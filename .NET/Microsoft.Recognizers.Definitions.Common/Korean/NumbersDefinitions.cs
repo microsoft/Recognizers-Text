@@ -127,27 +127,37 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string PercentageRegex = @"(?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트)|.*(?=[％%])";
       public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[만억]{{1,2}}(\s*(이상))?";
       public const string FracSplitRegex = @"[와|과]|분\s*의";
-      public const string ZeroToNineIntegerRegex = @"[일이삼사오육륙칠팔구영공]";
+      public const string ZeroToNineIntegerRegex = @"(영|령|공|일|이(?!다)|두|삼|사|(?<!시)오|육|칠|팔|구)";
+      public const string ZeroToNineNativeIntegerRegex = @"(하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)";
+      public static readonly string TenToNinetySinoIntegerRegex = $@"({ZeroToNineIntegerRegex})?십";
+      public const string TenToNinetyNativeIntegerRegex = @"(열|스물|서른|마흔|쉰|예순|일흔|여든|아흔)";
+      public static readonly string ElevenToNineteenSinoIntegerRegex = $@"십({ZeroToNineIntegerRegex})";
+      public static readonly string ElevenToNineteenNativeIntegerRegex = $@"열({ZeroToNineNativeIntegerRegex})";
       public const string NegativeNumberTermsRegex = @"((마\s*이\s*너\s*스|음\s*수)\s*)";
       public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}|^{NegativeNumberTermsRegexNum}";
       public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]";
       public const string PairRegex = @".*[쌍짝]$";
-      public const string RoundNumberIntegerRegex = @"[십백천만억조경열]";
-      public const string AllowListRegex = @"(。|，|、|（|）|“|”|까지|가지|가치|갓|거리|국|[곳|군데]|개|그루|급|기|길|[까풀|꺼풀]|꼭지|닢|다스|대|돈|롤|리|미터|[밀리|미리]|마리|매|모|[면|페이지]|벌|박|배|부|분|살|술|승|쌈|[옴큼|웅큼]|원|일|잎|잔|장|전|점|제곱|주|종|평|평방|척|채|차|첩|켤레|쾌|탕|푼|[연|년]|월|일|\s|$)";
-      public static readonly string NotSingleRegex = $@"(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[십])\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|십|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|영)\s*)*{ZeroToNineIntegerRegex}?";
-      public static readonly string SingleRegex = $@"(?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?={AllowListRegex})";
-      public static readonly string AllIntRegex = $@"((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|십)\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|[십]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|영)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})";
-      public static readonly string NumbersSpecialsChars = $@"(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+";
+      public const string RoundNumberIntegerRegex = @"(십|백|천|만|억|조(?!각)|경|열)";
+      public const string AllowListRegex = @"(。|，|、|（|）|“|”|까지|가지|가치|갓|거리|국|[곳|군데]|개|그루|급|기|길|[까풀|꺼풀]|꼭지|닢|다스|대|돈|롤|리|미터|[밀리|미리]|마리|매|모|[면|페이지]|벌|박|배|부|분|살|술|승|쌈|[옴큼|웅큼]|원|일|잎|잔|장|전|점|제곱|주|종|평|평방|척|채|차|첩|켤레|쾌|탕|푼|[연|년]|월|일|은|\s|$|/)";
+      public static readonly string NotSingleRegex = $@"((({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|[십])\s*(\s*{RoundNumberIntegerRegex}){{1,2}}(와)?|십|{RoundNumberIntegerRegex}\s*((과\s*)?{ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))((\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}(와)?|영)\s*)*(\s*{ZeroToNineIntegerRegex})?)";
+      public static readonly string SingleRegex = $@"(?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|일|두|삼|사|(?<![시])오|육|칠|팔|구)(?={AllowListRegex}))";
+      public static readonly string NativeSingleRegex = $@"(?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineNativeIntegerRegex})";
+      public static readonly string NativeIntRegex = $@"((({ZeroToNineIntegerRegex}\s*)?({RoundNumberIntegerRegex}+\s*)?({TenToNinetyNativeIntegerRegex}\s*)?({ZeroToNineIntegerRegex}))|({TenToNinetyNativeIntegerRegex}))";
+      public static readonly string AllIntRegex = $@"(((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|십)\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|[십]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|영)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})|{NativeIntRegex}+)";
+      public static readonly string NativeCumKoreanRegex = $@"({ZeroToNineFullHalfRegex}+)\s*(({RoundNumberIntegerRegex}+)({ZeroToNineFullHalfRegex}+))+";
+      public static readonly string NumbersWithDozen = $@"(((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|십)\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|[십]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|영)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex}))?(다스)(?!{AllIntRegex})";
+      public static readonly string NumbersSpecialsChars = $@"((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+)";
       public static readonly string NumbersSpecialsCharsWithSuffix = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
-      public static readonly string ZeroToNineIntegerSpecialsChars = $@"(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineIntegerRegex}+";
+      public static readonly string ZeroToNineIntegerSpecialsChars = $@"((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*){ZeroToNineIntegerRegex}+)";
       public static readonly string DottedNumbersSpecialsChar = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+";
       public const string PointRegexStr = @"[점\.．]";
       public static readonly string AllFloatRegex = $@"{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[일이삼사오육칠팔구영](\s*{ZeroToNineIntegerRegex})*";
-      public static readonly string NumbersWithAllowListRegex = $@"(?<!백\s*분\s*의\s*({AllIntRegex}점*|{AllFloatRegex})*){NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*(점{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*개\s*백\s*분\s*점)";
+      public static readonly string NumbersWithAllowListRegex = $@"((?<!백\s*분\s*의\s*({AllIntRegex}점*|{AllFloatRegex})*){NegativeNumberTermsRegex}?({RoundNumberIntegerRegex})?(과\s*(?!{ZeroToNineFullHalfRegex}))?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*(점{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*개\s*백\s*분\s*점))+";
       public static readonly string NumbersAggressiveRegex = $@"(?<!백\s*분\s*의\s*({AllIntRegex}점*|{AllFloatRegex})*){NegativeNumberTermsRegex}?{AllIntRegex}(?!({AllIntRegex}*(점{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*개\s*백\s*분\s*점)";
       public static readonly string PointRegex = $@"{PointRegexStr}";
-      public static readonly string DoubleSpecialsChars = $@"(?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)";
+      public static readonly string DoubleSpecialsChars = $@"(?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+))";
+      public static readonly string DoubleRoundNumberSpecialsChars = $@"(?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．점]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．점]\s?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\.．점]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+))";
       public static readonly string DoubleSpecialsCharsWithNegatives = $@"(?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))";
       public static readonly string SimpleDoubleSpecialsChars = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
       public static readonly string DoubleWithMultiplierRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
@@ -156,10 +166,12 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))";
       public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)";
       public static readonly string OrdinalRegex = $@"{AllIntRegex}번째";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(뒤에서 세번째|다음(\s*것)?|이전 것|현재|(((마지막)((에)?\s*((서)?\s*(두번째|((바로)?\s*(것|전)))|의 옆))?)|지금)(의 것)?))";
       public static readonly string OrdinalNumbersRegex = $@"{ZeroToNineFullHalfRegex}+번째";
+      public static readonly string OrdinalKoreanRegex = $@"({OrdinalRegex}|{RelativeOrdinalRegex}|{OrdinalNumbersRegex})";
       public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[와|과]\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*분\s*의\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})";
-      public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
-      public static readonly string FractionNotationRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
+      public static readonly string FractionNotationSpecialsCharsRegex = $@"(?<![/])(({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+)(?![/])";
+      public static readonly string FractionNotationRegex = $@"(?<![/])(({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+)(?![/])";
       public static readonly string PercentagePointRegex = $@"(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*개\s*백\s*분\s*점";
       public static readonly string SimplePercentageRegex = $@"(?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*({AllFloatRegex}|{AllIntRegex}|백)(?!{AllIntRegex})";
       public static readonly string NumbersPercentagePointRegex = $@"(?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))";
@@ -174,7 +186,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string IntegerPercentageRegex = $@"{ZeroToNineFullHalfRegex}+\s*개\s*백\s*분\s*점";
       public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*개\s*백\s*분\s*점";
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*개\s*백\s*분\s*점";
-      public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)";
+      public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d)({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({AllIntRegex}|{ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)([％%]|(퍼\s*센\s*트)|(프\s*로)|(퍼\s*센\s*티\s*지))(?!\d)";
       public const string TillRegex = @"(부터|까지|--|-|—|——|~)";
       public const string MoreRegex = @"(초과|많|높|크|더많|더높|더크|>)";
       public const string LessRegex = @"(미만|적|낮|작|더적|더낮|더적|<)";
@@ -185,11 +197,31 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string LessOrEqualSuffix = @"\s*(이상)";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"마지막", @"0" },
+            { @"다음", @"1" },
+            { @"뒤에서 세번째", @"-2" },
+            { @"마지막에서 두번째", @"-1" },
+            { @"마지막의 옆", @"-1" },
+            { @"마지막에서 바로 전의 것", @"-1" },
+            { @"이전 것", @"-1" },
+            { @"다음 것", @"1" },
+            { @"마지막에서 바로 전", @"-1" },
+            { @"지금의 것", @"0" },
+            { @"현재", @"0" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"마지막", @"end" },
+            { @"다음", @"current" },
+            { @"뒤에서 세번째", @"end" },
+            { @"마지막에서 두번째", @"end" },
+            { @"마지막의 옆", @"end" },
+            { @"마지막에서 바로 전의 것", @"end" },
+            { @"이전 것", @"current" },
+            { @"다음 것", @"current" },
+            { @"마지막에서 바로 전", @"end" },
+            { @"지금의 것", @"current" },
+            { @"현재", @"current" }
         };
     }
 }

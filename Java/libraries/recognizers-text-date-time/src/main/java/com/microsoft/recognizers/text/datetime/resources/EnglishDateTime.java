@@ -305,7 +305,7 @@ public class EnglishDateTime {
 
     public static final String SetWeekDayRegex = "\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\\b";
 
-    public static final String WeekDayOfMonthRegex = "(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})"
+    public static final String WeekDayOfMonthRegex = "(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+(week\\s+{MonthSuffixRegex}[\\.]?\\s+(on\\s+)?{WeekDayRegex}|{WeekDayRegex}\\s+{MonthSuffixRegex}))"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
 
@@ -338,7 +338,7 @@ public class EnglishDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractor5 = "\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}"
+    public static final String DateExtractor5 = "\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{MonthRegex}", MonthRegex)
@@ -720,7 +720,7 @@ public class EnglishDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
-    public static final String HolidayRegex3 = "(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'l)\\s+workers'?|mother's|mothers?|father's|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?"
+    public static final String HolidayRegex3 = "(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'?l)\\s+workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
@@ -1270,7 +1270,7 @@ public class EnglishDateTime {
         .put("arborday", new String[]{"arborday"})
         .put("girlsday", new String[]{"girlsday"})
         .put("whiteloverday", new String[]{"whiteloverday"})
-        .put("loverday", new String[]{"loverday"})
+        .put("loverday", new String[]{"loverday", "loversday"})
         .put("christmas", new String[]{"christmasday", "christmas"})
         .put("xmas", new String[]{"xmasday", "xmas"})
         .put("newyear", new String[]{"newyear"})
@@ -1282,7 +1282,7 @@ public class EnglishDateTime {
         .put("stpatrickday", new String[]{"stpatrickday", "stpatricksday", "stpatrick"})
         .put("aprilfools", new String[]{"aprilfools"})
         .put("stgeorgeday", new String[]{"stgeorgeday"})
-        .put("mayday", new String[]{"mayday", "intlworkersday", "internationalworkersday"})
+        .put("mayday", new String[]{"mayday", "intlworkersday", "internationalworkersday", "workersday"})
         .put("cincodemayoday", new String[]{"cincodemayoday"})
         .put("baptisteday", new String[]{"baptisteday"})
         .put("usindependenceday", new String[]{"usindependenceday"})

@@ -9,7 +9,7 @@ RangeConnectorRegex : !nestedRegex
   def: (?<and>\b(और|and|through|to|से\s+लेकर)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
-  def: \b(?<order>अगला|अगले|अगली|दूसरे|आने\s+वा(ले|ला)|आगामी|पिछला|पिछले|पिछली|आखिरी|अंतिम|यह|इसी|इस|वर्तमान|अभी\s+(के|वाला)|इस|उस|चालू)
+  def: \b(?<order>परसों\s+वापस\s+गय\s+था|अगला|अगले|अगली|दूसरे|आने\s+वा(ले|ला)|आगामी|पिछला|पिछले|पिछली|आखिरी|अंतिम|यह|इसी|इस|वर्तमान|अभी\s+(के|वाला)|इस|उस|चालू)
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>अगला|अगले|अगली|दूसरे|आने\s+वा(ले|ला)|आगामी|पिछला|पिछली|पिछले|आखिरी|अंतिम|वर्तमान|अभी\s+(के|वाला)|इसी|इस|उस)
 UpcomingPrefixRegex: !simpleRegex
@@ -129,7 +129,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यापारिक|व्यापार\s+के)\s+)?(?<day>दिनों|दिन?|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़ा))
+  def: (?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))
 DateTokenPrefix: 'को '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'को|की'
@@ -255,7 +255,7 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह){PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+(का|की|के|को))?\s+(अगला|अगले|अगली|आने\s+वाले|आने\s+वाला)\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)))
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: (?<!([\u0900-\u097f]))(परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)
+  def: (?<!([\u0900-\u097f]))(परसों\s+वापस\s+गया\s+था|कल\s+वापस\s+गया\s+था|परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन?)
@@ -285,11 +285,12 @@ DateExtractor1: !nestedRegex
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+(का|की|के|को)\s+|\s*-\s*){MonthRegex}[\.]?((\s+|\s*,\s*|\s+में\s+){DateYearRegex})?
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+# The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
-  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}
+  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])
@@ -314,7 +315,7 @@ DateExtractor9S: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}(?![%])
   references: [ DayRegex, MonthNumRegex, WeekDayRegex ]
 DateExtractorA: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}
+  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, DayRegex, WeekDayRegex ]
 OfMonth: !nestedRegex
   def: ^\s*{MonthRegex}(?=\s*(को|की)?)
@@ -368,7 +369,7 @@ BasicTime: !nestedRegex
 MidnightRegex: !simpleRegex
   def: (?<midnight>आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|मध्य\s*रात्रि)
 MidmorningRegex: !simpleRegex
-  def: (?<midmorning>(मध्य|बीच)\s*(-\s*)?सुबह)
+  def: (?<midmorning>(मध्य|बीच)\s*(-\s*)?सुबह|दिन\s+चढ़ने\s+से\s+पूर्व)
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>देर\s*दोपहर|दोपहर(\s*(देर|के\s*आसपास))|भरी\s*दुपहरी)
 MiddayRegex: !simpleRegex
@@ -383,7 +384,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}((-|——)?ish|दोपहर(\s*((के\s*आसपास)|देर))?|(\s+बजे)?\s+के\s+आसपास)|लगभग\s+लंच\s+के\s+समय)'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?rs?|h|घंटों|घंटे|घंटा|आर्स|मिनट|सेकंड|घण्टों|sec(ond)?s?)
+  def: ([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?rs?|h|घंटों|घंटे|घंटा|आर्स|मिनट|सेकंड्स|सेकंड|घण्टों|sec(ond)?s?)
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|घंटे|घंटा|घंटों|घण्टे|घण्टों|मिनट|आर्स|minute|मि|घण्टे)
 FivesRegex: !simpleRegex
@@ -468,7 +469,7 @@ UnspecificTimePeriodRegex: !nestedRegex
   def: ({MealTimeRegex})
   references: [ MealTimeRegex ]
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*({AmRegex}|{PmRegex})|(रोज\s+)?({AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?|शाम)
+  def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*(सुबह|दोपहर|शाम|{AmRegex}|{PmRegex})(?:\s+(को|में))?|(रोज\s+)?(सुबह|दोपहर|{AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?(?:\s+(को|में))?|शाम|(काम|व्यापार)\s+के\s+(समय|घंटों)(\s+में)?)
   references: [ LaterEarlyRegex, AmRegex, PmRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})|\b(tonight|आज(\s+रात)?))s?
@@ -479,17 +480,17 @@ TimeFollowedUnit: !nestedRegex
 TimeNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){TimeUnitRegex}
   references: [ TimeUnitRegex ]
-BusinessHourSplitStrings: ['business', 'hour', 'घण्टे']
+BusinessHourSplitStrings: ['business', 'hour','व्यापारिक', 'घण्टे', 'व्यापार', 'काम']
 NowRegex: !simpleRegex
-  def: \b(?<now>अभी|अब|जल्द\s+से\s+जल्द|जितनी\s+जल्दी\s+हो\s+सके|यथाशीघ्र|हाल\s+ही\s+में|पहले से)
+  def: \b(?<now>अभी|अब|ज़ल्दी\s+से\s+ज़ल्दी|जल्द\s+से\s+जल्द|जितनी\s+जल्दी\s+हो\s+सके|यथाशीघ्र|हाल\s+ही\s+में|पहले से)
 SuffixRegex: !simpleRegex
-  def: ^\s*(in the\s+)?(morning|सुबह|afternoon|दोपहर|evening|संध्या|शाम|सायं|सायंकाल|night|रात)\b
+  def: ^\s*(in the\s+)?(morning|सुबह|afternoon|दोपहर|दिन|evening|संध्या|शाम|सायं|सायंकाल|night|रात)\b
 NonTimeContextTokens: !simpleRegex
   def: (building)
 DateTimeTimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>morning|सुबह|afternoon|दोपहर|night|रात|evening|संध्या|शाम|सायं|सायंकाल)(?![\u0900-\u097f])
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bआज((\s+(आधी|अर्ध))?\s*रात)?)
+  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bआज(\s+रात)?((\s+(आधी|अर्ध))?\s*रात)?)
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
@@ -504,9 +505,9 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|करीब|लगभग))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ^\s*(((दिन\s+)?(यह\s+)?के\s+अंत(\s+में)?)|(देर\s+शाम\s+को))(?![\u0900-\u097f])
+  def: ^\s*(((दिन\s+)?(यह\s+)?के\s+(अंत|खत्म)(\s+में)?)|(देर\s+शाम\s+को))(?![\u0900-\u097f])
 UnspecificEndOfRegex: !nestedRegex
-  def: \b(यह\s+)?(eod|((?<!{WeekDayRegex}\s+)(दिन)\s+के\s+अंत\s+में))
+  def: \b(यह\s+)?(eod|दिन\s+के\s+खत्म|((?<!{WeekDayRegex}\s+)(दिन)\s+के\s+अंत\s+में))
   references: [ WeekDayRegex ]
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(eoy)\b
@@ -520,23 +521,23 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(((को|की)\s+)?{PeriodTimeOfDayRegex}(\s+(को|की))?)(?![\u0900-\u097f])
  references: [ PeriodTimeOfDayRegex ]
 LessThanRegex: !simpleRegex
-  def: \b(से\s+कम)
+  def: \b(से\s+(भी\s+)?कम(\s+समय)?)
 MoreThanRegex: !simpleRegex
-  def: \b(से\s+ज्यादा)
+  def: \b(से\s+(ज़्यादा|ज्यादा))
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड|सेकेंड|sec(ond)?s?)
-  references: [ DateUnitRegex, SetDurationUnitRegex ]
+  def: (?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे(\sऔर)?|कार्य\s?दिवस(\sऔर)?|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड|सेकेंड|sec(ond)?s?)
+  references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter)|(?<suffix_num>साढ़े|आधे|तिमाही))
+  def: (?<suffix>\s*(और)\s+((एक)?\s+)?(?<suffix_num>आधे|साढ़े|तिमाही)|(?<suffix_num>साढ़े|आधे|तिमाही))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>(?<daily>दैनिक|रोज़)|(?<monthly>मासिक)|(?<weekly>साप्ताहिक)|(?<yearly>वार्षिक|सालाना|सालान|साल\s+में\s+एक\s+बार)|(?<biweekly>हफ्ते\s+में\s+दो\s+बार))
+  def: \b(?<periodic>(?<daily>दैनिक|रोज़)|(?<monthly>मासिक)|(?<weekly>साप्ताहिक)|(?<yearly>वार्षिक|ऐनुअली\s+एक\s+बार|सालाना|सालान|साल\s+में\s+एक\s+बार)|(?<biweekly>हफ्ते\s+में\s+दो\s+बार))
 EachUnitRegex: !nestedRegex
-  def: (?<each>(प्रत्येक\s+से|हरेक|हर(\s+एक)?|प्रति|रो(?=ज))(?<other>\s+other)?\s*(?!दिन\s+(सुबह|दोपहर|संध्या|रात)){DurationUnitRegex})
+  def: (?<each>(प्रत्येक\s+से|हरेक|हर\s+तीसरे|हर(\s+एक)?|प्रति|रो(?=ज))(?<other>\s+other)?\s*(?!दिन\s+(सुबह|दोपहर|संध्या|रात)){DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*$)
+  def: \b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर\s+तीसरे|हर(\s+(एक|रोज|दिन))?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*)
+  def: \b(?<each>((से\s+)?प्रत्येक|प्रतिदिन|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>निम्नलिखित|अगले|आगामी|इस|पिछले|पिछले|पिछले|वर्तमान)
 EachDayRegex: !simpleRegex
@@ -550,7 +551,7 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b((?<half>आधा)|एक)\s+{DurationUnitRegex}
+  def: \b((?<half>आधे|आधा)|एक(\sऔर)?)\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(?<unit>साल|महीनों|महीना|(?!सप्ताहांत)सप्ताह|हफ़्ते|हफ्ते|दिन|घंटे|घंटा|आर्स)\s+(के लिए|के लिये|दौरान)
@@ -655,7 +656,7 @@ PrepositionSuffixRegex: !simpleRegex
 WrittenDayRegex: !simpleRegex
   def: (?<day>सात|दूसरी|आठ|फ़ोर|चार|पांच|पाँच|नौ|दो|छह|एक(सठ)?|तीन|सत्रह|तेरह|चौदह|अठारह|उन्नीस|पंद्रह|सोलह|ग्यारह|बारह|दस|सत्ताईस|तेईस|चौबीस|अट्ठाईस|अट्ठाइस|उनतीस|पच्चीस|छब्बीस|इक्कीस|बाईस|बीस|तीस|इकत्तीस|इकतीस)(?![\u0900-\u097f])
 FlexibleDayRegex: !nestedRegex
-  def: (?<DayOfMonth>({WeekDayRegex}+\s+)?({WrittenDayRegex}|(उस\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))))(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?
+  def: (?<DayOfMonth>({WeekDayRegex}+\s+)?({WrittenDayRegex}|(उस\s*)?(?<!:)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))))(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?
   references: [WrittenDayRegex, WeekDayRegex ]
 ForTheRegex: !nestedRegex
   def: \b(((उस\s+)?{FlexibleDayRegex}(?=\s+(तारीख\s+)?(के|को))|((यह\s+)?{FlexibleDayRegex}(?<=(?:ला|रा|था|वां|वीं|वें|वाँ|वा|ठा))(?<=\s+को\s+)))(?<end>\s*(,|\.|!|\?|$))?)
@@ -744,6 +745,9 @@ UnitMap: !dictionary
     महीने: MON
     माह: MON
     पखवाड़ा: 2W
+    पखवाड़े: 2W
+    पखवाड़े: 2W
+    पखवाड़ा: 2W
     हफ़्तों: W
     सप्ताह: W
     हफ़्ते: W
@@ -782,6 +786,7 @@ UnitMap: !dictionary
     सेकेंड: S
     secs: S
     sec: S
+    सेकंड्स: S
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
@@ -794,6 +799,9 @@ UnitValueMap: !dictionary
     महीने: 2592000
     महीनों: 2592000
     माह: 2592000
+    पखवाड़ा: 1209600
+    पखवाड़े: 1209600
+    पखवाड़े: 1209600
     पखवाड़ा: 1209600
     हफ़्तों: 604800
     सप्ताह: 604800
@@ -831,6 +839,7 @@ UnitValueMap: !dictionary
     second: 1
     सेकंड: 1
     सेकेंड: 1
+    सेकंड्स: 1
     secs: 1
     sec: 1
 SpecialYearPrefixesMap: !dictionary
@@ -1465,7 +1474,7 @@ HolidayNames: !dictionary
     yogaday: [योगदिवस, योग]
     holi: [होली]
     diwali: [दिवाली]
-    gandhijayanti: [गांधीजयंती]
+    gandhijayanti: [गांधीजयंती,गांधीजयंतीकेदिन]
     easterday: [ easterday, easter, eastersunday, ईस्टरसंडे ]
     ashwednesday: [ ashwednesday ]
     palmsunday: [ palmsunday ]
@@ -1868,6 +1877,7 @@ MinusOneDayTerms: !list
     - yesterday
     - day before
     - कल
+    - कल वापस गया था
 PlusTwoDayTerms: !list
   types: [ string ]
   entries:
@@ -1878,6 +1888,7 @@ MinusTwoDayTerms: !list
   types: [ string ]
   entries:
     - day before yesterday
+    - परसों वापस गया था
 # For DatePeriodParserConfiguration Logic
 FutureTerms: !list
   types: [ string ]

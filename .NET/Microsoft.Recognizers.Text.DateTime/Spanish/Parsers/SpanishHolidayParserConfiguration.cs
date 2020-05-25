@@ -25,8 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = 1;
             }
-
-            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -56,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 { "padres", FathersDay },
                 { "madres", MothersDay },
                 { "acciondegracias", ThanksgivingDay },
-                { "trabajador", LabourDay },
+                { "trabajador", InternationalWorkersDay },
                 { "delaraza", ColumbusDay },
                 { "memoria", MemorialDay },
                 { "pascuas", Pascuas },
@@ -88,6 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         private static DateObject TeacherDay(int year) => new DateObject(year, 9, 11);
 
-        private static DateObject Pascuas(int year) => DateObject.MinValue;
+        private static DateObject Pascuas(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
     }
 }

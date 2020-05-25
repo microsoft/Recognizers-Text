@@ -14,7 +14,6 @@
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>nlp entity-extraction parser-library recognizer date time datetime numex timex netstandard2.0</tags>
     <dependencies>
-      <dependency id="System.Collections.Immutable" version="1.4.0" />
       <dependency id="Microsoft.Recognizers.Text" version="$basic$"/>
       <dependency id="Microsoft.Recognizers.Text.Number" version="$number$"/>
       <dependency id="Microsoft.Recognizers.Text.NumberWithUnit" version="$numberWithUnit$"/>

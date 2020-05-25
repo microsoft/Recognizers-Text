@@ -229,12 +229,12 @@ public class FrenchDateTime {
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractor4 = "\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}"
+    public static final String DateExtractor4 = "\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractor5 = "\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}"
+    public static final String DateExtractor5 = "\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
@@ -258,7 +258,7 @@ public class FrenchDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractorA = "\\b{DateYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}"
+    public static final String DateExtractorA = "\\b{DateYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex);

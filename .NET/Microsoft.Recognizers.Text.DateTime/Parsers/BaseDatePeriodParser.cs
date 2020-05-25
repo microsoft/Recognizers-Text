@@ -928,7 +928,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var monthStr = match.Groups["month"].Value;
                 if (this.config.IsYearToDate(trimmedText))
                 {
-                    ret.Timex = referenceDate.Year.ToString("D4");
+                    ret.Timex = referenceDate.Year.ToString("D4", CultureInfo.InvariantCulture);
                     ret.FutureValue =
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, 1, 1), referenceDate);
@@ -938,7 +938,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (this.config.IsMonthToDate(trimmedText))
                 {
-                    ret.Timex = referenceDate.Year.ToString("D4") + "-" + referenceDate.Month.ToString("D2");
+                    ret.Timex = referenceDate.Year.ToString("D4", CultureInfo.InvariantCulture) + "-" + referenceDate.Month.ToString("D2", CultureInfo.InvariantCulture);
                     ret.FutureValue =
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(
@@ -955,13 +955,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (swift >= -1)
                     {
-                        ret.Timex = (referenceDate.Year + swift).ToString("D4") + "-" + month.ToString("D2");
+                        ret.Timex = (referenceDate.Year + swift).ToString("D4", CultureInfo.InvariantCulture) + "-" + month.ToString("D2", CultureInfo.InvariantCulture);
                         year = year + swift;
                         futureYear = pastYear = year;
                     }
                     else
                     {
-                        ret.Timex = "XXXX-" + month.ToString("D2");
+                        ret.Timex = "XXXX-" + month.ToString("D2", CultureInfo.InvariantCulture);
                         if (month < referenceDate.Month)
                         {
                             futureYear++;
@@ -1445,8 +1445,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
-                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                // Expressions like "today", "tomorrow",... should keep their original year
+                if (!this.config.SpecialDayRegex.IsMatch(pr1.Text))
+                {
+                    pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                }
+
+                if (!this.config.SpecialDayRegex.IsMatch(pr2.Text))
+                {
+                    pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                }
             }
 
             ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
@@ -1977,7 +1985,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = referenceDate.Year + swift;
                 }
 
-                var yearStr = year.ToString("D4");
+                var yearStr = year.ToString("D4", CultureInfo.InvariantCulture);
                 ret.Timex = yearStr + "-" + seasonTimex;
 
                 ret.Success = true;
@@ -2050,14 +2058,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var num = int.Parse(match.Groups["number"].ToString());
+                var num = int.Parse(match.Groups["number"].ToString(), CultureInfo.InvariantCulture);
                 if (num == 0)
                 {
                     return ret;
                 }
 
                 var year = referenceDate.Year;
-                ret.Timex = year.ToString("D4") + "-W" + num.ToString("D2");
+                ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-W" + num.ToString("D2", CultureInfo.InvariantCulture);
 
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 var firstThursday = firstDay.AddDays(DayOfWeek.Thursday - firstDay.DayOfWeek);

@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string LangMarker = @"Eng";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
-      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|billion|trillion)";
+      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|billion|trillion|lakh|crore)";
       public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
       public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(minus|negative)\s+)";
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string AllIntRegex = $@"(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+(\s*(K|k|M|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string NumbersWithDozenSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)";
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string DoubleExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public static readonly string DoubleCaretExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+(\s*(K|k|M|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
+      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"and" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"and" };
       public const string HalfADozenRegex = @"half\s+a\s+dozen";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"a", 1 },
@@ -148,7 +148,9 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"thousand", 1000 },
             { @"million", 1000000 },
             { @"billion", 1000000000 },
-            { @"trillion", 1000000000000 }
+            { @"trillion", 1000000000000 },
+            { @"lakh", 100000 },
+            { @"crore", 10000000 }
         };
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
@@ -228,6 +230,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"million", 1000000 },
             { @"billion", 1000000000 },
             { @"trillion", 1000000000000 },
+            { @"lakh", 100000 },
+            { @"crore", 10000000 },
             { @"hundredth", 100 },
             { @"thousandth", 1000 },
             { @"millionth", 1000000 },
@@ -242,6 +246,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"dozens", 12 },
             { @"k", 1000 },
             { @"m", 1000000 },
+            { @"mm", 1000000 },
+            { @"mil", 1000000 },
             { @"g", 1000000000 },
             { @"b", 1000000000 },
             { @"t", 1000000000000 }

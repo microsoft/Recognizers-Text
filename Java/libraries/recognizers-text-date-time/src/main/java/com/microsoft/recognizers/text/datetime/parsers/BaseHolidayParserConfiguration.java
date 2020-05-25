@@ -112,6 +112,10 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
         return DateUtil.safeCreateFromMinValue(year, 9, getDay(year, 9, 0, DayOfWeek.MONDAY));
     }
 
+    protected static LocalDateTime internationalWorkersDay(int year) {
+        return DateUtil.safeCreateFromMinValue(year, 5, 1);
+    }
+
     protected static LocalDateTime columbusDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 10, getDay(year, 10, 1, DayOfWeek.MONDAY));
     }

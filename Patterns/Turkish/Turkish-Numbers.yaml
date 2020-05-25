@@ -4,6 +4,8 @@ LangMarker: Tur
 CompoundNumberLanguage: !bool true
 MultiDecimalSeparatorCulture: !bool true
 # Integer Regex
+NumberMultiplierRegex: !simpleRegex
+  def: (K|k|M|G|T|B|b)
 DigitsNumberRegex: !simpleRegex
   def: \d+|\d{1,3}(\.\d{3})
 RoundNumberIntegerRegex: !simpleRegex
@@ -68,8 +70,8 @@ NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
-  references: [ BaseNumbers.NumberMultiplierRegex ]
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{NumberMultiplierRegex}(?=\b)
+  references: [ NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
@@ -163,8 +165,8 @@ AllFloatRegex: !nestedRegex
   def: ({FloatRegex1}|{FloatRegex2})
   references: [FloatRegex1, FloatRegex2]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
-  references: [ BaseNumbers.NumberMultiplierRegex ]
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{NumberMultiplierRegex}(?=\b)
+  references: [ NumberMultiplierRegex ]
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex

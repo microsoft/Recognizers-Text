@@ -2609,5 +2609,96 @@
         "End": 25
       }
     ]
+  },
+  {
+    "Input": "I can give you 13 lakh",
+    "Results": [
+      {
+        "Text": "13 lakh",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1300000"
+        },
+        "Start": 15,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "There are 1 crore boxes in this container",
+    "Results": [
+      {
+        "Text": "1 crore",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000"
+        },
+        "Start": 10,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "I count 6 crore and two hundred",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "6 crore and two hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "60000200"
+        },
+        "Start": 8,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "The total is three lakh crore",
+    "Results": [
+      {
+        "Text": "three lakh crore",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3000000000000"
+        },
+        "Start": 13,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "That account revenue target is US$ 1MM",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1mm",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        },
+        "Start": 35,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "2mil SEK can't buy you a big apartment anyome",
+    "Results": [
+      {
+        "Text": "2mil",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
   }
 ]

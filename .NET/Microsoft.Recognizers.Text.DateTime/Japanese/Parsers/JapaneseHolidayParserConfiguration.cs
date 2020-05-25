@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -7,6 +8,7 @@ using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -366,7 +368,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + timexStr;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + timexStr;
                     ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;

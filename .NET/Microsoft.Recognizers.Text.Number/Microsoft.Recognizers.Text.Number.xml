@@ -21,6 +21,11 @@
             Extract all number-related terms aggressively.
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Constants.JAPANESE_SUBS">
+            <summary>
+            Substitute for language markers for Japanese.
+            </summary>
+        </member>
         <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.Extract(System.String)">
             <summary>
             extractor the percentage entities from the sentence.

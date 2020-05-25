@@ -15508,5 +15508,228 @@
         }
       }
     ]
+  },
+  {
+    "Input": "This task should be carried out between today and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between today and tomorrow",
+        "Start": 32,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-06,2020-05-07,P1D)",
+              "type": "daterange",
+              "start": "2020-05-06",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The allotted time was between 22/Jan/2019 and yesterday",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 22/jan/2019 and yesterday",
+        "Start": 22,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-22,2020-05-05,P469D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2020-05-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It should have been completed between Aug 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between aug 2019 and now",
+        "Start": 30,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-08-01,2020-05-06,P279D)",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2020-05-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The ssn is 123-12-1234",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The COVID-19 was very serious at 02-02-2020 - 03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "02-02-2020 - 03-03-2020",
+        "Start": 33,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-02-02,2020-03-03,P30D)",
+              "type": "daterange",
+              "start": "2020-02-02",
+              "end": "2020-03-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The period is 10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-10-01,2017-11-02,P32D)",
+              "type": "daterange",
+              "start": "2017-10-01",
+              "end": "2017-11-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The code of this object is 133-03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The file's name is sales_report-2002-10-09.xlsx",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "2015-1-32 is a wrong date",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Call me al (206) 555-1212",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "1st week of Oct. on Friday.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1st week of oct. on friday",
+        "Start": 0,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-WXX-5-#1",
+              "type": "date",
+              "value": "2019-10-04"
+            },
+            {
+              "timex": "XXXX-10-WXX-5-#1",
+              "type": "date",
+              "value": "2020-10-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's celebrate International Workers' Day!",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "international workers' day",
+        "Start": 16,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-01",
+              "type": "date",
+              "value": "2020-05-01"
+            },
+            {
+              "timex": "XXXX-05-01",
+              "type": "date",
+              "value": "2021-05-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

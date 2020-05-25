@@ -50,6 +50,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber(testSpec);
         }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -58,6 +59,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberRangeModelExperimentalMode(TestModel testSpec)

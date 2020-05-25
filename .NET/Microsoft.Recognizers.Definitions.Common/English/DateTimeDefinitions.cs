@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
-      public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
+      public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+(week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))";
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b";
       public static readonly string SpecialDate = $@"(?=\b(on|at)\s+the\s+){DayRegex}\b";
       public const string DatePreposition = @"\b(on|in)";
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?";
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}[\.]?((\s+in)?{DateExtractorYearTermRegex})?\b";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}";
-      public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}";
+      public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b";
       public static readonly string DateExtractor7L = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])\b";
       public static readonly string DateExtractor7S = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b";
@@ -221,7 +221,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|may\s*day|yuan dan|christmas eve|(christmas|xmas)(\s+day)?|black friday|yuandan|easter(\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>(thanks\s*giving|all saint's|white lover|s(?:ain)?t?. (?:patrick|george)(?:')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+day)?)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
-      public static readonly string HolidayRegex3 = $@"(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'l)\s+workers'?|mother's|mothers?|father's|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
+      public static readonly string HolidayRegex3 = $@"(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'?l)\s+workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
       public const string AMTimeRegex = @"(?<am>morning)";
       public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
       public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
@@ -637,7 +637,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"arborday", new string[] { @"arborday" } },
             { @"girlsday", new string[] { @"girlsday" } },
             { @"whiteloverday", new string[] { @"whiteloverday" } },
-            { @"loverday", new string[] { @"loverday" } },
+            { @"loverday", new string[] { @"loverday", @"loversday" } },
             { @"christmas", new string[] { @"christmasday", @"christmas" } },
             { @"xmas", new string[] { @"xmasday", @"xmas" } },
             { @"newyear", new string[] { @"newyear" } },
@@ -649,7 +649,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", @"stpatrick" } },
             { @"aprilfools", new string[] { @"aprilfools" } },
             { @"stgeorgeday", new string[] { @"stgeorgeday" } },
-            { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday" } },
+            { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday", @"workersday" } },
             { @"cincodemayoday", new string[] { @"cincodemayoday" } },
             { @"baptisteday", new string[] { @"baptisteday" } },
             { @"usindependenceday", new string[] { @"usindependenceday" } },

@@ -670,6 +670,7 @@ AmbiguousDimensionUnitList: !list
     - áreas
     - pie
     - pies
+    - '"'
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]
@@ -695,6 +696,7 @@ AmbiguousLengthUnitList: !list
     - mi
     - área
     - áreas
+    - '"'
 #SpanishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))

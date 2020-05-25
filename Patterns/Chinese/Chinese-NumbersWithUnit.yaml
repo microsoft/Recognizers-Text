@@ -729,6 +729,11 @@ DimensionAmbiguousValues: !list
     - gb
     - tb
     - pb
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '五角': '五角大楼'
+    '普尔': '标准普尔'
 #TemperatureExtractorConfiguration
 TemperatureSuffixList: !dictionary
   types: [string, string]

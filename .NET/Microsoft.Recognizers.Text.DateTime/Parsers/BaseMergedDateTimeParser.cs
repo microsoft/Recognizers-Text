@@ -291,7 +291,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length += er.Text.Length - originText.Length;
             }
 
-            // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasEqual = false, hasDateAfter = false;
 
             // "InclusiveModifier" means MOD should include the start/end time
@@ -299,6 +298,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var hasInclusiveModifier = false;
             var matchIsAfter = false;
             var modStr = string.Empty;
+
+            // Analyze and process modifiers
+            // Push, save the MOD string
             if (er.Metadata != null && er.Metadata.HasMod)
             {
                 var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
@@ -410,12 +412,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Parse extracted datetime mention
             pr = ParseResult(er, referenceTime);
             if (pr == null)
             {
                 return null;
             }
 
+            // Apply processed modifiers
             // Pop, restore the MOD string
             if (hasBefore && pr.Value != null)
             {

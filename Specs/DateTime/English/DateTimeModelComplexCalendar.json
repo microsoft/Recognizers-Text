@@ -12823,5 +12823,220 @@
         }
       }
     ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and today",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and today",
+        "Start": 25,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-26,P481D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and tomorrow",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-27,P482D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and now",
+        "Start": 25,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-26,P481D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be carried out between today and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between today and tomorrow",
+        "Start": 32,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-06,2020-05-07,P1D)",
+              "type": "daterange",
+              "start": "2020-05-06",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The allotted time was between 22/Jan/2019 and yesterday",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 22/jan/2019 and yesterday",
+        "Start": 22,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-22,2020-05-05,P469D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2020-05-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It should have been completed between Aug 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between aug 2019 and now",
+        "Start": 30,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-08-01,2020-05-06,P279D)",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2020-05-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The ssn is 123-12-1234",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The COVID-19 was very serious at 02-02-2020 - 03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "02-02-2020 - 03-03-2020",
+        "Start": 33,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-02-02,2020-03-03,P30D)",
+              "type": "daterange",
+              "start": "2020-02-02",
+              "end": "2020-03-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The code of this object is 133-03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The file's name is sales_report-2002-10-09.xlsx",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "2015-1-32 is a wrong date",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Call me al (206) 555-1212",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
   }
 ]

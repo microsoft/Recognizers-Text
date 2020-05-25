@@ -1263,7 +1263,7 @@
   },
   {
     "Input": "The number range is 5k-20k",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5k-20k",

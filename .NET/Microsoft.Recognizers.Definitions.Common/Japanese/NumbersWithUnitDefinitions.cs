@@ -542,6 +542,10 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         {
             @"円",
             @"銭",
+            @"分",
+            @"レク",
+            @"プル",
+            @"ブル",
             @"\"
         };
     }

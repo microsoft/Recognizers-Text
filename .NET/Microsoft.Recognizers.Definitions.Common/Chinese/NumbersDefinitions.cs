@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string ZeroToNineIntegerRegex = @"[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]";
       public const string HalfUnitRegex = @"半";
       public const string NegativeNumberTermsRegex = @"[负負]";
-      public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
+      public static readonly string NegativeNumberTermsRegexNum = $@"((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-－])[-－])";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
       public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[十拾半对對]";
       public const string PairRegex = @".*[双对雙對]$";
@@ -248,7 +248,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string TwoNumberRangeRegex4 = $@"(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)";
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"十", @"十足" }
+            { @"十", @"十足" },
+            { @"伍", @"队伍" }
         };
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>

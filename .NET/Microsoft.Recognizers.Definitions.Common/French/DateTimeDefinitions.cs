@@ -86,13 +86,13 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b";
       public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b";
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s*-\s*){MonthRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
-      public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}";
-      public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}";
+      public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"(?<=\b(le|sur|sur l[ae])\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b";
       public static readonly string DateExtractor7 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
       public static readonly string DateExtractor8 = $@"(?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}\b";
       public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
-      public static readonly string DateExtractorA = $@"\b{DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}";
+      public static readonly string DateExtractorA = $@"\b{DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string OfMonth = $@"^\s*de\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(le)?\s*$";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
       public static readonly string ForTheRegex = $@"\b(((pour le {FlexibleDayRegex})|(dans (le\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b";
-      public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
+      public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\b(reste|fin)\s+(d[eu]\s+)?((le|ce(tte)?)\s+)?(?<duration>semaine|mois|l'ann[ée]e)\b";
       public const string RestOfDateTimeRegex = @"\b(reste|fin)\s+(d[eu]\s+)?((le|ce(tte)?)\s+)?(?<unit>jour)\b";
       public const string LaterEarlyPeriodRegex = @"^[.]";

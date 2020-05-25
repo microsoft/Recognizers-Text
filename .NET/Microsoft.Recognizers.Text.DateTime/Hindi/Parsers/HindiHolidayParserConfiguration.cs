@@ -11,10 +11,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        // Holi an Diwali dates { year, (holy_month, holy_day, diwali_month, diwali_day) }
-        private static readonly IDictionary<int, IEnumerable<int>> HoliDiwaliDates =
-            DateTimeDefinitions.HoliDiwaliDates.ToImmutableDictionary();
-
         public HindiHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
@@ -131,9 +127,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private static DateObject YogaDay(int year) => new DateObject(year, 6, 21);
 
-        private static DateObject HoliDay(int year) => GetHoliDiwaliDate(year, isHoli: true);
+        private static DateObject HoliDay(int year) => HolidayFunctions.CalculateHoliDiwaliDate(year, isHoli: true);
 
-        private static DateObject DiwaliDay(int year) => GetHoliDiwaliDate(year, isHoli: false);
+        private static DateObject DiwaliDay(int year) => HolidayFunctions.CalculateHoliDiwaliDate(year, isHoli: false);
 
         private static DateObject GandhiJayanti(int year) => new DateObject(year, 10, 2);
 
@@ -197,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => CalculateHolidayByEaster(year);
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -221,50 +217,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
-        // function adopted from German implementation
-        private static DateObject CalculateHolidayByEaster(int year, int days = 0)
-        {
-            int day = 0;
-            int month = 3;
-
-            int g = year % 19;
-            int c = year / 100;
-            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
-
-            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
-
-            if (day > 31)
-            {
-                month++;
-                day -= 31;
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
-        }
-
-        // Holi and Diwali follow the lunar calendar
-        // their dates have been included in the dictionary HoliDiwaliDates
-        private static DateObject GetHoliDiwaliDate(int year, bool isHoli)
-        {
-            int day = 1;
-            int month = 1;
-            if (year >= 1900 && year < 2100)
-            {
-                var dates = HoliDiwaliDates[year].ToImmutableList();
-                if (isHoli)
-                {
-                    month = dates[0];
-                    day = dates[1];
-                }
-                else
-                {
-                    month = dates[2];
-                    day = dates[3];
-                }
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day);
-        }
     }
 }

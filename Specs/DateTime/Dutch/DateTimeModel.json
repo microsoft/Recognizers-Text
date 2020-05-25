@@ -9367,5 +9367,57 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "Ik ben tussen 16:00 en 17:00 vandaag weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 16:00 en 17:00 vandaag",
+        "Start":7,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T16:00,T17:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-10,2017-02-11,P32D)",
+              "type": "daterange",
+              "start": "2017-01-10",
+              "end": "2017-02-11"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

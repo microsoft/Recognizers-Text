@@ -306,14 +306,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
                     new Japanese.PercentageExtractor()));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Japanese,
                 (options) => new NumberRangeModel(
                     new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
-                    new Japanese.NumberRangeExtractor(options)));
-            */
+                    new Japanese.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Korean,
@@ -321,6 +319,13 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
                     new Korean.NumberExtractor()));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Korean,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.OrdinalExtractor()));
 
             RegisterModel<NumberModel>(
                 Culture.Dutch,
@@ -337,20 +342,25 @@ namespace Microsoft.Recognizers.Text.Number
                     Dutch.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
             RegisterModel<PercentModel>(
+                Culture.Korean,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.PercentageExtractor()));
+
+            RegisterModel<PercentModel>(
                 Culture.Dutch,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
                     new Dutch.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
-            // When registering NumberRangeModel, enable TestNumber_Dutch -> NumberRangeModel tests
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Dutch,
                 (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
-                    new Dutch.NumberRangeExtractor(options)));
-            */
+                    new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration(
+                                                    new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
+                    new Dutch.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
             RegisterModel<NumberModel>(
                Culture.Turkish,
@@ -401,15 +411,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
                     new Hindi.PercentageExtractor(options)));
 
-            // @TODO Uncomment once all the tests pass
-            /*
-
             RegisterModel<NumberRangeModel>(
                 Culture.Hindi,
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
-                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));*/
+                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Swedish,

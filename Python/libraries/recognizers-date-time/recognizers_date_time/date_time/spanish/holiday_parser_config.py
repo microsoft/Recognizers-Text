@@ -2,7 +2,7 @@ from typing import List, Dict, Callable
 from datetime import datetime
 
 from recognizers_text.utilities import RegExpUtility
-from ..utilities import DateUtils
+from ..utilities import DateUtils, HolidayFunctions
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.spanish_date_time import SpanishDateTime
 
@@ -42,7 +42,7 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
             ('padres', SpanishHolidayParserConfiguration.fathers_day),
             ('madres', SpanishHolidayParserConfiguration.mothers_day),
             ('acciondegracias', SpanishHolidayParserConfiguration.thanksgiving_day),
-            ('trabajador', SpanishHolidayParserConfiguration.labour_day),
+            ('trabajador', SpanishHolidayParserConfiguration.international_workers_day),
             ('delaraza', SpanishHolidayParserConfiguration.columbus_day),
             ('memoria', SpanishHolidayParserConfiguration.memorial_day),
             ('pascuas', SpanishHolidayParserConfiguration.easter_day),
@@ -93,7 +93,7 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
 
     @staticmethod
     def easter_day(year: int) -> datetime:
-        return DateUtils.min_value
+        return HolidayFunctions.calculate_holiday_by_easter(year)
 
     def get_swift_year(self, text: str) -> int:
         trimmed_text = text.strip().lower()

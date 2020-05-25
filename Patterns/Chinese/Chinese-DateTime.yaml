@@ -82,16 +82,17 @@ DateRegexList5: !nestedRegex
   def: '{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){SimpleYearRegex})?'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 3-23-2017
+# The final lookahead in DateExtractor6|7|8 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateRegexList6: !nestedRegex
-  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}'
+  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}(?!\s*[/\\\-\.]\s*\d+)'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 23-3-2015
 DateRegexList7: !nestedRegex
-  def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}'
+  def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}(?!\s*[/\\\-\.]\s*\d+)'
   references: [DayRegex, MonthNumRegex, YearNumRegex]
 # 2015-12-23
 DateRegexList8: !nestedRegex
-  def: '{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}'
+  def: '{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)'
   references: [YearNumRegex, MonthNumRegex, DayRegex]
 # Note that these "Till" connector can be used without any suffix like "之间|之内|期间|中间|间"
 # DatePeriodExtractorChs

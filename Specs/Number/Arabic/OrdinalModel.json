@@ -1,8 +1,8 @@
 [
   {
     "Input": "احذف اخر جملة في الملاحظة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اخر",
@@ -19,8 +19,8 @@
   },
   {
     "Input": "هل تعني \"التالي\" او \"الاخر\"؟",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -48,8 +48,8 @@
   },
   {
     "Input": "أريني الذي قبل الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "قبل الاخير",
@@ -66,8 +66,8 @@
   },
   {
     "Input": "اريني الذي قبل الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "قبل الاخير",
@@ -102,8 +102,8 @@
   },
   {
     "Input": "أريني الثانية الى الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثانية الى الاخير",
@@ -120,8 +120,8 @@
   },
   {
     "Input": "احذف اخر جملة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اخر",
@@ -138,8 +138,8 @@
   },
   {
     "Input": "أريني السابق.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "السابق",
@@ -156,8 +156,8 @@
   },
   {
     "Input": "أريني التالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -174,8 +174,8 @@
   },
   {
     "Input": "أريد الكتابين الأخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأخير",
@@ -192,8 +192,8 @@
   },
   {
     "Input": "أريد الكتاب الأخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأخير",
@@ -210,8 +210,8 @@
   },
   {
     "Input": "أريد ثلاث كتب التالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -228,8 +228,8 @@
   },
   {
     "Input": "أنظر الى الصفحة التالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -246,8 +246,8 @@
   },
   {
     "Input": "أريد البسكويت الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الاخير",
@@ -264,8 +264,8 @@
   },
   {
     "Input": "أريد الذي قبل الاخير.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "قبل الاخير",
@@ -282,8 +282,8 @@
   },
   {
     "Input": "انتقل الى الصفحة السابقة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "السابقة",
@@ -300,8 +300,8 @@
   },
   {
     "Input": "البيت الحادي عشر",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحادي عشر",
@@ -318,8 +318,8 @@
   },
   {
     "Input": "السيارة الواحد والعشرون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الواحد والعشرون",
@@ -336,8 +336,8 @@
   },
   {
     "Input": "الكتاب الثلاثون غير جيد.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثلاثون",
@@ -354,8 +354,8 @@
   },
   {
     "Input": "السؤال الثاني صعب.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثاني",
@@ -372,8 +372,8 @@
   },
   {
     "Input": "هي في الصف الحادي عشر.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحادي عشر",
@@ -390,8 +390,8 @@
   },
   {
     "Input": "دخلت البيت العشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "العشرون",
@@ -408,8 +408,8 @@
   },
   {
     "Input": "هذه المرة الخامسة والعشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الخامسة والعشرون",
@@ -426,8 +426,8 @@
   },
   {
     "Input": "السؤال الواحد والعشرون غير محلولة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الواحد والعشرون",
@@ -444,8 +444,8 @@
   },
   {
     "Input": "وجدت الكتاب المئة والخامسة والعشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المئة والخامسة والعشرون",
@@ -462,8 +462,8 @@
   },
   {
     "Input": "حدث في العام المئة والخامسة والعشرون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المئة والخامسة والعشرون",
@@ -480,8 +480,8 @@
   },
   {
     "Input": "لم أجد الكتاب التريليون.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التريليون",
@@ -516,8 +516,8 @@
   },
   {
     "Input": "في عام المئتيان من بعد الهجرة.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المئتيان",
@@ -534,8 +534,8 @@
   },
   {
     "Input": "احجز مقعد ففي الدرجة الأولى الى سياتل.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأولى",
@@ -552,8 +552,8 @@
   },
   {
     "Input": "اعجبني الأول كتابين.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأول",
@@ -570,8 +570,8 @@
   },
   {
     "Input": "اعجبني الأول.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأول",
@@ -588,8 +588,8 @@
   },
   {
     "Input": "اتحدث الكلمة الأولى",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الأولى",
@@ -606,8 +606,8 @@
   },
   {
     "Input": "أريد الكتب الثلاثة التالي",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "التالي",
@@ -624,8 +624,8 @@
   },
   {
     "Input": "هي انتهت قراءة الكتاب الثاني",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الثاني",
@@ -678,8 +678,8 @@
   },
   {
     "Input": "الصفحة الحالي",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحالي",
@@ -696,8 +696,8 @@
   },
   {
     "Input": "انظر الى الصفحة الحالي.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الحالي",

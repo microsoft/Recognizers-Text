@@ -18,7 +18,7 @@ class PortugueseDateTime:
     CheckBothBeforeAfter = False
     TillRegex = f'(?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\\s+(o|[aà](s)?))?'
     RangeConnectorRegex = f'(?<and>(e\\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})'
-    DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\\b|t)'
+    DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)'
     MonthNumRegex = f'(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b'
     AmDescRegex = f'({BaseDateTime.BaseAmDescRegex})'
     PmDescRegex = f'({BaseDateTime.BasePmDescRegex})'
@@ -86,13 +86,13 @@ class PortugueseDateTime:
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?{MonthRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*([\\.\\-]|de)?\\s*{MonthRegex}?(\\s*(,|de)\\s*){YearRegex}\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+de\\s+|\\s*-\\s*){MonthRegex}((\\s+|\\s*(,|de)\\s*){YearRegex})?\\b'
-    DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}'
-    DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}'
+    DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
+    DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<=\\b(em|no|o)\\s+){MonthNumRegex}[\\-\\.]{DayRegex}\\b'
     DateExtractor7 = f'\\b{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*(,|de)\\s*){DateYearRegex})?\\b'
     DateExtractor8 = f'(?<=\\b(em|no|o)\\s+){DayRegex}[\\\\\\-]{MonthNumRegex}\\b'
     DateExtractor9 = f'\\b{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*(,|de)\\s*){DateYearRegex})?\\b'
-    DateExtractor10 = f'\\b{YearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}'
+    DateExtractor10 = f'\\b{YearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor11 = f'(?<=\\b(dia)\\s+){DayRegex}'
     HourNumRegex = f'\\b(?<hournum>zero|uma|duas|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze)\\b'
     MinuteNumRegex = f'(?<minnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)'
@@ -160,8 +160,8 @@ class PortugueseDateTime:
     InexactNumberRegex = f'\\b(poucos|pouco|algum|alguns|v[áa]rios)\\b'
     InexactNumberUnitRegex = f'\\b(poucos|pouco|algum|alguns|v[áa]rios)\\s+{UnitRegex}'
     HolidayRegex1 = f'\\b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\\s+(d[eo]?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b'
-    HolidayRegex2 = f'\\b(?<holiday>(dia( d[eoa]s?)? )?(martin luther king|todos os santos|trabalho|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia|trabalhador|trabalho))(\\s+(d[eo]?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b'
-    HolidayRegex3 = f'\\b(?<holiday>(dia( d[eoa]s?)? )(trabalhador|trabalhadores|trabalho|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor|professores))(\\s+(d[eo]?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b'
+    HolidayRegex2 = f'\\b(?<holiday>(dia\\s+(d[eoa]s?\\s+)?)?(martin luther king|todos os santos|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia))(\\s+(d[eo]?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b'
+    HolidayRegex3 = f'\\b(?<holiday>(dia\\s+d[eoa]s?\\s+)(trabalh(o|ador(es)?)|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor(es)?))(\\s+(d[eo]?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b'
     BeforeRegex = f'(antes(\\s+(de|dos?|das?)?)?)'
     AfterRegex = f'((depois|ap[óo]s)(\\s*(de|d?os?|d?as?)?)?)'
     SinceRegex = f'(desde(\\s+(as?|o))?)'
@@ -431,7 +431,6 @@ class PortugueseDateTime:
     VariableHolidaysTimexDictionary = dict([("pai", "-06-WXX-7-3"),
                                             ("mae", "-05-WXX-7-2"),
                                             ("acaodegracas", "-11-WXX-4-4"),
-                                            ("trabalho", "-05-WXX-1-1"),
                                             ("memoria", "-03-WXX-2-4")])
     DoubleNumbers = dict([("metade", 0.5),
                           ("quarto", 0.25)])

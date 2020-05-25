@@ -68,11 +68,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // (2015年)?(农历)?十月二十(星期三)?
             new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags),
 
-            // 7/23
-            new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
-            // 23/7
-            new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags),
+                // 23/7
+                new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags) :
+
+                // 7/23
+                new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags),
+
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
+
+                // 7/23
+                new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags) :
+
+                // 23/7
+                new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 

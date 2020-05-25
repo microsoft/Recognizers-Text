@@ -2,9 +2,9 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Korean;
 
-namespace Microsoft.Recognizers.Text.Number.Japanese
+namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
@@ -16,9 +16,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    // だい一百五十四
-                    new Regex(NumbersDefinitions.AllOrdinalRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.JAPANESE)
+                    new Regex(NumbersDefinitions.OrdinalKoreanRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
 
             };

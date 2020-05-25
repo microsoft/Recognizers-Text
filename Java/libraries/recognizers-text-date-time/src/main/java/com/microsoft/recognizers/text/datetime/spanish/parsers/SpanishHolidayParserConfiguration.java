@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParserConfigur
 import com.microsoft.recognizers.text.datetime.resources.SpanishDateTime;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
+import com.microsoft.recognizers.text.datetime.utilities.HolidayFunctions;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -81,7 +82,7 @@ public class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
         holidays.put("padres", SpanishHolidayParserConfiguration::fathersDay);
         holidays.put("madres", SpanishHolidayParserConfiguration::mothersDay);
         holidays.put("acciondegracias", SpanishHolidayParserConfiguration::thanksgivingDay);
-        holidays.put("trabajador", SpanishHolidayParserConfiguration::labourDay);
+        holidays.put("trabajador", SpanishHolidayParserConfiguration::internationalWorkersDay);
         holidays.put("delaraza", SpanishHolidayParserConfiguration::columbusDay);
         holidays.put("memoria", SpanishHolidayParserConfiguration::memorialDay);
         holidays.put("pascuas", SpanishHolidayParserConfiguration::pascuas);
@@ -131,6 +132,6 @@ public class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
 
     private static LocalDateTime pascuas(int year) {
-        return DateUtil.minValue();
+        return HolidayFunctions.calculateHolidayByEaster(year);
     }
 }

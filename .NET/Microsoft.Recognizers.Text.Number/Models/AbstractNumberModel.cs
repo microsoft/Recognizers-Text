@@ -9,7 +9,18 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class AbstractNumberModel : IModel
     {
         // Languages supporting subtypes in the resolution to be added here
-        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH, Constants.ARABIC };
+        private static readonly List<string> ExtractorsSupportingSubtype = new List<string>
+        {
+                Constants.ENGLISH,
+                Constants.SWEDISH,
+                Constants.ARABIC,
+
+                // TODO: Temporarily disabled as existing TestSpec not supporting
+                // Constants.JAPANESE_SUBS
+
+                // TODO: Temporarily disabled as existing TestSpec not supporting
+                // Constants.KOREAN,
+        };
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {

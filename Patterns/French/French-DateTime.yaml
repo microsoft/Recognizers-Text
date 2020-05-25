@@ -168,11 +168,12 @@ DateExtractor2: !nestedRegex
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s*-\s*){MonthRegex}((\s+|\s*,\s*){DateYearRegex})?\b
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+# The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
-  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}
+  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<=\b(le|sur|sur l[ae])\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b
@@ -187,7 +188,7 @@ DateExtractor9: !nestedRegex
   def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractorA: !nestedRegex
-  def: \b{DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}
+  def: \b{DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]
 OfMonth: !nestedRegex
   def: ^\s*de\s*{MonthRegex}
@@ -516,7 +517,7 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: \b(reste|fin)\s+(d[eu]\s+)?((le|ce(tte)?)\s+)?(?<duration>semaine|mois|l'ann[ée]e)\b

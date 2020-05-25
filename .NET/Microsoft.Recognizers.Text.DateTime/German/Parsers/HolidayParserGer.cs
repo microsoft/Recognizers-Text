@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -9,6 +10,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class HolidayParserGer : IDateTimeParser
     {
+
+        // Refactor this class to follow framework across languages
+
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
@@ -306,11 +310,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject BeginningOfFall(int year) => new DateObject(year, 9, 23);
 
-        private static DateObject GetEasterDay(int year)
-        {
-            return CalculateHolydaysByEaster(year);
-        }
-
         private static DateObject GetMothersDayOfYear(int year)
         {
             return DateObject.MinValue.SafeCreateFromValue(year, 5, (from day in Enumerable.Range(1, 31)
@@ -320,7 +319,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetFathersDayOfYear(int year)
         {
-            return CalculateHolydaysByEaster(year, 39);
+            return HolidayFunctions.CalculateHolidayByEaster(year, 39);
         }
 
         private static DateObject GetMartinLutherKingDayOfYear(int year)
@@ -372,9 +371,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                                                                       select day).ElementAt(3));
         }
 
+        private static DateObject GetEasterDay(int year)
+        {
+            return HolidayFunctions.CalculateHolidayByEaster(year);
+        }
+
         private static DateObject GetEasterMondayOfYear(int year)
         {
-            return CalculateHolydaysByEaster(year, 1);
+            return HolidayFunctions.CalculateHolidayByEaster(year, 1);
         }
 
         private static DateObject GetCheDayOfRepentance(int year)
@@ -386,27 +390,27 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetFourthAdvent(int year)
         {
-            return GetDateAdvent(year);
+            return HolidayFunctions.CalculateAdventDate(year);
         }
 
         private static DateObject GetThirdAdvent(int year)
         {
-            return GetDateAdvent(year, 7);
+            return HolidayFunctions.CalculateAdventDate(year, 7);
         }
 
         private static DateObject GetSecondAdvent(int year)
         {
-            return GetDateAdvent(year, 14);
+            return HolidayFunctions.CalculateAdventDate(year, 14);
         }
 
         private static DateObject GetFirstAdvent(int year)
         {
-            return GetDateAdvent(year, 21);
+            return HolidayFunctions.CalculateAdventDate(year, 21);
         }
 
         private static DateObject GetTotenSonntag(int year)
         {
-            return GetDateAdvent(year, 28);
+            return HolidayFunctions.CalculateAdventDate(year, 28);
         }
 
         private static DateObject GetDayOfRepentance(int year)
@@ -418,107 +422,67 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetMemorialDayGermany(int year)
         {
-            return GetDateAdvent(year, 35);
+            return HolidayFunctions.CalculateAdventDate(year, 35);
         }
 
         private static DateObject GetHolyThursday(int year)
         {
-            return CalculateHolydaysByEaster(year, -3);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -3);
         }
 
         private static DateObject GetFastnacht(int year)
         {
-            return CalculateHolydaysByEaster(year, -47);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -47);
         }
 
         private static DateObject GetRosenmontag(int year)
         {
-            return CalculateHolydaysByEaster(year, -48);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -48);
         }
 
         private static DateObject GetCorpusChristi(int year)
         {
-            return CalculateHolydaysByEaster(year, 60);
+            return HolidayFunctions.CalculateHolidayByEaster(year, 60);
         }
 
         private static DateObject GetWhitsunday(int year)
         {
-            return CalculateHolydaysByEaster(year, 49);
+            return HolidayFunctions.CalculateHolidayByEaster(year, 49);
         }
 
         private static DateObject GetWhitMonday(int year)
         {
-            return CalculateHolydaysByEaster(year, 50);
+            return HolidayFunctions.CalculateHolidayByEaster(year, 50);
         }
 
         private static DateObject GetAscensionOfChrist(int year)
         {
-            return CalculateHolydaysByEaster(year, 39);
+            return HolidayFunctions.CalculateHolidayByEaster(year, 39);
         }
 
         private static DateObject GetGoodfriday(int year)
         {
-            return CalculateHolydaysByEaster(year, -2);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -2);
         }
 
         private static DateObject GetPalmsunday(int year)
         {
-            return CalculateHolydaysByEaster(year, -7);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -7);
         }
 
         private static DateObject GetAshwednesday(int year)
         {
-            return CalculateHolydaysByEaster(year, -46);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -46);
         }
 
         private static DateObject GetCarnival(int year)
         {
-            return CalculateHolydaysByEaster(year, -49);
+            return HolidayFunctions.CalculateHolidayByEaster(year, -49);
         }
 
         private static DateObject GetWeiberfastnacht(int year)
         {
-            return CalculateHolydaysByEaster(year, -52);
-        }
-
-        private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
-        {
-            int day = 0;
-            int month = 3;
-
-            int g = year % 19;
-            int c = year / 100;
-            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
-
-            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
-
-            if (day > 31)
-            {
-                month++;
-                day -= 31;
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
-        }
-
-        private static DateObject GetDateAdvent(int year, int days = 0)
-        {
-            DateObject xmas = new DateObject(year, 12, 25);
-            int weekday = (int)xmas.DayOfWeek;
-
-            DateObject aday;
-
-            if (weekday == 0)
-            {
-                aday = xmas.AddDays(-7 - days);
-            }
-            else
-            {
-                aday = xmas.AddDays(-weekday - days);
-            }
-
-            return aday;
+            return HolidayFunctions.CalculateHolidayByEaster(year, -52);
         }
 
         private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
@@ -553,7 +517,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             if (!string.IsNullOrEmpty(yearStr))
             {
-                year = int.Parse(yearStr);
+                year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                 hasYear = true;
             }
             else if (!string.IsNullOrEmpty(orderStr))
@@ -609,7 +573,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + timexStr;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + timexStr;
                     ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;

@@ -228,7 +228,7 @@ RelativeDayRegex: !nestedRegex
 SetWeekDayRegex: !simpleRegex
   def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
+  def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+(week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
@@ -250,8 +250,9 @@ DateExtractor3: !nestedRegex
 DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+# The final lookahead in DateExtractor5 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017"
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b
@@ -520,7 +521,7 @@ HolidayRegex2: !nestedRegex
   references: [ YearRegex, RelativeRegex ]
 # General holidays (must be followed by "day")
 HolidayRegex3: !nestedRegex
-  def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'l)\s+workers'?|mother's|mothers?|father's|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
+  def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'?l)\s+workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
   references: [ YearRegex, RelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)
@@ -1026,7 +1027,7 @@ HolidayNames: !dictionary
     arborday: [ arborday ]
     girlsday: [ girlsday ]
     whiteloverday: [ whiteloverday ]
-    loverday: [ loverday ]
+    loverday: [ loverday, loversday ]
     christmas: [ christmasday, christmas ]
     xmas: [ xmasday, xmas ]
     newyear: [ newyear ]
@@ -1038,7 +1039,7 @@ HolidayNames: !dictionary
     stpatrickday: [ stpatrickday, stpatricksday, stpatrick ]
     aprilfools: [ aprilfools ]
     stgeorgeday: [ stgeorgeday ]
-    mayday: [ mayday, intlworkersday, internationalworkersday ]
+    mayday: [ mayday, intlworkersday, internationalworkersday, workersday ]
     cincodemayoday: [ cincodemayoday ]
     baptisteday: [ baptisteday ]
     usindependenceday: [ usindependenceday ]

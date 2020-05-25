@@ -113,5 +113,27 @@
     "Input": "今天2:00 pm, 你将会收到一个惊喜！",
     "NotSupported": "java",
     "Results": []
+  },
+  {
+    "Input": "一位名叫杰克的男生",
+    "NotSupported": "javascript, python, java, dotnet",
+    "Comment": "Ambiguous with other uses of 位 as measure word, especially 一位",
+    "Results": []
+  },
+  {
+    "Input": "一位是最小的存储单位",
+    "NotSupported": "javascript, python, java, dotnet",
+    "Results": [
+      {
+        "Text": "一位",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Bit",
+          "value": "1"
+        }
+      }
+    ]
   }
 ]

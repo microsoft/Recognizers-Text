@@ -163,8 +163,9 @@ HalfUnitRegex: !simpleRegex
   def: 半
 NegativeNumberTermsRegex: !simpleRegex
   def: '[负負]'
-NegativeNumberTermsRegexNum: !simpleRegex
-  def: ((?<!(\d+\s*)|[-－])[-－])
+NegativeNumberTermsRegexNum: !nestedRegex
+  def: ((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-－])[-－])
+  references: [BaseNumbers.NumberMultiplierRegex]
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
@@ -387,6 +388,7 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '十': '十足'
+    '伍': '队伍'
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
   def: ^[.]

@@ -32,7 +32,7 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
 
     @property
     def connector_token(self) -> str:
-        return self._connector_token
+        return PortugueseNumericWithUnit.ConnectorToken
 
     @property
     def compound_unit_connector_regex(self) -> Pattern:
@@ -53,7 +53,6 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         self._unit_num_extractor = PortugueseNumberExtractor(NumberMode.Unit)
         self._build_prefix = PortugueseNumericWithUnit.BuildPrefix
         self._build_suffix = PortugueseNumericWithUnit.BuildSuffix
-        self._connector_token = PortugueseNumericWithUnit.ConnectorToken
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
@@ -128,7 +127,9 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
         return self._ambiguous_unit_list
 
     def __init__(self, culture_info: CultureInfo = None):
+
         super().__init__(culture_info)
+
         self._suffix_list = {
             **PortugueseNumericWithUnit.InformationSuffixList,
             **PortugueseNumericWithUnit.AreaSuffixList,
@@ -137,6 +138,7 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
             **PortugueseNumericWithUnit.VolumeSuffixList,
             **PortugueseNumericWithUnit.WeightSuffixList
         }
+
         self._prefix_list = dict()
         self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousDimensionUnitList
 
@@ -166,6 +168,6 @@ class PortugueseTemperatureExtractorConfiguration(PortugueseNumberWithUnitExtrac
         super().__init__(culture_info)
         self._suffix_list = PortugueseNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._ambiguous_unit_list = []
         self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
             BaseUnits.AmbiguousUnitNumberMultiplierRegex)

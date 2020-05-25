@@ -29,7 +29,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
   </ItemGroup>
 
   <ItemGroup>

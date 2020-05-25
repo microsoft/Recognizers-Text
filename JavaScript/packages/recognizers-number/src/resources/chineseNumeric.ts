@@ -39,7 +39,7 @@ export namespace ChineseNumeric {
     export const ZeroToNineIntegerRegex = `[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]`;
     export const HalfUnitRegex = `半`;
     export const NegativeNumberTermsRegex = `[负負]`;
-    export const NegativeNumberTermsRegexNum = `((?<!(\\d+\\s*)|[-－])[-－])`;
+    export const NegativeNumberTermsRegexNum = `((?<!(\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)|[-－])[-－])`;
     export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*|^${NegativeNumberTermsRegexNum}.*`;
     export const SpeGetNumberRegex = `${ZeroToNineFullHalfRegex}|${ZeroToNineIntegerRegex}|[十拾半对對]`;
     export const PairRegex = '.*[双对雙對]$';
@@ -117,7 +117,7 @@ export namespace ChineseNumeric {
     export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})`;
     export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})`;
     export const TwoNumberRangeRegex4 = `(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)`;
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["十", "十足"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["十", "十足"],["伍", "队伍"]]);
     export const AmbiguousFractionConnectorsRegex = `^[.]`;
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
     export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);

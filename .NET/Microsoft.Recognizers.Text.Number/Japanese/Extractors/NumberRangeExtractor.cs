@@ -55,6 +55,16 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     NumberRangeConstants.MORE
                 },
                 {
+                    // 少なくとも|多くて|最大...
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex4, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
+                    // ...以上
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex5, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
                     // 小なり|小さい|低い...
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
                     NumberRangeConstants.LESS

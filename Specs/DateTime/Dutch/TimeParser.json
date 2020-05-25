@@ -18,7 +18,6 @@
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -40,7 +39,6 @@
         "Length": 32
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -62,7 +60,6 @@
         "Length": 30
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -84,7 +81,6 @@
         "Length": 14
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -106,14 +102,13 @@
         "Length": 21
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "zet de wekker op vijftien uur dertig",
     "Results": [
       {
-        "Text": "zet de wekker op vijftien uur dertig",
+        "Text": "vijftien uur dertig",
         "Type": "time",
         "Value": {
           "Timex": "T15:30",
@@ -124,11 +119,10 @@
             "time": "15:30:00"
           }
         },
-        "Start": 0,
-        "Length": 36
+        "Start": 17,
+        "Length": 19
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -150,7 +144,6 @@
         "Length": 14
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -172,7 +165,6 @@
         "Length": 23
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -194,51 +186,6 @@
         "Length": 5
       }
     ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": " ik ben om 7 uur terug",
-    "Results": [
-      {
-        "Text": "7",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07",
-          "FutureResolution": {
-            "time": "07:00:00"
-          },
-          "PastResolution": {
-            "time": "07:00:00"
-          }
-        },
-        "Start": 11,
-        "Length": 1
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": " ik ben om zeven uur terug",
-    "Results": [
-      {
-        "Text": "zeven",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07",
-          "FutureResolution": {
-            "time": "07:00:00"
-          },
-          "PastResolution": {
-            "time": "07:00:00"
-          }
-        },
-        "Start": 11,
-        "Length": 5
-      }
-    ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -260,7 +207,6 @@
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -282,7 +228,6 @@
         "Length": 6
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -304,7 +249,6 @@
         "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -326,7 +270,6 @@
         "Length": 10
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -348,7 +291,6 @@
         "Length": 5
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -370,7 +312,6 @@
         "Length": 8
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -392,7 +333,6 @@
         "Length": 5
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -414,7 +354,6 @@
         "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -436,7 +375,6 @@
         "Length": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -458,7 +396,6 @@
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -480,7 +417,6 @@
         "Length": 10
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -502,7 +438,6 @@
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -524,7 +459,6 @@
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -546,7 +480,6 @@
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -556,26 +489,25 @@
         "Text": "kwart voor tien",
         "Type": "time",
         "Value": {
-          "Timex": "T21:45",
+          "Timex": "T09:45",
           "FutureResolution": {
-            "time": "21:45:00"
+            "time": "09:45:00"
           },
           "PastResolution": {
-            "time": "21:45:00"
+            "time": "09:45:00"
           }
         },
         "Start": 7,
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Het is drie minuten voor acht",
     "Results": [
       {
-        "Text": "Het is drie minuten voor acht",
+        "Text": "drie minuten voor acht",
         "Type": "time",
         "Value": {
           "Timex": "T07:57",
@@ -586,11 +518,10 @@
             "time": "07:57:00"
           }
         },
-        "Start": 0,
-        "Length": 29
+        "Start": 7,
+        "Length": 22
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -612,7 +543,6 @@
         "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -634,7 +564,6 @@
         "Length": 19
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -656,7 +585,6 @@
         "Length": 21
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -678,7 +606,6 @@
         "Length": 27
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -700,7 +627,6 @@
         "Length": 32
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -722,7 +648,6 @@
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -732,7 +657,7 @@
         "Text": "3 uur in de middag",
         "Type": "time",
         "Value": {
-          "Timex": "T15:00",
+          "Timex": "T15",
           "FutureResolution": {
             "time": "15:00:00"
           },
@@ -744,7 +669,6 @@
         "Length": 18
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -766,7 +690,6 @@
         "Length": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -788,7 +711,6 @@
         "Length": 14
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -810,7 +732,6 @@
         "Length": 19
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -832,7 +753,6 @@
         "Length": 29
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -854,7 +774,6 @@
         "Length": 31
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -876,7 +795,6 @@
         "Length": 14
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -898,14 +816,13 @@
         "Length": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben tegen 11’en terug",
     "Results": [
       {
-        "Text": "11’en",
+        "Text": "tegen 11’en",
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -916,18 +833,17 @@
             "time": "11:00:00"
           }
         },
-        "Start": 13,
-        "Length": 5
+        "Start": 7,
+        "Length": 11
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " Ik ben tegen 11-en terug",
     "Results": [
       {
-        "Text": "11-en",
+        "Text": "tegen 11-en",
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -938,11 +854,10 @@
             "time": "11:00:00"
           }
         },
-        "Start": 14,
-        "Length": 5
+        "Start": 8,
+        "Length": 11
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -964,7 +879,6 @@
         "Length": 5
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -986,7 +900,6 @@
         "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1008,14 +921,13 @@
         "Length": 11
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "midmorning",
+    "Input": "midmorgen",
     "Results": [
       {
-        "Text": "midmorning",
+        "Text": "midmorgen",
         "Type": "time",
         "Value": {
           "Timex": "T10",
@@ -1027,10 +939,9 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1052,7 +963,6 @@
         "Length": 21
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1074,7 +984,6 @@
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1096,29 +1005,6 @@
         "Length": 6
       }
     ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "mid day",
-    "Results": [
-      {
-        "Text": "mid day",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1140,7 +1026,6 @@
         "Length": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1162,7 +1047,6 @@
         "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1184,7 +1068,6 @@
         "Length": 11
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1206,7 +1089,6 @@
         "Length": 18
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1228,7 +1110,6 @@
         "Length": 5
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1250,7 +1131,6 @@
         "Length": 16
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1272,7 +1152,6 @@
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1294,7 +1173,6 @@
         "Length": 10
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1316,7 +1194,6 @@
         "Length": 8
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1338,7 +1215,6 @@
         "Length": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1360,7 +1236,6 @@
         "Length": 28
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1382,7 +1257,6 @@
         "Length": 13
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1404,7 +1278,6 @@
         "Length": 26
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1426,14 +1299,13 @@
         "Length": 18
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben op de middag terug",
     "Results": [
       {
-        "Text": "middag",
+        "Text": "de middag",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -1444,16 +1316,14 @@
             "time": "12:00:00"
           }
         },
-        "Start": 13,
-        "Length": 6
+        "Start": 10,
+        "Length": 9
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben om 7h01 terug",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "7h01",
@@ -1475,7 +1345,6 @@
   },
   {
     "Input": "Ik ben om 10 H 10 pm terug",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10 H 10 pm",
@@ -1502,19 +1371,18 @@
         "Text": "vijf over zes",
         "Type": "time",
         "Value": {
-          "Timex": "T18:05",
+          "Timex": "T06:05",
           "FutureResolution": {
-            "time": "18:05:00"
+            "time": "06:05:00"
           },
           "PastResolution": {
-            "time": "18:05:00"
+            "time": "06:05:00"
           }
         },
         "Start": 9,
         "Length": 13
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1524,19 +1392,18 @@
         "Text": "tien over zes",
         "Type": "time",
         "Value": {
-          "Timex": "T18:05",
+          "Timex": "T06:10",
           "FutureResolution": {
-            "time": "18:05:00"
+            "time": "06:10:00"
           },
           "PastResolution": {
-            "time": "18:05:00"
+            "time": "06:10:00"
           }
         },
         "Start": 9,
         "Length": 13
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1546,19 +1413,18 @@
         "Text": "kwart over zes",
         "Type": "time",
         "Value": {
-          "Timex": "T18:15",
+          "Timex": "T06:15",
           "FutureResolution": {
-            "time": "18:15:00"
+            "time": "06:15:00"
           },
           "PastResolution": {
-            "time": "18:15:00"
+            "time": "06:15:00"
           }
         },
         "Start": 9,
         "Length": 14
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1568,19 +1434,18 @@
         "Text": "tien voor half zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:20",
+          "Timex": "T06:20",
           "FutureResolution": {
-            "time": "18:20:00"
+            "time": "06:20:00"
           },
           "PastResolution": {
-            "time": "18:20:00"
+            "time": "06:20:00"
           }
         },
         "Start": 9,
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1590,19 +1455,18 @@
         "Text": "vijf voor half zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:25",
+          "Timex": "T06:25",
           "FutureResolution": {
-            "time": "18:25:00"
+            "time": "06:25:00"
           },
           "PastResolution": {
-            "time": "18:25:00"
+            "time": "06:25:00"
           }
         },
         "Start": 9,
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1612,19 +1476,18 @@
         "Text": "half zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:30",
+          "Timex": "T06:30",
           "FutureResolution": {
-            "time": "18:30:00"
+            "time": "06:30:00"
           },
           "PastResolution": {
-            "time": "18:30:00"
+            "time": "06:30:00"
           }
         },
         "Start": 9,
         "Length": 10
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1634,19 +1497,18 @@
         "Text": "vijf over half zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:35",
+          "Timex": "T06:35",
           "FutureResolution": {
-            "time": "18:35:00"
+            "time": "06:35:00"
           },
           "PastResolution": {
-            "time": "18:35:00"
+            "time": "06:35:00"
           }
         },
         "Start": 9,
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1656,19 +1518,18 @@
         "Text": "tien over half zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:40",
+          "Timex": "T06:40",
           "FutureResolution": {
-            "time": "18:40:00"
+            "time": "06:40:00"
           },
           "PastResolution": {
-            "time": "18:40:00"
+            "time": "06:40:00"
           }
         },
         "Start": 9,
         "Length": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1678,19 +1539,18 @@
         "Text": "kwart voor zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:45",
+          "Timex": "T06:45",
           "FutureResolution": {
-            "time": "18:45:00"
+            "time": "06:45:00"
           },
           "PastResolution": {
-            "time": "18:45:00"
+            "time": "06:45:00"
           }
         },
         "Start": 9,
         "Length": 16
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1700,19 +1560,18 @@
         "Text": "tien voor zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:50",
+          "Timex": "T06:50",
           "FutureResolution": {
-            "time": "18:50:00"
+            "time": "06:50:00"
           },
           "PastResolution": {
-            "time": "18:50:00"
+            "time": "06:50:00"
           }
         },
         "Start": 9,
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1722,24 +1581,22 @@
         "Text": "vijf voor zeven",
         "Type": "time",
         "Value": {
-          "Timex": "T18:55",
+          "Timex": "T06:55",
           "FutureResolution": {
-            "time": "18:55:00"
+            "time": "06:55:00"
           },
           "PastResolution": {
-            "time": "18:55:00"
+            "time": "06:55:00"
           }
         },
         "Start": 9,
         "Length": 15
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "zet een alarm voor tien over half negen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1755,13 +1612,12 @@
           }
         },
         "Start": 19,
-        "Length": 11
+        "Length": 20
       }
     ]
   },
   {
     "Input": "zet een alarm voor tien over half negen 's morgens",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1777,13 +1633,12 @@
           }
         },
         "Start": 19,
-        "Length": 14
+        "Length": 31
       }
     ]
   },
   {
     "Input": "zet een alarm voor tien over half negen 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1799,13 +1654,12 @@
           }
         },
         "Start": 19,
-        "Length": 14
+        "Length": 30
       }
     ]
   },
   {
     "Input": "zet een alarm voor kwart voor elf",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1827,7 +1681,6 @@
   },
   {
     "Input": "zet een alarm voor kwart over drie 's middags",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1843,13 +1696,12 @@
           }
         },
         "Start": 19,
-        "Length": 19
+        "Length": 26
       }
     ]
   },
   {
     "Input": "zet een alarm voor half vier 's middags",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1865,13 +1717,12 @@
           }
         },
         "Start": 19,
-        "Length": 18
+        "Length": 20
       }
     ]
   },
   {
     "Input": "zet een alarm voor tien over tien",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1887,13 +1738,12 @@
           }
         },
         "Start": 19,
-        "Length": 7
+        "Length": 14
       }
     ]
   },
   {
     "Input": "zet een alarm voor vijf voor elf 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1909,13 +1759,12 @@
           }
         },
         "Start": 19,
-        "Length": 20
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ik ben om 7 u terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1931,13 +1780,12 @@
           }
         },
         "Start": 10,
-        "Length": 1
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Ik ben om zeven uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1953,20 +1801,19 @@
           }
         },
         "Start": 10,
-        "Length": 5
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Ik ben om 19:00 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12/31/1899 7:00:00 PM",
+        "Text": "19:00",
         "Type": "time",
         "Value": {
-          "Timex": "T19",
+          "Timex": "T19:00",
           "FutureResolution": {
             "time": "19:00:00"
           },
@@ -1974,18 +1821,17 @@
             "time": "19:00:00"
           }
         },
-        "Start": -1,
-        "Length": 3
+        "Start": 10,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Ik ben om 19:56 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12/31/1899 7:56:00 PM",
+        "Text": "19:56",
         "Type": "time",
         "Value": {
           "Timex": "T19:56",
@@ -1996,14 +1842,13 @@
             "time": "19:56:00"
           }
         },
-        "Start": -1,
-        "Length": 6
+        "Start": 10,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Ik ben om 19:56:30 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2019,13 +1864,12 @@
           }
         },
         "Start": 10,
-        "Length": 9
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Ik ben om 12:34 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2047,11 +1891,10 @@
   },
   {
     "Input": "Ik ben om 12:34:25 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12:34:25 ",
+        "Text": "12:34:25",
         "Type": "time",
         "Value": {
           "Timex": "T12:34:25",
@@ -2069,7 +1912,6 @@
   },
   {
     "Input": "Het is 8 uur 's morgens",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2091,7 +1933,6 @@
   },
   {
     "Input": "Het is 8 uur 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2107,13 +1948,12 @@
           }
         },
         "Start": 7,
-        "Length": 14
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Het is half 9 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2129,13 +1969,12 @@
           }
         },
         "Start": 7,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Het is kwart voor 10 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2157,7 +1996,6 @@
   },
   {
     "Input": "Het is half acht 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2173,13 +2011,12 @@
           }
         },
         "Start": 7,
-        "Length": 25
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Het is half acht 's ochtends",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2195,13 +2032,12 @@
           }
         },
         "Start": 7,
-        "Length": 30
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Het is kwart voor 8 's ochtends",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2217,13 +2053,12 @@
           }
         },
         "Start": 7,
-        "Length": 29
+        "Length": 24
       }
     ]
   },
   {
     "Input": "Het is 10 voor half negen 's avonds",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2239,13 +2074,12 @@
           }
         },
         "Start": 7,
-        "Length": 32
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Ik ben 7 uur 's avonds terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2261,17 +2095,16 @@
           }
         },
         "Start": 7,
-        "Length": 21
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ik ben 's avonds 7 uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "s avonds 7 uur",
+        "Text": "'s avonds 7 uur",
         "Type": "time",
         "Value": {
           "Timex": "T19",
@@ -2282,18 +2115,17 @@
             "time": "19:00:00"
           }
         },
-        "Start": 8,
-        "Length": 14
+        "Start": 7,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ik ben 's avonds 7:00 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "s avonds 7:00",
+        "Text": "'s avonds 7:00",
         "Type": "time",
         "Value": {
           "Timex": "T19:00",
@@ -2304,18 +2136,17 @@
             "time": "19:00:00"
           }
         },
-        "Start": 8,
+        "Start": 7,
         "Length": 14
       }
     ]
   },
   {
     "Input": "Ik ben 's avonds 7:00:05 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "s avonds 7:00:05",
+        "Text": "'s avonds 7:00:05",
         "Type": "time",
         "Value": {
           "Timex": "T19:00:05",
@@ -2326,18 +2157,17 @@
             "time": "19:00:05"
           }
         },
-        "Start": 8,
+        "Start": 7,
         "Length": 17
       }
     ]
   },
   {
     "Input": "Ik ben 's avonds zeven uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "s avonds zeven uur",
+        "Text": "'s avonds zeven uur",
         "Type": "time",
         "Value": {
           "Timex": "T19",
@@ -2348,14 +2178,13 @@
             "time": "19:00:00"
           }
         },
-        "Start": 8,
-        "Length": 18
+        "Start": 7,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ik ga half acht 's avonds terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2371,13 +2200,12 @@
           }
         },
         "Start": 6,
-        "Length": 15
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ik ga vijf over half acht 's avonds terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2393,13 +2221,12 @@
           }
         },
         "Start": 6,
-        "Length": 20
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Ik ga tien voor half twaalf 's avonds terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2415,13 +2242,12 @@
           }
         },
         "Start": 6,
-        "Length": 16
+        "Length": 31
       }
     ]
   },
   {
     "Input": "Ik ben rond het middaguur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2437,13 +2263,12 @@
           }
         },
         "Start": 7,
-        "Length": 7
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ik ben rond elven terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2459,13 +2284,12 @@
           }
         },
         "Start": 7,
-        "Length": 5
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Ik ben 15:40 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2487,7 +2311,6 @@
   },
   {
     "Input": "Ik ben 11:40 's morgens terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2503,13 +2326,12 @@
           }
         },
         "Start": 7,
-        "Length": 9
+        "Length": 16
       }
     ]
   },
   {
     "Input": "het middaguur",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2525,13 +2347,12 @@
           }
         },
         "Start": 0,
-        "Length": 4
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik ben 12 uur lunchtijd terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2547,13 +2368,12 @@
           }
         },
         "Start": 7,
-        "Length": 12
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Ik ben 12 uur middernacht terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2569,13 +2389,12 @@
           }
         },
         "Start": 7,
-        "Length": 11
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ik ben 12 uur 's nachts terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2591,13 +2410,12 @@
           }
         },
         "Start": 7,
-        "Length": 15
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Ik ben 1 uur middernacht terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2613,13 +2431,12 @@
           }
         },
         "Start": 7,
-        "Length": 18
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Ik ben 11 uur lunchtijd terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2635,13 +2452,12 @@
           }
         },
         "Start": 7,
-        "Length": 20
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Ik ben 1 uur lunchtijd terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2657,13 +2473,12 @@
           }
         },
         "Start": 7,
-        "Length": 19
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ik ben om lunchtijd 11 uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2679,13 +2494,12 @@
           }
         },
         "Start": 7,
-        "Length": 23
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ik ben 19:56:13 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2701,13 +2515,12 @@
           }
         },
         "Start": 7,
-        "Length": 10
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Ik ben 12:34:45 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2722,14 +2535,13 @@
             "time": "12:34:45"
           }
         },
-        "Start": 13,
+        "Start": 7,
         "Length": 8
       }
     ]
   },
   {
     "Input": "Ik ben 's avonds 7:00:25 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2751,7 +2563,6 @@
   },
   {
     "Input": "Ik ga half acht 's morgens terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2767,13 +2578,12 @@
           }
         },
         "Start": 6,
-        "Length": 15
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Ik ga vijf over elf terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2789,13 +2599,12 @@
           }
         },
         "Start": 6,
-        "Length": 11
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik ga drie minuten voor half zes terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2811,13 +2620,12 @@
           }
         },
         "Start": 6,
-        "Length": 25
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Ik ga half zes 's avonds terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2833,17 +2641,16 @@
           }
         },
         "Start": 6,
-        "Length": 24
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ik ga 's avonds half zes terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "s avonds half zes",
+        "Text": "'s avonds half zes",
         "Type": "time",
         "Value": {
           "Timex": "T17:30",
@@ -2854,14 +2661,13 @@
             "time": "17:30:00"
           }
         },
-        "Start": 7,
-        "Length": 24
+        "Start": 6,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ik ben het middaguur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2877,13 +2683,12 @@
           }
         },
         "Start": 7,
-        "Length": 4
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik ben om lunchtijd 12 uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2899,13 +2704,12 @@
           }
         },
         "Start": 7,
-        "Length": 23
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ik ben om 7:01u terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2921,13 +2725,12 @@
           }
         },
         "Start": 10,
-        "Length": 4
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Ik ben om 22:10u terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2943,13 +2746,12 @@
           }
         },
         "Start": 10,
-        "Length": 10
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Ik ben om drie minuten na 22:10 terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2965,7 +2767,7 @@
           }
         },
         "Start": 10,
-        "Length": 25
+        "Length": 21
       }
     ]
   }

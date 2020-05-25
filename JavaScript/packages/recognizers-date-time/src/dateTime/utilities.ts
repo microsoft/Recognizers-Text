@@ -389,12 +389,15 @@ export class DateUtils {
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
+        
         if (start === 0) {
             start = 7;
         }
+        
         if (target === 0) {
             target = 7;
         }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start + 7);
         return result;
@@ -403,12 +406,15 @@ export class DateUtils {
     static this(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
+        
         if (start === 0) {
             start = 7;
         }
+        
         if (target === 0) {
             target = 7;
         }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start);
         return result;
@@ -417,12 +423,15 @@ export class DateUtils {
     static last(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
+        
         if (start === 0) {
             start = 7;
         }
+        
         if (target === 0) {
             target = 7;
         }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start - 7);
         return result;
@@ -593,6 +602,30 @@ export class DateUtils {
             && minute >= 0 && minute < 60
             && second >= 0 && minute < 60;
     }
+}
+
+export class HolidayFunctions {
+
+    static calculateHolidayByEaster(year: number, days = 0): Date {
+
+        let day = 0;
+        let month = 2; // In JavaScript month is 0 indexed
+
+        let g = year % 19;
+        let c = year / 100;
+        let h = (c - ~~(c / 4) - ~~(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
+        let i = h - (~~(h / 28) * (1 - (~~(h / 28) * (29 / (h + 1)) * ~~((21 - g) / 11))));
+
+        day = i - ((year + ~~(year / 4) + i + 2 - c + ~~(c / 4)) % 7) + 28;
+
+        if (day > 31) {
+            month++;
+            day -= 31;
+        }
+
+        return DateUtils.addDays(DateUtils.safeCreateFromMinValue(year, month, day), days);
+    }
+
 }
 
 export class TimexUtil {

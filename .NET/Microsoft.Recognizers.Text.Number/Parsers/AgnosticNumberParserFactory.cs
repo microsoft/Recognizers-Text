@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Number
                     parser.SupportedTypes = new List<string> { Constants.SYS_NUM_ORDINAL };
                     break;
                 case AgnosticNumberParserType.Percentage:
-                    if ((!isChinese && !isJapanese) || isKorean)
+                    if (!isChinese && !isJapanese && !isKorean)
                     {
                         parser = new BasePercentageParser(languageConfiguration);
                     }
