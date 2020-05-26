@@ -4813,5 +4813,37 @@
     "Input": "E-151673398",
     "NotSupported": "java,javascript,python",
     "Results": []
+  },
+  {
+    "Input": "OFFICE - 1(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "1(516)733-3989",
+        "Start": 9,
+        "End": 22,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Office:(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "(516)733-3989",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(516)733-3989"
+        }
+      }
+    ]
   }
 ]
