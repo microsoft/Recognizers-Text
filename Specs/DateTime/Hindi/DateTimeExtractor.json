@@ -613,7 +613,6 @@
   },
   {
     "Input": "दोपहर 12:30 बजे शुक्रवार के लिए लंच जोड़ें",
-    "Comment": "Disable this for now because of new features in .NET",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
