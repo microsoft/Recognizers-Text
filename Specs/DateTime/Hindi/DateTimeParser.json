@@ -48,6 +48,56 @@
     ]
   },
   {
+    "Input": "मैं जितनी जल्दी हो सके वापस आउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जितनी जल्दी हो सके",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "FUTURE_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं ज़ल्दी से ज़ल्दी वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ज़ल्दी से ज़ल्दी",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "FUTURE_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "मैं 15 को 8:00 बजे वापस जाउंगा",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1108,7 +1158,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:00:00"
     },
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1133,7 +1182,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:15:00"
     },
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1158,7 +1206,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1175,6 +1222,157 @@
         },
         "Start": 4,
         "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक घंटे से भी कम समय में फ्री हो जाउंगा, इसलिए मुझे बाद में फोन करें",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक घंटे से भी कम समय में",
+        "Type": "datetime",
+        "Value": {
+          "Mod": "less",
+          "Timex": "2017-11-23T01:00:00",
+          "FutureResolution": {
+            "dateTime": "2017-11-23 01:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2017-11-23 01:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "आपको हमेशा इस दिन के खत्म होते ही सोने नहीं जाना चाहिए क्योंकि यह आपके स्वास्थ्य को नुकसान पहुंचाएगा।",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दिन के खत्म",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "आपको हमेशा दिन के खत्म होते ही सोने नहीं जाना चाहिए क्योंकि यह आपके स्वास्थ्य को नुकसान पहुंचाएगा।",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन के खत्म",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "बॉब और एलिस आमतौर पर अपने एन्क्रिप्टेड संदेशों को दिन के अंत में एक्सचेंज करते हैं।",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन के अंत में",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 50,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं बुधवार 26 अक्टूबर 15:50:06 2016 को वापस जाउंगा ",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बुधवार 26 अक्टूबर 15:50:06 2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 4,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "बुधवार अक्टूबर 26 15:50:06 2016, 2019 में एक दिन नहीं है।",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बुधवार अक्टूबर 26 15:50:06 2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 0,
+        "Length": 31
       }
     ]
   }
