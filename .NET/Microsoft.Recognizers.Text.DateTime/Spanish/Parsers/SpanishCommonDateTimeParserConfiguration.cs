@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(numConfig));
 
+            // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
@@ -47,13 +48,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(this));
+
+            DurationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
             TimeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
-            DurationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
+
             DateTimeAltParser = new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(this));
         }
     }

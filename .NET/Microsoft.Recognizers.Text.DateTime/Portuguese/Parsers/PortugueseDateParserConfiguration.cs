@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -50,8 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
