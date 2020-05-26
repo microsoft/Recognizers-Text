@@ -346,7 +346,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|minute)\b
 FivesRegex: !simpleRegex
@@ -477,7 +477,7 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   def: \b(more\s+than)\b
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
+  def: (?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))
@@ -682,6 +682,8 @@ UnitMap: !dictionary
     week: W
     days: D
     day: D
+    nights: D
+    night: D
     hours: H
     hour: H
     hrs: H
@@ -710,6 +712,8 @@ UnitValueMap: !dictionary
     week: 604800
     days: 86400
     day: 86400
+    nights: 86400
+    night: 86400
     hours: 3600
     hour: 3600
     hrs: 3600

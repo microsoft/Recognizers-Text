@@ -4308,17 +4308,59 @@
         }
       },
       {
-        "Text": "nights",
-        "Start": 45,
+        "Text": "2 nights",
+        "Start": 43,
         "End": 50,
-        "TypeName": "datetimeV2.timerange",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "TNI",
-              "type": "timerange",
-              "start": "20:00:00",
-              "end": "23:59:59"
+              "timex": "P2D",
+              "type": "duration",
+              "value": "172800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Can I do a booking for the 09th of May for 2 days?",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 09th of may",
+        "Start": 23,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-09",
+              "type": "date",
+              "value": "2018-05-09"
+            },
+            {
+              "timex": "XXXX-05-09",
+              "type": "date",
+              "value": "2019-05-09"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 days",
+        "Start": 43,
+        "End": 48,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "type": "duration",
+              "value": "172800"
             }
           ]
         }
@@ -15726,6 +15768,75 @@
               "timex": "XXXX-05-01",
               "type": "date",
               "value": "2021-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book a room for two days?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "two days",
+        "Start": 16,
+        "End": 23,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "type": "duration",
+              "value": "172800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book a room for two nights?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "two nights",
+        "Start": 16,
+        "End": 25,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "type": "duration",
+              "value": "172800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book a room for 1 night?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "1 night",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
             }
           ]
         }
