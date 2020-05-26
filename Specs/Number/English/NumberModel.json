@@ -2700,5 +2700,37 @@
         "End": 3
       }
     ]
+  },
+  {
+    "Input": "12,34,567.89",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,34,567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567.89",
+          "subtype": "decimal"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "12,567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12567",
+          "subtype": "integer"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
   }
 ]
