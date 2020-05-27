@@ -2700,5 +2700,35 @@
         "End": 3
       }
     ]
+  },
+  {
+    "Input": "3 hundred thousand",
+    "Results": [
+      {
+        "Text": "3 hundred thousand",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300000"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "3 lakh crore",
+    "Results": [
+      {
+        "Text": "3 lakh crore",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3000000000000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
   }
 ]
