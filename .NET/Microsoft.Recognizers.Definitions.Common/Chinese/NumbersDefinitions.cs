@@ -249,7 +249,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"十", @"十足" },
-            { @"伍", @"队伍" }
+            { @"伍", @"队伍" },
+            { @"肆", @"放肆|肆意|肆无忌惮" },
+            { @"陆", @"大陆|陆地|登陆|海陆" },
+            { @"拾", @"拾取|拾起|收拾|拾到|朝花夕拾" },
         };
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>

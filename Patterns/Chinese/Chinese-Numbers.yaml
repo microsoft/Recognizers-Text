@@ -389,6 +389,9 @@ AmbiguityFiltersDict: !dictionary
   entries:
     '十': '十足'
     '伍': '队伍'
+    '肆': '放肆|肆意|肆无忌惮'
+    '陆': '大陆|陆地|登陆|海陆'
+    '拾': '拾取|拾起|收拾|拾到|朝花夕拾'
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
   def: ^[.]
