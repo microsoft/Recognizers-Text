@@ -25,6 +25,10 @@ namespace Microsoft.Recognizers.Text.Number.English
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    new Regex(NumbersDefinitions.DoubleIndianDecimalPointRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(config.Placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },

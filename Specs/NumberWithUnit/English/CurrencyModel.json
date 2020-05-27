@@ -2250,5 +2250,22 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Am I eligible for a lone of 12,34,567.89 rupees",
+    "Comment": "Example of Indian numbering system, the format may not need to be supported in other languages.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,34,567.89 rupees",
+        "Start": 28,
+        "End": 46,
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1234567.89",
+          "unit": "Rupee"
+        }
+      }
+    ]
   }
 ]
