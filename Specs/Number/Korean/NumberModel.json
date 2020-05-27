@@ -93,7 +93,8 @@
   {
     "Input": "29km의 길",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29",
@@ -107,7 +108,8 @@
   {
     "Input": "5월 4일",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5",
@@ -268,7 +270,8 @@
   {
     "Input": "조 번째",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "조 번째",
@@ -282,7 +285,8 @@
   {
     "Input": "일백조 번째",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "일백조 번째",
@@ -422,7 +426,7 @@
   {
     "Input": " 123456789101231",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "123456789101231",
@@ -758,7 +762,8 @@
   {
     "Input": "반",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "반",
@@ -842,7 +847,7 @@
   {
     "Input": "백분의 일",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백분의 일",
@@ -1388,7 +1393,8 @@
   {
     "Input": "정답은 마이너스 오 점 오입니다.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "마이너스 오 점 오",
@@ -1444,7 +1450,8 @@
   {
     "Input": "1 234 567",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 234 567",
@@ -1458,7 +1465,8 @@
   {
     "Input": "40 000 은 40 000과 같다",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "40 000",
@@ -1479,7 +1487,8 @@
   {
     "Input": "현재 중국의 인구수는 1 414 021 100이다.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -1493,7 +1502,8 @@
   {
     "Input": "423 0000는 두 개의 숫자이다.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "423",
@@ -1521,7 +1531,8 @@
   {
     "Input": "1 234 567.89는 유효한 숫자 형식이다.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 234 567.89",
