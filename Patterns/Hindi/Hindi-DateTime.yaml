@@ -258,7 +258,7 @@ SpecialDayRegex: !nestedRegex
   def: (?<!([\u0900-\u097f]))(परसों\s+वापस\s+गया\s+था|कल\s+वापस\s+गया\s+था|परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन?)
+  def: \b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन(\s+(बाद)?))
   references: [ AllWrittenNumericalRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+दिन))
@@ -460,7 +460,7 @@ SpecificTimeBetweenAnd: !nestedRegex
 SuffixAfterRegex: !simpleRegex
   def: \b(और\s+(above|after|बाद|greater)?(?!\s+than)?)\b
 PrepositionRegex: !simpleRegex
-  def: (?<prep>^(at|(को|के),?|on|of)(\s+the)?$)
+  def: (?<prep>^(at|(को|के),?|on|of)?(\s+the)?$)
 LaterEarlyRegex: !simpleRegex
   def: ((?<early>((को|की)\s+)?(जल्दी|तड़के|सुबह(?!\s+देर))(\s+से)?-?)|(?<late>((को|की)\s+)?(प्रहर\s+)?देर(\s+से)?-?))
 MealTimeRegex: !simpleRegex

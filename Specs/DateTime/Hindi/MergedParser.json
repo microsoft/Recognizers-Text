@@ -885,6 +885,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "removed sourceEntity (datetimepoint) because the Extraction can mean both 'next Tuesday before 12:00 p.m.' or 'before next Tuesday 12:00 p.m.'",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -896,15 +897,13 @@
               "timex": "2016-11-15T12:00",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2016-11-15 12:00:00",
-              "sourceEntity": "datetimepoint"
+              "end": "2016-11-15 12:00:00"
             },
             {
               "timex": "2016-11-15T00:00",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2016-11-15 00:00:00",
-              "sourceEntity": "datetimepoint"
+              "end": "2016-11-15 00:00:00"
             }
           ]
         },
