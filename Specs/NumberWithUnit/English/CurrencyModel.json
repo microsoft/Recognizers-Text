@@ -2253,6 +2253,7 @@
   },
   {
     "Input": "Am I eligible for a lone of 12,34,567.89 rupees",
+    "Comment": "Example of Indian numbering system, the format may not need to be supported in other languages.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
