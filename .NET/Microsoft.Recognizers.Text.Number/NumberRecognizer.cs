@@ -327,6 +327,13 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
                     new Korean.OrdinalExtractor()));
 
+            RegisterModel<NumberRangeModel>(
+              Culture.Korean,
+              (options) => new NumberRangeModel(
+                          new BaseNumberRangeParser(new KoreanNumberRangeParserConfiguration(
+                                                        new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                          new Korean.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Korean, options))));
+
             RegisterModel<NumberModel>(
                 Culture.Dutch,
                 (options) => new NumberModel(

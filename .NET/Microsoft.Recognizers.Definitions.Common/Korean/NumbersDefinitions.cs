@@ -187,14 +187,30 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*개\s*백\s*분\s*점";
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*개\s*백\s*분\s*점";
       public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d)({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({AllIntRegex}|{ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)([％%]|(퍼\s*센\s*트)|(프\s*로)|(퍼\s*센\s*티\s*지))(?!\d)";
-      public const string TillRegex = @"(부터|까지|--|-|—|——|~)";
-      public const string MoreRegex = @"(초과|많|높|크|더많|더높|더크|>)";
-      public const string LessRegex = @"(미만|적|낮|작|더적|더낮|더적|<)";
-      public const string EqualRegex = @"(동일|같|=)";
+      public const string TillRegex = @"(부터|에서|--|-|—|–|——|~)";
+      public const string MoreRegex = @"(초과|많|높|크|더많|더높|더크|넘는|초과이다|크고)";
+      public const string LessRegex = @"(미만|적|낮|작|더적|더낮|더적|이하|이하이다|<|아래|작다)";
+      public const string EqualRegex = @"(동일|같|=|(해당하는)|는|그와 같다)";
+      public const string RangePrefixLessRegex = @"(까지최소|(?<!>|=)<|≤)";
+      public const string RangePrefixMoreRegex = @"((?<!<|=)>|≥)";
       public static readonly string MoreOrEqual = $@"(({MoreRegex}\s*(거나)?\s*{EqualRegex}))";
       public const string MoreOrEqualSuffix = @"\s*(이상)";
-      public static readonly string LessOrEqual = $@"(({LessRegex}\s*(거나)?\s*{EqualRegex}))";
-      public const string LessOrEqualSuffix = @"\s*(이상)";
+      public static readonly string LessOrEqual = $@"(?:(이|보다)?)?\s*(({LessRegex}\s*(거나)?\s*{EqualRegex}(은|다)?))";
+      public const string LessOrEqualSuffix = @"\s*(이하)";
+      public const string OneNumberRangeMoreSeparateRegex = @"^[.]";
+      public const string OneNumberRangeLessSeparateRegex = @"^[.]";
+      public static readonly string OneNumberRangeEqualRegex = $@"((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex})(거나|다|개)?(\s*({LessRegex})(은)?)?|((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(년에)\s*(\d+)(은|이다))";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*({MoreOrEqual}|{MoreRegex}|{MoreOrEqualSuffix})(은|다)?)";
+      public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>((?!((、(?!\d+))|(、(?!\d+))|。))|(?!\s+).)+)\s*(((혹은\s*그)?){MoreRegex}|((혹은\s*그)?){MoreOrEqualSuffix})";
+      public static readonly string OneNumberRangeMoreRegex3 = $@"({RangePrefixMoreRegex})\s*(?<number1>(((?!(((?!\d+))|((,)(?!\d+))|。)).)+))";
+      public static readonly string OneNumberRangeLessRegex1 = $@"((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex}(은|다)?)|((?<number2>([영령공일이두삼사오육칠팔구]+|[십백천만억조경열]+)+)\s*(또는)?\s*(그|그보다)?\s*(미만|적게|밑))";
+      public static readonly string OneNumberRangeLessRegex2 = $@"((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex})(거나)\s*(최소)\s*(\d+)";
+      public static readonly string OneNumberRangeLessRegex3 = $@"(?:({RangePrefixLessRegex}))\s*(?<number1>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))";
+      public static readonly string TwoNumberRangeRegex1 = $@"(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(위?)\s*(과|와|{TillRegex})\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(위?)\s*(사이)";
+      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(과|또는|，|、|,)?\s*({OneNumberRangeLessRegex1})";
+      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1})\s*(과|또는|，|、|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
+      public static readonly string TwoNumberRangeRegex4 = $@"(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(까지)?";
+      public static readonly string TwoNumberRangeRegex5 = $@"(?<number1>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+)\s*{TillRegex}\s*(?<number2>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+)\s*([십백천만억조경열]|((미만|적|낮|작|더적|더낮|더적|이하이다|까지|아래))+)";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
             { @"마지막", @"0" },
