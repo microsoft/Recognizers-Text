@@ -2265,51 +2265,6 @@
     ]
   },
   {
-    "Input": "कोर्टाना, क्या तुम अगले सप्ताह मंगलवार सुबह 9 बजे या गुरुवार दोपहर 1 बजे एक स्कायप कॉल की व्यवस्था कर सकती हो?",
-    "Context": {
-      "ReferenceDateTime": "2017-12-04T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "अगले सप्ताह मंगलवार सुबह 9 बजे",
-        "Start": 19,
-        "End": 48,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2017-12-12T09",
-              "type": "datetime",
-              "value": "2017-12-12 09:00:00"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "thursday 1 pm",
-        "Start": 71,
-        "End": 83,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-WXX-4T13",
-              "type": "datetime",
-              "value": "2017-11-30 13:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-4T13",
-              "type": "datetime",
-              "value": "2017-12-07 13:00:00"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
     "Input": "यह सही हो भी सकता है और नहीं भी।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -5360,32 +5315,6 @@
     "NotSupported": "dotnet"
   },
   {
-    "Input": "रेंज 2014 से 2018 तक है।",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2014 से 2018 तक",
-        "Start": 5,
-        "End": 19,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2014-01-01,2018-01-01,P4Y)",
-              "type": "daterange",
-              "start": "2014-01-01",
-              "end": "2018-01-01"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
     "Input": "रेंज 2014-2018 से है।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -5422,32 +5351,6 @@
         "Text": "2014~2018 से",
         "Start": 5,
         "End": 16,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2014-01-01,2018-01-01,P4Y)",
-              "type": "daterange",
-              "start": "2014-01-01",
-              "end": "2018-01-01"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
-    "Input": "रेंज 2014 से 2018 के दौरान है।",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2014 से 2018 के दौरान",
-        "Start": 5,
-        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7108,33 +7011,6 @@
     "NotSupported": "dotnet"
   },
   {
-    "Input": "आप केवल 1/1/2016 और उसके बाद छोड़ सकते हैं",
-    "Context": {
-      "ReferenceDateTime": "2018-08-31T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1/1/2016 और उसके बाद",
-        "Start": 8,
-        "End": 27,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2016-01-01",
-              "Mod": "since",
-              "type": "daterange",
-              "start": "2016-01-01",
-              "sourceEntity": "datetimepoint"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
     "Input": "मैं केवल 1/1/2016 को छोड़ सकता हूं और मेरे काम आइटम पूरा होने के बाद",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
@@ -8300,37 +8176,6 @@
     ]
   },
   {
-    "Input": "क्या आप सोमवार सुबह 10 बजे से दोपहर 12 बजे तक उपलब्ध हैं",
-    "Context": {
-      "ReferenceDateTime": "2018-11-01T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "सोमवार सुबह 10 बजे से दोपहर 12 बजे तक",
-        "Start": 8,
-        "End": 44,
-        "TypeName": "datetimeV2.datetimerange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
-              "type": "datetimerange",
-              "start": "2018-10-29 10:00:00",
-              "end": "2018-10-29 12:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
-              "type": "datetimerange",
-              "start": "2018-11-05 10:00:00",
-              "end": "2018-11-05 12:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "आप कहां थे कल दोपहर 3 से 8 बजे तक?",
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
@@ -9106,30 +8951,6 @@
     ]
   },
   {
-    "Input": "आपको हमेशा दिन के अंत में सोने के लिए नहीं जाना चाहिए क्योंकि यह आपके स्वास्थ्य को नुकसान पहुंचाएगा।",
-    "Context": {
-      "ReferenceDateTime": "2018-11-21T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "दिन के अंत में",
-        "Start": 11,
-        "End": 24,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2018-11-21T23:59:59",
-              "type": "datetime",
-              "value": "2018-11-21 23:59:59"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "बॉब और एलिस आमतौर पर अपने एन्क्रिप्टेड संदेशों को दिन के अंत में एक्सचेंज करते हैं",
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
@@ -9691,55 +9512,6 @@
     "NotSupported": "dotnet"
   },
   {
-    "Input": "मुझे लगता है कि एक घंटे के साथ आधे घंटे काम पूरा करने के लिए उचित है।",
-    "Context": {
-      "ReferenceDateTime": "2018-12-05T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "एक घंटे के साथ आधे घंटे",
-        "Start": 16,
-        "End": 38,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1.5H",
-              "type": "duration",
-              "value": "5400"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
-    "Input": "मुझे लगता है कि काम पूरा करने के लिए डेढ़ घंटा पर्याप्त है।",
-    "Context": {
-      "ReferenceDateTime": "2018-12-05T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "डेढ़ घंटा",
-        "Start": 37,
-        "End": 45,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1.5H",
-              "type": "duration",
-              "value": "5400"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "मुझे लगता है कि काम पूरा करने के लिए डेढ़ घंटा पर्याप्त है।",
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
@@ -10269,56 +10041,6 @@
         }
       }
     ]
-  },
-  {
-    "Input": "आप पिछले बुधवार को कहाँ थे?",
-    "Context": {
-      "ReferenceDateTime": "2019-01-31T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "पिछले बुधवार",
-        "Start": 3,
-        "End": 14,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-01-23",
-              "type": "date",
-              "value": "2019-01-23"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
-    "Input": "आप पिछले बुधवार को कहाँ थे?",
-    "Context": {
-      "ReferenceDateTime": "2019-01-31T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "पिछले बुधवार ",
-        "Start": 3,
-        "End": 15,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-01-23",
-              "type": "date",
-              "value": "2019-01-23"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
   },
   {
     "Input": "आप 12 को 0730-0930 के बीच कहाँ थे",
@@ -13098,32 +12820,6 @@
     "NotSupported": "dotnet"
   },
   {
-    "Input": "पिछली तिमाही के लिए बिक्री",
-    "Context": {
-      "ReferenceDateTime": "2019-07-04T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "पिछली तिमाही",
-        "Start": 0,
-        "End": 11,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2019-04-01,2019-07-01,P3M)",
-              "type": "daterange",
-              "start": "2019-04-01",
-              "end": "2019-07-01"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
     "Input": "मैं 27 दिसंबर सुबह 11:30 से 12:30 तक बाहर रहूंगा",
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
@@ -13431,47 +13127,6 @@
         "Text": "8 p.m.",
         "Start": 8,
         "End": 13,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T20",
-              "type": "time",
-              "value": "20:00:00"
-            }
-          ]
-        }
-      }
-    ],
-    "NotSupported": "dotnet"
-  },
-  {
-    "Input": "सप्ताह 10 शाम 8 बजे एक तिथि सीमा और एक समय होना चाहिए।",
-    "Context": {
-      "ReferenceDateTime": "2019-07-11T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "सप्ताह 10",
-        "Start": 0,
-        "End": 8,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-W10",
-              "type": "daterange",
-              "start": "2019-03-04",
-              "end": "2019-03-11"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "8p.m.",
-        "Start": 8,
-        "End": 12,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [

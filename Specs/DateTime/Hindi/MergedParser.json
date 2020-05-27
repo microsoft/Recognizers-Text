@@ -885,7 +885,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "removed sourceEntity (datetimepoint) because the Extraction can mean both 'next Tuesday before 12:00 p.m.' or 'before next Tuesday 12:00 p.m.'",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

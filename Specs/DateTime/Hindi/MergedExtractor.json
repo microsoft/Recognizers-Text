@@ -37,7 +37,6 @@
   },
   {
     "Input": "ये कल शाम 4 बजे से पहले है ",
-    "Comment": "Changed Type from 'datetime' to 'datetimerange' because the input can be interpreted both as 'tomorrow after 4pm' and 'after tomorrow 4pm'",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -98,7 +97,6 @@
   },
   {
     "Input": "ये कल 4pm के बाद है ",
-    "Comment": "Changed Type from 'datetime' to 'datetimerange' because the input can be interpreted both as 'tomorrow after 4pm' and 'after tomorrow 4pm'",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
