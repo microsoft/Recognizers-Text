@@ -346,7 +346,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|minute)\b
 FivesRegex: !simpleRegex
