@@ -4215,17 +4215,16 @@
         }
       },
       {
-        "Text": "nights",
-        "Start": 45,
+        "Text": "2 nights",
+        "Start": 43,
         "End": 50,
-        "TypeName": "datetimeV2.timerange",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "TNI",
-              "type": "timerange",
-              "start": "20:00:00",
-              "end": "23:59:59"
+              "timex": "P2D",
+              "type": "duration",
+              "value": "172800"
             }
           ]
         }
