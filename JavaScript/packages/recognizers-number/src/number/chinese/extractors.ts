@@ -30,6 +30,12 @@ export class ChineseNumberExtractor extends BaseNumberExtractor {
 
         // Add filter
         let ambiguityFiltersDict = new Array<RegExpRegExp>();
+
+
+        for (let [key, value] of ChineseNumeric.AmbiguityFiltersDict) {
+            ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs") })
+        }
+
         this.ambiguityFiltersDict = ambiguityFiltersDict;
     }
 }
