@@ -2265,6 +2265,31 @@
     ]
   },
   {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-10-01,2017-11-02,P32D)",
+              "type": "daterange",
+              "start": "2017-10-01",
+              "end": "2017-11-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "यह सही हो भी सकता है और नहीं भी।",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
