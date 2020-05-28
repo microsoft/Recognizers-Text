@@ -22,4 +22,5 @@ export namespace JapaneseNumericWithUnit {
     export const CompoundUnitConnectorRegex = `(?<spacer>と)`;
     export const CurrencyPrefixList: ReadonlyMap<string, string> = new Map<string, string>([["Dollar", "$"],["United States dollar", "us$"],["British Virgin Islands dollar", "bvi$"],["Brunei dollar", "b$"],["Sen", "sen"],["Singapore dollar", "s$"],["Canadian dollar", "can$|c$|c $"],["Cayman Islands dollar", "ci$"],["New Zealand dollar", "nz$|nz $"],["Guyanese dollar", "gy$|gy $|g$|g $"],["Hong Kong dollar", "hk$|hkd|hk $"],["Jamaican dollar", "j$"],["Namibian dollar", "nad|n$|n $"],["Solomon Islands dollar", "si$|si $"],["New Taiwan dollar", "nt$|nt $"],["Samoan tālā", "ws$"],["Chinese yuan", "￥"],["Japanese yen", "¥|\\"],["Turkish lira", "₺"],["Euro", "€"],["Pound", "£"],["Costa Rican colón", "₡"]]);
     export const CurrencyAmbiguousValues = [ "円","銭","分","レク","プル","ブル","\\" ];
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
 }

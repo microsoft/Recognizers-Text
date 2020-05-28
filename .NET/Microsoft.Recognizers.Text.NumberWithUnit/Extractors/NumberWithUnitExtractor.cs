@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -12,7 +14,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly StringMatcher suffixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
         private readonly StringMatcher prefixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+
         private readonly Regex separateRegex;
+        private readonly Regex singleCharUnitRegex = new Regex(BaseUnits.SingleCharUnitRegex,
+                                                               RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         private readonly int maxPrefixMatchLen;
 
@@ -272,9 +277,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 ExtractSeparateUnits(source, result, nonUnitMatches);
 
-                // Remove common ambiguous cases
-                result = FilterAmbiguity(result, source);
             }
+
+            // Remove common ambiguous cases
+            result = FilterAmbiguity(result, source);
 
             if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
             {
@@ -458,6 +464,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
+
             if (this.config.AmbiguityFiltersDict != null)
             {
                 foreach (var regex in this.config.AmbiguityFiltersDict)
@@ -467,12 +474,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         if (regex.Key.IsMatch(extractResult.Text))
                         {
                             var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
+                            extractResults = extractResults.Where(er =>
+                                                                      !matches.Any(m => m.Index < er.Start + er.Length &&
+                                                                                   m.Index + m.Length > er.Start)).ToList();
                         }
                     }
                 }
             }
+
+            // Filter single-char units if not exact match
+            extractResults = extractResults.Where(er => !(er.Length != text.Length && singleCharUnitRegex.IsMatch(er.Text))).ToList();
 
             return extractResults;
         }

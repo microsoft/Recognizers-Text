@@ -3,6 +3,7 @@ import { Culture, CultureInfo, Constants as NumberConstants } from "@microsoft/r
 import { Constants } from "./constants";
 import max = require("lodash.max");
 import escapeRegExp = require("lodash.escaperegexp");
+import { BaseUnits } from "../resources/baseUnits";
 
 export interface INumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
@@ -24,7 +25,10 @@ export class NumberWithUnitExtractor implements IExtractor {
     private readonly config: INumberWithUnitExtractorConfiguration;
     private readonly suffixRegexes: Set<RegExp>;
     private readonly prefixRegexes: Set<RegExp>;
+    
     private readonly separateRegex: RegExp;
+    private readonly singleCharUnitRegex: RegExp;
+
     private readonly maxPrefixMatchLen: number;
 
     constructor(config: INumberWithUnitExtractorConfiguration) {
@@ -54,6 +58,8 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
 
         this.separateRegex = this.buildSeparateRegexFromSet();
+
+        this.singleCharUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.SingleCharUnitRegex, "gs");
     }
 
     extract(source: string): ExtractResult[] {
@@ -217,6 +223,9 @@ export class NumberWithUnitExtractor implements IExtractor {
             this.extractSeparateUnits(source, result);
         }
 
+        // remove common ambiguous cases
+        result = this.filterAmbiguity(result, source);
+
         return result;
     }
 
@@ -224,10 +233,20 @@ export class NumberWithUnitExtractor implements IExtractor {
         return source.substring(0, 1) !== '-';
     }
 
-    protected preCheckStr(str: string) {
-        return str && str.length;
+    protected filterAmbiguity(ers: ExtractResult[], input: string): ExtractResult[] {
+    
+
+        // Filter single-char units if not exact match
+        ers = ers.filter(er => {
+            return !(er.length !== input.length && RegExpUtility.isMatch(this.singleCharUnitRegex, er.text));
+        });
+
+        return ers;
     }
 
+    protected preCheckStr(str: string): number {
+        return str && str.length;
+    }
 
     protected extractSeparateUnits(source: string, numDependResults: ExtractResult[]): void {
         // Default is false

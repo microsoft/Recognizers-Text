@@ -153,7 +153,7 @@ public class FrenchDateTime {
 
     public static final String AllHalfYearRegex = "^[.]";
 
-    public static final String PrefixDayRegex = "^[.]";
+    public static final String PrefixDayRegex = "\\b((?<EarlyPrefix>t[ôo]t\\sdans)|(?<MidPrefix>au\\smilieu\\sde)|(?<LatePrefix>tard\\sdans))(\\s+la\\s+journ[ée]e)?$";
 
     public static final String CenturySuffixRegex = "^[.]";
 
@@ -187,7 +187,7 @@ public class FrenchDateTime {
             .replace("{NextSuffixRegex}", NextSuffixRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String SpecialDayRegex = "\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\\b";
+    public static final String SpecialDayRegex = "\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|(de\\s)?la journ[ée]e|aujourd'hui)\\b";
 
     public static final String SpecialDayWithNumRegex = "^[.]";
 
@@ -240,7 +240,7 @@ public class FrenchDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractor6 = "(?<=\\b(le|sur|sur l[ae])\\s+){MonthNumRegex}[\\-\\.\\/]{DayRegex}\\b"
+    public static final String DateExtractor6 = "(?<=\\b(le|sur(\\sl[ae])?)\\s+){MonthNumRegex}[\\-\\.\\/]{DayRegex}\\b"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex);
 
@@ -632,7 +632,7 @@ public class FrenchDateTime {
 
     public static final String PreviousPrefixRegex = ".^";
 
-    public static final String RelativeDayRegex = "^[\\.]";
+    public static final String RelativeDayRegex = "\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b";
 
     public static final String ConnectorRegex = "^(,|pour|t|vers)$";
 

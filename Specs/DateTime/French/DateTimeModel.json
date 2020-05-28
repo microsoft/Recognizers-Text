@@ -2249,5 +2249,54 @@
         }
       }
     ]
+  },
+  {
+    "Input": "j'ai mangé tôt dans la journée",
+    "Context": {
+      "ReferenceDateTime": "2020-05-27T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "tôt dans la journée",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-05-27",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2020-05-27 00:00:00",
+              "end": "2020-05-27 12:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "la journée",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "la journée",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
   }
 ]

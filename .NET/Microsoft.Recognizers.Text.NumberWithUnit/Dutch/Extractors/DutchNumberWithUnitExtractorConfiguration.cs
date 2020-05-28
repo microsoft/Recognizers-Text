@@ -2,8 +2,10 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Dutch;
 
@@ -29,6 +31,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }

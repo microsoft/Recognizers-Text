@@ -110,6 +110,7 @@ public abstract class BaseNumberExtractor implements IExtractor {
                 last = i;
             }
         }
+
         result = filterAmbiguity(result, source);
         
         return result;

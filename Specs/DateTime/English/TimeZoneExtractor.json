@@ -211,6 +211,7 @@
   },
   {
     "Input": "Show me times at Lincoln Square",
+	"Debug": true,
     "Comment": "This case is to verify that the 'me time' substring won't be extracted from the 'me times'.",
     "NotSupported": "javascript",
     "Results": []
@@ -281,5 +282,10 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "Once upon a time...",
+    "NotSupported": "javascript",
+    "Results": []
   }
 ]

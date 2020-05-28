@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -136,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
 
-        // Include the date metioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+        // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";
 
         public const string DECADE_UNIT = "10Y";
@@ -189,11 +191,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int INVALID_CONNECTOR_CODE = -1;
 
         // Invalid year non-constant
-        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
-        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
+        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum, CultureInfo.InvariantCulture);
+        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum, CultureInfo.InvariantCulture);
 
-        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
-        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
+        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum, CultureInfo.InvariantCulture);
+        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum, CultureInfo.InvariantCulture);
         public static readonly System.DateTime InvalidDate = default(System.DateTime);
 
         // Timex non-constant

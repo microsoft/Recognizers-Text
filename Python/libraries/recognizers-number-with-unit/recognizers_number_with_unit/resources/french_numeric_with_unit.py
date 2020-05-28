@@ -297,7 +297,7 @@ class FrenchNumericWithUnit:
                                   ("Gigaoctet", "gigaoctet|gigaoctets|Go|Gio|GB|GiB|gigabyte|gigabytes"),
                                   ("Téraoctet", "téraoctet|téraoctets|To|Tio|TB|TiB|térabyte|térabytes"),
                                   ("Pétaoctet", "pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes")])
-    AmbiguousDimensionUnitList = [r'mi', r'barils', r'grain', r'l', r'pierre', r'fps', r'pts']
+    AmbiguousDimensionUnitList = [r'mi', r'barils', r'grain', r'pierre', r'fps', r'pts']
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
@@ -315,8 +315,7 @@ class FrenchNumericWithUnit:
                              ("Pied", "pied|pieds"),
                              ("Yard", "yards|yard|yd"),
                              ("Pouce", "pouce|pouces")])
-    AmbiguousLengthUnitList = [r'm', r'yard', r'yards', r'pm', r'pt', r'pts']
-    AmbuguousLengthUnitList = [r'm', r'pouce', r'pm']
+    AmbiguousLengthUnitList = [r'm', r'm.', r'yard', r'yards', r'pm', r'pouce', r'pt', r'pts']
     SpeedSuffixList = dict([("Mètre par seconde", "m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes"),
                             ("Kilomètre par heure", "km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure"),
                             ("Kilomètre par minute", "km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes"),
@@ -326,10 +325,10 @@ class FrenchNumericWithUnit:
                             ("Pied par seconde", "ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s"),
                             ("Pied par minute", "pieds/minute|pied/minute|ft/minute|ft/min|pied/min")])
     TemperatureSuffixList = dict([("Kelvin", "k|K|kelvin"),
-                                  ("F", "°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit"),
+                                  ("F", "°f|° f|degres f|degrés f|deg f|degrés fahrenheit|degres fahrenheit|fahrenheit|deg fahrenheit|degs fahrenheit"),
                                   ("R", "rankine|°r|° r"),
-                                  ("C", "°c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade"),
-                                  ("Degré", "degrés|degres|deg.|°| °|degré|degre|deg")])
+                                  ("C", "°c|° c|degres c|degrés c|deg c|degrés celsius|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade"),
+                                  ("Degré", "degrés|degres|deg.|°|degré|degre|deg|degs")])
     VolumeSuffixList = dict([("Mètre cube", "m3|m^3|m³|mètre cube|mètres cube|metre cube|metres cube"),
                              ("Centimètre cube", "cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube"),
                              ("Millimètre cube", "mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube"),
@@ -344,13 +343,13 @@ class FrenchNumericWithUnit:
                              ("Centilitre", "cl|centilitres|centilitre"),
                              ("Onces liquides", "onces liquides|once liquide|once liquides"),
                              ("Baril", "baril|barils|bbl")])
-    AmbiguousVolumeUnitList = [r'ounce', r'oz', r'l', r'cup', r'peck', r'cord', r'gill']
+    AmbiguousVolumeUnitList = [r'oz', r'l']
     WeightSuffixList = dict([("Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos"),
                              ("Gram", "g|gramme|grammes"),
                              ("Milligramme", "mg|milligramme|milligrammes"),
                              ("Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique"),
                              ("Tonne", "tonne|tonnes|-tonnes|-tonne"),
                              ("Livre", "livre|livres")])
-    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram']
+    AmbiguousWeightUnitList = [r'g', r'oz']
     AmbiguityFiltersDict = dict([("\\bcent\\b", "\\bpour\\s+cent\\b")])
 # pylint: enable=line-too-long

@@ -539,4 +539,8 @@ public class JapaneseNumericWithUnit {
         .build();
 
     public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "分", "レク", "プル", "ブル", "\\");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
+        .build();
 }

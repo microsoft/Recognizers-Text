@@ -16,4 +16,5 @@ export namespace BaseUnits {
     export const PmNonUnitRegex = `(${HourRegex}\\s*:\\s*${MinuteRegex}(\\s*:\\s*${SecondRegex})?\\s*pm)`;
     export const AmbiguousTimeTerm = 'pm';
     export const AmbiguousUnitNumberMultiplierRegex = `(\\s([Kk]|mil))`;
+    export const SingleCharUnitRegex = `^\\b(c|f|g|k|l|m|s)(\\s*\\.|\\b)$`;
 }

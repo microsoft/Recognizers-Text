@@ -887,5 +887,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             @"drammış",
             @"dramlık"
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
+        };
     }
 }

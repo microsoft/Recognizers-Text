@@ -548,5 +548,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             @"ブル",
             @"\"
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
+        };
     }
 }

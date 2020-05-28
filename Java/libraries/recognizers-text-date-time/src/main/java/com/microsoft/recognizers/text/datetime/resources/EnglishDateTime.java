@@ -675,7 +675,7 @@ public class EnglishDateTime {
 
     public static final String MoreThanRegex = "\\b(more\\s+than)\\b";
 
-    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b"
+    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\\b"
             .replace("{DateUnitRegex}", DateUnitRegex);
 
     public static final String SuffixAndRegex = "(?<suffix>\\s*(and)\\s+(an?\\s+)?(?<suffix_num>half|quarter))";
@@ -925,6 +925,8 @@ public class EnglishDateTime {
         .put("week", "W")
         .put("days", "D")
         .put("day", "D")
+        .put("nights", "D")
+        .put("night", "D")
         .put("hours", "H")
         .put("hour", "H")
         .put("hrs", "H")
@@ -953,6 +955,8 @@ public class EnglishDateTime {
         .put("week", 604800L)
         .put("days", 86400L)
         .put("day", 86400L)
+        .put("nights", 86400L)
+        .put("night", 86400L)
         .put("hours", 3600L)
         .put("hour", 3600L)
         .put("hrs", 3600L)

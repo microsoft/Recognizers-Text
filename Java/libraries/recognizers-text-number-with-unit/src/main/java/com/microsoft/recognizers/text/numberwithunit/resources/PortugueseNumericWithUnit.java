@@ -503,4 +503,8 @@ public class PortugueseNumericWithUnit {
         .put("Grão", "grão|grao|grãos|graos|gr")
         .put("Quilate", "ct|quilate|quilates")
         .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
+        .build();
 }

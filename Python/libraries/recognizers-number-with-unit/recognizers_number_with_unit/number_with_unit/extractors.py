@@ -123,6 +123,10 @@ class NumberWithUnitExtractor(Extractor):
     def separate_regex(self, value):
         self.__separate_regex = value
 
+    @property
+    def single_char_unit_regex(self):
+        return RegExpUtility.get_safe_reg_exp(BaseUnits.SingleCharUnitRegex)
+
     def __init__(self, config: NumberWithUnitExtractorConfiguration):
 
         self.config = config
@@ -446,6 +450,15 @@ class NumberWithUnitExtractor(Extractor):
                                         ers.remove(item)
                 except Exception:
                     pass
+
+        # filter single-char units if not exact match
+        try:
+            scu_regex = self.single_char_unit_regex
+
+            ers = list(filter(lambda er: not (er.length != len(text) and bool(regex.match(scu_regex, er.text))), ers))
+
+        except Exception:
+            pass
 
         return ers
 

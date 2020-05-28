@@ -313,8 +313,14 @@ FullNameList: !list
     - Central
     - Pacific
     - Eastern
-LocationTimeSuffixRegex: !simpleRegex
-  def: ((\s+|-)(timezone|time)\b)
+BaseTimeZoneSuffixRegex: !simpleRegex
+  def: ((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?
+LocationTimeSuffixRegex: !nestedRegex
+  def: ({BaseTimeZoneSuffixRegex})\b
+  references: [BaseTimeZoneSuffixRegex]
+TimeZoneEndRegex: !nestedRegex
+  def: ({BaseTimeZoneSuffixRegex})$
+  references: [BaseTimeZoneSuffixRegex]
 # For filtering ambiguous single timezone words
 AmbiguousTimezoneList: !list
   types: [string]

@@ -197,7 +197,7 @@ class EnglishDateTime:
     PeriodTimeOfDayWithDateRegex = f'\\b(({PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b'
     LessThanRegex = f'\\b(less\\s+than)\\b'
     MoreThanRegex = f'\\b(more\\s+than)\\b'
-    DurationUnitRegex = f'(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b'
+    DurationUnitRegex = f'(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\\b'
     SuffixAndRegex = f'(?<suffix>\\s*(and)\\s+(an?\\s+)?(?<suffix_num>half|quarter))'
     PeriodicRegex = f'\\b(?<periodic>daily|monthly|weekly|biweekly|quarterly|yearly|annual(ly)?)\\b'
     EachUnitRegex = f'(?<each>(each|every|once an?)(?<other>\\s+other)?\\s*({DurationUnitRegex}|{WeekDayRegex}))'
@@ -283,6 +283,8 @@ class EnglishDateTime:
                     ("week", "W"),
                     ("days", "D"),
                     ("day", "D"),
+                    ("nights", "D"),
+                    ("night", "D"),
                     ("hours", "H"),
                     ("hour", "H"),
                     ("hrs", "H"),
@@ -308,6 +310,8 @@ class EnglishDateTime:
                          ("week", 604800),
                          ("days", 86400),
                          ("day", 86400),
+                         ("nights", 86400),
+                         ("night", 86400),
                          ("hours", 3600),
                          ("hour", 3600),
                          ("hrs", 3600),
