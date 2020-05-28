@@ -304,7 +304,7 @@ SimpleIntegerPercentageRegex: !nestedRegex
 TillRegex: !simpleRegex
   def: (부터|에서|--|-|—|–|——|~)
 MoreRegex: !simpleRegex
-  def: (초과|많|높|크|더많|더높|더크|넘는|초과이다|크고)
+  def: (초과|많|높|크|더많|더높|더크|>|넘는|초과이다|크고)
 LessRegex: !simpleRegex
   def: (미만|적|낮|작|더적|더낮|더적|이하|이하이다|<|아래|작다)
 EqualRegex: !simpleRegex
@@ -324,10 +324,10 @@ LessOrEqual: !nestedRegex
 LessOrEqualSuffix: !simpleRegex
   def: \s*(이하)
 OneNumberRangeMoreSeparateRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
+  # TODO: Regex not applicable in Korean, references need to be adjusted
   def: ^[.]
 OneNumberRangeLessSeparateRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
+  # TODO: Regex not applicable in Korean, references need to be adjusted
   def: ^[.]
 OneNumberRangeEqualRegex: !nestedRegex
   def: ((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex})(거나|다|개)?(\s*({LessRegex})(은)?)?|((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(년에)\s*(\d+)(은|이다))
