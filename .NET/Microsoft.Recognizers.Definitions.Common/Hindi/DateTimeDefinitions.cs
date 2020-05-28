@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह){PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+((का|की|के)\s+)?(आखिरी|अंतिम)\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)))";
       public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह){PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+(का|की|के|को))?\s+(अगला|अगले|अगली|आने\s+वाले|आने\s+वाला)\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)))";
       public static readonly string SpecialDayRegex = $@"(?<!([\u0900-\u097f]))(परसों\s+वापस\s+गया\s+था|कल\s+वापस\s+गया\s+था|परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)";
-      public static readonly string SpecialDayWithNumRegex = $@"\b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन?)";
+      public static readonly string SpecialDayWithNumRegex = $@"\b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन(\s+(बाद)?))";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+दिन))";
       public const string SetWeekDayRegex = @"\b(?<prefix>को\s+)?(?<weekday>morning|afternoon|evening|night|रात|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?({MonthSuffixRegex}\s+)(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+(तारीख|{WeekDayRegex}))";
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string SpecificTimeFromTo = $@"(?<![/\\\-\.\d])((?<leftDesc>{DescRegexA})\s*)?(?<time1>(({TimeRegex2A}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegexA}))?))\s*{TillRegex}\s*(?<rightDesc>{DescRegexA}\s*)?(?<time2>(({TimeRegex2A}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegexA}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegexA}))?))(?![/\\\-\.\d])(\s+{{RangePrefixRegex}})?";
       public static readonly string SpecificTimeBetweenAnd = $@"(?<![/\\\-\.\d])((?<leftDesc>{DescRegexA})\s*)?(?<time1>(({TimeRegex2A}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegexA}))?))\s*{RangeConnectorRegex}\s*(?<rightDesc>{DescRegexA}\s*)?(?<time2>(({TimeRegex2A}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegexA}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegexA}))?))(?![/\\\-\.\d])(\s+{RangePrefixRegex})?";
       public const string SuffixAfterRegex = @"\b(और\s+(above|after|बाद|greater)?(?!\s+than)?)\b";
-      public const string PrepositionRegex = @"(?<prep>^(at|(को|के),?|on|of)(\s+the)?$)";
+      public const string PrepositionRegex = @"(?<prep>^(at|(को|के),?|on|of)?(\s+the)?$)";
       public const string LaterEarlyRegex = @"((?<early>((को|की)\s+)?(जल्दी|तड़के|सुबह(?!\s+देर))(\s+से)?-?)|(?<late>((को|की)\s+)?(प्रहर\s+)?देर(\s+से)?-?))";
       public const string MealTimeRegex = @"\b(?<mealTime>खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)";
       public static readonly string UnspecificTimePeriodRegex = $@"({MealTimeRegex})";

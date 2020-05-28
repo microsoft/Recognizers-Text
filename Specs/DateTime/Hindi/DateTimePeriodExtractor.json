@@ -814,5 +814,190 @@
         "Length": 41
       }
     ]
+  },
+  {
+    "Input": "क्या आप हमें 2015-09-23  1p.m. से 4 तक शेड्यूल कर सकते हैं। ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015-09-23  1p.m. से 4 तक",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "क्याआप हमें 2015-09-23  1:30p.m. से 4 तक नियत कर सकते हैं। ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015-09-23  1:30p.m. से 4 तक",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार सुबह वापस जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार सुबह",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार शाम को वापस भेजूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार शाम को",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "यह भविष्य में 2 घंटे होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "भविष्य में 2 घंटे",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 10 और 11:30 के बीच होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 10 और 11:30 के बीच",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "यह 10 और 11:30 के बीच 1/1/2015 को होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 और 11:30 के बीच 1/1/2015",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 10:30 से 3 बजे तक होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 10:30 से 3 बजे तक",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 3 और 5 के बीच होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 3 और 5 के बीच",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 3:30 से 5:55 तक होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 3:30 से 5:55 तक",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 2:00 के बाद होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 2:00 के बाद",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "यह आज शाम 4 बजे से पहले होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज शाम 4 बजे से पहले",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले बुधवार को सुबह 10 बजे के बाद होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले बुधवार को सुबह 10 बजे के बाद",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "यह पिछले मंगलवार को दोपहर 2 बजे तक हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले मंगलवार को दोपहर 2 बजे तक",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "चलो चलते हैं 1 फरवरी को 6:00 बजे से पहले नहीं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 फरवरी को 6:00 बजे से पहले नहीं",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले सप्ताह 2:00 के बाद हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   }
 ]

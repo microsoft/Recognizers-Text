@@ -41,7 +41,7 @@
     "Results": [
       {
         "Text": "कल शाम 4 बजे से पहले",
-        "Type": "datetime",
+        "Type": "datetimerange",
         "Start": 3,
         "Length": 20
       }
@@ -101,7 +101,7 @@
     "Results": [
       {
         "Text": "कल 4pm के बाद",
-        "Type": "datetime",
+        "Type": "datetimerange",
         "Start": 3,
         "Length": 13
       }
