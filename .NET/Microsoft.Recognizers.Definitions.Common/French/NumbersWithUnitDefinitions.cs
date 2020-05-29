@@ -355,7 +355,6 @@ namespace Microsoft.Recognizers.Definitions.French
             @"mi",
             @"barils",
             @"grain",
-            @"l",
             @"pierre",
             @"fps",
             @"pts"
@@ -383,17 +382,13 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
         {
             @"m",
+            @"m.",
             @"yard",
             @"yards",
             @"pm",
+            @"pouce",
             @"pt",
             @"pts"
-        };
-      public static readonly IList<string> AmbuguousLengthUnitList = new List<string>
-        {
-            @"m",
-            @"pouce",
-            @"pm"
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
@@ -409,10 +404,10 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
             { @"Kelvin", @"k|K|kelvin" },
-            { @"F", @"°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit" },
+            { @"F", @"°f|° f|degres f|degrés f|deg f|degrés fahrenheit|degres fahrenheit|fahrenheit|deg fahrenheit|degs fahrenheit" },
             { @"R", @"rankine|°r|° r" },
-            { @"C", @"°c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade" },
-            { @"Degré", @"degrés|degres|deg.|°| °|degré|degre|deg" }
+            { @"C", @"°c|° c|degres c|degrés c|deg c|degrés celsius|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade" },
+            { @"Degré", @"degrés|degres|deg.|°|degré|degre|deg|degs" }
         };
       public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
@@ -433,13 +428,8 @@ namespace Microsoft.Recognizers.Definitions.French
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
-            @"ounce",
             @"oz",
-            @"l",
-            @"cup",
-            @"peck",
-            @"cord",
-            @"gill"
+            @"l"
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
@@ -453,9 +443,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
             @"g",
-            @"oz",
-            @"stone",
-            @"dram"
+            @"oz"
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {

@@ -66,6 +66,8 @@ public class EnglishNumeric {
             .replace("{placeholder}", placeholder);
     }
 
+    public static final String IndianNumberingSystemRegex = "(?<=\\b)((?:\\d{1,2},(?:\\d{2},)*\\d{3})(?=\\b))";
+
     public static final String NumbersWithSuffix = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
@@ -159,6 +161,8 @@ public class EnglishNumeric {
         return "(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
             .replace("{placeholder}", placeholder);
     }
+
+    public static final String DoubleIndianDecimalPointRegex = "(?<=\\b)((?:\\d{1,2},(?:\\d{2},)*\\d{3})(?:\\.\\d{2})(?=\\b))";
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
         return "(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"

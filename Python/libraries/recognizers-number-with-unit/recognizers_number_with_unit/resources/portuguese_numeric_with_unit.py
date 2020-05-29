@@ -460,4 +460,5 @@ class PortugueseNumericWithUnit:
                              ("Onça", "oz|onça|onca|onças|oncas"),
                              ("Grão", "grão|grao|grãos|graos|gr"),
                              ("Quilate", "ct|quilate|quilates")])
+    AmbiguityFiltersDict = dict([("null", "null")])
 # pylint: enable=line-too-long

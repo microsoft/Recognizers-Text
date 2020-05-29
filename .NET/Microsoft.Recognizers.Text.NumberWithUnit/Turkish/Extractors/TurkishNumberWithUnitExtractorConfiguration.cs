@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Turkish;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Turkish;
 
@@ -25,6 +26,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }

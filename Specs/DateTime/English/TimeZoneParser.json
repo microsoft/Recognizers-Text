@@ -1002,5 +1002,23 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "Can you find a slot in a US-friendly time?",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "US-friendly time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 25,
+        "Length": 16
+      }
+    ]
   }
 ]

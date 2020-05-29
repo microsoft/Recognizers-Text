@@ -19,4 +19,5 @@ class BaseUnits:
     PmNonUnitRegex = f'({HourRegex}\\s*:\\s*{MinuteRegex}(\\s*:\\s*{SecondRegex})?\\s*pm)'
     AmbiguousTimeTerm = 'pm'
     AmbiguousUnitNumberMultiplierRegex = f'(\\s([Kk]|mil))'
+    SingleCharUnitRegex = f'^\\b(c|f|g|k|l|m|s)(\\s*\\.|\\b)$'
 # pylint: enable=line-too-long

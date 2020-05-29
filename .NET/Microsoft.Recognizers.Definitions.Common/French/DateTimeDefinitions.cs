@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string QuarterRegex = $@"(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quart(\s+de|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'ann[eé]e)";
       public static readonly string QuarterRegexYearFront = $@"({YearRegex}|l'année\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+ann[eé]e)\s+(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quarts";
       public const string AllHalfYearRegex = @"^[.]";
-      public const string PrefixDayRegex = @"^[.]";
+      public const string PrefixDayRegex = @"\b((?<EarlyPrefix>t[ôo]t\sdans)|(?<MidPrefix>au\smilieu\sde)|(?<LatePrefix>tard\sdans))(\s+la\s+journ[ée]e)?$";
       public const string CenturySuffixRegex = @"^[.]";
       public static readonly string SeasonRegex = $@"\b((<seas>printemps|été|automne|hiver)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\s+de|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'ann[eé]e))?)\b";
       public const string WhichWeekRegex = @"\b(semaine)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string ThisRegex = $@"\b((cette(\s*semaine)?\s+){WeekDayRegex})|({WeekDayRegex}(\s+cette\s*semaine))\b";
       public static readonly string LastDateRegex = $@"\b(({WeekDayRegex}(\s*(de)?\s*la\s*semaine\s+{PastSuffixRegex}))|({WeekDayRegex}(\s+{PastSuffixRegex})))\b";
       public static readonly string NextDateRegex = $@"\b(({WeekDayRegex}(\s+{NextSuffixRegex}))|({WeekDayRegex}(\s*(de)?\s*la\s*semaine\s+{NextSuffixRegex})))\b";
-      public const string SpecialDayRegex = @"\b(avant[\s|-]hier|apr[eè]s(-demain|\s*demain)|(le\s)?jour suivant|(le\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\b";
+      public const string SpecialDayRegex = @"\b(avant[\s|-]hier|apr[eè]s(-demain|\s*demain)|(le\s)?jour suivant|(le\s+)?dernier jour|hier|lendemain|demain|(de\s)?la journ[ée]e|aujourd'hui)\b";
       public const string SpecialDayWithNumRegex = @"^[.]";
       public const string StrictWeekDay = @"\b(?<weekday>dim(anche)?|lun(di)?|mar(di)?|mer(credi)?|jeu(di)?|ven(dredi)?|sam(edi)?)s?\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>le\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\b";
@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s*-\s*){MonthRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
-      public static readonly string DateExtractor6 = $@"(?<=\b(le|sur|sur l[ae])\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b";
+      public static readonly string DateExtractor6 = $@"(?<=\b(le|sur(\sl[ae])?)\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b";
       public static readonly string DateExtractor7 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
       public static readonly string DateExtractor8 = $@"(?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}\b";
       public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
@@ -212,7 +212,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string NextPrefixRegex = @".^";
       public const string PastPrefixRegex = @".^";
       public const string PreviousPrefixRegex = @".^";
-      public const string RelativeDayRegex = @"^[\.]";
+      public const string RelativeDayRegex = @"\b(((la\s+)?{RelativeRegex}\s+journ[ée]e))\b";
       public const string ConnectorRegex = @"^(,|pour|t|vers)$";
       public const string ConnectorAndRegex = @"\b(et\s*(le|las?)?)\b.+";
       public const string FromRegex = @"((de|du)?)$";

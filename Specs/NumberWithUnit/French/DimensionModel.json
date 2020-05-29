@@ -699,5 +699,33 @@
         "End": 41
       }
     ]
+  },
+  {
+    "Input": "M. Kersaudy veut porter plainte.",
+    "Results": []
+  },
+  {
+    "Input": "M . Kersaudy veut porter plainte.",
+    "Results": []
+  },
+  {
+    "Input": "m",
+    "Comment": "Exact unit match to the input should be supported always",
+    "Results": [
+      {
+        "Text": "m",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Mètres"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "nous chantons l'internationale",
+    "Results": []
   }
 ]

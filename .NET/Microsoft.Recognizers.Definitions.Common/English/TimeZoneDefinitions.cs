@@ -333,7 +333,9 @@ namespace Microsoft.Recognizers.Definitions.English
             @"Pacific",
             @"Eastern"
         };
-      public const string LocationTimeSuffixRegex = @"((\s+|-)(timezone|time)\b)";
+      public const string BaseTimeZoneSuffixRegex = @"((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?";
+      public static readonly string LocationTimeSuffixRegex = $@"({BaseTimeZoneSuffixRegex})\b";
+      public static readonly string TimeZoneEndRegex = $@"({BaseTimeZoneSuffixRegex})$";
       public static readonly IList<string> AmbiguousTimezoneList = new List<string>
         {
             @"bit",

@@ -439,7 +439,6 @@ AmbiguousDimensionUnitList: !list
      - mi
      - barils
      - grain
-     - l
      - pierre
      - fps
      - pts
@@ -471,17 +470,13 @@ AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
     - m
+    - m.
     - yard
     - yards
     - pm
+    - pouce
     - pt
     - pts
-AmbuguousLengthUnitList: !list
-  types: [ string ]
-  entries:
-    - m
-    - pouce
-    - pm
 #SpeecExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
@@ -499,10 +494,10 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Kelvin: k|K|kelvin
-    F: °f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit
+    F: °f|° f|degres f|degrés f|deg f|degrés fahrenheit|degres fahrenheit|fahrenheit|deg fahrenheit|degs fahrenheit
     R: rankine|°r|° r
-    C: °c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade
-    Degré: degrés|degres|deg.|°| °|degré|degre|deg
+    C: °c|° c|degres c|degrés c|deg c|degrés celsius|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade
+    Degré: degrés|degres|deg.|°|degré|degre|deg|degs
 #VolumeExtractorConfiguration
 VolumeSuffixList: !dictionary
   types: [ string, string ]
@@ -524,13 +519,8 @@ VolumeSuffixList: !dictionary
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
-    - ounce
     - oz
     - l
-    - cup
-    - peck
-    - cord
-    - gill
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
@@ -546,8 +536,6 @@ AmbiguousWeightUnitList: !list
   entries:
     - g
     - oz
-    - stone
-    - dram
 #Additional config
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]

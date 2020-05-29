@@ -511,7 +511,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Teaspoon", @"teelöffel|teeloeffel" },
             { @"Tablespoon", @"esslöffel|essloeffel" },
             { @"Pint", @"pinte" },
-            { @"Volume unit", @"fluid dram|Fluid drachm|Flüssigdrachme|Gill|Quart|Minim|Barrel|Cord|Peck|Beck|Scheffel|Hogshead|Oxhoft" }
+            { @"Volume unit", @"fluid dram|fluid drachm|flüssigdrachme|gill|quart|minim|cord|peck|beck|scheffel|hogshead|oxhoft" }
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
@@ -542,6 +542,10 @@ namespace Microsoft.Recognizers.Definitions.German
             @"oz",
             @"stone",
             @"dram"
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

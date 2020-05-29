@@ -27,5 +27,6 @@ namespace Microsoft.Recognizers.Definitions
       public static readonly string PmNonUnitRegex = $@"({HourRegex}\s*:\s*{MinuteRegex}(\s*:\s*{SecondRegex})?\s*pm)";
       public const string AmbiguousTimeTerm = @"pm";
       public const string AmbiguousUnitNumberMultiplierRegex = @"(\s([Kk]|mil))";
+      public const string SingleCharUnitRegex = @"^\b(c|f|g|k|l|m|s)(\s*\.|\b)$";
     }
 }

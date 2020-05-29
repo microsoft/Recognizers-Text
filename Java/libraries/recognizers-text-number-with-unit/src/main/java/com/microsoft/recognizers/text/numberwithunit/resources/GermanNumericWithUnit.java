@@ -425,7 +425,7 @@ public class GermanNumericWithUnit {
         .put("Teaspoon", "teelöffel|teeloeffel")
         .put("Tablespoon", "esslöffel|essloeffel")
         .put("Pint", "pinte")
-        .put("Volume unit", "fluid dram|Fluid drachm|Flüssigdrachme|Gill|Quart|Minim|Barrel|Cord|Peck|Beck|Scheffel|Hogshead|Oxhoft")
+        .put("Volume unit", "fluid dram|fluid drachm|flüssigdrachme|gill|quart|minim|cord|peck|beck|scheffel|hogshead|oxhoft")
         .build();
 
     public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "unze", "oz", "cup", "peck", "cord", "gill");
@@ -444,4 +444,8 @@ public class GermanNumericWithUnit {
         .build();
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
+        .build();
 }

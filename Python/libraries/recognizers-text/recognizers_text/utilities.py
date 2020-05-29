@@ -1,6 +1,6 @@
 import re
 import unicodedata
-from typing import Pattern, Union, List, Match
+from typing import Pattern, Union, List, Match, Dict
 import regex
 from emoji import UNICODE_EMOJI
 from multipledispatch import dispatch
@@ -223,6 +223,21 @@ class QueryProcessor:
         # NFC indicates that a Unicode string is normalized using full canonical decomposition,
         # followed by the replacement of sequences with their primary composites, if possible.
         return str(unicodedata.normalize('NFC', chars)).lower()
+
+
+class DefinitionLoader:
+
+    @staticmethod
+    def load_ambiguity_filters(filters: Dict[str, str]) -> Dict[Pattern, Pattern]:
+
+        ambiguity_filters_dict = dict()
+
+        for k, v in filters.items():
+
+            if not "null" == k:
+                ambiguity_filters_dict[RegExpUtility.get_safe_reg_exp(k)] = RegExpUtility.get_safe_reg_exp(v)
+
+        return ambiguity_filters_dict
 
 
 def flatten(result):
