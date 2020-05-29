@@ -1545,6 +1545,7 @@
   },
   {
     "Input": "0은 영이다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1565,6 +1566,7 @@
   },
   {
     "Input": "5/17/2018에 만날까요?",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1592,6 +1594,7 @@
   },
   {
     "Input": "내 전화번호는 +1-222-2222/2222입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3946,8 +3949,6 @@
     "Input": "셋에 출발하시면 됩니다",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "셋",
@@ -3965,8 +3966,6 @@
     "Input": "하나만 주세요",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "하나",
@@ -4001,8 +4000,6 @@
     "Input": "일흔 살",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "일흔",
@@ -4017,11 +4014,9 @@
     ]
   },
   {
-    "Input": "이 곱하기 십삼은 이십육이다",
+    "Input": "내가 가장 좋아하는 숫자는 이십육이다",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "이십육",
@@ -4030,8 +4025,8 @@
           "subtype": "integer",
           "value": "26"
         },
-        "Start": 10,
-        "End": 12
+        "Start": 15,
+        "End": 17
       }
     ]
   },
@@ -4039,8 +4034,6 @@
     "Input": "사과 세개",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "세",

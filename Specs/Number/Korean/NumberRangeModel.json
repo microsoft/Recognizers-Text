@@ -133,10 +133,8 @@
   },
   {
     "Input": "이 숫자는 100보다 크고 300보다 작다.",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "100보다 크고 300보다 작다",
@@ -197,10 +195,8 @@
   },
   {
     "Input": "숫자의 범위는 20부터 100까지 이다.",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "20부터 100까지",
@@ -513,10 +509,8 @@
   },
   {
     "Input": "x는 10보다 크고 20보다 작다. y는 50 이하, 20 이상이다.",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10보다 크고 20보다 작다",
@@ -825,10 +819,7 @@
   },
   {
     "Input": "이 숫자는 이십 초과 삼십오 이하이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "이십 초과 삼십오 이하",
@@ -860,9 +851,7 @@
   {
     "Input": "그는 십위와 십오위 사이에 있다",
     "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "십위와 십오위 사이",
@@ -912,9 +901,7 @@
   {
     "Input": "이 숫자는 백 이상, 삼백 이하이다",
     "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "백 이상, 삼백 이하",
@@ -959,10 +946,7 @@
   },
   {
     "Input": "이 수의 범위는 천에서 천오백까지이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "천에서 천오백까지",
@@ -1339,9 +1323,7 @@
   {
     "Input": "그의 점수는 5000과 같거나 그보다 많다",
     "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "5000과 같거나 그보다 많다",
@@ -1606,10 +1588,7 @@
   },
   {
     "Input": "그 수는 200에서부터 2008분의 3000000까지이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "200에서부터 2008분의 3000000까지",
@@ -1657,10 +1636,7 @@
   },
   {
     "Input": "닛산 모터 회사는 700에 달하는 계약직 노동자를 해고할 계획이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "700에 달하는",
@@ -1675,10 +1651,7 @@
   },
   {
     "Input": "700에 달하는 것이 >700으로 인식되어서는 안된다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "700에 달하는",
@@ -1720,10 +1693,7 @@
   },
   {
     "Input": "이 수는 1000보다 크고 1500보다 작다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1000보다 크고 1500보다 작다",
@@ -1851,9 +1821,7 @@
   {
     "Input": "그의 점수는 30이거나 최소 30이다",
     "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "30이거나 최소 30",
@@ -1884,10 +1852,7 @@
   },
   {
     "Input": "3000을 초과하는 기준",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "3000을 초과하는",
