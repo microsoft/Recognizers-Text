@@ -104,8 +104,8 @@ class SpanishDateTime:
     DateExtractor9 = f'\\b{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*|\\s+de\\s+){DateYearRegex})?\\b'
     DateExtractor10 = f'\\b{YearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     HourNumRegex = f'\\b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\\b'
-    MinuteNumRegex = f'(?<minnum>un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)'
-    DeltaMinuteNumRegex = f'(?<deltaminnum>un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)'
+    MinuteNumRegex = f'(?<minnum>uno?|d[óo]s|tr[eé]s|cuatro|cinco|s[eé]is|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)'
+    DeltaMinuteNumRegex = f'(?<deltaminnum>uno?|d[óo]s|tr[eé]s|cuatro|cinco|s[eé]is|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)'
     OclockRegex = f'(?<oclock>en\\s+punto)'
     PmRegex = f'(?<pm>((por|de|a|en)\\s+la)\\s+(tarde|noche))'
     AmRegex = f'(?<am>((por|de|a|en)\\s+la)\\s+(mañana|madrugada))'
@@ -113,7 +113,7 @@ class SpanishDateTime:
     PmTimeRegex = f'(?<pm>(esta|(por|de|a|en)\\s+la)\\s+(tarde|noche))'
     LessThanOneHour = f'(?<lth>((\\s+y\\s+)?cuarto|(\\s*)menos cuarto|(\\s+y\\s+)media|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutos?|mins?))|{DeltaMinuteNumRegex}(\\s+(minutos?|mins?))))'
     TensTimeRegex = f'(?<tens>diez|veint(i|e)|treinta|cuarenta|cincuenta)'
-    WrittenTimeRegex = f'(?<writtentime>{HourNumRegex}\\s*((y|menos)\\s+)?({MinuteNumRegex}|({TensTimeRegex}((\\s*y\\s+)?{MinuteNumRegex})?)))'
+    WrittenTimeRegex = f'(?<writtentime>{HourNumRegex}\\s*((y|menos)\\s+)?(({TensTimeRegex}(\\s*y\\s+)?)?{MinuteNumRegex}))'
     TimePrefix = f'(?<prefix>{LessThanOneHour}(\\s+(pasad[ao]s)\\s+(de\\s+las|las)?|\\s+(para|antes\\s+de)?\\s+(las?))?)'
     TimeSuffix = f'(?<suffix>({LessThanOneHour}\\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))'
     BasicTime = f'(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})'
@@ -127,9 +127,9 @@ class SpanishDateTime:
     TimeRegex6 = f'({BasicTime}(\\s*{DescRegex})?\\s+{TimeSuffix}\\b)'
     TimeRegex7 = f'\\b{TimeSuffix}\\s+a\\s+las\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
     TimeRegex8 = f'\\b{TimeSuffix}\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
-    TimeRegex9 = f'\\b(?<writtentime>{HourNumRegex}\\s+({TensTimeRegex}\\s*)?(y\\s+)?{MinuteNumRegex}?)\\b'
+    TimeRegex9 = f'\\b(?<writtentime>{HourNumRegex}\\s+({TensTimeRegex}\\s*)(y\\s+)?{MinuteNumRegex}?)\\b'
     TimeRegex10 = f'(a\\s+la|al)\\s+(madrugada|mañana|medio\\s*d[ií]a|tarde|noche)'
-    TimeRegex11 = f'\\b({WrittenTimeRegex})({DescRegex}?)\\b'
+    TimeRegex11 = f'\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b'
     TimeRegex12 = f'(\\b{TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
     PrepositionRegex = f'\\b(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b'
     NowRegex = f'\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente)\\b'
@@ -352,10 +352,13 @@ class SpanishDateTime:
                     ("una", 1),
                     ("uno", 1),
                     ("dos", 2),
+                    ("dós", 2),
                     ("tres", 3),
+                    ("trés", 3),
                     ("cuatro", 4),
                     ("cinco", 5),
                     ("seis", 6),
+                    ("séis", 6),
                     ("siete", 7),
                     ("ocho", 8),
                     ("nueve", 9),
@@ -373,6 +376,7 @@ class SpanishDateTime:
                     ("dieciocho", 18),
                     ("diecinueve", 19),
                     ("veinte", 20),
+                    ("veinti", 20),
                     ("ventiuna", 21),
                     ("ventiuno", 21),
                     ("veintiun", 21),
@@ -390,7 +394,9 @@ class SpanishDateTime:
                     ("veintisiete", 27),
                     ("veintiocho", 28),
                     ("veintinueve", 29),
-                    ("treinta", 30)])
+                    ("treinta", 30),
+                    ("cuarenta", 40),
+                    ("cincuenta", 50)])
     HolidayNames = dict([("padres", ["diadelpadre"]),
                          ("madres", ["diadelamadre"]),
                          ("acciondegracias", ["diadegracias", "diadeacciondegracias", "acciondegracias"]),
@@ -417,7 +423,7 @@ class SpanishDateTime:
     DateTokenPrefix = 'en '
     TimeTokenPrefix = 'a las '
     TokenBeforeDate = 'el '
-    TokenBeforeTime = 'la '
+    TokenBeforeTime = 'a las '
     UpcomingPrefixRegex = f'.^'
     NextPrefixRegex = f'(pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\\b'
     PastPrefixRegex = f'.^'

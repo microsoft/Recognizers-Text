@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -85,11 +86,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 foreach (Match match in matches)
                 {
-                    // @TODO Remove after time regex reviews across languages
-                    // Workaround to avoid incorrect partial-only matches
+                    // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
                     var lth = match.Groups["lth"].Value;
 
-                    if (string.IsNullOrEmpty(lth) || lth.Length != match.Length)
+                    if (string.IsNullOrEmpty(lth) ||
+                        (lth.Length != match.Length && !(match.Length == lth.Length + 1 && match.Value.EndsWith(" ", StringComparison.Ordinal))))
                     {
                         results.Add(new Token(match.Index, match.Index + match.Length));
                     }

@@ -14,5 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex IshRegex { get; }
 
         Regex TimeBeforeAfterRegex { get; }
+
+        string TimeTokenPrefix { get; }
+
     }
 }

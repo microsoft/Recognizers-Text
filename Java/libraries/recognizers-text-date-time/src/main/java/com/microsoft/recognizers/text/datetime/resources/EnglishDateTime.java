@@ -426,7 +426,7 @@ public class EnglishDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
-    public static final String TimePrefix = "(?<prefix>({LessThanOneHour} past|{LessThanOneHour} to))"
+    public static final String TimePrefix = "(?<prefix>{LessThanOneHour}\\s+(past|to))"
             .replace("{LessThanOneHour}", LessThanOneHour);
 
     public static final String TimeSuffix = "(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})"

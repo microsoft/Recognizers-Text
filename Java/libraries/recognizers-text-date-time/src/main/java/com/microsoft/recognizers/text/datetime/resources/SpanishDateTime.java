@@ -302,9 +302,9 @@ public class SpanishDateTime {
 
     public static final String HourNumRegex = "\\b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\\b";
 
-    public static final String MinuteNumRegex = "(?<minnum>un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
+    public static final String MinuteNumRegex = "(?<minnum>uno?|d[óo]s|tr[eé]s|cuatro|cinco|s[eé]is|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
 
-    public static final String DeltaMinuteNumRegex = "(?<deltaminnum>un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
+    public static final String DeltaMinuteNumRegex = "(?<deltaminnum>uno?|d[óo]s|tr[eé]s|cuatro|cinco|s[eé]is|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
 
     public static final String OclockRegex = "(?<oclock>en\\s+punto)";
 
@@ -322,7 +322,7 @@ public class SpanishDateTime {
 
     public static final String TensTimeRegex = "(?<tens>diez|veint(i|e)|treinta|cuarenta|cincuenta)";
 
-    public static final String WrittenTimeRegex = "(?<writtentime>{HourNumRegex}\\s*((y|menos)\\s+)?({MinuteNumRegex}|({TensTimeRegex}((\\s*y\\s+)?{MinuteNumRegex})?)))"
+    public static final String WrittenTimeRegex = "(?<writtentime>{HourNumRegex}\\s*((y|menos)\\s+)?(({TensTimeRegex}(\\s*y\\s+)?)?{MinuteNumRegex}))"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex)
             .replace("{TensTimeRegex}", TensTimeRegex);
@@ -403,14 +403,14 @@ public class SpanishDateTime {
             .replace("{BasicTime}", BasicTime)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String TimeRegex9 = "\\b(?<writtentime>{HourNumRegex}\\s+({TensTimeRegex}\\s*)?(y\\s+)?{MinuteNumRegex}?)\\b"
+    public static final String TimeRegex9 = "\\b(?<writtentime>{HourNumRegex}\\s+({TensTimeRegex}\\s*)(y\\s+)?{MinuteNumRegex}?)\\b"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{TensTimeRegex}", TensTimeRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
     public static final String TimeRegex10 = "(a\\s+la|al)\\s+(madrugada|mañana|medio\\s*d[ií]a|tarde|noche)";
 
-    public static final String TimeRegex11 = "\\b({WrittenTimeRegex})({DescRegex}?)\\b"
+    public static final String TimeRegex11 = "\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{DescRegex}", DescRegex);
 
@@ -807,10 +807,13 @@ public class SpanishDateTime {
         .put("una", 1)
         .put("uno", 1)
         .put("dos", 2)
+        .put("dós", 2)
         .put("tres", 3)
+        .put("trés", 3)
         .put("cuatro", 4)
         .put("cinco", 5)
         .put("seis", 6)
+        .put("séis", 6)
         .put("siete", 7)
         .put("ocho", 8)
         .put("nueve", 9)
@@ -828,6 +831,7 @@ public class SpanishDateTime {
         .put("dieciocho", 18)
         .put("diecinueve", 19)
         .put("veinte", 20)
+        .put("veinti", 20)
         .put("ventiuna", 21)
         .put("ventiuno", 21)
         .put("veintiun", 21)
@@ -846,6 +850,8 @@ public class SpanishDateTime {
         .put("veintiocho", 28)
         .put("veintinueve", 29)
         .put("treinta", 30)
+        .put("cuarenta", 40)
+        .put("cincuenta", 50)
         .build();
 
     public static final ImmutableMap<String, String[]> HolidayNames = ImmutableMap.<String, String[]>builder()
@@ -886,7 +892,7 @@ public class SpanishDateTime {
 
     public static final String TokenBeforeDate = "el ";
 
-    public static final String TokenBeforeTime = "la ";
+    public static final String TokenBeforeTime = "a las ";
 
     public static final String UpcomingPrefixRegex = ".^";
 

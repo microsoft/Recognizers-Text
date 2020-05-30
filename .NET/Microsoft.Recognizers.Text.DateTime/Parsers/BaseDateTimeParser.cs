@@ -160,10 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er2.Count == 0)
             {
                 // Here we filter out "morning, afternoon, night..." time entities
-                er2 = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + text, referenceTime);
+                var prefixToken = this.config.TokenBeforeTime;
+                er2 = this.config.TimeExtractor.Extract(prefixToken + text, referenceTime);
+
                 if (er2.Count == 1)
                 {
-                    er2[0].Start -= this.config.TokenBeforeTime.Length;
+                    er2[0].Start -= prefixToken.Length;
                 }
                 else if (er2.Count == 0)
                 {
@@ -327,10 +329,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var ers = this.config.TimeExtractor.Extract(trimmedText, referenceTime);
                 if (ers.Count != 1)
                 {
-                    ers = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + trimmedText, referenceTime);
+                    var prefixToken = this.config.TokenBeforeTime;
+                    ers = this.config.TimeExtractor.Extract(prefixToken + trimmedText, referenceTime);
+
                     if (ers.Count == 1)
                     {
-                        ers[0].Start -= this.config.TokenBeforeTime.Length;
+                        ers[0].Start -= prefixToken.Length;
                     }
                     else
                     {

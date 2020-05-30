@@ -111,8 +111,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+de\s+){DateYearRegex})?\b";
       public static readonly string DateExtractor10 = $@"\b{YearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public const string HourNumRegex = @"\b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\b";
-      public const string MinuteNumRegex = @"(?<minnum>un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
-      public const string DeltaMinuteNumRegex = @"(?<deltaminnum>un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
+      public const string MinuteNumRegex = @"(?<minnum>uno?|d[óo]s|tr[eé]s|cuatro|cinco|s[eé]is|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
+      public const string DeltaMinuteNumRegex = @"(?<deltaminnum>uno?|d[óo]s|tr[eé]s|cuatro|cinco|s[eé]is|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|treinta|cuarenta|cincuenta)";
       public const string OclockRegex = @"(?<oclock>en\s+punto)";
       public const string PmRegex = @"(?<pm>((por|de|a|en)\s+la)\s+(tarde|noche))";
       public const string AmRegex = @"(?<am>((por|de|a|en)\s+la)\s+(mañana|madrugada))";
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string PmTimeRegex = @"(?<pm>(esta|(por|de|a|en)\s+la)\s+(tarde|noche))";
       public static readonly string LessThanOneHour = $@"(?<lth>((\s+y\s+)?cuarto|(\s*)menos cuarto|(\s+y\s+)media|{BaseDateTime.DeltaMinuteRegex}(\s+(minutos?|mins?))|{DeltaMinuteNumRegex}(\s+(minutos?|mins?))))";
       public const string TensTimeRegex = @"(?<tens>diez|veint(i|e)|treinta|cuarenta|cincuenta)";
-      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s*((y|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*y\s+)?{MinuteNumRegex})?)))";
+      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s*((y|menos)\s+)?(({TensTimeRegex}(\s*y\s+)?)?{MinuteNumRegex}))";
       public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHour}(\s+(pasad[ao]s)\s+(de\s+las|las)?|\s+(para|antes\s+de)?\s+(las?))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
@@ -134,9 +134,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string TimeRegex6 = $@"({BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b)";
       public static readonly string TimeRegex7 = $@"\b{TimeSuffix}\s+a\s+las\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex8 = $@"\b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)";
-      public static readonly string TimeRegex9 = $@"\b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(y\s+)?{MinuteNumRegex}?)\b";
+      public static readonly string TimeRegex9 = $@"\b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(y\s+)?{MinuteNumRegex}?)\b";
       public const string TimeRegex10 = @"(a\s+la|al)\s+(madrugada|mañana|medio\s*d[ií]a|tarde|noche)";
-      public static readonly string TimeRegex11 = $@"\b({WrittenTimeRegex})({DescRegex}?)\b";
+      public static readonly string TimeRegex11 = $@"\b({WrittenTimeRegex})(\s+{DescRegex})?\b";
       public static readonly string TimeRegex12 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
       public const string PrepositionRegex = @"\b(?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)\b";
       public const string NowRegex = @"\b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente)\b";
@@ -385,10 +385,13 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"una", 1 },
             { @"uno", 1 },
             { @"dos", 2 },
+            { @"dós", 2 },
             { @"tres", 3 },
+            { @"trés", 3 },
             { @"cuatro", 4 },
             { @"cinco", 5 },
             { @"seis", 6 },
+            { @"séis", 6 },
             { @"siete", 7 },
             { @"ocho", 8 },
             { @"nueve", 9 },
@@ -406,6 +409,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"dieciocho", 18 },
             { @"diecinueve", 19 },
             { @"veinte", 20 },
+            { @"veinti", 20 },
             { @"ventiuna", 21 },
             { @"ventiuno", 21 },
             { @"veintiun", 21 },
@@ -423,7 +427,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"veintisiete", 27 },
             { @"veintiocho", 28 },
             { @"veintinueve", 29 },
-            { @"treinta", 30 }
+            { @"treinta", 30 },
+            { @"cuarenta", 40 },
+            { @"cincuenta", 50 }
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {
@@ -460,7 +466,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string DateTokenPrefix = @"en ";
       public const string TimeTokenPrefix = @"a las ";
       public const string TokenBeforeDate = @"el ";
-      public const string TokenBeforeTime = @"la ";
+      public const string TokenBeforeTime = @"a las ";
       public const string UpcomingPrefixRegex = @".^";
       public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\b";
       public const string PastPrefixRegex = @".^";
