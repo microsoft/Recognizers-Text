@@ -45,7 +45,7 @@ public class SpanishDateTime {
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
-    public static final String OfPrepositionRegex = "(d(o|a|el?))";
+    public static final String OfPrepositionRegex = "(\\bd(o|a|el?)\\b)";
 
     public static final String AfterNextSuffixRegex = "\\b(que\\s+viene|pasad[oa])\\b";
 
@@ -66,7 +66,7 @@ public class SpanishDateTime {
     public static final String WrittenOneToNinetyNineRegex = "(((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\\s+y\\s+{WrittenOneToNineRegex})?)|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)"
             .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
 
-    public static final String FullTextYearRegex = "(((dos\\s+)?mil)(\\s+{WrittenOneHundredToNineHundredRegex})?(\\s+{WrittenOneToNinetyNineRegex})?)"
+    public static final String FullTextYearRegex = "\\b(?<fullyear>((dos\\s+)?mil)(\\s+{WrittenOneHundredToNineHundredRegex})?(\\s+{WrittenOneToNinetyNineRegex})?)"
             .replace("{WrittenOneToNinetyNineRegex}", WrittenOneToNinetyNineRegex)
             .replace("{WrittenOneHundredToNineHundredRegex}", WrittenOneHundredToNineHundredRegex);
 
@@ -623,7 +623,7 @@ public class SpanishDateTime {
 
     public static final String ComplexDatePeriodRegex = "^[.]";
 
-    public static final String YearSuffix = "(,?\\s*({YearRegex}|{FullTextYearRegex}))"
+    public static final String YearSuffix = "((,|\\sde)?\\s*({YearRegex}|{FullTextYearRegex}))"
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 

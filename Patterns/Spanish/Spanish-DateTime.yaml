@@ -24,7 +24,7 @@ DescRegex: !nestedRegex
   def: (?<desc>({AmDescRegex}|{PmDescRegex}))
   references: [ AmDescRegex, PmDescRegex ]
 OfPrepositionRegex: !simpleRegex
-  def: (d(o|a|el?))
+  def: (\bd(o|a|el?)\b)
 AfterNextSuffixRegex: !simpleRegex
   def: \b(que\s+viene|pasad[oa])\b
 RangePrefixRegex: !simpleRegex
@@ -44,7 +44,7 @@ WrittenOneToNinetyNineRegex: !nestedRegex
   def: (((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\s+y\s+{WrittenOneToNineRegex})?)|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)
   references: [ WrittenOneToNineRegex ]
 FullTextYearRegex: !nestedRegex
-  def: (((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex})?(\s+{WrittenOneToNinetyNineRegex})?)
+  def: \b(?<fullyear>((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex})?(\s+{WrittenOneToNinetyNineRegex})?)
   references: [ WrittenOneToNinetyNineRegex, WrittenOneHundredToNineHundredRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
@@ -530,7 +530,7 @@ ComplexDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearSuffix: !nestedRegex
-  def: (,?\s*({YearRegex}|{FullTextYearRegex}))
+  def: ((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex

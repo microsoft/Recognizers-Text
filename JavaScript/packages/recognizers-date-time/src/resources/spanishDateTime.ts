@@ -21,7 +21,7 @@ export namespace SpanishDateTime {
     export const PmDescRegex = `(${BaseDateTime.BasePmDescRegex})`;
     export const AmPmDescRegex = `(${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(?<desc>(${AmDescRegex}|${PmDescRegex}))`;
-    export const OfPrepositionRegex = `(d(o|a|el?))`;
+    export const OfPrepositionRegex = `(\\bd(o|a|el?)\\b)`;
     export const AfterNextSuffixRegex = `\\b(que\\s+viene|pasad[oa])\\b`;
     export const RangePrefixRegex = `((de(sde)?|entre)\\s+(la(s)?\\s+)?)`;
     export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
@@ -30,7 +30,7 @@ export namespace SpanishDateTime {
     export const WrittenOneToNineRegex = `(un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)`;
     export const WrittenOneHundredToNineHundredRegex = `(doscient[oa]s|trescient[oa]s|cuatrocient[ao]s|quinient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|cien(to)?)`;
     export const WrittenOneToNinetyNineRegex = `(((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\\s+y\\s+${WrittenOneToNineRegex})?)|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)`;
-    export const FullTextYearRegex = `(((dos\\s+)?mil)(\\s+${WrittenOneHundredToNineHundredRegex})?(\\s+${WrittenOneToNinetyNineRegex})?)`;
+    export const FullTextYearRegex = `\\b(?<fullyear>((dos\\s+)?mil)(\\s+${WrittenOneHundredToNineHundredRegex})?(\\s+${WrittenOneToNinetyNineRegex})?)`;
     export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
     export const RelativeMonthRegex = `(?<relmonth>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+mes)|(mes\\s+((que\\s+viene)|pasado)))\\b`;
     export const MonthRegex = `\\b(?<month>abr(il)?|ago(sto)?|dic(iembre)?|feb(rero)?|ene(ro)?|ju[ln](io)?|mar(zo)?|mayo?|nov(iembre)?|oct(ubre)?|sep?t(iembre)?|sep)\\b`;
@@ -196,7 +196,7 @@ export namespace SpanishDateTime {
     export const DecadeWithCenturyRegex = `(los\\s+)?((((d[ée]cada(\\s+de)?)\\s+)(((?<century>\\d|1\\d|2\\d)?(?<decade>\\d0))))|a[ñn]os\\s+((((dos\\s+)?mil\\s+)?(${WrittenOneHundredToNineHundredRegex}\\s+)?${DecadeRegex})|((dos\\s+)?mil\\s+)?(${WrittenOneHundredToNineHundredRegex})(\\s+${DecadeRegex}?)|((dos\\s+)?mil)(\\s+${WrittenOneHundredToNineHundredRegex}\\s+)?${DecadeRegex}?))`;
     export const RelativeDecadeRegex = `\\b(((el|las?)\\s+)?${RelativeRegex}\\s+(((?<number>[\\d]+)|${WrittenOneToNineRegex})\\s+)?d[eé]cadas?)\\b`;
     export const ComplexDatePeriodRegex = `^[.]`;
-    export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
+    export const YearSuffix = `((,|\\sde)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
     export const AgoRegex = `\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes)\\b`;
     export const LaterRegex = `\\b(despu[eé]s|desde\\s+ahora|a\\s+partir\\s+de\\s+(?<day>hoy|ayer|mañana))\\b`;
     export const Tomorrow = 'mañana';

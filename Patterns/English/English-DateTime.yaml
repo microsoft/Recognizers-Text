@@ -83,6 +83,8 @@ AmPmDescRegex: !nestedRegex
 DescRegex: !nestedRegex
   def: (:?(:?({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
   references: [ OclockRegex, AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex ]
+OfPrepositionRegex: !simpleRegex
+  def: (\bof\b)
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
@@ -198,7 +200,7 @@ DateYearRegex: !nestedRegex
   def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
-  def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
+  def: ((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !nestedRegex
   def: (?<=\bon\s+)({DayRegex}s?)\b
