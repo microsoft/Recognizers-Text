@@ -23,14 +23,29 @@ AmPmDescRegex: !nestedRegex
 DescRegex: !nestedRegex
   def: (?<desc>({AmDescRegex}|{PmDescRegex}))
   references: [ AmDescRegex, PmDescRegex ]
+OfPrepositionRegex: !simpleRegex
+  def: (\bd(o|a|e)s?\b)
+AfterNextSuffixRegex: !simpleRegex
+  def: \b(que\s+vem|passad[oa])\b
 RangePrefixRegex: !simpleRegex
   def: ((de(sde)?|das?|entre)\s+(a(s)?\s+)?)
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
-FullTextYearRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[\*]
+RelativeRegex: !simpleRegex
+  def: (?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b
+StrictRelativeRegex: !simpleRegex
+  def: (?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b
+WrittenOneToNineRegex: !simpleRegex
+  def: (uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove)
+WrittenOneHundredToNineHundredRegex: !simpleRegex
+  def: (duzent[oa]s|trezent[oa]s|[cq]uatrocent[ao]s|quinhent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|cem|(?<!por\s+)(cento))
+WrittenOneToNinetyNineRegex: !nestedRegex
+  def: (((vinte|trinta|[cq]uarenta|cinquenta|sessenta|setenta|oitenta|noventa)(\s+e\s+{WrittenOneToNineRegex})?)|d[eé]z|onze|doze|treze|(c|qu)atorze|quinze|dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|uma?|d(oi|ua)s|tr[eê]s|quatro|cinco|seis|sete|oito|nove)
+  references: [ WrittenOneToNineRegex ]
+FullTextYearRegex: !nestedRegex
+  def: \b(?<fullyear>((dois\s+)?mil)((\s+e)?\s+{WrittenOneHundredToNineHundredRegex})?((\s+e)?\s+{WrittenOneToNinetyNineRegex})?)
+  references: [ WrittenOneToNinetyNineRegex, WrittenOneHundredToNineHundredRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
@@ -113,12 +128,6 @@ WithinNextPrefixRegex: !simpleRegex
 CenturySuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-RelativeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-StrictRelativeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
 FromRegex: !simpleRegex
   def: ((desde|de)(\s*a(s)?)?)$
 BetweenRegex: !simpleRegex
@@ -188,12 +197,12 @@ DateExtractor1: !nestedRegex
   references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor2: !nestedRegex
   # (domingo,)? 5 de Abril 5, 2016
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*([\.\-]|de)?\s*{MonthRegex}?(\s*(,|de)\s*){YearRegex}\b
-  references: [ MonthRegex, DayRegex, YearRegex, WeekDayRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*([\.\-]|de)?\s*{MonthRegex}(\s*(,|de)\s*){DateYearRegex}\b
+  references: [ MonthRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor3: !nestedRegex
   # (domingo,)? 6 de Abril
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*(,|de)\s*){YearRegex})?\b
-  references: [ DayRegex, MonthRegex, WeekDayRegex, YearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?\b
+  references: [ DayRegex, MonthRegex, WeekDayRegex, DateYearRegex ]
 # The final lookahead in DateExtractor4|5|10 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
   # 3-23-2017
@@ -255,7 +264,7 @@ TensTimeRegex: !simpleRegex
   def: (?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)
 WrittenTimeRegex: !nestedRegex
   # "seis e trinta", "seis e vinte um", "dez pras seis"
-  def: (?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?)))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))
+  def: (?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))
   references: [ HourNumRegex, MinuteNumRegex, TensTimeRegex, BaseDateTime.HourRegex ]
 TimePrefix: !nestedRegex
   def: (?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)
@@ -307,13 +316,13 @@ TimeRegex8: !nestedRegex
   references: [ TimeSuffix, BasicTime, DescRegex ]
 TimeRegex9: !nestedRegex
   # onze (e)? vinte e cinco
-  def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(e\s+)?{MinuteNumRegex}?)\b
+  def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(e\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
 TimeRegex10: !simpleRegex
   def: (\b([àa]|ao?)|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
 TimeRegex11: !nestedRegex
   # (tres menos vinte) (pm)?
-  def: \b({WrittenTimeRegex})({DescRegex}?)\b
+  def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
   references: [ WrittenTimeRegex, DescRegex ]
 TimeRegex12: !nestedRegex
   # (tres min depois das)? 3.00 (pm)?
@@ -858,7 +867,7 @@ RelativeDecadeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearSuffix: !nestedRegex
-  def: (,?\s*({YearRegex}|{FullTextYearRegex}))
+  def: ((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English

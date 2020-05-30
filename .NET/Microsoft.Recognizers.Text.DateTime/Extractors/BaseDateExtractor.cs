@@ -621,15 +621,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         private int GetYearIndex(string affix, ref int year, out bool success, bool inPrefix)
         {
             int index = 0;
+
             var matchYear = this.Config.YearSuffix.Match(affix);
-            success = !inPrefix ? matchYear.Success && matchYear.Index == 0 : matchYear.Success && matchYear.Index + matchYear.Length == affix.TrimEnd().Length;
+
+            success = !inPrefix ?
+                      matchYear.Success && matchYear.Index == 0 :
+                      matchYear.Success && matchYear.Index + matchYear.Length == affix.TrimEnd().Length;
+
             if (success)
             {
                 year = GetYearFromText(matchYear);
 
                 if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum)
                 {
-                    index = !inPrefix ? matchYear.Length : matchYear.Length + (affix.Length - affix.TrimEnd().Length);
+                    index = !inPrefix ?
+                            matchYear.Length :
+                            matchYear.Length + (affix.Length - affix.TrimEnd().Length);
                 }
             }
 

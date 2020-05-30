@@ -45,6 +45,7 @@ export namespace EnglishDateTime {
     export const PmDescRegex = `(:?${BaseDateTime.BasePmDescRegex})`;
     export const AmPmDescRegex = `(:?${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(:?(:?(${OclockRegex}\\s+)?(?<desc>(${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})))|${OclockRegex})`;
+    export const OfPrepositionRegex = `(\\bof\\b)`;
     export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
     export const YearRegex = `(?:${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
     export const WeekDayRegex = `\\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\\b`;
@@ -90,7 +91,7 @@ export namespace EnglishDateTime {
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const MonthRegex = `(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)`;
     export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|${TwoDigitYearRegex})`;
-    export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
+    export const YearSuffix = `((,|\\sof)?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
     export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>(3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))s?)\\b`;
     export const PrefixWeekDayRegex = `(\\s*((,?\\s*on)|[-—–]))`;
@@ -133,7 +134,7 @@ export namespace EnglishDateTime {
     export const CommonDatePrefixRegex = `^[\\.]`;
     export const LessThanOneHour = `(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|${BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?))|${DeltaMinuteNumRegex}(\\s+(minutes?|mins?)))`;
     export const WrittenTimeRegex = `(?<writtentime>${HourNumRegex}\\s+(${MinuteNumRegex}|(?<tens>twenty|thirty|fou?rty|fifty)\\s+${MinuteNumRegex}))`;
-    export const TimePrefix = `(?<prefix>(${LessThanOneHour} past|${LessThanOneHour} to))`;
+    export const TimePrefix = `(?<prefix>${LessThanOneHour}\\s+(past|to))`;
     export const TimeSuffix = `(?<suffix>${AmRegex}|${PmRegex}|${OclockRegex})`;
     export const TimeSuffixFull = `(?<suffix>${AmRegex}|${PmRegexFull}|${OclockRegex})`;
     export const BasicTime = `\\b(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex}(?![%\\d]))`;
