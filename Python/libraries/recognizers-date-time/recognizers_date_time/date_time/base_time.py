@@ -84,12 +84,35 @@ class BaseTimeExtractor(DateTimeExtractor):
 
         return result
 
+    @staticmethod
+    def lth_check(match: Match) -> bool:
+
+        result = False
+
+        match_val = match.group()
+
+        lth = None
+        if match.re.groupindex.keys().__contains__('lth'):
+            lth = match.group('lth')
+
+        if (lth is None) or (len(lth) != len(match_val) and not (len(match_val) == len(lth) + 1 and match_val.endswith(' '))):
+            result = True
+
+        if result is False:
+            print()
+
+        return result
+
     def basic_regex_match(self, source: str) -> []:
         from .utilities import Token
         result: List[Token] = list()
 
         for pattern in self.config.time_regex_list:
             matches = list(regex.finditer(pattern, source))
+
+            # @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
+            matches = list(filter(lambda match: self.lth_check(match), matches))
+
             result.extend(map(lambda x: Token(x.start(), x.end()), matches))
 
         return result

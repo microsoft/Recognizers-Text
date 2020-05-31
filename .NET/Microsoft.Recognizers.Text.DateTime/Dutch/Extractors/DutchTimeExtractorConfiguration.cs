@@ -143,5 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
     }
 }

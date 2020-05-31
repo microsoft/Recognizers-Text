@@ -139,5 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
     }
 }
