@@ -188,7 +188,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*개\s*백\s*분\s*점";
       public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d)({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({AllIntRegex}|{ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)([％%]|(퍼\s*센\s*트)|(프\s*로)|(퍼\s*센\s*티\s*지))(?!\d)";
       public const string TillRegex = @"(부터|에서|--|-|—|–|——|~)";
-      public const string MoreRegex = @"(초과|많|높|더많|더높|더크|>|넘는|초과이다|크고|(을 초과하는)|크)";
+      public const string MoreRegex = @"(초과|많|높|크|더많|더높|더크|넘는|초과이다|크고)";
       public const string LessRegex = @"(미만|적|낮|작|더적|더낮|더적|이하|이하이다|<|아래|작다)";
       public const string EqualRegex = @"(동일|같|=|(해당하는)|는|그와 같다)";
       public const string RangePrefixLessRegex = @"(까지최소|(?<!>|=)<|≤)";
