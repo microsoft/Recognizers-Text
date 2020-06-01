@@ -35,25 +35,13 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
     }
 
     basicRegexMatch(text: string): Token[] {
-
         let ret = [];
-
         this.config.timeRegexList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, text);
             matches.forEach(match => {
-
-                // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
-                let lth = match.groups("lth").value;
-
-                if (!lth ||
-                    (lth.length != match.length && !(match.length == lth.length + 1 && match.value.endsWith(" "))))
-                {
-
-                    ret.push(new Token(match.index, match.index + match.length));
-                }
+                ret.push(new Token(match.index, match.index + match.length));
             });
         });
-
         return ret;
     }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -24,11 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year = Constants.InvalidYear;
 
             var yearStr = match.Groups["year"].Value;
-            var writtenYearStr = match.Groups["fullyear"].Value;
-
-            if (!string.IsNullOrEmpty(yearStr) && !yearStr.Equals(writtenYearStr, StringComparison.Ordinal))
+            if (!string.IsNullOrEmpty(yearStr))
             {
-                year = int.Parse(yearStr, CultureInfo.InvariantCulture);
+                year = int.Parse(yearStr);
                 if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                 {
                     year += 1900;
@@ -78,30 +75,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         year = (firstTwoYearNum * 100) + lastTwoYearNum;
-                    }
-                }
-                else
-                {
-
-                    if (!string.IsNullOrEmpty(writtenYearStr))
-                    {
-                        var er = new ExtractResult
-                        {
-                            Text = writtenYearStr,
-                            Start = match.Groups["fullyear"].Index,
-                            Length = match.Groups["fullyear"].Length,
-                        };
-
-                        year = Convert.ToInt32((double)(this.Config.NumberParser.Parse(er).Value ?? 0));
-
-                        if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
-                        {
-                            year += 1900;
-                        }
-                        else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
-                        {
-                            year += 2000;
-                        }
                     }
                 }
             }

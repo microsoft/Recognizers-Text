@@ -27,11 +27,11 @@ public class PortugueseNumeric {
 
     public static final String HundredsNumberIntegerRegex = "(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))";
 
-    public static final String RoundNumberIntegerRegex = "(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))";
+    public static final String RoundNumberIntegerRegex = "(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)";
 
-    public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)";
+    public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)";
 
-    public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)";
+    public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)";
 
     public static final String TensNumberIntegerRegex = "(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)";
 

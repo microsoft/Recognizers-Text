@@ -112,8 +112,6 @@ public class EnglishDateTime {
             .replace("{AmPmDescRegex}", AmPmDescRegex)
             .replace("{SpecialDescRegex}", SpecialDescRegex);
 
-    public static final String OfPrepositionRegex = "(\\bof\\b)";
-
     public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
@@ -271,7 +269,7 @@ public class EnglishDateTime {
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
-    public static final String YearSuffix = "((,|\\sof)?\\s*({DateYearRegex}|{FullTextYearRegex}))"
+    public static final String YearSuffix = "(,?\\s*({DateYearRegex}|{FullTextYearRegex}))"
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
@@ -428,7 +426,7 @@ public class EnglishDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
-    public static final String TimePrefix = "(?<prefix>{LessThanOneHour}\\s+(past|to))"
+    public static final String TimePrefix = "(?<prefix>({LessThanOneHour} past|{LessThanOneHour} to))"
             .replace("{LessThanOneHour}", LessThanOneHour);
 
     public static final String TimeSuffix = "(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})"

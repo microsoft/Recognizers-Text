@@ -21,16 +21,9 @@ export namespace PortugueseDateTime {
     export const PmDescRegex = `(${BaseDateTime.BasePmDescRegex})`;
     export const AmPmDescRegex = `(${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(?<desc>(${AmDescRegex}|${PmDescRegex}))`;
-    export const OfPrepositionRegex = `(\\bd(o|a|e)s?\\b)`;
-    export const AfterNextSuffixRegex = `\\b(que\\s+vem|passad[oa])\\b`;
     export const RangePrefixRegex = `((de(sde)?|das?|entre)\\s+(a(s)?\\s+)?)`;
     export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
-    export const RelativeRegex = `(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b`;
-    export const StrictRelativeRegex = `(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b`;
-    export const WrittenOneToNineRegex = `(uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove)`;
-    export const WrittenOneHundredToNineHundredRegex = `(duzent[oa]s|trezent[oa]s|[cq]uatrocent[ao]s|quinhent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|cem|(?<!por\\s+)(cento))`;
-    export const WrittenOneToNinetyNineRegex = `(((vinte|trinta|[cq]uarenta|cinquenta|sessenta|setenta|oitenta|noventa)(\\s+e\\s+${WrittenOneToNineRegex})?)|d[eé]z|onze|doze|treze|(c|qu)atorze|quinze|dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|uma?|d(oi|ua)s|tr[eê]s|quatro|cinco|seis|sete|oito|nove)`;
-    export const FullTextYearRegex = `\\b(?<fullyear>((dois\\s+)?mil)((\\s+e)?\\s+${WrittenOneHundredToNineHundredRegex})?((\\s+e)?\\s+${WrittenOneToNinetyNineRegex})?)`;
+    export const FullTextYearRegex = `^[\\*]`;
     export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
     export const RelativeMonthRegex = `(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b`;
     export const MonthRegex = `(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)`;
@@ -62,6 +55,8 @@ export namespace PortugueseDateTime {
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `^[.]`;
     export const CenturySuffixRegex = `^[.]`;
+    export const RelativeRegex = `^[.]`;
+    export const StrictRelativeRegex = `^[.]`;
     export const FromRegex = `((desde|de)(\\s*a(s)?)?)$`;
     export const BetweenRegex = `(entre\\s*([oa](s)?)?)`;
     export const WeekDayRegex = `\\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\\b(\\.?(?=\\s|,|;|$)))`;
@@ -86,8 +81,8 @@ export namespace PortugueseDateTime {
     export const WeekDayStart = `^[\\.]`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?${MonthRegex}\\b`;
-    export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}\\s*([\\.\\-]|de)?\\s*${MonthRegex}(\\s*(,|de)\\s*)${DateYearRegex}\\b`;
-    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+de\\s+|\\s*-\\s*)${MonthRegex}((\\s+|\\s*(,|de)\\s*)${DateYearRegex})?\\b`;
+    export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}\\s*([\\.\\-]|de)?\\s*${MonthRegex}?(\\s*(,|de)\\s*)${YearRegex}\\b`;
+    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+de\\s+|\\s*-\\s*)${MonthRegex}((\\s+|\\s*(,|de)\\s*)${YearRegex})?\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor6 = `(?<=\\b(em|no|o)\\s+)${MonthNumRegex}[\\-\\.]${DayRegex}\\b`;
@@ -106,7 +101,7 @@ export namespace PortugueseDateTime {
     export const PmTimeRegex = `(?<pm>(([dn]?es[st]a|\\b[àa]\\b|(pela|de|da|na))\\s+(tarde|noite)))|((depois\\s+do|ap[óo]s\\s+o)\\s+(almo[çc]o|meio dia|meio-dia))`;
     export const LessThanOneHour = `(?<lth>((\\s+e\\s+)?(quinze|(um\\s+|dois\\s+|tr[êes]\\s+)?quartos?)|quinze|(\\s*)(um\\s+|dois\\s+|tr[êes]\\s+)?quartos?|(\\s+e\\s+)(meia|trinta)|${BaseDateTime.DeltaMinuteRegex}(\\s+(minuto|minutos|min|mins))|${DeltaMinuteNumRegex}(\\s+(minuto|minutos|min|mins))))`;
     export const TensTimeRegex = `(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)`;
-    export const WrittenTimeRegex = `(?<writtentime>(${HourNumRegex}\\s*((e|menos)\\s+)?(${MinuteNumRegex}|(${TensTimeRegex}((\\s*e\\s+)?${MinuteNumRegex}))))|((${MinuteNumRegex}|(${TensTimeRegex}((\\s*e\\s+)?${MinuteNumRegex})?))\\s*((para as|pras|antes da|antes das)\\s+)?(${HourNumRegex}|${BaseDateTime.HourRegex})))`;
+    export const WrittenTimeRegex = `(?<writtentime>(${HourNumRegex}\\s*((e|menos)\\s+)?(${MinuteNumRegex}|(${TensTimeRegex}((\\s*e\\s+)?${MinuteNumRegex})?)))|((${MinuteNumRegex}|(${TensTimeRegex}((\\s*e\\s+)?${MinuteNumRegex})?))\\s*((para as|pras|antes da|antes das)\\s+)?(${HourNumRegex}|${BaseDateTime.HourRegex})))`;
     export const TimePrefix = `(?<prefix>${LessThanOneHour}(\\s+(passad[ao]s)\\s+(as)?|\\s+depois\\s+(das?|do)|\\s+pras?|\\s+(para|antes)?\\s+([àa]s?))?)`;
     export const TimeSuffix = `(?<suffix>(${LessThanOneHour}\\s+)?(${AmRegex}|${PmRegex}|${OclockRegex}))`;
     export const BasicTime = `(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex})`;
@@ -120,9 +115,9 @@ export namespace PortugueseDateTime {
     export const TimeRegex6 = `(${BasicTime}(\\s*${DescRegex})?\\s+${TimeSuffix}\\b)`;
     export const TimeRegex7 = `\\b${TimeSuffix}\\s+[àa]s?\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
     export const TimeRegex8 = `\\b${TimeSuffix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
-    export const TimeRegex9 = `\\b(?<writtentime>${HourNumRegex}\\s+(${TensTimeRegex}\\s*)(e\\s+)?${MinuteNumRegex}?)\\b`;
+    export const TimeRegex9 = `\\b(?<writtentime>${HourNumRegex}\\s+(${TensTimeRegex}\\s*)?(e\\s+)?${MinuteNumRegex}?)\\b`;
     export const TimeRegex10 = `(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)`;
-    export const TimeRegex11 = `\\b(${WrittenTimeRegex})(\\s+${DescRegex})?\\b`;
+    export const TimeRegex11 = `\\b(${WrittenTimeRegex})(${DescRegex}?)\\b`;
     export const TimeRegex12 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
     export const PrepositionRegex = `(?<prep>([àa]s?|em|por|pelo|pela|no|na|de|d[oa]?)?$)`;
     export const NowRegex = `\\b(?<now>((logo|exatamente)\\s+)?agora(\\s+mesmo)?|neste\\s+momento|(assim\\s+que|t[ãa]o\\s+cedo\\s+quanto)\\s+(poss[ií]vel|possas?|possamos)|o\\s+mais\\s+(cedo|r[aá]pido)\\s+poss[íi]vel|recentemente|previamente)\\b`;
@@ -228,7 +223,7 @@ export namespace PortugueseDateTime {
     export const DecadeRegex = `^[.]`;
     export const DecadeWithCenturyRegex = `^[.]`;
     export const RelativeDecadeRegex = `^[.]`;
-    export const YearSuffix = `((,|\\sde)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
+    export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
     export const SuffixAfterRegex = `^[.]`;
     export const YearPeriodRegex = `^[.]`;
     export const FutureSuffixRegex = `^[.]`;

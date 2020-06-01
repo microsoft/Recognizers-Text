@@ -30,10 +30,6 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
         return self._cardinal_extractor
 
     @property
-    def date_extractor(self) -> DateTimeExtractor:
-        return self._date_extractor
-
-    @property
     def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
 
@@ -133,7 +129,6 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor
         self._cardinal_extractor = config.cardinal_extractor
-        self._date_extractor = config.date_extractor
         self._duration_extractor = config.duration_extractor
         self._number_parser = config.number_parser
         self._duration_parser = config.duration_parser

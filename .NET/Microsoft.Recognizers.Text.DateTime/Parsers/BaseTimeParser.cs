@@ -341,7 +341,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex += ":" + second.ToString("D2", CultureInfo.InvariantCulture);
             }
 
-            if (hour <= Constants.HalfDayHourCount && hour != 0 && !hasPm && !hasAm && !hasMid)
+            if (hour <= Constants.HalfDayHourCount && !hasPm && !hasAm && !hasMid)
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

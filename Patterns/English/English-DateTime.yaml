@@ -83,8 +83,6 @@ AmPmDescRegex: !nestedRegex
 DescRegex: !nestedRegex
   def: (:?(:?({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
   references: [ OclockRegex, AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex ]
-OfPrepositionRegex: !simpleRegex
-  def: (\bof\b)
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
@@ -200,7 +198,7 @@ DateYearRegex: !nestedRegex
   def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
-  def: ((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))
+  def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !nestedRegex
   def: (?<=\bon\s+)({DayRegex}s?)\b
@@ -319,7 +317,7 @@ WrittenTimeRegex: !nestedRegex
   def: (?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>{LessThanOneHour}\s+(past|to))
+  def: (?<prefix>({LessThanOneHour} past|{LessThanOneHour} to))
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})

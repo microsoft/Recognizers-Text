@@ -111,7 +111,6 @@ class Constants:
     WEEKDAY_GROUP_NAME = 'weekday'
     MONTH_GROUP_NAME = 'month'
     YEAR_GROUP_NAME = 'year'
-    FULL_YEAR_GROUP_NAME = 'fullyear'
     HOUR_NUM_GROUP_NAME = 'hournum'
     TENS_GROUP_NAME = 'tens'
 

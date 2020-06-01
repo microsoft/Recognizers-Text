@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+(माह|महि(ने|ना)|महीनों|महीने)(\s+(का|की|के))?)";
       public static readonly string WrittenMonthRegex = $@"\b({MonthRegex}(\s+(का|के|की)(\s+(माह|महि(ने|ना)))?)?)";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)";
-      public const string DateUnitRegex = @"(?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))";
+      public const string DateUnitRegex = @"(?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))";
       public const string DateTokenPrefix = @"को ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"को|की";
@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string SpecialDate = $@"({DayRegex}(?=\s*(को|पर)))";
       public const string DatePreposition = @"\b(को|में)";
       public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*,\s*|\s+(का|की|के|को)\s+){DateYearRegex}";
-      public static readonly string DateExtractor1 = $@"((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[\(,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\))?(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))";
+      public static readonly string DateExtractor1 = $@"((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))";
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+(का|की|के|को)\s+|\s*-\s*){MonthRegex}[\.]?((\s+|\s*,\s*|\s+में\s+){DateYearRegex})?";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
@@ -252,7 +252,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string AfterRegex = $@"((({InclusiveModPrepositions}\s*)?(((\s+)?के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
       public const string SinceRegex = @"(?:(?:\b(?:(से|के) बाद\s+(अथवा|या)\s+के बराबर|से|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b)|(?<!\w|<)(>=))";
       public const string AroundRegex = @"(?:\b(?:around|circa|लगभग|(के\s+)?आसपास))";
-      public const string AgoRegex = @"((?<day>(कल से पहले)|कल|आज)(\s+(से|के)\s*पहले)?|पहले)";
+      public const string AgoRegex = @"\b((?<day>कल|आज)(\s+(से|के)\s*पहले)|पहले)";
       public static readonly string LaterRegex = $@"\b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)";
       public const string InConnectorRegex = @"\b(में|को)";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
@@ -382,7 +382,6 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"हफ्तों", 604800 },
             { @"दिन", 86400 },
             { @"दिनों", 86400 },
-            { @"दिवस", 86400 },
             { @"ज", 86400 },
             { @"hours", 3600 },
             { @"घंटे", 3600 },
@@ -1434,16 +1433,14 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             @"tomorrow",
             @"tmr",
             @"day after",
-            @"कल",
-            @"कल से"
+            @"कल"
         };
       public static readonly IList<string> MinusOneDayTerms = new List<string>
         {
             @"yesterday",
             @"day before",
             @"कल",
-            @"कल वापस गया था",
-            @"कल से पहले"
+            @"कल वापस गया था"
         };
       public static readonly IList<string> PlusTwoDayTerms = new List<string>
         {

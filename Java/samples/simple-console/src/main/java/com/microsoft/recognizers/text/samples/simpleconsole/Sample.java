@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class Sample {
 
-    private static final String defaultCulture = Culture.Spanish;
+    private static final String defaultCulture = Culture.English;
 
     public static void main(String[] args) throws Exception {
         showIntro();

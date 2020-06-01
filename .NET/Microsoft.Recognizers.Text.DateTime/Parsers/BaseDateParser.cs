@@ -142,14 +142,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
             var trimmedText = text.Trim();
-
             foreach (var regex in this.config.DateRegexes)
             {
                 var offset = 0;
                 string relativeStr = null;
-
                 var match = regex.Match(trimmedText);
-
                 if (!match.Success)
                 {
                     match = regex.Match(this.config.DateTokenPrefix + trimmedText);
@@ -176,7 +173,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         // Value string will be set in Match2Date method
                         var ret = Match2Date(match, referenceDate, relativeStr);
-
                         return ret;
                     }
                 }
@@ -729,24 +725,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate, string relativeStr)
         {
             var ret = new DateTimeResolutionResult();
-            int month = 0, day = 0, year = 0;
 
             var monthStr = match.Groups["month"].Value;
             var dayStr = match.Groups["day"].Value;
-            var weekdayStr = match.Groups["weekday"].Value;
             var yearStr = match.Groups["year"].Value;
-            var writtenYear = match.Groups["fullyear"].Value;
+            var weekdayStr = match.Groups["weekday"].Value;
+            int month = 0, day = 0, year = 0;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
             {
                 month = this.config.MonthOfYear[monthStr];
                 day = this.config.DayOfMonth[dayStr];
-
-                if (!string.IsNullOrEmpty(writtenYear))
-                {
-                    year = this.config.DateExtractor.GetYearFromText(match);
-                }
-                else if (!string.IsNullOrEmpty(yearStr))
+                if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)

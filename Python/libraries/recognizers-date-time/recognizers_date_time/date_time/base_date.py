@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
-
 from recognizers_date_time.date_time.abstract_year_extractor import AbstractYearExtractor
 from datedelta import datedelta
 from recognizers_text.extractor import ExtractResult
@@ -689,7 +688,6 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
 
 class DateParserConfiguration(ABC):
-
     @property
     @abstractmethod
     def ordinal_extractor(self):
@@ -703,11 +701,6 @@ class DateParserConfiguration(ABC):
     @property
     @abstractmethod
     def cardinal_extractor(self):
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def date_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
@@ -844,7 +837,6 @@ class DateParserConfiguration(ABC):
 
 
 class BaseDateParser(DateTimeParser):
-
     @property
     def parser_type_name(self) -> str:
         return Constants.SYS_DATETIME_DATE
@@ -921,25 +913,19 @@ class BaseDateParser(DateTimeParser):
         from .utilities import DateTimeResolutionResult
         from .utilities import DateUtils
         from .utilities import DateTimeFormatUtil
-
         result = DateTimeResolutionResult()
+        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
+        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
+        day_str = RegExpUtility.get_group(match, Constants.DAY_GROUP_NAME)
         month = 0
         day = 0
         year = 0
 
-        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
-        written_year_str = RegExpUtility.get_group(match, Constants.FULL_YEAR_GROUP_NAME)
-        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
-        day_str = RegExpUtility.get_group(match, Constants.DAY_GROUP_NAME)
-
         if month_str in self.config.month_of_year and day_str in self.config.day_of_month:
-
             month = self.config.month_of_year.get(month_str)
             day = self.config.day_of_month.get(day_str)
 
-            if written_year_str:
-                year = self.config.date_extractor.get_year_from_text(match)
-            elif year_str:
+            if year_str:
                 year = int(year_str) if year_str.isnumeric() else 0
 
                 if 100 > year >= Constants.MIN_TWO_DIGIT_YEAR_PAST_NUM:

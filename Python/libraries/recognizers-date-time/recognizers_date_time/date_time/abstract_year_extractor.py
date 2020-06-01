@@ -18,22 +18,19 @@ class AbstractYearExtractor(DateExtractor):
         raise NotImplementedError
 
     def get_year_from_text(self, match: Match) -> int:
-
         year = Constants.INVALID_YEAR
 
-        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
-        written_year_str = RegExpUtility.get_group(match, Constants.FULL_YEAR_GROUP_NAME)
-
-        if year_str and not (str.isspace(year_str) or year_str is None) and not year_str == written_year_str:
-
+        year_str = RegExpUtility.get_group(
+            match, 'year')
+        if year_str and not (str.isspace(year_str) or year_str is None):
             year = int(year_str)
             if 100 > year >= Constants.MIN_TWO_DIGIT_YEAR_PAST_NUM:
                 year += 1900
             elif 0 <= year < Constants.MAX_TWO_DIGIT_YEAR_FUTURE_NUM:
                 year += 2000
         else:
-
-            first_two_year_num_str = RegExpUtility.get_group(match, Constants.FIRST_TWO_YEAR_NUM)
+            first_two_year_num_str = RegExpUtility.get_group(
+                match, Constants.FIRST_TWO_YEAR_NUM)
 
             if first_two_year_num_str and not (str.isspace(first_two_year_num_str) or first_two_year_num_str is None):
 
@@ -60,7 +57,6 @@ class AbstractYearExtractor(DateExtractor):
                     last_two_year_num = self.config.number_parser.parse(er).value if \
                         self.config.number_parser.parse(er).value else 0
 
-                # Exclude pure number like "nineteen", "twenty four"
                 if (first_two_year_num < 100 and last_two_year_num == 0)\
                         or (first_two_year_num < 100 and first_two_year_num % 10 == 0
                             and len(last_two_year_num_str.strip().split(' ')) == 1):
@@ -71,22 +67,5 @@ class AbstractYearExtractor(DateExtractor):
                     year = first_two_year_num + last_two_year_num
                 else:
                     year = (first_two_year_num * 100) + last_two_year_num
-
-            else:
-
-                if written_year_str and not (str.isspace(written_year_str) or written_year_str is None):
-
-                    er = ExtractResult()
-                    er.text = written_year_str
-                    er.start = match.string.index(RegExpUtility.get_group(match, Constants.FULL_YEAR_GROUP_NAME))
-                    er.length = len(RegExpUtility.get_group(match, Constants.FULL_YEAR_GROUP_NAME))
-
-                    year = self.config.number_parser.parse(er).value if \
-                        self.config.number_parser.parse(er).value else 0
-
-                    if 100 > year >= Constants.MIN_TWO_DIGIT_YEAR_PAST_NUM:
-                        year += 1900
-                    elif 0 <= year < Constants.MAX_TWO_DIGIT_YEAR_FUTURE_NUM:
-                        year += 2000
 
         return year
