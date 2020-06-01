@@ -118,6 +118,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                 { "holi", HoliDay },
                 { "diwali", DiwaliDay },
                 { "gandhijayanti", GandhiJayanti },
+                { "rakshabandhan", RakshaBandhanDay },
+                { "vaishakhi", VaishakhiDay },
             };
         }
 
@@ -217,5 +219,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
+        private static DateObject RakshaBandhanDay(int year) => HolidayFunctions.CalculateRakshaBandhanVaishakhiDate(year, isRakshabandhan: true);
+
+        private static DateObject VaishakhiDay(int year) => HolidayFunctions.CalculateRakshaBandhanVaishakhiDate(year, isRakshabandhan: false);
     }
 }
