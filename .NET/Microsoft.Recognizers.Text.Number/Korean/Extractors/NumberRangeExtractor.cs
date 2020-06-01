@@ -45,6 +45,10 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     NumberRangeConstants.TWONUMTILL
                 },
                 {
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex6, RegexFlags),
+                    NumberRangeConstants.TWONUMTILL
+                },
+                {
                     // ...이상|초과|많|높|크|더많|더높|더크|>
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
                     NumberRangeConstants.MORE
@@ -75,6 +79,15 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 {
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
                     NumberRangeConstants.EQUAL
+                },
+                {
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex4, RegexFlags),
+                    NumberRangeConstants.EQUAL
+                },
+                {
+                    // 700에 달하는
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex4, RegexFlags),
+                    NumberRangeConstants.LESS
                 },
         };
 
