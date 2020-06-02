@@ -10,8 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Holi an Diwali dates { year, (holy_month, holy_day, diwali_month, diwali_day) }
         // @TODO move declarations to base DateTime or implement lunar calculation
-        private static readonly IDictionary<int, IEnumerable<int>> HoliDiwaliDates =
-            Definitions.Hindi.DateTimeDefinitions.HoliDiwaliDates.ToImmutableDictionary();
+        private static readonly IDictionary<int, IEnumerable<int>> HoliDiwaliRakshabandhanBaisakhiDates =
+            Definitions.Hindi.DateTimeDefinitions.HoliDiwaliRakshabandhanBaisakhiDates.ToImmutableDictionary();
 
         public static DateObject CalculateHolidayByEaster(int year, int days = 0)
         {
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int month = 1;
             if (year >= 1900 && year < 2100)
             {
-                var dates = HoliDiwaliDates[year].ToImmutableList();
+                var dates = HoliDiwaliRakshabandhanBaisakhiDates[year].ToImmutableList();
                 if (isHoli)
                 {
                     month = dates[0];
@@ -77,5 +77,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             return DateObject.MinValue.SafeCreateFromValue(year, month, day);
         }
 
+        // Rakshabandhan and Vaishakhi also follow the lunar calendar
+        // their dates have been included in the dictionary HoliDiwaliDates
+        public static DateObject CalculateRakshaBandhanVaishakhiDate(int year, bool isRakshabandhan)
+        {
+            int day = 1;
+            int month = 1;
+            if (year >= 1900 && year < 2100)
+            {
+                var dates = HoliDiwaliRakshabandhanBaisakhiDates[year].ToImmutableList();
+                if (isRakshabandhan)
+                {
+                    month = dates[4];
+                    day = dates[5];
+                }
+                else
+                {
+                    month = dates[6];
+                    day = dates[7];
+                }
+            }
+
+            return DateObject.MinValue.SafeCreateFromValue(year, month, day);
+        }
     }
 }
