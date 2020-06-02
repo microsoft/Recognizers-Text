@@ -44,9 +44,9 @@ The table below summarizes the currently supported entities. Support for English
 | Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓      | ✓     | ✓       |
-| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
-| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
-| Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | **PA**  | :x:     | :x:    | :x:   | **PA**  |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
+| Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | **PA**  | PA/EO   | PA/EO  | :x:   | **PA**  |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SP** | ✓     | ✓       |
 | Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓     | ✓       | 
@@ -65,7 +65,7 @@ The table below summarizes the currently supported entities. Support for English
 | Number (cardinal)    | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
 | Ordinal              | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
 | Percentage           | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
-| Number Range         | :x:  | :x:     | ✓     | :x:    | PA/EO |         |        |        |        |         |
+| Number Range         | :x:  | :x:     | ✓     | ✓     | PA/EO |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
 | Unit - Currency      | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
 | Unit - Dimensions    | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 

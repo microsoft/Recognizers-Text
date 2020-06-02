@@ -509,4 +509,8 @@ public class SpanishNumericWithUnit {
         .put("Grano", "grano|granos")
         .put("Quilate", "ct|quilate|quilates")
         .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
+        .build();
 }

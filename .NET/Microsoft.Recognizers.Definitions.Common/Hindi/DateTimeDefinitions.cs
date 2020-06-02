@@ -60,19 +60,19 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string LastTwoYearNumRegex = $@"(?:(शून्य\s+)?{AllWrittenNumericalRegex}|{WrittenTensRegex}(\s+(और\s+)?){WrittenOneToNineRegex})";
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+सौ(\s+और)?))";
       public const string OclockRegex = @"(?<oclock>अराउंड|लगभग|बजे|ओक्लॉक|o\s*((’|‘|')\s*)?clock)";
-      public static readonly string AmDescRegex = $@"(?:{BaseDateTime.BaseAmDescRegex}|पू\.|पूर्वाहन|ए\.एम\.)";
-      public static readonly string PmDescRegex = $@"(:?{BaseDateTime.BasePmDescRegex}|अप\.|पीएम|अपराह्न|अपराहन)";
+      public static readonly string AmDescRegex = $@"(?:{BaseDateTime.BaseAmDescRegex}|पू\.|सुबह|पूर्वाहन|ए\.एम\.|एएम)";
+      public static readonly string PmDescRegex = $@"(:?{BaseDateTime.BasePmDescRegex}|अप\.|पीएम|पी\.एम\.|अपराह्न|अपराहन)";
       public static readonly string AmPmDescRegex = $@"(?:{BaseDateTime.BaseAmPmDescRegex})";
       public static readonly string DescRegex = $@"(?:(?:({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex})))|{OclockRegex})";
       public static readonly string DescRegexA = $@"(?:(?:({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|(?:{BaseDateTime.BaseAmDescRegex})|(?:{BaseDateTime.BasePmDescRegex}))))|{OclockRegex})";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))";
       public static readonly string YearRegex = $@"(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>(?:रवि|इत|एत|सोम|मंगल|म्गल|गुरु|((बृ|वृ)हस्पति)|वीर|शुक्र)(वार)?|बुध(वार)?|बीफ़े|शनि(वार)?|संडे|मंडे)";
       public const string SingleWeekDayRegex = @"\b(?<weekday>रविवार|इतवार|एतवार|शनिवार|संडे|मंडे|(?:सोम|मंगल|म्गल|गुरु|((बृ|वृ)हस्पति)|वीर|शुक्र)(वार)?|बुध(वार)?|बीफ़े|((शनि|रवि)(?<=को\s+)))\b";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+(माह|महि(ने|ना)|महीनों|महीने)(\s+(का|की|के))?)";
       public static readonly string WrittenMonthRegex = $@"\b({MonthRegex}(\s+(का|के|की)(\s+(माह|महि(ने|ना)))?)?)";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)";
-      public const string DateUnitRegex = @"(?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))";
+      public const string DateUnitRegex = @"(?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))";
       public const string DateTokenPrefix = @"को ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"को|की";
@@ -123,19 +123,19 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह){PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+((का|की|के)\s+)?(आखिरी|अंतिम)\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)))";
       public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह){PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+(का|की|के|को))?\s+(अगला|अगले|अगली|आने\s+वाले|आने\s+वाला)\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)))";
       public static readonly string SpecialDayRegex = $@"(?<!([\u0900-\u097f]))(परसों\s+वापस\s+गया\s+था|कल\s+वापस\s+गया\s+था|परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)";
-      public static readonly string SpecialDayWithNumRegex = $@"\b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन?)";
+      public static readonly string SpecialDayWithNumRegex = $@"\b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन(\s+(बाद)?))";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+दिन))";
       public const string SetWeekDayRegex = @"\b(?<prefix>को\s+)?(?<weekday>morning|afternoon|evening|night|रात|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
-      public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?({MonthSuffixRegex}\s+)(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+{WeekDayRegex})";
-      public static readonly string RelativeWeekDayRegex = $@"\b((अब\s+से|बाद)\s+{AllWrittenNumericalRegex}\s+{WeekDayRegex}\s+)";
+      public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?({MonthSuffixRegex}\s+)(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+(तारीख|{WeekDayRegex}))";
+      public static readonly string RelativeWeekDayRegex = $@"\b((अभी\s+से\s+अगले|अब\s+से|बाद|अगले)\s+{AllWrittenNumericalRegex}\s+{WeekDayRegex}(\s+के\s+बाद)?)";
       public static readonly string SpecialDate = $@"({DayRegex}(?=\s*(को|पर)))";
       public const string DatePreposition = @"\b(को|में)";
       public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*,\s*|\s+(का|की|के|को)\s+){DateYearRegex}";
-      public static readonly string DateExtractor1 = $@"((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))";
+      public static readonly string DateExtractor1 = $@"((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[\(,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\))?(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))";
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+(का|की|के|को)\s+|\s*-\s*){MonthRegex}[\.]?((\s+|\s*,\s*|\s+में\s+){DateYearRegex})?";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
-      public static readonly string DateExtractor6 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])";
+      public static readonly string DateExtractor6 = $@"({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])(?=\s+{DatePreposition})";
       public static readonly string DateExtractor7L = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])";
       public static readonly string DateExtractor7S = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])";
       public static readonly string DateExtractor8 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{DayRegex}[\\\-]{MonthNumRegex}(?![%])";
@@ -152,20 +152,20 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string DeltaMinuteNumRegex = @"(?<deltaminnum>शून्य|एक|दो|तीन|फ़ोर|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|अट्ठाईस|अट्ठाइस|उनतीस|तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस|चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|पैंतालिस|पेंतालिस|छियालीस|सैंतालीस|अड़तालीस|उनचास|पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी|ट्वेंटी|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|थर्टी|फ़ोर्टी|फ़िफ़्टी)";
       public const string PmRegex = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय|दोपहर\s+खाने\s+के\s+समय)";
       public const string PmRegexFull = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|अपराह्न|अपराहन|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)";
-      public const string AmRegex = @"(?<am>सवेरे|पूर्वाह्न|(सुबह|morning|दिन\s+के|पूर्वाहन)(\s*(-सुबह|(के|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|प्रातः)";
+      public const string AmRegex = @"(?<am>सवेरे|पूर्वाह्न|(सुबह(?!\s+(के\s+दौरान))|morning|दिन(?!\s+हैं)|पूर्वाहन|प्रातः)(\s*(-सुबह|(?:के|को|में|की)))?)";
       public const string LunchRegex = @"(खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)";
       public const string NightRegex = @"((आधी\s*(-\s*)?)?रात|अर्ध\s*(-\s*)?रात्रि)";
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"(?<lth>सवा|पौने|साढ़े|साढ़े|{BaseDateTime.DeltaMinuteRegex}(\s+(मिनट?|मि\.?|घण्टे))|{DeltaMinuteNumRegex}(\s+(मिनट?|मि\.?|घण्टे)))";
       public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>बीस|तीस|चालीस|पचास|twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))";
-      public static readonly string TimePrefix = $@"(?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले))?)";
+      public static readonly string TimePrefix = $@"(?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले|होने के\s+{MinuteNumRegex}\s+मिनट\s+बाद))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})";
       public static readonly string BasicTime = $@"\b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex}(?![%\d]))";
       public const string MidnightRegex = @"(?<midnight>आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|मध्य\s*रात्रि)";
       public const string MidmorningRegex = @"(?<midmorning>(मध्य|बीच)\s*(-\s*)?सुबह|दिन\s+चढ़ने\s+से\s+पूर्व)";
       public const string MidafternoonRegex = @"(?<midafternoon>देर\s*दोपहर|दोपहर(\s*(देर|के\s*आसपास))|भरी\s*दुपहरी)";
-      public const string MiddayRegex = @"(?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न)";
+      public const string MiddayRegex = @"(?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर\s+में|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न|दिन\s+(के\s+)?चढ़ते\s+ही|दिन\s+चढ़ने\s+पर)";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidafternoonRegex}|{MiddayRegex}|{MidnightRegex}|{MidmorningRegex}))";
       public static readonly string AtRegex = $@"\b(?:(?<=\bकी\s+)(?:{MidTimeRegex}|{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d))|{MidTimeRegex})";
       public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}((-|——)?ish|दोपहर(\s*((के\s*आसपास)|देर))?|(\s+बजे)?\s+के\s+आसपास)|लगभग\s+लंच\s+के\s+समय)";
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string SpecificTimeFromTo = $@"(?<![/\\\-\.\d])((?<leftDesc>{DescRegexA})\s*)?(?<time1>(({TimeRegex2A}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegexA}))?))\s*{TillRegex}\s*(?<rightDesc>{DescRegexA}\s*)?(?<time2>(({TimeRegex2A}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegexA}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegexA}))?))(?![/\\\-\.\d])(\s+{{RangePrefixRegex}})?";
       public static readonly string SpecificTimeBetweenAnd = $@"(?<![/\\\-\.\d])((?<leftDesc>{DescRegexA})\s*)?(?<time1>(({TimeRegex2A}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegexA}))?))\s*{RangeConnectorRegex}\s*(?<rightDesc>{DescRegexA}\s*)?(?<time2>(({TimeRegex2A}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegexA}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegexA}))?))(?![/\\\-\.\d])(\s+{RangePrefixRegex})?";
       public const string SuffixAfterRegex = @"\b(और\s+(above|after|बाद|greater)?(?!\s+than)?)\b";
-      public const string PrepositionRegex = @"(?<prep>^(at|(को|के),?|on|of)(\s+the)?$)";
+      public const string PrepositionRegex = @"(?<prep>^(at|(को|के),?|on|of)?(\s+the)?$)";
       public const string LaterEarlyRegex = @"((?<early>((को|की)\s+)?(जल्दी|तड़के|सुबह(?!\s+देर))(\s+से)?-?)|(?<late>((को|की)\s+)?(प्रहर\s+)?देर(\s+से)?-?))";
       public const string MealTimeRegex = @"\b(?<mealTime>खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)";
       public static readonly string UnspecificTimePeriodRegex = $@"({MealTimeRegex})";
@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(((को|की)\s+)?{PeriodTimeOfDayRegex}(\s+(को|की))?)(?![\u0900-\u097f])";
       public const string LessThanRegex = @"\b(से\s+(भी\s+)?कम(\s+समय)?)";
       public const string MoreThanRegex = @"\b(से\s+(ज़्यादा|ज्यादा))";
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे(\sऔर)?|कार्य\s?दिवस(\sऔर)?|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड|सेकेंड|sec(ond)?s?)";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे(\sऔर)?|कार्य\s?दिवस(\sऔर)?|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड्स|सेकंड|सेकेंड|sec(ond)?s?)";
       public const string SuffixAndRegex = @"(?<suffix>\s*(और)\s+((एक)?\s+)?(?<suffix_num>आधे|साढ़े|तिमाही)|(?<suffix_num>साढ़े|आधे|तिमाही))";
       public const string PeriodicRegex = @"\b(?<periodic>(?<daily>दैनिक|रोज़)|(?<monthly>मासिक)|(?<weekly>साप्ताहिक)|(?<yearly>वार्षिक|ऐनुअली\s+एक\s+बार|सालाना|सालान|साल\s+में\s+एक\s+बार)|(?<biweekly>हफ्ते\s+में\s+दो\s+बार))";
       public static readonly string EachUnitRegex = $@"(?<each>(प्रत्येक\s+से|हरेक|हर\s+तीसरे|हर(\s+एक)?|प्रति|रो(?=ज))(?<other>\s+other)?\s*(?!दिन\s+(सुबह|दोपहर|संध्या|रात)){DurationUnitRegex})";
@@ -239,29 +239,29 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string AllRegex = @"\b((?<all>(all|full|whole|पूरे|पूरा|सारा|सारे)(\s+|-))(?<unit>year|वर्ष|साल|month|माह|महीनों|महीना|महीने|week|सप्ताह|हफ्ते|हफ़्ते|हफ्ता|day|दिन)(\s+भर)?|(?<unit>year|वर्ष|साल|month|माह|महीनों|महीना|महीने|week|सप्ताह|हफ्ते|हफ़्ते|हफ्ता|day|दिन)(?<all>\s+भर))";
       public const string HalfRegex = @"((an?\s*)|\b)(?<half>(साढ़े|आधे|आधा)\s+(?<unit>year|वर्ष|साल|month|महीनों|महीने|week|(?!सप्ताहांत)सप्ताह|हफ़्ते|हफ्ते|day|दिनों|दिन|hour|घंटे|घण्टे|घंटा|आर्स))";
       public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
-      public static readonly string HolidayRegex1 = $@"\b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|नया\s+साल|नए\s+साल\s+की\s+शाम|नववर्ष\s+की\s+पूर्वसंध्या|न्यू\s+इयर\s+ईव|may\s*day|yuan dan|christmas eve|((christmas|xmas|क्रिसमस)(\s+के)?(\s+वाले)?(\s+(day|दिन))?)|गांधी\s+जयंती|black friday|ब्लैक\s+फ़्राइड|yuandan|ईस्टर(\s+(रवि|सोम|शनि)(वार)?)?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday|सायबर\s+मंडे)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?";
-      public static readonly string HolidayRegex2 = $@"\b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(thanks\s*giving|होली|दिवाली|all saint's|white lover|s(?:ain)?t?. (?:patrick|george)(?:')?(?:s)?|सेंट\s+पैट्रिक्स|us independence|ईस्टर( संडे)?|all hallow|all souls|guy fawkes|cinco de mayo|halloween|हैलोवीन|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+(day|दिन|डे))?|थैंक्स\s+गिविंग\s+के\s+दिन|थैंक्स\s*गिविंग)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?";
-      public static readonly string HolidayRegex3 = $@"\b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(?:independence|स्वतंत्रता|गणतंत्र|योग|presidents(?:')?|प्रेसिडेंट्स|mlk|martin luther king( jr)?|मार्टिन\s+लूथर\s+किंग|एम\.\s+एल\.\s+के\.|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|मजदूर|(international|int'l)\s+workers'?|mother's|mothers?|father's|फादर्स|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|पृथ्वी|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+(day|दिवस|डे))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?";
+      public static readonly string HolidayRegex1 = $@"\b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|नया\s+साल|नए\s+साल\s+की\s+शाम|नववर्ष\s+की\s+पूर्वसंध्या|न्यू\s+इयर\s+ईव|may\s*day|yuan dan|christmas eve|((christmas|xmas|क्रिसमस)(\s+के)?(\s+वाले)?(\s+(day|दिन))?)|गांधी\s+जयंती(\sके\s?दिन)?|black friday|ब्लैक\s+फ़्राइड|yuandan|ईस्टर(\s+(रवि|सोम|शनि)(वार)?)?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday|सायबर\s+मंडे)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?";
+      public static readonly string HolidayRegex2 = $@"\b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(thanks\s*giving|रक्षा(\s)?बंधन(\sके)?|होली|नवरा(त्रों|त्र)(\sके\s+पहले)?|वैशाखी|बैसाखी(\sहर\sसाल)?|दिवाली|all saint's|white lover|s(?:ain)?t?. (?:patrick|george)(?:')?(?:s)?|सेंट\s+पैट्रिक्स|us independence|ईस्टर( संडे)?|all hallow|all souls|guy fawkes|cinco de mayo|halloween|हैलोवीन|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+(day|दिन|डे))?|थैंक्स\s+गिविंग\s+के\s+दिन|थैंक्स\s*गिविंग)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?";
+      public static readonly string HolidayRegex3 = $@"\b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(?:independence|स्वतंत्रता|स्वतंत्रता|गणतंत्र|योग|presidents(?:')?|प्रेसिडेंट्स|mlk|martin luther king( jr)?|मार्टिन\s+लूथर\s+किंग|एम\.\s+एल\.\s+के\.|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|मजदूर|(अंतर्राष्ट्रीय|अंतरराष्ट्रीय)\s+मजदूर?|(international|int'l)\s+workers'?|श्रमिक|मई|mother's|mothers?|father's|फादर्स|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|पृथ्वी|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+(day|दिवस|डे))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?";
       public const string AMTimeRegex = @"(?<am>morning|सुबह)";
       public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night|दोपहर|शाम|रात)\b";
       public const string NowTimeRegex = @"(now|अब)";
       public const string RecentlyTimeRegex = @"(recently|previously|हाल\s+ही(\s+में)?|पहले(\s+से)?)";
-      public const string AsapTimeRegex = @"(as\s+soon\s+as\s+possible|asap|जल्द\s+से\s+जल्द)";
+      public const string AsapTimeRegex = @"(as\s+soon\s+as\s+possible|asap|ज़ल्दी\s+से\s+ज़ल्दी|जितनी\s+जल्दी\s+हो\s+सके|जल्द\s+से\s+जल्द)";
       public const string InclusiveModPrepositions = @"(?<include>((को|में|बीच में|in|से|पर|at)\s+(अथवा|या)\s+)|(\s+(अथवा|या)\s+(को|में|बीच में|in|से|पर)))";
-      public static readonly string BeforeRegex = $@"((\b({InclusiveModPrepositions}\s*)?(?:(((से|के)\s+)?पहले)|तक|पहले\s+से|(के|से)\s+पूर्व|(बाद में नही|पूर्व)\s+से|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as))(\s*{InclusiveModPrepositions})?\b)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?";
-      public static readonly string AfterRegex = $@"((\b({InclusiveModPrepositions}\s*)?((के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
+      public static readonly string BeforeRegex = $@"((({InclusiveModPrepositions}\s*)?\s*(?:(((से|के)\s+)?पहले(\s+नहीं)?)|तक|पहले\s+से|(के|से)\s+पूर्व|(बाद में नही|पूर्व)\s+से|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as))(\s*{InclusiveModPrepositions})?\b)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?";
+      public static readonly string AfterRegex = $@"((({InclusiveModPrepositions}\s*)?(((\s+)?के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
       public const string SinceRegex = @"(?:(?:\b(?:(से|के) बाद\s+(अथवा|या)\s+के बराबर|से|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b)|(?<!\w|<)(>=))";
       public const string AroundRegex = @"(?:\b(?:around|circa|लगभग|(के\s+)?आसपास))";
-      public const string AgoRegex = @"\b(पहले|(?<day>कल|आज)(\s+(से|के)\sपहले))";
-      public static readonly string LaterRegex = $@"\b(?:(?<day>अब\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से)";
+      public const string AgoRegex = @"((?<day>(कल से पहले)|कल|आज)(\s+(से|के)\s*पहले)?|पहले)";
+      public static readonly string LaterRegex = $@"\b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)";
       public const string InConnectorRegex = @"\b(में|को)";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
-      public static readonly string WithinNextPrefixRegex = $@"\b(((?<next>{NextPrefixRegex})\s+)?अंदर)";
+      public static readonly string WithinNextPrefixRegex = $@"\b(((?<next>{NextPrefixRegex}?के)\s+)?(अंदर|भीतर))";
       public static readonly string MorningStartEndRegex = $@"(^(सुबह|{AmDescRegex}))|((सुबह|{AmDescRegex})$)";
       public static readonly string AfternoonStartEndRegex = $@"(^(दोपहर|{PmDescRegex}))|((दोपहर|{PmDescRegex})$)";
       public const string EveningStartEndRegex = @"(^(शाम))|((शाम)$)";
       public const string NightStartEndRegex = @"(^(रातों|आज)?\s*रात)|((over|to)?रात$)";
-      public const string InexactNumberRegex = @"\b(कुछ|कई|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))";
+      public const string InexactNumberRegex = @"\b(कुछ|कई|कुछ ही|कुछेक|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"(?:(?:(?:{NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string RelativeDurationUnitRegex = $@"(?:(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
@@ -382,6 +382,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"हफ्तों", 604800 },
             { @"दिन", 86400 },
             { @"दिनों", 86400 },
+            { @"दिवस", 86400 },
             { @"ज", 86400 },
             { @"hours", 3600 },
             { @"घंटे", 3600 },
@@ -1087,7 +1088,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", @"stpatrick", @"सेंटपैट्रिक्सडे", @"सेंटपैट्रिक्स" } },
             { @"aprilfools", new string[] { @"aprilfools" } },
             { @"stgeorgeday", new string[] { @"stgeorgeday" } },
-            { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday", @"मजदूरदिवस" } },
+            { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday", @"मजदूरदिवस", @"श्रमिकदिवस", @"अंतर्राष्ट्रीयमजदूरदिवस", @"मईदिवस" } },
             { @"cincodemayoday", new string[] { @"cincodemayoday" } },
             { @"baptisteday", new string[] { @"baptisteday" } },
             { @"usindependenceday", new string[] { @"usindependenceday" } },
@@ -1099,210 +1100,212 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"guyfawkesday", new string[] { @"guyfawkesday" } },
             { @"veteransday", new string[] { @"veteransday" } },
             { @"christmaseve", new string[] { @"christmaseve" } },
-            { @"newyeareve", new string[] { @"newyearseve", @"newyeareve", @"नएसालकीशाम", @"नववर्षकीपूर्वसंध्या", @"न्यूइयरईव" } }
+            { @"newyeareve", new string[] { @"newyearseve", @"newyeareve", @"नएसालकीशाम", @"नववर्षकीपूर्वसंध्या", @"न्यूइयरईव" } },
+            { @"rakshabandhan", new string[] { @"रक्षाबंधनकेदिन", @"रक्षाबंधन" } },
+            { @"vaishakhi", new string[] { @"बैसाखीहरसाल", @"बैसाखी", @"वैशाखी" } }
         };
-      public static readonly Dictionary<int, IEnumerable<int>> HoliDiwaliDates = new Dictionary<int, IEnumerable<int>>
+      public static readonly Dictionary<int, IEnumerable<int>> HoliDiwaliRakshabandhanBaisakhiDates = new Dictionary<int, IEnumerable<int>>
         {
-            { 1900, new int[] { 3, 16, 10, 23 } },
-            { 1901, new int[] { 3, 05, 11, 11 } },
-            { 1902, new int[] { 3, 24, 10, 31 } },
-            { 1903, new int[] { 3, 13, 10, 20 } },
-            { 1904, new int[] { 3, 02, 11, 07 } },
-            { 1905, new int[] { 3, 21, 10, 28 } },
-            { 1906, new int[] { 3, 10, 10, 17 } },
-            { 1907, new int[] { 3, 29, 11, 05 } },
-            { 1908, new int[] { 3, 18, 10, 25 } },
-            { 1909, new int[] { 3, 07, 11, 13 } },
-            { 1910, new int[] { 3, 25, 11, 02 } },
-            { 1911, new int[] { 3, 14, 10, 22 } },
-            { 1912, new int[] { 3, 03, 11, 09 } },
-            { 1913, new int[] { 3, 22, 10, 29 } },
-            { 1914, new int[] { 3, 12, 10, 19 } },
-            { 1915, new int[] { 3, 01, 11, 07 } },
-            { 1916, new int[] { 3, 19, 10, 26 } },
-            { 1917, new int[] { 3, 08, 11, 14 } },
-            { 1918, new int[] { 3, 27, 11, 03 } },
-            { 1919, new int[] { 3, 16, 10, 23 } },
-            { 1920, new int[] { 3, 04, 11, 10 } },
-            { 1921, new int[] { 3, 23, 10, 30 } },
-            { 1922, new int[] { 3, 13, 10, 20 } },
-            { 1923, new int[] { 3, 03, 11, 08 } },
-            { 1924, new int[] { 3, 21, 10, 28 } },
-            { 1925, new int[] { 3, 10, 10, 17 } },
-            { 1926, new int[] { 3, 29, 11, 05 } },
-            { 1927, new int[] { 3, 18, 10, 25 } },
-            { 1928, new int[] { 3, 06, 11, 12 } },
-            { 1929, new int[] { 3, 25, 11, 01 } },
-            { 1930, new int[] { 3, 14, 10, 21 } },
-            { 1931, new int[] { 3, 04, 11, 09 } },
-            { 1932, new int[] { 3, 22, 10, 29 } },
-            { 1933, new int[] { 3, 12, 10, 19 } },
-            { 1934, new int[] { 3, 01, 11, 07 } },
-            { 1935, new int[] { 3, 20, 10, 27 } },
-            { 1936, new int[] { 3, 08, 11, 14 } },
-            { 1937, new int[] { 3, 26, 11, 03 } },
-            { 1938, new int[] { 3, 16, 10, 23 } },
-            { 1939, new int[] { 3, 05, 11, 11 } },
-            { 1940, new int[] { 3, 23, 10, 30 } },
-            { 1941, new int[] { 3, 13, 10, 20 } },
-            { 1942, new int[] { 3, 03, 11, 08 } },
-            { 1943, new int[] { 3, 21, 10, 29 } },
-            { 1944, new int[] { 3, 10, 10, 17 } },
-            { 1945, new int[] { 2, 26, 11, 04 } },
-            { 1946, new int[] { 3, 17, 10, 24 } },
-            { 1947, new int[] { 3, 07, 11, 12 } },
-            { 1948, new int[] { 3, 25, 11, 01 } },
-            { 1949, new int[] { 3, 14, 10, 21 } },
-            { 1950, new int[] { 3, 04, 11, 09 } },
-            { 1951, new int[] { 3, 23, 10, 30 } },
-            { 1952, new int[] { 3, 11, 10, 18 } },
-            { 1953, new int[] { 2, 28, 11, 06 } },
-            { 1954, new int[] { 3, 19, 10, 26 } },
-            { 1955, new int[] { 3, 08, 11, 14 } },
-            { 1956, new int[] { 3, 26, 11, 02 } },
-            { 1957, new int[] { 3, 16, 10, 23 } },
-            { 1958, new int[] { 3, 05, 11, 11 } },
-            { 1959, new int[] { 3, 24, 10, 31 } },
-            { 1960, new int[] { 3, 13, 10, 20 } },
-            { 1961, new int[] { 3, 02, 11, 08 } },
-            { 1962, new int[] { 3, 21, 10, 28 } },
-            { 1963, new int[] { 3, 10, 10, 17 } },
-            { 1964, new int[] { 3, 28, 11, 04 } },
-            { 1965, new int[] { 3, 17, 10, 24 } },
-            { 1966, new int[] { 3, 07, 11, 12 } },
-            { 1967, new int[] { 3, 26, 11, 02 } },
-            { 1968, new int[] { 3, 14, 10, 21 } },
-            { 1969, new int[] { 3, 04, 11, 09 } },
-            { 1970, new int[] { 3, 23, 10, 30 } },
-            { 1971, new int[] { 3, 12, 10, 19 } },
-            { 1972, new int[] { 2, 29, 11, 06 } },
-            { 1973, new int[] { 3, 18, 10, 26 } },
-            { 1974, new int[] { 3, 08, 11, 14 } },
-            { 1975, new int[] { 3, 27, 11, 03 } },
-            { 1976, new int[] { 3, 16, 10, 23 } },
-            { 1977, new int[] { 3, 05, 11, 11 } },
-            { 1978, new int[] { 3, 24, 10, 31 } },
-            { 1979, new int[] { 3, 13, 10, 21 } },
-            { 1980, new int[] { 3, 01, 11, 07 } },
-            { 1981, new int[] { 3, 20, 10, 27 } },
-            { 1982, new int[] { 3, 09, 11, 15 } },
-            { 1983, new int[] { 3, 28, 11, 04 } },
-            { 1984, new int[] { 3, 17, 10, 24 } },
-            { 1985, new int[] { 3, 07, 11, 12 } },
-            { 1986, new int[] { 3, 26, 11, 02 } },
-            { 1987, new int[] { 3, 15, 10, 22 } },
-            { 1988, new int[] { 3, 03, 11, 09 } },
-            { 1989, new int[] { 3, 22, 10, 29 } },
-            { 1990, new int[] { 3, 11, 10, 18 } },
-            { 1991, new int[] { 2, 28, 11, 06 } },
-            { 1992, new int[] { 3, 18, 10, 25 } },
-            { 1993, new int[] { 3, 08, 11, 13 } },
-            { 1994, new int[] { 3, 27, 11, 03 } },
-            { 1995, new int[] { 3, 17, 10, 24 } },
-            { 1996, new int[] { 3, 05, 11, 11 } },
-            { 1997, new int[] { 3, 24, 10, 31 } },
-            { 1998, new int[] { 3, 13, 10, 20 } },
-            { 1999, new int[] { 3, 02, 11, 08 } },
-            { 2000, new int[] { 3, 20, 10, 27 } },
-            { 2001, new int[] { 3, 09, 11, 15 } },
-            { 2002, new int[] { 3, 28, 11, 04 } },
-            { 2003, new int[] { 3, 18, 10, 25 } },
-            { 2004, new int[] { 3, 06, 11, 12 } },
-            { 2005, new int[] { 3, 25, 11, 02 } },
-            { 2006, new int[] { 3, 14, 10, 22 } },
-            { 2007, new int[] { 3, 03, 11, 09 } },
-            { 2008, new int[] { 3, 21, 10, 28 } },
-            { 2009, new int[] { 3, 11, 10, 18 } },
-            { 2010, new int[] { 2, 28, 11, 06 } },
-            { 2011, new int[] { 3, 19, 10, 26 } },
-            { 2012, new int[] { 3, 08, 11, 13 } },
-            { 2013, new int[] { 3, 27, 11, 03 } },
-            { 2014, new int[] { 3, 16, 10, 23 } },
-            { 2015, new int[] { 3, 05, 11, 11 } },
-            { 2016, new int[] { 3, 23, 10, 30 } },
-            { 2017, new int[] { 3, 12, 10, 19 } },
-            { 2018, new int[] { 3, 02, 11, 07 } },
-            { 2019, new int[] { 3, 21, 10, 28 } },
-            { 2020, new int[] { 3, 09, 11, 15 } },
-            { 2021, new int[] { 3, 28, 11, 04 } },
-            { 2022, new int[] { 3, 18, 10, 25 } },
-            { 2023, new int[] { 3, 07, 11, 13 } },
-            { 2024, new int[] { 3, 25, 11, 01 } },
-            { 2025, new int[] { 3, 14, 10, 21 } },
-            { 2026, new int[] { 3, 03, 11, 09 } },
-            { 2027, new int[] { 3, 22, 10, 29 } },
-            { 2028, new int[] { 3, 11, 10, 18 } },
-            { 2029, new int[] { 2, 28, 11, 06 } },
-            { 2030, new int[] { 3, 19, 10, 26 } },
-            { 2031, new int[] { 3, 09, 11, 14 } },
-            { 2032, new int[] { 3, 27, 11, 03 } },
-            { 2033, new int[] { 3, 16, 10, 23 } },
-            { 2034, new int[] { 3, 05, 11, 11 } },
-            { 2035, new int[] { 3, 23, 10, 31 } },
-            { 2036, new int[] { 3, 12, 10, 19 } },
-            { 2037, new int[] { 3, 01, 11, 07 } },
-            { 2038, new int[] { 3, 21, 10, 28 } },
-            { 2039, new int[] { 3, 10, 11, 16 } },
-            { 2040, new int[] { 3, 28, 11, 04 } },
-            { 2041, new int[] { 3, 17, 10, 25 } },
-            { 2042, new int[] { 3, 06, 11, 12 } },
-            { 2043, new int[] { 3, 25, 11, 01 } },
-            { 2044, new int[] { 3, 13, 10, 20 } },
-            { 2045, new int[] { 3, 03, 11, 08 } },
-            { 2046, new int[] { 3, 22, 10, 29 } },
-            { 2047, new int[] { 3, 12, 10, 19 } },
-            { 2048, new int[] { 2, 29, 11, 06 } },
-            { 2049, new int[] { 3, 19, 10, 26 } },
-            { 2050, new int[] { 3, 08, 11, 14 } },
-            { 2051, new int[] { 3, 27, 11, 03 } },
-            { 2052, new int[] { 3, 15, 10, 22 } },
-            { 2053, new int[] { 3, 04, 11, 10 } },
-            { 2054, new int[] { 3, 23, 10, 30 } },
-            { 2055, new int[] { 3, 13, 10, 20 } },
-            { 2056, new int[] { 3, 02, 11, 07 } },
-            { 2057, new int[] { 3, 21, 10, 28 } },
-            { 2058, new int[] { 3, 10, 11, 16 } },
-            { 2059, new int[] { 3, 29, 11, 05 } },
-            { 2060, new int[] { 3, 17, 10, 24 } },
-            { 2061, new int[] { 3, 06, 11, 12 } },
-            { 2062, new int[] { 3, 25, 11, 01 } },
-            { 2063, new int[] { 3, 14, 10, 21 } },
-            { 2064, new int[] { 3, 03, 11, 08 } },
-            { 2065, new int[] { 3, 22, 10, 29 } },
-            { 2066, new int[] { 3, 11, 10, 19 } },
-            { 2067, new int[] { 3, 01, 11, 06 } },
-            { 2068, new int[] { 3, 18, 10, 26 } },
-            { 2069, new int[] { 3, 07, 11, 13 } },
-            { 2070, new int[] { 3, 26, 11, 02 } },
-            { 2071, new int[] { 3, 16, 10, 23 } },
-            { 2072, new int[] { 3, 04, 11, 10 } },
-            { 2073, new int[] { 3, 23, 10, 30 } },
-            { 2074, new int[] { 3, 13, 10, 20 } },
-            { 2075, new int[] { 3, 02, 11, 08 } },
-            { 2076, new int[] { 3, 20, 10, 27 } },
-            { 2077, new int[] { 3, 09, 11, 15 } },
-            { 2078, new int[] { 3, 28, 11, 04 } },
-            { 2079, new int[] { 3, 17, 10, 24 } },
-            { 2080, new int[] { 3, 05, 11, 11 } },
-            { 2081, new int[] { 3, 25, 11, 01 } },
-            { 2082, new int[] { 3, 14, 10, 21 } },
-            { 2083, new int[] { 3, 04, 11, 09 } },
-            { 2084, new int[] { 3, 22, 10, 29 } },
-            { 2085, new int[] { 3, 11, 10, 18 } },
-            { 2086, new int[] { 2, 28, 11, 06 } },
-            { 2087, new int[] { 3, 19, 10, 26 } },
-            { 2088, new int[] { 3, 07, 11, 13 } },
-            { 2089, new int[] { 3, 26, 11, 02 } },
-            { 2090, new int[] { 3, 15, 10, 23 } },
-            { 2091, new int[] { 3, 05, 11, 11 } },
-            { 2092, new int[] { 3, 23, 10, 30 } },
-            { 2093, new int[] { 3, 13, 10, 20 } },
-            { 2094, new int[] { 3, 02, 11, 08 } },
-            { 2095, new int[] { 3, 21, 10, 28 } },
-            { 2096, new int[] { 3, 09, 11, 14 } },
-            { 2097, new int[] { 3, 27, 11, 04 } },
-            { 2098, new int[] { 3, 17, 10, 24 } },
-            { 2099, new int[] { 3, 06, 11, 12 } }
+            { 1900, new int[] { 3, 16, 10, 23, 8, 10, 4, 13 } },
+            { 1901, new int[] { 3, 05, 11, 11, 8, 29, 4, 13 } },
+            { 1902, new int[] { 3, 24, 10, 31, 8, 19, 4, 13 } },
+            { 1903, new int[] { 3, 13, 10, 20, 8, 08, 4, 13 } },
+            { 1904, new int[] { 3, 02, 11, 07, 8, 25, 4, 13 } },
+            { 1905, new int[] { 3, 21, 10, 28, 8, 15, 4, 13 } },
+            { 1906, new int[] { 3, 10, 10, 17, 8, 04, 4, 13 } },
+            { 1907, new int[] { 3, 29, 11, 05, 8, 23, 4, 13 } },
+            { 1908, new int[] { 3, 18, 10, 25, 8, 12, 4, 13 } },
+            { 1909, new int[] { 3, 07, 11, 13, 8, 31, 4, 13 } },
+            { 1910, new int[] { 3, 25, 11, 02, 8, 20, 4, 13 } },
+            { 1911, new int[] { 3, 14, 10, 22, 8, 09, 4, 13 } },
+            { 1912, new int[] { 3, 03, 11, 09, 8, 27, 4, 13 } },
+            { 1913, new int[] { 3, 22, 10, 29, 8, 16, 4, 13 } },
+            { 1914, new int[] { 3, 12, 10, 19, 8, 05, 4, 13 } },
+            { 1915, new int[] { 3, 01, 11, 07, 8, 24, 4, 13 } },
+            { 1916, new int[] { 3, 19, 10, 26, 8, 13, 4, 13 } },
+            { 1917, new int[] { 3, 08, 11, 14, 8, 03, 4, 13 } },
+            { 1918, new int[] { 3, 27, 11, 03, 8, 22, 4, 13 } },
+            { 1919, new int[] { 3, 16, 10, 23, 8, 11, 4, 13 } },
+            { 1920, new int[] { 3, 04, 11, 10, 8, 29, 4, 13 } },
+            { 1921, new int[] { 3, 23, 10, 30, 8, 18, 4, 13 } },
+            { 1922, new int[] { 3, 13, 10, 20, 8, 07, 4, 13 } },
+            { 1923, new int[] { 3, 03, 11, 08, 8, 26, 4, 13 } },
+            { 1924, new int[] { 3, 21, 10, 28, 8, 14, 4, 13 } },
+            { 1925, new int[] { 3, 10, 10, 17, 8, 04, 4, 13 } },
+            { 1926, new int[] { 3, 29, 11, 05, 8, 23, 4, 13 } },
+            { 1927, new int[] { 3, 18, 10, 25, 8, 13, 4, 14 } },
+            { 1928, new int[] { 3, 06, 11, 12, 8, 30, 4, 13 } },
+            { 1929, new int[] { 3, 25, 11, 01, 8, 20, 4, 13 } },
+            { 1930, new int[] { 3, 14, 10, 21, 8, 09, 4, 13 } },
+            { 1931, new int[] { 3, 04, 11, 09, 8, 28, 4, 14 } },
+            { 1932, new int[] { 3, 22, 10, 29, 8, 16, 4, 13 } },
+            { 1933, new int[] { 3, 12, 10, 19, 8, 05, 4, 13 } },
+            { 1934, new int[] { 3, 01, 11, 07, 8, 24, 4, 13 } },
+            { 1935, new int[] { 3, 20, 10, 27, 8, 14, 4, 14 } },
+            { 1936, new int[] { 3, 08, 11, 14, 8, 03, 4, 13 } },
+            { 1937, new int[] { 3, 26, 11, 03, 8, 21, 4, 13 } },
+            { 1938, new int[] { 3, 16, 10, 23, 8, 11, 4, 13 } },
+            { 1939, new int[] { 3, 05, 11, 11, 8, 29, 4, 14 } },
+            { 1940, new int[] { 3, 23, 10, 30, 8, 17, 4, 13 } },
+            { 1941, new int[] { 3, 13, 10, 20, 8, 07, 4, 13 } },
+            { 1942, new int[] { 3, 03, 11, 08, 8, 26, 4, 13 } },
+            { 1943, new int[] { 3, 21, 10, 29, 8, 15, 4, 14 } },
+            { 1944, new int[] { 3, 10, 10, 17, 8, 04, 4, 13 } },
+            { 1945, new int[] { 2, 26, 11, 04, 8, 23, 4, 13 } },
+            { 1946, new int[] { 3, 17, 10, 24, 8, 12, 4, 13 } },
+            { 1947, new int[] { 3, 07, 11, 12, 8, 31, 4, 14 } },
+            { 1948, new int[] { 3, 25, 11, 01, 8, 19, 4, 13 } },
+            { 1949, new int[] { 3, 14, 10, 21, 8, 08, 4, 13 } },
+            { 1950, new int[] { 3, 04, 11, 09, 8, 27, 4, 13 } },
+            { 1951, new int[] { 3, 23, 10, 30, 8, 17, 4, 14 } },
+            { 1952, new int[] { 3, 11, 10, 18, 8, 05, 4, 13 } },
+            { 1953, new int[] { 2, 28, 11, 06, 8, 24, 4, 13 } },
+            { 1954, new int[] { 3, 19, 10, 26, 8, 14, 4, 13 } },
+            { 1955, new int[] { 3, 08, 11, 14, 8, 03, 4, 14 } },
+            { 1956, new int[] { 3, 26, 11, 02, 8, 21, 4, 13 } },
+            { 1957, new int[] { 3, 16, 10, 23, 8, 10, 4, 13 } },
+            { 1958, new int[] { 3, 05, 11, 11, 8, 29, 4, 13 } },
+            { 1959, new int[] { 3, 24, 10, 31, 8, 18, 4, 14 } },
+            { 1960, new int[] { 3, 13, 10, 20, 8, 06, 4, 13 } },
+            { 1961, new int[] { 3, 02, 11, 08, 8, 26, 4, 13 } },
+            { 1962, new int[] { 3, 21, 10, 28, 8, 15, 4, 13 } },
+            { 1963, new int[] { 3, 10, 10, 17, 8, 05, 4, 14 } },
+            { 1964, new int[] { 3, 28, 11, 04, 8, 23, 4, 13 } },
+            { 1965, new int[] { 3, 17, 10, 24, 8, 12, 4, 13 } },
+            { 1966, new int[] { 3, 07, 11, 12, 8, 30, 4, 14 } },
+            { 1967, new int[] { 3, 26, 11, 02, 8, 19, 4, 14 } },
+            { 1968, new int[] { 3, 14, 10, 21, 8, 08, 4, 13 } },
+            { 1969, new int[] { 3, 04, 11, 09, 8, 27, 4, 13 } },
+            { 1970, new int[] { 3, 23, 10, 30, 8, 17, 4, 14 } },
+            { 1971, new int[] { 3, 12, 10, 19, 8, 06, 4, 14 } },
+            { 1972, new int[] { 2, 29, 11, 06, 8, 24, 4, 13 } },
+            { 1973, new int[] { 3, 18, 10, 26, 8, 13, 4, 13 } },
+            { 1974, new int[] { 3, 08, 11, 14, 8, 03, 4, 14 } },
+            { 1975, new int[] { 3, 27, 11, 03, 8, 21, 4, 14 } },
+            { 1976, new int[] { 3, 16, 10, 23, 8, 09, 4, 13 } },
+            { 1977, new int[] { 3, 05, 11, 11, 8, 28, 4, 13 } },
+            { 1978, new int[] { 3, 24, 10, 31, 8, 18, 4, 14 } },
+            { 1979, new int[] { 3, 13, 10, 21, 8, 08, 4, 14 } },
+            { 1980, new int[] { 3, 01, 11, 07, 8, 26, 4, 13 } },
+            { 1981, new int[] { 3, 20, 10, 27, 8, 15, 4, 13 } },
+            { 1982, new int[] { 3, 09, 11, 15, 8, 04, 4, 14 } },
+            { 1983, new int[] { 3, 28, 11, 04, 8, 23, 4, 14 } },
+            { 1984, new int[] { 3, 17, 10, 24, 8, 11, 4, 13 } },
+            { 1985, new int[] { 3, 07, 11, 12, 8, 30, 4, 13 } },
+            { 1986, new int[] { 3, 26, 11, 02, 8, 19, 4, 14 } },
+            { 1987, new int[] { 3, 15, 10, 22, 8, 09, 4, 14 } },
+            { 1988, new int[] { 3, 03, 11, 09, 8, 27, 4, 13 } },
+            { 1989, new int[] { 3, 22, 10, 29, 8, 17, 4, 13 } },
+            { 1990, new int[] { 3, 11, 10, 18, 8, 06, 4, 14 } },
+            { 1991, new int[] { 2, 28, 11, 06, 8, 25, 4, 14 } },
+            { 1992, new int[] { 3, 18, 10, 25, 8, 13, 4, 13 } },
+            { 1993, new int[] { 3, 08, 11, 13, 8, 02, 4, 13 } },
+            { 1994, new int[] { 3, 27, 11, 03, 8, 21, 4, 14 } },
+            { 1995, new int[] { 3, 17, 10, 24, 8, 10, 4, 14 } },
+            { 1996, new int[] { 3, 05, 11, 11, 8, 28, 4, 13 } },
+            { 1997, new int[] { 3, 24, 10, 31, 8, 18, 4, 13 } },
+            { 1998, new int[] { 3, 13, 10, 20, 8, 07, 4, 14 } },
+            { 1999, new int[] { 3, 02, 11, 08, 8, 26, 4, 14 } },
+            { 2000, new int[] { 3, 20, 10, 27, 8, 15, 4, 13 } },
+            { 2001, new int[] { 3, 09, 11, 15, 8, 04, 4, 13 } },
+            { 2002, new int[] { 3, 28, 11, 04, 8, 22, 4, 14 } },
+            { 2003, new int[] { 3, 18, 10, 25, 8, 12, 4, 14 } },
+            { 2004, new int[] { 3, 06, 11, 12, 8, 29, 4, 13 } },
+            { 2005, new int[] { 3, 25, 11, 02, 8, 19, 4, 14 } },
+            { 2006, new int[] { 3, 14, 10, 22, 8, 09, 4, 14 } },
+            { 2007, new int[] { 3, 03, 11, 09, 8, 28, 4, 14 } },
+            { 2008, new int[] { 3, 21, 10, 28, 8, 16, 4, 13 } },
+            { 2009, new int[] { 3, 11, 10, 18, 8, 05, 4, 14 } },
+            { 2010, new int[] { 2, 28, 11, 06, 8, 24, 4, 14 } },
+            { 2011, new int[] { 3, 19, 10, 26, 8, 13, 4, 14 } },
+            { 2012, new int[] { 3, 08, 11, 13, 8, 02, 4, 13 } },
+            { 2013, new int[] { 3, 27, 11, 03, 8, 20, 4, 14 } },
+            { 2014, new int[] { 3, 16, 10, 23, 8, 10, 4, 14 } },
+            { 2015, new int[] { 3, 05, 11, 11, 8, 29, 4, 14 } },
+            { 2016, new int[] { 3, 23, 10, 30, 8, 18, 4, 13 } },
+            { 2017, new int[] { 3, 12, 10, 19, 8, 07, 4, 14 } },
+            { 2018, new int[] { 3, 02, 11, 07, 8, 26, 4, 14 } },
+            { 2019, new int[] { 3, 21, 10, 28, 8, 15, 4, 14 } },
+            { 2020, new int[] { 3, 09, 11, 15, 8, 03, 4, 13 } },
+            { 2021, new int[] { 3, 28, 11, 04, 8, 22, 4, 14 } },
+            { 2022, new int[] { 3, 18, 10, 25, 8, 11, 4, 14 } },
+            { 2023, new int[] { 3, 07, 11, 13, 8, 30, 4, 14 } },
+            { 2024, new int[] { 3, 25, 11, 01, 8, 19, 4, 13 } },
+            { 2025, new int[] { 3, 14, 10, 21, 8, 09, 4, 14 } },
+            { 2026, new int[] { 3, 03, 11, 09, 8, 28, 4, 14 } },
+            { 2027, new int[] { 3, 22, 10, 29, 8, 17, 4, 14 } },
+            { 2028, new int[] { 3, 11, 10, 18, 8, 05, 4, 13 } },
+            { 2029, new int[] { 2, 28, 11, 06, 8, 23, 4, 14 } },
+            { 2030, new int[] { 3, 19, 10, 26, 8, 13, 4, 14 } },
+            { 2031, new int[] { 3, 09, 11, 14, 8, 02, 4, 14 } },
+            { 2032, new int[] { 3, 27, 11, 03, 8, 20, 4, 13 } },
+            { 2033, new int[] { 3, 16, 10, 23, 8, 10, 4, 14 } },
+            { 2034, new int[] { 3, 05, 11, 11, 8, 29, 4, 14 } },
+            { 2035, new int[] { 3, 23, 10, 31, 8, 18, 4, 14 } },
+            { 2036, new int[] { 3, 12, 10, 19, 8, 06, 4, 13 } },
+            { 2037, new int[] { 3, 01, 11, 07, 8, 25, 4, 14 } },
+            { 2038, new int[] { 3, 21, 10, 28, 8, 14, 4, 14 } },
+            { 2039, new int[] { 3, 10, 11, 16, 8, 04, 4, 14 } },
+            { 2040, new int[] { 3, 28, 11, 04, 8, 22, 4, 13 } },
+            { 2041, new int[] { 3, 17, 10, 25, 8, 11, 4, 14 } },
+            { 2042, new int[] { 3, 06, 11, 12, 8, 30, 4, 14 } },
+            { 2043, new int[] { 3, 25, 11, 01, 8, 20, 4, 14 } },
+            { 2044, new int[] { 3, 13, 10, 20, 8, 08, 4, 13 } },
+            { 2045, new int[] { 3, 03, 11, 08, 8, 27, 4, 14 } },
+            { 2046, new int[] { 3, 22, 10, 29, 8, 16, 4, 14 } },
+            { 2047, new int[] { 3, 12, 10, 19, 8, 05, 4, 14 } },
+            { 2048, new int[] { 2, 29, 11, 06, 8, 23, 4, 14 } },
+            { 2049, new int[] { 3, 19, 10, 26, 8, 13, 4, 14 } },
+            { 2050, new int[] { 3, 08, 11, 14, 8, 02, 4, 14 } },
+            { 2051, new int[] { 3, 27, 11, 03, 8, 21, 4, 14 } },
+            { 2052, new int[] { 3, 15, 10, 22, 8, 10, 4, 14 } },
+            { 2053, new int[] { 3, 04, 11, 10, 8, 29, 4, 14 } },
+            { 2054, new int[] { 3, 23, 10, 30, 8, 18, 4, 14 } },
+            { 2055, new int[] { 3, 13, 10, 20, 8, 07, 4, 14 } },
+            { 2056, new int[] { 3, 02, 11, 07, 8, 25, 4, 14 } },
+            { 2057, new int[] { 3, 21, 10, 28, 8, 14, 4, 14 } },
+            { 2058, new int[] { 3, 10, 11, 16, 8, 04, 4, 14 } },
+            { 2059, new int[] { 3, 29, 11, 05, 8, 23, 4, 14 } },
+            { 2060, new int[] { 3, 17, 10, 24, 8, 11, 4, 14 } },
+            { 2061, new int[] { 3, 06, 11, 12, 8, 30, 4, 14 } },
+            { 2062, new int[] { 3, 25, 11, 01, 8, 20, 4, 14 } },
+            { 2063, new int[] { 3, 14, 10, 21, 8, 09, 4, 14 } },
+            { 2064, new int[] { 3, 03, 11, 08, 8, 26, 4, 14 } },
+            { 2065, new int[] { 3, 22, 10, 29, 8, 16, 4, 14 } },
+            { 2066, new int[] { 3, 11, 10, 19, 8, 05, 4, 14 } },
+            { 2067, new int[] { 3, 01, 11, 06, 8, 24, 4, 14 } },
+            { 2068, new int[] { 3, 18, 10, 26, 8, 13, 4, 14 } },
+            { 2069, new int[] { 3, 07, 11, 13, 9, 01, 4, 14 } },
+            { 2070, new int[] { 3, 26, 11, 02, 8, 21, 4, 14 } },
+            { 2071, new int[] { 3, 16, 10, 23, 8, 10, 4, 14 } },
+            { 2072, new int[] { 3, 04, 11, 10, 8, 28, 4, 14 } },
+            { 2073, new int[] { 3, 23, 10, 30, 8, 17, 4, 14 } },
+            { 2074, new int[] { 3, 13, 10, 20, 8, 06, 4, 14 } },
+            { 2075, new int[] { 3, 02, 11, 08, 8, 25, 4, 14 } },
+            { 2076, new int[] { 3, 20, 10, 27, 8, 14, 4, 14 } },
+            { 2077, new int[] { 3, 09, 11, 15, 8, 04, 4, 14 } },
+            { 2078, new int[] { 3, 28, 11, 04, 8, 23, 4, 14 } },
+            { 2079, new int[] { 3, 17, 10, 24, 8, 12, 4, 14 } },
+            { 2080, new int[] { 3, 05, 11, 11, 8, 30, 4, 14 } },
+            { 2081, new int[] { 3, 25, 11, 01, 8, 19, 4, 14 } },
+            { 2082, new int[] { 3, 14, 10, 21, 8, 08, 4, 14 } },
+            { 2083, new int[] { 3, 04, 11, 09, 8, 27, 4, 14 } },
+            { 2084, new int[] { 3, 22, 10, 29, 8, 15, 4, 14 } },
+            { 2085, new int[] { 3, 11, 10, 18, 8, 05, 4, 14 } },
+            { 2086, new int[] { 2, 28, 11, 06, 8, 24, 4, 14 } },
+            { 2087, new int[] { 3, 19, 10, 26, 8, 14, 4, 15 } },
+            { 2088, new int[] { 3, 07, 11, 13, 8, 31, 4, 14 } },
+            { 2089, new int[] { 3, 26, 11, 02, 8, 21, 4, 14 } },
+            { 2090, new int[] { 3, 15, 10, 23, 8, 10, 4, 14 } },
+            { 2091, new int[] { 3, 05, 11, 11, 8, 28, 4, 15 } },
+            { 2092, new int[] { 3, 23, 10, 30, 8, 17, 4, 14 } },
+            { 2093, new int[] { 3, 13, 10, 20, 8, 06, 4, 14 } },
+            { 2094, new int[] { 3, 02, 11, 08, 8, 25, 4, 14 } },
+            { 2095, new int[] { 3, 21, 10, 28, 8, 15, 4, 15 } },
+            { 2096, new int[] { 3, 09, 11, 14, 8, 04, 4, 14 } },
+            { 2097, new int[] { 3, 27, 11, 04, 8, 22, 4, 14 } },
+            { 2098, new int[] { 3, 17, 10, 24, 8, 11, 4, 14 } },
+            { 2099, new int[] { 3, 06, 11, 12, 8, 30, 4, 15 } }
         };
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
@@ -1356,7 +1359,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             @"say",
             @"like"
         };
-      public static readonly string[] DurationDateRestrictions = { @"today", @"now" };
+      public static readonly string[] DurationDateRestrictions = { @"आज", @"today", @"now" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"^(morning|afternoon|evening|night|day)\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
@@ -1431,14 +1434,16 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             @"tomorrow",
             @"tmr",
             @"day after",
-            @"कल"
+            @"कल",
+            @"कल से"
         };
       public static readonly IList<string> MinusOneDayTerms = new List<string>
         {
             @"yesterday",
             @"day before",
             @"कल",
-            @"कल वापस गया था"
+            @"कल वापस गया था",
+            @"कल से पहले"
         };
       public static readonly IList<string> PlusTwoDayTerms = new List<string>
         {

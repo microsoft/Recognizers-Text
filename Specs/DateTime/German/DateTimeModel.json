@@ -2115,5 +2115,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "aktuelle Uhrzeit in Berlin",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "aktuelle",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2018-10-24 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

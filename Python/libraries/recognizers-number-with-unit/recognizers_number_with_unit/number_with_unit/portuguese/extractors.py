@@ -2,7 +2,7 @@ from typing import Dict, List, Pattern
 
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
-from recognizers_text.utilities import RegExpUtility
+from recognizers_text.utilities import RegExpUtility, DefinitionLoader
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.models import NumberMode
 from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor
@@ -16,7 +16,7 @@ from recognizers_number_with_unit.resources.base_units import BaseUnits
 class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return None
+        return DefinitionLoader.load_ambiguity_filters(PortugueseNumericWithUnit.AmbiguityFiltersDict)
 
     @property
     def unit_num_extractor(self) -> Extractor:

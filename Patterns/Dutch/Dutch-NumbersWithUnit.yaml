@@ -864,4 +864,8 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - yen
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

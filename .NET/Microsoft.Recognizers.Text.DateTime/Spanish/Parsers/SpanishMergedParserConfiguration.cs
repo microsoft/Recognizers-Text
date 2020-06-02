@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             EqualRegex = SpanishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = SpanishMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));

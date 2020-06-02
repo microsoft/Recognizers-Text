@@ -700,4 +700,8 @@ WeightSuffixList: !dictionary
     Onça: oz|onça|onca|onças|oncas
     Grão: grão|grao|grãos|graos|gr
     Quilate: ct|quilate|quilates
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

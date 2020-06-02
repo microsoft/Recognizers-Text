@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Definitions.Utilities
@@ -13,7 +14,7 @@ namespace Microsoft.Recognizers.Definitions.Utilities
             {
                 foreach (var item in filters)
                 {
-                    if (!"null".Equals(item.Key))
+                    if (!"null".Equals(item.Key, StringComparison.Ordinal))
                     {
                         ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
                     }

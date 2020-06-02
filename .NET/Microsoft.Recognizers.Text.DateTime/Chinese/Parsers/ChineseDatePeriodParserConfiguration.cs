@@ -870,8 +870,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var firstHalf = match.Groups["firstHalf"].Value;
             var secondHalf = match.Groups["secondHalf"].Value;
+
             hasHalf = false;
-            isFirstHalf = !string.IsNullOrEmpty(firstHalf) ? true : false;
+            isFirstHalf = !string.IsNullOrEmpty(firstHalf);
 
             if (isFirstHalf || !string.IsNullOrEmpty(secondHalf))
             {

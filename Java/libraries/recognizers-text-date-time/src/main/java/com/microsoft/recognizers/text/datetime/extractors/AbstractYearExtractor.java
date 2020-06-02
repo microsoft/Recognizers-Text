@@ -29,11 +29,14 @@ public abstract class AbstractYearExtractor implements IDateExtractor {
 
     @Override
     public int getYearFromText(Match match) {
+
         int year = Constants.InvalidYear;
 
         String yearStr = match.getGroup("year").value;
+        String writtenYearStr = match.getGroup("fullyear").value;
 
-        if (!StringUtility.isNullOrEmpty(yearStr)) {
+        if (!StringUtility.isNullOrEmpty(yearStr) && !yearStr.equals(writtenYearStr)) {
+
             year = Math.round(Double.valueOf(yearStr).floatValue());
 
             if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) {
@@ -42,6 +45,7 @@ public abstract class AbstractYearExtractor implements IDateExtractor {
                 year += 2000;
             }
         } else {
+
             MatchGroup firstTwoYear = match.getGroup("firsttwoyearnum");
 
             if (!StringUtility.isNullOrEmpty(firstTwoYear.value)) {
@@ -75,6 +79,26 @@ public abstract class AbstractYearExtractor implements IDateExtractor {
                     year = firstTwoYearNum + lastTwoYearNum;
                 } else {
                     year = firstTwoYearNum * 100 + lastTwoYearNum;
+                }
+
+            } else {
+
+                if (!StringUtility.isNullOrEmpty(writtenYearStr)) {
+
+                    MatchGroup writtenYear = match.getGroup("fullyear");
+
+                    ExtractResult er = new ExtractResult();
+                    er.setStart(writtenYear.index);
+                    er.setLength(writtenYear.length);
+                    er.setText(writtenYear.value);
+
+                    year = Math.round(Double.valueOf((double)config.getNumberParser().parse(er).getValue()).floatValue());
+
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) {
+                        year += 1900;
+                    } else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) {
+                        year += 2000;
+                    }
                 }
             }
         }

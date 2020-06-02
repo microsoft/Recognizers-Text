@@ -127,5 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
     }
 }

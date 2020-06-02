@@ -540,5 +540,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Grano", @"grano|granos" },
             { @"Quilate", @"ct|quilate|quilates" }
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
+        };
     }
 }

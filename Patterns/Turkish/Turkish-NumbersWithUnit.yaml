@@ -994,4 +994,8 @@ AmbiguousWeightUnitList: !list
     - dramdı
     - drammış
     - dramlık
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

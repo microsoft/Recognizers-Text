@@ -112,6 +112,8 @@ public class EnglishDateTime {
             .replace("{AmPmDescRegex}", AmPmDescRegex)
             .replace("{SpecialDescRegex}", SpecialDescRegex);
 
+    public static final String OfPrepositionRegex = "(\\bof\\b)";
+
     public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
@@ -269,7 +271,7 @@ public class EnglishDateTime {
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
-    public static final String YearSuffix = "(,?\\s*({DateYearRegex}|{FullTextYearRegex}))"
+    public static final String YearSuffix = "((,|\\sof)?\\s*({DateYearRegex}|{FullTextYearRegex}))"
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
@@ -426,7 +428,7 @@ public class EnglishDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
-    public static final String TimePrefix = "(?<prefix>({LessThanOneHour} past|{LessThanOneHour} to))"
+    public static final String TimePrefix = "(?<prefix>{LessThanOneHour}\\s+(past|to))"
             .replace("{LessThanOneHour}", LessThanOneHour);
 
     public static final String TimeSuffix = "(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})"
@@ -675,7 +677,7 @@ public class EnglishDateTime {
 
     public static final String MoreThanRegex = "\\b(more\\s+than)\\b";
 
-    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b"
+    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\\b"
             .replace("{DateUnitRegex}", DateUnitRegex);
 
     public static final String SuffixAndRegex = "(?<suffix>\\s*(and)\\s+(an?\\s+)?(?<suffix_num>half|quarter))";
@@ -925,6 +927,8 @@ public class EnglishDateTime {
         .put("week", "W")
         .put("days", "D")
         .put("day", "D")
+        .put("nights", "D")
+        .put("night", "D")
         .put("hours", "H")
         .put("hour", "H")
         .put("hrs", "H")
@@ -953,6 +957,8 @@ public class EnglishDateTime {
         .put("week", 604800L)
         .put("days", 86400L)
         .put("day", 86400L)
+        .put("nights", 86400L)
+        .put("night", 86400L)
         .put("hours", 3600L)
         .put("hour", 3600L)
         .put("hrs", 3600L)

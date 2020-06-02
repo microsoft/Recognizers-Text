@@ -51,7 +51,7 @@ export namespace FrenchDateTime {
     export const QuarterRegex = `(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quart(\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e)`;
     export const QuarterRegexYearFront = `(${YearRegex}|l'année\\s+(${PastSuffixRegex}|${NextSuffixRegex})|${RelativeRegex}\\s+ann[eé]e)\\s+(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quarts`;
     export const AllHalfYearRegex = `^[.]`;
-    export const PrefixDayRegex = `^[.]`;
+    export const PrefixDayRegex = `\\b((?<EarlyPrefix>t[ôo]t\\sdans)|(?<MidPrefix>au\\smilieu\\sde)|(?<LatePrefix>tard\\sdans))(\\s+la\\s+journ[ée]e)?$`;
     export const CenturySuffixRegex = `^[.]`;
     export const SeasonRegex = `\\b((<seas>printemps|été|automne|hiver)+\\s*(${NextSuffixRegex}|${PastSuffixRegex}))|(?<season>(${RelativeRegex}\\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e))?)\\b`;
     export const WhichWeekRegex = `\\b(semaine)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
@@ -63,7 +63,7 @@ export namespace FrenchDateTime {
     export const ThisRegex = `\\b((cette(\\s*semaine)?\\s+)${WeekDayRegex})|(${WeekDayRegex}(\\s+cette\\s*semaine))\\b`;
     export const LastDateRegex = `\\b((${WeekDayRegex}(\\s*(de)?\\s*la\\s*semaine\\s+${PastSuffixRegex}))|(${WeekDayRegex}(\\s+${PastSuffixRegex})))\\b`;
     export const NextDateRegex = `\\b((${WeekDayRegex}(\\s+${NextSuffixRegex}))|(${WeekDayRegex}(\\s*(de)?\\s*la\\s*semaine\\s+${NextSuffixRegex})))\\b`;
-    export const SpecialDayRegex = `\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\\b`;
+    export const SpecialDayRegex = `\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|(de\\s)?la journ[ée]e|aujourd'hui)\\b`;
     export const SpecialDayWithNumRegex = `^[.]`;
     export const StrictWeekDay = `\\b(?<weekday>dim(anche)?|lun(di)?|mar(di)?|mer(credi)?|jeu(di)?|ven(dredi)?|sam(edi)?)s?\\b`;
     export const SetWeekDayRegex = `\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b`;
@@ -78,7 +78,7 @@ export namespace FrenchDateTime {
     export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)${MonthRegex}((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
-    export const DateExtractor6 = `(?<=\\b(le|sur|sur l[ae])\\s+)${MonthNumRegex}[\\-\\.\\/]${DayRegex}\\b`;
+    export const DateExtractor6 = `(?<=\\b(le|sur(\\sl[ae])?)\\s+)${MonthNumRegex}[\\-\\.\\/]${DayRegex}\\b`;
     export const DateExtractor7 = `\\b${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
     export const DateExtractor8 = `(?<=\\b(le)\\s+)${DayRegex}[\\\\\\-]${MonthNumRegex}\\b`;
     export const DateExtractor9 = `\\b${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
@@ -202,7 +202,7 @@ export namespace FrenchDateTime {
     export const NextPrefixRegex = `.^`;
     export const PastPrefixRegex = `.^`;
     export const PreviousPrefixRegex = `.^`;
-    export const RelativeDayRegex = `^[\\.]`;
+    export const RelativeDayRegex = `\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b`;
     export const ConnectorRegex = `^(,|pour|t|vers)$`;
     export const ConnectorAndRegex = `\\b(et\\s*(le|las?)?)\\b.+`;
     export const FromRegex = `((de|du)?)$`;
@@ -214,7 +214,7 @@ export namespace FrenchDateTime {
     export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
     export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
     export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
-    export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
+    export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-:]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
     export const RestOfDateRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b`;
     export const RestOfDateTimeRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<unit>jour)\\b`;
     export const LaterEarlyPeriodRegex = `^[.]`;

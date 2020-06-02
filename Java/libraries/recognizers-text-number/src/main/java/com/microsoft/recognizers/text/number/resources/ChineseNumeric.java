@@ -468,6 +468,9 @@ public class ChineseNumeric {
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("十", "十足")
         .put("伍", "队伍")
+        .put("肆", "放肆|肆意|肆无忌惮")
+        .put("陆", "大陆|陆地|登陆|海陆")
+        .put("拾", "拾取|拾起|收拾|拾到|朝花夕拾")
         .build();
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";

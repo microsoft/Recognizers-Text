@@ -135,6 +135,9 @@ namespace Microsoft.Recognizers.Text.Number
             var resultText = extResult.Text;
             var splitResult = Config.FracSplitRegex.Split(resultText);
             string intPart = string.Empty, demoPart = string.Empty, numPart = string.Empty;
+
+            // TODO: Refactor to support half (eg. KO: 반)
+
             if (splitResult.Length == 3)
             {
                 intPart = splitResult[0];

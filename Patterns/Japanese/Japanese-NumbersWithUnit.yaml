@@ -616,4 +616,8 @@ CurrencyAmbiguousValues: !list
     - プル
     - ブル
     - \
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

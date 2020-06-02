@@ -97,11 +97,24 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(testSpec));
 
-                foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
+                foreach (var resolutionValues in expectedValues.Zip(actualValues, Tuple.Create))
                 {
-                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(testSpec));
-                    CollectionAssert.AreEqual(value.Item1.OrderBy(o => o.Key).ToImmutableDictionary(),
-                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(testSpec));
+                    Assert.AreEqual(resolutionValues.Item1.Count, resolutionValues.Item2.Count, GetMessage(testSpec));
+
+                    var expectedResolution = resolutionValues.Item1.OrderBy(o => o.Key).ToImmutableDictionary();
+                    var actualResolution = resolutionValues.Item2.OrderBy(o => o.Key).ToImmutableDictionary();
+
+                    for (int i = 0; i < expectedResolution.Count; i++)
+                    {
+                        var expectedKey = expectedResolution.ElementAt(i).Key;
+                        Assert.AreEqual(expectedKey, actualResolution.ElementAt(i).Key, GetMessage(testSpec));
+
+                        var expectedValue = expectedResolution[expectedKey];
+                        var actualValue = actualResolution[expectedKey];
+
+                        Assert.AreEqual(expectedValue, actualValue, GetMessage(testSpec));
+                    }
+
                 }
             }
         }

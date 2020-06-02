@@ -135,5 +135,77 @@
     "Input": "गांधी के नाम पर छुट्टी होती है",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "रक्षा बंधन के दिन मैं अहमदाबाद में रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रक्षा बंधन के दिन",
+        "Type": "date",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवरात्रों के पहले दिन वापस जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवरात्रों के पहले दिन",
+        "Type": "date",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "वैशाखी मैं पटियाला में मनाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "वैशाखी",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "पिछले साल होली कौन से दिन पड़ा था?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले साल होली",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "पिछले साल दिवाली किस तारीख को मनी थी?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले साल दिवाली",
+        "Type": "date",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "अगले साल दिवाली कब होगी?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल दिवाली",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
   }
 ]

@@ -4788,5 +4788,53 @@
     "Input": "这是我的队伍",
     "NotSupported": "python, javascript, java",
     "Results": []
+  },
+  {
+    "Input": "小明每天收拾房间",
+    "Results": []
+  },
+  {
+    "Input": "《朝花夕拾》是鲁迅的作品",
+    "Results": []
+  },
+  {
+    "Input": "这个人很放肆",
+    "Results": []
+  },
+  {
+    "Input": "这个岛屿远离大陆",
+    "Results": []
+  },
+  {
+    "Input": "海陆空部队",
+    "Results": []
+  },
+  {
+    "Input": "这个人很肆意妄为",
+    "Results": []
+  },
+  {
+    "Input": "这个人很肆无忌惮",
+    "Results": []
+  },
+  {
+    "Input": "岛屿远离陆地",
+    "Results": []
+  },
+  {
+    "Input": "登陆部队已经上岸",
+    "Results": []
+  },
+  {
+    "Input": "他在海滩上拾取贝壳",
+    "Results": []
+  },
+  {
+    "Input": "小明拾起石子",
+    "Results": []
+  },
+  {
+    "Input": "没有人拾到她的东西",
+    "Results": []
   }
 ]

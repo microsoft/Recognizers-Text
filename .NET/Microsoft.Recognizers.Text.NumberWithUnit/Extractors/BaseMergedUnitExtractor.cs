@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 if (length < 0)
                 {
-                    continue; // @HERE
+                    continue;
                 }
 
                 var middleStr = source.Substring(middleBegin, length).Trim();

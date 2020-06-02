@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             TimeZoneParser = new BaseTimeZoneParser();
 
+            // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
@@ -49,6 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(this));
+
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
@@ -56,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
+
             DateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
         }
 

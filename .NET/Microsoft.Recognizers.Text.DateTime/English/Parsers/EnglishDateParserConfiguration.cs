@@ -14,13 +14,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
              : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
+
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
+
             DateRegexes = new EnglishDateExtractorConfiguration(this).DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;

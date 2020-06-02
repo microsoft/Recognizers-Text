@@ -1,8 +1,8 @@
 [
   {
     "Input": "3조 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3조 번째",
@@ -17,8 +17,8 @@
   },
   {
     "Input": "조 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "조 번째",
@@ -33,8 +33,8 @@
   },
   {
     "Input": "백조 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백조 번째",
@@ -49,8 +49,8 @@
   },
   {
     "Input": "열한 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "열한 번째",
@@ -65,8 +65,8 @@
   },
   {
     "Input": "스물한 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "스물한 번째",
@@ -81,8 +81,8 @@
   },
   {
     "Input": "서른 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "서른 번째",
@@ -97,8 +97,8 @@
   },
   {
     "Input": "두 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "두 번째",
@@ -113,8 +113,8 @@
   },
   {
     "Input": "스무 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "스무 번째",
@@ -129,8 +129,8 @@
   },
   {
     "Input": "스물다섯 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "스물다섯 번째",
@@ -145,8 +145,8 @@
   },
   {
     "Input": "백스물다섯 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백스물다섯 번째",
@@ -161,8 +161,8 @@
   },
   {
     "Input": "백이십오 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백이십오 번째",
@@ -177,8 +177,8 @@
   },
   {
     "Input": "조번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "조번째",
@@ -193,8 +193,8 @@
   },
   {
     "Input": "이십일조 삼백이십이 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이십일조 삼백이십이 번째",
@@ -209,8 +209,8 @@
   },
   {
     "Input": "이백 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이백 번째",
@@ -225,8 +225,8 @@
   },
   {
     "Input": "시애틀로 가는 일등석을 예약해주십시오.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Comment": "PendingValidation",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "일등",
@@ -580,7 +580,7 @@
   {
     "Input": "열한번째 날",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "열한번째",
@@ -598,7 +598,7 @@
   {
     "Input": "스무번째 밤",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "스무번째",
@@ -616,7 +616,7 @@
   {
     "Input": "스물 다섯번째 생일",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "스물 다섯번째",
@@ -634,7 +634,7 @@
   {
     "Input": "스물 한번째 식사",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "스물 한번째",
@@ -652,7 +652,7 @@
   {
     "Input": "백스물다섯번째 생신",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "백스물다섯번째",
@@ -689,7 +689,7 @@
   {
     "Input": "이십일조 삼백스물두번째 밤",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "이십일조 삼백스물두번째",
@@ -725,7 +725,7 @@
   {
     "Input": "나는 처음 두권이 좋았습니다",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "처음",
@@ -743,7 +743,7 @@
   {
     "Input": "나는 첫번째가 좋다",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "첫번째",
@@ -761,7 +761,7 @@
   {
     "Input": "첫 단어를 말해봐",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "첫",
@@ -797,7 +797,7 @@
   {
     "Input": "그녀는 두번째로 들어옵니다!",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "두번째",

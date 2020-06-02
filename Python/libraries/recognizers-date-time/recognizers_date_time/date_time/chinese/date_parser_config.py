@@ -6,9 +6,11 @@ from recognizers_number import CJKNumberParser, ChineseIntegerExtractor, Chinese
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..base_date import DateParserConfiguration
+from ..extractors import DateTimeExtractor
 
 
 class ChineseDateParserConfiguration(DateParserConfiguration):
+
     @property
     def check_both_before_after(self) -> bool:
         pass
@@ -24,6 +26,10 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
     def cardinal_extractor(self) -> any:
         return None
+
+    @property
+    def date_extractor(self) -> DateTimeExtractor:
+        return self._date_extractor
 
     @property
     def duration_extractor(self) -> any:
@@ -200,5 +206,5 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayRegex)
         self._integer_extractor = ChineseIntegerExtractor()
-        self._number_parser = CJKNumberParser(
-            ChineseNumberParserConfiguration())
+        self._number_parser = CJKNumberParser(ChineseNumberParserConfiguration())
+        self._date_extractor = None

@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -293,7 +292,6 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -318,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -343,7 +340,6 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -368,7 +364,6 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -441,7 +436,6 @@
     "Context": {
       "ReferenceDateTime": "2019-10-01T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -530,6 +524,198 @@
         },
         "Start": 0,
         "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां श्रमिक दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "श्रमिक दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां अंतर्राष्ट्रीय मजदूर दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतर्राष्ट्रीय मजदूर दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां मई दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "गणतंत्र दिवस तो दिल्ली में मनाई जाती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गणतंत्र दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-26",
+          "FutureResolution": {
+            "date": "2019-01-26"
+          },
+          "PastResolution": {
+            "date": "2018-01-26"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "स्वतंत्रता दिवस को लाल किला पर परेड होती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "स्वतंत्रता दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-15",
+          "FutureResolution": {
+            "date": "2018-08-15"
+          },
+          "PastResolution": {
+            "date": "2017-08-15"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "गांधी जयंती के दिन छुट्टी होती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गांधी जयंती के दिन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2018-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "रक्षाबंधन के दिन राजपत्रित छुट्टी नहीं है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रक्षाबंधन के दिन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-26",
+          "FutureResolution": {
+            "date": "2018-08-26"
+          },
+          "PastResolution": {
+            "date": "2017-08-07"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "बैसाखी हर साल अलग-अलग तारीख को पड़ती है.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बैसाखी हर साल",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-14",
+          "FutureResolution": {
+            "date": "2019-04-14"
+          },
+          "PastResolution": {
+            "date": "2018-04-14"
+          }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   }
