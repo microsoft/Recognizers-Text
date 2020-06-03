@@ -64,8 +64,9 @@
   },
   {
     "Input": "180.25ml의 액체",
-    "Comment": "PendingValidation",
+    "Comment": "PendingValidation, incorrect result set",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "180.25",
@@ -78,8 +79,9 @@
   },
   {
     "Input": "180ml의 액체",
-    "Comment": "PendingValidation",
+    "Comment": "PendingValidation, incorrect result set",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "180",
@@ -129,8 +131,9 @@
   },
   {
     "Input": ".25ml의 액체",
-    "Comment": "PendingValidation",
+    "Comment": "PendingValidation, incorrect result set",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": ".25",
@@ -2930,7 +2933,6 @@
     "Input": "백억분의 일만 주세요",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "백억분의 일",
@@ -3869,36 +3871,26 @@
   {
     "Input": "180.25ml  액체",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": "180ml 액체",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": "29km 길",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": "내 생일은 오월 4일이다",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
     "Input": ".25ml 짜리 액체",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "Need more research by language expert",
     "Results": []
   },
   {
@@ -4051,8 +4043,6 @@
     "Input": "사과 한 개",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Comment": "PendingImplementation",
     "Results": [
       {
         "Text": "한",
