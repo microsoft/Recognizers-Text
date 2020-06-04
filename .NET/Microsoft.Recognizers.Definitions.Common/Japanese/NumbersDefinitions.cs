@@ -153,9 +153,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))";
       public static readonly string DoubleExponentialNotationKanjiRegex = $@"(?<!({ZeroToNineIntegerRegex})+[\.．・])(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|[十千五百])+([\.．・]({ZeroToNineIntegerRegex})+)?(×)?(十)?(の)((((マ\s*イ\s*ナ\s*ス))*({ZeroToNineIntegerRegex}|[十])({ZeroToNineIntegerRegex}|[十])*[乗])(?!({ZeroToNineIntegerRegex}|[十])+))";
       public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)";
-      public static readonly string OrdinalNumbersRegex = $@"(((第|だい)({ZeroToNineFullHalfRegex}+)({RoundNumberIntegerRegex}+)?))|(({ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+)({RoundNumberIntegerRegex}+)?(番目|位|等))";
-      public static readonly string OrdinalRegex = $@"(({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|({AllIntRegex}+(番目|位|等))))|(最初の|ファースト)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から１つ前のこと|から１つ前(のも)?|から3番目|(から１つ前)(のもの)|から３番目|から三番目|から二番目|(から一つ前|から1つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|前のもの|(現在)(のこと)?|次|二位))";
+      public static readonly string OrdinalNumbersRegex = $@"(((第|だい)({ZeroToNineFullHalfRegex}+)({RoundNumberIntegerRegex}+)?))|(({ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+)({RoundNumberIntegerRegex}+)?(番目|位|等(?!級)))";
+      public static readonly string OrdinalRegex = $@"(({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|(({AllIntRegex}+|{NumbersWithAllowListRegex}+)(番目|位|等))))|(最初|1等|ファースト)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))";
       public static readonly string AllOrdinalRegex = $@"({OrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string AllFractionNumber = $@"((({NegativeNumberTermsRegex}{{0,1}})|{NegativeNumberTermsRegexNum})(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{{0,1}}\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})+)";
       public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
@@ -210,6 +210,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
+            { @"前", @"-1" },
             { @"現在", @"0" },
             { @"次", @"1" },
             { @"最後", @"0" },
@@ -224,14 +225,12 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"現在のこと", @"0" },
             { @"前のもの", @"-1" },
             { @"次のもの", @"1" },
-            { @"最後から３番目", @"-2" },
-            { @"最後から１つ前", @"-1" },
-            { @"最後から１つ前のもの", @"-1" },
-            { @"最後から１つ前のこと", @"-1" },
-            { @"最後から3番目", @"-2" }
+            { @"最後から3番目", @"-2" },
+            { @"最後から2番目", @"-1" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
+            { @"前", @"current" },
             { @"現在", @"end" },
             { @"次", @"current" },
             { @"最後", @"end" },
@@ -246,11 +245,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"最後から1つ前", @"end" },
             { @"前のもの", @"current" },
             { @"次のもの", @"current" },
-            { @"最後から３番目", @"end" },
-            { @"最後から１つ前", @"end" },
-            { @"最後から１つ前のもの", @"end" },
-            { @"最後から１つ前のこと", @"end" },
-            { @"最後から3番目", @"end" }
+            { @"最後から3番目", @"end" },
+            { @"最後から2番目", @"end" }
         };
     }
 }
