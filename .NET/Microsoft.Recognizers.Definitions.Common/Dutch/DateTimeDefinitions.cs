@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((van\s+)?(de\s+)?)?{RelativeRegex}\s+maand)\b";
       public const string WrittenMonthRegex = @"(((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|van|tijdens|sinds|tot)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|decennia|maand(en)?|week|weken|(?<business>(werk))?dag(en)?)\b";
+      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|jr|decennia|maand(en)?|mnd|week|weken|(?<business>(werk))?dag(en)?|dgn)\b";
       public const string DateTokenPrefix = @"op ";
       public const string TimeTokenPrefix = @"om ";
       public const string TokenBeforeDate = @"op ";
@@ -292,12 +292,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"decennia", @"10Y" },
             { @"jaren", @"Y" },
             { @"jaar", @"Y" },
+            { @"jr", @"Y" },
             { @"maanden", @"MON" },
             { @"maand", @"MON" },
+            { @"mnd", @"MON" },
             { @"weken", @"W" },
             { @"week", @"W" },
             { @"dagen", @"D" },
             { @"dag", @"D" },
+            { @"dgn", @"D" },
             { @"uren", @"H" },
             { @"uur", @"H" },
             { @"u", @"H" },
@@ -321,12 +324,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"decenniën", 315360000 },
             { @"jaren", 31536000 },
             { @"jaar", 31536000 },
+            { @"jr", 31536000 },
             { @"maanden", 2592000 },
             { @"maand", 2592000 },
+            { @"mnd", 2592000 },
             { @"weken", 604800 },
             { @"week", 604800 },
             { @"dagen", 86400 },
             { @"dag", 86400 },
+            { @"dgn", 86400 },
             { @"werkdagen", 86400 },
             { @"werkdag", 86400 },
             { @"uren", 3600 },

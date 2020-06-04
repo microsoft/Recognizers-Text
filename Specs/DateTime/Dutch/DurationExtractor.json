@@ -12,6 +12,18 @@
     ]
   },
   {
+    "Input": "Ik ga 3 dgn weg",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 dgn",
+        "Type": "duration",
+        "Start": 6,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "Ik ga 3dagen weg",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -32,6 +44,18 @@
         "Type": "duration",
         "Start": 6,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga 3,5 jr weg",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3,5 jr",
+        "Type": "duration",
+        "Start": 6,
+        "Length": 6
       }
     ]
   },
