@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)";
       public static readonly string OrdinalNumbersRegex = $@"(((第|だい)({ZeroToNineFullHalfRegex}+)({RoundNumberIntegerRegex}+)?))|(({ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+)({RoundNumberIntegerRegex}+)?(番目|位|等(?!級)))";
       public static readonly string OrdinalRegex = $@"(({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|(({AllIntRegex}+|{NumbersWithAllowListRegex}+)(番目|位|等))))|(最初|1等|ファースト)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から１つ前のこと|から１つ前(のも)?|から(3|2|３|２)番目|(から１つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))";
       public static readonly string AllOrdinalRegex = $@"({OrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string AllFractionNumber = $@"((({NegativeNumberTermsRegex}{{0,1}})|{NegativeNumberTermsRegexNum})(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{{0,1}}\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})+)";
       public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
@@ -225,10 +225,6 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"現在のこと", @"0" },
             { @"前のもの", @"-1" },
             { @"次のもの", @"1" },
-            { @"最後から３番目", @"-2" },
-            { @"最後から１つ前", @"-1" },
-            { @"最後から１つ前のもの", @"-1" },
-            { @"最後から１つ前のこと", @"-1" },
             { @"最後から3番目", @"-2" },
             { @"最後から2番目", @"-1" }
         };
@@ -249,10 +245,6 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"最後から1つ前", @"end" },
             { @"前のもの", @"current" },
             { @"次のもの", @"current" },
-            { @"最後から３番目", @"end" },
-            { @"最後から１つ前", @"end" },
-            { @"最後から１つ前のもの", @"end" },
-            { @"最後から１つ前のこと", @"end" },
             { @"最後から3番目", @"end" },
             { @"最後から2番目", @"end" }
         };
