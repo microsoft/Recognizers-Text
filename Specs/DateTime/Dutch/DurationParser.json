@@ -4,6 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3u",
@@ -20,15 +21,14 @@
         "Start": 7,
         "Length": 2
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 dagen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 dagen",
@@ -45,15 +45,14 @@
         "Start": 7,
         "Length": 7
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3,5 jaar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3,5 jaar",
@@ -70,15 +69,14 @@
         "Start": 7,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 u weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 u",
@@ -95,15 +93,14 @@
         "Start": 7,
         "Length": 3
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 uur",
@@ -120,15 +117,14 @@
         "Start": 7,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 maanden weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 maanden",
@@ -145,15 +141,14 @@
         "Start": 7,
         "Length": 9
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 minuten weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 minuten",
@@ -170,15 +165,14 @@
         "Start": 7,
         "Length": 9
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 min weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 min",
@@ -195,15 +189,14 @@
         "Start": 7,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 123,45 sec weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "123,45 sec",
@@ -220,15 +213,14 @@
         "Start": 7,
         "Length": 10
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben twee weken weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee weken",
@@ -245,15 +237,14 @@
         "Start": 7,
         "Length": 10
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "I'k ben twintig min weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twintig min",
@@ -270,18 +261,17 @@
         "Start": 8,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben vierentwintig uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "vierentwintig",
+        "Text": "vierentwintig uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT24H",
@@ -293,17 +283,16 @@
           }
         },
         "Start": 7,
-        "Length": 13
+        "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de hele dag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele dag",
@@ -320,15 +309,14 @@
         "Start": 7,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de hele week weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele week",
@@ -345,15 +333,14 @@
         "Start": 7,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de hele maand weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele maand",
@@ -370,15 +357,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben het hele jaar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het hele jaar",
@@ -395,15 +381,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de volle dag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volle dag",
@@ -420,15 +405,14 @@
         "Start": 7,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de volle week weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volle week",
@@ -445,15 +429,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de volle maand weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volle maand",
@@ -470,15 +453,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben het volle jaar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het volle jaar",
@@ -495,15 +477,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een uur",
@@ -520,15 +501,14 @@
         "Start": 7,
         "Length": 7
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "half jaar",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "half jaar",
@@ -545,15 +525,14 @@
         "Start": 0,
         "Length": 9
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "een half jaar",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een half jaar",
@@ -570,15 +549,14 @@
         "Start": 0,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben anderhalf uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -595,15 +573,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben anderhalve dag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "anderhalve dag",
@@ -611,27 +588,26 @@
         "Value": {
           "Timex": "P1.5D",
           "FutureResolution": {
-            "duration": "7776000"
+            "duration": "129600"
           },
           "PastResolution": {
-            "duration": "7776000"
+            "duration": "129600"
           }
         },
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een kwartier uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "kwartier",
+        "Text": "een kwartier uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT0.25H",
@@ -642,21 +618,20 @@
             "duration": "900"
           }
         },
-        "Start": 11,
-        "Length": 8
+        "Start": 7,
+        "Length": 16
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een half uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "half uur",
+        "Text": "een half uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT0.5H",
@@ -667,18 +642,17 @@
             "duration": "1800"
           }
         },
-        "Start": 11,
-        "Length": 8
+        "Start": 7,
+        "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben twee uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee uur",
@@ -695,15 +669,14 @@
         "Start": 7,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben tweeëneenhalf uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeëneenhalf uur",
@@ -720,16 +693,14 @@
         "Start": 7,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 1 jaar, 1 maand en 21 dagen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 jaar, 1 maand en 21 dagen",
@@ -746,15 +717,14 @@
         "Start": 7,
         "Length": 27
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 2 dagen en 1 maand weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2 dagen en 1 maand",
@@ -771,15 +741,14 @@
         "Start": 7,
         "Length": 18
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben een week en drie dagen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een week en drie dagen",
@@ -796,15 +765,14 @@
         "Start": 7,
         "Length": 22
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een paar weken weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een paar weken",
@@ -821,15 +789,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een paar dagen weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een paar dagen",
@@ -846,15 +813,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben minder dan een paar dagen weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "minder dan een paar dagen",
@@ -872,15 +838,14 @@
         "Start": 7,
         "Length": 25
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben meer dan een uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "meer dan een uur",
@@ -898,14 +863,14 @@
         "Start": 7,
         "Length": 16
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben nog een uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een uur",
@@ -922,15 +887,14 @@
         "Start": 7,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik bedacht me dat je nog een week weg bent",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een week",
@@ -947,15 +911,14 @@
         "Start": 21,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Kunnen we nog een maand wachten?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een maand",
@@ -972,16 +935,13 @@
         "Start": 10,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik vertrek voor 3u",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1006,7 +966,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1022,7 +981,7 @@
           }
         },
         "Start": 16,
-        "Length": 8
+        "Length": 7
       }
     ]
   },
@@ -1031,7 +990,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1056,7 +1014,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1072,7 +1029,7 @@
           }
         },
         "Start": 16,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
@@ -1081,7 +1038,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1097,7 +1053,7 @@
           }
         },
         "Start": 16,
-        "Length": 8
+        "Length": 9
       }
     ]
   },
@@ -1106,7 +1062,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1131,7 +1086,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1156,7 +1110,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1181,7 +1134,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1197,7 +1149,7 @@
           }
         },
         "Start": 16,
-        "Length": 9
+        "Length": 10
       }
     ]
   },
@@ -1206,7 +1158,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1222,7 +1173,7 @@
           }
         },
         "Start": 16,
-        "Length": 10
+        "Length": 15
       }
     ]
   },
@@ -1231,7 +1182,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1247,7 +1197,7 @@
           }
         },
         "Start": 16,
-        "Length": 7
+        "Length": 11
       }
     ]
   },
@@ -1256,7 +1206,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1272,7 +1221,7 @@
           }
         },
         "Start": 16,
-        "Length": 8
+        "Length": 12
       }
     ]
   },
@@ -1281,7 +1230,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1297,7 +1245,7 @@
           }
         },
         "Start": 16,
-        "Length": 9
+        "Length": 13
       }
     ]
   },
@@ -1306,7 +1254,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1322,7 +1269,7 @@
           }
         },
         "Start": 16,
-        "Length": 8
+        "Length": 13
       }
     ]
   },
@@ -1331,7 +1278,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1347,7 +1293,7 @@
           }
         },
         "Start": 16,
-        "Length": 8
+        "Length": 13
       }
     ]
   },
@@ -1356,7 +1302,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1372,7 +1317,7 @@
           }
         },
         "Start": 16,
-        "Length": 9
+        "Length": 14
       }
     ]
   },
@@ -1381,7 +1326,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1397,7 +1341,7 @@
           }
         },
         "Start": 16,
-        "Length": 10
+        "Length": 15
       }
     ]
   },
@@ -1406,7 +1350,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1422,7 +1365,7 @@
           }
         },
         "Start": 16,
-        "Length": 9
+        "Length": 15
       }
     ]
   },
@@ -1431,7 +1374,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1456,7 +1398,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1472,7 +1413,7 @@
           }
         },
         "Start": 16,
-        "Length": 9
+        "Length": 10
       }
     ]
   },
@@ -1481,7 +1422,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1506,7 +1446,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1522,7 +1461,7 @@
           }
         },
         "Start": 16,
-        "Length": 18
+        "Length": 13
       }
     ]
   },
@@ -1531,7 +1470,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1547,7 +1485,7 @@
           }
         },
         "Start": 16,
-        "Length": 9
+        "Length": 7
       }
     ]
   },
@@ -1556,7 +1494,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1572,7 +1509,7 @@
           }
         },
         "Start": 16,
-        "Length": 8
+        "Length": 9
       }
     ]
   },
@@ -1581,7 +1518,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1597,7 +1533,7 @@
           }
         },
         "Start": 16,
-        "Length": 20
+        "Length": 14
       }
     ]
   },
@@ -1606,7 +1542,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1622,7 +1557,7 @@
           }
         },
         "Start": 16,
-        "Length": 22
+        "Length": 25
       }
     ]
   },
@@ -1631,7 +1566,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1647,7 +1581,7 @@
           }
         },
         "Start": 16,
-        "Length": 14
+        "Length": 16
       }
     ]
   },
@@ -1656,7 +1590,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1672,7 +1605,7 @@
           }
         },
         "Start": 16,
-        "Length": 19
+        "Length": 22
       }
     ]
   },
@@ -1681,23 +1614,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een aantal weken",
         "Type": "duration",
         "Value": {
-          "Timex": "P2W",
+          "Timex": "P3W",
           "FutureResolution": {
-            "duration": "1209600"
+            "duration": "1814400"
           },
           "PastResolution": {
-            "duration": "1209600"
+            "duration": "1814400"
           }
         },
         "Start": 16,
-        "Length": 15
+        "Length": 16
       }
     ]
   },
@@ -1706,19 +1638,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een aantal dagen",
         "Type": "duration",
         "Value": {
-          "Timex": "P2D",
+          "Timex": "P3D",
           "FutureResolution": {
-            "duration": "172800"
+            "duration": "259200"
           },
           "PastResolution": {
-            "duration": "172800"
+            "duration": "259200"
           }
         },
         "Start": 7,
@@ -1731,7 +1662,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1739,16 +1669,16 @@
         "Type": "duration",
         "Value": {
           "Mod": "less",
-          "Timex": "P2D",
+          "Timex": "P3D",
           "FutureResolution": {
-            "duration": "172800"
+            "duration": "259200"
           },
           "PastResolution": {
-            "duration": "172800"
+            "duration": "259200"
           }
         },
         "Start": 7,
-        "Length": 26
+        "Length": 27
       }
     ]
   },
@@ -1757,7 +1687,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1774,7 +1703,7 @@
           }
         },
         "Start": 16,
-        "Length": 17
+        "Length": 16
       }
     ]
   },
@@ -1783,7 +1712,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1799,7 +1727,7 @@
           }
         },
         "Start": 16,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
@@ -1808,7 +1736,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1833,7 +1760,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1849,13 +1775,12 @@
           }
         },
         "Start": 10,
-        "Length": 20
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ik vertrek voor twee decennia",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1871,20 +1796,19 @@
           }
         },
         "Start": 16,
-        "Length": 11
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik vertrek voor veertien dagen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "veertien dagen",
         "Type": "duration",
         "Value": {
-          "Timex": "P2W",
+          "Timex": "P14D",
           "FutureResolution": {
             "duration": "1209600"
           },
@@ -1893,7 +1817,7 @@
           }
         },
         "Start": 16,
-        "Length": 11
+        "Length": 14
       }
     ]
   }
