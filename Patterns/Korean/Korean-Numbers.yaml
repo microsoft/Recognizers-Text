@@ -132,7 +132,7 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '(와|과|분\s*의|중)'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (영|령|공|일|(?<!(율|답|둘))이(?!다)|두|삼|사(?!(랑|주))|(?<!시)오(?!월)|육|칠|팔|구|한|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)
+  def: (영|령|공|(?<!생)일|(?<!(율|답|둘))이(?!다)|두|삼|사(?!(랑|주))|(?<!시)오(?!(월|늘))|육|칠|팔|구|한|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)
 TenToNinetySinoIntegerRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex})?십
   references: [ZeroToNineIntegerRegex]
@@ -161,7 +161,7 @@ NotSingleRegex: !nestedRegex
   def: ({TenToNinetyNativeIntegerRegex})|((({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|[십천백셋])\s*(\s*{RoundNumberIntegerRegex}){1,2}(와)?|[십천백셋]|{RoundNumberIntegerRegex}\s*((과\s*)?{ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))((\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){1,2}(와)?|영)\s*)*(\s*{ZeroToNineIntegerRegex})?)
   references: [TenToNinetyNativeIntegerRegex, ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 SingleRegex: !nestedRegex
-  def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|일|두|삼|사(?!(랑|주))|(?<![시])오|육|칠|팔|구|세|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))
+  def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생)일|두|삼|사(?!(랑|주))|(?<![시])오(?!(월|늘))|육|칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, AllowListRegex]
 NativeSingleRegex: !nestedRegex
   def: (?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineIntegerRegex})
@@ -179,10 +179,10 @@ NumbersWithDozen: !nestedRegex
   def: '(((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|십)\s*(\s*{RoundNumberIntegerRegex}){1,2}|[십]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){1,2}|영)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex}))?(다스)(?!{AllIntRegex})'
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex, AllIntRegex]
 NumbersSpecialsChars: !nestedRegex
-  def: ((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+)
+  def: ((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}+))(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?(k|mil|t|g|b|km|ml|m)))
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, NegativeNumberTermsRegex]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
-  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}'
+  def: '({NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+(\s*{BaseNumbers.NumberMultiplierRegex}+)?)(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?(k|mil|t|g|b|km|ml|m)))'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
 ZeroToNineIntegerSpecialsChars: !nestedRegex
   def: ((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*){ZeroToNineIntegerRegex}+)
@@ -206,19 +206,19 @@ PointRegex: !nestedRegex
   def: '{PointRegexStr}'
   references: [PointRegexStr]
 DoubleSpecialsChars: !nestedRegex
-  def: (?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+))
+  def: ((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!(k|mil|t|g|b|km|ml|m))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 DoubleRoundNumberSpecialsChars: !nestedRegex
   def: (?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．점]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．점]\s?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\.．점]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+))
   references: [NegativeNumberTermsRegexNum,NegativeNumberTermsRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]
 DoubleSpecialsCharsWithNegatives: !nestedRegex
-  def: (?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))
+  def: ((?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!(k|mil|t|g|b|km|ml|m))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 SimpleDoubleSpecialsChars: !nestedRegex
-  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+
+  def: (({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+)
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}
+  def: (({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex})(?=\b|\D)(?!(k|mil|t|g|b|km|ml|m))
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex]
 DoubleWithThousandsRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*?[백천만억]{1,2}'
@@ -234,12 +234,12 @@ DoubleScientificNotationRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegex: !nestedRegex
-  def: '(({AllIntRegex}|{RoundNumberIntegerRegex}+)\s*(번째|위))|첫(음|번째)?|처음|일등'
-  references: [AllIntRegex,RoundNumberIntegerRegex]
+  def: '((({AllIntRegex}|{RoundNumberIntegerRegex}+)\s*(번째|위))|첫(음|번째)?|처음|일등)|((({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+)(?:일|등|번째))'
+  references: [AllIntRegex,RoundNumberIntegerRegex,ZeroToNineIntegerRegex]
 RelativeOrdinalRegex: !simpleRegex
-  def: (?<relativeOrdinal>(뒤에서 세번째|다음(\s*것)?|이전 것|현재|(((마지막)((에)?\s*((서)?\s*(두번째|((바로)?\s*(것|전)))|의 옆))?)|지금)(의 것)?))
+  def: (?<relativeOrdinal>((끝(에서)?\s*((세|두)번째)?(바로)?\s*(전의)?(\s*것)?)|뒤에서 세번째|다음(\s*것)?|이전 것|현재|(((마지막)((에)?\s*((서)?\s*(두번째|((바로)?\s*(것|전)))|의 옆))?)|지금)(의 것)?))
 OrdinalNumbersRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}+\s*(번째)'
+  def: '({ZeroToNineFullHalfRegex}+\s*(번째))|({ZeroToNineFullHalfRegex}+(?:일))'
   references: [ZeroToNineFullHalfRegex]
 OrdinalKoreanRegex: !nestedRegex
   def: '({OrdinalRegex}|{RelativeOrdinalRegex}|{OrdinalNumbersRegex})'
@@ -335,11 +335,14 @@ OneNumberRangeLessSeparateRegex: !simpleRegex
 OneNumberRangeEqualRegex: !nestedRegex
   def: ((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex})(거나|다|개)?(\s*({LessRegex})(은)?)?|((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(년에)\s*(\d+)(은|이다))
   references: [EqualRegex,LessRegex]
+OneNumberRangeEqualRegex2: !nestedRegex
+  def: ((?<number1>(((?!((\s(?!\d+))|(,(?!\d+))|。)))(?<=((는\s+))))([\d]|{AllIntRegex})+)(이다))
+  references: [AllIntRegex]
 OneNumberRangeMoreRegex1: !nestedRegex
   def: ((?<number1>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*({MoreOrEqual}|{MoreRegex}|{MoreOrEqualSuffix})(은|다)?)
   references: [MoreOrEqual, MoreRegex, MoreOrEqualSuffix]
 OneNumberRangeMoreRegex2: !nestedRegex
-  def: (?<number1>((?!((、(?!\d+))|(、(?!\d+))|。))|(?!\s+).)+)\s*(((혹은\s*그)?){MoreRegex}|((혹은\s*그)?){MoreOrEqualSuffix})
+  def: (?<number1>(((?!(((?!([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+))))|(사분의\s)).)+)(보다)?\s({MoreRegex})|(?<number1>((?!((、(?!\d+))|(、(?!\d+))|。))|(?!\s+).)+)\s*(((혹은\s*그)?){MoreRegex}|((혹은\s*그)?){MoreOrEqualSuffix})
   references: [MoreRegex, MoreOrEqualSuffix]
 OneNumberRangeMoreRegex3: !nestedRegex
   def: ({RangePrefixMoreRegex})\s*(?<number1>(((?!(((?!\d+))|((,)(?!\d+))|。)).)+))
@@ -347,9 +350,15 @@ OneNumberRangeMoreRegex3: !nestedRegex
 OneNumberRangeMoreRegex4: !nestedRegex
   def: ((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex}){MoreOrEqual2}(다)?
   references: [MoreOrEqual2,EqualRegex]
+OneNumberRangeMoreRegex5: !nestedRegex
+  def: (?<number1>((?![,.](?!\d+)).)+)\s*((또는)\s+(그){MoreOrEqualSuffix})
+  references: [MoreOrEqualSuffix]
+OneNumberRangeMoreRegexFraction: !nestedRegex
+  def: ((?<number1>(((\d+)[/／]).)+)(이)\s*{MoreRegex})
+  references: [MoreRegex]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex}(은|다)?)|((?<number2>([영령공일이두삼사오육칠팔구]+|[십백천만억조경열]+)+)\s*(또는)?\s*(그|그보다)?\s*(미만|적게|밑|이하))
-  references: [LessOrEqual, LessRegex]
+  def: ((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex}(은|다)?)|{OneNumberRangeLessRegex5}
+  references: [LessOrEqual, LessRegex,OneNumberRangeLessRegex5]
 OneNumberRangeLessRegex2: !nestedRegex
   def: ((?<number2>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에|이)+\s*{EqualRegex}?)(거나)\s*(최소)\s*(\d+)
   references: [EqualRegex]
@@ -359,6 +368,8 @@ OneNumberRangeLessRegex3: !nestedRegex
 OneNumberRangeLessRegex4: !nestedRegex
   def: (?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))\s*(에)(?:({LessOrEqualSuffix}))
   references: [LessOrEqualSuffix]
+OneNumberRangeLessRegex5: !simpleRegex
+  def: ((?<number2>((이분의\s)|[영령공일이두삼사오육칠팔구]+|[십백천만억조경열]+)+)\s*(또는)?\s*(그|그보다|보다)?\s*(미만|적게|밑|이하|작다))
 TwoNumberRangeRegex1: !nestedRegex
   def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(위?)\s*(과|와|{TillRegex})\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(위?)\s*(사이)
   references: [TillRegex]
@@ -377,6 +388,9 @@ TwoNumberRangeRegex5: !nestedRegex
 TwoNumberRangeRegex6: !nestedRegex
   def: ((?<number1>((?!((，(?!\d+))|(,(?!\d+))|。|\D)).)+)\s*{TillRegex}+\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(까지))
   references: [TillRegex]
+TwoNumberRangeRegex7: !nestedRegex
+  def: ({OneNumberRangeMoreRegex2}\s*{OneNumberRangeLessRegex5})
+  references: [OneNumberRangeMoreRegex2, OneNumberRangeLessRegex5]
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:
@@ -391,6 +405,10 @@ RelativeReferenceOffsetMap: !dictionary
     마지막에서 바로 전: -1
     지금의 것: 0
     현재: 0
+    끝: 0
+    끝에서 세번째: -2
+    끝에서 두번째: -1
+    끝에서 바로 전의 것: -1
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
   entries:
@@ -405,4 +423,8 @@ RelativeReferenceRelativeToMap: !dictionary
     마지막에서 바로 전: end
     지금의 것: current
     현재: current
+    끝: end
+    끝에서 세번째: end
+    끝에서 두번째: end
+    끝에서 바로 전의 것: end
 ...

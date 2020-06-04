@@ -57,7 +57,6 @@
     "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "십등에서 십오등 사이",
@@ -976,10 +975,7 @@
   },
   {
     "Input": "이 수는 사분의 일 초과 이분의 일 미만이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "사분의 일 초과 이분의 일 미만",
@@ -1024,10 +1020,7 @@
   },
   {
     "Input": "1/2이 넘는 사람들이 이곳에 왔다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1/2이 넘는",
@@ -1428,10 +1421,7 @@
   },
   {
     "Input": "5분의 2 또는 그 이상이 어때?",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "5분의 2 또는 그 이상",
@@ -1676,9 +1666,7 @@
   {
     "Input": "이 수는 이십보다 크고 삼십오보다 작다",
     "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "이십보다 크고 삼십오보다 작다",
@@ -1708,10 +1696,7 @@
   },
   {
     "Input": "이 수는 사분의 일보다 크고 이분의 일보다 작다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "사분의 일보다 크고 이분의 일보다 작다",
@@ -1757,10 +1742,7 @@
   },
   {
     "Input": "x는 백칠십이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "백칠십이다",
@@ -1802,10 +1784,7 @@
   },
   {
     "Input": "그 수는 20이다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "20이다",

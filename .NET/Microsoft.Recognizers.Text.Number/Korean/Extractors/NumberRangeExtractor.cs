@@ -36,6 +36,11 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     NumberRangeConstants.TWONUM
                 },
                 {
+                    // 이십보다 크고 삼십오보다 작다
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex7, RegexFlags),
+                    NumberRangeConstants.TWONUM
+                },
+                {
                     // ...에서..., 20~30
                     new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags),
                     NumberRangeConstants.TWONUMTILL
@@ -64,6 +69,15 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     NumberRangeConstants.MORE
                 },
                 {
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex5, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
+                   // >|≥...
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegexFraction, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
                     NumberRangeConstants.LESS
                 },
@@ -78,6 +92,11 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
+                    NumberRangeConstants.EQUAL
+                },
+                {
+                    // >|≥...
+                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex2, RegexFlags),
                     NumberRangeConstants.EQUAL
                 },
                 {
