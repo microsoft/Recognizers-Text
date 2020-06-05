@@ -648,6 +648,30 @@
     ]
   },
   {
+    "Input": "Ik ben een kwart uur weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een kwart uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT0.25H",
+          "FutureResolution": {
+            "duration": "900"
+          },
+          "PastResolution": {
+            "duration": "900"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
     "Input": "Ik ben een half uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
