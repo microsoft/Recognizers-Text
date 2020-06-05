@@ -208,15 +208,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}(\s+(om|rond|tegen|op))?))\b";
       public const string LessThanRegex = @"\b(minder\s+dan)\b";
       public const string MoreThanRegex = @"\b(meer\s+dan)\b";
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier\s+uur)|(?<quarter>kwartier)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?";
-      public const string SuffixAndRegex = @"(?<suffix>\s*(\sen|en een)\s+(?<suffix_num>half|kwart))";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier(\s+uur)?)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?";
+      public const string SuffixAndRegex = @"(?<suffix>\s*(\sen|en een)\s+(?<suffix_num>half|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))";
       public const string PeriodicRegex = @"\b(?<periodic>dagelijks|maandelijks|wekelijks|twee-wekelijks|jaarlijks)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(iedere|elke)(?<other>\s+andere)?\s*{DurationUnitRegex})";
       public const string EachPrefixRegex = @"\b(?<each>(iedere|elke)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(iedere|elke)\s*)";
       public const string SetLastRegex = @"(?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)";
       public const string EachDayRegex = @"^\s*(elke)\s*dag\b";
-      public static readonly string DurationFollowedUnit = $@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
+      public static readonly string DurationFollowedUnit = $@"^\s*((?<suffix>(?<unit>(?<suffix_num>(een\s+)?kwartier)))|{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"\b(?<half>((nog een|een|nog)\s+(anderhalf|anderhalve|half|halve)?))\s*{DurationUnitRegex}";
       public const string DuringRegex = @"\b(voor\s+een|gedurende\s+(het|de))\s+(?<unit>jaar|maand|week|dag)\b";
@@ -677,6 +677,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"anderhalf", 1.5 },
             { @"anderhalve", 1.5 },
             { @"halve", 0.5 },
+            { @"een kwartier", 0.25 },
             { @"kwartier", 0.25 },
             { @"kwart", 0.25 },
             { @"driekwart", 0.75 },

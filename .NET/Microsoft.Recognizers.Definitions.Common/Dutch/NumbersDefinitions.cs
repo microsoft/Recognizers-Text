@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string OrdinalDutchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionUnitsRegex = @"((?<onehalf>anderhalve|anderhalf)|(?<quarter>driekwart)|half|halve|helft|kwart|kwartier)";
+      public const string FractionUnitsRegex = @"((?<onehalf>anderhalve|anderhalf)|(?<quarter>driekwart)|half|halve|helft|kwart)";
       public const string FractionHalfRegex = @"(ënhalf|enhalve|ëneenhalf|ëneenhalf)$";
       public static readonly string[] OneHalfTokens = { @"een", @"half" };
       public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|{FractionUnitsRegex}))(?=\b)";
@@ -165,7 +165,6 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"derde", 3 },
             { @"vierde", 4 },
             { @"kwart", 4 },
-            { @"kwartier", 4 },
             { @"vijfde", 5 },
             { @"vijfden", 5 },
             { @"zesde", 6 },

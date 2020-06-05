@@ -487,10 +487,10 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   def: \b(meer\s+dan)\b
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier\s+uur)|(?<quarter>kwartier)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?
+  def: (?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier(\s+uur)?)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(\sen|en een)\s+(?<suffix_num>half|kwart))
+  def: (?<suffix>\s*(\sen|en een)\s+(?<suffix_num>half|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>dagelijks|maandelijks|wekelijks|twee-wekelijks|jaarlijks)\b
 EachUnitRegex: !nestedRegex
@@ -505,7 +505,7 @@ SetLastRegex: !simpleRegex
 EachDayRegex: !simpleRegex
   def: ^\s*(elke)\s*dag\b
 DurationFollowedUnit: !nestedRegex
-  def: ^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
+  def: ^\s*((?<suffix>(?<unit>(?<suffix_num>(een\s+)?kwartier)))|{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
@@ -1067,6 +1067,7 @@ DoubleNumbers: !dictionary
     anderhalf: 1.5
     anderhalve: 1.5
     halve: 0.5
+    een kwartier: 0.25
     kwartier: 0.25
     kwart: 0.25
     driekwart: 0.75

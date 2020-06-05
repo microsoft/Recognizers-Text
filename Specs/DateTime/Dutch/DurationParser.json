@@ -600,14 +600,14 @@
     ]
   },
   {
-    "Input": "Ik ben een kwartier uur weg",
+    "Input": "Ik ben een kwartier weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "een kwartier uur",
+        "Text": "een kwartier",
         "Type": "duration",
         "Value": {
           "Timex": "PT0.25H",
@@ -619,7 +619,7 @@
           }
         },
         "Start": 7,
-        "Length": 16
+        "Length": 12
       }
     ]
   },
