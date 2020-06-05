@@ -52,6 +52,9 @@
         // 1'234'567,89
         public static LongFormatType DoubleNumQuoteComma { get; set; } = new LongFormatType('\'', ',');
 
+        // １　２３４　５６７．８９
+        public static LongFormatType DoubleNumFullWidthBlankDot { get; set; } = new LongFormatType('　', '.');
+
         public char DecimalsMark { get; }
 
         public char ThousandsMark { get; }

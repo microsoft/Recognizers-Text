@@ -58,6 +58,16 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
+                {
+                    // １　２３４　５６７．８９
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumFullWidthBlankDot),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    // 1 234 567.89
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();

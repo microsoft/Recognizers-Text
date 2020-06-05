@@ -1567,6 +1567,7 @@
   {
     "Input": "この袋の厚さは０・０８ミリメートルです。",
     "IgnoreResolution": true,
+    "Comment": "Need language review",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
     "Results": [
@@ -1789,6 +1790,7 @@
   {
     "Input": "テニスボールを３００と２ダース発注しました。",
     "IgnoreResolution": true,
+    "Comment": "Need language review",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
     "Results": [
@@ -2083,7 +2085,6 @@
     "Input": "答え−１万です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-1万",
@@ -2272,6 +2273,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "1の10乗",
@@ -2290,6 +2292,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "1.1の23乗",
@@ -2597,6 +2600,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "2.5の-1乗",
@@ -2615,6 +2619,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-2500の-1乗",
@@ -2633,6 +2638,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-1.1の23乗",
@@ -2651,6 +2657,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-2.5の-1乗",
@@ -2669,6 +2676,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-1.1の--23乗",
@@ -2687,6 +2695,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-127.32×10の13乗",
@@ -2705,6 +2714,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "12.32×10の14乗",
@@ -2723,6 +2733,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-12×10の-1乗",
@@ -3393,7 +3404,6 @@
     "Input": "２０１８年５月１７日にいつでも会えますか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "2018",
@@ -3824,23 +3834,17 @@
   },
   {
     "Input": "このボトルには水が１８０．２５ミリリットル入れられます。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "このボトルには水が１８０ミリリットル入れられます。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "会社から自宅までの距離は２９キロメートルです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -3852,16 +3856,12 @@
   },
   {
     "Input": "毎日この薬を０．２５ミリリットル飲んでください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "１メートルは数字ではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -3931,7 +3931,9 @@
   {
     "Input": "この袋の厚さは0.08ミリメートルです。",
     "IgnoreResolution": true,
+    "Comment": "Need language review",
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "0.08",
@@ -4152,6 +4154,7 @@
   {
     "Input": "テニスボールを300と2ダース発注しました。",
     "IgnoreResolution": true,
+    "Comment": "Need language review",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
     "Results": [
@@ -4446,7 +4449,6 @@
     "Input": "答え-1万です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-1万",
@@ -4635,6 +4637,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "1の10乗",
@@ -4653,6 +4656,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "1.1の23乗",
@@ -4960,6 +4964,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "2.5の-1乗",
@@ -4978,6 +4983,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-2500の-1乗",
@@ -4996,6 +5002,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-1.1の23乗",
@@ -5014,6 +5021,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-2.5の-1乗",
@@ -5032,6 +5040,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-1.1の--23乗",
@@ -5050,6 +5059,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-127.32×10の13乗",
@@ -5068,6 +5078,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-12.32×10の14乗",
@@ -5086,6 +5097,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "-12×10の-1乗",
@@ -5728,7 +5740,6 @@
     "Input": "1 234 567.89は有効な数値形式です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 234 567.89",
@@ -6203,23 +6214,17 @@
   },
   {
     "Input": "このボトルには水が180.25ミリリットル入れられます。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "このボトルには水が180ミリリットル入れられます。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "会社から自宅までの距離は29キロメートルです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -6231,16 +6236,12 @@
   },
   {
     "Input": "毎日この薬を0.25 ミリリットル飲んでください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "1メートルは数字ではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -6502,7 +6503,6 @@
     "Input": "テニスボールを三百と二ダース発注しました。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "三百と二ダース",
@@ -6520,7 +6520,6 @@
     "Input": "百二十三万四千五百六十七は素数ではありません。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "百二十三万四千五百六十七",
@@ -6728,7 +6727,6 @@
     "Input": "答えは百億です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "百億",
@@ -6934,6 +6932,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "一の十乗",
@@ -6952,6 +6951,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "一・一の二十三乗",
@@ -7089,6 +7089,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. Parser does not support half (半).",
     "Results": [
       {
         "Text": "半分",
@@ -7277,6 +7278,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "二・五のマイナス一乗",
@@ -7295,6 +7297,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス二千五百のマイナス一乗",
@@ -7313,6 +7316,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス一・一の二十三乗",
@@ -7331,6 +7335,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス二・五のマイナス一乗",
@@ -7349,6 +7354,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス一・一のマイナスマイナス二十三乗",
@@ -7367,6 +7373,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス百二十七・三二×十の十三乗",
@@ -7385,6 +7392,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス十二・三二×十の十四乗",
@@ -7403,6 +7411,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. PowerNumberParse method does not support 'power' representation for Kanji",
     "Results": [
       {
         "Text": "マイナス十二のマイナス一乗",
@@ -7947,7 +7956,6 @@
     "Input": "答えは百二十三万四千五百六十七です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "百二十三万四千五百六十七",
@@ -7992,7 +8000,6 @@
     "Input": "現在、中国の人口は十四億一千四百二万千百人です。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "十四億一千四百二万千百",
@@ -8392,7 +8399,6 @@
     "Input": "いくつかの国では、五・〇〇もしくは五、〇〇とかいてもいいです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "五・〇〇",
@@ -8438,6 +8444,7 @@
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Comment": "Extraction done. Parser does not support half (半).",
     "Results": [
       {
         "Text": "半数",
@@ -8541,73 +8548,67 @@
   },
   {
     "Input": "このボトルには水が百八十・二五ミリリットル入れられます。",
-    "NotSupported": "dotnet",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "このボトルには水が百八十ミリリットル入れられます。",
-    "NotSupported": "dotnet",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "会社から自宅までの距離は二十九キロメートルです。",
-    "NotSupported": "dotnet",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "来週の木曜日は五月四日です。",
-    "NotSupported": "dotnet",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
     "Input": "毎日この薬を〇・二五ミリリットル飲んでください。",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation: This case requires more research.",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
-    "Comment": "PendingValidation: This case requires more research.",
     "Results": []
   },
   {
     "Input": "シアトルへのファーストクラスの席を予約してください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "一メートルは数字ではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "あなたが言及したものは無効です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "これはあなたが間違っています。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "どちらをあなたが準備しますか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "あれは本当にいいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   }
