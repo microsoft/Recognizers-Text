@@ -468,18 +468,6 @@
     ]
   },
   {
-    "Input": "Ik ga vanavond om 7 terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vanavond om 7",
-        "Type": "datetime",
-        "Start": 6,
-        "Length": 13
-      }
-    ]
-  },
-  {
     "Input": "voor 2 personen vanavond om 21.30u",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
