@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         {
             '十'
         };
-      public const string UnitsRegex = @"(k|mil|t|g|b|km|ml|m|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)";
+      public static readonly string AllMultiplierLookupRegex = $@"({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)";
       public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";
       public static readonly string DigitNumRegex = $@"{ZeroToNineFullHalfRegex}+";
@@ -134,8 +134,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string AllIntRegex = $@"(?<!(ダース))((((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|(({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})|{RoundNumberIntegerRegex})){{1,2}}|({RoundNumberIntegerRegex}+))(\s*[以上]+)?)";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly string NumbersSpecialsChars = $@"((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}))+(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{UnitsRegex}))";
-      public static readonly string NumbersSpecialsCharsWithSuffix = $@"({NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+(\s*{BaseNumbers.NumberMultiplierRegex}+)?)(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{UnitsRegex}))";
+      public static readonly string NumbersSpecialsChars = $@"((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}))+(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{AllMultiplierLookupRegex}))";
+      public static readonly string NumbersSpecialsCharsWithSuffix = $@"({NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+(\s*{BaseNumbers.NumberMultiplierRegex}+)?)(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{AllMultiplierLookupRegex}))";
       public static readonly string DottedNumbersSpecialsChar = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{{1,3}}([,，、]{ZeroToNineFullHalfRegex}{{3}})+";
       public static readonly string NumbersWithHalfDozen = $@"半({RoundNumberIntegerRegex}|(ダース))";
       public static readonly string NumbersWithDozen = $@"({AllIntRegex}([と]?{ZeroToNineIntegerRegex})?|{ZeroToNineFullHalfRegex}+)(ダース)";
@@ -144,11 +144,11 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string NumbersWithAllowListRegex = $@"{NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}+)";
       public static readonly string NumbersAggressiveRegex = $@"(({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))";
       public static readonly string PointRegex = $@"{PointRegexStr}";
-      public static readonly string DoubleSpecialsChars = $@"((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!\s*{UnitsRegex})";
+      public static readonly string DoubleSpecialsChars = $@"((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!\s*{AllMultiplierLookupRegex})";
       public static readonly string DoubleRoundNumberSpecialsChars = $@"(?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+)";
       public static readonly string DoubleSpecialsCharsWithNegatives = $@"(?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))";
       public static readonly string SimpleDoubleSpecialsChars = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
-      public static readonly string DoubleWithMultiplierRegex = $@"(({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex})(?=\b|\D)(?!{UnitsRegex})";
+      public static readonly string DoubleWithMultiplierRegex = $@"(({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex})(?=\b|\D)(?!{AllMultiplierLookupRegex})";
       public static readonly string DoubleWithThousandsRegex = $@"({NegativeNumberTermsRegex}{{0,1}}|{NegativeNumberTermsRegexNum})\s*({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*[万亿萬億]{{1,2}})";
       public static readonly string DoubleAllFloatRegex = $@"(?<!(({AllIntRegex}[.]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*パーセント)";
       public static readonly string DoubleExponentialNotationRegex = $@"(?<!\d+[\.])({NegativeNumberTermsRegexNum}\s*)?(\d+([\.]\d+)?)e(([-+＋]*[1-9]\d*)|[0](?!\d+))|(?<!\d+[\.])({NegativeNumberTermsRegexNum}\s*)?(\d+([\.]\d+)?)(×)?(10)?の((([-+＋]*[1-9]\d*)|[0])[乗](?!\d+))";

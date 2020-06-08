@@ -95,8 +95,9 @@ TenChars: !list
   types: [char]
   entries:
     - 十
-UnitsRegex: !simpleRegex
-  def: (k|mil|t|g|b|km|ml|m|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)
+AllMultiplierLookupRegex: !nestedRegex
+  def: ({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)
+  references: [BaseNumbers.MultiplierLookupRegex]  
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
@@ -147,11 +148,11 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersSpecialsChars: !nestedRegex
-  def: ((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}))+(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{UnitsRegex}))
-  references: [NegativeNumberTermsRegexNum, NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, UnitsRegex]
+  def: ((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}))+(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{AllMultiplierLookupRegex}))
+  references: [NegativeNumberTermsRegexNum, NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, AllMultiplierLookupRegex]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
-  def: '({NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+(\s*{BaseNumbers.NumberMultiplierRegex}+)?)(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{UnitsRegex}))'
-  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex, UnitsRegex]
+  def: '({NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+(\s*{BaseNumbers.NumberMultiplierRegex}+)?)(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{AllMultiplierLookupRegex}))'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex, AllMultiplierLookupRegex]
 DottedNumbersSpecialsChar: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{1,3}([,，、]{ZeroToNineFullHalfRegex}{3})+'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
@@ -177,8 +178,8 @@ PointRegex: !nestedRegex
   def: '{PointRegexStr}'
   references: [PointRegexStr]
 DoubleSpecialsChars: !nestedRegex
-  def: ((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!\s*{UnitsRegex})
-  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum, UnitsRegex]
+  def: ((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!\s*{AllMultiplierLookupRegex})
+  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum, AllMultiplierLookupRegex]
 DoubleRoundNumberSpecialsChars: !nestedRegex
   def: (?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+)
   references: [NegativeNumberTermsRegexNum,NegativeNumberTermsRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]
@@ -189,8 +190,8 @@ SimpleDoubleSpecialsChars: !nestedRegex
   def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: (({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex})(?=\b|\D)(?!{UnitsRegex})
-  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex, UnitsRegex]
+  def: (({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex})(?=\b|\D)(?!{AllMultiplierLookupRegex})
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, BaseNumbers.NumberMultiplierRegex, AllMultiplierLookupRegex]
 DoubleWithThousandsRegex: !nestedRegex
   def: '({NegativeNumberTermsRegex}{0,1}|{NegativeNumberTermsRegexNum})\s*({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*[万亿萬億]{1,2})'
   references: [NegativeNumberTermsRegex,NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
