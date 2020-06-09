@@ -3845,7 +3845,6 @@
   {
     "Input": "会社から自宅までの距離は２９キロメートルです。",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -6226,7 +6225,6 @@
   {
     "Input": "会社から自宅までの距離は29キロメートルです。",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -6239,7 +6237,6 @@
   {
     "Input": "毎日この薬を0.25 ミリリットル飲んでください。",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -8567,7 +8564,6 @@
     "Input": "会社から自宅までの距離は二十九キロメートルです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {

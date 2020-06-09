@@ -168,8 +168,8 @@ AllFloatRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*'
   references: [NegativeNumberTermsRegex, AllIntRegex, PointRegexStr, ZeroToNineIntegerRegex]
 NumbersWithAllowListRegex: !nestedRegex
-  def: '{NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}+)'
-  references: [NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, AllIntRegex, ZeroToNineIntegerRegex, AllFloatRegex, PercentageRegex]
+  def: '(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}+))(?!(\s*{AllMultiplierLookupRegex}))'
+  references: [NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, AllIntRegex, ZeroToNineIntegerRegex, AllFloatRegex, PercentageRegex, AllMultiplierLookupRegex]
 NumbersAggressiveRegex: !nestedRegex
   def: (({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex, PercentageRegex]
