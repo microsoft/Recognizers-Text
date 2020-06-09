@@ -345,7 +345,6 @@
   },
   {
     "Input": "この数は２０より大きく３５以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -361,7 +360,6 @@
   },
   {
     "Input": "この数は２０以上３０未満の間にあります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -377,7 +375,6 @@
   },
   {
     "Input": "彼は１０番目以上１５番目未満の間に位置付けされます。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -393,7 +390,6 @@
   },
   {
     "Input": "彼は−１０以上１５未満の間を得る。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -409,7 +405,6 @@
   },
   {
     "Input": "この数は１００より大きく３００より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -425,7 +420,6 @@
   },
   {
     "Input": "この数は１００以上３００以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -443,7 +437,6 @@
     "Input": "多くて１００、少なくとも２０のりんごがあります。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "多くて100,少なくとも20",
@@ -458,7 +451,6 @@
   },
   {
     "Input": "これらのりんごは約２０から１００未満あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -474,7 +466,6 @@
   },
   {
     "Input": "この数字の範囲は２０から１００未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -490,7 +481,6 @@
   },
   {
     "Input": "この数字の範囲は１０００から１５００未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -506,7 +496,6 @@
   },
   {
     "Input": "この数字は１０００より大きく１５００より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -522,7 +511,7 @@
   },
   {
     "Input": "この数字は４分の１より大きく半分より小さいです。",
-    "IgnoreResolution": true,
+    "Comment": "Extractor done. Parser does not support half (半).",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotNet",
     "Results": [
@@ -539,7 +528,6 @@
   },
   {
     "Input": "この数字は３９６５以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -555,7 +543,6 @@
   },
   {
     "Input": "この数字は４５６５より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -571,7 +558,6 @@
   },
   {
     "Input": "この数字は３０より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -587,7 +573,6 @@
   },
   {
     "Input": "これらの製品には約５００以上あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -603,7 +588,6 @@
   },
   {
     "Input": "これらの製品には約５００もしくはそれ以上あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -619,7 +603,6 @@
   },
   {
     "Input": "１００以下の素数を見つけなさい。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -635,7 +618,6 @@
   },
   {
     "Input": "これらの製品には約５００以下あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -651,7 +633,6 @@
   },
   {
     "Input": "彼の身長は１７０未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -667,7 +648,6 @@
   },
   {
     "Input": "xは１７０に等しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -683,7 +663,6 @@
   },
   {
     "Input": "xは１０より大きく２０より小さいです。yは５０以下２０以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -708,7 +687,6 @@
   },
   {
     "Input": "この数字は２０に等しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -724,7 +702,6 @@
   },
   {
     "Input": "私たちのクラスの学生の数が２０に等しいことは重要ではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -740,7 +717,6 @@
   },
   {
     "Input": "彼のスコアは２００以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -756,7 +732,6 @@
   },
   {
     "Input": "彼のスコアは１９０より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -772,7 +747,6 @@
   },
   {
     "Input": "彼のスコアは２００もしくはそれ以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -788,7 +762,6 @@
   },
   {
     "Input": "彼のスコアは３０以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -804,7 +777,6 @@
   },
   {
     "Input": "彼のスコアは５０００に等しいか６０００より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -829,7 +801,6 @@
   },
   {
     "Input": "彼のスコアは５０００に等しいか４５００より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -854,7 +825,6 @@
   },
   {
     "Input": "彼のスコアは５０００以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -870,7 +840,6 @@
   },
   {
     "Input": "彼のスコアは５０００以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -886,7 +855,6 @@
   },
   {
     "Input": "彼のスコアは５０００もしくはそれ以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -902,9 +870,7 @@
   },
   {
     "Input": "彼のスコアは５０００に等しいか５０００より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "5000に等しい",
@@ -928,7 +894,6 @@
   },
   {
     "Input": "この数字の範囲は１０００以上５０００未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -960,7 +925,6 @@
   },
   {
     "Input": "２より大きいのはどうですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -976,7 +940,6 @@
   },
   {
     "Input": "２００９年の３００００より大きい記録を私に見せてくれませんか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -992,7 +955,6 @@
   },
   {
     "Input": "２００９年の３０００より小さい記録を私に見せてくれませんか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1008,7 +970,6 @@
   },
   {
     "Input": "いまだに３０より大きいですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1024,7 +985,6 @@
   },
   {
     "Input": "いまだに３０以上ですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1040,7 +1000,6 @@
   },
   {
     "Input": "いまだに－３０より小さいですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1056,7 +1015,6 @@
   },
   {
     "Input": "いまだに－３０以下ですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1104,7 +1062,6 @@
   },
   {
     "Input": "この数字は１９９８分の２００００に等しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1120,13 +1077,12 @@
   },
   {
     "Input": "２００８年の数は２００から３００です",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "この数字は２００以上２００８分の３００万未満に等しいです。",
-    "IgnoreResolution": true,
+    "Comment": "Extractor done. Parser does not support combination of digit and Kanji.",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotNet",
     "Results": [
@@ -1143,7 +1099,6 @@
   },
   {
     "Input": "日産自動車は最大７００人の契約社員を削減する計画です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1159,9 +1114,7 @@
   },
   {
     "Input": "最大７００は７００より大きいとして認められるべきではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "最大700",
@@ -1185,7 +1138,6 @@
   },
   {
     "Input": "馬力が１５０を超える自動車の数",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1201,37 +1153,31 @@
   },
   {
     "Input": "＋１−２２２−２２２２／２２２２は電話番号です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "＋１−２２２−２２２２−２２２２は電話番号です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "４分の１は分数です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "１９９５−０１",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "１９９５年１月",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "この数は20より大きく35以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1247,7 +1193,6 @@
   },
   {
     "Input": "この数は20以上30未満の間にあります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1263,7 +1208,6 @@
   },
   {
     "Input": "彼は10番目以上15番目未満の間に位置付けされます。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1279,7 +1223,6 @@
   },
   {
     "Input": "彼は-10以上15未満の間を得る。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1295,7 +1238,6 @@
   },
   {
     "Input": "この数は100より大きく300より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1311,7 +1253,6 @@
   },
   {
     "Input": "この数は100以上300以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1329,7 +1270,6 @@
     "Input": "多くて100、少なくとも20のりんごがあります。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "多くて100,少なくとも20",
@@ -1344,7 +1284,6 @@
   },
   {
     "Input": "これらのりんごは約20から100未満あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1360,7 +1299,6 @@
   },
   {
     "Input": "この数字の範囲は20から100未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1376,7 +1314,6 @@
   },
   {
     "Input": "この数字の範囲は1000から1500未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1392,7 +1329,6 @@
   },
   {
     "Input": "この数字は1000より大きく1500より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1408,7 +1344,7 @@
   },
   {
     "Input": "この数字は4分の1より大きく半分より小さいです。",
-    "IgnoreResolution": true,
+    "Comment": "Extractor done. Parser does not support half (半).",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotNet",
     "Results": [
@@ -1425,7 +1361,6 @@
   },
   {
     "Input": "この数字は3965以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1441,7 +1376,6 @@
   },
   {
     "Input": "この数字は4565より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1457,7 +1391,6 @@
   },
   {
     "Input": "この数字は30より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1473,7 +1406,6 @@
   },
   {
     "Input": "これらの製品には約500以上あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1489,7 +1421,6 @@
   },
   {
     "Input": "これらの製品には約500もしくはそれ以上あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1505,7 +1436,7 @@
   },
   {
     "Input": "2分の1より多くの人が来ました。",
-    "IgnoreResolution": true,
+    "Comment": "Need language review",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotNet",
     "Results": [
@@ -1522,7 +1453,6 @@
   },
   {
     "Input": "100以下の素数を見つけなさい。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1538,7 +1468,6 @@
   },
   {
     "Input": "これらの製品には約500以下あります。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1554,7 +1483,6 @@
   },
   {
     "Input": "彼の身長は170未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1570,7 +1498,6 @@
   },
   {
     "Input": "xは170に等しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1586,7 +1513,6 @@
   },
   {
     "Input": "xは10より大きく20より小さいです。yは50以下20以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1611,7 +1537,6 @@
   },
   {
     "Input": "この数字は20に等しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1627,7 +1552,6 @@
   },
   {
     "Input": "私たちのクラスの学生の数が20に等しいことは重要ではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1643,7 +1567,6 @@
   },
   {
     "Input": "彼のスコアは200以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1659,7 +1582,6 @@
   },
   {
     "Input": "彼のスコアは190より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1675,7 +1597,6 @@
   },
   {
     "Input": "彼のスコアは200もしくはそれ以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1691,7 +1612,6 @@
   },
   {
     "Input": "彼のスコアは30以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1707,7 +1627,6 @@
   },
   {
     "Input": "彼のスコアは5000に等しいか6000より小さいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1732,7 +1651,6 @@
   },
   {
     "Input": "彼のスコアは5000に等しいか4500より大きいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1757,7 +1675,6 @@
   },
   {
     "Input": "彼のスコアは5000以下です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1773,7 +1690,6 @@
   },
   {
     "Input": "彼のスコアは5000以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1789,7 +1705,6 @@
   },
   {
     "Input": "彼のスコアは5000もしくはそれ以上です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1805,7 +1720,6 @@
   },
   {
     "Input": "この数字の範囲は1000以上5000未満です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1837,7 +1751,6 @@
   },
   {
     "Input": "2より大きいのはどうですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1853,7 +1766,6 @@
   },
   {
     "Input": "2009年の30000より大きい記録を私に見せてくれませんか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1869,7 +1781,6 @@
   },
   {
     "Input": "2009年の3000より小さい記録を私に見せてくれませんか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1885,7 +1796,6 @@
   },
   {
     "Input": "いまだに30より大きいですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1901,7 +1811,6 @@
   },
   {
     "Input": "いまだに30以上ですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1917,7 +1826,6 @@
   },
   {
     "Input": "いまだに-30より小さいですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1933,7 +1841,6 @@
   },
   {
     "Input": "いまだに-30以下ですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1981,7 +1888,6 @@
   },
   {
     "Input": "この数字は1998分の20000に等しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1997,13 +1903,12 @@
   },
   {
     "Input": "2008年の数は200から300です",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "この数字は200以上2008分の300万未満に等しいです。",
-    "IgnoreResolution": true,
+    "Comment": "Extractor done. Parser does not support combination of digit and Kanji.",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotNet",
     "Results": [
@@ -2021,6 +1926,7 @@
   {
     "Input": "半数以上の人がここに来ました。",
     "IgnoreResolution": true,
+    "Comment": "Extractor done. Parser does not support half (半).",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotNet",
     "Results": [
@@ -2037,7 +1943,6 @@
   },
   {
     "Input": "日産自動車は最大700人の契約社員を削減する計画です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2053,9 +1958,7 @@
   },
   {
     "Input": "最大700は700より大きいとして認められるべきではありません。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "最大700",
@@ -2079,7 +1982,6 @@
   },
   {
     "Input": "馬力が150を超える自動車の数",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2095,36 +1997,32 @@
   },
   {
     "Input": "+1-222-2222-2222は電話番号です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "+1-222-2222/2222は電話番号です。 ",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "4分の1は分数です。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "1995-01",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "1995年1月",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "5k-20k",
+    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
