@@ -110,7 +110,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((in|van|tijdens|sinds|tot)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>eeuw(en)?|jaar|jaren|maand(en)?|week|weken|(?<business>(werk))?dag(en)?)\b
+  def: (?<unit>eeuw(en)?|jaar|jaren|jr|decennia|maand(en)?|mnd|week|weken|(?<business>(werk))?dag(en)?|dgn)\b
 DateTokenPrefix: 'op '
 TimeTokenPrefix: 'om '
 TokenBeforeDate: 'op '
@@ -310,13 +310,13 @@ WeekDayEnd: !nestedRegex
 WeekDayStart: !simpleRegex
   def: ^[\.]
 RangeUnitRegex: !simpleRegex
-  def: \b(?<unit>jaren|jaar|maanden|maand|weken|week)\b
+  def: \b(?<unit>jaren|jaar|maanden|maand|weken|week|dagen|dag)\b
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b
 MinuteNumRegex: !simpleRegex
-  def: (?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)
+  def: (?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)
 DeltaMinuteNumRegex: !simpleRegex
-  def: (?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)
+  def: (?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)
 PmRegex: !simpleRegex
   def: (?<pm>(((’|‘|'|ʼ)\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))
 PmRegexFull: !simpleRegex
@@ -365,11 +365,11 @@ IshRegex: !nestedRegex
   def: \b(tegen\s+{BaseDateTime.HourRegex}(-|——|\s*(’|‘|')\s*)?en|middagloos)\b
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>uren|uur|u|minuten|minuut|min\.?|mins|secondes|seconden|seconde|secs|sec\.?)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>((min\.|sec\.)|((uren|uur|u|minuten|minuut|mins|min|secondes|seconden|seconde|secs|sec)\b)))
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>uur|minuut)\b
 FivesRegex: !simpleRegex
-  def: (?<tens>(vijf|tien|vijftien|twintig|vijfentwintig|dertig|vijfendertig|veertig|vijfenveertig|vijftig|vijfenvijftig))\b
+  def: (?<tens>(vijf|tien|vijftien|twintig|vijfentwintig|vijventwintig|dertig|vijfendertig|veertig|vijfenveertig|vijftig|vijfenvijftig))\b
 HourRegex: !nestedRegex
   def: \b{BaseDateTime.HourRegex}
   references: [ BaseDateTime.HourRegex ]
@@ -487,10 +487,10 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   def: \b(meer\s+dan)\b
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|uur|uren|u|minuten|mins|m|secondes|secs|s)\b
+  def: (?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier(\s+uur)?)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(en)\s+(een\s+)?(?<suffix_num>half|kwart))
+  def: (?<suffix>\s*(\sen|en een)\s+(?<suffix_num>half|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>dagelijks|maandelijks|wekelijks|twee-wekelijks|jaarlijks)\b
 EachUnitRegex: !nestedRegex
@@ -505,20 +505,20 @@ SetLastRegex: !simpleRegex
 EachDayRegex: !simpleRegex
   def: ^\s*(elke)\s*dag\b
 DurationFollowedUnit: !nestedRegex
-  def: ^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
+  def: ^\s*((?<suffix>(?<unit>(?<suffix_num>(een\s+)?kwartier)))|{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b(?<half>(een\s(half|halve)))\s+{DurationUnitRegex}
+  def: \b(?<half>((nog een|een|nog)\s+(anderhalf|anderhalve|half|halve)?))\s*{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(voor\s+een|gedurende\s+(het|de))\s+(?<unit>jaar|maand|week|dag)\b
 AllRegex: !simpleRegex
-  def: \b(?<all>((ge)?hele|volledige|ganse|heel|volledig)(\s+|-)(?<unit>jaar|maand|week|dag))\b
+  def: \b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b
 HalfRegex: !simpleRegex
-  def: (((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur))\b
+  def: (((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
 HolidayRegex1: !nestedRegex
@@ -571,7 +571,7 @@ EveningStartEndRegex: !simpleRegex
 NightStartEndRegex: !simpleRegex
   def: (^(gedurende de nacht|vannacht|nacht|('s|des)?\s+nachts))|((gedurende de nacht|vannacht|('s|des)?\s+nachts|nacht)$)
 InexactNumberRegex: !simpleRegex
-  def: \b(een aantal|meerdere|enkele|verscheidene|(een\s+)?paar)\b
+  def: \b((een\s+)?aantal|meerdere|enkele|verscheidene|(?<NumTwoTerm>(een\s+)?paar))\b
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
@@ -659,7 +659,7 @@ DecadeWithCenturyRegex: !nestedRegex
   def: (de\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(en\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(en\s+)?(?<decade>tien|honderd)))
   references: [ CenturyRegex, DecadeRegex ]
 RelativeDecadeRegex: !nestedRegex
-  def: \b((de\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decennia?)\b
+  def: \b((de\s+)?{RelativeRegex}((?<number>[\w,]+)\s+)?decennia?)\b
   references: [ RelativeRegex ]
 SuffixAfterRegex: !simpleRegex
   def: \b(((bij)\s)?(of|en)\s+(boven|na|later|groter)(?!\s+dan))\b
@@ -681,22 +681,30 @@ UnitMap: !dictionary
     decennia: 10Y
     jaren: Y
     jaar: Y
+    jr: Y
     maanden: MON
     maand: MON
+    mnd: MON
     weken: W
     week: W
     dagen: D
     dag: D
+    dgn: D
     uren: H
     uur: H
     u: H
     minuten: M
     minuut: M
     min: M
+    min.: M
     secondes: S
+    seconden: S
     seconde: S
     secs: S
     sec: S
+    kwartier: H
+    kwartier uur: H
+    halfuur: H
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
@@ -705,12 +713,15 @@ UnitValueMap: !dictionary
     decenniën: 315360000
     jaren: 31536000
     jaar: 31536000
+    jr: 31536000
     maanden: 2592000
     maand: 2592000
+    mnd: 2592000
     weken: 604800
     week: 604800
     dagen: 86400
     dag: 86400
+    dgn: 86400
     werkdagen: 86400
     werkdag: 86400
     uren: 3600
@@ -719,11 +730,15 @@ UnitValueMap: !dictionary
     minuten: 60
     minuut: 60
     min: 60
+    min.: 60
     secondes: 1
     seconden: 1
     seconde: 1
     secs: 1
     sec: 1
+    kwartier: 3600
+    kwartier uur: 3600
+    halfuur: 3600
 # TODO: modify below regex according to the counterpart in English
 SpecialYearPrefixesMap: !dictionary
   types: [ string, string ]
@@ -918,6 +933,7 @@ Numbers: !dictionary
     'drieëntwintig': 23
     'vierentwintig': 24
     'vijfentwintig': 25
+    'vijventwintig': 25
     'zesentwintig': 26
     'zevenentwintig': 27
     'achtentwintig': 28
@@ -1048,9 +1064,14 @@ DoubleNumbers: !dictionary
   types: [ string, double ]
   entries:
     half: 0.5
+    anderhalf: 1.5
+    anderhalve: 1.5
     halve: 0.5
-    kwart: 0.25
+    een kwartier: 0.25
     kwartier: 0.25
+    kwart: 0.25
+    driekwart: 0.75
+    'drie kwart': 0.75
     kwartaal: 0.25
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
@@ -1245,6 +1266,7 @@ YearTerms: !list
   types: [ string ]
   entries:
     - jaar
+    - jaren
 GenericYearTerms: !list
   types: [ string ]
   entries:

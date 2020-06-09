@@ -1224,14 +1224,14 @@
     ]
   },
   {
-    "Input": "Wie heb ik een paar maanden geleden een email gestuurd",
+    "Input": "Wie heb ik enkele maanden geleden een email gestuurd",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "een paar maanden geleden",
+        "Text": "enkele maanden geleden",
         "Type": "date",
         "Value": {
           "Timex": "2016-08-07",
@@ -1243,19 +1243,19 @@
           }
         },
         "Start": 11,
-        "Length": 24
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "wie heb ik een paar dagen geleden een email gestuurd",
+    "Input": "wie heb ik enkele dagen geleden een email gestuurd",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "een paar dagen geleden",
+        "Text": "enkele dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-04",
@@ -1267,7 +1267,7 @@
           }
         },
         "Start": 11,
-        "Length": 22
+        "Length": 20
       }
     ]
   },
