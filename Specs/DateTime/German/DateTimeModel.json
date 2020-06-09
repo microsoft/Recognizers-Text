@@ -2139,5 +2139,63 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Es ist dreiviertel 8.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dreiviertel 8",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es ist viertel 8.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "viertel 8",
+        "Start": 7,
+        "End": 15,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:15",
+              "type": "time",
+              "value": "07:15:00"
+            },
+            {
+              "timex": "T19:15",
+              "type": "time",
+              "value": "19:15:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
