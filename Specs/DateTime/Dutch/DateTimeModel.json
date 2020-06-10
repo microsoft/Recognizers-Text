@@ -9690,5 +9690,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Wie heb ik een paar maanden geleden een email gestuurd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een paar maanden geleden",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-09-07",
+              "type": "date",
+              "value": "2016-09-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug om 20.15u",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "om 20.15u",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:15",
+              "type": "time",
+              "value": "20:15"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
