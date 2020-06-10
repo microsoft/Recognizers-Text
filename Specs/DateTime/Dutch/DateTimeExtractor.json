@@ -48,6 +48,18 @@
     ]
   },
   {
+    "Input": "Ik ga terug op 15 om 8.00:30",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 om 8.00:30",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
     "Input": "Ik ga terug op 15, 20u",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

@@ -82,7 +82,7 @@ FractionNotationRegex: !simpleRegex
 FractionUnitsRegex: !simpleRegex
   def: ((?<onehalf>anderhalve|anderhalf)|(?<quarter>driekwart)|half|halve|helft|kwart)
 FractionHalfRegex: !simpleRegex
-  def: (ënhalf|enhalve|ëneenhalf|ëneenhalf)$
+  def: (ënhalf|enhalve|ëneenhalf)$
 OneHalfTokens: [een, half]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|{FractionUnitsRegex}))(?=\b)

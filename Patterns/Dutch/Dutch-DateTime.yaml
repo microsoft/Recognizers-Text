@@ -314,7 +314,7 @@ RangeUnitRegex: !simpleRegex
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b
 MinuteNumRegex: !simpleRegex
-  def: (?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)
+  def: (?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vij[fv]entwintig|ze(s|ven)entwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|ze(s|ven)endertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|ze(s|ven)enveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|ze(s|ven)envijftig|achtenvijftig|negenenvijftig)
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)
 PmRegex: !simpleRegex
@@ -471,7 +471,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
 SpecificEndOfRegex: !simpleRegex
   def: ((het\s+)?einde? van(\s+de)?\s*$|^\s*(het\s+)?einde? van(\s+de(\s+dag)))
 UnspecificEndOfRegex: !simpleRegex
-  def: \b(((om|rond|tegen|op)\s+)?het\s+)?(einde\s+van\s+dag)\b
+  def: \b(((om|rond|tegen|op)\s+)?het\s+)?(einde\s+van\s+(de\s+)?dag)\b
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(evj)\b
 PeriodTimeOfDayRegex: !simpleRegex
