@@ -72,6 +72,18 @@
     ]
   },
   {
+    "Input": "मैं ऐनुअली एक बार जाता हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ऐनुअली एक बार",
+        "Type": "set",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
     "Input": "मैं हर दो दिन में जाती हूं",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -84,6 +96,18 @@
     ]
   },
   {
+    "Input": "मैं प्रत्येक दूसरे दिन जाती हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रत्येक दूसरे दिन",
+        "Type": "set",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
     "Input": "मैं हरेक तीन हफ़्तों में जाऊँगा",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -92,6 +116,18 @@
         "Type": "set",
         "Start": 4,
         "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर तीसरे हफ़्ते जाती हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर तीसरे हफ़्ते",
+        "Type": "set",
+        "Start": 4,
+        "Length": 14
       }
     ]
   },
@@ -313,6 +349,7 @@
   },
   {
     "Input": "क्या मैं 09th मई को 2 रातों के लिए बुकिंग करवा सकता हूँ ",
+    "Comment": "(Can I do a booking for the 09th of May for 2 nights?). Hindi does not use plurals of weekdays such as 'Mondays', 'mornings', 'nights'",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
