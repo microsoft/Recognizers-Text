@@ -74,6 +74,8 @@ MonthFrontBetweenRegex: !nestedRegex
 DayBetweenRegex: !nestedRegex
   def: \b((entre|entre\s+el)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex, MonthSuffixRegex, YearRegex ]
+SpecialYearPrefixes: !simpleRegex
+  def: ((del\s+)?calend[aá]rio|(?<special>fiscal|escolar))
 OneWordPeriodRegex: !nestedRegex
   def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, AfterNextSuffixRegex,DateUnitRegex]
@@ -457,7 +459,7 @@ HolidayRegex3: !nestedRegex
 BeforeRegex: !simpleRegex
   def: (antes(\s+del?(\s+las?)?)?)
 AfterRegex: !simpleRegex
-  def: (despues(\s*del?(\s+las?)?)?)
+  def: (despu[eé]s(\s*del?(\s+las?)?)?)
 SinceRegex: !simpleRegex
   def: (desde(\s+(las?|el))?)
 AroundRegex: !simpleRegex
@@ -593,11 +595,11 @@ UnitValueMap: !dictionary
     segundo: 1
     segs: 1
     seg: 1
-# TODO: modify below regex according to the counterpart in English
 SpecialYearPrefixesMap: !dictionary
   types: [ string, string ]
   entries:
-    '': ''
+    fiscal: FY
+    escolar: SY
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
@@ -875,6 +877,10 @@ SpecialDecadeCases: !dictionary
     '': 0
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: [ hoy ]
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ]

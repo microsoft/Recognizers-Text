@@ -2298,5 +2298,44 @@
         "End": 9
       }
     ]
+  },
+  {
+    "Input": "Durant l'été, cet été, j'ai été à la mer.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "été",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 9,
+        "End": 11
+      },
+      {
+        "Text": "été",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 18,
+        "End": 20
+      }
+    ]
   }
 ]

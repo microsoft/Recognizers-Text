@@ -1,7 +1,7 @@
 from typing import List, Pattern
 
 from recognizers_text.extractor import Extractor
-from recognizers_text.utilities import RegExpUtility
+from recognizers_text.utilities import RegExpUtility, DefinitionLoader
 from recognizers_number import SpanishIntegerExtractor
 from ...resources.spanish_date_time import SpanishDateTime
 from ..extractors import DateTimeExtractor
@@ -205,3 +205,4 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
             SpanishDateTime.SuffixAfterRegex
         )
         self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
+        self._ambiguity_filters_dict = DefinitionLoader.load_ambiguity_filters(SpanishDateTime.AmbiguityFiltersDict)

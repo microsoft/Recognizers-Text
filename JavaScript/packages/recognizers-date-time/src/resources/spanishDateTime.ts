@@ -42,6 +42,7 @@ export namespace SpanishDateTime {
     export const MonthFrontSimpleCasesRegex = `\\b${MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
     export const DayBetweenRegex = `\\b((entre|entre\\s+el)\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?${YearRegex})?\\b`;
+    export const SpecialYearPrefixes = `((del\\s+)?calend[aá]rio|(?<special>fiscal|escolar))`;
     export const OneWordPeriodRegex = `\\b(((((la|el)\\s+)?mes\\s+((${OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?(${MonthRegex})|((la|el)\\s+)?(((${RelativeRegex}\\s+)${DateUnitRegex}(\\s+${AfterNextSuffixRegex})?)|${DateUnitRegex}(\\s+${AfterNextSuffixRegex}))|va\\s+de\\s+${DateUnitRegex})`;
     export const MonthWithYearRegex = `\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?(${MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b`;
     export const MonthNumWithYearRegex = `\\b((${YearRegex}(\\s*?)[/\\-\\.~](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?)${YearRegex}))\\b`;
@@ -170,7 +171,7 @@ export namespace SpanishDateTime {
     export const HolidayRegex2 = `\\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\\s+(del?\\s+)?(${YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
     export const HolidayRegex3 = `\\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\\s+(del?\\s+)?(${YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
     export const BeforeRegex = `(antes(\\s+del?(\\s+las?)?)?)`;
-    export const AfterRegex = `(despues(\\s*del?(\\s+las?)?)?)`;
+    export const AfterRegex = `(despu[eé]s(\\s*del?(\\s+las?)?)?)`;
     export const SinceRegex = `(desde(\\s+(las?|el))?)`;
     export const AroundRegex = `^[.]`;
     export const PeriodicRegex = `\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b`;
@@ -202,7 +203,7 @@ export namespace SpanishDateTime {
     export const Tomorrow = 'mañana';
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["años", "Y"],["año", "Y"],["meses", "MON"],["mes", "MON"],["semanas", "W"],["semana", "W"],["dias", "D"],["dia", "D"],["días", "D"],["día", "D"],["jornada", "D"],["horas", "H"],["hora", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutos", "M"],["minuto", "M"],["mins", "M"],["min", "M"],["segundos", "S"],["segundo", "S"],["segs", "S"],["seg", "S"]]);
     export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["años", 31536000],["año", 31536000],["meses", 2592000],["mes", 2592000],["semanas", 604800],["semana", 604800],["dias", 86400],["dia", 86400],["días", 86400],["día", 86400],["horas", 3600],["hora", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutos", 60],["minuto", 60],["mins", 60],["min", 60],["segundos", 1],["segundo", 1],["segs", 1],["seg", 1]]);
-    export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
+    export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["fiscal", "FY"],["escolar", "SY"]]);
     export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["primavera", "SP"],["verano", "SU"],["otoño", "FA"],["invierno", "WI"]]);
     export const SeasonValueMap: ReadonlyMap<string, number> = new Map<string, number>([["SP", 3],["SU", 6],["FA", 9],["WI", 12]]);
     export const CardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["primer", 1],["primero", 1],["primera", 1],["1er", 1],["1ro", 1],["1ra", 1],["segundo", 2],["segunda", 2],["2do", 2],["2da", 2],["tercer", 3],["tercero", 3],["tercera", 3],["3er", 3],["3ro", 3],["3ra", 3],["cuarto", 4],["cuarta", 4],["4to", 4],["4ta", 4],["quinto", 5],["quinta", 5],["5to", 5],["5ta", 5]]);
@@ -244,6 +245,7 @@ export namespace SpanishDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = 'DMY';
     export const DurationDateRestrictions = [ "hoy" ];
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
     export const MorningTermList = [ "mañana" ];
     export const AfternoonTermList = [ "pasado mediodia","pasado el mediodia" ];
