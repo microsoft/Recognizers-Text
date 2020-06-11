@@ -2136,23 +2136,6 @@
     ]
   },
   {
-    "Input": "واحد على ثلاثة",
-    "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
-    "Results": [
-      {
-        "Text": "واحد على ثلاثة",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.333333333"
-        },
-        "Start": 0,
-        "End": 13
-      }
-    ]
-  },
-  {
     "Input": "الإجابة هي ناقص صفر فاصلة مائة وخمسة وثلاثون",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, java, python",
