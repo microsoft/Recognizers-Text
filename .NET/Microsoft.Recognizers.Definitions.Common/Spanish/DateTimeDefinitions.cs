@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b{MonthSuffixRegex}\s+((desde\s+el|desde|del)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+((entre|entre\s+el)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b";
       public static readonly string DayBetweenRegex = $@"\b((entre|entre\s+el)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b";
+      public const string SpecialYearPrefixes = @"((del\s+)?calend[aá]rio|(?<special>fiscal|escolar))";
       public static readonly string OneWordPeriodRegex = $@"\b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})";
       public static readonly string MonthWithYearRegex = $@"\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})(\s+|(\s*[,-]\s*))((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b";
       public static readonly string MonthNumWithYearRegex = $@"\b(({YearRegex}(\s*?)[/\-\.~](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-\.~](\s*?){YearRegex}))\b";
@@ -180,7 +181,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\s+(del?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
       public static readonly string HolidayRegex3 = $@"\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\s+(del?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
       public const string BeforeRegex = @"(antes(\s+del?(\s+las?)?)?)";
-      public const string AfterRegex = @"(despues(\s*del?(\s+las?)?)?)";
+      public const string AfterRegex = @"(despu[eé]s(\s*del?(\s+las?)?)?)";
       public const string SinceRegex = @"(desde(\s+(las?|el))?)";
       public const string AroundRegex = @"^[.]";
       public const string PeriodicRegex = @"\b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b";
@@ -265,7 +266,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"fiscal", @"FY" },
+            { @"escolar", @"SY" }
         };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
@@ -501,6 +503,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public const string DefaultLanguageFallback = @"DMY";
       public static readonly string[] DurationDateRestrictions = { @"hoy" };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
+        };
       public static readonly IList<string> EarlyMorningTermList = new List<string>
         {
             @"madrugada"

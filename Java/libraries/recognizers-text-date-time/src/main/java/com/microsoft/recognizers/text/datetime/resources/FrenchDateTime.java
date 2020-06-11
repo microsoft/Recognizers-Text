@@ -70,7 +70,7 @@ public class FrenchDateTime {
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String WeekDayRegex = "(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun|mar|mer|jeu|ven|sam|dim)\\b";
+    public static final String WeekDayRegex = "(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)\\b";
 
     public static final String RelativeMonthRegex = "(?<relmonth>({ThisPrefixRegex}\\s+mois)|(mois\\s+{PastSuffixRegex})|(mois\\s+{NextSuffixRegex}))\\b"
             .replace("{ThisPrefixRegex}", ThisPrefixRegex)
@@ -1161,6 +1161,11 @@ public class FrenchDateTime {
     public static final String DefaultLanguageFallback = "DMY";
 
     public static final List<String> DurationDateRestrictions = Arrays.asList();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^([eé]t[eé])\\b", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b")
+        .put("^(mer)\\b", "(?<!((le|ce)\\s+))mer\\b")
+        .build();
 
     public static final List<String> MorningTermList = Arrays.asList("matinee", "matin", "matinée");
 

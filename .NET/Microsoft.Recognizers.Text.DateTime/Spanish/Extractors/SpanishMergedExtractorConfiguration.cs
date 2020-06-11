@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
@@ -76,6 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
 
         public IDateExtractor DateExtractor { get; }
@@ -102,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor IntegerExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
 

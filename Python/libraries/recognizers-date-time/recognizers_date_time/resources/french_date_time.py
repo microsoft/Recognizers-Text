@@ -34,7 +34,7 @@ class FrenchDateTime:
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     FullTextYearRegex = f'^[\\*]'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
-    WeekDayRegex = f'(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun|mar|mer|jeu|ven|sam|dim)\\b'
+    WeekDayRegex = f'(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)\\b'
     RelativeMonthRegex = f'(?<relmonth>({ThisPrefixRegex}\\s+mois)|(mois\\s+{PastSuffixRegex})|(mois\\s+{NextSuffixRegex}))\\b'
     WrittenMonthRegex = f'(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)'
     MonthSuffixRegex = f'(?<msuf>(en\\s*|le\\s*|de\\s*|dans\\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
@@ -645,6 +645,8 @@ class FrenchDateTime:
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
+    AmbiguityFiltersDict = dict([("^([eé]t[eé])\\b", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
+                                 ("^(mer)\\b", "(?<!((le|ce)\\s+))mer\\b")])
     MorningTermList = [r'matinee', r'matin', r'matinée']
     AfternoonTermList = [r'apres-midi', r'apres midi', r'après midi', r'après-midi']
     EveningTermList = [r'soir', r'soiree', r'soirée']

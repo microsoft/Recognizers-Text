@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
@@ -76,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance(numConfig);
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
 
         public IDateExtractor DateExtractor { get; }
@@ -102,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
 

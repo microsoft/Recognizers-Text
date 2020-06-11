@@ -46,7 +46,7 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun|mar|mer|jeu|ven|sam|dim)\b
+  def: (?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\.)?|mar(\.)?|mer(\.)?|jeu(\.)?|ven(\.)?|sam(\.)?|dim(\.)?)\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({ThisPrefixRegex}\s+mois)|(mois\s+{PastSuffixRegex})|(mois\s+{NextSuffixRegex}))\b
   references: [ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex]
@@ -1032,6 +1032,12 @@ SpecialDecadeCases: !dictionary
     '': 0
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
+# Cases collected from mined data
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^([eé]t[eé])\b': '(?<!((l\s*[''`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b'
+    '^(mer)\b': '(?<!((le|ce)\s+))mer\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

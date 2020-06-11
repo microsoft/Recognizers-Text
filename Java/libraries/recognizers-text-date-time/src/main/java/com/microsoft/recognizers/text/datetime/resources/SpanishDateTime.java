@@ -112,6 +112,8 @@ public class SpanishDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
+    public static final String SpecialYearPrefixes = "((del\\s+)?calend[aá]rio|(?<special>fiscal|escolar))";
+
     public static final String OneWordPeriodRegex = "\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})"
             .replace("{MonthRegex}", MonthRegex)
             .replace("{RelativeRegex}", RelativeRegex)
@@ -554,7 +556,7 @@ public class SpanishDateTime {
 
     public static final String BeforeRegex = "(antes(\\s+del?(\\s+las?)?)?)";
 
-    public static final String AfterRegex = "(despues(\\s*del?(\\s+las?)?)?)";
+    public static final String AfterRegex = "(despu[eé]s(\\s*del?(\\s+las?)?)?)";
 
     public static final String SinceRegex = "(desde(\\s+(las?|el))?)";
 
@@ -687,7 +689,8 @@ public class SpanishDateTime {
         .build();
 
     public static final ImmutableMap<String, String> SpecialYearPrefixesMap = ImmutableMap.<String, String>builder()
-        .put("", "")
+        .put("fiscal", "FY")
+        .put("escolar", "SY")
         .build();
 
     public static final ImmutableMap<String, String> SeasonMap = ImmutableMap.<String, String>builder()
@@ -957,6 +960,10 @@ public class SpanishDateTime {
     public static final String DefaultLanguageFallback = "DMY";
 
     public static final List<String> DurationDateRestrictions = Arrays.asList("hoy");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
+        .build();
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");
 
