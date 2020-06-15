@@ -46,10 +46,10 @@ The table below summarizes the currently supported entities. Support for English
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓      | ✓     | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
-| Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | **PA**  | PA/EO   | PA/EO  | :x:   | **PA**  |
+| Number Range         | ✓    | ✓       | ✓    | :x:    | :x:   | ✓      | PA/EO   | PA/EO  | :x:    | ✓      |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SP** | ✓     | ✓       |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓     | ✓       | 
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓      | ✓      | 
 | Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓      | ✓      | 
 | Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
