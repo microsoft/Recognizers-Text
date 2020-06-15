@@ -178,11 +178,11 @@ class NumberWithUnitExtractor(Extractor):
                 for number in numbers:
                     start = number.start
                     length = number.length
-                    numberPrefix = [(mr.start + mr.length) == start for mr in prefix_match]
-                    numberSuffix = [mr.start == (start + length) for mr in suffix_match]
-                    if True in numberPrefix and True in numberSuffix and "," in number.text:
-                         commaIndex = number.start + number.text.index(",")
-                         source = source[:commaIndex] + " " + source[commaIndex + 1:];
+                    number_prefix = [(mr.start + mr.length) == start for mr in prefix_match]
+                    number_suffix = [mr.start == (start + length) for mr in suffix_match]
+                    if True in number_prefix and True in number_suffix and "," in number.text:
+                        comma_index = number.start + number.text.index(",")
+                        source = source[:comma_index] + " " + source[comma_index + 1:]
 
                 numbers: List[ExtractResult] = sorted(self.config.unit_num_extractor.extract(source), key=lambda o: o.start)
 
