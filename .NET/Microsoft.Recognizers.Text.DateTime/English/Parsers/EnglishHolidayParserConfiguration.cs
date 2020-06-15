@@ -79,16 +79,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "earthday", EarthDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
-                { "cincodemayoday", CincoDeMayoday },
+                { "cincodemayoday", CincoDeMayoDay },
                 { "baptisteday", BaptisteDay },
                 { "usindependenceday", UsaIndependenceDay },
                 { "independenceday", UsaIndependenceDay },
                 { "bastilleday", BastilleDay },
                 { "halloweenday", HalloweenDay },
                 { "allhallowday", AllHallowDay },
-                { "allsoulsday", AllSoulsday },
+                { "allsoulsday", AllSoulsDay },
                 { "guyfawkesday", GuyFawkesDay },
-                { "veteransday", Veteransday },
+                { "veteransday", VeteransDay },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
                 { "easterday", EasterDay },
@@ -103,6 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "whitemonday", WhiteMonday },
                 { "trinitysunday", TrinitySunday },
                 { "corpuschristi", CorpusChristi },
+                { "juneteenth", Juneteenth },
             };
         }
 
@@ -148,7 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
 
-        private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
+        private static DateObject CincoDeMayoDay(int year) => new DateObject(year, 5, 5);
 
         private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
 
@@ -160,11 +161,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
 
-        private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
+        private static DateObject AllSoulsDay(int year) => new DateObject(year, 11, 2);
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject VeteransDay(int year) => new DateObject(year, 11, 11);
+
+        private static DateObject Juneteenth(int year) => new DateObject(year, 6, 19);
 
         private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 

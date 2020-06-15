@@ -1122,5 +1122,31 @@
         "Length": 15
       }
     ]
+  },
+  {
+    "Input": "No me llames en horas de oficina",
+    "NotSupported": "dotnet, java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "horas de oficina",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "No me llames en horas de trabajo",
+    "NotSupported": "dotnet, java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "horas de trabajo",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
   }
 ]

@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var unitList = new List<string>(unitToTimexComponents.Keys);
             unitList.Sort((x, y) => (unitValueMap[x] < unitValueMap[y] ? 1 : -1));
+
             var isTimeDurationAlreadyExist = false;
             var timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
 
@@ -183,6 +184,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case Constants.FORTNIGHT_UNIT:
                         number = number * 2;
                         unitStr = Constants.TimexWeek;
+                        break;
+                    case Constants.WEEKEND_UNIT:
+                        unitStr = Constants.TimexWeekend;
                         break;
                     default:
                         unitStr = unitStr.Substring(0, 1);
@@ -369,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool IsRangeTimex(string timex)
         {
-            return !string.IsNullOrEmpty(timex) && timex.StartsWith("(");
+            return !string.IsNullOrEmpty(timex) && timex.StartsWith("(", StringComparison.Ordinal);
         }
 
         public static string SetTimexWithContext(string timex, DateContext context)
@@ -377,9 +381,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             return timex.Replace(Constants.TimexFuzzyYear, context.Year.ToString("D4", CultureInfo.InvariantCulture));
         }
 
+        public static string GenerateSetTimex(string durationType, float durationLength, float multiplier = 1)
+        {
+            return $"P{durationLength * multiplier:0.#}{durationType}";
+        }
+
         private static bool IsTimeDurationTimex(string timex)
         {
-            return timex.StartsWith($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}");
+            return timex.StartsWith($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}", StringComparison.Ordinal);
         }
 
         private static string GetDurationTimexWithoutPrefix(string timex)
@@ -410,5 +419,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return unitCount;
         }
+
     }
 }

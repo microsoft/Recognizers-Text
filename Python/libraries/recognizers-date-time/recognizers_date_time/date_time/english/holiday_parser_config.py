@@ -83,7 +83,8 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
             ('veteransday', EnglishHolidayParserConfiguration.veterans_day),
             ('christmaseve', EnglishHolidayParserConfiguration.christmas_eve),
             ('newyeareve', EnglishHolidayParserConfiguration.new_year_eve),
-            ('easterday', EnglishHolidayParserConfiguration.easter_day)
+            ('easterday', EnglishHolidayParserConfiguration.easter_day),
+            ('juneteenth', EnglishHolidayParserConfiguration.juneteenth),
         ])
 
         return {**super()._init_holiday_funcs(), **local}
@@ -207,3 +208,7 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @staticmethod
     def easter_day(year: int) -> datetime:
         return DateUtils.min_value
+
+    @staticmethod
+    def juneteenth(year: int) -> datetime:
+        return datetime(year, 6, 19)

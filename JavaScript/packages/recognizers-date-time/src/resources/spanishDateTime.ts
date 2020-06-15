@@ -115,7 +115,7 @@ export namespace SpanishDateTime {
     export const TimePrefix = `(?<prefix>${LessThanOneHour}(\\s+(pasad[ao]s)\\s+(de\\s+las|las)?|\\s+(para|antes\\s+de)?\\s+(las?))?)`;
     export const TimeSuffix = `(?<suffix>(${LessThanOneHour}\\s+)?(${AmRegex}|${PmRegex}|${OclockRegex}))`;
     export const BasicTime = `(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex})`;
-    export const AtRegex = `\\b(?<=\\b(a las?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?`;
+    export const AtRegex = `\\b(?<=\\b((a|de(sde)?)\\s+las?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?`;
     export const ConnectNumRegex = `(${BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*${DescRegex})`;
     export const TimeRegex1 = `(\\b${TimePrefix}\\s+)?(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(${DescRegex}|\\s*\\bh\\b)`;
     export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(t)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?((\\s*${DescRegex})|\\b)`;
@@ -142,7 +142,7 @@ export namespace SpanishDateTime {
     export const UnspecificEndOfRegex = `^[.]`;
     export const UnspecificEndOfRangeRegex = `^[.]`;
     export const UnitRegex = `(?<unit>años?|mes(es)?|semanas?|d[ií]as?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\\b`;
-    export const ConnectorRegex = `^(,|t|para las?|cerca de las?)$`;
+    export const ConnectorRegex = `^(,|t|para las?|(cerca|alrededor) de las?)$`;
     export const TimeHourNumRegex = `(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)`;
     export const PureNumFromTo = `((desde|de)\\s+(la(s)?\\s+)?)?(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${TillRegex}\\s*(${BaseDateTime.HourRegex}|${TimeHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
     export const PureNumBetweenAnd = `(entre\\s+(la(s)?\\s+)?)(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*y\\s*(la(s)?\\s+)?(${BaseDateTime.HourRegex}|${TimeHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
@@ -173,7 +173,7 @@ export namespace SpanishDateTime {
     export const BeforeRegex = `(antes(\\s+del?(\\s+las?)?)?)`;
     export const AfterRegex = `(despu[eé]s(\\s*del?(\\s+las?)?)?)`;
     export const SinceRegex = `(desde(\\s+(las?|el))?)`;
-    export const AroundRegex = `^[.]`;
+    export const AroundRegex = `(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)`;
     export const PeriodicRegex = `\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b`;
     export const EachExpression = `cada|tod[oa]s\\s*(l[oa]s)?`;
     export const EachUnitRegex = `(?<each>(${EachExpression})\\s*${UnitRegex})`;

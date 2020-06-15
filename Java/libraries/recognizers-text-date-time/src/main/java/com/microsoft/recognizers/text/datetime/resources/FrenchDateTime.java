@@ -70,14 +70,14 @@ public class FrenchDateTime {
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String WeekDayRegex = "(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)\\b";
+    public static final String WeekDayRegex = "(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)";
 
     public static final String RelativeMonthRegex = "(?<relmonth>({ThisPrefixRegex}\\s+mois)|(mois\\s+{PastSuffixRegex})|(mois\\s+{NextSuffixRegex}))\\b"
             .replace("{ThisPrefixRegex}", ThisPrefixRegex)
             .replace("{PastSuffixRegex}", PastSuffixRegex)
             .replace("{NextSuffixRegex}", NextSuffixRegex);
 
-    public static final String WrittenMonthRegex = "(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)";
+    public static final String WrittenMonthRegex = "(?<month>avril|avr(\\.)?|ao[uû]t|d[eé]cembre|d[eé]c(\\.)?|f[eé]vrier|f[eé]vr?(\\.)?|janvier|janv?(\\.)?|juillet|jui?[ln](\\.)?|mars?(\\.)?|mai|novembre|nov(\\.)?|octobre|oct(\\.)?|septembre|sept?(\\.)?)";
 
     public static final String MonthSuffixRegex = "(?<msuf>(en\\s*|le\\s*|de\\s*|dans\\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))"
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
@@ -169,7 +169,7 @@ public class FrenchDateTime {
 
     public static final String MonthOfRegex = "(mois)(\\s*)(de)";
 
-    public static final String MonthRegex = "(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]vr?\\.|f[eé]vr?|janvier|janv\\.|janv?|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept?)";
+    public static final String MonthRegex = "(?<month>avril|avr(\\.)?|ao[uû]t|d[eé]cembre|d[eé]c(\\.)?|f[eé]vrier|f[eé]vr?(\\.)?|janvier|janv?(\\.)?|juillet|jui?[ln](\\.)?|mars?(\\.)?|mai|novembre|nov(\\.)?|octobre|oct(\\.)?|septembre|sept?(\\.)?)";
 
     public static final String OnRegex = "(?<=\\b(en|sur\\s*l[ea]|sur)\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
@@ -193,7 +193,7 @@ public class FrenchDateTime {
 
     public static final String StrictWeekDay = "\\b(?<weekday>dim(anche)?|lun(di)?|mar(di)?|mer(credi)?|jeu(di)?|ven(dredi)?|sam(edi)?)s?\\b";
 
-    public static final String SetWeekDayRegex = "\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b";
+    public static final String SetWeekDayRegex = "\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apr[eè]s-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b";
 
     public static final String WeekDayOfMonthRegex = "(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})"
             .replace("{WeekDayRegex}", WeekDayRegex)
@@ -815,6 +815,13 @@ public class FrenchDateTime {
         .put("ven", 5)
         .put("sam", 6)
         .put("dim", 0)
+        .put("lun.", 1)
+        .put("mar.", 2)
+        .put("mer.", 3)
+        .put("jeu.", 4)
+        .put("ven.", 5)
+        .put("sam.", 6)
+        .put("dim.", 0)
         .build();
 
     public static final ImmutableMap<String, Integer> MonthOfYear = ImmutableMap.<String, Integer>builder()
@@ -823,11 +830,14 @@ public class FrenchDateTime {
         .put("février", 2)
         .put("mars", 3)
         .put("mar", 3)
+        .put("mar.", 3)
         .put("avril", 4)
         .put("avr", 4)
+        .put("avr.", 4)
         .put("mai", 5)
         .put("juin", 6)
         .put("jun", 6)
+        .put("jun.", 6)
         .put("juillet", 7)
         .put("aout", 8)
         .put("août", 8)
@@ -839,14 +849,18 @@ public class FrenchDateTime {
         .put("janv", 1)
         .put("janv.", 1)
         .put("jan", 1)
+        .put("jan.", 1)
         .put("fevr", 2)
         .put("fevr.", 2)
         .put("févr.", 2)
         .put("févr", 2)
         .put("fev", 2)
+        .put("fev.", 2)
         .put("juil", 7)
         .put("jul", 7)
+        .put("jul.", 7)
         .put("sep", 9)
+        .put("sep.", 9)
         .put("sept.", 9)
         .put("sept", 9)
         .put("oct", 10)
@@ -854,6 +868,7 @@ public class FrenchDateTime {
         .put("nov", 11)
         .put("nov.", 11)
         .put("dec", 12)
+        .put("dec.", 12)
         .put("déc.", 12)
         .put("déc", 12)
         .put("1", 1)
@@ -1163,8 +1178,8 @@ public class FrenchDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("^([eé]t[eé])\\b", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b")
-        .put("^(mer)\\b", "(?<!((le|ce)\\s+))mer\\b")
+        .put("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b")
+        .put("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("matinee", "matin", "matinée");

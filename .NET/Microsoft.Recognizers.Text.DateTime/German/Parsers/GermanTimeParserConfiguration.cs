@@ -10,29 +10,32 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
         private static readonly Regex HalfTokenRegex =
-            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
 
         private static readonly Regex QuarterToTokenRegex =
-            new Regex(DateTimeDefinitions.QuarterToTokenRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.QuarterToTokenRegex, RegexFlags);
 
         private static readonly Regex QuarterPastTokenRegex =
-            new Regex(DateTimeDefinitions.QuarterPastTokenRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.QuarterPastTokenRegex, RegexFlags);
 
         private static readonly Regex ThreeQuarterToTokenRegex =
-            new Regex(DateTimeDefinitions.ThreeQuarterToTokenRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThreeQuarterToTokenRegex, RegexFlags);
 
         private static readonly Regex ThreeQuarterPastTokenRegex =
-            new Regex(DateTimeDefinitions.ThreeQuarterPastTokenRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThreeQuarterPastTokenRegex, RegexFlags);
 
         public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

@@ -360,7 +360,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
-                        if (match.Success)
+                        if (match.Success && match.Value != ".")
                         {
                             var isFollowedByOtherEntity = true;
 

@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
             new Regex(BaseDateTime.EqualRegex, RegexFlags);

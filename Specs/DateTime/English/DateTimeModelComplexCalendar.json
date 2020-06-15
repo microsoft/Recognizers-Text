@@ -13038,5 +13038,72 @@
     },
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "tomorrow on skype for business between 3:00 pm and 5:00 pm eastern",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tomorrow",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-13",
+              "type": "date",
+              "value": "2020-06-13"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "between 3:00 pm and 5:00 pm eastern",
+        "Start": 31,
+        "End": 65,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T15:00,T17:00,PT2H)",
+              "type": "timerange",
+              "timezone": "UTC-04:00",
+              "timezoneText": "eastern",
+              "utcOffsetMins": "-240",
+              "start": "15:00:00",
+              "end": "17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Thursdays at 17.30 Beijing time",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "thursdays at 17.30 beijing time",
+        "Start": 0,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T17:30",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
