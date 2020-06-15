@@ -477,7 +477,7 @@
   },
   {
     "Input": "人民币  50元",
-    "NotSupported":"javascript, java, dotnet, python",
+    "NotSupported": "javascript, java, dotnet, python",
     "Results": [
       {
         "Text": "人民币  50元",
@@ -518,5 +518,42 @@
     "Input": "标准普尔指数下降",
     "NotSupported": "javascript, java, python",
     "Results": []
+  },
+  {
+    "Input": "在下面的价格中选一个，$20，300美圆, ￥300, ok?",
+    "Results": [
+      {
+        "Text": "$20",
+        "Start": 11,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "20"
+        }
+      },
+      {
+        "Text": "300美圆",
+        "Start": 15,
+        "End": 19,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "300"
+        }
+      },
+      {
+        "Text": "￥300",
+        "Start": 22,
+        "End": 25,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "300"
+        }
+      }
+    ]
   }
 ]

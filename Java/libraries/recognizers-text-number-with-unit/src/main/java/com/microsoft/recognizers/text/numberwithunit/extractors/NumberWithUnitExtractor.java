@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.numberwithunit.Constants;
 import com.microsoft.recognizers.text.numberwithunit.models.PrefixUnitResult;
 import com.microsoft.recognizers.text.numberwithunit.resources.BaseUnits;
 import com.microsoft.recognizers.text.numberwithunit.utilities.StringComparer;
@@ -81,6 +82,40 @@ public class NumberWithUnitExtractor implements IExtractor {
         Arrays.fill(matched, false);
         List<ExtractResult> numbers = this.config.getUnitNumExtractor().extract(source);
         int sourceLen = source.length();
+
+        if (numbers.size() > 0  && this.config.getExtractType() == Constants.SYS_UNIT_CURRENCY) {
+
+            for (ExtractResult number : numbers) {
+                int start = number.getStart();
+                int length = number.getLength();
+                Boolean numberPrefix = false;
+                Boolean numberSuffix = false;
+
+                for (Pattern regex : prefixRegexes) {
+                    Matcher match = regex.matcher(source);
+                    while (match.find()) {
+                        if (match.end() == start) {
+                            numberPrefix = true;
+                        }
+                    }
+                }
+
+                for (Pattern regex : suffixRegexes) {
+                    Matcher match = regex.matcher(source);
+                    while (match.find()) {
+                        if (start + length == match.start()) {
+                            numberSuffix = true;
+                        }
+                    }
+                }
+                
+                if (numberPrefix && numberSuffix && number.getText().contains(",")) {
+                    int commaIndex = start + number.getText().indexOf(",");
+                    source = source.substring(0, commaIndex) + " " + source.substring(commaIndex + 1);
+                }
+            }
+            numbers = this.config.getUnitNumExtractor().extract(source);
+        }
 
         /* Special case for cases where number multipliers clash with unit */
         Pattern ambiguousMultiplierRegex = this.config.getAmbiguousUnitNumberMultiplierRegex();

@@ -81,6 +81,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             {
                                 shouldAdd = false;
                             }
+
+                            if (result.Start <= extractionResult.Start && result.End >= extractionResult.End)
+                            {
+                                shouldAdd = false;
+                            }
                         }
 
                         if (shouldAdd)

@@ -50,8 +50,9 @@ class AbstractNumberWithUnitModel(Model):
                     model_result.resolution = self.get_resolution(
                         parse_result.value)
 
-                    b_add = not [x for x in extraction_results if x.start ==
-                                 model_result.start and x.end == model_result.end]
+                    b_add = not [x for x in extraction_results if (x.start ==
+                                 model_result.start and x.end == model_result.end) or 
+                                 (model_result.start <= x.start and model_result.end >= x.end)]
 
                     if b_add:
                         extraction_results.append(model_result)

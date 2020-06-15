@@ -79,6 +79,25 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
 
+                if (numbers.Count() > 0 && CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
+                {
+
+                    foreach (var number in numbers)
+                    {
+                        int start = (int)number.Start, length = (int)number.Length;
+                        var numberPrefix = prefixMatches.Any(o => o.Start + o.Length == number.Start);
+                        var numberSuffix = suffixMatches.Any(o => o.Start == number.Start + number.Length);
+
+                        if (numberPrefix != false && numberSuffix != false && number.Text.Contains(","))
+                        {
+                            int commaIndex = (int)number.Start + number.Text.IndexOf(",");
+                            source = source.Substring(0, commaIndex) + " " + source.Substring(commaIndex + 1);
+                        }
+                    }
+
+                    numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+                }
+
                 // Special case for cases where number multipliers clash with unit
                 var ambiguousMultiplierRegex = this.config.AmbiguousUnitNumberMultiplierRegex;
                 if (ambiguousMultiplierRegex != null)

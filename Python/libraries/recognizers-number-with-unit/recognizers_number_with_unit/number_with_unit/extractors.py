@@ -173,6 +173,19 @@ class NumberWithUnitExtractor(Extractor):
 
             numbers: List[ExtractResult] = sorted(self.config.unit_num_extractor.extract(source), key=lambda o: o.start)
 
+            if len(numbers) > 0 and self.config.extract_type is Constants.SYS_UNIT_CURRENCY:
+
+                for number in numbers:
+                    start = number.start
+                    length = number.length
+                    numberPrefix = [(mr.start + mr.length) == start for mr in prefix_match]
+                    numberSuffix = [mr.start == (start + length) for mr in suffix_match]
+                    if True in numberPrefix and True in numberSuffix and "," in number.text:
+                         commaIndex = number.start + number.text.index(",")
+                         source = source[:commaIndex] + " " + source[commaIndex + 1:];
+
+                numbers: List[ExtractResult] = sorted(self.config.unit_num_extractor.extract(source), key=lambda o: o.start)
+
             # Special case for cases where number multipliers clash with unit
             ambiguous_multiplier_regex = self.config.ambiguous_unit_number_multiplier_regex
             if ambiguous_multiplier_regex is not None:
