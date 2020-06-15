@@ -63,6 +63,11 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     NumberRangeConstants.MORE
                 },
                 {
+                    // فيه خمس مائة وأكثر منتجات
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
                     // less/smaller/lower than ...
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
                     NumberRangeConstants.LESS
