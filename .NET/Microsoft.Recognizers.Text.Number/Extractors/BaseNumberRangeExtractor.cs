@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.Number
             var matched = new bool[source.Length];
 
             var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
+
             foreach (var collection in collections)
             {
                 foreach (Match m in collection.Key)

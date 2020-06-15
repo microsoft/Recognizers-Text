@@ -143,6 +143,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string DECADE_UNIT = "10Y";
         public const string FORTNIGHT_UNIT = "2W";
+        public const string QUARTER_UNIT = "3MON";
+        public const string WEEKEND_UNIT = "WE";
 
         // Timex
         public const string TimexYear = "Y";

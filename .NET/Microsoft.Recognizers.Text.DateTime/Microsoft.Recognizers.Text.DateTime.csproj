@@ -36,6 +36,7 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj" />
     <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj" />
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.DataTypes.TimexExpression\Microsoft.Recognizers.Text.DataTypes.TimexExpression.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">

@@ -52,22 +52,25 @@ def test_datetime_parser(
     extractor = create_extractor(language, model, options)
     parser = create_parser(language, model, options)
 
+    spec_info = type(parser).__name__ + " : " + source
+
     extract_results = extractor.extract(source, reference_datetime)
     result = [parser.parse(x, reference_datetime) for x in extract_results]
     assert len(result) == len(expected_results)
+
     for actual, expected in zip(result, expected_results):
 
-        simple_parser_assert(actual, expected, 'text', 'Text', True)
-        simple_parser_assert(actual, expected, 'type', 'Type')
+        simple_parser_assert(spec_info, actual, expected, 'text', 'Text', True)
+        simple_parser_assert(spec_info, actual, expected, 'type', 'Type')
 
         if 'Value' in expected:
             assert actual.value
 
         if actual.value and 'Value' in expected:
-            simple_parser_assert(actual.value, expected['Value'], 'timex', 'Timex')
-            simple_parser_assert(actual.value, expected['Value'], 'mod', 'Mod')
-            simple_parser_assert(actual.value, expected['Value'], 'future_resolution', 'FutureResolution')
-            simple_parser_assert(actual.value, expected['Value'], 'past_resolution', 'PastResolution')
+            simple_parser_assert(spec_info, actual.value, expected['Value'], 'timex', 'Timex')
+            simple_parser_assert(spec_info, actual.value, expected['Value'], 'mod', 'Mod')
+            simple_parser_assert(spec_info, actual.value, expected['Value'], 'future_resolution', 'FutureResolution')
+            simple_parser_assert(spec_info, actual.value, expected['Value'], 'past_resolution', 'PastResolution')
 
 
 @pytest.mark.parametrize(
@@ -139,12 +142,15 @@ def test_datetime_model(
 
     for actual, expected in zip(result, expected_results):
 
-        simple_parser_assert(actual, expected, 'text', 'Text')
-        simple_parser_assert(actual, expected, 'type_name', 'TypeName')
-        simple_parser_assert(actual, expected, 'parent_text', 'ParentText')
-        simple_parser_assert(actual, expected, 'start', 'Start')
-        simple_parser_assert(actual, expected, 'end', 'End')
+        simple_parser_assert(spec_info, actual, expected, 'text', 'Text')
+        simple_parser_assert(spec_info, actual, expected, 'type_name', 'TypeName')
+        simple_parser_assert(spec_info, actual, expected, 'parent_text', 'ParentText')
+        simple_parser_assert(spec_info, actual, expected, 'start', 'Start')
+        simple_parser_assert(spec_info, actual, expected, 'end', 'End')
 
+        # Avoid TypError if Actual is None
+        assert_verbose(actual is None, False, spec_info)
+        assert_verbose(actual.resolution is None, False, spec_info)
         assert_verbose(len(actual.resolution['values']), len(expected['Resolution']['values']), spec_info)
 
         for actual_resolution_value in actual.resolution['values']:
@@ -193,11 +199,11 @@ def simple_extractor_assert(spec_info, actual, expected, prop, resolution, ignor
         assert_verbose(actual_normalize, expected_normalize, spec_info)
 
 
-def simple_parser_assert(actual, expected, prop, resolution, ignore_result_case=False):
+def simple_parser_assert(spec_info, actual, expected, prop, resolution, ignore_result_case=False):
     if resolution in expected:
         expected_normalize = expected[resolution] if not ignore_result_case else expected[resolution].lower()
         actual_normalize = getattr(actual, prop) if not ignore_result_case else getattr(actual, prop).lower()
-        assert actual_normalize == expected_normalize
+        assert_verbose(actual_normalize, expected_normalize, spec_info)
 
 
 def create_extractor(language, model, options):

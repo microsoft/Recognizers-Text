@@ -345,7 +345,7 @@ public class SpanishDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{BaseDateTime.SecondRegex}", BaseDateTime.SecondRegex);
 
-    public static final String AtRegex = "\\b(?<=\\b(a las?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?"
+    public static final String AtRegex = "\\b(?<=\\b((a|de(sde)?)\\s+las?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex);
@@ -457,7 +457,7 @@ public class SpanishDateTime {
 
     public static final String UnitRegex = "(?<unit>años?|mes(es)?|semanas?|d[ií]as?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\\b";
 
-    public static final String ConnectorRegex = "^(,|t|para las?|cerca de las?)$";
+    public static final String ConnectorRegex = "^(,|t|para las?|(cerca|alrededor) de las?)$";
 
     public static final String TimeHourNumRegex = "(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)";
 
@@ -560,7 +560,7 @@ public class SpanishDateTime {
 
     public static final String SinceRegex = "(desde(\\s+(las?|el))?)";
 
-    public static final String AroundRegex = "^[.]";
+    public static final String AroundRegex = "(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)";
 
     public static final String PeriodicRegex = "\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b";
 

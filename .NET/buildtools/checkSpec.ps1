@@ -26,6 +26,7 @@ function SpecInfo()
         catch
         {
 			Write-Host("Error decoding spec file:`t" + $file.FullName)
+			Write-Warning(($Error[0] -split '\n')[0])
             exit 2
         }
         
