@@ -17,7 +17,7 @@
       <dependency id="Microsoft.Recognizers.Text" version="$basic$"/>
       <dependency id="Microsoft.Recognizers.Text.Number" version="$number$"/>
       <dependency id="Microsoft.Recognizers.Text.NumberWithUnit" version="$numberWithUnit$"/>
-	  <dependency id="Microsoft.Recognizers.Text.DataTypes.TimexExpression" version="$basic$"/>
+      <dependency id="Microsoft.Recognizers.Text.DataTypes.TimexExpression" version="$basic$"/>
     </dependencies>
   </metadata>
   <files>
