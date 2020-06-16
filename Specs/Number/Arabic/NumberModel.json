@@ -18,8 +18,8 @@
   },
   {
     "Input": "العنوان الأي بي هو ١٩٢.١٦٨.١.٢",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٩٢",
@@ -309,8 +309,8 @@
   },
   {
     "Input": "أريد دزينة من التفاحة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "دزينة",
@@ -613,8 +613,8 @@
   },
   {
     "Input": "١/٤ ٢",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١/٤ ٢",
@@ -1087,8 +1087,8 @@
   },
   {
     "Input": "احتمال الإجابة جزء من مئة الف تريليونات",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "جزء من مئة الف تريليونات",
@@ -1205,8 +1205,8 @@
   },
   {
     "Input": "حذفت عشرين اجزاء من خمسة وعشرين الملف.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "عشرين اجزاء من خمسة وعشرين",
@@ -1222,8 +1222,8 @@
   },
   {
     "Input": "مئة أجزاء من خمسة وثلاثون المقطع تم تنزيله",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مئة أجزاء من خمسة وثلاثون",
@@ -1239,8 +1239,8 @@
   },
   {
     "Input": "لدي مئة وثلاثون وخُمسَين ريال",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مئة وثلاثون وخُمسَين",
@@ -1256,8 +1256,8 @@
   },
   {
     "Input": "جزء من مئة وخمسة الاكياس خالية",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "جزء من مئة وخمسة",
@@ -1408,8 +1408,8 @@
   },
   {
     "Input": "كم هي خمسة وتسعون مائة على خمسة ؟",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "خمسة وتسعون مائة على خمسة",
@@ -2018,8 +2018,8 @@
   },
   {
     "Input": "جزء من واحد وعشرون اجزاء الملف فاضية",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "جزء من واحد وعشرون",
@@ -2069,8 +2069,8 @@
   },
   {
     "Input": "-١-^٢٥٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-١-^٢٥٠٠",
@@ -2086,8 +2086,8 @@
   },
   {
     "Input": "-٢٣^١,١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-٢٣^١,١",
@@ -2103,8 +2103,8 @@
   },
   {
     "Input": "-٢٣--^١,١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-٢٣--^١,١",

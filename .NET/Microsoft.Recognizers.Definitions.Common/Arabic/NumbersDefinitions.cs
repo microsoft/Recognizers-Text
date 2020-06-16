@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string ArabicBuiltInFraction = @"(ثلثان|ربع|خمس|عشرونات|ثلاثون|خُمسَين:?)";
       public const string FractionOrdinalPrefix = @"(الوزن|المحتوى:?)";
       public static readonly string FractionNounRegex = $@"(?<=\b){ArabicBuiltInFraction}|{AllIntRegex}\s(و\s|و){ArabicBuiltInFraction}|(({AllIntRegex}\s(و\s|و)?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|أرباع|وربع|ارباع|واحد وربع|نصف|ربع|أنصاف|ربعين|أرباع|ارباع))(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|نصف|وربع|ربع|ونصف))|(نصف|))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|نصف|وربع|ربع|ونصف))|(الربع|النصف|نصف|))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|أجزاء من|اجزاء من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+على\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string FractionWithOrdinalPrefix = $@"({AllOrdinalRegex})(?=\s*({FractionOrdinalPrefix}))";
@@ -77,31 +77,32 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+(من|في المئة))";
       public static readonly string NumberWithPrefixPercentage = $@"(نسبة|بالمائة)(\s*)({BaseNumbers.NumberReplaceToken})";
       public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(في|خارج\s+من)\s*({BaseNumbers.NumberReplaceToken})";
-      public const string TillRegex = @"(إلى|خلال|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(?:(فوق|أكبر|أعظم|أطول|يتجاوز|تفوق)(\s+من)?|(?<!<|=)>)";
-      public const string LessRegex = @"(?:(أقل|اقل|اصغر|أصغر|ادنى)(\s+من)?|تحت|(?<!>|=)<)";
+      public const string TillRegex = @"(الى|إلى|خلال|--|-|—|——|~|–)";
+      public const string MoreRegex = @"(?:(اكثر|فوق|أكبر|أعظم|أطول|يتجاوز|تفوق|أعلى|أكثر)|(?<!<|=)>)";
+      public const string LessRegex = @"(?:(أقل|اقل|اصغر|أصغر|أخفض|ادنى)(\s*من)?|تحت|(?<!>|=)<)";
       public const string EqualRegex = @"(يساوي|(?<!<|>)=)";
       public static readonly string MoreOrEqualPrefix = $@"(((ليس|لا)\s+{LessRegex})|(على\s+الأقل))";
-      public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{MoreRegex})|({MoreOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{MoreOrEqualPrefix})|({MoreRegex})|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((و|أو)\s+(((أكبر|أعظم|أطول|فوق|اكثر)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول|اكثر)(?!\s+من))))";
-      public static readonly string LessOrEqualPrefix = $@"((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى))";
-      public static readonly string LessOrEqual = $@"(({LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+{LessRegex})|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|({LessRegex})|<\s*=)";
-      public const string LessOrEqualSuffix = @"((و|أو)\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))";
-      public const string NumberSplitMark = @"(?![,.](?!\d+))";
-      public const string MoreRegexNoNumberSucceed = @"((أكبر|أعظم|أطول|فوق)((?!\s+من)|\s+(من(?!(\s*\d+))))|(فوق|أكبر|أعظم)(?!(\s*\d+)))";
-      public const string LessRegexNoNumberSucceed = @"((أقل|أصغر)((?!\s+من)|\s+(من(?!(\s*\d+))))|(تحت|أقل|أصغر)(?!(\s*\d+)))";
-      public const string EqualRegexNoNumberSucceed = @"(يساوي)";
-      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string MoreOrEqual = $@"(?:(({MoreRegex}(\s+من)?)\s+(أو|او)?\s+{EqualRegex})|(({MoreOrEqualPrefix}|(تفوق))(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?({MoreOrEqualPrefix}|تفوق))|>\s*=)";
+      public const string MoreOrEqualSuffix = @"((أو|او)\s+(((أكبر|أعظم|أطول|فوق|اكثر|اكثر|اكبر|أكثر)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول|اكثر)(?!\s+من))))";
+      public static readonly string LessOrEqualPrefix = $@"((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى)|(يصل الى))";
+      public static readonly string LessOrEqual = $@"(((لا\s*)?{LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+(((أقل|اقل|أدنى|اصغر|أصغر|ادنى)(\s+من))|تحت|(?<!>|=)<))|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|<\s*=)";
+      public const string LessOrEqualSuffix = @"((أ|ا)?و\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))";
+      public const string NumberSplitMark = @"(?![.،](?!\d+))";
+      public const string MoreRegexNoNumberSucceed = @"((أكبر|أعظم|أطول|فوق|اكثر)((?!\s+من)|\s+(من(?!(\s*\d+))))|(فوق|أكبر|أعظم)(?!(\s*\d+)))";
+      public const string LessRegexNoNumberSucceed = @"((أقل|أصغر)((?!\s+من)|\s+(من(?!(\s*\d+))))|(تحت|اقل|أقل|أصغر)(?!((\s*\d+)|\s*من)))";
+      public const string EqualRegexNoNumberSucceed = @"((يساوي)(?!(\s*\d+)))";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s*(أو|او)?\s+({MoreRegex}))(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s+(أو|او)?\s+({MoreRegex}))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})\s*(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreRegex3 = $@"(?<number1>({NumberSplitMark}.)+)\s*(و|أو)\s*({MoreRegex})";
       public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}";
-      public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual})\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreSeparateRegex = $@"({MoreRegex}\s*(من)\s+(?<number1>({NumberSplitMark}.)+)\s+(أو|او)\s+{EqualRegexNoNumberSucceed})|({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeLessRegex1 = $@"(({LessOrEqual})\s*(ال)?(?<number2>({NumberSplitMark}.)+))|(لا\s*)?((((أقل|اقل|أدنى|اصغر|أصغر|ادنى)(\s+من))|تحت|(?<!>|=)<))\s*(ال)?(?<number2>({NumberSplitMark}.)+)|(لا\s*)?(({LessRegex})\s*(ال)?(?<number2>({NumberSplitMark}.)+))";
       public static readonly string OneNumberRangeLessRegex2 = $@"(?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}";
-      public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+أو\s+){EqualRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)\s*(أو|او)\s+{LessRegexNoNumberSucceed})|(((((أقل|اقل|أدنى|اصغر|أصغر|ادنى)(\s+من))|تحت|(?<!>|=)<))\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})";
       public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(ال)?(?<number1>({NumberSplitMark}.)+)";
       public static readonly string TwoNumberRangeRegex1 = $@"بين\s*(ال)?(?<number1>({NumberSplitMark}.)+)\s*و\s*(ال)?(?<number2>({NumberSplitMark}.)+)";
-      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(و|لكن|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
-      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(و|لكن|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
-      public static readonly string TwoNumberRangeRegex4 = $@"(من\s+)?(?<number1>({NumberSplitMark}(?!\bمن\b).)+)\s*{TillRegex}\s*(ال\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(،)?\s*((أ|ا)?و|لكن|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
+      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(،)?\s*((أ|ا)?و|لكن|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
+      public static readonly string TwoNumberRangeRegex4 = $@"((من\s)(?<number1>({NumberSplitMark}(?!\bمن\b).)+)\s*{TillRegex}\s*(ال\s+)?(?<number2>({NumberSplitMark}.)+))|((من\s)?(?<number1>({NumberSplitMark}(?!\bمن\b).)+)\s*{TillRegex}\s*(ال\s+)?(?<number2>({NumberSplitMark}.)+))";
       public const string AmbiguousFractionConnectorsRegex = @"(\bمن|بين|من|بين\b)";
       public const char DecimalSeparatorChar = ',';
       public const string FractionMarkerToken = @"أكثر";
@@ -120,6 +121,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"صفر", 0 },
             { @"اثنان", 2 },
             { @"اثنين", 2 },
+            { @"ثلاث", 3 },
             { @"ثلاثة", 3 },
             { @"أربعة", 4 },
             { @"خمسة", 5 },
@@ -222,12 +224,14 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"الثاني", 2 },
             { @"الثانية", 2 },
             { @"ثان", 2 },
+            { @"النصف", 2 },
             { @"نصف", 2 },
             { @"ثلث", 3 },
             { @"الثالث", 3 },
             { @"الثالثة", 3 },
             { @"ثالث", 3 },
             { @"ثالثة", 3 },
+            { @"الربع", 4 },
             { @"ربع", 4 },
             { @"الرابع", 4 },
             { @"الرابعة", 4 },
