@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
+        private static readonly Regex NumberOrConnectorRegex = new Regex(@"^[0-9-]+$", RegexOptions.Compiled);
+
         private readonly IMergedExtractorConfiguration config;
 
         public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
@@ -285,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // @TODO: Refactor to remove this method and use the general ambiguity filter approach
-            extractResults = extractResults.Where(er => !(text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-")))
+            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
                     .ToList();
 
             return extractResults;
