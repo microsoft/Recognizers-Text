@@ -191,7 +191,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (this.config.UnitMap.TryGetValue(srcUnit, out var unitStr))
                 {
-                    var numVal = double.Parse(pr.Value.ToString(), CultureInfo.InvariantCulture) + ParseNumberWithUnitAndSuffix(suffixStr);
+                    // First try to parse combined expression 'num + suffix'
+                    double numVal;
+                    var combStr = pr.Text + " " + suffixStr;
+                    if (this.config.DoubleNumbers.ContainsKey(combStr))
+                    {
+                        numVal = ParseNumberWithUnitAndSuffix(combStr);
+                    }
+                    else
+                    {
+                        numVal = double.Parse(pr.Value.ToString(), CultureInfo.InvariantCulture) + ParseNumberWithUnitAndSuffix(suffixStr);
+                    }
 
                     ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];

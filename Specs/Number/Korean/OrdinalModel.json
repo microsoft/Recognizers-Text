@@ -2,6 +2,7 @@
   {
     "Input": "3조 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -18,6 +19,7 @@
   {
     "Input": "조 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -34,6 +36,7 @@
   {
     "Input": "백조 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -50,6 +53,7 @@
   {
     "Input": "열한 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,6 +70,7 @@
   {
     "Input": "스물한 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -82,6 +87,7 @@
   {
     "Input": "서른 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -98,6 +104,7 @@
   {
     "Input": "두 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -114,6 +121,7 @@
   {
     "Input": "스무 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -130,6 +138,7 @@
   {
     "Input": "스물다섯 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -146,6 +155,7 @@
   {
     "Input": "백스물다섯 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -162,6 +172,7 @@
   {
     "Input": "백이십오 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -178,6 +189,7 @@
   {
     "Input": "조번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -194,6 +206,7 @@
   {
     "Input": "이십일조 삼백이십이 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -210,6 +223,7 @@
   {
     "Input": "이백 번째",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -226,6 +240,7 @@
   {
     "Input": "시애틀로 가는 일등석을 예약해주십시오.",
     "IgnoreResolution": true,
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -304,8 +319,6 @@
       }
     ]
   },
-
-
   {
     "Input": "마지막의 옆을 보여주세요",
     "IgnoreResolution": true,
@@ -450,7 +463,6 @@
       }
     ]
   },
-
   {
     "Input": "다음 아이템을 주세요",
     "IgnoreResolution": true,
@@ -507,7 +519,6 @@
   },
   {
     "Input": "나는 11번째이다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -525,7 +536,6 @@
   },
   {
     "Input": "21번째 생일",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -543,7 +553,6 @@
   },
   {
     "Input": "그녀는 30번째를 기록했다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -561,7 +570,6 @@
   },
   {
     "Input": "여행 온지 2번째 날이다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -667,7 +675,6 @@
       }
     ]
   },
-
   {
     "Input": "백화점을 방문한 일조번째 손님",
     "IgnoreResolution": true,
@@ -881,6 +888,326 @@
         },
         "Start": 0,
         "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "끝에 서주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "끝",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "끝에서 세번째를 보여주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "끝에서 세번째",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "끝에서 바로 전의 것을 보여주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "끝에서 바로 전의 것",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "끝에서 두번째를 보여주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "끝에서 두번째",
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "오늘은 오월 11일이다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "11일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "오늘은 사월 21일이다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "21일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "어제는 삼월 30일이었다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "30일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "사월 2일",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        },
+        "Start": 3,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "오월 십일일",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "십일일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        },
+        "Start": 3,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "유월 이십일",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        },
+        "Start": 3,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "칠월 이십오일",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십오일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "25",
+          "relativeTo": "start",
+          "value": "25"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "BTS는 이십일일에 새 앨범을 낸다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일일",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "전교 백이십오등",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백이십오등",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        },
+        "Start": 3,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "이백등은 순위에 들지 않는다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이백등",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "200",
+          "relativeTo": "start",
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "그녀는 이등으로 들어옵니다!",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이등",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        },
+        "Start": 4,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "이등은 은메달을 수여받는다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이등",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "삼조번째",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼조번째",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3000000000000",
+          "relativeTo": "start",
+          "value": "3000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "백조번째",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백조번째",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000000000000",
+          "relativeTo": "start",
+          "value": "100000000000000"
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   }

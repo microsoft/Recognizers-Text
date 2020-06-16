@@ -11,7 +11,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public DutchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            CardinalExtractor = config.CardinalExtractor;
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Dutch.NumberExtractor.GetInstance(numConfig);
             NumberParser = config.NumberParser;
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = DutchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;

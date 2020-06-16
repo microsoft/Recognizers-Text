@@ -1199,5 +1199,106 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Año en que las ventas de bmw son superiores a 300000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "superiores a 300000",
+        "Start": 33,
+        "End": 51,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(300000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Qué categorías tuvieron ventas de más de 700000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "más de 700000",
+        "Start": 35,
+        "End": 47,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Qué categorías tuvieron ventas de más de 700.000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Comments": "Spanish doesn't traditionally use comma as thousand-separator",
+    "Results": [
+      {
+        "Text": "más de 700.000",
+        "Start": 35,
+        "End": 48,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Encuentre 2 años fiscales con los menores recuentos de sesiones en enero cuando las recuperaciones son menores a 10",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "menores a 10",
+        "Start": 103,
+        "End": 114,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Marcas cuyos teléfonos celulares más ligeros pesan menos de 174.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "menos de 174",
+        "Start": 51,
+        "End": 62,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,174)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Poner en orden descendente los recuentos de sesiones más grandes no menos de 194 y menos de 12 en cada mes y año fiscal.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no menos de 194",
+        "Start": 65,
+        "End": 79,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[194,)"
+        }
+      },
+      {
+        "Text": "menos de 12",
+        "Start": 83,
+        "End": 93,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      }
+    ]
   }
 ]

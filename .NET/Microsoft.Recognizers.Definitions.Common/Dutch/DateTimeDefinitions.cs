@@ -60,12 +60,12 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string DescRegex = $@"((({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})";
       public static readonly string TwoDigitYearRegex = $@"\b(?<!\$)(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
-      public const string WeekDayRegex = @"\b(?<weekday>(((?:maan|dins|woens|donder|vrij|zater|zon)(dag)?(en)?)\b|(ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|za(t)?|zo)[\.\b]))";
-      public const string SingleWeekDayRegex = @"\b(?<weekday>((((maan|dins|woens|donder|vrij|zater|zon)(dag(en)?))\b)|((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij\.)?|za(t)?|zo)\b(\.)?)))";
+      public const string WeekDayRegex = @"\b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij\.)?|za(t)?|zo)[\.\b])|((?:maan|dins|woens|donder|vrij|zater|zon)(dag)?(en)?(middag)?)\b)";
+      public const string SingleWeekDayRegex = @"\b(?<weekday>(((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij\.)?|za(t)?|zo)\b(\.)?)|(((maan|dins|woens|donder|zater|zon)(dag(en)?)?|(?<=op\s+)vrij|vrij(dag(en)?))\b)))";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((van\s+)?(de\s+)?)?{RelativeRegex}\s+maand)\b";
       public const string WrittenMonthRegex = @"(((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|van|tijdens|sinds|tot)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|maand(en)?|week|weken|(?<business>(werk))?dag(en)?)\b";
+      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|jr|decennia|maand(en)?|mnd|week|weken|(?<business>(werk))?dag(en)?|dgn)\b";
       public const string DateTokenPrefix = @"op ";
       public const string TimeTokenPrefix = @"om ";
       public const string TokenBeforeDate = @"op ";
@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string ThisRegex = $@"\b((deze(\s+week)?(\s+op)?\s*){WeekDayRegex})|({WeekDayRegex}((\s+van)?\s*deze\s+week))\b";
       public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+vorige\s+week))\b";
       public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayRegex})|((op\s+)?{WeekDayRegex}\s+((van\s+)?(de\s+)?{NextPrefixRegex})\s*week)\b";
-      public static readonly string SpecialDayRegex = $@"\b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|mijn)\s+dag)|gisteren|morgen|vandaag)\b";
+      public static readonly string SpecialDayRegex = $@"\b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|mijn)\s+dag)|gisteren|(deze\s+|van)?morgen|vandaag|(morgen|(?<weekday>zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag))(ochtend|(na)?middag|avond|nacht))\b";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+dag(en)?\s+(gerekend\s+)?(vanaf\s+)(?<day>gisteren|morgen|vandaag))\b";
       public static readonly string RelativeDayRegex = $@"\b(((de\s+)?{RelativeRegex}\s+dag))\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>op\s+({ArticleRegex}\s+))?(?<weekday>morgen|ochtend|middag|avond|nacht|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)s\b";
@@ -140,8 +140,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string WeekDayStart = @"^[\.]";
       public const string RangeUnitRegex = @"\b(?<unit>jaren|jaar|maanden|maand|weken|week)\b";
       public const string HourNumRegex = @"\b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b";
-      public const string MinuteNumRegex = @"(?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)";
-      public const string DeltaMinuteNumRegex = @"(?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)";
+      public const string MinuteNumRegex = @"(?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vij[fv]entwintig|ze(s|ven)entwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|ze(s|ven)endertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|ze(s|ven)enveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|ze(s|ven)envijftig|achtenvijftig|negenenvijftig)";
+      public const string DeltaMinuteNumRegex = @"(?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)";
       public const string PmRegex = @"(?<pm>(((’|‘|'|ʼ)\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))";
       public const string PmRegexFull = @"(?<pm>(((’|‘|'|ʼ)\s*s|des)\s+(middags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))";
       public const string AmRegex = @"(?<am>(((’|‘|'|ʼ)\s*s|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))))";
@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"(?<lth>((een\s+)?((drie\s+)?kwart(ier)?|half(uur)?))|{BaseDateTime.DeltaMinuteRegex}(\s+(minuten|mins|min\.?))?|({DeltaMinuteNumRegex}(\s+(minuten|mins|min\.?))?))";
       public static readonly string WrittenTimeRegex = $@"(?<writtentime>({HourNumRegex}\s+{MinuteNumRegex}|(?<prefix>half)\s+({HourNumRegex})(\s+uur)?))";
-      public static readonly string TimePrefix = $@"(?<prefix>({LessThanOneHour}\s+(over|voor|na)(\s+half)?)|(uur\s+{LessThanOneHour}))";
+      public static readonly string TimePrefix = $@"(?<prefix>(half|{LessThanOneHour}\s+(over|voor|na)(\s+half)?)|(uur\s+{LessThanOneHour}))";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})";
       public static readonly string BasicTime = $@"\b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|((?<prefix>half)\s+)?{BaseDateTime.HourRegex})";
@@ -163,22 +163,22 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string IshRegex = $@"\b(tegen\s+{BaseDateTime.HourRegex}(-|——|\s*(’|‘|')\s*)?en|middagloos)\b";
       public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)(?<unit>uren|uur|u|minuten|minuut|min\.?|mins|secondes|seconden|seconde|secs|sec\.?)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>uur|minuut)\b";
-      public const string FivesRegex = @"(?<tens>(vijf|tien|vijftien|twintig|vijfentwintig|dertig|vijfendertig|veertig|vijfenveertig|vijftig|vijfenvijftig))\b";
+      public const string FivesRegex = @"(?<tens>(vijf|tien|vijftien|twintig|vijfentwintig|vijventwintig|dertig|vijfendertig|veertig|vijfenveertig|vijftig|vijfenvijftig))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
       public const string PeriodHourNumRegex = @"\b(?<hour>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b";
       public static readonly string ConnectNumRegex = $@"\b{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
-      public static readonly string TimeRegexWithDotConnector = $@"({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
+      public static readonly string TimeRegexWithDotConnector = $@"({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex}(\s*:\s*{BaseDateTime.SecondRegex})?(\s*u\s*)?)";
       public static readonly string TimeRegex1 = $@"\b(({TimePrefix}|{AroundRegex})\s+)?(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*{DescRegex})|((?<prefix>half)\s+)?(?!een){HourNumRegex}\b)";
-      public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(\s*u)?((\s*{DescRegex})|\b)";
+      public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?(:|\.)(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(\s*u)?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
       public static readonly string TimeRegex4 = $@"\b{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
       public static readonly string TimeRegex5 = $@"\b({TimePrefix}\s+{BasicTime}|{BasicTime}\s+{TimePrefix})((\s*({DescRegex}|{TimeSuffix}))|\b)";
-      public static readonly string TimeRegex6 = $@"{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
+      public static readonly string TimeRegex6 = $@"{BasicTime}(\s*u\s*)?(\s*{DescRegex})?\s+{TimeSuffix}\b";
       public static readonly string TimeRegex7 = $@"({TimeSuffixFull}\s+{BasicTime})((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex8 = $@".^";
       public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)";
-      public static readonly string TimeRegex10 = $@"\b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*(u|h))(\s*{BaseDateTime.MinuteRegex})?(\s*{DescRegex})?";
-      public static readonly string TimeRegex11 = $@"\b(({TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)|({TimeRegexWithDotConnector}(\s*{DescRegex})))";
+      public static readonly string TimeRegex10 = $@"\b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*(u\b|h))(\s*{BaseDateTime.MinuteRegex})?(\s*{DescRegex})?";
+      public static readonly string TimeRegex11 = $@"\b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\s*({DescRegex}|{TimeSuffix})))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)))";
       public static readonly string FirstTimeRegexInTimeRange = $@"\b{TimeRegexWithDotConnector}(\s*{DescRegex})?";
       public static readonly string PureNumFromTo = $@"({RangePrefixRegex}\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?";
       public static readonly string PureNumBetweenAnd = $@"(tussen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?";
@@ -186,42 +186,42 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string SpecificTimeBetweenAnd = $@"(tussen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
       public const string PrepositionRegex = @"(?<prep>^(om|rond|tegen|op)(\s+de)?$)";
       public const string LaterEarlyRegex = @"((?<early>vroege?(\s+|-))|(?<late>(laat|late)(\s+|-)))";
-      public static readonly string TimeOfDayRegex = $@"(?<timeOfDay>(((in\s+(de)?\s+)?{LaterEarlyRegex}?(in\s+(de)?\s+)?(morgen|ochtend(en)?|middag|nacht|avond(en)?))|{MealTimeRegex})s?|((((’|‘|'|ʼ)\s*s\s+)?)(morgen|ochtend|middag|avond|nacht)s?(\s+((?<early>vroeg)|(?<late>laat)))?)|(tijdens\s+(de\s+)?)?(kantoor|werk)uren)\b";
-      public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\bvan(nacht|avond))s?\b";
+      public static readonly string TimeOfDayRegex = $@"(?<timeOfDay>((((in\s+(de)?\s+)?{LaterEarlyRegex}?(in\s+(de)?\s+)?)(morgen|ochtend(en)?|middag|nacht|avond(en)?))|{MealTimeRegex})s?|((((’|‘|'|ʼ)\s*s\s+)?)(morgen|ochtend|middag|avond|nacht)s?(\s+((?<early>vroeg)|(?<late>laat)))?)|(tijdens\s+(de\s+)?)?(kantoor|werk)uren)\b";
+      public static readonly string SpecificTimeOfDayRegex = $@"\b((({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\bvan(nacht|avond))s?)\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public static readonly string[] BusinessHourSplitStrings = { @"werk", @"uren" };
       public static readonly string[] BusinessHourSplitStrings2 = { @"kantoor", @"uren" };
-      public const string NowRegex = @"\b(?<now>nu|zo snel mogelijk|zo spoedig mogelijk|asap|recent|onlangs|zojuist)\b";
+      public const string NowRegex = @"\b(?<now>nu(\s+meteen)?|zo snel mogelijk|zo spoedig mogelijk|asap|recent|onlangs|zojuist)\b";
       public const string SuffixRegex = @"^\s*(in de\s+)?(vroege\s+|late\s+)?(ochtend|(na)?middag|avond|nacht)\b";
-      public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>ochtend|(na)?middag|avond|nacht)\b";
+      public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>morgen|ochtend|(na)?middag|avond|nacht)\b";
       public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bvan(nacht|avond|middag|ochtend|morgen))\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(in\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op))?\s*$";
-      public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}";
+      public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex}(\s*:\s*{BaseDateTime.MinuteRegex})?)(\s*({OclockRegex}|u))?\s*(,\s*)?(in\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string SimpleTimeOfTodayBeforeRegex = $@"\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b";
-      public const string SpecificEndOfRegex = @"(het\s+)?einde van(\s+de)?\s*$";
-      public const string UnspecificEndOfRegex = @"\b(((om|rond|tegen|op)\s+)?het\s+)?(einde\s+van\s+de\s+dag)\b";
+      public const string SpecificEndOfRegex = @"((het\s+)?einde? van(\s+de)?\s*$|^\s*(het\s+)?einde? van(\s+de(\s+dag)))";
+      public const string UnspecificEndOfRegex = @"\b(((om|rond|tegen|op)\s+)?het\s+)?(einde\s+van\s+(de\s+)?dag)\b";
       public const string UnspecificEndOfRangeRegex = @"\b(evj)\b";
       public const string PeriodTimeOfDayRegex = @"\b((in\s+(de)?\s+)?((?<early>vroege(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>ochtend|(na)?middag|nacht|avond))\b";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\bvan(nacht|avond|middag|ochtend))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}(\s+(om|rond|tegen|op))?))\b";
       public const string LessThanRegex = @"\b(minder\s+dan)\b";
       public const string MoreThanRegex = @"\b(meer\s+dan)\b";
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|uur|uren|u|minuten|mins|m|secondes|secs|s)\b";
-      public const string SuffixAndRegex = @"(?<suffix>\s*(en)\s+(een\s+)?(?<suffix_num>half|kwart))";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier(\s+uur)?)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?";
+      public const string SuffixAndRegex = @"(?<suffix>\s*(\sen|en een)\s+(?<suffix_num>half|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))";
       public const string PeriodicRegex = @"\b(?<periodic>dagelijks|maandelijks|wekelijks|twee-wekelijks|jaarlijks)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(iedere|elke)(?<other>\s+andere)?\s*{DurationUnitRegex})";
       public const string EachPrefixRegex = @"\b(?<each>(iedere|elke)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(iedere|elke)\s*)";
       public const string SetLastRegex = @"(?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)";
       public const string EachDayRegex = @"^\s*(elke)\s*dag\b";
-      public static readonly string DurationFollowedUnit = $@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
+      public static readonly string DurationFollowedUnit = $@"^\s*((?<suffix>(?<unit>(?<suffix_num>(een\s+)?kwartier)))|{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
-      public static readonly string AnUnitRegex = $@"\b(?<half>(een\s(half|halve)))\s+{DurationUnitRegex}";
+      public static readonly string AnUnitRegex = $@"\b(?<half>((nog een|een|nog)\s+(anderhalf|anderhalve|half|halve)?))\s*{DurationUnitRegex}";
       public const string DuringRegex = @"\b(voor\s+een|gedurende\s+(het|de))\s+(?<unit>jaar|maand|week|dag)\b";
-      public const string AllRegex = @"\b(?<all>((ge)?hele|volledige|ganse|heel|volledig)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
-      public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur))\b";
+      public const string AllRegex = @"\b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
+      public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string AfternoonStartEndRegex = $@"(^(('s|des)\s+middags|in de (na)?middag|{PmDescRegex}))|((('s|des)\s+middags|in de (na)?middag|{PmDescRegex})$)";
       public const string EveningStartEndRegex = @"(^(avond|('s|des)?\s+avonds))|((avond|('s|des)?\s+avonds)$)";
       public const string NightStartEndRegex = @"(^(gedurende de nacht|vannacht|nacht|('s|des)?\s+nachts))|((gedurende de nacht|vannacht|('s|des)?\s+nachts|nacht)$)";
-      public const string InexactNumberRegex = @"\b(een aantal|meerdere|enkele|verscheidene|(een\s+)?paar)\b";
+      public const string InexactNumberRegex = @"\b((een\s+)?aantal|meerdere|enkele|verscheidene|(?<NumTwoTerm>(een\s+)?paar))\b";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((de|het|mijn))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
@@ -292,22 +292,30 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"decennia", @"10Y" },
             { @"jaren", @"Y" },
             { @"jaar", @"Y" },
+            { @"jr", @"Y" },
             { @"maanden", @"MON" },
             { @"maand", @"MON" },
+            { @"mnd", @"MON" },
             { @"weken", @"W" },
             { @"week", @"W" },
             { @"dagen", @"D" },
             { @"dag", @"D" },
+            { @"dgn", @"D" },
             { @"uren", @"H" },
             { @"uur", @"H" },
             { @"u", @"H" },
             { @"minuten", @"M" },
             { @"minuut", @"M" },
             { @"min", @"M" },
+            { @"min.", @"M" },
             { @"secondes", @"S" },
+            { @"seconden", @"S" },
             { @"seconde", @"S" },
             { @"secs", @"S" },
-            { @"sec", @"S" }
+            { @"sec", @"S" },
+            { @"kwartier", @"H" },
+            { @"kwartier uur", @"H" },
+            { @"halfuur", @"H" }
         };
       public static readonly Dictionary<string, long> UnitValueMap = new Dictionary<string, long>
         {
@@ -316,12 +324,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"decenniën", 315360000 },
             { @"jaren", 31536000 },
             { @"jaar", 31536000 },
+            { @"jr", 31536000 },
             { @"maanden", 2592000 },
             { @"maand", 2592000 },
+            { @"mnd", 2592000 },
             { @"weken", 604800 },
             { @"week", 604800 },
             { @"dagen", 86400 },
             { @"dag", 86400 },
+            { @"dgn", 86400 },
             { @"werkdagen", 86400 },
             { @"werkdag", 86400 },
             { @"uren", 3600 },
@@ -330,11 +341,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"minuten", 60 },
             { @"minuut", 60 },
             { @"min", 60 },
+            { @"min.", 60 },
             { @"secondes", 1 },
             { @"seconden", 1 },
             { @"seconde", 1 },
             { @"secs", 1 },
-            { @"sec", 1 }
+            { @"sec", 1 },
+            { @"kwartier", 3600 },
+            { @"kwartier uur", 3600 },
+            { @"halfuur", 3600 }
         };
       public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
         {
@@ -381,6 +396,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"vrijdag", 5 },
             { @"zaterdag", 6 },
             { @"zondag", 0 },
+            { @"zondagmiddag", 0 },
             { @"maandagen", 1 },
             { @"dinsdagen", 2 },
             { @"woensdagen", 3 },
@@ -528,6 +544,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"drieëntwintig", 23 },
             { @"vierentwintig", 24 },
             { @"vijfentwintig", 25 },
+            { @"vijventwintig", 25 },
             { @"zesentwintig", 26 },
             { @"zevenentwintig", 27 },
             { @"achtentwintig", 28 },
@@ -658,9 +675,14 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>
         {
             { @"half", 0.5 },
+            { @"anderhalf", 1.5 },
+            { @"anderhalve", 1.5 },
             { @"halve", 0.5 },
-            { @"kwart", 0.25 },
+            { @"een kwartier", 0.25 },
             { @"kwartier", 0.25 },
+            { @"kwart", 0.25 },
+            { @"driekwart", 0.75 },
+            { @"drie kwart", 0.75 },
             { @"kwartaal", 0.25 }
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
@@ -793,13 +815,16 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         };
       public static readonly IList<string> SameDayTerms = new List<string>
         {
-            @"vandaag"
+            @"vandaag",
+            @"deze morgen",
+            @"vanmorgen"
         };
       public static readonly IList<string> PlusOneDayTerms = new List<string>
         {
             @"morgen",
             @"dag na",
-            @"volgende dag"
+            @"volgende dag",
+            @"morgenochtend"
         };
       public static readonly IList<string> MinusOneDayTerms = new List<string>
         {
@@ -846,7 +871,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         };
       public static readonly IList<string> YearTerms = new List<string>
         {
-            @"jaar"
+            @"jaar",
+            @"jaren"
         };
       public static readonly IList<string> GenericYearTerms = new List<string>
         {

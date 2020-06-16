@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
@@ -68,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
 
         public IDateExtractor DateExtractor { get; }
@@ -94,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor IntegerExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
 

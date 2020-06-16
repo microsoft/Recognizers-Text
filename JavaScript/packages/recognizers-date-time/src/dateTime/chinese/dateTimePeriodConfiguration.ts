@@ -252,13 +252,12 @@ export class ChineseDateTimePeriodExtractor extends BaseDateTimePeriodExtractor 
 
         this.config.singleDateExtractor.extract(source, refDate).forEach(er => {
             let afterStr = source.substr(er.start + er.length);
-            let match = RegExpUtility.getMatches(this.config.timeOfDayRegex, afterStr).pop();
-            if (match) {
+            RegExpUtility.getMatches(this.config.timeOfDayRegex, afterStr).forEach(match => {
                 let middleStr = source.substr(0, match.index);
                 if (StringUtility.isNullOrWhitespace(middleStr) || RegExpUtility.isMatch(this.config.prepositionRegex, middleStr)) {
                     tokens.push(new Token(er.start, er.start + er.length + match.index + match.length));
                 }
-            }
+            });
         });
 
         return tokens;

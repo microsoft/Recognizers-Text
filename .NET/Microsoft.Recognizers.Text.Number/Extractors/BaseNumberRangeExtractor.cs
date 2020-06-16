@@ -13,8 +13,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberParser numberParser;
 
-        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser,
-                                        INumberOptionsConfiguration config)
+        protected BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser,
+                                           INumberOptionsConfiguration config)
         {
             this.numberExtractor = numberExtractor;
             this.ordinalExtractor = ordinalExtractor;
@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.Number
             var matched = new bool[source.Length];
 
             var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
+
             foreach (var collection in collections)
             {
                 foreach (Match m in collection.Key)
@@ -62,7 +63,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var length = match.Key.Item2;
 
                 // Filter wrong two number ranges such as "more than 20 and less than 10" and "大于20小于10".
-                if (match.Value.Equals(NumberRangeConstants.TWONUM))
+                if (match.Value.Equals(NumberRangeConstants.TWONUM, StringComparison.Ordinal))
                 {
                     int moreIndex = 0, lessIndex = 0;
 
@@ -86,10 +87,13 @@ namespace Microsoft.Recognizers.Text.Number
                     var matchList = matchSource.ToList();
                     matchList.Sort((pair1, pair2) => pair2.Key.Item2.CompareTo(pair1.Key.Item2));
 
-                    moreIndex = matchList.First(r => r.Value.Equals(NumberRangeConstants.MORE) && r.Key.Item1 >= start &&
-                                                       r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
-                    lessIndex = matchList.First(r => r.Value.Equals(NumberRangeConstants.LESS) && r.Key.Item1 >= start &&
-                                                       r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
+                    moreIndex = matchList.First(r =>
+                                                    r.Value.Equals(NumberRangeConstants.MORE, StringComparison.Ordinal) &&
+                                                    r.Key.Item1 >= start && r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
+
+                    lessIndex = matchList.First(r =>
+                                                    r.Value.Equals(NumberRangeConstants.LESS, StringComparison.Ordinal) &&
+                                                    r.Key.Item1 >= start && r.Key.Item1 + r.Key.Item2 <= start + length).Key.Item1;
 
                     if (!((nums[0] < nums[1] && moreIndex <= lessIndex) || (nums[0] > nums[1] && moreIndex >= lessIndex)))
                     {

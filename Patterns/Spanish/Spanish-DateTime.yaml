@@ -74,6 +74,8 @@ MonthFrontBetweenRegex: !nestedRegex
 DayBetweenRegex: !nestedRegex
   def: \b((entre|entre\s+el)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex, MonthSuffixRegex, YearRegex ]
+SpecialYearPrefixes: !simpleRegex
+  def: ((del\s+)?calend[aá]rio|(?<special>fiscal|escolar))
 OneWordPeriodRegex: !nestedRegex
   def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, AfterNextSuffixRegex,DateUnitRegex]
@@ -290,7 +292,7 @@ BasicTime: !nestedRegex
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 AtRegex: !nestedRegex
   # "a las cuatro" "a las 3 h?"
-  def: \b(?<=\b(a las?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?
+  def: \b(?<=\b((a|de(sde)?)\s+las?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?
   references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex ]
 ConnectNumRegex: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex})
@@ -376,7 +378,7 @@ UnspecificEndOfRangeRegex: !simpleRegex
 UnitRegex: !simpleRegex
   def: (?<unit>años?|mes(es)?|semanas?|d[ií]as?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\b
 ConnectorRegex: !simpleRegex
-  def: ^(,|t|para las?|cerca de las?)$
+  def: ^(,|t|para las?|(cerca|alrededor) de las?)$
 # SpanishTimePeriodExtractorConfiguration
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)
@@ -457,12 +459,11 @@ HolidayRegex3: !nestedRegex
 BeforeRegex: !simpleRegex
   def: (antes(\s+del?(\s+las?)?)?)
 AfterRegex: !simpleRegex
-  def: (despues(\s*del?(\s+las?)?)?)
+  def: (despu[eé]s(\s*del?(\s+las?)?)?)
 SinceRegex: !simpleRegex
   def: (desde(\s+(las?|el))?)
 AroundRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: (?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)
 # SpanishSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b
@@ -593,11 +594,11 @@ UnitValueMap: !dictionary
     segundo: 1
     segs: 1
     seg: 1
-# TODO: modify below regex according to the counterpart in English
 SpecialYearPrefixesMap: !dictionary
   types: [ string, string ]
   entries:
-    '': ''
+    fiscal: FY
+    escolar: SY
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
@@ -875,6 +876,10 @@ SpecialDecadeCases: !dictionary
     '': 0
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: [ hoy ]
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ]

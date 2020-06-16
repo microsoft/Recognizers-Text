@@ -1,7 +1,7 @@
 from typing import List, Pattern
 
 from recognizers_text.extractor import Extractor
-from recognizers_text.utilities import RegExpUtility
+from recognizers_text.utilities import RegExpUtility, DefinitionLoader
 from recognizers_number import FrenchIntegerExtractor
 from ...resources.french_date_time import FrenchDateTime
 from ..extractors import DateTimeExtractor
@@ -150,7 +150,7 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
 
     @property
     def ambiguity_filters_dict(self) -> Pattern:
-        return None
+        return self._ambiguity_filters_dict
 
     def __init__(self):
         self._before_regex = RegExpUtility.get_safe_reg_exp(
@@ -205,3 +205,4 @@ class FrenchMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._term_filter_regexes = None
         self._datetime_alt_extractor = None
         self._time_zone_extractor = None
+        self._ambiguity_filters_dict = DefinitionLoader.load_ambiguity_filters(FrenchDateTime.AmbiguityFiltersDict)

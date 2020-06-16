@@ -523,7 +523,6 @@
     "Input": "前のページに戻りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "前",
@@ -704,7 +703,6 @@
     "Input": "私は最初の2冊の本が好きです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最初",
@@ -723,7 +721,6 @@
     "Input": "私は最初のが好きです。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最初",
@@ -742,7 +739,6 @@
     "Input": "最初の単語を話しなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最初",
@@ -851,7 +847,6 @@
     "Input": "最後から二番目を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最後から二番目",
@@ -870,7 +865,6 @@
     "Input": "最後から一つ前を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最後から一つ前",
@@ -889,7 +883,6 @@
     "Input": "前から十一番目の席に座りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "十一番目",
@@ -908,7 +901,6 @@
     "Input": "前から二十一番目の席に座りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "二十一番目",
@@ -927,7 +919,6 @@
     "Input": "百二十五番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "百二十五番目",
@@ -944,9 +935,7 @@
   },
   {
     "Input": "一兆番目の数字はなんですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "一兆番目",
@@ -965,7 +954,6 @@
     "Input": "私は言いたかったのは現在のことでした。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "現在のこと",
@@ -982,8 +970,6 @@
   },
   {
     "Input": "一兆分の一の大きさは目に見えません。",
-    "IgnoreResolution": true,
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -1134,7 +1120,6 @@
     "Input": "２１兆３２２番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "21兆322番目",
@@ -1171,10 +1156,9 @@
     "Input": "シアトルへの１等級の席を予約しなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "ファースト",
+        "Text": "1等",
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -1280,7 +1264,6 @@
     "Input": "最後から２番目を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最後から2番目",
@@ -1299,7 +1282,6 @@
     "Input": "最後から１つ前を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最後から1つ前",
@@ -1318,7 +1300,6 @@
     "Input": "前から１１番目の席に座りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "11番目",
@@ -1337,7 +1318,6 @@
     "Input": "前から２１番目の席に座りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "21番目",
@@ -1356,7 +1336,6 @@
     "Input": "１２５番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "125番目",
@@ -1373,9 +1352,7 @@
   },
   {
     "Input": "１兆番目の数字はなんですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1兆番目",
@@ -1392,8 +1369,6 @@
   },
   {
     "Input": "１兆分の１の大きさは目に見えません。",
-    "IgnoreResolution": true,
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -1544,7 +1519,6 @@
     "Input": "21兆322番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "21兆322番目",
@@ -1689,7 +1663,6 @@
     "Input": "最後から2番目を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最後から2番目",
@@ -1708,7 +1681,6 @@
     "Input": "最後から1つ前を私に見せてください。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "最後から1つ前",
@@ -1727,7 +1699,6 @@
     "Input": "前から11番目の席に座りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "11番目",
@@ -1746,7 +1717,6 @@
     "Input": "前から21番目の席に座りなさい。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "21番目",
@@ -1765,7 +1735,6 @@
     "Input": "125番目の数字はなんですか。",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "125番目",
@@ -1782,9 +1751,7 @@
   },
   {
     "Input": "1兆番目の数字はなんですか。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1兆番目",
@@ -1801,8 +1768,7 @@
   },
   {
     "Input": "1兆分の1の大きさは目に見えません。",
-    "IgnoreResolution": true,
-    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   }
 ]

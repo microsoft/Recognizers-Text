@@ -68,7 +68,8 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
                 ["veteransday", EnglishHolidayParserConfiguration.Veteransday],
                 ["christmaseve", EnglishHolidayParserConfiguration.ChristmasEve],
                 ["newyeareve", EnglishHolidayParserConfiguration.NewYearEve],
-                ["easterday", EnglishHolidayParserConfiguration.EasterDay]
+                ["easterday", EnglishHolidayParserConfiguration.EasterDay],
+                ["juneteenth", EnglishHolidayParserConfiguration.Juneteenth]
             ]);
     }
 
@@ -159,6 +160,9 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
     private static Veteransday(year: number): Date {
         return new Date(year, 11 - 1, 11);
+    }
+    private static Juneteenth(year: number): Date {
+        return new Date(year, 6 - 1, 19);
     }
     private static EasterDay(year: number): Date {
         return DateUtils.minValue();

@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const bool MultiDecimalSeparatorCulture = false;
       public const string DigitsNumberRegex = @"-?(\d+|\d{1,3}(\.\d{3})*)";
       public const string RoundNumberIntegerRegex = @"(honderd|duizend|miljoen|miljard|biljoen)";
-      public const string ZeroToNineIntegerRegex = @"(drie|zeven|acht|vier|vijf|nul|negen|een|één|twee|zes)";
+      public const string ZeroToNineIntegerRegex = @"(((een)(?!\s+((honderdste|duizendste|miljoenste|miljardste|biljoenste)|(nulde|eende|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste))))|(één|drie|zeven|acht|vier|vijf|nul|negen|twee|zes))";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(min|negatief)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(een|één)(?=\s)";
@@ -41,10 +41,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)";
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozijn(en)?(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
-      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?))(?=\b)";
+      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?)|{GrossRegex})(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(honderdste|duizendste|miljoenste|miljardste|biljoenste)";
-      public const string BasicOrdinalRegex = @"(nulde|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
-      public static readonly string SuffixBasicOrdinalRegex = $@"(((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})\s*)?((en|ën)\s*)?{BasicOrdinalRegex})";
+      public const string BasicOrdinalRegex = @"(nulde|eende|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|vijfentwintigste|vijventwintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
+      public static readonly string SuffixBasicOrdinalRegex = $@"(((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})\s*)*((en|ën)\s*)*{BasicOrdinalRegex})";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1e|2e|3e|4e|5e|6e|7e|8e|9e|0e))|(1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)|([0-9]*1[0-9]de)|([0-9]*[2-9][0-9]ste)|([0-9]*[0](1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)))(?=\b)";
@@ -52,9 +52,12 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(één|een)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalDutchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s+)?)?({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|halve|helft|kwart)|half|halve|helft)(?=\b)";
+      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public const string FractionUnitsRegex = @"((?<onehalf>anderhalve|anderhalf)|(?<quarter>driekwart)|half|halve|helft|kwart)";
+      public const string FractionHalfRegex = @"(ënhalf|enhalve|ëneenhalf)$";
+      public static readonly string[] OneHalfTokens = { @"een", @"half" };
+      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|{FractionUnitsRegex}))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
@@ -153,6 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         {
             { @"nulde", 0 },
             { @"eerste", 1 },
+            { @"eende", 1 },
             { @"tweede", 2 },
             { @"secundair", 2 },
             { @"half", 2 },
@@ -180,13 +184,23 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"achttiende", 18 },
             { @"negentiende", 19 },
             { @"twintigste", 20 },
+            { @"eenentwintigste", 21 },
+            { @"vijfentwintigste", 25 },
+            { @"vijventwintigste", 25 },
             { @"dertigste", 30 },
+            { @"vijfendertigste", 35 },
             { @"veertigste", 40 },
+            { @"vijfenveertigste", 45 },
             { @"vijftigste", 50 },
+            { @"vijfenvijftigste", 55 },
             { @"zestigste", 60 },
+            { @"vijfenzestigste", 65 },
             { @"zeventigste", 70 },
+            { @"vijfenzeventigste", 75 },
             { @"tachtigste", 80 },
+            { @"vijfentachtigste", 85 },
             { @"negentigste", 90 },
+            { @"vijfennegentigste", 95 },
             { @"honderdste", 100 },
             { @"duizendste", 1000 },
             { @"miljoenste", 1000000 },

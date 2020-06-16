@@ -26,6 +26,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex2, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
@@ -35,6 +39,14 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
+                },
+                {
+                    new Regex(NumbersDefinitions.FractionWithOrdinalPrefix, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
+                },
+                {
+                    new Regex(NumbersDefinitions.FractionWithPartOfPrefix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
             };

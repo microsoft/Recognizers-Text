@@ -65,6 +65,16 @@ MonthSuffixRegex: !nestedRegex
   references: [ RelativeMonthRegex, WrittenMonthRegex, MonthNumRegex ]
 DateUnitRegex: !simpleRegex
   def: (?<unit>jahre|jahr|monate|monat|wochen?|tage|tag)(s)?
+HalfTokenRegex: !simpleRegex
+  def: ^(halb)
+QuarterToTokenRegex: !simpleRegex
+  def: ^(viertel\s+vor|dreiviertel)\s*$
+QuarterPastTokenRegex: !simpleRegex
+  def: ^(viertel\s+nach)\s*$
+ThreeQuarterToTokenRegex: !simpleRegex
+  def: ^(viertel|dreiviertel\s+vor)\s*$
+ThreeQuarterPastTokenRegex: !simpleRegex
+  def: ^(dreiviertel\s+nach)\s*$
 SimpleCasesRegex: !nestedRegex
   def: ((vom|zwischen)\s+)?({DayRegex})(\s*{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex})(\s*{MonthSuffixRegex})?((\s+|\s*,\s*){YearRegex})?
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -235,7 +245,7 @@ AmPmPrefixRegex: !simpleRegex
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\s+(min(uten?)?))
+  def: \b(?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\s+(min(uten?)?))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
   def: (um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))

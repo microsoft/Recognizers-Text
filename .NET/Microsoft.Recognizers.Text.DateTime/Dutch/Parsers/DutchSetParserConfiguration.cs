@@ -79,6 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
+
             if (trimmedText.Equals("dagelijks"))
             {
                 timex = "P1D";

@@ -406,12 +406,12 @@
   },
   {
     "Input": "百度.com 是不合法地址",
-    "Notsupport": "java",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "网址是microsoft.com",
-    "Notsupport": "java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
@@ -426,7 +426,7 @@
   },
   {
     "Input": "微软的官网是microsoft.com哦",
-    "Notsupport": "java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
@@ -441,7 +441,7 @@
   },
   {
     "Input": "微软的官网是：microsoft.com",
-    "Notsupport": "java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
@@ -456,7 +456,7 @@
   },
   {
     "Input": "微软的官网是：www.microsoft.com",
-    "Notsupport": "java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "www.microsoft.com",
@@ -471,7 +471,7 @@
   },
   {
     "Input": "微软的官网是：http://www.microsoft.com",
-    "Notsupport": "java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "http://www.microsoft.com",

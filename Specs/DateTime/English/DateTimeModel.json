@@ -16069,5 +16069,637 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Thursdays at 17.30 Beijing time",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "thursdays at 17.30",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T17:30",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Juneteenth, which is also known as Freedom Day and Jubilee Day, dates back to 1865, and it is observed on 19 June every year.",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "juneteenth",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2019-06-19"
+            },
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2020-06-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "freedom day",
+        "Start": 35,
+        "End": 45,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2019-06-19"
+            },
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2020-06-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "jubilee day",
+        "Start": 51,
+        "End": 61,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2019-06-19"
+            },
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2020-06-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "1865",
+        "Start": 78,
+        "End": 81,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1865",
+              "type": "daterange",
+              "start": "1865-01-01",
+              "end": "1866-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 june",
+        "Start": 106,
+        "End": 112,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2019-06-19"
+            },
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2020-06-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "every year",
+        "Start": 114,
+        "End": 123,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tomorrow on skype for business between 3:00 pm and 5:00 pm eastern",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tomorrow",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-13",
+              "type": "date",
+              "value": "2020-06-13"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "between 3:00 pm and 5:00 pm",
+        "Start": 31,
+        "End": 57,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T15:00,T17:00,PT2H)",
+              "type": "timerange",
+              "start": "15:00:00",
+              "end": "17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Date: Wednesday at 3.30pm",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "wednesday at 3.30pm",
+        "Start": 6,
+        "End": 24,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15:30",
+              "type": "datetime",
+              "value": "2020-06-10 15:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15:30",
+              "type": "datetime",
+              "value": "2020-06-17 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please schedule a meeting semi-annually",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "semi-annually",
+        "Start": 26,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P0.5Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please schedule a semiannual meeting",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "semiannual",
+        "Start": 18,
+        "End": 27,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P0.5Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please schedule a meeting with everyone next week",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 40,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-W25",
+              "type": "daterange",
+              "start": "2020-06-15",
+              "end": "2020-06-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's make sure that happens every weekday",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every weekday",
+        "Start": 29,
+        "End": 41,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "why don't you take the remaining of the week off?",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "remaining of the week",
+        "Start": 23,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-06-12,2020-06-14,P2D)",
+              "type": "daterange",
+              "start": "2020-06-12",
+              "end": "2020-06-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "it's almost time for the annual review",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "annual",
+        "Start": 25,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "laws and regulations require reporting financials each quarter",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "each quarter",
+        "Start": 50,
+        "End": 61,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4th of july is around the corner",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "4th of july",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-04",
+              "type": "date",
+              "value": "2019-07-04"
+            },
+            {
+              "timex": "XXXX-07-04",
+              "type": "date",
+              "value": "2020-07-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the bi-monthly drills will happens thoughout the whole summer",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "bi-monthly",
+        "Start": 4,
+        "End": 13,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "summer",
+        "Start": 55,
+        "End": 60,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "do you do that every weekend?",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "every weekend",
+        "Start": 15,
+        "End": 27,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-WE",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "every two weekends",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every two weekends",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2WE",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the course lasts three weekends",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "three weekends",
+        "Start": 17,
+        "End": 30,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3WE",
+              "type": "duration",
+              "value": "518400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the first quarter of the year is usually slower",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the first quarter of the year",
+        "Start": 0,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01,XXXX-04-01,P3M)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2020-04-01"
+            },
+            {
+              "timex": "(XXXX-01-01,XXXX-04-01,P3M)",
+              "type": "daterange",
+              "start": "2021-01-01",
+              "end": "2021-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Winter, and more so the whole 1st quarter of 2013, was very polluted",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "winter",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "WI",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+     {
+        "Text": "1st quarter of 2013",
+        "Start": 30,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2013-01-01,2013-04-01,P3M)",
+              "type": "daterange",
+              "start": "2013-01-01",
+              "end": "2013-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the course will last three weekends",
+    "Context": {
+      "ReferenceDateTime": "2020-06-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "three weekends",
+        "Start": 21,
+        "End": 34,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3WE",
+              "type": "duration",
+              "value": "518400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "this appointment shouldn't last two hours at all",
+    "Context": {
+      "ReferenceDateTime": "2020-06-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "two hours",
+        "Start": 32,
+        "End": 40,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -5573,5 +5573,57 @@
         }
       }
     ]
+  },
+  {
+    "Input": "7月25日早间，7月25日早",
+    "Context": {
+      "ReferenceDateTime": "2020-06-11T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2019-07-25 08:00:00",
+              "end": "2019-07-25 12:00:00"
+            },
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2020-07-25 08:00:00",
+              "end": "2020-07-25 12:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "7月25日早",
+        "Start": 8,
+        "End": 13,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2019-07-25 08:00:00",
+              "end": "2019-07-25 12:00:00"
+            },
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2020-07-25 08:00:00",
+              "end": "2020-07-25 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
