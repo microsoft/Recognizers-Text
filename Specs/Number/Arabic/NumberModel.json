@@ -2026,7 +2026,7 @@
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0.047619048"
+          "value": "0.0476190476190476"
         },
         "Start": 0,
         "End": 17
@@ -2034,19 +2034,19 @@
     ]
   },
   {
-    "Input": "مائة ألف أخماس",
+    "Input": "مائة على ألف وخمسة",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "مائة ألف أخماس",
+        "Text": "مائة على ألف وخمسة",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0.099502488"
+          "value": "0.0995024875621891"
         },
         "Start": 0,
-        "End": 13
+        "End": 17
       }
     ]
   },
@@ -2060,7 +2060,7 @@
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "103.6666667"
+          "value": "103.666666666667"
         },
         "Start": 0,
         "End": 17
@@ -2094,7 +2094,7 @@
         "TypeName": "number",
         "Resolution": {
           "subtype": "power",
-          "value": "-8.954302433"
+          "value": "-8.95430243255239"
         },
         "Start": 0,
         "End": 6
@@ -2111,7 +2111,7 @@
         "TypeName": "number",
         "Resolution": {
           "subtype": "power",
-          "value": "-8.954302433"
+          "value": "-8.95430243255239"
         },
         "Start": 0,
         "End": 8
@@ -2136,19 +2136,18 @@
     ]
   },
   {
-    "Input": "الإجابة هي ناقص صفر فاصلة مائة وخمسة وثلاثون",
-    "NotSupported": "dotnet",
+    "Input": "الإجابة هي ناقص مائة على خمسة وثلاثون",
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "ناقص صفر فاصلة مائة وخمسة وثلاثون",
+        "Text": "ناقص مائة على خمسة وثلاثون",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "-2.857142857"
+          "value": "-2.85714285714286"
         },
         "Start": 11,
-        "End": 43
+        "End": 36
       }
     ]
   },

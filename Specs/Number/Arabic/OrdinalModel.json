@@ -1,7 +1,6 @@
 [
   {
     "Input": "احذف اخر جملة في الملاحظة.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -19,7 +18,6 @@
   },
   {
     "Input": "هل تعني \"التالي\" او \"الاخر\"؟",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -48,7 +46,6 @@
   },
   {
     "Input": "أريني الذي قبل الاخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -66,7 +63,6 @@
   },
   {
     "Input": "اريني الذي قبل الاخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -85,24 +81,22 @@
   {
     "Input": "أريني الواحد قبل الاخير.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "واحد قبل الاخير",
+        "Text": "الواحد قبل الاخير",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
           "relativeTo": "end",
           "value": "end-1"
         },
-        "Start": 8,
+        "Start": 6,
         "End": 22
       }
     ]
   },
   {
     "Input": "أريني الثانية الى الاخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -120,7 +114,6 @@
   },
   {
     "Input": "احذف اخر جملة.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -138,7 +131,6 @@
   },
   {
     "Input": "أريني السابق.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -156,7 +148,6 @@
   },
   {
     "Input": "أريني التالي.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -174,7 +165,6 @@
   },
   {
     "Input": "أريد الكتابين الأخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -192,7 +182,6 @@
   },
   {
     "Input": "أريد الكتاب الأخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -210,7 +199,6 @@
   },
   {
     "Input": "أريد ثلاث كتب التالي.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -228,7 +216,6 @@
   },
   {
     "Input": "أنظر الى الصفحة التالي.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -246,7 +233,6 @@
   },
   {
     "Input": "أريد البسكويت الاخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -264,7 +250,6 @@
   },
   {
     "Input": "أريد الذي قبل الاخير.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -282,7 +267,6 @@
   },
   {
     "Input": "انتقل الى الصفحة السابقة.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -300,7 +284,6 @@
   },
   {
     "Input": "البيت الحادي عشر",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -336,7 +319,6 @@
   },
   {
     "Input": "الكتاب الثلاثون غير جيد.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -354,7 +336,6 @@
   },
   {
     "Input": "السؤال الثاني صعب.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -372,7 +353,6 @@
   },
   {
     "Input": "هي في الصف الحادي عشر.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -390,7 +370,6 @@
   },
   {
     "Input": "دخلت البيت العشرون.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -480,16 +459,15 @@
   },
   {
     "Input": "لم أجد الكتاب التريليون.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "التريليون",
         "TypeName": "ordinal",
         "Resolution": {
-          "offset": "1.00E+12",
+          "offset": "1000000000000",
           "relativeTo": "start",
-          "value": "1.00E+12"
+          "value": "1000000000000"
         },
         "Start": 14,
         "End": 22
@@ -505,9 +483,9 @@
         "Text": "الواحد والعشرون تريليون وثلاث مائة  واثنين وعشرون",
         "TypeName": "ordinal",
         "Resolution": {
-          "offset": "2.10E+13",
+          "offset": "21000000000322",
           "relativeTo": "start",
-          "value": "2.10E+13"
+          "value": "21000000000322"
         },
         "Start": 17,
         "End": 65
@@ -534,7 +512,6 @@
   },
   {
     "Input": "احجز مقعد ففي الدرجة الأولى الى سياتل.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -552,7 +529,6 @@
   },
   {
     "Input": "اعجبني الأول كتابين.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -570,7 +546,6 @@
   },
   {
     "Input": "اعجبني الأول.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -588,7 +563,6 @@
   },
   {
     "Input": "اتحدث الكلمة الأولى",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -606,7 +580,6 @@
   },
   {
     "Input": "أريد الكتب الثلاثة التالي",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -624,7 +597,6 @@
   },
   {
     "Input": "هي انتهت قراءة الكتاب الثاني",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -643,10 +615,9 @@
   {
     "Input": "النتيجة الصحيحة هي الذي قبلا الأخير",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "الذي قبلا الأخي",
+        "Text": "الذي قبلا الأخير",
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -654,14 +625,13 @@
           "value": "end-1"
         },
         "Start": 19,
-        "End": 33
+        "End": 34
       }
     ]
   },
   {
     "Input": "النتيجة الصحيحة هي الذي قبل الأخير",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "الذي قبل الأخير",
@@ -678,7 +648,6 @@
   },
   {
     "Input": "الصفحة الحالي",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -696,7 +665,6 @@
   },
   {
     "Input": "انظر الى الصفحة الحالي.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -715,7 +683,7 @@
   {
     "Input": "أرني ما قبل الأخير",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "قبل الأخير",
@@ -732,8 +700,9 @@
   },
   {
     "Input": "أرني تلك التي سبقت الأخيرة",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "سبقت الأخيرة",
@@ -751,7 +720,7 @@
   {
     "Input": "تحذف الجملة الأخيرة.",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الأخيرة",
@@ -769,7 +738,7 @@
   {
     "Input": "أرني السابقة",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "السابقة",
@@ -787,7 +756,7 @@
   {
     "Input": "أرني التالي",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "التالي",
@@ -823,7 +792,7 @@
   {
     "Input": "أريد آخر كتاب",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "آخر",
@@ -859,7 +828,7 @@
   {
     "Input": "أعطني البند التالي.",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "التالي",
@@ -877,7 +846,7 @@
   {
     "Input": "أريد الكعك الأخير",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الأخير",
@@ -895,7 +864,7 @@
   {
     "Input": "ننتقل إلى الصفحة السابقة.",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "السابقة",
@@ -949,7 +918,7 @@
   {
     "Input": "الحادية عشرة",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الحادية عشرة",
@@ -967,7 +936,7 @@
   {
     "Input": "العشرون",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "العشرون",
@@ -1093,7 +1062,7 @@
   {
     "Input": "احجز مقعد ًا من الدرجة الأولى إلى سياتل",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الأولى",
@@ -1111,7 +1080,6 @@
   {
     "Input": "أحب أول كتابين",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "أول",
@@ -1129,7 +1097,7 @@
   {
     "Input": "أنا أحب الأولى",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الأولى",
@@ -1147,7 +1115,7 @@
   {
     "Input": "تكلّم بالكلمة الأولى.",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الأولى",
@@ -1183,7 +1151,7 @@
   {
     "Input": "لقد أنهت المركز الثاني",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الثاني",
@@ -1201,7 +1169,7 @@
   {
     "Input": "قبل الأخير هو الصحيح",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "قبل الأخير",
@@ -1219,7 +1187,7 @@
   {
     "Input": "عنيت قبل الأخير",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "قبل الأخير",
@@ -1237,7 +1205,7 @@
   {
     "Input": "عنيت الحالي",
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الحالي",
@@ -1254,8 +1222,9 @@
   },
   {
     "Input": "انظر إلى الصفحة الحالية",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "الحالية",
