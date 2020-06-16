@@ -13107,39 +13107,44 @@
     ]
   },
   {
-    "Input": "Race - 3pm Sat - this week",
+    "Input": "Race - 3pm Mon - this week",
     "Context": {
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "3pm",
+        "Text": "3pm mon",
         "Start": 7,
-        "End": 9,
-        "TypeName": "datetimeV2.time",
+        "End": 13,
+        "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
-              "type": "time",
-              "value": "15:00:00"
+              "timex": "XXXX-WXX-1T15",
+              "type": "datetime",
+              "value": "2020-06-15 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T15",
+              "type": "datetime",
+              "value": "2020-06-22 15:00:00"
             }
           ]
         }
       },
       {
-        "Text": "this week",
-        "Start": 17,
+        "Text": "mon - this week",
+        "Start": 11,
         "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "2020-W25",
+              "timex": "(2020-06-15,2020-06-15,P0.5D)",
               "type": "daterange",
               "start": "2020-06-15",
-              "end": "2020-06-22"
+              "end": "2020-06-15"
             }
           ]
         }
