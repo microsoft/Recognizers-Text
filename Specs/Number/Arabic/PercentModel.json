@@ -193,7 +193,6 @@
   },
   {
     "Input": "ارية فقط سالب خمسة بالمئة.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -210,7 +209,6 @@
   {
     "Input": "100%",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "100%",
@@ -226,7 +224,6 @@
   {
     "Input": " 100% ",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "100%",
@@ -242,7 +239,6 @@
   {
     "Input": " 100 بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "100 بالمائة",
@@ -258,7 +254,6 @@
   {
     "Input": "240 بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "240 بالمائة",
@@ -274,7 +269,6 @@
   {
     "Input": "ثلاثون بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاثون بالمائة",
@@ -290,7 +284,6 @@
   {
     "Input": "مائة بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة بالمائة",
@@ -306,7 +299,6 @@
   {
     "Input": "عشرون بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "عشرون بالمائة",
@@ -322,7 +314,6 @@
   {
     "Input": "بالمائة 10",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "بالمائة 10",
@@ -354,7 +345,6 @@
   {
     "Input": "بالمائة 210",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "بالمائة 210",
@@ -370,7 +360,6 @@
   {
     "Input": "10 بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "10 بالمائة",
@@ -386,7 +375,6 @@
   {
     "Input": "تحتاج فقط سالب خمسة بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "سالب خمسة بالمائة",
