@@ -1073,33 +1073,6 @@
     ]
   },
   {
-    "Input": "leg een meeting voorafgaand aan 14.00 vast",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "voorafgaand aan 14.00 ",
-        "Type": "datetimeV2.timerange",
-        "Value": {
-          "values": [
-            {
-              "timex": "T14",
-              "Mod": "before",
-              "type": "timerange",
-              "end": "14:00:00",
-              "sourceEntity": "datetimepoint"
-            }
-          ]
-        },
-        "Start": 16,
-        "Length": 22
-      }
-    ]
-  },
-  {
     "Input": "Ik zal de afspraak van tien uur 's ochtends naar twintig verzetten!",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2157,32 +2130,6 @@
     ]
   },
   {
-    "Input": "Ik zal 11 - 2016 weg zijn",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11 - 2016 ",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Ik zal 11- 2016 weg zijn",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2257,32 +2204,6 @@
         },
         "Start": 7,
         "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik zal 11 / 2016 weg zijn ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11 / 2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 9
       }
     ]
   },
@@ -2339,32 +2260,6 @@
     ]
   },
   {
-    "Input": "Ik zal 11-2016 weg zijn",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11-2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "Ik zal 11 - 2016 weg zijn",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2387,84 +2282,6 @@
         },
         "Start": 7,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik zal 11- 2016 weg zijn",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11- 2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik zal 11 -2016 weg zijn",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11 -2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik zal 11/2016 weg zijn",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11/2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 7
       }
     ]
   },
