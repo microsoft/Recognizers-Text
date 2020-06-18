@@ -133,6 +133,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string OclockRegex = @"(?<oclock>in punto)";
       public const string OclockPrefix = @"(?<oclock>ore)";
       public const string PmRegex = @"\b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|ora di pranzo))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera|mezzanotte)))\b";
+      public const string RangePmRegex = @"\b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera)))\b";
       public const string AmRegex = @"\b(?<am>((((la|alla|verso|per|della|di|in)\s+(la\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\s+(il\s+)?)?(mattino))))\b";
       public const string LunchRegex = @"\b(ora di pranzo)\b";
       public const string NightRegex = @"\b(mezzanotte|notte)\b";

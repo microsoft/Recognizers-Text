@@ -287,6 +287,8 @@ OclockPrefix: !simpleRegex
   def: (?<oclock>ore)
 PmRegex: !simpleRegex
   def: \b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|ora di pranzo))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera|mezzanotte)))\b
+RangePmRegex: !simpleRegex
+  def: \b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera)))\b
 AmRegex: !simpleRegex
   def: \b(?<am>((((la|alla|verso|per|della|di|in)\s+(la\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\s+(il\s+)?)?(mattino))))\b
 LunchRegex: !simpleRegex
