@@ -71,6 +71,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string InConnectorRegex = @"\b(em)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public const string WithinNextPrefixRegex = @"^[.]";
+      public const string TodayNowRegex = @"^[.]";
       public const string CenturySuffixRegex = @"^[.]";
       public const string FromRegex = @"((desde|de)(\s*a(s)?)?)$";
       public const string BetweenRegex = @"(entre\s*([oa](s)?)?)";

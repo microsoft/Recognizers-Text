@@ -561,6 +561,8 @@ SinceYearSuffixRegex: !nestedRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
+TodayNowRegex: !simpleRegex  # Added to remove hard coded strings in BaseDatePeriodParser
+  def: \b(today|now)\b
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
 MorningStartEndRegex: !nestedRegex
   def: (^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)

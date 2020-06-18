@@ -205,6 +205,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string InConnectorRegex = @"\b(in)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public static readonly string WithinNextPrefixRegex = $@"\b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b";
+      public const string TodayNowRegex = @"^[.]";
       public const string MorningStartEndRegex = @"(^(früh|vormittag(s)?)|(morgens?|früh|vormittags?)$)";
       public const string AfternoonStartEndRegex = @"(^(nachmittags?)|(nachmittags?)$)";
       public const string EveningStartEndRegex = @"(^(abends?)|(abends?)$)";

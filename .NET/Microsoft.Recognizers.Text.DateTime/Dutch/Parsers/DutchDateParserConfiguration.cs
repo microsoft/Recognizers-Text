@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        private IImmutableList<string> lastCardinalTerms = DateTimeDefinitions.LastCardinalTerms.ToImmutableList();
+
         public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -162,7 +164,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("last");
+            foreach (var s in lastCardinalTerms)
+            {
+                if (trimmedText.Equals(s))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public string Normalize(string text)

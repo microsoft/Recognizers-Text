@@ -105,6 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SpecialDayRegex { get; }
 
+        Regex TodayNowRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

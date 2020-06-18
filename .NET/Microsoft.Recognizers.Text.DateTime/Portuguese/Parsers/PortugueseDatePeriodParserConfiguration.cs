@@ -78,6 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             CenturySuffixRegex = PortugueseDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = PortugueseDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = PortugueseDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -188,6 +189,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex NowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 
