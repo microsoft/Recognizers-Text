@@ -147,8 +147,7 @@ SinceYearSuffixRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   def: \b(dentro\s+de)\b
 TodayNowRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: \b(hoy|ahora)\b
 FromRegex: !simpleRegex
   def: ((de(sde)?)(\s*la(s)?)?)$
 BetweenRegex: !simpleRegex

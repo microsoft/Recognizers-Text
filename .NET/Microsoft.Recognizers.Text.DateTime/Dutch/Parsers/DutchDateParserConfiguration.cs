@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -164,15 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            foreach (var s in lastCardinalTerms)
-            {
-                if (trimmedText.Equals(s))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return lastCardinalTerms.Contains(trimmedText);
         }
 
         public string Normalize(string text)

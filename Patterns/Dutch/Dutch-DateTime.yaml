@@ -6,7 +6,7 @@ TillRegex: !nestedRegex
   def: (?<till>\b(tot(dat|\s+en\s+met)?|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RangeConnectorRegex: !nestedRegex
-  def: (?<and>\b(en|tot en met|t/m|tot(\s+aan)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<and>\b(en|t/m|tot(\s+(aan|en\s+met))?)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 ArticleRegex: !simpleRegex
   def: \b(de|het|een)\b
@@ -188,7 +188,7 @@ AllHalfYearRegex: !nestedRegex
 EarlyPrefixRegex: !simpleRegex
   def: \b(?<EarlyPrefix>((?<RelEarly>eerder)|vroeg(er)?|begin(nend)?|start(end)?)\s+(in|op|van)?)\b
 MidPrefixRegex: !simpleRegex
-  def: \b(?<MidPrefix>(mid(den)?|halverwege|op\s+de\s+helft|half)(\s+)?((in|op|van)\b)?)
+  def: \b(?<MidPrefix>(mid(den|-)?|halverwege|op\s+de\s+helft|half)(\s+)?((in|op|van)\b)?)
 LaterPrefixRegex: !simpleRegex
   def: \b(?<LatePrefix>(laat|(?<RelLate>later)|aan\s+het\s+einde|eind(igend)?|afsluitend)(\s+(in|op|van)?))\b
 PrefixPeriodRegex: !nestedRegex
@@ -313,7 +313,7 @@ WeekDayEnd: !nestedRegex
 WeekDayStart: !simpleRegex
   def: ^[\.]
 RangeUnitRegex: !simpleRegex
-  def: \b(?<unit>jaren|jaar|maand(en)?|weken|week|dag(en)?)\b
+  def: \b(?<unit>ja(ren|ar)|maand(en)?|we(ken|ek)|dag(en)?)\b
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b
 MinuteNumRegex: !simpleRegex

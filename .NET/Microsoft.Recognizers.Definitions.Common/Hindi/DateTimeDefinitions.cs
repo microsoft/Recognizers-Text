@@ -257,7 +257,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string InConnectorRegex = @"\b(में|को)";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(((?<next>{NextPrefixRegex}?के)\s+)?(अंदर|भीतर))";
-      public const string TodayNowRegex = @"^[.]";
+      public const string TodayNowRegex = @"\b(आज|अभी)(?![\u0900-\u097f])";
       public static readonly string MorningStartEndRegex = $@"(^(सुबह|{AmDescRegex}))|((सुबह|{AmDescRegex})$)";
       public static readonly string AfternoonStartEndRegex = $@"(^(दोपहर|{PmDescRegex}))|((दोपहर|{PmDescRegex})$)";
       public const string EveningStartEndRegex = @"(^(शाम))|((शाम)$)";

@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string LangMarker = @"Dut";
       public const bool CheckBothBeforeAfter = false;
       public static readonly string TillRegex = $@"(?<till>\b(tot(dat|\s+en\s+met)?|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public static readonly string RangeConnectorRegex = $@"(?<and>\b(en|tot en met|t/m|tot(\s+aan)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string RangeConnectorRegex = $@"(?<and>\b(en|t/m|tot(\s+(aan|en\s+met))?)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string ArticleRegex = @"\b(de|het|een)\b";
       public const string RelativeRegex = @"\b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen|de|het)\b";
       public const string StrictRelativeRegex = @"\b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b";
@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string HalfYearRelativeRegex = $@"(het\s+)?{HalfYearTermRegex}(\s+van|\s*,\s*)?\s+({RelativeRegex}\s+jaar)";
       public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";
       public const string EarlyPrefixRegex = @"\b(?<EarlyPrefix>((?<RelEarly>eerder)|vroeg(er)?|begin(nend)?|start(end)?)\s+(in|op|van)?)\b";
-      public const string MidPrefixRegex = @"\b(?<MidPrefix>(mid(den)?|halverwege|op\s+de\s+helft|half)(\s+)?((in|op|van)\b)?)";
+      public const string MidPrefixRegex = @"\b(?<MidPrefix>(mid(den|-)?|halverwege|op\s+de\s+helft|half)(\s+)?((in|op|van)\b)?)";
       public const string LaterPrefixRegex = @"\b(?<LatePrefix>(laat|(?<RelLate>later)|aan\s+het\s+einde|eind(igend)?|afsluitend)(\s+(in|op|van)?))\b";
       public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})";
       public const string PrefixDayRegex = @"\b((?<EarlyPrefix>eerder|vroeg(er)?|begin|start)|(?<MidPrefix>midden|halverwege|op\s+de\s+helft)|(?<LatePrefix>laat|later|aan\s+het\s+einde))(\s+(op|van))?(\s+de\s+dag)?\b";
@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string MonthEnd = $@"{MonthRegex}(\s+de\s*)?$";
       public static readonly string WeekDayEnd = $@"(deze\s+)?{WeekDayRegex}\s*,?\s*$";
       public const string WeekDayStart = @"^[\.]";
-      public const string RangeUnitRegex = @"\b(?<unit>jaren|jaar|maand(en)?|weken|week|dag(en)?)\b";
+      public const string RangeUnitRegex = @"\b(?<unit>ja(ren|ar)|maand(en)?|we(ken|ek)|dag(en)?)\b";
       public const string HourNumRegex = @"\b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b";
       public const string MinuteNumRegex = @"(?<minnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vij[fv]entwintig|ze(s|ven)entwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|ze(s|ven)endertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|ze(s|ven)enveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|ze(s|ven)envijftig|achtenvijftig|negenenvijftig)";
       public const string DeltaMinuteNumRegex = @"(?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)";

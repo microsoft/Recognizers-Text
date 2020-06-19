@@ -672,8 +672,7 @@ WithinNextPrefixRegex: !nestedRegex
   def: \b((?<next>{NextPrefixRegex}\s+)?(\d+\s+(saniye|dakika|saat|gün|hafta|ay|yıl)\s+)?içinde)\b
   references: [ NextPrefixRegex ]
 TodayNowRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: \b(bugün|şimdi)\b
 MorningStartEndRegex: !simpleRegex
   def: (^sabahı?$)
 AfternoonStartEndRegex: !simpleRegex
