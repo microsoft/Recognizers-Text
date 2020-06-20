@@ -1009,12 +1009,12 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "equals to 20000 in 1998",
+        "Text": "equals to 20000",
         "Start": 14,
-        "End": 36,
+        "End": 28,
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[10.01001001001,10.01001001001]"
+          "value": "[20000,20000]"
         }
       }
     ]
@@ -1029,12 +1029,12 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "from 200 to 3000000 in 2008",
+        "Text": "from 200 to 3000000",
         "Start": 14,
-        "End": 40,
+        "End": 32,
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[200,1494.02390438247)"
+          "value": "[200,3000000)"
         }
       }
     ]
