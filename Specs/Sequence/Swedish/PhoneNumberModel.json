@@ -41,7 +41,7 @@
         "End": 15,
         "TypeName": "phonenumber",
         "Resolution": {
-          "score": "0,9",
+          "score": "0.9",
           "value": "08-12 45 67"
         }
       }
@@ -89,7 +89,7 @@
         "End": 14,
         "TypeName": "phonenumber",
         "Resolution": {
-          "score": "0,7",
+          "score": "0.7",
           "value": "046-124 67"
         }
       }
@@ -121,7 +121,7 @@
         "End": 15,
         "TypeName": "phonenumber",
         "Resolution": {
-          "score": "0,8",
+          "score": "0.8",
           "value": "0414-123 45"
         }
       }
