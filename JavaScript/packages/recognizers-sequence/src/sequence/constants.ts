@@ -10,7 +10,8 @@ export class Constants {
     static readonly PHONE_NUMBER_REGEX_CN: string = "CNPhoneNumber";
     static readonly PHONE_NUMBER_REGEX_DK: string = "DKPhoneNumber";
     static readonly PHONE_NUMBER_REGEX_IT: string = "ITPhoneNumber";
-    static readonly PHONE_NUMBER_REGEX_NL: string = "NLPhoneNumber";
+    // The EUPhoneNumberRegex regex is merged from NLPhoneNumberRegex and SEPhoneNumberRegex
+    static readonly PHONE_NUMBER_REGEX_EU: string = "EUPhoneNumber";
     static readonly PHONE_NUMBER_REGEX_SPECIAL: string = "SpecialPhoneNumber";
     static readonly MENTION_REGEX = "Mention";
     static readonly HASHTAG_REGEX = "Hashtag";
