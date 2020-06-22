@@ -10,7 +10,7 @@ class Constants:
     PHONE_NUMBER_REGEX_CN: str = "CNPhoneNumber"
     PHONE_NUMBER_REGEX_DK: str = "DKPhoneNumber"
     PHONE_NUMBER_REGEX_IT: str = "ITPhoneNumber"
-    PHONE_NUMBER_REGEX_NL: str = "NLPhoneNumber"
+    PHONE_NUMBER_REGEX_EU: str = "EUPhoneNumber"
     PHONE_NUMBER_REGEX_SPECIAL: str = "SpecialPhoneNumber"
     MENTION_REGEX = "Mention"
     HASHTAG_REGEX = "Hashtag"
