@@ -366,7 +366,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "converteer 200 graden Celsius naar Fahrenheit",
+    "Input": "converteer 200 graden Celsius celsius naar Fahrenheit",
     "Results": [
       {
         "Text": "200 graden celsius",
@@ -393,7 +393,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -416,7 +415,7 @@
         }
       },
       {
-        "Text": "graden celsius",
+        "Text": "celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -432,7 +431,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
