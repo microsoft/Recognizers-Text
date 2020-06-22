@@ -394,7 +394,7 @@ class SpanishNumericWithUnit:
                                   ("gibibyte", "gibibyte|gibibytes|GiB|GiByte"),
                                   ("tebibyte", "tebibyte|tebibytes|TiB|TiByte"),
                                   ("pebibyte", "pebibyte|pebibytes|PiB|PiByte")])
-    AmbiguousDimensionUnitList = [r'al', r'mi', r'área', r'áreas', r'pie', r'pies']
+    AmbiguousDimensionUnitList = [r'al', r'mi', r'área', r'áreas', r'pie', r'pies', r'"']
     LengthSuffixList = dict([("Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros"),
                              ("Hectómetro", "hm|hectometro|hectómetro|hectometros|hectómetros"),
                              ("Decámetro", "decametro|decámetro|decametros|decámetros|dam"),
@@ -410,7 +410,7 @@ class SpanishNumericWithUnit:
                              ("Pulgada", "pulgada|pulgadas|\""),
                              ("Pie", "pie|pies|ft"),
                              ("Año luz", "año luz|años luz|al")])
-    AmbiguousLengthUnitList = [r'mi', r'área', r'áreas']
+    AmbiguousLengthUnitList = [r'mi', r'área', r'áreas', r'"']
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
@@ -465,4 +465,5 @@ class SpanishNumericWithUnit:
                              ("Onza", "oz|onza|onzas"),
                              ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
+    AmbiguityFiltersDict = dict([("null", "null")])
 # pylint: enable=line-too-long

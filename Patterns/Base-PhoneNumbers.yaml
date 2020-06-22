@@ -30,7 +30,7 @@ DKPhoneNumberRegex: !paramsRegex
   def: ((\(\s?(\+\s?|00)45\s?\)\s?)|(((?<!\d)\+\s?|\b00)45\s?)|{WordBoundariesRegex})(\s?\(0\)\s?)?((\d{8})|(\d{4}\s?-?\s?\d{4,6})|((\d{2}[\s-]){3}\d{2})|(\d{2}\s?-?\s?\d{3}\s?-?\s?\d{3}))(?!-){EndWordBoundariesRegex}
   params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
 ITPhoneNumberRegex: !paramsRegex
-  def: ((\(\s?(\+\s?|00)39\s?\)\s?)|(((?<!\d)\+\s?|\b00)39\s?)|{WordBoundariesRegex})((0[\d\s-]{4,12}\d)|(3[\d\s-]{7,12}\d))(?!-){EndWordBoundariesRegex}
+  def: ((\(\s?(\+\s?|00)39\s?\)\s?)|(((?<!\d)\+\s?|\b00)39\s?)|{WordBoundariesRegex})((0[\d-]{4,12}\d)|(3[\d-]{7,12}\d)|(0[\d\s]{4,12}\d)|(3[\d\s]{7,12}\d))(?!-){EndWordBoundariesRegex}
   params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
 # The EUPhoneNumberRegex regex is merged from NLPhoneNumberRegex and SEPhoneNumberRegex
 EUPhoneNumberRegex: !paramsRegex

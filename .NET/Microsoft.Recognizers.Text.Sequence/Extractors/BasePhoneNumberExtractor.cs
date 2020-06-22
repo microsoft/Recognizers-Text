@@ -131,8 +131,11 @@ namespace Microsoft.Recognizers.Text.Sequence
                             var charGap = text[(int)(er.Start - 2)];
                             if (!char.IsNumber(charGap) && !char.IsWhiteSpace(charGap))
                             {
+                                // check if the extracted string has a non-digit string before "-".
+                                var flag = Regex.IsMatch(text.Substring(0, (int)(er.Start - 2)), @"^[^0-9]+$");
+
                                 // Handle cases like "91a-677-0060".
-                                if (char.IsLower(charGap))
+                                if (char.IsLower(charGap) && !flag)
                                 {
                                     ers.Remove(er);
                                     i--;

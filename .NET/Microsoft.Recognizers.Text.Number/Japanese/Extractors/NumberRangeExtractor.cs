@@ -45,13 +45,23 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     NumberRangeConstants.MORE
                 },
                 {
-                    // ...より大なり|大きい|高い|大きく
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags),
+                    // ...以上
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
+                    // 少なくとも|多くて|最大...
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex4, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // ...以上
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex5, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
+                    // ...以上
+                    new Regex(NumbersDefinitions.TwoNumberRangeMoreSuffix, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
@@ -60,13 +70,13 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     NumberRangeConstants.LESS
                 },
                 {
-                    // ...より小なり|小さい|低い
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
+                    // ...以下
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex3, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {
                     // ...以下
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex3, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex4, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {

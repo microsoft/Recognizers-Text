@@ -122,7 +122,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (match.Success)
                 {
+                    // "3pm *each* day"
                     var trimmedText = text.Remove(match.Index, match.Length);
+
                     var ers = extractor.Extract(trimmedText, reference);
                     foreach (var er in ers)
                     {

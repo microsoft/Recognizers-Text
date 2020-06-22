@@ -172,6 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
     },
+    "Comment": "The input literally translates to 'I'll leave each in two days' and 'in two days' is processed as Date instead of Duration",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -197,6 +198,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
     },
+    "Comment": "The input literally translates to 'I'll leave each in three weeks' and 'in three weeks' is processed as Date instead of Duration",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -622,6 +624,30 @@
         },
         "Start": 4,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर संडे को जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर संडे",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 4,
+        "Length": 7
       }
     ]
   }

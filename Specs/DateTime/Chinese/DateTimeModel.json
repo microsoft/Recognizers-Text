@@ -3320,7 +3320,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T08:00:00"
     },
-    "NotSupported":  "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "从四月的最后一个星期一到十月一日",
@@ -3441,7 +3441,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "去年上半年",
@@ -3466,7 +3466,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "上半年",
@@ -3491,7 +3491,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "明年下半年",
@@ -3516,7 +3516,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2017年上半年",
@@ -3541,7 +3541,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-02T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "二零一七年下半年",
@@ -3566,7 +3566,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "上半月",
@@ -3591,7 +3591,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "下半周",
@@ -3616,7 +3616,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "上个半年",
@@ -3641,7 +3641,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年前半年",
@@ -3666,7 +3666,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T08:00:00"
     },
-    "NotSupported":  "javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今年后半年",
@@ -5533,5 +5533,97 @@
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
     "Results": []
+  },
+  {
+    "Input": "这是我的队伍",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "五角大楼宣布了作战计划",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "标准普尔指数下降",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-10,2017-02-11,P32D)",
+              "type": "daterange",
+              "start": "2017-01-10",
+              "end": "2017-02-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "7月25日早间，7月25日早",
+    "Context": {
+      "ReferenceDateTime": "2020-06-11T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "7月25日早间",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2019-07-25 08:00:00",
+              "end": "2019-07-25 12:00:00"
+            },
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2020-07-25 08:00:00",
+              "end": "2020-07-25 12:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "7月25日早",
+        "Start": 8,
+        "End": 13,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2019-07-25 08:00:00",
+              "end": "2019-07-25 12:00:00"
+            },
+            {
+              "timex": "XXXX-07-25TMO",
+              "type": "datetimerange",
+              "start": "2020-07-25 08:00:00",
+              "end": "2020-07-25 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

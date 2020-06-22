@@ -139,5 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
     }
 }

@@ -258,6 +258,10 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
         return new Date(year, 9 - 1, BaseHolidayParserConfiguration.getDay(year, 9 - 1, 0, DayOfWeek.Monday));
     }
 
+    protected static InternationalWorkersDay(year: number): Date {
+        return new Date(year, 5 - 1, 1);
+    }
+
     protected static ColumbusDay(year: number): Date {
         return new Date(year, 10 - 1, BaseHolidayParserConfiguration.getDay(year, 10 - 1, 1, DayOfWeek.Monday));
     }

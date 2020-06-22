@@ -10,7 +10,7 @@
       {
         "Text": "4e jan 2019",
         "Start": 6,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -35,7 +35,7 @@
       {
         "Text": "3e jan 2019",
         "Start": 6,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -60,7 +60,7 @@
       {
         "Text": "2e jan 2019 ",
         "Start": 6,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -85,7 +85,7 @@
       {
         "Text": "1e jan 2019",
         "Start": 6,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -110,7 +110,7 @@
       {
         "Text": "jaren '90",
         "Start": 37,
-        "End": 46,
+        "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -136,7 +136,7 @@
       {
         "Text": "2/okt",
         "Start": 6,
-        "End": 11,
+        "End": 10,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -166,7 +166,7 @@
       {
         "Text": "22/04",
         "Start": 6,
-        "End": 11,
+        "End": 10,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -196,7 +196,7 @@
       {
         "Text": "negenentwintig mei",
         "Start": 6,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -226,7 +226,7 @@
       {
         "Text": "de tweede van augustus",
         "Start": 6,
-        "End": 28,
+        "End": 27,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -256,7 +256,7 @@
       {
         "Text": "vandaag",
         "Start": 6,
-        "End": 13,
+        "End": 12,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -281,7 +281,7 @@
       {
         "Text": "morgen",
         "Start": 6,
-        "End": 12,
+        "End": 11,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -306,7 +306,7 @@
       {
         "Text": "gisteren",
         "Start": 6,
-        "End": 14,
+        "End": 13,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -331,7 +331,7 @@
       {
         "Text": "vrijdag",
         "Start": 9,
-        "End": 16,
+        "End": 15,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -361,7 +361,7 @@
       {
         "Text": "volgende maand van 4-23",
         "Start": 7,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -387,7 +387,7 @@
       {
         "Text": "tussen 3 en 12 sept",
         "Start": 7,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -419,7 +419,7 @@
       {
         "Text": "aanstaande september",
         "Start": 7,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -445,7 +445,7 @@
       {
         "Text": "12 januari, 2016 - 22/01/2016 ",
         "Start": 7,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -471,7 +471,7 @@
       {
         "Text": "komende drie dagen",
         "Start": 6,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -497,7 +497,7 @@
       {
         "Text": "de laatste week van juli",
         "Start": 7,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -529,7 +529,7 @@
       {
         "Text": "2015-3",
         "Start": 7,
-        "End": 13,
+        "End": 12,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -555,7 +555,7 @@
       {
         "Text": "deze zomer",
         "Start": 6,
-        "End": 16,
+        "End": 15,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -580,7 +580,7 @@
       {
         "Text": "sinds morgen",
         "Start": 6,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -606,7 +606,7 @@
       {
         "Text": "sinds augustus",
         "Start": 6,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -638,7 +638,7 @@
       {
         "Text": "sinds aanstaande augustus",
         "Start": 6,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -664,7 +664,7 @@
       {
         "Text": "nu",
         "Start": 6,
-        "End": 8,
+        "End": 7,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -689,7 +689,7 @@
       {
         "Text": "14 oktober om 8:00:31",
         "Start": 6,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -719,7 +719,7 @@
       {
         "Text": "morgen 8:00",
         "Start": 6,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -744,7 +744,7 @@
       {
         "Text": "10, vanavond",
         "Start": 9,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -769,7 +769,7 @@
       {
         "Text": "8 vanmorgen",
         "Start": 9,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -794,7 +794,7 @@
       {
         "Text": "eind van morgen",
         "Start": 6,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -819,7 +819,7 @@
       {
         "Text": "eind van de zondag",
         "Start": 6,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -849,7 +849,7 @@
       {
         "Text": "eind van deze zondag",
         "Start": 6,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -874,7 +874,7 @@
       {
         "Text": "vandaag van vijf tot zeven",
         "Start": 7,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -906,7 +906,7 @@
       {
         "Text": "22 april van 5 tot 6 's middags",
         "Start": 7,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -938,7 +938,7 @@
       {
         "Text": "morgen 3:00 tot 4:00",
         "Start": 7,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -970,7 +970,7 @@
       {
         "Text": "deze avond",
         "Start": 6,
-        "End": 16,
+        "End": 15,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -996,7 +996,7 @@
       {
         "Text": "morgenavond",
         "Start": 6,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -1022,7 +1022,7 @@
       {
         "Text": "komende maandagmiddag",
         "Start": 6,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -1048,7 +1048,7 @@
       {
         "Text": "aankomende uur",
         "Start": 10,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -1074,7 +1074,7 @@
       {
         "Text": "dinsdag in de ochtend",
         "Start": 6,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -1106,7 +1106,7 @@
       {
         "Text": "3u",
         "Start": 16,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1131,7 +1131,7 @@
       {
         "Text": "3,5 jaar",
         "Start": 16,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1156,7 +1156,7 @@
       {
         "Text": "3 minuten",
         "Start": 16,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1181,7 +1181,7 @@
       {
         "Text": "123,45 sec",
         "Start": 16,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1206,7 +1206,7 @@
       {
         "Text": "de hele dag",
         "Start": 16,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1231,7 +1231,7 @@
       {
         "Text": "vierentwintig uur",
         "Start": 16,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1256,7 +1256,7 @@
       {
         "Text": "hele maand",
         "Start": 19,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1281,7 +1281,7 @@
       {
         "Text": "een uur",
         "Start": 16,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1306,7 +1306,7 @@
       {
         "Text": "paar uur",
         "Start": 16,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1331,7 +1331,7 @@
       {
         "Text": "een paar minuten",
         "Start": 16,
-        "End": 32,
+        "End": 31,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1356,7 +1356,7 @@
       {
         "Text": "wat dagen",
         "Start": 16,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1381,7 +1381,7 @@
       {
         "Text": "enige weken",
         "Start": 16,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -1406,7 +1406,7 @@
       {
         "Text": "wekelijks",
         "Start": 11,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1431,7 +1431,7 @@
       {
         "Text": "elke dag",
         "Start": 11,
-        "End": 19,
+        "End": 18,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1456,7 +1456,7 @@
       {
         "Text": "jaarlijks",
         "Start": 11,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1481,7 +1481,7 @@
       {
         "Text": "elke twee dagen",
         "Start": 11,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1506,7 +1506,7 @@
       {
         "Text": "elke drie weken",
         "Start": 11,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1531,7 +1531,7 @@
       {
         "Text": "elke dag 15.00",
         "Start": 11,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1556,7 +1556,7 @@
       {
         "Text": "elke maandag",
         "Start": 11,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1581,7 +1581,7 @@
       {
         "Text": "elke maandag om 16.00",
         "Start": 11,
-        "End": 32,
+        "End": 31,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1631,7 +1631,7 @@
       {
         "Text": "half acht",
         "Start": 7,
-        "End": 16,
+        "End": 15,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1661,7 +1661,7 @@
       {
         "Text": "10 voor half negen 's avonds",
         "Start": 7,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1686,7 +1686,7 @@
       {
         "Text": "s morgens om 7 uur",
         "Start": 8,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1711,7 +1711,7 @@
       {
         "Text": "s middags om 7 uur",
         "Start": 8,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1736,7 +1736,7 @@
       {
         "Text": "rond de middag",
         "Start": 7,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1761,7 +1761,7 @@
       {
         "Text": "rond 11 uur",
         "Start": 7,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1811,7 +1811,7 @@
       {
         "Text": "het middaguur",
         "Start": 0,
-        "End": 13,
+        "End": 12,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1836,7 +1836,7 @@
       {
         "Text": "5 tot 6 's middags",
         "Start": 7,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1862,7 +1862,7 @@
       {
         "Text": "s middags 5 tot zeven",
         "Start": 8,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1888,7 +1888,7 @@
       {
         "Text": "tussen 5 en 6 's middags",
         "Start": 7,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1914,7 +1914,7 @@
       {
         "Text": "4:00 tot 7",
         "Start": 7,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1946,7 +1946,7 @@
       {
         "Text": "van 3 uur 's ochtends tot 5 uur 's middags",
         "Start": 7,
-        "End": 49,
+        "End": 48,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1972,7 +1972,7 @@
       {
         "Text": "tussen 4 en 5 's middags",
         "Start": 7,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1998,7 +1998,7 @@
       {
         "Text": "s morgens",
         "Start": 10,
-        "End": 19,
+        "End": 18,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -2024,7 +2024,7 @@
       {
         "Text": "s avonds",
         "Start": 10,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -2050,7 +2050,7 @@
       {
         "Text": "over 5 minuten",
         "Start": 7,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -2075,7 +2075,7 @@
       {
         "Text": "over 5 minuten",
         "Start": 0,
-        "End": 14,
+        "End": 13,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -2140,7 +2140,7 @@
       {
         "Text": "volgende week maandag",
         "Start": 31,
-        "End": 52,
+        "End": 51,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2185,7 +2185,7 @@
       {
         "Text": " 's ochtends om 9 uur",
         "Start": 4,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -2230,7 +2230,7 @@
       {
         "Text": "volgende maandag 13:00-15:00",
         "Start": 31,
-        "End": 59,
+        "End": 58,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -2271,7 +2271,7 @@
     "Results": [
       {
         "Text": "maandag 8-9 's ochtends ",
-        "Start": -1,
+        "Start": 0,
         "End": 23,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -2320,7 +2320,7 @@
       {
         "Text": "volgende week op dinsdag",
         "Start": 49,
-        "End": 73,
+        "End": 72,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2365,7 +2365,7 @@
       {
         "Text": "volgende week op dinsdag 9 uur 's ochtends",
         "Start": 49,
-        "End": 91,
+        "End": 90,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -2428,7 +2428,7 @@
       {
         "Text": "dinsdag 9 mei",
         "Start": 33,
-        "End": 46,
+        "End": 45,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2458,7 +2458,7 @@
       {
         "Text": "mei",
         "Start": 20,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2490,7 +2490,7 @@
       {
         "Text": "1 uur",
         "Start": 9,
-        "End": 14,
+        "End": 13,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -2535,7 +2535,7 @@
       {
         "Text": "de week van 10 april",
         "Start": 45,
-        "End": 65,
+        "End": 64,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2612,7 +2612,7 @@
       {
         "Text": "vandaag",
         "Start": 59,
-        "End": 66,
+        "End": 65,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2664,7 +2664,7 @@
       {
         "Text": "binnen 9 maanden",
         "Start": 13,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2706,7 +2706,7 @@
       {
         "Text": "over twee weken",
         "Start": 36,
-        "End": 51,
+        "End": 50,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2720,8 +2720,8 @@
       },
       {
         "Text": "over twee weken",
-        "Start": 79,
-        "End": 88,
+        "Start": 36,
+        "End": 50,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2746,7 +2746,7 @@
       {
         "Text": "komende vijf dagen",
         "Start": 10,
-        "End": 28,
+        "End": 27,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2788,7 +2788,7 @@
       {
         "Text": "1 juli",
         "Start": 7,
-        "End": 13,
+        "End": 12,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2818,7 +2818,7 @@
       {
         "Text": "2 uren",
         "Start": 13,
-        "End": 19,
+        "End": 18,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -2859,7 +2859,7 @@
       {
         "Text": "maandag 12-4",
         "Start": 49,
-        "End": 61,
+        "End": 60,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -2903,7 +2903,7 @@
       {
         "Text": "maandag 11-4",
         "Start": 49,
-        "End": 61,
+        "End": 60,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -2947,7 +2947,7 @@
       {
         "Text": "andere dag",
         "Start": 20,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -2971,7 +2971,7 @@
     "Results": [
       {
         "Text": "elke week",
-        "Start": -1,
+        "Start": 0,
         "End": 8,
         "TypeName": "datetimeV2.set",
         "Resolution": {
@@ -3013,7 +3013,7 @@
       {
         "Text": "dezelfde week",
         "Start": 17,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3040,7 +3040,7 @@
       {
         "Text": "dezelfde maand",
         "Start": 17,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3094,7 +3094,7 @@
       {
         "Text": "hetzelfde jaar",
         "Start": 20,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3121,7 +3121,7 @@
       {
         "Text": "de dag",
         "Start": 16,
-        "End": 22,
+        "End": 21,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -3146,7 +3146,7 @@
       {
         "Text": "de maand",
         "Start": 7,
-        "End": 15,
+        "End": 14,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3172,7 +3172,7 @@
       {
         "Text": "woensdag vroeg op de dag",
         "Start": 7,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3199,7 +3199,7 @@
       {
         "Text": "halverwege vandaag",
         "Start": 7,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3226,7 +3226,7 @@
       {
         "Text": "later op de dag",
         "Start": 7,
-        "End": 22,
+        "End": 21,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3253,7 +3253,7 @@
       {
         "Text": "het jaar",
         "Start": 34,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3332,7 +3332,7 @@
       {
         "Text": "2017 april",
         "Start": 11,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3358,7 +3358,7 @@
       {
         "Text": "eerder in de week",
         "Start": 47,
-        "End": 64,
+        "End": 63,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3384,7 +3384,7 @@
       {
         "Text": "eerder deze maand",
         "Start": 47,
-        "End": 64,
+        "End": 63,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3410,7 +3410,7 @@
       {
         "Text": "eerder dit jaar",
         "Start": 47,
-        "End": 62,
+        "End": 61,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3436,7 +3436,7 @@
       {
         "Text": "later deze week",
         "Start": 40,
-        "End": 55,
+        "End": 54,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3462,7 +3462,7 @@
       {
         "Text": "later deze maand",
         "Start": 40,
-        "End": 56,
+        "End": 55,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3488,7 +3488,7 @@
       {
         "Text": "later dit jaar",
         "Start": 40,
-        "End": 54,
+        "End": 53,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3514,7 +3514,7 @@
       {
         "Text": "later in het jaar",
         "Start": 40,
-        "End": 57,
+        "End": 56,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3540,7 +3540,7 @@
       {
         "Text": "twee dagen na vandaag",
         "Start": 7,
-        "End": 28,
+        "End": 27,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -3565,7 +3565,7 @@
       {
         "Text": "drie weken vanaf morgen",
         "Start": 7,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -3590,7 +3590,7 @@
       {
         "Text": "twee dagen voor gisteren?",
         "Start": 12,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -3615,7 +3615,7 @@
       {
         "Text": "31 dec. 1994",
         "Start": 27,
-        "End": 39,
+        "End": 38,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -3640,7 +3640,7 @@
       {
         "Text": "5-3-'18 om 17:49:19",
         "Start": 6,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -3665,7 +3665,7 @@
       {
         "Text": "tussen 10 en 11:30 op 1-1-2015",
         "Start": 17,
-        "End": 47,
+        "End": 46,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3697,7 +3697,7 @@
       {
         "Text": "1-1-2015 tussen 10 en 11:30",
         "Start": 8,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3729,7 +3729,7 @@
       {
         "Text": "van 10:30 tot 15.00 op 1-1-2015",
         "Start": 17,
-        "End": 48,
+        "End": 47,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3755,7 +3755,7 @@
       {
         "Text": "tussen 3 en 5 op 1-1-2015",
         "Start": 17,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3787,7 +3787,7 @@
       {
         "Text": "van 3:30 tot 5.55 op 1-1-2015",
         "Start": 17,
-        "End": 46,
+        "End": 45,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -3819,7 +3819,7 @@
       {
         "Text": "voor 2010",
         "Start": 28,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3861,7 +3861,7 @@
       {
         "Text": "na 2010",
         "Start": 28,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3908,8 +3908,8 @@
       },
       {
         "Text": "1998",
-        "Start": 64,
-        "End": 67,
+        "Start": 73,
+        "End": 76,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3935,7 +3935,7 @@
       {
         "Text": "meer dan 4 dagen",
         "Start": 22,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -3977,7 +3977,7 @@
       {
         "Text": " langer dan 1 uur en 30 minuten",
         "Start": 22,
-        "End": 53,
+        "End": 52,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -4003,7 +4003,7 @@
       {
         "Text": "langer dan 2 weken voor vandaag",
         "Start": 31,
-        "End": 62,
+        "End": 61,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4029,7 +4029,7 @@
       {
         "Text": "dan 2 dagen voor gisteren ",
         "Start": 19,
-        "End": 45,
+        "End": 44,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4055,7 +4055,7 @@
       {
         "Text": "minder dan 3 dagen na morgen",
         "Start": 14,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4081,7 +4081,7 @@
       {
         "Text": "meer dan 2 weken na vandaag ",
         "Start": 14,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4107,7 +4107,7 @@
       {
         "Text": "3 minuten vanaf nu",
         "Start": 14,
-        "End": 32,
+        "End": 31,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -4132,7 +4132,7 @@
       {
         "Text": "3 minuten",
         "Start": 14,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -4172,7 +4172,7 @@
       {
         "Text": " de 9e van mei",
         "Start": 32,
-        "End": 46,
+        "End": 45,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -4218,7 +4218,7 @@
       {
         "Text": "15e eeuw",
         "Start": 15,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4244,7 +4244,7 @@
       {
         "Text": "21e eeuw",
         "Start": 29,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4270,7 +4270,7 @@
       {
         "Text": "na 2018",
         "Start": 20,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4296,7 +4296,7 @@
       {
         "Text": "na feb 2018",
         "Start": 20,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4322,7 +4322,7 @@
       {
         "Text": "na feb",
         "Start": 20,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4354,7 +4354,7 @@
       {
         "Text": "1-1-2015 na 2:00",
         "Start": 8,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4386,7 +4386,7 @@
       {
         "Text": "vandaag voor 16:00 ",
         "Start": 8,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4412,7 +4412,7 @@
       {
         "Text": "volgende week woensdag later dan 10 uur 's morgens",
         "Start": 8,
-        "End": 58,
+        "End": 57,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4438,7 +4438,7 @@
       {
         "Text": "vorige week dinsdag om 2 uur 's middags",
         "Start": 16,
-        "End": 55,
+        "End": 54,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4464,7 +4464,7 @@
       {
         "Text": "1 feb niet later dan 6:00 ",
         "Start": 23,
-        "End": 49,
+        "End": 48,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4508,7 +4508,7 @@
       {
         "Text": "volgende week",
         "Start": 16,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4556,7 +4556,7 @@
       {
         "Text": "2007",
         "Start": 16,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4571,8 +4571,8 @@
       },
       {
         "Text": "2009",
-        "Start": 23,
-        "End": 26,
+        "Start": 24,
+        "End": 27,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4598,7 +4598,7 @@
       {
         "Text": "tussen 2007 en 2009",
         "Start": 13,
-        "End": 32,
+        "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4624,7 +4624,7 @@
       {
         "Text": "vandaag om 9:00 ",
         "Start": 4,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -4649,7 +4649,7 @@
       {
         "Text": "vandaag om 21:00",
         "Start": 4,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -4700,7 +4700,7 @@
       {
         "Text": "het jaar",
         "Start": 16,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4726,7 +4726,7 @@
       {
         "Text": "de week",
         "Start": 16,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4752,7 +4752,7 @@
       {
         "Text": "de week na volgende",
         "Start": 16,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4778,7 +4778,7 @@
       {
         "Text": "week 31",
         "Start": 19,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4839,7 +4839,7 @@
       {
         "Text": "over 2 minuten",
         "Start": 11,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -4864,7 +4864,7 @@
       {
         "Text": "over twee maanden",
         "Start": 11,
-        "End": 28,
+        "End": 27,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -4889,7 +4889,7 @@
       {
         "Text": "over twee weken",
         "Start": 11,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -4914,7 +4914,7 @@
       {
         "Text": "over twee jaar",
         "Start": 11,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -4939,7 +4939,7 @@
       {
         "Text": "twee dagen na vandaag",
         "Start": 16,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -4964,7 +4964,7 @@
       {
         "Text": " 2014-2018",
         "Start": 13,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4990,7 +4990,7 @@
       {
         "Text": "2014~2018",
         "Start": 14,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5016,7 +5016,7 @@
       {
         "Text": "2014 tot 2018",
         "Start": 14,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5042,7 +5042,7 @@
       {
         "Text": "tussen 2014-2018",
         "Start": 14,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5068,7 +5068,7 @@
       {
         "Text": "tussen 2014~2018",
         "Start": 14,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5094,7 +5094,7 @@
       {
         "Text": "tussen 2014 en 2018",
         "Start": 14,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5120,7 +5120,7 @@
       {
         "Text": "van 2014 tot 2018",
         "Start": 14,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5146,7 +5146,7 @@
       {
         "Text": "van 2014-2018",
         "Start": 14,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5172,7 +5172,7 @@
       {
         "Text": "van 2014~2018",
         "Start": 14,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5198,7 +5198,7 @@
       {
         "Text": "van 2014 tot en met 2018",
         "Start": 14,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5224,7 +5224,7 @@
       {
         "Text": "in 2014 tot en met 2018",
         "Start": 14,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5250,7 +5250,7 @@
       {
         "Text": "2014 tot en met mei 2018",
         "Start": 17,
-        "End": 41,
+        "End": 40,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5276,7 +5276,7 @@
       {
         "Text": "2014 tot en met 2 mei 2018",
         "Start": 17,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5302,7 +5302,7 @@
       {
         "Text": "2008",
         "Start": 36,
-        "End": 40,
+        "End": 39,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5328,7 +5328,7 @@
       {
         "Text": "vierentwintig januari half twee 's middags",
         "Start": 16,
-        "End": 58,
+        "End": 57,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -5358,7 +5358,7 @@
       {
         "Text": "half november",
         "Start": 23,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5392,7 +5392,7 @@
       {
         "Text": "zat. om 5 uur",
         "Start": 40,
-        "End": 53,
+        "End": 52,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -5431,7 +5431,7 @@
     "Results": [
       {
         "Text": "gisterenavond",
-        "Start": -1,
+        "Start": 0,
         "End": 12,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -5458,7 +5458,7 @@
       {
         "Text": "het jaar",
         "Start": 21,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5484,7 +5484,7 @@
       {
         "Text": "onafhankelijksdag van dit jaar",
         "Start": 22,
-        "End": 52,
+        "End": 51,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -5509,7 +5509,7 @@
       {
         "Text": "voor onafhankelijkheidsdag",
         "Start": 28,
-        "End": 54,
+        "End": 53,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5541,7 +5541,7 @@
       {
         "Text": "komende week",
         "Start": 22,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5567,7 +5567,7 @@
       {
         "Text": "komende weken",
         "Start": 26,
-        "End": 39,
+        "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5593,7 +5593,7 @@
       {
         "Text": "op volgende week maandag",
         "Start": 7,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -5618,7 +5618,7 @@
       {
         "Text": "22 mei (dins) - 11:30",
         "Start": 14,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -5648,7 +5648,7 @@
       {
         "Text": "het middaguur vandaag",
         "Start": 22,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -5708,7 +5708,7 @@
       {
         "Text": "deze week",
         "Start": 16,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5750,7 +5750,7 @@
       {
         "Text": "al zo laat als 7 uur 's ochtends",
         "Start": 11,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -5776,7 +5776,7 @@
       {
         "Text": "van 15 minuten",
         "Start": 23,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -5838,7 +5838,7 @@
       {
         "Text": "5 aankomende jaren ",
         "Start": 17,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5864,7 +5864,7 @@
       {
         "Text": "2 aankomende maanden ",
         "Start": 17,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5890,7 +5890,7 @@
       {
         "Text": " 2 aankomende dagen ",
         "Start": 16,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5916,7 +5916,7 @@
       {
         "Text": "5 aankomende minuten ",
         "Start": 17,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -5942,7 +5942,7 @@
       {
         "Text": "afgelopen 5 minuten ",
         "Start": 16,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -5968,7 +5968,7 @@
       {
         "Text": "afgelopen 5 jaren",
         "Start": 16,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5994,7 +5994,7 @@
       {
         "Text": "afgelopen 10 weken",
         "Start": 16,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6020,7 +6020,7 @@
       {
         "Text": "morgen van 10 tot 12 uur 's ochtends",
         "Start": 39,
-        "End": 75,
+        "End": 74,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -6061,7 +6061,7 @@
       {
         "Text": "zo vroeg als het eerste kwartaal van volgend jaar",
         "Start": 6,
-        "End": 55,
+        "End": 54,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6087,7 +6087,7 @@
       {
         "Text": "voor het jaar hoger dan 2012",
         "Start": 18,
-        "End": 46,
+        "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6113,7 +6113,7 @@
       {
         "Text": "jaar 2012 of later",
         "Start": 20,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6139,7 +6139,7 @@
       {
         "Text": "jaar 2016 en hoger",
         "Start": 16,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6165,7 +6165,7 @@
       {
         "Text": "1-1-2016 en later",
         "Start": 29,
-        "End": 46,
+        "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6191,7 +6191,7 @@
       {
         "Text": "1-1-2016 en daarna",
         "Start": 29,
-        "End": 47,
+        "End": 46,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6218,7 +6218,7 @@
       {
         "Text": "1-1-2016",
         "Start": 28,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -6243,7 +6243,7 @@
       {
         "Text": "1-1-2016",
         "Start": 28,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -6284,7 +6284,7 @@
       {
         "Text": "jaar tot op heden",
         "Start": 46,
-        "End": 63,
+        "End": 62,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6310,7 +6310,7 @@
       {
         "Text": "2018 of later",
         "Start": 24,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6336,7 +6336,7 @@
       {
         "Text": "tussen 2015 en 2018",
         "Start": 23,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6378,7 +6378,7 @@
       {
         "Text": "deze week",
         "Start": 9,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6420,7 +6420,7 @@
       {
         "Text": "later dan 2018",
         "Start": 0,
-        "End": 14,
+        "End": 13,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6446,7 +6446,7 @@
       {
         "Text": "voor maandag om half 3 's middags",
         "Start": 32,
-        "End": 65,
+        "End": 64,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -6486,7 +6486,7 @@
       {
         "Text": "voor half 3 's middags",
         "Start": 10,
-        "End": 32,
+        "End": 31,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -6512,7 +6512,7 @@
       {
         "Text": "donderdag 29-3 11 uur 's ochtends ",
         "Start": 3,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -6542,7 +6542,7 @@
       {
         "Text": "6-4 tussen 9.30-16.30",
         "Start": 31,
-        "End": 52,
+        "End": 51,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -6574,7 +6574,7 @@
       {
         "Text": "van maart tot mei",
         "Start": 12,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6606,7 +6606,7 @@
       {
         "Text": "tussen augustus en oktober",
         "Start": 21,
-        "End": 47,
+        "End": 46,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6632,7 +6632,7 @@
       {
         "Text": "mei tot maart",
         "Start": 21,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6658,7 +6658,7 @@
       {
         "Text": "van sep tot nov",
         "Start": 21,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6690,7 +6690,7 @@
       {
         "Text": "van mei tot september",
         "Start": 21,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6716,7 +6716,7 @@
       {
         "Text": "van nov tot maart",
         "Start": 21,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6757,7 +6757,7 @@
       {
         "Text": "om 6.45",
         "Start": 10,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -6787,7 +6787,7 @@
       {
         "Text": "over twee dagen",
         "Start": 19,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -6836,7 +6836,7 @@
       {
         "Text": "van 1-10 tot 7-11",
         "Start": 0,
-        "End": 17,
+        "End": 16,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6862,7 +6862,7 @@
       {
         "Text": "van 25-10 tot 25-1",
         "Start": 0,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6894,7 +6894,7 @@
       {
         "Text": "van 10-1-2018-10-7-2018",
         "Start": 17,
-        "End": 40,
+        "End": 39,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6920,7 +6920,7 @@
       {
         "Text": "van 10-1-2018 - 10-7-2018",
         "Start": 17,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6946,7 +6946,7 @@
       {
         "Text": "tussen 1-10 en 7-11",
         "Start": 26,
-        "End": 45,
+        "End": 44,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6972,7 +6972,7 @@
       {
         "Text": "jan-feb 2017",
         "Start": 31,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6998,7 +6998,7 @@
       {
         "Text": "nov-feb 2017",
         "Start": 31,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7024,7 +7024,7 @@
       {
         "Text": "nov-5 feb 2017",
         "Start": 31,
-        "End": 45,
+        "End": 44,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7050,7 +7050,7 @@
       {
         "Text": "18 nov-19 dec, 2015",
         "Start": 31,
-        "End": 50,
+        "End": 49,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7076,7 +7076,7 @@
       {
         "Text": "18 nov 2014-19 dec 2015",
         "Start": 31,
-        "End": 54,
+        "End": 53,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7102,7 +7102,7 @@
       {
         "Text": "op 18-19 november",
         "Start": 31,
-        "End": 48,
+        "End": 47,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7134,7 +7134,7 @@
       {
         "Text": "van aanstaande mei tot okt 2020",
         "Start": 18,
-        "End": 49,
+        "End": 48,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7160,7 +7160,7 @@
       {
         "Text": "van mei tot okt 2020",
         "Start": 18,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7186,7 +7186,7 @@
       {
         "Text": "van 1-5 - 7-5, 2020",
         "Start": 18,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7212,7 +7212,7 @@
       {
         "Text": "van 1-5 - 7-5-2020",
         "Start": 18,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7238,7 +7238,7 @@
       {
         "Text": "van 1-5-2019 - 7-5-2020",
         "Start": 18,
-        "End": 41,
+        "End": 40,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7289,7 +7289,7 @@
       {
         "Text": "maandagmorgen van 10:00 tot 12:00",
         "Start": 22,
-        "End": 55,
+        "End": 54,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7321,7 +7321,7 @@
       {
         "Text": "10:00 tot 12:00 maandagmorgen",
         "Start": 19,
-        "End": 48,
+        "End": 47,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7353,7 +7353,7 @@
       {
         "Text": "gisterenmiddag van 15:00-20:00",
         "Start": 12,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7379,7 +7379,7 @@
       {
         "Text": "van 15:00-20:00 gisterenmiddag",
         "Start": 12,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7405,7 +7405,7 @@
       {
         "Text": "van 8 uur 's morgens-15:00 gisterenmiddag",
         "Start": 12,
-        "End": 53,
+        "End": 52,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7431,7 +7431,7 @@
       {
         "Text": "maandag 3-8",
         "Start": 12,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7475,7 +7475,7 @@
       {
         "Text": "gisteren tussen 3 en 8",
         "Start": 12,
-        "End": 34,
+        "End": 33,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7507,7 +7507,7 @@
       {
         "Text": "volgende maandag tussen 3 en 8 uur 's morgens",
         "Start": 7,
-        "End": 52,
+        "End": 51,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7533,7 +7533,7 @@
       {
         "Text": " volgende maandag tussen 3 uur 's middags - 12 uur 's middags",
         "Start": 6,
-        "End": 67,
+        "End": 66,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7559,7 +7559,7 @@
       {
         "Text": "volgende maandag tussen 6-8 ",
         "Start": 7,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7591,7 +7591,7 @@
       {
         "Text": "volgende maandag 6-8",
         "Start": 7,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7623,7 +7623,7 @@
       {
         "Text": "volgende maandagmorgen 6-8",
         "Start": 7,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7649,7 +7649,7 @@
       {
         "Text": "dec-2018",
         "Start": 20,
-        "End": 28,
+        "End": 27,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7701,7 +7701,7 @@
       {
         "Text": "dec, 2018",
         "Start": 20,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7727,7 +7727,7 @@
       {
         "Text": "dec/2018-mei/2019",
         "Start": 20,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7753,7 +7753,7 @@
       {
         "Text": "de dag ervoor",
         "Start": 7,
-        "End": 20,
+        "End": 19,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7778,7 +7778,7 @@
       {
         "Text": "de dag erna",
         "Start": 20,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7812,7 +7812,7 @@
       {
         "Text": "volgende maandag",
         "Start": 38,
-        "End": 54,
+        "End": 53,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7852,7 +7852,7 @@
       {
         "Text": "volgende maandag",
         "Start": 39,
-        "End": 55,
+        "End": 54,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7892,7 +7892,7 @@
       {
         "Text": "volgende week woensdag",
         "Start": 20,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7917,7 +7917,7 @@
       {
         "Text": "vorige week - maandag",
         "Start": 16,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7942,7 +7942,7 @@
       {
         "Text": "deze week maandag",
         "Start": 16,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7967,7 +7967,7 @@
       {
         "Text": "eind van de dag ",
         "Start": 34,
-        "End": 50,
+        "End": 49,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -7992,7 +7992,7 @@
       {
         "Text": "het eind van de dag",
         "Start": 65,
-        "End": 84,
+        "End": 83,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -8017,7 +8017,7 @@
       {
         "Text": "eind van het jaar",
         "Start": 8,
-        "End": 25,
+        "End": 24,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8044,7 +8044,7 @@
       {
         "Text": "20-11",
         "Start": 18,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8094,7 +8094,7 @@
       {
         "Text": "eind van de maand",
         "Start": 50,
-        "End": 67,
+        "End": 66,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8121,7 +8121,7 @@
       {
         "Text": "eind van de week",
         "Start": 80,
-        "End": 96,
+        "End": 95,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8149,7 +8149,7 @@
       {
         "Text": "woensdag",
         "Start": 72,
-        "End": 80,
+        "End": 79,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8220,7 +8220,7 @@
       {
         "Text": "tussen 6:30 tot 9 pst",
         "Start": 3,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -8259,7 +8259,7 @@
       {
         "Text": "tussen 9 tot 10:30",
         "Start": 3,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -8291,7 +8291,7 @@
       {
         "Text": "de eerste week van 2015",
         "Start": 3,
-        "End": 26,
+        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8317,7 +8317,7 @@
       {
         "Text": "eerste week van jan 2015",
         "Start": 6,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8343,7 +8343,7 @@
       {
         "Text": "laatste week van 2016",
         "Start": 6,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8369,7 +8369,7 @@
       {
         "Text": "laatste week van dec 2016",
         "Start": 3,
-        "End": 28,
+        "End": 27,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8473,7 +8473,7 @@
       {
         "Text": "de 3e week van jan",
         "Start": 3,
-        "End": 21,
+        "End": 20,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8505,7 +8505,7 @@
       {
         "Text": "eerder vorige week",
         "Start": 20,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8532,7 +8532,7 @@
       {
         "Text": "later deze week",
         "Start": 16,
-        "End": 31,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8583,7 +8583,7 @@
       {
         "Text": "anderhalf uur",
         "Start": 16,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -8608,7 +8608,7 @@
       {
         "Text": "een jaar en een kwart jaar ",
         "Start": 10,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -8645,8 +8645,8 @@
     "Context": {
       "ReferenceDateTime": "2018-12-07T12:00:00"
     },
-    "NotSupported": "dotnet",
     "Comment": "Not extracted may as a datetime range is not supported for now",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -8670,7 +8670,7 @@
       {
         "Text": "dinsdag",
         "Start": 8,
-        "End": 15,
+        "End": 14,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8700,7 +8700,7 @@
       {
         "Text": "maandag 21",
         "Start": 26,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8730,7 +8730,7 @@
       {
         "Text": "zondag 31",
         "Start": 26,
-        "End": 35,
+        "End": 34,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8760,7 +8760,7 @@
       {
         "Text": "vrijdag 31",
         "Start": 26,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8790,7 +8790,7 @@
       {
         "Text": "na half mei",
         "Start": 16,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8822,7 +8822,7 @@
       {
         "Text": "voor begin september",
         "Start": 16,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8854,7 +8854,7 @@
       {
         "Text": "sinds eind juli",
         "Start": 18,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8886,7 +8886,7 @@
       {
         "Text": "deze aankomende vrijdag",
         "Start": 26,
-        "End": 49,
+        "End": 48,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8911,7 +8911,7 @@
       {
         "Text": "aanstaande vrijdag",
         "Start": 26,
-        "End": 44,
+        "End": 43,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8936,7 +8936,7 @@
       {
         "Text": "volgende vrijdag",
         "Start": 26,
-        "End": 42,
+        "End": 41,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8961,7 +8961,7 @@
       {
         "Text": "komende donderdag",
         "Start": 26,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8986,7 +8986,7 @@
       {
         "Text": "deze afgelopen woensdag",
         "Start": 15,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -9011,7 +9011,7 @@
       {
         "Text": "afgelopen woensdag",
         "Start": 15,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -9036,7 +9036,7 @@
       {
         "Text": "vorige woensdag",
         "Start": 15,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -9061,7 +9061,7 @@
       {
         "Text": "tussen 07:30-09:00",
         "Start": 19,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -9093,7 +9093,7 @@
       {
         "Text": "tussen 07:30-09:30",
         "Start": 12,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -9125,7 +9125,7 @@
       {
         "Text": "tussen 09:30-07:30",
         "Start": 12,
-        "End": 30,
+        "End": 29,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -9166,7 +9166,7 @@
       {
         "Text": "maandag 21 tussen 9:30 en 15:00",
         "Start": 25,
-        "End": 56,
+        "End": 55,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -9198,7 +9198,7 @@
       {
         "Text": "dinsdag, 15 jan, 13:00 - 13.15",
         "Start": 15,
-        "End": 45,
+        "End": 44,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -9230,7 +9230,7 @@
       {
         "Text": "18 januari, 2019",
         "Start": 3,
-        "End": 19,
+        "End": 18,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -9270,7 +9270,7 @@
       {
         "Text": "elke dinsdag",
         "Start": 31,
-        "End": 43,
+        "End": 42,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -9317,7 +9317,7 @@
       {
         "Text": "12-2015",
         "Start": 26,
-        "End": 33,
+        "End": 32,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -9367,5 +9367,378 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "Ik ben tussen 16:00 en 17:00 vandaag weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 16:00 en 17:00 vandaag",
+        "Start": 7,
+        "End": 35,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T16:00,T17:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-10,2017-02-11,P32D)",
+              "type": "daterange",
+              "start": "2017-01-10",
+              "end": "2017-02-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga morgen terug om 8:00",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-25",
+              "type": "date",
+              "value": "2018-10-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "om 8:00",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga vanavond terug om 7",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-24TNI",
+              "type": "datetimerange",
+              "start": "2018-10-24 20:00:00",
+              "end": "2018-10-24 23:59:59"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "om 7",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "type": "time",
+              "value": "07:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga op de 5e terug om 4u ‘s morgens",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op de 5e",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-05",
+              "type": "date",
+              "value": "2018-10-05"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "om 4u ‘s morgens",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04:00",
+              "type": "time",
+              "value": "04:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga op 16-12-2016 terug om 12.23:59u",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16-12-2016",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-12-16",
+              "type": "date",
+              "value": "2016-12-16"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "om 12.23:59u",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12:23:59",
+              "type": "time",
+              "value": "12:23:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga de 15e, 20:00 terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de 15e, 20:00",
+        "Start": 6,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-15T20:00",
+              "type": "datetime",
+              "value": "2016-11-15 20:00"
+            },
+            {
+              "timex": "XXXX-11-15T20:00",
+              "type": "datetime",
+              "value": "2017-11-15 20:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga 20.00 terug op de 15e",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20:00",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:00",
+              "type": "time",
+              "value": "20:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "op de 15e",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-15",
+              "type": "date",
+              "value": "2018-10-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga om zeven uur terug op de 15e",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "om zeven uur",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "type": "time",
+              "value": "07:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "op de 15e",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-15",
+              "type": "date",
+              "value": "2018-10-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wie heb ik een paar maanden geleden een email gestuurd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een paar maanden geleden",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-09-07",
+              "type": "date",
+              "value": "2016-09-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug om 20.15u",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "om 20.15u",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:15",
+              "type": "time",
+              "value": "20:15"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

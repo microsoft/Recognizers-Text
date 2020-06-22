@@ -599,7 +599,7 @@ VolumeSuffixList: !dictionary
     Teaspoon: teelöffel|teeloeffel
     Tablespoon: esslöffel|essloeffel
     Pint: pinte
-    Volume unit: fluid dram|Fluid drachm|Flüssigdrachme|Gill|Quart|Minim|Barrel|Cord|Peck|Beck|Scheffel|Hogshead|Oxhoft
+    Volume unit: fluid dram|fluid drachm|flüssigdrachme|gill|quart|minim|cord|peck|beck|scheffel|hogshead|oxhoft
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
@@ -631,4 +631,8 @@ AmbiguousWeightUnitList: !list
     - oz
     - stone
     - dram
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

@@ -10,5 +10,7 @@ PmNonUnitRegex: !nestedRegex
   references: [HourRegex, MinuteRegex, SecondRegex]
 AmbiguousTimeTerm: "pm"
 AmbiguousUnitNumberMultiplierRegex: !simpleRegex
-  def: (\s[Kk])
+  def: (\s([Kk]|mil))
+SingleCharUnitRegex: !simpleRegex
+  def: ^\b(c|f|g|k|l|m|s)(\s*\.|\b)$
 ...

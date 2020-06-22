@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -26,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = MergeDateAndTime(er.Text, referenceTime);
                 if (!innerResult.Success)
@@ -89,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult
             {
-                Timex = timexPrefix + "T23:59:59",
+                Timex = timexPrefix + "T23:59:59", // Due to .NET framework design
                 FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1),
                 PastValue = pastDate.Date.AddDays(1).AddSeconds(-1),
                 Success = true,
@@ -158,10 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er2.Count == 0)
             {
                 // Here we filter out "morning, afternoon, night..." time entities
-                er2 = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + text, referenceTime);
+                var prefixToken = this.config.TokenBeforeTime;
+                er2 = this.config.TimeExtractor.Extract(prefixToken + text, referenceTime);
+
                 if (er2.Count == 1)
                 {
-                    er2[0].Start -= this.config.TokenBeforeTime.Length;
+                    er2[0].Start -= prefixToken.Length;
                 }
                 else if (er2.Count == 0)
                 {
@@ -241,7 +245,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
 
-            timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+            timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult)pr2.Value;
@@ -315,20 +319,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    hour = int.Parse(hourStr);
+                    hour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                 }
 
-                timeStr = "T" + hour.ToString("D2");
+                timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture);
             }
             else
             {
                 var ers = this.config.TimeExtractor.Extract(trimmedText, referenceTime);
                 if (ers.Count != 1)
                 {
-                    ers = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + trimmedText, referenceTime);
+                    var prefixToken = this.config.TokenBeforeTime;
+                    ers = this.config.TimeExtractor.Extract(prefixToken + trimmedText, referenceTime);
+
                     if (ers.Count == 1)
                     {
-                        ers[0].Start -= this.config.TokenBeforeTime.Length;
+                        ers[0].Start -= prefixToken.Length;
                     }
                     else
                     {
@@ -370,7 +376,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
 
-                timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+                timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);
@@ -383,9 +389,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private DateTimeResolutionResult ParseSpecialTimeOfDate(string text, DateObject refDateTime)
         {
-            var ret = new DateTimeResolutionResult();
+            var ret = ParseUnspecificTimeOfDate(text, refDateTime);
 
-            ret = ParseUnspecificTimeOfDate(text, refDateTime);
             if (ret.Success)
             {
                 return ret;

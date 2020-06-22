@@ -660,5 +660,81 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "मुझे एहसास हुआ कि आप एक और हफ्ते के लिए बाहर हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और हफ्ते",
+        "Type": "duration",
+        "Start": 21,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक और महीना इंतजार कर सकते हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और महीना",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक और व्यावसायिक दिवस की प्रतीक्षा कर सकते हैं?",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और व्यावसायिक दिवस",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं आधे कार्यदिवस के लिए जाऊंगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधे कार्यदिवस",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो दशकों के लिए बाहर रहुंगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो दशकों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक पखवाड़े के लिए बाहर रहुंगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक पखवाड़े",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
   }
 ]

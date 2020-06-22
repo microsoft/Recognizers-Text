@@ -10,14 +10,32 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterToTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterToTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterPastTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterPastTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterToTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterToTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterPastTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterPastTokenRegex, RegexFlags);
 
         public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -49,17 +67,25 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
-            if (trimmedPrefix.StartsWith("halb"))
+            if (HalfTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = -30;
             }
-            else if (trimmedPrefix.StartsWith("viertel nach"))
+            else if (QuarterToTokenRegex.IsMatch(trimmedPrefix))
+            {
+                deltaMin = -15;
+            }
+            else if (QuarterPastTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.StartsWith("viertel vor"))
+            else if (ThreeQuarterToTokenRegex.IsMatch(trimmedPrefix))
             {
-                deltaMin = -15;
+                deltaMin = -45;
+            }
+            else if (ThreeQuarterPastTokenRegex.IsMatch(trimmedPrefix))
+            {
+                deltaMin = 45;
             }
             else
             {

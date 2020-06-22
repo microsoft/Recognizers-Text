@@ -15,9 +15,9 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
 
-            NumberExtractor = English.NumberExtractor.GetInstance(numConfig);
-            OrdinalExtractor = English.OrdinalExtractor.GetInstance(numConfig);
-            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(config));
+            NumberExtractor = Hindi.NumberExtractor.GetInstance();
+            OrdinalExtractor = Hindi.OrdinalExtractor.GetInstance();
+            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

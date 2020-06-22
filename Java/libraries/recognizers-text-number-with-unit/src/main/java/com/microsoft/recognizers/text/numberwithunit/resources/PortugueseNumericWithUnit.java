@@ -195,7 +195,7 @@ public class PortugueseNumericWithUnit {
         .put("Coroa feroesa", "coroa feroesa|coroas feroesas|fkr")
         .put("Libra das Malvinas", "libra das malvinas|libras das malvinas|fk£|fkp")
         .put("Dólar das Ilhas Salomão", "dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd")
-        .put("Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils")
+        .put("Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils|₪")
         .put("Agora", "agora|agorot")
         .put("Dólar jamaicano", "dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd")
         .put("Yen", "yen|iene|yenes|ienes|jpy")
@@ -387,7 +387,7 @@ public class PortugueseNumericWithUnit {
         .put("Lira turca", "₺")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le", "agora");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("bit", "bit|bits")
@@ -414,7 +414,7 @@ public class PortugueseNumericWithUnit {
         .put("pebibyte", "pebibyte|pebibytes|PiB|PiByte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("ton", "tonelada", "área", "area", "áreas", "areas", "milha", "milhas");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("ton", "tonelada", "área", "area", "áreas", "areas", "milha", "milhas", "\"");
 
     public static final String BuildPrefix = "(?<=(\\s|^|\\P{L}))";
 
@@ -440,7 +440,7 @@ public class PortugueseNumericWithUnit {
         .put("Ano luz", "ano luz|anos luz|al")
         .build();
 
-    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "milha", "milhas");
+    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "milha", "milhas", "\"");
 
     public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos")
@@ -502,5 +502,9 @@ public class PortugueseNumericWithUnit {
         .put("Onça", "oz|onça|onca|onças|oncas")
         .put("Grão", "grão|grao|grãos|graos|gr")
         .put("Quilate", "ct|quilate|quilates")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
         .build();
 }

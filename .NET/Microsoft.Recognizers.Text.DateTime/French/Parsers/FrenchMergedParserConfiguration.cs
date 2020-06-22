@@ -16,7 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             EqualRegex = FrenchMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = FrenchMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = FrenchMergedExtractorConfiguration.SuperfluousWordMatcher;
+
             SetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
             TimeZoneParser = new DummyTimeZoneParser();

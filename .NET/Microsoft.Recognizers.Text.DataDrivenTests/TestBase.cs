@@ -97,11 +97,24 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(testSpec));
 
-                foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
+                foreach (var resolutionValues in expectedValues.Zip(actualValues, Tuple.Create))
                 {
-                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(testSpec));
-                    CollectionAssert.AreEqual(value.Item1.OrderBy(o => o.Key).ToImmutableDictionary(),
-                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(testSpec));
+                    Assert.AreEqual(resolutionValues.Item1.Count, resolutionValues.Item2.Count, GetMessage(testSpec));
+
+                    var expectedResolution = resolutionValues.Item1.OrderBy(o => o.Key).ToImmutableDictionary();
+                    var actualResolution = resolutionValues.Item2.OrderBy(o => o.Key).ToImmutableDictionary();
+
+                    for (int i = 0; i < expectedResolution.Count; i++)
+                    {
+                        var expectedKey = expectedResolution.ElementAt(i).Key;
+                        Assert.AreEqual(expectedKey, actualResolution.ElementAt(i).Key, GetMessage(testSpec));
+
+                        var expectedValue = expectedResolution[expectedKey];
+                        var actualValue = actualResolution[expectedKey];
+
+                        Assert.AreEqual(expectedValue, actualValue, GetMessage(testSpec));
+                    }
+
                 }
             }
         }
@@ -360,29 +373,43 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     Assert.AreEqual(expected.End, actual.End, GetMessage(testSpec));
                 }
 
-                if (expected.TypeName.Contains(Number.Constants.MODEL_ORDINAL))
+                if (testSpec.IgnoreResolution)
                 {
-                    if (!expected.TypeName.Equals(Number.Constants.MODEL_ORDINAL_RELATIVE))
-                    {
-                        Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(testSpec));
-                    }
-
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.Offset], actual.Resolution[ResolutionKey.Offset], GetMessage(testSpec));
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.RelativeTo], actual.Resolution[ResolutionKey.RelativeTo], GetMessage(testSpec));
+                    Assert.Inconclusive(GetMessage(testSpec) + ". Resolution not validated.");
                 }
                 else
                 {
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(testSpec));
-                }
 
-                foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
-                {
-                    if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))
+                    if (expected.TypeName.Contains(Number.Constants.MODEL_ORDINAL))
                     {
-                        continue;
+                        if (!expected.TypeName.Equals(Number.Constants.MODEL_ORDINAL_RELATIVE))
+                        {
+                            Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value],
+                                            GetMessage(testSpec));
+                        }
+
+                        Assert.AreEqual(expected.Resolution[ResolutionKey.Offset], actual.Resolution[ResolutionKey.Offset],
+                                        GetMessage(testSpec));
+
+                        Assert.AreEqual(expected.Resolution[ResolutionKey.RelativeTo], actual.Resolution[ResolutionKey.RelativeTo],
+                                        GetMessage(testSpec));
+                    }
+                    else
+                    {
+                        Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value],
+                                        GetMessage(testSpec));
                     }
 
-                    Assert.AreEqual(expected.Resolution[key].ToString(), actual.Resolution[key].ToString(), GetMessage(testSpec));
+                    foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
+                    {
+                        if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))
+                        {
+                            continue;
+                        }
+
+                        Assert.AreEqual(expected.Resolution[key].ToString(), actual.Resolution[key].ToString(),
+                                        GetMessage(testSpec));
+                    }
                 }
             }
         }

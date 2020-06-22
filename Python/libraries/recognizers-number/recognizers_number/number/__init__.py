@@ -8,3 +8,4 @@ from .french import *
 from .japanese import *
 from .number_recognizer import *
 from .parser_factory import *
+from .utilities import *

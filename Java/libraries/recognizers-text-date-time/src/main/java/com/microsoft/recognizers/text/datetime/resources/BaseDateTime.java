@@ -52,7 +52,7 @@ public class BaseDateTime {
 
     public static final int MaxTwoDigitYearFutureNum = 30;
 
-    public static final int MinTwoDigitYearPastNum = 70;
+    public static final int MinTwoDigitYearPastNum = 40;
 
     public static final ImmutableMap<String, Integer> DayOfMonthDictionary = ImmutableMap.<String, Integer>builder()
         .put("01", 1)

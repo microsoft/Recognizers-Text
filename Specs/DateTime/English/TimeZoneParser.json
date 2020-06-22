@@ -924,5 +924,101 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "Kiribati's Line Islands is in UTC+14",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "utc+14",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+14:00",
+            "UtcOffsetMins": 840
+          }
+        },
+        "Start": 30,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "All deadlines are 11.59 pm UTC -12h (\"anywhere on Earth / AoE\")",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "UTC -12h",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-12:00",
+            "UtcOffsetMins": -720
+          }
+        },
+        "Start": 27,
+        "Length": 8
+      },
+      {
+        "Text": "anywhere on earth",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-12:00",
+            "UtcOffsetMins": -720
+          }
+        },
+        "Start": 38,
+        "Length": 17
+      },
+      {
+        "Text": "aoe",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-12:00",
+            "UtcOffsetMins": -720
+          }
+        },
+        "Start": 58,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Don't forget we're in UK time",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "uk time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 22,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Can you find a slot in a US-friendly time?",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "US-friendly time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 25,
+        "Length": 16
+      }
+    ]
   }
 ]

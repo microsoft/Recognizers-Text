@@ -136,6 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
+        // @TODO Move time range resolution to common policy
+
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
@@ -180,6 +182,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public int GetSwiftPrefix(string text)
         {
             var trimmedText = text.Trim();
+
+            // @TODO Move hardcoded terms to resource file
 
             var swift = 0;
             if (trimmedText.StartsWith("next"))

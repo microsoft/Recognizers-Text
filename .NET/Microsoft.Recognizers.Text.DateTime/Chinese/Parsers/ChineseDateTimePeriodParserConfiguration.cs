@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var referenceTime = refDate;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = MergeDateAndTimePeriod(er.Text, referenceTime);
                 if (!innerResult.Success)

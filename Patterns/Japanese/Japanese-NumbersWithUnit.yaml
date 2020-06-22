@@ -611,5 +611,13 @@ CurrencyAmbiguousValues: !list
   entries:
     - 円
     - 銭
+    - 分
+    - レク
+    - プル
+    - ブル
     - \
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

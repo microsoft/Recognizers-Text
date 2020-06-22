@@ -30,7 +30,7 @@ EqualRegex: !simpleRegex
 MinYearNum: 1500
 MaxYearNum: 2100
 MaxTwoDigitYearFutureNum: 30
-MinTwoDigitYearPastNum: 70
+MinTwoDigitYearPastNum: 40
 DayOfMonthDictionary: !dictionary
   types: [ string, int ]
   entries:

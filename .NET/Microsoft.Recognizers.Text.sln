@@ -19,6 +19,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
 	ProjectSection(SolutionItems) = preProject
 		..\Patterns\Arabic\Arabic-Choice.yaml = ..\Patterns\Arabic\Arabic-Choice.yaml
+		..\Patterns\Arabic\Arabic-Numbers.yaml = ..\Patterns\Arabic\Arabic-Numbers.yaml
 		..\Patterns\Base-Currency.yaml = ..\Patterns\Base-Currency.yaml
 		..\Patterns\Base-DateTime.yaml = ..\Patterns\Base-DateTime.yaml
 		..\Patterns\Base-Email.yaml = ..\Patterns\Base-Email.yaml
@@ -111,6 +112,697 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecognizerFunction", "Sampl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotBuilderRecognizerBot", "Samples\BotBuilder\BotBuilderRecognizerBot.csproj", "{5039FC31-E88A-45EC-811B-3C406162A863}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specs", "Specs", "{4406756F-4161-46CA-8021-DB26FD0CA2A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Choice", "Choice", "{55DDEF35-167D-45A5-B6D0-3747532E8314}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DateTime", "DateTime", "{5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Number", "Number", "{2DF9886B-9586-4C62-8D1C-A723F8688574}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NumberWithUnit", "NumberWithUnit", "{72FEAD3F-7C2A-4B85-9942-D9ADA122411A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sequence", "Sequence", "{59FC2C0D-BF12-4A99-BC50-A104948DB1DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese", "Chinese", "{16B24511-1D2F-47FE-BF6D-5C2B29F45279}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Chinese\IpAddressModel.json = ..\Specs\Sequence\Chinese\IpAddressModel.json
+		..\Specs\Sequence\Chinese\PhoneNumberModel.json = ..\Specs\Sequence\Chinese\PhoneNumberModel.json
+		..\Specs\Sequence\Chinese\URLModel.json = ..\Specs\Sequence\Chinese\URLModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dutch", "Dutch", "{7218D1B7-55C9-43E0-AA97-CD36B6DC2822}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Dutch\PhoneNumberModel.json = ..\Specs\Sequence\Dutch\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "English", "English", "{D80595E0-D724-466F-9F65-9F254B974C8A}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\English\EmailModel.json = ..\Specs\Sequence\English\EmailModel.json
+		..\Specs\Sequence\English\GUIDModel.json = ..\Specs\Sequence\English\GUIDModel.json
+		..\Specs\Sequence\English\HashtagModel.json = ..\Specs\Sequence\English\HashtagModel.json
+		..\Specs\Sequence\English\IpAddressModel.json = ..\Specs\Sequence\English\IpAddressModel.json
+		..\Specs\Sequence\English\MentionModel.json = ..\Specs\Sequence\English\MentionModel.json
+		..\Specs\Sequence\English\PhoneNumberModel.json = ..\Specs\Sequence\English\PhoneNumberModel.json
+		..\Specs\Sequence\English\URLModel.json = ..\Specs\Sequence\English\URLModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "French", "French", "{047F38CF-8AAA-4967-BDEF-5E2BC378670D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\French\PhoneNumberModel.json = ..\Specs\Sequence\French\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "German", "German", "{BCD91F42-F366-4F68-8A3B-7AC4EEF42534}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\German\PhoneNumberModel.json = ..\Specs\Sequence\German\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hindi", "Hindi", "{6DEA89B3-D580-48A4-BA52-8A077920AF09}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Hindi\PhoneNumberModel.json = ..\Specs\Sequence\Hindi\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Italian", "Italian", "{04F976D1-D026-4511-A414-FF318BEF3321}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Italian\PhoneNumberModel.json = ..\Specs\Sequence\Italian\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Japanese", "Japanese", "{81B5C120-8A99-42BF-88DD-0A8F0147142D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Japanese\IpAddressModel.json = ..\Specs\Sequence\Japanese\IpAddressModel.json
+		..\Specs\Sequence\Japanese\PhoneNumberModel.json = ..\Specs\Sequence\Japanese\PhoneNumberModel.json
+		..\Specs\Sequence\Japanese\URLModel.json = ..\Specs\Sequence\Japanese\URLModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean", "Korean", "{93CE72CE-A624-4075-B2DD-392F4D42DC77}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Korean\PhoneNumberModel.json = ..\Specs\Sequence\Korean\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portuguese", "Portuguese", "{C47CD83C-F6DC-4580-A143-A5C11EA9377A}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Portuguese\IpAddressModel.json = ..\Specs\Sequence\Portuguese\IpAddressModel.json
+		..\Specs\Sequence\Portuguese\PhoneNumberModel.json = ..\Specs\Sequence\Portuguese\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{D64B181C-B07E-4531-A016-14E9D827EB87}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Spanish\PhoneNumberModel.json = ..\Specs\Sequence\Spanish\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{18C2DA46-BF61-4F87-B645-443D6525545A}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Turkish\PhoneNumberModel.json = ..\Specs\Sequence\Turkish\PhoneNumberModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arabic", "Arabic", "{78A33B3C-6340-4EE8-B802-63618D008AFF}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Arabic\BooleanModel.json = ..\Specs\Choice\Arabic\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bulgarian", "Bulgarian", "{39E7797E-768E-4170-9C29-5DAEE70D86E2}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Bulgarian\BooleanModel.json = ..\Specs\Choice\Bulgarian\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese", "Chinese", "{39E7797E-768E-4170-9C29-5DAEE70D86E3}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Chinese\BooleanModel.json = ..\Specs\Choice\Chinese\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dutch", "Dutch", "{39E7797E-768E-4170-9C29-5DAEE70D86E4}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Dutch\BooleanModel.json = ..\Specs\Choice\Dutch\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "English", "English", "{39E7797E-768E-4170-9C29-5DAEE70D86E5}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\English\BooleanModel.json = ..\Specs\Choice\English\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "French", "French", "{39E7797E-768E-4170-9C29-5DAEE70D86E6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\French\BooleanModel.json = ..\Specs\Choice\French\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "German", "German", "{39E7797E-768E-4170-9C29-5DAEE70D86E7}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\German\BooleanModel.json = ..\Specs\Choice\German\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hindi", "Hindi", "{39E7797E-768E-4170-9C29-5DAEE70D86E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Hindi\BooleanModel.json = ..\Specs\Choice\Hindi\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Italian", "Italian", "{39E7797E-768E-4170-9C29-5DAEE70D86E9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Italian\BooleanModel.json = ..\Specs\Choice\Italian\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Japanese", "Japanese", "{39E7797E-768E-4170-9C29-5DAEE70D86F0}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Japanese\BooleanModel.json = ..\Specs\Choice\Japanese\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean", "Korean", "{39E7797E-768E-4170-9C29-5DAEE70D86F1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Korean\BooleanModel.json = ..\Specs\Choice\Korean\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portuguese", "Portuguese", "{39E7797E-768E-4170-9C29-5DAEE70D86F2}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Portuguese\BooleanModel.json = ..\Specs\Choice\Portuguese\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{39E7797E-768E-4170-9C29-5DAEE70D86F3}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Spanish\BooleanModel.json = ..\Specs\Choice\Spanish\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{39E7797E-768E-4170-9C29-5DAEE70D86F4}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Swedish\BooleanModel.json = ..\Specs\Choice\Swedish\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{39E7797E-768E-4170-9C29-5DAEE70D86F5}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Choice\Turkish\BooleanModel.json = ..\Specs\Choice\Turkish\BooleanModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arabic", "Arabic", "{19152546-2D99-476A-9DCB-A3D8F70418A3}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Arabic\NumberModel.json = ..\Specs\Number\Arabic\NumberModel.json
+		..\Specs\Number\Arabic\NumberRangeModel.json = ..\Specs\Number\Arabic\NumberRangeModel.json
+		..\Specs\Number\Arabic\OrdinalModel.json = ..\Specs\Number\Arabic\OrdinalModel.json
+		..\Specs\Number\Arabic\PercentModel.json = ..\Specs\Number\Arabic\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese", "Chinese", "{19152546-2D99-476A-9DCB-A3D8F70418A4}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Chinese\NumberModel.json = ..\Specs\Number\Chinese\NumberModel.json
+		..\Specs\Number\Chinese\NumberRangeModel.json = ..\Specs\Number\Chinese\NumberRangeModel.json
+		..\Specs\Number\Chinese\NumberRangeModelExperimentalMode.json = ..\Specs\Number\Chinese\NumberRangeModelExperimentalMode.json
+		..\Specs\Number\Chinese\OrdinalModel.json = ..\Specs\Number\Chinese\OrdinalModel.json
+		..\Specs\Number\Chinese\PercentModel.json = ..\Specs\Number\Chinese\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dutch", "Dutch", "{19152546-2D99-476A-9DCB-A3D8F70418A5}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Dutch\NumberModel.json = ..\Specs\Number\Dutch\NumberModel.json
+		..\Specs\Number\Dutch\NumberModelPercentMode.json = ..\Specs\Number\Dutch\NumberModelPercentMode.json
+		..\Specs\Number\Dutch\NumberRangeModel.json = ..\Specs\Number\Dutch\NumberRangeModel.json
+		..\Specs\Number\Dutch\OrdinalModel.json = ..\Specs\Number\Dutch\OrdinalModel.json
+		..\Specs\Number\Dutch\PercentModel.json = ..\Specs\Number\Dutch\PercentModel.json
+		..\Specs\Number\Dutch\PercentModelPercentMode.json = ..\Specs\Number\Dutch\PercentModelPercentMode.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "English", "English", "{19152546-2D99-476A-9DCB-A3D8F70418A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\English\NumberModel.json = ..\Specs\Number\English\NumberModel.json
+		..\Specs\Number\English\NumberModelExperimentalMode.json = ..\Specs\Number\English\NumberModelExperimentalMode.json
+		..\Specs\Number\English\NumberModelPercentMode.json = ..\Specs\Number\English\NumberModelPercentMode.json
+		..\Specs\Number\English\NumberRangeModel.json = ..\Specs\Number\English\NumberRangeModel.json
+		..\Specs\Number\English\NumberRangeModelExperimentalMode.json = ..\Specs\Number\English\NumberRangeModelExperimentalMode.json
+		..\Specs\Number\English\OrdinalModel.json = ..\Specs\Number\English\OrdinalModel.json
+		..\Specs\Number\English\OrdinalModelSuppressExtendedTypes.json = ..\Specs\Number\English\OrdinalModelSuppressExtendedTypes.json
+		..\Specs\Number\English\PercentModel.json = ..\Specs\Number\English\PercentModel.json
+		..\Specs\Number\English\PercentModelPercentMode.json = ..\Specs\Number\English\PercentModelPercentMode.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "French", "French", "{19152546-2D99-476A-9DCB-A3D8F70418A7}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\French\NumberModel.json = ..\Specs\Number\French\NumberModel.json
+		..\Specs\Number\French\OrdinalModel.json = ..\Specs\Number\French\OrdinalModel.json
+		..\Specs\Number\French\PercentModel.json = ..\Specs\Number\French\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "German", "German", "{19152546-2D99-476A-9DCB-A3D8F70418A8}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\German\NumberModel.json = ..\Specs\Number\German\NumberModel.json
+		..\Specs\Number\German\OrdinalModel.json = ..\Specs\Number\German\OrdinalModel.json
+		..\Specs\Number\German\OrdinalModelEnablePreview.json = ..\Specs\Number\German\OrdinalModelEnablePreview.json
+		..\Specs\Number\German\PercentModel.json = ..\Specs\Number\German\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hindi", "Hindi", "{19152546-2D99-476A-9DCB-A3D8F70418A9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Hindi\NumberModel.json = ..\Specs\Number\Hindi\NumberModel.json
+		..\Specs\Number\Hindi\NumberRangeModel.json = ..\Specs\Number\Hindi\NumberRangeModel.json
+		..\Specs\Number\Hindi\OrdinalModel.json = ..\Specs\Number\Hindi\OrdinalModel.json
+		..\Specs\Number\Hindi\PercentModel.json = ..\Specs\Number\Hindi\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Italian", "Italian", "{19152546-2D99-476A-9DCB-A3D8F70418B0}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Italian\NumberModel.json = ..\Specs\Number\Italian\NumberModel.json
+		..\Specs\Number\Italian\NumberRangeModel.json = ..\Specs\Number\Italian\NumberRangeModel.json
+		..\Specs\Number\Italian\OrdinalModel.json = ..\Specs\Number\Italian\OrdinalModel.json
+		..\Specs\Number\Italian\PercentModel.json = ..\Specs\Number\Italian\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Japanese", "Japanese", "{19152546-2D99-476A-9DCB-A3D8F70418B1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Japanese\NumberModel.json = ..\Specs\Number\Japanese\NumberModel.json
+		..\Specs\Number\Japanese\NumberRangeModel.json = ..\Specs\Number\Japanese\NumberRangeModel.json
+		..\Specs\Number\Japanese\NumberRangeModelExperimentalMode.json = ..\Specs\Number\Japanese\NumberRangeModelExperimentalMode.json
+		..\Specs\Number\Japanese\OrdinalModel.json = ..\Specs\Number\Japanese\OrdinalModel.json
+		..\Specs\Number\Japanese\PercentModel.json = ..\Specs\Number\Japanese\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean", "Korean", "{19152546-2D99-476A-9DCB-A3D8F70418B2}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Korean\NumberModel.json = ..\Specs\Number\Korean\NumberModel.json
+		..\Specs\Number\Korean\NumberModelPercentMode.json = ..\Specs\Number\Korean\NumberModelPercentMode.json
+		..\Specs\Number\Korean\NumberRangeModel.json = ..\Specs\Number\Korean\NumberRangeModel.json
+		..\Specs\Number\Korean\OrdinalModel.json = ..\Specs\Number\Korean\OrdinalModel.json
+		..\Specs\Number\Korean\PercentModel.json = ..\Specs\Number\Korean\PercentModel.json
+		..\Specs\Number\Korean\PercentModelPercentMode.json = ..\Specs\Number\Korean\PercentModelPercentMode.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portuguese", "Portuguese", "{19152546-2D99-476A-9DCB-A3D8F70418B3}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Portuguese\NumberModel.json = ..\Specs\Number\Portuguese\NumberModel.json
+		..\Specs\Number\Portuguese\OrdinalModel.json = ..\Specs\Number\Portuguese\OrdinalModel.json
+		..\Specs\Number\Portuguese\PercentModel.json = ..\Specs\Number\Portuguese\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{19152546-2D99-476A-9DCB-A3D8F70418B4}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Spanish\NumberModel.json = ..\Specs\Number\Spanish\NumberModel.json
+		..\Specs\Number\Spanish\NumberRangeModel.json = ..\Specs\Number\Spanish\NumberRangeModel.json
+		..\Specs\Number\Spanish\OrdinalModel.json = ..\Specs\Number\Spanish\OrdinalModel.json
+		..\Specs\Number\Spanish\PercentModel.json = ..\Specs\Number\Spanish\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{19152546-2D99-476A-9DCB-A3D8F70418B5}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Swedish\NumberModel.json = ..\Specs\Number\Swedish\NumberModel.json
+		..\Specs\Number\Swedish\OrdinalModel.json = ..\Specs\Number\Swedish\OrdinalModel.json
+		..\Specs\Number\Swedish\PercentModel.json = ..\Specs\Number\Swedish\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{19152546-2D99-476A-9DCB-A3D8F70418B6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Number\Turkish\NumberModel.json = ..\Specs\Number\Turkish\NumberModel.json
+		..\Specs\Number\Turkish\NumberRangeModel.json = ..\Specs\Number\Turkish\NumberRangeModel.json
+		..\Specs\Number\Turkish\OrdinalModel.json = ..\Specs\Number\Turkish\OrdinalModel.json
+		..\Specs\Number\Turkish\PercentModel.json = ..\Specs\Number\Turkish\PercentModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese", "Chinese", "{97D22337-7EC5-46CF-B619-C54FFD0BD5EB}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Chinese\AgeModel.json = ..\Specs\NumberWithUnit\Chinese\AgeModel.json
+		..\Specs\NumberWithUnit\Chinese\CurrencyModel.json = ..\Specs\NumberWithUnit\Chinese\CurrencyModel.json
+		..\Specs\NumberWithUnit\Chinese\DimensionModel.json = ..\Specs\NumberWithUnit\Chinese\DimensionModel.json
+		..\Specs\NumberWithUnit\Chinese\TemperatureModel.json = ..\Specs\NumberWithUnit\Chinese\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dutch", "Dutch", "{97D22337-7EC5-46CF-B619-C54FFD0BD5EC}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Dutch\AgeModel.json = ..\Specs\NumberWithUnit\Dutch\AgeModel.json
+		..\Specs\NumberWithUnit\Dutch\CurrencyModel.json = ..\Specs\NumberWithUnit\Dutch\CurrencyModel.json
+		..\Specs\NumberWithUnit\Dutch\DimensionModel.json = ..\Specs\NumberWithUnit\Dutch\DimensionModel.json
+		..\Specs\NumberWithUnit\Dutch\TemperatureModel.json = ..\Specs\NumberWithUnit\Dutch\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "English", "English", "{97D22337-7EC5-46CF-B619-C54FFD0BD5ED}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\English\AgeModel.json = ..\Specs\NumberWithUnit\English\AgeModel.json
+		..\Specs\NumberWithUnit\English\CurrencyModel.json = ..\Specs\NumberWithUnit\English\CurrencyModel.json
+		..\Specs\NumberWithUnit\English\DimensionModel.json = ..\Specs\NumberWithUnit\English\DimensionModel.json
+		..\Specs\NumberWithUnit\English\TemperatureModel.json = ..\Specs\NumberWithUnit\English\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "French", "French", "{97D22337-7EC5-46CF-B619-C54FFD0BD5EE}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\French\AgeModel.json = ..\Specs\NumberWithUnit\French\AgeModel.json
+		..\Specs\NumberWithUnit\French\CurrencyModel.json = ..\Specs\NumberWithUnit\French\CurrencyModel.json
+		..\Specs\NumberWithUnit\French\DimensionModel.json = ..\Specs\NumberWithUnit\French\DimensionModel.json
+		..\Specs\NumberWithUnit\French\TemperatureModel.json = ..\Specs\NumberWithUnit\French\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "German", "German", "{97D22337-7EC5-46CF-B619-C54FFD0BD5EF}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\German\AgeModel.json = ..\Specs\NumberWithUnit\German\AgeModel.json
+		..\Specs\NumberWithUnit\German\CurrencyModel.json = ..\Specs\NumberWithUnit\German\CurrencyModel.json
+		..\Specs\NumberWithUnit\German\DimensionModel.json = ..\Specs\NumberWithUnit\German\DimensionModel.json
+		..\Specs\NumberWithUnit\German\TemperatureModel.json = ..\Specs\NumberWithUnit\German\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hindi", "Hindi", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F0}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Hindi\AgeModel.json = ..\Specs\NumberWithUnit\Hindi\AgeModel.json
+		..\Specs\NumberWithUnit\Hindi\CurrencyModel.json = ..\Specs\NumberWithUnit\Hindi\CurrencyModel.json
+		..\Specs\NumberWithUnit\Hindi\DimensionModel.json = ..\Specs\NumberWithUnit\Hindi\DimensionModel.json
+		..\Specs\NumberWithUnit\Hindi\TemperatureModel.json = ..\Specs\NumberWithUnit\Hindi\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Italian", "Italian", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Italian\AgeModel.json = ..\Specs\NumberWithUnit\Italian\AgeModel.json
+		..\Specs\NumberWithUnit\Italian\CurrencyModel.json = ..\Specs\NumberWithUnit\Italian\CurrencyModel.json
+		..\Specs\NumberWithUnit\Italian\DimensionModel.json = ..\Specs\NumberWithUnit\Italian\DimensionModel.json
+		..\Specs\NumberWithUnit\Italian\TemperatureModel.json = ..\Specs\NumberWithUnit\Italian\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Japanese", "Japanese", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F2}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Japanese\AgeModel.json = ..\Specs\NumberWithUnit\Japanese\AgeModel.json
+		..\Specs\NumberWithUnit\Japanese\CurrencyModel.json = ..\Specs\NumberWithUnit\Japanese\CurrencyModel.json
+		..\Specs\NumberWithUnit\Japanese\DimensionModel.json = ..\Specs\NumberWithUnit\Japanese\DimensionModel.json
+		..\Specs\NumberWithUnit\Japanese\TemperatureModel.json = ..\Specs\NumberWithUnit\Japanese\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean", "Korean", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F3}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Korean\AgeModel.json = ..\Specs\NumberWithUnit\Korean\AgeModel.json
+		..\Specs\NumberWithUnit\Korean\CurrencyModel.json = ..\Specs\NumberWithUnit\Korean\CurrencyModel.json
+		..\Specs\NumberWithUnit\Korean\DimensionModel.json = ..\Specs\NumberWithUnit\Korean\DimensionModel.json
+		..\Specs\NumberWithUnit\Korean\TemperatureModel.json = ..\Specs\NumberWithUnit\Korean\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portuguese", "Portuguese", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F4}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Portuguese\AgeModel.json = ..\Specs\NumberWithUnit\Portuguese\AgeModel.json
+		..\Specs\NumberWithUnit\Portuguese\CurrencyModel.json = ..\Specs\NumberWithUnit\Portuguese\CurrencyModel.json
+		..\Specs\NumberWithUnit\Portuguese\DimensionModel.json = ..\Specs\NumberWithUnit\Portuguese\DimensionModel.json
+		..\Specs\NumberWithUnit\Portuguese\TemperatureModel.json = ..\Specs\NumberWithUnit\Portuguese\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F5}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Spanish\AgeModel.json = ..\Specs\NumberWithUnit\Spanish\AgeModel.json
+		..\Specs\NumberWithUnit\Spanish\CurrencyModel.json = ..\Specs\NumberWithUnit\Spanish\CurrencyModel.json
+		..\Specs\NumberWithUnit\Spanish\DimensionModel.json = ..\Specs\NumberWithUnit\Spanish\DimensionModel.json
+		..\Specs\NumberWithUnit\Spanish\TemperatureModel.json = ..\Specs\NumberWithUnit\Spanish\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Turkish\AgeModel.json = ..\Specs\NumberWithUnit\Turkish\AgeModel.json
+		..\Specs\NumberWithUnit\Turkish\CurrencyModel.json = ..\Specs\NumberWithUnit\Turkish\CurrencyModel.json
+		..\Specs\NumberWithUnit\Turkish\DimensionModel.json = ..\Specs\NumberWithUnit\Turkish\DimensionModel.json
+		..\Specs\NumberWithUnit\Turkish\TemperatureModel.json = ..\Specs\NumberWithUnit\Turkish\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese", "Chinese", "{2F41FB40-EA08-469A-A676-138F2E7C6273}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Chinese\DateExtractor.json = ..\Specs\DateTime\Chinese\DateExtractor.json
+		..\Specs\DateTime\Chinese\DateParser.json = ..\Specs\DateTime\Chinese\DateParser.json
+		..\Specs\DateTime\Chinese\DatePeriodExtractor.json = ..\Specs\DateTime\Chinese\DatePeriodExtractor.json
+		..\Specs\DateTime\Chinese\DatePeriodParser.json = ..\Specs\DateTime\Chinese\DatePeriodParser.json
+		..\Specs\DateTime\Chinese\DateTimeExtractor.json = ..\Specs\DateTime\Chinese\DateTimeExtractor.json
+		..\Specs\DateTime\Chinese\DateTimeModel.json = ..\Specs\DateTime\Chinese\DateTimeModel.json
+		..\Specs\DateTime\Chinese\DateTimeModelExperimentalMode.json = ..\Specs\DateTime\Chinese\DateTimeModelExperimentalMode.json
+		..\Specs\DateTime\Chinese\DateTimeParser.json = ..\Specs\DateTime\Chinese\DateTimeParser.json
+		..\Specs\DateTime\Chinese\DateTimePeriodExtractor.json = ..\Specs\DateTime\Chinese\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Chinese\DateTimePeriodParser.json = ..\Specs\DateTime\Chinese\DateTimePeriodParser.json
+		..\Specs\DateTime\Chinese\DurationExtractor.json = ..\Specs\DateTime\Chinese\DurationExtractor.json
+		..\Specs\DateTime\Chinese\DurationParser.json = ..\Specs\DateTime\Chinese\DurationParser.json
+		..\Specs\DateTime\Chinese\HolidayExtractor.json = ..\Specs\DateTime\Chinese\HolidayExtractor.json
+		..\Specs\DateTime\Chinese\HolidayParser.json = ..\Specs\DateTime\Chinese\HolidayParser.json
+		..\Specs\DateTime\Chinese\MergedExtractor.json = ..\Specs\DateTime\Chinese\MergedExtractor.json
+		..\Specs\DateTime\Chinese\MergedParser.json = ..\Specs\DateTime\Chinese\MergedParser.json
+		..\Specs\DateTime\Chinese\SetExtractor.json = ..\Specs\DateTime\Chinese\SetExtractor.json
+		..\Specs\DateTime\Chinese\SetParser.json = ..\Specs\DateTime\Chinese\SetParser.json
+		..\Specs\DateTime\Chinese\TimeExtractor.json = ..\Specs\DateTime\Chinese\TimeExtractor.json
+		..\Specs\DateTime\Chinese\TimeParser.json = ..\Specs\DateTime\Chinese\TimeParser.json
+		..\Specs\DateTime\Chinese\TimePeriodExtractor.json = ..\Specs\DateTime\Chinese\TimePeriodExtractor.json
+		..\Specs\DateTime\Chinese\TimePeriodParser.json = ..\Specs\DateTime\Chinese\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dutch", "Dutch", "{2F41FB40-EA08-469A-A676-138F2E7C6274}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Dutch\DateExtractor.json = ..\Specs\DateTime\Dutch\DateExtractor.json
+		..\Specs\DateTime\Dutch\DateParser.json = ..\Specs\DateTime\Dutch\DateParser.json
+		..\Specs\DateTime\Dutch\DatePeriodExtractor.json = ..\Specs\DateTime\Dutch\DatePeriodExtractor.json
+		..\Specs\DateTime\Dutch\DatePeriodParser.json = ..\Specs\DateTime\Dutch\DatePeriodParser.json
+		..\Specs\DateTime\Dutch\DateTimeExtractor.json = ..\Specs\DateTime\Dutch\DateTimeExtractor.json
+		..\Specs\DateTime\Dutch\DateTimeModel.json = ..\Specs\DateTime\Dutch\DateTimeModel.json
+		..\Specs\DateTime\Dutch\DateTimeParser.json = ..\Specs\DateTime\Dutch\DateTimeParser.json
+		..\Specs\DateTime\Dutch\DateTimePeriodExtractor.json = ..\Specs\DateTime\Dutch\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Dutch\DateTimePeriodParser.json = ..\Specs\DateTime\Dutch\DateTimePeriodParser.json
+		..\Specs\DateTime\Dutch\DurationExtractor.json = ..\Specs\DateTime\Dutch\DurationExtractor.json
+		..\Specs\DateTime\Dutch\DurationParser.json = ..\Specs\DateTime\Dutch\DurationParser.json
+		..\Specs\DateTime\Dutch\HolidayExtractor.json = ..\Specs\DateTime\Dutch\HolidayExtractor.json
+		..\Specs\DateTime\Dutch\HolidayParser.json = ..\Specs\DateTime\Dutch\HolidayParser.json
+		..\Specs\DateTime\Dutch\MergedExtractor.json = ..\Specs\DateTime\Dutch\MergedExtractor.json
+		..\Specs\DateTime\Dutch\SetExtractor.json = ..\Specs\DateTime\Dutch\SetExtractor.json
+		..\Specs\DateTime\Dutch\TimeExtractor.json = ..\Specs\DateTime\Dutch\TimeExtractor.json
+		..\Specs\DateTime\Dutch\TimeParser.json = ..\Specs\DateTime\Dutch\TimeParser.json
+		..\Specs\DateTime\Dutch\TimePeriodExtractor.json = ..\Specs\DateTime\Dutch\TimePeriodExtractor.json
+		..\Specs\DateTime\Dutch\TimePeriodParser.json = ..\Specs\DateTime\Dutch\TimePeriodParser.json
+		..\Specs\DateTime\Dutch\TimeZoneParser.json = ..\Specs\DateTime\Dutch\TimeZoneParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "English", "English", "{2F41FB40-EA08-469A-A676-138F2E7C6275}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\English\DateExtractor.json = ..\Specs\DateTime\English\DateExtractor.json
+		..\Specs\DateTime\English\DateParser.json = ..\Specs\DateTime\English\DateParser.json
+		..\Specs\DateTime\English\DatePeriodExtractor.json = ..\Specs\DateTime\English\DatePeriodExtractor.json
+		..\Specs\DateTime\English\DatePeriodParser.json = ..\Specs\DateTime\English\DatePeriodParser.json
+		..\Specs\DateTime\English\DateTimeExtractor.json = ..\Specs\DateTime\English\DateTimeExtractor.json
+		..\Specs\DateTime\English\DateTimeModel.json = ..\Specs\DateTime\English\DateTimeModel.json
+		..\Specs\DateTime\English\DateTimeModelCalendarMode.json = ..\Specs\DateTime\English\DateTimeModelCalendarMode.json
+		..\Specs\DateTime\English\DateTimeModelComplexCalendar.json = ..\Specs\DateTime\English\DateTimeModelComplexCalendar.json
+		..\Specs\DateTime\English\DateTimeModelExperimentalMode.json = ..\Specs\DateTime\English\DateTimeModelExperimentalMode.json
+		..\Specs\DateTime\English\DateTimeModelExtendedTypes.json = ..\Specs\DateTime\English\DateTimeModelExtendedTypes.json
+		..\Specs\DateTime\English\DateTimeModelSplitDateAndTime.json = ..\Specs\DateTime\English\DateTimeModelSplitDateAndTime.json
+		..\Specs\DateTime\English\DateTimeParser.json = ..\Specs\DateTime\English\DateTimeParser.json
+		..\Specs\DateTime\English\DateTimePeriodExtractor.json = ..\Specs\DateTime\English\DateTimePeriodExtractor.json
+		..\Specs\DateTime\English\DateTimePeriodParser.json = ..\Specs\DateTime\English\DateTimePeriodParser.json
+		..\Specs\DateTime\English\DurationExtractor.json = ..\Specs\DateTime\English\DurationExtractor.json
+		..\Specs\DateTime\English\DurationParser.json = ..\Specs\DateTime\English\DurationParser.json
+		..\Specs\DateTime\English\HolidayExtractor.json = ..\Specs\DateTime\English\HolidayExtractor.json
+		..\Specs\DateTime\English\HolidayParser.json = ..\Specs\DateTime\English\HolidayParser.json
+		..\Specs\DateTime\English\MergedExtractor.json = ..\Specs\DateTime\English\MergedExtractor.json
+		..\Specs\DateTime\English\MergedExtractorSkipFromTo.json = ..\Specs\DateTime\English\MergedExtractorSkipFromTo.json
+		..\Specs\DateTime\English\MergedParser.json = ..\Specs\DateTime\English\MergedParser.json
+		..\Specs\DateTime\English\SetExtractor.json = ..\Specs\DateTime\English\SetExtractor.json
+		..\Specs\DateTime\English\SetParser.json = ..\Specs\DateTime\English\SetParser.json
+		..\Specs\DateTime\English\TimeExtractor.json = ..\Specs\DateTime\English\TimeExtractor.json
+		..\Specs\DateTime\English\TimeParser.json = ..\Specs\DateTime\English\TimeParser.json
+		..\Specs\DateTime\English\TimePeriodExtractor.json = ..\Specs\DateTime\English\TimePeriodExtractor.json
+		..\Specs\DateTime\English\TimePeriodParser.json = ..\Specs\DateTime\English\TimePeriodParser.json
+		..\Specs\DateTime\English\TimeZoneExtractor.json = ..\Specs\DateTime\English\TimeZoneExtractor.json
+		..\Specs\DateTime\English\TimeZoneParser.json = ..\Specs\DateTime\English\TimeZoneParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnglishOthers", "EnglishOthers", "{2F41FB40-EA08-469A-A676-138F2E7C6276}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\EnglishOthers\DateParser.json = ..\Specs\DateTime\EnglishOthers\DateParser.json
+		..\Specs\DateTime\EnglishOthers\DateTimeModel.json = ..\Specs\DateTime\EnglishOthers\DateTimeModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "French", "French", "{2F41FB40-EA08-469A-A676-138F2E7C6277}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\French\DateExtractor.json = ..\Specs\DateTime\French\DateExtractor.json
+		..\Specs\DateTime\French\DateParser.json = ..\Specs\DateTime\French\DateParser.json
+		..\Specs\DateTime\French\DatePeriodExtractor.json = ..\Specs\DateTime\French\DatePeriodExtractor.json
+		..\Specs\DateTime\French\DatePeriodParser.json = ..\Specs\DateTime\French\DatePeriodParser.json
+		..\Specs\DateTime\French\DateTimeExtractor.json = ..\Specs\DateTime\French\DateTimeExtractor.json
+		..\Specs\DateTime\French\DateTimeModel.json = ..\Specs\DateTime\French\DateTimeModel.json
+		..\Specs\DateTime\French\DateTimeParser.json = ..\Specs\DateTime\French\DateTimeParser.json
+		..\Specs\DateTime\French\DateTimePeriodExtractor.json = ..\Specs\DateTime\French\DateTimePeriodExtractor.json
+		..\Specs\DateTime\French\DateTimePeriodParser.json = ..\Specs\DateTime\French\DateTimePeriodParser.json
+		..\Specs\DateTime\French\DurationExtractor.json = ..\Specs\DateTime\French\DurationExtractor.json
+		..\Specs\DateTime\French\DurationParser.json = ..\Specs\DateTime\French\DurationParser.json
+		..\Specs\DateTime\French\HolidayExtractor.json = ..\Specs\DateTime\French\HolidayExtractor.json
+		..\Specs\DateTime\French\HolidayParser.json = ..\Specs\DateTime\French\HolidayParser.json
+		..\Specs\DateTime\French\MergedExtractor.json = ..\Specs\DateTime\French\MergedExtractor.json
+		..\Specs\DateTime\French\MergedExtractorSkipFromTo.json = ..\Specs\DateTime\French\MergedExtractorSkipFromTo.json
+		..\Specs\DateTime\French\MergedParser.json = ..\Specs\DateTime\French\MergedParser.json
+		..\Specs\DateTime\French\SetExtractor.json = ..\Specs\DateTime\French\SetExtractor.json
+		..\Specs\DateTime\French\SetParser.json = ..\Specs\DateTime\French\SetParser.json
+		..\Specs\DateTime\French\TimeExtractor.json = ..\Specs\DateTime\French\TimeExtractor.json
+		..\Specs\DateTime\French\TimeParser.json = ..\Specs\DateTime\French\TimeParser.json
+		..\Specs\DateTime\French\TimePeriodExtractor.json = ..\Specs\DateTime\French\TimePeriodExtractor.json
+		..\Specs\DateTime\French\TimePeriodParser.json = ..\Specs\DateTime\French\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "German", "German", "{2F41FB40-EA08-469A-A676-138F2E7C6278}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\German\DateExtractor.json = ..\Specs\DateTime\German\DateExtractor.json
+		..\Specs\DateTime\German\DateParser.json = ..\Specs\DateTime\German\DateParser.json
+		..\Specs\DateTime\German\DatePeriodExtractor.json = ..\Specs\DateTime\German\DatePeriodExtractor.json
+		..\Specs\DateTime\German\DatePeriodParser.json = ..\Specs\DateTime\German\DatePeriodParser.json
+		..\Specs\DateTime\German\DateTimeExtractor.json = ..\Specs\DateTime\German\DateTimeExtractor.json
+		..\Specs\DateTime\German\DateTimeModel.json = ..\Specs\DateTime\German\DateTimeModel.json
+		..\Specs\DateTime\German\DateTimeModelCalendarMode.json = ..\Specs\DateTime\German\DateTimeModelCalendarMode.json
+		..\Specs\DateTime\German\DateTimeModelSplitDateAndTime.json = ..\Specs\DateTime\German\DateTimeModelSplitDateAndTime.json
+		..\Specs\DateTime\German\DateTimeParser.json = ..\Specs\DateTime\German\DateTimeParser.json
+		..\Specs\DateTime\German\DateTimePeriodExtractor.json = ..\Specs\DateTime\German\DateTimePeriodExtractor.json
+		..\Specs\DateTime\German\DateTimePeriodParser.json = ..\Specs\DateTime\German\DateTimePeriodParser.json
+		..\Specs\DateTime\German\DurationExtractor.json = ..\Specs\DateTime\German\DurationExtractor.json
+		..\Specs\DateTime\German\DurationParser.json = ..\Specs\DateTime\German\DurationParser.json
+		..\Specs\DateTime\German\HolidayExtractor.json = ..\Specs\DateTime\German\HolidayExtractor.json
+		..\Specs\DateTime\German\HolidayParser.json = ..\Specs\DateTime\German\HolidayParser.json
+		..\Specs\DateTime\German\MergedExtractor.json = ..\Specs\DateTime\German\MergedExtractor.json
+		..\Specs\DateTime\German\MergedExtractorSkipFromTo.json = ..\Specs\DateTime\German\MergedExtractorSkipFromTo.json
+		..\Specs\DateTime\German\MergedParser.json = ..\Specs\DateTime\German\MergedParser.json
+		..\Specs\DateTime\German\SetExtractor.json = ..\Specs\DateTime\German\SetExtractor.json
+		..\Specs\DateTime\German\SetParser.json = ..\Specs\DateTime\German\SetParser.json
+		..\Specs\DateTime\German\TimeExtractor.json = ..\Specs\DateTime\German\TimeExtractor.json
+		..\Specs\DateTime\German\TimeParser.json = ..\Specs\DateTime\German\TimeParser.json
+		..\Specs\DateTime\German\TimePeriodExtractor.json = ..\Specs\DateTime\German\TimePeriodExtractor.json
+		..\Specs\DateTime\German\TimePeriodParser.json = ..\Specs\DateTime\German\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hindi", "Hindi", "{2F41FB40-EA08-469A-A676-138F2E7C6279}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Hindi\DateExtractor.json = ..\Specs\DateTime\Hindi\DateExtractor.json
+		..\Specs\DateTime\Hindi\DateParser.json = ..\Specs\DateTime\Hindi\DateParser.json
+		..\Specs\DateTime\Hindi\DatePeriodExtractor.json = ..\Specs\DateTime\Hindi\DatePeriodExtractor.json
+		..\Specs\DateTime\Hindi\DatePeriodParser.json = ..\Specs\DateTime\Hindi\DatePeriodParser.json
+		..\Specs\DateTime\Hindi\DateTimeExtractor.json = ..\Specs\DateTime\Hindi\DateTimeExtractor.json
+		..\Specs\DateTime\Hindi\DateTimeModel.json = ..\Specs\DateTime\Hindi\DateTimeModel.json
+		..\Specs\DateTime\Hindi\DateTimeParser.json = ..\Specs\DateTime\Hindi\DateTimeParser.json
+		..\Specs\DateTime\Hindi\DateTimePeriodExtractor.json = ..\Specs\DateTime\Hindi\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Hindi\DateTimePeriodParser.json = ..\Specs\DateTime\Hindi\DateTimePeriodParser.json
+		..\Specs\DateTime\Hindi\DurationExtractor.json = ..\Specs\DateTime\Hindi\DurationExtractor.json
+		..\Specs\DateTime\Hindi\DurationParser.json = ..\Specs\DateTime\Hindi\DurationParser.json
+		..\Specs\DateTime\Hindi\HolidayExtractor.json = ..\Specs\DateTime\Hindi\HolidayExtractor.json
+		..\Specs\DateTime\Hindi\HolidayParser.json = ..\Specs\DateTime\Hindi\HolidayParser.json
+		..\Specs\DateTime\Hindi\MergedExtractor.json = ..\Specs\DateTime\Hindi\MergedExtractor.json
+		..\Specs\DateTime\Hindi\MergedParser.json = ..\Specs\DateTime\Hindi\MergedParser.json
+		..\Specs\DateTime\Hindi\SetExtractor.json = ..\Specs\DateTime\Hindi\SetExtractor.json
+		..\Specs\DateTime\Hindi\SetParser.json = ..\Specs\DateTime\Hindi\SetParser.json
+		..\Specs\DateTime\Hindi\TimeExtractor.json = ..\Specs\DateTime\Hindi\TimeExtractor.json
+		..\Specs\DateTime\Hindi\TimeParser.json = ..\Specs\DateTime\Hindi\TimeParser.json
+		..\Specs\DateTime\Hindi\TimePeriodExtractor.json = ..\Specs\DateTime\Hindi\TimePeriodExtractor.json
+		..\Specs\DateTime\Hindi\TimePeriodParser.json = ..\Specs\DateTime\Hindi\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Italian", "Italian", "{2F41FB40-EA08-469A-A676-138F2E7C627A}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Italian\DateExtractor.json = ..\Specs\DateTime\Italian\DateExtractor.json
+		..\Specs\DateTime\Italian\DateParser.json = ..\Specs\DateTime\Italian\DateParser.json
+		..\Specs\DateTime\Italian\DatePeriodExtractor.json = ..\Specs\DateTime\Italian\DatePeriodExtractor.json
+		..\Specs\DateTime\Italian\DatePeriodParser.json = ..\Specs\DateTime\Italian\DatePeriodParser.json
+		..\Specs\DateTime\Italian\DateTimeExtractor.json = ..\Specs\DateTime\Italian\DateTimeExtractor.json
+		..\Specs\DateTime\Italian\DateTimeModel.json = ..\Specs\DateTime\Italian\DateTimeModel.json
+		..\Specs\DateTime\Italian\DateTimeModelCalendarMode.json = ..\Specs\DateTime\Italian\DateTimeModelCalendarMode.json
+		..\Specs\DateTime\Italian\DateTimeModelExtendedTypes.json = ..\Specs\DateTime\Italian\DateTimeModelExtendedTypes.json
+		..\Specs\DateTime\Italian\DateTimeModelSplitDateAndTime.json = ..\Specs\DateTime\Italian\DateTimeModelSplitDateAndTime.json
+		..\Specs\DateTime\Italian\DateTimeParser.json = ..\Specs\DateTime\Italian\DateTimeParser.json
+		..\Specs\DateTime\Italian\DateTimePeriodExtractor.json = ..\Specs\DateTime\Italian\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Italian\DateTimePeriodParser.json = ..\Specs\DateTime\Italian\DateTimePeriodParser.json
+		..\Specs\DateTime\Italian\DurationExtractor.json = ..\Specs\DateTime\Italian\DurationExtractor.json
+		..\Specs\DateTime\Italian\DurationParser.json = ..\Specs\DateTime\Italian\DurationParser.json
+		..\Specs\DateTime\Italian\HolidayExtractor.json = ..\Specs\DateTime\Italian\HolidayExtractor.json
+		..\Specs\DateTime\Italian\HolidayParser.json = ..\Specs\DateTime\Italian\HolidayParser.json
+		..\Specs\DateTime\Italian\MergedExtractor.json = ..\Specs\DateTime\Italian\MergedExtractor.json
+		..\Specs\DateTime\Italian\MergedExtractorSkipFromTo.json = ..\Specs\DateTime\Italian\MergedExtractorSkipFromTo.json
+		..\Specs\DateTime\Italian\MergedParser.json = ..\Specs\DateTime\Italian\MergedParser.json
+		..\Specs\DateTime\Italian\SetExtractor.json = ..\Specs\DateTime\Italian\SetExtractor.json
+		..\Specs\DateTime\Italian\SetParser.json = ..\Specs\DateTime\Italian\SetParser.json
+		..\Specs\DateTime\Italian\TimeExtractor.json = ..\Specs\DateTime\Italian\TimeExtractor.json
+		..\Specs\DateTime\Italian\TimeParser.json = ..\Specs\DateTime\Italian\TimeParser.json
+		..\Specs\DateTime\Italian\TimePeriodExtractor.json = ..\Specs\DateTime\Italian\TimePeriodExtractor.json
+		..\Specs\DateTime\Italian\TimePeriodParser.json = ..\Specs\DateTime\Italian\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Japanese", "Japanese", "{2F41FB40-EA08-469A-A676-138F2E7C627B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Japanese\DateExtractor.json = ..\Specs\DateTime\Japanese\DateExtractor.json
+		..\Specs\DateTime\Japanese\DateParser.json = ..\Specs\DateTime\Japanese\DateParser.json
+		..\Specs\DateTime\Japanese\DatePeriodExtractor.json = ..\Specs\DateTime\Japanese\DatePeriodExtractor.json
+		..\Specs\DateTime\Japanese\DatePeriodParser.json = ..\Specs\DateTime\Japanese\DatePeriodParser.json
+		..\Specs\DateTime\Japanese\DateTimeExtractor.json = ..\Specs\DateTime\Japanese\DateTimeExtractor.json
+		..\Specs\DateTime\Japanese\DateTimeModel.json = ..\Specs\DateTime\Japanese\DateTimeModel.json
+		..\Specs\DateTime\Japanese\DateTimeParser.json = ..\Specs\DateTime\Japanese\DateTimeParser.json
+		..\Specs\DateTime\Japanese\DateTimePeriodExtractor.json = ..\Specs\DateTime\Japanese\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Japanese\DateTimePeriodParser.json = ..\Specs\DateTime\Japanese\DateTimePeriodParser.json
+		..\Specs\DateTime\Japanese\DurationExtractor.json = ..\Specs\DateTime\Japanese\DurationExtractor.json
+		..\Specs\DateTime\Japanese\DurationParser.json = ..\Specs\DateTime\Japanese\DurationParser.json
+		..\Specs\DateTime\Japanese\HolidayExtractor.json = ..\Specs\DateTime\Japanese\HolidayExtractor.json
+		..\Specs\DateTime\Japanese\HolidayParser.json = ..\Specs\DateTime\Japanese\HolidayParser.json
+		..\Specs\DateTime\Japanese\MergedExtractor.json = ..\Specs\DateTime\Japanese\MergedExtractor.json
+		..\Specs\DateTime\Japanese\SetExtractor.json = ..\Specs\DateTime\Japanese\SetExtractor.json
+		..\Specs\DateTime\Japanese\SetParser.json = ..\Specs\DateTime\Japanese\SetParser.json
+		..\Specs\DateTime\Japanese\TimeExtractor.json = ..\Specs\DateTime\Japanese\TimeExtractor.json
+		..\Specs\DateTime\Japanese\TimeParser.json = ..\Specs\DateTime\Japanese\TimeParser.json
+		..\Specs\DateTime\Japanese\TimePeriodExtractor.json = ..\Specs\DateTime\Japanese\TimePeriodExtractor.json
+		..\Specs\DateTime\Japanese\TimePeriodParser.json = ..\Specs\DateTime\Japanese\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean", "Korean", "{2F41FB40-EA08-469A-A676-138F2E7C627C}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Korean\DateExtractor.json = ..\Specs\DateTime\Korean\DateExtractor.json
+		..\Specs\DateTime\Korean\DateParser.json = ..\Specs\DateTime\Korean\DateParser.json
+		..\Specs\DateTime\Korean\DatePeriodExtractor.json = ..\Specs\DateTime\Korean\DatePeriodExtractor.json
+		..\Specs\DateTime\Korean\DatePeriodParser.json = ..\Specs\DateTime\Korean\DatePeriodParser.json
+		..\Specs\DateTime\Korean\DateTimeExtractor.json = ..\Specs\DateTime\Korean\DateTimeExtractor.json
+		..\Specs\DateTime\Korean\DateTimeModel.json = ..\Specs\DateTime\Korean\DateTimeModel.json
+		..\Specs\DateTime\Korean\DateTimePeriodExtractor.json = ..\Specs\DateTime\Korean\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Korean\DateTimePeriodParser.json = ..\Specs\DateTime\Korean\DateTimePeriodParser.json
+		..\Specs\DateTime\Korean\DurationExtractor.json = ..\Specs\DateTime\Korean\DurationExtractor.json
+		..\Specs\DateTime\Korean\DurationParser.json = ..\Specs\DateTime\Korean\DurationParser.json
+		..\Specs\DateTime\Korean\HolidayExtractor.json = ..\Specs\DateTime\Korean\HolidayExtractor.json
+		..\Specs\DateTime\Korean\HolidayParser.json = ..\Specs\DateTime\Korean\HolidayParser.json
+		..\Specs\DateTime\Korean\MergedExtractor.json = ..\Specs\DateTime\Korean\MergedExtractor.json
+		..\Specs\DateTime\Korean\SetExtractor.json = ..\Specs\DateTime\Korean\SetExtractor.json
+		..\Specs\DateTime\Korean\SetParser.json = ..\Specs\DateTime\Korean\SetParser.json
+		..\Specs\DateTime\Korean\TimeExtractor.json = ..\Specs\DateTime\Korean\TimeExtractor.json
+		..\Specs\DateTime\Korean\TimeParser.json = ..\Specs\DateTime\Korean\TimeParser.json
+		..\Specs\DateTime\Korean\TimePeriodExtractor.json = ..\Specs\DateTime\Korean\TimePeriodExtractor.json
+		..\Specs\DateTime\Korean\TimePeriodParser.json = ..\Specs\DateTime\Korean\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portuguese", "Portuguese", "{2F41FB40-EA08-469A-A676-138F2E7C627D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Portuguese\DateExtractor.json = ..\Specs\DateTime\Portuguese\DateExtractor.json
+		..\Specs\DateTime\Portuguese\DateParser.json = ..\Specs\DateTime\Portuguese\DateParser.json
+		..\Specs\DateTime\Portuguese\DatePeriodExtractor.json = ..\Specs\DateTime\Portuguese\DatePeriodExtractor.json
+		..\Specs\DateTime\Portuguese\DatePeriodParser.json = ..\Specs\DateTime\Portuguese\DatePeriodParser.json
+		..\Specs\DateTime\Portuguese\DateTimeExtractor.json = ..\Specs\DateTime\Portuguese\DateTimeExtractor.json
+		..\Specs\DateTime\Portuguese\DateTimeModel.json = ..\Specs\DateTime\Portuguese\DateTimeModel.json
+		..\Specs\DateTime\Portuguese\DateTimeParser.json = ..\Specs\DateTime\Portuguese\DateTimeParser.json
+		..\Specs\DateTime\Portuguese\DateTimePeriodExtractor.json = ..\Specs\DateTime\Portuguese\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Portuguese\DateTimePeriodParser.json = ..\Specs\DateTime\Portuguese\DateTimePeriodParser.json
+		..\Specs\DateTime\Portuguese\DurationExtractor.json = ..\Specs\DateTime\Portuguese\DurationExtractor.json
+		..\Specs\DateTime\Portuguese\DurationParser.json = ..\Specs\DateTime\Portuguese\DurationParser.json
+		..\Specs\DateTime\Portuguese\HolidayExtractor.json = ..\Specs\DateTime\Portuguese\HolidayExtractor.json
+		..\Specs\DateTime\Portuguese\HolidayParser.json = ..\Specs\DateTime\Portuguese\HolidayParser.json
+		..\Specs\DateTime\Portuguese\MergedExtractor.json = ..\Specs\DateTime\Portuguese\MergedExtractor.json
+		..\Specs\DateTime\Portuguese\SetExtractor.json = ..\Specs\DateTime\Portuguese\SetExtractor.json
+		..\Specs\DateTime\Portuguese\SetParser.json = ..\Specs\DateTime\Portuguese\SetParser.json
+		..\Specs\DateTime\Portuguese\TimeExtractor.json = ..\Specs\DateTime\Portuguese\TimeExtractor.json
+		..\Specs\DateTime\Portuguese\TimeParser.json = ..\Specs\DateTime\Portuguese\TimeParser.json
+		..\Specs\DateTime\Portuguese\TimePeriodExtractor.json = ..\Specs\DateTime\Portuguese\TimePeriodExtractor.json
+		..\Specs\DateTime\Portuguese\TimePeriodParser.json = ..\Specs\DateTime\Portuguese\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{2F41FB40-EA08-469A-A676-138F2E7C627E}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Spanish\DateExtractor.json = ..\Specs\DateTime\Spanish\DateExtractor.json
+		..\Specs\DateTime\Spanish\DateParser.json = ..\Specs\DateTime\Spanish\DateParser.json
+		..\Specs\DateTime\Spanish\DatePeriodExtractor.json = ..\Specs\DateTime\Spanish\DatePeriodExtractor.json
+		..\Specs\DateTime\Spanish\DatePeriodParser.json = ..\Specs\DateTime\Spanish\DatePeriodParser.json
+		..\Specs\DateTime\Spanish\DateTimeExtractor.json = ..\Specs\DateTime\Spanish\DateTimeExtractor.json
+		..\Specs\DateTime\Spanish\DateTimeModel.json = ..\Specs\DateTime\Spanish\DateTimeModel.json
+		..\Specs\DateTime\Spanish\DateTimeParser.json = ..\Specs\DateTime\Spanish\DateTimeParser.json
+		..\Specs\DateTime\Spanish\DateTimePeriodExtractor.json = ..\Specs\DateTime\Spanish\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Spanish\DateTimePeriodParser.json = ..\Specs\DateTime\Spanish\DateTimePeriodParser.json
+		..\Specs\DateTime\Spanish\DurationExtractor.json = ..\Specs\DateTime\Spanish\DurationExtractor.json
+		..\Specs\DateTime\Spanish\DurationParser.json = ..\Specs\DateTime\Spanish\DurationParser.json
+		..\Specs\DateTime\Spanish\HolidayExtractor.json = ..\Specs\DateTime\Spanish\HolidayExtractor.json
+		..\Specs\DateTime\Spanish\HolidayParser.json = ..\Specs\DateTime\Spanish\HolidayParser.json
+		..\Specs\DateTime\Spanish\MergedExtractor.json = ..\Specs\DateTime\Spanish\MergedExtractor.json
+		..\Specs\DateTime\Spanish\SetExtractor.json = ..\Specs\DateTime\Spanish\SetExtractor.json
+		..\Specs\DateTime\Spanish\SetParser.json = ..\Specs\DateTime\Spanish\SetParser.json
+		..\Specs\DateTime\Spanish\TimeExtractor.json = ..\Specs\DateTime\Spanish\TimeExtractor.json
+		..\Specs\DateTime\Spanish\TimeParser.json = ..\Specs\DateTime\Spanish\TimeParser.json
+		..\Specs\DateTime\Spanish\TimePeriodExtractor.json = ..\Specs\DateTime\Spanish\TimePeriodExtractor.json
+		..\Specs\DateTime\Spanish\TimePeriodParser.json = ..\Specs\DateTime\Spanish\TimePeriodParser.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{2F41FB40-EA08-469A-A676-138F2E7C627F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Turkish\DateExtractor.json = ..\Specs\DateTime\Turkish\DateExtractor.json
+		..\Specs\DateTime\Turkish\DateParser.json = ..\Specs\DateTime\Turkish\DateParser.json
+		..\Specs\DateTime\Turkish\DatePeriodExtractor.json = ..\Specs\DateTime\Turkish\DatePeriodExtractor.json
+		..\Specs\DateTime\Turkish\DatePeriodParser.json = ..\Specs\DateTime\Turkish\DatePeriodParser.json
+		..\Specs\DateTime\Turkish\DateTimeExtractor.json = ..\Specs\DateTime\Turkish\DateTimeExtractor.json
+		..\Specs\DateTime\Turkish\DateTimeModel.json = ..\Specs\DateTime\Turkish\DateTimeModel.json
+		..\Specs\DateTime\Turkish\DateTimeParser.json = ..\Specs\DateTime\Turkish\DateTimeParser.json
+		..\Specs\DateTime\Turkish\DateTimePeriodExtractor.json = ..\Specs\DateTime\Turkish\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Turkish\DateTimePeriodParser.json = ..\Specs\DateTime\Turkish\DateTimePeriodParser.json
+		..\Specs\DateTime\Turkish\DurationExtractor.json = ..\Specs\DateTime\Turkish\DurationExtractor.json
+		..\Specs\DateTime\Turkish\DurationParser.json = ..\Specs\DateTime\Turkish\DurationParser.json
+		..\Specs\DateTime\Turkish\HolidayExtractor.json = ..\Specs\DateTime\Turkish\HolidayExtractor.json
+		..\Specs\DateTime\Turkish\HolidayParser.json = ..\Specs\DateTime\Turkish\HolidayParser.json
+		..\Specs\DateTime\Turkish\MergedExtractor.json = ..\Specs\DateTime\Turkish\MergedExtractor.json
+		..\Specs\DateTime\Turkish\MergedParser.json = ..\Specs\DateTime\Turkish\MergedParser.json
+		..\Specs\DateTime\Turkish\SetExtractor.json = ..\Specs\DateTime\Turkish\SetExtractor.json
+		..\Specs\DateTime\Turkish\SetParser.json = ..\Specs\DateTime\Turkish\SetParser.json
+		..\Specs\DateTime\Turkish\TimeExtractor.json = ..\Specs\DateTime\Turkish\TimeExtractor.json
+		..\Specs\DateTime\Turkish\TimeParser.json = ..\Specs\DateTime\Turkish\TimeParser.json
+		..\Specs\DateTime\Turkish\TimePeriodExtractor.json = ..\Specs\DateTime\Turkish\TimePeriodExtractor.json
+		..\Specs\DateTime\Turkish\TimePeriodParser.json = ..\Specs\DateTime\Turkish\TimePeriodParser.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -186,6 +878,78 @@ Global
 		{32A4593C-3D2D-412E-8EC5-07346266A358} = {ED7B6456-AB0A-48CE-8F85-711FE87F09C2}
 		{AC7B58DC-209E-47FA-9B03-A1E0FB5E7B05} = {452C724B-66C1-4F67-A718-E7733F79961D}
 		{5039FC31-E88A-45EC-811B-3C406162A863} = {452C724B-66C1-4F67-A718-E7733F79961D}
+		{4406756F-4161-46CA-8021-DB26FD0CA2A7} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
+		{55DDEF35-167D-45A5-B6D0-3747532E8314} = {4406756F-4161-46CA-8021-DB26FD0CA2A7}
+		{5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E} = {4406756F-4161-46CA-8021-DB26FD0CA2A7}
+		{2DF9886B-9586-4C62-8D1C-A723F8688574} = {4406756F-4161-46CA-8021-DB26FD0CA2A7}
+		{72FEAD3F-7C2A-4B85-9942-D9ADA122411A} = {4406756F-4161-46CA-8021-DB26FD0CA2A7}
+		{59FC2C0D-BF12-4A99-BC50-A104948DB1DC} = {4406756F-4161-46CA-8021-DB26FD0CA2A7}
+		{16B24511-1D2F-47FE-BF6D-5C2B29F45279} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{7218D1B7-55C9-43E0-AA97-CD36B6DC2822} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{D80595E0-D724-466F-9F65-9F254B974C8A} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{047F38CF-8AAA-4967-BDEF-5E2BC378670D} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{BCD91F42-F366-4F68-8A3B-7AC4EEF42534} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{6DEA89B3-D580-48A4-BA52-8A077920AF09} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{04F976D1-D026-4511-A414-FF318BEF3321} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{81B5C120-8A99-42BF-88DD-0A8F0147142D} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{93CE72CE-A624-4075-B2DD-392F4D42DC77} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{C47CD83C-F6DC-4580-A143-A5C11EA9377A} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{D64B181C-B07E-4531-A016-14E9D827EB87} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{18C2DA46-BF61-4F87-B645-443D6525545A} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{78A33B3C-6340-4EE8-B802-63618D008AFF} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E2} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E3} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E4} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E5} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E6} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E7} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E8} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86E9} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86F0} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86F1} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86F2} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86F3} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86F4} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{39E7797E-768E-4170-9C29-5DAEE70D86F5} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
+		{19152546-2D99-476A-9DCB-A3D8F70418A3} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418A4} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418A5} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418A6} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418A7} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418A8} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418A9} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B0} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B1} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B2} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B3} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B4} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B5} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{19152546-2D99-476A-9DCB-A3D8F70418B6} = {2DF9886B-9586-4C62-8D1C-A723F8688574}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5EB} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5EC} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5ED} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5EE} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5EF} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F0} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F1} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F2} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F3} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F4} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F5} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{97D22337-7EC5-46CF-B619-C54FFD0BD5F6} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{2F41FB40-EA08-469A-A676-138F2E7C6273} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C6274} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C6275} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C6276} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C6277} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C6278} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C6279} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C627A} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C627B} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C627C} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C627D} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C627E} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2F41FB40-EA08-469A-A676-138F2E7C627F} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

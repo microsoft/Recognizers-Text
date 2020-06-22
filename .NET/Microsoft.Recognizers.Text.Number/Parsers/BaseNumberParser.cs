@@ -621,6 +621,13 @@ namespace Microsoft.Recognizers.Text.Number
 
         public virtual double GetIntValue(List<string> matchStrs)
         {
+            var specialCase = Config.GetLangSpecificIntValue(matchStrs);
+
+            if (specialCase.isRelevant)
+            {
+                return specialCase.value;
+            }
+
             var isEnd = new bool[matchStrs.Count];
             for (var i = 0; i < isEnd.Length; i++)
             {

@@ -44,12 +44,12 @@ The table below summarizes the currently supported entities. Support for English
 | Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓      | ✓     | ✓       |
-| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
-| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
-| Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | **PA**  | :x:     | :x:    | :x:   | **PA**  |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
+| Number Range         | ✓    | ✓       | ✓    | :x:    | :x:   | ✓      | PA/EO   | PA/EO  | :x:    | ✓      |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SP** | ✓     | ✓       |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓     | ✓       | 
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓      | ✓      | 
 | Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓      | ✓      | 
 | Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
@@ -62,10 +62,10 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | SV      | BG      | TR    | HI     | AR    |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
-| Ordinal              | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
-| Percentage           | ✓    | :x:     | ✓    | ✓      | :x:   |         |        |        |        |         |
-| Number Range         | :x:  | :x:     | ✓     | :x:    | :x:   |         |        |        |        |         |
+| Number (cardinal)    | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
+| Ordinal              | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
+| Percentage           | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
+| Number Range         | :x:  | :x:     | ✓     | ✓     | PA/EO |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
 | Unit - Currency      | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
 | Unit - Dimensions    | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
@@ -80,7 +80,8 @@ The table below summarizes the currently supported entities. Support for English
 | DateTime (+subtypes) | :x:  | :x:     | ✓     | ✓      | :x:   |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
-* PA: Partial support;
-* SO: Specs-only;
+* EO: Extraction-only (parsing/resolution/normalization pending);
+* PA: Partial support (type not fully supported);
+* SO: Specs-only (test specs coverage OK, but support pending);
 * SP: Partial specs;
-* SI: Very initial specs.
+* SI: Very initial specs (typically language support start for a new language).

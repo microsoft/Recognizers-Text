@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -24,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public DateTimeParseResult Parse(ExtractResult er, DateObject referenceTime)
         {
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 DateTimeResolutionResult innerResult;
 
@@ -127,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Comment = Constants.Comment_AmPm;
                     }
 
-                    ret.Timex = "T" + hour.ToString("D2");
+                    ret.Timex = "T" + hour.ToString("D2", CultureInfo.InvariantCulture);
                     ret.FutureValue = ret.PastValue =
                         DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);
                     ret.Success = true;
@@ -255,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    min = int.Parse(minStr);
+                    min = int.Parse(minStr, CultureInfo.InvariantCulture);
                     hasMin = true;
                 }
 
@@ -263,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var secStr = match.Groups[Constants.SecondGroupName].Value;
                 if (!string.IsNullOrEmpty(secStr))
                 {
-                    second = int.Parse(secStr);
+                    second = int.Parse(secStr, CultureInfo.InvariantCulture);
                     hasSec = true;
                 }
                 else
@@ -326,18 +330,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hour = 0;
             }
 
-            ret.Timex = "T" + hour.ToString("D2");
+            ret.Timex = "T" + hour.ToString("D2", CultureInfo.InvariantCulture);
             if (hasMin)
             {
-                ret.Timex += ":" + min.ToString("D2");
+                ret.Timex += ":" + min.ToString("D2", CultureInfo.InvariantCulture);
             }
 
             if (hasSec)
             {
-                ret.Timex += ":" + second.ToString("D2");
+                ret.Timex += ":" + second.ToString("D2", CultureInfo.InvariantCulture);
             }
 
-            if (hour <= Constants.HalfDayHourCount && !hasPm && !hasAm && !hasMid)
+            if (hour <= Constants.HalfDayHourCount && hour != 0 && !hasPm && !hasAm && !hasMid)
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

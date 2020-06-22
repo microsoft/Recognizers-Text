@@ -13,7 +13,6 @@
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>nlp entity-extraction parser-library recognizer phonenumber netstandard2.0</tags>
     <dependencies>
-      <dependency id="System.Collections.Immutable" version="1.4.0" />
       <dependency id="Microsoft.Recognizers.Text" version="$basic$"/>
     </dependencies>
   </metadata>

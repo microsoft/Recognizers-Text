@@ -2131,5 +2131,339 @@
         }
       }
     ]
+  },
+  {
+    "Input": "En juillet 98, la France a remporté le mondial de football.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "juillet 98",
+        "Start": 3,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1998-07",
+              "type": "daterange",
+              "start": "1998-07-01",
+              "end": "1998-08-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Merci d'envoyer ce message à l'adresse suivante avant le 15.05.99 : Martin Dupont 1 Rue de France",
+    "Context": {
+      "ReferenceDateTime": "2019-08-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "15.05.99",
+        "Start": 57,
+        "End": 64,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1999-05-15",
+              "type": "date",
+              "value": "1999-05-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-10,2017-02-11,P32D)",
+              "type": "daterange",
+              "start": "2017-01-10",
+              "end": "2017-02-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je veux le numéro 17",
+    "Context": {
+      "ReferenceDateTime": "2020-08-12T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Mardi 11:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "mardi 11:00",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T11:00",
+              "type": "datetime",
+              "value": "2016-11-01 11:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T11:00",
+              "type": "datetime",
+              "value": "2016-11-08 11:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T23:00",
+              "type": "datetime",
+              "value": "2016-11-01 23:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T23:00",
+              "type": "datetime",
+              "value": "2016-11-08 23:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "j'ai mangé tôt dans la journée",
+    "Context": {
+      "ReferenceDateTime": "2020-05-27T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "tôt dans la journée",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-05-27",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2020-05-27 00:00:00",
+              "end": "2020-05-27 12:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "la journée",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "la journée",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Durant l'été, cet été, j'ai été à la mer.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "été",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 9,
+        "End": 11
+      },
+      {
+        "Text": "été",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 18,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Quand ? mercredi 10 juin 2020. Horaires : de 14h à 16h.",
+    "Context": {
+      "ReferenceDateTime": "2016-07-15T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mercredi 10 juin 2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-10",
+              "type": "date",
+              "value": "2020-06-10"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 28
+      },
+      {
+        "Text": "de 14h à 16h",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T14,T16,PT2H)",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        },
+        "Start": 42,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "Quand ? mer. 10 juin 2020. Horaires : de 14h à 16h.",
+    "Context": {
+      "ReferenceDateTime": "2016-07-15T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mer. 10 juin 2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-10",
+              "type": "date",
+              "value": "2020-06-10"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 24
+      },
+      {
+        "Text": "de 14h à 16h",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T14,T16,PT2H)",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "Exposition d'art contemporain le mer. 24 juin 2020.",
+    "Context": {
+      "ReferenceDateTime": "2016-07-15T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mer. 24 juin 2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-24",
+              "type": "date",
+              "value": "2020-06-24"
+            }
+          ]
+        },
+        "Start": 33,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "Mer. 6 Mai 2020 à 18h",
+    "Context": {
+      "ReferenceDateTime": "2016-07-15T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mer. 6 mai 2020 à 18h",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-05-06T18",
+              "type": "datetime",
+              "value": "2020-05-06 18:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
   }
 ]

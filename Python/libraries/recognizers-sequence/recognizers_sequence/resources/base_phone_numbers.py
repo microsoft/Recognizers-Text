@@ -41,10 +41,10 @@ class BasePhoneNumbers:
         return f'((\\(\\s?(\\+\\s?|00)45\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|\\b00)45\\s?)|{WordBoundariesRegex})(\\s?\\(0\\)\\s?)?((\\d{{8}})|(\\d{{4}}\\s?-?\\s?\\d{{4,6}})|((\\d{{2}}[\\s-]){{3}}\\d{{2}})|(\\d{{2}}\\s?-?\\s?\\d{{3}}\\s?-?\\s?\\d{{3}}))(?!-){EndWordBoundariesRegex}'
 
     def ITPhoneNumberRegex(WordBoundariesRegex, EndWordBoundariesRegex):
-        return f'((\\(\\s?(\\+\\s?|00)39\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|\\b00)39\\s?)|{WordBoundariesRegex})((0[\\d\\s-]{{4,12}}\\d)|(3[\\d\\s-]{{7,12}}\\d))(?!-){EndWordBoundariesRegex}'
+        return f'((\\(\\s?(\\+\\s?|00)39\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|\\b00)39\\s?)|{WordBoundariesRegex})((0[\\d-]{{4,12}}\\d)|(3[\\d-]{{7,12}}\\d)|(0[\\d\\s]{{4,12}}\\d)|(3[\\d\\s]{{7,12}}\\d))(?!-){EndWordBoundariesRegex}'
 
     def NLPhoneNumberRegex(WordBoundariesRegex, EndWordBoundariesRegex):
-        return f'((((\\(\\s?(\\+\\s?|00)31\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|{WordBoundariesRegex}00)31\\s?))?((({WordBoundariesRegex}|(?<=31))0?\\d{{1,3}}|\\(\\s?0?\\d{{1,3}}\\s?\\)|\\(0\\)[-\\s]?\\d{{1,3}})\\s?-?[\\d\\s]{{5,11}}\\d))|\\b\\d{{10,12}})(?!-){EndWordBoundariesRegex}'
+        return f'((((\\(\\s?(\\+\\s?|00)31\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|{WordBoundariesRegex}00)31\\s?))?((({WordBoundariesRegex}|(?<=31))0?\\d{{1,3}}|\\(\\s?0?\\d{{1,3}}\\s?\\)|\\(0\\)[-\\s]?\\d{{1,3}})((-?[\\d]{{5,11}})|(\\s[\\d\\s]{{5,11}}))\\d))|\\b\\d{{10,12}})(?!-){EndWordBoundariesRegex}'
 
     def SpecialPhoneNumberRegex(WordBoundariesRegex, EndWordBoundariesRegex):
         return f'({WordBoundariesRegex}(\\d{{3,4}}[/-]\\d{{1,4}}[/-]\\d{{3,4}}){EndWordBoundariesRegex})'

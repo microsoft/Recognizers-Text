@@ -6,6 +6,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
     [TestClass]
     public class TestNumberWithUnit_Japanese : TestBase
     {
+
         [NetCoreTestDataSource]
         [TestMethod]
         public void AgeModel(TestModel testSpec)

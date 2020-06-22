@@ -273,7 +273,7 @@ CurrencySuffixList: !dictionary
 #Ilhas Salomão
     Dólar das Ilhas Salomão: dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd
 #Israel
-    Novo shekel israelense: novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils
+    Novo shekel israelense: novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils|₪
     Agora: agora|agorot
 #Jamaica
     Dólar jamaicano: dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd
@@ -557,6 +557,7 @@ AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:
     - le
+    - agora
 #DimensionExtractorConfiguration
 InformationSuffixList: !dictionary
   types: [ string, string ]
@@ -595,6 +596,7 @@ AmbiguousDimensionUnitList: !list
     - areas
     - milha
     - milhas
+    - '"'
 #PortugueseNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))
@@ -626,6 +628,7 @@ AmbiguousLengthUnitList: !list
     - mi
     - milha
     - milhas
+    - '"'
 #SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
@@ -697,4 +700,8 @@ WeightSuffixList: !dictionary
     Onça: oz|onça|onca|onças|oncas
     Grão: grão|grao|grãos|graos|gr
     Quilate: ct|quilate|quilates
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

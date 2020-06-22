@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             : base(
                   NumberExtractor.GetInstance(),
                   OrdinalExtractor.GetInstance(),
-                  new BaseNumberParser(new HindiNumberParserConfiguration(config)),
+                  new BaseIndianNumberParser(new HindiNumberParserConfiguration(config)),
                   config)
         {
             var regexes = new Dictionary<Regex, string>()
@@ -71,6 +71,16 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                 {
                     // equal to 30 or less, smaller than 30 or equal ...
                     new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags),
+                    NumberRangeConstants.LESS
+                },
+                {
+                    // 30 and/or greater/higher
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex0, RegexFlags),
+                    NumberRangeConstants.MORE
+                },
+                {
+                    // less/smaller/lower than ...
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex0, RegexFlags),
                     NumberRangeConstants.LESS
                 },
             };

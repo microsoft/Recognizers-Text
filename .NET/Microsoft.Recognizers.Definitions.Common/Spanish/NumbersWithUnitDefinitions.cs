@@ -442,7 +442,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             @"área",
             @"áreas",
             @"pie",
-            @"pies"
+            @"pies",
+            @""""
         };
       public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
         {
@@ -466,7 +467,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         {
             @"mi",
             @"área",
-            @"áreas"
+            @"áreas",
+            @""""
         };
       public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
       public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
@@ -537,6 +539,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Onza", @"oz|onza|onzas" },
             { @"Grano", @"grano|granos" },
             { @"Quilate", @"ct|quilate|quilates" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

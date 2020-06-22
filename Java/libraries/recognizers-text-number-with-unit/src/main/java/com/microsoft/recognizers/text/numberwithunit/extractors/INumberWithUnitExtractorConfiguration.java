@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public interface INumberWithUnitExtractorConfiguration {
+
     Map<String, String> getSuffixList();
     
     Map<String, String> getPrefixList();
@@ -29,4 +30,6 @@ public interface INumberWithUnitExtractorConfiguration {
     Pattern getCompoundUnitConnectorRegex();
     
     Pattern getAmbiguousUnitNumberMultiplierRegex();
+
+    Map<Pattern, Pattern> getAmbiguityFiltersDict();
 }

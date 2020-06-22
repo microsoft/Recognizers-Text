@@ -182,7 +182,8 @@ public class ChineseNumeric {
 
     public static final String NegativeNumberTermsRegex = "[负負]";
 
-    public static final String NegativeNumberTermsRegexNum = "((?<!(\\d+\\s*)|[-－])[-－])";
+    public static final String NegativeNumberTermsRegexNum = "((?<!(\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)|[-－])[-－])"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String NegativeNumberSignRegex = "^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
@@ -463,6 +464,14 @@ public class ChineseNumeric {
 
     public static final String TwoNumberRangeRegex4 = "(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)"
             .replace("{TillRegex}", TillRegex);
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("十", "十足")
+        .put("伍", "队伍")
+        .put("肆", "放肆|肆意|肆无忌惮")
+        .put("陆", "大陆|陆地|登陆|海陆")
+        .put("拾", "拾取|拾起|收拾|拾到|朝花夕拾")
+        .build();
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 

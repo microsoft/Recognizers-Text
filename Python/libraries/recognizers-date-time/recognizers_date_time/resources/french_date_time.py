@@ -31,12 +31,12 @@ class FrenchDateTime:
     PmDescRegex = f'(h\\b|{BaseDateTime.BasePmDescRegex})'
     AmPmDescRegex = f'(h\\b|{BaseDateTime.BaseAmPmDescRegex})'
     DescRegex = f'(?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})'
-    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
+    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     FullTextYearRegex = f'^[\\*]'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
-    WeekDayRegex = f'(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun|mar|mer|jeu|ven|sam|dim)\\b'
+    WeekDayRegex = f'(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)'
     RelativeMonthRegex = f'(?<relmonth>({ThisPrefixRegex}\\s+mois)|(mois\\s+{PastSuffixRegex})|(mois\\s+{NextSuffixRegex}))\\b'
-    WrittenMonthRegex = f'(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)'
+    WrittenMonthRegex = f'(?<month>avril|avr(\\.)?|ao[uû]t|d[eé]cembre|d[eé]c(\\.)?|f[eé]vrier|f[eé]vr?(\\.)?|janvier|janv?(\\.)?|juillet|jui?[ln](\\.)?|mars?(\\.)?|mai|novembre|nov(\\.)?|octobre|oct(\\.)?|septembre|sept?(\\.)?)'
     MonthSuffixRegex = f'(?<msuf>(en\\s*|le\\s*|de\\s*|dans\\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
     DateUnitRegex = f'(?<unit>(l\')?ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\\b'
     SimpleCasesRegex = f'\\b((d[ue])|entre\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
@@ -44,32 +44,32 @@ class FrenchDateTime:
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+(entre|d[ue]\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     BetweenRegex = f'\\b(entre\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     YearWordRegex = f'\\b(?<year>l\'ann[ée]e)\\b'
-    MonthWithYear = f'\\b((?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)(\\s*),?(\\s+de)?(\\s*)({YearRegex}|(?<order>cette)\\s*{YearWordRegex})|{YearWordRegex}\\s*({PastSuffixRegex}|{NextSuffixRegex}))'
-    OneWordPeriodRegex = f'\\b(({RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)|weekend|week-end|(mois|l\'année))\\b'
+    MonthWithYear = f'\\b({WrittenMonthRegex}(\\s*),?(\\s+de)?(\\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>cette)\\s*{YearWordRegex})|{YearWordRegex}\\s*({PastSuffixRegex}|{NextSuffixRegex}))'
+    OneWordPeriodRegex = f'\\b(({RelativeRegex}\\s+)?{WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)|weekend|week-end|(mois|l\'année))\\b'
     MonthNumWithYear = f'({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){YearRegex})'
-    WeekOfMonthRegex = f'(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine\\s+{MonthSuffixRegex})'
+    WeekOfMonthRegex = f'(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+{MonthSuffixRegex})'
     WeekOfYearRegex = f'(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+({YearRegex}|{RelativeRegex}\\s+ann[ée]e))'
     FollowedDateUnit = f'^\\s*{DateUnitRegex}'
     NumberCombinedWithDateUnit = f'\\b(?<num>\\d+(\\.\\d*)?){DateUnitRegex}'
     QuarterRegex = f'(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quart(\\s+de|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+l\'ann[eé]e)'
     QuarterRegexYearFront = f'({YearRegex}|l\'année\\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\\s+ann[eé]e)\\s+(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quarts'
     AllHalfYearRegex = f'^[.]'
-    PrefixDayRegex = f'^[.]'
+    PrefixDayRegex = f'\\b((?<EarlyPrefix>t[ôo]t\\sdans)|(?<MidPrefix>au\\smilieu\\sde)|(?<LatePrefix>tard\\sdans))(\\s+la\\s+journ[ée]e)?$'
     CenturySuffixRegex = f'^[.]'
     SeasonRegex = f'\\b((<seas>printemps|été|automne|hiver)+\\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\\s+de|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+l\'ann[eé]e))?)\\b'
     WhichWeekRegex = f'\\b(semaine)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
     WeekOfRegex = f'(semaine)(\\s*)(de)'
     MonthOfRegex = f'(mois)(\\s*)(de)'
-    MonthRegex = f'(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]vr?\\.|f[eé]vr?|janvier|janv\\.|janv?|juillet|jul|juil\\.|juil|juin|jun|mars?|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept?)'
+    MonthRegex = f'(?<month>avril|avr(\\.)?|ao[uû]t|d[eé]cembre|d[eé]c(\\.)?|f[eé]vrier|f[eé]vr?(\\.)?|janvier|janv?(\\.)?|juillet|jui?[ln](\\.)?|mars?(\\.)?|mai|novembre|nov(\\.)?|octobre|oct(\\.)?|septembre|sept?(\\.)?)'
     OnRegex = f'(?<=\\b(en|sur\\s*l[ea]|sur)\\s+)({DayRegex}s?)\\b'
     RelaxedOnRegex = f'(?<=\\b(en|le|dans|sur\\s*l[ea]|du|sur)\\s+)((?<day>10e|11e|12e|13e|14e|15e|16e|17e|18e|19e|1er|20e|21e|22e|23e|24e|25e|26e|27e|28e|29e|2e|30e|31e|3e|4e|5e|6e|7e|8e|9e)s?)\\b'
     ThisRegex = f'\\b((cette(\\s*semaine)?\\s+){WeekDayRegex})|({WeekDayRegex}(\\s+cette\\s*semaine))\\b'
     LastDateRegex = f'\\b(({WeekDayRegex}(\\s*(de)?\\s*la\\s*semaine\\s+{PastSuffixRegex}))|({WeekDayRegex}(\\s+{PastSuffixRegex})))\\b'
     NextDateRegex = f'\\b(({WeekDayRegex}(\\s+{NextSuffixRegex}))|({WeekDayRegex}(\\s*(de)?\\s*la\\s*semaine\\s+{NextSuffixRegex})))\\b'
-    SpecialDayRegex = f'\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd\'hui)\\b'
+    SpecialDayRegex = f'\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|(de\\s)?la journ[ée]e|aujourd\'hui)\\b'
     SpecialDayWithNumRegex = f'^[.]'
     StrictWeekDay = f'\\b(?<weekday>dim(anche)?|lun(di)?|mar(di)?|mer(credi)?|jeu(di)?|ven(dredi)?|sam(edi)?)s?\\b'
-    SetWeekDayRegex = f'\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apres-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b'
+    SetWeekDayRegex = f'\\b(?<prefix>le\\s+)?(?<weekday>matin([ée]e)?|apr[eè]s-midi|soir([ée]e)?|dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)s\\b'
     WeekDayOfMonthRegex = f'(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
     AmbiguousRangeModifierPrefix = f'^[.]'
@@ -79,13 +79,13 @@ class FrenchDateTime:
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*[\\.\\-]?\\s*{DateYearRegex}\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*){MonthRegex}((\\s+|\\s*,\\s*){DateYearRegex})?\\b'
-    DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}'
-    DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}'
-    DateExtractor6 = f'(?<=\\b(le|sur|sur l[ae])\\s+){MonthNumRegex}[\\-\\.\\/]{DayRegex}\\b'
+    DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
+    DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
+    DateExtractor6 = f'(?<=\\b(le|sur(\\sl[ae])?)\\s+){MonthNumRegex}[\\-\\.\\/]{DayRegex}\\b'
     DateExtractor7 = f'\\b{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*){DateYearRegex})?\\b'
     DateExtractor8 = f'(?<=\\b(le)\\s+){DayRegex}[\\\\\\-]{MonthNumRegex}\\b'
     DateExtractor9 = f'\\b{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*){DateYearRegex})?\\b'
-    DateExtractorA = f'\\b{DateYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}'
+    DateExtractorA = f'\\b{DateYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     OfMonth = f'^\\s*de\\s*{MonthRegex}'
     MonthEnd = f'{MonthRegex}\\s*(le)?\\s*$'
     WeekDayEnd = f'{WeekDayRegex}\\s*,?\\s*$'
@@ -205,7 +205,7 @@ class FrenchDateTime:
     NextPrefixRegex = f'.^'
     PastPrefixRegex = f'.^'
     PreviousPrefixRegex = f'.^'
-    RelativeDayRegex = f'^[\\.]'
+    RelativeDayRegex = f'\\b(((la\\s+)?{{RelativeRegex}}\\s+journ[ée]e))\\b'
     ConnectorRegex = f'^(,|pour|t|vers)$'
     ConnectorAndRegex = f'\\b(et\\s*(le|las?)?)\\b.+'
     FromRegex = f'((de|du)?)$'
@@ -217,7 +217,7 @@ class FrenchDateTime:
     FlexibleDayRegex = f'(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)'
     ForTheRegex = f'\\b(((pour le {FlexibleDayRegex})|(dans (le\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))'
     WeekDayAndDayOfMonthRegex = f'\\b{WeekDayRegex}\\s+(le\\s+{FlexibleDayRegex})\\b'
-    WeekDayAndDayRegex = f'\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b'
+    WeekDayAndDayRegex = f'\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b'
     RestOfDateRegex = f'\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<duration>semaine|mois|l\'ann[ée]e)\\b'
     RestOfDateTimeRegex = f'\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<unit>jour)\\b'
     LaterEarlyPeriodRegex = f'^[.]'
@@ -323,17 +323,27 @@ class FrenchDateTime:
                       ("jeu", 4),
                       ("ven", 5),
                       ("sam", 6),
-                      ("dim", 0)])
+                      ("dim", 0),
+                      ("lun.", 1),
+                      ("mar.", 2),
+                      ("mer.", 3),
+                      ("jeu.", 4),
+                      ("ven.", 5),
+                      ("sam.", 6),
+                      ("dim.", 0)])
     MonthOfYear = dict([("janvier", 1),
                         ("fevrier", 2),
                         ("février", 2),
                         ("mars", 3),
                         ("mar", 3),
+                        ("mar.", 3),
                         ("avril", 4),
                         ("avr", 4),
+                        ("avr.", 4),
                         ("mai", 5),
                         ("juin", 6),
                         ("jun", 6),
+                        ("jun.", 6),
                         ("juillet", 7),
                         ("aout", 8),
                         ("août", 8),
@@ -345,14 +355,18 @@ class FrenchDateTime:
                         ("janv", 1),
                         ("janv.", 1),
                         ("jan", 1),
+                        ("jan.", 1),
                         ("fevr", 2),
                         ("fevr.", 2),
                         ("févr.", 2),
                         ("févr", 2),
                         ("fev", 2),
+                        ("fev.", 2),
                         ("juil", 7),
                         ("jul", 7),
+                        ("jul.", 7),
                         ("sep", 9),
+                        ("sep.", 9),
                         ("sept.", 9),
                         ("sept", 9),
                         ("oct", 10),
@@ -360,6 +374,7 @@ class FrenchDateTime:
                         ("nov", 11),
                         ("nov.", 11),
                         ("dec", 12),
+                        ("dec.", 12),
                         ("déc.", 12),
                         ("déc", 12),
                         ("1", 1),
@@ -645,6 +660,8 @@ class FrenchDateTime:
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
+    AmbiguityFiltersDict = dict([("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
+                                 ("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")])
     MorningTermList = [r'matinee', r'matin', r'matinée']
     AfternoonTermList = [r'apres-midi', r'apres midi', r'après midi', r'après-midi']
     EveningTermList = [r'soir', r'soiree', r'soirée']

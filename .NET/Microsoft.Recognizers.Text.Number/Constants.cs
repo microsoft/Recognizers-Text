@@ -40,6 +40,12 @@ namespace Microsoft.Recognizers.Text.Number
         public const string BULGARIAN = "Bul";
         public const string TURKISH = "Tur";
         public const string HINDI = "Hin";
+        public const string ARABIC = "Ara";
+
+        /// <summary>
+        /// Substitute for language markers for Japanese.
+        /// </summary>
+        public const string JAPANESE_SUBS = "Jap";
 
         // Regex Prefixes / Suffixes
         public const string FRACTION_PREFIX = "Frac";

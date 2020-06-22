@@ -9,7 +9,7 @@ RangeConnectorRegex : !nestedRegex
   def: (?<and>\b(और|and|through|to|से\s+लेकर)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
-  def: \b(?<order>अगला|अगले|अगली|दूसरे|आने\s+वा(ले|ला)|आगामी|पिछला|पिछले|पिछली|आखिरी|अंतिम|यह|इसी|इस|वर्तमान|अभी\s+(के|वाला)|इस|उस|चालू)
+  def: \b(?<order>परसों\s+वापस\s+गय\s+था|अगला|अगले|अगली|दूसरे|आने\s+वा(ले|ला)|आगामी|पिछला|पिछले|पिछली|आखिरी|अंतिम|यह|इसी|इस|वर्तमान|अभी\s+(के|वाला)|इस|उस|चालू)
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>अगला|अगले|अगली|दूसरे|आने\s+वा(ले|ला)|आगामी|पिछला|पिछली|पिछले|आखिरी|अंतिम|वर्तमान|अभी\s+(के|वाला)|इसी|इस|उस)
 UpcomingPrefixRegex: !simpleRegex
@@ -91,14 +91,13 @@ LastTwoYearNumRegex: !nestedRegex
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+सौ(\s+और)?))
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
-# As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 OclockRegex: !simpleRegex
   def: (?<oclock>अराउंड|लगभग|बजे|ओक्लॉक|o\s*((’|‘|')\s*)?clock)
 AmDescRegex: !nestedRegex
-  def: (?:{BaseDateTime.BaseAmDescRegex}|पू\.|पूर्वाहन|ए\.एम\.)
+  def: (?:{BaseDateTime.BaseAmDescRegex}|पू\.|सुबह|पूर्वाहन|ए\.एम\.|एएम)
   references: [BaseDateTime.BaseAmDescRegex]
 PmDescRegex: !nestedRegex
-  def: (:?{BaseDateTime.BasePmDescRegex}|अप\.|पीएम|अपराह्न|अपराहन)
+  def: (:?{BaseDateTime.BasePmDescRegex}|अप\.|पीएम|पी\.एम\.|अपराह्न|अपराहन)
   references: [BaseDateTime.BasePmDescRegex]
 AmPmDescRegex: !nestedRegex
   def: (?:{BaseDateTime.BaseAmPmDescRegex})
@@ -111,8 +110,8 @@ DescRegexA: !nestedRegex
   references: [ OclockRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, AmPmDescRegex ]
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))
-  references: [ AmDescRegex, PmDescRegex]
+  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))
+  references: [ AmDescRegex, PmDescRegex, OclockRegex]
 YearRegex: !nestedRegex
   def: (?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
@@ -130,7 +129,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यापारिक|व्यापार\s+के)\s+)?(?<day>दिनों|दिन?|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़ा))
+  def: (?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))
 DateTokenPrefix: 'को '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'को|की'
@@ -256,10 +255,10 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह){PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+(का|की|के|को))?\s+(अगला|अगले|अगली|आने\s+वाले|आने\s+वाला)\s*(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)))
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: (?<!([\u0900-\u097f]))(परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)
+  def: (?<!([\u0900-\u097f]))(परसों\s+वापस\s+गया\s+था|कल\s+वापस\s+गया\s+था|परसों के\s+पहले|कल\s+के\s+बाद|(?<!\d+\s+)दिन\s+(पहले|बाद)(?!=\s+दिन)|((यह\s+)?({RelativeRegex}|मेरा)\s+दिन)|परसों|कल\b|आज(?!\s+आधी\s+रात)|उस\s+दिन)
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन?)
+  def: \b((?<day>परसों|\bकल\b|आज)\s+से\s+(?<number>{AllWrittenNumericalRegex})\s+दिन(\s+(बाद)?))
   references: [ AllWrittenNumericalRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+दिन))
@@ -267,10 +266,10 @@ RelativeDayRegex: !nestedRegex
 SetWeekDayRegex: !simpleRegex
   def: \b(?<prefix>को\s+)?(?<weekday>morning|afternoon|evening|night|रात|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>(the\s+)?({MonthSuffixRegex}\s+)(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+{WeekDayRegex})
+  def: (?<wom>(the\s+)?({MonthSuffixRegex}\s+)(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+(तारीख|{WeekDayRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
-  def: \b((अब\s+से|बाद)\s+{AllWrittenNumericalRegex}\s+{WeekDayRegex}\s+)
+  def: \b((अभी\s+से\s+अगले|अब\s+से|बाद|अगले)\s+{AllWrittenNumericalRegex}\s+{WeekDayRegex}(\s+के\s+बाद)?)
   references: [ AllWrittenNumericalRegex, WeekDayRegex ]
 SpecialDate: !nestedRegex
   def: ({DayRegex}(?=\s*(को|पर)))
@@ -281,19 +280,20 @@ DateExtractorYearTermRegex: !nestedRegex
   def: (\s+|\s*,\s*|\s+(का|की|के|को)\s+){DateYearRegex}
   references: [ DateYearRegex ]
 DateExtractor1: !nestedRegex
-  def: ((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))
+  def: ((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[\(,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\))?(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateExtractorYearTermRegex,DateYearRegex]
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+(का|की|के|को)\s+|\s*-\s*){MonthRegex}[\.]?((\s+|\s*,\s*|\s+में\s+){DateYearRegex})?
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+# The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
-  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}
+  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
-  def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])
+  def: ({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])(?=\s+{DatePreposition})
   references: [ MonthNumRegex, DayRegex, WeekDayRegex, DatePreposition, StrictRelativeRegex ]
 DateExtractor7L: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])
@@ -315,7 +315,7 @@ DateExtractor9S: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}(?![%])
   references: [ DayRegex, MonthNumRegex, WeekDayRegex ]
 DateExtractorA: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}
+  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, DayRegex, WeekDayRegex ]
 OfMonth: !nestedRegex
   def: ^\s*{MonthRegex}(?=\s*(को|की)?)
@@ -341,7 +341,7 @@ PmRegex: !simpleRegex
 PmRegexFull: !simpleRegex
   def: (?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|अपराह्न|अपराहन|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)
 AmRegex: !simpleRegex
-  def: (?<am>सवेरे|पूर्वाह्न|(सुबह|morning|दिन\s+के|पूर्वाहन)(\s*(-सुबह|(के|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|प्रातः)
+  def: (?<am>सवेरे|पूर्वाह्न|(सुबह(?!\s+(के\s+दौरान))|morning|दिन(?!\s+हैं)|पूर्वाहन|प्रातः)(\s*(-सुबह|(?:के|को|में|की)))?)
 LunchRegex: !simpleRegex
   def: (खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)
 NightRegex: !simpleRegex
@@ -355,8 +355,8 @@ WrittenTimeRegex: !nestedRegex
   def: (?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>बीस|तीस|चालीस|पचास|twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले))?)
-  references: [ HourNumRegex, LessThanOneHour, BaseDateTime.HourRegex ]
+  def: (?<prefix>((बजकर|बजने\s+(में|से))\s+)?{LessThanOneHour}(\s+(बाकी|पहले|होने के\s+{MinuteNumRegex}\s+मिनट\s+बाद))?)
+  references: [ HourNumRegex, LessThanOneHour, BaseDateTime.HourRegex, MinuteNumRegex ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
   references: [ AmRegex, PmRegex, OclockRegex ]
@@ -369,11 +369,11 @@ BasicTime: !nestedRegex
 MidnightRegex: !simpleRegex
   def: (?<midnight>आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|मध्य\s*रात्रि)
 MidmorningRegex: !simpleRegex
-  def: (?<midmorning>(मध्य|बीच)\s*(-\s*)?सुबह)
+  def: (?<midmorning>(मध्य|बीच)\s*(-\s*)?सुबह|दिन\s+चढ़ने\s+से\s+पूर्व)
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>देर\s*दोपहर|दोपहर(\s*(देर|के\s*आसपास))|भरी\s*दुपहरी)
 MiddayRegex: !simpleRegex
-  def: (?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न)
+  def: (?<midday>दिन\s*के\s*मध्य|दिन\s*के\s*बीच|दोपहर\s+में|दोपहर(\s+के\s+खाने\s+के\s+वक़्त)?(\s*(12|बारह)\s*बजे)?|मध्याह्न|दिन\s+(के\s+)?चढ़ते\s+ही|दिन\s+चढ़ने\s+पर)
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidafternoonRegex}|{MiddayRegex}|{MidnightRegex}|{MidmorningRegex}))
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
@@ -384,7 +384,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}((-|——)?ish|दोपहर(\s*((के\s*आसपास)|देर))?|(\s+बजे)?\s+के\s+आसपास)|लगभग\s+लंच\s+के\s+समय)'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?rs?|h|घंटों|घंटे|घंटा|आर्स|मिनट|सेकंड|घण्टों|sec(ond)?s?)
+  def: ([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?rs?|h|घंटों|घंटे|घंटा|आर्स|मिनट|सेकंड्स|सेकंड|घण्टों|sec(ond)?s?)
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|घंटे|घंटा|घंटों|घण्टे|घण्टों|मिनट|आर्स|minute|मि|घण्टे)
 FivesRegex: !simpleRegex
@@ -460,7 +460,7 @@ SpecificTimeBetweenAnd: !nestedRegex
 SuffixAfterRegex: !simpleRegex
   def: \b(और\s+(above|after|बाद|greater)?(?!\s+than)?)\b
 PrepositionRegex: !simpleRegex
-  def: (?<prep>^(at|(को|के),?|on|of)(\s+the)?$)
+  def: (?<prep>^(at|(को|के),?|on|of)?(\s+the)?$)
 LaterEarlyRegex: !simpleRegex
   def: ((?<early>((को|की)\s+)?(जल्दी|तड़के|सुबह(?!\s+देर))(\s+से)?-?)|(?<late>((को|की)\s+)?(प्रहर\s+)?देर(\s+से)?-?))
 MealTimeRegex: !simpleRegex
@@ -469,7 +469,7 @@ UnspecificTimePeriodRegex: !nestedRegex
   def: ({MealTimeRegex})
   references: [ MealTimeRegex ]
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*({AmRegex}|{PmRegex})|(रोज\s+)?({AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?|शाम)
+  def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*(सुबह|दोपहर|शाम|{AmRegex}|{PmRegex})(?:\s+(को|में))?|(रोज\s+)?(सुबह|दोपहर|{AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?(?:\s+(को|में))?|शाम|(काम|व्यापार)\s+के\s+(समय|घंटों)(\s+में)?)
   references: [ LaterEarlyRegex, AmRegex, PmRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})|\b(tonight|आज(\s+रात)?))s?
@@ -480,17 +480,17 @@ TimeFollowedUnit: !nestedRegex
 TimeNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){TimeUnitRegex}
   references: [ TimeUnitRegex ]
-BusinessHourSplitStrings: ['business', 'hour', 'घण्टे']
+BusinessHourSplitStrings: ['business', 'hour','व्यापारिक', 'घण्टे', 'व्यापार', 'काम']
 NowRegex: !simpleRegex
-  def: \b(?<now>अभी|अब|जल्द\s+से\s+जल्द|जितनी\s+जल्दी\s+हो\s+सके|यथाशीघ्र|हाल\s+ही\s+में|पहले से)
+  def: \b(?<now>अभी|अब|ज़ल्दी\s+से\s+ज़ल्दी|जल्द\s+से\s+जल्द|जितनी\s+जल्दी\s+हो\s+सके|यथाशीघ्र|हाल\s+ही\s+में|पहले से)
 SuffixRegex: !simpleRegex
-  def: ^\s*(in the\s+)?(morning|सुबह|afternoon|दोपहर|evening|संध्या|शाम|सायं|सायंकाल|night|रात)\b
+  def: ^\s*(in the\s+)?(morning|सुबह|afternoon|दोपहर|दिन|evening|संध्या|शाम|सायं|सायंकाल|night|रात)\b
 NonTimeContextTokens: !simpleRegex
   def: (building)
 DateTimeTimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>morning|सुबह|afternoon|दोपहर|night|रात|evening|संध्या|शाम|सायं|सायंकाल)(?![\u0900-\u097f])
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bआज((\s+(आधी|अर्ध))?\s*रात)?)
+  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bआज(\s+रात)?((\s+(आधी|अर्ध))?\s*रात)?)
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
@@ -505,9 +505,9 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|करीब|लगभग))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ^\s*(((दिन\s+)?(यह\s+)?के\s+अंत(\s+में)?)|(देर\s+शाम\s+को))(?![\u0900-\u097f])
+  def: ^\s*(((दिन\s+)?(यह\s+)?के\s+(अंत|खत्म)(\s+में)?)|(देर\s+शाम\s+को))(?![\u0900-\u097f])
 UnspecificEndOfRegex: !nestedRegex
-  def: \b(यह\s+)?(eod|((?<!{WeekDayRegex}\s+)(दिन)\s+के\s+अंत\s+में))
+  def: \b(यह\s+)?(eod|दिन\s+के\s+खत्म|((?<!{WeekDayRegex}\s+)(दिन)\s+के\s+अंत\s+में))
   references: [ WeekDayRegex ]
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(eoy)\b
@@ -521,23 +521,23 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(((को|की)\s+)?{PeriodTimeOfDayRegex}(\s+(को|की))?)(?![\u0900-\u097f])
  references: [ PeriodTimeOfDayRegex ]
 LessThanRegex: !simpleRegex
-  def: \b(से\s+कम)
+  def: \b(से\s+(भी\s+)?कम(\s+समय)?)
 MoreThanRegex: !simpleRegex
-  def: \b(से\s+ज्यादा)
+  def: \b(से\s+(ज़्यादा|ज्यादा))
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड|सेकेंड|sec(ond)?s?)
-  references: [ DateUnitRegex, SetDurationUnitRegex ]
+  def: (?<unit>{DateUnitRegex}|((घं|मि)(\.|(?=[/\\.,-])))|घण्टों|घण्टे(\sऔर)?|कार्य\s?दिवस(\sऔर)?|घंटों|घंटे|घंटा|घं|आर्स|h|मिनटों|मिनट|मिन\.|min\.|min(ute)?s?|सेकंड्स|सेकंड|सेकेंड|sec(ond)?s?)
+  references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter)|(?<suffix_num>साढ़े|आधे|तिमाही))
+  def: (?<suffix>\s*(और)\s+((एक)?\s+)?(?<suffix_num>आधे|साढ़े|तिमाही)|(?<suffix_num>साढ़े|आधे|तिमाही))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>(?<daily>दैनिक|रोज़)|(?<monthly>मासिक)|(?<weekly>साप्ताहिक)|(?<yearly>वार्षिक|सालाना|सालान|साल\s+में\s+एक\s+बार)|(?<biweekly>हफ्ते\s+में\s+दो\s+बार))
+  def: \b(?<periodic>(?<daily>दैनिक|रोज़)|(?<monthly>मासिक)|(?<weekly>साप्ताहिक)|(?<yearly>वार्षिक|ऐनुअली\s+एक\s+बार|सालाना|सालान|साल\s+में\s+एक\s+बार)|(?<biweekly>हफ्ते\s+में\s+दो\s+बार))
 EachUnitRegex: !nestedRegex
-  def: (?<each>(प्रत्येक\s+से|हरेक|हर(\s+एक)?|प्रति|रो(?=ज))(?<other>\s+other)?\s*(?!दिन\s+(सुबह|दोपहर|संध्या|रात)){DurationUnitRegex})
+  def: (?<each>(प्रत्येक\s+से|हरेक|हर\s+तीसरे|हर(\s+एक)?|प्रति|रो(?=ज))(?<other>\s+other)?\s*(?!दिन\s+(सुबह|दोपहर|संध्या|रात)){DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*$)
+  def: \b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर\s+तीसरे|हर(\s+(एक|रोज|दिन))?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*)
+  def: \b(?<each>((से\s+)?प्रत्येक|प्रतिदिन|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>निम्नलिखित|अगले|आगामी|इस|पिछले|पिछले|पिछले|वर्तमान)
 EachDayRegex: !simpleRegex
@@ -551,7 +551,7 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b((?<half>आधा)|एक)\s+{DurationUnitRegex}
+  def: \b((?<half>आधे|आधा)|एक(\sऔर)?)\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(?<unit>साल|महीनों|महीना|(?!सप्ताहांत)सप्ताह|हफ़्ते|हफ्ते|दिन|घंटे|घंटा|आर्स)\s+(के लिए|के लिये|दौरान)
@@ -563,15 +563,15 @@ ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
 # Major holidays + holiday w/ weekday in name
 HolidayRegex1: !nestedRegex
-  def: \b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|नया\s+साल|नए\s+साल\s+की\s+शाम|नववर्ष\s+की\s+पूर्वसंध्या|न्यू\s+इयर\s+ईव|may\s*day|yuan dan|christmas eve|((christmas|xmas|क्रिसमस)(\s+के)?(\s+वाले)?(\s+(day|दिन))?)|गांधी\s+जयंती|black friday|ब्लैक\s+फ़्राइड|yuandan|ईस्टर(\s+(रवि|सोम|शनि)(वार)?)?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday|सायबर\s+मंडे)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?
+  def: \b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|नया\s+साल|नए\s+साल\s+की\s+शाम|नववर्ष\s+की\s+पूर्वसंध्या|न्यू\s+इयर\s+ईव|may\s*day|yuan dan|christmas eve|((christmas|xmas|क्रिसमस)(\s+के)?(\s+वाले)?(\s+(day|दिन))?)|गांधी\s+जयंती(\sके\s?दिन)?|black friday|ब्लैक\s+फ़्राइड|yuandan|ईस्टर(\s+(रवि|सोम|शनि)(वार)?)?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday|सायबर\s+मंडे)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?
   references: [ YearRegex, RelativeRegex ]
 # Extra religious or local holidays
 HolidayRegex2: !nestedRegex
-  def: \b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(thanks\s*giving|होली|दिवाली|all saint's|white lover|s(?:ain)?t?. (?:patrick|george)(?:')?(?:s)?|सेंट\s+पैट्रिक्स|us independence|ईस्टर( संडे)?|all hallow|all souls|guy fawkes|cinco de mayo|halloween|हैलोवीन|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+(day|दिन|डे))?|थैंक्स\s+गिविंग\s+के\s+दिन|थैंक्स\s*गिविंग)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?
+  def: \b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(thanks\s*giving|रक्षा(\s)?बंधन(\sके)?|होली|नवरा(त्रों|त्र)(\sके\s+पहले)?|वैशाखी|बैसाखी(\sहर\sसाल)?|दिवाली|all saint's|white lover|s(?:ain)?t?. (?:patrick|george)(?:')?(?:s)?|सेंट\s+पैट्रिक्स|us independence|ईस्टर( संडे)?|all hallow|all souls|guy fawkes|cinco de mayo|halloween|हैलोवीन|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+(day|दिन|डे))?|थैंक्स\s+गिविंग\s+के\s+दिन|थैंक्स\s*गिविंग)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?
   references: [ YearRegex, RelativeRegex ]
 # General holidays (must be followed by "day")
 HolidayRegex3: !nestedRegex
-  def: \b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(?:independence|स्वतंत्रता|गणतंत्र|योग|presidents(?:')?|प्रेसिडेंट्स|mlk|martin luther king( jr)?|मार्टिन\s+लूथर\s+किंग|एम\.\s+एल\.\s+के\.|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|मजदूर|(international|int'l)\s+workers'?|mother's|mothers?|father's|फादर्स|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|पृथ्वी|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+(day|दिवस|डे))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?
+  def: \b(({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?))\s+((की|के)\s+)?)?(?<holiday>(?:independence|स्वतंत्रता|स्वतंत्रता|गणतंत्र|योग|presidents(?:')?|प्रेसिडेंट्स|mlk|martin luther king( jr)?|मार्टिन\s+लूथर\s+किंग|एम\.\s+एल\.\s+के\.|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|मजदूर|(अंतर्राष्ट्रीय|अंतरराष्ट्रीय)\s+मजदूर?|(international|int'l)\s+workers'?|श्रमिक|मई|mother's|mothers?|father's|फादर्स|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|पृथ्वी|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+(day|दिवस|डे))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+(year|साल|वर्ष?)))?
   references: [ YearRegex, RelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning|सुबह)
@@ -582,24 +582,24 @@ NowTimeRegex: !simpleRegex
 RecentlyTimeRegex: !simpleRegex
   def: (recently|previously|हाल\s+ही(\s+में)?|पहले(\s+से)?)
 AsapTimeRegex: !simpleRegex
-  def: (as\s+soon\s+as\s+possible|asap|जल्द\s+से\s+जल्द)
+  def: (as\s+soon\s+as\s+possible|asap|ज़ल्दी\s+से\s+ज़ल्दी|जितनी\s+जल्दी\s+हो\s+सके|जल्द\s+से\s+जल्द)
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((को|में|बीच में|in|से|पर|at)\s+(अथवा|या)\s+)|(\s+(अथवा|या)\s+(को|में|बीच में|in|से|पर)))
 BeforeRegex: !nestedRegex
-  def: ((\b({InclusiveModPrepositions}\s*)?(?:(((से|के)\s+)?पहले)|तक|पहले\s+से|(के|से)\s+पूर्व|(बाद में नही|पूर्व)\s+से|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as))(\s*{InclusiveModPrepositions})?\b)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?
+  def: ((({InclusiveModPrepositions}\s*)?\s*(?:(((से|के)\s+)?पहले(\s+नहीं)?)|तक|पहले\s+से|(के|से)\s+पूर्व|(बाद में नही|पूर्व)\s+से|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as))(\s*{InclusiveModPrepositions})?\b)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?
   references: [ InclusiveModPrepositions ]
 # "starting from" is SinceRegex
 AfterRegex: !nestedRegex
-  def: ((\b({InclusiveModPrepositions}\s*)?((के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
+  def: ((({InclusiveModPrepositions}\s*)?(((\s+)?के बाद|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to)(\s*{InclusiveModPrepositions})?\b)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
   def: (?:(?:\b(?:(से|के) बाद\s+(अथवा|या)\s+के बराबर|से|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b)|(?<!\w|<)(>=))
 AroundRegex: !simpleRegex
   def: (?:\b(?:around|circa|लगभग|(के\s+)?आसपास))
 AgoRegex: !simpleRegex
-  def: \b(पहले|(?<day>कल|आज)(\s+(से|के)\sपहले))
+  def: ((?<day>(कल से पहले)|कल|आज)(\s+(से|के)\s*पहले)?|पहले)
 LaterRegex: !nestedRegex
-  def: \b(?:(?<day>अब\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से)
+  def: \b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(में|को)
@@ -607,7 +607,7 @@ SinceYearSuffixRegex: !nestedRegex
   def: (^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})
   references: [ SinceRegex, YearSuffix ]
 WithinNextPrefixRegex: !nestedRegex
-  def: \b(((?<next>{NextPrefixRegex})\s+)?अंदर)
+  def: \b(((?<next>{NextPrefixRegex}?के)\s+)?(अंदर|भीतर))
   references: [ NextPrefixRegex ]
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
 MorningStartEndRegex: !nestedRegex
@@ -621,7 +621,7 @@ EveningStartEndRegex: !simpleRegex
 NightStartEndRegex: !simpleRegex
   def: (^(रातों|आज)?\s*रात)|((over|to)?रात$)
 InexactNumberRegex: !simpleRegex
-  def: \b(कुछ|कई|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))
+  def: \b(कुछ|कई|कुछ ही|कुछेक|(?<NumTwoTerm>(का\s+)?(एक\s+)?जोड़ा))
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
@@ -656,7 +656,7 @@ PrepositionSuffixRegex: !simpleRegex
 WrittenDayRegex: !simpleRegex
   def: (?<day>सात|दूसरी|आठ|फ़ोर|चार|पांच|पाँच|नौ|दो|छह|एक(सठ)?|तीन|सत्रह|तेरह|चौदह|अठारह|उन्नीस|पंद्रह|सोलह|ग्यारह|बारह|दस|सत्ताईस|तेईस|चौबीस|अट्ठाईस|अट्ठाइस|उनतीस|पच्चीस|छब्बीस|इक्कीस|बाईस|बीस|तीस|इकत्तीस|इकतीस)(?![\u0900-\u097f])
 FlexibleDayRegex: !nestedRegex
-  def: (?<DayOfMonth>({WeekDayRegex}+\s+)?({WrittenDayRegex}|(उस\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))))(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?
+  def: (?<DayOfMonth>({WeekDayRegex}+\s+)?({WrittenDayRegex}|(उस\s*)?(?<!:)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))))(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?
   references: [WrittenDayRegex, WeekDayRegex ]
 ForTheRegex: !nestedRegex
   def: \b(((उस\s+)?{FlexibleDayRegex}(?=\s+(तारीख\s+)?(के|को))|((यह\s+)?{FlexibleDayRegex}(?<=(?:ला|रा|था|वां|वीं|वें|वाँ|वा|ठा))(?<=\s+को\s+)))(?<end>\s*(,|\.|!|\?|$))?)
@@ -745,6 +745,9 @@ UnitMap: !dictionary
     महीने: MON
     माह: MON
     पखवाड़ा: 2W
+    पखवाड़े: 2W
+    पखवाड़े: 2W
+    पखवाड़ा: 2W
     हफ़्तों: W
     सप्ताह: W
     हफ़्ते: W
@@ -783,6 +786,7 @@ UnitMap: !dictionary
     सेकेंड: S
     secs: S
     sec: S
+    सेकंड्स: S
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
@@ -796,6 +800,9 @@ UnitValueMap: !dictionary
     महीनों: 2592000
     माह: 2592000
     पखवाड़ा: 1209600
+    पखवाड़े: 1209600
+    पखवाड़े: 1209600
+    पखवाड़ा: 1209600
     हफ़्तों: 604800
     सप्ताह: 604800
     हफ्ते: 604800
@@ -805,6 +812,7 @@ UnitValueMap: !dictionary
     हफ्तों: 604800
     दिन: 86400
     दिनों: 86400
+    दिवस: 86400
     ज: 86400
     hours: 3600
     घंटे: 3600
@@ -832,6 +840,7 @@ UnitValueMap: !dictionary
     second: 1
     सेकंड: 1
     सेकेंड: 1
+    सेकंड्स: 1
     secs: 1
     sec: 1
 SpecialYearPrefixesMap: !dictionary
@@ -1466,7 +1475,7 @@ HolidayNames: !dictionary
     yogaday: [योगदिवस, योग]
     holi: [होली]
     diwali: [दिवाली]
-    gandhijayanti: [गांधीजयंती]
+    gandhijayanti: [गांधीजयंती,गांधीजयंतीकेदिन]
     easterday: [ easterday, easter, eastersunday, ईस्टरसंडे ]
     ashwednesday: [ ashwednesday ]
     palmsunday: [ palmsunday ]
@@ -1515,7 +1524,7 @@ HolidayNames: !dictionary
     stpatrickday: [ stpatrickday, stpatricksday, stpatrick, सेंटपैट्रिक्सडे, सेंटपैट्रिक्स ]
     aprilfools: [ aprilfools ]
     stgeorgeday: [ stgeorgeday ]
-    mayday: [ mayday, intlworkersday, internationalworkersday, मजदूरदिवस ]
+    mayday: [ mayday, intlworkersday, internationalworkersday, मजदूरदिवस, श्रमिकदिवस, अंतर्राष्ट्रीयमजदूरदिवस, मईदिवस ]
     cincodemayoday: [ cincodemayoday ]
     baptisteday: [ baptisteday ]
     usindependenceday: [ usindependenceday ]
@@ -1528,209 +1537,211 @@ HolidayNames: !dictionary
     veteransday: [ veteransday ]
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve, नएसालकीशाम, नववर्षकीपूर्वसंध्या, न्यूइयरईव ]
-HoliDiwaliDates: !dictionary
+    rakshabandhan: [ रक्षाबंधनकेदिन, रक्षाबंधन ]
+    vaishakhi: [ बैसाखीहरसाल, बैसाखी, वैशाखी ]
+HoliDiwaliRakshabandhanBaisakhiDates: !dictionary
   types: [ int, 'int[]' ]
   entries:
-    1900: [3, 16, 10, 23]
-    1901: [3, 05, 11, 11]
-    1902: [3, 24, 10, 31]
-    1903: [3, 13, 10, 20]
-    1904: [3, 02, 11, 07]
-    1905: [3, 21, 10, 28]
-    1906: [3, 10, 10, 17]
-    1907: [3, 29, 11, 05]
-    1908: [3, 18, 10, 25]
-    1909: [3, 07, 11, 13]
-    1910: [3, 25, 11, 02]
-    1911: [3, 14, 10, 22]
-    1912: [3, 03, 11, 09]
-    1913: [3, 22, 10, 29]
-    1914: [3, 12, 10, 19]
-    1915: [3, 01, 11, 07]
-    1916: [3, 19, 10, 26]
-    1917: [3, 08, 11, 14]
-    1918: [3, 27, 11, 03]
-    1919: [3, 16, 10, 23]
-    1920: [3, 04, 11, 10]
-    1921: [3, 23, 10, 30]
-    1922: [3, 13, 10, 20]
-    1923: [3, 03, 11, 08]
-    1924: [3, 21, 10, 28]
-    1925: [3, 10, 10, 17]
-    1926: [3, 29, 11, 05]
-    1927: [3, 18, 10, 25]
-    1928: [3, 06, 11, 12]
-    1929: [3, 25, 11, 01]
-    1930: [3, 14, 10, 21]
-    1931: [3, 04, 11, 09]
-    1932: [3, 22, 10, 29]
-    1933: [3, 12, 10, 19]
-    1934: [3, 01, 11, 07]
-    1935: [3, 20, 10, 27]
-    1936: [3, 08, 11, 14]
-    1937: [3, 26, 11, 03]
-    1938: [3, 16, 10, 23]
-    1939: [3, 05, 11, 11]
-    1940: [3, 23, 10, 30]
-    1941: [3, 13, 10, 20]
-    1942: [3, 03, 11, 08]
-    1943: [3, 21, 10, 29]
-    1944: [3, 10, 10, 17]
-    1945: [2, 26, 11, 04]
-    1946: [3, 17, 10, 24]
-    1947: [3, 07, 11, 12]
-    1948: [3, 25, 11, 01]
-    1949: [3, 14, 10, 21]
-    1950: [3, 04, 11, 09]
-    1951: [3, 23, 10, 30]
-    1952: [3, 11, 10, 18]
-    1953: [2, 28, 11, 06]
-    1954: [3, 19, 10, 26]
-    1955: [3, 08, 11, 14]
-    1956: [3, 26, 11, 02]
-    1957: [3, 16, 10, 23]
-    1958: [3, 05, 11, 11]
-    1959: [3, 24, 10, 31]
-    1960: [3, 13, 10, 20]
-    1961: [3, 02, 11, 08]
-    1962: [3, 21, 10, 28]
-    1963: [3, 10, 10, 17]
-    1964: [3, 28, 11, 04]
-    1965: [3, 17, 10, 24]
-    1966: [3, 07, 11, 12]
-    1967: [3, 26, 11, 02]
-    1968: [3, 14, 10, 21]
-    1969: [3, 04, 11, 09]
-    1970: [3, 23, 10, 30]
-    1971: [3, 12, 10, 19]
-    1972: [2, 29, 11, 06]
-    1973: [3, 18, 10, 26]
-    1974: [3, 08, 11, 14]
-    1975: [3, 27, 11, 03]
-    1976: [3, 16, 10, 23]
-    1977: [3, 05, 11, 11]
-    1978: [3, 24, 10, 31]
-    1979: [3, 13, 10, 21]
-    1980: [3, 01, 11, 07]
-    1981: [3, 20, 10, 27]
-    1982: [3, 09, 11, 15]
-    1983: [3, 28, 11, 04]
-    1984: [3, 17, 10, 24]
-    1985: [3, 07, 11, 12]
-    1986: [3, 26, 11, 02]
-    1987: [3, 15, 10, 22]
-    1988: [3, 03, 11, 09]
-    1989: [3, 22, 10, 29]
-    1990: [3, 11, 10, 18]
-    1991: [2, 28, 11, 06]
-    1992: [3, 18, 10, 25]
-    1993: [3, 08, 11, 13]
-    1994: [3, 27, 11, 03]
-    1995: [3, 17, 10, 24]
-    1996: [3, 05, 11, 11]
-    1997: [3, 24, 10, 31]
-    1998: [3, 13, 10, 20]
-    1999: [3, 02, 11, 08]
-    2000: [3, 20, 10, 27]
-    2001: [3, 09, 11, 15]
-    2002: [3, 28, 11, 04]
-    2003: [3, 18, 10, 25]
-    2004: [3, 06, 11, 12]
-    2005: [3, 25, 11, 02]
-    2006: [3, 14, 10, 22]
-    2007: [3, 03, 11, 09]
-    2008: [3, 21, 10, 28]
-    2009: [3, 11, 10, 18]
-    2010: [2, 28, 11, 06]
-    2011: [3, 19, 10, 26]
-    2012: [3, 08, 11, 13]
-    2013: [3, 27, 11, 03]
-    2014: [3, 16, 10, 23]
-    2015: [3, 05, 11, 11]
-    2016: [3, 23, 10, 30]
-    2017: [3, 12, 10, 19]
-    2018: [3, 02, 11, 07]
-    2019: [3, 21, 10, 28]
-    2020: [3, 09, 11, 15]
-    2021: [3, 28, 11, 04]
-    2022: [3, 18, 10, 25]
-    2023: [3, 07, 11, 13]
-    2024: [3, 25, 11, 01]
-    2025: [3, 14, 10, 21]
-    2026: [3, 03, 11, 09]
-    2027: [3, 22, 10, 29]
-    2028: [3, 11, 10, 18]
-    2029: [2, 28, 11, 06]
-    2030: [3, 19, 10, 26]
-    2031: [3, 09, 11, 14]
-    2032: [3, 27, 11, 03]
-    2033: [3, 16, 10, 23]
-    2034: [3, 05, 11, 11]
-    2035: [3, 23, 10, 31]
-    2036: [3, 12, 10, 19]
-    2037: [3, 01, 11, 07]
-    2038: [3, 21, 10, 28]
-    2039: [3, 10, 11, 16]
-    2040: [3, 28, 11, 04]
-    2041: [3, 17, 10, 25]
-    2042: [3, 06, 11, 12]
-    2043: [3, 25, 11, 01]
-    2044: [3, 13, 10, 20]
-    2045: [3, 03, 11, 08]
-    2046: [3, 22, 10, 29]
-    2047: [3, 12, 10, 19]
-    2048: [2, 29, 11, 06]
-    2049: [3, 19, 10, 26]
-    2050: [3, 08, 11, 14]
-    2051: [3, 27, 11, 03]
-    2052: [3, 15, 10, 22]
-    2053: [3, 04, 11, 10]
-    2054: [3, 23, 10, 30]
-    2055: [3, 13, 10, 20]
-    2056: [3, 02, 11, 07]
-    2057: [3, 21, 10, 28]
-    2058: [3, 10, 11, 16]
-    2059: [3, 29, 11, 05]
-    2060: [3, 17, 10, 24]
-    2061: [3, 06, 11, 12]
-    2062: [3, 25, 11, 01]
-    2063: [3, 14, 10, 21]
-    2064: [3, 03, 11, 08]
-    2065: [3, 22, 10, 29]
-    2066: [3, 11, 10, 19]
-    2067: [3, 01, 11, 06]
-    2068: [3, 18, 10, 26]
-    2069: [3, 07, 11, 13]
-    2070: [3, 26, 11, 02]
-    2071: [3, 16, 10, 23]
-    2072: [3, 04, 11, 10]
-    2073: [3, 23, 10, 30]
-    2074: [3, 13, 10, 20]
-    2075: [3, 02, 11, 08]
-    2076: [3, 20, 10, 27]
-    2077: [3, 09, 11, 15]
-    2078: [3, 28, 11, 04]
-    2079: [3, 17, 10, 24]
-    2080: [3, 05, 11, 11]
-    2081: [3, 25, 11, 01]
-    2082: [3, 14, 10, 21]
-    2083: [3, 04, 11, 09]
-    2084: [3, 22, 10, 29]
-    2085: [3, 11, 10, 18]
-    2086: [2, 28, 11, 06]
-    2087: [3, 19, 10, 26]
-    2088: [3, 07, 11, 13]
-    2089: [3, 26, 11, 02]
-    2090: [3, 15, 10, 23]
-    2091: [3, 05, 11, 11]
-    2092: [3, 23, 10, 30]
-    2093: [3, 13, 10, 20]
-    2094: [3, 02, 11, 08]
-    2095: [3, 21, 10, 28]
-    2096: [3, 09, 11, 14]
-    2097: [3, 27, 11, 04]
-    2098: [3, 17, 10, 24]
-    2099: [3, 06, 11, 12]
+    1900: [3, 16, 10, 23, 8, 10, 4, 13]
+    1901: [3, 05, 11, 11, 8, 29, 4, 13]
+    1902: [3, 24, 10, 31, 8, 19, 4, 13]
+    1903: [3, 13, 10, 20, 8, 08, 4, 13]
+    1904: [3, 02, 11, 07, 8, 25, 4, 13]
+    1905: [3, 21, 10, 28, 8, 15, 4, 13]
+    1906: [3, 10, 10, 17, 8, 04, 4, 13]
+    1907: [3, 29, 11, 05, 8, 23, 4, 13]
+    1908: [3, 18, 10, 25, 8, 12, 4, 13]
+    1909: [3, 07, 11, 13, 8, 31, 4, 13]
+    1910: [3, 25, 11, 02, 8, 20, 4, 13]
+    1911: [3, 14, 10, 22, 8, 09, 4, 13]
+    1912: [3, 03, 11, 09, 8, 27, 4, 13]
+    1913: [3, 22, 10, 29, 8, 16, 4, 13]
+    1914: [3, 12, 10, 19, 8, 05, 4, 13]
+    1915: [3, 01, 11, 07, 8, 24, 4, 13]
+    1916: [3, 19, 10, 26, 8, 13, 4, 13]
+    1917: [3, 08, 11, 14, 8, 03, 4, 13]
+    1918: [3, 27, 11, 03, 8, 22, 4, 13]
+    1919: [3, 16, 10, 23, 8, 11, 4, 13]
+    1920: [3, 04, 11, 10, 8, 29, 4, 13]
+    1921: [3, 23, 10, 30, 8, 18, 4, 13]
+    1922: [3, 13, 10, 20, 8, 07, 4, 13]
+    1923: [3, 03, 11, 08, 8, 26, 4, 13]
+    1924: [3, 21, 10, 28, 8, 14, 4, 13]
+    1925: [3, 10, 10, 17, 8, 04, 4, 13]
+    1926: [3, 29, 11, 05, 8, 23, 4, 13]
+    1927: [3, 18, 10, 25, 8, 13, 4, 14]
+    1928: [3, 06, 11, 12, 8, 30, 4, 13]
+    1929: [3, 25, 11, 01, 8, 20, 4, 13]
+    1930: [3, 14, 10, 21, 8, 09, 4, 13]
+    1931: [3, 04, 11, 09, 8, 28, 4, 14]
+    1932: [3, 22, 10, 29, 8, 16, 4, 13]
+    1933: [3, 12, 10, 19, 8, 05, 4, 13]
+    1934: [3, 01, 11, 07, 8, 24, 4, 13]
+    1935: [3, 20, 10, 27, 8, 14, 4, 14]
+    1936: [3, 08, 11, 14, 8, 03, 4, 13]
+    1937: [3, 26, 11, 03, 8, 21, 4, 13]
+    1938: [3, 16, 10, 23, 8, 11, 4, 13]
+    1939: [3, 05, 11, 11, 8, 29, 4, 14]
+    1940: [3, 23, 10, 30, 8, 17, 4, 13]
+    1941: [3, 13, 10, 20, 8, 07, 4, 13]
+    1942: [3, 03, 11, 08, 8, 26, 4, 13]
+    1943: [3, 21, 10, 29, 8, 15, 4, 14]
+    1944: [3, 10, 10, 17, 8, 04, 4, 13]
+    1945: [2, 26, 11, 04, 8, 23, 4, 13]
+    1946: [3, 17, 10, 24, 8, 12, 4, 13]
+    1947: [3, 07, 11, 12, 8, 31, 4, 14]
+    1948: [3, 25, 11, 01, 8, 19, 4, 13]
+    1949: [3, 14, 10, 21, 8, 08, 4, 13]
+    1950: [3, 04, 11, 09, 8, 27, 4, 13]
+    1951: [3, 23, 10, 30, 8, 17, 4, 14]
+    1952: [3, 11, 10, 18, 8, 05, 4, 13]
+    1953: [2, 28, 11, 06, 8, 24, 4, 13]
+    1954: [3, 19, 10, 26, 8, 14, 4, 13]
+    1955: [3, 08, 11, 14, 8, 03, 4, 14]
+    1956: [3, 26, 11, 02, 8, 21, 4, 13]
+    1957: [3, 16, 10, 23, 8, 10, 4, 13]
+    1958: [3, 05, 11, 11, 8, 29, 4, 13]
+    1959: [3, 24, 10, 31, 8, 18, 4, 14]
+    1960: [3, 13, 10, 20, 8, 06, 4, 13]
+    1961: [3, 02, 11, 08, 8, 26, 4, 13]
+    1962: [3, 21, 10, 28, 8, 15, 4, 13]
+    1963: [3, 10, 10, 17, 8, 05, 4, 14]
+    1964: [3, 28, 11, 04, 8, 23, 4, 13]
+    1965: [3, 17, 10, 24, 8, 12, 4, 13]
+    1966: [3, 07, 11, 12, 8, 30, 4, 14]
+    1967: [3, 26, 11, 02, 8, 19, 4, 14]
+    1968: [3, 14, 10, 21, 8, 08, 4, 13]
+    1969: [3, 04, 11, 09, 8, 27, 4, 13]
+    1970: [3, 23, 10, 30, 8, 17, 4, 14]
+    1971: [3, 12, 10, 19, 8, 06, 4, 14]
+    1972: [2, 29, 11, 06, 8, 24, 4, 13]
+    1973: [3, 18, 10, 26, 8, 13, 4, 13]
+    1974: [3, 08, 11, 14, 8, 03, 4, 14]
+    1975: [3, 27, 11, 03, 8, 21, 4, 14]
+    1976: [3, 16, 10, 23, 8, 09, 4, 13]
+    1977: [3, 05, 11, 11, 8, 28, 4, 13]
+    1978: [3, 24, 10, 31, 8, 18, 4, 14]
+    1979: [3, 13, 10, 21, 8, 08, 4, 14]
+    1980: [3, 01, 11, 07, 8, 26, 4, 13]
+    1981: [3, 20, 10, 27, 8, 15, 4, 13]
+    1982: [3, 09, 11, 15, 8, 04, 4, 14]
+    1983: [3, 28, 11, 04, 8, 23, 4, 14]
+    1984: [3, 17, 10, 24, 8, 11, 4, 13]
+    1985: [3, 07, 11, 12, 8, 30, 4, 13]
+    1986: [3, 26, 11, 02, 8, 19, 4, 14]
+    1987: [3, 15, 10, 22, 8, 09, 4, 14]
+    1988: [3, 03, 11, 09, 8, 27, 4, 13]
+    1989: [3, 22, 10, 29, 8, 17, 4, 13]
+    1990: [3, 11, 10, 18, 8, 06, 4, 14]
+    1991: [2, 28, 11, 06, 8, 25, 4, 14]
+    1992: [3, 18, 10, 25, 8, 13, 4, 13]
+    1993: [3, 08, 11, 13, 8, 02, 4, 13]
+    1994: [3, 27, 11, 03, 8, 21, 4, 14]
+    1995: [3, 17, 10, 24, 8, 10, 4, 14]
+    1996: [3, 05, 11, 11, 8, 28, 4, 13]
+    1997: [3, 24, 10, 31, 8, 18, 4, 13]
+    1998: [3, 13, 10, 20, 8, 07, 4, 14]
+    1999: [3, 02, 11, 08, 8, 26, 4, 14]
+    2000: [3, 20, 10, 27, 8, 15, 4, 13]
+    2001: [3, 09, 11, 15, 8, 04, 4, 13]
+    2002: [3, 28, 11, 04, 8, 22, 4, 14]
+    2003: [3, 18, 10, 25, 8, 12, 4, 14]
+    2004: [3, 06, 11, 12, 8, 29, 4, 13]
+    2005: [3, 25, 11, 02, 8, 19, 4, 14]
+    2006: [3, 14, 10, 22, 8, 09, 4, 14]
+    2007: [3, 03, 11, 09, 8, 28, 4, 14]
+    2008: [3, 21, 10, 28, 8, 16, 4, 13]
+    2009: [3, 11, 10, 18, 8, 05, 4, 14]
+    2010: [2, 28, 11, 06, 8, 24, 4, 14]
+    2011: [3, 19, 10, 26, 8, 13, 4, 14]
+    2012: [3, 08, 11, 13, 8, 02, 4, 13]
+    2013: [3, 27, 11, 03, 8, 20, 4, 14]
+    2014: [3, 16, 10, 23, 8, 10, 4, 14]
+    2015: [3, 05, 11, 11, 8, 29, 4, 14]
+    2016: [3, 23, 10, 30, 8, 18, 4, 13]
+    2017: [3, 12, 10, 19, 8, 07, 4, 14]
+    2018: [3, 02, 11, 07, 8, 26, 4, 14]
+    2019: [3, 21, 10, 28, 8, 15, 4, 14]
+    2020: [3, 09, 11, 15, 8, 03, 4, 13]
+    2021: [3, 28, 11, 04, 8, 22, 4, 14]
+    2022: [3, 18, 10, 25, 8, 11, 4, 14]
+    2023: [3, 07, 11, 13, 8, 30, 4, 14]
+    2024: [3, 25, 11, 01, 8, 19, 4, 13]
+    2025: [3, 14, 10, 21, 8, 09, 4, 14]
+    2026: [3, 03, 11, 09, 8, 28, 4, 14]
+    2027: [3, 22, 10, 29, 8, 17, 4, 14]
+    2028: [3, 11, 10, 18, 8, 05, 4, 13]
+    2029: [2, 28, 11, 06, 8, 23, 4, 14]
+    2030: [3, 19, 10, 26, 8, 13, 4, 14]
+    2031: [3, 09, 11, 14, 8, 02, 4, 14]
+    2032: [3, 27, 11, 03, 8, 20, 4, 13]
+    2033: [3, 16, 10, 23, 8, 10, 4, 14]
+    2034: [3, 05, 11, 11, 8, 29, 4, 14]
+    2035: [3, 23, 10, 31, 8, 18, 4, 14]
+    2036: [3, 12, 10, 19, 8, 06, 4, 13]
+    2037: [3, 01, 11, 07, 8, 25, 4, 14]
+    2038: [3, 21, 10, 28, 8, 14, 4, 14]
+    2039: [3, 10, 11, 16, 8, 04, 4, 14]
+    2040: [3, 28, 11, 04, 8, 22, 4, 13]
+    2041: [3, 17, 10, 25, 8, 11, 4, 14]
+    2042: [3, 06, 11, 12, 8, 30, 4, 14]
+    2043: [3, 25, 11, 01, 8, 20, 4, 14]
+    2044: [3, 13, 10, 20, 8, 08, 4, 13]
+    2045: [3, 03, 11, 08, 8, 27, 4, 14]
+    2046: [3, 22, 10, 29, 8, 16, 4, 14]
+    2047: [3, 12, 10, 19, 8, 05, 4, 14]
+    2048: [2, 29, 11, 06, 8, 23, 4, 14]
+    2049: [3, 19, 10, 26, 8, 13, 4, 14]
+    2050: [3, 08, 11, 14, 8, 02, 4, 14]
+    2051: [3, 27, 11, 03, 8, 21, 4, 14]
+    2052: [3, 15, 10, 22, 8, 10, 4, 14]
+    2053: [3, 04, 11, 10, 8, 29, 4, 14]
+    2054: [3, 23, 10, 30, 8, 18, 4, 14]
+    2055: [3, 13, 10, 20, 8, 07, 4, 14]
+    2056: [3, 02, 11, 07, 8, 25, 4, 14]
+    2057: [3, 21, 10, 28, 8, 14, 4, 14]
+    2058: [3, 10, 11, 16, 8, 04, 4, 14]
+    2059: [3, 29, 11, 05, 8, 23, 4, 14]
+    2060: [3, 17, 10, 24, 8, 11, 4, 14]
+    2061: [3, 06, 11, 12, 8, 30, 4, 14]
+    2062: [3, 25, 11, 01, 8, 20, 4, 14]
+    2063: [3, 14, 10, 21, 8, 09, 4, 14]
+    2064: [3, 03, 11, 08, 8, 26, 4, 14]
+    2065: [3, 22, 10, 29, 8, 16, 4, 14]
+    2066: [3, 11, 10, 19, 8, 05, 4, 14]
+    2067: [3, 01, 11, 06, 8, 24, 4, 14]
+    2068: [3, 18, 10, 26, 8, 13, 4, 14]
+    2069: [3, 07, 11, 13, 9, 01, 4, 14]
+    2070: [3, 26, 11, 02, 8, 21, 4, 14]
+    2071: [3, 16, 10, 23, 8, 10, 4, 14]
+    2072: [3, 04, 11, 10, 8, 28, 4, 14]
+    2073: [3, 23, 10, 30, 8, 17, 4, 14]
+    2074: [3, 13, 10, 20, 8, 06, 4, 14]
+    2075: [3, 02, 11, 08, 8, 25, 4, 14]
+    2076: [3, 20, 10, 27, 8, 14, 4, 14]
+    2077: [3, 09, 11, 15, 8, 04, 4, 14]
+    2078: [3, 28, 11, 04, 8, 23, 4, 14]
+    2079: [3, 17, 10, 24, 8, 12, 4, 14]
+    2080: [3, 05, 11, 11, 8, 30, 4, 14]
+    2081: [3, 25, 11, 01, 8, 19, 4, 14]
+    2082: [3, 14, 10, 21, 8, 08, 4, 14]
+    2083: [3, 04, 11, 09, 8, 27, 4, 14]
+    2084: [3, 22, 10, 29, 8, 15, 4, 14]
+    2085: [3, 11, 10, 18, 8, 05, 4, 14]
+    2086: [2, 28, 11, 06, 8, 24, 4, 14]
+    2087: [3, 19, 10, 26, 8, 14, 4, 15]
+    2088: [3, 07, 11, 13, 8, 31, 4, 14]
+    2089: [3, 26, 11, 02, 8, 21, 4, 14]
+    2090: [3, 15, 10, 23, 8, 10, 4, 14]
+    2091: [3, 05, 11, 11, 8, 28, 4, 15]
+    2092: [3, 23, 10, 30, 8, 17, 4, 14]
+    2093: [3, 13, 10, 20, 8, 06, 4, 14]
+    2094: [3, 02, 11, 08, 8, 25, 4, 14]
+    2095: [3, 21, 10, 28, 8, 15, 4, 15]
+    2096: [3, 09, 11, 14, 8, 04, 4, 14]
+    2097: [3, 27, 11, 04, 8, 22, 4, 14]
+    2098: [3, 17, 10, 24, 8, 11, 4, 14]
+    2099: [3, 06, 11, 12, 8, 30, 4, 15]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
@@ -1784,16 +1795,12 @@ SuperfluousWordList: !list
     - say
     - like
 # For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty.
-DurationDateRestrictions: [ today, now ]
+DurationDateRestrictions: [ आज, today, now ]
 # Cases collected from mined data
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '^(morning|afternoon|evening|night|day)\b': '\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b'
-    '\bnow\b': '\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b'
-    '\bmay\b': '\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b'
-    '\b(a|one) second\b': '\b(?<!an?\s+)(a|one) second (round|time)\b'
-    '\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$': '(?<!\b(before|after|around|circa)\b\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)'
+    '\bदिन\b': '\bदिन-ब-दिन\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
@@ -1863,12 +1870,15 @@ PlusOneDayTerms: !list
     - tmr
     - day after
     - कल
+    - कल से
 MinusOneDayTerms: !list
   types: [ string ]
   entries:
     - yesterday
     - day before
     - कल
+    - कल वापस गया था
+    - कल से पहले
 PlusTwoDayTerms: !list
   types: [ string ]
   entries:
@@ -1879,6 +1889,7 @@ MinusTwoDayTerms: !list
   types: [ string ]
   entries:
     - day before yesterday
+    - परसों वापस गया था
 # For DatePeriodParserConfiguration Logic
 FutureTerms: !list
   types: [ string ]

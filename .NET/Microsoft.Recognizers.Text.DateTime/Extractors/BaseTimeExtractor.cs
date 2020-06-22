@@ -86,7 +86,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 foreach (Match match in matches)
                 {
-                    results.Add(new Token(match.Index, match.Index + match.Length));
+                    // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
+                    var lth = match.Groups["lth"].Value;
+
+                    if (string.IsNullOrEmpty(lth) ||
+                        (lth.Length != match.Length && !(match.Length == lth.Length + 1 && match.Value.EndsWith(" ", StringComparison.Ordinal))))
+                    {
+                        results.Add(new Token(match.Index, match.Index + match.Length));
+                    }
                 }
 
             }

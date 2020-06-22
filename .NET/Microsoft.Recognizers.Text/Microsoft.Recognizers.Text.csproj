@@ -10,7 +10,7 @@
   <PropertyGroup>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
-		not report warnings for missing comments.
+		not report warnings for missing comments .
 
 		CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
 		CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
@@ -28,11 +28,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
-    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.0.0" />
-    <PackageReference Include="NuGet.CommandLine" Version="4.3.0" />
-    <PackageReference Include="vswhere" Version="2.2.11" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
+    <PackageReference Include="NuGet.CommandLine" Version="5.5.1" />
+    <PackageReference Include="vswhere" Version="2.8.4" />
   </ItemGroup>
 
 </Project>

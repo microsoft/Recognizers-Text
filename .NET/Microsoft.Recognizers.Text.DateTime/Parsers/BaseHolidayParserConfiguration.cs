@@ -29,13 +29,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public abstract string SanitizeHolidayToken(string holiday);
 
+        // @TODO move all old holiday definitions to resource files
         protected static DateObject MothersDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 5, GetDay(year, 5, 1, DayOfWeek.Sunday));
 
         protected static DateObject FathersDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetDay(year, 6, 2, DayOfWeek.Sunday));
 
         protected static DateObject MemorialDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 5, GetLastDay(year, 5, DayOfWeek.Monday));
 
-        protected static DateObject LabourDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 0, DayOfWeek.Monday));
+        protected static DateObject UsLabourDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 0, DayOfWeek.Monday));
+
+        protected static DateObject InternationalWorkersDay(int year) => new DateObject(year, 5, 1);
 
         protected static DateObject ColumbusDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 10, GetDay(year, 10, 1, DayOfWeek.Monday));
 
@@ -68,7 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 { "martinlutherking", MartinLutherKingDay },
                 { "washingtonsbirthday", WashingtonsBirthday },
                 { "canberra", CanberraDay },
-                { "labour", LabourDay },
+                { "labour", UsLabourDay },
+                { "internationalworkers", InternationalWorkersDay },
                 { "columbus", ColumbusDay },
                 { "memorial", MemorialDay },
             };

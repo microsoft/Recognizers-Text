@@ -7,9 +7,11 @@ namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class QueryProcessor
     {
-        private const string Expression = @"(?<=(\s|\d))(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\b";
 
-        private static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
+        // Must be in sync with Base-Numbers YAML due to inter-dependency issue with different .NET targets
+        private const string CaseSensitiveTerms = @"(?<=(\s|\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\b";
+
+        private static readonly Regex SpecialTokensRegex = new Regex(CaseSensitiveTerms, RegexOptions.Compiled);
 
         public static string Preprocess(string query, bool caseSensitive = false, bool recode = true)
         {
@@ -27,6 +29,7 @@ namespace Microsoft.Recognizers.Text.Utilities
                 query = query.Replace("９", "9");
                 query = query.Replace("：", ":");
                 query = query.Replace("－", "-");
+                query = query.Replace("−", "-");
                 query = query.Replace("，", ",");
                 query = query.Replace("／", "/");
                 query = query.Replace("Ｇ", "G");

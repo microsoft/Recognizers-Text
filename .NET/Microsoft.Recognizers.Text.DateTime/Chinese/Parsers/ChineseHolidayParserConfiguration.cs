@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -15,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
+        // Move dictionaries and hardcoded terms to resource file
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {
             { "元旦", NewYear },
@@ -92,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var referenceDate = refDate;
             object value = null;
 
-            if (er.Type.Equals(ParserName, StringComparison.InvariantCulture))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
 
@@ -305,6 +307,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var yearNum = match.Groups["year"].Value;
             var yearChs = match.Groups["yearchs"].Value;
             var yearRel = match.Groups["yearrel"].Value;
+
+            // @TODO move hardcoded values to resource file
             if (!string.IsNullOrEmpty(yearNum))
             {
                 hasYear = true;
@@ -371,7 +375,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + timexStr;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + timexStr;
                     ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;
@@ -407,7 +411,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 foreach (var ch in yearChsStr)
                 {
                     num *= 10;
-                    er = integerExtractor.Extract(ch.ToString());
+                    er = integerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))

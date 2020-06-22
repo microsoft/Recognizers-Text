@@ -281,5 +281,10 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "Once upon a time...",
+    "NotSupported": "javascript",
+    "Results": []
   }
 ]

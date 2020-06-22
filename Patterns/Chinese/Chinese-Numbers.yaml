@@ -163,8 +163,9 @@ HalfUnitRegex: !simpleRegex
   def: 半
 NegativeNumberTermsRegex: !simpleRegex
   def: '[负負]'
-NegativeNumberTermsRegexNum: !simpleRegex
-  def: ((?<!(\d+\s*)|[-－])[-－])
+NegativeNumberTermsRegexNum: !nestedRegex
+  def: ((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-－])[-－])
+  references: [BaseNumbers.NumberMultiplierRegex]
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
@@ -383,6 +384,14 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (?<number1>((?!(([,，](?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)
   references: [ TillRegex ]
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '十': '十足'
+    '伍': '队伍'
+    '肆': '放肆|肆意|肆无忌惮'
+    '陆': '大陆|陆地|登陆|海陆'
+    '拾': '拾取|拾起|收拾|拾到|朝花夕拾'
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
   def: ^[.]

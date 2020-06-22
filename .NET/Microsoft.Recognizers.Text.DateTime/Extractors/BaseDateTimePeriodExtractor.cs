@@ -378,7 +378,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (midEnd - midBegin > 0)
                 {
                     var midStr = text.Substring(midBegin, midEnd - midBegin);
-                    bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate);
+                    bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) ||
+                                                  (midStr.TrimStart().StartsWith(config.TokenBeforeDate) &&
+                                                   (points[idx + 1].Type == Constants.SYS_DATETIME_DATE || points[idx + 1].Type == Constants.SYS_DATETIME_DATETIME));
+
                     if (this.config.CheckBothBeforeAfter && !string.IsNullOrWhiteSpace(midStr))
                     {
                         List<string> tokenListBeforeDate = config.TokenBeforeDate.Split('|').ToList();

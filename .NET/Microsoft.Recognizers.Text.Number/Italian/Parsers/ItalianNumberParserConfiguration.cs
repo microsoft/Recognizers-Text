@@ -71,6 +71,8 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
+            // @TODO "mezzo" and "e" should be moved to the Italian YAML file
+
             // The following piece of code is needed in Italian to correctly compute some fraction patterns
             // e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
             // 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when

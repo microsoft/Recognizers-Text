@@ -11,12 +11,25 @@ $global:duplicateFileDict = New-Object System.Collections.Hashtable
 
 function SpecInfo()
 {
+    Write-Host("SpecInfo start...")
+
     foreach ($file in $input) 
     {   
         $parentName = $file.FullName | Split-Path -parent | Split-Path -leaf
         $typeFolder = $file.FullName | Split-Path -parent | Split-Path -parent | Split-Path -leaf
-        $contents = Get-Content $file.FullName -encoding utf8 | ConvertFrom-Json
-        CheckSpec -spec $contents -type $typeFolder -parent $parentName -name $file.Name
+        
+        try 
+        {
+            $contents = Get-Content $file.FullName -encoding utf8 | ConvertFrom-Json
+            CheckSpec -spec $contents -type $typeFolder -parent $parentName -name $file.Name
+        }
+        catch
+        {
+			Write-Host("Error decoding spec file:`t" + $file.FullName)
+			Write-Warning(($Error[0] -split '\n')[0])
+            exit 2
+        }
+        
     }
 
     Write-Host("Total invalid input test cases:`t" + $global:totalEmpty)

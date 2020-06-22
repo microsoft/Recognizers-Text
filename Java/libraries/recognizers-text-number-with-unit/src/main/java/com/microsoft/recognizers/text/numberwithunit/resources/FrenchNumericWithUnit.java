@@ -319,7 +319,7 @@ public class FrenchNumericWithUnit {
         .put("Pétaoctet", "pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("mi", "barils", "grain", "l", "pierre", "fps", "pts");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("mi", "barils", "grain", "pierre", "fps", "pts");
 
     public static final String BuildPrefix = "(?<=(\\s|^|\\P{L}))";
 
@@ -344,9 +344,7 @@ public class FrenchNumericWithUnit {
         .put("Pouce", "pouce|pouces")
         .build();
 
-    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("m", "yard", "yards", "pm", "pt", "pts");
-
-    public static final List<String> AmbuguousLengthUnitList = Arrays.asList("m", "pouce", "pm");
+    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("m", "m.", "yard", "yards", "pm", "pouce", "pt", "pts");
 
     public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Mètre par seconde", "m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes")
@@ -361,10 +359,10 @@ public class FrenchNumericWithUnit {
 
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("Kelvin", "k|K|kelvin")
-        .put("F", "°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit")
+        .put("F", "°f|° f|degres f|degrés f|deg f|degrés fahrenheit|degres fahrenheit|fahrenheit|deg fahrenheit|degs fahrenheit")
         .put("R", "rankine|°r|° r")
-        .put("C", "°c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade")
-        .put("Degré", "degrés|degres|deg.|°| °|degré|degre|deg")
+        .put("C", "°c|° c|degres c|degrés c|deg c|degrés celsius|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade")
+        .put("Degré", "degrés|degres|deg.|°|degré|degre|deg|degs")
         .build();
 
     public static final ImmutableMap<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
@@ -384,7 +382,7 @@ public class FrenchNumericWithUnit {
         .put("Baril", "baril|barils|bbl")
         .build();
 
-    public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("ounce", "oz", "l", "cup", "peck", "cord", "gill");
+    public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("oz", "l");
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos")
@@ -395,7 +393,7 @@ public class FrenchNumericWithUnit {
         .put("Livre", "livre|livres")
         .build();
 
-    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bcent\\b", "\\bpour\\s+cent\\b")

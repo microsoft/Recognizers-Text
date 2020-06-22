@@ -542,7 +542,15 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         {
             @"円",
             @"銭",
+            @"分",
+            @"レク",
+            @"プル",
+            @"ブル",
             @"\"
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

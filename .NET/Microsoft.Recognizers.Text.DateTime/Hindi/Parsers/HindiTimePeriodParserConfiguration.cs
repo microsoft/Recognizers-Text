@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             {
                 timeOfDay = Constants.Night;
             }
-            else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.BusinessHourSplitStrings.Any(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.BusinessHour;
             }

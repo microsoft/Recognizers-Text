@@ -398,11 +398,10 @@
   },
   {
     "Input": "x, 10'dan büyük ve 20'den küçüktür. y, 50'den fazla değil ve 20'den az değildir.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10'dan büyük ve 50'den küçüktür",
+        "Text": "10'dan büyük ve 20'den küçüktür",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,20)"
@@ -635,7 +634,6 @@
   },
   {
     "Input": "Onun skoru 5000'e eşit veya 5000'den az",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
