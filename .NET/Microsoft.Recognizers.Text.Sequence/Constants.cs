@@ -56,9 +56,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public const string PHONE_NUMBER_REGEX_IT = "ITPhoneNumber";
 
-        public const string PHONE_NUMBER_REGEX_NL = "NLPhoneNumber";
-
-        public const string PHONE_NUMBER_REGEX_SE = "SEPhoneNumber";
+        // The EUPhoneNumberRegex regex is merged from NLPhoneNumberRegex and SEPhoneNumberRegex
+        public const string PHONE_NUMBER_REGEX_EU = "EUPhoneNumber";
 
         public const string PHONE_NUMBER_REGEX_SPECIAL = "SpecialPhoneNumber";
 

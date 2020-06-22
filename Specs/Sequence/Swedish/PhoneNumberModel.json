@@ -1,5 +1,21 @@
 [
   {
+    "Input": "Tel: 08-123 456 67",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "08-123 456 67",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "08-123 456 67"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Tel: 08-123 45 67",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -11,6 +27,22 @@
         "Resolution": {
           "score": "1",
           "value": "08-123 45 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tel: 08-12 45 67",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "08-12 45 67",
+        "Start": 5,
+        "End": 15,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0,9",
+          "value": "08-12 45 67"
         }
       }
     ]
@@ -32,6 +64,54 @@
     ]
   },
   {
+    "Input": "Tel: 046-12 45 67",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "046-12 45 67",
+        "Start": 5,
+        "End": 16,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "046-12 45 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tel: 046-124 67",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "046-124 67",
+        "Start": 5,
+        "End": 14,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0,7",
+          "value": "046-124 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tel: 0414-12 34 56",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "0414-12 34 56",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "0414-12 34 56"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Tel: 0414-123 45",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -41,7 +121,7 @@
         "End": 15,
         "TypeName": "phonenumber",
         "Resolution": {
-          "score": "0.8",
+          "score": "0,8",
           "value": "0414-123 45"
         }
       }
@@ -59,6 +139,70 @@
         "Resolution": {
           "score": "1",
           "value": "+46 414 123 45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Phone: +46(0)41412345",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46(0)41412345",
+        "Start": 7,
+        "End": 20,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46(0)41412345"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Phone: 0046(0)41412345",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "0046(0)41412345",
+        "Start": 7,
+        "End": 21,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "0046(0)41412345"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Phone: +46(0)414-12345",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46(0)414-12345",
+        "Start": 7,
+        "End": 21,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46(0)414-12345"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Phone: +46 498 12 34 56",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46 498 12 34 56",
+        "Start": 7,
+        "End": 22,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46 498 12 34 56"
         }
       }
     ]

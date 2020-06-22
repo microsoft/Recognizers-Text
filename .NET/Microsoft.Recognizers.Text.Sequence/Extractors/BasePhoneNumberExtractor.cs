@@ -60,12 +60,9 @@ namespace Microsoft.Recognizers.Text.Sequence
                     Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
-                    Constants.PHONE_NUMBER_REGEX_NL
-                },
-                {
-                    new Regex(BasePhoneNumbers.SEPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
-                    Constants.PHONE_NUMBER_REGEX_SE
+                    // The EUPhoneNumberRegex regex is merged from NLPhoneNumberRegex and SEPhoneNumberRegex
+                    new Regex(BasePhoneNumbers.EUPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    Constants.PHONE_NUMBER_REGEX_EU
                 },
                 {
                     new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
