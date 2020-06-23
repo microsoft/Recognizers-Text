@@ -446,12 +446,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
                     new Swedish.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
 
-            RegisterModel<NumberRangeModel>(
-                Culture.Swedish,
-                (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration(
-                                                    new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    new Swedish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
+            // RegisterModel<NumberRangeModel>(
+            //    Culture.Swedish,
+            //    (options) => new NumberRangeModel(
+            //        new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration(
+            //                                        new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+            //        new Swedish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
