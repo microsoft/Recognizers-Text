@@ -1,6 +1,6 @@
-[
+﻿[
   {
-    "Input": "Estar\u00e9 afuera de 5 a 6pm",
+    "Input": "Estaré afuera de 5 a 6pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 5 a 6p.m.",
+    "Input": "Estaré afuera de 5 a 6p.m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -50,13 +50,13 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 5 a siete de la ma\u00f1ana",
+    "Input": "Estaré afuera de 5 a siete de la mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "de 5 a siete de la ma\u00f1ana",
+        "Text": "de 5 a siete de la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "(T05,T07,PT2H)",
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde las 5 hasta las 6 pm",
+    "Input": "Estaré afuera desde las 5 hasta las 6 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -100,7 +100,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre las 5 y 6pm",
+    "Input": "Estaré afuera entre las 5 y 6pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -125,7 +125,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 5pm y 6pm",
+    "Input": "Estaré afuera entre 5pm y 6pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre las 5 y 6 de la tarde",
+    "Input": "Estaré afuera entre las 5 y 6 de la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera desde las 4pm hasta 5pm",
+    "Input": "Estaré fuera desde las 4pm hasta 5pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -200,7 +200,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera desde las 4:00 hasta las 7 en punto",
+    "Input": "Estaré fuera desde las 4:00 hasta las 7 en punto",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -225,7 +225,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera 4pm-5pm",
+    "Input": "Estaré fuera 4pm-5pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -250,7 +250,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera 4pm - 5pm",
+    "Input": "Estaré fuera 4pm - 5pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -275,13 +275,13 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera desde las 3 de la ma\u00f1ana hasta las 5pm",
+    "Input": "Estaré fuera desde las 3 de la mañana hasta las 5pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "desde las 3 de la ma\u00f1ana hasta las 5pm",
+        "Text": "desde las 3 de la mañana hasta las 5pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -300,7 +300,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera entre las 3 de la madrugada y las 5pm",
+    "Input": "Estaré fuera entre las 3 de la madrugada y las 5pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -325,7 +325,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 fuera entre las 4pm y 5pm de hoy",
+    "Input": "Estaré fuera entre las 4pm y 5pm de hoy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -377,7 +377,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 5 a 6 pm",
+    "Input": "Estaré afuera de 5 a 6 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -404,7 +404,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 5 a 6 p. m.",
+    "Input": "Estaré afuera de 5 a 6 p. m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -431,7 +431,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de las 5 a las siete de la ma\u00f1ana",
+    "Input": "Estaré afuera de las 5 a las siete de la mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -439,7 +439,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de las 5 a las siete de la ma\u00f1ana",
+        "Text": "de las 5 a las siete de la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "(T05,T07,PT2H)",
@@ -458,7 +458,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 5 a 6 de la tarde",
+    "Input": "Estaré afuera de 5 a 6 de la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -485,7 +485,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 5 y 6 p. m.",
+    "Input": "Estaré afuera entre 5 y 6 p. m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -512,7 +512,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 5 pm y 6 pm",
+    "Input": "Estaré afuera entre 5 pm y 6 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -539,7 +539,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre las 5 y las 6 de la tarde",
+    "Input": "Estaré afuera entre las 5 y las 6 de la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -566,7 +566,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de las 1 am a las 5 pm",
+    "Input": "Estaré afuera de las 1 am a las 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -593,7 +593,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde las 4 hasta las 5 p. m.",
+    "Input": "Estaré afuera desde las 4 hasta las 5 p. m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -620,7 +620,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de las 4 a las 5 pm",
+    "Input": "Estaré afuera de las 4 a las 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -647,7 +647,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 4:00 a las 7",
+    "Input": "Estaré afuera de 4:00 a las 7",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -674,7 +674,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 4 pm-5 pm",
+    "Input": "Estaré afuera 4 pm-5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -701,7 +701,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 4 pm - 5 pm",
+    "Input": "Estaré afuera 4 pm - 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -728,7 +728,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde las 3 de la ma\u00f1ana hasta las 5 pm",
+    "Input": "Estaré afuera desde las 3 de la mañana hasta las 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -736,7 +736,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde las 3 de la ma\u00f1ana hasta las 5 pm",
+        "Text": "desde las 3 de la mañana hasta las 5 pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -755,7 +755,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre las 3 de la ma\u00f1ana y las 5 pm",
+    "Input": "Estaré afuera entre las 3 de la mañana y las 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -763,7 +763,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "entre las 3 de la ma\u00f1ana y las 5 pm",
+        "Text": "entre las 3 de la mañana y las 5 pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -782,7 +782,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera hoy entre 4 pm y 5 pm",
+    "Input": "Estaré afuera hoy entre 4 pm y 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -809,7 +809,7 @@
     ]
   },
   {
-    "Input": "Nos vemos por la ma\u00f1ana.",
+    "Input": "Nos vemos por la mañana.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -817,7 +817,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "por la ma\u00f1ana",
+        "Text": "por la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -890,7 +890,7 @@
     ]
   },
   {
-    "Input": "Nos vemos a primeras horas de la ma\u00f1ana",
+    "Input": "Nos vemos a primeras horas de la mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -898,7 +898,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "primeras horas de la ma\u00f1ana",
+        "Text": "primeras horas de la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -917,7 +917,7 @@
     ]
   },
   {
-    "Input": "Nos vemos a \u00faltimas horas de la ma\u00f1ana",
+    "Input": "Nos vemos a últimas horas de la mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -925,7 +925,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimas horas de la ma\u00f1ana",
+        "Text": "últimas horas de la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -971,7 +971,7 @@
     ]
   },
   {
-    "Input": "Nos vemos a \u00faltimas horas de la tarde",
+    "Input": "Nos vemos a últimas horas de la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -979,7 +979,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimas horas de la tarde",
+        "Text": "últimas horas de la tarde",
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
@@ -1025,7 +1025,7 @@
     ]
   },
   {
-    "Input": "Nos vemos a \u00faltimas horas de la noche",
+    "Input": "Nos vemos a últimas horas de la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1033,7 +1033,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimas horas de la noche",
+        "Text": "últimas horas de la noche",
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
@@ -1133,7 +1133,7 @@
     ]
   },
   {
-    "Input": "Programa en la ma\u00f1ana",
+    "Input": "Programa en la mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1141,7 +1141,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "en la ma\u00f1ana",
+        "Text": "en la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -1160,7 +1160,7 @@
     ]
   },
   {
-    "Input": "ay\u00fadame a programar una reuni\u00f3n desde 1:30 hasta 3:00 de la ma\u00f1ana",
+    "Input": "ayúdame a programar una reunión desde 1:30 hasta 3:00 de la mañana",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1168,7 +1168,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde 1:30 hasta 3:00 de la ma\u00f1ana",
+        "Text": "desde 1:30 hasta 3:00 de la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "(T01:30,T03,PT1H30M)",
@@ -1295,7 +1295,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 11:00-11:50 a. m.",
+    "Input": "programa una reunión de 11:00-11:50 a. m.",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1322,7 +1322,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 1:30-3:30 pm",
+    "Input": "programa una reunión de 1:30-3:30 pm",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1349,7 +1349,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 1:30-3:30 de la tarde",
+    "Input": "programa una reunión de 1:30-3:30 de la tarde",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1376,7 +1376,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 1.30-3.30 p. m.",
+    "Input": "programa una reunión de 1.30-3.30 p. m.",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1403,7 +1403,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de las 3 pm a las 3:30 pm",
+    "Input": "programa una reunión de las 3 pm a las 3:30 pm",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1484,7 +1484,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 3 a 3:30",
+    "Input": "programa una reunión de 3 a 3:30",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1511,7 +1511,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de las 1:30 a las 3",
+    "Input": "programa una reunión de las 1:30 a las 3",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1538,7 +1538,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n entre 1:30 y 3 p. m.",
+    "Input": "programa una reunión entre 1:30 y 3 p. m.",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1565,7 +1565,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 11 a 3",
+    "Input": "programa una reunión de 11 a 3",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1592,7 +1592,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n desde las 11 hasta las 11:50 del mediod\u00eda",
+    "Input": "programa una reunión desde las 11 hasta las 11:50 del mediodía",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1600,7 +1600,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde las 11 hasta las 11:50 del mediod\u00eda",
+        "Text": "desde las 11 hasta las 11:50 del mediodía",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T11:50,PT50M)",
@@ -1619,7 +1619,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n desde las 11 hasta las 11:50 de la ma\u00f1ana",
+    "Input": "programa una reunión desde las 11 hasta las 11:50 de la mañana",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1627,7 +1627,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde las 11 hasta las 11:50 de la ma\u00f1ana",
+        "Text": "desde las 11 hasta las 11:50 de la mañana",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T11:50,PT50M)",
@@ -1646,7 +1646,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 11 a 3 de la madrugada",
+    "Input": "programa una reunión de 11 a 3 de la madrugada",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1673,7 +1673,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 10:00-11:00 a. m.",
+    "Input": "programa una reunión de 10:00-11:00 a. m.",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1700,7 +1700,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 23:00-3:00",
+    "Input": "programa una reunión de 23:00-3:00",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1727,7 +1727,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 23.00-3.00",
+    "Input": "programa una reunión de 23.00-3.00",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1754,7 +1754,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de las 23 h a las 3 h",
+    "Input": "programa una reunión de las 23 h a las 3 h",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1781,7 +1781,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de las 23 h a las 15 h",
+    "Input": "programa una reunión de las 23 h a las 15 h",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1808,7 +1808,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de 23:00-15:00",
+    "Input": "programa una reunión de 23:00-15:00",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1835,7 +1835,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n entre 10 y 11:30",
+    "Input": "programa una reunión entre 10 y 11:30",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1862,7 +1862,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n entre las 10:10 am y las 12:50",
+    "Input": "programa una reunión entre las 10:10 am y las 12:50",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1889,7 +1889,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n entre las 22.10 h y las 3 h",
+    "Input": "programa una reunión entre las 22.10 h y las 3 h",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1916,7 +1916,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de las 10.10 pm a las 10",
+    "Input": "programa una reunión de las 10.10 pm a las 10",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1943,7 +1943,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n de las 10:30 a. m. a las 23 h",
+    "Input": "programa una reunión de las 10:30 a. m. a las 23 h",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },

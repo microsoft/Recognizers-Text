@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "Estare afuera desde el 4 hasta el 22 de este mes",
     "Context": {
@@ -481,13 +481,13 @@
     ]
   },
   {
-    "Input": "Estare afuera hoy hasta ma\u00f1ana",
+    "Input": "Estare afuera hoy hasta mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "hoy hasta ma\u00f1ana",
+        "Text": "hoy hasta mañana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -806,13 +806,13 @@
     ]
   },
   {
-    "Input": "Estare afuera en junio del proximo a\u00f1o",
+    "Input": "Estare afuera en junio del proximo año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "junio del proximo a\u00f1o",
+        "Text": "junio del proximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-06",
@@ -831,13 +831,13 @@
     ]
   },
   {
-    "Input": "Estare afuera el pr\u00f3ximo a\u00f1o",
+    "Input": "Estare afuera el próximo año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "el pr\u00f3ximo a\u00f1o",
+        "Text": "el próximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -856,13 +856,13 @@
     ]
   },
   {
-    "Input": "Estare afuera los pr\u00f3ximos 3 dias",
+    "Input": "Estare afuera los próximos 3 dias",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "pr\u00f3ximos 3 dias",
+        "Text": "próximos 3 dias",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-11,P3D)",
@@ -906,13 +906,13 @@
     ]
   },
   {
-    "Input": "Estare afuera en 3 a\u00f1os",
+    "Input": "Estare afuera en 3 años",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "en 3 a\u00f1os",
+        "Text": "en 3 años",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2019-11-08,P3Y)",
@@ -956,13 +956,13 @@
     ]
   },
   {
-    "Input": "Estuve afuera los ultimos 3a\u00f1os",
+    "Input": "Estuve afuera los ultimos 3años",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "ultimos 3a\u00f1os",
+        "Text": "ultimos 3años",
         "Type": "daterange",
         "Value": {
           "Timex": "(2013-11-07,2016-11-07,P3Y)",
@@ -1006,13 +1006,13 @@
     ]
   },
   {
-    "Input": "Estare afuera desde hoy hasta ma\u00f1ana",
+    "Input": "Estare afuera desde hoy hasta mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "desde hoy hasta ma\u00f1ana",
+        "Text": "desde hoy hasta mañana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -1083,7 +1083,7 @@
     ]
   },
   {
-    "Input": "Estare afuera la tercer semana del pr\u00f3ximo a\u00f1o",
+    "Input": "Estare afuera la tercer semana del próximo año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1091,7 +1091,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "la tercer semana del pr\u00f3ximo a\u00f1o",
+        "Text": "la tercer semana del próximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W03",
@@ -1135,13 +1135,13 @@
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de este a\u00f1o",
+    "Input": "Estare afuera el tercer cuatrimestre de este año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de este a\u00f1o",
+        "Text": "el tercer cuatrimestre de este año",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1204,13 +1204,13 @@
     ]
   },
   {
-    "Input": "Estare afuera la pr\u00f3xima primavera",
+    "Input": "Estare afuera la próxima primavera",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "pr\u00f3xima primavera",
+        "Text": "próxima primavera",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-SP",
@@ -1299,7 +1299,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 4 a 22 de este mes",
+    "Input": "Estaré afuera de 4 a 22 de este mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1326,7 +1326,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 4-23 del pr\u00f3ximo mes",
+    "Input": "Estaré afuera de 4-23 del próximo mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1334,7 +1334,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de 4-23 del pr\u00f3ximo mes",
+        "Text": "de 4-23 del próximo mes",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -1353,7 +1353,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde 3 hasta 12 de sept jajaja",
+    "Input": "Estaré afuera desde 3 hasta 12 de sept jajaja",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1380,7 +1380,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde viernes 11 hasta martes 15",
+    "Input": "Estaré afuera desde viernes 11 hasta martes 15",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1407,7 +1407,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 4 a 23 del mes que viene",
+    "Input": "Estaré afuera de 4 a 23 del mes que viene",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1434,7 +1434,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde el 4 hasta el 23 de este mes",
+    "Input": "Estaré afuera desde el 4 hasta el 23 de este mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1461,7 +1461,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 4 y 22 de este mes",
+    "Input": "Estaré afuera entre 4 y 22 de este mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1488,7 +1488,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 3 y 12 de sept jajaja",
+    "Input": "Estaré afuera entre 3 y 12 de sept jajaja",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1515,7 +1515,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 4 a 22 de enero de 1995",
+    "Input": "Estaré afuera de 4 a 22 de enero de 1995",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1542,7 +1542,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 4-22 de enero de 1995",
+    "Input": "Estaré afuera entre 4-22 de enero de 1995",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1569,7 +1569,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre el 4 y el 8 de septiembre",
+    "Input": "Estaré afuera entre el 4 y el 8 de septiembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1596,7 +1596,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera esta semana",
+    "Input": "Estaré afuera esta semana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1623,7 +1623,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en la semana que viene",
+    "Input": "Estaré afuera en la semana que viene",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1650,7 +1650,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en la semana actual",
+    "Input": "Estaré afuera en la semana actual",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1677,7 +1677,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en febrero",
+    "Input": "Estaré afuera en febrero",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1704,7 +1704,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera este septiembre",
+    "Input": "Estaré afuera este septiembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1731,7 +1731,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera el pasado septiembre",
+    "Input": "Estaré afuera el pasado septiembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1758,7 +1758,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera el pr\u00f3ximo junio",
+    "Input": "Estaré afuera el próximo junio",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1766,7 +1766,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3ximo junio",
+        "Text": "próximo junio",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-06",
@@ -1785,7 +1785,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera la 3\u00aa semana de este mes",
+    "Input": "Estaré afuera la 3ª semana de este mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1793,7 +1793,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "3\u00aa semana de este mes",
+        "Text": "3ª semana de este mes",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-11-W03",
@@ -1812,7 +1812,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en la \u00faltima semana de julio",
+    "Input": "Estaré afuera en la última semana de julio",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1820,7 +1820,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltima semana de julio",
+        "Text": "última semana de julio",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-07-W04",
@@ -1893,7 +1893,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 3.2015",
+    "Input": "Estaré afuera 3.2015",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1920,7 +1920,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 3-2015",
+    "Input": "Estaré afuera 3-2015",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1947,7 +1947,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 3/2015",
+    "Input": "Estaré afuera 3/2015",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1974,7 +1974,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 3~2015",
+    "Input": "Estaré afuera 3~2015",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2001,7 +2001,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n en las dos semanas",
+    "Input": "programa una reunión en las dos semanas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2010,7 +2010,7 @@
     "Results": []
   },
   {
-    "Input": "pr\u00f3ximos 2 d\u00edas",
+    "Input": "próximos 2 días",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2018,7 +2018,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3ximos 2 d\u00edas",
+        "Text": "próximos 2 días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -2037,7 +2037,7 @@
     ]
   },
   {
-    "Input": "\u00faltimos d\u00edas",
+    "Input": "últimos días",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2045,7 +2045,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimos d\u00edas",
+        "Text": "últimos días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-04,2016-11-07,P3D)",
@@ -2226,7 +2226,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 2 de oct a 22 de octubre",
+    "Input": "Estaré afuera de 2 de oct a 22 de octubre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2253,7 +2253,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 12 de enero de 2016-22/1/2016",
+    "Input": "Estaré afuera 12 de enero de 2016-22/1/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2280,7 +2280,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde 1 de ene hasta mi\u00e9rcoles 22 de ene",
+    "Input": "Estaré afuera desde 1 de ene hasta miércoles 22 de ene",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2288,7 +2288,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde 1 de ene hasta mi\u00e9rcoles 22 de ene",
+        "Text": "desde 1 de ene hasta miércoles 22 de ene",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
@@ -2307,7 +2307,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de hoy a ma\u00f1ana",
+    "Input": "Estaré afuera de hoy a mañana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2315,7 +2315,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de hoy a ma\u00f1ana",
+        "Text": "de hoy a mañana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -2334,7 +2334,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde 2 oct hasta 22 octubre",
+    "Input": "Estaré afuera desde 2 oct hasta 22 octubre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2361,7 +2361,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 2 de oct y 22 de octubre",
+    "Input": "Estaré afuera entre 2 de oct y 22 de octubre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2388,7 +2388,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 19-20 de noviembre",
+    "Input": "Estaré afuera 19-20 de noviembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2415,7 +2415,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 19 a 20 de noviembre",
+    "Input": "Estaré afuera de 19 a 20 de noviembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2442,7 +2442,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 19 y 20 de noviembre",
+    "Input": "Estaré afuera entre 19 y 20 de noviembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2469,7 +2469,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el resto de la semana",
+    "Input": "Estaré afuera en el resto de la semana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2496,7 +2496,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera resto de semana",
+    "Input": "Estaré afuera resto de semana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2523,7 +2523,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el resto de esta semana",
+    "Input": "Estaré afuera en el resto de esta semana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2550,7 +2550,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el resto de la semana actual",
+    "Input": "Estaré afuera en el resto de la semana actual",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2577,7 +2577,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el resto del mes",
+    "Input": "Estaré afuera en el resto del mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2604,7 +2604,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el resto del a\u00f1o",
+    "Input": "Estaré afuera en el resto del año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2612,7 +2612,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto del a\u00f1o",
+        "Text": "resto del año",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-12-31,P55D)",
@@ -2631,7 +2631,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera este fin de semana",
+    "Input": "Estaré afuera este fin de semana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2658,7 +2658,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera este finde",
+    "Input": "Estaré afuera este finde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2685,7 +2685,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en junio de 2016",
+    "Input": "Estaré afuera en junio de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2712,7 +2712,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en junio del pr\u00f3ximo a\u00f1o",
+    "Input": "Estaré afuera en junio del próximo año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2720,7 +2720,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "junio del pr\u00f3ximo a\u00f1o",
+        "Text": "junio del próximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-06",
@@ -2739,7 +2739,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera el a\u00f1o que viene",
+    "Input": "Estaré afuera el año que viene",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2747,7 +2747,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1o que viene",
+        "Text": "año que viene",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -2766,7 +2766,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en los 3 d\u00edas siguientes",
+    "Input": "Estaré afuera en los 3 días siguientes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2774,7 +2774,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "3 d\u00edas siguientes",
+        "Text": "3 días siguientes",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-11,P3D)",
@@ -2793,7 +2793,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en los pr\u00f3ximos 3 meses",
+    "Input": "Estaré afuera en los próximos 3 meses",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2801,7 +2801,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3ximos 3 meses",
+        "Text": "próximos 3 meses",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2017-02-08,P3M)",
@@ -2820,7 +2820,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en los 3 a\u00f1os",
+    "Input": "Estaré afuera en los 3 años",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2829,7 +2829,7 @@
     "Results": []
   },
   {
-    "Input": "Estuve afuera en las \u00faltimas 3 semanas",
+    "Input": "Estuve afuera en las últimas 3 semanas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2837,7 +2837,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimas 3 semanas",
+        "Text": "últimas 3 semanas",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-10-17,2016-11-07,P3W)",
@@ -2856,7 +2856,7 @@
     ]
   },
   {
-    "Input": "Estuve afuera \u00faltimos 3 a\u00f1os",
+    "Input": "Estuve afuera últimos 3 años",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2864,7 +2864,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimos 3 a\u00f1os",
+        "Text": "últimos 3 años",
         "Type": "daterange",
         "Value": {
           "Timex": "(2013-11-07,2016-11-07,P3Y)",
@@ -2910,7 +2910,7 @@
     ]
   },
   {
-    "Input": "1\u00aa semana de oct",
+    "Input": "1ª semana de oct",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2918,7 +2918,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "1\u00aa semana de oct",
+        "Text": "1ª semana de oct",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-10-W01",
@@ -2937,7 +2937,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera la 3\u00aa semana de 2027",
+    "Input": "Estaré afuera la 3ª semana de 2027",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2945,7 +2945,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "3\u00aa semana de 2027",
+        "Text": "3ª semana de 2027",
         "Type": "daterange",
         "Value": {
           "Timex": "2027-01-W03",
@@ -2964,7 +2964,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera la tercera semana del pr\u00f3ximo a\u00f1o",
+    "Input": "Estaré afuera la tercera semana del próximo año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2972,7 +2972,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "tercera semana del pr\u00f3ximo a\u00f1o",
+        "Text": "tercera semana del próximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-01-W03",
@@ -2991,7 +2991,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el 3\u00ba cuatrimestre",
+    "Input": "Estaré afuera en el 3º cuatrimestre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2999,7 +2999,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "3\u00ba cuatrimestre",
+        "Text": "3º cuatrimestre",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -3018,7 +3018,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 3\u00ba cuarto de este a\u00f1o",
+    "Input": "Estaré afuera 3º cuarto de este año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3026,7 +3026,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "3\u00ba cuarto de este a\u00f1o",
+        "Text": "3º cuarto de este año",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -3045,7 +3045,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el tercer cuatrimestre de 2016",
+    "Input": "Estaré afuera en el tercer cuatrimestre de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3072,7 +3072,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera durante el 3\u00ba cuatrimestre de este a\u00f1o",
+    "Input": "Estaré afuera durante el 3º cuatrimestre de este año",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3080,7 +3080,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "3\u00ba cuatrimestre de este a\u00f1o",
+        "Text": "3º cuatrimestre de este año",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -3099,7 +3099,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera tercer cuarto de 2016",
+    "Input": "Estaré afuera tercer cuarto de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3126,7 +3126,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 en el 2\u00ba cuatrimestre",
+    "Input": "Volveré en el 2º cuatrimestre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3134,7 +3134,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "2\u00ba cuatrimestre",
+        "Text": "2º cuatrimestre",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-04-01,2016-07-01,P3M)",
@@ -3153,7 +3153,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 primer cuarto de 2016",
+    "Input": "Volveré primer cuarto de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3180,7 +3180,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en la primera mitad de 2016",
+    "Input": "Estaré afuera en la primera mitad de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3207,7 +3207,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera segunda mitad de 2016",
+    "Input": "Estaré afuera segunda mitad de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3234,7 +3234,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en 2\u00aa mitad de 2016",
+    "Input": "Estaré afuera en 2ª mitad de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3242,7 +3242,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "2\u00aa mitad de 2016",
+        "Text": "2ª mitad de 2016",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2017-01-01,P6M)",
@@ -3261,7 +3261,7 @@
     ]
   },
   {
-    "Input": "Me ir\u00e9 pr\u00f3xima primavera",
+    "Input": "Me iré próxima primavera",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3269,7 +3269,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3xima primavera",
+        "Text": "próxima primavera",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-SP",
@@ -3282,7 +3282,7 @@
     ]
   },
   {
-    "Input": "Me ir\u00e9 este verano",
+    "Input": "Me iré este verano",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3303,7 +3303,7 @@
     ]
   },
   {
-    "Input": "Me ir\u00e9 en verano",
+    "Input": "Me iré en verano",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3324,7 +3324,7 @@
     ]
   },
   {
-    "Input": "Me ir\u00e9 en verano de 2016",
+    "Input": "Me iré en verano de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3372,7 +3372,7 @@
     ]
   },
   {
-    "Input": "vacaciones del mes pr\u00f3ximo",
+    "Input": "vacaciones del mes próximo",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3380,7 +3380,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mes pr\u00f3ximo",
+        "Text": "mes próximo",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-12",
@@ -3455,7 +3455,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para la 2\u00aa mitad de esta semana",
+    "Input": "Busca un tiempo para la 2ª mitad de esta semana",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3463,7 +3463,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "2\u00aa mitad de esta semana",
+        "Text": "2ª mitad de esta semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W45",
@@ -3483,7 +3483,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para los \u00faltimos seis meses de este a\u00f1o",
+    "Input": "Busca un tiempo para los últimos seis meses de este año",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3491,7 +3491,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "primeros seis meses de este a\u00f1o",
+        "Text": "primeros seis meses de este año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -3511,7 +3511,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para primeros 6 meses del pr\u00f3ximo a\u00f1o",
+    "Input": "Busca un tiempo para primeros 6 meses del próximo año",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3519,7 +3519,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "primeros 6 meses del pr\u00f3ximo a\u00f1o",
+        "Text": "primeros 6 meses del próximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2018",
@@ -3539,7 +3539,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para los primeros d\u00edas de la pr\u00f3xima semana",
+    "Input": "Busca un tiempo para los primeros días de la próxima semana",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3547,7 +3547,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "primeros d\u00edas de la pr\u00f3xima semana",
+        "Text": "primeros días de la próxima semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3595,7 +3595,7 @@
     ]
   },
   {
-    "Input": "Tuvimos una reuni\u00f3n en la 2\u00aa mitad del a\u00f1o pasado",
+    "Input": "Tuvimos una reunión en la 2ª mitad del año pasado",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3603,7 +3603,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "2\u00aa mitad del a\u00f1o pasado",
+        "Text": "2ª mitad del año pasado",
         "Type": "daterange",
         "Value": {
           "Timex": "2016",
@@ -3623,7 +3623,7 @@
     ]
   },
   {
-    "Input": "Tuvimos una reuni\u00f3n en los \u00faltimos d\u00edas de la semana pasada",
+    "Input": "Tuvimos una reunión en los últimos días de la semana pasada",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3631,7 +3631,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimos d\u00edas de la semana pasada",
+        "Text": "últimos días de la semana pasada",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W44",
@@ -3651,7 +3651,7 @@
     ]
   },
   {
-    "Input": "Tuvimos una reuni\u00f3n en los \u00faltimos d\u00edas del mes pasado",
+    "Input": "Tuvimos una reunión en los últimos días del mes pasado",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -3659,7 +3659,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimos d\u00edas del mes pasado",
+        "Text": "últimos días del mes pasado",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-10",
@@ -3679,7 +3679,7 @@
     ]
   },
   {
-    "Input": "Cortana, organiza una reuni\u00f3n de 25 minutos con Antonio entre mi\u00e9rcoles y viernes de la pr\u00f3xima semana",
+    "Input": "Cortana, organiza una reunión de 25 minutos con Antonio entre miércoles y viernes de la próxima semana",
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
@@ -3687,7 +3687,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "entre mi\u00e9rcoles y viernes de la pr\u00f3xima semana",
+        "Text": "entre miércoles y viernes de la próxima semana",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-22,2017-11-24,P2D)",
@@ -3706,7 +3706,7 @@
     ]
   },
   {
-    "Input": "Cortana, organiza una reuni\u00f3n de 25 minutos con Antonio entre viernes y domingo de la semana pasada.",
+    "Input": "Cortana, organiza una reunión de 25 minutos con Antonio entre viernes y domingo de la semana pasada.",
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
@@ -3733,7 +3733,7 @@
     ]
   },
   {
-    "Input": "Cortana, organiza una reuni\u00f3n de 25 minutos con Antonio esta semana de martes a jueves.",
+    "Input": "Cortana, organiza una reunión de 25 minutos con Antonio esta semana de martes a jueves.",
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
@@ -3760,7 +3760,7 @@
     ]
   },
   {
-    "Input": "Tuvimos una reuni\u00f3n esta semana",
+    "Input": "Tuvimos una reunión esta semana",
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
@@ -3787,7 +3787,7 @@
     ]
   },
   {
-    "Input": "Tuvimos una reuni\u00f3n en la primera semana de este a\u00f1o",
+    "Input": "Tuvimos una reunión en la primera semana de este año",
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
@@ -3795,7 +3795,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "primera semana de este a\u00f1o",
+        "Text": "primera semana de este año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-01-W01",
@@ -3814,7 +3814,7 @@
     ]
   },
   {
-    "Input": "1\u00aa semana de 2015",
+    "Input": "1ª semana de 2015",
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
@@ -3822,7 +3822,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "1\u00aa semana de 2015",
+        "Text": "1ª semana de 2015",
         "Type": "daterange",
         "Value": {
           "Timex": "2015-01-W01",
@@ -3868,7 +3868,7 @@
     ]
   },
   {
-    "Input": "\u00faltima semana de 2015",
+    "Input": "última semana de 2015",
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
@@ -3876,7 +3876,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltima semana de 2015",
+        "Text": "última semana de 2015",
         "Type": "daterange",
         "Value": {
           "Timex": "2015-12-W53",
@@ -3895,7 +3895,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en el a\u00f1o 247",
+    "Input": "Estaré afuera en el año 247",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
@@ -3903,7 +3903,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1o 247",
+        "Text": "año 247",
         "Type": "daterange",
         "Value": {
           "Timex": "0247",
@@ -3922,7 +3922,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os 1970",
+    "Input": "en los años 1970",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3930,7 +3930,7 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "a\u00f1os 1970",
+        "Text": "años 1970",
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -3949,7 +3949,7 @@
     ]
   },
   {
-    "Input": "Naci\u00f3 en los a\u00f1os 2000",
+    "Input": "Nació en los años 2000",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3957,7 +3957,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os 2000",
+        "Text": "años 2000",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -4003,7 +4003,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os 70",
+    "Input": "en los años 70",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4011,7 +4011,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os 70",
+        "Text": "años 70",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -4030,7 +4030,7 @@
     ]
   },
   {
-    "Input": "en la d\u00e9cada 70",
+    "Input": "en la década 70",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4038,7 +4038,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "d\u00e9cada 70",
+        "Text": "década 70",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -4057,7 +4057,7 @@
     ]
   },
   {
-    "Input": "en la d\u00e9cada 1970",
+    "Input": "en la década 1970",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4065,7 +4065,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "d\u00e9cada 1970",
+        "Text": "década 1970",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -4084,7 +4084,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os 40",
+    "Input": "en los años 40",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4092,7 +4092,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os 40",
+        "Text": "años 40",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
@@ -4111,7 +4111,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os setenta",
+    "Input": "en los años setenta",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4119,7 +4119,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os setenta",
+        "Text": "años setenta",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -4138,7 +4138,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os mil novecientos setenta",
+    "Input": "en los años mil novecientos setenta",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4146,7 +4146,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os mil novecientos setenta",
+        "Text": "años mil novecientos setenta",
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -4165,7 +4165,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os dos mil diez",
+    "Input": "en los años dos mil diez",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4173,7 +4173,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os dos mil diez",
+        "Text": "años dos mil diez",
         "Type": "daterange",
         "Value": {
           "Timex": "(2010-01-01,2020-01-01,P10Y)",
@@ -4192,7 +4192,7 @@
     ]
   },
   {
-    "Input": "en la d\u00e9cada dos mil diez",
+    "Input": "en la década dos mil diez",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4200,7 +4200,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "d\u00e9cada dos mil diez",
+        "Text": "década dos mil diez",
         "Type": "daterange",
         "Value": {
           "Timex": "(2010-01-01,2020-01-01,P10Y)",
@@ -4219,7 +4219,7 @@
     ]
   },
   {
-    "Input": "en los a\u00f1os dos mil",
+    "Input": "en los años dos mil",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4227,7 +4227,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1os dos mil",
+        "Text": "años dos mil",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -4246,7 +4246,7 @@
     ]
   },
   {
-    "Input": "en la primera d\u00e9cada del siglo",
+    "Input": "en la primera década del siglo",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4254,7 +4254,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "primera d\u00e9cada del siglo",
+        "Text": "primera década del siglo",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -4273,7 +4273,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 2 a 7 de feb de dos mil dieciocho",
+    "Input": "Estaré afuera de 2 a 7 de feb de dos mil dieciocho",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4300,7 +4300,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre el 2 y el 7 de feb de dos mil dieciocho",
+    "Input": "Estaré afuera entre el 2 y el 7 de feb de dos mil dieciocho",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4327,7 +4327,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 2-7 de feb de dos mil dieciocho",
+    "Input": "Estaré afuera entre 2-7 de feb de dos mil dieciocho",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4354,7 +4354,7 @@
     ]
   },
   {
-    "Input": "Ocurri\u00f3 en jun de mil novecientos noventa y nueve",
+    "Input": "Ocurrió en jun de mil novecientos noventa y nueve",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4435,7 +4435,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en semana 3 de dos mil veintisiete",
+    "Input": "Estaré afuera en semana 3 de dos mil veintisiete",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4462,7 +4462,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en cuatrimestre 3 de dos mil veinte",
+    "Input": "Estaré afuera en cuatrimestre 3 de dos mil veinte",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4510,7 +4510,7 @@
     ]
   },
   {
-    "Input": "a\u00f1o dos cientos sesenta y siete",
+    "Input": "año dos cientos sesenta y siete",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4518,7 +4518,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1o dos cientos sesenta y siete",
+        "Text": "año dos cientos sesenta y siete",
         "Type": "daterange",
         "Value": {
           "Timex": "0267",
@@ -4537,7 +4537,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en la semana despu\u00e9s de la pr\u00f3xima",
+    "Input": "Estaré afuera en la semana después de la próxima",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4545,7 +4545,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "semana despu\u00e9s de la pr\u00f3xima",
+        "Text": "semana después de la próxima",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W47",
@@ -4564,7 +4564,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera el mes tras el pr\u00f3ximo mes",
+    "Input": "Estaré afuera el mes tras el próximo mes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4572,7 +4572,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mes tras el pr\u00f3ximo",
+        "Text": "mes tras el próximo",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-01",
@@ -4591,7 +4591,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera el a\u00f1o despu\u00e9s del pr\u00f3ximo",
+    "Input": "Estaré afuera el año después del próximo",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4599,7 +4599,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a\u00f1o despu\u00e9s del pr\u00f3ximo",
+        "Text": "año después del próximo",
         "Type": "daterange",
         "Value": {
           "Timex": "2018",
@@ -4618,7 +4618,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera el fin de semana despu\u00e9s del pr\u00f3ximo",
+    "Input": "Estaré afuera el fin de semana después del próximo",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4626,7 +4626,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "fin de semana despu\u00e9s del pr\u00f3ximo",
+        "Text": "fin de semana después del próximo",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W47-WE",
@@ -4807,7 +4807,7 @@
     ]
   },
   {
-    "Input": "Sucedi\u00f3 en las \u00faltimas dos d\u00e9cadas.",
+    "Input": "Sucedió en las últimas dos décadas.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4815,7 +4815,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimas dos d\u00e9cadas",
+        "Text": "últimas dos décadas",
         "Type": "daterange",
         "Value": {
           "Timex": "(1990-01-01,2010-01-01,P20Y)",
@@ -4834,7 +4834,7 @@
     ]
   },
   {
-    "Input": "Sucedi\u00f3 en los \u00faltimos dos decenios.",
+    "Input": "Sucedió en los últimos dos decenios.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4842,7 +4842,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "\u00faltimos dos decenios",
+        "Text": "últimos dos decenios",
         "Type": "daterange",
         "Value": {
           "Timex": "(1990-01-01,2010-01-01,P20Y)",
@@ -4861,7 +4861,7 @@
     ]
   },
   {
-    "Input": "Ocurrir\u00e1 en la pr\u00f3xima d\u00e9cada",
+    "Input": "Ocurrirá en la próxima década",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4869,7 +4869,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3xima d\u00e9cada",
+        "Text": "próxima década",
         "Type": "daterange",
         "Value": {
           "Timex": "(2020-01-01,2030-01-01,P10Y)",
@@ -4888,7 +4888,7 @@
     ]
   },
   {
-    "Input": "Ocurrir\u00e1 en las pr\u00f3ximas 3 d\u00e9cadas.",
+    "Input": "Ocurrirá en las próximas 3 décadas.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4896,7 +4896,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3ximas 3 d\u00e9cadas",
+        "Text": "próximas 3 décadas",
         "Type": "daterange",
         "Value": {
           "Timex": "(2020-01-01,2050-01-01,P30Y)",
@@ -4915,7 +4915,7 @@
     ]
   },
   {
-    "Input": "Ocurrir\u00e1 en las 4 semanas siguientes",
+    "Input": "Ocurrirá en las 4 semanas siguientes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4942,7 +4942,7 @@
     ]
   },
   {
-    "Input": "Ocurrir\u00e1 en los pr\u00f3ximos 2 d\u00edas.",
+    "Input": "Ocurrirá en los próximos 2 días.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -4950,7 +4950,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "pr\u00f3ximos 2 d\u00edas",
+        "Text": "próximos 2 días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -4969,7 +4969,7 @@
     ]
   },
   {
-    "Input": "Cortana busca un tiempo a comienzos de la semana pr\u00f3xima",
+    "Input": "Cortana busca un tiempo a comienzos de la semana próxima",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -4977,7 +4977,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "comienzos de la semana pr\u00f3xima",
+        "Text": "comienzos de la semana próxima",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -4997,7 +4997,7 @@
     ]
   },
   {
-    "Input": "Claro, vamos a hablar por skype a finales de la pr\u00f3xima semana",
+    "Input": "Claro, vamos a hablar por skype a finales de la próxima semana",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5005,7 +5005,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "finales de la pr\u00f3xima semana",
+        "Text": "finales de la próxima semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -5109,7 +5109,7 @@
     ]
   },
   {
-    "Input": "Cortana busca un tiempo a mediados de la pr\u00f3xima semana",
+    "Input": "Cortana busca un tiempo a mediados de la próxima semana",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5117,7 +5117,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mediados de la pr\u00f3xima semana",
+        "Text": "mediados de la próxima semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -5137,7 +5137,7 @@
     ]
   },
   {
-    "Input": "Puedo buscar un tiempo para inicios de la pr\u00f3xima semana",
+    "Input": "Puedo buscar un tiempo para inicios de la próxima semana",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5145,7 +5145,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "inicios de la pr\u00f3xima semana",
+        "Text": "inicios de la próxima semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -5165,7 +5165,7 @@
     ]
   },
   {
-    "Input": "Qu\u00e9 tal a mediados de verano?",
+    "Input": "Qué tal a mediados de verano?",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5187,7 +5187,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 dentro de 5 d\u00edas",
+    "Input": "Volveré dentro de 5 días",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5195,7 +5195,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de 5 d\u00edas",
+        "Text": "dentro de 5 días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-08,2017-11-13,P5D)",
@@ -5214,7 +5214,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 dentro de 10 meses",
+    "Input": "Volveré dentro de 10 meses",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5241,7 +5241,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 dentro de 3 a\u00f1os",
+    "Input": "Volveré dentro de 3 años",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5249,7 +5249,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de 3 a\u00f1os",
+        "Text": "dentro de 3 años",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-08,2020-11-08,P3Y)",
@@ -5268,7 +5268,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 dentro de 5 a\u00f1os, 1 mes y 12 d\u00edas",
+    "Input": "Volveré dentro de 5 años, 1 mes y 12 días",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5276,7 +5276,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de 5 a\u00f1os, 1 mes y 12 d\u00edas",
+        "Text": "dentro de 5 años, 1 mes y 12 días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
@@ -5295,7 +5295,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 dentro de los pr\u00f3ximos 3 a\u00f1os",
+    "Input": "Volveré dentro de los próximos 3 años",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5303,7 +5303,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de los pr\u00f3ximos 3 a\u00f1os",
+        "Text": "dentro de los próximos 3 años",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-08,2020-11-08,P3Y)",
@@ -5322,7 +5322,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 durante los pr\u00f3ximos 5 a\u00f1os, 1 mes y 12 d\u00edas",
+    "Input": "Volveré durante los próximos 5 años, 1 mes y 12 días",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -5330,7 +5330,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "durante los pr\u00f3ximos 5 a\u00f1os, 1 mes y 12 d\u00edas",
+        "Text": "durante los próximos 5 años, 1 mes y 12 días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
@@ -5349,7 +5349,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde 4 hasta 22 de enero de 1995",
+    "Input": "Estaré afuera desde 4 hasta 22 de enero de 1995",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5376,7 +5376,7 @@
     ]
   },
   {
-    "Input": "Quiero reservar una habitaci\u00f3n desde el 2 hasta el 7 de abril",
+    "Input": "Quiero reservar una habitación desde el 2 hasta el 7 de abril",
     "Context": {
       "ReferenceDateTime": "2018-04-02T00:00:00"
     },
@@ -5403,7 +5403,7 @@
     ]
   },
   {
-    "Input": "programa una reuni\u00f3n en las semanas",
+    "Input": "programa una reunión en las semanas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5412,7 +5412,7 @@
     "Results": []
   },
   {
-    "Input": "Estar\u00e9 afuera en junio 2016",
+    "Input": "Estaré afuera en junio 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5439,7 +5439,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en nov 2016",
+    "Input": "Estaré afuera en nov 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5466,7 +5466,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en nov, 2016",
+    "Input": "Estaré afuera en nov, 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5493,7 +5493,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera en 2016, noviembre",
+    "Input": "Estaré afuera en 2016, noviembre",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5520,7 +5520,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera noviembre 2016",
+    "Input": "Estaré afuera noviembre 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5547,7 +5547,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11-2016",
+    "Input": "Estaré afuera 11-2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5574,7 +5574,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11 - 2016",
+    "Input": "Estaré afuera 11 - 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5601,7 +5601,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11- 2016",
+    "Input": "Estaré afuera 11- 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5628,7 +5628,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11 -2016",
+    "Input": "Estaré afuera 11 -2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5655,7 +5655,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11/2016",
+    "Input": "Estaré afuera 11/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5682,7 +5682,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11 / 2016",
+    "Input": "Estaré afuera 11 / 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5709,7 +5709,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11/ 2016",
+    "Input": "Estaré afuera 11/ 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5736,7 +5736,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11 /2016",
+    "Input": "Estaré afuera 11 /2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5763,7 +5763,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11.2016",
+    "Input": "Estaré afuera 11.2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5790,7 +5790,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11 . 2016",
+    "Input": "Estaré afuera 11 . 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5817,7 +5817,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11. 2016",
+    "Input": "Estaré afuera 11. 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5844,7 +5844,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera 11 .2016",
+    "Input": "Estaré afuera 11 .2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5871,7 +5871,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 1 de enero y 5 de abril",
+    "Input": "Estaré afuera entre 1 de enero y 5 de abril",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5898,7 +5898,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 1 de enero de 2015 y 5 de feb de 2018",
+    "Input": "Estaré afuera entre 1 de enero de 2015 y 5 de feb de 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5925,7 +5925,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 1 de enero de 2015 y feb de 2018",
+    "Input": "Estaré afuera entre 1 de enero de 2015 y feb de 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5952,7 +5952,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 2015 y feb 2018",
+    "Input": "Estaré afuera entre 2015 y feb 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -5979,7 +5979,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de 1 de feb a marzo de 2019",
+    "Input": "Estaré afuera de 1 de feb a marzo de 2019",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -6006,7 +6006,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 1 de feb y marzo de 2019",
+    "Input": "Estaré afuera entre 1 de feb y marzo de 2019",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -6033,7 +6033,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre junio de 2015 y mayo de 2018",
+    "Input": "Estaré afuera entre junio de 2015 y mayo de 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -6060,7 +6060,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre mayo de 2015 y 2018",
+    "Input": "Estaré afuera entre mayo de 2015 y 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -6087,7 +6087,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre mayo 2015 y 2018",
+    "Input": "Estaré afuera entre mayo 2015 y 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -6114,7 +6114,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre mayo de 2015 y jun de 2018",
+    "Input": "Estaré afuera entre mayo de 2015 y jun de 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -6141,7 +6141,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre 2015 y 5 de enero de 2018",
+    "Input": "Estaré afuera entre 2015 y 5 de enero de 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -6168,7 +6168,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde 2015 hasta 5 de mayo de 2017",
+    "Input": "Estaré afuera desde 2015 hasta 5 de mayo de 2017",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -6195,7 +6195,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera desde el \u00faltimo lunes de abril hasta 2019",
+    "Input": "Estaré afuera desde el último lunes de abril hasta 2019",
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
@@ -6203,7 +6203,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde el \u00faltimo lunes de abril hasta 2019",
+        "Text": "desde el último lunes de abril hasta 2019",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-04-30,2019-01-01,P246D)",
@@ -6222,7 +6222,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera de la semana 31 a la semana 35",
+    "Input": "Estaré afuera de la semana 31 a la semana 35",
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
@@ -6249,7 +6249,7 @@
     ]
   },
   {
-    "Input": "Estar\u00e9 afuera entre la semana 31 y 35",
+    "Input": "Estaré afuera entre la semana 31 y 35",
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
@@ -6276,7 +6276,7 @@
     ]
   },
   {
-    "Input": "Me quedo aqu\u00ed desde hoy hasta dos y medio d\u00edas despu\u00e9s",
+    "Input": "Me quedo aquí desde hoy hasta dos y medio días después",
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
@@ -6284,7 +6284,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde hoy hasta dos y medio d\u00edas despu\u00e9s",
+        "Text": "desde hoy hasta dos y medio días después",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-05-04,2018-05-06,P2.5D)",
@@ -6303,7 +6303,7 @@
     ]
   },
   {
-    "Input": "No estuve all\u00ed la misma semana en que ocurri\u00f3 eso",
+    "Input": "No estuve allí la misma semana en que ocurrió eso",
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
@@ -6331,7 +6331,7 @@
     ]
   },
   {
-    "Input": "No estuve all\u00ed el mismo mes en que ocurri\u00f3 eso.",
+    "Input": "No estuve allí el mismo mes en que ocurrió eso.",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -6359,7 +6359,7 @@
     ]
   },
   {
-    "Input": "No estuve all\u00ed aquel fin de semana.",
+    "Input": "No estuve allí aquel fin de semana.",
     "Context": {
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
@@ -6387,7 +6387,7 @@
     ]
   },
   {
-    "Input": "No estuve all\u00ed el mismo a\u00f1o en que ocurri\u00f3 eso. ",
+    "Input": "No estuve allí el mismo año en que ocurrió eso. ",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -6395,7 +6395,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mismo a\u00f1o",
+        "Text": "mismo año",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX",
@@ -6415,7 +6415,7 @@
     ]
   },
   {
-    "Input": "Podr\u00edamos habernos visto m\u00e1s temprano esta semana.",
+    "Input": "Podríamos habernos visto más temprano esta semana.",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
@@ -6423,7 +6423,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "m\u00e1s temprano esta semana",
+        "Text": "más temprano esta semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-W22",
@@ -6442,7 +6442,7 @@
     ]
   },
   {
-    "Input": "Podr\u00edamos habernos visto m\u00e1s temprano este mes.",
+    "Input": "Podríamos habernos visto más temprano este mes.",
     "Context": {
       "ReferenceDateTime": "2018-05-13T00:00:00"
     },
@@ -6450,7 +6450,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "m\u00e1s temprano este mes",
+        "Text": "más temprano este mes",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-05",
@@ -6469,7 +6469,7 @@
     ]
   },
   {
-    "Input": "Podr\u00edamos habernos visto m\u00e1s temprano este a\u00f1o.",
+    "Input": "Podríamos habernos visto más temprano este año.",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
@@ -6477,7 +6477,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "m\u00e1s temprano este a\u00f1o",
+        "Text": "más temprano este año",
         "Type": "daterange",
         "Value": {
           "Timex": "2018",
@@ -6550,7 +6550,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para el resto de este a\u00f1o",
+    "Input": "Busca un tiempo para el resto de este año",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -6558,7 +6558,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto de este a\u00f1o",
+        "Text": "resto de este año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -6577,7 +6577,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para el resto del a\u00f1o",
+    "Input": "Busca un tiempo para el resto del año",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -6585,7 +6585,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto del a\u00f1o",
+        "Text": "resto del año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -6604,7 +6604,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para lo que queda del a\u00f1o",
+    "Input": "Busca un tiempo para lo que queda del año",
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
@@ -6612,7 +6612,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "lo que queda del a\u00f1o",
+        "Text": "lo que queda del año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -6631,7 +6631,7 @@
     ]
   },
   {
-    "Input": "Esta tarea empezar\u00e1 en m\u00e1s de 2 semanas",
+    "Input": "Esta tarea empezará en más de 2 semanas",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
@@ -6639,7 +6639,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "en m\u00e1s de 2 semanas",
+        "Text": "en más de 2 semanas",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-06-12",
@@ -6657,7 +6657,7 @@
     ]
   },
   {
-    "Input": "Regresar\u00e9 en menos de 2 semanas",
+    "Input": "Regresaré en menos de 2 semanas",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
@@ -6710,7 +6710,7 @@
     ]
   },
   {
-    "Input": "Esta tarea debi\u00f3 ser terminada hace m\u00e1s de 3 d\u00edas",
+    "Input": "Esta tarea debió ser terminada hace más de 3 días",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
@@ -6718,7 +6718,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "hace m\u00e1s de 3 d\u00edas",
+        "Text": "hace más de 3 días",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-05-26",
@@ -6736,7 +6736,7 @@
     ]
   },
   {
-    "Input": "Esta tarea debe ser terminada dentro de menos de 4 d\u00edas",
+    "Input": "Esta tarea debe ser terminada dentro de menos de 4 días",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
@@ -6744,7 +6744,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de menos de 4 d\u00edas",
+        "Text": "dentro de menos de 4 días",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-05-30,2018-06-02,P3D)",
@@ -6763,7 +6763,7 @@
     ]
   },
   {
-    "Input": "Ocurri\u00f3 en el siglo XV",
+    "Input": "Ocurrió en el siglo XV",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
@@ -6870,7 +6870,7 @@
     ]
   },
   {
-    "Input": "ventas de esta d\u00e9cada",
+    "Input": "ventas de esta década",
     "Context": {
       "ReferenceDateTime": "2018-08-31T00:00:00"
     },
@@ -6878,7 +6878,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "esta d\u00e9cada",
+        "Text": "esta década",
         "Type": "daterange",
         "Value": {
           "Timex": "(2010-01-01,2020-01-01,P10Y)",

@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "me voy por 3h",
     "Results": [
@@ -22,10 +22,10 @@
     ]
   },
   {
-    "Input": "me voy por 3,5 a\u00f1os",
+    "Input": "me voy por 3,5 años",
     "Results": [
       {
-        "Text": "3,5 a\u00f1os",
+        "Text": "3,5 años",
         "Type": "duration",
         "Start": 11,
         "Length": 8
@@ -187,10 +187,10 @@
     ]
   },
   {
-    "Input": "me voy por todo el a\u00f1o",
+    "Input": "me voy por todo el año",
     "Results": [
       {
-        "Text": "todo el a\u00f1o",
+        "Text": "todo el año",
         "Type": "duration",
         "Start": 11,
         "Length": 11
@@ -209,10 +209,10 @@
     ]
   },
   {
-    "Input": "me voy por un a\u00f1o",
+    "Input": "me voy por un año",
     "Results": [
       {
-        "Text": "un a\u00f1o",
+        "Text": "un año",
         "Type": "duration",
         "Start": 11,
         "Length": 6
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "Input": "Volver\u00e9 dentro de menos de 2 semanas",
+    "Input": "Volveré dentro de menos de 2 semanas",
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -233,12 +233,12 @@
     ]
   },
   {
-    "Input": "Esta tarea debi\u00f3 ser terminada m\u00e1s de tres d\u00edas antes",
+    "Input": "Esta tarea debió ser terminada más de tres días antes",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "m\u00e1s de tres d\u00edas antes",
+        "Text": "más de tres días antes",
         "Type": "duration",
         "Start": 31,
         "Length": 22
@@ -246,12 +246,12 @@
     ]
   },
   {
-    "Input": "Esta tarea debe ser terminada en menos de 4 d\u00edas",
+    "Input": "Esta tarea debe ser terminada en menos de 4 días",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "menos de 4 d\u00edas",
+        "Text": "menos de 4 días",
         "Type": "duration",
         "Start": 33,
         "Length": 41
