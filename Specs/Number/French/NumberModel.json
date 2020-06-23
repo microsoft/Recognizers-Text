@@ -1788,5 +1788,33 @@
         "End": 17
       }
     ]
+  },
+  {
+    "Input": " une douzaine",
+    "Results": [
+      {
+        "Text": "une douzaine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 1,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": " trois douzaines",
+    "Results": [
+      {
+        "Text": "trois douzaines",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 15
+      }
+    ]
   }
 ]
