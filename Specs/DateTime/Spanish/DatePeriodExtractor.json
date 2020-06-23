@@ -3693,7 +3693,7 @@
   },
   {
     "Input": "En mil novecientos veintiocho",
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
