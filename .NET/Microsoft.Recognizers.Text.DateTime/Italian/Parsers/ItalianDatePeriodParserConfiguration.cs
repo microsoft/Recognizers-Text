@@ -92,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             CenturySuffixRegex = ItalianDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = ItalianDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -203,6 +204,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex NowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

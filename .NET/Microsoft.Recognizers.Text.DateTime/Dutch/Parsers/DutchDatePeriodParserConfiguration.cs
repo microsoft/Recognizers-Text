@@ -79,6 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             MoreThanRegex = DutchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = DutchDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = DutchDatePeriodExtractorConfiguration.NowRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
             SpecialDayRegex = DutchDateExtractorConfiguration.SpecialDayRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -200,6 +201,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex CenturySuffixRegex { get; }
 
         public Regex NowRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
 

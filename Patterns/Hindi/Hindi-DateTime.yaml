@@ -609,6 +609,8 @@ SinceYearSuffixRegex: !nestedRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b(((?<next>{NextPrefixRegex}?के)\s+)?(अंदर|भीतर))
   references: [ NextPrefixRegex ]
+TodayNowRegex: !simpleRegex
+  def: \b(आज|अभी)(?![\u0900-\u097f])
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
 MorningStartEndRegex: !nestedRegex
   def: (^(सुबह|{AmDescRegex}))|((सुबह|{AmDescRegex})$)

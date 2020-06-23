@@ -76,6 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             CenturySuffixRegex = GermanDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = GermanDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -186,6 +187,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex NowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

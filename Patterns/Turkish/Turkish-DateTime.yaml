@@ -671,6 +671,8 @@ SinceYearSuffixRegex: !nestedRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b((?<next>{NextPrefixRegex}\s+)?(\d+\s+(saniye|dakika|saat|gün|hafta|ay|yıl)\s+)?içinde)\b
   references: [ NextPrefixRegex ]
+TodayNowRegex: !simpleRegex
+  def: \b(bugün|şimdi)\b
 MorningStartEndRegex: !simpleRegex
   def: (^sabahı?$)
 AfternoonStartEndRegex: !simpleRegex

@@ -199,6 +199,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string InConnectorRegex = @"\b(dans|en|sur)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public const string WithinNextPrefixRegex = @"^[.]";
+      public const string TodayNowRegex = @"\b(aujourd'hui|maintenant)\b";
       public const string MorningStartEndRegex = @"(^(matin))|((matin)$)";
       public const string AfternoonStartEndRegex = @"(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)";
       public const string EveningStartEndRegex = @"(^(soir[ée]e|soir))|((soir[ée]e|soir)$)";

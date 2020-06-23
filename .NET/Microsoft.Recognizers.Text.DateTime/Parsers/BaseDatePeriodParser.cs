@@ -588,9 +588,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var isLessThanOrWithIn = false;
                     var isMoreThan = false;
 
-                    // @TODO move hardcoded English strings to definition
                     // cases like "within 3 days from yesterday/tomorrow" does not make any sense
-                    if (er.Text.Contains("today") || er.Text.Contains("now"))
+                    if (this.config.TodayNowRegex.IsMatch(er.Text))
                     {
                         MatchWithinNextPrefix(beforeString, isAgo, ref isLessThanOrWithIn, ref isMoreThan);
                     }

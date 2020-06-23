@@ -453,6 +453,8 @@ SinceYearSuffixRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+TodayNowRegex: !simpleRegex
+  def: \b(aujourd'hui|maintenant)\b
 MorningStartEndRegex: !simpleRegex
   def: (^(matin))|((matin)$)
 AfternoonStartEndRegex: !simpleRegex
