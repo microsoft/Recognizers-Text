@@ -1,6 +1,6 @@
 [
   {
-    "Input": "Estaré fuera de cinco a siete hoy",
+    "Input": "Estar\u00e9 fuera de cinco a siete hoy",
     "Results": [
       {
         "Text": "de cinco a siete hoy",
@@ -11,12 +11,12 @@
     ]
   },
   {
-    "Input": "Hoy estaré fuera de cinco a siete",
+    "Input": "Hoy estar\u00e9 fuera de cinco a siete",
     "NotSupported": "javascript",
     "Results": []
   },
   {
-    "Input": "Estaré fuera hoy de cinco a siete",
+    "Input": "Estar\u00e9 fuera hoy de cinco a siete",
     "Results": [
       {
         "Text": "hoy de cinco a siete",
@@ -27,10 +27,10 @@
     ]
   },
   {
-    "Input": "Estaré fuera de cinco a siete mañana",
+    "Input": "Estar\u00e9 fuera de cinco a siete ma\u00f1ana",
     "Results": [
       {
-        "Text": "de cinco a siete mañana",
+        "Text": "de cinco a siete ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 23
@@ -38,10 +38,10 @@
     ]
   },
   {
-    "Input": "Estaré fuera desde las 5 hasta las 6 el próximo domingo",
+    "Input": "Estar\u00e9 fuera desde las 5 hasta las 6 el pr\u00f3ximo domingo",
     "Results": [
       {
-        "Text": "desde las 5 hasta las 6 el próximo domingo",
+        "Text": "desde las 5 hasta las 6 el pr\u00f3ximo domingo",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 42
@@ -49,10 +49,10 @@
     ]
   },
   {
-    "Input": "Estaré fuera desde las 5 hasta las 6pm el próximo domingo",
+    "Input": "Estar\u00e9 fuera desde las 5 hasta las 6pm el pr\u00f3ximo domingo",
     "Results": [
       {
-        "Text": "desde las 5 hasta las 6pm el próximo domingo",
+        "Text": "desde las 5 hasta las 6pm el pr\u00f3ximo domingo",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 44
@@ -60,10 +60,10 @@
     ]
   },
   {
-    "Input": "Estaré fuera desde las 5 hasta las 6pm del próximo domingo",
+    "Input": "Estar\u00e9 fuera desde las 5 hasta las 6pm del pr\u00f3ximo domingo",
     "Results": [
       {
-        "Text": "desde las 5 hasta las 6pm del próximo domingo",
+        "Text": "desde las 5 hasta las 6pm del pr\u00f3ximo domingo",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 45
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm a 5pm hoy",
+    "Input": "Estar\u00e9 afuera de 4pm a 5pm hoy",
     "Results": [
       {
         "Text": "de 4pm a 5pm hoy",
@@ -82,7 +82,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm a 5pm de hoy",
+    "Input": "Estar\u00e9 afuera de 4pm a 5pm de hoy",
     "Results": [
       {
         "Text": "de 4pm a 5pm de hoy",
@@ -93,10 +93,10 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm de hoy a 5pm de mañana",
+    "Input": "Estar\u00e9 afuera de 4pm de hoy a 5pm de ma\u00f1ana",
     "Results": [
       {
-        "Text": "de 4pm de hoy a 5pm de mañana",
+        "Text": "de 4pm de hoy a 5pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 29
@@ -104,10 +104,10 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm a 5pm de mañana",
+    "Input": "Estar\u00e9 afuera de 4pm a 5pm de ma\u00f1ana",
     "Results": [
       {
-        "Text": "de 4pm a 5pm de mañana",
+        "Text": "de 4pm a 5pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 22
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
+    "Input": "Estar\u00e9 afuera de 4pm a 5pm del 2017-6-6",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -127,7 +127,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm a 5pm el 5 de Mayo del 2018",
+    "Input": "Estar\u00e9 afuera de 4pm a 5pm el 5 de Mayo del 2018",
     "Results": [
       {
         "Text": "de 4pm a 5pm el 5 de Mayo del 2018",
@@ -138,7 +138,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4:00 a 5pm 5 de Mayo, 2018",
+    "Input": "Estar\u00e9 afuera de 4:00 a 5pm 5 de Mayo, 2018",
     "Results": [
       {
         "Text": "de 4:00 a 5pm 5 de Mayo, 2018",
@@ -149,7 +149,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4pm del 1 de Enero del 2016 a 5pm de hoy",
+    "Input": "Estar\u00e9 afuera de 4pm del 1 de Enero del 2016 a 5pm de hoy",
     "Results": [
       {
         "Text": "de 4pm del 1 de Enero del 2016 a 5pm de hoy",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+    "Input": "Estar\u00e9 afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
     "Results": [
       {
         "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde hoy a las 4 hasta el miercoles siguiente a las 5",
+    "Input": "Estar\u00e9 afuera desde hoy a las 4 hasta el miercoles siguiente a las 5",
     "Results": [
       {
         "Text": "desde hoy a las 4 hasta el miercoles siguiente a las 5",
@@ -182,7 +182,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera entre las 4pm y 5pm de hoy",
+    "Input": "Estar\u00e9 afuera entre las 4pm y 5pm de hoy",
     "Results": [
       {
         "Text": "entre las 4pm y 5pm de hoy",
@@ -193,7 +193,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
+    "Input": "Estar\u00e9 afuera entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
     "Results": [
       {
         "Text": "entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "Input": "Regresaré por la noche",
+    "Input": "Regresar\u00e9 por la noche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -216,7 +216,7 @@
     ]
   },
   {
-    "Input": "Regresaré a la madrugada",
+    "Input": "Regresar\u00e9 a la madrugada",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -228,7 +228,7 @@
     ]
   },
   {
-    "Input": "Regresaré esta tarde",
+    "Input": "Regresar\u00e9 esta tarde",
     "Results": [
       {
         "Text": "esta tarde",
@@ -239,22 +239,22 @@
     ]
   },
   {
-    "Input": "Regresaré por la mañana",
+    "Input": "Regresar\u00e9 por la ma\u00f1ana",
     "NotSupportedByDesign": "javascript",
     "Results": [
-        {
-          "Text": "la mañana",
-          "Type": "datetimerange",
-          "Start": 14,
-          "Length": 9
-        }
-      ]
+      {
+        "Text": "la ma\u00f1ana",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
   },
   {
-    "Input": "Regresaré esta mañana",
+    "Input": "Regresar\u00e9 esta ma\u00f1ana",
     "Results": [
       {
-        "Text": "esta mañana",
+        "Text": "esta ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 10,
         "Length": 11
@@ -262,10 +262,10 @@
     ]
   },
   {
-    "Input": "Regresaré la próxima noche",
+    "Input": "Regresar\u00e9 la pr\u00f3xima noche",
     "Results": [
       {
-        "Text": "próxima noche",
+        "Text": "pr\u00f3xima noche",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 13
@@ -273,7 +273,7 @@
     ]
   },
   {
-    "Input": "Regresé anoche",
+    "Input": "Regres\u00e9 anoche",
     "Results": [
       {
         "Text": "anoche",
@@ -284,10 +284,10 @@
     ]
   },
   {
-    "Input": "Regresaré mañana por la noche",
+    "Input": "Regresar\u00e9 ma\u00f1ana por la noche",
     "Results": [
       {
-        "Text": "mañana por la noche",
+        "Text": "ma\u00f1ana por la noche",
         "Type": "datetimerange",
         "Start": 10,
         "Length": 19
@@ -295,7 +295,7 @@
     ]
   },
   {
-    "Input": "Regresaré el 5 de mayo en la noche",
+    "Input": "Regresar\u00e9 el 5 de mayo en la noche",
     "Results": [
       {
         "Text": "5 de mayo en la noche",
@@ -306,10 +306,10 @@
     ]
   },
   {
-    "Input": "Voy a retroceder los últimos 3 minutos",
+    "Input": "Voy a retroceder los \u00faltimos 3 minutos",
     "Results": [
       {
-        "Text": "últimos 3 minutos",
+        "Text": "\u00faltimos 3 minutos",
         "Type": "datetimerange",
         "Start": 21,
         "Length": 17
@@ -383,10 +383,10 @@
     ]
   },
   {
-    "Input": "Voy a volver en el último minuto",
+    "Input": "Voy a volver en el \u00faltimo minuto",
     "Results": [
       {
-        "Text": "último minuto",
+        "Text": "\u00faltimo minuto",
         "Type": "datetimerange",
         "Start": 19,
         "Length": 13
@@ -394,10 +394,10 @@
     ]
   },
   {
-    "Input": "Voy a volver en la próxima hora",
+    "Input": "Voy a volver en la pr\u00f3xima hora",
     "Results": [
       {
-        "Text": "próxima hora",
+        "Text": "pr\u00f3xima hora",
         "Type": "datetimerange",
         "Start": 19,
         "Length": 12
@@ -405,7 +405,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera hoy de cinco a siete",
+    "Input": "Estar\u00e9 afuera hoy de cinco a siete",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -417,11 +417,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera mañana de las cinco a las siete",
+    "Input": "Estar\u00e9 afuera ma\u00f1ana de las cinco a las siete",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana de las cinco a las siete",
+        "Text": "ma\u00f1ana de las cinco a las siete",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 31
@@ -429,11 +429,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera el próximo domingo de 5 a 6",
+    "Input": "Estar\u00e9 afuera el pr\u00f3ximo domingo de 5 a 6",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximo domingo de 5 a 6",
+        "Text": "pr\u00f3ximo domingo de 5 a 6",
         "Type": "datetimerange",
         "Start": 17,
         "Length": 24
@@ -441,11 +441,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera el próximo domingo de las 5 a las 6 de la tarde",
+    "Input": "Estar\u00e9 afuera el pr\u00f3ximo domingo de las 5 a las 6 de la tarde",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximo domingo de las 5 a las 6 de la tarde",
+        "Text": "pr\u00f3ximo domingo de las 5 a las 6 de la tarde",
         "Type": "datetimerange",
         "Start": 17,
         "Length": 44
@@ -453,11 +453,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera de las 5 a las 6 p. m. del próximo domingo",
+    "Input": "Estar\u00e9 afuera de las 5 a las 6 p. m. del pr\u00f3ximo domingo",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de las 5 a las 6 p. m. del próximo domingo",
+        "Text": "de las 5 a las 6 p. m. del pr\u00f3ximo domingo",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 42
@@ -465,7 +465,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera hoy desde las 4 pm hasta las 5 pm",
+    "Input": "Estar\u00e9 afuera hoy desde las 4 pm hasta las 5 pm",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -477,11 +477,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde hoy a las 4 pm hasta mañana a las 5 pm",
+    "Input": "Estar\u00e9 afuera desde hoy a las 4 pm hasta ma\u00f1ana a las 5 pm",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde hoy a las 4 pm hasta mañana a las 5 pm",
+        "Text": "desde hoy a las 4 pm hasta ma\u00f1ana a las 5 pm",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 44
@@ -489,11 +489,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 4 pm de hoy hasta las 5 pm de mañana",
+    "Input": "Estar\u00e9 afuera desde las 4 pm de hoy hasta las 5 pm de ma\u00f1ana",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde las 4 pm de hoy hasta las 5 pm de mañana",
+        "Text": "desde las 4 pm de hoy hasta las 5 pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 46
@@ -501,11 +501,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera de las 4 a las 5 pm de mañana",
+    "Input": "Estar\u00e9 afuera de las 4 a las 5 pm de ma\u00f1ana",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de las 4 a las 5 pm de mañana",
+        "Text": "de las 4 a las 5 pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 29
@@ -513,7 +513,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera el 6-6-2017 desde las 4 p. m. hasta las 5 p. m.",
+    "Input": "Estar\u00e9 afuera el 6-6-2017 desde las 4 p. m. hasta las 5 p. m.",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -525,7 +525,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 4 p. m. hasta las 5 p. m. del 6-6-2017",
+    "Input": "Estar\u00e9 afuera desde las 4 p. m. hasta las 5 p. m. del 6-6-2017",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -537,7 +537,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera el 5 de mayo de 2018 de 4 a 5 pm",
+    "Input": "Estar\u00e9 afuera el 5 de mayo de 2018 de 4 a 5 pm",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -549,7 +549,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 4-5 pm de 5 de mayo de 2018",
+    "Input": "Estar\u00e9 afuera de 4-5 pm de 5 de mayo de 2018",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -562,7 +562,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de las 4:00 a las 5:00 p. m. de 5 de mayo de 2018",
+    "Input": "Estar\u00e9 afuera de las 4:00 a las 5:00 p. m. de 5 de mayo de 2018",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -574,7 +574,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 16 h de 1 de ene de 2016 hasta hoy a las 17 h",
+    "Input": "Estar\u00e9 afuera desde las 16 h de 1 de ene de 2016 hasta hoy a las 17 h",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -587,7 +587,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 2:00 p. m. del 21-2-2016 hasta las 3:32 del 23/4/2016",
+    "Input": "Estar\u00e9 afuera desde las 2:00 p. m. del 21-2-2016 hasta las 3:32 del 23/4/2016",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -599,11 +599,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera de hoy a las 4 al próximo mie a las 5",
+    "Input": "Estar\u00e9 afuera de hoy a las 4 al pr\u00f3ximo mie a las 5",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de hoy a las 4 al próximo mie a las 5",
+        "Text": "de hoy a las 4 al pr\u00f3ximo mie a las 5",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 37
@@ -611,7 +611,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera hoy entre las 4 y las 5 p. m.",
+    "Input": "Estar\u00e9 afuera hoy entre las 4 y las 5 p. m.",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -623,7 +623,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera hoy de 4-5 p. m.",
+    "Input": "Estar\u00e9 afuera hoy de 4-5 p. m.",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -635,7 +635,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera entre las 4 pm de 1 de ene de 2016 y las 5 pm de hoy",
+    "Input": "Estar\u00e9 afuera entre las 4 pm de 1 de ene de 2016 y las 5 pm de hoy",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -647,7 +647,7 @@
     ]
   },
   {
-    "Input": "Volveré esta noche",
+    "Input": "Volver\u00e9 esta noche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -659,7 +659,7 @@
     ]
   },
   {
-    "Input": "Volveré hoy por la noche",
+    "Input": "Volver\u00e9 hoy por la noche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -671,7 +671,7 @@
     ]
   },
   {
-    "Input": "Volveré en la noche de hoy",
+    "Input": "Volver\u00e9 en la noche de hoy",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -684,11 +684,11 @@
     ]
   },
   {
-    "Input": "Volveré esta mañana",
+    "Input": "Volver\u00e9 esta ma\u00f1ana",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "esta mañana",
+        "Text": "esta ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 8,
         "Length": 11
@@ -696,7 +696,7 @@
     ]
   },
   {
-    "Input": "Volveré esta tarde",
+    "Input": "Volver\u00e9 esta tarde",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -708,11 +708,11 @@
     ]
   },
   {
-    "Input": "Volveré mañana por la noche",
+    "Input": "Volver\u00e9 ma\u00f1ana por la noche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana por la noche",
+        "Text": "ma\u00f1ana por la noche",
         "Type": "datetimerange",
         "Start": 8,
         "Length": 19
@@ -720,7 +720,7 @@
     ]
   },
   {
-    "Input": "Volví anoche",
+    "Input": "Volv\u00ed anoche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -732,12 +732,12 @@
     ]
   },
   {
-    "Input": "Volveré en la noche de mañana",
+    "Input": "Volver\u00e9 en la noche de ma\u00f1ana",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "noche de mañana",
+        "Text": "noche de ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 15
@@ -745,11 +745,11 @@
     ]
   },
   {
-    "Input": "Volveré el próximo lunes por la tarde",
+    "Input": "Volver\u00e9 el pr\u00f3ximo lunes por la tarde",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximo lunes por la tarde",
+        "Text": "pr\u00f3ximo lunes por la tarde",
         "Type": "datetimerange",
         "Start": 11,
         "Length": 26
@@ -757,12 +757,12 @@
     ]
   },
   {
-    "Input": "Volveré en la tarde del próximo lunes",
+    "Input": "Volver\u00e9 en la tarde del pr\u00f3ximo lunes",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "tarde del próximo lunes",
+        "Text": "tarde del pr\u00f3ximo lunes",
         "Type": "datetimerange",
         "Start": 14,
         "Length": 26
@@ -770,7 +770,7 @@
     ]
   },
   {
-    "Input": "Volveré el 5 de mayo por la noche",
+    "Input": "Volver\u00e9 el 5 de mayo por la noche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -782,11 +782,11 @@
     ]
   },
   {
-    "Input": "Volví en los últimos 3 minutos",
+    "Input": "Volv\u00ed en los \u00faltimos 3 minutos",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "últimos 3 minutos",
+        "Text": "\u00faltimos 3 minutos",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 17
@@ -794,7 +794,7 @@
     ]
   },
   {
-    "Input": "Volví en los 3 minutos pasados",
+    "Input": "Volv\u00ed en los 3 minutos pasados",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -806,7 +806,7 @@
     ]
   },
   {
-    "Input": "Volví en los 3 minutos anteriores",
+    "Input": "Volv\u00ed en los 3 minutos anteriores",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -818,11 +818,11 @@
     ]
   },
   {
-    "Input": "Volví en los últimos 3 min",
+    "Input": "Volv\u00ed en los \u00faltimos 3 min",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "últimos 3 min",
+        "Text": "\u00faltimos 3 min",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 13
@@ -830,12 +830,12 @@
     ]
   },
   {
-    "Input": "Volveré en las próximas 5 horas",
+    "Input": "Volver\u00e9 en las pr\u00f3ximas 5 horas",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximas 5 horas",
+        "Text": "pr\u00f3ximas 5 horas",
         "Type": "datetimerange",
         "Start": 15,
         "Length": 16
@@ -843,12 +843,12 @@
     ]
   },
   {
-    "Input": "Volveré en las próximas 5 h",
+    "Input": "Volver\u00e9 en las pr\u00f3ximas 5 h",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximas 5 h",
+        "Text": "pr\u00f3ximas 5 h",
         "Type": "datetimerange",
         "Start": 15,
         "Length": 12
@@ -856,11 +856,11 @@
     ]
   },
   {
-    "Input": "Volví en el último minuto",
+    "Input": "Volv\u00ed en el \u00faltimo minuto",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "último minuto",
+        "Text": "\u00faltimo minuto",
         "Type": "datetimerange",
         "Start": 12,
         "Length": 13
@@ -868,11 +868,11 @@
     ]
   },
   {
-    "Input": "Volveré a la próxima hora",
+    "Input": "Volver\u00e9 a la pr\u00f3xima hora",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próxima hora",
+        "Text": "pr\u00f3xima hora",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 12
@@ -880,12 +880,12 @@
     ]
   },
   {
-    "Input": "Volví en los últimos minutos",
+    "Input": "Volv\u00ed en los \u00faltimos minutos",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "últimos minutos",
+        "Text": "\u00faltimos minutos",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 15
@@ -893,11 +893,11 @@
     ]
   },
   {
-    "Input": "Volveré el martes por la mañana",
+    "Input": "Volver\u00e9 el martes por la ma\u00f1ana",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes por la mañana",
+        "Text": "martes por la ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 11,
         "Length": 20
@@ -905,7 +905,7 @@
     ]
   },
   {
-    "Input": "Volveré el martes por la tarde",
+    "Input": "Volver\u00e9 el martes por la tarde",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -917,7 +917,7 @@
     ]
   },
   {
-    "Input": "Volveré el martes por la noche",
+    "Input": "Volver\u00e9 el martes por la noche",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -929,7 +929,7 @@
     ]
   },
   {
-    "Input": "Volveré en la noche de martes",
+    "Input": "Volver\u00e9 en la noche de martes",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -942,12 +942,12 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a primeras horas de la mañana",
+    "Input": "Nos vemos el martes a primeras horas de la ma\u00f1ana",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a primeras horas de la mañana",
+        "Text": "martes a primeras horas de la ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 36
@@ -955,12 +955,12 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a últimas horas de la mañana",
+    "Input": "Nos vemos el martes a \u00faltimas horas de la ma\u00f1ana",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a últimas horas de la mañana",
+        "Text": "martes a \u00faltimas horas de la ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 35
@@ -994,12 +994,12 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a últimas horas de la tarde",
+    "Input": "Nos vemos el martes a \u00faltimas horas de la tarde",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a últimas horas de la tarde",
+        "Text": "martes a \u00faltimas horas de la tarde",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 34
@@ -1020,12 +1020,12 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a últimas horas de la noche",
+    "Input": "Nos vemos el martes a \u00faltimas horas de la noche",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a últimas horas de la noche",
+        "Text": "martes a \u00faltimas horas de la noche",
         "Type": "datetimerange",
         "Start": 13,
         "Length": 34
@@ -1033,12 +1033,12 @@
     ]
   },
   {
-    "Input": "Nos vemos a últimas horas de la noche de martes",
+    "Input": "Nos vemos a \u00faltimas horas de la noche de martes",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "a últimas horas de la noche de martes",
+        "Text": "a \u00faltimas horas de la noche de martes",
         "Type": "datetimerange",
         "Start": 10,
         "Length": 37
@@ -1059,12 +1059,12 @@
     ]
   },
   {
-    "Input": "Estaré afuera en el resto del día de hoy",
+    "Input": "Estar\u00e9 afuera en el resto del d\u00eda de hoy",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto del día de hoy",
+        "Text": "resto del d\u00eda de hoy",
         "Type": "datetimerange",
         "Start": 20,
         "Length": 20
@@ -1072,7 +1072,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera en el resto de la jornada de hoy",
+    "Input": "Estar\u00e9 afuera en el resto de la jornada de hoy",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1085,12 +1085,12 @@
     ]
   },
   {
-    "Input": "Estaré afuera en el resto del día",
+    "Input": "Estar\u00e9 afuera en el resto del d\u00eda",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto del día",
+        "Text": "resto del d\u00eda",
         "Type": "datetimerange",
         "Start": 20,
         "Length": 13
@@ -1098,7 +1098,7 @@
     ]
   },
   {
-    "Input": "Cortana, programa una reunión con Wayne el viernes entre 1 y 4 pm",
+    "Input": "Cortana, programa una reuni\u00f3n con Wayne el viernes entre 1 y 4 pm",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1110,11 +1110,11 @@
     ]
   },
   {
-    "Input": "Programa una reunión entre las 8 am y las 2 pm de mañana",
+    "Input": "Programa una reuni\u00f3n entre las 8 am y las 2 pm de ma\u00f1ana",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "entre las 8 am y las 2 pm de mañana",
+        "Text": "entre las 8 am y las 2 pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 21,
         "Length": 35
@@ -1122,7 +1122,7 @@
     ]
   },
   {
-    "Input": "Programa una reunión el 9 de dic entre 8:00 a. m. y 2:00 p. m.",
+    "Input": "Programa una reuni\u00f3n el 9 de dic entre 8:00 a. m. y 2:00 p. m.",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1134,7 +1134,7 @@
     ]
   },
   {
-    "Input": "Hola Cortana- programa una reunión con Jennifer. Necesito una reunión de 30 minutos este viernes por la tarde",
+    "Input": "Hola Cortana- programa una reuni\u00f3n con Jennifer. Necesito una reuni\u00f3n de 30 minutos este viernes por la tarde",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1146,7 +1146,7 @@
     ]
   },
   {
-    "Input": "Hola Cortana- programa una reunión con Jennifer.  Necesito una reunión de 30 minutos en la tarde de este viernes",
+    "Input": "Hola Cortana- programa una reuni\u00f3n con Jennifer.  Necesito una reuni\u00f3n de 30 minutos en la tarde de este viernes",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1159,7 +1159,7 @@
     ]
   },
   {
-    "Input": "Cortana, programa una reunión con Wayne el viernes entre las 1 y las 4 de la tarde",
+    "Input": "Cortana, programa una reuni\u00f3n con Wayne el viernes entre las 1 y las 4 de la tarde",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1171,7 +1171,7 @@
     ]
   },
   {
-    "Input": "Cortana, programa una reunión con Wayne entre las 1 pm y las 4 pm del viernes",
+    "Input": "Cortana, programa una reuni\u00f3n con Wayne entre las 1 pm y las 4 pm del viernes",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1209,7 +1209,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá dentro de 2 horas",
+    "Input": "Ocurrir\u00e1 dentro de 2 horas",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1221,7 +1221,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá el 1.1.2015 entre 10 y 11:30",
+    "Input": "Ocurrir\u00e1 el 1.1.2015 entre 10 y 11:30",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1233,7 +1233,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá 1/1/2015 entre las 10 h y las 11.30 h",
+    "Input": "Ocurrir\u00e1 1/1/2015 entre las 10 h y las 11.30 h",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1246,7 +1246,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá desde las 10.30 h hasta las 15 h de 1/1/15",
+    "Input": "Ocurrir\u00e1 desde las 10.30 h hasta las 15 h de 1/1/15",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1259,7 +1259,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá entre 3 y 5 del 1-1-2015",
+    "Input": "Ocurrir\u00e1 entre 3 y 5 del 1-1-2015",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1271,7 +1271,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá el 1.1.15 de 3.30 a 5.55",
+    "Input": "Ocurrir\u00e1 el 1.1.15 de 3.30 a 5.55",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1284,12 +1284,12 @@
     ]
   },
   {
-    "Input": "Ocurrirá 1/1/2015 después de 2:00",
-    "NotSupported": "dotnet, java, python",
+    "Input": "Ocurrir\u00e1 1/1/2015 despu\u00e9s de 2:00",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "1/1/2015 después de 2:00",
+        "Text": "1/1/2015 despu\u00e9s de 2:00",
         "Type": "datetimerange",
         "Start": 9,
         "Length": 24
@@ -1297,7 +1297,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá hoy antes de las 4 pm",
+    "Input": "Ocurrir\u00e1 hoy antes de las 4 pm",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1309,7 +1309,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá antes de las 4 p. m. de hoy",
+    "Input": "Ocurrir\u00e1 antes de las 4 p. m. de hoy",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1322,12 +1322,12 @@
     ]
   },
   {
-    "Input": "Ocurrirá el próximo miércoles después de las 10 de la mañana",
-    "NotSupported": "dotnet, java, python",
+    "Input": "Ocurrir\u00e1 el pr\u00f3ximo mi\u00e9rcoles despu\u00e9s de las 10 de la ma\u00f1ana",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximo miércoles después de las 10 de la mañana",
+        "Text": "pr\u00f3ximo mi\u00e9rcoles despu\u00e9s de las 10 de la ma\u00f1ana",
         "Type": "datetimerange",
         "Start": 12,
         "Length": 48
@@ -1335,7 +1335,7 @@
     ]
   },
   {
-    "Input": "Ocurrió antes de las 2 de la tarde del martes pasado",
+    "Input": "Ocurri\u00f3 antes de las 2 de la tarde del martes pasado",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -1360,8 +1360,8 @@
     ]
   },
   {
-    "Input": "Ocurrió la próxima semana después de las 2",
-    "NotSupported": "dotnet, java, python",
+    "Input": "Ocurri\u00f3 la pr\u00f3xima semana despu\u00e9s de las 2",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": []
   }

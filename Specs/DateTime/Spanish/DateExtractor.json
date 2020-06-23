@@ -374,10 +374,10 @@
     ]
   },
   {
-    "Input": "Volveré el sábado",
+    "Input": "Volver\u00e9 el s\u00e1bado",
     "Results": [
       {
-        "Text": "sábado",
+        "Text": "s\u00e1bado",
         "Type": "date",
         "Start": 11,
         "Length": 6
@@ -396,10 +396,10 @@
     ]
   },
   {
-    "Input": "Volvere mañana",
+    "Input": "Volvere ma\u00f1ana",
     "Results": [
       {
-        "Text": "mañana",
+        "Text": "ma\u00f1ana",
         "Type": "date",
         "Start": 8,
         "Length": 6
@@ -440,10 +440,10 @@
     ]
   },
   {
-    "Input": "Volvere el dia despues de mañana",
+    "Input": "Volvere el dia despues de ma\u00f1ana",
     "Results": [
       {
-        "Text": "el dia despues de mañana",
+        "Text": "el dia despues de ma\u00f1ana",
         "Type": "date",
         "Start": 8,
         "Length": 24
@@ -451,10 +451,10 @@
     ]
   },
   {
-    "Input": "Volvere pasado mañana",
+    "Input": "Volvere pasado ma\u00f1ana",
     "Results": [
       {
-        "Text": "pasado mañana",
+        "Text": "pasado ma\u00f1ana",
         "Type": "date",
         "Start": 8,
         "Length": 13
@@ -638,7 +638,7 @@
     ]
   },
   {
-    "Input": "¿Estás libre el 13.5.2015",
+    "Input": "\u00bfEst\u00e1s libre el 13.5.2015",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -649,7 +649,7 @@
     ]
   },
   {
-    "Input": "¿Estás libre el 2015.5.13",
+    "Input": "\u00bfEst\u00e1s libre el 2015.5.13",
     "Results": [
       {
         "Text": "2015.5.13",
@@ -660,7 +660,7 @@
     ]
   },
   {
-    "Input": "Volveré dentro de 2 semanas",
+    "Input": "Volver\u00e9 dentro de 2 semanas",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [

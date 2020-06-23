@@ -1,6 +1,6 @@
 [
   {
-    "Input": "Estaré fuera de cinco a siete hoy",
+    "Input": "Estar\u00e9 fuera de cinco a siete hoy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "Input": "Estaré fuera de 5 a 6 del 4/22/2016",
+    "Input": "Estar\u00e9 fuera de 5 a 6 del 4/22/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "Input": "Estaré fuera de 5 a 6 del 22 de Abril",
+    "Input": "Estar\u00e9 fuera de 5 a 6 del 22 de Abril",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "Input": "Estaré fuera de 5 a 6pm del 22 de Abril",
+    "Input": "Estar\u00e9 fuera de 5 a 6pm del 22 de Abril",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -100,7 +100,7 @@
     ]
   },
   {
-    "Input": "Estaré fuera de 5 a 6 del 1ro de Ene",
+    "Input": "Estar\u00e9 fuera de 5 a 6 del 1ro de Ene",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -125,13 +125,13 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 3pm a 4pm mañana",
+    "Input": "Estar\u00e9 afuera de 3pm a 4pm ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "de 3pm a 4pm mañana",
+        "Text": "de 3pm a 4pm ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -150,13 +150,13 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 3:00 a 4:00 de mañana",
+    "Input": "Estar\u00e9 afuera de 3:00 a 4:00 de ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "de 3:00 a 4:00 de mañana",
+        "Text": "de 3:00 a 4:00 de ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de siete y media a 4pm mañana",
+    "Input": "Estar\u00e9 afuera de siete y media a 4pm ma\u00f1ana",
     "NotSupported": "javascript, java, python",
     "Comment": "Timex is incorrectly resolved to PT8H, code needs to be updated to match C# in #1736",
     "Context": {
@@ -183,7 +183,7 @@
     },
     "Results": [
       {
-        "Text": "de siete y media a 4pm mañana",
+        "Text": "de siete y media a 4pm ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -202,13 +202,13 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 4pm de hoy hasta las 5pm de mañana",
+    "Input": "Estar\u00e9 afuera desde las 4pm de hoy hasta las 5pm de ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "desde las 4pm de hoy hasta las 5pm de mañana",
+        "Text": "desde las 4pm de hoy hasta las 5pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -227,7 +227,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+    "Input": "Estar\u00e9 afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera entre las 4pm a 5pm hoy",
+    "Input": "Estar\u00e9 afuera entre las 4pm a 5pm hoy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -277,7 +277,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera entre las 4pm del 1 Ene, 2016 y las 5pm de hoy",
+    "Input": "Estar\u00e9 afuera entre las 4pm del 1 Ene, 2016 y las 5pm de hoy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -302,7 +302,7 @@
     ]
   },
   {
-    "Input": "Regresaré esta noche",
+    "Input": "Regresar\u00e9 esta noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -327,7 +327,7 @@
     ]
   },
   {
-    "Input": "Regresaré esta tarde",
+    "Input": "Regresar\u00e9 esta tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -352,13 +352,13 @@
     ]
   },
   {
-    "Input": "Regresé esta mañana",
+    "Input": "Regres\u00e9 esta ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "esta mañana",
+        "Text": "esta ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TMO",
@@ -377,7 +377,7 @@
     ]
   },
   {
-    "Input": "Regresé anoche",
+    "Input": "Regres\u00e9 anoche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -402,13 +402,13 @@
     ]
   },
   {
-    "Input": "Regresaré mañana por la noche",
+    "Input": "Regresar\u00e9 ma\u00f1ana por la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "mañana por la noche",
+        "Text": "ma\u00f1ana por la noche",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TNI",
@@ -427,13 +427,13 @@
     ]
   },
   {
-    "Input": "Voy a retroceder los últimos 3 minutos",
+    "Input": "Voy a retroceder los \u00faltimos 3 minutos",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "últimos 3 minutos",
+        "Text": "\u00faltimos 3 minutos",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -602,13 +602,13 @@
     ]
   },
   {
-    "Input": "Voy a volver en el último minuto",
+    "Input": "Voy a volver en el \u00faltimo minuto",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "último minuto",
+        "Text": "\u00faltimo minuto",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
@@ -627,13 +627,13 @@
     ]
   },
   {
-    "Input": "Voy a volver en la próxima hora",
+    "Input": "Voy a volver en la pr\u00f3xima hora",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "próxima hora",
+        "Text": "pr\u00f3xima hora",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
@@ -652,13 +652,13 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 3:00 a 4:00 mañana",
+    "Input": "Estar\u00e9 afuera de 3:00 a 4:00 ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "de 3:00 a 4:00 mañana",
+        "Text": "de 3:00 a 4:00 ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
@@ -677,11 +677,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera hoy de cinco a siete",
+    "Input": "Estar\u00e9 afuera hoy de cinco a siete",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -704,11 +704,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera de las 5 a las 6 de 4/22/2016",
+    "Input": "Estar\u00e9 afuera de las 5 a las 6 de 4/22/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -731,7 +731,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera el 4.22.16 de las 5 a las 6",
+    "Input": "Estar\u00e9 afuera el 4.22.16 de las 5 a las 6",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -758,11 +758,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 5 a 6 de 22 de abril",
+    "Input": "Estar\u00e9 afuera de 5 a 6 de 22 de abril",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -785,11 +785,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 5-6 de 22 de abril",
+    "Input": "Estar\u00e9 afuera de 5-6 de 22 de abril",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -812,11 +812,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 5 hasta las 6 p. m. de 22 de abril",
+    "Input": "Estar\u00e9 afuera desde las 5 hasta las 6 p. m. de 22 de abril",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -839,11 +839,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera el 1 de ene desde las 5 hasta las 6",
+    "Input": "Estar\u00e9 afuera el 1 de ene desde las 5 hasta las 6",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -866,7 +866,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera mañana de 3 a 4 pm",
+    "Input": "Estar\u00e9 afuera ma\u00f1ana de 3 a 4 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -874,7 +874,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana de 3 a 4 pm",
+        "Text": "ma\u00f1ana de 3 a 4 pm",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -893,15 +893,15 @@
     ]
   },
   {
-    "Input": "Estaré afuera mañana de las siete y media a las 4 p. m.",
+    "Input": "Estar\u00e9 afuera ma\u00f1ana de las siete y media a las 4 p. m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana de las siete y media a las 4 p. m.",
+        "Text": "ma\u00f1ana de las siete y media a las 4 p. m.",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -920,15 +920,15 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde hoy a las 4 pm hasta mañana a las 5 pm",
+    "Input": "Estar\u00e9 afuera desde hoy a las 4 pm hasta ma\u00f1ana a las 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde hoy a las 4 pm hasta mañana a las 5 pm",
+        "Text": "desde hoy a las 4 pm hasta ma\u00f1ana a las 5 pm",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -947,15 +947,15 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 4 pm de hoy hasta las 5 pm de mañana",
+    "Input": "Estar\u00e9 afuera desde las 4 pm de hoy hasta las 5 pm de ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "desde las 4 pm de hoy hasta las 5 pm de mañana",
+        "Text": "desde las 4 pm de hoy hasta las 5 pm de ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -974,7 +974,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 2 p. m. del 21 de feb de 2016 hasta el 4-23-16 a las 3:32",
+    "Input": "Estar\u00e9 afuera desde las 2 p. m. del 21 de feb de 2016 hasta el 4-23-16 a las 3:32",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1001,11 +1001,11 @@
     ]
   },
   {
-    "Input": "Estaré afuera hoy entre las 4 y las 5 pm",
+    "Input": "Estar\u00e9 afuera hoy entre las 4 y las 5 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1028,7 +1028,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera entre el 1 de ene a las 16 h y hoy a las 5 p. m.",
+    "Input": "Estar\u00e9 afuera entre el 1 de ene a las 16 h y hoy a las 5 p. m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1055,11 +1055,11 @@
     ]
   },
   {
-    "Input": "Volveré esta noche",
+    "Input": "Volver\u00e9 esta noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1082,11 +1082,11 @@
     ]
   },
   {
-    "Input": "Volveré hoy por la noche",
+    "Input": "Volver\u00e9 hoy por la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1109,7 +1109,7 @@
     ]
   },
   {
-    "Input": "Volveré en la noche de hoy",
+    "Input": "Volver\u00e9 en la noche de hoy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1136,15 +1136,15 @@
     ]
   },
   {
-    "Input": "Volveré esta mañana",
+    "Input": "Volver\u00e9 esta ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "esta mañana",
+        "Text": "esta ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TMO",
@@ -1163,7 +1163,7 @@
     ]
   },
   {
-    "Input": "Volveré esta tarde",
+    "Input": "Volver\u00e9 esta tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1190,15 +1190,15 @@
     ]
   },
   {
-    "Input": "Volveré mañana por la noche",
+    "Input": "Volver\u00e9 ma\u00f1ana por la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana por la noche",
+        "Text": "ma\u00f1ana por la noche",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TNI",
@@ -1217,11 +1217,11 @@
     ]
   },
   {
-    "Input": "Volví anoche",
+    "Input": "Volv\u00ed anoche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1244,7 +1244,7 @@
     ]
   },
   {
-    "Input": "Volveré en la noche de mañana",
+    "Input": "Volver\u00e9 en la noche de ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1252,7 +1252,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "noche de mañana",
+        "Text": "noche de ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TNI",
@@ -1271,7 +1271,7 @@
     ]
   },
   {
-    "Input": "Volveré el próximo lunes por la tarde",
+    "Input": "Volver\u00e9 el pr\u00f3ximo lunes por la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1279,7 +1279,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximo lunes por la tarde",
+        "Text": "pr\u00f3ximo lunes por la tarde",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-14TAF",
@@ -1298,7 +1298,7 @@
     ]
   },
   {
-    "Input": "Volveré en la tarde del próximo lunes",
+    "Input": "Volver\u00e9 en la tarde del pr\u00f3ximo lunes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1306,7 +1306,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "tarde del próximo lunes",
+        "Text": "tarde del pr\u00f3ximo lunes",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-14TAF",
@@ -1325,15 +1325,15 @@
     ]
   },
   {
-    "Input": "Volví en los últimos 3 minutos",
+    "Input": "Volv\u00ed en los \u00faltimos 3 minutos",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "últimos 3 minutos",
+        "Text": "\u00faltimos 3 minutos",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -1352,11 +1352,11 @@
     ]
   },
   {
-    "Input": "Volví en los 3 minutos pasados",
+    "Input": "Volv\u00ed en los 3 minutos pasados",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1379,11 +1379,11 @@
     ]
   },
   {
-    "Input": "Volví en los 3 minutos anteriores",
+    "Input": "Volv\u00ed en los 3 minutos anteriores",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1406,15 +1406,15 @@
     ]
   },
   {
-    "Input": "Volví en los últimos 3 min",
+    "Input": "Volv\u00ed en los \u00faltimos 3 min",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "últimos 3 min",
+        "Text": "\u00faltimos 3 min",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -1433,15 +1433,15 @@
     ]
   },
   {
-    "Input": "Volví en el último minuto",
+    "Input": "Volv\u00ed en el \u00faltimo minuto",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "último minuto",
+        "Text": "\u00faltimo minuto",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
@@ -1460,15 +1460,15 @@
     ]
   },
   {
-    "Input": "Volveré a la próxima hora",
+    "Input": "Volver\u00e9 a la pr\u00f3xima hora",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próxima hora",
+        "Text": "pr\u00f3xima hora",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
@@ -1487,7 +1487,7 @@
     ]
   },
   {
-    "Input": "Volveré en las próximas horas",
+    "Input": "Volver\u00e9 en las pr\u00f3ximas horas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1495,7 +1495,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximas horas",
+        "Text": "pr\u00f3ximas horas",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
@@ -1514,15 +1514,15 @@
     ]
   },
   {
-    "Input": "Volveré el martes por la mañana",
+    "Input": "Volver\u00e9 el martes por la ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes por la mañana",
+        "Text": "martes por la ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -1541,7 +1541,7 @@
     ]
   },
   {
-    "Input": "Busca un tiempo para la mañana de este martes",
+    "Input": "Busca un tiempo para la ma\u00f1ana de este martes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1549,7 +1549,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana de este martes",
+        "Text": "ma\u00f1ana de este martes",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TMO",
@@ -1568,15 +1568,15 @@
     ]
   },
   {
-    "Input": "Organiza una reunión de 30 minutos para el martes en la mañana",
+    "Input": "Organiza una reuni\u00f3n de 30 minutos para el martes en la ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes en la mañana",
+        "Text": "martes en la ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -1595,7 +1595,7 @@
     ]
   },
   {
-    "Input": "Volveré el martes por la tarde",
+    "Input": "Volver\u00e9 el martes por la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1622,7 +1622,7 @@
     ]
   },
   {
-    "Input": "Volveré el martes por la noche",
+    "Input": "Volver\u00e9 el martes por la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1649,7 +1649,7 @@
     ]
   },
   {
-    "Input": "Volveré en la noche de martes",
+    "Input": "Volver\u00e9 en la noche de martes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1676,7 +1676,7 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a primeras horas de la mañana",
+    "Input": "Nos vemos el martes a primeras horas de la ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1684,7 +1684,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a primeras horas de la mañana",
+        "Text": "martes a primeras horas de la ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -1703,7 +1703,7 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a últimas horas de la mañana",
+    "Input": "Nos vemos el martes a \u00faltimas horas de la ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1711,7 +1711,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a últimas horas de la mañana",
+        "Text": "martes a \u00faltimas horas de la ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -1784,7 +1784,7 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a últimas horas de la tarde",
+    "Input": "Nos vemos el martes a \u00faltimas horas de la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1792,7 +1792,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a últimas horas de la tarde",
+        "Text": "martes a \u00faltimas horas de la tarde",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
@@ -1838,7 +1838,7 @@
     ]
   },
   {
-    "Input": "Nos vemos a últimas horas de la noche de martes",
+    "Input": "Nos vemos a \u00faltimas horas de la noche de martes",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1846,7 +1846,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "últimas horas de la noche de martes",
+        "Text": "\u00faltimas horas de la noche de martes",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
@@ -1865,7 +1865,7 @@
     ]
   },
   {
-    "Input": "Nos vemos el martes a últimas horas de la noche",
+    "Input": "Nos vemos el martes a \u00faltimas horas de la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1873,7 +1873,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes a últimas horas de la noche",
+        "Text": "martes a \u00faltimas horas de la noche",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
@@ -1919,15 +1919,15 @@
     ]
   },
   {
-    "Input": "Nos vemos en el resto del día de hoy",
+    "Input": "Nos vemos en el resto del d\u00eda de hoy",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto del día de hoy",
+        "Text": "resto del d\u00eda de hoy",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1950,7 +1950,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1973,15 +1973,15 @@
     ]
   },
   {
-    "Input": "Nos vemos en el resto del día",
+    "Input": "Nos vemos en el resto del d\u00eda",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "resto del día",
+        "Text": "resto del d\u00eda",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -2000,7 +2000,7 @@
     ]
   },
   {
-    "Input": "Estaré afuera desde las 14 h de 21-2-2016 hasta el 23.4.16 a las 3:32",
+    "Input": "Estar\u00e9 afuera desde las 14 h de 21-2-2016 hasta el 23.4.16 a las 3:32",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2027,11 +2027,11 @@
     ]
   },
   {
-    "Input": "Cortana, programa una reunión con Wayne entre las 1 pm y las 4 pm del viernes",
+    "Input": "Cortana, programa una reuni\u00f3n con Wayne entre las 1 pm y las 4 pm del viernes",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2054,15 +2054,15 @@
     ]
   },
   {
-    "Input": "Programa una reunión mañana entre 8 a. m. y 2 p. m.",
+    "Input": "Programa una reuni\u00f3n ma\u00f1ana entre 8 a. m. y 2 p. m.",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "mañana entre 8 a. m. y 2 p. m.",
+        "Text": "ma\u00f1ana entre 8 a. m. y 2 p. m.",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -2081,7 +2081,7 @@
     ]
   },
   {
-    "Input": "Programa una reunión de 8-2 de mañana",
+    "Input": "Programa una reuni\u00f3n de 8-2 de ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
@@ -2089,7 +2089,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "de 8-2 de mañana",
+        "Text": "de 8-2 de ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -2108,11 +2108,11 @@
     ]
   },
   {
-    "Input": "Programa una reunión el 9 de dic entre las 8 am y las 2 pm",
+    "Input": "Programa una reuni\u00f3n el 9 de dic entre las 8 am y las 2 pm",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2135,11 +2135,11 @@
     ]
   },
   {
-    "Input": "Programa una reunión de 8-2 del 9 de dic",
+    "Input": "Programa una reuni\u00f3n de 8-2 del 9 de dic",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2162,7 +2162,7 @@
     ]
   },
   {
-    "Input": "Hola Cortana- programa una reunión con Jennifer. Necesito una reunión de 30 minutos este viernes por la tarde",
+    "Input": "Hola Cortana- programa una reuni\u00f3n con Jennifer. Necesito una reuni\u00f3n de 30 minutos este viernes por la tarde",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
@@ -2189,7 +2189,7 @@
     ]
   },
   {
-    "Input": "Hola Cortana- programa una reunión con Jennifer.  Necesito una reunión de 30 minutos en la tarde de este viernes",
+    "Input": "Hola Cortana- programa una reuni\u00f3n con Jennifer.  Necesito una reuni\u00f3n de 30 minutos en la tarde de este viernes",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
@@ -2216,7 +2216,7 @@
     ]
   },
   {
-    "Input": "Hola Cortana- programa una reunión con Jennifer.  Necesito una reunión de 30 minutos en la tarde del próximo viernes",
+    "Input": "Hola Cortana- programa una reuni\u00f3n con Jennifer.  Necesito una reuni\u00f3n de 30 minutos en la tarde del pr\u00f3ximo viernes",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
@@ -2224,7 +2224,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "tarde del próximo viernes",
+        "Text": "tarde del pr\u00f3ximo viernes",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2017-11-24TAF",
@@ -2243,7 +2243,7 @@
     ]
   },
   {
-    "Input": "Hola Cortana- programa una reunión con Jennifer. Necesito una reunión de 30 minutos el viernes pasado por la tarde",
+    "Input": "Hola Cortana- programa una reuni\u00f3n con Jennifer. Necesito una reuni\u00f3n de 30 minutos el viernes pasado por la tarde",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
@@ -2270,11 +2270,11 @@
     ]
   },
   {
-    "Input": "Cortana, programa una reunión con Wayne el viernes entre las 1 y las 4 de la tarde",
+    "Input": "Cortana, programa una reuni\u00f3n con Wayne el viernes entre las 1 y las 4 de la tarde",
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2297,11 +2297,11 @@
     ]
   },
   {
-    "Input": "Cortana, programa una reunión con Wayne el viernes de 1-4 p. m.",
+    "Input": "Cortana, programa una reuni\u00f3n con Wayne el viernes de 1-4 p. m.",
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2328,7 +2328,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2378,15 +2378,15 @@
     ]
   },
   {
-    "Input": "Nos vemos el 5 de feb en la mañana",
+    "Input": "Nos vemos el 5 de feb en la ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "5 de feb en la mañana",
+        "Text": "5 de feb en la ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-02-05TMO",
@@ -2405,15 +2405,15 @@
     ]
   },
   {
-    "Input": "Volveré el martes en la mañana",
+    "Input": "Volver\u00e9 el martes en la ma\u00f1ana",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "martes en la mañana",
+        "Text": "martes en la ma\u00f1ana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -2432,7 +2432,7 @@
     ]
   },
   {
-    "Input": "Volveré el martes en la tarde",
+    "Input": "Volver\u00e9 el martes en la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2459,11 +2459,11 @@
     ]
   },
   {
-    "Input": "Ocurrirá dentro de 2 horas",
+    "Input": "Ocurrir\u00e1 dentro de 2 horas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2486,11 +2486,11 @@
     ]
   },
   {
-    "Input": "Volveré dentro de 15 segundos",
+    "Input": "Volver\u00e9 dentro de 15 segundos",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2513,11 +2513,11 @@
     ]
   },
   {
-    "Input": "Volveré dentro de 5 minutos",
+    "Input": "Volver\u00e9 dentro de 5 minutos",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2540,11 +2540,11 @@
     ]
   },
   {
-    "Input": "Volveré dentro de 5 horas",
+    "Input": "Volver\u00e9 dentro de 5 horas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2567,7 +2567,7 @@
     ]
   },
   {
-    "Input": "Volveré dentro de 1 día y 5 horas",
+    "Input": "Volver\u00e9 dentro de 1 d\u00eda y 5 horas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2575,7 +2575,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de 1 día y 5 horas",
+        "Text": "dentro de 1 d\u00eda y 5 horas",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
@@ -2594,7 +2594,7 @@
     ]
   },
   {
-    "Input": "Esta tarea debe terminarse dentro de 2 días, 1 hora, 5 minutos y 30 segundos",
+    "Input": "Esta tarea debe terminarse dentro de 2 d\u00edas, 1 hora, 5 minutos y 30 segundos",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2602,7 +2602,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "dentro de 2 días, 1 hora, 5 minutos y 30 segundos",
+        "Text": "dentro de 2 d\u00edas, 1 hora, 5 minutos y 30 segundos",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
@@ -2621,7 +2621,7 @@
     ]
   },
   {
-    "Input": "Esta tarea debe terminarse en los próximos 2 días, 1 hora, 5 minutos y 30 segundos",
+    "Input": "Esta tarea debe terminarse en los pr\u00f3ximos 2 d\u00edas, 1 hora, 5 minutos y 30 segundos",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2629,7 +2629,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximos 2 días, 1 hora, 5 minutos y 30 segundos",
+        "Text": "pr\u00f3ximos 2 d\u00edas, 1 hora, 5 minutos y 30 segundos",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
@@ -2648,15 +2648,15 @@
     ]
   },
   {
-    "Input": "Volveré en las próximas 5 horas",
+    "Input": "Volver\u00e9 en las pr\u00f3ximas 5 horas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "próximas 5 horas",
+        "Text": "pr\u00f3ximas 5 horas",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
@@ -2675,11 +2675,11 @@
     ]
   },
   {
-    "Input": "Volveré de 8-9 de lunes",
+    "Input": "Volver\u00e9 de 8-9 de lunes",
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2706,7 +2706,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2733,7 +2733,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2756,11 +2756,11 @@
     ]
   },
   {
-    "Input": "Ocurrirá 1/1/2015 entre las 10 h y las 11.30 h",
+    "Input": "Ocurrir\u00e1 1/1/2015 entre las 10 h y las 11.30 h",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2783,11 +2783,11 @@
     ]
   },
   {
-    "Input": "Ocurrirá el 1.1.2015 entre 10 y 11:30",
+    "Input": "Ocurrir\u00e1 el 1.1.2015 entre 10 y 11:30",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2810,11 +2810,11 @@
     ]
   },
   {
-    "Input": "Ocurrirá desde las 10.30 h hasta las 15 h de 1/1/15",
+    "Input": "Ocurrir\u00e1 desde las 10.30 h hasta las 15 h de 1/1/15",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -2837,7 +2837,7 @@
     ]
   },
   {
-    "Input": "Ocurrirá entre 3 y 5 del 1-1-2015",
+    "Input": "Ocurrir\u00e1 entre 3 y 5 del 1-1-2015",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
@@ -2864,11 +2864,11 @@
     ]
   },
   {
-    "Input": "Ocurrirá el 1.1.15 de 3.30 a 5.55",
+    "Input": "Ocurrir\u00e1 el 1.1.15 de 3.30 a 5.55",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {

@@ -22,10 +22,10 @@
     ]
   },
   {
-    "Input": "me voy por 3,5 años",
+    "Input": "me voy por 3,5 a\u00f1os",
     "Results": [
       {
-        "Text": "3,5 años",
+        "Text": "3,5 a\u00f1os",
         "Type": "duration",
         "Start": 11,
         "Length": 8
@@ -187,10 +187,10 @@
     ]
   },
   {
-    "Input": "me voy por todo el año",
+    "Input": "me voy por todo el a\u00f1o",
     "Results": [
       {
-        "Text": "todo el año",
+        "Text": "todo el a\u00f1o",
         "Type": "duration",
         "Start": 11,
         "Length": 11
@@ -209,10 +209,10 @@
     ]
   },
   {
-    "Input": "me voy por un año",
+    "Input": "me voy por un a\u00f1o",
     "Results": [
       {
-        "Text": "un año",
+        "Text": "un a\u00f1o",
         "Type": "duration",
         "Start": 11,
         "Length": 6
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "Input": "Volveré dentro de menos de 2 semanas",
+    "Input": "Volver\u00e9 dentro de menos de 2 semanas",
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -233,12 +233,12 @@
     ]
   },
   {
-    "Input": "Esta tarea debió ser terminada más de tres días antes",
+    "Input": "Esta tarea debi\u00f3 ser terminada m\u00e1s de tres d\u00edas antes",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "más de tres días antes",
+        "Text": "m\u00e1s de tres d\u00edas antes",
         "Type": "duration",
         "Start": 31,
         "Length": 22
@@ -246,14 +246,14 @@
     ]
   },
   {
-    "Input": "Esta tarea debe ser terminada en menos de 4 días",
+    "Input": "Esta tarea debe ser terminada en menos de 4 d\u00edas",
     "NotSupported": "dotnet, java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "menos de 4 días",
+        "Text": "menos de 4 d\u00edas",
         "Type": "duration",
-        "Start":33,
+        "Start": 33,
         "Length": 41
       }
     ]
