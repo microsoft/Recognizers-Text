@@ -15,11 +15,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor>();
 
-        private FractionExtractor(NumberMode mode, NumberOptions options)
-            : base(options)
+        private FractionExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
 
-            Options = options;
+            Options = config.Options;
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             };
 
             // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
-            if (mode != NumberMode.Unit)
+            if (config.Mode != NumberMode.Unit)
             {
                 regexes.Add(
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
@@ -59,17 +59,17 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         // "Fraction";
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
 
-        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        public static FractionExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (mode, options);
+            var extractorKey = (config.Mode, config.Options);
 
-            if (!Instances.ContainsKey(cacheKey))
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new FractionExtractor(mode, options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new FractionExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }
