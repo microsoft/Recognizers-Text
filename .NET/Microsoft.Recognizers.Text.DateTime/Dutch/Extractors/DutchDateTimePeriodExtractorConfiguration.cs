@@ -74,9 +74,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
 
         private static readonly Regex[] SimpleCases =
-{
+        {
             DutchTimePeriodExtractorConfiguration.PureNumFromTo,
+            DutchTimePeriodExtractorConfiguration.TimeDateFromTo,
             DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+            DutchTimePeriodExtractorConfiguration.SpecificTimeFromTo,
         };
 
         public DutchDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -174,9 +176,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            if (text.EndsWith("vanaf"))
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
+                index = text.LastIndexOf("vanaf", StringComparison.Ordinal);
+                return true;
+            }
+            else if (text.EndsWith("van"))
+            {
+                index = text.LastIndexOf("van", StringComparison.Ordinal);
                 return true;
             }
 
@@ -186,9 +193,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            if (text.EndsWith("tussen"))
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
+                index = text.LastIndexOf("tussen", StringComparison.Ordinal);
                 return true;
             }
 

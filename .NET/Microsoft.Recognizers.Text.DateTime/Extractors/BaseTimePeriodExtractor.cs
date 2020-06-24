@@ -80,12 +80,38 @@ namespace Microsoft.Recognizers.Text.DateTime
         // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
         private List<ExtractResult> GermanMorgenWorkaround(string text, List<ExtractResult> timePeriodErs)
         {
-            if (text.Equals("morgen"))
-            {
-                timePeriodErs.Clear();
-            }
+            var culture = this.config.Culture;
+            var isGerman = culture == Culture.German;
+            var isDutch = culture == Culture.Dutch;
+            var morgenStr = "morgen";
 
-            return timePeriodErs;
+            List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+
+            if (isGerman)
+            {
+                if (text.Equals(morgenStr))
+                {
+                    timePeriodErs.Clear();
+                }
+
+                return timePeriodErs;
+            }
+            else if (isDutch)
+            {
+                foreach (var timePeriodEr in timePeriodErs)
+                {
+                    if (!timePeriodEr.Text.Equals(morgenStr))
+                    {
+                        timePeriodErsResult.Add(timePeriodEr);
+                    }
+                }
+
+                return timePeriodErsResult;
+            }
+            else
+            {
+                return timePeriodErs;
+            }
         }
 
         // Cases like "from 3 to 5am" or "between 3:30 and 5" are extracted here

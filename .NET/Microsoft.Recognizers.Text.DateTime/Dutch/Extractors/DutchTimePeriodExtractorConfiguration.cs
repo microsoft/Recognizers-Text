@@ -32,6 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex PureNumFromTo =
             new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
 
+        public static readonly Regex TimeDateFromTo =
+            new Regex(DateTimeDefinitions.TimeDateFromTo, RegexFlags);
+
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
 
