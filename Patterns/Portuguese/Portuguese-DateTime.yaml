@@ -125,6 +125,8 @@ SinceYearSuffixRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+TodayNowRegex: !simpleRegex
+  def: \b(hoje|agora)\b
 CenturySuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

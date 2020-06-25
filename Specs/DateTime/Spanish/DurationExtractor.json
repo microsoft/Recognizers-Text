@@ -253,7 +253,7 @@
       {
         "Text": "menos de 4 días",
         "Type": "duration",
-        "Start":33,
+        "Start": 33,
         "Length": 41
       }
     ]

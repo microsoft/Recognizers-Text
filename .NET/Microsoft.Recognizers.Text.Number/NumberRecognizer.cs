@@ -430,21 +430,28 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                    Swedish.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Swedish, options, NumberMode.PureNumber))));
 
             RegisterModel<OrdinalModel>(
                 Culture.Swedish,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    Swedish.OrdinalExtractor.GetInstance()));
+                    Swedish.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Swedish,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
-                    new Swedish.PercentageExtractor(options)));
+                    new Swedish.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
+
+            // RegisterModel<NumberRangeModel>(
+            //    Culture.Swedish,
+            //    (options) => new NumberRangeModel(
+            //        new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration(
+            //                                        new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+            //        new Swedish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)

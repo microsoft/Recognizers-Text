@@ -288,6 +288,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string SinceNumSuffixRegex = @"\b^(?!0)(\d{0,3}((1|2|7|8)'den|(3|4|5)'ten|(6|9)'dan)|\d{0,2}(10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den)|\d000'den)\b";
       public static readonly string SinceYearSuffixRegex = $@"({YearSuffix}\s+(yılından beri)|{SinceNumSuffixRegex}\s+beri)";
       public static readonly string WithinNextPrefixRegex = $@"\b((?<next>{NextPrefixRegex}\s+)?(\d+\s+(saniye|dakika|saat|gün|hafta|ay|yıl)\s+)?içinde)\b";
+      public const string TodayNowRegex = @"\b(bugün|şimdi)\b";
       public const string MorningStartEndRegex = @"(^sabahı?$)";
       public const string AfternoonStartEndRegex = @"(^öğle(den\s+sonra)?$)";
       public const string EveningStartEndRegex = @"(^akşamı?$)";

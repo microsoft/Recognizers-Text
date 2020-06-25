@@ -464,6 +464,8 @@ SinceYearSuffixRegex: !simpleRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
+TodayNowRegex: !simpleRegex
+  def: \b(heute|jetzt)\b
 MorningStartEndRegex: !simpleRegex
   def: (^(früh|vormittag(s)?)|(morgens?|früh|vormittags?)$)
 AfternoonStartEndRegex: !simpleRegex

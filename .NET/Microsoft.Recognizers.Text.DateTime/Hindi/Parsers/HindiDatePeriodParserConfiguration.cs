@@ -95,6 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             CenturySuffixRegex = HindiDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = HindiDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = HindiDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -206,6 +207,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public Regex NowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

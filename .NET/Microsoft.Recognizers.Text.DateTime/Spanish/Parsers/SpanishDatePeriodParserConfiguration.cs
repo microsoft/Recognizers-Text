@@ -85,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             CenturySuffixRegex = SpanishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = SpanishDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -195,6 +196,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex NowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 

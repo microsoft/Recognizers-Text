@@ -93,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             CenturySuffixRegex = TurkishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = TurkishDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = TurkishDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -204,6 +205,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public Regex NowRegex { get; }
 
         public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

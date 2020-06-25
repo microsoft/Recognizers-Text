@@ -242,13 +242,13 @@
     "Input": "Regresaré por la mañana",
     "NotSupportedByDesign": "javascript",
     "Results": [
-        {
-          "Text": "la mañana",
-          "Type": "datetimerange",
-          "Start": 14,
-          "Length": 9
-        }
-      ]
+      {
+        "Text": "la mañana",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
   },
   {
     "Input": "Regresaré esta mañana",
@@ -1285,7 +1285,7 @@
   },
   {
     "Input": "Ocurrirá 1/1/2015 después de 2:00",
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1323,7 +1323,7 @@
   },
   {
     "Input": "Ocurrirá el próximo miércoles después de las 10 de la mañana",
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
@@ -1361,7 +1361,7 @@
   },
   {
     "Input": "Ocurrió la próxima semana después de las 2",
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": []
   }

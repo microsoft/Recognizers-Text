@@ -11,16 +11,17 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances =
             new ConcurrentDictionary<string, CardinalExtractor>();
 
-        private CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        private CardinalExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Integer Regexes
-            var intExtract = IntegerExtractor.GetInstance(placeholder);
+            var intExtract = IntegerExtractor.GetInstance(config);
             builder.AddRange(intExtract.Regexes);
 
             // Add Double Regexes
-            var douExtract = DoubleExtractor.GetInstance(placeholder);
+            var douExtract = DoubleExtractor.GetInstance(config);
             builder.AddRange(douExtract.Regexes);
 
             Regexes = builder.ToImmutable();
@@ -31,15 +32,17 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         // "Cardinal";
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
 
-        public static CardinalExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        public static CardinalExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            if (!Instances.ContainsKey(placeholder))
+            var extractorKey = config.Placeholder;
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new CardinalExtractor(placeholder);
-                Instances.TryAdd(placeholder, instance);
+                var instance = new CardinalExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[extractorKey];
         }
     }
 }

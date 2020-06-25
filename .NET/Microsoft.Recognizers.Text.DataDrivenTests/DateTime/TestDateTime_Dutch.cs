@@ -34,7 +34,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void DatePeriodExtractor(TestModel testSpec)
@@ -42,7 +41,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ExtractorInitialize(Extractors);
             TestDateTimeExtractor(testSpec);
         }
-        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -60,7 +58,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateTimePeriodExtractor(TestModel testSpec)
@@ -68,7 +65,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ExtractorInitialize(Extractors);
             TestDateTimeExtractor(testSpec);
         }
-        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -104,7 +100,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void MergedExtractor(TestModel testSpec)
@@ -113,6 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void MergedExtractorSkipFromTo(TestModel testSpec)
@@ -140,7 +136,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeParser(testSpec);
         }
 
-        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void DatePeriodParser(TestModel testSpec)
@@ -149,7 +144,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
         }
-        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -187,6 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeParser(testSpec);
         }
 
+        /*
         [NetCoreTestDataSource]
         [TestMethod]
         public void TimeZoneParser(TestModel testSpec)
@@ -195,6 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
         }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -205,30 +201,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeParser(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void SetParser(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    ParserInitialize(Parsers);
-        //    TestDateTimeParser(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void SetParser(TestModel testSpec)
+        {
+           ExtractorInitialize(Extractors);
+           ParserInitialize(Parsers);
+           TestDateTimeParser(testSpec);
+        }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void MergedParser(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    ParserInitialize(Parsers);
-        //    TestDateTimeMergedParser(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void MergedParser(TestModel testSpec)
+        {
+           ExtractorInitialize(Extractors);
+           ParserInitialize(Parsers);
+           TestDateTimeMergedParser(testSpec);
+        }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void DateTimeModel(TestModel testSpec)
-        // {
-        //    TestDateTime(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimeModel(TestModel testSpec)
+        {
+           TestDateTime(testSpec);
+        }
 
         // [NetCoreTestDataSource]
         // [TestMethod]

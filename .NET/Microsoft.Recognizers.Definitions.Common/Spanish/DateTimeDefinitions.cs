@@ -78,6 +78,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string InConnectorRegex = @"\b(in)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public const string WithinNextPrefixRegex = @"\b(dentro\s+de)\b";
+      public const string TodayNowRegex = @"\b(hoy|ahora)\b";
       public const string FromRegex = @"((de(sde)?)(\s*la(s)?)?)$";
       public const string BetweenRegex = @"(entre\s*(la(s)?)?)";
       public const string WeekDayRegex = @"\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\b";

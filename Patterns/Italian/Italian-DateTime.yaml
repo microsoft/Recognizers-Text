@@ -533,6 +533,8 @@ SinceYearSuffixRegex: !nestedRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b(entro(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
+TodayNowRegex: !simpleRegex
+  def: \b(oggi|adesso)\b
 MorningStartEndRegex: !nestedRegex
   def: (^(((di\s+|questa\s+|sta)?mattin[oa]|mattinata)|{AmDescRegex}))|((((di\s+|questa\s+|sta)?mattin[oa]|mattinata)|{AmDescRegex})$)
   references: [ AmDescRegex ]
