@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                         foreach (var extractionResult in extractionResults)
                         {
-                            if (extractionResult.Start == result.Start && extractionResult.End == result.End)
+                            if (result.Start <= extractionResult.Start && result.End >= extractionResult.End)
                             {
                                 shouldAdd = false;
                             }
