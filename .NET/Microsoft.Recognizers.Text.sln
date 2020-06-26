@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -803,6 +803,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{2F41
 		..\Specs\DateTime\Turkish\TimePeriodParser.json = ..\Specs\DateTime\Turkish\TimePeriodParser.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{2AA6937E-36C0-4E6B-B536-AA0E08D30261}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Swedish\PhoneNumberModel.json = ..\Specs\Sequence\Swedish\PhoneNumberModel.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -950,6 +955,7 @@ Global
 		{2F41FB40-EA08-469A-A676-138F2E7C627D} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{2F41FB40-EA08-469A-A676-138F2E7C627E} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{2F41FB40-EA08-469A-A676-138F2E7C627F} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{2AA6937E-36C0-4E6B-B536-AA0E08D30261} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

@@ -58,6 +58,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public const string PHONE_NUMBER_REGEX_NL = "NLPhoneNumber";
 
+        public const string PHONE_NUMBER_REGEX_SE = "SEPhoneNumber";
+
         public const string PHONE_NUMBER_REGEX_SPECIAL = "SpecialPhoneNumber";
 
         public const string MENTION_REGEX = "Mention";
