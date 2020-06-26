@@ -768,18 +768,6 @@
     ]
   },
   {
-    "Input": "Kan je 23-09-2015 13:30 tot 4 voor ons vastleggen",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "23-09-2015 13:30 tot 4",
-        "Type": "datetimerange",
-        "Start": 7,
-        "Length": 22
-      }
-    ]
-  },
-  {
     "Input": "Ik ga dinsdagmorgen terug",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

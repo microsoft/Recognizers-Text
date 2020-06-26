@@ -9820,32 +9820,6 @@
     ]
   },
   {
-    "Input": "Morgen ben ik weg tussen 3 en 4 uur ’s middags",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "tussen 3 en 4 uur ’s middags",
-        "Start": 18,
-        "End": 45,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
-              "type": "daterange",
-              "start": "2016-11-08 15:00:00",
-              "end": "2016-11-08 16:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "Morgen ben ik weg van half acht tot 4 uur ‘s middags",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
