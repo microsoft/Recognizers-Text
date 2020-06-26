@@ -1232,7 +1232,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "het eind van de dag",
+        "Text": "aan het eind van de dag",
         "Type": "datetime",
         "Value": {
           "Timex": "2018-11-21T23:59:59",
@@ -1243,8 +1243,8 @@
             "dateTime": "2018-11-21 23:59:59"
           }
         },
-        "Start": 65,
-        "Length": 19
+        "Start": 61,
+        "Length": 23
       }
     ]
   }

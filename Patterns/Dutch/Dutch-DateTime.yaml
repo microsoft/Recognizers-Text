@@ -3,7 +3,7 @@
 LangMarker: Dut
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
-  def: (?<till>\b(tot(dat)?|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<till>\b(tot(dat|\s+en\s+met)?|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RangeConnectorRegex: !nestedRegex
   def: (?<and>\b(en|t/m|tot(\s+(aan|en\s+met))?)\b|{BaseDateTime.RangeConnectorSymbolRegex})
@@ -20,9 +20,9 @@ RelativeRegex: !simpleRegex
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b
 UpcomingPrefixRegex: !simpleRegex
-  def: ((aankomende?|komende?|aanstaande?))
+  def: (aankomende?|komende?|aanstaande?)
 NextPrefixRegex: !nestedRegex
-  def: \b(volgende?|eerstvolgende|aanstaande?|over|{UpcomingPrefixRegex})\b
+  def: \b(volgende?|eerstvolgende|aanstaande?|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 AfterNextSuffixRegex: !simpleRegex
   def: \b((na\s+((de|het)\s+)?volgende?)|over)\b
@@ -69,16 +69,16 @@ WrittenCenturyFullYearRegex: !nestedRegex
 WrittenCenturyOrdinalYearRegex: !simpleRegex
   def: ((ee|éé)nentwintig|tweeëntwintig|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|een|twee|drie|vier|vijf|zes|zeven|acht|negen)
 CenturyRegex: !nestedRegex
-  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*honderd)?(\s+en)?)\b
+  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*honderd)?(\s+en)?)
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
 LastTwoYearNumRegex: !nestedRegex
   def: ((zero|nul|en)\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|({WrittenOneToNineRegex}[eë]n)?{WrittenTensRegex})
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 FullTextYearRegex: !nestedRegex
-  def: \b((?<firsttwoyearnum>{CenturyRegex})(\s+)?(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundred(\s+and)?))\b
+  def: \b((?<firsttwoyearnum>{CenturyRegex})\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundred(\s+and)?))\b
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
 OclockRegex: !simpleRegex
-  def: (?<oclock>uur)
+  def: (?<oclock>u(ur)?)\b
 SpecialDescRegex: !simpleRegex
   def: (p\b)
 AmDescRegex: !nestedRegex
@@ -104,7 +104,7 @@ YearRegex: !nestedRegex
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|za(t)?|zo)[\.\b])|((?:maan|dins|woens|donder|vrij|zater|zon)(dag)?(en)?(middag)?)\b)
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>(((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij\.)?|za(t)?|zo)\b(\.)?)|(((maan|dins|woens|donder|zater|zon)(dag(en)?)?|(?<=op\s+)vrij|vrij(dag(en)?))\b)))
+  def: \b(?<weekday>(((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij\.)?|za(t)?|zo)\b(\.)?)|(((maan|dins|woens|donder|zater|zon)(dag(en)?)?|(?<=op\s+)vrij|vrij(dag(en)?))\b))|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((van\s+)?(de\s+)?)?{RelativeRegex}\s+maand)\b
   references: [RelativeRegex]
@@ -151,7 +151,7 @@ MonthWithYear: !nestedRegex
   def: \b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*)({YearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar))|(({YearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((de\s+)?maand\s+van\s+)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan\.?|feb\.?|mar\.?|mrt\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar)\s+tot(\s+op)?\s+heden|nu|(({RelativeRegex}\s+)(mijn\s+)?(weekend|week|maand|jaar)|({RelativeRegex}\s+)?(mijn\s+)(weekend|week|maand|jaar))(?!((\s+van)?\s+\d+|\s+tot(\s+op)?\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b
+  def: \b((((de\s+)?maand\s+(van\s+)?)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan\.?|feb\.?|mar\.?|mrt\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar)\s+tot(\s+op)?\s+heden|nu|(({RelativeRegex}\s+)(mijn\s+)?(weekend|week|maand|jaar)|({RelativeRegex}\s+)?(mijn\s+)(weekend|week|maand|jaar))(?!((\s+van)?\s+\d+|\s+tot(\s+op)?\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b
   references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex ]
 MonthNumWithYear: !nestedRegex
   def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
@@ -193,7 +193,7 @@ AllHalfYearRegex: !nestedRegex
 EarlyPrefixRegex: !simpleRegex
   def: \b(?<EarlyPrefix>((?<RelEarly>eerder)|vroeg(er)?|begin(nend)?|start(end)?)(\s+(in|op|van)(\s+de)?)?)\b
 MidPrefixRegex: !simpleRegex
-  def: \b(?<MidPrefix>(mid(den|-)?|halverwege|op\s+de\s+helft|half)(\s+(in|op|van)(\s+de)?)?)\b
+  def: \b(?<MidPrefix>(mid(den|-)?|halverwege|op\s+de\s+helft|half)(\s+(in|op|van)(\s+de)?)?)
 LaterPrefixRegex: !simpleRegex
   def: \b(?<LatePrefix>(laat|(?<RelLate>later)|aan\s+het\s+einde?(\s+van(\s+de)?)?|eind(igend)?|afsluitend)(\s+(in|op|van)(\s+de)?)?)\b
 PrefixPeriodRegex: !nestedRegex
@@ -240,7 +240,7 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayRegex})|((op\s+)?{WeekDayRegex}\s+((van\s+)?(de\s+)?{NextPrefixRegex})\s*week)\b
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|mijn)\s+dag)|gisteren|(deze\s+|van)?morgen|vandaag|(morgen|(?<weekday>zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag))(ochtend|(na)?middag|avond|nacht))\b
+  def: \b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|mijn)\s+dag)|gisteren|(deze\s+|van)?morgen|vandaag|morgen(middag))(?!s\b)
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+dag(en)?\s+(gerekend\s+)?(vanaf\s+)(?<day>gisteren|morgen|vandaag))\b
@@ -329,10 +329,10 @@ PmRegex: !nestedRegex
   def: (?<pm>({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht))
   references: [ ApostrofsRegex ]
 PmRegexFull: !nestedRegex
-  def: (?<pm>(({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)))
+  def: (?<pm>(({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)(?!\s+om\b)))
   references: [ ApostrofsRegex ]
 AmRegex: !nestedRegex
-  def: (?<am>(({ApostrofsRegex}|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))))
+  def: (?<am>(({ApostrofsRegex}|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))|(?<=gisteren|morgen|vandaag)(ochtend|morgen)|^ochtend))
   references: [ ApostrofsRegex ]
 LunchRegex: !simpleRegex
   def: \b(lunchtijd)\b
@@ -366,7 +366,7 @@ SecondDTRegEx: !nestedRegex
   def: ({BaseDateTime.SecondRegex})
   references: [ BaseDateTime.SecondRegex, BaseUnits.SecondRegex]
 BasicTime: !nestedRegex
-  def: \b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{HourDTRegEx}:{MinuteDTRegEx}(:{SecondDTRegEx})?|((?<prefix>half)\s+)?{HourDTRegEx})
+  def: \b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{HourDTRegEx}:{MinuteDTRegEx}(:{SecondDTRegEx})?|((?<prefix>half)\s+)?{HourDTRegEx}(?![.,:]?[%\d]))
   references: [ WrittenTimeRegex, HourNumRegex, HourDTRegEx, MinuteDTRegEx, SecondDTRegEx ]
 MidnightRegex: !nestedRegex
   def: (?<midnight>mid\s*(-\s*)?nacht|middernacht|(in\s+)?de nacht(\s+van)?|({ApostrofsRegex}|des)\s*nachts)
@@ -423,8 +423,8 @@ TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*u\s*)?(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: ({TimeSuffixFull}\s+{BasicTime})((\s*{DescRegex})|\b)
-  references: [ TimeSuffixFull, BasicTime, DescRegex ]
+  def: ({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)
+  references: [ TimeSuffixFull, BasicTime, DescRegex, WrittenTimeRegex, TimePrefix ]
 TimeRegex8: !nestedRegex
   def: .^
   references: [ TimeSuffixFull, BasicTime, DescRegex ]
@@ -510,19 +510,19 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op(\s+de)?))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ((aan\s+)?((de|het)\s+)?eind(e? van)?(\s+de)?\s*$|^\s*(het\s+)?einde? van(\s+de(\s+dag)))
+  def: ((\baan\s+)?((de|het)\s+)?eind(e? van)?(\s+de)?\s*$|^\s*(het\s+)?einde? van(\s+de(\s+dag)))
 UnspecificEndOfRegex: !simpleRegex
   def: \b(((om|rond|tegen|op)\s+)?het\s+)?(einde?\s+van\s+(de\s+)?dag)\b
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(evj)\b
 PeriodTimeOfDayRegex: !nestedRegex
-  def: \b((in\s+(de)?\s+)?({EarlyLateRegex}(\s+|-))?(?<timeOfDay>ochtend|(na)?middag|nacht|avond))\b
+  def: ((in\s+(de)?\s+)?({EarlyLateRegex}(\s+|-))?(zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|(eer)?gisteren|morgen)?(?<timeOfDay>ochtend|(na)?middag|avond|nacht))\b
   references: [ EarlyLateRegex ]
 PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\bvan(nacht|avond|(na)?middag|ochtend))\b
   references: [ PeriodTimeOfDayRegex, StrictRelativeRegex ]
 PeriodTimeOfDayWithDateRegex: !nestedRegex
- def: \b(({TimeOfDayRegex}(\s+(om|rond|tegen|op(\s+de)?))?))\b
+ def: (({TimeOfDayRegex}(\s+(om|rond|tegen|op(\s+de)?))?))\b
  references: [ TimeOfDayRegex ]
 LessThanRegex: !simpleRegex
   def: \b((binnen\s+)?minder\s+dan)\b
@@ -702,7 +702,7 @@ TimeBeforeAfterRegex: !nestedRegex
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+op)\s*$
 DecadeRegex: !simpleRegex
-  def: (?<decade>(nul|tien|twintig|dertig|veertig|vijftig|zestig|zeventig|tachtig|negentig)|(fifties|sixties|seventies|eighties|nineties|zeroes|tens|tweeduizend|21e\s+eeuw|(ee|éé)nentwintigste\s+eeuw))
+  def: (?<decade>(nul|tien|twintig|dertig|veertig|vijftig|zestig|zeventig|tachtig|negentig)|(fifties|sixties|seventies|eighties|nineties|zeroes|tens|tweeduizend|(ee|éé)nentwintigste\s+eeuw))
 DecadeWithCenturyRegex: !nestedRegex
   def: \b(de\s+)?(jaren\s+)?((?<!\$)((?<century>1\d|2\d|\d)?({ApostrofRegex})?(?<decade>\d0)({ApostrofRegex})?s?)(?!%)\b|(({CenturyRegex}(\s+|-)?(en\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)?(en\s+)?(?<decade>tien|honderd)))
   references: [ CenturyRegex, DecadeRegex, ApostrofRegex ]
@@ -1293,6 +1293,7 @@ SameDayTerms: !list
     - actuele dag
     - deze morgen
     - actuele morgen
+    - vanmorgen
 PlusOneDayTerms: !list
   types: [ string ]
   entries:
