@@ -139,5 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             return text.Equals("and");
         }
+
+        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.FilterAmbiguousCases(text, timePeriodErs);
     }
 }

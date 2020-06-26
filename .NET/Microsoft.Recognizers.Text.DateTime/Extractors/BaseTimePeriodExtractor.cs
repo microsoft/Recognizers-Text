@@ -67,51 +67,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timePeriodErs = TimeZoneUtility.MergeTimeZones(timePeriodErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
 
-            // TODO: Fix to solve german morgen (morning) / morgen (tomorrow) ambiguity. To be removed after the first version of DateTimeV2 in German is in production.
-            timePeriodErs = GermanMorgenWorkaround(text, timePeriodErs);
+            // Filter ambiguous extractions e.g. 'morgen' in German and Dutch
+            timePeriodErs = this.config.FilterAmbiguousCases(text, timePeriodErs);
 
             return timePeriodErs;
-        }
-
-        // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning".
-        // When the extractor extracts "Abend" in this example it will take the string before that to look for a relative shift to another day like "yesterday", "tomorrow" etc.
-        // When trying to do this on the string "morgen" it will be extracted as a time period ("morning") by the TimePeriodExtractor, and not as "tomorrow".
-        // Filtering out the string "morgen" from the TimePeriodExtractor will fix the problem as only in the case where "morgen" is NOT a time period the string "morgen" will be passed to this extractor.
-        // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
-        private List<ExtractResult> GermanMorgenWorkaround(string text, List<ExtractResult> timePeriodErs)
-        {
-            var culture = this.config.Culture;
-            var isGerman = culture == Culture.German;
-            var isDutch = culture == Culture.Dutch;
-            var morgenStr = "morgen";
-
-            List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
-
-            if (isGerman)
-            {
-                if (text.Equals(morgenStr))
-                {
-                    timePeriodErs.Clear();
-                }
-
-                return timePeriodErs;
-            }
-            else if (isDutch)
-            {
-                foreach (var timePeriodEr in timePeriodErs)
-                {
-                    if (!timePeriodEr.Text.Equals(morgenStr))
-                    {
-                        timePeriodErsResult.Add(timePeriodEr);
-                    }
-                }
-
-                return timePeriodErsResult;
-            }
-            else
-            {
-                return timePeriodErs;
-            }
         }
 
         // Cases like "from 3 to 5am" or "between 3:30 and 5" are extracted here

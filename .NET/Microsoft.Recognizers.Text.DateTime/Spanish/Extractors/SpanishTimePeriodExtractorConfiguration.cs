@@ -128,5 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             return RangeConnectorRegex.IsExactMatch(text, true);
         }
+
+        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.FilterAmbiguousCases(text, timePeriodErs);
     }
 }

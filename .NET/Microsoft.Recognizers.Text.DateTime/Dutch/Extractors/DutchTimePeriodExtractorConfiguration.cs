@@ -152,5 +152,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
+
+        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs)
+        {
+            {
+                var morgenStr = "morgen";
+                List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+                foreach (var timePeriodEr in timePeriodErs)
+                {
+                    if (!timePeriodEr.Text.Equals(morgenStr))
+                    {
+                        timePeriodErsResult.Add(timePeriodEr);
+                    }
+                }
+
+                return timePeriodErsResult;
+            }
+        }
     }
 }

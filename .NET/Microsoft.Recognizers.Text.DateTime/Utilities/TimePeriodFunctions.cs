@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
@@ -161,6 +162,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
 
             return spanTimex.ToString();
+        }
+
+        // used to filter ambiguous extractions e.g. 'morgen' in German and Dutch
+        public static List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs)
+        {
+            return timePeriodErs;
         }
     }
 }

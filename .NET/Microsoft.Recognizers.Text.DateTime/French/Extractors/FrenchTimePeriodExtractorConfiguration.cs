@@ -146,5 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             return ConnectorAndRegex.IsMatch(text);
         }
+
+        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.FilterAmbiguousCases(text, timePeriodErs);
     }
 }
