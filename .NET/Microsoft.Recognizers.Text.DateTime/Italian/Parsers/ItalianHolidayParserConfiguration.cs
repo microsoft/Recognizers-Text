@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Italian;
 using DateObject = System.DateTime;
 
@@ -9,30 +10,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public ItalianHolidayParserConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public ItalianHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = ItalianHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
 
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
+
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
-            if (trimmedText.EndsWith("prochain"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
-                // next - 'l'annee prochain'
                 swift = 1;
             }
-            else if (trimmedText.EndsWith("dernier"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
-                // last - 'l'annee dernier'
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("cette"))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
-                // this - 'cette annees'
                 swift = 0;
             }
 
@@ -89,7 +98,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 { "newyeareve", NewYearEve },
                 { "fathersday", FathersDay },
                 { "mothersday", MothersDay },
-                { "labourday", LabourDay },
+                { "labourday", InternationalWorkersDay },
+                { "memorialday", MemorialDay },
+                { "ferragosto", Ferragosto },
+                { "liberationday", LiberationDay },
+                { "republicday", RepublicDay },
+                { "easterday", EasterDay },
+                { "eastermonday", EasterDay },
+                { "mardigras", EasterDay },
             };
         }
 
@@ -151,10 +167,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static new DateObject FathersDay(int year) => new DateObject(year, 6, 17);
+        private static new DateObject FathersDay(int year) => new DateObject(year, 3, 19);
 
         private static new DateObject MothersDay(int year) => new DateObject(year, 5, 27);
 
-        private static new DateObject LabourDay(int year) => new DateObject(year, 5, 1);
+        private static new DateObject MemorialDay(int year) => new DateObject(year, 1, 27);
+
+        private static DateObject Ferragosto(int year) => new DateObject(year, 8, 15);
+
+        private static DateObject LiberationDay(int year) => new DateObject(year, 4, 25);
+
+        private static DateObject RepublicDay(int year) => new DateObject(year, 6, 2);
+
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
+
     }
 }

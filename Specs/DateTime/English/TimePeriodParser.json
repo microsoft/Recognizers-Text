@@ -535,6 +535,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -560,6 +561,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -585,6 +587,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -610,6 +613,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -635,6 +639,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "12:00:00",
             "endTime": "14:00:00"
@@ -660,6 +665,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "14:00:00",
             "endTime": "16:00:00"
@@ -685,6 +691,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "16:00:00",
             "endTime": "18:00:00"
@@ -710,6 +717,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "18:00:00",
             "endTime": "20:00:00"
@@ -735,6 +743,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "20:00:00",
             "endTime": "22:00:00"
@@ -760,6 +769,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "22:00:00",
             "endTime": "23:59:59"
@@ -785,6 +795,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "20:00:00",
             "endTime": "22:00:00"
@@ -810,6 +821,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "22:00:00",
             "endTime": "23:59:59"
@@ -1554,6 +1566,84 @@
         },
         "Start": 14,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out lunch time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "lunch time",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "He is at lunch",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "at lunch",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 6,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "This popular family friendly concert returns to the Hall for another lunchtime filled with traditional carols and festive favourites",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "lunchtime",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 69,
+        "Length": 9
       }
     ]
   }

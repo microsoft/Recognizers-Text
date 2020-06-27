@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class DutchDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        private IImmutableList<string> lastCardinalTerms = DateTimeDefinitions.LastCardinalTerms.ToImmutableList();
+
         public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -137,11 +140,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             if (NextPrefixRegex.IsMatch(trimmedText))
@@ -159,8 +164,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("last");
+            var trimmedText = text.Trim();
+            return lastCardinalTerms.Contains(trimmedText);
         }
 
         public string Normalize(string text)

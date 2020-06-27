@@ -7,10 +7,12 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class ItalianDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ItalianDateParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
@@ -24,9 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             OnRegex = ItalianDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = ItalianDateExtractorConfiguration.SpecialDayWithNumRegex;
-            NextRegex = ItalianDateExtractorConfiguration.NextRegex;
+            NextRegex = ItalianDateExtractorConfiguration.NextDateRegex;
             ThisRegex = ItalianDateExtractorConfiguration.ThisRegex;
-            LastRegex = ItalianDateExtractorConfiguration.LastRegex;
+            LastRegex = ItalianDateExtractorConfiguration.LastDateRegex;
             UnitRegex = ItalianDateExtractorConfiguration.DateUnitRegex;
             WeekDayRegex = ItalianDateExtractorConfiguration.WeekDayRegex;
             StrictWeekDay = ItalianDateExtractorConfiguration.StrictWeekDay;
@@ -39,17 +41,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             StrictRelativeRegex = ItalianDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
+            // @TODO move to config
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
+            Numbers = config.Numbers;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
+
             SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
             PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
             PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
@@ -129,6 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
+        public IImmutableDictionary<string, int> Numbers { get; }
+
         public IImmutableDictionary<string, int> CardinalMap { get; }
 
         public IImmutableList<string> SameDayTerms { get; }
@@ -141,18 +150,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
-            if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
+
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"))
+
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -162,9 +174,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
+            var trimmedText = text.Trim();
+            return PreviousPrefixRegex.IsMatch(trimmedText);
         }
 
         public string Normalize(string text)

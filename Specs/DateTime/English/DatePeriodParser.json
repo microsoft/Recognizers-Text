@@ -1779,7 +1779,7 @@
         "Text": "Q3",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "Timex": "(XXXX-07-01,XXXX-10-01,P3M)",
           "FutureResolution": {
             "startDate": "2017-07-01",
             "endDate": "2017-10-01"
@@ -1804,7 +1804,7 @@
         "Text": "Q2",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-04-01,2016-07-01,P3M)",
+          "Timex": "(XXXX-04-01,XXXX-07-01,P3M)",
           "FutureResolution": {
             "startDate": "2017-04-01",
             "endDate": "2017-07-01"
@@ -5644,6 +5644,487 @@
         },
         "Start": 24,
         "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "3pm : I'll be out on this week",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W28",
+          "FutureResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          }
+        },
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "this week 8am should be a daterange and a datetime.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W28",
+          "FutureResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "this week 8p.m. should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W28",
+          "FutureResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8 p.m. should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W10",
+          "FutureResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8p.m. should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W10",
+          "FutureResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "week 10 10:20 should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W10",
+          "FutureResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from next friday to Oct 1st 2020",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T15:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "from next friday to Oct 1st 2020",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-09,2020-10-01,P419D)",
+          "FutureResolution": {
+            "startDate": "2019-08-09",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-09",
+            "endDate": "2020-10-01"
+          }
+        },
+        "Start": 13,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "6,107.31 August 2019 should not include the decimal",
+    "Results": [
+      {
+        "Text": "August 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 9,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I was not there from 2019-aug-1 to today",
+    "Context": {
+      "ReferenceDateTime": "2019-10-14T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 2019-aug-1 to today",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-01,2019-10-14,P74D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-10-14"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-10-14"
+          }
+        },
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "I was not there from 2019/aug/01 to today",
+    "Context": {
+      "ReferenceDateTime": "2019-09-30T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 2019/aug/01 to today",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-01,2019-09-30,P60D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-30"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-30"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week commencing february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the week commencing february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week starting february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week starting on february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week starting on february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning on february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week beginning on february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for the week beginning february 4",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "the week beginning february 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "please schedule a meeting for w/c feb 4.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "w/c feb 4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 30,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the end of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-23T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "end of 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2000-09-01",
+            "endDate": "2001-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-09-01",
+            "endDate": "2001-01-01"
+          }
+        },
+        "Start": 36,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the beginning of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-23T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beginning of 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2000-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2000-05-01"
+          }
+        },
+        "Start": 36,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the middle of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-23T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "middle of 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "mid",
+          "FutureResolution": {
+            "startDate": "2000-05-01",
+            "endDate": "2000-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-05-01",
+            "endDate": "2000-09-01"
+          }
+        },
+        "Start": 36,
+        "Length": 14
       }
     ]
   }

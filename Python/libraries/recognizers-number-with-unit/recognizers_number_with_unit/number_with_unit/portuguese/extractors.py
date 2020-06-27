@@ -2,8 +2,9 @@ from typing import Dict, List, Pattern
 
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
-from recognizers_text.utilities import RegExpUtility
+from recognizers_text.utilities import RegExpUtility, DefinitionLoader
 from recognizers_number.culture import CultureInfo
+from recognizers_number.number.models import NumberMode
 from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
@@ -13,6 +14,10 @@ from recognizers_number_with_unit.resources.base_units import BaseUnits
 
 # pylint: disable=abstract-method
 class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
+    @property
+    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return DefinitionLoader.load_ambiguity_filters(PortugueseNumericWithUnit.AmbiguityFiltersDict)
+
     @property
     def unit_num_extractor(self) -> Extractor:
         return self._unit_num_extractor
@@ -27,7 +32,7 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
 
     @property
     def connector_token(self) -> str:
-        return self._connector_token
+        return PortugueseNumericWithUnit.ConnectorToken
 
     @property
     def compound_unit_connector_regex(self) -> Pattern:
@@ -45,12 +50,13 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         if culture_info is None:
             culture_info = CultureInfo(Culture.Portuguese)
         super().__init__(culture_info)
-        self._unit_num_extractor = PortugueseNumberExtractor()
+        self._unit_num_extractor = PortugueseNumberExtractor(NumberMode.Unit)
         self._build_prefix = PortugueseNumericWithUnit.BuildPrefix
         self._build_suffix = PortugueseNumericWithUnit.BuildSuffix
-        self._connector_token = PortugueseNumericWithUnit.ConnectorToken
-        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
-        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.PmNonUnitRegex)
 
 
 # pylint: enable=abstract-method
@@ -76,7 +82,7 @@ class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfi
         super().__init__(culture_info)
         self._suffix_list = PortugueseNumericWithUnit.AgeSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousAgeUnitList
 
 
 class PortugueseCurrencyExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
@@ -121,7 +127,9 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
         return self._ambiguous_unit_list
 
     def __init__(self, culture_info: CultureInfo = None):
+
         super().__init__(culture_info)
+
         self._suffix_list = {
             **PortugueseNumericWithUnit.InformationSuffixList,
             **PortugueseNumericWithUnit.AreaSuffixList,
@@ -130,6 +138,7 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
             **PortugueseNumericWithUnit.VolumeSuffixList,
             **PortugueseNumericWithUnit.WeightSuffixList
         }
+
         self._prefix_list = dict()
         self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousDimensionUnitList
 
@@ -159,5 +168,6 @@ class PortugueseTemperatureExtractorConfiguration(PortugueseNumberWithUnitExtrac
         super().__init__(culture_info)
         self._suffix_list = PortugueseNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
-        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)
+        self._ambiguous_unit_list = []
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.AmbiguousUnitNumberMultiplierRegex)

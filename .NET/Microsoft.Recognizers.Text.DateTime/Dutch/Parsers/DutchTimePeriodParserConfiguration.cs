@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
+    public class DutchTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public DutchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -88,6 +88,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 timeOfDay = Constants.Night;
             }
             else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.BusinessHour;
+            }
+            else if (DateTimeDefinitions.BusinessHourSplitStrings2.All(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.BusinessHour;
             }

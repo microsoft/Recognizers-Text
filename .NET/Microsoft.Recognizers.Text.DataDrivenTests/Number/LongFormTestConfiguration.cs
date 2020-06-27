@@ -28,11 +28,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; private set; }
 
+        public INumberOptionsConfiguration Config { get; }
+
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
-
-        public NumberOptions Options { get; }
 
         public CultureInfo CultureInfo { get; }
 
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public string HalfADozenText { get; }
 
-        public string LangMarker { get; } = "SelfDefined";
+        public string LanguageMarker { get; } = "SelfDefined";
 
         public char NonDecimalSeparatorChar { get; }
 
@@ -78,5 +78,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             throw new NotImplementedException();
         }
+
+        public (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            return (false, double.MinValue);
+        }
+
     }
 }

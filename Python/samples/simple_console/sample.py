@@ -30,7 +30,12 @@ def run_recognition():
             print()
 
             for result in results:
-                print(json.dumps(result, default=lambda o: o.__dict__, indent='\t', ensure_ascii=False))
+                print(
+                    json.dumps(
+                        result,
+                        default=lambda o: o.__dict__,
+                        indent='\t',
+                        ensure_ascii=False))
                 print()
 
 
@@ -49,15 +54,18 @@ def parse_all(user_input: str, culture: str) -> List[List[ModelResult]]:
         Recognizers.recognize_percentage(user_input, culture),
 
         # Age recognizer - This function will find any age number presented
-        # E.g "After ninety five years of age, perspectives change" will return "95 Year"
+        # E.g "After ninety five years of age, perspectives change" will return
+        # "95 Year"
         Recognizers.recognize_age(user_input, culture),
 
         # Currency recognizer - This function will find any currency presented
-        # E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
+        # E.g "Interest expense in the 1988 third quarter was $ 75.3 million"
+        # will return "75300000 Dollar"
         Recognizers.recognize_currency(user_input, culture),
 
         # Dimension recognizer - This function will find any dimension presented E.g "The six-mile trip to my airport
-        #  hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
+        # hotel that had taken 20 minutes earlier in the day took more than
+        # three hours." will return "6 Mile"
         Recognizers.recognize_dimension(user_input, culture),
 
         # Temperature recognizer - This function will find any temperature presented
@@ -73,8 +81,9 @@ def parse_all(user_input: str, culture: str) -> List[List[ModelResult]]:
         Recognizers.recognize_phone_number(user_input, culture),
 
         # Email recognizer will find any phone number presented
-        # E.g "Please write to me at Dave@abc.com for more information on task #A1"
-        Recognizers.recognize_email(user_input,culture),
+        # E.g "Please write to me at Dave@abc.com for more information on task
+        # #A1"
+        Recognizers.recognize_email(user_input, culture),
     ]
 
 

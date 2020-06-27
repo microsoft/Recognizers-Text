@@ -1,7 +1,6 @@
 [
   {
     "Input": "15'te döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "22 Nisan'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "1 Ocak'ta döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "2 Ekimde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "12 Ocak 2016'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,20 +61,18 @@
   },
   {
     "Input": "12 Ocak 2016 Pazartesi günü döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 Ocak 2016 Pazartesi günü ",
+        "Text": "12 Ocak 2016 Pazartesi günü",
         "Type": "date",
         "Start": 0,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
   {
     "Input": "22/02/2016'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "21/04/2016'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "21/04/16'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "28 Kasım'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "22 Ocak Çarşamba döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,20 +133,18 @@
   },
   {
     "Input": "Temmuz'un ilk Cuma günü döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Temmuz'un ilk Cuma günü ",
+        "Text": "Temmuz'un ilk Cuma günü",
         "Type": "date",
         "Start": 0,
-        "Length": 24
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Bu ayın ilk Cuma günü döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +157,6 @@
   },
   {
     "Input": "iki hafta sonra döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +169,6 @@
   },
   {
     "Input": "geçen Pazartesi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "Salı günü döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "Salı günü döneceğim, iyi haber",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "Cuma döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "dünden önceki gün döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "yarından sonraki gün döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "sonraki gün döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "geçen Pazar döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -286,21 +264,19 @@
     ]
   },
   {
-    "Input": "günde döneceğim",
-    "NotSupported": "dotnet",
+    "Input": "ertesi gün döneceğim",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "gün",
+        "Text": "ertesi gün",
         "Type": "date",
         "Start": 0,
-        "Length": 3
+        "Length": 10
       }
     ]
   },
   {
     "Input": "15 Haziran 2016'da döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -312,21 +288,19 @@
     ]
   },
   {
-    "Input": "Mayıs'ın onbirinde beyzbol",
-    "NotSupported": "dotnet",
+    "Input": "Mayıs'ın on birinde beyzbol",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Mayıs'ın onbiri",
+        "Text": "Mayıs'ın on biri",
         "Type": "date",
         "Start": 0,
-        "Length": 15
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Mayıs'ın dördünde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "Mart'ın 4'ünde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -351,12 +324,11 @@
     ]
   },
   {
-    "Input": "yirmi bir Mayıs'da döneceğim",
-    "NotSupported": "dotnet",
+    "Input": "Yirmi bir Mayıs'ta döneceğim",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi bir Mayıs",
+        "Text": "Yirmi bir Mayıs",
         "Type": "date",
         "Start": 0,
         "Length": 15
@@ -365,7 +337,6 @@
   },
   {
     "Input": "Haziran'ın yirmi ikisinde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -377,36 +348,32 @@
     ]
   },
   {
-    "Input": "27'inci kata gideceğim",
-    "NotSupported": "dotnet",
+    "Input": "27'nci kata gideceğim",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "Singapur ve Çin arasındaki Diplomatik İlişkilerin 25. Yıldönümü için Anma Etkinlikleri",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
-    "Input": "27'inci Çarşamba Joe Smith'le toplantı",
+    "Input": "27'si Çarşamba günü Joe Smith'le toplantı",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27'inci Çarşamba",
+        "Text": "27'si Çarşamba",
         "Type": "date",
         "Start": 0,
-        "Length": 16
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Altıncı Pazar döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -419,7 +386,6 @@
   },
   {
     "Input": "Onuncu Pazartesi döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -432,7 +398,6 @@
   },
   {
     "Input": "Gelecek ayın 20'sinde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -445,7 +410,6 @@
   },
   {
     "Input": "Bu ayın 31'inde döneceğim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -458,7 +422,6 @@
   },
   {
     "Input": "Cortana, bu hafta Cuma ya da gelecek hafta Salı gününe Skype görüşmesi ayarlayabilir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -477,7 +440,6 @@
   },
   {
     "Input": "16 Kasım 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -490,7 +452,6 @@
   },
   {
     "Input": "1 ay 21 gün önce bir toplantımız vardı",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -503,7 +464,6 @@
   },
   {
     "Input": "Buradan 2 yıl 1 ay 21 gün önce ayrıldım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -516,7 +476,6 @@
   },
   {
     "Input": "2 yıl 21 gün sonra buradan ayrılacağım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -529,7 +488,6 @@
   },
   {
     "Input": "Buradan 1 ay 2 yıl 21 gün önce ayrıldım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -541,12 +499,11 @@
     ]
   },
   {
-    "Input": "Buradan gelecek 20'inci ay ayrıldım",
-    "NotSupported": "dotnet",
+    "Input": "Buradan gelecek ayın 20'sinde ayrıldım",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "gelecek 20'inci ay",
+        "Text": "gelecek ayın 20'si",
         "Type": "date",
         "Start": 8,
         "Length": 18
@@ -555,7 +512,6 @@
   },
   {
     "Input": "Buradan 5 Aralık 1391'de ayrıldım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -567,38 +523,23 @@
     ]
   },
   {
-    "Input": "Pazartesi, Ocak yirmi iki, 2018",
-    "NotSupported": "dotnet",
+    "Input": "Yirmi iki Ocak 2018, pazartesi",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Pazartesi, Ocak yirmi iki, 2018",
+        "Text": "Yirmi iki Ocak 2018, pazartesi",
         "Type": "date",
         "Start": 0,
-        "Length": 31
+        "Length": 30
       }
     ]
   },
   {
-    "Input": "Pazar günü, Ocak yirmi bir, iki bin on sekiz",
-    "NotSupported": "dotnet",
+    "Input": "Yirmi bir Ocak iki bin on sekiz, pazar günü",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Pazar günü, Ocak yirmi bir, iki bin on sekiz",
-        "Type": "date",
-        "Start": 0,
-        "Length": 44
-      }
-    ]
-  },
-  {
-    "Input": "eylülde yirmi birinci on dokuz yetmiş sekiz",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "eylülde yirmi birinci on dokuz yetmiş sekiz",
+        "Text": "Yirmi bir Ocak iki bin on sekiz, pazar günü",
         "Type": "date",
         "Start": 0,
         "Length": 43
@@ -606,34 +547,43 @@
     ]
   },
   {
-    "Input": "10 Eylül'de, on dokuz sıfır bir",
-    "NotSupported": "dotnet",
+    "Input": "Yirmi bir Eylül bin dokuz yüz yetmiş sekizde",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 Eylül'de, on dokuz sıfır bir",
+        "Text": "Yirmi bir Eylül bin dokuz yüz yetmiş sekiz",
         "Type": "date",
         "Start": 0,
-        "Length": 31
+        "Length": 42
       }
     ]
   },
   {
-    "Input": "Onuncu Eylül, iki bin",
-    "NotSupported": "dotnet",
+    "Input": "10 Eylül bin dokuz yüz birde",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Onuncu Eylül, iki bin",
+        "Text": "10 Eylül bin dokuz yüz bir",
         "Type": "date",
         "Start": 0,
-        "Length": 21
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "iki bin yılı Eylül'ün onunda",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki bin yılı Eylül'ün onu",
+        "Type": "date",
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "13.5.2015'te uygun musun?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -645,12 +595,11 @@
     ]
   },
   {
-    "Input": "İki Pazartesi sonra uygun musun?",
-    "NotSupported": "dotnet",
+    "Input": "iki Pazartesi sonra uygun musun?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "İki Pazartesi sonra",
+        "Text": "iki Pazartesi sonra",
         "Type": "date",
         "Start": 0,
         "Length": 19
@@ -659,7 +608,6 @@
   },
   {
     "Input": "Bugünden iki gün sonra uygun musun?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -671,15 +619,14 @@
     ]
   },
   {
-    "Input": "Yarından itibaren üç hafta uygun musun?",
-    "NotSupported": "dotnet",
+    "Input": "Yarından itibaren üç hafta sonra uygun musun?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yarından itibaren üç hafta",
+        "Text": "Yarından itibaren üç hafta sonra",
         "Type": "date",
         "Start": 0,
-        "Length": 26
+        "Length": 32
       }
     ]
   },
@@ -688,14 +635,13 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "bu Cuma günü 15 Haziran",
+        "Text": "bu Cuma günü 15 Haziran'a",
         "Type": "date",
         "Start": 16,
-        "Length": 23
+        "Length": 25
       }
     ]
   },
@@ -704,7 +650,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -716,18 +661,80 @@
     ]
   },
   {
-    "Input": "Cortana, lütfen 7.6 Cuma günü'ne Jim ile bir Skype araması ayarla",
+    "Input": "Cortana, lütfen 7.6.2019 Cuma gününe Jim ile bir Skype araması ayarla",
     "Context": {
       "ReferenceDateTime": "2018-07-06T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "7.6 Cuma",
+        "Text": "7.6.2019 Cuma günü",
         "Type": "date",
         "Start": 16,
-        "Length": 8
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Bugün döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Bugünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünkü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Dün döneceğim",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dün",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Dünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dünkü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
       }
     ]
   }

@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class ItalianTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public ItalianTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public ItalianTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

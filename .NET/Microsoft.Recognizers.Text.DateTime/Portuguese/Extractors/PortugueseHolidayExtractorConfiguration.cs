@@ -5,16 +5,18 @@ using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class PortugueseHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex2, RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline),
+            new Regex(DateTimeDefinitions.HolidayRegex1, RegexFlags),
+            new Regex(DateTimeDefinitions.HolidayRegex2, RegexFlags),
+            new Regex(DateTimeDefinitions.HolidayRegex3, RegexFlags),
         };
 
-        public PortugueseHolidayExtractorConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public PortugueseHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

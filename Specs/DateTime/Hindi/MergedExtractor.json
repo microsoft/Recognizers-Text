@@ -1,0 +1,560 @@
+[
+  {
+    "Input": "10 घण्टों में मुलाक़ात रखो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 घण्टों में",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "ये 2 दिन हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 दिन",
+        "Type": "duration",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "ये शाम 4 बजे से पहले है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 4 बजे से पहले",
+        "Type": "time",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "ये कल शाम 4 बजे से पहले है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल शाम 4 बजे से पहले",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "ये शाम 4 बजे कल से पहले है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 4 बजे कल से पहले",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "ये कल से पहले शाम 4 बजे है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल से पहले शाम 4 बजे",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "ये 4pm के बाद है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4pm के बाद",
+        "Type": "time",
+        "Start": 3,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "ये 4 बजे शाम कल के बाद है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 बजे शाम कल के बाद",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "ये कल 4pm के बाद है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल 4pm के बाद",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं 5 मिनटों में आऊँगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मिनटों में",
+        "Type": "datetime",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "पिछले हफ्ते ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले हफ्ते",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "यह दिन कैसा लग रहा हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "यह दिन",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "यह हफ्ता कैसा लग रहा है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "यह हफ्ता",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मेरा हफ़्ता कैसा लग रहा है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मेरा हफ़्ता",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "इस हफ्ते क्या है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस हफ्ते",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मेरा दिन कैसा है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मेरा दिन",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "सुबह 9 से सुबह 11 बजे के बीच मीटिंग रखो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह 9 से सुबह 11 बजे के बीच",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "कल 9 से सुबह 11 बजे तक की मीटिंग रखो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल 9 से सुबह 11 बजे तक",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "जुलाई 22 की दिल्ली वाली मुलाक़ात को बदलकर अगस्त 22 कर दें ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई 22",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      },
+      {
+        "Text": "अगस्त 22",
+        "Type": "date",
+        "Start": 41,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "7/2 के बाद ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2 के बाद",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "7/2 से",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2 से",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "7/2 से पहले ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7/2 से पहले",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "06/06 12:15",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06/06 12:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "06/06/12 15:15",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06/06/12 15:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "06/06, 2015",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "06/06, 2015",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मई 29th ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई 29th",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मार्च 29",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च 29",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मेरी पैदाइश मार्च की है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं मार्च के महीने में पैदा हुआ था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मई में क्या हुआ था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "रेस्तरां के खुलने का समय क्या है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "धूप में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "कौन सी ईमेल का जवाब आया है ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "वो अक्सर अकेला रहता है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "अक्सर एक चिड़िया ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मिशिगन के घंटे ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं शाम 3 बजे का अपॉइंटमेंट बदलकर 4 कर देता हूँ ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 3 बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 9
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 34,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम थ्री pm का अपॉइंटमेंट बदलकर फ़ोर कर देता हूँ ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम थ्री pm",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "फ़ोर",
+        "Type": "time",
+        "Start": 36,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं morning ten o'clock का अपॉइंटमेंट बदलकर eleven कर देता हूँ ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morning ten o'clock",
+        "Type": "time",
+        "Start": 4,
+        "Length": 19
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 44,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर ग्यारह कर देता हूँ !",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह दस बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "ग्यारह",
+        "Type": "time",
+        "Start": 36,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं टेन am का अपॉइंटमेंट बदलकर इलेवन कर देता हूँ?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "टेन am",
+        "Type": "time",
+        "Start": 4,
+        "Length": 6
+      },
+      {
+        "Text": "इलेवन",
+        "Type": "time",
+        "Start": 31,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर 20 कर देता हूँ!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह दस बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "20",
+        "Type": "time",
+        "Start": 36,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर बीस कर देता हूँ!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह दस बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "बीस",
+        "Type": "time",
+        "Start": 36,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर तेरह कर देता हूँ!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह दस बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "तेरह",
+        "Type": "time",
+        "Start": 36,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह दस बजे का अपॉइंटमेंट बदलकर 13 कर देता हूँ!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह दस बजे",
+        "Type": "time",
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "13",
+        "Type": "time",
+        "Start": 36,
+        "Length": 2
+      }
+    ]
+  }
+]

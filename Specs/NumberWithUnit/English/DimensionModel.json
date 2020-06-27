@@ -97,7 +97,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "500000",
-          "unit": "Barrel"
+          "unit": "Volume unit"
         },
         "Start": 54,
         "End": 68
@@ -766,7 +766,7 @@
   },
   {
     "Input": "I'll give you a surprise at 2:00 pm",
-    "NotSupported": "python, java",
+    "NotSupported": "java",
     "Results": []
   },
   {
@@ -796,7 +796,7 @@
   },
   {
     "Input": "that one mile can provide.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "one mile",
@@ -807,6 +807,95 @@
           "unit": "Mile",
           "value": "1"
         }
+      }
+    ]
+  },
+  {
+    "Input": "I ' m tired",
+    "NotSupported": "javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "I'm 1.8m tall.",
+    "Results": [
+      {
+        "Text": "1.8m",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It cost 1.8M dollars.",
+    "Results": []
+  },
+  {
+    "Input": "1 m 1 m",
+    "Results": [
+      {
+        "Text": "1 m",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 m",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 m x 1 m",
+    "Results": [
+      {
+        "Text": "1 m",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 m",
+        "Start": 6,
+        "End": 8,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The submarine mein weigh 25 lakh tonnes",
+    "Results": [
+      {
+        "Text": "25 lakh tonnes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2500000",
+          "unit": "Ton"
+        },
+        "Start": 25,
+        "End": 38
       }
     ]
   }

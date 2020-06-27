@@ -11,8 +11,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         public ItalianNumberWithUnitParserConfiguration(CultureInfo ci)
             : base(ci)
         {
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Italian, NumberOptions.None);
+
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration());
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new ItalianNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 

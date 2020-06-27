@@ -1,7 +1,6 @@
 [
   {
     "Input": "https://abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://abc.com",
@@ -14,7 +13,6 @@
   },
   {
     "Input": "ftp://abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ftp://abc.com",
@@ -27,7 +25,6 @@
   },
   {
     "Input": "http://abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com",
@@ -40,7 +37,6 @@
   },
   {
     "Input": "www.abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "www.abc.com",
@@ -53,7 +49,6 @@
   },
   {
     "Input": "www.abc.com.cn",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "www.abc.com.cn",
@@ -66,7 +61,6 @@
   },
   {
     "Input": "abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "abc.com",
@@ -79,7 +73,6 @@
   },
   {
     "Input": "http://abc.com/file_name",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/file_name",
@@ -92,7 +85,6 @@
   },
   {
     "Input": "http://abc.com/file_path/",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/file_path/",
@@ -105,7 +97,6 @@
   },
   {
     "Input": "http://abc.com/file_path/123.html",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/file_path/123.html",
@@ -118,7 +109,6 @@
   },
   {
     "Input": "http://abc.com/search?id=123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/search?id=123",
@@ -131,7 +121,6 @@
   },
   {
     "Input": "http://abc.com/search?id=123&name=Alice",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/search?id=123&name=Alice",
@@ -144,7 +133,6 @@
   },
   {
     "Input": "http://abc.com/123#cite_1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/123#cite_1",
@@ -157,7 +145,6 @@
   },
   {
     "Input": "http://abc.com:8080",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com:8080",
@@ -170,7 +157,6 @@
   },
   {
     "Input": "你好，@伊芙，你可以在这里看到我的简历https://frank.website.com/CV/#cite_2",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://frank.website.com/CV/#cite_2",
@@ -183,32 +169,26 @@
   },
   {
     "Input": "Alice@abc.com是个邮箱不是个url地址",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "https:// 是不合法的",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "http://#是不合法的",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "httt://abc.com是不合法的, 没有这样的协议地址",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "你好， @Carol,请发送邮件到Dave@abc.com以获取更多关于#A1的信息",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "http://127.0.0.1:8080",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://127.0.0.1:8080",
@@ -221,7 +201,6 @@
   },
   {
     "Input": "http://localhost:8080",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://localhost:8080",
@@ -234,7 +213,6 @@
   },
   {
     "Input": "http://localhost:8080#123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://localhost:8080#123",
@@ -247,7 +225,6 @@
   },
   {
     "Input": "http://localhost:8080/#/123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://localhost:8080/#/123",
@@ -260,7 +237,6 @@
   },
   {
     "Input": "http://127.0.0.1:8080/#/123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://127.0.0.1:8080/#/123",
@@ -273,7 +249,6 @@
   },
   {
     "Input": "['http://twitter.com/#!/KCGtechnoly/status/9042443475840', None]",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://twitter.com/#!/KCGtechnoly/status/9042443475840",
@@ -286,12 +261,10 @@
   },
   {
     "Input": "DNS服务器地址是8.8.8.8",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "更多详情:https://bit.ly/2jm6eu3",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://bit.ly/2jm6eu3",
@@ -306,7 +279,6 @@
   },
   {
     "Input": "五月五.https://t.co/YCUZfuyyHZ",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://t.co/YCUZfuyyHZ",
@@ -321,7 +293,6 @@
   },
   {
     "Input": "以下皆为合法地址：bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "bit.ly",
@@ -372,12 +343,10 @@
   },
   {
     "Input": "john.de@cooso.com.au",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "请访问https://luis.ai?action=add以获取更多信息",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://luis.ai?action=add",
@@ -392,17 +361,14 @@
   },
   {
     "Input": "working..是一个不合法的网址",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "7.am更像是一个日期而不是一个网址。",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "请访问https://7.am以获取更多信息。",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://7.am",
@@ -417,7 +383,6 @@
   },
   {
     "Input": "请访问27.pm和s7.am以获取更多信息。",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "27.pm",
@@ -441,14 +406,12 @@
   },
   {
     "Input": "百度.com 是不合法地址",
-    "Notsupport": "java",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "网址是microsoft.com",
-    "Notsupport": "java",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
@@ -463,8 +426,7 @@
   },
   {
     "Input": "微软的官网是microsoft.com哦",
-    "Notsupport": "java",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
@@ -479,8 +441,7 @@
   },
   {
     "Input": "微软的官网是：microsoft.com",
-    "Notsupport": "java",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
@@ -495,8 +456,7 @@
   },
   {
     "Input": "微软的官网是：www.microsoft.com",
-    "Notsupport": "java",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "www.microsoft.com",
@@ -511,8 +471,7 @@
   },
   {
     "Input": "微软的官网是：http://www.microsoft.com",
-    "Notsupport": "java",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "http://www.microsoft.com",

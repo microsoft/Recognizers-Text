@@ -1,20 +1,22 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public sealed class PortugueseMergedParserConfiguration : PortugueseCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public PortugueseMergedParserConfiguration(IOptionsConfiguration config)
+        public PortugueseMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
             SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
             AroundRegex = PortugueseMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = PortugueseMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = PortugueseMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));
@@ -33,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex AroundRegex { get; }
 
+        public Regex EqualRegex { get; }
+
         public Regex SuffixAfter { get; }
 
         public Regex YearRegex { get; }
@@ -42,5 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
+
+        bool IMergedParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

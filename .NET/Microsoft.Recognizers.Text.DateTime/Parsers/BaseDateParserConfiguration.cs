@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
+    public abstract class BaseDateParserConfiguration : BaseDateTimeOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
-        protected BaseDateParserConfiguration(IOptionsConfiguration config)
+        protected BaseDateParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }
@@ -61,6 +61,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, long> UnitValueMap { get; protected set; }
 
         public virtual IImmutableDictionary<string, string> SeasonMap { get; protected set; }
+
+        public virtual IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; protected set; }
 
         public virtual IImmutableDictionary<string, string> UnitMap { get; protected set; }
 

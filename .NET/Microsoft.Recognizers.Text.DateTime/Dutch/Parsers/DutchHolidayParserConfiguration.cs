@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using DateObject = System.DateTime;
 
@@ -8,26 +9,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public DutchHolidayParserConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public DutchHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = DutchHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
 
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
+
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
-            if (trimmedText.StartsWith("volgende"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("vorige") || trimmedText.StartsWith("laatste"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("deze"))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -83,6 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "veteransday", DutchVeteransday },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
+                { "oudejaarsavond", NewYearEve },
                 { "easterday", EasterDay },
                 { "kingsday", KingsDay },
                 { "queensday", QueensDay },

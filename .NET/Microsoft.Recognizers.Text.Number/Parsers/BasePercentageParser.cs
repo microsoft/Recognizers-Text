@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     // for case like "2 out of 5".
                     extResult.Text = $"{extendedData1[0].Item1} {Config.FractionMarkerToken} {extendedData1[1].Item1}";
-                    extResult.Data = $"Frac{Config.LangMarker}";
+                    extResult.Data = $"Frac{Config.LanguageMarker}";
 
                     ret = base.Parse(extResult);
                     ret.Value = (double)ret.Value * 100;

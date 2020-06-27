@@ -15,9 +15,9 @@ export namespace PortugueseNumeric {
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = false;
     export const HundredsNumberIntegerRegex = `(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))`;
-    export const RoundNumberIntegerRegex = `(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)`;
-    export const ZeroToNineIntegerRegex = `(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)`;
-    export const TenToNineteenIntegerRegex = `(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)`;
+    export const RoundNumberIntegerRegex = `(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))`;
+    export const ZeroToNineIntegerRegex = `(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)`;
+    export const TenToNineteenIntegerRegex = `(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)`;
     export const TensNumberIntegerRegex = `(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)`;
     export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
     export const BelowHundredsRegex = `((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+e\\s+${ZeroToNineIntegerRegex})?))|${ZeroToNineIntegerRegex})`;
@@ -56,7 +56,7 @@ export namespace PortugueseNumeric {
     export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((e|com)\\s+)?)?(${AllIntRegex})(\\s+((e|com)\\s)?)(((${AllOrdinalRegex})s?|(${SpecialFractionInteger})|(${SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\\b)`;
     export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(e\\s+)?)?(um|um[as])(\\s+)((${AllOrdinalRegex})|(${SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)(?=\\b)`;
-    export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
+    export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
     export const AllFloatRegex = `${AllIntRegex}(\\s+(vírgula|virgula|e|ponto))${AllPointRegex}`;
     export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
     export const DoubleExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
@@ -85,6 +85,7 @@ export namespace PortugueseNumeric {
     export const PrefixCardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["hum", 1],["dois", 2],["tres", 3],["três", 3],["quatro", 4],["cinco", 5],["seis", 6],["sete", 7],["oito", 8],["nove", 9],["dez", 10],["onze", 11],["doze", 12],["treze", 13],["catorze", 14],["quatorze", 14],["quinze", 15],["dezesseis", 16],["dezasseis", 16],["dezessete", 17],["dezassete", 17],["dezoito", 18],["dezenove", 19],["dezanove", 19],["vinte", 20],["trinta", 30],["quarenta", 40],["cinquenta", 50],["cincoenta", 50],["sessenta", 60],["setenta", 70],["oitenta", 80],["noventa", 90],["cem", 100],["duzentos", 200],["trezentos", 300],["quatrocentos", 400],["quinhentos", 500],["seiscentos", 600],["setecentos", 700],["oitocentos", 800],["novecentos", 900]]);
     export const SuffixOrdinalMap: ReadonlyMap<string, number> = new Map<string, number>([["milesimo", 1000],["milionesimo", 1000000],["bilionesimo", 1000000000],["trilionesimo", 1000000000000]]);
     export const RoundNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["mil", 1000],["milesimo", 1000],["milhão", 1000000],["milhao", 1000000],["milhões", 1000000],["milhoes", 1000000],["milionésimo", 1000000],["milionesimo", 1000000],["bilhão", 1000000000],["bilhao", 1000000000],["bilhões", 1000000000],["bilhoes", 1000000000],["bilionésimo", 1000000000],["bilionesimo", 1000000000],["trilhão", 1000000000000],["trilhao", 1000000000000],["trilhões", 1000000000000],["trilhoes", 1000000000000],["trilionésimo", 1000000000000],["trilionesimo", 1000000000000],["dezena", 10],["dezenas", 10],["dúzia", 12],["duzia", 12],["dúzias", 12],["duzias", 12],["k", 1000],["m", 1000000],["g", 1000000000],["b", 1000000000],["t", 1000000000000]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^[.]", ""]]);
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
     export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
 }

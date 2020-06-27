@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net462;net452;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -30,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\ChoiceDefinitions.cs" Link="Arabic\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\NumbersDefinitions.cs" Link="Arabic\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseCurrency.cs" Link="BaseCurrency.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseDateTime.cs" Link="BaseDateTime.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
@@ -41,14 +43,17 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BasePhoneNumbers.cs" Link="BasePhoneNumbers.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseUnits.cs" Link="BaseUnits.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseURL.cs" Link="BaseURL.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\PhoneNumbersDefinitions.cs" Link="English\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\ChoiceDefinitions.cs" Link="Chinese\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\DateTimeDefinitions.cs" Link="Chinese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersDefinitions.cs" Link="Chinese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersWithUnitDefinitions.cs" Link="Chinese\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\URLDefinitions.cs" Link="Chinese\URLDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\IpDefinitions.cs" Link="Chinese\IpDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\PhoneNumbersDefinitions.cs" Link="Chinese\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\ChoiceDefinitions.cs" Link="Dutch\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\DateTimeDefinitions.cs" Link="Dutch\DateTimeDefinitions.cs" />
-    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumberDefinitions.cs" Link="Dutch\NumberDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersDefinitions.cs" Link="Dutch\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersWithUnitDefinitions.cs" Link="Dutch\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\TimeZoneDefinitions.cs" Link="Dutch\TimeZoneDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\ChoiceDefinitions.cs" Link="English\ChoiceDefinitions.cs" />
@@ -64,6 +69,10 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\DateTimeDefinitions.cs" Link="German\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersDefinitions.cs" Link="German\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersWithUnitDefinitions.cs" Link="German\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersDefinitions.cs" Link="Hindi\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersWithUnitDefinitions.cs" Link="Hindi\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\ChoiceDefinitions.cs" Link="Hindi\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\DateTimeDefinitions.cs" Link="Hindi\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\ChoiceDefinitions.cs" Link="Italian\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\DateTimeDefinitions.cs" Link="Italian\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersDefinitions.cs" Link="Italian\NumbersDefinitions.cs" />
@@ -77,15 +86,22 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\DateTimeDefinitions.cs" Link="Portuguese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersDefinitions.cs" Link="Portuguese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersWithUnitDefinitions.cs" Link="Portuguese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\PhoneNumbersDefinitions.cs" Link="Portuguese\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\ChoiceDefinitions.cs" Link="Spanish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\DateTimeDefinitions.cs" Link="Spanish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersDefinitions.cs" Link="Spanish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersWithUnitDefinitions.cs" Link="Spanish\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\ChoiceDefinitions.cs" Link="Swedish\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersDefinitions.cs" Link="Swedish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Bulgarian\ChoiceDefinitions.cs" Link="Bulgarian\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\ChoiceDefinitions.cs" Link="Turkish\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\DateTimeDefinitions.cs" Link="Turkish\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersDefinitions.cs" Link="Turkish\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersWithUnitDefinitions.cs" Link="Turkish\NumbersWithUnitDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Arabic\" />
     <Folder Include="Chinese\" />
     <Folder Include="Dutch\" />
     <Folder Include="English\" />
@@ -98,6 +114,8 @@
     <Folder Include="Portuguese\" />
     <Folder Include="Swedish\" />
     <Folder Include="Bulgarian\" />
+    <Folder Include="Hindi\" />
+    <Folder Include="Turkish\" />
   </ItemGroup>
   
   <ItemGroup>
@@ -110,5 +128,5 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
+  
 </Project>

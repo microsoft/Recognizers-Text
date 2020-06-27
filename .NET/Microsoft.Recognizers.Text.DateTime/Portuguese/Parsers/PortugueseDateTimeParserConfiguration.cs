@@ -6,8 +6,11 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
+    public class PortugueseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public PortugueseDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -17,9 +20,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+
             NowRegex = PortugueseDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexOptions.Singleline);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
             SimpleTimeOfTodayAfterRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -28,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             UnitRegex = PortugueseDateTimeExtractorConfiguration.UnitRegex;
             DateNumberConnectorRegex = PortugueseDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             YearRegex = PortugueseDateTimeExtractorConfiguration.YearRegex;
+
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -90,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             int result = hour;
 
             // TODO: Replace with a regex
@@ -108,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
             if (trimmedText.EndsWith("agora") || trimmedText.EndsWith("mesmo") || trimmedText.EndsWith("momento"))
             {
@@ -134,7 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))

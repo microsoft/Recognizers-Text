@@ -419,6 +419,30 @@
     ]
   },
   {
+    "Input": "I'll go back on cyber monday",
+    "Context": {
+      "ReferenceDateTime": "2019-10-01T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "cyber monday",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-02",
+          "FutureResolution": {
+            "date": "2019-12-02"
+          },
+          "PastResolution": {
+            "date": "2018-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
     "Input": "Out here in Pershing Square for May Day/Int'l Workers Day.",
     "Context": {
       "ReferenceDateTime": "2018-06-01T00:00:00"

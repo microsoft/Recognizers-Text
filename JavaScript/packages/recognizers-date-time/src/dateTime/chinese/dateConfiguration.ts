@@ -1,13 +1,13 @@
-import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
-import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number"
-import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
+import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility, MetaData } from "@microsoft/recognizers-text";
+import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
+import { Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "../baseDate";
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { Constants, TimeTypeConstants } from "../constants"
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
+import { Constants, TimeTypeConstants } from "../constants";
 import { ChineseDurationExtractor } from "./durationConfiguration";
 import { Token, DateTimeFormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { IDateTimeParser, DateTimeParseResult } from "../parsers"
+import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 
 class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -27,7 +27,10 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
+
+        let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
@@ -35,12 +38,12 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
 
-            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
 
-            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
 
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
@@ -59,34 +62,46 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
 }
 
 export class ChineseDateExtractor extends BaseDateExtractor {
+    static beforeRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.BeforeRegex);
+    static afterRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.AfterRegex);
+    static dateTimePeriodUnitRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodUnitRegex);
     private readonly durationExtractor: ChineseDurationExtractor;
 
-    constructor() {
-        super(new ChineseDateExtractorConfiguration());
+    constructor(dmyDateFormat: boolean) {
+        super(new ChineseDateExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new ChineseDurationExtractor();
     }
 
-    extract(source: string, refDate: Date): Array<ExtractResult> {
-        if (!refDate) refDate = new Date();
+    extract(source: string, refDate: Date): ExtractResult[] {
+        if (!refDate) {
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
-        let tokens: Array<Token> = new Array<Token>()
+        let tokens: Token[] = new Array<Token>()
             .concat(super.basicRegexMatch(source))
             .concat(super.implicitDate(source))
-            .concat(this.durationWithBeforeAndAfter(source, referenceDate));
+            .concat(this.durationWithAgoAndLater(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected durationWithBeforeAndAfter(source: string, refDate: Date): Array<Token> {
+    protected durationWithAgoAndLater(source: string, refDate: Date): Token[] {
         let ret = [];
-        let durEx = this.durationExtractor.extract(source, refDate);
-        durEx.forEach(er => {
-            let pos = er.start + er.length;
-            if (pos < source.length) {
-                let nextChar = source.substr(pos, 1);
-                if (nextChar === '前' || nextChar === '后') {
-                    ret.push(new Token(er.start, pos + 1));
+        let durationEr = this.durationExtractor.extract(source, refDate);
+        durationEr.forEach(er => {
+            if (!RegExpUtility.isMatch(ChineseDateExtractor.dateTimePeriodUnitRegex, er.text)) {
+                let pos = er.start + er.length;
+                if (pos < source.length) {
+                    let suffix = source.substr(pos, 1);
+                    let beforeMatch = RegExpUtility.getMatches(ChineseDateExtractor.beforeRegex, suffix).pop();
+                    let afterMatch = RegExpUtility.getMatches(ChineseDateExtractor.afterRegex, suffix).pop();
+
+                    if (beforeMatch && suffix.startsWith(beforeMatch.value) || afterMatch && suffix.startsWith(afterMatch.value)) {
+                        let metadata = new MetaData();
+                        metadata.IsDurationWithAgoAndLater = true;
+                        ret.push(new Token(er.start, pos + 1, metadata));
+                    }
                 }
             }
         });
@@ -130,17 +145,23 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         let swift = 0;
         if (trimmedSource === '今天' || trimmedSource === '今日' || trimmedSource === '最近') {
             swift = 0;
-        } else if (trimmedSource.startsWith('明')) {
+        }
+        else if (trimmedSource.startsWith('明')) {
             swift = 1;
-        } else if (trimmedSource.startsWith('昨')) {
+        }
+        else if (trimmedSource.startsWith('昨')) {
             swift = -1;
-        } else if (trimmedSource === '大后天' || trimmedSource === '大後天') {
+        }
+        else if (trimmedSource === '大后天' || trimmedSource === '大後天') {
             swift = 3;
-        } else if (trimmedSource === '大前天') {
+        }
+        else if (trimmedSource === '大前天') {
             swift = -3;
-        } else if (trimmedSource === '后天' || trimmedSource === '後天') {
+        }
+        else if (trimmedSource === '后天' || trimmedSource === '後天') {
             swift = 2;
-        } else if (trimmedSource === '前天') {
+        }
+        else if (trimmedSource === '前天') {
             swift = -2;
         }
         return swift;
@@ -151,7 +172,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         let swift = 0;
         if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationNextMonthToken)) {
             swift = 1;
-        } else if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationLastMonthToken)) {
+        }
+        else if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationLastMonthToken)) {
             swift = -1;
         }
         return swift;
@@ -165,8 +187,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         return source === ChineseDateTime.ParserConfigurationLastWeekDayToken;
     }
 
-    constructor() {
-        this.dateRegex = new ChineseDateExtractorConfiguration().dateRegexList;
+    constructor(dmyDateFormat: boolean) {
+        this.dateRegex = new ChineseDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.monthOfYear = ChineseDateTime.ParserConfigurationMonthOfYear;
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.dayOfWeek = ChineseDateTime.ParserConfigurationDayOfWeek;
@@ -175,6 +197,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         this.thisRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateThisRegex);
         this.nextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateNextRegex);
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateLastRegex);
+        this.unitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateUnitRegex);
+        this.unitMap = ChineseDateTime.ParserConfigurationUnitMap;
         this.weekDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekDayRegex);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
@@ -187,20 +211,24 @@ export class ChineseDateParser extends BaseDateParser {
     private readonly specialDateRegex: RegExp
     private readonly tokenNextRegex: RegExp
     private readonly tokenLastRegex: RegExp
-    private readonly monthMaxDays: Array<number>;
+    private readonly monthMaxDays: number[];
+    private readonly durationExtractor: ChineseDurationExtractor;
 
-    constructor() {
-        let config = new ChineseDateParserConfiguration();
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseDateParserConfiguration(dmyDateFormat);
         super(config);
         this.lunarRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex);
         this.specialDateRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDate);
-        this.tokenNextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateNextRe);
-        this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateLastRe);
-        this.monthMaxDays = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+        this.tokenNextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NextPrefixRegex);
+        this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LastPrefixRegex);
+        this.monthMaxDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        this.durationExtractor = new ChineseDurationExtractor();
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
-        if (!referenceDate) referenceDate = new Date();
+        if (!referenceDate) {
+            referenceDate = new Date();
+        }
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let source = extractorResult.text.toLowerCase();
@@ -273,7 +301,8 @@ export class ChineseDateParser extends BaseDateParser {
                         month = Constants.MinMonth;
                         year++;
                     }
-                } else if (RegExpUtility.isMatch(this.tokenLastRegex, monthStr)) {
+                }
+                else if (RegExpUtility.isMatch(this.tokenLastRegex, monthStr)) {
                     month--;
                     if (month === Constants.MinMonth - 1) {
                         month = Constants.MaxMonth;
@@ -283,7 +312,8 @@ export class ChineseDateParser extends BaseDateParser {
                 if (hasYear) {
                     if (RegExpUtility.isMatch(this.tokenNextRegex, yearStr)) {
                         year++;
-                    } else if (RegExpUtility.isMatch(this.tokenLastRegex, yearStr)) {
+                    }
+                    else if (RegExpUtility.isMatch(this.tokenLastRegex, yearStr)) {
                         year--;
                     }
                 }
@@ -318,16 +348,17 @@ export class ChineseDateParser extends BaseDateParser {
                 else if (isFutureValid && !isPastValid) {
                     futureDate = pastDate = DateUtils.safeCreateFromMinValue(futureYear, futureMonth, day);
                 }
-                else if (!isFutureValid && !isPastValid){
+                else if (!isFutureValid && !isPastValid) {
                     futureDate = pastDate = DateUtils.safeCreateFromMinValue(pastYear, pastMonth, day);
                 }
                 else {
                     futureDate = pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
                 }
-            } else {
+            }
+            else {
                 futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
                 pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-                
+
                 if (!hasMonth) {
                     if (futureDate < referenceDate) {
                         if (this.isValidDate(year, month + 1, day)) {
@@ -338,18 +369,19 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (this.isNonleapYearFeb29th(year, month - 1, day)){
+                        else if (this.isNonleapYearFeb29th(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
-                } else if (hasMonth && !hasYear) {
+                }
+                else if (hasMonth && !hasYear) {
                     if (futureDate < referenceDate) {
                         if (DateUtils.isValidDate(year + 1, month, day)) {
                             futureDate = DateUtils.addYears(futureDate, 1);
                         }
                     }
                     if (pastDate >= referenceDate) {
-                        if (DateUtils.isValidDate(year - 1, month, day)){
+                        if (DateUtils.isValidDate(year - 1, month, day)) {
                             pastDate = DateUtils.addYears(pastDate, -1);
                         }
                     }
@@ -421,13 +453,21 @@ export class ChineseDateParser extends BaseDateParser {
             let weekday = this.config.dayOfWeek.get(weekdayStr);
             let value = DateUtils.this(referenceDate, weekday);
 
-            if (weekday === 0) weekday = 7;
-            if (weekday < referenceDate.getDay()) value = DateUtils.next(referenceDate, weekday);
+            if (weekday === 0) {
+                weekday = 7;
+            }
+            if (weekday < referenceDate.getDay()) {
+                value = DateUtils.next(referenceDate, weekday);
+            }
             result.timex = 'XXXX-WXX-' + weekday;
             let futureDate = new Date(value);
             let pastDate = new Date(value);
-            if (futureDate < referenceDate) futureDate = DateUtils.addDays(futureDate, 7);
-            if (pastDate >= referenceDate) pastDate = DateUtils.addDays(pastDate, -7);
+            if (futureDate < referenceDate) {
+                futureDate = DateUtils.addDays(futureDate, 7);
+            }
+            if (pastDate >= referenceDate) {
+                pastDate = DateUtils.addDays(pastDate, -7);
+            }
 
             result.futureValue = futureDate;
             result.pastValue = pastDate;
@@ -455,8 +495,12 @@ export class ChineseDateParser extends BaseDateParser {
             day = this.getDayOfMonth(dayStr);
             if (!StringUtility.isNullOrEmpty(yearStr)) {
                 year = Number.parseInt(yearStr, 10);
-                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) year += 1900;
-                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) year += 2000;
+                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) {
+                    year += 1900;
+                }
+                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) {
+                    year += 2000;
+                }
             }
         }
         let noYear = false;
@@ -464,7 +508,8 @@ export class ChineseDateParser extends BaseDateParser {
             year = referenceDate.getFullYear();
             result.timex = DateTimeFormatUtil.luisDate(-1, month, day);
             noYear = true;
-        } else {
+        }
+        else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
         let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
@@ -479,6 +524,17 @@ export class ChineseDateParser extends BaseDateParser {
         result.pastValue = pastDate;
         result.success = true;
         return result;
+    }
+
+    // convert Chinese Number to Integer
+    private parseChineseWrittenNumberToValue(source: string): number {
+        let num = -1;
+        let er = this.config.integerExtractor.extract(source);
+        if (er && er[0].type === NumberConstants.SYS_NUM_INTEGER) {
+            num = Number.parseInt(this.config.numberParser.parse(er[0]).value);
+        }
+
+        return num;
     }
 
     private convertChineseYearToNumber(source: string): number {
@@ -517,30 +573,103 @@ export class ChineseDateParser extends BaseDateParser {
     private getMonthMaxDay(year: number, month: number): number {
         let maxDay = this.monthMaxDays[month];
 
-            if (!DateUtils.isLeapYear(year) && month === 1)
-            {
-                maxDay -= 1;
-            }
+        if (!DateUtils.isLeapYear(year) && month === 1) {
+            maxDay -= 1;
+        }
 
-            return maxDay;
+        return maxDay;
     }
 
     private isValidDate(year: number, month: number, day: number): boolean {
-        if (month < Constants.MinMonth)
-            {
-                year--;
-                month = Constants.MaxMonth;
-            }
+        if (month < Constants.MinMonth) {
+            year--;
+            month = Constants.MaxMonth;
+        }
 
-            if (month > Constants.MaxMonth)
-            {
-                year++;
-                month = Constants.MinMonth;
-            }
-            return DateUtils.isValidDate(year, month, day);
+        if (month > Constants.MaxMonth) {
+            year++;
+            month = Constants.MinMonth;
+        }
+        return DateUtils.isValidDate(year, month, day);
     }
 
     private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
         return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
+    }
+    
+    // Handle cases like "三天前"
+    protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let durationRes = this.durationExtractor.extract(source, referenceDate);
+
+        if (durationRes) {
+            let match = RegExpUtility.getMatches(this.config.unitRegex, source).pop();
+            if (match) {
+                let suffix = source.substring(durationRes[0].start + durationRes[0].length);
+                let srcUnit = match.groups('unit').value;
+
+                let numberStr = source.substring(durationRes[0].start, match.index - durationRes[0].start);
+                let number =  this.parseChineseWrittenNumberToValue(numberStr);
+
+                if (this.config.unitMap.has(srcUnit)) {
+                    let unitStr = this.config.unitMap.get(srcUnit);
+
+                    let beforeMatch = RegExpUtility.getMatches(ChineseDateExtractor.beforeRegex, suffix).pop();
+                    if (beforeMatch && suffix.startsWith(beforeMatch.value)) {
+                        let date : Date;
+                        switch (unitStr) {
+                            case Constants.TimexDay:
+                                date = DateUtils.addDays(referenceDate, -number);
+                                break;
+                            case Constants.TimexWeek:
+                                date = DateUtils.addDays(referenceDate, -7 * number);
+                                break;
+                            case Constants.TimexMonthFull:
+                                date = DateUtils.addMonths(referenceDate, -number);
+                                break;
+                            case Constants.TimexYear:
+                                date = DateUtils.addYears(referenceDate, -number);
+                                break;
+                            default:
+                                return result;
+                        }
+
+                        result.timex = DateTimeFormatUtil.luisDateFromDate(date);
+                        result.futureValue = result.pastValue = date;
+                        result.success = true;
+                        return result;
+                    }
+
+                    let afterMatch = RegExpUtility.getMatches(ChineseDateExtractor.afterRegex, suffix).pop();
+                    if (afterMatch && suffix.startsWith(afterMatch.value)) {
+                        let date: Date;
+                        switch (unitStr) {
+                            case Constants.TimexDay:
+                                    date = DateUtils.addDays(referenceDate, number);
+                                break;
+                            case Constants.TimexWeek:
+                                    date = DateUtils.addDays(referenceDate, 7 * number);
+                                break;
+                            case Constants.TimexMonthFull:
+                                    date = DateUtils.addMonths(referenceDate, number);
+                                break;
+                            case Constants.TimexYear:
+                                    date = DateUtils.addYears(referenceDate, number);
+                                break;
+                            default:
+                                return result;
+                        }
+
+                        result.timex = DateTimeFormatUtil.luisDateFromDate(date);
+                        result.futureValue = result.pastValue = date;
+                        result.success = true;
+                        return result;
+                    }
+                }
+
+            }
+        }
+
+        return result;
     }
 }

@@ -1,0 +1,400 @@
+[
+  {
+    "Input": "هي الوحيدة الذي حصلت على ١٠٠٪.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "١٠٠٪",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 25,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "اصبح شاحن الجوال ١٠٠٪؜.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "١٠٠٪",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 17,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "الاحتمال هو ١٠٠ في المئة.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "١٠٠ في المئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 12,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "تم تنزيل الملف ١٠٠ بالمئة.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "١٠٠ بالمئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 15,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "الإجابة هو ٢٤٠ في المئة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "٢٤٠ في المئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 11,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "احتمال وقوع حادث عشرين في المئة.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عشرين في المئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 17,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثين بالمئة ليس الإجابة الصحيحة.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ثلاثين بالمئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "كان نتيجته مئة بالمئة.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مئة بالمئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 11,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "ما هو نسبة ١٠ من العدد ؟",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نسبة ١٠",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "نسبة اثنين وعشرين كفاية لكل شخص.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نسبة اثنين وعشرين",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "كان يطلب نسبة ٢١٠.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نسبة ٢١٠",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "احتمال نزول المطر ١٠ بالمائة.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "١٠ بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 18,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "ارية فقط سالب خمسة بالمئة.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سالب خمسة بالمئة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 9,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "100%",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " 100 بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "100 بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "240 بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "240 بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثون بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "ثلاثون بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "مائة بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "مائة بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "عشرون بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "عشرون بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "بالمائة 10",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "بالمائة 10",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "اثنين و عشرون بالمائة",
+    "Comment": "PendingValidation",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنين و عشرون بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "بالمائة 210",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "بالمائة 210",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "10 بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "10 بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "تحتاج فقط سالب خمسة بالمائة",
+    "Comment": "PendingValidation",
+    "Results": [
+      {
+        "Text": "سالب خمسة بالمائة",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 10,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "يمكنك الذهاب إلى http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 لمزيد من التفاصيل.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "يمكنك الذهاب إلى https://www.test.com/search?q=30%25%2020%",
+    "NotSupported": "javascript",
+    "Results": []
+  }
+]

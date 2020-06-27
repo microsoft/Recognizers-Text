@@ -11,11 +11,14 @@
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class PortugueseNumericWithUnit:
     AgeSuffixList = dict([("Ano", "anos|ano"),
                           ("Mês", "meses|mes|mês"),
                           ("Semana", "semanas|semana"),
                           ("Dia", "dias|dia")])
+    AmbiguousAgeUnitList = [r'anos', r'ano', r'meses', r'mes', r'mês', r'semanas', r'semana', r'dias', r'dia']
     AreaSuffixList = dict([("Quilômetro quadrado", "quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²"),
                            ("Hectare", "hectômetro quadrado|hectómetro quadrado|hectômetros quadrados|hectómetros cuadrados|hm2|hm^2|hm²|hectare|hectares"),
                            ("Decâmetro quadrado", "decâmetro quadrado|decametro quadrado|decâmetros quadrados|decametro quadrado|dam2|dam^2|dam²|are|ares"),
@@ -58,14 +61,14 @@ class PortugueseNumericWithUnit:
                                ("Lek albanês", "lek|lekë|lekes|lek albanês|leque|leques|all"),
                                ("Qindarke", "qindarka|qindarkë|qindarke|qindarkas"),
                                ("Kwanza angolano", "kwanza angolano|kwanzas angolanos|kwanza|kwanzas|aoa|kz"),
-                               ("Cêntimo angolano", "cêntimo angolano|cêntimo|cêntimos"),
+                               ("Cêntimo angolano", "cêntimo angolano"),
                                ("Florim das Antilhas Holandesas", "florim das antilhas holandesas|florim das antilhas neerlandesas|ang"),
                                ("Rial saudita", "rial saudita|riais sauditas|riyal saudita|riyals sauditas|riyal|riyals|sar"),
                                ("Halala saudita", "halala saudita|halala|hallalah"),
                                ("Dinar argelino", "dinar argelino|dinares argelinos|dzd"),
                                ("Cêntimo argelino", "centimo argelino|centimos argelinos|cêntimo argelino|cêntimos argelinos|centavo argelino|centavos argelinos"),
-                               ("Peso argentino", "peso argentino|pesos argentinos|peso|pesos|ar$|ars"),
-                               ("Centavo argentino", "centavo argentino|centavos argentinos|centavo|ctvo.|ctvos."),
+                               ("Peso argentino", "peso argentino|pesos argentinos|ar$|ars"),
+                               ("Centavo argentino", "centavo argentino|centavos argentinos|ctvo.|ctvos."),
                                ("Dram armênio", "dram armênio|dram armênios|dram arménio|dram arménios|dram armenio|dram armenios|dram|drame|drames|դր."),
                                ("Luma armênio", "luma armênio|lumas armênios|luma arménio|lumas arménios|luma armenio|lumas armenios|luma|lumas"),
                                ("Florim arubano", "florín arubeño|florines arubeños|ƒ arubeños|aƒ|awg"),
@@ -85,7 +88,7 @@ class PortugueseNumericWithUnit:
                                ("Centavo de Belize", "centavo de belize|centavos de belize|cêntimo do belize|cêntimos do belize"),
                                ("Dólar bermudense", "dólar bermudense|dólares bermudenses|bd$|bmd"),
                                ("Centavo bermudense", "centavo bermudense|centavos bermudenses|cêntimo bermudense| cêntimos bermudenses"),
-                               ("Rublo bielorrusso", "rublo bielorrusso|rublos bielorrussos|br|byr"),
+                               ("Rublo bielorrusso", "rublo bielorrusso|rublos bielorrussos|byr"),
                                ("Copeque bielorusso", "copeque bielorrusso|copeques bielorrussos|kopek bielorrusso|kopeks bielorrussos|kap"),
                                ("Quiate mianmarense", "quiate mianmarense|quiates mianmarenses|kyat mianmarense|kyates mianmarenses|quiate myanmarense|quiates myanmarenses|kyat myanmarense|kyates myanmarenses|quiate birmanês|quite birmanes|quiates birmaneses|kyat birmanês|kyat birmanes|kyates birmaneses|mmk"),
                                ("Pya mianmarense", "pya mianmarense|pyas mianmarenses|pya myanmarense|pyas myanmarenses|pya birmanês|pya birmanes|pyas birmaneses"),
@@ -110,7 +113,7 @@ class PortugueseNumericWithUnit:
                                ("Dólar canadense", "dólar canadense|dolar canadense|dólares canadenses|dolares canadenses|c$|cad"),
                                ("Centavo canadense", "centavo canadense|centavos canadenses"),
                                ("Peso chileno", "peso chileno|pesos chilenos|cpl"),
-                               ("Yuan chinês", "yuan chinês|yuan chines|yuans chineses|yuan|yuans|renminbi|rmb|cny|¥"),
+                               ("Yuan chinês", "yuan chinês|yuan chines|yuans chineses|yuan|yuans|renminbi|rmb|cny|￥"),
                                ("Peso colombiano", "peso colombiano|pesos colombianos|cop|col$"),
                                ("Centavo colombiano", "centavo colombiano|centavos colombianos"),
                                ("Franco comorense", "franco comorense|francos comorenses|kmf|₣"),
@@ -126,7 +129,7 @@ class PortugueseNumericWithUnit:
                                ("Peso cubano", "peso cubano|pesos cubanos|cup"),
                                ("Peso cubano convertível", "peso cubano conversível|pesos cubanos conversíveis|peso cubano conversivel|pesos cubanos conversiveis|peso cubano convertível|pesos cubanos convertíveis|peso cubano convertivel|pesos cubanos convertiveis|cuc"),
                                ("Coroa dinamarquesa", "coroa dinamarquesa|coroas dinamarquesas|dkk"),
-                               ("Libra egípcia", "libra egípcia|libra egipcia|libras egípcias|libras egipcias|egp|le"),
+                               ("Libra egípcia", "libra egípcia|libra egipcia|libras egípcias|libras egipcias|egp|l.e."),
                                ("Piastra egípcia", "piastra egípcia|piastra egipcia|pisastras egípcias|piastras egipcias"),
                                ("Dirham dos Emirados Árabes Unidos", "dirham|dirhams|dirham dos emirados arabes unidos|aed|dhs"),
                                ("Nakfa", "nakfa|nfk|ern"),
@@ -179,7 +182,7 @@ class PortugueseNumericWithUnit:
                                ("Coroa feroesa", "coroa feroesa|coroas feroesas|fkr"),
                                ("Libra das Malvinas", "libra das malvinas|libras das malvinas|fk£|fkp"),
                                ("Dólar das Ilhas Salomão", "dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd"),
-                               ("Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils"),
+                               ("Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils|₪"),
                                ("Agora", "agora|agorot"),
                                ("Dólar jamaicano", "dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd"),
                                ("Yen", "yen|iene|yenes|ienes|jpy"),
@@ -340,14 +343,14 @@ class PortugueseNumericWithUnit:
                                ("Dólar australiano", "a$|aud"),
                                ("Dólar bahamense", "b$|bsd"),
                                ("Dólar de Barbados", "bds$|bbd"),
-                               ("Dólar de Belizebe", "bz$|bzd"),
+                               ("Dólar de Belize", "bz$|bzd"),
                                ("Dólar bermudense", "bd$|bmd"),
-                               ("Dólar de Brunebi", "brunéi $|bnd"),
+                               ("Dólar de Brunei", "brunéi $|bnd"),
                                ("Dólar de Cingapura", "s$|sgd"),
                                ("Dólar canadense", "c$|can$|cad"),
                                ("Dólar das Ilhas Cayman", "ci$|kyd"),
                                ("Dólar neozelandês", "nz$|nzd"),
-                               ("Dólar fijgiano", "fj$|fjd"),
+                               ("Dólar fijiano", "fj$|fjd"),
                                ("Dólar guianense", "gy$|gyd"),
                                ("Dólar de Hong Kong", "hk$|hkd"),
                                ("Dólar jamaicano", "j$|ja$|jmd"),
@@ -362,10 +365,10 @@ class PortugueseNumericWithUnit:
                                ("Yen", "¥|jpy"),
                                ("Euro", "€|eur"),
                                ("Florim", "ƒ"),
-                               ("Libra", "£|gbp"),
+                               ("Libra", "£"),
                                ("Colón costarriquenho", "₡"),
                                ("Lira turca", "₺")])
-    AmbiguousCurrencyUnitList = [r'le']
+    AmbiguousCurrencyUnitList = [r'le', r'agora']
     InformationSuffixList = dict([("bit", "bit|bits"),
                                   ("kilobit", "kilobit|kilobits|kb|kbit"),
                                   ("megabit", "megabit|megabits|Mb|Mbit"),
@@ -388,7 +391,7 @@ class PortugueseNumericWithUnit:
                                   ("gibibyte", "gibibyte|gibibytes|GiB|GiByte"),
                                   ("tebibyte", "tebibyte|tebibytes|TiB|TiByte"),
                                   ("pebibyte", "pebibyte|pebibytes|PiB|PiByte")])
-    AmbiguousDimensionUnitList = [r'ton', r'tonelada', r'área', r'area', r'áreas', r'areas', r'milha', r'milhas']
+    AmbiguousDimensionUnitList = [r'ton', r'tonelada', r'área', r'area', r'áreas', r'areas', r'milha', r'milhas', r'"']
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
@@ -407,7 +410,7 @@ class PortugueseNumericWithUnit:
                              ("Polegada", "polegada|polegadas|\""),
                              ("Pé", "pé|pe|pés|pes|ft"),
                              ("Ano luz", "ano luz|anos luz|al")])
-    AmbiguousLengthUnitList = [r'mi', r'milha', r'milhas']
+    AmbiguousLengthUnitList = [r'mi', r'milha', r'milhas', r'"']
     SpeedSuffixList = dict([("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos"),
                             ("Quilômetro por hora", "km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora"),
                             ("Quilômetro por minuto", "km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto"),
@@ -446,7 +449,7 @@ class PortugueseNumericWithUnit:
                              ("Quilograma", "kg|quilograma|quilogramas|quilo|quilos|kilo|kilos"),
                              ("Hectograma", "hg|hectograma|hectogramas"),
                              ("Decagrama", "dag|decagrama|decagramas"),
-                             ("Grama", "g|gr|grama|gramas"),
+                             ("Grama", "g|grama|gramas"),
                              ("Decigrama", "dg|decigrama|decigramas"),
                              ("Centigrama", "cg|centigrama|centigramas"),
                              ("Miligrama", "mg|miligrama|miligramas"),
@@ -456,5 +459,6 @@ class PortugueseNumericWithUnit:
                              ("Libra", "lb|libra|libras"),
                              ("Onça", "oz|onça|onca|onças|oncas"),
                              ("Grão", "grão|grao|grãos|graos|gr"),
-                             ("Quilate", "ct|kt|quilate|quilates")])
+                             ("Quilate", "ct|quilate|quilates")])
+    AmbiguityFiltersDict = dict([("null", "null")])
 # pylint: enable=line-too-long

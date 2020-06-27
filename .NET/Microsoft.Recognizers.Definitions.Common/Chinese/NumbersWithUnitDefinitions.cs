@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Att", @"att" },
             { @"Lesotho loti", @"莱索托洛提|莱索托马洛蒂" },
             { @"South African rand", @"南非兰特" },
-            { @"Macedonian denar", @"马其顿代纳尔|马其顿币|第纳尔|代纳尔" },
+            { @"Macedonian denar", @"马其顿代纳尔|马其顿币|代纳尔" },
             { @"Deni", @"第尼" },
             { @"Malagasy ariary", @"马达加斯加阿里亚里" },
             { @"Iraimbilanja", @"伊莱姆比拉贾" },
@@ -215,7 +215,6 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"South Sudanese pound", @"南苏丹镑" },
             { @"Sudanese pound", @"苏丹镑" },
             { @"Syrian pound", @"叙利亚镑" },
-            { @"Pound", @"英镑" },
             { @"Pence", @"便士" },
             { @"Shilling", @"先令" },
             { @"United States dollar", @"美元|美金|美圆" },
@@ -234,7 +233,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Fijian dollar", @"斐济元|斐币" },
             { @"Guyanese dollar", @"圭亚那元" },
             { @"Hong Kong dollar", @"蚊|港元|港圆|港币" },
-            { @"Macau Pataca", @"澳元|澳门币|澳门元" },
+            { @"Macau Pataca", @"澳门币|澳门元" },
             { @"New Taiwan dollar", @"箍|新台币|台币" },
             { @"Jamaican dollar", @"牙买加元" },
             { @"Kiribati dollar", @"吉里巴斯元" },
@@ -243,7 +242,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Surinamese dollar", @"苏里南元" },
             { @"Trinidad and Tobago dollar", @"特立尼达多巴哥元" },
             { @"Tuvaluan dollar", @"吐瓦鲁元" },
-            { @"Chinese yuan", @"人民币|人民币元|块钱|块|元|圆" },
+            { @"Chinese yuan", @"人民币|人民币元|元人民币|块钱|块|元|圆" },
             { @"Fen", @"分钱|分" },
             { @"Jiao", @"毛钱|毛|角钱|角" },
             { @"Finnish markka", @"芬兰马克" },
@@ -654,6 +653,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"gb",
             @"tb",
             @"pb"
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"五角", @"五角大楼" },
+            { @"普尔", @"标准普尔" }
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {

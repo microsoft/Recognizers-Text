@@ -5,9 +5,9 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    internal class PortugueseTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    internal class PortugueseTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public PortugueseTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+        public PortugueseTimeZoneExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

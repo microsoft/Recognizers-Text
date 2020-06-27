@@ -5,7 +5,6 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 {
     public class EnglishURLExtractorConfiguration : URLConfiguration
     {
-
         public EnglishURLExtractorConfiguration(SequenceOptions options)
             : base(options)
         {

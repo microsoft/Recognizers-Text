@@ -8,7 +8,8 @@
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
-<PropertyGroup>
+
+  <PropertyGroup>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.
@@ -18,7 +19,8 @@
 	  -->
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-	</PropertyGroup>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
       <PrivateAssets>all</PrivateAssets>
@@ -28,10 +30,20 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="YamlDotNet" Version="5.0.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Arabic\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Arabic\NumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -87,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseURL.tt</DependentUpon>
     </Compile>
+    <Compile Update="Bulgarian\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Chinese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -107,6 +124,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Chinese\PhoneNumbersDefinitions.cs">
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Chinese\IpDefinitions.cs">
+      <DependentUpon>IpDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Chinese\URLDefinitions.cs">
       <DependentUpon>URLDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -122,10 +149,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="Dutch\NumberDefinitions.cs">
+    <Compile Update="Dutch\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>NumberDefinitions.tt</DependentUpon>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Dutch\NumbersWithUnitDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -156,6 +183,11 @@
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="English\PhoneNumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="English\TimeZoneDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -202,15 +234,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="Italian\DateTimeDefinitions.cs">
+    <Compile Update="Hindi\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Hindi\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Hindi\NumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Hindi\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Italian\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Italian\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Italian\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -267,6 +319,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Portuguese\PhoneNumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Spanish\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -292,14 +349,38 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Bulgarian\ChoiceDefinitions.cs">
+    <Compile Update="Swedish\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Turkish\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Turkish\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Turkish\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Arabic\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Arabic\NumbersDefinitions.tt">
+    </None>
     <None Update="BaseCurrency.tt">
     </None>
     <None Update="BaseDateTime.tt">
@@ -332,13 +413,17 @@
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Chinese\PhoneNumbersDefinitions.tt">
+    </None>
     <None Update="Chinese\URLDefinitions.tt">
+    </None>
+    <None Update="Chinese\IpDefinitions.tt">
     </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
     <None Update="Dutch\DateTimeDefinitions.tt">
     </None>
-    <None Update="Dutch\NumberDefinitions.tt">
+    <None Update="Dutch\NumbersDefinitions.tt">
     </None>
     <None Update="Dutch\NumbersWithUnitDefinitions.tt">
     </None>
@@ -351,6 +436,8 @@
     <None Update="English\NumbersDefinitions.tt">
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="English\PhoneNumbersDefinitions.tt">
     </None>
     <None Update="English\TimeZoneDefinitions.tt">
     </None>
@@ -369,6 +456,14 @@
     <None Update="German\NumbersDefinitions.tt">
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Hindi\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Hindi\DateTimeDefinitions.tt">
+    </None>
+    <None Update="Hindi\NumbersDefinitions.tt">
+    </None>
+    <None Update="Hindi\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Italian\ChoiceDefinitions.tt">
     </None>
@@ -396,6 +491,8 @@
     </None>
     <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Portuguese\PhoneNumbersDefinitions.tt">
+    </None>
     <None Update="Spanish\ChoiceDefinitions.tt">
     </None>
     <None Update="Spanish\DateTimeDefinitions.tt">
@@ -406,13 +503,23 @@
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
     </None>
+    <None Update="Swedish\NumbersDefinitions.tt">
+    </None>
+    <None Update="Turkish\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Turkish\DateTimeDefinitions.tt">
+    </None>
+    <None Update="Turkish\NumbersDefinitions.tt">
+    </None>
+    <None Update="Turkish\NumbersWithUnitDefinitions.tt">
+    </None>
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
     <Exec Command="BuildResources.cmd $(TargetPath)" />
   </Target>
 

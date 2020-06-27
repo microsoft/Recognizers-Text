@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateParserConfiguration : IOptionsConfiguration
+    public interface IDateParserConfiguration : IDateTimeOptionsConfiguration
     {
         string DateTokenPrefix { get; }
 
@@ -88,6 +88,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableList<string> PlusTwoDayTerms { get; }
 
         IImmutableList<string> MinusTwoDayTerms { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

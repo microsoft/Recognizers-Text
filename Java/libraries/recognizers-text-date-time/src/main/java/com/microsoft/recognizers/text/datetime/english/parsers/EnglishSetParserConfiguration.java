@@ -8,7 +8,9 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ISetParserConfiguration;
+import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.MatchedTimexResult;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Locale;
 import java.util.regex.Pattern;
@@ -141,6 +143,30 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
         return eachPrefixRegex;
     }
 
+    private static Pattern doubleMultiplierRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DoubleMultiplierRegex);
+
+    private static Pattern halfMultiplierRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HalfMultiplierRegex);
+
+    private static Pattern dayTypeRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DayTypeRegex);
+
+    private static Pattern weekTypeRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekTypeRegex);
+
+    private static Pattern weekendTypeRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekendTypeRegex);
+
+    private static Pattern monthTypeRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthTypeRegex);
+
+    private static Pattern quarterTypeRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterTypeRegex);
+
+    private static Pattern yearTypeRegex =
+            RegExpUtility.getSafeRegExp(EnglishDateTime.YearTypeRegex);
+
     public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config) {
 
         super(config.getOptions());
@@ -173,7 +199,12 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
     public MatchedTimexResult getMatchedDailyTimex(String text) {
 
         MatchedTimexResult result = new MatchedTimexResult();
+
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
+
+        float durationLength = 1; // Default value
+        float multiplier = 1;
+        String durationType;
 
         if (trimmedText.equals("daily")) {
             result.setTimex("P1D");
@@ -183,6 +214,8 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
             result.setTimex("P2W");
         } else if (trimmedText.equals("monthly")) {
             result.setTimex("P1M");
+        } else if (trimmedText.equals("quarterly")) {
+            result.setTimex("P3M");
         } else if (trimmedText.equals("yearly") || trimmedText.equals("annually") || trimmedText.equals("annual")) {
             result.setTimex("P1Y");
         }

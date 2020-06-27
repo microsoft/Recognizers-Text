@@ -1,4 +1,5 @@
-import abc, json
+import abc
+import json
 from .yaml_parser import SimpleRegex, NestedRegex, ParamsRegex, Dictionary, List
 
 
@@ -51,7 +52,8 @@ class ParamsRegexWriter(SimpleRegexWriter):
         self.params = ', '.join(params)
 
     def write(self):
-        return f'{self.name} = lambda {self.params}: f\'{self.definition}\''
+        spaces = '    '
+        return f'\ndef {self.name}({self.params}):\n{spaces}return f\'{self.definition}\''
 
 
 class DictionaryWriter(CodeWriter):
@@ -68,7 +70,7 @@ class DictionaryWriter(CodeWriter):
             self.entries.append(f'({key}, {value})')
 
     def write(self):
-        spaces = ' ' * (len(f'{self.name} = dict([') + 4)
+        spaces = ' ' * ((len(f'{self.name} = dict([') + 4) - 4)
         joined_entries = f',\n{spaces}'.join(self.entries)
         return f'{self.name} = dict([{joined_entries}])'
 
@@ -132,20 +134,23 @@ def generate_code(root):
     lines = []
     for token_name in root:
         token = root[token_name]
-        if type(token) is SimpleRegex:
+        if isinstance(token, SimpleRegex):
             lines.append(SimpleRegexWriter(token_name, token.def_))
         elif type(token) is NestedRegex:
-            lines.append(NestedRegexWriter(token_name, token.def_, token.references))
+            lines.append(NestedRegexWriter(
+                token_name, token.def_, token.references))
         elif type(token) is ParamsRegex:
-            lines.append(ParamsRegexWriter(token_name, token.def_, token.params))
+            lines.append(ParamsRegexWriter(
+                token_name, token.def_, token.params))
         elif type(token) is Dictionary:
-            lines.append(DictionaryWriter(token_name, token.key_type, token.value_type, token.entries))
+            lines.append(DictionaryWriter(
+                token_name, token.key_type, token.value_type, token.entries))
         elif type(token) is List:
             lines.append(ArrayWriter(token_name, token.type_, token.entries))
-        elif type(token) is list:
+        elif isinstance(token, list):
             inferred_type = 'string'
             lines.append(ArrayWriter(token_name, inferred_type, token))
-        elif type(token) is bool:
+        elif isinstance(token, bool):
             lines.append(BooleanWriter(token_name, token))
         else:
             lines.append(DefaultWriter(token_name, str(token)))

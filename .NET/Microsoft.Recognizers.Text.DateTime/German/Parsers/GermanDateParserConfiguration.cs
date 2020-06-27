@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class GermanDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -137,11 +137,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (NextPrefixRegex.IsMatch(trimmedText))
             {
@@ -157,7 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("letzten");
         }
 

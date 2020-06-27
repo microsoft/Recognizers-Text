@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 using DateObject = System.DateTime;
 
@@ -26,7 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public delegate int SwiftDayDelegate(string text);
 
-        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret, IDateTimeUtilityConfiguration utilityConfiguration)
+        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret,
+                                                                      IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
 
@@ -35,47 +37,129 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterString = text.Substring(pos);
                 var beforeString = text.Substring(0, (int)er.Start);
                 var isTimeDuration = utilityConfiguration.TimeUnitRegex.Match(er.Text).Success;
-
-                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out var index))
+                int index;
+                bool isMatch = false;
+                var agoLaterRegexes = new List<Regex>
                 {
-                    // We don't support cases like "5 minutes from today" for now
-                    // Cases like "5 minutes ago" or "5 minutes from now" are supported
-                    // Cases like "2 days before today" or "2 weeks from today" are also supported
-                    var isDayMatchInAfterString = utilityConfiguration.AgoRegex.Match(afterString).Groups["day"].Success;
+                    utilityConfiguration.AgoRegex,
+                    utilityConfiguration.LaterRegex,
+                };
 
-                    if (!(isTimeDuration && isDayMatchInAfterString))
-                    {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                    }
-                }
-                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
+                foreach (var regex in agoLaterRegexes)
                 {
-                    var isDayMatchInAfterString = utilityConfiguration.LaterRegex.Match(afterString).Groups["day"].Success;
+                    Token tokAfter = null, tokBefore = null;
+                    bool isDayMatch = false;
 
-                    if (!(isTimeDuration && isDayMatchInAfterString))
+                    // Check afterString
+                    if (MatchingUtil.GetAgoLaterIndex(afterString, regex, out index, inSuffix: true))
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                    }
-                }
-                else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
-                {
-                    // For range unit like "week, month, year", it should output dateRange or datetimeRange
-                    if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
-                    {
-                        if (er.Start != null && er.Length != null && (int)er.Start >= index)
+                        // We don't support cases like "5 minutes from today" for now
+                        // Cases like "5 minutes ago" or "5 minutes from now" are supported
+                        // Cases like "2 days before today" or "2 weeks from today" are also supported
+                        isDayMatch = regex.Match(afterString).Groups["day"].Success;
+
+                        if (!(isTimeDuration && isDayMatch))
                         {
-                            ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                            tokAfter = new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index);
+                            isMatch = true;
                         }
                     }
-                }
-                else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
-                {
-                    // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
-                    if (!utilityConfiguration.DateUnitRegex.IsMatch(er.Text) && !utilityConfiguration.TimeUnitRegex.IsMatch(er.Text))
+
+                    if (utilityConfiguration.CheckBothBeforeAfter)
                     {
-                        if (er.Start != null && er.Length != null && (int)er.Start >= index)
+                        // Check if regex match is split between beforeString and afterString
+                        if (!isDayMatch && isMatch)
                         {
-                            ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                            string beforeAfterStr = beforeString + afterString.Substring(0, index);
+                            var isRangeMatch = utilityConfiguration.RangePrefixRegex.MatchBegin(afterString.Substring(index), trim: true).Success;
+                            if (!isRangeMatch && MatchingUtil.GetAgoLaterIndex(beforeAfterStr, regex, out var indexStart, inSuffix: false))
+                            {
+                                isDayMatch = regex.Match(beforeAfterStr).Groups["day"].Success;
+
+                                if (isDayMatch && !(isTimeDuration && isDayMatch))
+                                {
+                                    ret.Add(new Token(indexStart, (er.Start + er.Length ?? 0) + index));
+                                    isMatch = true;
+                                }
+                            }
+                        }
+
+                        // Check also beforeString
+                        if (MatchingUtil.GetAgoLaterIndex(beforeString, regex, out index, inSuffix: false))
+                        {
+                            isDayMatch = regex.Match(beforeString).Groups["day"].Success;
+                            if (!(isTimeDuration && isDayMatch))
+                            {
+                                tokBefore = new Token(index, er.Start + er.Length ?? 0);
+                                isMatch = true;
+                            }
+                        }
+                    }
+
+                    if (tokAfter != null && tokBefore != null && tokBefore.Start + tokBefore.Length > tokAfter.Start)
+                    {
+                        // Merge overlapping tokens
+                        ret.Add(new Token(tokBefore.Start, tokAfter.Start + tokAfter.Length - tokBefore.Start));
+                    }
+                    else if (tokAfter != null)
+                    {
+                        ret.Add(tokAfter);
+                    }
+                    else if (tokBefore != null)
+                    {
+                        ret.Add(tokBefore);
+                    }
+
+                    if (isMatch)
+                    {
+                        break;
+                    }
+                }
+
+                if (!isMatch)
+                {
+                    // Item1 is the main regex to be tested
+                    // Item2 is a list of unit regexes used to validate the extraction (in case of match, the extraction is discarded)
+                    var inWithinRegexTuples = new List<(Regex, List<Regex>)>
+                    {
+                        (utilityConfiguration.InConnectorRegex, new List<Regex> { utilityConfiguration.RangeUnitRegex }),
+                        (utilityConfiguration.WithinNextPrefixRegex, new List<Regex> { utilityConfiguration.DateUnitRegex, utilityConfiguration.TimeUnitRegex }),
+                    };
+
+                    foreach (var regex in inWithinRegexTuples)
+                    {
+                        bool isMatchAfter = false;
+                        if (MatchingUtil.GetTermIndex(beforeString, regex.Item1, out index))
+                        {
+                            isMatch = true;
+                        }
+                        else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.GetAgoLaterIndex(afterString, regex.Item1, out index, inSuffix: true))
+                        {
+                            // Check also afterString
+                            isMatch = isMatchAfter = true;
+                        }
+
+                        if (isMatch)
+                        {
+                            // For InConnectorRegex and range unit like "week, month, year", it should output dateRange or datetimeRange
+                            // For WithinNextPrefixRegex and range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
+                            bool isUnitMatch = false;
+                            foreach (var unitRegex in regex.Item2)
+                            {
+                                isUnitMatch = isUnitMatch || unitRegex.IsMatch(er.Text);
+                            }
+
+                            if (!isUnitMatch)
+                            {
+                                if (er.Start != null && er.Length != null && ((int)er.Start >= index || isMatchAfter))
+                                {
+                                    int start = (int)er.Start - (!isMatchAfter ? index : 0);
+                                    int end = (int)er.Start + (int)er.Length + (isMatchAfter ? index : 0);
+                                    ret.Add(new Token(start, end));
+                                }
+                            }
+
+                            break;
                         }
                     }
                 }
@@ -104,13 +188,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = unitRegex.Matches(text);
                 if (matches.Count > 0)
                 {
-                    var afterStr =
-                            text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                                .Trim().ToLowerInvariant();
+                    var afterStr = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
 
-                    var beforeStr =
-                        text.Substring(0, (int)durationRes[0].Start)
-                            .Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, (int)durationRes[0].Start).Trim();
 
                     var mode = AgoLaterMode.Date;
                     if (pr.TimexStr.Contains("T"))
@@ -151,45 +231,97 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Mod = Constants.LESS_THAN_MOD;
             }
 
-            if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
-            {
-                var match = utilityConfiguration.AgoRegex.Match(afterStr);
-                var swift = 0;
+            int swift = 0;
+            bool isMatch = false, isLater = false;
+            string dayStr = null;
 
-                // Handle cases like "3 days before yesterday"
-                if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+            // Item2 is a label identifying the regex defined in Item1
+            var agoLaterRegexTuples = new List<(Regex, string)>
+            {
+                (utilityConfiguration.AgoRegex, Constants.AGO_LABEL),
+                (utilityConfiguration.LaterRegex, Constants.LATER_LABEL),
+            };
+
+            // AgoRegex and LaterRegex cases
+            foreach (var regex in agoLaterRegexTuples)
+            {
+                // Match in afterStr
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, regex.Item1, inSuffix: true))
                 {
-                    swift = swiftDay(match.Groups["day"].Value);
+                    isMatch = true;
+                    isLater = regex.Item2 == Constants.LATER_LABEL;
+                    var match = regex.Item1.Match(afterStr);
+                    dayStr = match.Groups["day"].Value;
                 }
 
-                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), false);
+                if (utilityConfiguration.CheckBothBeforeAfter)
+                {
+                    // Match split between beforeStr and afterStr
+                    if (string.IsNullOrEmpty(dayStr) && isMatch)
+                    {
+                        var match = regex.Item1.Match(beforeStr + " " + afterStr);
+                        dayStr = match.Groups["day"].Value;
+                    }
 
-                ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
+                    // Match in beforeStr
+                    if (string.IsNullOrEmpty(dayStr) && MatchingUtil.ContainsAgoLaterIndex(beforeStr, regex.Item1, inSuffix: false))
+                    {
+                        isMatch = true;
+                        isLater = regex.Item2 == Constants.LATER_LABEL;
+                        var match = regex.Item1.Match(beforeStr);
+                        dayStr = match.Groups["day"].Value;
+                    }
+                }
+
+                if (isMatch)
+                {
+                    break;
+                }
             }
-            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
-                     MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex))
+
+            // InConnectorRegex cases
+            if (!isMatch)
             {
-                var match = utilityConfiguration.LaterRegex.Match(afterStr);
-                var swift = 0;
-
-                // Handle cases like "3 days after tomorrow"
-                if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+                if (MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex))
                 {
-                    swift = swiftDay(match.Groups["day"].Value);
+                    // Match in afterStr
+                    isMatch = isLater = true;
+                    var match = utilityConfiguration.LaterRegex.Match(afterStr);
+                    dayStr = match.Groups["day"].Value;
+                }
+                else if (utilityConfiguration.CheckBothBeforeAfter && MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.InConnectorRegex, inSuffix: true))
+                {
+                    // Match in beforeStr
+                    isMatch = isLater = true;
+                    var match = utilityConfiguration.LaterRegex.Match(beforeStr);
+                    dayStr = match.Groups["day"].Value;
+                }
+            }
+
+            if (isMatch)
+            {
+                // Handle cases like "3 days before yesterday", "3 days after tomorrow"
+                if (!string.IsNullOrEmpty(dayStr))
+                {
+                    swift = swiftDay(dayStr);
                 }
 
-                var yearMatch = utilityConfiguration.SinceYearSuffixRegex.Match(afterStr);
-                if (yearMatch.Success)
+                if (isLater)
                 {
-                    var yearString = yearMatch.Groups[Constants.YearGroupName].Value;
-                    var yearEr = new ExtractResult { Text = yearString };
-                    var year = Convert.ToInt32((double)(numberParser.Parse(yearEr).Value ?? 0));
-                    referenceTime = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                    var yearMatch = utilityConfiguration.SinceYearSuffixRegex.Match(afterStr);
+                    if (yearMatch.Success)
+                    {
+                        var yearString = yearMatch.Groups[Constants.YearGroupName].Value;
+                        var yearEr = new ExtractResult { Text = yearString };
+                        var year = Convert.ToInt32((double)(numberParser.Parse(yearEr).Value ?? 0));
+                        referenceTime = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                    }
                 }
 
-                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), true);
+                var isFuture = isLater;
+                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), future: isFuture);
 
-                ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.AFTER_MOD;
+                ((DateTimeResolutionResult)durationParseResult.Value).Mod = isLater ? Constants.AFTER_MOD : Constants.BEFORE_MOD;
             }
 
             if (resultDateTime != referenceTime)

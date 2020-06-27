@@ -33,7 +33,7 @@ public class PortugueseNumberWithUnitParserConfiguration extends BaseNumberWithU
 
     public PortugueseNumberWithUnitParserConfiguration(CultureInfo ci) {
         super(ci);
-        this.internalNumberExtractor = new NumberExtractor(NumberMode.Default);
+        this.internalNumberExtractor = NumberExtractor.getInstance(NumberMode.Default);
         this.internalNumberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration());
     }
 }

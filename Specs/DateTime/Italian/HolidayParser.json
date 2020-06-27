@@ -4,21 +4,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "pasqua",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "XXXX-03-27",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-04-16"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2016-03-27"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 6
       }
     ]
   },
@@ -27,11 +28,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il giorno di natale",
+        "Text": "giorno di natale",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-12-25",
@@ -41,7 +41,9 @@
           "PastResolution": {
             "date": "2015-12-25"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -50,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -64,7 +65,9 @@
           "PastResolution": {
             "date": "2015-12-31"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 23
       }
     ]
   },
@@ -73,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -87,7 +89,9 @@
           "PastResolution": {
             "date": "2015-12-25"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 6
       }
     ]
   },
@@ -96,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -110,7 +113,9 @@
           "PastResolution": {
             "date": "2016-01-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -119,7 +124,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -133,7 +137,9 @@
           "PastResolution": {
             "date": "2015-11-26"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 25
       }
     ]
   },
@@ -142,7 +148,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -156,7 +161,9 @@
           "PastResolution": {
             "date": "2015-11-26"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
@@ -165,21 +172,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "festa del papà",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-06-WXX-7-3",
+          "Timex": "XXXX-03-19",
           "FutureResolution": {
-            "date": "2017-06-18"
+            "date": "2017-03-19"
           },
           "PastResolution": {
-            "date": "2016-06-19"
+            "date": "2016-03-19"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 14
       }
     ]
   },
@@ -188,7 +196,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -202,7 +209,9 @@
           "PastResolution": {
             "date": "2017-01-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 34
       }
     ]
   },
@@ -211,7 +220,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -225,7 +233,9 @@
           "PastResolution": {
             "date": "2010-11-25"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 34
       }
     ]
   },
@@ -234,21 +244,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "festa del papà del 2015",
         "Type": "date",
         "Value": {
-          "Timex": "2015-06-WXX-7-3",
+          "Timex": "2015-03-19",
           "FutureResolution": {
-            "date": "2015-06-21"
+            "date": "2015-03-19"
           },
           "PastResolution": {
-            "date": "2015-06-21"
+            "date": "2015-03-19"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 23
       }
     ]
   }

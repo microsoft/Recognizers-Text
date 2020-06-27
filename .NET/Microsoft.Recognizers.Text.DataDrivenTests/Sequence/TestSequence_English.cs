@@ -6,68 +6,53 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
     [TestClass]
     public class TestSequence_English : TestBase
     {
-        public static TestResources TestResources { get; protected set; }
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            this.TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PhoneNumberModel-English.csv", "PhoneNumberModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void PhoneNumberModel()
+        public void PhoneNumberModel(TestModel testSpec)
         {
-            TestPhoneNumber();
+            TestPhoneNumber(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "IpAddressModel-English.csv", "IpAddressModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void IpAddressModel()
+        public void IpAddressModel(TestModel testSpec)
         {
-            TestIpAddress();
+            TestIpAddress(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "MentionModel-English.csv", "MentionModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void MentionModel()
+        public void MentionModel(TestModel testSpec)
         {
-            TestMention();
+            TestMention(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HashtagModel-English.csv", "HashtagModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void HashtagModel()
+        public void HashtagModel(TestModel testSpec)
         {
-            TestHashtag();
+            TestHashtag(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "EmailModel-English.csv", "EmailModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void EmailModel()
+        public void EmailModel(TestModel testSpec)
         {
-            TestEmail();
+            TestEmail(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "URLModel-English.csv", "URLModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void URLModel()
+        public void URLModel(TestModel testSpec)
         {
-            TestURL();
+            TestURL(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "GUIDModel-English.csv", "GUIDModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void GUIDModel()
+        public void GUIDModel(TestModel testSpec)
         {
-            TestGUID();
+            TestGUID(testSpec);
         }
     }
 }

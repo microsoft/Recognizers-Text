@@ -1,27 +1,37 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions.Italian;
+
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class ItalianDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
+        public static readonly Regex InexactNumberUnitRegex2 = new Regex(DateTimeDefinitions.InexactNumberUnitRegex2, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ItalianDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = ItalianDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
+
             AnUnitRegex = ItalianDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = ItalianDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = ItalianDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = ItalianDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = ItalianDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = ItalianDurationExtractorConfiguration.DurationFollowedUnit;
+
             ConjunctionRegex = ItalianDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = ItalianDurationExtractorConfiguration.InexactNumberRegex;
-            InexactNumberUnitRegex = ItalianDurationExtractorConfiguration.InexactNumberUnitRegex;
+            InexactNumberUnitRegex = InexactNumberUnitRegex2;
             DurationUnitRegex = ItalianDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = ItalianDurationExtractorConfiguration.SpecialNumberUnitRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
@@ -29,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -54,6 +64,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

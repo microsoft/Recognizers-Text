@@ -295,5 +295,55 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "Let's meet once a week",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "once a week",
+        "Type": "set",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I go on vacation once a year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "once a year",
+        "Type": "set",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Every other Friday",
+    "Results": [
+      {
+        "Text": "Every other Friday",
+        "Type": "set",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Let's have a quarterly meeting.",
+    "Results": [
+      {
+        "Text": "quarterly",
+        "Type": "set",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
   }
 ]

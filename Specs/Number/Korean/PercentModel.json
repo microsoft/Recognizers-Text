@@ -1,7 +1,7 @@
 [
   {
     "Input": "100%",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "100%",
@@ -14,7 +14,7 @@
   },
   {
     "Input": " 100% ",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "100%",
@@ -27,7 +27,7 @@
   },
   {
     "Input": " 100 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "100 퍼센트",
@@ -40,7 +40,7 @@
   },
   {
     "Input": " 100 프로",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "100 프로",
@@ -53,7 +53,7 @@
   },
   {
     "Input": "240 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "240 퍼센트",
@@ -66,7 +66,7 @@
   },
   {
     "Input": "20프로",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "20프로",
@@ -79,7 +79,8 @@
   },
   {
     "Input": "이십 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이십 퍼센트",
@@ -92,7 +93,8 @@
   },
   {
     "Input": "삼십 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "삼십 퍼센트",
@@ -105,7 +107,8 @@
   },
   {
     "Input": "백퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백퍼센트",
@@ -118,7 +121,8 @@
   },
   {
     "Input": "백 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백 퍼센트",
@@ -131,7 +135,8 @@
   },
   {
     "Input": "십퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "십퍼센트",
@@ -144,7 +149,8 @@
   },
   {
     "Input": "이십이 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이십이 퍼센트",
@@ -157,7 +163,8 @@
   },
   {
     "Input": "이백십 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이백십 퍼센트",
@@ -170,7 +177,8 @@
   },
   {
     "Input": "십 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "십 퍼센트",
@@ -183,7 +191,7 @@
   },
   {
     "Input": "-5퍼센트가 필요합니다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "-5퍼센트",
@@ -193,5 +201,218 @@
         }
       }
     ]
+  },
+  {
+    "Input": "100% 맞습니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "100% 틀렸습니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "100 퍼센트 정답입니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "100 퍼센티지의 승률",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100 퍼센티지",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "240 퍼센트의 수익률",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "240 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "이십 퍼센트 할인 중",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "삼십 퍼센티지의 승률",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼십 퍼센티지",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "백 퍼센트 이길 겁니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "십 퍼센트만 올려주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "십 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "이십이 퍼센트로 앞서나가고 있습니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십이 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "이백십 퍼센트의 수익률",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이백십 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "십 퍼센트는 내 몫이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "십 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "마이너스 오 퍼센트만 필요해",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "마이너스 오 퍼센트",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 로 가면 된다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "https://www.test.com/search?q=30%25%2020% 로 가면 된다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
   }
 ]

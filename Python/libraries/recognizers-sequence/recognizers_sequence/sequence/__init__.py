@@ -3,3 +3,6 @@ from .constants import *
 from .models import *
 from .extractors import *
 from .parsers import *
+from .english import *
+from .chinese import *
+from .portuguese import *

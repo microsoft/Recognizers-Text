@@ -7,7 +7,7 @@ import { BaseUnits } from "../../resources/baseUnits";
 export class SpanishTemperatureExtractorConfiguration extends SpanishNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 
@@ -30,7 +30,7 @@ export class SpanishTemperatureExtractorConfiguration extends SpanishNumberWithU
 
 export class SpanishTemperatureParserConfiguration extends SpanishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Spanish);
         }
 

@@ -782,5 +782,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             @"yer",
             @"yen"
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
+        };
     }
 }

@@ -11,14 +11,16 @@
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class PortugueseNumeric:
     LangMarker = 'Por'
-    CompoundNumberLanguage = True
-    MultiDecimalSeparatorCulture = True
+    CompoundNumberLanguage = False
+    MultiDecimalSeparatorCulture = False
     HundredsNumberIntegerRegex = f'(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))'
-    RoundNumberIntegerRegex = f'(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)'
-    ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)'
-    TenToNineteenIntegerRegex = f'(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)'
+    RoundNumberIntegerRegex = f'(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))'
+    ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)'
+    TenToNineteenIntegerRegex = f'(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)'
     TensNumberIntegerRegex = f'(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
     BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+e\\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})'
@@ -34,7 +36,9 @@ class PortugueseNumeric:
     PlaceHolderPureNumber = f'\\b'
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((meia)?\\s+(d[úu]zia))|({AllIntRegex}\\s+(e|com)\\s+)?({AllIntRegex}\\s+(d[úu]zia(s)?|dezena(s)?)))(?=\\b)'
-    NumbersWithPlaceHolder = lambda placeholder: f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})'
+
+    def NumbersWithPlaceHolder(placeholder):
+        return f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})'
     NumbersWithSuffix = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
     RoundNumberIntegerRegexWithLocks = f'(?<=\\b)({DigitsNumberRegex})+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     NumbersWithDozenSuffix = f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dezena(s)?(?=\\b)'
@@ -57,13 +61,17 @@ class PortugueseNumeric:
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\\b)'
     FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(e\\s+)?)?(um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)(?=\\b)'
-    FractionPrepositionRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
+    FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllFloatRegex = f'{AllIntRegex}(\\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
     DoubleWithMultiplierRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
     DoubleExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)'
     DoubleCaretExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
-    DoubleDecimalPointRegex = lambda placeholder: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})'
-    DoubleWithoutIntegralRegex = lambda placeholder: f'(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?={placeholder})'
+
+    def DoubleDecimalPointRegex(placeholder):
+        return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})'
+
+    def DoubleWithoutIntegralRegex(placeholder):
+        return f'(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?={placeholder})'
     DoubleWithRoundNumber = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)'
@@ -366,6 +374,7 @@ class PortugueseNumeric:
                            ("g", 1000000000),
                            ("b", 1000000000),
                            ("t", 1000000000000)])
+    AmbiguityFiltersDict = dict([("^[.]", "")])
     RelativeReferenceOffsetMap = dict([("", "")])
     RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

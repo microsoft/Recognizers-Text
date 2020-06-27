@@ -3,10 +3,12 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
-from recognizers_number.number.french.extractors import FrenchCardinalExtractor
-from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 from ...resources.french_date_time import FrenchDateTime
-from ..base_duration import DurationParserConfiguration
+
+from ..extractors import DateTimeExtractor
+from ..base_duration import DurationParserConfiguration, BaseDurationExtractor
+from .duration_extractor_config import FrenchDurationExtractorConfiguration
+
 
 class FrenchDurationParserConfiguration(DurationParserConfiguration):
     @property
@@ -57,16 +59,30 @@ class FrenchDurationParserConfiguration(DurationParserConfiguration):
     def double_numbers(self) -> Dict[str, float]:
         return self._double_numbers
 
+    def duration_extractor(self) -> DateTimeExtractor:
+        return self._duration_extractor
+
     def __init__(self, config):
+        self.duration_extractor = BaseDurationExtractor(
+            FrenchDurationExtractorConfiguration(), False)
         self._cardinal_extractor = config.cardinal_extractor
         self._number_parser = config.number_parser
-        self._followed_unit = RegExpUtility.get_safe_reg_exp(FrenchDateTime.DurationFollowedUnit)
-        self._suffix_and_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SuffixAndRegex)
-        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NumberCombinedWithDurationUnit)
-        self._an_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AnUnitRegex)
-        self._all_date_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AllRegex)
-        self._half_date_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.HalfRegex)
-        self._inexact_number_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.InexactNumberUnitRegex)
+        self._followed_unit = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.DurationFollowedUnit)
+        self._suffix_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SuffixAndRegex)
+        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NumberCombinedWithDurationUnit)
+        self._an_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AnUnitRegex)
+        self._all_date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AllRegex)
+        self._half_date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.HalfRegex)
+        self._inexact_number_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.InexactNumberUnitRegex)
         self._unit_map = config.unit_map
         self._unit_value_map = config.unit_value_map
         self._double_numbers = config.double_numbers
+        # TODO When the implementation for this property is added, change the None value to their respective Regexp
+        self._duration_extractor = None

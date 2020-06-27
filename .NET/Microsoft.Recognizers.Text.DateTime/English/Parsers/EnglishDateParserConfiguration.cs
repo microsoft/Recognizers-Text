@@ -6,19 +6,23 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class EnglishDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
              : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
+
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
+
             DateRegexes = new EnglishDateExtractorConfiguration(this).DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
@@ -37,17 +41,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StrictRelativeRegex = EnglishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
+
             SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
             PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
             PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
@@ -137,11 +144,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             if (NextPrefixRegex.IsMatch(trimmedText))
@@ -159,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("last");
         }
 

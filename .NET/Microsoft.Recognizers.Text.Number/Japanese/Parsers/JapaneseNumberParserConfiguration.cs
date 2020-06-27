@@ -10,57 +10,58 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class JapaneseNumberParserConfiguration : BaseNumberParserConfiguration, ICJKNumberParserConfiguration
     {
-        public JapaneseNumberParserConfiguration()
-            : this(new CultureInfo(Culture.Japanese))
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public JapaneseNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
 
-        public JapaneseNumberParserConfiguration(CultureInfo ci)
-        {
-            LangMarker = NumbersDefinitions.LangMarker;
-            CultureInfo = ci;
-            IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
-            IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
+            this.Config = config;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
+            this.CultureInfo = new CultureInfo(config.Culture);
 
-            DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
-            FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
-            NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
-            HalfADozenText = NumbersDefinitions.HalfADozenText;
-            WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
-            ZeroChar = NumbersDefinitions.ZeroChar;
-            PairChar = NumbersDefinitions.PairChar;
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
-            WrittenDecimalSeparatorTexts = Enumerable.Empty<string>();
-            WrittenGroupSeparatorTexts = Enumerable.Empty<string>();
-            WrittenIntegerSeparatorTexts = Enumerable.Empty<string>();
-            WrittenFractionSeparatorTexts = Enumerable.Empty<string>();
+            this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
+            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
+            this.NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
+            this.HalfADozenText = NumbersDefinitions.HalfADozenText;
+            this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
+            this.ZeroChar = NumbersDefinitions.ZeroChar;
+            this.PairChar = NumbersDefinitions.PairChar;
 
-            CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
-            OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
-            RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
-            RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
-            RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
-            ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
-            FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
-            RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
-            UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
-            RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
-            TenChars = NumbersDefinitions.TenChars.ToImmutableList();
+            this.WrittenDecimalSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenGroupSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenIntegerSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenFractionSeparatorTexts = Enumerable.Empty<string>();
 
-            HalfADozenRegex = null;
+            this.CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
+            this.OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
+            this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
+            this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
+            this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
+            this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
+            this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
+
+            this.HalfADozenRegex = null;
 
             // @TODO Change init to follow design in other languages
-            DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexOptions.Singleline);
-            PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.Singleline);
-            DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.Singleline);
-            DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexOptions.Singleline);
-            FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexOptions.Singleline);
-            NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline);
-            PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.Singleline);
-            PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.Singleline);
-            RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexOptions.Singleline);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexFlags);
+            this.PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexFlags);
+            this.DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexFlags);
+            this.DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags);
+            this.FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexFlags);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
+            this.PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags);
+            this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
+            this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

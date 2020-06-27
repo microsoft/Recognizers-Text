@@ -84,6 +84,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         dayOfMonth = config.getDayOfMonth();
         monthOfYear = config.getMonthOfYear();
         seasonMap = config.getSeasonMap();
+        specialYearPrefixesMap = config.getSpecialYearPrefixesMap();
         writtenDecades = config.getWrittenDecades();
         numbers = config.getNumbers();
         specialDecadeCases = config.getSpecialDecadeCases();
@@ -160,6 +161,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final ImmutableMap<String, Integer> dayOfMonth;
     private final ImmutableMap<String, Integer> monthOfYear;
     private final ImmutableMap<String, String> seasonMap;
+    private final ImmutableMap<String, String> specialYearPrefixesMap;
     private final ImmutableMap<String, Integer> writtenDecades;
     private final ImmutableMap<String, Integer> numbers;
     private final ImmutableMap<String, Integer> specialDecadeCases;
@@ -447,6 +449,11 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public ImmutableMap<String, String> getSeasonMap() {
         return seasonMap;
+    }
+
+    @Override
+    public ImmutableMap<String, String> getSpecialYearPrefixesMap() {
+        return specialYearPrefixesMap;
     }
 
     @Override

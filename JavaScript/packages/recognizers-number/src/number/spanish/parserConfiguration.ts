@@ -2,7 +2,7 @@ import { ParseResult } from "@microsoft/recognizers-text";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { SpanishNumeric } from "../../resources/spanishNumeric";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class SpanishNumberParserConfiguration implements INumberParserConfiguration {
 
@@ -19,10 +19,10 @@ export class SpanishNumberParserConfiguration implements INumberParserConfigurat
     readonly nonDecimalSeparatorChar: string;
     readonly decimalSeparatorChar: string;
     readonly wordSeparatorToken: string;
-    readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenFractionSeparatorTexts: ReadonlyArray<string>;
+    readonly writtenDecimalSeparatorTexts: readonly string[];
+    readonly writtenGroupSeparatorTexts: readonly string[];
+    readonly writtenIntegerSeparatorTexts: readonly string[];
+    readonly writtenFractionSeparatorTexts: readonly string[];
 
     constructor(ci?: CultureInfo) {
         if (!ci) {
@@ -61,7 +61,7 @@ export class SpanishNumberParserConfiguration implements INumberParserConfigurat
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(SpanishNumeric.DigitalNumberRegex);
     }
 
-    normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {
+    normalizeTokenSet(tokens: readonly string[], context: ParseResult): readonly string[] {
         let result = new Array<string>();
 
         tokens.forEach((token: string) => {

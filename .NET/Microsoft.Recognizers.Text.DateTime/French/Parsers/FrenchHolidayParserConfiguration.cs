@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public FrenchHolidayParserConfiguration(IOptionsConfiguration config)
+        public FrenchHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = FrenchHolidayExtractorConfiguration.HolidayRegexList;
@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
             if (trimmedText.EndsWith("prochain"))
             {
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 { "newyeareve", NewYearEve },
                 { "fathersday", FathersDay },
                 { "mothersday", MothersDay },
-                { "labourday", LabourDay },
+                { "labourday", InternationalWorkersDay },
             };
         }
 
@@ -155,6 +155,5 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private static new DateObject MothersDay(int year) => new DateObject(year, 5, 27);
 
-        private static new DateObject LabourDay(int year) => new DateObject(year, 5, 1);
     }
 }

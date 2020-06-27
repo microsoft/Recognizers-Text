@@ -21,8 +21,8 @@
             "endDate": "2016-11-22"
           }
         },
-        "Start": 12,
-        "Length": 23
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -48,8 +48,8 @@
             "endDate": "2016-12-23"
           }
         },
-        "Start": 12,
-        "Length": 23
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -75,8 +75,8 @@
             "endDate": "2016-09-12"
           }
         },
-        "Start": 12,
-        "Length": 23
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -102,8 +102,8 @@
             "endDate": "2016-11-15"
           }
         },
-        "Start": 12,
-        "Length": 43
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -129,8 +129,8 @@
             "endDate": "2016-11-23"
           }
         },
-        "Start": 12,
-        "Length": 23
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -156,8 +156,8 @@
             "endDate": "2016-11-22"
           }
         },
-        "Start": 12,
-        "Length": 27
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -183,8 +183,8 @@
             "endDate": "2016-09-12"
           }
         },
-        "Start": 12,
-        "Length": 24
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -210,8 +210,8 @@
             "endDate": "1995-01-22"
           }
         },
-        "Start": 12,
-        "Length": 26
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -237,8 +237,8 @@
             "endDate": "1995-01-22"
           }
         },
-        "Start": 12,
-        "Length": 26
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -264,8 +264,8 @@
             "endDate": "2016-09-08"
           }
         },
-        "Start": 12,
-        "Length": 43
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -291,8 +291,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -318,8 +318,8 @@
             "endDate": "2016-11-21"
           }
         },
-        "Start": 19,
-        "Length": 11
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -345,8 +345,8 @@
             "endDate": "2016-03-01"
           }
         },
-        "Start": 12,
-        "Length": 8
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -372,8 +372,8 @@
             "endDate": "2016-10-01"
           }
         },
-        "Start": 12,
-        "Length": 14
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -399,8 +399,8 @@
             "endDate": "2015-10-01"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -426,8 +426,8 @@
             "endDate": "2017-07-01"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -453,8 +453,8 @@
             "endDate": "2016-11-21"
           }
         },
-        "Start": 12,
-        "Length": 28
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -480,8 +480,8 @@
             "endDate": "2016-08-01"
           }
         },
-        "Start": 12,
-        "Length": 21
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -508,7 +508,7 @@
           }
         },
         "Start": 0,
-        "Length": 22
+        "Length": 7
       }
     ]
   },
@@ -535,7 +535,7 @@
           }
         },
         "Start": 0,
-        "Length": 23
+        "Length": 7
       }
     ]
   },
@@ -561,8 +561,8 @@
             "endDate": "2015-04-01"
           }
         },
-        "Start": 12,
-        "Length": 6
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -589,7 +589,7 @@
           }
         },
         "Start": 0,
-        "Length": 11
+        "Length": 8
       }
     ]
   },
@@ -616,7 +616,7 @@
           }
         },
         "Start": 0,
-        "Length": 13
+        "Length": 5
       }
     ]
   },
@@ -643,7 +643,7 @@
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 3
       }
     ]
   },
@@ -669,8 +669,8 @@
             "endDate": "2026-01-05"
           }
         },
-        "Start": 34,
-        "Length": 9
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -697,7 +697,7 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 3
       }
     ]
   },
@@ -724,7 +724,7 @@
           }
         },
         "Start": 0,
-        "Length": 11
+        "Length": 4
       }
     ]
   },
@@ -751,7 +751,7 @@
           }
         },
         "Start": 0,
-        "Length": 12
+        "Length": 3
       }
     ]
   },
@@ -778,7 +778,7 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 4
       }
     ]
   },
@@ -804,13 +804,13 @@
             "endDate": "2016-10-22"
           }
         },
-        "Start": 12,
-        "Length": 20
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
-    "Input": "2016年1月12日から2016年2月22日まで不在にします。",
+    "Input": "2016年1月12日から2016年1月22日まで不在にします。",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -818,7 +818,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2016年1月12日から2016年2月22日",
+        "Text": "2016年1月12日から2016年1月22日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-01-12,2016-01-22,P10D)",
@@ -831,8 +831,8 @@
             "endDate": "2016-01-22"
           }
         },
-        "Start": 12,
-        "Length": 29
+        "Start": 0,
+        "Length": 24
       }
     ]
   },
@@ -858,8 +858,8 @@
             "endDate": "2016-01-22"
           }
         },
-        "Start": 12,
-        "Length": 28
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -885,8 +885,8 @@
             "endDate": "2016-11-08"
           }
         },
-        "Start": 12,
-        "Length": 19
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -912,8 +912,8 @@
             "endDate": "2016-10-22"
           }
         },
-        "Start": 12,
-        "Length": 25
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -939,8 +939,8 @@
             "endDate": "2016-10-22"
           }
         },
-        "Start": 12,
-        "Length": 29
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -966,8 +966,8 @@
             "endDate": "2015-11-20"
           }
         },
-        "Start": 12,
-        "Length": 14
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -993,8 +993,8 @@
             "endDate": "2015-11-20"
           }
         },
-        "Start": 12,
-        "Length": 26
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1020,8 +1020,8 @@
             "endDate": "2016-11-13"
           }
         },
-        "Start": 12,
-        "Length": 16
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1047,8 +1047,8 @@
             "endDate": "2016-11-13"
           }
         },
-        "Start": 12,
-        "Length": 12
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1074,8 +1074,8 @@
             "endDate": "2016-11-13"
           }
         },
-        "Start": 12,
-        "Length": 14
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -1101,8 +1101,8 @@
             "endDate": "2016-11-13"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1128,8 +1128,8 @@
             "endDate": "2016-11-30"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1155,8 +1155,8 @@
             "endDate": "2016-12-31"
           }
         },
-        "Start": 12,
-        "Length": 16
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -1182,8 +1182,8 @@
             "endDate": "2016-11-13"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1209,8 +1209,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 15,
-        "Length": 7
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -1236,8 +1236,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 15,
-        "Length": 12
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -1263,8 +1263,8 @@
             "endDate": "2016-07-01"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -1290,8 +1290,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -1317,8 +1317,8 @@
             "endDate": "2016-11-11"
           }
         },
-        "Start": 12,
-        "Length": 11
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1344,8 +1344,8 @@
             "endDate": "2017-02-08"
           }
         },
-        "Start": 12,
-        "Length": 13
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1371,8 +1371,8 @@
             "endDate": "2016-11-07"
           }
         },
-        "Start": 12,
-        "Length": 16
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -1399,7 +1399,7 @@
           }
         },
         "Start": 0,
-        "Length": 21
+        "Length": 7
       }
     ]
   },
@@ -1425,8 +1425,8 @@
             "endDate": "2027-01-25"
           }
         },
-        "Start": 12,
-        "Length": 22
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -1452,8 +1452,8 @@
             "endDate": "2017-01-23"
           }
         },
-        "Start": 12,
-        "Length": 24
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1479,8 +1479,8 @@
             "endDate": "2016-10-01"
           }
         },
-        "Start": 12,
-        "Length": 25
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1506,8 +1506,8 @@
             "endDate": "2016-10-01"
           }
         },
-        "Start": 12,
-        "Length": 27
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1533,8 +1533,8 @@
             "endDate": "2016-10-01"
           }
         },
-        "Start": 20,
-        "Length": 2
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -1560,8 +1560,8 @@
             "endDate": "2016-07-01"
           }
         },
-        "Start": 20,
-        "Length": 2
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -1587,8 +1587,8 @@
             "endDate": "2016-04-01"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1614,8 +1614,8 @@
             "endDate": "2017-01-01"
           }
         },
-        "Start": 19,
-        "Length": 7
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1641,8 +1641,8 @@
             "endDate": "2016-07-01"
           }
         },
-        "Start": 19,
-        "Length": 7
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -1668,8 +1668,8 @@
             "endDate": "2017-01-01"
           }
         },
-        "Start": 19,
-        "Length": 7
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -1689,8 +1689,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 11,
-        "Length": 11
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -1710,8 +1710,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 11,
-        "Length": 11
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -1731,8 +1731,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 11,
-        "Length": 10
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -1752,8 +1752,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 11,
-        "Length": 6
+        "Start": 0,
+        "Length": 1
       }
     ]
   },
@@ -1773,8 +1773,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 11,
-        "Length": 11
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -1801,7 +1801,7 @@
           }
         },
         "Start": 0,
-        "Length": 14
+        "Length": 2
       }
     ]
   },
@@ -1828,8 +1828,8 @@
             "endDate": "2017-12-01"
           }
         },
-        "Start": 30,
-        "Length": 15
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1856,8 +1856,8 @@
             "endDate": "2017-11-13"
           }
         },
-        "Start": 30,
-        "Length": 14
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1884,8 +1884,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 30,
-        "Length": 14
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1912,8 +1912,8 @@
             "endDate": "2018-07-01"
           }
         },
-        "Start": 30,
-        "Length": 15
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -1940,8 +1940,8 @@
             "endDate": "2017-11-16"
           }
         },
-        "Start": 30,
-        "Length": 15
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -1968,8 +1968,8 @@
             "endDate": "2017-12-16"
           }
         },
-        "Start": 30,
-        "Length": 16
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -1996,8 +1996,8 @@
             "endDate": "2017-01-01"
           }
         },
-        "Start": 17,
-        "Length": 14
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
@@ -2024,8 +2024,8 @@
             "endDate": "2017-11-06"
           }
         },
-        "Start": 17,
-        "Length": 14
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
@@ -2052,8 +2052,8 @@
             "endDate": "2017-11-01"
           }
         },
-        "Start": 17,
-        "Length": 15
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
@@ -2079,8 +2079,8 @@
             "endDate": "2017-11-24"
           }
         },
-        "Start": 61,
-        "Length": 38
+        "Start": 18,
+        "Length": 13
       }
     ]
   },
@@ -2106,8 +2106,8 @@
             "endDate": "2017-11-12"
           }
         },
-        "Start": 61,
-        "Length": 35
+        "Start": 18,
+        "Length": 13
       }
     ]
   },
@@ -2133,8 +2133,8 @@
             "endDate": "2017-11-16"
           }
         },
-        "Start": 61,
-        "Length": 26
+        "Start": 18,
+        "Length": 11
       }
     ]
   },
@@ -2160,8 +2160,8 @@
             "endDate": "2017-11-20"
           }
         },
-        "Start": 17,
-        "Length": 9
+        "Start": 4,
+        "Length": 2
       }
     ]
   },
@@ -2187,8 +2187,8 @@
             "endDate": "2017-01-09"
           }
         },
-        "Start": 17,
-        "Length": 23
+        "Start": 4,
+        "Length": 6
       }
     ]
   },
@@ -2215,7 +2215,7 @@
           }
         },
         "Start": 0,
-        "Length": 18
+        "Length": 9
       }
     ]
   },
@@ -2242,7 +2242,7 @@
           }
         },
         "Start": 0,
-        "Length": 19
+        "Length": 9
       }
     ]
   },
@@ -2269,7 +2269,7 @@
           }
         },
         "Start": 0,
-        "Length": 12
+        "Length": 3
       }
     ]
   },
@@ -2296,7 +2296,7 @@
           }
         },
         "Start": 0,
-        "Length": 17
+        "Length": 10
       }
     ]
   },
@@ -2322,8 +2322,8 @@
             "endDate": "0248-01-01"
           }
         },
-        "Start": 12,
-        "Length": 8
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -2349,8 +2349,8 @@
             "endDate": "1980-01-01"
           }
         },
-        "Start": 3,
-        "Length": 9
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2376,8 +2376,8 @@
             "endDate": "2010-01-01"
           }
         },
-        "Start": 3,
-        "Length": 9
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2403,8 +2403,8 @@
             "endDate": "1980-01-01"
           }
         },
-        "Start": 3,
-        "Length": 7
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -2430,8 +2430,8 @@
             "endDate": "1950-01-01"
           }
         },
-        "Start": 3,
-        "Length": 8
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -2457,8 +2457,8 @@
             "endDate": "2020-01-01"
           }
         },
-        "Start": 3,
-        "Length": 25
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2484,8 +2484,8 @@
             "endDate": "2010-01-01"
           }
         },
-        "Start": 3,
-        "Length": 17
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2511,8 +2511,8 @@
             "endDate": "2018-02-07"
           }
         },
-        "Start": 12,
-        "Length": 42
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -2538,8 +2538,8 @@
             "endDate": "2018-02-07"
           }
         },
-        "Start": 12,
-        "Length": 45
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -2565,8 +2565,8 @@
             "endDate": "1999-07-01"
           }
         },
-        "Start": 15,
-        "Length": 28
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -2592,8 +2592,8 @@
             "endDate": "1929-01-01"
           }
         },
-        "Start": 3,
-        "Length": 21
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2619,8 +2619,8 @@
             "endDate": "1790-01-01"
           }
         },
-        "Start": 3,
-        "Length": 42
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2646,8 +2646,8 @@
             "endDate": "2020-10-01"
           }
         },
-        "Start": 12,
-        "Length": 44
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -2667,8 +2667,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 3,
-        "Length": 36
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -2695,7 +2695,7 @@
           }
         },
         "Start": 0,
-        "Length": 32
+        "Length": 4
       }
     ]
   },
@@ -2721,8 +2721,8 @@
             "endDate": "2016-11-28"
           }
         },
-        "Start": 12,
-        "Length": 19
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2748,8 +2748,8 @@
             "endDate": "2017-02-01"
           }
         },
-        "Start": 12,
-        "Length": 24
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2775,8 +2775,8 @@
             "endDate": "2019-01-01"
           }
         },
-        "Start": 12,
-        "Length": 19
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2802,8 +2802,8 @@
             "endDate": "2016-11-28"
           }
         },
-        "Start": 12,
-        "Length": 26
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2829,8 +2829,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 3,
+        "Length": 14
       }
     ]
   },
@@ -2856,8 +2856,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 13,
-        "Length": 17
+        "Start": 3,
+        "Length": 14
       }
     ]
   },
@@ -2883,8 +2883,8 @@
             "endDate": "2014-01-01"
           }
         },
-        "Start": 13,
-        "Length": 49
+        "Start": 3,
+        "Length": 14
       }
     ]
   },
@@ -2910,8 +2910,8 @@
             "endDate": "2010-01-01"
           }
         },
-        "Start": 15,
-        "Length": 18
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -2937,8 +2937,8 @@
             "endDate": "2030-01-01"
           }
         },
-        "Start": 15,
-        "Length": 15
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -2964,8 +2964,8 @@
             "endDate": "2050-01-01"
           }
         },
-        "Start": 15,
-        "Length": 18
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -2991,8 +2991,8 @@
             "endDate": "2016-12-06"
           }
         },
-        "Start": 15,
-        "Length": 21
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -3018,8 +3018,8 @@
             "endDate": "2016-11-10"
           }
         },
-        "Start": 15,
-        "Length": 12
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -3046,8 +3046,8 @@
             "endDate": "2017-11-16"
           }
         },
-        "Start": 27,
-        "Length": 22
+        "Start": 5,
+        "Length": 5
       }
     ]
   },
@@ -3074,8 +3074,8 @@
             "endDate": "2017-11-20"
           }
         },
-        "Start": 24,
-        "Length": 16
+        "Start": 7,
+        "Length": 6
       }
     ]
   },
@@ -3102,8 +3102,8 @@
             "endDate": "2017-11-16"
           }
         },
-        "Start": 24,
-        "Length": 18
+        "Start": 7,
+        "Length": 5
       }
     ]
   },
@@ -3130,8 +3130,8 @@
             "endDate": "2017-04-01"
           }
         },
-        "Start": 24,
-        "Length": 12
+        "Start": 5,
+        "Length": 5
       }
     ]
   },
@@ -3158,8 +3158,8 @@
             "endDate": "2017-11-18"
           }
         },
-        "Start": 31,
-        "Length": 13
+        "Start": 5,
+        "Length": 4
       }
     ]
   },
@@ -3186,8 +3186,8 @@
             "endDate": "2017-11-16"
           }
         },
-        "Start": 21,
-        "Length": 22
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -3208,8 +3208,8 @@
           "FutureResolution": {},
           "PastResolution": {}
         },
-        "Start": 14,
-        "Length": 10
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -3235,8 +3235,8 @@
             "endDate": "2017-11-13"
           }
         },
-        "Start": 15,
-        "Length": 13
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -3262,8 +3262,8 @@
             "endDate": "2018-09-08"
           }
         },
-        "Start": 15,
-        "Length": 16
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3289,8 +3289,8 @@
             "endDate": "2020-11-08"
           }
         },
-        "Start": 15,
-        "Length": 14
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -3316,8 +3316,8 @@
             "endDate": "2022-12-20"
           }
         },
-        "Start": 15,
-        "Length": 30
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -3343,8 +3343,8 @@
             "endDate": "2020-11-08"
           }
         },
-        "Start": 15,
-        "Length": 23
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -3370,8 +3370,8 @@
             "endDate": "2022-12-20"
           }
         },
-        "Start": 15,
-        "Length": 43
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -3397,8 +3397,8 @@
             "endDate": "2017-04-07"
           }
         },
-        "Start": 14,
-        "Length": 19
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -3424,8 +3424,8 @@
             "endDate": "2016-12-01"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -3451,8 +3451,8 @@
             "endDate": "2016-04-05"
           }
         },
-        "Start": 12,
-        "Length": 33
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -3478,8 +3478,8 @@
             "endDate": "2018-02-05"
           }
         },
-        "Start": 12,
-        "Length": 41
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
@@ -3505,8 +3505,8 @@
             "endDate": "2018-02-01"
           }
         },
-        "Start": 12,
-        "Length": 37
+        "Start": 0,
+        "Length": 20
       }
     ]
   },
@@ -3532,8 +3532,8 @@
             "endDate": "2018-02-01"
           }
         },
-        "Start": 12,
-        "Length": 25
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -3559,8 +3559,8 @@
             "endDate": "2019-03-01"
           }
         },
-        "Start": 12,
-        "Length": 26
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -3586,8 +3586,8 @@
             "endDate": "2019-03-01"
           }
         },
-        "Start": 12,
-        "Length": 30
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -3613,8 +3613,8 @@
             "endDate": "2018-05-01"
           }
         },
-        "Start": 12,
-        "Length": 30
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -3640,8 +3640,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 12,
-        "Length": 25
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -3667,8 +3667,8 @@
             "endDate": "2018-06-01"
           }
         },
-        "Start": 12,
-        "Length": 30
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -3694,8 +3694,8 @@
             "endDate": "2018-01-05"
           }
         },
-        "Start": 12,
-        "Length": 33
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -3721,8 +3721,8 @@
             "endDate": "2017-05-05"
           }
         },
-        "Start": 12,
-        "Length": 26
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -3748,8 +3748,8 @@
             "endDate": "2019-01-01"
           }
         },
-        "Start": 12,
-        "Length": 30
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -3775,8 +3775,8 @@
             "endDate": "2018-08-27"
           }
         },
-        "Start": 12,
-        "Length": 23
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -3802,8 +3802,8 @@
             "endDate": "2018-08-27"
           }
         },
-        "Start": 12,
-        "Length": 27
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -3829,8 +3829,8 @@
             "endDate": "2018-05-06"
           }
         },
-        "Start": 15,
-        "Length": 37
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -3857,8 +3857,8 @@
             "endDate": "2017-11-20"
           }
         },
-        "Start": 20,
-        "Length": 9
+        "Start": 10,
+        "Length": 3
       }
     ]
   },
@@ -3885,8 +3885,8 @@
             "endDate": "2017-12-01"
           }
         },
-        "Start": 20,
-        "Length": 10
+        "Start": 10,
+        "Length": 3
       }
     ]
   },
@@ -3913,8 +3913,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 16,
-        "Length": 12
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -3941,8 +3941,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 20,
-        "Length": 9
+        "Start": 10,
+        "Length": 3
       }
     ]
   },
@@ -3968,8 +3968,8 @@
             "endDate": "2018-05-31"
           }
         },
-        "Start": 39,
-        "Length": 19
+        "Start": 4,
+        "Length": 4
       }
     ]
   },
@@ -3995,8 +3995,8 @@
             "endDate": "2018-05-13"
           }
         },
-        "Start": 39,
-        "Length": 18
+        "Start": 4,
+        "Length": 4
       }
     ]
   },
@@ -4022,8 +4022,8 @@
             "endDate": "2018-05-28"
           }
         },
-        "Start": 39,
-        "Length": 17
+        "Start": 4,
+        "Length": 4
       }
     ]
   },
@@ -4049,8 +4049,8 @@
             "endDate": "2017-11-13"
           }
         },
-        "Start": 30,
-        "Length": 15
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4076,8 +4076,8 @@
             "endDate": "2018-06-01"
           }
         },
-        "Start": 30,
-        "Length": 16
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4103,8 +4103,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 30,
-        "Length": 17
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -4129,8 +4129,8 @@
             "startDate": "2018-06-12"
           }
         },
-        "Start": 21,
-        "Length": 29
+        "Start": 5,
+        "Length": 11
       }
     ]
   },
@@ -4156,8 +4156,8 @@
             "endDate": "2018-06-12"
           }
         },
-        "Start": 17,
-        "Length": 28
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -4182,8 +4182,8 @@
             "endDate": "2018-05-15"
           }
         },
-        "Start": 36,
-        "Length": 30
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -4208,8 +4208,8 @@
             "endDate": "2018-05-26"
           }
         },
-        "Start": 32,
-        "Length": 33
+        "Start": 5,
+        "Length": 8
       }
     ]
   },
@@ -4235,8 +4235,8 @@
             "endDate": "2018-06-02"
           }
         },
-        "Start": 23,
-        "Length": 31
+        "Start": 5,
+        "Length": 8
       }
     ]
   },
@@ -4262,8 +4262,8 @@
             "endDate": "1500-01-01"
           }
         },
-        "Start": 14,
-        "Length": 13
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -4289,8 +4289,8 @@
             "endDate": "2100-01-01"
           }
         },
-        "Start": 23,
-        "Length": 12
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -4316,8 +4316,8 @@
             "endDate": "2018-07-23"
           }
         },
-        "Start": 45,
-        "Length": 20
+        "Start": 5,
+        "Length": 5
       }
     ]
   },
@@ -4343,8 +4343,8 @@
             "endDate": "2018-08-20"
           }
         },
-        "Start": 45,
-        "Length": 20
+        "Start": 5,
+        "Length": 5
       }
     ]
   },
@@ -4370,8 +4370,8 @@
             "endDate": "2020-01-01"
           }
         },
-        "Start": 20,
-        "Length": 11
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -4398,7 +4398,7 @@
           }
         },
         "Start": 0,
-        "Length": 17
+        "Length": 14
       }
     ]
   },
@@ -4425,7 +4425,7 @@
           }
         },
         "Start": 0,
-        "Length": 19
+        "Length": 15
       }
     ]
   },
@@ -4451,8 +4451,8 @@
             "endDate": "2019-01-07"
           }
         },
-        "Start": 43,
-        "Length": 9
+        "Start": 5,
+        "Length": 2
       }
     ]
   },
@@ -4478,8 +4478,8 @@
             "endDate": "2017-01-02"
           }
         },
-        "Start": 36,
-        "Length": 9
+        "Start": 6,
+        "Length": 2
       }
     ]
   },
@@ -4505,8 +4505,8 @@
             "endDate": "2016-01-04"
           }
         },
-        "Start": 21,
-        "Length": 9
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -4830,6 +4830,32 @@
         },
         "Start": 0,
         "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "4月の最終月曜日から10月1日まで",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java,dotnet",
+    "Results": [
+      {
+        "Text": "4月の最後の月曜日から10月1日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
+          "FutureResolution": {
+            "startDate": "2019-08-26",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-27",
+            "endDate": "2018-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   }

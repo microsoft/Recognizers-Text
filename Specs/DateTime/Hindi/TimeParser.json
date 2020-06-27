@@ -1,0 +1,1747 @@
+[
+  {
+    "Input": "आठ चालीस के लिए अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आठ चालीस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "सवेरे आठ चालीस के लिए अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सवेरे आठ चालीस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "शाम आठ चालीस के लिए अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम आठ चालीस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:40",
+          "FutureResolution": {
+            "time": "20:40:00"
+          },
+          "PastResolution": {
+            "time": "20:40:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "दस पेंतालिस का अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दस पेंतालिस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:45",
+          "FutureResolution": {
+            "time": "10:45:00"
+          },
+          "PastResolution": {
+            "time": "10:45:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर के पंद्रह पंद्रह के लिए अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर के पंद्रह पंद्रह",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:15",
+          "FutureResolution": {
+            "time": "15:15:00"
+          },
+          "PastResolution": {
+            "time": "15:15:00"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर पंद्रह तीस का अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर पंद्रह तीस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:30",
+          "FutureResolution": {
+            "time": "15:30:00"
+          },
+          "PastResolution": {
+            "time": "15:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "दस बजकर दस का अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दस बजकर दस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "रात दस पचपन के लिए अलार्म सेट करो ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रात दस पचपन",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:55",
+          "FutureResolution": {
+            "time": "22:55:00"
+          },
+          "PastResolution": {
+            "time": "22:55:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं 7 बजे वापस आऊँगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं सात बजे वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 7 बजे वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 7 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 7 बजकर 56 मिनट पर वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 7 बजकर 56 मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम 7:56:30 पर वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 7:56:30",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं 7:56:30 pm पर वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7:56:30 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं 12:34 पर वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं 12:34:25 पर वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12:34:25",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:25",
+          "FutureResolution": {
+            "time": "12:34:25"
+          },
+          "PastResolution": {
+            "time": "12:34:25"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "7 बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "सात बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "सुबह के 8 बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह के 8 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "रात के 8 बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रात के 8 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "साढ़े आठ बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साढ़े आठ बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "रात के साढ़े 8 बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रात के साढ़े 8 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:30",
+          "FutureResolution": {
+            "time": "20:30:00"
+          },
+          "PastResolution": {
+            "time": "20:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "आठ बजकर तीस मिनट हुए हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आठ बजकर तीस मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "आठ बजकर पंद्रह मिनट हुए हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आठ बजकर पंद्रह मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "सवा आठ बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सवा आठ बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "शाम के 9 पैंतालिस हुए हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के 9 पैंतालिस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:45",
+          "FutureResolution": {
+            "time": "21:45:00"
+          },
+          "PastResolution": {
+            "time": "21:45:00"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "आठ बजने में तीन मिनट बाकी हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आठ बजने में तीन मिनट बाकी",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:57",
+          "FutureResolution": {
+            "time": "07:57:00"
+          },
+          "PastResolution": {
+            "time": "07:57:00"
+          }
+        },
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "साढ़े सात बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साढ़े सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "शाम के साढ़े सात बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के साढ़े सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "सुबह के साढ़े सात बजे हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह के साढ़े सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "सुबह के आठ बजने में पंद्रह मिनट बाकी हैं ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह के आठ बजने में पंद्रह मिनट बाकी",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:45",
+          "FutureResolution": {
+            "time": "07:45:00"
+          },
+          "PastResolution": {
+            "time": "07:45:00"
+          }
+        },
+        "Start": 0,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "शाम के आठ बजकर 20 मिनट हुए हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के आठ बजकर 20 मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:20",
+          "FutureResolution": {
+            "time": "20:20:00"
+          },
+          "PastResolution": {
+            "time": "20:20:00"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम को 7 बजे वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम को 7 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम के 7 बजे वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के 7 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम को 7:00 बजे वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम को 7:00 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं अपराहन 7:00:05 पर वापस आउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अपराहन 7:00:05",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:05",
+          "FutureResolution": {
+            "time": "19:00:05"
+          },
+          "PastResolution": {
+            "time": "19:00:05"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम सेवन पीएम को वापस आ जाउंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम सेवन पीएम",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम साढ़े सात बजे वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम साढ़े सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम सात बजकर पैंतीस मिनट पर वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम सात बजकर पैंतीस मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:35",
+          "FutureResolution": {
+            "time": "19:35:00"
+          },
+          "PastResolution": {
+            "time": "19:35:00"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं रात ग्यारह बीस पर वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रात ग्यारह बीस",
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:20",
+          "FutureResolution": {
+            "time": "23:20:00"
+          },
+          "PastResolution": {
+            "time": "23:20:00"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं दोपहर तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं दोपहर 12 बजे तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 12 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं लगभग ग्यारह बजे तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "लगभग ग्यारह बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं अराउंड ग्यारह बजे तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अराउंड ग्यारह बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं दोपहर 3:40 तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 3:40",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:40",
+          "FutureResolution": {
+            "time": "15:40:00"
+          },
+          "PastResolution": {
+            "time": "15:40:00"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह 11:40 तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह 11:40",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:40",
+          "FutureResolution": {
+            "time": "11:40:00"
+          },
+          "PastResolution": {
+            "time": "11:40:00"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "आधी रात ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधी रात",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "आधी-रात ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधी-रात",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मध्य रात्रि",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मध्य रात्रि",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "बीचसुबह ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीचसुबह",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मध्य-सुबह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मध्य-सुबह",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मध्य सुबह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मध्य सुबह",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "भरी दुपहरी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "भरी दुपहरी",
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "देर दोपहर ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "देर दोपहर",
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर देर से",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर देर",
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर में",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "दिन के मध्य में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन के मध्य",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "दिन के बीच में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन के बीच",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मध्याह्न",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मध्याह्न",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं लंच के समय 12 बजे तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "लंच के समय 12 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं आधी रात 12 बजे वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधी रात 12 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं रात को 12 बजे वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रात को 12 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं आधी रात को 1 बजे वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधी रात को 1 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं 12 बजे दोपहर खाने के वक़्त तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 बजे दोपहर खाने के वक़्त तक",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11 बजे दोपहर खाने के वक़्त तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 बजे दोपहर खाने के वक़्त तक",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 बजे दोपहर खाने के वक़्त तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 बजे दोपहर खाने के वक़्त तक",
+        "Type": "time",
+        "Value": {
+          "Timex": "T13",
+          "FutureResolution": {
+            "time": "13:00:00"
+          },
+          "PastResolution": {
+            "time": "13:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं दोपहर खाने के समय 11 बजे तक वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर खाने के समय 11 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम के 7:56:13 पर  वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के 7:56:13",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:13",
+          "FutureResolution": {
+            "time": "19:56:13"
+          },
+          "PastResolution": {
+            "time": "19:56:13"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं १२:३४:४५ पर  वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "१२:३४:४५",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:45",
+          "FutureResolution": {
+            "time": "12:34:45"
+          },
+          "PastResolution": {
+            "time": "12:34:45"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं दोपहर के 7:00:25 पर  वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर के 7:00:25",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:25",
+          "FutureResolution": {
+            "time": "19:00:25"
+          },
+          "PastResolution": {
+            "time": "19:00:25"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह के साढ़े सात बजे वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह के साढ़े सात बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं ग्यारह पाँच पर वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ग्यारह पाँच",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:05",
+          "FutureResolution": {
+            "time": "11:05:00"
+          },
+          "PastResolution": {
+            "time": "11:05:00"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं साढ़े पाँच बजने में तीन मिनट बाकी होने पर वापस जाउंगा",
+    "Comment": "the case corresponds to 'I'll go back three mins to five thirty' but in Hindi has a different structure (half past five three mins to) which is not supported",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साढ़े पाँच बजने में तीन मिनट बाकी",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:27",
+          "FutureResolution": {
+            "time": "05:27:00"
+          },
+          "PastResolution": {
+            "time": "05:27:00"
+          }
+        },
+        "Start": 4,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "मैं रात में साढ़े पाँच बजे वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रात में साढ़े पाँच बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं साढ़े पाँच बजे रात में वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साढ़े पाँच बजे रात में",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं मध्याह्न को वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मध्याह्न",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं दोपहर के खाने के वक़्त 12 बजे वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर के खाने के वक़्त 12 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं 7 बजकर 1 मिनट पर वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7 बजकर 1 मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:01",
+          "FutureResolution": {
+            "time": "07:01:00"
+          },
+          "PastResolution": {
+            "time": "07:01:00"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम के दस बजकर दस मिनट पर वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के दस बजकर दस मिनट",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:10",
+          "FutureResolution": {
+            "time": "22:10:00"
+          },
+          "PastResolution": {
+            "time": "22:10:00"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं शाम के दस बजकर दस मिनट होने के तीन मिनट बाद वापस आ जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम के दस बजकर दस मिनट होने के तीन मिनट बाद",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:13",
+          "FutureResolution": {
+            "time": "22:13:00"
+          },
+          "PastResolution": {
+            "time": "22:13:00"
+          }
+        },
+        "Start": 4,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "शाम 3 बजे : इस समय मैं इस हफ्ते बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 3 बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "time": "15:00:00"
+          },
+          "PastResolution": {
+            "time": "15:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "इस हफ्ते सुबह आठ बजे ठीक रहेगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह आठ बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "इस हफ्ते शाम आठ बजे ठीक रहेगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम आठ बजे",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 10
+      }
+    ]
+  }
+]

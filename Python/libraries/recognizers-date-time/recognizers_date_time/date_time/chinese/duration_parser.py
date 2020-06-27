@@ -10,10 +10,12 @@ from ..parsers import DateTimeParseResult
 from ..base_duration import BaseDurationParser
 from .duration_parser_config import ChineseDurationParserConfiguration, ChineseDurationNumberWithUnitParserConfiguration
 
+
 class ChineseDurationParser(BaseDurationParser):
     def __init__(self):
         super().__init__(ChineseDurationParserConfiguration())
-        self._internal_parser = NumberWithUnitParser(ChineseDurationNumberWithUnitParserConfiguration())
+        self._internal_parser = NumberWithUnitParser(
+            ChineseDurationNumberWithUnitParserConfiguration())
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if reference is None:
@@ -43,13 +45,16 @@ class ChineseDurationParser(BaseDurationParser):
                 number_str = str((float(number_str) + 0.5))
 
             unit_type = 'T' if self.is_less_than_day(unit_str) else ''
-            time_value = int(float(number_str) * self.config.unit_value_map.get(unit_str, 1))
+            time_value = int(float(number_str) *
+                             self.config.unit_value_map.get(unit_str, 1))
 
             inner_result.timex = f'P{unit_type}{number_str}{unit_str[0]}'
             inner_result.future_value = time_value
             inner_result.past_value = time_value
-            inner_result.future_resolution[TimeTypeConstants.DURATION] = str(inner_result.future_value)
-            inner_result.past_resolution[TimeTypeConstants.DURATION] = str(inner_result.past_value)
+            inner_result.future_resolution[TimeTypeConstants.DURATION] = str(
+                inner_result.future_value)
+            inner_result.past_resolution[TimeTypeConstants.DURATION] = str(
+                inner_result.past_value)
 
             result = DateTimeParseResult(source)
             result.value = inner_result

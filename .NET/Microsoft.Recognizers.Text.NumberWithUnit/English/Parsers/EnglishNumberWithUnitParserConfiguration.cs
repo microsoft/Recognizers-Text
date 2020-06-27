@@ -9,8 +9,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public EnglishNumberWithUnitParserConfiguration(CultureInfo ci)
                : base(ci)
         {
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration());
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.English, NumberOptions.None);
+
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new EnglishNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
         }
 

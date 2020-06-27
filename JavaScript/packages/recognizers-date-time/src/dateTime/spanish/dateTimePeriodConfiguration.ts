@@ -40,15 +40,15 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly middlePauseRegex: RegExp;
 
     readonly fromRegex: RegExp;
-    readonly connectorAndRegex: RegExp;
+    readonly RangeConnectorRegex: RegExp;
     readonly betweenRegex: RegExp;
 
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd)
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
@@ -64,17 +64,17 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex);
         this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex);
         this.generalEndingRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.GeneralEndingRegex);
-        this.middlePauseRegex= RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
+        this.middlePauseRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
 
         this.cardinalExtractor = new SpanishCardinalExtractor();
 
-        this.singleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.singleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.singleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
     }
@@ -88,7 +88,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     }
 
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, source).matched;
+        return RegExpUtility.getFirstMatchIndex(this.RangeConnectorRegex, source).matched;
     }
 }
 

@@ -1,35 +1,55 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseMergedExtractorConfiguration : IDateTimeExtractor
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.Singleline);
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.Singleline);
-        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexOptions.Singleline);
-        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.Singleline);
-        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
+
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
+
+        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
+
+        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
+
+        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+
+        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly JapaneseDateExtractorConfiguration DateExtractor = new JapaneseDateExtractorConfiguration();
+
         private static readonly JapaneseTimeExtractorConfiguration TimeExtractor = new JapaneseTimeExtractorConfiguration();
+
         private static readonly JapaneseDateTimeExtractorConfiguration DateTimeExtractor = new JapaneseDateTimeExtractorConfiguration();
+
         private static readonly JapaneseDatePeriodExtractorConfiguration DatePeriodExtractor = new JapaneseDatePeriodExtractorConfiguration();
+
         private static readonly JapaneseTimePeriodExtractorConfiguration TimePeriodExtractor = new JapaneseTimePeriodExtractorConfiguration();
+
         private static readonly JapaneseDateTimePeriodExtractorConfiguration DateTimePeriodExtractor = new JapaneseDateTimePeriodExtractorConfiguration();
+
         private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
+
         private static readonly JapaneseSetExtractorConfiguration SetExtractor = new JapaneseSetExtractorConfiguration();
-        private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new JapaneseHolidayExtractorConfiguration());
 
-        private readonly DateTimeOptions options;
+        private readonly IDateTimeOptionsConfiguration config;
 
-        public JapaneseMergedExtractorConfiguration(DateTimeOptions options)
+        public JapaneseMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
         {
-            this.options = options;
+            this.config = config;
+
+            HolidayExtractor = new BaseHolidayExtractor(new JapaneseHolidayExtractorConfiguration(config));
         }
+
+        private BaseHolidayExtractor HolidayExtractor { get; }
 
         public List<ExtractResult> Extract(string text)
         {
@@ -113,15 +133,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var lastEnd = 0;
             foreach (var er in ers)
             {
-                var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
-                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+                var beforeStr = text.Substring(lastEnd, er.Start ?? 0);
+                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
                 var match = BeforeRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
-                    var modLengh = match.Index + match.Length;
-                    er.Length += modLengh;
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -129,8 +149,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (match.Success)
                 {
-                    var modLengh = match.Index + match.Length;
-                    er.Length += modLengh;
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -138,9 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (match.Success)
                 {
-                    var modLengh = beforeStr.Length - match.Index;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -148,9 +168,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (match.Success)
                 {
-                    var modLengh = beforeStr.Length - match.Index;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -158,8 +178,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (match.Success)
                 {
-                    var modLengh = match.Index + match.Length;
-                    er.Length += modLengh;
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
             }
@@ -184,7 +204,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             foreach (var result in src)
             {
                 var isFound = false;
-                int resultMatchtIndex = -1, resultMatchLength = 1;
+                int resultMatchIndex = -1, resultMatchLength = 1;
                 for (var i = 0; i < dst.Count; i++)
                 {
                     if (dst[i].IsOverlap(result))
@@ -192,7 +212,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         isFound = true;
                         if (result.Length > dst[i].Length)
                         {
-                            resultMatchtIndex = i;
+                            resultMatchIndex = i;
                             var j = i + 1;
                             while (j < dst.Count && dst[j].IsOverlap(result))
                             {
@@ -209,15 +229,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     dst.Add(result);
                 }
-                else if (resultMatchtIndex >= 0)
+                else if (resultMatchIndex >= 0)
                 {
-                    dst.RemoveRange(resultMatchtIndex, resultMatchLength);
+                    dst.RemoveRange(resultMatchIndex, resultMatchLength);
                     var tmpDst = MoveOverlap(dst, result);
                     dst.Clear();
                     dst.AddRange(tmpDst);
-                    dst.Insert(resultMatchtIndex, result);
+                    dst.Insert(resultMatchIndex, result);
                 }
             }
         }
+
     }
 }

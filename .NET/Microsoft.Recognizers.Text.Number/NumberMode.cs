@@ -8,11 +8,6 @@
         Default,
 
         /// <summary>
-        /// Unit is for unit
-        /// </summary>
-        Unit,
-
-        /// <summary>
         /// Add 67.5 billion and million support.
         /// </summary>
         Currency,
@@ -21,5 +16,10 @@
         /// Don't extract number from cases like 16ml
         /// </summary>
         PureNumber,
+
+        /// <summary>
+        /// Unit is for unit
+        /// </summary>
+        Unit,
     }
 }

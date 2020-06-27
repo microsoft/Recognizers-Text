@@ -30,11 +30,11 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
-    readonly connectorAndRegex: RegExp;
+    readonly RangeConnectorRegex: RegExp;
     readonly betweenRegex: RegExp;
     readonly nowRegex: RegExp
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex),
@@ -70,11 +70,11 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeUnitRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
-        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.integerExtractor = new SpanishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
@@ -89,7 +89,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, source).matched;
+        return RegExpUtility.getFirstMatchIndex(this.RangeConnectorRegex, source).matched;
     }
 }
 

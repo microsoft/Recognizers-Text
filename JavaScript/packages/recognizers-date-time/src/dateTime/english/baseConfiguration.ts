@@ -1,24 +1,24 @@
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { EnglishCardinalExtractor, EnglishIntegerExtractor, EnglishOrdinalExtractor, BaseNumberParser, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
-import { EnglishDateTime } from "../../resources/englishDateTime"
-import { BaseDateTime } from "../../resources/baseDateTime"
-import { DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities"
-import { BaseDateParserConfiguration } from "../parsers"
-import { BaseDateExtractor, BaseDateParser} from "../baseDate"
-import { BaseTimeExtractor} from "../baseTime"
-import { BaseDatePeriodExtractor, BaseDatePeriodParser} from "../baseDatePeriod"
-import { BaseTimePeriodExtractor, BaseTimePeriodParser} from "../baseTimePeriod"
-import { BaseDateTimeExtractor, BaseDateTimeParser} from "../baseDateTime"
-import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "../baseDateTimePeriod"
-import { BaseDurationExtractor, BaseDurationParser} from "../baseDuration"
-import { EnglishDurationExtractorConfiguration, EnglishDurationParserConfiguration } from "./durationConfiguration"
-import { EnglishTimeExtractorConfiguration, EnglishTimeParserConfiguration } from "./timeConfiguration"
-import { EnglishDateExtractorConfiguration, EnglishDateParserConfiguration } from "./dateConfiguration"
-import { EnglishDateTimeExtractorConfiguration, EnglishDateTimeParserConfiguration } from "./dateTimeConfiguration"
-import { EnglishTimePeriodExtractorConfiguration, EnglishTimePeriodParserConfiguration } from "./timePeriodConfiguration"
-import { EnglishDatePeriodExtractorConfiguration, EnglishDatePeriodParserConfiguration } from "./datePeriodConfiguration"
-import { EnglishDateTimePeriodExtractorConfiguration, EnglishDateTimePeriodParserConfiguration } from "./dateTimePeriodConfiguration"
-import { EnglishTimeParser } from "./parsers"
+import { EnglishDateTime } from "../../resources/englishDateTime";
+import { BaseDateTime } from "../../resources/baseDateTime";
+import { DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities";
+import { BaseDateParserConfiguration } from "../parsers";
+import { BaseDateExtractor, BaseDateParser } from "../baseDate";
+import { BaseTimeExtractor } from "../baseTime";
+import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
+import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
+import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
+import { EnglishDurationExtractorConfiguration, EnglishDurationParserConfiguration } from "./durationConfiguration";
+import { EnglishTimeExtractorConfiguration, EnglishTimeParserConfiguration } from "./timeConfiguration";
+import { EnglishDateExtractorConfiguration, EnglishDateParserConfiguration } from "./dateConfiguration";
+import { EnglishDateTimeExtractorConfiguration, EnglishDateTimeParserConfiguration } from "./dateTimeConfiguration";
+import { EnglishTimePeriodExtractorConfiguration, EnglishTimePeriodParserConfiguration } from "./timePeriodConfiguration";
+import { EnglishDatePeriodExtractorConfiguration, EnglishDatePeriodParserConfiguration } from "./datePeriodConfiguration";
+import { EnglishDateTimePeriodExtractorConfiguration, EnglishDateTimePeriodParserConfiguration } from "./dateTimePeriodConfiguration";
+import { EnglishTimeParser } from "./parsers";
 
 export class EnglishDateTimeUtilityConfiguration implements IDateTimeUtilityConfiguration {
     readonly agoRegex: RegExp;
@@ -41,7 +41,7 @@ export class EnglishDateTimeUtilityConfiguration implements IDateTimeUtilityConf
 }
 
 export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         super();
         this.utilityConfiguration = new EnglishDateTimeUtilityConfiguration();
         this.unitMap = EnglishDateTime.UnitMap;
@@ -57,15 +57,15 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.ordinalExtractor = new EnglishOrdinalExtractor();
         this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
-        this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+        this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this, dmyDateFormat));
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
         this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));

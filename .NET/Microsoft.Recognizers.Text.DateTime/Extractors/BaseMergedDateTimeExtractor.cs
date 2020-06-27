@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
+        private static readonly Regex NumberOrConnectorRegex = new Regex(@"^[0-9-]+$", RegexOptions.Compiled);
+
         private readonly IMergedExtractorConfiguration config;
 
         public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
@@ -17,29 +20,45 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public static bool HasTokenIndex(string text, Regex regex, out int index)
+        public static bool HasTokenIndex(string text, Regex regex, out int index, bool inPrefix)
         {
             index = -1;
 
             // Support cases has two or more specific tokens
             // For example, "show me sales after 2010 and before 2018 or before 2000"
             // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
+            RegexOptions regexFlags = inPrefix ? RegexOptions.RightToLeft | RegexOptions.Singleline : RegexOptions.Singleline;
+            var match = Regex.Match(text, regex.ToString(), regexFlags);
 
-            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
+            if (match.Success)
             {
-                index = match.Index;
-                return true;
+                var subStr = inPrefix ? text.Substring(match.Index + match.Length) : text.Substring(0, match.Index);
+                if (string.IsNullOrEmpty(subStr))
+                {
+                    index = inPrefix ? match.Index : match.Length;
+                    return true;
+                }
             }
 
             return false;
         }
 
-        public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool potentialAmbiguity = false)
         {
             var beforeStr = text.Substring(0, er.Start ?? 0);
+            var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+            if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
+            {
+                var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                {
+                    return false;
+                }
+            }
+
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex, inPrefix: true))
             {
                 var modLength = beforeStr.Length - tokenIndex;
 
@@ -47,7 +66,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
 
+                er.Metadata = AssignModMetadata(er.Metadata);
+
                 return true;
+            }
+            else if (this.config.CheckBothBeforeAfter)
+            {
+                // check also afterStr
+                afterStr = text.Substring(er.Start + er.Length ?? 0);
+                if (HasTokenIndex(afterStr.TrimStart(), tokenRegex, out tokenIndex, inPrefix: false))
+                {
+                    var modLength = tokenIndex + afterStr.Length - afterStr.TrimStart().Length;
+
+                    er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    er.Data = Constants.HAS_MOD;
+                    er.Metadata = AssignModMetadata(er.Metadata);
+
+                    return true;
+                }
             }
 
             return false;
@@ -128,6 +165,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        private Metadata AssignModMetadata(Metadata metadata)
+        {
+            if (metadata == null)
+            {
+                metadata = new Metadata { HasMod = true };
+            }
+            else
+            {
+                metadata.HasMod = true;
+            }
+
+            return metadata;
         }
 
         private bool IsFailFastCase(string input)
@@ -217,37 +268,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
             {
-                foreach (var regex in config.AmbiguityFiltersDict)
+                foreach (var regex in this.config.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er =>
-                                !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                            .ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
-        }
+            // @TODO: Refactor to remove this method and use the general ambiguity filter approach
+            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
+                    .ToList();
 
-        private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
-        {
-            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text))
-            {
-                var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
-                if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return extractResults;
         }
 
         // Handle cases like "move 3pm appointment to 4"
@@ -257,8 +300,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var extractResult in extractResults)
             {
-                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture) ||
-                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.InvariantCulture))
+                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) ||
+                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
                 {
                     var stringAfter = text.Substring((int)extractResult.Start + (int)extractResult.Length);
                     var match = this.config.NumberEndingPattern.Match(stringAfter);
@@ -293,47 +336,59 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!success)
                 {
-                    success = TryMergeModifierToken(er, config.SinceRegex, text);
+                    // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+                    success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
                 }
 
                 if (!success)
                 {
-                    TryMergeModifierToken(er, config.AroundRegex, text);
+                    success = TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.InvariantCulture) ||
-                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture) ||
-                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture))
+                if (!success)
+                {
+                    success = TryMergeModifierToken(er, config.EqualRegex, text);
+                }
+
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     // 2012 or after/above, 3 pm or later
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
-                    var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
-
-                    if (match.Success)
+                    if (afterStr.Length > 1)
                     {
-                        var isFollowedByOtherEntity = true;
 
-                        if (match.Length == afterStr.Trim().Length)
-                        {
-                            isFollowedByOtherEntity = false;
-                        }
-                        else
-                        {
-                            var nextStr = afterStr.Trim().Substring(match.Length).Trim();
-                            var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
+                        var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
-                            if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                        if (match.Success && match.Value != ".")
+                        {
+                            var isFollowedByOtherEntity = true;
+
+                            if (match.Length == afterStr.Trim().Length)
                             {
                                 isFollowedByOtherEntity = false;
                             }
-                        }
+                            else
+                            {
+                                var nextStr = afterStr.Trim().Substring(match.Length).Trim();
+                                var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                        if (!isFollowedByOtherEntity)
-                        {
-                            var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
-                            er.Length += modLength;
-                            er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                                {
+                                    isFollowedByOtherEntity = false;
+                                }
+                            }
+
+                            if (!isFollowedByOtherEntity)
+                            {
+                                var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
+                                er.Length += modLength;
+                                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                                er.Metadata = AssignModMetadata(er.Metadata);
+                            }
                         }
                     }
                 }

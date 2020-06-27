@@ -122,8 +122,9 @@ public class GermanNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex);
+    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{BaseNumbers.CommonCurrencySymbol}", BaseNumbers.CommonCurrencySymbol);
 
     public static final String AllPointRegex = "((\\s*{ZeroToNineIntegerRegex})+|(\\s*{SeparaIntRegex}))"
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
@@ -141,7 +142,7 @@ public class GermanNumeric {
     public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
 
     public static String DoubleDecimalPointRegex(String placeholder) {
-        return "((\\d{1,3})(\\.\\d{3})*(\\,\\d+)?)(?={placeholder})"
+        return "(?<=\\b)((\\d{1,3})(\\.\\d{3})*(\\,\\d+)?)(?={placeholder})"
             .replace("{placeholder}", placeholder);
     }
 
@@ -194,6 +195,7 @@ public class GermanNumeric {
         .put("eins", 1L)
         .put("einer", 1L)
         .put("einen", 1L)
+        .put("beiden", 2L)
         .put("zwei", 2L)
         .put("zwo", 2L)
         .put("drei", 3L)
@@ -485,6 +487,10 @@ public class GermanNumeric {
         .put("g", 1000000000L)
         .put("b", 1000000000L)
         .put("t", 1000000000000L)
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()

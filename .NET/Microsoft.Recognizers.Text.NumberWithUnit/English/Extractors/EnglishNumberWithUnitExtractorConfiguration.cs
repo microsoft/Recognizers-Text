@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
 
@@ -12,19 +13,27 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public abstract class EnglishNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
 
         private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
 
         protected EnglishNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = NumberExtractor.GetInstance(NumberMode.Unit);
+
+            var unitNumConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None, NumberMode.Unit);
+            this.UnitNumExtractor = NumberExtractor.GetInstance(unitNumConfig);
+
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }

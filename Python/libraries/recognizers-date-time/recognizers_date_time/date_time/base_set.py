@@ -17,6 +17,7 @@ from .base_datetime import BaseDateTimeParser, MatchedTimex
 from .base_dateperiod import BaseDatePeriodParser
 from .base_datetimeperiod import BaseDateTimePeriodParser
 
+
 class SetExtractorConfiguration(ABC):
     @property
     @abstractmethod
@@ -93,6 +94,7 @@ class SetExtractorConfiguration(ABC):
     def date_time_period_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
+
 class BaseSetExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -110,12 +112,18 @@ class BaseSetExtractor(DateTimeExtractor):
         tokens.extend(self.match_periodic(source))
         tokens.extend(self.match_each_duration(source, reference))
         tokens.extend(self.time_everyday(source, reference))
-        tokens.extend(self.match_each(self.config.date_extractor, source, reference))
-        tokens.extend(self.match_each(self.config.time_extractor, source, reference))
-        tokens.extend(self.match_each(self.config.date_time_extractor, source, reference))
-        tokens.extend(self.match_each(self.config.date_period_extractor, source, reference))
-        tokens.extend(self.match_each(self.config.time_period_extractor, source, reference))
-        tokens.extend(self.match_each(self.config.date_time_period_extractor, source, reference))
+        tokens.extend(self.match_each(
+            self.config.date_extractor, source, reference))
+        tokens.extend(self.match_each(
+            self.config.time_extractor, source, reference))
+        tokens.extend(self.match_each(
+            self.config.date_time_extractor, source, reference))
+        tokens.extend(self.match_each(
+            self.config.date_period_extractor, source, reference))
+        tokens.extend(self.match_each(
+            self.config.time_period_extractor, source, reference))
+        tokens.extend(self.match_each(
+            self.config.date_time_period_extractor, source, reference))
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
 
@@ -142,11 +150,13 @@ class BaseSetExtractor(DateTimeExtractor):
             after_str = source[extract_result.start + extract_result.length:]
             if not after_str and self.config.before_each_day_regex is not None:
                 before_str = source[0:extract_result.start]
-                before_match = regex.search(self.config.before_each_day_regex, before_str)
+                before_match = regex.search(
+                    self.config.before_each_day_regex, before_str)
                 if before_match:
                     yield Token(before_match.start(), extract_result.start + extract_result.length)
             else:
-                after_match = regex.search(self.config.each_day_regex, after_str)
+                after_match = regex.search(
+                    self.config.each_day_regex, after_str)
                 if after_match:
                     yield Token(
                         extract_result.start,
@@ -157,21 +167,23 @@ class BaseSetExtractor(DateTimeExtractor):
             trimmed_source = source[0:match.start()] + source[match.end():]
 
             for extract_result in extractor.extract(trimmed_source, reference):
-                if (extract_result.start <= match.start()
-                        and extract_result.start + extract_result.length > match.start()):
+                if extract_result.start <= match.start() < extract_result.start + extract_result.length:
                     yield Token(extract_result.start, extract_result.start + extract_result.length + len(match.group()))
 
         for match in regex.finditer(self.config.set_week_day_regex, source):
-            trimmed_source = source[0:match.start()] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
+            trimmed_source = source[0:match.start()] \
+                + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
 
             for extract_result in extractor.extract(trimmed_source, reference):
-                if extract_result.start <= match.start() and RegExpUtility.get_group(match, 'weekday') in extract_result.text:
+                if extract_result.start <= match.start() and\
+                        RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) in extract_result.text:
                     length = extract_result.length + 1
-                    prefix = RegExpUtility.get_group(match, 'prefix')
+                    prefix = RegExpUtility.get_group(match, Constants.PREFIX_GROUP_NAME)
                     if prefix:
                         length += len(prefix)
 
                     yield Token(extract_result.start, extract_result.start + length)
+
 
 class SetParserConfiguration:
     @property
@@ -287,6 +299,7 @@ class SetParserConfiguration:
     def get_matched_unit_timex(self, text: str) -> MatchedTimex:
         raise NotImplementedError
 
+
 class BaseSetParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -308,7 +321,8 @@ class BaseSetParser(DateTimeParser):
                 inner_result = self.parse_each_duration(source.text, reference)
 
             if not inner_result.success:
-                inner_result = self.parser_time_everyday(source.text, reference)
+                inner_result = self.parser_time_everyday(
+                    source.text, reference)
 
             # NOTE: Please do not change the order of following function
             # datetimeperiod>dateperiod>timeperiod>datetime>date>time
@@ -345,7 +359,8 @@ class BaseSetParser(DateTimeParser):
         # handle "daily", "weekly"
         match = regex.match(self.config.periodic_regex, source)
         if match:
-            get_matched_daily_timex = self.config.get_matched_daily_timex(source)
+            get_matched_daily_timex = self.config.get_matched_daily_timex(
+                source)
             if not get_matched_daily_timex.matched:
                 return result
 
@@ -356,14 +371,16 @@ class BaseSetParser(DateTimeParser):
         # handle "each month"
         match = regex.match(self.config.each_unit_regex, source)
         if match and len(match.group()) == len(source):
-            source_unit = RegExpUtility.get_group(match, 'unit')
+            source_unit = RegExpUtility.get_group(match, Constants.UNIT)
             if source_unit and source_unit in self.config.unit_map:
-                get_matched_unit_timex = self.config.get_matched_unit_timex(source_unit)
+                get_matched_unit_timex = self.config.get_matched_unit_timex(
+                    source_unit)
                 if not get_matched_unit_timex.matched:
                     return result
 
-                if RegExpUtility.get_group(match, 'other'):
-                    get_matched_unit_timex = MatchedTimex(matched=get_matched_unit_timex.matched, timex=get_matched_unit_timex.timex.replace('1', '2'))
+                if RegExpUtility.get_group(match, Constants.OTHER):
+                    get_matched_unit_timex = MatchedTimex(
+                        matched=get_matched_unit_timex.matched, timex=get_matched_unit_timex.timex.replace('1', '2'))
 
                 result.timex = get_matched_unit_timex.timex
                 result.future_value = result.past_value = 'Set: ' + result.timex
@@ -413,12 +430,13 @@ class BaseSetParser(DateTimeParser):
         if match:
             trimmed_text = source[0:match.start()] + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
-            if(len(er) == 1 and er[0].length == len(trimmed_text)):
+            if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True
 
         match = regex.search(self.config.set_week_day_regex, source)
         if match:
-            trimmed_text = source[0:match.start()] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
+            trimmed_text = source[0:match.start()]\
+                + RegExpUtility.get_group(match, Constants.WEEKDAY_GROUP_NAME) + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
             if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True

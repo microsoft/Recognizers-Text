@@ -25,6 +25,7 @@ import com.microsoft.recognizers.text.utilities.MatchGroup;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.sql.Time;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -731,6 +732,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     LocalDateTime date = referenceDate.plusYears(swift);
                     year = date.getYear();
 
+                    if (!StringUtility.isNullOrEmpty(match.getMatch().get().getGroup("special").value)) {
+                        String specialYearPrefixes = this.config.getSpecialYearPrefixesMap().get(match.getMatch().get().getGroup("special").value.toLowerCase());
+                        swift = this.config.getSwiftYear(trimmedText);
+                        year = swift < -1 ? Constants.InvalidYear : year;
+                        ret.setTimex(TimexUtility.generateYearTimex(year, specialYearPrefixes));
+                        ret.setSuccess(true);
+                        return ret;
+                    }
+
                     LocalDateTime beginDate = DateUtil.safeCreateFromMinValue(year, 1, 1);
 
                     LocalDateTime endValue = DateUtil.safeCreateFromMinValue(year, 12, 31);
@@ -757,7 +767,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                         }
                     }
 
-                    ret.setTimex(isRef ? TimexUtility.generateYearTimex() : TimexUtility.generateYearTimex(date));
+                    year = isRef ? Constants.InvalidYear : year;
+                    ret.setTimex(TimexUtility.generateYearTimex(year));
 
                     ret.setFutureValue(new Pair<>(beginDate, endDate));
                     ret.setPastValue(new Pair<>(beginDate, endDate));
@@ -912,6 +923,12 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 exactMatch = RegexExtension.matchExact(this.config.getYearPlusNumberRegex(), text, true);
                 if (exactMatch.getSuccess()) {
                     year = this.config.getDateExtractor().getYearFromText(exactMatch.getMatch().get());
+                    if (!StringUtility.isNullOrEmpty(exactMatch.getMatch().get().getGroup("special").value)) {
+                        String specialYearPrefixes = this.config.getSpecialYearPrefixesMap().get(exactMatch.getMatch().get().getGroup("special").value.toLowerCase());
+                        ret.setTimex(TimexUtility.generateYearTimex(year, specialYearPrefixes));
+                        ret.setSuccess(true);
+                        return ret;
+                    }
                 }
             }
 
@@ -921,7 +938,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 LocalDateTime endDayValue = DateUtil.safeCreateFromMinValue(year + 1, 1, 1);
                 LocalDateTime endDay = inclusiveEndPeriod ? endDayValue.minusDays(1) : endDayValue;
 
-                ret.setTimex(String.format("%04d", year));
+                ret.setTimex(TimexUtility.generateYearTimex(year));
                 ret.setFutureValue(new Pair<>(beginDay, endDay));
                 ret.setPastValue(new Pair<>(beginDay, endDay));
                 ret.setSuccess(true);
@@ -1377,14 +1394,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         String cardinalStr = match.getMatch().get().getGroup("cardinal").value.toLowerCase();
-        String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
+        String orderQuarterStr = match.getMatch().get().getGroup("orderQuarter").value.toLowerCase();
+        String orderStr = StringUtility.isNullOrEmpty(orderQuarterStr) ? match.getMatch().get().getGroup("order").value.toLowerCase() : null;
         String numberStr = match.getMatch().get().getGroup("number").value;
 
         boolean noSpecificYear = false;
         int year = this.config.getDateExtractor().getYearFromText(match.getMatch().get());
 
         if (year == Constants.InvalidYear) {
-            int swift = this.config.getSwiftYear(orderStr);
+            int swift = StringUtility.isNullOrEmpty(orderQuarterStr) ? this.config.getSwiftYear(orderStr) : 0;
             if (swift < -1) {
                 swift = 0;
                 noSpecificYear = true;
@@ -1395,6 +1413,18 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         int quarterNum;
         if (!StringUtility.isNullOrEmpty(numberStr)) {
             quarterNum = Integer.parseInt(numberStr);
+        } else if (!StringUtility.isNullOrEmpty(orderQuarterStr)) {
+            int month = referenceDate.getMonthValue();
+            quarterNum = (int)Math.ceil((double)month / Constants.TrimesterMonthCount);
+            int swift = this.config.getSwiftYear(orderQuarterStr);
+            quarterNum += swift;
+            if (quarterNum <= 0) {
+                quarterNum += Constants.QuarterCount;
+                year -= 1;
+            } else if (quarterNum > Constants.QuarterCount) {
+                quarterNum -= Constants.QuarterCount;
+                year += 1;
+            }
         } else {
             quarterNum = this.config.getCardinalMap().get(cardinalStr);
         }
@@ -1419,12 +1449,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 ret.setFutureValue(new Pair<>(beginDate, endDate));
                 ret.setPastValue(new Pair<>(beginDate, endDate));
             }
+
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(-1, beginDate.getMonthValue(), 1), DateTimeFormatUtil.luisDate(-1, endDate.getMonthValue(), 1)));
         } else {
             ret.setFutureValue(new Pair<>(beginDate, endDate));
             ret.setPastValue(new Pair<>(beginDate, endDate));
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         }
 
-        ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         ret.setSuccess(true);
 
         return ret;

@@ -5,19 +5,21 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
+    public class GermanDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
 
         public static readonly Regex AfternoonStartEndRegex =
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
 
         public static readonly Regex EveningStartEndRegex =
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
 
         public static readonly Regex NightStartEndRegex =
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -39,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = GermanDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = GermanDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -90,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex PureNumberFromToRegex { get; }
 
+        public Regex HyphenDateRegex { get; }
+
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex SpecificTimeOfDayRegex { get; }
@@ -124,13 +129,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex AfterRegex { get; }
 
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;
@@ -171,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächstes"))

@@ -9,17 +9,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
-        public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.SetEachUnitRegex, RegexOptions.Singleline);
+        public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.SetEachUnitRegex, RegexFlags);
 
-        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.SetEachPrefixRegex, RegexOptions.Singleline);
+        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.SetEachPrefixRegex, RegexFlags);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.SetLastRegex, RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags);
 
-        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.SetEachDayRegex, RegexOptions.Singleline);
+        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.SetEachDayRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
+
         private static readonly JapaneseTimeExtractorConfiguration TimeExtractor = new JapaneseTimeExtractorConfiguration();
+
         private static readonly JapaneseDateExtractorConfiguration DateExtractor = new JapaneseDateExtractorConfiguration();
+
         private static readonly JapaneseDateTimeExtractorConfiguration DateTimeExtractor = new JapaneseDateTimeExtractorConfiguration();
 
         public static List<Token> MatchEachDuration(string text, DateObject referenceTime)

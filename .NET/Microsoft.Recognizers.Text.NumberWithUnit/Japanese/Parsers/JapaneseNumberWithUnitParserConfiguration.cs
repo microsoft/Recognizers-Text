@@ -9,8 +9,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         public JapaneseNumberWithUnitParserConfiguration(CultureInfo ci)
             : base(ci)
         {
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Japanese, NumberOptions.None);
+
             this.InternalNumberExtractor = new NumberExtractor();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new JapaneseNumberParserConfiguration());
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new JapaneseNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
         }
 

@@ -1,0 +1,222 @@
+[
+  {
+    "Input": "100%",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " 100 परसेंट",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 परसेंट",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " 100 प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "240 प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "240 प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "बीस प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "तीस प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीस प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "बीस का प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस का प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "10 का प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 का प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "बाईस का प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाईस का प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "210 का प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "210 का प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "10 प्रतिशत",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "बस माइनस पांच प्रतिशत चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस पांच प्रतिशत",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 3,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "अधिक विवरण के लिए आप http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 जा सकते हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "आप यहां जा सकते हैं https://www.test.com/search?q=30%25%2020%",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  }
+]

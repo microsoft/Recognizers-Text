@@ -1,20 +1,18 @@
 [
   {
     "Input": "Saat 17'den 18'e kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "17'den 18'e kadar",
+        "Text": "Saat 17'den 18'e kadar",
         "Type": "timerange",
-        "Start": 5,
-        "Length": 17
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Öğleden sonra 17'den 18'e kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,20 +25,18 @@
   },
   {
     "Input": "5'ten sabah yediye kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5'ten sabah yediye kadar ",
+        "Text": "5'ten sabah yediye kadar",
         "Type": "timerange",
         "Start": 0,
-        "Length": 25
+        "Length": 24
       }
     ]
   },
   {
     "Input": "17 ile 18 arasında yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "Öğleden sonra 5 ile 6 arasında yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "16'dan 17'ye dek yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "16'dan 17'ye kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "4:00'dan 5'e kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "4:00'dan 7'ye kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,50 +109,10 @@
   },
   {
     "Input": "15'ten yedi buçuğa kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15'ten yedi buçuğa kadar ",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 25
-      }
-    ]
-  },
-  {
-    "Input": "16-17 arası yokum",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "16-17 arası ",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "Akşam üçten sekize kadar yirmi dakika yokum",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Akşam üçten sekize kadar yirmi dakika",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 37
-      }
-    ]
-  },
-  {
-    "Input": "16'dan beş buçuğa kadar yokum",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "16'dan beş buçuğa kadar ",
+        "Text": "15'ten yedi buçuğa kadar",
         "Type": "timerange",
         "Start": 0,
         "Length": 24
@@ -169,8 +120,43 @@
     ]
   },
   {
+    "Input": "16-17 arası yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16-17 arası",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Üçe 20 kaladan akşam sekize kadar yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Üçe 20 kaladan akşam sekize kadar",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "16'dan beş buçuğa kadar yokum",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16'dan beş buçuğa kadar",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
     "Input": "Sabah 3'ten 17'ye kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,33 +169,30 @@
   },
   {
     "Input": "Sabah 3'ten öğleden sonra beşe kadar yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sabah 3'ten öğleden sonra beşe kadar ",
+        "Text": "Sabah 3'ten öğleden sonra beşe kadar",
         "Type": "timerange",
         "Start": 0,
-        "Length": 37
+        "Length": 36
       }
     ]
   },
   {
     "Input": "16 ile beş buçuk arası yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "16 ile beş buçuk arası ",
+        "Text": "16 ile beş buçuk arası",
         "Type": "timerange",
         "Start": 0,
-        "Length": 23
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Sabah 3 ile 17 arası yokum",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "Sabah buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "Öğleden sonra buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,20 +229,18 @@
   },
   {
     "Input": "Gece buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gece ",
+        "Text": "Gece",
         "Type": "timerange",
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
   {
     "Input": "Akşam buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "Akşamları buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,7 +265,6 @@
   },
   {
     "Input": "Sabahları erken saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "Sabahları geç saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "Sabah erkenden buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "Sabah geç saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "Öğleden sonra erken saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "Öğleden sonra geç saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "Akşam erken saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "Akşam geç saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "Gece erken saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "Gece geç saatte buluşalım",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "Saat on dörtten on yediye kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +397,6 @@
   },
   {
     "Input": "Jean'deki parti 18'den 23'e kadar",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -442,12 +408,11 @@
     ]
   },
   {
-    "Input": "14.00'dan 16:30'a kadar toplantı ayarla",
-    "NotSupported": "dotnet",
+    "Input": "14:00'dan 16:30'a kadar toplantı ayarla",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14.00'dan 16:30'a kadar",
+        "Text": "14:00'dan 16:30'a kadar",
         "Type": "timerange",
         "Start": 0,
         "Length": 23
@@ -456,7 +421,6 @@
   },
   {
     "Input": "13'ten 16'ya kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "13:30'dan 16'ya kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "Merhaba Cortana - Lütfen Jennifer ile skype toplantısı planlayın. Öğleden sonra 30 dakikalık bir toplantıya ihtiyacım var, bu Cuma ayrılacağım.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,7 +457,6 @@
   },
   {
     "Input": "1:30'dan 3:30'a kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,20 +469,18 @@
   },
   {
     "Input": "13:30'dan 3:30'a kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "13:30'dan 3:30'a kadar ",
+        "Text": "13:30'dan 3:30'a kadar",
         "Type": "timerange",
         "Start": 0,
-        "Length": 23
+        "Length": 22
       }
     ]
   },
   {
     "Input": "13:30'dan 15:30'a kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "1'den 3:30'a kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,11 +505,22 @@
   },
   {
     "Input": "1:30'dan 3'e kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1:30'dan 3'e kadar ",
+        "Text": "1:30'dan 3'e kadar",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "10 ve 11:30 arasına toplantı ayarla",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 ve 11:30 arasına",
         "Type": "timerange",
         "Start": 0,
         "Length": 19
@@ -559,47 +528,31 @@
     ]
   },
   {
-    "Input": "10 ve 11:30 arasına toplantı ayarla",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "10 ve 11:30 arası",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 17
-      }
-    ]
-  },
-  {
     "Input": "10:10 ve 12:50 arasına toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10:10 ve 12:50 arası",
+        "Text": "10:10 ve 12:50 arasına",
         "Type": "timerange",
         "Start": 0,
-        "Length": 20
+        "Length": 22
       }
     ]
   },
   {
     "Input": "22:10 ve 3 arasına toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22:10 ve 3 arası",
+        "Text": "22:10 ve 3 arasına",
         "Type": "timerange",
         "Start": 0,
-        "Length": 16
+        "Length": 18
       }
     ]
   },
   {
     "Input": "22:10'dan 10'a kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -612,27 +565,25 @@
   },
   {
     "Input": "10:30'dan 23'e kadar toplantı ayarla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10:30'dan 23'e kadar ",
+        "Text": "10:30'dan 23'e kadar",
         "Type": "timerange",
         "Start": 0,
-        "Length": 21
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Beni iş saatleri içinde arama",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "iş saatleri",
+        "Text": "iş saatleri içinde",
         "Type": "timerange",
         "Start": 5,
-        "Length": 11
+        "Length": 18
       }
     ]
   }

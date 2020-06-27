@@ -7,6 +7,7 @@ from ..parsers import DateTimeParser
 from ..base_set import SetParserConfiguration, MatchedTimex
 from ..base_configs import BaseDateParserConfiguration
 
+
 class FrenchSetParserConfiguration(SetParserConfiguration):
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -109,21 +110,27 @@ class FrenchSetParserConfiguration(SetParserConfiguration):
         self._date_time_period_parser = config.date_time_period_parser
         self._unit_map = FrenchDateTime.UnitMap
 
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EachPrefixRegex)
-        self._periodic_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PeriodicRegex)
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EachUnitRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EachDayRegex)
-        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SetWeekDayRegex)
-        self._set_each_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SetEachRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EachPrefixRegex)
+        self._periodic_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PeriodicRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EachUnitRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EachDayRegex)
+        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SetWeekDayRegex)
+        self._set_each_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SetEachRegex)
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
         timex = ''
 
         if (
-                trimmed_text == 'quotidien' or trimmed_text == 'quotidienne' or
-                trimmed_text == 'jours' or trimmed_text == 'journellement'
-            ):
+            trimmed_text == 'quotidien' or trimmed_text == 'quotidienne' or
+            trimmed_text == 'jours' or trimmed_text == 'journellement'
+        ):
             timex = 'P1D'
         elif trimmed_text == 'hebdomadaire':
             timex = 'P1W'

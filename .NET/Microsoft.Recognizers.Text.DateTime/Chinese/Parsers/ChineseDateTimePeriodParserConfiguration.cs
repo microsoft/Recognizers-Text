@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -14,30 +16,48 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexOptions.Singleline);
+        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
 
-        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexOptions.Singleline);
+        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexFlags);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexOptions.Singleline);
+        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexOptions.Singleline);
+        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexOptions.Singleline);
+        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
-        private static readonly IDateTimeExtractor TimeWithDateExtractor = new ChineseDateTimeExtractorConfiguration();
-        private static readonly IDateTimeExtractor TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
-        private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
-        private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
-            AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration());
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
+
+        private static readonly IDateTimeExtractor TimeWithDateExtractor = new ChineseDateTimeExtractorConfiguration();
+
+        private static readonly IDateTimeExtractor TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
+
+        private readonly IExtractor cardinalExtractor;
+
+        private readonly IParser cardinalParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public ChineseDateTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            cardinalExtractor = new CardinalExtractor(numConfig);
+
+            cardinalParser = AgnosticNumberParserFactory.GetParser(
+                AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration(numConfig));
         }
 
         public static string BuildTimex(TimeResult timeResult)
@@ -45,17 +65,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
             {
-                build.Append(timeResult.Hour.ToString("D2"));
+                build.Append(timeResult.Hour.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Minute >= 0)
             {
-                build.Append(":" + timeResult.Minute.ToString("D2"));
+                build.Append(":" + timeResult.Minute.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Second >= 0)
             {
-                build.Append(":" + timeResult.Second.ToString("D2"));
+                build.Append(":" + timeResult.Second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             return build.ToString();
@@ -83,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var referenceTime = refDate;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = MergeDateAndTimePeriod(er.Text, referenceTime);
                 if (!innerResult.Success)
@@ -164,9 +184,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var pr1 = this.config.DateParser.Parse(er1[0], referenceTime);
             var pr2 = this.config.TimePeriodParser.Parse(er2[0], referenceTime);
-            var timerange = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr2.Value).FutureValue;
-            var beginTime = timerange.Item1;
-            var endTime = timerange.Item2;
+            var timeRange = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr2.Value).FutureValue;
+            var beginTime = timeRange.Item1;
+            var endTime = timeRange.Item2;
             var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
             var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
 
@@ -180,15 +200,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
-            var splited = pr2.TimexStr.Split('T');
-            if (splited.Length != 4)
+            var split = pr2.TimexStr.Split('T');
+            if (split.Length != 4)
             {
                 return ret;
             }
 
             var dateStr = pr1.TimexStr;
 
-            ret.Timex = splited[0] + dateStr + "T" + splited[1] + dateStr + "T" + splited[2] + "T" + splited[3];
+            ret.Timex = split[0] + dateStr + "T" + split[1] + dateStr + "T" + split[2] + "T" + split[3];
 
             ret.Success = true;
             return ret;
@@ -327,7 +347,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             rightTime = rightTime.AddSeconds(second);
 
             // the right side time contains "ampm", while the left side doesn't
-            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm) &&
+            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
                 rightTime = rightTime.AddHours(Constants.HalfDayHourCount);
@@ -365,7 +385,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             int beginHour, endHour, endMin = 0;
             string timeStr;
 
@@ -527,23 +547,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            string numStr, unitStr;
+            string unitStr;
 
-            // if there are spaces between nubmer and unit
-            var ers = CardinalExtractor.Extract(text);
+            // if there are spaces between number and unit
+            var ers = cardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
-                var pr = CardinalParser.Parse(ers[0]);
-                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                var pr = cardinalParser.Parse(ers[0]);
+                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim();
+
                 if (srcUnit.StartsWith("个"))
                 {
                     srcUnit = srcUnit.Substring(1);
                 }
 
-                var beforeStr = text.Substring(0, ers[0].Start ?? 0).ToLowerInvariant();
+                var beforeStr = text.Substring(0, ers[0].Start ?? 0);
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
-                    numStr = pr.ResolutionStr;
+                    var numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
                     var prefixMatch = ChineseDateTimePeriodExtractorConfiguration.PastRegex.MatchExact(beforeStr, trim: true);
 
@@ -611,8 +632,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var match = ChineseDateTimePeriodExtractorConfiguration.UnitRegex.Match(text);
             if (match.Success)
             {
-                var srcUnit = match.Groups["unit"].Value.ToLower();
-                var beforeStr = text.Substring(0, match.Index).Trim().ToLowerInvariant();
+                var srcUnit = match.Groups["unit"].Value;
+                var beforeStr = text.Substring(0, match.Index).Trim();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];

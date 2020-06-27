@@ -4,69 +4,92 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
+    public class DutchTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
 
         public static readonly Regex HourRegex =
-            new Regex(DateTimeDefinitions.HourRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
 
         public static readonly Regex PeriodHourNumRegex =
-            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexFlags);
 
         public static readonly Regex PeriodDescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DescRegex, RegexFlags);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
 
         public static readonly Regex PureNumFromTo =
-            new Regex(DateTimeDefinitions.PureNumFromTo, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
 
         public static readonly Regex PureNumBetweenAnd =
-            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
 
         public static readonly Regex SpecificTimeFromTo =
-            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexFlags);
 
         public static readonly Regex SpecificTimeBetweenAnd =
-            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexFlags);
 
         public static readonly Regex PrepositionRegex =
-            new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
 
         public static readonly Regex TimeOfDayRegex =
-            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
         public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
 
         public static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
 
         public static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
 
         public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
 
-        public DutchTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
+        public DutchTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
         }
 
@@ -90,6 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             PureNumFromTo, PureNumBetweenAnd,
         };
 
+        bool ITimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
@@ -99,30 +124,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = BetweenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("and");
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

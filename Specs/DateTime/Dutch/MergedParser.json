@@ -1,0 +1,5350 @@
+[
+  {
+    "Input": "VOEG LUNCH TOE OM 12.30 OP VRIJ",
+    "Comment": "Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, Java, python",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12.30 OP VRIJ",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-04 12:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-11 12:30:00"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Wat heb ik de week van 30 november?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de week van 30 november",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2015-11-30",
+              "end": "2015-12-07"
+            },
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2016-11-28",
+              "end": "2016-12-05"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Voor vier maandag om 12.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "maandag om 12.00",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-10-31 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Voeg 649 toe vanavond middernacht",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond middernacht",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik wil voor 3 mensen bij een pizzatent reserveren in seattle voor vanavond rond 20.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond rond 20.00",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T20",
+              "type": "datetime",
+              "value": "2016-11-07 20:00:00"
+            }
+          ]
+        },
+        "Start": 66,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak voor Pasen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pasen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak voor Pasen 2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Pasen 2019",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "overmorgen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "overmorgen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "overmorgen om 8.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "overmorgen om 8.00",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09T08",
+              "type": "datetime",
+              "value": "2016-11-09 08:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "op vrijdag in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag in de middag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "op vrijdag voor 3 's middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag voor 3 's middags",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-04 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-11 15:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Maak afspraak voor morgenochtend om 9 uur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgenochtend om 9 uur",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Zet de bruiloft van make cable in mijn agena voor woensdag de eenendertigste",
+    "Context": {
+      "ReferenceDateTime": "2017-09-15T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "woensdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-13"
+            },
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-20"
+            }
+          ]
+        },
+        "Start": 50,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Zet de bruiloft van make cable in mijn agena voor dinsdag de eenendertigste",
+    "Context": {
+      "ReferenceDateTime": "2017-10-15T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag de eenendertigste",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-10-31",
+              "type": "date",
+              "value": "2017-10-31"
+            }
+          ]
+        },
+        "Start": 50,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Leg een meeting over 8 minuten vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 8 minuten",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:08:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:08:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Leg een meeting over 10 uur vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 10 uur",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T10:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Leg een meeting over 10 dagen vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 10 dagen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Leg een meeting over 3 weken vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 3 weken",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Leg een meeting over 3 maanden vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 3 maanden",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-02-07",
+              "type": "date",
+              "value": "2017-02-07"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben over 3 jaar weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 3 jaar",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-11-07",
+              "type": "date",
+              "value": "2019-11-07"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "na 20.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 20.00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "voor 20.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 20.00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "sinds 20.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sinds 20.00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "30-2-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30-2-2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2015-1-32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015-1",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2015-02-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2017-13-12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "voeg yoga toe aan persoonlijke agenda op maandag en woensdag om 15.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "maandag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-10-31"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 41,
+        "Length": 7
+      },
+      {
+        "Text": "wednesday at 3pm",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-02 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-09 15:00:00"
+            }
+          ]
+        },
+        "Start": 44,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "leg een meeting vast iedere week om 8.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8.00",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        },
+        "Start": 36,
+        "Length": 4
+      },
+      {
+        "Text": "every week",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "leg vast tweede zaterdag elke maand ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweede zaterdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-12",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 15
+      },
+      {
+        "Text": "each month",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak voor Eerste Paasdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Eerste Paasdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak voor Tweede Paasdag 2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Tweede Paasdag 2017",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-04-17",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Blok 1 uur af op mijn agenda morgenochtend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 uur",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        },
+        "Start": 5,
+        "Length": 5
+      },
+      {
+        "Text": "tomorrow morning",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Wijzig de meeting van 22 juli in Bellevue naar 22 augustus",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 juli",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2016-07-22"
+            },
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2017-07-22"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 7
+      },
+      {
+        "Text": "August 22nd",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2016-08-22"
+            },
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2017-08-22"
+            }
+          ]
+        },
+        "Start": 40,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "op vrijdag voor 3 in Bellevue in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 7
+      },
+      {
+        "Text": "in the afternoon",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "pik Jordans medicijnen op bij de costco apotheek op havana ergens voor aankomende dinsdag om 12.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor aankomende dinsdag om 12.00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-15T12:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 12:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "2016-11-15T00:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 00:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 66,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "leg een meeting voorafgaand aan 14.00 vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voorafgaand aan 14.00 ",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal de afspraak van tien uur 's ochtends naar twintig verzetten!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 20
+      },
+      {
+        "Text": "twenty",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal de afspraak van tien uur 's ochtends naar 20.00 verzetten!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 20
+      },
+      {
+        "Text": "20",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal de afspraak van tien uur 's ochtends naar negen verzetten!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 20
+      },
+      {
+        "Text": "nine",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal de afspraak van tien uur 's ochtends naar 26 verzetten!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal de afspraak van tien uur 's ochtends naar zesentwintig verzetten!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tien uur 's ochtends",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben over 5 minuten terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 5 minuten",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "over 5 minuten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 5 minuten",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Leg ergens tijdens de ochtend vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ochtend",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal voor morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal niet later dan morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "niet later dan morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "geef me alle beschikbare plekken met data na of gelijk aan 1-1-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na of gelijk aan 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 42,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal later dan 1-1-2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "later dan 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal na 1-1-2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal eerder dan 1-1-2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Het zal beginnend vanaf 1-1-2016 sluiten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beginnend vanaf 1-1-2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "eindigend met 1-1-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eindigend met 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal eerder dan 2020 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan 2020",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2020-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik is tot 2012",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tot 2012",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2012-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik is 2012 of erna",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2012 of erna",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2012-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 5 dagen terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 5 dagen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2017-11-13,P5D)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2017-11-13"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 10 maanden terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 10 maanden",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 3 jaar terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 3 jaar",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2020-11-08,P3Y)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2020-11-08"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 5 jaar 1 maand 12 dagen terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 5 jaar 1 maand 12 dagen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2022-12-20"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 15 seconden terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 15 seconden",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:12:15"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 5 minuten terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 5 minuten",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:17:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 5 uren terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 5 uren",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 21:12:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen 1 dag en 5 uren terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 1 dag en 5 uren",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zou binnen 2 dagen 1 uur 5 minuten 30 seconden af moeten zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 2 dagen 1 uur 5 minuten 30 seconden",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-09 17:17:30"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen de komende 1 dag en 5 uren terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen de komende 1 dag en 5 uren",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zou binnen de komende 2 dagen 1 uur 5 minuten 30 seconden af moeten zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen de komende 2 dagen 1 uur 5 minuten 30 seconden",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-09 17:17:30"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 53
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen de komende 15 seconden terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen de komende 15 seconden",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:12:15"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen de komende 10 maanden terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen de komende 10 maanden ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 2016, nov weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016, nov",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 2016 , nov weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 , nov",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal november , 2016 weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "november , 2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 2016 november weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 november",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11-2016 weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11- 2016 weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11- 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11 -2016 weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 -2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11/2016 weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11/ 2016 weg zijn ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11/ 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11 /2016 weg zijn ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 /2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11 - 2016 weg zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 - 2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 11 / 2016 weg zijn ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal later dan of op 1-1-2016 arriveren",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "later dan of op 1-1-2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal later dan 1-1-2016 arriveren",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "later dan 1-1-2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal op 1-1-2016 arriveren",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1-1-2016 ",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal voor of op 1-1-2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor of op 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal voor 1-1-2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 1-1-2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal op of eerder dan 1-1-2016 af zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of eerder dan 1-1-2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal op 1-1-2016 af zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1-1-2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal eerder dan 1-1-2016 af zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal voor of in feb 2018 af zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor of in feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal voor feb 2018 af zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-02-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal in feb 2018 af zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "type": "daterange",
+              "start": "2018-02-01",
+              "end": "2018-03-01"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt niet later dan of in 2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "later dan of in 2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt niet later dan 2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "later dan 2016 ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt niet in 2016 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2017-01-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt kantoor niet op of na 18.30 vandaag verlaten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of na 18.30 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt kantoor niet na 18.30 vandaag verlaten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 18.30 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt kantoor niet om 18.30 vandaag verlaten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18.30 vandaag ",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "type": "datetime",
+              "value": "2016-11-07 18:30:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je moet op of voor overmorgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of voor overmorgen ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je moet overmorgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "overmorgen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je moet voor overmorgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor overmorgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je moet op of eerder dan 15.00 15-5-2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of eerder dan 15.00 15-5-2018",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je moet eerder dan 15.00 15-5-2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan 15.00 15-5-2018 ",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je moet op 15.00 15-5-2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15.00 15-5-2018 ",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "type": "datetime",
+              "value": "2018-05-15 15:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ben je twee dagen na vandaag beschikbaar?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee dagen na vandaag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-02",
+              "type": "date",
+              "value": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Ben je drie weken na morgen beschikbaar?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "drie weken na morgen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-22",
+              "type": "date",
+              "value": "2018-06-22"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Waar was je twee dagen voor gisteren?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee dagen voor gisteren",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-28",
+              "type": "date",
+              "value": "2018-05-28"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "laat me verkoop zien voor 2010 of na 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor 2010",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2010-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 9
+      },
+      {
+        "Text": "after 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "laat me verkoop zien na 2010 en voor 2018 of voor 2000 maar niet 1998",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2010",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2011-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 7
+      },
+      {
+        "Text": "before 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 11
+      },
+      {
+        "Text": "before 2000",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2000-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 44,
+        "Length": 11
+      },
+      {
+        "Text": "1998",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "1998",
+              "type": "daterange",
+              "start": "1998-01-01",
+              "end": "1999-01-01"
+            }
+          ]
+        },
+        "Start": 64,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "laat me gegevens zien meer dan 4 dagen en minder dan 1 week",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 4 dagen",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 16
+      },
+      {
+        "Text": "less than 1 week",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "Mod": "less",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "laat me gegevens zien meer dan 1 uur en 30 minuten",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 1 uur en 30 minuten",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H30M",
+              "Mod": "more",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Ik heb meer dan 2 weken voor vandaag al mijn werk al afgerond ",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 2 weken voor vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Ik heb meer dan 2 weken voor vandaag al mijn werk al afgerond ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 2 weken voor vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-15"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "deze taak zou al meer dan 2 dagen voor gisteren afgerond moeten zijn geweest",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 2 dagen voor gisteren ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-26",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-26"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal minder dan 3 dagen na morgen af zijn",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "minder dan 3 dagen na morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-30,2018-06-02,P3D)",
+              "type": "daterange",
+              "start": "2018-05-30",
+              "end": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal meer dan 2 weken na vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan 2 weken na vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-12",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Laten we over 3 minuten vanaf nu beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten vanaf nu",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Laten we over 3 minuten vanaf vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 9
+      },
+      {
+        "Text": "from today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal binnen 2 weken na vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen 2 weken na vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-29,2018-06-12,P2W)",
+              "type": "daterange",
+              "start": "2018-05-29",
+              "end": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal binnen de komende 2 weken na vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen de komende 2 weken na vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-29,2018-06-12,P2W)",
+              "type": "daterange",
+              "start": "2018-05-29",
+              "end": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal binnen de komende 2 weken voor vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 weken voor vandaag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-08",
+              "type": "date",
+              "value": "2018-06-08"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal binnen de komende 2 weken na morgen beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 weken na morgen ",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal binnen 2 weken voor gisteren beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 weken voor gisteren ",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-07",
+              "type": "date",
+              "value": "2018-06-07"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "laat me verkoop zien van 2010 - 2020 en niet 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 2010 - 2020",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2020-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 15
+      },
+      {
+        "Text": "2015",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 39,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Misschien kunnen we na 2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Misschien kunnen we na feb 2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Misschien kunnen we na feb vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na feb",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            },
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Het zal 1-1-2015 na 2:00 gebeuren",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1-1-2015 na 2:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01-01T02:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 02:00:00"
+            },
+            {
+              "timex": "2015-01-01T14:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 14:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Het zal vandaag voor 16.00  gebeuren",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vandaag voor 16.00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-22T16",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-22 16:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Het zal volgende week woensdag later dan 10 uur 's ochtends gebeuren",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week woensdag later dan 10 uur 's ochtends ",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-04T10",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-07-04 10:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 52
+      }
+    ]
+  },
+  {
+    "Input": "Het gebeurde op vorige week dinsdag om 2 uur 's middags",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vorige week dinsdag om 2 uur 's middags",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-19T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-19 14:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Laten we op 1 feb niet later dan 6:00 gaan",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 feb niet later dan 6:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 18:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 18:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Het gebeurde op volgende week na 2:00",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 13
+      },
+      {
+        "Text": "after 2:00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T02:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "T14:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in 2007 en 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2007",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2007",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 4
+      },
+      {
+        "Text": "2009",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2009",
+              "type": "daterange",
+              "start": "2009-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien tussen 2007 en 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 2007 en 2009",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in het jaar 2008",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "jaar 2008",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2008",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in het jaar",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "het jaar",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in de week",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de week",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in de week na de volgende",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de week na de volgende",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W29",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-07-23"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in de week 31",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "week 31",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W31",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-08-06"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 3 uur vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 3 uur",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-05T03:00:00",
+              "type": "datetime",
+              "value": "2018-07-05 03:00:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 2 weken vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 2 weken",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 2 dagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 2 dagen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 2 maanden vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 2 maanden",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-09-05",
+              "type": "date",
+              "value": "2018-09-05"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 2 jaar vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over 2 jaar",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-07-05",
+              "type": "date",
+              "value": "2020-07-05"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 2 dagen vanaf vandaag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 dagen vanaf vandaag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Zal je > 18.00 vandaag vertrekken?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "> 18.00 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Zal je >= 18.00 vandaag vertrekken?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ">= 18.00 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Zal je <18.00 vandaag arriveren?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "<18.00 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Zal je <=18.00 vandaag arriveren?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "<=18.00 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "<div>18.00</div>",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18.00",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 5,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "De tijd is <>18.00",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18.00",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal na 2016 en voor 2018, of voor 2019 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2015-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2016",
+        "Start": 8,
+        "Length": 7,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2018",
+        "Start": 29,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2019",
+        "Start": 45,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak voor Paaszondag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Paaszondag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak voor Paasmaandag 2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Paasmaandag 2017",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-04-17",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "leg een meeting eerder dan 14:00 vast",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan 14:00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "geef me alle beschikbare plekken met data na of op 1-1-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na of op 1-1-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 42,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen de komende dag en 5 uren terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen de komende dag en 5 uren",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal binnen komende 10 maanden terug zijn",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "binnen komende 10 maanden ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt kantoor na 18.30 vandaag verlaten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 18.30 vandaag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je kunt kantoor om 18.30 vandaag verlaten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18.30 vandaag ",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "type": "datetime",
+              "value": "2016-11-07 18:30:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je moet op of voor de dag na morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op of voor de dag na morgen ",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je moet de dag na morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de dag na morgen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je moet voor de dag na morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de dag na morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal eerder dan 3 dagen na morgen af zijn",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerder dan 3 dagen na morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-30,2018-06-02,P3D)",
+              "type": "daterange",
+              "start": "2018-05-30",
+              "end": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal ruim 2 weken na vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ruim 2 weken na vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-12",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Laten we over 3 minuten sinds nu beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten sinds nu",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Laten we over 3 minuten sinds vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      },
+      {
+        "Text": "from today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Deze taak zal binnen 2 weken eerder dan gisteren beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 weken eerder dan gisteren ",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-07",
+              "type": "date",
+              "value": "2018-06-07"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Misschien kunnen we na afloop van 2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na afloop van 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Misschien kunnen we na afloop van feb 2018 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na afloop van feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Misschien kunnen we na afloop van feb vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na afloop van feb",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            },
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Het zal 1-1-2015 later dan 2:00 gebeuren",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1-1-2015 later dan 2:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01-01T02:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 02:00:00"
+            },
+            {
+              "timex": "2015-01-01T14:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 14:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Het zal volgende week woensdag na 10 uur 's ochtends gebeuren",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week woensdag na 10 uur 's ochtends ",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-04T10",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-07-04 10:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "Het gebeurde op komende week na 2:00",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "komende week",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 12
+      },
+      {
+        "Text": "after 2:00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T02:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "T14:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Laat verkoop zien in de week na afloop van de volgende",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de week na afloop van de volgende",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W29",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-07-23"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal na 2 weken vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2 weken",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal na 2 dagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2 dagen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal na 2 maanden vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2 maanden",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-09-05",
+              "type": "date",
+              "value": "2018-09-05"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal na 2 jaar vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na 2 jaar",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-07-05",
+              "type": "date",
+              "value": "2020-07-05"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal over 2 dagen sedert vandaag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 dagen sedert vandaag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Hij zal na afloop van 2016 en voor 2018, of voor 2019 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2015-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "na afloop van 2016",
+        "Start": 8,
+        "Length": 18,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2018",
+        "Start": 29,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2019",
+        "Start": 45,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,6 +1,7 @@
 [
   {
     "Input": "drie biljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drie biljoenste",
@@ -11,17 +12,16 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "een biljoenste",
-    "Results": [],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   },
   {
     "Input": "honderd biljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderd biljoenste",
@@ -32,11 +32,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "11e",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11e",
@@ -47,11 +47,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "derde",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "derde",
@@ -62,11 +62,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "30ste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "30ste",
@@ -77,11 +77,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweede",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweede",
@@ -92,11 +92,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "elfde",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elfde",
@@ -107,11 +107,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "nulde",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nulde",
@@ -122,11 +122,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "twintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twintigste",
@@ -137,11 +137,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "vijfendertigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vijfendertigste",
@@ -152,11 +152,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "eenentwintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eenentwintigste",
@@ -167,11 +167,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdvijfentwintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdvijfentwintigste",
@@ -182,11 +182,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "biljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "biljoenste",
@@ -197,11 +197,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "eerste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerste",
@@ -212,11 +212,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweehonderdste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweehonderdste",
@@ -227,11 +227,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerste",
@@ -242,12 +242,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdachtste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdachtste",
@@ -258,11 +257,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdenachtste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdenachtste",
@@ -273,11 +272,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweeduizend zestiende",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeduizend zestiende",
@@ -288,11 +287,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweeduizend en zestiende",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeduizend en zestiende",
@@ -303,11 +302,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "zeventien miljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zeventien miljoenste",
@@ -318,11 +317,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "vier miljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vier miljoenste",
@@ -333,11 +332,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "vier miljoen vierhonderdduizendste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vier miljoen vierhonderdduizendste",
@@ -348,11 +347,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "drieduizend tweehonderdtwintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drieduizend tweehonderdtwintigste",
@@ -363,12 +362,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdvijfendertigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdvijfendertigste",
@@ -379,11 +377,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdentweede",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdentweede",
@@ -394,11 +392,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "drieduizendste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drieduizendste",
@@ -409,12 +407,12 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdeende",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdeende",
@@ -425,13 +423,12 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdeneende",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdeneende",
@@ -442,13 +439,12 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdeerste",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdeerste",
@@ -459,12 +455,12 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "duizendeende",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "duizendeende",
@@ -475,13 +471,12 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "duizendeerste",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "duizendeerste",
@@ -492,11 +487,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "achthonderdzevende",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "achthonderdzevende",
@@ -507,11 +502,11 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "driehonderdachtste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "driehonderdachtste",
@@ -522,7 +517,6 @@
           "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   }
 ]

@@ -28,6 +28,17 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Week", @"woche alt|wochen alt|wochen|woche" },
             { @"Day", @"tag alt|tage alt|tagen|tage" }
         };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"jahren",
+            @"jahre",
+            @"monaten",
+            @"monate",
+            @"wochen",
+            @"woche",
+            @"tagen",
+            @"tage"
+        };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
             { @"Square kilometer", @"qkm|quadratkilometer|km^2|km²" },
@@ -49,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Afghan afghani", @"afghanischer afghani|afghanische afghani|afghanischen afghani|؋|afn|afghani" },
             { @"Pul", @"pul" },
             { @"Euro", @"euro|€|eur" },
-            { @"Cent", @"cent|-cent|sen" },
+            { @"Cent", @"cent|-cent" },
             { @"Albanian lek", @"albaninischer Lek|albanische Lek|albanischen Lek" },
             { @"Qindarkë", @"qindarkë|qindarkës|qindarke|qindarkes" },
             { @"Angolan kwanza", @"angolanischer kwanza|angolanische kwanza|angolanischen kwanza|kz|aoa|kwanza|kwanzas" },
@@ -74,7 +85,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Céntimo", @"céntimo" },
             { @"Croatian kuna", @"kroatischer kuna|kroatische kuna|kroatischen kuna|kn|hrk|kuna" },
             { @"Lipa", @"lipa" },
-            { @"Czech koruna", @"tschechische krone|tschechischen kronen|tschechischer kronen|czk|kč|krone|kronen" },
+            { @"Czech koruna", @"tschechische krone|tschechischen kronen|tschechischer kronen|czk|kč" },
             { @"Haléř", @"haléř" },
             { @"Eritrean nakfa", @"eritreischer nakfa|eritreische nakfa|eritreischen nakfa|nfk|ern|nakfa" },
             { @"Ethiopian birr", @"äthiopischer birr|äthiopische birr|äthiopischen birr|etb" },
@@ -95,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Lithuanian litas", @"ltl|litauischer litas|litauische litas|litauischen litas" },
             { @"Japanese yen", @"japaneser yen|japanese yen|japanesen yen|jpy|yen|¥" },
             { @"Kazakhstani tenge", @"kasachischer tenge|kasachische tenge|kasachischen tenge|kzt" },
-            { @"Kenyan shilling", @"kenia-schilling|sh|kes" },
+            { @"Kenyan shilling", @"kenia-schilling|kes" },
             { @"North Korean won", @"nordkoreanischer won|nordkoreanische won|nordkoreanischen won|kpw" },
             { @"South Korean won", @"südkoreanischer won|südkoreanische won|südkoreanischen won|krw" },
             { @"Korean won", @"koreanischer won|koreanische won|koreanischen won|₩" },
@@ -128,7 +139,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Kuruş", @"kuruş" },
             { @"Omani rial", @"omanischer rial|omanische rial|omanischen rial|omr|ر.ع." },
             { @"Panamanian balboa", @"panamaischer balboa|panamaische balboa|panamaischen balboa|b/.|pab" },
-            { @"Centesimo", @"centesimo|céntimo" },
+            { @"Centesimo", @"centesimo" },
             { @"Papua New Guinean kina", @"papua-neuguinea-kina|kina|pgk" },
             { @"Toea", @"toea" },
             { @"Paraguayan guaraní", @"paraguayischer guaraní|paraguayische guaraní|paraguayischen guaraní|guaraní|₲|pyg" },
@@ -145,7 +156,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"São Tomé and Príncipe dobra", @"são-toméischer dobra|são-toméische dobra|são-toméischen dobra|dobra|std" },
             { @"Sierra Leonean leone", @"sierra-leonischer leone|sierra-leonische leone|sierra-leonischen leone|sll|leone|le" },
             { @"Peseta", @"pesetas|peseta" },
-            { @"Netherlands guilder", @"florin|antillen-gulden|niederländische-antillen-gulden|antillen gulden|ang|ƒ|niederländischer gulden|niederländische gulden|niederländischen gulden|gulden|fl" },
+            { @"Netherlands guilder", @"florin|antillen-gulden|niederländische-antillen-gulden|antillen gulden|ang|niederländischer gulden|niederländische gulden|niederländischen gulden|gulden|fl" },
             { @"Swazi lilangeni", @"swazi-lilangeni|swazi lilangeni|lilangeni|szl|swazi-emalangeni|swazi emalangeni" },
             { @"Tajikistani somoni", @"tadschikischer somoni|tadschikische somoni|tadschikischen somoni|tadschikistan-somoni|tadschikistan somoni|tajikischer somoni|tajikische somoni|tajikischen somoni|tajikistan-somoni|tajikistan somoni|tjs" },
             { @"Diram", @"dirams|diram" },
@@ -167,7 +178,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Somali shilling", @"somalia-schilling|sh.so.|sos" },
             { @"Somaliland shilling", @"somaliland-schilling" },
             { @"Tanzanian shilling", @"tansania-schilling|tsh|tzs" },
-            { @"Ugandan shilling", @"uganda-schilling|sh|ugx" },
+            { @"Ugandan shilling", @"uganda-schilling|ugx" },
             { @"Romanian leu", @"rumänischer leu|rumänische leu|rumänischen leu|rumaenischer leu|rumaenische leu|rumaenischen leu|lei|ron" },
             { @"Moldovan leu", @"moldauischer leu|moldauische leu|moldauischen leu|mdl|moldau leu" },
             { @"Leu", @"leu" },
@@ -177,7 +188,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Indian rupee", @"indischer rupie|indische rupie|indischen rupie|indischer rupien|indische rupien|indischen rupien|inr|₹" },
             { @"Seychellois rupee", @"seychellen-rupie|seychellen-rupien|scr|sr|sre" },
             { @"Mauritian rupee", @"mauritius-rupie|mauritius-rupien|mur" },
-            { @"Maldivian rufiyaa", @"maledivischer rufiyaa|maledivische rufiyaa|maledivischen rufiyaa|rf|mvr|.ރ" },
+            { @"Maldivian rufiyaa", @"maledivischer rufiyaa|maledivische rufiyaa|maledivischen rufiyaa|mvr|.ރ" },
             { @"Sri Lankan rupee", @"sri-lanka-rupie|sri-lanka-rupien|lkr|රු|ரூ" },
             { @"Indonesian rupiah", @"indonesischer rupiah|indonesische rupiah|indonesischen rupiah|rupiah|perak|rp|idr" },
             { @"Rupee", @"rupie|rs" },
@@ -253,7 +264,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Tristan da Cunha pound", @"tristan-da-cunha-pfund|tristan-da-cunha-£" },
             { @"Pound", @"pfund|£" },
             { @"Pence", @"pence" },
-            { @"Shilling", @"shillings|shilling|shilingi" },
+            { @"Shilling", @"shillings|shilling|shilingi|sh" },
             { @"Penny", @"pennies|penny" },
             { @"United States dollar", @"us-dollar|us$|usd|amerikanischer dollar|amerikanische dollar|amerikanischen dollar" },
             { @"East Caribbean dollar", @"ostkaribischer dollar|ostkaribische dollar|ostkaribischen dollar|ostkaribische $|xcd" },
@@ -469,10 +480,10 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
             { @"F", @"grad fahrenheit|°fahrenheit|°f|fahrenheit" },
-            { @"K", @"k|K|kelvin" },
+            { @"K", @"k|K|kelvin|grad kelvin|°kelvin|°k|°K" },
             { @"R", @"rankine|°r" },
             { @"D", @"delisle|°de" },
-            { @"C", @"grad celsius|°celsius|°c" },
+            { @"C", @"grad celsius|°celsius|°c|celsius" },
             { @"Degree", @"grad|°" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
@@ -500,7 +511,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Teaspoon", @"teelöffel|teeloeffel" },
             { @"Tablespoon", @"esslöffel|essloeffel" },
             { @"Pint", @"pinte" },
-            { @"Volume unit", @"fluid dram|Fluid drachm|Flüssigdrachme|Gill|Quart|Minim|Barrel|Cord|Peck|Beck|Scheffel|Hogshead|Oxhoft" }
+            { @"Volume unit", @"fluid dram|fluid drachm|flüssigdrachme|gill|quart|minim|cord|peck|beck|scheffel|hogshead|oxhoft" }
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
@@ -531,6 +542,10 @@ namespace Microsoft.Recognizers.Definitions.German
             @"oz",
             @"stone",
             @"dram"
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

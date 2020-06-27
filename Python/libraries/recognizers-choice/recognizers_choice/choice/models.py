@@ -16,9 +16,14 @@ class ChoiceModel(Model):
         self.parser = parser
 
     def parse(self, source: str):
-        extract_results = self.extractor.extract(source)
-        parse_results = [self.parser.parse(e) for e in extract_results]
         result = []
+
+        try:
+            extract_results = self.extractor.extract(source)
+            parse_results = [self.parser.parse(e) for e in extract_results]
+        except Exception:
+            pass
+
         for o in parse_results:
             model_result = ModelResult()
             model_result.start = o.start
@@ -53,4 +58,3 @@ class BooleanModel(ChoiceModel):
                                       'score': o.data.score}
                                      for o in sources.data.other_matches]
         return results
-

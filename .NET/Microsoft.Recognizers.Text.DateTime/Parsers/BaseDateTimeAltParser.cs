@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseDateTimeAndTimeAlt(er, referenceTime);
 
@@ -198,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (((Dictionary<string, object>)er.Data).ContainsKey(Constants.Context))
             {
                 contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
-                if (contextEr.Type.Equals(Constants.ContextType_RelativeSuffix))
+                if (contextEr.Type.Equals(Constants.ContextType_RelativeSuffix, StringComparison.Ordinal))
                 {
                     dateTimeEr.Text = $"{er.Text} {contextEr.Text}";
                 }

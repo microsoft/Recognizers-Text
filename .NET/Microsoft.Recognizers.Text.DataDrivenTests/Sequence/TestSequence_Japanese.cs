@@ -1,4 +1,4 @@
-using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Sequence.Tests
@@ -6,26 +6,25 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
     [TestClass]
     public class TestSequence_Japanese : TestBase
     {
-        public static TestResources TestResources { get; protected set; }
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            this.TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "URLModel-Japanese.csv", "URLModel-Japanese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void URLModel()
+        public void URLModel(TestModel testSpec)
         {
-            TestURL();
+            TestURL(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void PhoneNumberModel(TestModel testSpec)
+        {
+            TestPhoneNumber(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void IpAddressModel(TestModel testSpec)
+        {
+            TestIpAddress(testSpec);
         }
     }
 }

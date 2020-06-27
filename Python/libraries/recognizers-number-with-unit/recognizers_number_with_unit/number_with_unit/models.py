@@ -1,6 +1,5 @@
 from abc import abstractmethod
 from typing import List
-from collections import namedtuple
 
 from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
@@ -25,29 +24,44 @@ class AbstractNumberWithUnitModel(Model):
         self.extractor_parser: List[ExtractorParserModel] = extractor_parser
 
     def parse(self, query: str) -> List[ModelResult]:
+
         query = QueryProcessor.preprocess(query, True)
-
         extraction_results = []
-        for item in self.extractor_parser:
-            extract_results = item.extractor.extract(query)
-            parse_results = [r for r in [item.parser.parse(r) for r in extract_results] if not r.value is None]
+        parse_results = []
 
-            for parse_result in parse_results:
-                model_result = ModelResult()
-                model_result.start = parse_result.start
-                model_result.end = parse_result.start + parse_result.length - 1
-                model_result.text = parse_result.text
-                model_result.type_name = self.model_type_name
-                model_result.resolution = self.get_resolution(parse_result.value)
+        try:
+            for item in self.extractor_parser:
+                extract_results = item.extractor.extract(query)
+                for result in extract_results:
+                    r = item.parser.parse(result)
+                    if r.value is not None:
+                        if isinstance(r.value, list):
+                            for j in r.value:
+                                parse_results.append(j)
+                        else:
+                            parse_results.append(r)
 
-                b_add = not [x for x in extraction_results if x.start == model_result.start and x.end == model_result.end]
+                for parse_result in parse_results:
+                    model_result = ModelResult()
+                    model_result.start = parse_result.start
+                    model_result.end = parse_result.start + parse_result.length - 1
+                    model_result.text = parse_result.text
+                    model_result.type_name = self.model_type_name
+                    model_result.resolution = self.get_resolution(
+                        parse_result.value)
 
-                if b_add:
-                    extraction_results.append(model_result)
+                    b_add = not [x for x in extraction_results if x.start ==
+                                 model_result.start and x.end == model_result.end]
+
+                    if b_add:
+                        extraction_results.append(model_result)
+        except Exception:
+            pass
 
         return extraction_results
 
-    def get_resolution(self, data):
+    @staticmethod
+    def get_resolution(data):
         if isinstance(data, str):
             return {
                 'value': data
@@ -63,6 +77,19 @@ class AbstractNumberWithUnitModel(Model):
                 'unit': data.unit,
                 'isoCurrency': data.iso_currency
             }
+        elif isinstance(data, list):
+            if hasattr(data[0].value, 'iso_currency'):
+                return {
+                    'value': data[0].value.number,
+                    'unit': data[0].value.unit,
+                    'isoCurrency': data[0].value.iso_currency
+                }
+            else:
+                return {
+                    'value': data[0].value.number,
+                    'unit': data[0].value.unit
+                }
+
         return None
 
 

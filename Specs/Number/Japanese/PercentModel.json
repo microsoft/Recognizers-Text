@@ -1,6 +1,7 @@
 [
   {
     "Input": "今日は九パーセントの確率は雨",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -16,6 +17,7 @@
   },
   {
     "Input": "この車は19パーセントの確率が遅れた",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -31,6 +33,7 @@
   },
   {
     "Input": "彼女は50パーセントこのことはできません",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -46,6 +49,7 @@
   },
   {
     "Input": "共有29.5パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -61,6 +65,7 @@
   },
   {
     "Input": "彼は13,000.2パーセント告白失败",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -76,6 +81,7 @@
   },
   {
     "Input": "彼は3500パーセント告白失败",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -91,6 +97,7 @@
   },
   {
     "Input": "僕2,100パーセント告白失败",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -106,6 +113,7 @@
   },
   {
     "Input": "僕１，１２３パーセント告白失败",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -121,6 +129,7 @@
   },
   {
     "Input": "今日は3.2kパーセントの確率で雪が降る",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -136,6 +145,7 @@
   },
   {
     "Input": "今日は3.2kパ ーセ ントの確率で雪が降る",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -151,6 +161,7 @@
   },
   {
     "Input": "今日は15kパ ーセ ントの確率で雪が降る",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -166,6 +177,7 @@
   },
   {
     "Input": "今日は１２０パ ーセ ントの確率で雪が降る",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -181,6 +193,7 @@
   },
   {
     "Input": "今日は９，９９９パ ーセ ントの確率で雪が降る",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -196,6 +209,7 @@
   },
   {
     "Input": "２．４パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -211,6 +225,7 @@
   },
   {
     "Input": "-22.2%",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -226,6 +241,7 @@
   },
   {
     "Input": "２２％",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -241,6 +257,7 @@
   },
   {
     "Input": "－1２２％",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -256,6 +273,7 @@
   },
   {
     "Input": "22パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -271,6 +289,7 @@
   },
   {
     "Input": "１２０パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -286,6 +305,7 @@
   },
   {
     "Input": "15kパーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -301,6 +321,7 @@
   },
   {
     "Input": "1,111パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -316,6 +337,7 @@
   },
   {
     "Input": "９，９９９パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -331,6 +353,7 @@
   },
   {
     "Input": "５６.２パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -346,6 +369,7 @@
   },
   {
     "Input": "3.2パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -361,6 +385,7 @@
   },
   {
     "Input": "12.56パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -376,6 +401,7 @@
   },
   {
     "Input": "０.４パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -391,6 +417,7 @@
   },
   {
     "Input": "15,123パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -406,6 +433,7 @@
   },
   {
     "Input": "１１１，１１１パーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -421,6 +449,7 @@
   },
   {
     "Input": "１５kパーセント",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -436,6 +465,7 @@
   },
   {
     "Input": "５．５％",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -451,6 +481,7 @@
   },
   {
     "Input": "２．４パ ー   セ    ン ト",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -466,6 +497,7 @@
   },
   {
     "Input": "５２.５ k   パ ー セ  ン     ト",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -481,6 +513,7 @@
   },
   {
     "Input": "今日この服は5割引になります",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -496,6 +529,7 @@
   },
   {
     "Input": "今日この服はの5.6割引になります",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -511,6 +545,7 @@
   },
   {
     "Input": "今日この服はの２.５割引になります",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -526,6 +561,7 @@
   },
   {
     "Input": "９割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -541,6 +577,7 @@
   },
   {
     "Input": "7.２割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -556,6 +593,7 @@
   },
   {
     "Input": "１０ 割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -571,6 +609,7 @@
   },
   {
     "Input": "１0 割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -586,6 +625,7 @@
   },
   {
     "Input": "十 割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -601,6 +641,7 @@
   },
   {
     "Input": "9.9割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -616,6 +657,7 @@
   },
   {
     "Input": "10割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -631,6 +673,7 @@
   },
   {
     "Input": "十割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -646,6 +689,7 @@
   },
   {
     "Input": "２.５割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -661,6 +705,7 @@
   },
   {
     "Input": "２割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -676,6 +721,7 @@
   },
   {
     "Input": "2割,2.5割,２．１割，２割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -718,6 +764,7 @@
   },
   {
     "Input": "五割",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -733,6 +780,7 @@
   },
   {
     "Input": "クラスの女子は3割を占める",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -748,6 +796,7 @@
   },
   {
     "Input": "クラスの女子は5割半を占める",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -763,6 +812,7 @@
   },
   {
     "Input": "女子学生は七割半を占めている",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -778,6 +828,7 @@
   },
   {
     "Input": "女子学生は3.8割を占めている",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -793,6 +844,7 @@
   },
   {
     "Input": "女子学生は三割を占めている",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -808,6 +860,7 @@
   },
   {
     "Input": "今シーズンの打率は3割8分7厘でした",
+    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -818,6 +871,586 @@
         },
         "Start": 9,
         "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "回答率は100%です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 4,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイの電車の乗車率は240%です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "240%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 12,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "20%の人がパソコンを持っていません。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "30%の人が犬を飼っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "30%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "10%の人がパスポートを持っていません。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "10%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "私の体脂肪率は22%です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "22%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイのバスの乗車率は210%です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "210%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 12,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "今年の売り上げは前年比の-5%です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-5%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 12,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "回答率は100パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 4,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイの電車の乗車率は240パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "240パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 12,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "20パーセントの人がパソコンを持っていません。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "10パーセントの人がパスポートを持っていません。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "10パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "私の体脂肪率は22パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "22パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 7,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイのバスの乗車率は210パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "210パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 12,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "今年の売り上げは前年比の-5パーセントでした。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-5パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 12,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "２割の人がパソコンを持っていません。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "３割の人が犬を飼っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "１割の人がパスポートを持っていません。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "この問題の回答率は100%だ。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 9,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "今日の会議の出席率は20%だ。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 10,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "江戸川区のインド人の割合は10%です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "10%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 13,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "詳細については次のURLをご確認ください。 http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "次のURLを参考にしてくだい。 https://www.test.com/search?q=30%25%2020%",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "回答率は１００％です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 4,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイの電車の乗車率は２４０％です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "240%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 12,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "２０％の人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "１０％の人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "10%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "売り上げは前年度比−５％です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-5%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 9,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "回答率は百％です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "百%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 4,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイの電車の乗車率は二百四十％です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "二百四十%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 12,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "二十％の人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "二十%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "十％の人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "十%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "売り上げは前年度比マイナス五％です。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "マイナス五%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 9,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "回答率は百パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "百パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 4,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "ムンバイの電車の乗車率は二百四十パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "二百四十パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 12,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "二十パーセントの人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "二十パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "十パーセントの人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "十パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "売り上げは前年度比マイナス五パーセントです。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "マイナス五パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 9,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "二割の人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "二割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "一割の人がパソコンを持っています。",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "一割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 1
       }
     ]
   }

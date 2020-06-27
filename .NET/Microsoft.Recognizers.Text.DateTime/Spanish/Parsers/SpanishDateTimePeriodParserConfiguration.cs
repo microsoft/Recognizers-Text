@@ -1,9 +1,11 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions.Spanish;
+
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
+    public class SpanishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -25,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = SpanishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -76,6 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PureNumberFromToRegex { get; }
 
+        public Regex HyphenDateRegex { get; }
+
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex SpecificTimeOfDayRegex { get; }
@@ -110,13 +115,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AfterRegex { get; }
 
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
@@ -164,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             // TODO: Replace with a regex

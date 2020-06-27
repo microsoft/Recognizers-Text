@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimePeriodParserConfiguration : IOptionsConfiguration
+    public interface IDateTimePeriodParserConfiguration : IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 
@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimeZoneParser { get; }
 
         Regex PureNumberFromToRegex { get; }
+
+        Regex HyphenDateRegex { get; }
 
         Regex PureNumberBetweenAndRegex { get; }
 
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex BeforeRegex { get; }
 
         Regex AfterRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -16,6 +18,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_SET = "set";
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
         public const string SYS_DATETIME_TIMEZONE = "timezone";
+
+        // SourceEntity Types
+        public const string SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
 
         // Model Name
         public const string MODEL_DATETIME = "datetime";
@@ -78,6 +83,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string APPROX_MOD = "approx";
 
+        public const string HAS_MOD = "mod";
+
+        // labels associated to AgoRegex and LaterRegex
+        public const string AGO_LABEL = "ago";
+        public const string LATER_LABEL = "later";
+
         // These are some particular values for timezone recognition
         public const int InvalidOffsetValue = -10000;
         public const string UtcOffsetMinsKey = "utcOffsetMins";
@@ -88,6 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int NegativeSign = -1;
 
         public const int TrimesterMonthCount = 3;
+        public const int QuarterCount = 4;
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
         public const int CenturyYearsCount = 100;
@@ -124,9 +136,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string BusinessDayGroupName = "business";
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
+        public const string MealTimeGroupName = "mealTime";
+
+        // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+        public const string IncludeGroupName = "include";
 
         public const string DECADE_UNIT = "10Y";
         public const string FORTNIGHT_UNIT = "2W";
+        public const string QUARTER_UNIT = "3MON";
+        public const string WEEKEND_UNIT = "WE";
 
         // Timex
         public const string TimexYear = "Y";
@@ -158,6 +176,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Daytime = "TDT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
+        public const string MealtimeBreakfast = "TMEB";
+        public const string MealtimeBrunch = "TMER";
+        public const string MealtimeLunch = "TMEL";
+        public const string MealtimeDinner = "TMED";
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
@@ -167,12 +189,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int InvalidMinute = int.MinValue;
         public const int InvalidSecond = int.MinValue;
 
-        // Invalid year non-constant
-        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
-        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
+        // Failed connector extraction
+        public const int INVALID_CONNECTOR_CODE = -1;
 
-        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
-        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
+        // Invalid year non-constant
+        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum, CultureInfo.InvariantCulture);
+        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum, CultureInfo.InvariantCulture);
+
+        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum, CultureInfo.InvariantCulture);
+        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum, CultureInfo.InvariantCulture);
+        public static readonly System.DateTime InvalidDate = default(System.DateTime);
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };

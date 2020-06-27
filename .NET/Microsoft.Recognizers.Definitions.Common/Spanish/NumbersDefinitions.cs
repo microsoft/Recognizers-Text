@@ -25,12 +25,12 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string HundredsNumberIntegerRegex = @"(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))";
-      public const string RoundNumberIntegerRegex = @"(mil millones|mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";
+      public const string RoundNumberIntegerRegex = @"(mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";
       public const string ZeroToNineIntegerRegex = @"(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
       public const string TenToNineteenIntegerRegex = @"(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
       public const string TwentiesIntegerRegex = @"(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)";
       public const string TensNumberIntegerRegex = @"(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)";
-      public const string NegativeNumberTermsRegex = @"((?<!(al|lo)\s+)menos\s+)";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>(?<!(al|lo)\s+)menos\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
       public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\s+y\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?({AllIntRegex})(\s+((y|con)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(y\s+)?)?(un|un[oa])(\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex})|(y\s+)?medi[oa]s?)(?=\b)";
-      public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
+      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(coma|con)){AllPointRegex}";
       public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
@@ -75,32 +75,32 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-      public static readonly string NumberWithPrefixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\b)";
+      public static readonly string NumberWithPrefixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|por\s+cien(to)?\b)";
       public const string TillRegex = @"(\ba\b|hasta|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(más\s+alt[oa]\s+que|(m[áa]s|mayor(es)?|por\s+encima)(\s+(que|de|del))?|(?<!<|=)>)";
-      public const string LessRegex = @"((menos|menor|menores|por\s+debajo)(\s+(que|de|del))?|más\s+baj[oa]\s+que|(?<!>|=)<)";
-      public const string EqualRegex = @"((igual(es)?|equivalente(s)?|equivale|equivalen|son)(\s+(a|que|de|al|del))?|(?<!<|>)=)";
+      public const string MoreRegex = @"(más\s+(alt[oa]s?|grandes)\s+que|(m[áa]s|mayor(es)?|superior(es)?|por\s+encima)((\s+(que|del?|a))|(?=\s+o\b))|(?<!<|=)>)";
+      public const string LessRegex = @"((meno(s|r(es)?)|inferior(es)?|por\s+debajo)((\s+(que|del?|a)|(?=\s+o\b)))|más\s+baj[oa]\s+que|(?<!>|=)<)";
+      public const string EqualRegex = @"((igual(es)?|equivalente(s)?|equivalen?|son)(\s+(al?|que|del?))?|(?<!<|>)=)";
       public static readonly string MoreOrEqualPrefix = $@"((no\s+{LessRegex})|(por\s+lo\s+menos|como\s+m[íi]nimo|al\s+menos))";
       public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+(o)?\s+{EqualRegex})|({EqualRegex}\s+(o|y)\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(o)\s+{EqualRegex})?|({EqualRegex}\s+(o)\s+)?{MoreOrEqualPrefix}|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((\b(y|o)\b\s+(m[áa]s|mayor|mayores)((?!\s+(alt[oa]|baj[oa]|que|de|del))|(\s+(que|de|del)(?!(\s*\d+)))))|como\s+m[áa]ximo|por\s+lo\s+menos|al\s+menos)";
-      public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(como\s+máximo|como\s+maximo|como\s+mucho))";
+      public const string MoreOrEqualSuffix = @"((\b(y|o)\b\s+(m[áa]s|mayor(es)?|superior(es)?)((?!\s+(alt[oa]|baj[oa]|que|del?))|(\s+(que|del?|a)(?!(\s*\d+)))))|como\s+m[íi]nimo|por\s+lo\s+menos|al\s+menos)";
+      public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(como\s+(m[aá]ximo|mucho)))";
       public static readonly string LessOrEqual = $@"(({LessRegex}\s+(o)?\s+{EqualRegex})|({EqualRegex}\s+(o)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(o)?\s+{EqualRegex})?|({EqualRegex}\s+(o)?\s+)?{LessOrEqualPrefix}|<\s*=)";
-      public const string LessOrEqualSuffix = @"((\b(y|o)\b\s+(menos|menor|menores)((?!\s+(alt[oa]|baj[oa]|que|de|del))|(\s+(que|de|del)(?!(\s*\d+)))))|como\s+m[íi]nimo)";
+      public const string LessOrEqualSuffix = @"((\b(y|o)\b\s+(meno(s|r(es)?|inferior(es)?))((?!\s+(alt[oa]|baj[oa]|que|del?|a))|(\s+(que|del?|a)(?!(\s*\d+)))))|como\s+m[áa]ximo)";
       public const string NumberSplitMark = @"(?![,.](?!\d+))";
-      public const string MoreRegexNoNumberSucceed = @"((m[áa]s|mayor|mayores)((?!\s+(que|de|del))|\s+((que|de|del)(?!(\s*\d+))))|(por encima)(?!(\s*\d+)))";
-      public const string LessRegexNoNumberSucceed = @"((menos|menor|menores)((?!\s+(que|de|del))|\s+((que|de|del)(?!(\s*\d+))))|(por debajo)(?!(\s*\d+)))";
-      public const string EqualRegexNoNumberSucceed = @"((igual|iguales|equivalente|equivalentes|equivale|equivalen)((?!\s+(a|que|de|al|del))|(\s+(a|que|de|al|del)(?!(\s*\d+)))))";
-      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*((el|la|los|las)\s+)?(?<number1>({NumberSplitMark}.)+)";
+      public const string MoreRegexNoNumberSucceed = @"((m[áa]s|mayor(es)?|superior(es)?)((?!\s+(que|del?|a))|\s+((que|del?)(?!(\s*\d+))))|(por encima)(?!(\s*\d+)))";
+      public const string LessRegexNoNumberSucceed = @"((meno(s|r(es)?)|inferior(es)?)((?!\s+(que|del?|a))|\s+((que|del?)(?!(\s*\d+))))|(por debajo)(?!(\s*\d+)))";
+      public const string EqualRegexNoNumberSucceed = @"((igual(es)?|equivalentes?|equivalen?)((?!\s+(al?|que|del?))|(\s+(al?|que|del?)(?!(\s*\d+)))))";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}";
       public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*((el|la|los|las)\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeLessRegex2 = $@"(?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}";
       public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*((el|la|los|las)\s+)?(?<number1>({NumberSplitMark}.)+)";
-      public static readonly string TwoNumberRangeRegex1 = $@"entre\s*((el|la|los|las)\s+)?(?<number1>({NumberSplitMark}.)+)\s*y\s*((el|la|los|las)\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string TwoNumberRangeRegex1 = $@"entre\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)\s*y\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)";
       public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(\by\b|\be\b|pero|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
       public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(\by\b|\be\b|pero|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
-      public static readonly string TwoNumberRangeRegex4 = $@"((de|desde)\s+)?((el|la|los|las)\s+)?(?<number1>({NumberSplitMark}(?!\b(entre|de|desde|es)\b).)+)\s*{TillRegex}\s*((el|la|los|las)\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string TwoNumberRangeRegex4 = $@"(de(sde)?\s+)?((el|las?|los)\s+)?(?<number1>({NumberSplitMark}(?!\b(entre|de(sde)?|es)\b).)+)\s*{TillRegex}\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)";
       public const string AmbiguousFractionConnectorsRegex = @"(\b(en|de)\b)";
       public const char DecimalSeparatorChar = ',';
       public const string FractionMarkerToken = @"sobre";
@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"y" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"con" };
       public const string HalfADozenRegex = @"media\s+docena";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil(l[oó]n(es)?)?|bill[oó]n(es)?|trill[oó]n(es)?|docenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"cero", 0 },
@@ -361,6 +361,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"g", 1000000000 },
             { @"b", 1000000000 },
             { @"t", 1000000000000 }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"^[.]", @"" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

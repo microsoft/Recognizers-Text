@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class FrenchDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -141,11 +141,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public static int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
 
@@ -183,7 +185,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
             {
@@ -200,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
                     trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
         }

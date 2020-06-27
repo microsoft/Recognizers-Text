@@ -41,7 +41,7 @@ export class SpanishDateTimeUtilityConfiguration implements IDateTimeUtilityConf
 
 export class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         super();
         this.utilityConfiguration = new SpanishDateTimeUtilityConfiguration();
 
@@ -59,15 +59,15 @@ export class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.ordinalExtractor = new SpanishOrdinalExtractor();
 
         this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.durationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
-        this.dateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
+        this.dateParser = new BaseDateParser(new SpanishDateParserConfiguration(this, dmyDateFormat));
         this.timeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
         this.dateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
         this.datePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));

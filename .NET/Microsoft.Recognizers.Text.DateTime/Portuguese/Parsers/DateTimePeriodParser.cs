@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
@@ -14,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         protected override DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             // Handle morning, afternoon..
             if (!this.Config.GetMatchedTimeRange(trimmedText, out string timeStr, out int beginHour, out int endHour, out int endMin))

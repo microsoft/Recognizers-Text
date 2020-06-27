@@ -621,20 +621,29 @@ public class BaseDateParser implements IDateTimeParser {
 
     // parse a regex match which includes 'day', 'month' and 'year' (optional) group
     private DateTimeResolutionResult match2Date(Optional<Match> match, LocalDateTime referenceDate, String relativeStr) {
-        DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
-        String monthStr = match.get().getGroup("month").value.toLowerCase();
-        String dayStr = match.get().getGroup("day").value.toLowerCase();
-        String yearStr = match.get().getGroup("year").value.toLowerCase();
-        String weekdayStr = match.get().getGroup("weekday").value.toLowerCase();
+        DateTimeResolutionResult ret = new DateTimeResolutionResult();
         int month = 0;
         int day = 0;
         int year = 0;
 
+        String monthStr = match.get().getGroup("month").value.toLowerCase();
+        String dayStr = match.get().getGroup("day").value.toLowerCase();
+        String weekdayStr = match.get().getGroup("weekday").value.toLowerCase();
+        String yearStr = match.get().getGroup("year").value.toLowerCase();
+        String writtenYearStr = match.get().getGroup("fullyear").value.toLowerCase();
+
         if (this.config.getMonthOfYear().containsKey(monthStr) && this.config.getDayOfMonth().containsKey(dayStr)) {
+
             month = this.config.getMonthOfYear().get(monthStr);
             day = this.config.getDayOfMonth().get(dayStr);
+
             if (!StringUtility.isNullOrEmpty(yearStr)) {
+
+                year = this.config.getDateExtractor().getYearFromText(match.get());
+
+            } else if (!StringUtility.isNullOrEmpty(yearStr)) {
+
                 year = Integer.parseInt(yearStr);
                 if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) {
                     year += 1900;
@@ -667,11 +676,11 @@ public class BaseDateParser implements IDateTimeParser {
         LocalDateTime futureDate = DateUtil.safeCreateFromMinValue(year, month, day);
         LocalDateTime pastDate = DateUtil.safeCreateFromMinValue(year, month, day);
 
-        if (noYear && futureDate.isBefore(referenceDate)) {
+        if (noYear && futureDate.isBefore(referenceDate) && !futureDate.isEqual(DateUtil.minValue())) {
             futureDate = futureDate.plusYears(1);
         }
 
-        if (noYear && (pastDate.isEqual(referenceDate) || pastDate.isAfter(referenceDate))) {
+        if (noYear && (pastDate.isEqual(referenceDate) || pastDate.isAfter(referenceDate)) && !pastDate.isEqual(DateUtil.minValue())) {
             pastDate = pastDate.minusYears(1);
         }
 

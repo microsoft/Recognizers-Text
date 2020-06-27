@@ -8,10 +8,10 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor(NumberOptions options = NumberOptions.None)
-              : base(NumberExtractor.GetInstance(options: options))
+        public PercentageExtractor(BaseNumberOptionsConfiguration config)
+            : base(NumberExtractor.GetInstance(config))
         {
-            Options = options;
+            Options = config.Options;
             Regexes = InitRegexes();
         }
 

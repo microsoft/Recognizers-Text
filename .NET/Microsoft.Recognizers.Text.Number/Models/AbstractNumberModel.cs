@@ -9,7 +9,18 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class AbstractNumberModel : IModel
     {
         // Languages supporting subtypes in the resolution to be added here
-        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH };
+        private static readonly List<string> ExtractorsSupportingSubtype = new List<string>
+        {
+                Constants.ENGLISH,
+                Constants.SWEDISH,
+                Constants.ARABIC,
+
+                // TODO: Temporarily disabled as existing TestSpec not supporting
+                // Constants.JAPANESE_SUBS
+
+                // TODO: Temporarily disabled as existing TestSpec not supporting
+                // Constants.KOREAN,
+        };
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
@@ -47,7 +58,9 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
 
-                return parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
+                var modelResults = parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
+
+                return modelResults;
             }
             catch (Exception)
             {
@@ -83,22 +96,9 @@ namespace Microsoft.Recognizers.Text.Number
                 string specificNumberType;
 
                 // For ordinal and ordinal.relative - "ordinal.relative" only available in English for now
-                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL, StringComparison.InvariantCulture))
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL, StringComparison.Ordinal))
                 {
-                    if (pn.Metadata != null && pn.Metadata.IsOrdinalRelative)
-                    {
-                        specificNumberType = Constants.MODEL_ORDINAL_RELATIVE;
-
-                        // Add value for ordinal.relative
-                        string sign = pn.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
-                        string value = string.Concat(pn.Metadata.RelativeTo, sign, pn.Metadata.Offset);
-                        resolution.Add(ResolutionKey.Value, value);
-                    }
-                    else
-                    {
-                        specificNumberType = ModelTypeName;
-                    }
-
+                    specificNumberType = pn.Type;
                     resolution.Add(ResolutionKey.Offset, pn.Metadata.Offset);
                     resolution.Add(ResolutionKey.RelativeTo, pn.Metadata.RelativeTo);
                 }

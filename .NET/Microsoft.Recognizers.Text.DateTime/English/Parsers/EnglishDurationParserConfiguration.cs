@@ -1,17 +1,21 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class EnglishDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this), false);
+
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
+
             AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
@@ -22,6 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             InexactNumberRegex = EnglishDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = EnglishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = EnglishDurationExtractorConfiguration.SpecialNumberUnitRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
@@ -29,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -54,6 +60,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

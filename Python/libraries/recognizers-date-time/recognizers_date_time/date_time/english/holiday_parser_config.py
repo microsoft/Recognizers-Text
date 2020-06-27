@@ -7,6 +7,7 @@ from ..utilities import DateUtils
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.english_date_time import EnglishDateTime
 
+
 class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
     def holiday_names(self) -> Dict[str, List[str]]:
@@ -82,7 +83,8 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
             ('veteransday', EnglishHolidayParserConfiguration.veterans_day),
             ('christmaseve', EnglishHolidayParserConfiguration.christmas_eve),
             ('newyeareve', EnglishHolidayParserConfiguration.new_year_eve),
-            ('easterday', EnglishHolidayParserConfiguration.easter_day)
+            ('easterday', EnglishHolidayParserConfiguration.easter_day),
+            ('juneteenth', EnglishHolidayParserConfiguration.juneteenth),
         ])
 
         return {**super()._init_holiday_funcs(), **local}
@@ -206,3 +208,7 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @staticmethod
     def easter_day(year: int) -> datetime:
         return DateUtils.min_value
+
+    @staticmethod
+    def juneteenth(year: int) -> datetime:
+        return datetime(year, 6, 19)

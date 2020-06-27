@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -13,19 +16,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
 
-        private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
+        private static readonly IDateTimeExtractor DurationExtractor = new ChineseDurationExtractorConfiguration();
 
-        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
+        private readonly IExtractor integerExtractor;
 
-        private static readonly IDateTimeExtractor Durationextractor = new ChineseDurationExtractorConfiguration();
-
-        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+        private readonly IParser integerParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public ChineseDatePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerExtractor = new IntegerExtractor(numConfig);
+            integerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
+
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -39,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseSimpleCases(er.Text, referenceDate);
                 if (!innerResult.Success)
@@ -154,64 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return candidateResults;
         }
 
-        // convert Chinese Number to Integer
-        private static int ConvertChineseToNum(string numStr)
-        {
-            var num = -1;
-            var er = IntegerExtractor.Extract(numStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
-                {
-                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-
-            return num;
-        }
-
-        // convert Chinese Year to Integer
-        private static int ConvertChineseToInteger(string yearChsStr)
-        {
-            var year = 0;
-            var num = 0;
-
-            var er = IntegerExtractor.Extract(yearChsStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
-                {
-                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-
-            if (num < 10)
-            {
-                num = 0;
-                foreach (var ch in yearChsStr)
-                {
-                    num *= 10;
-                    er = IntegerExtractor.Extract(ch.ToString());
-                    if (er.Count != 0)
-                    {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
-                        {
-                            num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
-                        }
-                    }
-                }
-
-                year = num;
-            }
-            else
-            {
-                year = num;
-            }
-
-            return year == 0 ? -1 : year;
-        }
-
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -225,7 +182,64 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
 
-            return firstWeekday.AddDays(7 * (cadinal - 1));
+            return firstWeekday.AddDays(7 * (cardinal - 1));
+        }
+
+        // convert Chinese Number to Integer
+        private int ConvertChineseToNum(string numStr)
+        {
+            var num = -1;
+            var er = integerExtractor.Extract(numStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                {
+                    num = Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+
+            return num;
+        }
+
+        // convert Chinese Year to Integer
+        private int ConvertChineseToInteger(string yearChsStr)
+        {
+            var year = 0;
+            var num = 0;
+
+            var er = integerExtractor.Extract(yearChsStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                {
+                    num = Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+
+            if (num < 10)
+            {
+                num = 0;
+                foreach (var ch in yearChsStr)
+                {
+                    num *= 10;
+                    er = integerExtractor.Extract(ch.ToString());
+                    if (er.Count != 0)
+                    {
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                        {
+                            num += Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
+                        }
+                    }
+                }
+
+                year = num;
+            }
+            else
+            {
+                year = num;
+            }
+
+            return year == 0 ? -1 : year;
         }
 
         private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceDate)
@@ -242,8 +256,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (match.Success)
             {
                 var days = match.Groups["day"];
-                beginDay = this.config.DayOfMonth[days.Captures[0].Value.ToLower()];
-                endDay = this.config.DayOfMonth[days.Captures[1].Value.ToLower()];
+                beginDay = this.config.DayOfMonth[days.Captures[0].Value];
+                endDay = this.config.DayOfMonth[days.Captures[1].Value];
 
                 var monthStr = match.Groups["month"].Value;
                 var yearStr = match.Groups["year"].Value;
@@ -268,20 +282,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!string.IsNullOrEmpty(monthStr))
                 {
-                    month = ToMonthNumber(monthStr.ToLower());
+                    month = ToMonthNumber(monthStr);
                 }
                 else
                 {
-                    monthStr = match.Groups["relmonth"].Value.Trim().ToLower();
-                    var thismatch = ChineseDatePeriodExtractorConfiguration.ThisRegex.Match(monthStr);
-                    var nextmatch = ChineseDatePeriodExtractorConfiguration.NextRegex.Match(monthStr);
-                    var lastmatch = ChineseDatePeriodExtractorConfiguration.LastRegex.Match(monthStr);
+                    monthStr = match.Groups["relmonth"].Value.Trim();
+                    var thisMatch = ChineseDatePeriodExtractorConfiguration.ThisRegex.Match(monthStr);
+                    var nextMatch = ChineseDatePeriodExtractorConfiguration.NextRegex.Match(monthStr);
+                    var lastMatch = ChineseDatePeriodExtractorConfiguration.LastRegex.Match(monthStr);
 
-                    if (thismatch.Success)
+                    if (thisMatch.Success)
                     {
                         // do nothing
                     }
-                    else if (nextmatch.Success)
+                    else if (nextMatch.Success)
                     {
                         if (month != 12)
                         {
@@ -421,9 +435,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
                 var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
-                var beginTimex = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
-                var endTimex = DateTimeFormatUtil.LuisDate(endYear, 1, 1);
-                ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByYear);
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
                 return ret;
@@ -541,7 +553,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
-                if (yearNum.EndsWith("年"))
+                if (IsYearOnly(yearNum))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
@@ -550,7 +562,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
-                if (yearChs.EndsWith("年"))
+                if (IsYearOnly(yearChs))
                 {
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
@@ -559,11 +571,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
-                if (yearRel.EndsWith("去年"))
+                if (IsLastYear(yearRel))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("明年"))
+                else if (IsNextYear(yearRel))
                 {
                     year++;
                 }
@@ -592,7 +604,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 endDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
             }
 
-            ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+            ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
             ret.Success = true;
             return ret;
@@ -605,15 +617,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int year = referenceDate.Year, month = referenceDate.Month;
             int futureYear = year, pastYear = year;
 
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
             var match = ChineseDatePeriodExtractorConfiguration.OneWordPeriodRegex.MatchExact(trimmedText, trim: true);
 
             if (match.Success)
             {
                 var monthStr = match.Groups["month"].Value;
-                if (trimmedText.Equals("今年"))
+                if (IsThisYear(trimmedText))
                 {
-                    ret.Timex = referenceDate.Year.ToString("D4");
+                    ret.Timex = TimexUtility.GenerateYearTimex(referenceDate);
                     ret.FutureValue =
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, 1, 1), referenceDate);
@@ -621,38 +633,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return ret;
                 }
 
-                var thismatch = ChineseDatePeriodExtractorConfiguration.ThisRegex.Match(trimmedText);
-                var nextmatch = ChineseDatePeriodExtractorConfiguration.NextRegex.Match(trimmedText);
-                var lastmatch = ChineseDatePeriodExtractorConfiguration.LastRegex.Match(trimmedText);
+                var thisMatch = ChineseDatePeriodExtractorConfiguration.ThisRegex.Match(trimmedText);
+                var nextMatch = ChineseDatePeriodExtractorConfiguration.NextRegex.Match(trimmedText);
+                var lastMatch = ChineseDatePeriodExtractorConfiguration.LastRegex.Match(trimmedText);
 
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     var swift = -10;
+                    var yearRel = match.Groups["yearrel"].Value;
+                    if (!string.IsNullOrEmpty(yearRel))
+                    {
+                        if (IsNextYear(yearRel))
+                        {
+                            swift = 1;
+                        }
+                        else if (IsLastYear(yearRel))
+                        {
+                            swift = -1;
+                        }
+                        else if (IsThisYear(yearRel))
+                        {
+                            swift = 0;
+                        }
+                    }
 
-                    if (trimmedText.StartsWith("明年"))
-                    {
-                        swift = 1;
-                    }
-                    else if (trimmedText.StartsWith("去年"))
-                    {
-                        swift = -1;
-                    }
-                    else if (trimmedText.StartsWith("今年"))
-                    {
-                        swift = 0;
-                    }
-
-                    month = ToMonthNumber(monthStr.ToLower());
+                    month = ToMonthNumber(monthStr);
 
                     if (swift >= -1)
                     {
-                        ret.Timex = (referenceDate.Year + swift).ToString("D4") + "-" + month.ToString("D2");
                         year = year + swift;
+                        ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
                         futureYear = pastYear = year;
                     }
                     else
                     {
-                        ret.Timex = "XXXX-" + month.ToString("D2");
+                        ret.Timex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
                         if (month < referenceDate.Month)
                         {
                             futureYear++;
@@ -667,16 +682,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else
                 {
                     var swift = 0;
-                    if (nextmatch.Success)
+                    if (nextMatch.Success)
                     {
                         swift = 1;
                     }
-                    else if (lastmatch.Success)
+                    else if (lastMatch.Success)
                     {
                         swift = -1;
                     }
 
-                    if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
+                    // Handle cases with "(上|下)半" like "上半月"、 "下半年"
+                    if (!string.IsNullOrEmpty(match.Groups["halfTag"].Value))
+                    {
+                        return HandleWithHalfTag(trimmedText, referenceDate, ret, swift);
+                    }
+
+                    if (IsWeekOnly(trimmedText))
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
@@ -689,14 +710,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    if (trimmedText.EndsWith("周末"))
+                    if (IsWeekend(trimmedText))
                     {
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                        ret.Timex = beginDate.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2") + "-WE";
+                        ret.Timex = TimexUtility.GenerateWeekendTimex(beginDate);
 
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
@@ -706,41 +725,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    if (trimmedText.EndsWith("月"))
+                    if (IsMonthOnly(trimmedText))
                     {
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
-                        ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                        ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
                         futureYear = pastYear = year;
                     }
-                    else if (trimmedText.EndsWith("年"))
+                    else if (IsYearOnly(trimmedText))
                     {
+                        // Handle like "今年上半年"，"明年下半年"
+                        trimmedText = HandleWithHalfYear(match, trimmedText, out bool hasHalf, out bool isFirstHalf);
+                        swift = hasHalf ? 0 : swift;
+
                         year = referenceDate.AddYears(swift).Year;
-                        if (trimmedText.EndsWith("去年"))
+                        if (IsLastYear(trimmedText))
                         {
                             year--;
                         }
-                        else if (trimmedText.EndsWith("明年"))
+                        else if (IsNextYear(trimmedText))
                         {
                             year++;
                         }
-                        else if (trimmedText.EndsWith("前年"))
+                        else if (IsYearBeforeLast(trimmedText))
                         {
                             year -= 2;
                         }
-                        else if (trimmedText.EndsWith("后年"))
+                        else if (IsYearAfterNext(trimmedText))
                         {
                             year += 2;
                         }
 
-                        ret.Timex = year.ToString("D4");
-                        ret.FutureValue =
-                            ret.PastValue =
-                                new Tuple<DateObject, DateObject>(
-                                    DateObject.MinValue.SafeCreateFromValue(year, 1, 1),
-                                    DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1));
-                        ret.Success = true;
-                        return ret;
+                        return HandleYearResult(ret, hasHalf, isFirstHalf, year);
                     }
                 }
             }
@@ -763,7 +779,43 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // only contains year like "2016年"
+        private DateTimeResolutionResult HandleWithHalfTag(string text, DateObject referenceDate, DateTimeResolutionResult ret, int swift)
+        {
+            DateObject beginDay, endDay;
+            int year = referenceDate.Year, month = referenceDate.Month;
+
+            if (IsWeekOnly(text))
+            {
+                // Handle like "上半周"，"下半周"
+                beginDay = swift == -1 ? referenceDate.This(DayOfWeek.Monday) : referenceDate.This(DayOfWeek.Thursday);
+                endDay = swift == -1 ? referenceDate.This(DayOfWeek.Thursday) : referenceDate.This(DayOfWeek.Sunday).AddDays(1);
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByDay);
+            }
+            else if (IsMonthOnly(text))
+            {
+                // Handle like "上半月"，"下半月"
+                var monthStartDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+                var monthEndDay = DateObject.MinValue.SafeCreateFromValue(year, month + 1, 1);
+                var halfMonthDay = (int)((monthEndDay - monthStartDay).TotalDays / 2);
+
+                beginDay = swift == -1 ? monthStartDay : monthStartDay.AddDays(halfMonthDay);
+                endDay = swift == -1 ? monthStartDay.AddDays(halfMonthDay) : monthEndDay;
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByDay);
+            }
+            else
+            {
+                // Handle like "上(个)半年"，"下(个)半年"
+                beginDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 1, 1) : DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                endDay = swift == -1 ? DateObject.MinValue.SafeCreateFromValue(year, 7, 1) : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByMonth);
+            }
+
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+            ret.Success = true;
+            return ret;
+        }
+
+        // only contains year like "2016年" or "2016年上半年"
         private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -771,81 +823,99 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var tmp = match.Value;
+                var yearStr = match.Value;
+
+                // Handle like "2016年上半年"，"2017年下半年"
+                yearStr = HandleWithHalfYear(match, yearStr, out bool hasHalf, out bool isFirstHalf);
 
                 // Trim() to handle extra whitespaces like '07 年'
-                if (tmp.EndsWith("年"))
+                if (IsYearOnly(yearStr))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - 1).Trim();
+                    yearStr = yearStr.Substring(0, yearStr.Length - 1).Trim();
                 }
 
-                var num = 0;
-                var year = 0;
-                if (tmp.Length == 2)
-                {
-                    num = int.Parse(tmp);
-                    if (num < 100 && num >= 30)
-                    {
-                        num += 1900;
-                    }
-                    else if (num < 30)
-                    {
-                        num += 2000;
-                    }
+                var year = int.Parse(yearStr);
 
-                    year = num;
-                }
-                else
-                {
-                    year = int.Parse(tmp);
-                }
-
-                var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
-                var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
-
-                ret.Timex = year.ToString("D4");
-                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
-                ret.Success = true;
-
-                return ret;
+                return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
 
             match = ChineseDatePeriodExtractorConfiguration.YearInChineseRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
-                var tmp = match.Value;
-                if (tmp.EndsWith("年"))
+                var yearStr = match.Value;
+
+                // Handle like "二零一七年上半年"，"二零一七年下半年"
+                yearStr = HandleWithHalfYear(match, yearStr, out bool hasHalf, out bool isFirstHalf);
+
+                if (IsYearOnly(yearStr))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - 1);
+                    yearStr = yearStr.Substring(0, yearStr.Length - 1);
                 }
 
-                if (tmp.Length == 1)
+                if (yearStr.Length == 1)
                 {
                     return ret;
                 }
 
-                var re = ConvertChineseToInteger(tmp);
-                var year = re;
+                var year = ConvertChineseToInteger(yearStr);
 
-                if (year < 100 && year >= this.config.TwoNumYear)
-                {
-                    year += 1900;
-                }
-                else if (year < 100 && year < this.config.TwoNumYear)
-                {
-                    year += 2000;
-                }
-
-                var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
-                var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
-
-                ret.Timex = year.ToString("D4");
-                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
-                ret.Success = true;
-
-                return ret;
+                return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
+
+            return ret;
+        }
+
+        private string HandleWithHalfYear(ConditionalMatch match, string text, out bool hasHalf, out bool isFirstHalf)
+        {
+            var firstHalf = match.Groups["firstHalf"].Value;
+            var secondHalf = match.Groups["secondHalf"].Value;
+
+            hasHalf = false;
+            isFirstHalf = !string.IsNullOrEmpty(firstHalf);
+
+            if (isFirstHalf || !string.IsNullOrEmpty(secondHalf))
+            {
+                var halfText = isFirstHalf ? firstHalf : secondHalf;
+                text = text.Substring(0, text.Length - halfText.Length);
+                hasHalf = true;
+            }
+
+            return text;
+        }
+
+        private DateTimeResolutionResult HandleYearResult(DateTimeResolutionResult ret, bool hasHalf, bool isFirstHalf, int year)
+        {
+            if (year < 100 && year >= this.config.TwoNumYear)
+            {
+                year += 1900;
+            }
+            else if (year < 100 && year < this.config.TwoNumYear)
+            {
+                year += 2000;
+            }
+
+            var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+            var endDay = DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
+
+            ret.Timex = DateTimeFormatUtil.LuisDate(year);
+
+            if (hasHalf)
+            {
+                if (isFirstHalf)
+                {
+                    endDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                }
+                else
+                {
+                    beginDay = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
+                }
+
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDay, endDay, DatePeriodTimexType.ByMonth);
+            }
+
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+            ret.Success = true;
 
             return ret;
         }
@@ -869,9 +939,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
             var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
-            if (pr1.Value == null || pr2.Value == null)
+
+            if (er.Count >= 2)
             {
-                return ret;
+                // @TODO Refactor code to remove the cycle between BaseDatePeriodParser and its config.
+                var dateContext = BaseDatePeriodParser.GetYearContext(this.config, er[0].Text, er[1].Text, text);
+
+                if (pr1.Value == null || pr2.Value == null)
+                {
+                    return ret;
+                }
+
+                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
             }
 
             DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
@@ -909,8 +989,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                var beforeStr = text.Substring(0, match.Index).ToLowerInvariant();
+                var srcUnit = match.Groups["unit"].Value;
+                var beforeStr = text.Substring(0, match.Index);
+
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];
@@ -983,20 +1064,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // for case "前两年" "后三年"
-            var durationRes = Durationextractor.Extract(text, referenceDate);
+            var durationRes = DurationExtractor.Extract(text, referenceDate);
             if (durationRes.Count > 0)
             {
-                var beforeStr = text.Substring(0, (int)durationRes[0].Start).ToLowerInvariant();
+                var beforeStr = text.Substring(0, (int)durationRes[0].Start);
                 match = ChineseDatePeriodExtractorConfiguration.UnitRegex.Match(durationRes[0].Text);
                 if (match.Success)
                 {
-                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                    var numberStr = durationRes[0].Text.Substring(0, match.Index).Trim().ToLowerInvariant();
+                    var srcUnit = match.Groups["unit"].Value;
+
+                    var numberStr = durationRes[0].Text.Substring(0, match.Index).Trim();
                     var number = ConvertChineseToNum(numberStr);
+
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
                         unitStr = this.config.UnitMap[srcUnit];
-                        numStr = number.ToString();
+
                         var prefixMatch = ChineseDatePeriodExtractorConfiguration.PastRegex.MatchExact(beforeStr, trim: true);
 
                         if (prefixMatch.Success)
@@ -1005,26 +1088,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             switch (unitStr)
                             {
                                 case Constants.TimexDay:
-                                    beginDate = referenceDate.AddDays(-double.Parse(numStr));
+                                    beginDate = referenceDate.AddDays(-number);
                                     endDate = referenceDate;
                                     break;
                                 case Constants.TimexWeek:
-                                    beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                    beginDate = referenceDate.AddDays(-7 * number);
                                     endDate = referenceDate;
                                     break;
                                 case Constants.TimexMonthFull:
-                                    beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                    beginDate = referenceDate.AddMonths(-number);
                                     endDate = referenceDate;
                                     break;
                                 case Constants.TimexYear:
-                                    beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                    beginDate = referenceDate.AddYears(-number);
                                     endDate = referenceDate;
                                     break;
                                 default:
                                     return ret;
                             }
 
-                            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
+                            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P{number}{unitStr[0]})";
                             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                             ret.Success = true;
                             return ret;
@@ -1039,26 +1122,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             {
                                 case Constants.TimexDay:
                                     beginDate = referenceDate;
-                                    endDate = referenceDate.AddDays(double.Parse(numStr));
+                                    endDate = referenceDate.AddDays(number);
                                     break;
                                 case Constants.TimexWeek:
                                     beginDate = referenceDate;
-                                    endDate = referenceDate.AddDays(7 * double.Parse(numStr));
+                                    endDate = referenceDate.AddDays(7 * number);
                                     break;
                                 case Constants.TimexMonthFull:
                                     beginDate = referenceDate;
-                                    endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                    endDate = referenceDate.AddMonths(number);
                                     break;
                                 case Constants.TimexYear:
                                     beginDate = referenceDate;
-                                    endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                    endDate = referenceDate.AddYears(number);
                                     break;
                                 default:
                                     return ret;
                             }
 
                             ret.Timex =
-                                $"({DateTimeFormatUtil.LuisDate(beginDate.AddDays(1))},{DateTimeFormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
+                                $"({DateTimeFormatUtil.LuisDate(beginDate.AddDays(1))},{DateTimeFormatUtil.LuisDate(endDate.AddDays(1))},P{number}{unitStr[0]})";
                             ret.FutureValue =
                                 ret.PastValue =
                                     new Tuple<DateObject, DateObject>(beginDate.AddDays(1), endDate.AddDays(1));
@@ -1076,7 +1159,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseWeekOfMonth(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
+
             var match = ChineseDatePeriodExtractorConfiguration.WeekOfMonthRegex.Match(text);
             if (!match.Success)
             {
@@ -1113,12 +1197,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
-                ret.Timex = referenceDate.Year.ToString("D4") + "-" + month.ToString("D2");
+                ret.Timex = DateTimeFormatUtil.LuisDate(referenceDate.Year, month);
             }
             else
             {
                 month = ToMonthNumber(monthStr);
-                ret.Timex = "XXXX" + "-" + month.ToString("D2");
+                ret.Timex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
                 year = referenceDate.Year;
                 noYear = true;
             }
@@ -1145,7 +1229,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
-            ret.Timex += "-W" + cardinal.ToString("D2");
+            ret.Timex += "-W" + cardinal.ToString("D2", CultureInfo.InvariantCulture);
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
             ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
             ret.Success = true;
@@ -1171,7 +1255,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearNum))
                 {
                     hasYear = true;
-                    if (yearNum.EndsWith("年"))
+                    if (IsYearOnly(yearNum))
                     {
                         yearNum = yearNum.Substring(0, yearNum.Length - 1);
                     }
@@ -1181,7 +1265,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else if (!string.IsNullOrEmpty(yearChs))
                 {
                     hasYear = true;
-                    if (yearChs.EndsWith("年"))
+                    if (IsYearOnly(yearChs))
                     {
                         yearChs = yearChs.Substring(0, yearChs.Length - 1);
                     }
@@ -1191,11 +1275,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else if (!string.IsNullOrEmpty(yearRel))
                 {
                     hasYear = true;
-                    if (yearRel.EndsWith("去年"))
+                    if (IsLastYear(yearRel))
                     {
                         year--;
                     }
-                    else if (yearRel.EndsWith("明年"))
+                    else if (IsNextYear(yearRel))
                     {
                         year++;
                     }
@@ -1215,7 +1299,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = this.config.SeasonMap[seasonStr];
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + "-" + ret.Timex;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-" + ret.Timex;
                 }
 
                 ret.Success = true;
@@ -1242,7 +1326,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
-                if (yearNum.EndsWith("年"))
+                if (IsYearOnly(yearNum))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
@@ -1251,7 +1335,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
-                if (yearChs.EndsWith("年"))
+                if (IsYearOnly(yearChs))
                 {
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
@@ -1260,11 +1344,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
-                if (yearRel.EndsWith("去年"))
+                if (IsLastYear(yearRel))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("明年"))
+                else if (IsNextYear(yearRel))
                 {
                     year++;
                 }
@@ -1286,7 +1370,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum * 3) - 2, 1);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum * 3) + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P3M)";
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDate, endDate, DatePeriodTimexType.ByMonth);
             ret.Success = true;
 
             return ret;
@@ -1297,7 +1381,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
             int century = (referenceDate.Year / 100) + 1;
             int decade;
-            int beginYear, endYear;
             int decadeLastYear = 10;
             var inputCentury = false;
 
@@ -1329,16 +1412,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (!string.IsNullOrEmpty(centuryStr))
                     {
-                        centuryStr = centuryStr.Trim().ToLower();
-                        var thismatch = ChineseDatePeriodExtractorConfiguration.ThisRegex.Match(centuryStr);
-                        var nextmatch = ChineseDatePeriodExtractorConfiguration.NextRegex.Match(centuryStr);
-                        var lastmatch = ChineseDatePeriodExtractorConfiguration.LastRegex.Match(centuryStr);
+                        centuryStr = centuryStr.Trim();
+                        var thisMatch = ChineseDatePeriodExtractorConfiguration.ThisRegex.Match(centuryStr);
+                        var nextMatch = ChineseDatePeriodExtractorConfiguration.NextRegex.Match(centuryStr);
+                        var lastMatch = ChineseDatePeriodExtractorConfiguration.LastRegex.Match(centuryStr);
 
-                        if (thismatch.Success)
+                        if (thisMatch.Success)
                         {
                             // do nothing
                         }
-                        else if (nextmatch.Success)
+                        else if (nextMatch.Success)
                         {
                             century++;
                         }
@@ -1356,8 +1439,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            beginYear = ((century - 1) * 100) + decade;
-            endYear = beginYear + decadeLastYear;
+            var beginYear = ((century - 1) * 100) + decade;
+            var endYear = beginYear + decadeLastYear;
 
             if (inputCentury)
             {
@@ -1366,11 +1449,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else
             {
-                var beginYearStr = "XX" + decade.ToString();
+                var beginYearStr = "XX" + decade;
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (endYear % 100).ToString("D2");
+                var endYearStr = "XX" + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
@@ -1405,6 +1488,60 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private int ToMonthNumber(string monthStr)
         {
             return this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
+        }
+
+        private bool IsMonthOnly(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsWeekend(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsWeekOnly(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsYearOnly(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+        }
+
+        private bool IsThisYear(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsLastYear(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.LastYearTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsNextYear(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.NextYearTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsYearAfterNext(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearAfterNextTerms.Any(o => trimmedText.Equals(o));
+        }
+
+        private bool IsYearBeforeLast(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearBeforeLastTerms.Any(o => trimmedText.Equals(o));
         }
     }
 }

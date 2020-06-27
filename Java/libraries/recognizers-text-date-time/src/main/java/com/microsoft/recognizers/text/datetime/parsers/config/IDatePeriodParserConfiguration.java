@@ -125,6 +125,8 @@ public interface IDatePeriodParserConfiguration extends IOptionsConfiguration {
 
     ImmutableMap<String, String> getSeasonMap();
 
+    ImmutableMap<String, String> getSpecialYearPrefixesMap();
+
     ImmutableMap<String, Integer> getWrittenDecades();
 
     ImmutableMap<String, Integer> getNumbers();

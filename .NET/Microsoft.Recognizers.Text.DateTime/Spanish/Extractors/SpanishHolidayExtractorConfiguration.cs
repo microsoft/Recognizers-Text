@@ -5,16 +5,18 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class SpanishHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex2, RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline),
+            new Regex(DateTimeDefinitions.HolidayRegex1, RegexFlags),
+            new Regex(DateTimeDefinitions.HolidayRegex2, RegexFlags),
+            new Regex(DateTimeDefinitions.HolidayRegex3, RegexFlags),
         };
 
-        public SpanishHolidayExtractorConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public SpanishHolidayExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
         }

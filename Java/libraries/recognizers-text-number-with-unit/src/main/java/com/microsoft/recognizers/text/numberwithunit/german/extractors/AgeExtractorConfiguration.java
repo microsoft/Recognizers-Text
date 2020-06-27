@@ -36,7 +36,7 @@ public class AgeExtractorConfiguration extends GermanNumberWithUnitExtractorConf
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return Collections.emptyList();
+        return GermanNumericWithUnit.AmbiguousAgeUnitList;
     }
 
     public static Map<String, String> AgeSuffixList = GermanNumericWithUnit.AgeSuffixList;

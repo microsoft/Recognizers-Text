@@ -1,20 +1,22 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public SpanishMergedParserConfiguration(IOptionsConfiguration config)
+        public SpanishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
             SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
             AroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = SpanishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = SpanishMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
@@ -33,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AroundRegex { get; }
 
+        public Regex EqualRegex { get; }
+
         public Regex SuffixAfter { get; }
 
         public Regex YearRegex { get; }
@@ -42,5 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
+
+        bool IMergedParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

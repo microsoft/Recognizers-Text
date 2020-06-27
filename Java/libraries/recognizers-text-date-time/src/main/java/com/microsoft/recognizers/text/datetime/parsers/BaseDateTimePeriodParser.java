@@ -535,11 +535,13 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             if (!StringUtility.isNullOrEmpty(match.get().getGroup("early").value)) {
                 hasEarly = true;
                 result.setComment(Constants.Comment_Early);
+                result.setMod(Constants.EARLY_MOD);
             }
 
             if (!hasEarly && !StringUtility.isNullOrEmpty(match.get().getGroup("late").value)) {
                 hasLate = true;
                 result.setComment(Constants.Comment_Late);
+                result.setMod(Constants.LATE_MOD);
             }
         } else {
             match = Arrays.stream(RegExpUtility.getMatches(config.getAmDescRegex(), trimmedText)).findFirst();

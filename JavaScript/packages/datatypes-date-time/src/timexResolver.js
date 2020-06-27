@@ -70,7 +70,7 @@ const weekDateRange = function (year, weekOfYear) {
 const monthDateRange = function (year, month) {
     return {
         start: timexValue.dateValue({ year: year, month: month, dayOfMonth: 1 }),
-        end: timexValue.dateValue({ year: year, month: month + 1, dayOfMonth: 1 })
+        end: timexValue.dateValue({ year: month == 12 ? year + 1 : year, month: month == 12 ? 1 : month + 1, dayOfMonth: 1 })
     };
 };
 

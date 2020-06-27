@@ -1,13 +1,13 @@
-import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod"
+import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { BaseNumberParser, BaseNumberExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number"
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { BaseDateTime } from "../../resources/baseDateTime"
+import { BaseNumberParser, BaseNumberExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
+import { BaseDateTime } from "../../resources/baseDateTime";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
-import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
-import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
+import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration";
+import { EnglishDurationExtractorConfiguration } from "./durationConfiguration";
+import { EnglishDateExtractorConfiguration } from "./dateConfiguration";
 import { IDateTimeExtractor } from "../baseDateTime";
 
 export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
@@ -31,7 +31,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly rangeConnectorRegex: RegExp
     readonly nowRegex: RegExp
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex),
@@ -64,7 +64,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
         this.inConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex);
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex);
-        this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.integerExtractor = new EnglishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
@@ -124,7 +124,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly nextPrefixRegex: RegExp
     readonly previousPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
-    readonly restOfDateRegex : RegExp
+    readonly restOfDateRegex: RegExp
     readonly laterEarlyPeriodRegex: RegExp
     readonly weekWithWeekDayRangeRegex: RegExp
     readonly unspecificEndOfRangeRegex: RegExp
@@ -135,7 +135,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly cardinalMap: ReadonlyMap<string, number>
     readonly seasonMap: ReadonlyMap<string, string>
     readonly unitMap: ReadonlyMap<string, string>
-    
+
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.dateExtractor = config.dateExtractor;
         this.dateParser = config.dateParser;
@@ -182,7 +182,8 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         let swift = 0;
         if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
-        } else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
+        }
+        else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
         }
         return swift;
@@ -193,9 +194,11 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         let swift = -10;
         if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
-        } else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
+        }
+        else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
-        } else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimmedSource).length > 0) {
+        }
+        else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimmedSource).length > 0) {
             swift = 0;
         }
         return swift;

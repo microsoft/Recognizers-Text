@@ -1,12 +1,14 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Number.Config;
+
 namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
         // CardinalExtractor = Int + Double
-        public CardinalExtractor(JapaneseNumberExtractorMode mode = JapaneseNumberExtractorMode.Default)
+        public CardinalExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 

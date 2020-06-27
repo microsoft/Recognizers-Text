@@ -1,0 +1,1152 @@
+[
+  {
+    "Input": "Ik zal wekelijks vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "wekelijks",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal tweewekelijks vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweewekelijks",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal dagelijks vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dagelijks",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke dag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke dag",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke maand vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke maand",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal jaarlijks vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "jaarlijks",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke twee dagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke twee dagen ",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke 3 weken vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke 3 weken",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 15.00 elke dag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15.00 elke dag",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 15.00 iedere dag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15.00 iedere dag",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke 15/4 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke 15/4",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere maandag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere maandag",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke maandag 16.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke maandag 16.00",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
+        },
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere ochtend vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere ochtend",
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere ochtend om 9.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere ochtend om 9.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 7,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere middag  om 16.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere middag  om 16.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
+        },
+        "Start": 7,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere avond om 21.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere avond om 21.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 7,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere avond om 21.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere avond om 21.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 7,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal ochtenden om 9.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4065719+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ochtenden om 9.00",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal op ochtenden om 9.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op ochtenden om 9.00",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal om 9.00 iedere zondag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " 9.00 iedere zondag ",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 9,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal om 9.00 op zondagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9.00 op zondagen ",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 10,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal zondagen 9.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zondagen 9.00",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal op maandagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op maandagen",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal op zondagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op zondagen",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal zondagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zondagen",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga eenmaal per jaar op vakantie",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eenmaal per jaar",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        },
+        "Start": 6,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Laten we eenmaal per week afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eenmaal per week",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 9,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Laten we vrijdag om de week afspreken",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag om de week",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-5"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-5"
+          }
+        },
+        "Start": 9,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Laten we een driemaandelijkse meeting instellen",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "driemaandelijkse",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "set": "Set: P3M"
+          },
+          "PastResolution": {
+            "set": "Set: P3M"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere dag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere dag",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere maand vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere maand",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere twee dagen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere twee dagen ",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
+        },
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 15.00 iedere dag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15.00 iedere dag",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 15.00 elke dag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15.00 elke dag",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        },
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere 15/4 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere 15/4",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke maandag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke maandag",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal iedere maandag 16.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere maandag 16.00",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
+        },
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke ochtend vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke ochtend",
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke ochtend om 9.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke ochtend om 9.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        },
+        "Start": 7,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke middag  om 16.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke middag  om 16.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
+        },
+        "Start": 7,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke avond om 21.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke avond om 21.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke avond om 21.00 vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke avond om 21.00 ",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        },
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal om 9.00 elke zondag vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " 9.00 elke zondag ",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        },
+        "Start": 9,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Laten we vrijdag om de andere week afspreken",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag om de andere week",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-5"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-5"
+          }
+        },
+        "Start": 9,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Laten we een kwartaal meeting instellen",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " kwartaal",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "set": "Set: P3M"
+          },
+          "PastResolution": {
+            "set": "Set: P3M"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  }
+]

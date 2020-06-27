@@ -1,0 +1,1510 @@
+[
+  {
+    "Input": "मैं 15 को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 4,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाऊंगा 22 अप्रील",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 अप्रील",
+        "Type": "date",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाऊंगा जन. 1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जन. 1",
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं को वापस जाऊंगा जनवरी 12, 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जनवरी 12, 2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाऊंगा 2016 के जनवरी 12 को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 के जनवरी 12",
+        "Type": "date",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं सोमवार जनवरी 12, 2016  को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार जनवरी 12, 2016",
+        "Type": "date",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा 21/04/2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा 21/04/16",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा 9-18-15",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 22/04 को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंग 22/04",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा 2015/08/12",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा पहली जन.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहली जन.",
+        "Type": "date",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा 1-जन.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1-जन.",
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा 28-नवं.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "28-नवं.",
+        "Type": "date",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा, बुध, 22 जन.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बुध, 22 जन.",
+        "Type": "date",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा जुलाई के पहले शुक्रवार को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई के पहले शुक्रवार",
+        "Type": "date",
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाउंगा इस माह के पहले शुक्रवार को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस माह के पहले शुक्रवार",
+        "Type": "date",
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं वापस जाऊंगा अब से दो सप्ताह बाद",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अब से दो सप्ताह बाद",
+        "Type": "date",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले हफ़्ते शुक्रवार को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले हफ़्ते शुक्रवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार को अगले सप्ताह वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को अगले सप्ताह",
+        "Type": "date",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "पिछले सोमवार",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले सोमवार",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगल को वापस जाऊंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगल",
+        "Type": "date",
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगल को वापस जाऊंगा। अच्छी खबर",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगल",
+        "Type": "date",
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार को वापस जाऊंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्र को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्र",
+        "Type": "date",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज",
+        "Type": "date",
+        "Start": 4,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल",
+        "Type": "date",
+        "Start": 4,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं परसों वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "परसों",
+        "Type": "date",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले दिन वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले दिन",
+        "Type": "date",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस शुक्रवार वापस जाऊंगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले रविवार को वापस जाऊंगा ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले रविवार को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी दिन वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी दिन",
+        "Type": "date",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अंतिम दिन वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम दिन",
+        "Type": "date",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं उस दिन वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उस दिन",
+        "Type": "date",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस हफ्ते शुक्रवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस हफ्ते शुक्रवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले हफ़्ते रविवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले हफ़्ते रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले हफ़्ते रविवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले हफ़्ते रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं 15 जून 2016 को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 जून 2016",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई की ग्यारहवीं तारीख को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई की ग्यारहवीं",
+        "Type": "date",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं चार मई को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "चार मई",
+        "Type": "date",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं पहली जनवरी वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहली जनवरी",
+        "Type": "date",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं इक्कीस मई को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीस मई",
+        "Type": "date",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई इक्कीस को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई इक्कीस",
+        "Type": "date",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं दूसरे अगस्त को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरे अगस्त",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून की बाईस तारीख को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून की बाईस",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो महीने पहले वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो महीने पहले",
+        "Type": "date",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो दिन बाद वापस चला जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो दिन बाद",
+        "Type": "date",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "एक महीने पहले मैंने किसको ईमेल किया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक महीने पहले",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं 27 के लिए वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 4,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "27वें दिन मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27वें",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "27 के लिए मैं वापस चला गया था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "27 के लिये मैं वापस चला गया था!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "27  के लिये मैं वापस चला गया था ।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "21वें दिन मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21वें",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "22वें दिन मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22वें",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "दूसरे दिन मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरे दिन",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "बाईस के लिए मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाईस",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "इकत्तीस के लिए मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इकत्तीस",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "27वें दिन के लिए मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27वें",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "21वें दिन के लिए मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21वें",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "22वें दिन के लिए मैं वापस चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22वें",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "दूसरी तारीख के लिए मैं वापस चला गया था!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरी",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "बाईस तारीख के लिए मैं वापस चला गया था?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाईस",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "पहला पुरस्कार",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं 27वें मंजिल पर जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "सिंगापुर और चीन के बीच कूटनीतिक रिश्तों की 25वीं वर्षगांठ का कार्यक्रम",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "17वें डोर हॉन्टेड एक्सपीरियंस की टिकटें पाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "शनिवार दूसरी तारीख को मेरे पास क्या है",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शनिवार दूसरी",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "विशाल शर्मा के साथ बुधवार 27 तारीख को एक मीटिंग",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बुधवार 27",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं गुरुवार 21 तारीख को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गुरुवार 21",
+        "Type": "date",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार 22 तारीख को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 22",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं शनिवार 23 तारीख को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शनिवार 23",
+        "Type": "date",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार 15 तारीख को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 15",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं वृहस्पतिवार इक्कीस तारीख को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "वृहस्पतिवार इक्कीस",
+        "Type": "date",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार बाईस को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार बाईस",
+        "Type": "date",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार पंद्रह को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार पंद्रह",
+        "Type": "date",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं गुरुवार सात तारीख को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गुरुवार सात",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं दूसरे रविवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरे रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं पहले रविवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहले रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं तीसरे मंगलवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीसरे मंगलवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं पांचवें रविवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांचवें रविवार",
+        "Type": "date",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं छठे रविवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रविवार",
+        "Type": "date",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं दसवें सोमवार को वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार",
+        "Type": "date",
+        "Start": 10,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले महीने की बीसवीं तारीख को जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने की बीसवीं",
+        "Type": "date",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस महीने की इकत्तीस तारीख को जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने की इकत्तीस",
+        "Type": "date",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, क्या तुम या तो इस हफ़्ते शुक्रवार या अगले हफ़्ते मंगलवार को एक स्कायप कॉल अरेंज कर सकती हो",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस हफ़्ते शुक्रवार",
+        "Type": "date",
+        "Start": 25,
+        "Length": 17
+      },
+      {
+        "Text": "अगले हफ़्ते मंगलवार",
+        "Type": "date",
+        "Start": 46,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, क्या तुम या तो इस हफ़्ते के शुक्रवार या इस हफ़्ते शनिवार को एक स्कायप कॉल अरेंज कर सकती हो",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस हफ़्ते के शुक्रवार",
+        "Type": "date",
+        "Start": 25,
+        "Length": 20
+      },
+      {
+        "Text": "इस हफ़्ते शनिवार",
+        "Type": "date",
+        "Start": 49,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "1 महीने 21 दिन पहले हमारी एक मीटिंग हुई थी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 महीने 21 दिन पहले",
+        "Type": "date",
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैंने यह जगह 2 वर्ष 1 माह 21 दिन पहले छोड़ दी थी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 वर्ष 1 माह 21 दिन पहले",
+        "Type": "date",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां 2 वर्ष 21 दिन बाद से रहना शुरू करुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 वर्ष 21 दिन बाद",
+        "Type": "date",
+        "Start": 9,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां से अगले महीने 20 को चला गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने 20",
+        "Type": "date",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां से 5 दिसंबर 1391 को निकल गया था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 दिसंबर 1391",
+        "Type": "date",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "सोमवार, जन. बाईस, 2018",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार, जन. बाईस, 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "रविवार जनवरी इक्कीस दो हजार अठारह को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रविवार जनवरी इक्कीस दो हजार अठारह",
+        "Type": "date",
+        "Start": 0,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "इक्कीस सितंबर उन्नीस सौ अठत्तर को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीस सितंबर उन्नीस सौ अठत्तर",
+        "Type": "date",
+        "Start": 0,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "सितंबर 10, उन्नीस सौ एक को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर 10, उन्नीस सौ एक",
+        "Type": "date",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "सितंबर की दस तारीख, सन दो हजार को",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर की दस तारीख, सन दो हजार",
+        "Type": "date",
+        "Start": 0,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप 13.5.2015 को फ्री हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप 2015.5.13 को उपलब्ध हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप अभी से अगले दो रविवार को उपलब्ध हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अभी से अगले दो रविवार",
+        "Type": "date",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप अगले दो सोमवार के बाद को उपलब्ध हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले दो सोमवार के बाद",
+        "Type": "date",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप आज से दो दिन बाद उपलब्ध हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से दो दिन बाद",
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप कल से तीन हफ़्ते बाद उपलब्ध होंगे?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल से तीन हफ़्ते बाद",
+        "Type": "date",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "आप कल से दो दिन पहले कहां थे?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल से दो दिन पहले",
+        "Type": "date",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस शुक्रवार-जून-15 को कभी विशाल के साथ एक स्कायप कॉल सेट कीजिए",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार-जून-15",
+        "Type": "date",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस शुक्रवार(जून 15) को कभी विशाल के साथ एक स्कायप कॉल सेट कीजिए",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार(जून 15)",
+        "Type": "date",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस शुक्रवार जून 15 को कभी विशाल के साथ एक स्कायप कॉल सेट कीजिए",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार जून 15",
+        "Type": "date",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस शुक्रवार जून बाईस को कभी विशाल के साथ एक स्कायप कॉल सेट कीजिए",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार जून बाईस",
+        "Type": "date",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस शुक्रवार जून तेईस को कभी विशाल के साथ एक स्कायप कॉल सेट कीजिए",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार",
+        "Type": "date",
+        "Start": 16,
+        "Length": 11
+      },
+      {
+        "Text": "जून तेईस",
+        "Type": "date",
+        "Start": 28,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 हफ़्ते में चला जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 हफ़्ते में",
+        "Type": "date",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया शुक्रवार 7.6  को विशाल के साथ कभी एक स्कायप कॉल सेट करें.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 7.6",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया शुक्रवार 7/6  को विशाल के साथ कभी एक स्कायप कॉल सेट करें.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 7/6",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया शुक्रवार 7-6  को विशाल के साथ कभी एक स्कायप कॉल सेट करें.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 7-6",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया शुक्रवार 2018-7-6  को विशाल के साथ कभी एक स्कायप कॉल सेट करें.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 2018-7-6",
+        "Type": "date",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया दो कार्यदिवस में कभी एक स्कायप कॉल सेट करें.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो कार्यदिवस में",
+        "Type": "date",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, क्या तुम अक्तूबर की पहली तारीख के लिए कुछ सेट कर सकती हो?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्तूबर की पहली तारीख",
+        "Type": "date",
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "इसके अंकित मूल्य 6 1/4% के परिवर्तन होने पर...",
+    "Comment": "1/4 shouldn't recognized as date here",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं बाईस जून 2017 को चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाईस जून 2017",
+        "Type": "date",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून की बाईस तारीख 2017 को चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून की बाईस तारीख 2017",
+        "Type": "date",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  }
+]

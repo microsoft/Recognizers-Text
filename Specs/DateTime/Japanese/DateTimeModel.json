@@ -563,6 +563,7 @@
               "timex": "2016-11-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-11-08"
             }
           ]
@@ -589,12 +590,14 @@
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-08-01"
             },
             {
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2017-08-01"
             }
           ]
@@ -621,6 +624,7 @@
               "timex": "2016-08",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-08-01"
             }
           ]
@@ -2113,9 +2117,9 @@
         }
       },
       {
-        "Text": "1 pm",
-        "Start": 44,
-        "End": 47,
+        "Text": "午後1時",
+        "Start": 12,
+        "End": 16,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -2153,9 +2157,9 @@
         }
       },
       {
-        "Text": "tue",
-        "Start": 39,
-        "End": 41,
+        "Text": "火曜日",
+        "Start": 7,
+        "End": 10,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2198,9 +2202,9 @@
         }
       },
       {
-        "Text": "10 oclock",
-        "Start": 49,
-        "End": 57,
+        "Text": "10時",
+        "Start": 5,
+        "End": 8,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -2244,9 +2248,9 @@
         }
       },
       {
-        "Text": "5-6 pm",
-        "Start": 44,
-        "End": 49,
+        "Text": "午後5時から6時まで",
+        "Start": 17,
+        "End": 27,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -2292,9 +2296,9 @@
         }
       },
       {
-        "Text": "9-10 am",
-        "Start": 16,
-        "End": 22,
+        "Text": "午前9時から10時まで",
+        "Start": 14,
+        "End": 25,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -2333,9 +2337,9 @@
         }
       },
       {
-        "Text": "thursday",
-        "Start": 66,
-        "End": 73,
+        "Text": "木曜日",
+        "Start": 12,
+        "End": 15,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2378,9 +2382,9 @@
         }
       },
       {
-        "Text": "thursday 1 pm",
-        "Start": 71,
-        "End": 83,
+        "Text": "木曜日午後1時",
+        "Start": 16,
+        "End": 23,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -2488,24 +2492,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1時間",
-        "Start": 8,
-        "End": 11,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1H",
-              "type": "duration",
-              "value": "3600"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "tuesday march 7",
-        "Start": 21,
-        "End": 35,
+        "Text": "3月7日火曜日",
+        "Start": 0,
+        "End": 7,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2518,6 +2507,21 @@
               "timex": "XXXX-03-07",
               "type": "date",
               "value": "2019-03-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "1時間",
+        "Start": 8,
+        "End": 11,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
             }
           ]
         }
@@ -2678,9 +2682,9 @@
         }
       },
       {
-        "Text": "within next 10 months",
-        "Start": 56,
-        "End": 76,
+        "Text": "10か月以内に",
+        "Start": 20,
+        "End": 27,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2720,8 +2724,8 @@
       },
       {
         "Text": "2週間以内に",
-        "Start": 79,
-        "End": 88,
+        "Start": 5,
+        "End": 11,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -2760,9 +2764,9 @@
         }
       },
       {
-        "Text": "next forty days",
-        "Start": 37,
-        "End": 51,
+        "Text": "今後40日間",
+        "Start": 11,
+        "End": 17,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2816,6 +2820,22 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
+        "Text": "来月",
+        "Start": 5,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04",
+              "type": "daterange",
+              "start": "2018-04-01",
+              "end": "2018-05-01"
+            }
+          ]
+        }
+      },
+      {
         "Text": "2時間",
         "Start": 7,
         "End": 10,
@@ -2826,22 +2846,6 @@
               "timex": "PT2H",
               "type": "duration",
               "value": "7200"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "next month",
-        "Start": 29,
-        "End": 38,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2018-04",
-              "type": "daterange",
-              "start": "2018-04-01",
-              "end": "2018-05-01"
             }
           ]
         }
@@ -2857,6 +2861,22 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
+        "Text": "先週",
+        "Start": 5,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W11",
+              "type": "daterange",
+              "start": "2018-03-12",
+              "end": "2018-03-19"
+            }
+          ]
+        }
+      },
+      {
         "Text": "2時間",
         "Start": 12,
         "End": 15,
@@ -2867,22 +2887,6 @@
               "timex": "PT2H",
               "type": "duration",
               "value": "7200"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "last week",
-        "Start": 38,
-        "End": 46,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2018-W11",
-              "type": "daterange",
-              "start": "2018-03-12",
-              "end": "2018-03-19"
             }
           ]
         }
@@ -3026,9 +3030,9 @@
         }
       },
       {
-        "Text": "this week",
-        "Start": 28,
-        "End": 36,
+        "Text": "今週",
+        "Start": 5,
+        "End": 7,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3067,9 +3071,9 @@
         }
       },
       {
-        "Text": "this week",
-        "Start": 136,
-        "End": 144,
+        "Text": "今週",
+        "Start": 60,
+        "End": 62,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3083,24 +3087,9 @@
         }
       },
       {
-        "Text": "45 minutes",
-        "Start": 403,
-        "End": 412,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT45M",
-              "type": "duration",
-              "value": "2700"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "november",
-        "Start": 417,
-        "End": 424,
+        "Text": "11月",
+        "Start": 161,
+        "End": 164,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -3115,6 +3104,21 @@
               "type": "daterange",
               "start": "2018-11-01",
               "end": "2018-12-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "45分",
+        "Start": 165,
+        "End": 168,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT45M",
+              "type": "duration",
+              "value": "2700"
             }
           ]
         }
@@ -4023,15 +4027,16 @@
               "timex": "2010",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2010-01-01"
             }
           ]
         }
       },
       {
-        "Text": "after 2018",
-        "Start": 29,
-        "End": 38,
+        "Text": "2018年以降",
+        "Start": 10,
+        "End": 17,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4071,9 +4076,9 @@
         }
       },
       {
-        "Text": "before 2018",
-        "Start": 29,
-        "End": 39,
+        "Text": "2018年以前",
+        "Start": 10,
+        "End": 17,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4081,15 +4086,16 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-01-01"
             }
           ]
         }
       },
       {
-        "Text": "before 2000",
-        "Start": 44,
-        "End": 54,
+        "Text": "2000年以前",
+        "Start": 32,
+        "End": 39,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4097,6 +4103,7 @@
               "timex": "2000",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2000-01-01"
             }
           ]
@@ -4104,8 +4111,8 @@
       },
       {
         "Text": "1998",
-        "Start": 64,
-        "End": 67,
+        "Start": 24,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -4214,9 +4221,9 @@
         }
       },
       {
-        "Text": "less than 1 week",
-        "Start": 37,
-        "End": 52,
+        "Text": "1週間以下",
+        "Start": 4,
+        "End": 9,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -4276,6 +4283,7 @@
               "timex": "2018-05-29",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-05-29"
             }
           ]
@@ -4302,6 +4310,7 @@
               "timex": "2018-05-26",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-05-26"
             }
           ]
@@ -4395,6 +4404,21 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
+        "Text": "今日",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "type": "date",
+              "value": "2018-05-29"
+            }
+          ]
+        }
+      },
+      {
         "Text": "3分",
         "Start": 4,
         "End": 6,
@@ -4405,21 +4429,6 @@
               "timex": "PT3M",
               "type": "duration",
               "value": "180"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "today",
-        "Start": 27,
-        "End": 31,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2018-05-29",
-              "type": "date",
-              "value": "2018-05-29"
             }
           ]
         }
@@ -4455,9 +4464,9 @@
         }
       },
       {
-        "Text": "nights",
-        "Start": 45,
-        "End": 50,
+        "Text": "泊",
+        "Start": 7,
+        "End": 8,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -4627,6 +4636,7 @@
               "timex": "2018-06-26T16",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-06-26 16:00:00"
             }
           ]
@@ -4679,6 +4689,7 @@
               "timex": "2018-06-19T14",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-06-19 14:00:00"
             }
           ]
@@ -4705,24 +4716,28 @@
               "timex": "XXXX-02-01T06:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-02-01 06:00:00"
             },
             {
               "timex": "XXXX-02-01T06:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2019-02-01 06:00:00"
             },
             {
               "timex": "XXXX-02-01T18:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2018-02-01 18:00:00"
             },
             {
               "timex": "XXXX-02-01T18:00",
               "Mod": "before",
               "type": "datetimerange",
+              "sourceEntity": "datetimerange",
               "end": "2019-02-01 18:00:00"
             }
           ]
@@ -4755,9 +4770,9 @@
         }
       },
       {
-        "Text": "after 2:00",
-        "Start": 25,
-        "End": 34,
+        "Text": "2時以降",
+        "Start": 6,
+        "End": 10,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -4804,8 +4819,8 @@
       },
       {
         "Text": "2009",
-        "Start": 23,
-        "End": 26,
+        "Start": 6,
+        "End": 10,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5335,9 +5350,9 @@
         }
       },
       {
-        "Text": "more than 4 days",
-        "Start": 43,
-        "End": 58,
+        "Text": "4日以上",
+        "Start": 9,
+        "End": 13,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -5351,9 +5366,9 @@
         }
       },
       {
-        "Text": "less than 30 minutes",
-        "Start": 69,
-        "End": 88,
+        "Text": "30分以上",
+        "Start": 19,
+        "End": 24,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -5594,12 +5609,14 @@
               "timex": "XXXX-07-04",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-07-04"
             },
             {
               "timex": "XXXX-07-04",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2019-07-04"
             }
           ]
@@ -5636,9 +5653,9 @@
         }
       },
       {
-        "Text": "wednesday from 10-4",
-        "Start": 39,
-        "End": 57,
+        "Text": "水曜日の10時から4時までの間",
+        "Start": 9,
+        "End": 24,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -5803,9 +5820,9 @@
         }
       },
       {
-        "Text": "tomorrow am",
-        "Start": 36,
-        "End": 46,
+        "Text": "明日の午前",
+        "Start": 7,
+        "End": 12,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -6115,9 +6132,9 @@
         }
       },
       {
-        "Text": "as early as 7:00 am",
-        "Start": 21,
-        "End": 39,
+        "Text": "早朝午前7時に",
+        "Start": 2,
+        "End": 9,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -6125,6 +6142,7 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
+              "sourceEntity": "datetimerange",
               "start": "07:00:00"
             }
           ]
@@ -6304,6 +6322,28 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
+        "Text": "火曜日の午後1時以降に",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-08-28 13:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-09-04 13:00:00"
+            }
+          ]
+        }
+      },
+      {
         "Text": "15分",
         "Start": 35,
         "End": 38,
@@ -6319,9 +6359,9 @@
         }
       },
       {
-        "Text": "next monday",
-        "Start": 30,
-        "End": 40,
+        "Text": "来週の月曜日",
+        "Start": 10,
+        "End": 16,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -6329,28 +6369,6 @@
               "timex": "2018-09-03",
               "type": "date",
               "value": "2018-09-03"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "tuesday after 1pm",
-        "Start": 45,
-        "End": 61,
-        "TypeName": "datetimeV2.datetimerange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-WXX-2T13",
-              "Mod": "after",
-              "type": "datetimerange",
-              "start": "2018-08-28 13:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-2T13",
-              "Mod": "after",
-              "type": "datetimerange",
-              "start": "2018-09-04 13:00:00"
             }
           ]
         }
@@ -6562,21 +6580,6 @@
             }
           ]
         }
-      },
-      {
-        "Text": "tomorrow",
-        "Start": 47,
-        "End": 54,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2018-09-01",
-              "type": "date",
-              "value": "2018-09-01"
-            }
-          ]
-        }
       }
     ]
   },
@@ -6599,6 +6602,7 @@
               "timex": "(2019-01-01,2019-04-01,P3M)",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2019-01-01"
             }
           ]
@@ -6651,6 +6655,7 @@
               "timex": "2012",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2012-01-01"
             }
           ]
@@ -6677,6 +6682,7 @@
               "timex": "2016",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-01-01"
             }
           ]
@@ -6703,6 +6709,7 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2016-01-01"
             }
           ]
@@ -6760,9 +6767,9 @@
         }
       },
       {
-        "Text": "after 6pm",
-        "Start": 33,
-        "End": 41,
+        "Text": "午後6時以降に",
+        "Start": 10,
+        "End": 17,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -6822,6 +6829,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -6854,9 +6862,9 @@
         }
       },
       {
-        "Text": "later than 2020",
-        "Start": 46,
-        "End": 60,
+        "Text": "2020年以降",
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6896,9 +6904,9 @@
         }
       },
       {
-        "Text": "any time from 7:00 am",
-        "Start": 21,
-        "End": 41,
+        "Text": "午前7時以降",
+        "Start": 3,
+        "End": 9,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -6906,6 +6914,7 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
+              "sourceEntity": "datetimerange",
               "start": "07:00:00"
             }
           ]
@@ -6998,6 +7007,7 @@
               "timex": "T14:30",
               "Mod": "before",
               "type": "timerange",
+              "sourceEntity": "datetimerange",
               "end": "14:30:00"
             }
           ]
@@ -7304,9 +7314,9 @@
         }
       },
       {
-        "Text": "one month ago",
-        "Start": 221,
-        "End": 233,
+        "Text": "ひと月前",
+        "Start": 85,
+        "End": 89,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7344,9 +7354,9 @@
         }
       },
       {
-        "Text": "in a week",
-        "Start": 32,
-        "End": 40,
+        "Text": "一週間",
+        "Start": 21,
+        "End": 24,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8140,9 +8150,9 @@
         }
       },
       {
-        "Text": "next tuesday",
-        "Start": 55,
-        "End": 66,
+        "Text": "来週の火曜日",
+        "Start": 22,
+        "End": 28,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8180,9 +8190,9 @@
         }
       },
       {
-        "Text": "previous monday",
-        "Start": 55,
-        "End": 69,
+        "Text": "先週の月曜日",
+        "Start": 22,
+        "End": 28,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8220,9 +8230,9 @@
         }
       },
       {
-        "Text": "tuesday",
-        "Start": 55,
-        "End": 61,
+        "Text": "火曜日",
+        "Start": 22,
+        "End": 25,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8240,9 +8250,9 @@
         }
       },
       {
-        "Text": "previous wednesday",
-        "Start": 66,
-        "End": 83,
+        "Text": "先週の水曜日",
+        "Start": 26,
+        "End": 32,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8340,24 +8350,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30分",
-        "Start": 26,
-        "End": 29,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT30M",
-              "type": "duration",
-              "value": "1800"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "11/20",
-        "Start": 38,
-        "End": 42,
+        "Text": "11月20日",
+        "Start": 5,
+        "End": 11,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8375,9 +8370,9 @@
         }
       },
       {
-        "Text": "11/22",
-        "Start": 45,
-        "End": 49,
+        "Text": "11月22日",
+        "Start": 12,
+        "End": 18,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8395,9 +8390,9 @@
         }
       },
       {
-        "Text": "11/25",
-        "Start": 54,
-        "End": 58,
+        "Text": "11月25日",
+        "Start": 19,
+        "End": 25,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8410,6 +8405,21 @@
               "timex": "XXXX-11-25",
               "type": "date",
               "value": "2019-11-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "30分",
+        "Start": 26,
+        "End": 29,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
             }
           ]
         }
@@ -8522,9 +8532,9 @@
         }
       },
       {
-        "Text": "12 of nov",
-        "Start": 29,
-        "End": 37,
+        "Text": "11月12日",
+        "Start": 22,
+        "End": 28,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8627,9 +8637,9 @@
         }
       },
       {
-        "Text": "thursday",
-        "Start": 61,
-        "End": 68,
+        "Text": "木曜日",
+        "Start": 4,
+        "End": 7,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -8647,9 +8657,9 @@
         }
       },
       {
-        "Text": "friday",
-        "Start": 73,
-        "End": 78,
+        "Text": "金曜日",
+        "Start": 8,
+        "End": 11,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -9593,9 +9603,9 @@
         }
       },
       {
-        "Text": "3pm today",
-        "Start": 127,
-        "End": 135,
+        "Text": "今日午後3時",
+        "Start": 55,
+        "End": 61,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -9633,9 +9643,9 @@
         }
       },
       {
-        "Text": "thursday 19:00 - 21:00",
-        "Start": 44,
-        "End": 65,
+        "Text": "木曜日の19時から21時",
+        "Start": 12,
+        "End": 24,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -9717,5 +9727,31 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "4月の最終月曜日から10月1日まで",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4月の最終月曜日から10月1日まで",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
+              "type": "daterange",
+              "start": "2019-04-29",
+              "end": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

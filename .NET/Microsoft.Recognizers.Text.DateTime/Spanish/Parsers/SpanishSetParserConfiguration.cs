@@ -1,9 +1,10 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class SpanishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -77,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diariamente"))
             {
@@ -110,7 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.Equals("día") || trimmedText.Equals("dia") ||
                 trimmedText.Equals("días") || trimmedText.Equals("dias"))
@@ -137,5 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             return true;
         }
+
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

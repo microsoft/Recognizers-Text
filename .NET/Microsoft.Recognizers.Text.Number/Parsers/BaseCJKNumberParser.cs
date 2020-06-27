@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -17,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number
         public override ParseResult Parse(ExtractResult extResult)
         {
             // Check if the parser is configured to support specific types
-            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t)))
+            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.Ordinal)))
             {
                 return null;
             }
@@ -97,6 +99,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
                     ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+                    ret.Type = Constants.MODEL_ORDINAL_RELATIVE;
                 }
                 else
                 {
@@ -104,7 +107,15 @@ namespace Microsoft.Recognizers.Text.Number
 
                     // Every ordinal number is relative to the start
                     ret.Metadata.RelativeTo = Constants.RELATIVE_START;
+                    ret.Type = Constants.MODEL_ORDINAL;
                 }
+            }
+
+            // TODO: Refacoring this check to determine the subtype for JA and KO
+            if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
+            {
+                ret.Type = DetermineType(extResult);
+                ret.Text = ret.Text.ToLowerInvariant();
             }
 
             return ret;
@@ -124,6 +135,9 @@ namespace Microsoft.Recognizers.Text.Number
             var resultText = extResult.Text;
             var splitResult = Config.FracSplitRegex.Split(resultText);
             string intPart = string.Empty, demoPart = string.Empty, numPart = string.Empty;
+
+            // TODO: Refactor to support half (eg. KO: 반, JA: 半)
+
             if (splitResult.Length == 3)
             {
                 intPart = splitResult[0];
@@ -132,7 +146,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
-                intPart = Config.ZeroChar.ToString();
+                intPart = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 demoPart = splitResult[0];
                 numPart = splitResult[1];
             }
@@ -295,7 +309,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var splitResult = Config.PointRegex.Split(doubleText);
                 if (splitResult[0] == string.Empty)
                 {
-                    splitResult[0] = Config.ZeroChar.ToString();
+                    splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
 
                 var doubleValue = GetIntValue(splitResult[0]);
@@ -368,7 +382,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (splitResult[0] == string.Empty)
                 {
-                    splitResult[0] = Config.ZeroChar.ToString();
+                    splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
 
                 if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
@@ -438,7 +452,7 @@ namespace Microsoft.Recognizers.Text.Number
             return intValue;
         }
 
-        // Replace full digtal numbers with half digtal numbers. "４" and "4" are both legal in Japanese, replace "４" with "4", then deal with "4"
+        // Replace full digit numbers with half digit numbers. "４" and "4" are both legal in Japanese, replace "４" with "4", then deal with "4"
         private string NormalizeCharWidth(string text)
         {
             if (string.IsNullOrWhiteSpace(text))

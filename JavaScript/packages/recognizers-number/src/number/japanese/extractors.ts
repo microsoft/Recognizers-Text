@@ -1,4 +1,4 @@
-import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
+import { BaseNumberExtractor, RegExpValue, RegExpRegExp, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { JapaneseNumeric } from "../../resources/japaneseNumeric";
@@ -27,6 +27,10 @@ export class JapaneseNumberExtractor extends BaseNumberExtractor {
         fracExtract.regexes.forEach(r => regexes.push(r));
 
         this.regexes = regexes;
+
+        // Add filter
+        let ambiguityFiltersDict = new Array<RegExpRegExp>();
+        this.ambiguityFiltersDict = ambiguityFiltersDict;
     }
 }
 
@@ -54,7 +58,7 @@ export class JapaneseIntegerExtractor extends BaseNumberExtractor {
 
     constructor(mode: JapaneseNumberExtractorMode = JapaneseNumberExtractorMode.Default) {
         super();
-        
+
         let regexes = new Array<RegExpValue>(
             { // 123456,  －１２３４５６
                 regExp: RegExpUtility.getSafeRegExp(JapaneseNumeric.NumbersSpecialsChars, "gi"),
@@ -85,7 +89,7 @@ export class JapaneseIntegerExtractor extends BaseNumberExtractor {
                     value: "IntegerJpn"
                 });
                 break;
-            
+
             case JapaneseNumberExtractorMode.ExtractAll:
                 regexes.push({ // 一百五十五, 负一亿三百二十二, "西九条" from "九". Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regExp: RegExpUtility.getSafeRegExp(JapaneseNumeric.NumbersAggressiveRegex, "gi"),
@@ -121,7 +125,7 @@ export class JapaneseDoubleExtractor extends BaseNumberExtractor {
                 regExp: RegExpUtility.getSafeRegExp(JapaneseNumeric.DoubleWithMultiplierRegex, "gis"),
                 value: "DoubleNum"
             },
-            { //１５.２万
+            { // １５.２万
                 regExp: RegExpUtility.getSafeRegExp(JapaneseNumeric.DoubleWithThousandsRegex, "gis"),
                 value: "DoubleJpn"
             },

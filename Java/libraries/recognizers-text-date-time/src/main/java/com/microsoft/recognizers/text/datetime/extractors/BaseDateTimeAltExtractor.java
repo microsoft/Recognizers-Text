@@ -197,21 +197,24 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             relativeTermsMatches.addAll(Arrays.asList(RegExpUtility.getMatches(regex, text)));
         }
 
+        List<ExtractResult> results = new ArrayList<>();
+
         List<ExtractResult> relativeDatePeriodErs = new ArrayList<>();
         int i = 0;
         for (ExtractResult result : ers.toArray(new ExtractResult[0])) {
             if (!result.getType().equals(Constants.SYS_DATETIME_DATETIMEALT)) {
                 int resultEnd = result.getStart() + result.getLength();
                 for (Match relativeTermsMatch : relativeTermsMatches) {
-                    if (relativeTermsMatch.index > resultEnd) {
+                    int relativeTermsMatchEnd = relativeTermsMatch.index + relativeTermsMatch.length;
+                    if (relativeTermsMatch.index > resultEnd || relativeTermsMatchEnd < result.getStart()) {
                         // Check whether middle string is a connector
-                        int middleBegin = resultEnd;
-                        int middleEnd = relativeTermsMatch.index;
+                        int middleBegin = relativeTermsMatch.index > resultEnd ? resultEnd : relativeTermsMatchEnd;
+                        int middleEnd = relativeTermsMatch.index > resultEnd ? relativeTermsMatch.index : result.getStart();
                         String middleStr = text.substring(middleBegin, middleEnd).trim().toLowerCase();
                         Match[] orTermMatches = RegExpUtility.getMatches(config.getOrRegex(), middleStr);
                         if (orTermMatches.length == 1 && orTermMatches[0].index == 0 && orTermMatches[0].length == middleStr.length()) {
-                            int parentTextStart = result.getStart();
-                            int parentTextEnd = relativeTermsMatch.index + relativeTermsMatch.length;
+                            int parentTextStart = relativeTermsMatch.index > resultEnd ? result.getStart() : relativeTermsMatch.index;
+                            int parentTextEnd = relativeTermsMatch.index > resultEnd ? relativeTermsMatchEnd : resultEnd;
                             String parentText = text.substring(parentTextStart, parentTextEnd);
 
                             ExtractResult contextErs = new ExtractResult();
@@ -254,12 +257,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             i++;
         }
 
-        List<ExtractResult> result = new ArrayList<>();
-        result.addAll(ers);
-        result.addAll(relativeDatePeriodErs);
-        result.sort(Comparator.comparingInt(er -> er.getStart()));
+        results.addAll(ers);
+        results.addAll(relativeDatePeriodErs);
+        results.sort(Comparator.comparingInt(er -> er.getStart()));
 
-        return result;
+        return results;
     }
 
     private boolean isConnectorOrWhiteSpace(int start, int end, String text) {

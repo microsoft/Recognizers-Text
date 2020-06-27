@@ -7,6 +7,8 @@
       "header": [
         "package com.microsoft.recognizers.text.number.resources;",
         "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
         "public class BaseNumbers {"
       ],
       "footer": [ "}" ]

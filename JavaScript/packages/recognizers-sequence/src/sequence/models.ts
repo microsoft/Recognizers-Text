@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "@microsoft/recognizers-text";
+import { IModel, ModelResult, IExtractor, IParser, ParseResult, QueryProcessor } from "@microsoft/recognizers-text";
 
 export abstract class AbstractSequenceModel implements IModel {
     public abstract readonly modelTypeName: string;
@@ -12,18 +12,27 @@ export abstract class AbstractSequenceModel implements IModel {
     }
 
     parse(query: string): ModelResult[] {
-        let extractResults = this.extractor.extract(query);
-        let parseResults = extractResults.map(r => this.parser.parse(r));
+        let parseResults = new Array<ParseResult>();
 
-        return parseResults
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: { "value": o.resolutionStr },
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
+        try {
+            let extractResults = this.extractor.extract(query);
+            parseResults = extractResults.map(r => this.parser.parse(r));
+        }
+        catch (err) {
+            // Nothing to do. Exceptions in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
+            return parseResults
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: { "value": o.resolutionStr },
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
+        }
     }
 }
 
@@ -31,21 +40,31 @@ export class PhoneNumberModel extends AbstractSequenceModel {
     public modelTypeName: string = "phonenumber";
 
     parse(query: string): ModelResult[] {
-        let extractResults = this.extractor.extract(query);
-        let parseResults = extractResults.map(r => this.parser.parse(r));
+        let parseResults = new Array<ParseResult>();
+        query = QueryProcessor.preProcess(query);
 
-        return parseResults
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: {
-                    "value": o.resolutionStr,
-                    "score": o.value.toString()
-                },
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
+        try {
+            let extractResults = this.extractor.extract(query);
+            parseResults = extractResults.map(r => this.parser.parse(r));
+        }
+        catch (err) {
+            // Nothing to do. Exceptions in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
+            return parseResults
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: {
+                        "value": o.resolutionStr,
+                        "score": o.value.toString()
+                    },
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
+        }
     }
 }
 
@@ -53,21 +72,30 @@ export class IpAddressModel extends AbstractSequenceModel {
     public modelTypeName: string = "ip";
 
     parse(query: string): ModelResult[] {
-        let extractResults = this.extractor.extract(query);
-        let parseResults = extractResults.map(r => this.parser.parse(r));
+        let parseResults = new Array<ParseResult>();
 
-        return parseResults
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: { 
-                    "value": o.resolutionStr,
-                    "type": o.data 
-                },
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
+        try {
+            let extractResults = this.extractor.extract(query);
+            parseResults = extractResults.map(r => this.parser.parse(r));
+        }
+        catch (err) {
+            // Nothing to do. Exceptions in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
+            return parseResults
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: {
+                        "value": o.resolutionStr,
+                        "type": o.data
+                    },
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
+        }
     }
 }
 
@@ -91,20 +119,30 @@ export class GUIDModel extends AbstractSequenceModel {
     public modelTypeName: string = "guid";
 
     parse(query: string): ModelResult[] {
-        let extractResults = this.extractor.extract(query);
-        let parseResults = extractResults.map(r => this.parser.parse(r));
+        let parseResults = new Array<ParseResult>();
+        query = QueryProcessor.preProcess(query);
 
-        return parseResults
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: {
-                    "value": o.resolutionStr,
-                    "score": o.value.toString()
-                },
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
+        try {
+            let extractResults = this.extractor.extract(query);
+            parseResults = extractResults.map(r => this.parser.parse(r));
+        }
+        catch (err) {
+            // Nothing to do. in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
+            return parseResults
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: {
+                        "value": o.resolutionStr,
+                        "score": o.value.toString()
+                    },
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
+        }
     }
 }

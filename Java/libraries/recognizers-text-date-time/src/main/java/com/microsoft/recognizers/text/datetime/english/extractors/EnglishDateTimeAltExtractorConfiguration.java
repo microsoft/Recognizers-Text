@@ -75,6 +75,11 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     }
 
     @Override
+    public Pattern getThisPrefixRegex() {
+        return ThisPrefixRegex;
+    }
+
+    @Override
     public Pattern getDayRegex() {
         return DayRegex;
     }

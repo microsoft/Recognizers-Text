@@ -7,7 +7,9 @@ export enum NumberMode {
     // Add 67.5 billion & million support.
     Currency,
     // Don't extract number from cases like 16ml
-    PureNumber
+    PureNumber,
+    // Unit is for unit
+    Unit
 }
 
 export class LongFormatType {
@@ -74,19 +76,27 @@ export abstract class AbstractNumberModel implements IModel {
 
     parse(query: string): ModelResult[] {
         query = QueryProcessor.preProcess(query, true);
+        let parseNums: ParseResult[];
 
-        let extractResults = this.extractor.extract(query);
-        let parseNums = extractResults.map(r => this.parser.parse(r));
-
-        return parseNums
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: { value: o.resolutionStr },
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
+        try {
+            let extractResults = this.extractor.extract(query);
+            parseNums = extractResults.map(r => this.parser.parse(r));
+        }
+        catch (err) {
+            // Nothing to do. Exceptions in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
+            return parseNums
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: { value: o.resolutionStr },
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
+        }
     }
 }
 

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-        public DutchCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public DutchCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
             SeasonMap = DateTimeDefinitions.SeasonMap.ToImmutableDictionary();
+            SpecialYearPrefixesMap = DateTimeDefinitions.SpecialYearPrefixesMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.CardinalMap.ToImmutableDictionary();
             DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
@@ -25,12 +26,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
-            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(numConfig));
 
             TimeZoneParser = new BaseTimeZoneParser();
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));

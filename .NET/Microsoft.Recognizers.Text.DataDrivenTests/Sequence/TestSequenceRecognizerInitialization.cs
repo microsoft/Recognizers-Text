@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.Recognizers.Text.Sequence.English;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Sequence.Tests
@@ -16,9 +17,11 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
 
         public TestSequenceRecognizerInitialization()
         {
+            var config = new SequenceOptions();
+
             controlModel = new PhoneNumberModel(
                 new English.PhoneNumberParser(),
-                new English.PhoneNumberExtractor());
+                new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration(config)));
         }
 
         [TestMethod]

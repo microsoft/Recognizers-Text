@@ -7,6 +7,7 @@ from ..parsers import DateTimeParser
 from ..base_set import SetParserConfiguration, MatchedTimex
 from ..base_configs import BaseDateParserConfiguration
 
+
 class EnglishSetParserConfiguration(SetParserConfiguration):
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -108,12 +109,18 @@ class EnglishSetParserConfiguration(SetParserConfiguration):
         self._date_time_period_extractor = config.date_time_period_extractor
         self._date_time_period_parser = config.date_time_period_parser
         self._unit_map = EnglishDateTime.UnitMap
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EachPrefixRegex)
-        self._periodic_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PeriodicRegex)
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EachUnitRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EachDayRegex)
-        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SetWeekDayRegex)
-        self._set_each_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SetEachRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EachPrefixRegex)
+        self._periodic_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PeriodicRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EachUnitRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EachDayRegex)
+        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SetWeekDayRegex)
+        self._set_each_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SetEachRegex)
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
@@ -125,6 +132,8 @@ class EnglishSetParserConfiguration(SetParserConfiguration):
             timex = 'P2W'
         elif trimmed_text == 'monthly':
             timex = 'P1M'
+        elif trimmed_text == 'quarterly':
+            timex = 'P3M'
         elif trimmed_text in ('yearly', 'annually', 'annual'):
             timex = 'P1Y'
         else:

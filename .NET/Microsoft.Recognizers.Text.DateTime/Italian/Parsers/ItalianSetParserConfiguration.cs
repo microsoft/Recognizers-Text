@@ -1,12 +1,13 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class ItalianSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public ItalianSetParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+            : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -77,29 +78,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") ||
-                trimmedText.Equals("jours") || trimmedText.Equals("journellement"))
+            var trimmedText = text.Trim();
+            if (trimmedText.Equals("quotidianamente") || trimmedText.Equals("quotidiano") || trimmedText.Equals("quotidiana") ||
+                trimmedText.Equals("giornalmente") || trimmedText.Equals("giornaliero") || trimmedText.Equals("giornaliera"))
             {
                 // daily
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("hebdomadaire"))
+            else if (trimmedText.Equals("settimanale") || trimmedText.Equals("settimanalmente"))
             {
                 // weekly
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("bihebdomadaire"))
+            else if (trimmedText.Equals("bisettimanale"))
             {
                 // bi weekly
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensuel") || trimmedText.Equals("mensuelle"))
+            else if (trimmedText.Equals("mensile") || trimmedText.Equals("mensilmente"))
             {
                 // monthly
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("annuel") || trimmedText.Equals("annuellement"))
+            else if (trimmedText.Equals("annuale") || trimmedText.Equals("annualmente"))
             {
                 // yearly/annually
                 timex = "P1Y";
@@ -115,20 +116,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("jour") || trimmedText.Equals("journee"))
+            var trimmedText = text.Trim();
+            if (trimmedText.Equals("giorno") || trimmedText.Equals("giornata") || trimmedText.Equals("giorni"))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semaine"))
+            else if (trimmedText.Equals("settimana") || trimmedText.Equals("settimane"))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mois"))
+            else if (trimmedText.Equals("mese") || trimmedText.Equals("mesi"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("an") || trimmedText.Equals("annee"))
+            else if (trimmedText.Equals("anno") || trimmedText.Equals("annata") || trimmedText.Equals("anni"))
             {
                 // year
                 timex = "P1Y";
@@ -140,6 +141,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             }
 
             return true;
+        }
+
+        public string WeekDayGroupMatchString(Match match)
+        {
+            string weekday = string.Empty;
+            if (match.Groups["g0"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g0"].ToString() + "a";
+            }
+            else if (match.Groups["g1"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g1"].ToString() + "io";
+            }
+            else if (match.Groups["g2"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g2"].ToString() + "e";
+            }
+            else if (match.Groups["g3"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g3"].ToString() + "ì";
+            }
+            else if (match.Groups["g4"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g4"].ToString() + "a";
+            }
+            else if (match.Groups["g5"].ToString() != string.Empty)
+            {
+                weekday = match.Groups["g5"].ToString() + "o";
+            }
+
+            return weekday;
         }
     }
 }

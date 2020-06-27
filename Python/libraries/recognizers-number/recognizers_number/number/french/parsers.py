@@ -8,6 +8,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_number.number.parsers import NumberParserConfiguration
 from recognizers_number.resources.french_numeric import FrenchNumeric
 
+
 class FrenchNumberParserConfiguration(NumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
@@ -97,9 +98,12 @@ class FrenchNumberParserConfiguration(NumberParserConfiguration):
         self._cardinal_number_map = FrenchNumeric.CardinalNumberMap
         self._ordinal_number_map = FrenchNumeric.OrdinalNumberMap
         self._round_number_map = FrenchNumeric.RoundNumberMap
-        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(FrenchNumeric.NegativeNumberSignRegex)
-        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(FrenchNumeric.HalfADozenRegex)
-        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(FrenchNumeric.DigitalNumberRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchNumeric.NegativeNumberSignRegex)
+        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchNumeric.HalfADozenRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         return tokens

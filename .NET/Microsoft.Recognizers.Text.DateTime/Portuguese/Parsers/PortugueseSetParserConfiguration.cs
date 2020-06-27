@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class PortugueseSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
             if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diaria") || trimmedText.EndsWith("diariamente"))
             {
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
             if (trimmedText.Equals("dia") || trimmedText.Equals("dias"))
             {
@@ -139,5 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             return true;
         }
+
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

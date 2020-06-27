@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
+    public class SpanishTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public SpanishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;

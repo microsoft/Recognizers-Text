@@ -7,8 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     [TestClass]
     public class TestDateTime_Japanese : TestBase
     {
-        public static TestResources TestResources { get; private set; }
-
         public static IDictionary<string, IDateTimeExtractor> Extractors { get; private set; }
 
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
@@ -16,51 +14,43 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
             Extractors = new Dictionary<string, IDateTimeExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
         }
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateExtractor-Japanese.csv", "DateExtractor-Japanese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateExtractor()
+        public void DateExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
-            TestDateTimeExtractor();
+            TestDateTimeExtractor(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateParser-Japanese.csv", "DateParser-Japanese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DateParser()
+        public void DateParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodParser-Japanese.csv", "DatePeriodParser-Japanese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DatePeriodParser()
+        public void DatePeriodParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeParser-Japanese.csv", "DateTimeParser-Japanese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public new void DateTimeParser()
+        public new void DateTimeParser(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
             ParserInitialize(Parsers);
-            TestDateTimeParser();
+            TestDateTimeParser(testSpec);
         }
     }
 }

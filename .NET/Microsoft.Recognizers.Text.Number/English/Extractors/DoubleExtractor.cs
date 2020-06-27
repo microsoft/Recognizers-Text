@@ -9,51 +9,59 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<string, DoubleExtractor> Instances =
             new ConcurrentDictionary<string, DoubleExtractor>();
 
-        private DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        private DoubleExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
+
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder), RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(config.Placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder), RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleIndianDecimalPointRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(config.Placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.ENGLISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot, placeholder),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, placeholder),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };
@@ -65,15 +73,18 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE; // "Double";
 
-        public static DoubleExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        public static DoubleExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            if (!Instances.ContainsKey(placeholder))
+
+            var extractorKey = config.Placeholder;
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new DoubleExtractor(placeholder);
-                Instances.TryAdd(placeholder, instance);
+                var instance = new DoubleExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[extractorKey];
         }
     }
 }

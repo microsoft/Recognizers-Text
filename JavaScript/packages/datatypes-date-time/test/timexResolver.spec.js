@@ -179,6 +179,19 @@ describe('No Network', () => {
                     resolution.values[0].should.have.property('start', '2019-04-10');
                     resolution.values[0].should.have.property('end', '2019-05-01');
                 });
+                it('December', () => {
+                    const today = new Date(2020, 3, 27);
+                    const resolution = resolver.resolve(['XXXX-12'], today);
+                    resolution.should.have.property('values').that.is.an('array').of.length(2);
+                    resolution.values[0].should.have.property('timex', 'XXXX-12');
+                    resolution.values[0].should.have.property('type', 'daterange');
+                    resolution.values[0].should.have.property('start', '2019-12-01');
+                    resolution.values[0].should.have.property('end', '2020-01-01');
+                    resolution.values[1].should.have.property('timex', 'XXXX-12');
+                    resolution.values[1].should.have.property('type', 'daterange');
+                    resolution.values[1].should.have.property('start', '2020-12-01');
+                    resolution.values[1].should.have.property('end', '2021-01-01');
+                });
             });
             describe('timerange', () => {
                 it('4am to 8pm', () => {

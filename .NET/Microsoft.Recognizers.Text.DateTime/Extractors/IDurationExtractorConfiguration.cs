@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDurationExtractorConfiguration : IOptionsConfiguration
+    public interface IDurationExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex FollowedUnit { get; }
 
@@ -35,10 +35,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MoreThanRegex { get; }
 
+        Regex SpecialNumberUnitRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }
+
     }
 }

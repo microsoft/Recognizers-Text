@@ -14,6 +14,7 @@ from .time_parser import ChineseTimeParser
 from .duration_parser import ChineseDurationParser
 from .datetime_parser import ChineseDateTimeParser
 
+
 class ChineseSetParserConfiguration(SetParserConfiguration):
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -109,9 +110,12 @@ class ChineseSetParserConfiguration(SetParserConfiguration):
         self._duration_parser = ChineseDurationParser()
         self._date_time_parser = ChineseDateTimeParser()
         self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachUnitRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachDayRegex)
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachPrefixRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachUnitRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachDayRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachPrefixRegex)
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         return None

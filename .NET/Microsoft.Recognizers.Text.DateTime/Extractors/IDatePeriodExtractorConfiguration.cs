@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDatePeriodExtractorConfiguration : IOptionsConfiguration
+    public interface IDatePeriodExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         IEnumerable<Regex> SimpleCasesRegexes { get; }
 
@@ -58,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MonthNumRegex { get; }
 
         Regex NowRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         IDateExtractor DatePointExtractor { get; }
 

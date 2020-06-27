@@ -9,7 +9,7 @@ import { BaseUnits } from "../../resources/baseUnits";
 export abstract class SpanishNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;
     abstract readonly prefixList: ReadonlyMap<string, string>;
-    abstract readonly ambiguousUnitList: ReadonlyArray<string>;
+    abstract readonly ambiguousUnitList: readonly string[];
     readonly abstract extractType: string;
 
     readonly cultureInfo: CultureInfo;
@@ -23,7 +23,7 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
-        this.unitNumExtractor = new SpanishNumberExtractor();
+        this.unitNumExtractor = new SpanishNumberExtractor(NumberMode.Unit);
 
         this.buildPrefix = SpanishNumericWithUnit.BuildPrefix;
         this.buildSuffix = SpanishNumericWithUnit.BuildSuffix;

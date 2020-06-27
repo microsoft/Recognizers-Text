@@ -9,6 +9,7 @@ from ..parsers import DateTimeParseResult
 from ..base_merged import BaseMergedParser
 from .merged_parser_config import ChineseMergedParserConfiguration
 
+
 class ChineseMergedParser(BaseMergedParser):
     def __init__(self):
         super().__init__(ChineseMergedParserConfiguration(), DateTimeOptions.NONE)
@@ -26,13 +27,13 @@ class ChineseMergedParser(BaseMergedParser):
         has_before = False
         has_after = False
 
-        if before_match:
+        if before_match and not self._is_duration_with_ago_and_later:
             has_before = True
             result.start += before_match.start()
             result.length -= len(before_match.group())
             result.text = result.text[before_match.start():]
             mod_str = before_match.group()
-        elif after_match:
+        elif after_match and not self._is_duration_with_ago_and_later:
             has_after = True
             result.start += after_match.start()
             result.length -= len(after_match.group())
@@ -52,7 +53,8 @@ class ChineseMergedParser(BaseMergedParser):
         elif source.type == Constants.SYS_DATETIME_TIMEPERIOD:
             result = self.config.time_period_parser.parse(source, reference)
         elif source.type == Constants.SYS_DATETIME_DATETIMEPERIOD:
-            result = self.config.date_time_period_parser.parse(source, reference)
+            result = self.config.date_time_period_parser.parse(
+                source, reference)
         elif source.type == Constants.SYS_DATETIME_DURATION:
             result = self.config.duration_parser.parse(source, reference)
         elif source.type == Constants.SYS_DATETIME_SET:
@@ -77,9 +79,11 @@ class ChineseMergedParser(BaseMergedParser):
             value.mod = TimeTypeConstants.AFTER_MOD
             result.value = value
 
-        result.value = self._date_time_resolution(result, has_before, has_after)
+        result.value = self._date_time_resolution(
+            result, has_before, has_after)
 
-        result.type = self.parser_type_name + '.' + self._determine_date_time_types(result.type, has_before, has_after)
+        result.type = self.parser_type_name + '.' + \
+            self._determine_date_time_types(result.type, has_before, has_after)
 
         return result
 
@@ -91,7 +95,8 @@ class ChineseMergedParser(BaseMergedParser):
         resolutions: List[Dict[str, str]] = list()
 
         d_type = slot.type
-        output_type = self._determine_date_time_types(d_type, has_before, has_after)
+        output_type = self._determine_date_time_types(
+            d_type, has_before, has_after)
         timex = slot.timex_str
 
         value: DateTimeResolutionResult = slot.value
@@ -102,10 +107,10 @@ class ChineseMergedParser(BaseMergedParser):
         mod = value.mod
         comment = value.comment
 
-        self._add_resolution_fields_any(result, Constants.TimexKey, timex)
-        self._add_resolution_fields_any(result, Constants.CommentKey, comment)
-        self._add_resolution_fields_any(result, Constants.ModKey, mod)
-        self._add_resolution_fields_any(result, Constants.TypeKey, output_type)
+        self._add_resolution_fields_any(result, Constants.TIMEX_KEY, timex)
+        self._add_resolution_fields_any(result, Constants.COMMENT_KEY, comment)
+        self._add_resolution_fields_any(result, Constants.MOD_KEY, mod)
+        self._add_resolution_fields_any(result, Constants.TYPE_KEY, output_type)
         # self._add_resolution_fields_any(result, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
 
         future_resolution = value.future_resolution
@@ -116,16 +121,20 @@ class ChineseMergedParser(BaseMergedParser):
 
         future_values = sorted(future.values())
         past_values = sorted(past.values())
-        intersect_values = [i for i, j in zip(future_values, past_values) if i == j]
+        intersect_values = [i for i, j in zip(
+            future_values, past_values) if i == j]
 
         if len(intersect_values) == len(past_values) and len(intersect_values) == len(future_values):
             if past_values:
-                self._add_resolution_fields_any(result, Constants.ResolveKey, past)
+                self._add_resolution_fields_any(
+                    result, Constants.RESOLVE_KEY, past)
         else:
             if past_values:
-                self._add_resolution_fields_any(result, Constants.ResolveToPastKey, past)
+                self._add_resolution_fields_any(
+                    result, Constants.RESOLVE_TO_PAST_KEY, past)
             if future_resolution:
-                self._add_resolution_fields_any(result, Constants.ResolveToFutureKey, future)
+                self._add_resolution_fields_any(
+                    result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 
         if comment == 'ampm':
             if 'resolve' in result:
@@ -135,14 +144,17 @@ class ChineseMergedParser(BaseMergedParser):
                 self._resolve_ampm(result, 'resolveToFuture')
 
         if is_lunar:
-            self._add_resolution_fields_any(result, Constants.IsLunarKey, is_lunar)
+            self._add_resolution_fields_any(
+                result, Constants.IS_LUNAR_KEY, is_lunar)
 
         for value in result.values():
             if isinstance(value, dict):
                 new_values = {}
-                self._add_resolution_fields(new_values, Constants.TimexKey, timex)
-                self._add_resolution_fields(new_values, Constants.ModKey, mod)
-                self._add_resolution_fields(new_values, Constants.TypeKey, output_type)
+                self._add_resolution_fields(
+                    new_values, Constants.TIMEX_KEY, timex)
+                self._add_resolution_fields(new_values, Constants.MOD_KEY, mod)
+                self._add_resolution_fields(
+                    new_values, Constants.TYPE_KEY, output_type)
 
                 for inner_key in value:
                     new_values[inner_key] = value[inner_key]
@@ -150,10 +162,7 @@ class ChineseMergedParser(BaseMergedParser):
                 resolutions.append(new_values)
 
         if not past and not future:
-            dummy = {}
-            dummy['timex'] = timex
-            dummy['type'] = output_type
-            dummy['value'] = 'not resolved'
+            dummy = {'timex': timex, 'type': output_type, 'value': 'not resolved'}
             resolutions.append(dummy)
 
         return {'values': resolutions}
@@ -168,3 +177,7 @@ class ChineseMergedParser(BaseMergedParser):
                 return Constants.SYS_DATETIME_DATETIMEPERIOD
 
         return d_type
+
+    @staticmethod
+    def _is_duration_with_ago_and_later(er: ExtractResult) -> bool:
+        return er.meta_data and er.meta_data.is_duration_with_ago_and_later

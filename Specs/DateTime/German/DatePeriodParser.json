@@ -720,7 +720,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "Wochenende",
+        "Text": "am Wochenende",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -733,8 +733,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 3,
-        "Length": 10
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1228,6 +1228,59 @@
           }
         },
         "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ab Ende 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-30T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Ende 1989",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1989",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "1989-09-01",
+            "endDate": "1990-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1989-09-01",
+            "endDate": "1990-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "bis März 2008",
+    "Context": {
+      "ReferenceDateTime": "2020-04-30T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "März 2008",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-03",
+          "FutureResolution": {
+            "startDate": "2008-03-01",
+            "endDate": "2008-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-03-01",
+            "endDate": "2008-04-01"
+          }
+        },
+        "Start": 4,
         "Length": 9
       }
     ]

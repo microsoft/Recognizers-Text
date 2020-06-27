@@ -1083,5 +1083,197 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nissan Motor Co. is planning to cut up to 700 contract workers.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "up to 700",
+        "Start": 36,
+        "End": 44,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "up to 700 Should not be recognized as >700",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "up to 700",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]"
+        }
+      },
+      {
+        "Text": ">700",
+        "Start": 38,
+        "End": 41,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Number of cars which have horsepower exceeding 150",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "exceeding 150",
+        "Start": 37,
+        "End": 49,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(150,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Shares were up more than 20, above 170 apiece",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 20",
+        "Start": 15,
+        "End": 26,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)"
+        }
+      },
+      {
+        "Text": "above 170",
+        "Start": 29,
+        "End": 37,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(170,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "More than 40 and less than 10 are two ranges",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "more than 40",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "More than 40 and less than 10, less than 10 and more than 40 are the same",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "more than 40",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 31,
+        "End": 42,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      },
+      {
+        "Text": "more than 40",
+        "Start": 48,
+        "End": 59,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "More than 40 and less than 10, more than 10 and less than 40 are not the same",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "more than 40",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(40,)"
+        }
+      },
+      {
+        "Text": "less than 10",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      },
+      {
+        "Text": "more than 10 and less than 40",
+        "Start": 31,
+        "End": 59,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,40)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The number range is 5k-20k",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5k-20k",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,20000)"
+        },
+        "Start": 20,
+        "End": 25
+      }
+    ]
   }
 ]

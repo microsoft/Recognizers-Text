@@ -2,9 +2,10 @@ from typing import List, Dict, Callable
 from datetime import datetime
 
 from recognizers_text.utilities import RegExpUtility
-from ..utilities import DateUtils
+from ..utilities import DateUtils, HolidayFunctions
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.spanish_date_time import SpanishDateTime
+
 
 class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
@@ -29,16 +30,19 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
         self._holiday_names = SpanishDateTime.HolidayNames
         self._variable_holidays_timex_dictionary = SpanishDateTime.VariableHolidaysTimexDictionary
 
-        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
-        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ThisPrefixRegex)
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.NextPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PreviousPrefixRegex)
+        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.ThisPrefixRegex)
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         local = dict([
             ('padres', SpanishHolidayParserConfiguration.fathers_day),
             ('madres', SpanishHolidayParserConfiguration.mothers_day),
             ('acciondegracias', SpanishHolidayParserConfiguration.thanksgiving_day),
-            ('trabajador', SpanishHolidayParserConfiguration.labour_day),
+            ('trabajador', SpanishHolidayParserConfiguration.international_workers_day),
             ('delaraza', SpanishHolidayParserConfiguration.columbus_day),
             ('memoria', SpanishHolidayParserConfiguration.memorial_day),
             ('pascuas', SpanishHolidayParserConfiguration.easter_day),
@@ -89,7 +93,7 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
 
     @staticmethod
     def easter_day(year: int) -> datetime:
-        return DateUtils.min_value
+        return HolidayFunctions.calculate_holiday_by_easter(year)
 
     def get_swift_year(self, text: str) -> int:
         trimmed_text = text.strip().lower()

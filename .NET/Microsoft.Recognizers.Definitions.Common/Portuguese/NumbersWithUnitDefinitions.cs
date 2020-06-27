@@ -28,6 +28,18 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Semana", @"semanas|semana" },
             { @"Dia", @"dias|dia" }
         };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"anos",
+            @"ano",
+            @"meses",
+            @"mes",
+            @"mês",
+            @"semanas",
+            @"semana",
+            @"dias",
+            @"dia"
+        };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
             { @"Quilômetro quadrado", @"quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²" },
@@ -75,14 +87,14 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Lek albanês", @"lek|lekë|lekes|lek albanês|leque|leques|all" },
             { @"Qindarke", @"qindarka|qindarkë|qindarke|qindarkas" },
             { @"Kwanza angolano", @"kwanza angolano|kwanzas angolanos|kwanza|kwanzas|aoa|kz" },
-            { @"Cêntimo angolano", @"cêntimo angolano|cêntimo|cêntimos" },
+            { @"Cêntimo angolano", @"cêntimo angolano" },
             { @"Florim das Antilhas Holandesas", @"florim das antilhas holandesas|florim das antilhas neerlandesas|ang" },
             { @"Rial saudita", @"rial saudita|riais sauditas|riyal saudita|riyals sauditas|riyal|riyals|sar" },
             { @"Halala saudita", @"halala saudita|halala|hallalah" },
             { @"Dinar argelino", @"dinar argelino|dinares argelinos|dzd" },
             { @"Cêntimo argelino", @"centimo argelino|centimos argelinos|cêntimo argelino|cêntimos argelinos|centavo argelino|centavos argelinos" },
-            { @"Peso argentino", @"peso argentino|pesos argentinos|peso|pesos|ar$|ars" },
-            { @"Centavo argentino", @"centavo argentino|centavos argentinos|centavo|ctvo.|ctvos." },
+            { @"Peso argentino", @"peso argentino|pesos argentinos|ar$|ars" },
+            { @"Centavo argentino", @"centavo argentino|centavos argentinos|ctvo.|ctvos." },
             { @"Dram armênio", @"dram armênio|dram armênios|dram arménio|dram arménios|dram armenio|dram armenios|dram|drame|drames|դր." },
             { @"Luma armênio", @"luma armênio|lumas armênios|luma arménio|lumas arménios|luma armenio|lumas armenios|luma|lumas" },
             { @"Florim arubano", @"florín arubeño|florines arubeños|ƒ arubeños|aƒ|awg" },
@@ -102,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Centavo de Belize", @"centavo de belize|centavos de belize|cêntimo do belize|cêntimos do belize" },
             { @"Dólar bermudense", @"dólar bermudense|dólares bermudenses|bd$|bmd" },
             { @"Centavo bermudense", @"centavo bermudense|centavos bermudenses|cêntimo bermudense| cêntimos bermudenses" },
-            { @"Rublo bielorrusso", @"rublo bielorrusso|rublos bielorrussos|br|byr" },
+            { @"Rublo bielorrusso", @"rublo bielorrusso|rublos bielorrussos|byr" },
             { @"Copeque bielorusso", @"copeque bielorrusso|copeques bielorrussos|kopek bielorrusso|kopeks bielorrussos|kap" },
             { @"Quiate mianmarense", @"quiate mianmarense|quiates mianmarenses|kyat mianmarense|kyates mianmarenses|quiate myanmarense|quiates myanmarenses|kyat myanmarense|kyates myanmarenses|quiate birmanês|quite birmanes|quiates birmaneses|kyat birmanês|kyat birmanes|kyates birmaneses|mmk" },
             { @"Pya mianmarense", @"pya mianmarense|pyas mianmarenses|pya myanmarense|pyas myanmarenses|pya birmanês|pya birmanes|pyas birmaneses" },
@@ -127,7 +139,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Dólar canadense", @"dólar canadense|dolar canadense|dólares canadenses|dolares canadenses|c$|cad" },
             { @"Centavo canadense", @"centavo canadense|centavos canadenses" },
             { @"Peso chileno", @"peso chileno|pesos chilenos|cpl" },
-            { @"Yuan chinês", @"yuan chinês|yuan chines|yuans chineses|yuan|yuans|renminbi|rmb|cny|¥" },
+            { @"Yuan chinês", @"yuan chinês|yuan chines|yuans chineses|yuan|yuans|renminbi|rmb|cny|￥" },
             { @"Peso colombiano", @"peso colombiano|pesos colombianos|cop|col$" },
             { @"Centavo colombiano", @"centavo colombiano|centavos colombianos" },
             { @"Franco comorense", @"franco comorense|francos comorenses|kmf|₣" },
@@ -143,7 +155,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Peso cubano", @"peso cubano|pesos cubanos|cup" },
             { @"Peso cubano convertível", @"peso cubano conversível|pesos cubanos conversíveis|peso cubano conversivel|pesos cubanos conversiveis|peso cubano convertível|pesos cubanos convertíveis|peso cubano convertivel|pesos cubanos convertiveis|cuc" },
             { @"Coroa dinamarquesa", @"coroa dinamarquesa|coroas dinamarquesas|dkk" },
-            { @"Libra egípcia", @"libra egípcia|libra egipcia|libras egípcias|libras egipcias|egp|le" },
+            { @"Libra egípcia", @"libra egípcia|libra egipcia|libras egípcias|libras egipcias|egp|l.e." },
             { @"Piastra egípcia", @"piastra egípcia|piastra egipcia|pisastras egípcias|piastras egipcias" },
             { @"Dirham dos Emirados Árabes Unidos", @"dirham|dirhams|dirham dos emirados arabes unidos|aed|dhs" },
             { @"Nakfa", @"nakfa|nfk|ern" },
@@ -196,7 +208,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Coroa feroesa", @"coroa feroesa|coroas feroesas|fkr" },
             { @"Libra das Malvinas", @"libra das malvinas|libras das malvinas|fk£|fkp" },
             { @"Dólar das Ilhas Salomão", @"dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd" },
-            { @"Novo shekel israelense", @"novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils" },
+            { @"Novo shekel israelense", @"novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils|₪" },
             { @"Agora", @"agora|agorot" },
             { @"Dólar jamaicano", @"dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd" },
             { @"Yen", @"yen|iene|yenes|ienes|jpy" },
@@ -360,14 +372,14 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Dólar australiano", @"a$|aud" },
             { @"Dólar bahamense", @"b$|bsd" },
             { @"Dólar de Barbados", @"bds$|bbd" },
-            { @"Dólar de Belizebe", @"bz$|bzd" },
+            { @"Dólar de Belize", @"bz$|bzd" },
             { @"Dólar bermudense", @"bd$|bmd" },
-            { @"Dólar de Brunebi", @"brunéi $|bnd" },
+            { @"Dólar de Brunei", @"brunéi $|bnd" },
             { @"Dólar de Cingapura", @"s$|sgd" },
             { @"Dólar canadense", @"c$|can$|cad" },
             { @"Dólar das Ilhas Cayman", @"ci$|kyd" },
             { @"Dólar neozelandês", @"nz$|nzd" },
-            { @"Dólar fijgiano", @"fj$|fjd" },
+            { @"Dólar fijiano", @"fj$|fjd" },
             { @"Dólar guianense", @"gy$|gyd" },
             { @"Dólar de Hong Kong", @"hk$|hkd" },
             { @"Dólar jamaicano", @"j$|ja$|jmd" },
@@ -382,13 +394,14 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Yen", @"¥|jpy" },
             { @"Euro", @"€|eur" },
             { @"Florim", @"ƒ" },
-            { @"Libra", @"£|gbp" },
+            { @"Libra", @"£" },
             { @"Colón costarriquenho", @"₡" },
             { @"Lira turca", @"₺" }
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {
-            @"le"
+            @"le",
+            @"agora"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
@@ -424,7 +437,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             @"áreas",
             @"areas",
             @"milha",
-            @"milhas"
+            @"milhas",
+            @""""
         };
       public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
       public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
@@ -451,7 +465,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         {
             @"mi",
             @"milha",
-            @"milhas"
+            @"milhas",
+            @""""
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
@@ -508,7 +523,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Quilograma", @"kg|quilograma|quilogramas|quilo|quilos|kilo|kilos" },
             { @"Hectograma", @"hg|hectograma|hectogramas" },
             { @"Decagrama", @"dag|decagrama|decagramas" },
-            { @"Grama", @"g|gr|grama|gramas" },
+            { @"Grama", @"g|grama|gramas" },
             { @"Decigrama", @"dg|decigrama|decigramas" },
             { @"Centigrama", @"cg|centigrama|centigramas" },
             { @"Miligrama", @"mg|miligrama|miligramas" },
@@ -518,7 +533,11 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Libra", @"lb|libra|libras" },
             { @"Onça", @"oz|onça|onca|onças|oncas" },
             { @"Grão", @"grão|grao|grãos|graos|gr" },
-            { @"Quilate", @"ct|kt|quilate|quilates" }
+            { @"Quilate", @"ct|quilate|quilates" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

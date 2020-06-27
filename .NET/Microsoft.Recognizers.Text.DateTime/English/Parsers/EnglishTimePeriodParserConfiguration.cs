@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
+    public class EnglishTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             TimeZoneParser = config.TimeZoneParser;
+
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
@@ -22,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
+
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }
@@ -54,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.EndsWith("s"))
             {
                 trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);
@@ -88,6 +90,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.BusinessHour;
+            }
+            else if (DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.MealtimeBreakfast;
+            }
+            else if (DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.MealtimeBrunch;
+            }
+            else if (DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.MealtimeLunch;
+            }
+            else if (DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
+            {
+                timeOfDay = Constants.MealtimeDinner;
             }
             else
             {

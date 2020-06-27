@@ -19,15 +19,15 @@ import com.google.common.collect.ImmutableMap;
 
 public class FrenchNumeric {
 
-    public static final String LangMarker = "Fr";
+    public static final String LangMarker = "Fre";
 
     public static final Boolean CompoundNumberLanguage = false;
 
     public static final Boolean MultiDecimalSeparatorCulture = true;
 
-    public static final String RoundNumberIntegerRegex = "(cent|mille|millions|million|milliard|milliards|billion|billions)";
+    public static final String RoundNumberIntegerRegex = "(cent|mille|millions?|milliards?|billions?)";
 
-    public static final String ZeroToNineIntegerRegex = "(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
+    public static final String ZeroToNineIntegerRegex = "(une?|deux|trois|quatre|cinq|six|sept|huit|neuf)";
 
     public static final String TenToNineteenIntegerRegex = "((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)";
 
@@ -44,7 +44,7 @@ public class FrenchNumeric {
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex);
 
-    public static final String BelowHundredsRegex = "(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}([-\\s]+({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})"
+    public static final String BelowHundredsRegex = "(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}((-|(\\s+et)?\\s+)({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
@@ -87,31 +87,31 @@ public class FrenchNumeric {
     public static final String AllIntRegexWithDozenSuffixLocks = "(?<=\\b)(((demi\\s+)?\\s+douzaine)|({AllIntRegex}\\s+douzaines?))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
-    public static final String SimpleRoundOrdinalRegex = "(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)";
+    public static final String SimpleRoundOrdinalRegex = "(centi|[bm]illioni|milli(ardi)?)[eè]me";
 
-    public static final String OneToNineOrdinalRegex = "(premier|premi[eè]re|deuxi[eè]me|second[e]|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)";
+    public static final String OneToNineOrdinalRegex = "(premi[eè]re?|second[e]|tier(s|ce)|(deuxi|troisi|quatri|cinqui|sixi|septi|hui[tr]i|neuvi)[eè]me)";
 
-    public static final String SpecialUnderHundredOrdinalRegex = "(onzi[eè]me|douzi[eè]me)";
+    public static final String SpecialUnderHundredOrdinalRegex = "(di[xz]i|onzi|douzi|treizi|quatorzi|quinzi|seizi|dix[\\s-](septi|huiri|neuvi))[eè]me";
 
-    public static final String TensOrdinalRegex = "(quatre-vingt-dixi[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
+    public static final String TensOrdinalRegex = "(quatre-vingt-di[xz]i[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
 
-    public static final String HundredOrdinalRegex = "({AllIntRegex}(\\s+(centi[eè]me\\s)))"
+    public static final String HundredOrdinalRegex = "({AllIntRegex}(\\s+(centi[eè]me)))"
             .replace("{AllIntRegex}", AllIntRegex);
 
-    public static final String UnderHundredOrdinalRegex = "((({AllIntRegex}(\\W)?)?{OneToNineOrdinalRegex})|({TensNumberIntegerRegex}(\\W)?)?{OneToNineOrdinalRegex}|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})"
+    public static final String UnderHundredOrdinalRegex = "(((({AllIntRegex}|{TensNumberIntegerRegex})(\\W)?)?({OneToNineOrdinalRegex}|\\s+et\\s+uni[eè]me))|{SpecialUnderHundredOrdinalRegex}|{TensOrdinalRegex})"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{OneToNineOrdinalRegex}", OneToNineOrdinalRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{TensOrdinalRegex}", TensOrdinalRegex)
             .replace("{SpecialUnderHundredOrdinalRegex}", SpecialUnderHundredOrdinalRegex);
 
-    public static final String UnderThousandOrdinalRegex = "((({HundredOrdinalRegex}(\\s)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})"
+    public static final String UnderThousandOrdinalRegex = "((({HundredOrdinalRegex}(\\s|-)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})"
             .replace("{HundredOrdinalRegex}", HundredOrdinalRegex)
             .replace("{UnderHundredOrdinalRegex}", UnderHundredOrdinalRegex)
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{SimpleRoundOrdinalRegex}", SimpleRoundOrdinalRegex);
 
-    public static final String OverThousandOrdinalRegex = "(({AllIntRegex})(i[eè]me))"
+    public static final String OverThousandOrdinalRegex = "(({AllIntRegex})(-i[eè]me))"
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String ComplexOrdinalRegex = "(({OverThousandOrdinalRegex}(\\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})"
@@ -136,7 +136,7 @@ public class FrenchNumeric {
 
     public static final String PlaceHolderDefault = "\\D|\\b";
 
-    public static final String OrdinalSuffixRegex = "(?<=\\b)((\\d*(1er|2e|2eme|3e|3eme|4e|4eme|5e|5eme|6e|6eme|7e|7eme|8e|8eme|9e|9eme|0e|0eme))|(11e|11eme|12e|12eme))(?=\\b)";
+    public static final String OrdinalSuffixRegex = "(?<=\\b)((\\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\\b)";
 
     public static final String OrdinalFrenchRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
             .replace("{AllOrdinalRegex}", AllOrdinalRegex);
@@ -145,18 +145,19 @@ public class FrenchNumeric {
 
     public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\\b)"
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(un|une)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demis?)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex);
+    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{BaseNumbers.CommonCurrencySymbol}", BaseNumbers.CommonCurrencySymbol);
 
     public static final String AllPointRegex = "((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))"
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
@@ -213,9 +214,9 @@ public class FrenchNumeric {
 
     public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("et", "sur");
 
-    public static final String HalfADozenRegex = "(?<=\\b)demi\\s+douzaine";
+    public static final String HalfADozenRegex = "(?<=\\b)demie?\\s+douzaine";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
@@ -242,6 +243,7 @@ public class FrenchNumeric {
         .put("seize", 16L)
         .put("dix-sept", 17L)
         .put("dix-huit", 18L)
+        .put("dix-huir", 18L)
         .put("dix-neuf", 19L)
         .put("vingt", 20L)
         .put("trente", 30L)
@@ -289,12 +291,15 @@ public class FrenchNumeric {
         .put("premier", 1L)
         .put("première", 1L)
         .put("premiere", 1L)
+        .put("unième", 1L)
+        .put("unieme", 1L)
         .put("deuxième", 2L)
         .put("deuxieme", 2L)
         .put("second", 2L)
         .put("seconde", 2L)
         .put("troisième", 3L)
         .put("demi", 2L)
+        .put("demie", 2L)
         .put("tiers", 3L)
         .put("tierce", 3L)
         .put("quart", 4L)
@@ -310,10 +315,14 @@ public class FrenchNumeric {
         .put("septieme", 7L)
         .put("huitième", 8L)
         .put("huitieme", 8L)
+        .put("huirième", 8L)
+        .put("huirieme", 8L)
         .put("neuvième", 9L)
         .put("neuvieme", 9L)
         .put("dixième", 10L)
         .put("dixieme", 10L)
+        .put("dizième", 10L)
+        .put("dizieme", 10L)
         .put("onzième", 11L)
         .put("onzieme", 11L)
         .put("douzième", 12L)
@@ -321,7 +330,7 @@ public class FrenchNumeric {
         .put("treizième", 13L)
         .put("treizieme", 13L)
         .put("quatorzième", 14L)
-        .put("quatorizieme", 14L)
+        .put("quatorzieme", 14L)
         .put("quinzième", 15L)
         .put("quinzieme", 15L)
         .put("seizième", 16L)
@@ -330,6 +339,8 @@ public class FrenchNumeric {
         .put("dix-septieme", 17L)
         .put("dix-huitième", 18L)
         .put("dix-huitieme", 18L)
+        .put("dix-huirième", 18L)
+        .put("dix-huirieme", 18L)
         .put("dix-neuvième", 19L)
         .put("dix-neuvieme", 19L)
         .put("vingtième", 20L)
@@ -478,6 +489,10 @@ public class FrenchNumeric {
         .put("g", 1000000000L)
         .put("b", 1000000000L)
         .put("t", 1000000000000L)
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()

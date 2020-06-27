@@ -7,34 +7,42 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.Number.English
 {
-    public class OrdinalExtractor : BaseNumberExtractor
+    public class OrdinalExtractor : CachedNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
             new ConcurrentDictionary<string, OrdinalExtractor>();
 
-        private OrdinalExtractor(NumberOptions options)
-            : base(options)
-        {
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
+        private readonly string keyPrefix;
 
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexOptions.Singleline);
+        private OrdinalExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
+        {
+
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options.ToString() + "_" + config.Culture);
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.ENGLISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.ENGLISH)
                 },
             };
@@ -50,16 +58,23 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        public static OrdinalExtractor GetInstance(NumberOptions options = NumberOptions.None)
+        public static OrdinalExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = options.ToString();
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = config.Options.ToString();
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new OrdinalExtractor(options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new OrdinalExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
+
+        protected override object GenKey(string input)
+        {
+            return (keyPrefix, input);
+        }
+
     }
 }

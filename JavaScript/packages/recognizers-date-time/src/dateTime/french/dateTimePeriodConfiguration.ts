@@ -44,12 +44,12 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
     readonly beforeRegex: RegExp;
 
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis")
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
@@ -64,8 +64,8 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
         this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayWithDateRegex);
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex);
         this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex);
-        this.generalEndingRegex= RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex);
-        this.middlePauseRegex= RegExpUtility.getSafeRegExp(FrenchDateTime.MiddlePauseRegex);
+        this.generalEndingRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex);
+        this.middlePauseRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MiddlePauseRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2);
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex);
@@ -73,9 +73,9 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
 
         this.cardinalExtractor = new FrenchCardinalExtractor();
 
-        this.singleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
+        this.singleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(dmyDateFormat));
         this.singleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
+        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
     }
@@ -221,15 +221,15 @@ export class FrenchDateTimePeriodParserConfiguration implements IDateTimePeriodP
         let swift = 0;
 
         // TODO: Replace with a regex
-        if (trimedText.startsWith("prochain") || 
+        if (trimedText.startsWith("prochain") ||
             trimedText.endsWith("prochain") ||
-            trimedText.startsWith("prochaine") || 
+            trimedText.startsWith("prochaine") ||
             trimedText.endsWith("prochaine")) {
             swift = 1;
         }
-        else if (trimedText.startsWith("derniere") || 
-            trimedText.startsWith("dernier")||
-            trimedText.endsWith("derniere") || 
+        else if (trimedText.startsWith("derniere") ||
+            trimedText.startsWith("dernier") ||
+            trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernier")) {
             swift = -1;
         }

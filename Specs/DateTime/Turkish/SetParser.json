@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -19,21 +18,20 @@
             "set": "Set: P1W"
           }
         },
-        "Start": 11,
-        "Length": 6
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "İki haftada bir ayrılacağım",
+    "Input": "iki haftada bir ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "İki hafta bir",
+        "Text": "iki haftada bir",
         "Type": "set",
         "Value": {
           "Timex": "P2W",
@@ -44,8 +42,8 @@
             "set": "Set: P2W"
           }
         },
-        "Start": 11,
-        "Length": 8
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -54,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,8 +66,8 @@
             "set": "Set: P1D"
           }
         },
-        "Start": 11,
-        "Length": 5
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -79,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -94,8 +90,8 @@
             "set": "Set: P1D"
           }
         },
-        "Start": 11,
-        "Length": 9
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -104,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -119,8 +114,8 @@
             "set": "Set: P1M"
           }
         },
-        "Start": 11,
-        "Length": 10
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -129,7 +124,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,21 +138,20 @@
             "set": "Set: P1Y"
           }
         },
-        "Start": 11,
-        "Length": 8
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "Yıllık ayrılacağım",
+    "Input": "Senelik ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2854444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yıllık",
+        "Text": "Senelik",
         "Type": "set",
         "Value": {
           "Timex": "P1Y",
@@ -169,8 +162,8 @@
             "set": "Set: P1Y"
           }
         },
-        "Start": 11,
-        "Length": 6
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -179,7 +172,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -194,8 +186,8 @@
             "set": "Set: P2D"
           }
         },
-        "Start": 11,
-        "Length": 13
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -204,7 +196,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -219,33 +210,8 @@
             "set": "Set: P3W"
           }
         },
-        "Start": 11,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "Her gün saat 15'te ayrılacağım",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Her gün saat 15",
-        "Type": "set",
-        "Value": {
-          "Timex": "T15",
-          "FutureResolution": {
-            "set": "Set: T15"
-          },
-          "PastResolution": {
-            "set": "Set: T15"
-          }
-        },
-        "Start": 11,
-        "Length": 13
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -254,7 +220,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -269,21 +234,20 @@
             "set": "Set: T15"
           }
         },
-        "Start": 11,
-        "Length": 12
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "Her 4/15'te ayrılacağım",
+    "Input": "Her 15/4'te ayrılacağım",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her 4/15",
+        "Text": "Her 15/4",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-04-15",
@@ -294,8 +258,8 @@
             "set": "Set: XXXX-04-15"
           }
         },
-        "Start": 11,
-        "Length": 9
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -304,7 +268,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -319,8 +282,8 @@
             "set": "Set: XXXX-WXX-1"
           }
         },
-        "Start": 11,
-        "Length": 12
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -329,7 +292,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -344,8 +306,8 @@
             "set": "Set: XXXX-WXX-1T16"
           }
         },
-        "Start": 11,
-        "Length": 15
+        "Start": 0,
+        "Length": 21
       }
     ]
   },
@@ -354,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -369,8 +330,8 @@
             "set": "Set: TMO"
           }
         },
-        "Start": 11,
-        "Length": 13
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -379,11 +340,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her sabah saat 9'da",
+        "Text": "Her sabah saat 9",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -394,8 +354,8 @@
             "set": "Set: T09"
           }
         },
-        "Start": 11,
-        "Length": 20
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -404,11 +364,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her öğleden sonra saat 16'da",
+        "Text": "Her öğleden sonra saat 16",
         "Type": "set",
         "Value": {
           "Timex": "T16",
@@ -419,8 +378,8 @@
             "set": "Set: T16"
           }
         },
-        "Start": 11,
-        "Length": 22
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
@@ -429,11 +388,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her gece saat 21'de",
+        "Text": "Her gece saat 21",
         "Type": "set",
         "Value": {
           "Timex": "T21",
@@ -444,8 +402,8 @@
             "set": "Set: T21"
           }
         },
-        "Start": 11,
-        "Length": 18
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -454,11 +412,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Her gece 21'de",
+        "Text": "Her gece 21",
         "Type": "set",
         "Value": {
           "Timex": "T21",
@@ -469,33 +426,8 @@
             "set": "Set: T21"
           }
         },
-        "Start": 11,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "Sabahları saat 9'da ayrılacağım",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T12:25:54.4065719+03:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Sabahları saat 9'da",
-        "Type": "set",
-        "Value": {
-          "Timex": "T09",
-          "FutureResolution": {
-            "set": "Set: T09"
-          },
-          "PastResolution": {
-            "set": "Set: T09"
-          }
-        },
-        "Start": 11,
-        "Length": 15
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -504,11 +436,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sabahları saat 9'da",
+        "Text": "Sabahları saat 9",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -519,7 +450,7 @@
             "set": "Set: T09"
           }
         },
-        "Start": 11,
+        "Start": 0,
         "Length": 16
       }
     ]
@@ -529,7 +460,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,7 +474,7 @@
             "set": "Set: XXXX-WXX-7T09"
           }
         },
-        "Start": 14,
+        "Start": 0,
         "Length": 16
       }
     ]
@@ -554,7 +484,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -569,8 +498,8 @@
             "set": "Set: XXXX-WXX-7T09"
           }
         },
-        "Start": 14,
-        "Length": 14
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -579,7 +508,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -594,8 +522,8 @@
             "set": "Set: XXXX-WXX-7T09"
           }
         },
-        "Start": 14,
-        "Length": 11
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -604,7 +532,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -619,8 +546,8 @@
             "set": "Set: XXXX-WXX-1"
           }
         },
-        "Start": 11,
-        "Length": 10
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -629,7 +556,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -644,8 +570,8 @@
             "set": "Set: XXXX-WXX-7"
           }
         },
-        "Start": 11,
-        "Length": 10
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -654,7 +580,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -669,8 +594,8 @@
             "set": "Set: XXXX-WXX-7"
           }
         },
-        "Start": 11,
-        "Length": 7
+        "Start": 0,
+        "Length": 10
       }
     ]
   }

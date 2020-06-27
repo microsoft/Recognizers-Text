@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimePeriodExtractorConfiguration : IOptionsConfiguration
+    public interface IDateTimePeriodExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 
@@ -56,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex BeforeRegex { get; }
 
         Regex AfterRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         IExtractor CardinalExtractor { get; }
 

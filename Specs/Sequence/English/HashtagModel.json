@@ -1,7 +1,6 @@
 [
   {
     "Input": "This is task number #123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "#123",
@@ -14,7 +13,6 @@
   },
   {
     "Input": "This is topic #basketball.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "#basketball",
@@ -27,7 +25,6 @@
   },
   {
     "Input": "This is challenge #Ice_Bucket.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "#Ice_Bucket",
@@ -40,7 +37,6 @@
   },
   {
     "Input": "Try #lero-lero",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "#lero",
@@ -53,7 +49,6 @@
   },
   {
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "#A1",
@@ -66,22 +61,18 @@
   },
   {
     "Input": "abc@efg.com/hij#cite_1, which is a URL rather than a hashtag",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "C# is cool but is not a hashtag",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "# is comment sign in python",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
-    "NotSupportedByDesign": "python",
     "Results": []
   }
 ]

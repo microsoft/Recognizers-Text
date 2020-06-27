@@ -10,6 +10,8 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseHashtag:
     HashtagRegex = f'((?<=\\s|^)#([a-zA-Z0-9_]+))'
 # pylint: enable=line-too-long

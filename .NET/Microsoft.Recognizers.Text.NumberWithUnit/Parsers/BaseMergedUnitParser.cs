@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
+﻿using System;
+
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class BaseMergedUnitParser : IParser
     {
@@ -17,7 +19,7 @@
             ParseResult pr;
 
             // For now only currency model recognizes compound units.
-            if (extResult.Type.Equals(Constants.SYS_UNIT_CURRENCY))
+            if (extResult.Type.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.Ordinal))
             {
                 pr = new BaseCurrencyParser(Config).Parse(extResult);
             }

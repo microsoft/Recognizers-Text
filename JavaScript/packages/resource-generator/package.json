@@ -9,7 +9,7 @@
     "compiled"
   ],
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=10.3.0"
   },
   "scripts": {
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/"

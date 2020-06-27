@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
+    public class PortugueseDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = PortugueseDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -79,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex PureNumberFromToRegex { get; }
 
+        public Regex HyphenDateRegex { get; }
+
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex SpecificTimeOfDayRegex { get; }
@@ -113,18 +116,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex AfterRegex { get; }
 
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            // TODO: modify it according to the coresponding function in English part
+            // TODO: modify it according to the corresponding function in English part
             if (trimmedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";
@@ -167,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
             // TODO: Replace with a regex

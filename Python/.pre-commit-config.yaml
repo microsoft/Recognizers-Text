@@ -1,0 +1,13 @@
+default_stages: [push]
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
+    hooks:
+    - id: flake8
+      args: ['--config=Python/setup.cfg']
+      
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: master
+    hooks:
+    - id: autopep8
+      args: ['--in-place','--global-config=Python/setup.cfg']

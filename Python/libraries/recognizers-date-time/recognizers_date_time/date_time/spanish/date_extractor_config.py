@@ -10,8 +10,18 @@ from ..utilities import DateTimeUtilityConfiguration
 from .duration_extractor_config import SpanishDurationExtractorConfiguration
 from .base_configs import SpanishDateTimeUtilityConfiguration
 from ..constants import Constants
+from ...resources.base_date_time import BaseDateTime
+
 
 class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
+    @property
+    def week_day_start(self) -> Pattern:
+        return self._week_day_start
+
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
     @property
     def date_regex_list(self) -> List[Pattern]:
         return self._date_regex_list
@@ -23,6 +33,10 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def month_end(self) -> Pattern:
         return self._month_end
+
+    @property
+    def week_day_end(self) -> Pattern:
+        return self._week_day_end
 
     @property
     def of_month(self) -> Pattern:
@@ -49,8 +63,16 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_regex
 
     @property
+    def prefix_article_regex(self) -> Pattern:
+        return self._prefix_article_regex
+
+    @property
     def day_of_week(self) -> Dict[str, int]:
         return self._day_of_week
+
+    @property
+    def month_of_year(self) -> Dict[str, int]:
+        return self._month_of_year
 
     @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
@@ -69,10 +91,47 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._duration_extractor
 
     @property
+    def strict_relative_regex(self) -> Pattern:
+        return self._strict_relative_regex
+
+    @property
+    def range_connector_symbol_regex(self) -> Pattern:
+        return self._range_connector_symbol_regex
+
+    @property
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
+    @property
+    def year_suffix(self) -> Pattern:
+        return self._year_suffix
+
+    @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
+    def in_connector_regex(self) -> Pattern:
+        return self._in_connector_regex
+
+    @property
+    def range_unit_regex(self) -> Pattern:
+        return self._range_unit_regex
+
+    @property
+    def since_year_suffix_regex(self) -> Pattern:
+        return self._since_year_suffix_regex
+
+    @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
     def __init__(self):
+        self._check_both_before_after = False
         if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = SpanishDateTime.DateExtractor5
             date_extractor_5 = SpanishDateTime.DateExtractor4
@@ -109,20 +168,67 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.LastDateRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextDateRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekDayRegex),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekDayOfMonthRegex),
+            RegExpUtility.get_safe_reg_exp(
+                SpanishDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.SpecialDateRegex),
         ]
-        self._month_end = RegExpUtility.get_safe_reg_exp(SpanishDateTime.MonthEndRegex)
-        self._of_month = RegExpUtility.get_safe_reg_exp(SpanishDateTime.OfMonthRegex)
-        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateUnitRegex)
-        self._for_the_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ForTheRegex)
+        self._month_end = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.MonthEndRegex)
+        self._of_month = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.OfMonthRegex)
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.DateUnitRegex)
+        self._for_the_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.WeekDayAndDayOfMonthRegex)
-        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.RelativeMonthRegex)
-        self._week_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekDayRegex)
+        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RelativeMonthRegex)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayRegex)
         self._day_of_week = SpanishDateTime.DayOfWeek
         self._ordinal_extractor = SpanishOrdinalExtractor()
         self._integer_extractor = SpanishIntegerExtractor()
-        self._number_parser = BaseNumberParser(SpanishNumberParserConfiguration())
-        self._duration_extractor = BaseDurationExtractor(SpanishDurationExtractorConfiguration())
+        self._number_parser = BaseNumberParser(
+            SpanishNumberParserConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            SpanishDurationExtractorConfiguration())
         self._utility_configuration = SpanishDateTimeUtilityConfiguration()
+        self._range_connector_symbol_regex = RegExpUtility.get_safe_reg_exp(
+            BaseDateTime.RangeConnectorSymbolRegex
+        )
+        self._strict_relative_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.StrictRelativeRegex
+        )
+        self._year_suffix = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.YearSuffix
+        )
+        self._month_of_year = SpanishDateTime.MonthOfYear
+        self._prefix_article_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PrefixArticleRegex
+        )
+        self._week_day_end = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayEnd
+        )
+        self._more_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.MoreThanRegex
+        )
+        self._less_than_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LessThanRegex
+        )
+        self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.InConnectorRegex
+        )
+        self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RangeUnitRegex
+        )
+        self._since_year_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SinceYearSuffixRegex
+        )
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayAndDayRegex
+        )
+        self._week_day_start = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayStart
+        )
+        self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class FrenchSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -77,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") ||
                 trimmedText.Equals("jours") || trimmedText.Equals("journellement"))
             {
@@ -115,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.Equals("jour") || trimmedText.Equals("journee"))
             {
                 timex = "P1D";
@@ -141,5 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             return true;
         }
+
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

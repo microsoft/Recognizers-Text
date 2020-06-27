@@ -1,0 +1,17 @@
+[
+  {
+    "Input": "私の電話番号は(+31)12-3456789です.",
+    "Results": [
+      {
+        "Text": "(+31)12-3456789",
+        "Start": 7,
+        "End": 21,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(+31)12-3456789"
+        }
+      }
+    ]
+  }
+]

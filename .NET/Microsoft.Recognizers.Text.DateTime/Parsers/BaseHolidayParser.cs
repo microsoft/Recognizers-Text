@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -27,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceDate = refDate;
             object value = null;
 
-            if (er.Type.Equals(ParserName, StringComparison.InvariantCulture))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
 
@@ -95,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(yearStr))
             {
-                year = int.Parse(yearStr);
+                year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                 hasYear = true;
             }
             else if (!string.IsNullOrEmpty(orderStr))
@@ -131,6 +133,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (this.config.HolidayFuncDictionary.TryGetValue(holidayKey, out Func<int, DateObject> function))
                 {
                     value = function(year);
+
+                    // @TODO should be checking if variable holiday to produce better timex. Fixing is a breaking change.
                     this.config.VariableHolidaysTimexDictionary.TryGetValue(holidayKey, out timexStr);
                     if (string.IsNullOrEmpty(timexStr))
                     {
@@ -153,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (hasYear)
                 {
-                    ret.Timex = year.ToString("D4") + timexStr;
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + timexStr;
                     ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;

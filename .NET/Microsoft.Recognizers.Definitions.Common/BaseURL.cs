@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Definitions
       public static readonly string UrlPrefixRegex = $@"({ExtractionRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{{0,256}}(?<![.])\.";
       public static readonly string UrlSuffixRegex = $@"{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=@])";
       public static readonly string UrlRegex = $@"{UrlPrefixRegex}(?<Tld>[a-zA-Z]{{2,18}}){UrlSuffixRegex}";
-      public const string UrlRegex2 = @"((ht|f)tp(s?)\:\/\/|www\.)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(\.(?<Tld>[0-9a-zA-Z]+))+(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_=@]*)?";
+      public const string UrlRegex2 = @"((ht|f)tp(s?)\:\/\/|www\.)[-a-zA-Z0-9@:%._\+~#=]{1,256}\.(?<Tld>[a-zA-Z0-9()]{1,6})\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)";
       public static readonly string IpUrlRegex = $@"(?<IPurl>({ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}))";
       public const string AmbiguousTimeTerm = @"^(1?[0-9]|2[0-3]).[ap]m$";
       public static readonly IList<string> TldList = new List<string>

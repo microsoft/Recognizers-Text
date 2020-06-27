@@ -8,9 +8,9 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public abstract class BaseHolidayParserConfiguration : BaseOptionsConfiguration, IHolidayParserConfiguration
+    public abstract class BaseHolidayParserConfiguration : BaseDateTimeOptionsConfiguration, IHolidayParserConfiguration
     {
-        protected BaseHolidayParserConfiguration(IOptionsConfiguration config)
+        protected BaseHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
                 : base(config)
         {
             this.VariableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary.ToImmutableDictionary();
@@ -29,21 +29,24 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public abstract string SanitizeHolidayToken(string holiday);
 
+        // @TODO move all old holiday definitions to resource files
         protected static DateObject MothersDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 5, GetDay(year, 5, 1, DayOfWeek.Sunday));
 
         protected static DateObject FathersDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetDay(year, 6, 2, DayOfWeek.Sunday));
 
         protected static DateObject MemorialDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 5, GetLastDay(year, 5, DayOfWeek.Monday));
 
-        protected static DateObject LabourDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 0, DayOfWeek.Monday));
+        protected static DateObject UsLabourDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 0, DayOfWeek.Monday));
+
+        protected static DateObject InternationalWorkersDay(int year) => new DateObject(year, 5, 1);
 
         protected static DateObject ColumbusDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 10, GetDay(year, 10, 1, DayOfWeek.Monday));
 
         protected static DateObject ThanksgivingDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Thursday));
 
-        protected static DateObject BlackFriday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Friday));
+        protected static DateObject BlackFriday(int year) => ThanksgivingDay(year).AddDays(1);
 
-        protected static DateObject CyberMonday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 4, DayOfWeek.Monday));
+        protected static DateObject CyberMonday(int year) => ThanksgivingDay(year).AddDays(4);
 
         protected static int GetDay(int year, int month, int week, DayOfWeek dayOfWeek) =>
             (from day in Enumerable.Range(1, DateObject.DaysInMonth(year, month))
@@ -68,7 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 { "martinlutherking", MartinLutherKingDay },
                 { "washingtonsbirthday", WashingtonsBirthday },
                 { "canberra", CanberraDay },
-                { "labour", LabourDay },
+                { "labour", UsLabourDay },
+                { "internationalworkers", InternationalWorkersDay },
                 { "columbus", ColumbusDay },
                 { "memorial", MemorialDay },
             };

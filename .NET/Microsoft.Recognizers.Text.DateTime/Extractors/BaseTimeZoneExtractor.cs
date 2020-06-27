@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> RemoveAmbiguousTimezone(List<ExtractResult> ers)
         {
-            ers.RemoveAll(o => config.AmbiguousTimezoneList.Contains(o.Text.ToLowerInvariant()));
+            ers.RemoveAll(o => config.AmbiguousTimezoneList.Contains(o.Text));
             return ers;
         }
 
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (timeMatch.Count != 0 && !isAllSuffixInsideTokens)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
-                var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());
+                var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex));
                 var locationMatches = MatchingUtil.RemoveSubMatches(matches);
 
                 var i = 0;
@@ -121,16 +121,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
 
             // Direct UTC matches
-            var directUtc = this.config.DirectUtcRegex.Matches(text);
-            foreach (Match match in directUtc)
+            if (this.config.DirectUtcRegex != null)
             {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
+                var directUtc = this.config.DirectUtcRegex.Matches(text);
+                foreach (Match match in directUtc)
+                {
+                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                }
 
-            var matches = this.config.TimeZoneMatcher.Find(text);
-            foreach (MatchResult<string> match in matches)
-            {
-                ret.Add(new Token(match.Start, match.Start + match.Length));
+                var matches = this.config.TimeZoneMatcher.Find(text);
+                foreach (MatchResult<string> match in matches)
+                {
+                    ret.Add(new Token(match.Start, match.Start + match.Length));
+                }
             }
 
             return ret;

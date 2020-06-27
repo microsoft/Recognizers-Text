@@ -1,10 +1,9 @@
 [
   {
-    "Input": "15'te döneceğim",
+    "Input": "15'inde döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -19,7 +18,7 @@
             "date": "2016-10-15"
           }
         },
-        "Start": 16,
+        "Start": 0,
         "Length": 2
       }
     ]
@@ -29,7 +28,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -44,21 +42,20 @@
             "date": "2016-10-02"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 6
       }
     ]
   },
   {
-    "Input": "12 Ocak, 2016'da döneceğim",
+    "Input": "12 Ocak 2016'da döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 Ocak, 2016",
+        "Text": "12 Ocak 2016",
         "Type": "date",
         "Value": {
           "Timex": "2016-01-12",
@@ -69,8 +66,8 @@
             "date": "2016-01-12"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -79,11 +76,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 Ocak 2016 Pazartesi ",
+        "Text": "12 Ocak 2016 Pazartesi",
         "Type": "date",
         "Value": {
           "Timex": "2016-01-12",
@@ -94,8 +90,8 @@
             "date": "2016-01-12"
           }
         },
-        "Start": 13,
-        "Length": 25
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
@@ -104,11 +100,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "",
+        "Text": "22/02/2016",
         "Type": "date",
         "Value": {
           "Timex": "2016-02-22",
@@ -119,17 +114,16 @@
             "date": "2016-02-22"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 10
       }
     ]
   },
   {
-    "Input": "21/04/2016'da dönceğim",
+    "Input": "21/04/2016'da döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +138,7 @@
             "date": "2016-04-21"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 10
       }
     ]
@@ -154,7 +148,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -169,21 +162,20 @@
             "date": "2016-04-21"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 10
       }
     ]
   },
   {
-    "Input": "08/12/2015'de döneceğim",
+    "Input": "12/08/2015'te döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8/12/2015 12:00:00 AM",
+        "Text": "12/08/2015",
         "Type": "date",
         "Value": {
           "Timex": "2015-08-12",
@@ -194,7 +186,7 @@
             "date": "2015-08-12"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 10
       }
     ]
@@ -204,7 +196,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -219,8 +210,8 @@
             "date": "2016-01-01"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -229,7 +220,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -244,21 +234,20 @@
             "date": "2016-01-22"
           }
         },
-        "Start": 13,
-        "Length": 14
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "Mayıs yirmi birde döneceğim",
+    "Input": "Yirmi bir Mayıs'ta döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Mayıs yirmi bir",
+        "Text": "Yirmi bir Mayıs",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-05-21",
@@ -269,8 +258,8 @@
             "date": "2016-05-21"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -279,7 +268,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -294,17 +282,16 @@
             "date": "2016-08-02"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "Haziran'ın yirmi ikisinde dönceğim",
+    "Input": "Haziran'ın yirmi ikisinde döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -319,8 +306,8 @@
             "date": "2016-06-22"
           }
         },
-        "Start": 13,
-        "Length": 21
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
@@ -329,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -344,8 +330,8 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -354,7 +340,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -369,7 +354,7 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 5
       }
     ]
@@ -379,7 +364,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -394,8 +378,8 @@
             "date": "2016-11-08"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -404,7 +388,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -419,8 +402,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -429,7 +412,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -444,8 +426,8 @@
             "date": "2016-11-05"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -454,7 +436,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,8 +450,8 @@
             "date": "2016-11-09"
           }
         },
-        "Start": 13,
-        "Length": 22
+        "Start": 0,
+        "Length": 20
       }
     ]
   },
@@ -479,7 +460,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -494,8 +474,8 @@
             "date": "2016-11-08"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -504,7 +484,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -519,8 +498,8 @@
             "date": "2016-11-11"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -529,7 +508,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,8 +522,8 @@
             "date": "2016-11-20"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -554,7 +532,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -569,7 +546,7 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 11
       }
     ]
@@ -579,7 +556,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -594,8 +570,8 @@
             "date": "2016-11-11"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -604,7 +580,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -619,8 +594,8 @@
             "date": "2016-11-20"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 19
       }
     ]
   },
@@ -629,7 +604,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -644,8 +618,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -654,7 +628,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -669,8 +642,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -679,7 +652,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -694,21 +666,20 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
   {
-    "Input": "gün döneceğim",
+    "Input": "O gün döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "gün",
+        "Text": "O gün",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-07",
@@ -719,8 +690,8 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -729,7 +700,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -744,8 +714,8 @@
             "date": "2016-06-15"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -754,7 +724,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -769,8 +738,8 @@
             "date": "2016-07-01"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 23
       }
     ]
   },
@@ -779,7 +748,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -794,21 +762,20 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 13,
-        "Length": 30
+        "Start": 0,
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "Gelecek gafta Cuma günü döneceğim",
+    "Input": "Gelecek hafta Cuma günü döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gelecek gafta Cuma günü",
+        "Text": "Gelecek hafta Cuma günü",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-18",
@@ -819,8 +786,8 @@
             "date": "2016-11-18"
           }
         },
-        "Start": 13,
-        "Length": 19
+        "Start": 0,
+        "Length": 23
       }
     ]
   },
@@ -829,11 +796,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "benim günüm / günüm",
+        "Text": "benim günüm",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-07",
@@ -844,17 +810,16 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 10,
-        "Length": 6
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "İki hafta içinde döneceğim",
+    "Input": "iki hafta içinde döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -869,8 +834,8 @@
             "date": "2016-11-21"
           }
         },
-        "Start": 13,
-        "Length": 18
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -879,7 +844,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -894,7 +858,7 @@
             "date": "2016-10-07"
           }
         },
-        "Start": 16,
+        "Start": 0,
         "Length": 11
       }
     ]
@@ -904,7 +868,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -919,8 +882,8 @@
             "date": "2016-08-07"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -929,7 +892,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -944,8 +906,8 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
@@ -954,11 +916,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27'si",
+        "Text": "27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -969,21 +930,20 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "21'sinde döndüm",
+    "Input": "21'inde döndüm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "21'i",
+        "Text": "21",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-21",
@@ -994,8 +954,8 @@
             "date": "2016-10-21"
           }
         },
-        "Start": 16,
-        "Length": 8
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -1004,11 +964,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22'si",
+        "Text": "22",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1019,8 +978,8 @@
             "date": "2016-10-22"
           }
         },
-        "Start": 16,
-        "Length": 8
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -1029,11 +988,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi iki",
+        "Text": "yirmi ikisi",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1044,8 +1002,8 @@
             "date": "2016-10-22"
           }
         },
-        "Start": 16,
-        "Length": 17
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1054,11 +1012,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "otuz",
+        "Text": "otuzu",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-30",
@@ -1069,8 +1026,8 @@
             "date": "2016-10-30"
           }
         },
-        "Start": 16,
-        "Length": 10
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -1079,7 +1036,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1094,8 +1050,8 @@
             "date": "2017-09-21"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1104,7 +1060,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1119,8 +1074,8 @@
             "date": "2017-09-22"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -1129,7 +1084,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1144,8 +1098,8 @@
             "date": "2017-09-23"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -1154,7 +1108,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1169,8 +1122,8 @@
             "date": "2017-09-15"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -1179,7 +1132,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1194,8 +1146,8 @@
             "date": "2017-09-21"
           }
         },
-        "Start": 12,
-        "Length": 25
+        "Start": 0,
+        "Length": 19
       }
     ]
   },
@@ -1204,7 +1156,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1219,8 +1170,8 @@
             "date": "2017-09-22"
           }
         },
-        "Start": 12,
-        "Length": 24
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -1229,7 +1180,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1244,8 +1194,8 @@
             "date": "2017-09-15"
           }
         },
-        "Start": 12,
-        "Length": 18
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1254,7 +1204,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1269,8 +1218,8 @@
             "date": "2017-09-10"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1279,7 +1228,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1294,8 +1242,8 @@
             "date": "2017-09-03"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -1304,7 +1252,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1319,8 +1266,8 @@
             "date": "2017-09-19"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1329,7 +1276,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1344,8 +1290,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1354,7 +1300,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1369,7 +1314,7 @@
             "date": "2016-12-20"
           }
         },
-        "Start": 12,
+        "Start": 0,
         "Length": 18
       }
     ]
@@ -1379,7 +1324,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1394,8 +1338,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 12,
-        "Length": 18
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1404,7 +1348,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1419,8 +1362,8 @@
             "date": "2018-01-12"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1429,7 +1372,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1444,17 +1386,16 @@
             "date": "2015-09-18"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "İki gün önce döndüm",
+    "Input": "iki gün önce döndüm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1469,17 +1410,16 @@
             "date": "2016-11-05"
           }
         },
-        "Start": 12,
+        "Start": 0,
         "Length": 12
       }
     ]
   },
   {
-    "Input": "İki yıl önce döndüm",
+    "Input": "iki yıl önce döndüm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1494,8 +1434,8 @@
             "date": "2014-11-07"
           }
         },
-        "Start": 12,
-        "Length": 13
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1504,7 +1444,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1529,11 +1468,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 ay 21 gün önce ",
+        "Text": "1 ay 21 gün önce",
         "Type": "date",
         "Value": {
           "Timex": "2017-10-02",
@@ -1544,8 +1482,8 @@
             "date": "2017-10-02"
           }
         },
-        "Start": 17,
-        "Length": 19
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -1554,7 +1492,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1569,8 +1506,8 @@
             "date": "2015-10-02"
           }
         },
-        "Start": 12,
-        "Length": 27
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
@@ -1579,7 +1516,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1594,8 +1530,8 @@
             "date": "2019-12-14"
           }
         },
-        "Start": 17,
-        "Length": 21
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -1604,7 +1540,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1619,8 +1554,8 @@
             "date": "2015-10-02"
           }
         },
-        "Start": 12,
-        "Length": 27
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
@@ -1629,11 +1564,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 ay, 21 gün önce ",
+        "Text": "1 ay, 21 gün önce",
         "Type": "date",
         "Value": {
           "Timex": "2017-10-02",
@@ -1644,8 +1578,8 @@
             "date": "2017-10-02"
           }
         },
-        "Start": 17,
-        "Length": 20
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -1654,7 +1588,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1669,8 +1602,8 @@
             "date": "2018-01-20"
           }
         },
-        "Start": 17,
-        "Length": 22
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -1679,7 +1612,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1694,21 +1626,20 @@
             "date": "1391-12-05"
           }
         },
-        "Start": 17,
-        "Length": 15
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "yirmi iki Ocak, Pazartesi, 2018",
+    "Input": "yirmi iki Ocak 2018, Pazartesi",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi iki Ocak, Pazartesi, 2018",
+        "Text": "yirmi iki Ocak 2018, Pazartesi",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-22",
@@ -1720,20 +1651,19 @@
           }
         },
         "Start": 0,
-        "Length": 28
+        "Length": 30
       }
     ]
   },
   {
-    "Input": "Pazar günü, yirmi bir Ocak iki bin on sekiz",
+    "Input": "Yirmi bir Ocak iki bin on sekiz, Pazar günü",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Pazar, yirmi bir Ocak iki bin on sekiz",
+        "Text": "Yirmi bir Ocak iki bin on sekiz, Pazar günü",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-21",
@@ -1744,21 +1674,20 @@
             "date": "2018-01-21"
           }
         },
-        "Start": 3,
-        "Length": 47
+        "Start": 0,
+        "Length": 43
       }
     ]
   },
   {
-    "Input": "yirmi bir Eylül ondokuz yetmiş sekiz",
+    "Input": "yirmi bir Eylül bin dokuz yüz yetmiş sekiz",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi bir Eylül ondokuz yetmiş sekiz",
+        "Text": "yirmi bir Eylül bin dokuz yüz yetmiş sekiz",
         "Type": "date",
         "Value": {
           "Timex": "1978-09-21",
@@ -1769,21 +1698,20 @@
             "date": "1978-09-21"
           }
         },
-        "Start": 3,
-        "Length": 49
+        "Start": 0,
+        "Length": 42
       }
     ]
   },
   {
-    "Input": "10 Eylül, on dokuz sıfır bir",
+    "Input": "10 Eylül bin dokuz yüz bir",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10 Eylül, on dokuz sıfır bir",
+        "Text": "10 Eylül bin dokuz yüz bir",
         "Type": "date",
         "Value": {
           "Timex": "1901-09-10",
@@ -1794,21 +1722,20 @@
             "date": "1901-09-10"
           }
         },
-        "Start": 3,
-        "Length": 31
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "Eylül'ün onunda, iki bin",
+    "Input": "iki bin yılı Eylül'ün onunda",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Eylül'ün onu, iki bin",
+        "Text": "iki bin yılı Eylül'ün onu",
         "Type": "date",
         "Value": {
           "Timex": "2000-09-10",
@@ -1819,21 +1746,20 @@
             "date": "2000-09-10"
           }
         },
-        "Start": 7,
-        "Length": 32
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
   {
-    "Input": "Gelecek ayın ilk Cuma'sı seni göreceğim",
+    "Input": "Gelecek ayın ilk Cuması seni göreceğim",
     "Context": {
       "ReferenceDateTime": "2018-03-20T09:58:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Gelecek ayın ilk Cuma'sı ",
+        "Text": "Gelecek ayın ilk Cuması",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-WXX-5-#1",
@@ -1844,8 +1770,8 @@
             "date": "2018-04-06"
           }
         },
-        "Start": 13,
-        "Length": 30
+        "Start": 0,
+        "Length": 23
       }
     ]
   },
@@ -1854,11 +1780,10 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "gelecek ayın ikinci pazartesi ",
+        "Text": "gelecek ayın ikinci pazartesi",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-WXX-1-#2",
@@ -1869,21 +1794,20 @@
             "date": "2018-04-09"
           }
         },
-        "Start": 12,
-        "Length": 31
+        "Start": 6,
+        "Length": 29
       }
     ]
   },
   {
-    "Input": "Önceki ayın üçüncü Çarşamba'sı döndüm",
+    "Input": "Önceki ayın üçüncü Çarşambası döndüm",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Önceki ayın üçüncü Çarşamba'sı",
+        "Text": "Önceki ayın üçüncü Çarşambası",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-02-WXX-3-#3",
@@ -1894,8 +1818,8 @@
             "date": "2018-02-21"
           }
         },
-        "Start": 12,
-        "Length": 37
+        "Start": 0,
+        "Length": 29
       }
     ]
   },
@@ -1904,7 +1828,6 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1919,8 +1842,8 @@
             "date": "2018-03-27"
           }
         },
-        "Start": 19,
-        "Length": 17
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
@@ -1929,7 +1852,6 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1944,8 +1866,8 @@
             "date": "2018-04-01"
           }
         },
-        "Start": 16,
-        "Length": 22
+        "Start": 0,
+        "Length": 24
       }
     ]
   },
@@ -1954,11 +1876,10 @@
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yarından itibaren iki gün",
+        "Text": "Yarından itibaren iki gün içinde",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-23",
@@ -1969,8 +1890,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 13,
-        "Length": 22
+        "Start": 0,
+        "Length": 32
       }
     ]
   },
@@ -1979,11 +1900,10 @@
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Dünden itibaren dört gün",
+        "Text": "Dünden itibaren dört gün içinde",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-23",
@@ -1994,8 +1914,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 31
       }
     ]
   },
@@ -2004,7 +1924,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2019,7 +1938,7 @@
             "date": "2015-05-13"
           }
         },
-        "Start": 16,
+        "Start": 0,
         "Length": 9
       }
     ]
@@ -2029,7 +1948,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2044,21 +1962,20 @@
             "date": "2015-05-13"
           }
         },
-        "Start": 21,
-        "Length": 9
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "03.07.2017'de döneceğim",
+    "Input": "07.03.2017'de döneceğim",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "03.07.2017",
+        "Text": "07.03.2017",
         "Type": "date",
         "Value": {
           "Timex": "2017-03-07",
@@ -2069,8 +1986,8 @@
             "date": "2017-03-07"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2079,11 +1996,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5/5/1989 12:00:00 AM",
+        "Text": "05/05/1989",
         "Type": "date",
         "Value": {
           "Timex": "1989-05-05",
@@ -2094,8 +2010,8 @@
             "date": "1989-05-05"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2104,11 +2020,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5/5/1971 12:00:00 AM",
+        "Text": "05/05/1971",
         "Type": "date",
         "Value": {
           "Timex": "1971-05-05",
@@ -2119,21 +2034,20 @@
             "date": "1971-05-05"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "Şu andan itibaren iki Pazar uygun musun?",
+    "Input": "Şu andan itibaren iki Pazar sonra uygun musun?",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Şu andan itibaren iki Pazar",
+        "Text": "Şu andan itibaren iki Pazar sonra",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-20",
@@ -2144,21 +2058,20 @@
             "date": "2018-05-20"
           }
         },
-        "Start": 18,
-        "Length": 20
+        "Start": 0,
+        "Length": 33
       }
     ]
   },
   {
-    "Input": "İki Pazartesi sonra uygun musun?",
+    "Input": "iki Pazartesi sonra uygun musun?",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "İki Pazartesi sonra",
+        "Text": "iki Pazartesi sonra",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-21",
@@ -2169,21 +2082,20 @@
             "date": "2018-05-21"
           }
         },
-        "Start": 18,
-        "Length": 16
+        "Start": 0,
+        "Length": 19
       }
     ]
   },
   {
-    "Input": "Bugünden sonra iki gün uygun musun?",
+    "Input": "Bugünden iki gün sonra uygun musun?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Bugünden sonra iki gün",
+        "Text": "Bugünden iki gün sonra",
         "Type": "date",
         "Value": {
           "Timex": "2018-06-02",
@@ -2194,21 +2106,20 @@
             "date": "2018-06-02"
           }
         },
-        "Start": 18,
-        "Length": 20
+        "Start": 0,
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "Yarından itibaren üç hafta uygun musun?",
+    "Input": "Yarından itibaren üç hafta sonra uygun musun?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yarından itibaren üç hafta",
+        "Text": "Yarından itibaren üç hafta sonra",
         "Type": "date",
         "Value": {
           "Timex": "2018-06-22",
@@ -2219,21 +2130,20 @@
             "date": "2018-06-22"
           }
         },
-        "Start": 18,
-        "Length": 25
+        "Start": 0,
+        "Length": 32
       }
     ]
   },
   {
-    "Input": "Dünden önceki iki gün neredeydin?",
+    "Input": "Dünden iki gün önce neredeydin?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Dünden önceki iki gün",
+        "Text": "Dünden iki gün önce",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-28",
@@ -2244,8 +2154,8 @@
             "date": "2018-05-28"
           }
         },
-        "Start": 15,
-        "Length": 25
+        "Start": 0,
+        "Length": 19
       }
     ]
   },
@@ -2254,7 +2164,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2269,17 +2178,16 @@
             "date": "2018-07-26"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "Cortana, lütfen dört iş günü içinde bir ara bir Skype görüşmesi ayarla",
+    "Input": "Cortana, lütfen dört iş günü içinde bir-ara bir Skype görüşmesi ayarla",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2294,8 +2202,58 @@
             "date": "2018-08-27"
           }
         },
-        "Start": 45,
-        "Length": 21
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Bugünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bugünkü",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-23",
+          "FutureResolution": {
+            "date": "2019-09-23"
+          },
+          "PastResolution": {
+            "date": "2019-09-23"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Dünkü derse gelmedi",
+    "Comment": "DateTime V2 enhancements",
+    "Context": {
+      "ReferenceDateTime": "2019-09-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dünkü",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-22",
+          "FutureResolution": {
+            "date": "2019-09-22"
+          },
+          "PastResolution": {
+            "date": "2019-09-22"
+          }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   }

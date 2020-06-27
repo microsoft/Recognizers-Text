@@ -386,5 +386,118 @@
         "End": 44
       }
     ]
+  },
+  {
+    "Input": "Son dizième anniversaire",
+    "Results": [
+      {
+        "Text": "dizième",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "10",
+          "offset":"10",
+          "relativeTo":"start"
+        },
+        "Start": 4,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1ère femme",
+    "Results": [
+      {
+        "Text": "1ère",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "quinzième, dix-huirième, dix-septième, septième",
+    "Results": [
+      {
+        "Text": "quinzième",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "15",
+          "offset":"15",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 8
+      },
+      {
+        "Text": "dix-huirième",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "18",
+          "offset":"18",
+          "relativeTo":"start"
+        },
+        "Start": 11,
+        "End": 22
+      },
+      {
+        "Text": "dix-septième",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "17",
+          "offset":"17",
+          "relativeTo":"start"
+        },
+        "Start":25,
+        "End": 36
+      },
+      {
+        "Text": "septième",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "7",
+          "offset":"7",
+          "relativeTo":"start"
+        },
+        "Start": 39,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "Le vingt et unième jour",
+    "Results": [
+      {
+        "Text": "vingt et unième",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
+        },
+        "Start": 3,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "la 111e année",
+    "Results": [
+      {
+        "Text": "111e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "111",
+          "offset":"111",
+          "relativeTo":"start"
+        },
+        "Start": 3,
+        "End": 6
+      }
+    ]
   }
 ]

@@ -55,8 +55,8 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
         holidays.put("stgeorgeday", EnglishHolidayParserConfiguration::stGeorgeDay);
         holidays.put("baptisteday", EnglishHolidayParserConfiguration::baptisteDay);
         holidays.put("bastilleday", EnglishHolidayParserConfiguration::bastilleDay);
-        holidays.put("allsoulsday", EnglishHolidayParserConfiguration::allSoulsday);
-        holidays.put("veteransday", EnglishHolidayParserConfiguration::veteransday);
+        holidays.put("allsoulsday", EnglishHolidayParserConfiguration::allSoulsDay);
+        holidays.put("veteransday", EnglishHolidayParserConfiguration::veteransDay);
         holidays.put("childrenday", EnglishHolidayParserConfiguration::childrenDay);
         holidays.put("maosbirthday", EnglishHolidayParserConfiguration::maoBirthday);
         holidays.put("allsaintsday", EnglishHolidayParserConfiguration::halloweenDay);
@@ -69,10 +69,11 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
         holidays.put("whiteloverday", EnglishHolidayParserConfiguration::whiteLoverDay);
         holidays.put("valentinesday", EnglishHolidayParserConfiguration::valentinesDay);
         holidays.put("treeplantingday", EnglishHolidayParserConfiguration::treePlantDay);
-        holidays.put("cincodemayoday", EnglishHolidayParserConfiguration::cincoDeMayoday);
+        holidays.put("cincodemayoday", EnglishHolidayParserConfiguration::cincoDeMayoDay);
         holidays.put("inaugurationday", EnglishHolidayParserConfiguration::inaugurationDay);
         holidays.put("independenceday", EnglishHolidayParserConfiguration::usaIndependenceDay);
         holidays.put("usindependenceday", EnglishHolidayParserConfiguration::usaIndependenceDay);
+        holidays.put("juneteenth", EnglishHolidayParserConfiguration::juneteenth);
 
         return holidays;
     }
@@ -129,7 +130,7 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
         return DateUtil.safeCreateFromMinValue(year, 7, 14);
     }
 
-    private static LocalDateTime allSoulsday(int year) {
+    private static LocalDateTime allSoulsDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 11, 2);
     }
 
@@ -157,7 +158,7 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
         return DateUtil.safeCreateFromMinValue(year, 11, 5);
     }
 
-    private static LocalDateTime veteransday(int year) {
+    private static LocalDateTime veteransDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 11, 11);
     }
 
@@ -173,7 +174,7 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
         return DateUtil.safeCreateFromMinValue(year, 3, 14);
     }
 
-    private static LocalDateTime cincoDeMayoday(int year) {
+    private static LocalDateTime cincoDeMayoDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 5, 5);
     }
 
@@ -195,6 +196,10 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
 
     private static LocalDateTime usaIndependenceDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 7, 4);
+    }
+
+    private static LocalDateTime juneteenth(int year) {
+        return DateUtil.safeCreateFromMinValue(year, 6, 19);
     }
 
     @Override

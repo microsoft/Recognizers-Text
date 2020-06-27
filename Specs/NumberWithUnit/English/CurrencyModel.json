@@ -1436,7 +1436,6 @@
   },
   {
     "Input": "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dollar",
@@ -1463,7 +1462,6 @@
   },
   {
     "Input": "it only cost 3 dollars 50 cents.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 dollars 50 cents",
@@ -1479,7 +1477,6 @@
   },
   {
     "Input": "it only cost thirteen dollars and forty-five cents",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "thirteen dollars and forty-five cents",
@@ -1495,7 +1492,6 @@
   },
   {
     "Input": "it only cost thirteen dollars forty-five cents",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "thirteen dollars forty-five cents",
@@ -1511,7 +1507,6 @@
   },
   {
     "Input": "it only cost thirteen dollars forty five",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "thirteen dollars forty five",
@@ -1527,7 +1522,6 @@
   },
   {
     "Input": "It costs one dollar and one and one point of your credit points.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "one dollar and one",
@@ -1571,7 +1565,6 @@
   },
   {
     "Input": "It costs you 10 us dollar and me c $ 100 and fifty.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 us dollar",
@@ -1599,7 +1592,7 @@
   },
   {
     "Input": "It may need one kuai and five mao five.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "one kuai and five mao five",
@@ -1616,7 +1609,6 @@
   },
   {
     "Input": "It costs one dollar and two and three points of your credit points.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "one dollar and two",
@@ -1632,7 +1624,6 @@
   },
   {
     "Input": "Hey, the cost is $4.25 and 32 is the quantity!",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$4.25",
@@ -1734,7 +1725,7 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "100000",
-          "unit": "Cent"
+          "unit": "Sen"
         },
         "Start": 13,
         "End": 23
@@ -1769,6 +1760,511 @@
         },
         "Start": 8,
         "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "I want to loan $10000 over 3 years",
+    "Results": [
+      {
+        "Text": "$10000",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want to earn $10000 in 3 years",
+    "Results": [
+      {
+        "Text": "$10000",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "$20",
+    "Results": [
+      {
+        "Text": "$20",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50 dollar dollar",
+    "Results": [
+      {
+        "Text": "50 dollar",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "dollar",
+        "Start": 10,
+        "End": 15,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": null
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50 dollar 50 dollar",
+    "Results": [
+      {
+        "Text": "50 dollar",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "50 dollar",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50 50 dollar bills",
+    "Results": [
+      {
+        "Text": "50 dollar",
+        "Start": 3,
+        "End": 11,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50 dollar 40 rmb",
+    "Results": [
+      {
+        "Text": "50 dollar",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "40 rmb",
+        "Start": 10,
+        "End": 15,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "40"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50 dollar rmb",
+    "Results": [
+      {
+        "Text": "50 dollar",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "rmb",
+        "Start": 10,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": null
+        }
+      }
+    ]
+  },
+  {
+    "Input": "$ 20,000.00 $ 37,305.97 february expenses",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "$ 20,000.00",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "20000"
+        }
+      },
+      {
+        "Text": "$ 37,305.97",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "37305.97"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ is not much, nor is 10 €",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "10 €",
+        "Start": 25,
+        "End": 28,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Banknotes: 5 €, 10 €, 20 €, 50 €, 100 €, 200 €, 500 €.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 €",
+        "Start": 11,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "10 €",
+        "Start": 16,
+        "End": 19,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 €",
+        "Start": 22,
+        "End": 25,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "20"
+        }
+      },
+      {
+        "Text": "50 €",
+        "Start": 28,
+        "End": 31,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "100 €",
+        "Start": 34,
+        "End": 38,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "200 €",
+        "Start": 41,
+        "End": 45,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "200"
+        }
+      },
+      {
+        "Text": "500 €",
+        "Start": 48,
+        "End": 52,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "500"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 $10 dollars bill",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "$10",
+        "Start": 2,
+        "End": 4,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "dollars",
+        "Start": 6,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": null
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 $ 10 dollars bill",
+    "Comment": "Gets '1 $' and '10 dollars' now, because '$ 10 dollars' is not supported.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "$ 10 dollars",
+        "Start": 2,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ 30 $",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "30 $",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 $ 30 cent",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $ 30 cent",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10.3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 rmb 20 usd",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 rmb",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 usd",
+        "Start": 7,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "rmb 10 usd 20",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "rmb 10",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "usd 20",
+        "Start": 7,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 turkish lira 11a",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 turkish lira",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TRY",
+          "unit": "Turkish lira",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deposits: 10 turkish lira 1111-22223333-4444",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 turkish lira",
+        "Start": 10,
+        "End": 24,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TRY",
+          "unit": "Turkish lira",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am I eligible for a lone of 35 lakh rupees",
+    "Results": [
+      {
+        "Text": "35 lakh rupees",
+        "Start": 28,
+        "End": 41,
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3500000",
+          "unit": "Rupee"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am I eligible for a lone of 12,34,567.89 rupees",
+    "Comment": "Example of Indian numbering system, the format may not need to be supported in other languages.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,34,567.89 rupees",
+        "Start": 28,
+        "End": 46,
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1234567.89",
+          "unit": "Rupee"
+        }
       }
     ]
   }

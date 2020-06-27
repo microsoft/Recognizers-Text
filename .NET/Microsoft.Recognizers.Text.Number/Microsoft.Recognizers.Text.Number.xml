@@ -4,21 +4,26 @@
         <name>Microsoft.Recognizers.Text.Number</name>
     </assembly>
     <members>
-        <member name="T:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode">
+        <member name="T:Microsoft.Recognizers.Text.Number.Config.CJKNumberExtractorMode">
             <summary>
-            These modes only apply to ChineseNumberExtractor.
-            The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese ideograms.
+            These modes only apply to CJK NumberExtractors.
+            The default mode utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese/Japanese ideograms.
             ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode.Default">
+        <member name="F:Microsoft.Recognizers.Text.Number.Config.CJKNumberExtractorMode.Default">
             <summary>
             Number extraction with an allow list that filters what numbers to extract.
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode.ExtractAll">
+        <member name="F:Microsoft.Recognizers.Text.Number.Config.CJKNumberExtractorMode.ExtractAll">
             <summary>
             Extract all number-related terms aggressively.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Constants.JAPANESE_SUBS">
+            <summary>
+            Substitute for language markers for Japanese.
             </summary>
         </member>
         <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.Extract(System.String)">
@@ -32,7 +37,7 @@
             <summary>
             read the rules.
             </summary>
-            <param name="regexStrs">rule list.</param>
+            <param name="regexStrings">rule list.</param>
             <param name="ignoreCase">.</param>
             <returns>Immutable HashSet of regex.</returns>
         </member>
@@ -52,20 +57,10 @@
             <param name="numExtResults">number extractor result.</param>
             <returns>return according type "builtin.num" or "builtin.num.percentage".</returns>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Japanese.JapaneseNumberExtractorMode.Default">
-            <summary>
-            Number extraction with an allow list that filters what numbers to extract.
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.Japanese.JapaneseNumberExtractorMode.ExtractAll">
-            <summary>
-            Extract all number-related terms aggressively.
-            </summary>
-        </member>
         <member name="T:Microsoft.Recognizers.Text.Number.Korean.KoreanNumberExtractorMode">
             <summary>
             These modes can be applied to KoreanNumberExtractor.
-            The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Korean ideograms.
+            The default more utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Korean ideograms.
             --> such as "십이지장(十二指腸)" is organ name(duodenum, part of small intestine) in Korean, should not be extracted.
             ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
             </summary>
@@ -85,11 +80,6 @@
             Default is for datetime
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Unit">
-            <summary>
-            Unit is for unit
-            </summary>
-        </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Currency">
             <summary>
             Add 67.5 billion and million support.
@@ -100,6 +90,11 @@
             Don't extract number from cases like 16ml
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Unit">
+            <summary>
+            Unit is for unit
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.None">
             <summary>
             None
@@ -108,6 +103,11 @@
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.PercentageMode">
             <summary>
             PercentageMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.SuppressExtendedTypes">
@@ -181,6 +181,13 @@
             </summary>
             <param name="numberStr">composite number.</param>
             <returns>value of the string.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.INumberParserConfiguration.GetLangSpecificIntValue(System.Collections.Generic.List{System.String})">
+            <summary>
+            Used when requiring special processing for number value cases.
+            </summary>
+            <param name="matchStrs">matches.</param>
+            <returns>value of the match.</returns>
         </member>
     </members>
 </doc>

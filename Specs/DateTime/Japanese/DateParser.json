@@ -19,7 +19,7 @@
             "date": "2016-10-02"
           }
         },
-        "Start": 13,
+        "Start": 2,
         "Length": 5
       }
     ]
@@ -44,7 +44,7 @@
             "date": "2016-02-22"
           }
         },
-        "Start": 13,
+        "Start": 2,
         "Length": 10
       }
     ]
@@ -69,7 +69,7 @@
             "date": "2016-04-21"
           }
         },
-        "Start": 13,
+        "Start": 2,
         "Length": 10
       }
     ]
@@ -94,8 +94,8 @@
             "date": "2016-04-22"
           }
         },
-        "Start": 16,
-        "Length": 4
+        "Start": 2,
+        "Length": 5
       }
     ]
   },
@@ -119,7 +119,7 @@
             "date": "2015-08-12"
           }
         },
-        "Start": 13,
+        "Start": 2,
         "Length": 10
       }
     ]
@@ -144,13 +144,13 @@
             "date": "2016-01-01"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 2,
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "N/A",
+    "Input": "先週の日曜日",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -169,8 +169,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -194,8 +194,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 2,
+        "Length": 4
       }
     ]
   },
@@ -219,8 +219,8 @@
             "date": "2016-07-01"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -244,8 +244,8 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 10,
-        "Length": 6
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -258,7 +258,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "",
+        "Text": "前日",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -269,8 +269,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 2,
+        "Length": 2
       }
     ]
   },
@@ -294,8 +294,8 @@
             "date": "2016-11-21"
           }
         },
-        "Start": 13,
-        "Length": 18
+        "Start": 2,
+        "Length": 7
       }
     ]
   },
@@ -319,8 +319,8 @@
             "date": "2016-10-07"
           }
         },
-        "Start": 16,
-        "Length": 11
+        "Start": 2,
+        "Length": 4
       }
     ]
   },
@@ -344,8 +344,8 @@
             "date": "2016-08-07"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -369,8 +369,8 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -394,8 +394,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -419,8 +419,8 @@
             "date": "2016-10-21"
           }
         },
-        "Start": 16,
-        "Length": 8
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -444,8 +444,8 @@
             "date": "2016-10-22"
           }
         },
-        "Start": 16,
-        "Length": 8
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -458,7 +458,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "二日目",
+        "Text": "二日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-02",
@@ -469,8 +469,8 @@
             "date": "2016-11-02"
           }
         },
-        "Start": 16,
-        "Length": 10
+        "Start": 2,
+        "Length": 2
       }
     ]
   },
@@ -494,8 +494,8 @@
             "date": "2016-10-22"
           }
         },
-        "Start": 16,
-        "Length": 17
+        "Start": 2,
+        "Length": 4
       }
     ]
   },
@@ -519,8 +519,8 @@
             "date": "2016-10-30"
           }
         },
-        "Start": 16,
-        "Length": 10
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -544,8 +544,8 @@
             "date": "2017-09-21"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 2,
+        "Length": 6
       }
     ]
   },
@@ -569,8 +569,8 @@
             "date": "2017-09-22"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 2,
+        "Length": 5
       }
     ]
   },
@@ -594,8 +594,8 @@
             "date": "2017-09-23"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 2,
+        "Length": 7
       }
     ]
   },
@@ -619,13 +619,14 @@
             "date": "2017-09-15"
           }
         },
-        "Start": 12,
-        "Length": 15
+        "Start": 2,
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "私は3日火曜日に戻ります",
+    "Input": "私は第三火曜日に戻ります",
+    "Comment": "Translated from 'third thursday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
@@ -633,7 +634,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3日火曜日",
+        "Text": "第三火曜日",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-19",
@@ -644,8 +645,8 @@
             "date": "2017-09-19"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 2,
+        "Length": 5
       }
     ]
   },
@@ -669,13 +670,14 @@
             "date": "2018-01-12"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 2,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "私は2018年9月15日に戻ります",
+    "Input": "私は2015年9月18日に戻ります",
+    "Comment": "Translated from 9-18-15(MDY)",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -683,7 +685,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2018年9月15日",
+        "Text": "2015年9月18日",
         "Type": "date",
         "Value": {
           "Timex": "2015-09-18",
@@ -694,8 +696,8 @@
             "date": "2015-09-18"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 2,
+        "Length": 10
       }
     ]
   },
@@ -719,8 +721,8 @@
             "date": "1901-09-10"
           }
         },
-        "Start": 3,
-        "Length": 31
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -744,8 +746,8 @@
             "date": "2018-03-27"
           }
         },
-        "Start": 19,
-        "Length": 17
+        "Start": 2,
+        "Length": 6
       }
     ]
   },
@@ -769,8 +771,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 13,
-        "Length": 22
+        "Start": 2,
+        "Length": 6
       }
     ]
   },
@@ -794,8 +796,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 2,
+        "Length": 6
       }
     ]
   },
@@ -819,8 +821,8 @@
             "date": "2015-05-13"
           }
         },
-        "Start": 16,
-        "Length": 9
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -844,8 +846,8 @@
             "date": "2015-05-13"
           }
         },
-        "Start": 21,
-        "Length": 9
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -869,8 +871,8 @@
             "date": "2017-03-07"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 2,
+        "Length": 9
       }
     ]
   },
@@ -894,8 +896,8 @@
             "date": "2007-03-07"
           }
         },
-        "Start": 13,
-        "Length": 6
+        "Start": 2,
+        "Length": 9
       }
     ]
   },
@@ -919,8 +921,8 @@
             "date": "2027-03-07"
           }
         },
-        "Start": 13,
-        "Length": 6
+        "Start": 2,
+        "Length": 9
       }
     ]
   },
@@ -944,8 +946,8 @@
             "date": "1989-05-05"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 2,
+        "Length": 9
       }
     ]
   },
@@ -969,8 +971,8 @@
             "date": "1971-05-05"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 2,
+        "Length": 9
       }
     ]
   },
@@ -994,8 +996,8 @@
             "date": "2018-05-20"
           }
         },
-        "Start": 18,
-        "Length": 20
+        "Start": 3,
+        "Length": 7
       }
     ]
   },
@@ -1019,8 +1021,8 @@
             "date": "2018-05-28"
           }
         },
-        "Start": 15,
-        "Length": 25
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1194,13 +1196,14 @@
   },
   {
     "Input": "私は2016/04/21に戻ります",
+    "Comment": "Translated from 21/04/2016(DMY).",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "21/04/2016",
+        "Text": "2016/04/21",
         "Type": "date",
         "Value": {
           "Timex": "2016-04-21",
@@ -1218,6 +1221,7 @@
   },
   {
     "Input": "私は21/04/16に戻ります",
+    "Comment": "Unnecessary. Japanese don't use DMY form.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1961,14 +1965,15 @@
     ]
   },
   {
-    "Input": "私は6月の第一金曜日に戻ります",
+    "Input": "私は7月の第一金曜日に戻ります",
+    "Comment": "Translated from 'the first friday of july' which is 7th month.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "6月の第一金曜日",
+        "Text": "7月の第一金曜日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-07-WXX-5-#1",
@@ -2250,6 +2255,7 @@
   },
   {
     "Input": "私は今月の27日に戻ろうと思っています",
+    "Comment": "Fix needed: translated from 'the 27', w/o month term.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2259,12 +2265,12 @@
         "Text": "今月の27日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-XX-27",
+          "Timex": "XXXX-11-27",
           "FutureResolution": {
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-10-27"
+            "date": "2015-11-27"
           }
         },
         "Start": 2,
@@ -2298,6 +2304,7 @@
   },
   {
     "Input": "私は今月27日に戻ろうと思っています",
+    "Comment": "Fix needed: translated from 'the 27th', w/o month term.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2307,12 +2314,12 @@
         "Text": "今月27日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-XX-27",
+          "Timex": "XXXX-11-27",
           "FutureResolution": {
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-10-27"
+            "date": "2015-11-27"
           }
         },
         "Start": 2,
@@ -2556,7 +2563,7 @@
           }
         },
         "Start": 2,
-        "Length": 6
+        "Length": 7
       }
     ]
   },
@@ -2585,14 +2592,15 @@
     ]
   },
   {
-    "Input": "私は２日の日曜日に戻ります",
+    "Input": "私は第２の日曜日に戻ります",
+    "Comment": "Translated from 'second Sunday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "２日の日曜日",
+        "Text": "第２の日曜日",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-10",
@@ -2609,14 +2617,14 @@
     ]
   },
   {
-    "Input": "私は1日の日曜日に戻ります",
+    "Input": "私は第1の日曜日に戻ります",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "1日の日曜日",
+        "Text": "第1の日曜日",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-03",
@@ -2633,14 +2641,15 @@
     ]
   },
   {
-    "Input": "私は3日の木曜日に戻ります",
+    "Input": "私は第3の火曜日に戻ります",
+    "Comment": "Translated from 'third Tuesday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "3日の木曜日",
+        "Text": "第3の火曜日",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-19",
@@ -2657,14 +2666,15 @@
     ]
   },
   {
-    "Input": "私は五日の日曜日に戻ります",
+    "Input": "私は第五の日曜日に戻ります",
+    "Comment": "Translated from 'fifth Sunday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
-        "Text": "五日の日曜日",
+        "Text": "第五の日曜日",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-31",

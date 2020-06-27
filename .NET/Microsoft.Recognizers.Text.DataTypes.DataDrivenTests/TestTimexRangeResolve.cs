@@ -592,5 +592,44 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsTrue(r.Contains("2018-06-17T16"));
             Assert.AreEqual(2, r.Count);
         }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_time()
+        {
+            var resolutions = TimexRangeResolver.Evaluate(
+                new[] { "T09" },
+                new[] { "(2020-01-01,2020-01-02,P1D)" });
+            Assert.AreEqual(1, resolutions.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_time_with_daterange_constraint()
+        {
+            var candidates = new[] { "T09" };
+            var constraints = new[] { "P3D" };
+            var resolutions = TimexRangeResolver.Evaluate(candidates, constraints);
+            Assert.AreEqual(1, resolutions.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_time_with_datetimerange_constraint()
+        {
+            var resolutions = TimexRangeResolver.Evaluate(
+                new[] { "T09" },
+                new[] { "(2020-01-01T00:00:00,2020-01-02T00:00:00,PT24H)" });
+
+            Assert.AreEqual(1, resolutions.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_datetime_with_daterange_constraint()
+        {
+            var resolutions = TimexRangeResolver.Evaluate(
+                new[] { "2020-01-01T09", "2020-01-02T09" },
+                new[] { "(2020-01-01,2020-01-02,P1D)" });
+            Assert.AreEqual(1, resolutions.Count);
+            Assert.AreEqual(1, resolutions.First().Month);
+        }
+
     }
 }

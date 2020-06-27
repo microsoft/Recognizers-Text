@@ -1,23 +1,19 @@
 [
   {
-    "Input": "\nBu sayı yirmiden büyük ve otuz beşten küçük veya ona eşittir.",
-    "NotSupported": "dotnet",
+    "Input": "Bu sayı yirmiden büyük ve otuz beşten küçük veya eşittir.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmiden büyük ve otuz beşten küçük veya ona eşit.",
+        "Text": "yirmiden büyük ve otuz beşten küçük veya eşittir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(20,35]"
-        },
-        "Start": -1,
-        "End": 49
+        }
       }
     ]
   },
   {
     "Input": "Sayı 20 ve 30 arasında",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -25,15 +21,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,30)"
-        },
-        "Start": 5,
-        "End": 22
+        }
       }
     ]
   },
   {
     "Input": "O onuncu ve on beşinci arasında yer alır.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -41,15 +34,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10,15)"
-        },
-        "Start": 2,
-        "End": 31
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru eksi on ve on beş arasındadır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -57,31 +47,25 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[-10,15)"
-        },
-        "Start": 11,
-        "End": 37
+        }
       }
     ]
   },
   {
-    "Input": "O onuncudan daha yüksek ancak onbeşinden daha düşük sırada.",
-    "NotSupported": "dotnet",
+    "Input": "O onuncudan daha yüksek ancak on beşinciden daha düşük sırada.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "onuncudan daha yüksek ancak onbeşinden daha düşük ",
+        "Text": "onuncudan daha yüksek ancak on beşinciden daha düşük",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,15)"
-        },
-        "Start": 2,
-        "End": 52
+        }
       }
     ]
   },
   {
     "Input": "Bu 100'den büyük ve 300'den küçük bir sayıdır.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -89,47 +73,38 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(100,300)"
-        },
-        "Start": 3,
-        "End": 33
+        }
       }
     ]
   },
   {
     "Input": "Bu sayı yüzden büyüktür veya eşittir, üç yüzden küçüktür veya eşittir.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yüzden büyük veya eşit, üç yüzden küçük veya eşit",
+        "Text": "yüzden büyüktür veya eşittir, üç yüzden küçüktür veya eşittir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[100,300]"
-        },
-        "Start": -1,
-        "End": 48
+        }
       }
     ]
   },
   {
     "Input": "En çok 100 ve en az 20 elma var",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "En çok 100 ve en az 20",
+        "Text": "en çok 100 ve en az 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100]"
-        },
-        "Start": 0,
-        "End": 22
+        }
       }
     ]
   },
   {
     "Input": "Bu elmalar 20~100 civarındadır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -137,15 +112,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
-        },
-        "Start": 11,
-        "End": 17
+        }
       }
     ]
   },
   {
     "Input": "Sayı aralığı 20'den 100'e kadardır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -153,15 +125,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
-        },
-        "Start": 13,
-        "End": 31
+        }
       }
     ]
   },
   {
     "Input": "Sayı aralığı binden bin beş yüze kadardır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -169,111 +138,90 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,1500)"
-        },
-        "Start": 13,
-        "End": 38
+        }
       }
     ]
   },
   {
     "Input": "Sayı 1000'den yukarıda ve 1500'den aşağıdadır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1000'den yukarıda ve 1500'den aşağıda",
+        "Text": "1000'den yukarıda ve 1500'den aşağıdadır",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(1000,1500)"
-        },
-        "Start": 5,
-        "End": 42
+        }
       }
     ]
   },
   {
     "Input": "Sayı çeyrekten yüksek ve yarımdan aşağıdadır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "çeyrekten yüksek ve yarımdan aşağıda",
+        "Text": "çeyrekten yüksek ve yarımdan aşağıdadır",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
-        },
-        "Start": 5,
-        "End": 41
+        }
       }
     ]
   },
   {
-    "Input": "Bu sayı üç bin dokuz yüz altmış beşten büyük veya ona eşittir",
-    "NotSupported": "dotnet",
+    "Input": "Bu sayı üç bin dokuz yüz altmış beşten büyük veya eşittir",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "üç bin dokuz yüz altmış beşten büyük veya ona eşit",
+        "Text": "üç bin dokuz yüz altmış beşten büyük veya eşittir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[3965,)"
-        },
-        "Start": 8,
-        "End": 58
+        }
       }
     ]
   },
   {
-    "Input": "Bu sayı 4,565'den büyüktür",
-    "NotSupported": "dotnet",
+    "Input": "Bu sayı 4.565'ten büyüktür",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4,565'den büyük",
+        "Text": "4.565'ten büyüktür",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4565,)"
-        },
-        "Start": 8,
-        "End": 23
+        }
       }
     ]
   },
   {
     "Input": "Onun yaşı otuzdan büyüktür",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "otuzdan büyük",
+        "Text": "otuzdan büyüktür",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        },
-        "Start": 10,
-        "End": 23
+        }
       }
     ]
   },
   {
     "Input": "Onun yaşı otuzun üzerindedir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "otuzun üzerinde",
+        "Text": "otuzun üzerindedir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        },
-        "Start": 10,
-        "End": 25
+        }
       }
     ]
   },
   {
     "Input": "Onun yaşı otuzdan az değil",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -281,47 +229,38 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
-        "Start": 10,
-        "End": 26
+        }
       }
     ]
   },
   {
     "Input": "Bu ürünlerde yaklaşık beş yüz ve daha fazlası var.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beş yüz ve daha fazla",
+        "Text": "beş yüz ve daha fazlası",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
-        },
-        "Start": 22,
-        "End": 43
+        }
       }
     ]
   },
   {
     "Input": "Bu ürünlerde yaklaşık beş yüz veya daha fazlası var.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beş yüz veya daha fazla",
+        "Text": "beş yüz veya daha fazlası",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
-        },
-        "Start": 22,
-        "End": 45
+        }
       }
     ]
   },
   {
-    "Input": "1/2 kişiden fazlası geldi",
-    "NotSupported": "dotnet",
+    "Input": "1/2'den fazlası geldi",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -329,15 +268,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
-        },
-        "Start": -1,
-        "End": 12
+        }
       }
     ]
   },
   {
     "Input": "100'den küçük veya eşit olan asal sayıları bulun",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -345,15 +281,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        },
-        "Start": 0,
-        "End": 23
+        }
       }
     ]
   },
   {
     "Input": "100'den az veya eşit olan asal sayıları bulun",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -361,31 +294,25 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        },
-        "Start": 0,
-        "End": 20
+        }
       }
     ]
   },
   {
     "Input": "Bu ürünlerde yaklaşık beş yüz veya daha azı var.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beş yüz veya daha az",
+        "Text": "beş yüz veya daha azı",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,500]"
-        },
-        "Start": 22,
-        "End": 42
+        }
       }
     ]
   },
   {
     "Input": "<= 100 olan asal sayıları bulun",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -393,15 +320,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        },
-        "Start": 0,
-        "End": 6
+        }
       }
     ]
   },
   {
     "Input": "Onun boyu 170'ten aşağıda",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -409,15 +333,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
-        },
-        "Start": 10,
-        "End": 25
+        }
       }
     ]
   },
   {
     "Input": "Onun boyu 170'in altında",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -425,47 +346,38 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
-        },
-        "Start": 10,
-        "End": 24
+        }
       }
     ]
   },
   {
     "Input": "Binden az dev panda hala vahşi doğada yaşıyor.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Binden az",
+        "Text": "binden az",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,1000)"
-        },
-        "Start": 0,
-        "End": 9
+        }
       }
     ]
   },
   {
     "Input": "x eşittir yüz yetmiş",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "x eşittir yüz yetmiş",
+        "Text": "eşittir yüz yetmiş",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[170,170]"
-        },
-        "Start": 0,
-        "End": 20
+        }
       }
     ]
   },
   {
     "Input": "x>10 ve y<20",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -473,65 +385,52 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,)"
-        },
-        "Start": 1,
-        "End": 4
+        }
       },
       {
         "Text": "<20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,20)"
-        },
-        "Start": 10,
-        "End": 12
+        }
       }
     ]
   },
   {
-    "Input": "x, 10'dan büyük ve 20'den küçüktür. y, 50'den fazla ve 20'den az değildir.",
-    "NotSupported": "dotnet",
+    "Input": "x, 10'dan büyük ve 20'den küçüktür. y, 50'den fazla değil ve 20'den az değildir.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "10'dan büyük ve 20'den küçük",
+        "Text": "10'dan büyük ve 20'den küçüktür",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,20)"
-        },
-        "Start": 3,
-        "End": 31
+        }
       },
       {
-        "Text": "no more than 50 and no less than 20",
+        "Text": "50'den fazla değil ve 20'den az değildir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,50]"
-        },
-        "Start": 46,
-        "End": 80
+        }
       }
     ]
   },
   {
     "Input": "Sayı 20'ye eşittir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20'ye eşit",
+        "Text": "20'ye eşittir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
-        },
-        "Start": 5,
-        "End": 15
+        }
       }
     ]
   },
   {
     "Input": "20'ye eşit, sınıfımızdaki öğrenci sayısı belirgin değildir.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -539,47 +438,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
-        },
-        "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "Onun skoru 200 ya da .... daha yüksek",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "200 ya da ....yüksek",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[200,)"
-        },
-        "Start": -1,
-        "End": 19
-      }
-    ]
-  },
-  {
-    "Input": "Onun skoru 200 ya da 190'dan  yüksek",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "200 ya da 190'dan  yüksek",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(190,)"
-        },
-        "Start": 11,
-        "End": 36
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 200 ya da daha yüksek",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -587,31 +451,38 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,)"
-        },
-        "Start": 11,
-        "End": 32
+        }
       }
     ]
   },
   {
-    "Input": "Onun skoru 30'dan az ya da ona eşit",
-    "NotSupported": "dotnet",
+    "Input": "Onun skoru 200 ya da 190'dan yüksek",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30'dan az ya da ona eşit",
+        "Text": "190'dan yüksek",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(190,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Onun skoru 30'dan az ya da eşit",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30'dan az ya da eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
-        },
-        "Start": 11,
-        "End": 35
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 30'a eşit ya da daha az",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -619,31 +490,25 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
-        },
-        "Start": 11,
-        "End": 34
+        }
       }
     ]
   },
   {
-    "Input": "Onun skoru en az 30 ya da ona eşit",
-    "NotSupported": "dotnet",
+    "Input": "Onun skoru en az 30'a eşit",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "en az 30 ya da ona eşit",
+        "Text": "en az 30'a eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
-        "Start": 11,
-        "End": 34
+        }
       }
     ]
   },
   {
-    "Input": "Onun skoru 30'a eşit ya da  daha fazla",
-    "NotSupported": "dotnet",
+    "Input": "Onun skoru 30'a eşit ya da daha fazla",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -651,15 +516,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
-        "Start": -1,
-        "End": 25
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 5000'e eşit ya da daha az",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -667,15 +529,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
-        },
-        "Start": 11,
-        "End": 36
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 5000'e eşit ya da 6000'den daha az",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -683,40 +542,32 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
-        },
-        "Start": 11,
-        "End": 22
+        }
       },
       {
-        "Text": "less than 6000",
+        "Text": "6000'den daha az",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,6000)"
-        },
-        "Start": 30,
-        "End": 43
+        }
       }
     ]
   },
   {
-    "Input": "Onun skoru 5000'e eşit ya da .... daha fazla",
-    "NotSupported": "dotnet",
+    "Input": "Onun skoru 5000'e eşit ya da daha fazla",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5000'e eşit ya da .... daha fazla",
+        "Text": "5000'e eşit ya da daha fazla",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
-        },
-        "Start": 11,
-        "End": 44
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 5000'e eşit ya da 4500'den daha fazla",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -724,24 +575,19 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
-        },
-        "Start": 11,
-        "End": 22
+        }
       },
       {
-        "Text": "more than 4500",
+        "Text": "4500'den daha fazla",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4500,)"
-        },
-        "Start": 30,
-        "End": 43
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 5000'den az ya da eşit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -749,47 +595,25 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
-        },
-        "Start": 11,
-        "End": 33
+        }
       }
     ]
   },
   {
-    "Input": "Onun skoru 5000'den fazla ya da .... eşit",
-    "NotSupported": "dotnet",
+    "Input": "Onun skoru 5000'den fazla ya da eşit",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5000'den fazla ya da .... eşit",
+        "Text": "5000'den fazla ya da eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
-        },
-        "Start": 11,
-        "End": 41
-      }
-    ]
-  },
-  {
-    "Input": "Onun skoru 5000'den fazla ya da ona eşit",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "5000'den fazla ya da ona eşit",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,)"
-        },
-        "Start": 11,
-        "End": 40
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 5000'den fazla ya da 6000'e eşit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -797,24 +621,19 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(5000,)"
-        },
-        "Start": 11,
-        "End": 25
+        }
       },
       {
-        "Text": "equal to 6000",
+        "Text": "6000'e eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[6000,6000]"
-        },
-        "Start": 31,
-        "End": 43
+        }
       }
     ]
   },
   {
     "Input": "Onun skoru 5000'e eşit veya 5000'den az",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -822,24 +641,19 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
-        },
-        "Start": 11,
-        "End": 22
+        }
       },
       {
-        "Text": "less than 5000",
+        "Text": "5000'den az",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000)"
-        },
-        "Start": 30,
-        "End": 43
+        }
       }
     ]
   },
   {
     "Input": "Sayı aralığı 1000-5000'dir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -847,15 +661,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
-        "Start": 13,
-        "End": 22
+        }
       }
     ]
   },
   {
     "Input": "Sayı aralığı 1000 - 5000'dir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -863,15 +674,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
-        "Start": 13,
-        "End": 24
+        }
       }
     ]
   },
   {
     "Input": "Sayı aralığı 1000–5000'dir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -879,15 +687,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
-        "Start": 13,
-        "End": 22
+        }
       }
     ]
   },
   {
     "Input": "Sayı aralığı 1000 – 5000'dir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -895,80 +700,65 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
-        "Start": 13,
-        "End": 24
+        }
       }
     ]
   },
   {
-    "Input": "5'te 2 veya daha fazlası nasıl",
-    "NotSupported": "dotnet",
+    "Input": "2 bölü 5 veya daha fazlası nasıl",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5'te 2 veya daha fazlası",
+        "Text": "2 bölü 5 veya daha fazlası",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[0.4,)"
-        },
-        "Start": 0,
-        "End": 24
+        }
       }
     ]
   },
   {
     "Input": "5'te 2'den fazlası nasıl",
     "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2'den fazlası",
+        "Text": "2'den fazla",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(2,)"
-        },
-        "Start": 5,
-        "End": 18
+        }
       }
     ]
   },
   {
-    "Input": "Bana 2009’daki 30000’den fazla kayıt gösterebilir misin",
-    "NotSupported": "dotnet",
+    "Input": "Bana 2009'daki 30000'den fazla kayıt gösterebilir misin",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30000’den fazla",
+        "Text": "30000'den fazla",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30000,)"
-        },
-        "Start": 15,
-        "End": 30
+        }
       }
     ]
   },
   {
-    "Input": "Bana 2009’daki 30000’den az kayıt gösterebilir misin",
-    "NotSupported": "dotnet",
+    "Input": "Bana 2009'daki 3000'den az kayıt gösterebilir misin",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30000’den az",
+        "Text": "3000'den az",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,3000)"
-        },
-        "Start": 15,
-        "End": 27
+        }
       }
     ]
   },
   {
     "Input": "> 30 olduğunda hala böyle mi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -976,15 +766,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        },
-        "Start": 0,
-        "End": 4
+        }
       }
     ]
   },
   {
     "Input": ">= 30 olduğunda hala böyle mi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -992,15 +779,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
-        "Start": 0,
-        "End": 5
+        }
       }
     ]
   },
   {
     "Input": "<-30 olduğunda hala böyle mi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1008,15 +792,12 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,-30)"
-        },
-        "Start": 0,
-        "End": 4
+        }
       }
     ]
   },
   {
     "Input": "<=  -30 olduğunda hala böyle mi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1024,21 +805,16 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,-30]"
-        },
-        "Start": 0,
-        "End": 7
+        }
       }
     ]
   },
   {
-    "Input": "Sayı 1998'de 20000'e eşittir",
-    "NotSupported": "dotnet",
+    "Input": "Sayı 20000 bölü 1998'e eşittir",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1998'de 20000'e eşit",
-        "Start": 5,
-        "End": 25,
+        "Text": "20000 bölü 1998'e eşittir",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10.01001001001,10.01001001001]"
@@ -1047,14 +823,11 @@
     ]
   },
   {
-    "Input": "Sayı 2008'de 200'den 3000000'e kadar",
-    "NotSupported": "dotnet",
+    "Input": "Sayı 200'den 3000000 bölü 2008'e kadar",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2008'de 200'den 3000000'e kadar",
-        "Start": 5,
-        "End": 36,
+        "Text": "200'den 3000000 bölü 2008'e kadar",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,1494.02390438247)"

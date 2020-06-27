@@ -7,7 +7,7 @@ import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
 export class EnglishTemperatureExtractorConfiguration extends EnglishNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 
@@ -24,13 +24,13 @@ export class EnglishTemperatureExtractorConfiguration extends EnglishNumberWithU
         this.prefixList = new Map<string, string>();
         this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousTemperatureUnitList;
 
-      this.ambiguousUnitNumberMultiplierRegex = RegExpUtility.getSafeRegExp(BaseUnits.AmbiguousUnitNumberMultiplierRegex, "gs");
+        this.ambiguousUnitNumberMultiplierRegex = RegExpUtility.getSafeRegExp(BaseUnits.AmbiguousUnitNumberMultiplierRegex, "gs");
     }
 }
 
 export class EnglishTemperatureParserConfiguration extends EnglishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.English);
         }
 

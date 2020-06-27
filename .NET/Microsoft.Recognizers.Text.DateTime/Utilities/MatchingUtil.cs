@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class MatchingUtil
     {
-        public static bool GetAgoLaterIndex(string text, Regex regex, out int index)
+        public static bool GetAgoLaterIndex(string text, Regex regex, out int index, bool inSuffix)
         {
             index = -1;
-            var match = regex.MatchBegin(text, trim: true);
+            var match = inSuffix ? regex.MatchBegin(text, trim: true) : regex.MatchEnd(text, trim: true);
 
             if (match.Success)
             {
-                index = match.Index + match.Length;
+                index = match.Index + (inSuffix ? match.Length : 0);
                 return true;
             }
 
@@ -26,19 +27,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool GetTermIndex(string text, Regex regex, out int index)
         {
             index = -1;
-            var match = regex.Match(text.Trim().ToLower().Split(' ').Last());
+            var match = regex.Match(text.Trim().Split(' ').Last());
             if (match.Success)
             {
-                index = text.Length - text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal);
+                index = text.Length - text.LastIndexOf(match.Value, StringComparison.Ordinal);
                 return true;
             }
 
             return false;
         }
 
-        public static bool ContainsAgoLaterIndex(string text, Regex regex)
+        public static bool ContainsAgoLaterIndex(string text, Regex regex, bool inSuffix)
         {
-            return GetAgoLaterIndex(text, regex, out var index);
+            return GetAgoLaterIndex(text, regex, out var index, inSuffix);
         }
 
         public static bool ContainsTermIndex(string text, Regex regex)

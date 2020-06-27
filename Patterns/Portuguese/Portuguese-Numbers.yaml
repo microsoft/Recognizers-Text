@@ -1,4 +1,5 @@
 ---
+#ISO 639-2 Code
 LangMarker: Por
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool false
@@ -8,11 +9,11 @@ MultiDecimalSeparatorCulture: !bool false
 HundredsNumberIntegerRegex: !simpleRegex
   def: (quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\s+)(cento))
 RoundNumberIntegerRegex: !simpleRegex
-  def: (mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)
+  def: (mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)
+  def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)
+  def: (dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)
 TensNumberIntegerRegex: !simpleRegex
   def: (cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)
 DigitsNumberRegex: !simpleRegex
@@ -116,8 +117,8 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixRoundOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
-  references: [ AllIntRegex ]
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
+  references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
 #Double Regex
 AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
@@ -465,6 +466,10 @@ RoundNumberMap: !dictionary
     g: 1000000000
     b: 1000000000
     t: 1000000000000
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': ''
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English

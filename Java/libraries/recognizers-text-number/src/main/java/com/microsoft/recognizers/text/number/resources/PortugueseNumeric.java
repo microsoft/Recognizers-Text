@@ -27,11 +27,11 @@ public class PortugueseNumeric {
 
     public static final String HundredsNumberIntegerRegex = "(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))";
 
-    public static final String RoundNumberIntegerRegex = "(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)";
+    public static final String RoundNumberIntegerRegex = "(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))";
 
-    public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)";
+    public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)";
 
-    public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)";
+    public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)";
 
     public static final String TensNumberIntegerRegex = "(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)";
 
@@ -157,8 +157,9 @@ public class PortugueseNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex);
+    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{BaseNumbers.CommonCurrencySymbol}", BaseNumbers.CommonCurrencySymbol);
 
     public static final String AllFloatRegex = "{AllIntRegex}(\\s+(vírgula|virgula|e|ponto)){AllPointRegex}"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -517,6 +518,10 @@ public class PortugueseNumeric {
         .put("g", 1000000000L)
         .put("b", 1000000000L)
         .put("t", 1000000000000L)
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()

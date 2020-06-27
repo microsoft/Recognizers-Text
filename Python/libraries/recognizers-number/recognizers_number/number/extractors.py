@@ -10,6 +10,7 @@ from recognizers_number.number.models import LongFormatType
 from recognizers_number.number.constants import Constants
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
+ReRe = namedtuple('ReRe', ['reKey', 'reVal'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 
@@ -18,6 +19,10 @@ class BaseNumberExtractor(Extractor):
     @abstractmethod
     def regexes(self) -> List[ReVal]:
         raise NotImplementedError
+
+    @property
+    def ambiguity_filters_dict(self) -> List[ReRe]:
+        pass
 
     @property
     @abstractmethod
@@ -32,14 +37,13 @@ class BaseNumberExtractor(Extractor):
         if source is None or len(source.strip()) is 0:
             return list()
         result: List[ExtractResult] = list()
-        match_source: Dict[[Match], str] = dict()
+        match_source = dict()
         matched: List[bool] = [False] * len(source)
 
         matches_list = list(map(
             lambda x: MatchesVal(matches=list(regex.finditer(x.re, source)),
                                  val=x.val), self.regexes))
         matches_list = list(filter(lambda x: len(x.matches) > 0, matches_list))
-
         for ml in matches_list:
             for m in ml.matches:
                 for j in range(len(m.group())):
@@ -57,7 +61,7 @@ class BaseNumberExtractor(Extractor):
                     length = i - last
                     substr = source[start:start + length].strip()
                     src_match = next((x for x in iter(match_source) if (
-                            x.start() == start and (
+                        x.start() == start and (
                             x.end() - x.start()) == length)), None)
 
                     # extract negative numbers
@@ -77,7 +81,25 @@ class BaseNumberExtractor(Extractor):
                         value.type = self._extract_type
                         value.data = match_source.get(src_match, None)
                         result.append(value)
+
+        result = self._filter_ambiguity(result, source)
         return result
+
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str) -> List[ExtractResult]:
+        if self.ambiguity_filters_dict is not None:
+            for item in self.ambiguity_filters_dict:
+                if regex.search(item.reKey, text):
+                    matches = list(regex.finditer(item.reVal, text))
+                    if matches and len(matches):
+                        ers = list(filter(lambda x: self._filter_item(x, matches), ers))
+        return ers
+
+    def _filter_item(self, er: ExtractResult, matches: List[Match]) -> bool:
+        for match in matches:
+            if match.start() < er.start + er.length and match.end() > er.start:
+                return False
+
+        return True
 
     def _generate_format_regex(self, format_type: LongFormatType,
                                placeholder: str = None) -> Pattern:
@@ -220,7 +242,7 @@ class BasePercentageExtractor(Extractor):
     def __post_processing(self, results: List[ExtractResult], source: str,
                           positionmap: Dict[int, int],
                           extractresults: List[ExtractResult]) -> List[
-        ExtractResult]:
+            ExtractResult]:
         dummy_token = BaseNumbers.NumberReplaceToken
         for i in range(len(results)):
             start = results[i].start
@@ -232,7 +254,7 @@ class BasePercentageExtractor(Extractor):
                 results[i].start = original_start
                 results[i].length = original_length
                 results[i].text = source[
-                                  original_start:original_start + original_length].strip()
+                    original_start:original_start + original_length].strip()
                 num_start = text.find(dummy_token)
                 if num_start != -1:
                     num_original_start = start + num_start
@@ -240,8 +262,8 @@ class BasePercentageExtractor(Extractor):
                         num_original_end = num_original_start + len(
                             dummy_token)
                         data_key = source[
-                                   positionmap[num_original_start]:positionmap[
-                                       num_original_end]]
+                            positionmap[num_original_start]:positionmap[
+                                num_original_end]]
                         for j in range(i, len(extractresults)):
                             if results[i].start == extractresults[j].start and \
                                     extractresults[j].text in results[i].text:

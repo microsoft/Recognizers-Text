@@ -4,19 +4,41 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
-    public class DutchTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class DutchTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
+        private static readonly Regex ToHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ToHalfTokenRegex, RegexFlags);
+
+        private static readonly Regex ForHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ForHalfTokenRegex, RegexFlags);
 
         public DutchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -49,15 +71,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("half"))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
-                deltaMin = 30;
+                deltaMin = -30;
             }
-            else if (trimedPrefix.StartsWith("a quarter") || trimedPrefix.StartsWith("quarter"))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("three quarter"))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 45;
             }
@@ -71,12 +93,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (ToHalfTokenRegex.IsMatch(trimedPrefix))
+            {
+                deltaMin = deltaMin - 30;
+            }
+            else if (ForHalfTokenRegex.IsMatch(trimedPrefix))
+            {
+                deltaMin = -deltaMin - 30;
+            }
+            else if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }

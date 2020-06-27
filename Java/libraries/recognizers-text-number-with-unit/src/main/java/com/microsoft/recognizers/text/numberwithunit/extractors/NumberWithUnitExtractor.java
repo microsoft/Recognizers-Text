@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.numberwithunit.extractors;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.PrefixUnitResult;
+import com.microsoft.recognizers.text.numberwithunit.resources.BaseUnits;
 import com.microsoft.recognizers.text.numberwithunit.utilities.StringComparer;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
@@ -28,7 +30,9 @@ public class NumberWithUnitExtractor implements IExtractor {
 
     private final Set<Pattern> suffixRegexes;
     private final Set<Pattern> prefixRegexes;
+
     private final Pattern separateRegex;
+    private final Pattern singleCharUnitRegex = Pattern.compile(BaseUnits.SingleCharUnitRegex, Pattern.UNICODE_CHARACTER_CLASS);
 
     private final int maxPrefixMatchLen;
 
@@ -199,12 +203,43 @@ public class NumberWithUnitExtractor implements IExtractor {
             }
         }
 
-        //extract Separate unit
+        // Extract Separate unit
         if (separateRegex != null) {
             extractSeparateUnits(source, result);
         }
 
+        // Remove common ambiguous cases
+        result = filterAmbiguity(result, source);
+
         return result;
+    }
+
+    private List<ExtractResult> filterAmbiguity(List<ExtractResult> extractResults, String input) {
+
+        if (this.config.getAmbiguityFiltersDict() != null) {
+
+            for (Map.Entry<Pattern, Pattern> pair : this.config.getAmbiguityFiltersDict().entrySet()) {
+
+                final Pattern key = pair.getKey();
+                final Pattern value = pair.getValue();
+
+                for (ExtractResult extractResult : extractResults) {
+                    Optional<Match> keyMatch = Arrays.stream(RegExpUtility.getMatches(key, extractResult.getText())).findFirst();
+                    if (keyMatch.isPresent()) {
+                        final Match[] matches = RegExpUtility.getMatches(value, input);
+                        extractResults = extractResults.stream()
+                                .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
+                                .collect(Collectors.toCollection(ArrayList::new));
+                    }
+                }
+            }
+        }
+
+        // Filter single-char units if not exact match
+        extractResults = extractResults.stream().filter(er -> !(er.getLength() != input.length() && Pattern.matches(singleCharUnitRegex.toString(), er.getText())))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        return extractResults;
     }
 
     public void extractSeparateUnits(String source, List<ExtractResult> numDependResults) {

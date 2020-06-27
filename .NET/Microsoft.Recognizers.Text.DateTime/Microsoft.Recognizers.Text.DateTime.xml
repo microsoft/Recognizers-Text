@@ -79,6 +79,11 @@
             ExtendedTypes
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.FailFast">
             <summary>
             FailFast, mode that aborts extraction/tagging quickly for non-entity cases. May be removed later.
@@ -127,6 +132,26 @@
         <member name="F:Microsoft.Recognizers.Text.DateTime.DurationParsingUtil.MultiDurationType.DateTime">
             <summary>
             Represents the time of the date
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificYear">
+            <summary>
+            NonspecificYear
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificMonth">
+            <summary>
+            NonspecificMonth
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificDay">
+            <summary>
+            NonspecificDay
             </summary>
         </member>
     </members>

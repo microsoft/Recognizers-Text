@@ -11,21 +11,16 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 {
     public class ItalianNumberParserConfiguration : BaseNumberParserConfiguration
     {
-        public ItalianNumberParserConfiguration(NumberOptions options)
-            : this()
-        {
-            this.Options = options;
-        }
 
-        public ItalianNumberParserConfiguration()
-            : this(new CultureInfo(Culture.Italian))
-        {
-        }
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ItalianNumberParserConfiguration(CultureInfo ci)
+        public ItalianNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-            this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+
+            this.Config = config;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
+            this.CultureInfo = new CultureInfo(config.Culture);
+
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
@@ -45,11 +40,12 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
-            this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexOptions.Singleline);
+
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -75,11 +71,13 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
-            /*The following piece of code is needed in Italian to correctly compute some fraction patterns
-             * e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
-             * 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when
-             * they are concatenated to other numbers, so the following lines try to keep them isolated
-             * by concatenating the two previous numbers) */
+            // @TODO "mezzo" and "e" should be moved to the Italian YAML file
+
+            // The following piece of code is needed in Italian to correctly compute some fraction patterns
+            // e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
+            // 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when
+            // they are concatenated to other numbers, so the following lines try to keep them isolated
+            // by concatenating the two previous numbers)
             var fracLen = fracWords.Count;
             if (fracLen > 2 && this.OneToNineOrdinalRegex.Match(fracWords[fracLen - 1]).Success)
             {
@@ -87,6 +85,19 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 {
                     fracWords[fracLen - 3] += fracWords[fracLen - 2];
                     fracWords.RemoveAt(fracLen - 2);
+                }
+            }
+
+            // The following piece of code is needed to compute the fraction pattern number+'e mezzo'
+            // e.g. 'due e mezzo' ('two and a half') where the numerator is omitted in Italian.
+            // It works by inserting the numerator 'un' ('a') in the list fracWords
+            // so that the pattern is correctly processed.
+            fracLen = fracWords.Count;
+            if (fracLen > 2)
+            {
+                if (fracWords[fracLen - 1] == "mezzo" && fracWords[fracLen - 2] == "e")
+                {
+                    fracWords.Insert(fracLen - 1, "un");
                 }
             }
 
