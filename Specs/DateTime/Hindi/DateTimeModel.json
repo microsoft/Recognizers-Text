@@ -8620,7 +8620,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-08T12:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
