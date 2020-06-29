@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string WhichWeekRegex = @"(\b(सप्ताह)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b)|(\b(?<number>5[0-3]|[1-4]\d|0?[1-9])(\s*(वें)?\s*)(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह(?!\s+में)))";
       public const string WeekOfRegex = @"(\s*(के|का|वाले|तारीख वाली)\s+)(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)";
       public const string MonthOfRegex = @"(\s*(का|की|के)\s+)?((महि|मही(ने|ना))|माह)";
-      public const string MonthRegex = @"\b(?<month>अप्रील|अप्रैल|अगस्त|मई|दिसम्बर|दिसंबर|फरवरी|जनवरी|जुलाई|जून|मार्च|नवंबर|नवम्बर|अक्तूबर|अक्टूबर|आक्ट|सितंबर|सितम्बर|(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित)(\.|(?=[/\\.,-]))|(?<=(3[0-1]|[0-2]?\d)(ली)?\s+)(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित))";
+      public const string MonthRegex = @"\b(?<![\u0900-\u097f])(?<month>अप्रील|अप्रैल|अगस्त|मई|दिसम्बर|दिसंबर|फरवरी|जनवरी|जुलाई|जून|मार्च|नवंबर|नवम्बर|अक्तूबर|अक्टूबर|आक्ट|सितंबर|सितम्बर|(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित)(\.|(?=[/\\.,-])|(?![\u0900-\u097f]))|(?<=(3[0-1]|[0-2]?\d)(ली)?\s+)(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित))";
       public const string AmbiguousMonthP0Regex = @"\b((((!|\.|\?|,|;|)\s+|^)मे आई)|(आई|you|he|she|we|they)\s+मे|(मे\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or मे नहीं))))";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"(^(\s*तारीख)?,?\s*(सन\s+)?({DateYearRegex}|{FullTextYearRegex})|({DateYearRegex}|{FullTextYearRegex}),?\s*$)";
@@ -547,7 +547,9 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"फर", 2 },
             { @"फर.", 2 },
             { @"मा.", 3 },
+            { @"मा", 3 },
             { @"अप्र.", 4 },
+            { @"अप्र", 4 },
             { @"जू.", 6 },
             { @"जु.", 7 },
             { @"जुल", 7 },
@@ -561,6 +563,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"सितं", 9 },
             { @"सितं.", 9 },
             { @"आक्ट.", 10 },
+            { @"आक्ट", 10 },
             { @"अक्टू.", 10 },
             { @"नवं", 11 },
             { @"नवं.", 11 },
@@ -1364,11 +1367,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string[] DurationDateRestrictions = { @"आज", @"today", @"now" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"^(morning|afternoon|evening|night|day)\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
-            { @"\bnow\b", @"\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b" },
-            { @"\bmay\b", @"\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" },
-            { @"\b(a|one) second\b", @"\b(?<!an?\s+)(a|one) second (round|time)\b" },
-            { @"\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", @"(?<!\b(before|after|around|circa)\b\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)" }
+            { @"\bदिन\b", @"\bदिन-ब-दिन\b" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

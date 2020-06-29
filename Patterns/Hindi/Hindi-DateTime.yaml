@@ -228,7 +228,7 @@ WeekOfRegex: !simpleRegex
 MonthOfRegex: !simpleRegex
   def: (\s*(का|की|के)\s+)?((महि|मही(ने|ना))|माह)
 MonthRegex: !simpleRegex
-  def: \b(?<month>अप्रील|अप्रैल|अगस्त|मई|दिसम्बर|दिसंबर|फरवरी|जनवरी|जुलाई|जून|मार्च|नवंबर|नवम्बर|अक्तूबर|अक्टूबर|आक्ट|सितंबर|सितम्बर|(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित)(\.|(?=[/\\.,-]))|(?<=(3[0-1]|[0-2]?\d)(ली)?\s+)(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित))
+  def: \b(?<![\u0900-\u097f])(?<month>अप्रील|अप्रैल|अगस्त|मई|दिसम्बर|दिसंबर|फरवरी|जनवरी|जुलाई|जून|मार्च|नवंबर|नवम्बर|अक्तूबर|अक्टूबर|आक्ट|सितंबर|सितम्बर|(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित)(\.|(?=[/\\.,-])|(?![\u0900-\u097f]))|(?<=(3[0-1]|[0-2]?\d)(ली)?\s+)(अप्र|अग|दिस|फर|फ़ेब|फेब्रू|फ़र|जन|जु|जू|मा|नवं|नव|अक्टू|सितं|सित))
 # Cases collected from mined data. Regex to be removed once all platforms move to AmbiguityFiltersDict.
 AmbiguousMonthP0Regex: !simpleRegex
   def: \b((((!|\.|\?|,|;|)\s+|^)मे आई)|(आई|you|he|she|we|they)\s+मे|(मे\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or मे नहीं))))
@@ -984,7 +984,9 @@ MonthOfYear: !dictionary
     'फर': 2
     'फर.': 2
     'मा.': 3
+    'मा': 3
     'अप्र.': 4
+    'अप्र': 4   
     'जू.': 6
     'जु.': 7
     'जुल': 7
@@ -998,7 +1000,9 @@ MonthOfYear: !dictionary
     'सितं': 9
     'सितं.': 9
     'आक्ट.': 10
+    'आक्ट': 10
     'अक्टू.': 10
+    'अक्टू': 10
     'नवं': 11
     'नवं.': 11
     'नव': 11
@@ -1804,11 +1808,7 @@ DurationDateRestrictions: [ आज, today, now ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '^(morning|afternoon|evening|night|day)\b': '\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b'
-    '\bnow\b': '\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b'
-    '\bmay\b': '\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b'
-    '\b(a|one) second\b': '\b(?<!an?\s+)(a|one) second (round|time)\b'
-    '\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$': '(?<!\b(before|after|around|circa)\b\s)(breakfast|brunch|lunch(time)?|dinner(time)?|supper)'
+    '\bदिन\b': '\bदिन-ब-दिन\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

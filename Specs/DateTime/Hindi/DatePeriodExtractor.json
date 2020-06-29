@@ -3594,6 +3594,18 @@
     ]
   },
   {
+    "Input": "मैं अक्टू 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
     "Input": "कोर्टाना, क्या आप 18 तारीख वाली सप्ताह के लिए कुछ सेट कर सकती हो।",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
