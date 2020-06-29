@@ -15,8 +15,8 @@ from recognizers_number.number.portuguese.extractors import PortugueseNumberExtr
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
-from recognizers_number.number.french.extractors import GermanNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor
-from recognizers_number.number.french.parsers import GermanNumberParserConfiguration
+from recognizers_number.number.german.extractors import GermanNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor
+from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 
 
 class NumberOptions(IntFlag):
