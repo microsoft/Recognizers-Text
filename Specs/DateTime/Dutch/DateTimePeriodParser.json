@@ -3207,14 +3207,14 @@
         "Text": "afgelopen nacht",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-07TNI",
+          "Timex": "2016-11-06TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
           }
         },
         "Start": 6,

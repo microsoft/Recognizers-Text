@@ -111,6 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
+        // @TODO move hardcoded strings to YAML file
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
@@ -140,6 +141,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             return text.Equals("and");
         }
 
-        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.FilterAmbiguousCases(text, timePeriodErs);
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
     }
 }

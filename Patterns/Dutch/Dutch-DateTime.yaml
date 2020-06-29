@@ -131,10 +131,10 @@ ToHalfTokenRegex: !simpleRegex
   def: \b(over\s+half)$
 ForHalfTokenRegex: !simpleRegex
   def: \b(voor\s+half)$
-FromTokenRegex: !simpleRegex
-  def: (van(af)?)$
+FromRegex: !simpleRegex
+  def: \b(van(af)?)$
 BetweenTokenRegex: !simpleRegex
-  def: (tussen)$
+  def: \b(tussen)$
 SimpleCasesRegex: !nestedRegex
   def: \b({RangePrefixRegex}\s+)?({DayRegex}((\s*),?(\s*){MonthSuffixRegex})?)\s*{TillRegex}\s*({DayRegex}(\s*),?(\s*){MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex}|{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex, RangePrefixRegex ]
@@ -634,10 +634,6 @@ ReferenceDatePeriodRegex: !nestedRegex
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|voor|t|rond(om)?|@)$
-FromRegex: !simpleRegex
-  def: \b(vanaf|van)$
-BetweenTokenRegex: !simpleRegex
-  def: \b(tussen)$
 FromToRegex: !simpleRegex
   def: \b(van(af)?).+(tot)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex

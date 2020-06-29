@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string ToTokenRegex = @"\b(voor)$";
       public const string ToHalfTokenRegex = @"\b(over\s+half)$";
       public const string ForHalfTokenRegex = @"\b(voor\s+half)$";
-      public const string FromTokenRegex = @"(van(af)?)$";
+      public const string FromRegex = @"\b(van(af)?)$";
       public const string BetweenTokenRegex = @"\b(tussen)$";
       public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex}((\s*),?(\s*){MonthSuffixRegex})?)\s*{TillRegex}\s*({DayRegex}(\s*),?(\s*){MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex}|{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((van)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
@@ -262,7 +262,6 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string ReferenceDatePeriodRegex = $@"\b{ReferencePrefixRegex}\s+(?<duration>week|maand|jaar|decennium|weekend)\b";
       public const string ConnectorRegex = @"^(-|,|voor|t|rond(om)?|@)$";
-      public const string FromRegex = @"\b(vanaf|van)$";
       public const string FromToRegex = @"\b(van(af)?).+(tot)\b.+";
       public const string SingleAmbiguousMonthRegex = @"^(de\s+)?(mei)$";
       public const string SingleAmbiguousTermsRegex = @"^(de\s+)?(dag|week|maand|jaar)$";

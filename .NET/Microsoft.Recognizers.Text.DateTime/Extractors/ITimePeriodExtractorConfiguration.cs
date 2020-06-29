@@ -31,6 +31,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         bool GetBetweenTokenIndex(string text, out int index);
 
-        List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs);
+        List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs);
     }
 }

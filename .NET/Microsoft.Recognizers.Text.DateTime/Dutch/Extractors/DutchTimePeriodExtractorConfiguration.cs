@@ -153,10 +153,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
 
-        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs)
+        // This method is used to disambiguate extractions containing 'morgen' (that can mean both 'tomorrow' and 'morning').
+        // It discards isolated occurrences of 'morgen', keeping as valid extractions only those cases
+        // where it is part of a bigger match (e.g. 'diensdag morgen')
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
         {
             {
-                var morgenStr = "morgen";
+                var morgenStr = DateTimeDefinitions.MorningTermList[0];
                 List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
                 foreach (var timePeriodEr in timePeriodErs)
                 {

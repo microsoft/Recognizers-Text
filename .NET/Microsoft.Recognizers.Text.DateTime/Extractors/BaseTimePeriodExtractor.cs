@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Filter ambiguous extractions e.g. 'morgen' in German and Dutch
-            timePeriodErs = this.config.FilterAmbiguousCases(text, timePeriodErs);
+            timePeriodErs = this.config.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
 
             return timePeriodErs;
         }

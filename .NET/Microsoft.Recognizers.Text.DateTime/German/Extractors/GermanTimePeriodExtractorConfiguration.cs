@@ -94,6 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
+        // @TODO move hardcoded strings to YAML file
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
@@ -128,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         // When trying to do this on the string "morgen" it will be extracted as a time period ("morning") by the TimePeriodExtractor, and not as "tomorrow".
         // Filtering out the string "morgen" from the TimePeriodExtractor will fix the problem as only in the case where "morgen" is NOT a time period the string "morgen" will be passed to this extractor.
         // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
-        public List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs)
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
         {
             if (text.Equals("morgen"))
             {

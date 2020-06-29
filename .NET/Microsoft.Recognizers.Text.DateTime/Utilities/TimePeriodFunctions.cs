@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         }
 
         // used to filter ambiguous extractions e.g. 'morgen' in German and Dutch
-        public static List<ExtractResult> FilterAmbiguousCases(string text, List<ExtractResult> timePeriodErs)
+        public static List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
         {
             return timePeriodErs;
         }
