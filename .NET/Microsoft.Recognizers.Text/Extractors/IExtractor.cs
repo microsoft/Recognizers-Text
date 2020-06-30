@@ -11,6 +11,9 @@ namespace Microsoft.Recognizers.Text
 
     public class ExtractResult : ICloneableType<ExtractResult>
     {
+
+        public string Issuer { get; set; } = null;
+
         public int? Start { get; set; } = null;
 
         public int? Length { get; set; } = null;
@@ -22,6 +25,8 @@ namespace Microsoft.Recognizers.Text
         public object Data { get; set; } = null;
 
         public Metadata Metadata { get; set; } = null;
+
+        public bool Validation { get; set; } = false;
 
         public ExtractResult Clone()
         {

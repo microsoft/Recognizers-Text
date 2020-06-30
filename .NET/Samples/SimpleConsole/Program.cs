@@ -15,7 +15,7 @@ namespace SimpleConsole
     public static class Program
     {
         // Use English for the Recognizers culture
-        private const string DefaultCulture = Culture.English;
+        private const string DefaultCulture = Culture.Chinese;
 
         public static void Main(string[] args)
         {
@@ -118,6 +118,10 @@ namespace SimpleConsole
                 // GUID recognizer will find all the GUID usages
                 // E.g "{123e4567-e89b-12d3-a456-426655440000}"
                 SequenceRecognizer.RecognizeGUID(query, culture),
+
+                // CreditCard recognizer wiil find all the Credit/Bank Card usages
+                // E.g "This is a Chinese Credit Card: 3100 0000 0000 0000 123"
+                SequenceRecognizer.RecognizeCreditCard(query, culture),
 
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"

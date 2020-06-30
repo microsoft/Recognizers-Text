@@ -19,6 +19,8 @@
             Text = er.Text;
             Type = er.Type;
             Metadata = er.Metadata;
+            Issuer = er.Issuer;
+            Validation = er.Validation;
         }
 
         // Value is for resolution.
