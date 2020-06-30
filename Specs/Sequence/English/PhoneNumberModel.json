@@ -4845,5 +4845,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Her credit cards are: Visa 5111 1111 1111 1111",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Her credit cards are: American Express 3600 0000 0000 009",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Her credit cards are: Discover 6011-0000-0000-0004",
+    "NotSupported": "java",
+    "Results": []
   }
 ]

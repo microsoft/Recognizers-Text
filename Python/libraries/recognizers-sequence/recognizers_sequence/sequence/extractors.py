@@ -148,6 +148,18 @@ class BasePhoneNumberExtractor(SequenceExtractor):
             if (count_digits(er.text) < 7 and er.data != "ITPhoneNumber") or \
                     ssn_filter_regex.search(er.text):
                 continue
+            if count_digits(er.text) == 16 and er.text[0] != "+":
+                continue
+            if count_digits(er.text) == 15:
+                flag = False
+                for numSpan in er.text.split(' '):
+                    if count_digits(numSpan) == 4 or count_digits(numSpan) == 3:
+                        flag = False
+                    else:
+                        flag = True
+                        break
+                if flag == False:
+                   continue
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
                 if ch in BasePhoneNumbers.ForbiddenSuffixMarkers:
