@@ -2471,8 +2471,8 @@
   },
   {
     "Input": "١ تريليون كتاب جديد",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١ تريليون",
@@ -2482,7 +2482,7 @@
           "value": "1000000000000"
         },
         "Start": 0,
-        "End": 9
+        "End": 8
       }
     ]
   },
@@ -2933,8 +2933,8 @@
   },
   {
     "Input": "مائة وثلاثة على اربعة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة وثلاثة على اربعة",
@@ -2967,8 +2967,8 @@
   },
   {
     "Input": "١ في واحد و عشرون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١ في واحد و عشرون",
@@ -2978,7 +2978,7 @@
           "value": "0.0476190476190476"
         },
         "Start": 0,
-        "End": 17
+        "End": 16
       }
     ]
   },
@@ -4156,9 +4156,9 @@
   },
   {
     "Input": "واحد و ربع",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "واحد و ربع",
@@ -4174,9 +4174,9 @@
   },
   {
     "Input": "خمسة و ربع",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "خمسة و ربع",
