@@ -29,6 +29,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    new Regex(NumbersDefinitions.NumbersWithSpace(config.Placeholder), RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
