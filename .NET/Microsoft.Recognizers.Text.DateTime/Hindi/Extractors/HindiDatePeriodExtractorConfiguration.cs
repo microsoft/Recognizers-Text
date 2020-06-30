@@ -64,6 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex SimpleCasesRegex =
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
 
+        public static readonly Regex NumberBeforeWeekRegex =
+            new Regex(DateTimeDefinitions.NumberBeforeWeekRegex, RegexFlags);
+
         public static readonly Regex MonthFrontSimpleCasesRegex =
             new Regex(DateTimeDefinitions.MonthFrontSimpleCasesRegex, RegexFlags);
 
@@ -178,6 +181,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         {
             // "3-5 Jan, 2018",
             SimpleCasesRegex,
+
+            // "18 तारीख वाली सप्ताह"
+            NumberBeforeWeekRegex,
 
             // "between 3 and 5 Jan, 2018"
             BetweenRegex,

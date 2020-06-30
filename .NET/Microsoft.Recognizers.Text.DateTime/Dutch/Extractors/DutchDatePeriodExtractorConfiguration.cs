@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromTokenRegex =
-            new Regex(DateTimeDefinitions.FromTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
         private static readonly Regex BetweenTokenRegex =
             new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
