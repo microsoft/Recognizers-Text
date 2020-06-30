@@ -44,6 +44,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="BaseCreditCard.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseCreditCard.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -108,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Chinese\CreditCardDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CreditCardDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Chinese\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
@@ -381,6 +391,8 @@
     </None>
     <None Update="Arabic\NumbersDefinitions.tt">
     </None>
+    <None Update="BaseCreditCard.tt">
+    </None>
     <None Update="BaseCurrency.tt">
     </None>
     <None Update="BaseDateTime.tt">
@@ -406,6 +418,8 @@
     <None Update="Bulgarian\ChoiceDefinitions.tt">
     </None>
     <None Update="Chinese\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Chinese\CreditCardDefinitions.tt">
     </None>
     <None Update="Chinese\DateTimeDefinitions.tt">
     </None>

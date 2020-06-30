@@ -11,5 +11,7 @@
         public const string SubType = "subtype";
         public const string Offset = "offset";
         public const string RelativeTo = "relativeTo";
+        public const string Issuer = "issuer";
+        public const string Validation = "validation";
     }
 }

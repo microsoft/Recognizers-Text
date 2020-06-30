@@ -9,6 +9,7 @@ using Microsoft.Recognizers.Text.Sequence.German;
 using Microsoft.Recognizers.Text.Sequence.Hindi;
 using Microsoft.Recognizers.Text.Sequence.Italian;
 using Microsoft.Recognizers.Text.Sequence.Korean;
+using Microsoft.Recognizers.Text.Sequence.Parsers;
 using Microsoft.Recognizers.Text.Sequence.Portuguese;
 using Microsoft.Recognizers.Text.Sequence.Spanish;
 using Microsoft.Recognizers.Text.Sequence.Turkish;
@@ -72,6 +73,11 @@ namespace Microsoft.Recognizers.Text.Sequence
             return RecognizeByModel(recognizer => recognizer.GetGUIDModel(culture, fallbackToDefaultCulture), query, options);
         }
 
+        public static List<ModelResult> RecognizeCreditCard(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetCreditCardModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
         public IModel GetPhoneNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
             if (culture != null && (
@@ -125,6 +131,11 @@ namespace Microsoft.Recognizers.Text.Sequence
         public IModel GetGUIDModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
             return GetModel<GUIDModel>(Culture.English, fallbackToDefaultCulture);
+        }
+
+        public IModel GetCreditCardModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<CreditCardModel>(culture, fallbackToDefaultCulture);
         }
 
         protected override void InitializeConfiguration()
@@ -234,6 +245,12 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<GUIDModel>(
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
+
+            RegisterModel<CreditCardModel>(
+                Culture.Chinese,
+                (options) => new CreditCardModel(
+                    new CreditCardParser(),
+                    new BaseCreditCardExtractor(new ChineseCreditCardExtractorConfiguration(options))));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)

@@ -1,0 +1,11 @@
+---
+WordBoundariesRegex: !simpleRegex
+  def: '\b'
+NonWordBoundariesRegex: !simpleRegex
+  def: '\B'
+EndWordBoundariesRegex: !simpleRegex
+  def: '\b'
+CNCreditCardRegex: !paramsRegex
+  def: ((62|81)(\s?\d){2}(\s|-)?(\s?\d){4}(\s|-)?(\s?\d){4}(\s|-)?(\s?\d){4}(\s|-)?(\s?\d){0,3}|31(\s?\d){2}(\s|-)?(\s?\d){4}(\s|-)?(\s?\d){4}(\s|-)?(\s?\d){4}(\s|-)?(\s?\d){3})
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+...

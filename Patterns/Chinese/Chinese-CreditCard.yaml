@@ -1,0 +1,6 @@
+---
+ChinaTUnionRegex: !simpleRegex
+  def: ^31
+ChinaUnionPayRegex: !simpleRegex
+  def: ^(62|81)
+...

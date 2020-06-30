@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Chinese\Chinese-CreditCard.yaml";
+	this.Language = "Chinese";
+	this.ClassName = "CreditCardDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>

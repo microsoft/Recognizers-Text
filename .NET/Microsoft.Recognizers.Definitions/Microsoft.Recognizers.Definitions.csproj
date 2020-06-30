@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\ChoiceDefinitions.cs" Link="Arabic\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Arabic\NumbersDefinitions.cs" Link="Arabic\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseCreditCard.cs" Link="BaseCreditCard.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseCurrency.cs" Link="BaseCurrency.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseDateTime.cs" Link="BaseDateTime.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
@@ -45,6 +46,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseURL.cs" Link="BaseURL.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\PhoneNumbersDefinitions.cs" Link="English\PhoneNumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\ChoiceDefinitions.cs" Link="Chinese\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\CreditCardDefinitions.cs" Link="Chinese\CreditCardDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\DateTimeDefinitions.cs" Link="Chinese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersDefinitions.cs" Link="Chinese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersWithUnitDefinitions.cs" Link="Chinese\NumbersWithUnitDefinitions.cs" />
