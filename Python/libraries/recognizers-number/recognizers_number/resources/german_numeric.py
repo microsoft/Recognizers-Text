@@ -52,7 +52,7 @@ class GermanNumeric:
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(und\\s+)?)?(an?|eins)(\\s+|\\s*-\\s*)(?!\\berster\\b|\\bzweiter\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb|viertel))|(halb))(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(und\\s+)?)?(an?|eins)(\\s+|\\s*-\\s*)(?!\\berster\\b|\\bzweiter\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(es)?|viertel))|(halb))(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     FractionPrepositionWithinPercentModeRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
@@ -70,10 +70,10 @@ class GermanNumeric:
     DoubleWithRoundNumber = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     ConnectorRegex = f'(?<spacer>und)'
-    NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per\\s*cents?|prozent|cents?)\\b)'
+    NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(Prozent(e)?)\\b)'
     FractionNumberWithSuffixPercentage = f'(({BaseNumbers.FractionNumberReplaceToken})\\s+of)'
-    NumberWithPrefixPercentage = f'(per\\s*cents?\\s+von)(\\s*)({BaseNumbers.NumberReplaceToken})'
-    NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})'
+    NumberWithPrefixPercentage = f'(Prozent+von)(\\s*)({BaseNumbers.NumberReplaceToken})'
+    NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+von)\\s*({BaseNumbers.NumberReplaceToken})'
     TillRegex = f'(bis|bis zu|--|-|—|——|~|–)'
     MoreRegex = f'(?:(größer|höher|mehr)(\\s+als)?|über|darüber(hinaus)?|(?<!<|=)>)'
     LessRegex = f'(?:(weniger|winziger|kleiner|wenig)(\\s+als)?|darunter|unter|(?<!>|=)<)'
@@ -144,11 +144,14 @@ class GermanNumeric:
                               ("achtzig", 80),
                               ("neunzig", 90),
                               ("hundert", 100),
+                              ("einhundert", 100),
                               ("tausend", 1000),
+                              ("eintausend", 1000),
                               ("million", 1000000),
                               ("billion", 1000000000),
                               ("trillion", 1000000000000),
                               ("hunderttausend", 100000),
+                              ("einhunderttausend", 100000),
                               ("zehn millionen", 10000000)])
     OrdinalNumberMap = dict([("erstens", 1),
                              ("zweitens", 2),
@@ -178,7 +181,9 @@ class GermanNumeric:
                              ("achtzigstens", 80),
                              ("neunzigstens", 90),
                              ("hundertstens", 100),
+                             ("einhundertstens", 100),
                              ("tausendstens", 1000),
+                             ("einstens", 1000),
                              ("millionstens", 1000000),
                              ("billionstens", 1000000000),
                              ("trillionstens", 1000000000000),
@@ -212,7 +217,9 @@ class GermanNumeric:
                              ("achtzigste", 80),
                              ("neunzigste", 90),
                              ("hundertste", 100),
+                             ("einhundertste", 100),
                              ("tausendste", 1000),
+                             ("eintausendste", 1000),
                              ("millionste", 1000000),
                              ("billionste", 1000000000),
                              ("trillionste", 1000000000000),
@@ -246,22 +253,28 @@ class GermanNumeric:
                              ("neunzigster", 90),
                              ("hunderster", 100),
                              ("tausendster", 1000),
+                             ("eintausendster", 1000),
                              ("millionster", 1000000),
                              ("billionster", 1000000000),
                              ("trillionster", 1000000000000)])
     RoundNumberMap = dict([("hundert", 100),
+                           ("einhundert", 100),
                            ("tausend", 1000),
+                           ("eintausend", 1000),
                            ("million", 1000000),
                            ("billion", 1000000000),
                            ("trillion", 1000000000000),
                            ("hunderttausend", 100000),
+                           ("einhunderttausend", 100000),
                            ("zehn millionen", 10000000),
                            ("hundertste", 100),
+                           ("einhundertste", 100),
                            ("tausenste", 1000),
                            ("millionste", 1000000),
                            ("billionste", 1000000000),
                            ("trillionste", 1000000000000),
                            ("hundertster", 100),
+                           ("einhundertster", 100),
                            ("tausenster", 1000),
                            ("millionster", 1000000),
                            ("billionster", 1000000000),
