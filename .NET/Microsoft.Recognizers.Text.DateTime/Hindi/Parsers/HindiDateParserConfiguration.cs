@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -9,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
     public class HindiDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private IImmutableList<string> lastCardinalTerms = DateTimeDefinitions.LastCardinalTerms.ToImmutableList();
 
         public HindiDateParserConfiguration(ICommonDateTimeParserConfiguration config)
              : base(config)
@@ -167,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("last");
+            return lastCardinalTerms.Contains(trimmedText);
         }
 
         public string Normalize(string text)
