@@ -1314,23 +1314,23 @@
     ]
   },
   {
-    "Input": "نطاق الرقم من ٢٠  إلى ١٠٠ ",
+    "Input": "نطاق الرقم من ٢٠ إلى ١٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "من ٢٠  إلى ١٠٠ ",
+        "Text": "من ٢٠ إلى ١٠٠",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
         },
         "Start": 11,
-        "End": 24
+        "End": 23
       }
     ]
   },
   {
-    "Input": "وهو أكثر من ثلاثين سنة من عمره ",
+    "Input": "وهو أكثر من ثلاثين سنة من عمره",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
@@ -1361,12 +1361,12 @@
     ]
   },
   {
-    "Input": "ارتفاعه أقل من ١٧٠ ",
+    "Input": "ارتفاعه أقل من ١٧٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "أقل من ١٧٠ ",
+        "Text": "أقل من ١٧٠",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
@@ -1377,79 +1377,95 @@
     ]
   },
   {
-    "Input": "درجته ٢٠٠  أو أكبر",
+    "Input": "درجته ٢٠٠ أو أكبر",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "٢٠٠  أو أكبر",
+        "Text": "٢٠٠ أو أكبر",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,)"
         },
         "Start": 6,
-        "End": 17
+        "End": 16
       }
     ]
   },
   {
-    "Input": "درجته أقل من ٣٠  او ما يعادله",
+    "Input": "درجته أقل من ٣٠ او ما يعادله",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "أقل من ٣٠  او ما يعادله",
+        "Text": "أقل من ٣٠ او ما يعادله",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
         },
         "Start": 6,
-        "End": 28
+        "End": 27
       }
     ]
   },
   {
-    "Input": "درجته تساوي ٣٠  أو ما تقل عنه ",
+    "Input": "درجته تساوي ٣٠ أو ما تقل عنه",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "٣٠  أو ما تقل",
+        "Text": "٣٠ أو ما تقل",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
         },
         "Start": 12,
-        "End": 24
+        "End": 23
       }
     ]
   },
   {
-    "Input": "درجته ٣٠  على الأقل أو ما يعادله ",
+    "Input": "درجته ٣٠ على الأقل أو ما يعادله",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "٣٠  على الأقل أو ما يعادله ",
+        "Text": "٣٠ على الأقل أو ما يعادله",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
         "Start": 6,
-        "End": 31
+        "End": 30
       }
     ]
   },
   {
-    "Input": "درجته تساوي ٣٠  أو اكثر منه",
+    "Input": "درجته تساوي ٣٠ أو اكثر منه",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "تساوي ٣٠  أو اكثر",
+        "Text": "تساوي ٣٠ أو اكثر",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
+        },
+        "Start": 6,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "درجته تساوي ٥٠٠٠ أو أقل منه",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "تساوي ٥٠٠٠ أو أقل",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
         },
         "Start": 6,
         "End": 22
@@ -1457,15 +1473,15 @@
     ]
   },
   {
-    "Input": "درجته تساوي ٥٠٠٠  أو أقل منه ",
+    "Input": "درجته تساوي ٥٠٠٠ أو اكثر منه",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": " تساوي ٥٠٠٠  أو أقل",
+        "Text": "تساوي ٥٠٠٠ أو اكثر",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(,5000]"
+          "value": "[5000,)"
         },
         "Start": 6,
         "End": 23
@@ -1473,23 +1489,7 @@
     ]
   },
   {
-    "Input": "درجته تساوي ٥٠٠٠  أو اكثر منه",
-    "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
-    "Results": [
-      {
-        "Text": "تساوي ٥٠٠٠  أو اكثر",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,)"
-        },
-        "Start": 6,
-        "End": 24
-      }
-    ]
-  },
-  {
-    "Input": "درجته تساوي ٥٠٠٠  أو اكثر من ٤٥٠٠ ",
+    "Input": "درجته تساوي ٥٠٠٠ أو اكثر من ٤٥٠٠",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
@@ -1508,66 +1508,66 @@
         "Resolution": {
           "value": "(4500,)"
         },
-        "Start": 21,
-        "End": 32
+        "Start": 20,
+        "End": 31
       }
     ]
   },
   {
-    "Input": "درجته اكثر من ٥٠٠٠  أو ما يعادل من",
+    "Input": "درجته اكثر من ٥٠٠٠ أو ما يعادل من",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "اكثر من ٥٠٠٠  أو ما يعادل",
+        "Text": "اكثر من ٥٠٠٠ أو ما يعادل",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
         },
         "Start": 6,
-        "End": 30
+        "End": 29
       }
     ]
   },
   {
-    "Input": "درجته اكثر من ٥٠٠٠  أو ما يعادله ",
+    "Input": "درجته اكثر من ٥٠٠٠ أو ما يعادله",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "اكثر من ٥٠٠٠  أو ما يعادل",
+        "Text": "اكثر من ٥٠٠٠ أو ما يعادل",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
         },
         "Start": 6,
-        "End": 30
+        "End": 29
       }
     ]
   },
   {
-    "Input": "ماذا عن ٢  في ٥  أو أكثر",
+    "Input": "ماذا عن ٢ في ٥ أو أكثر",
     "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "٢  في ٥  أو أكثر",
+        "Text": "٢ في ٥ أو أكثر",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[0.4,)"
         },
         "Start": 8,
-        "End": 23
+        "End": 21
       }
     ]
   },
   {
-    "Input": "ماذا عن أكثر من ٢  في ٥ ",
+    "Input": "ماذا عن أكثر من ٢ في ٥",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "أكثر من ٢ ",
+        "Text": "أكثر من ٢",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(2,)"
@@ -1578,12 +1578,12 @@
     ]
   },
   {
-    "Input": "هل يمكنك أن تعرضني سجلات أكثر من ٣٠٠٠٠  في عام ٢٠٠٩م",
+    "Input": "هل يمكنك أن تعرضني سجلات أكثر من ٣٠٠٠٠ في عام ٢٠٠٩م",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "أكثر من ٣٠٠٠٠ ",
+        "Text": "أكثر من ٣٠٠٠٠",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30000,)"
@@ -1594,12 +1594,12 @@
     ]
   },
   {
-    "Input": "هل يمكنك أن تعرضني سجلات أقل من ٣٠٠٠٠  في عام ٢٠٠٩م ",
+    "Input": "هل يمكنك أن تعرضني سجلات أقل من ٣٠٠٠٠ في عام ٢٠٠٩م",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "أقل من ٣٠٠٠٠ ",
+        "Text": "أقل من ٣٠٠٠٠",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,3000)"
@@ -1610,28 +1610,28 @@
     ]
   },
   {
-    "Input": "العدد يساوي ٢٠٠٠٠  في ١٩٩٨م",
+    "Input": "العدد يساوي ٢٠٠٠٠ في ١٩٩٨م",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "يساوي ٢٠٠٠٠  في ١٩٩٨م",
+        "Text": "يساوي ٢٠٠٠٠ في ١٩٩٨م",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10.01001001001,10.01001001001]"
         },
         "Start": 6,
-        "End": 26
+        "End": 25
       }
     ]
   },
   {
-    "Input": "هو تجاوز ٣٠٠٠  سجل هذا العام",
+    "Input": "هو تجاوز ٣٠٠٠ سجل هذا العام",
     "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": " تجاوز ٣٠٠٠ ",
+        "Text": "تجاوز ٣٠٠٠",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(3000,)"
