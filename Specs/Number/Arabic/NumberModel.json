@@ -3619,7 +3619,6 @@
   },
   {
     "Input": "- 1 4/5",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -5037,7 +5036,6 @@
   },
   {
     "Input": "واحد من ثلاثة",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
