@@ -2339,8 +2339,8 @@
   },
   {
     "Input": "٠٠٠ ٤٠ هو نفسه ٠٠٠ ٤٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٠٠٠ ٤٠",
@@ -2366,8 +2366,8 @@
   },
   {
     "Input": "في الوقت الحالي ، يبلغ عدد سكان الصين  ١٠٠ ٠٢١ ٤١٤ ١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١٠٠ ٠٢١ ٤١٤ ١",
