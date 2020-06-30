@@ -30,5 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool IsConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
+
+        List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs);
     }
 }

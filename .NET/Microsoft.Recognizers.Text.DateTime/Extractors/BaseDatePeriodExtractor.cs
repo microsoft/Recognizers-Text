@@ -590,6 +590,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                         periodBegin = fromIndex;
                     }
 
+                    // handle "between...and..." case when "between" follows the datepoints
+                    if (this.config.CheckBothBeforeAfter)
+                    {
+                        var afterStr = text.Substring(periodEnd, text.Length - periodEnd);
+                        if (this.config.GetBetweenTokenIndex(afterStr, out int afterIndex))
+                        {
+                            periodEnd += afterIndex;
+                            ret.Add(new Token(periodBegin, periodEnd, metadata));
+
+                            // merge two tokens here, increase the index by two
+                            idx += 2;
+                            continue;
+                        }
+                    }
+
                     ret.Add(new Token(periodBegin, periodEnd, metadata));
 
                     // merge two tokens here, increase the index by two

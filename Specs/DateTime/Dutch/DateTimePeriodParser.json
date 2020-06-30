@@ -1,12 +1,13 @@
 [
   {
-    "Input": "ik ben vandaag weg tussen vijf en zeven",
+    "Input": "ik ben weg vandaag tussen vijf en zeven",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "vandaag weg tussen vijf en zeven",
+        "Text": "vandaag tussen vijf en zeven",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
@@ -19,18 +20,17 @@
             "endDateTime": "2016-11-07 07:00:00"
           }
         },
-        "Start": 7,
-        "Length": 32
+        "Start": 11,
+        "Length": 28
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben weg van 5 tot 6 op 22/4/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 5 tot 6 op 22/4/2016",
@@ -49,15 +49,14 @@
         "Start": 11,
         "Length": 24
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben weg van 5 tot 6 op 22 april",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 5 tot 6 op 22 april",
@@ -76,15 +75,14 @@
         "Start": 11,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben weg van 5 tot 6 ‘s middags op 22 april",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 5 tot 6 ‘s middags op 22 april",
@@ -103,18 +101,17 @@
         "Start": 11,
         "Length": 34
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "ik ben op 1 januari weg van 5 tot 6",
+    "Input": "ik ben weg op 1 januari van 5 tot 6",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op 1 januari weg van 5 tot 6",
+        "Text": "1 januari van 5 tot 6",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
@@ -127,21 +124,20 @@
             "endDateTime": "2016-01-01 06:00:00"
           }
         },
-        "Start": 7,
-        "Length": 28
+        "Start": 14,
+        "Length": 21
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Morgen ben ik weg tussen 3 en 4 uur ’s middags",
+    "Input": "Ik ben weg morgen tussen 15 en 16 uur ’s middags",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tussen 3 en 4 uur ’s middags",
+        "Text": "morgen tussen 15 en 16 uur ’s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -154,49 +150,72 @@
             "endDateTime": "2016-11-08 16:00:00"
           }
         },
-        "Start": 18,
-        "Length": 28
+        "Start": 11,
+        "Length": 37
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Morgen ben ik weg tussen 3 en 4 uur ‘s middags",
+    "Input": "Ik ben weg morgen tussen 15 en 16 uur ‘s middags",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tussen 3 en 4 uur ‘s middags",
+        "Text": "morgen tussen 15 en 16 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 03:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 03:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
           }
         },
-        "Start": 18,
-        "Length": 28
+        "Start": 11,
+        "Length": 37
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Morgen ben ik weg van half acht tot 4 uur ‘s middags",
+    "Input": "Ik ben weg morgen tussen 15 en 16 uur",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van half acht tot 4 uur ‘s middags",
+        "Text": "morgen tussen 15 en 16 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben weg van morgen half acht tot 16 uur ‘s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van morgen half acht tot 16 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -209,20 +228,46 @@
             "endDateTime": "2016-11-08 16:00:00"
           }
         },
-        "Start": 18,
-        "Length": 34
+        "Start": 11,
+        "Length": 42
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben weg vanaf 4 uur vandaag tot morgen 5 uur ’s middags",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vanaf 4 uur vandaag tot morgen 5 uur ’s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T04,2016-11-08T17,PT37H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 04:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 04:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben weg vanaf 16 uur vandaag tot morgen 17 uur ’s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanaf 16 uur vandaag tot morgen 17 uur ’s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -236,20 +281,45 @@
           }
         },
         "Start": 11,
-        "Length": 47
+        "Length": 49
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben weg van 2016-2-21 vanaf 14:00 tot 2016-04-23 15:32",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van 2016-2-21 vanaf 14:00 tot 2016-04-23 15:32",
+        "Text": "vanaf 14:00 tot 2016-04-23 15:32",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-23T14:00,2016-04-23T15:32,PT1H32M)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-23 14:00:00",
+            "endDateTime": "2016-04-23 15:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-23 14:00:00",
+            "endDateTime": "2016-04-23 15:32:00"
+          }
+        },
+        "Start": 25,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben weg van 2016-2-21 14:00 tot 2016-04-23 03:32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 2016-2-21 14:00 tot 2016-04-23 03:32",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -263,20 +333,19 @@
           }
         },
         "Start": 11,
-        "Length": 46
+        "Length": 40
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Vandaag ben ik tussen 4 en 5 uur in de middag weg",
+    "Input": "Ik ben vandaag tussen 16 en 17 uur in de middag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tussen 4 en 5 uur in de middag",
+        "Text": "vandaag tussen 16 en 17 uur in de middag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
@@ -289,21 +358,46 @@
             "endDateTime": "2016-11-07 17:00:00"
           }
         },
-        "Start": 15,
-        "Length": 30
+        "Start": 7,
+        "Length": 40
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben niet beschikbaar tussen 1 januari 2016 vanaf 4 uur tot vandaag 5 uur in de middag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tussen 1 januari 2016 vanaf 4 uur tot vandaag 5 uur in de middag",
+        "Text": "vanaf 4 uur tot vandaag 5 uur in de middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T04,2016-11-07T17,PT13H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 04:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 04:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 46,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben niet beschikbaar tussen 1 januari 2016 16 uur tot vandaag 17 uur in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 1 januari 2016 16 uur tot vandaag 17 uur in de middag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
@@ -317,98 +411,16 @@
           }
         },
         "Start": 24,
-        "Length": 64
+        "Length": 60
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga vanavond terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Results": [
-      {
-        "Text": "vanavond",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 6,
-        "Length": 8
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ben vanavond beschikbaar",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "vanavond",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 7,
-        "Length": 8
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ga deze avond terug ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "deze avond",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 6,
-        "Length": 10
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ga vanavond terug ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vanavond",
@@ -427,15 +439,92 @@
         "Start": 6,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Ik ben vanavond beschikbaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga deze avond terug ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 6,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga vanavond terug ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 6,
+        "Length": 8
+      }
+    ]
   },
   {
     "Input": "Ik ga deze ochtend terug ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze ochtend",
@@ -454,123 +543,92 @@
         "Start": 6,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ga deze middag terugI'll go back this afternoon",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "deze middag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TAF",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
-          }
-        },
-        "Start": 6,
-        "Length": 11
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga morgenavond terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgenavond",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TNI",
+          "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           }
         },
         "Start": 6,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga de laatste avond terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "laatste avond",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-06TNI",
+          "Timex": "2016-11-06TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-06 20:00:00",
-            "endDateTime": "2016-11-06 23:59:59"
+            "startDateTime": "2016-11-06 16:00:00",
+            "endDateTime": "2016-11-06 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-06 20:00:00",
-            "endDateTime": "2016-11-06 23:59:59"
+            "startDateTime": "2016-11-06 16:00:00",
+            "endDateTime": "2016-11-06 20:00:00"
           }
         },
         "Start": 9,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga morgenavond terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgenavond",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TNI",
+          "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           }
         },
         "Start": 6,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga morgennacht terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgennacht",
@@ -578,26 +636,25 @@
         "Value": {
           "Timex": "2016-11-08TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 00:00:00",
-            "endDateTime": "2016-11-08 06:00:00"
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 00:00:00",
-            "endDateTime": "2016-11-08 06:00:00"
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
           }
         },
         "Start": 6,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga aankomende maandagmiddag terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "aankomende maandagmiddag",
@@ -616,15 +673,14 @@
         "Start": 6,
         "Length": 24
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga de laatste 3 minuten terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "laatste 3 minuten",
@@ -643,15 +699,14 @@
         "Start": 9,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga 3 minuten terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 minuten terug",
@@ -670,15 +725,14 @@
         "Start": 6,
         "Length": 15
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga drie minuten terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drie minuten terug",
@@ -697,15 +751,14 @@
         "Start": 6,
         "Length": 18
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga binnen 5 uur terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 5 uur",
@@ -724,18 +777,17 @@
         "Start": 6,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "ik ga een minuut terug",
+    "Input": "ik ga terug in de laatste minuut",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "een minuut terug",
+        "Text": "laatste minuut",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
@@ -748,21 +800,20 @@
             "endDateTime": "2016-11-07 16:12:00"
           }
         },
-        "Start": 6,
-        "Length": 16
+        "Start": 18,
+        "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Ik ga over een uur terug",
+    "Input": "Ik ga terug in het volgende uur",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "over een uur",
+        "Text": "volgende uur",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
@@ -775,45 +826,43 @@
             "endDateTime": "2016-11-07 17:12:00"
           }
         },
-        "Start": 6,
+        "Start": 19,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga binnen een paar uur terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen een paar uur",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
+            "endDateTime": "2016-11-07 18:12:00"
           },
           "PastResolution": {
             "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
+            "endDateTime": "2016-11-07 18:12:00"
           }
         },
         "Start": 6,
         "Length": 19
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga dinsdagochtend terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagochtend",
@@ -832,15 +881,14 @@
         "Start": 6,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Kan je aankomende dinsdagochtend een tijdstip voor ons vinden?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "aankomende dinsdagochtend",
@@ -859,15 +907,14 @@
         "Start": 7,
         "Length": 25
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Organizeer een vergadering van 30 minuten op dinsdagochtend alsjeblieft. ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagochtend",
@@ -886,15 +933,14 @@
         "Start": 45,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga dinsdagmiddag terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagmiddag",
@@ -913,15 +959,14 @@
         "Start": 6,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga dinsdagavond terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagavond",
@@ -940,21 +985,21 @@
         "Start": 6,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Laten we dinsdagochtend vroeg afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagochtend vroeg",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -967,15 +1012,16 @@
         "Start": 9,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we vroeg op de dinsdagochtend afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Parsing cannot be done on both sides of the day/date, and time(-related) entities ('vroeg' (early), 'ochtend' (morning)) need to be placed together",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vroeg op de dinsdagochtend",
@@ -994,21 +1040,48 @@
         "Start": 9,
         "Length": 26
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "laten we op de dinsdagochtend vroeg afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdagochtend vroeg",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
   },
   {
     "Input": "laten we dinsdag laat in de ochtend afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag laat in de ochtend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 10:00:00",
             "endDateTime": "2016-11-08 12:00:00"
@@ -1021,15 +1094,16 @@
         "Start": 9,
         "Length": 26
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we in het begin van dinsdagmiddag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Parsing cannot be done on both sides of the day/date, and time(-related) entities ('in het begin', 'middag') need to be placed together",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "begin van dinsdagmiddag",
@@ -1048,21 +1122,48 @@
         "Start": 16,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "laten we dinsdagmiddag in het begin afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdagmiddag in het begin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 26
+      }
+    ]
   },
   {
     "Input": "laten we op dinsdag later in de middag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag later in de middag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 14:00:00",
             "endDateTime": "2016-11-08 16:00:00"
@@ -1075,21 +1176,21 @@
         "Start": 12,
         "Length": 26
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we dinsdag vroeg in de avond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag vroeg in de avond",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 18:00:00"
@@ -1102,21 +1203,48 @@
         "Start": 9,
         "Length": 25
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we dinsdag in het begin van de avond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "begin van de avond",
+        "Text": "dinsdag in het begin van de avond",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "laten we dinsdagavond laat afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdagavond laat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 18:00:00",
             "endDateTime": "2016-11-08 20:00:00"
@@ -1126,132 +1254,77 @@
             "endDateTime": "2016-11-01 20:00:00"
           }
         },
-        "Start": 24,
-        "Length": 18
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "laten we dinsdagavond laat afspreken",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "dinsdagavond laat",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 20:00:00",
-            "endDateTime": "2016-11-01 22:00:00"
-          }
-        },
         "Start": 9,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Laten we dinsdagavond laat afspreken",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "dinsdagavond laat",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
-          }
-        },
-        "Start": 9,
-        "Length": 17
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we dinsdagavond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagavond",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "XXXX-WXX-2TNI",
+          "Timex": "XXXX-WXX-2TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-01 20:00:00",
-            "endDateTime": "2016-11-01 22:00:00"
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
           }
         },
         "Start": 9,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "zullen we dinsdagavond laat afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagavond laat",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "XXXX-WXX-2TNI",
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
           }
         },
         "Start": 10,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "zullen we dinsdag vroeg in de ochtend afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag vroeg in de ochtend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -1264,15 +1337,16 @@
         "Start": 10,
         "Length": 27
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we aan het einde van dinsdagochtend afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Parsing cannot be done on both sides of the day/date, and time(-related) entities ('aan het einde', 'ochtend') need to be placed together",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "einde van dinsdagochtend",
@@ -1291,15 +1365,43 @@
         "Start": 17,
         "Length": 24
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "laten we dinsdagochtend aan het einde afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdagochtend aan het einde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 28
+      }
+    ]
   },
   {
     "Input": "zullen we aan het einde van dinsdagmiddag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Parsing cannot be done on both sides of the day/date, and time(-related) entities ('aan het einde', 'middag') need to be placed together",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het einde van dinsdagmiddag",
@@ -1318,42 +1420,68 @@
         "Start": 14,
         "Length": 27
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "zullen we dinsdagmiddag aan het einde afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdagmiddag aan het einde",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 27
+      }
+    ]
   },
   {
     "Input": "Zullen we op dinsdag aan het einde van de middag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag aan het einde van de middag",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "XXXX-WXX-2TEV",
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 18:00:00"
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-01 16:00:00",
-            "endDateTime": "2016-11-01 18:00:00"
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
           }
         },
         "Start": 13,
         "Length": 35
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we op dinsdag in de avond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag in de avond",
@@ -1361,53 +1489,53 @@
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 18:00:00",
+            "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-01 18:00:00",
+            "startDateTime": "2016-11-01 16:00:00",
             "endDateTime": "2016-11-01 20:00:00"
           }
         },
         "Start": 12,
         "Length": 19
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "zullen we dinsdag in de avond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag in de avond",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "XXXX-WXX-2TNI",
+          "Timex": "XXXX-WXX-2TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-01 20:00:00",
-            "endDateTime": "2016-11-01 22:00:00"
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
           }
         },
         "Start": 10,
         "Length": 19
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we laat op dinsdagavond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Parsing cannot be done on both sides of the day/date, and time(-related) entities ('laat', 'avond') need to be placed together",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "laat op dinsdagavond",
@@ -1426,15 +1554,14 @@
         "Start": 9,
         "Length": 20
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we de rest van de dag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest van de dag",
@@ -1453,15 +1580,14 @@
         "Start": 12,
         "Length": 15
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we de rest van deze dag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest van deze dag",
@@ -1480,15 +1606,14 @@
         "Start": 12,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we de rest van mijn dag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest van mijn dag",
@@ -1507,15 +1632,14 @@
         "Start": 12,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we rest van vandaag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest van vandaag",
@@ -1534,18 +1658,17 @@
         "Start": 9,
         "Length": 16
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "laten we de rest van vandaag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de rest van vandaag",
+        "Text": "rest van vandaag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1558,48 +1681,72 @@
             "endDateTime": "2016-11-07 23:59:59"
           }
         },
-        "Start": 9,
-        "Length": 19
+        "Start": 12,
+        "Length": 16
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "ik ben afwezig van 2016-02-21 14:00 uur tot 2016-02-21 15:32",
+    "Input": "ik ben afwezig van 2016-02-21 14:00 uur tot 2016-02-23 03:32",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van 2016-02-21 14:00 uur tot 2016-02-21 15:32",
+        "Text": "van 2016-02-21 14:00 uur tot 2016-02-23 03:32",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "Timex": "(2016-02-21T14:00,2016-02-23T03:32,PT38H)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
+            "endDateTime": "2016-02-23 03:32:00"
           },
           "PastResolution": {
             "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
+            "endDateTime": "2016-02-23 03:32:00"
           }
         },
         "Start": 15,
         "Length": 45
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Cortana, plan een skype for business meeting met Wayne op vrijdag tussen 1 en 4 uur ‘s middags.",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vrijdag tussen 1 en 4 uur ‘s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T01,XXXX-WXX-5T04,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 01:00:00",
+            "endDateTime": "2017-11-10 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-03 01:00:00",
+            "endDateTime": "2017-11-03 04:00:00"
+          }
+        },
+        "Start": 58,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, plan een skype for business meeting met Wayne op vrijdag tussen 13 en 16 uur ‘s middags.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag tussen 13 en 16 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
@@ -1613,17 +1760,42 @@
           }
         },
         "Start": 58,
-        "Length": 36
+        "Length": 38
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Cortana, plan een skype for business meeting met Wayne op vrijdag tussen 13 en 16 uur.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag tussen 13 en 16 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-03 13:00:00",
+            "endDateTime": "2017-11-03 16:00:00"
+          }
+        },
+        "Start": 58,
+        "Length": 27
+      }
+    ]
   },
   {
     "Input": "Kan je ons morgen tussen 8 uur ‘s ochtends en 2 uur ’s middags inplannen?",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgen tussen 8 uur ‘s ochtends en 2 uur ’s middags",
@@ -1642,15 +1814,40 @@
         "Start": 11,
         "Length": 51
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Kan je ons morgen tussen 8 uur ‘s ochtends en 14 uur ’s middags inplannen?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen tussen 8 uur ‘s ochtends en 14 uur ’s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 52
+      }
+    ]
   },
   {
     "Input": "Kan je ons op 9 december tussen 8 uur ‘s ochtends en 2 uur ‘s middags in plannen?",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9 december tussen 8 uur ‘s ochtends en 2 uur ‘s middags",
@@ -1669,15 +1866,42 @@
         "Start": 14,
         "Length": 55
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Kan je ons op 9 december tussen 8 uur ‘s ochtends en 14 uur ‘s middags in plannen?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9 december tussen 8 uur ‘s ochtends en 14 uur ‘s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-12-09 08:00:00",
+            "endDateTime": "2017-12-09 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-12-09 08:00:00",
+            "endDateTime": "2016-12-09 14:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 56
+      }
+    ]
   },
   {
     "Input": "Hi Cortana, plan een skype meeting in met Jennifer. Ik heb een afspraak van 30 minuten op vrijdagmiddag aanstaande nodig. ",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
+    "Comment": "Words that are related to each other, such as 'aanstaande' and 'vrijdag', may not be seperated by other words from a different entity such as 'middag'",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vrijdagmiddag aanstaande",
@@ -1696,15 +1920,40 @@
         "Start": 90,
         "Length": 24
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Hi Cortana, plan een skype meeting in met Jennifer. Ik heb een afspraak van 30 minuten op aanstaande vrijdagmiddag nodig. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "aanstaande vrijdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        },
+        "Start": 90,
+        "Length": 24
+      }
+    ]
   },
   {
     "Input": "Hi Coratna – plan aub een skype meeting met Jennifer in. Ik heb een afspraak van 30 minuten op deze vrijdagmiddag nodig.",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze vrijdagmiddag",
@@ -1723,15 +1972,14 @@
         "Start": 95,
         "Length": 18
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Hi Cortana- maak een skype meeting met Jennifer aan. Ik wil volgende vrijdagmiddag een afspraak van 30 minuten!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende vrijdagmiddag",
@@ -1750,15 +1998,14 @@
         "Start": 60,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": " Hi Cortana- maak een skype meeting met Jennifer aan. Ik wil een afspraak van 30 minuten op afgelopen vrijdagmiddag! ",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "afgelopen vrijdagmiddag",
@@ -1777,18 +2024,43 @@
         "Start": 92,
         "Length": 23
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Cortane, maak een afspraak met skype for business met Wayne op vrijdagmiddag tussen 1 en 4. ",
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vrijdagmiddag tussen 1 en 4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T1,XXXX-WXX-5T4,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 01:00:00",
+            "endDateTime": "2017-11-17 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 01:00:00",
+            "endDateTime": "2017-11-10 04:00:00"
+          }
+        },
+        "Start": 63,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Cortane, maak een afspraak met skype for business met Wayne op vrijdagmiddag tussen 13 en 16. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdagmiddag tussen 13 en 16",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
@@ -1802,21 +2074,45 @@
           }
         },
         "Start": 63,
-        "Length": 27
+        "Length": 29
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "laten we 5 februari in ochtend afspreken",
+    "Input": "Cortane, maak een afspraak met skype for business met Wayne op vrijdag tussen 13 en 16. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag tussen 13 en 16",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        },
+        "Start": 63,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "laten we 5 februari in de ochtend afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 februari in ochtend",
+        "Text": "5 februari in de ochtend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-02-05TMO",
@@ -1830,17 +2126,16 @@
           }
         },
         "Start": 9,
-        "Length": 21
+        "Length": 24
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ga dinsdagochtend terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdagochtend",
@@ -1859,15 +2154,14 @@
         "Start": 6,
         "Length": 14
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ga dinsdag in de middag terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dinsdag in de middag",
@@ -1886,18 +2180,17 @@
         "Start": 6,
         "Length": 20
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Het zal over 2 uur in de toekomst gebeuren ",
+    "Input": "Het zal binnen 2 uur in de toekomst gebeuren",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 uur in de toekomst",
+        "Text": "binnen 2 uur",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
@@ -1910,18 +2203,17 @@
             "endDateTime": "2016-11-07 18:12:00"
           }
         },
-        "Start": 13,
-        "Length": 20
+        "Start": 8,
+        "Length": 12
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben terug binnen 15 seconden",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 15 seconden",
@@ -1940,15 +2232,14 @@
         "Start": 13,
         "Length": 18
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben binnen 5 minuten terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 5 minuten",
@@ -1967,15 +2258,14 @@
         "Start": 7,
         "Length": 16
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben binnen 5 uur terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 5 uur",
@@ -1994,15 +2284,14 @@
         "Start": 7,
         "Length": 12
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben binnen een dag en 5 uur terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen een dag en 5 uur",
@@ -2021,21 +2310,20 @@
         "Start": 7,
         "Length": 23
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Deze taak is af binnen 2 dagen, 1 uur, 5 minuten en 30 seconden ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 dagen, 1 uur, 5 minuten en 30 seconden",
+        "Text": "binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-09 17:17:30"
@@ -2045,24 +2333,23 @@
             "endDateTime": "2016-11-09 17:17:30"
           }
         },
-        "Start": 23,
-        "Length": 40
+        "Start": 16,
+        "Length": 47
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Deze taak is compleet binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-09 17:17:30"
@@ -2075,21 +2362,20 @@
         "Start": 22,
         "Length": 47
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Deze taak is klaar binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-09 17:17:30"
@@ -2102,15 +2388,14 @@
         "Start": 19,
         "Length": 58
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben binnen 5 uur terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 5 uur",
@@ -2129,15 +2414,14 @@
         "Start": 7,
         "Length": 12
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben maandag tussen 8 en 9 terug",
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "maandag tussen 8 en 9",
@@ -2156,15 +2440,14 @@
         "Start": 7,
         "Length": 21
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Cortana kan je een tijd voor ons vinden op maandag 11-4 ",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "maandag 11-4",
@@ -2183,18 +2466,17 @@
         "Start": 43,
         "Length": 12
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Het zal op 1/1/2015 tussen 10 en 11:30 plaatsvinden",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op 1/1/2015 tussen 10 en 11:30",
+        "Text": "1/1/2015 tussen 10 en 11:30",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
@@ -2207,18 +2489,17 @@
             "endDateTime": "2015-01-01 11:30:00"
           }
         },
-        "Start": 8,
-        "Length": 30
+        "Start": 11,
+        "Length": 27
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Het zal gebeuren op 1/1/2015 tussen 10 en 11:30",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1/1/2015 tussen 10 en 11:30",
@@ -2237,15 +2518,14 @@
         "Start": 20,
         "Length": 27
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Het zal gebeuren van 10:30 tot 3 op 1/1/2015",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 10:30 tot 3 op 1/1/2015",
@@ -2264,15 +2544,40 @@
         "Start": 17,
         "Length": 27
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Het zal gebeuren van 10:30 tot 15 op 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 10:30 tot 15 op 1/1/2015",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 28
+      }
+    ]
   },
   {
     "Input": "het zal tussen 3 en 5 op 1/1/2015 gebeuren.",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 3 en 5 op 1/1/2015",
@@ -2291,18 +2596,17 @@
         "Start": 8,
         "Length": 25
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Het is op 1/1/2015 van 3:30 tot 5:55",
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op 1/1/2015 van 3:30 tot 5:55",
+        "Text": "1/1/2015 van 3:30 tot 5:55",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2015-01-01T03:30,2015-01-01T05:55,PT2H25M)",
@@ -2315,18 +2619,16 @@
             "endDateTime": "2015-01-01 05:55:00"
           }
         },
-        "Start": 7,
-        "Length": 29
+        "Start": 10,
+        "Length": 26
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben vandaag vijf tot zeven weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2344,7 +2646,7 @@
           }
         },
         "Start": 7,
-        "Length": 19
+        "Length": 22
       }
     ]
   },
@@ -2353,7 +2655,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2380,7 +2681,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2407,14 +2707,39 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van 5 tot 18:00 op 22 april ",
+        "Text": "van 5 tot 18:00 op 22 april",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+          "Timex": "(XXXX-04-22T05,XXXX-04-22T18:00,PT13H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 05:00:00",
+            "endDateTime": "2017-04-22 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 18:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga van 17 tot 18:00 op 22 april weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 17 tot 18:00 op 22 april",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T17,XXXX-04-22T18:00,PT1H)",
           "FutureResolution": {
             "startDateTime": "2017-04-22 17:00:00",
             "endDateTime": "2017-04-22 18:00:00"
@@ -2424,8 +2749,8 @@
             "endDateTime": "2016-04-22 18:00:00"
           }
         },
-        "Start": 7,
-        "Length": 25
+        "Start": 6,
+        "Length": 28
       }
     ]
   },
@@ -2434,7 +2759,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2452,7 +2776,7 @@
           }
         },
         "Start": 7,
-        "Length": 22
+        "Length": 28
       }
     ]
   },
@@ -2461,11 +2785,36 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgen van 15:00 tot 16:00",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15:00,2016-11-08T16:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben morgen van 15 tot 16 weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen van 15 tot 16",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -2479,7 +2828,7 @@
           }
         },
         "Start": 7,
-        "Length": 19
+        "Length": 20
       }
     ]
   },
@@ -2488,7 +2837,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2506,7 +2854,7 @@
           }
         },
         "Start": 7,
-        "Length": 21
+        "Length": 20
       }
     ]
   },
@@ -2515,11 +2863,36 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "half acht tot 16:00 morgen",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16:00,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben half acht tot 16 morgen weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "half acht tot 16 morgen",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -2533,7 +2906,7 @@
           }
         },
         "Start": 7,
-        "Length": 31
+        "Length": 23
       }
     ]
   },
@@ -2542,14 +2915,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van 16:00 vandaag tot 17:00 morgen ",
+        "Text": "van 16:00 vandaag tot 17:00 morgen",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+          "Timex": "(2016-11-07T16:00,2016-11-08T17:00,PT25H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-08 17:00:00"
@@ -2560,7 +2932,7 @@
           }
         },
         "Start": 7,
-        "Length": 30
+        "Length": 34
       }
     ]
   },
@@ -2569,11 +2941,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14:00, 21-2-2016 tot 3:32, 23-04-2016",
+        "Text": "van 14:00, 21-2-2016 tot 3:32, 23-04-2016",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -2586,8 +2957,8 @@
             "endDateTime": "2016-04-23 03:32:00"
           }
         },
-        "Start": 11,
-        "Length": 42
+        "Start": 7,
+        "Length": 41
       }
     ]
   },
@@ -2596,14 +2967,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 16:00 en 17:00 vandaag",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "Timex": "(2016-11-07T16:00,2016-11-07T17:00,PT1H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-07 17:00:00"
@@ -2614,7 +2984,7 @@
           }
         },
         "Start": 7,
-        "Length": 25
+        "Length": 29
       }
     ]
   },
@@ -2623,14 +2993,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 16:00 op 1 jan, 2016 en 17:00 vandaag",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+          "Timex": "(2016-01-01T16:00,2016-11-07T17:00,PT7465H)",
           "FutureResolution": {
             "startDateTime": "2016-01-01 16:00:00",
             "endDateTime": "2016-11-07 17:00:00"
@@ -2641,7 +3010,7 @@
           }
         },
         "Start": 7,
-        "Length": 40
+        "Length": 44
       }
     ]
   },
@@ -2650,25 +3019,50 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vanavond",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-07TNI",
+          "Timex": "2016-11-07TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
           }
         },
         "Start": 6,
-        "Length": 7
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga vanavond voor 20 terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 6,
+        "Length": 8
       }
     ]
   },
@@ -2677,7 +3071,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2704,7 +3097,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2722,7 +3114,7 @@
           }
         },
         "Start": 6,
-        "Length": 12
+        "Length": 10
       }
     ]
   },
@@ -2731,7 +3123,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2758,7 +3149,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2776,7 +3166,7 @@
           }
         },
         "Start": 6,
-        "Length": 14
+        "Length": 11
       }
     ]
   },
@@ -2785,7 +3175,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2803,7 +3192,7 @@
           }
         },
         "Start": 9,
-        "Length": 10
+        "Length": 14
       }
     ]
   },
@@ -2812,7 +3201,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2830,7 +3218,33 @@
           }
         },
         "Start": 6,
-        "Length": 10
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga vorige nacht terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vorige nacht",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        },
+        "Start": 6,
+        "Length": 12
       }
     ]
   },
@@ -2839,7 +3253,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2857,7 +3270,7 @@
           }
         },
         "Start": 6,
-        "Length": 14
+        "Length": 11
       }
     ]
   },
@@ -2866,7 +3279,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2884,7 +3296,7 @@
           }
         },
         "Start": 6,
-        "Length": 21
+        "Length": 22
       }
     ]
   },
@@ -2893,7 +3305,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2911,7 +3322,7 @@
           }
         },
         "Start": 6,
-        "Length": 14
+        "Length": 15
       }
     ]
   },
@@ -2920,7 +3331,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2938,7 +3348,7 @@
           }
         },
         "Start": 9,
-        "Length": 10
+        "Length": 15
       }
     ]
   },
@@ -2947,7 +3357,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2965,7 +3374,7 @@
           }
         },
         "Start": 6,
-        "Length": 11
+        "Length": 14
       }
     ]
   },
@@ -2974,7 +3383,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2992,7 +3400,7 @@
           }
         },
         "Start": 6,
-        "Length": 9
+        "Length": 10
       }
     ]
   },
@@ -3001,25 +3409,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "komende paar uur",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
+            "endDateTime": "2016-11-07 18:12:00"
           },
           "PastResolution": {
             "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
+            "endDateTime": "2016-11-07 18:12:00"
           }
         },
         "Start": 6,
-        "Length": 14
+        "Length": 16
       }
     ]
   },
@@ -3028,7 +3435,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3046,7 +3452,7 @@
           }
         },
         "Start": 6,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -3055,7 +3461,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3078,11 +3483,10 @@
     ]
   },
   {
-    "Input": "Organiseer alsjeblieft een meeting van 30 minuten op dinsdag, in the ochtend",
+    "Input": "Organiseer alsjeblieft een meeting van 30 minuten op dinsdag, in de ochtend",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3099,8 +3503,8 @@
             "endDateTime": "2016-11-01 12:00:00"
           }
         },
-        "Start": -1,
-        "Length": 23
+        "Start": 53,
+        "Length": 22
       }
     ]
   },
@@ -3109,7 +3513,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3127,7 +3530,7 @@
           }
         },
         "Start": 6,
-        "Length": 24
+        "Length": 20
       }
     ]
   },
@@ -3136,7 +3539,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3154,7 +3556,7 @@
           }
         },
         "Start": 6,
-        "Length": 22
+        "Length": 19
       }
     ]
   },
@@ -3163,7 +3565,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3171,6 +3572,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -3181,7 +3583,7 @@
           }
         },
         "Start": 19,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
@@ -3190,7 +3592,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3198,6 +3599,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 10:00:00"
@@ -3205,60 +3607,6 @@
           "PastResolution": {
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 10:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 31
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken laat in de ochtend dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de ochtend dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TMO",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 10:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 10:00:00",
-            "endDateTime": "2016-11-01 12:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 27
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken vroeg in de middag dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de middag dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TAF",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 12:00:00",
-            "endDateTime": "2016-11-08 14:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 12:00:00",
-            "endDateTime": "2016-11-01 14:00:00"
           }
         },
         "Start": 19,
@@ -3267,180 +3615,18 @@
     ]
   },
   {
-    "Input": "laten we afspreken laat in de middag dinsdag",
+    "Input": "laten we afspreken laat in de ochtend dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "laat in de middag dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TAF",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 14:00:00",
-            "endDateTime": "2016-11-08 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 14:00:00",
-            "endDateTime": "2016-11-01 16:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken vroeg in de avond dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de avond dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TEV",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 18:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 16:00:00",
-            "endDateTime": "2016-11-01 18:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 28
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken laat in de avond dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de avond dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TEV",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 18:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 18:00:00",
-            "endDateTime": "2016-11-01 20:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 27
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken vroeg in de nacht dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de nacht dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 20:00:00",
-            "endDateTime": "2016-11-01 22:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 26
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken laat in de nacht dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de nacht dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
-          }
-        },
-        "Start": 19,
-        "Length": 25
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken dinsdag vroeg in de ochtend",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de ochtend",
+        "Text": "laat in de ochtend dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 10:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 08:00:00",
-            "endDateTime": "2016-11-01 10:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken dinsdag laat in de ochtend",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de ochtend",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 10:00:00",
             "endDateTime": "2016-11-08 12:00:00"
@@ -3451,23 +3637,23 @@
           }
         },
         "Start": 19,
-        "Length": 20
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag vroeg in de middag",
+    "Input": "laten we afspreken vroeg in de middag dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag vroeg in de middag",
+        "Text": "vroeg in de middag dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 12:00:00",
             "endDateTime": "2016-11-08 14:00:00"
@@ -3478,23 +3664,23 @@
           }
         },
         "Start": 19,
-        "Length": 23
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag laat in de middag",
+    "Input": "laten we afspreken laat in de middag dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag laat in de middag",
+        "Text": "laat in de middag dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 14:00:00",
             "endDateTime": "2016-11-08 16:00:00"
@@ -3505,23 +3691,23 @@
           }
         },
         "Start": 19,
-        "Length": 22
+        "Length": 25
       }
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag vroeg in de avond",
+    "Input": "laten we afspreken vroeg in de avond dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag vroeg in de avond",
+        "Text": "vroeg in de avond dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 18:00:00"
@@ -3532,23 +3718,23 @@
           }
         },
         "Start": 19,
-        "Length": 21
+        "Length": 25
       }
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag laat in de avond",
+    "Input": "laten we afspreken laat in de avond dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag laat in de avond",
+        "Text": "laat in de avond dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 18:00:00",
             "endDateTime": "2016-11-08 20:00:00"
@@ -3559,23 +3745,23 @@
           }
         },
         "Start": 19,
-        "Length": 20
+        "Length": 24
       }
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag vroeg in de nacht",
+    "Input": "laten we afspreken vroeg in de nacht dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag vroeg in de nacht",
+        "Text": "vroeg in de nacht dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "start",
           "FutureResolution": {
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 22:00:00"
@@ -3586,23 +3772,23 @@
           }
         },
         "Start": 19,
-        "Length": 19
+        "Length": 25
       }
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag laat in de nacht",
+    "Input": "laten we afspreken laat in de nacht dinsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag laat in de nacht",
+        "Text": "laat in de nacht dinsdag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 22:00:00",
             "endDateTime": "2016-11-08 23:59:59"
@@ -3613,7 +3799,223 @@
           }
         },
         "Start": 19,
-        "Length": 18
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag vroeg in de ochtend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag vroeg in de ochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag laat in de ochtend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag laat in de ochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag vroeg in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag vroeg in de middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag laat in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag laat in de middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag vroeg in de avond",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag vroeg in de avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag laat in de avond",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag laat in de avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag vroeg in de nacht",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag vroeg in de nacht",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "laten we afspreken dinsdag laat in de nacht",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag laat in de nacht",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 19,
+        "Length": 24
       }
     ]
   },
@@ -3622,11 +4024,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de rest van de huidige dag",
+        "Text": "rest van de huidige dag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -3639,8 +4040,8 @@
             "endDateTime": "2016-11-07 23:59:59"
           }
         },
-        "Start": 9,
-        "Length": 19
+        "Start": 12,
+        "Length": 23
       }
     ]
   },
@@ -3649,7 +4050,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3667,7 +4067,7 @@
           }
         },
         "Start": 11,
-        "Length": 42
+        "Length": 41
       }
     ]
   },
@@ -3676,7 +4076,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3684,6 +4083,7 @@
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
           "FutureResolution": {
             "startDateTime": "2016-11-08 22:00:00",
             "endDateTime": "2016-11-08 23:59:59"
@@ -3694,7 +4094,7 @@
           }
         },
         "Start": 19,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
@@ -3703,14 +4103,13 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgen tussen 8:00 en 14:00",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+          "Timex": "(2017-11-10T08:00,2017-11-10T14:00,PT6H)",
           "FutureResolution": {
             "startDateTime": "2017-11-10 08:00:00",
             "endDateTime": "2017-11-10 14:00:00"
@@ -3721,7 +4120,7 @@
           }
         },
         "Start": 11,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
@@ -3730,14 +4129,13 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9 dec tussen 8:00 en 14:00",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+          "Timex": "(XXXX-12-09T08:00,XXXX-12-09T14:00,PT6H)",
           "FutureResolution": {
             "startDateTime": "2017-12-09 08:00:00",
             "endDateTime": "2017-12-09 14:00:00"
@@ -3748,7 +4146,7 @@
           }
         },
         "Start": 11,
-        "Length": 27
+        "Length": 26
       }
     ]
   },
@@ -3757,7 +4155,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3775,7 +4172,7 @@
           }
         },
         "Start": 100,
-        "Length": 29
+        "Length": 26
       }
     ]
   },
@@ -3784,7 +4181,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3802,7 +4198,7 @@
           }
         },
         "Start": 22,
-        "Length": 8
+        "Length": 17
       }
     ]
   },
@@ -3811,7 +4207,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3838,11 +4233,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15 seconden",
+        "Text": "binnen 15 seconden",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
@@ -3855,8 +4249,8 @@
             "endDateTime": "2016-11-07 16:12:15"
           }
         },
-        "Start": 14,
-        "Length": 17
+        "Start": 7,
+        "Length": 18
       }
     ]
   },
@@ -3865,7 +4259,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3883,7 +4276,7 @@
           }
         },
         "Start": 7,
-        "Length": 14
+        "Length": 13
       }
     ]
   },
@@ -3892,7 +4285,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3910,7 +4302,7 @@
           }
         },
         "Start": 7,
-        "Length": 24
+        "Length": 22
       }
     ]
   },
@@ -3919,7 +4311,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3937,7 +4328,7 @@
           }
         },
         "Start": 22,
-        "Length": 41
+        "Length": 45
       }
     ]
   },
@@ -3946,7 +4337,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3964,7 +4354,7 @@
           }
         },
         "Start": 22,
-        "Length": 46
+        "Length": 54
       }
     ]
   },
@@ -3973,11 +4363,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "aankomende 2 dagen, 1 uur, 5 minuten, 30 seconden",
+        "Text": "binnen aankomende 2 dagen, 1 uur, 5 minuten, 30 seconden",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
@@ -3990,8 +4379,8 @@
             "endDateTime": "2016-11-09 17:17:30"
           }
         },
-        "Start": 29,
-        "Length": 54
+        "Start": 22,
+        "Length": 56
       }
     ]
   },
@@ -4000,7 +4389,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4018,7 +4406,7 @@
           }
         },
         "Start": 7,
-        "Length": 23
+        "Length": 24
       }
     ]
   },
@@ -4027,7 +4415,6 @@
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4045,7 +4432,7 @@
           }
         },
         "Start": 7,
-        "Length": 13
+        "Length": 15
       }
     ]
   },
@@ -4054,7 +4441,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4072,7 +4458,7 @@
           }
         },
         "Start": 46,
-        "Length": 11
+        "Length": 12
       }
     ]
   },
@@ -4081,7 +4467,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4099,7 +4484,7 @@
           }
         },
         "Start": 46,
-        "Length": 11
+        "Length": 12
       }
     ]
   },
@@ -4108,7 +4493,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4126,7 +4510,7 @@
           }
         },
         "Start": 8,
-        "Length": 32
+        "Length": 30
       }
     ]
   },
@@ -4135,7 +4519,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4153,7 +4536,7 @@
           }
         },
         "Start": 8,
-        "Length": 29
+        "Length": 27
       }
     ]
   },
@@ -4162,7 +4545,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4189,7 +4571,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4207,7 +4588,33 @@
           }
         },
         "Start": 8,
-        "Length": 27
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Het zal tussen 3 en 5 op 1/1/2015 gebeuren",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 3 en 5 op 1/1/2015",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          }
+        },
+        "Start": 8,
+        "Length": 25
       }
     ]
   },
@@ -4216,7 +4623,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

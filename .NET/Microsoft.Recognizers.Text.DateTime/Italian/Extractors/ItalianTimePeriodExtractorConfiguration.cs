@@ -156,5 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             return ConnectorAndRegex.IsMatch(text) || FullTillRegex.IsExactMatch(text, false);
         }
+
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
     }
 }
