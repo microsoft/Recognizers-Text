@@ -158,8 +158,8 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                     else:
                         flag = True
                         break
-                if flag == False:
-                   continue
+                if flag is False:
+                    continue
             if er.start + er.length < len(source):
                 ch = source[er.start + er.length]
                 if ch in BasePhoneNumbers.ForbiddenSuffixMarkers:
