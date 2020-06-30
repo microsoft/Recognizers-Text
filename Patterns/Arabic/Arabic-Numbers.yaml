@@ -46,6 +46,9 @@ PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
+NumbersWithSpace: !paramsRegex
+  def: ((((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))(\d{1,3})(((\s)+(\d{1,3})))+)(?={placeholder})
+  params: [placeholder]
 NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))\d+(?!([\.،,]\d+[\u0621-\u064A]))(?={placeholder})
   params: [placeholder]
