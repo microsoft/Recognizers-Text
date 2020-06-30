@@ -1,7 +1,7 @@
 [
   {
     "Input": "2",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2",
@@ -16,7 +16,7 @@
   },
   {
     "Input": "eins",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "eins",
@@ -31,7 +31,7 @@
   },
   {
     "Input": "1/2",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1/2",
@@ -46,7 +46,7 @@
   },
   {
     "Input": "ein halbes Schwein",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ein halbes",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "drei halbe Schweine",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "drei halbe",
@@ -76,7 +76,7 @@
   },
   {
     "Input": "zwei drittel Brot",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwei drittel",
@@ -91,7 +91,7 @@
   },
   {
     "Input": "fünf halbe Brötchen",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "fünf halbe",
@@ -107,7 +107,7 @@
   {
     "Input": "zwei Komma drei",
     "Comment": "does not yet recognize 'Komma' as ','",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwei komma drei",
@@ -122,7 +122,7 @@
   },
   {
     "Input": "2,35",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2,35",
@@ -137,7 +137,7 @@
   },
   {
     "Input": "2.000,352",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2.000,352",
@@ -152,7 +152,7 @@
   },
   {
     "Input": "2,357",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2,357",
@@ -167,7 +167,7 @@
   },
   {
     "Input": "2,3",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2,3",
@@ -182,7 +182,7 @@
   },
   {
     "Input": "2.300",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2.300",
@@ -197,7 +197,7 @@
   },
   {
     "Input": "zwei",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwei",
@@ -212,7 +212,7 @@
   },
   {
     "Input": "4.800",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4.800",
@@ -227,7 +227,7 @@
   },
   {
     "Input": "4,800",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "4,800",
@@ -242,7 +242,7 @@
   },
   {
     "Input": "Das sind einhundert Leute.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert",
@@ -257,7 +257,7 @@
   },
   {
     "Input": "sechzehn",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "sechzehn",
@@ -272,7 +272,7 @@
   },
   {
     "Input": "ein dutzend",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ein dutzend",
@@ -287,7 +287,7 @@
   },
   {
     "Input": "Da kommen wohl ein halbes dutzend Leute hin.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ein halbes dutzend",
@@ -302,7 +302,7 @@
   },
   {
     "Input": "Das sind mindestens fünf dutzend Bananen.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "fünf dutzend",
@@ -317,7 +317,7 @@
   },
   {
     "Input": "dreißig dutzend",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dreißig dutzend",
@@ -332,7 +332,7 @@
   },
   {
     "Input": "einhunderteinunddreißig",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhunderteinunddreißig",
@@ -347,7 +347,7 @@
   },
   {
     "Input": "einhundertdrei",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundertdrei",
@@ -362,7 +362,7 @@
   },
   {
     "Input": "eintausendeinhundertfünfzig",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "eintausendeinhundertfünfzig",
@@ -377,7 +377,7 @@
   },
   {
     "Input": "zwei Millionen eintausendeinhundertfünfzig",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwei millionen eintausendeinhundertfünfzig",
@@ -392,7 +392,7 @@
   },
   {
     "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "eine million dreihundertneunundneunzigtausendfuenfhundertneun",
@@ -407,7 +407,7 @@
   },
   {
     "Input": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwei millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
@@ -422,7 +422,7 @@
   },
   {
     "Input": "Die dreihundert waren wohl eher zehntausend",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dreihundert",
@@ -446,7 +446,7 @@
   },
   {
     "Input": "Eine 8 Bit Variable kann bis zu zweihundertsechsundfuenfzig verschiedene Zustände annehmen. Das reicht aus um Zahlen von null bis zweihundertfünfundfünfzig darzustellen.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "eine",
@@ -497,7 +497,7 @@
   },
   {
     "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "ein dutzend",
@@ -621,7 +621,7 @@
   {
     "Input": "Die Milchstraße besteht nach heutiger Schätzung aus ca. 100 bis 300 Milliarden Sternen.",
     "Comment": "Whitespace at the end of second result currently necessary because of the possible follow-up-numbers. Regex needs refinement here.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100",
@@ -645,7 +645,7 @@
   },
   {
     "Input": "100 bis 300 Milliarden",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100",
@@ -669,7 +669,7 @@
   },
   {
     "Input": "1 234 567",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 234 567",
@@ -684,7 +684,7 @@
   },
   {
     "Input": "40 000 ist das gleiche wie 40 000",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "40 000",
@@ -708,7 +708,7 @@
   },
   {
     "Input": "Fürs Erste ist Chinas Bevölkerung 1 414 021 100.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -723,7 +723,7 @@
   },
   {
     "Input": "423 0000 wird als zwei Nummern erkannt.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "423",
@@ -756,7 +756,7 @@
   },
   {
     "Input": "1 234 567,89 ist ein gültiges Zahlenformat.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 234 567,89",
