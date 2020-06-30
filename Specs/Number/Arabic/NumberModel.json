@@ -2069,8 +2069,8 @@
   },
   {
     "Input": "-١-^٢٥٠٠",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-١-^٢٥٠٠",
@@ -2103,8 +2103,8 @@
   },
   {
     "Input": "-٢٣--^١,١",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-٢٣--^١,١",
@@ -3373,7 +3373,6 @@
   },
   {
     "Input": "مائة و واحد و ستون",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3757,7 +3756,6 @@
     "Input": "واحد و عشرون تريليون و ثلاثمائة",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "واحد و عشرون تريليون و ثلاثمائة",
@@ -3809,7 +3807,6 @@
     "Input": "ثلاثمائة و واحد و ثلاثون",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاثمائة و واحد و ثلاثون",
@@ -3897,7 +3894,6 @@
     "Input": "1e10",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1e10",
@@ -4334,9 +4330,9 @@
   },
   {
     "Input": "-127.32e13",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-127.32e13",
@@ -4352,9 +4348,9 @@
   },
   {
     "Input": "12.32e+14",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "12.32e+14",
@@ -4372,7 +4368,6 @@
     "Input": "-12e-1",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-12e-1",
@@ -4724,7 +4719,6 @@
     "Input": "واحد على مائة و واحد و عشرون",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "واحد على مائة و واحد و عشرون",
@@ -5329,7 +5323,6 @@
     "Input": "أربعة ألف و ثلاثمائة و واحد و عشرون رقم صالح",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "أربعة ألف و ثلاثمائة و واحد و عشرون",
@@ -5457,7 +5450,6 @@
     "Input": "ثلاثمائة و واحد رقم صالح",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاثمائة و واحد",
