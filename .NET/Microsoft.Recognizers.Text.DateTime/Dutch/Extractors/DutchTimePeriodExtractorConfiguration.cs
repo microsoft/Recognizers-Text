@@ -32,6 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex PureNumFromTo =
             new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
 
+        public static readonly Regex TimeDateFromTo =
+            new Regex(DateTimeDefinitions.TimeDateFromTo, RegexFlags);
+
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
 
@@ -148,6 +151,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool IsConnectorToken(string text)
         {
             return RangeConnectorRegex.IsExactMatch(text, trim: true);
+        }
+
+        // This method is used to disambiguate extractions containing 'morgen' (that can mean both 'tomorrow' and 'morning').
+        // It discards isolated occurrences of 'morgen', keeping as valid extractions only those cases
+        // where it is part of a bigger match (e.g. 'diensdag morgen')
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
+        {
+            {
+                var morgenStr = DateTimeDefinitions.MorningTermList[0];
+                List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+                foreach (var timePeriodEr in timePeriodErs)
+                {
+                    if (!timePeriodEr.Text.Equals(morgenStr))
+                    {
+                        timePeriodErsResult.Add(timePeriodEr);
+                    }
+                }
+
+                return timePeriodErsResult;
+            }
         }
     }
 }

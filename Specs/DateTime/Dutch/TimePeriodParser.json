@@ -1009,7 +1009,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "ochtend",
+        "Text": "de ochtend",
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -1022,8 +1022,8 @@
             "endTime": "12:00:00"
           }
         },
-        "Start": 20,
-        "Length": 7
+        "Start": 17,
+        "Length": 10
       }
     ]
   },
