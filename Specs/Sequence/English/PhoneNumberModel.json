@@ -4852,12 +4852,12 @@
     "Results": []
   },
   {
-    "Input": "Her credit cards is: American Express 3600 0000 0000 009",
+    "Input": "Her credit card is: American Express 3600 0000 0000 009",
     "NotSupported": "java",
     "Results": []
   },
   {
-    "Input": "Her credit cards is: Discover 6011-0000-0000-0004",
+    "Input": "Her credit card is: Discover 6011-0000-0000-0004",
     "NotSupported": "java",
     "Results": []
   }

@@ -3,27 +3,30 @@ import os
 import time
 start = time.time()
 
-def getInput(fname):
+
+def get_input(fname):
     count = 0
-    with open(fname, "r",encoding = "UTF-8") as load_f:
+    with open(fname, "r", encoding="UTF-8") as load_f:
         load_dict = json.load(load_f)
         for i in load_dict:
             if "NotSupported" in i and "python" in i["NotSupported"]:
                 count += 1
     print(fname, count)
 
-def getAllDir(path):
+
+def get_all_dir(path):
     filess = os.listdir(path)
     print(filess)
     for files in filess:
         if files != "README.md":
             if os.path.isdir(path+files):
                 print("dir:"+files)
-                getAllDir(path+files+'\\')
+                get_all_dir(path+files+'\\')
             else:
-                getInput(path+"\\"+files)
-path = r".\Specs\DateTime\Spanish\\"
+                get_input(path+"\\"+files)
 
-getAllDir(path)
+
+path = r".\Specs\DateTime\Spanish\\"
+get_all_dir(path)
 end = time.time()
 print(end-start)
