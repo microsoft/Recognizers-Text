@@ -2336,7 +2336,7 @@
         "End": 51
       }
     ]
-  }, 
+  },
   {
     "Input": "اثنان وخمسون كتابا جديدا ",
     "IgnoreResolution": true,
@@ -2356,8 +2356,8 @@
   },
   {
     "Input": "‫مائتان واثنا الف قلم",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائتان واثنا الف",
@@ -2475,6 +2475,7 @@
   {
     "Input": "لعبت أربعون بنتا في ملعب المدرسة ",
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "أربعون",
@@ -2768,8 +2769,8 @@
   },
   {
     "Input": "٨٩ .٥٦٧ ٢٣٤ ١ هو تنسيق رقم صالح ",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٨٩ .٥٦٧ ٢٣٤ ١",
@@ -2900,7 +2901,7 @@
         "End": 16
       }
     ]
-  }, 
+  },
   {
     "Input": "ثلاثة وعشرون على خمسة ",
     "IgnoreResolution": true,
@@ -3000,7 +3001,7 @@
         "End": 15
       }
     ]
-  },  
+  },
   {
     "Input": "بنتان اثنتان",
     "NotSupportedByDesign": "javascript, java, python",
@@ -3218,7 +3219,7 @@
         "End": 20
       }
     ]
-  }, 
+  },
   {
     "Input": "نجحت خمسون طالبًة في الامتحان السنوي",
     "NotSupportedByDesign": "javascript, java, python",
@@ -4480,7 +4481,6 @@
     "Input": "المائة",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المائة",
@@ -4498,7 +4498,6 @@
     "Input": "ثلث",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلث",
@@ -4514,9 +4513,9 @@
   },
   {
     "Input": "مائة و ثلاثة و ثلث",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثة و ثلث",
