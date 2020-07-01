@@ -2849,8 +2849,8 @@
   },
   {
     "Input": "٨٩ .٥٦٧ ٢٣٤ ١ هو تنسيق رقم صالح ",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٨٩ .٥٦٧ ٢٣٤ ١",
@@ -3285,9 +3285,9 @@
   },
   {
     "Input": "مائة و ثلاثة و ثلث",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثة و ثلث",

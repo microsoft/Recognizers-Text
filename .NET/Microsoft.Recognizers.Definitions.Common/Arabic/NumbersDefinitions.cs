@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string ArabicBuiltInFraction = @"(ثلثان|(و?)\s*ربع|خمس|عشرونات|ثلاثون|خُمسَين:?)";
       public const string FractionOrdinalPrefix = @"(الوزن|المحتوى:?)";
       public static readonly string FractionNounRegex = $@"(?<=\b){ArabicBuiltInFraction}|{AllIntRegex}\s(و\s|و){ArabicBuiltInFraction}|(({AllIntRegex}\s(و\s|و)?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|أرباع|وربع|ارباع|واحد وربع|نصف|ربع|أنصاف|ربعين|أرباع|ارباع))(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|نصف|(و?)\s*ربع|ونصف|ثمن|(و\s*)?(ثلثين)))|(و ربع|الربع|النصف|نصف|))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|نصف|(و?)\s*ربع|ونصف|ثمن|(و\s*)?(ثلثين|ثلث)))|(و ربع|الربع|النصف|نصف|))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|أجزاء من|اجزاء من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+على\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string FractionWithOrdinalPrefix = $@"({AllOrdinalRegex})(?=\s*({FractionOrdinalPrefix}))";
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e[+-]*((\d+[\.,])?\d+)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)[+-]*\^[+-]*((\d+[\.,])?\d+)(?=\b)";
-      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+[\.,]\d+))(?!([\.,]\d+))(?={placeholder})";
+      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+\s*[\.,](\d+((\s*\d+)?)+)))(?!([\.,]\d+))(?={placeholder})";
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
