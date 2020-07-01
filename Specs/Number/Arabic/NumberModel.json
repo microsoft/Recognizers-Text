@@ -2069,8 +2069,8 @@
   },
   {
     "Input": "-١-^٢٥٠٠",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-١-^٢٥٠٠",
@@ -2103,8 +2103,8 @@
   },
   {
     "Input": "-٢٣--^١,١",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "-٢٣--^١,١",
@@ -2437,8 +2437,8 @@
   },
   {
     "Input": "‫مائتان واثنا الف قلم",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائتان واثنا الف",
@@ -3303,9 +3303,9 @@
   },
   {
     "Input": "مائة و ثلاثة و ثلثين",
+    "IgnoreResolution": true,
     "Comment": "PendingValidation, Mothanna Case: ثلثين",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثة و ثلثين",
