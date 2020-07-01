@@ -594,6 +594,8 @@ public class FrenchDateTime {
 
     public static final String WithinNextPrefixRegex = "^[.]";
 
+    public static final String TodayNowRegex = "\\b(aujourd'hui|maintenant)\\b";
+
     public static final String MorningStartEndRegex = "(^(matin))|((matin)$)";
 
     public static final String AfternoonStartEndRegex = "(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)";

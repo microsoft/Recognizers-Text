@@ -64,6 +64,7 @@ class PortugueseDateTime:
     InConnectorRegex = f'\\b(em)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
+    TodayNowRegex = f'\\b(hoje|agora)\\b'
     CenturySuffixRegex = f'^[.]'
     FromRegex = f'((desde|de)(\\s*a(s)?)?)$'
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'

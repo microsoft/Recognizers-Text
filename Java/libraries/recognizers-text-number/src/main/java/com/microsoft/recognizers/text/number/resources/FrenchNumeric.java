@@ -237,6 +237,8 @@ public class FrenchNumeric {
         .put("dix", 10L)
         .put("onze", 11L)
         .put("douze", 12L)
+        .put("douzaine", 12L)
+        .put("douzaines", 12L)
         .put("treize", 13L)
         .put("quatorze", 14L)
         .put("quinze", 15L)

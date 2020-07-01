@@ -155,6 +155,7 @@ public class DateTimeParserTest extends AbstractTest {
             Assert.assertEquals("Actual results size differs", expectedResults.size(), actualResults.size());
 
             IntStream.range(0, expectedResults.size()).mapToObj(i -> new Pair<>(expectedResults.get(i), actualResults.get(i))).forEach(o -> {
+
                 Map<String, Object> expectedItem = o.getValue0();
                 Map<String, Object> actualItem = o.getValue1();
                 Assert.assertTrue(String.format("Keys error \n\tExpected:\t%s\n\tActual:\t%s",

@@ -265,10 +265,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     // Actual ValueSet types should not be modified as that's considered a breaking API change
                     var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
 
-                    var expectedObj =
-                        JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(
-                            expected.Value.ToString());
+                    var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
                     var expectedValues = expectedObj[ResolutionKey.ValueSet];
+
+                    Assert.AreEqual(expectedValues.Count, actualValues?.Count, GetMessage(testSpec));
 
                     foreach (var (item1, item2) in expectedValues.Zip(actualValues, Tuple.Create))
                     {
