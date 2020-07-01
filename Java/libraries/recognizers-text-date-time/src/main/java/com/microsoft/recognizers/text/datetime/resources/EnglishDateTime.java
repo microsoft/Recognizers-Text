@@ -140,7 +140,7 @@ public class EnglishDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{WrittenMonthRegex}", WrittenMonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>decades?|years?|months?|weeks?|(?<business>(business\\s+|week\\s*))?days?|fortnights?|weekends?)\\b";
+    public static final String DateUnitRegex = "(?<unit>decades?|years?|months?|weeks?|(?<business>(business\\s+|week\\s*))?days?|fortnights?|weekends?|(?<=\\s+\\d{1,4})[ymwd])\\b";
 
     public static final String DateTokenPrefix = "on ";
 
@@ -618,7 +618,7 @@ public class EnglishDateTime {
             .replace("{LaterEarlyRegex}", LaterEarlyRegex)
             .replace("{MealTimeRegex}", MealTimeRegex);
 
-    public static final String SpecificTimeOfDayRegex = "\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b"
+    public static final String SpecificTimeOfDayRegex = "\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btoni(ght|te))s?\\b"
             .replace("{TimeOfDayRegex}", TimeOfDayRegex)
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
 
@@ -638,7 +638,7 @@ public class EnglishDateTime {
 
     public static final String DateTimeTimeOfDayRegex = "\\b(?<timeOfDay>morning|afternoon|night|evening)\\b";
 
-    public static final String DateTimeSpecificTimeOfDayRegex = "\\b(({RelativeRegex}\\s+{DateTimeTimeOfDayRegex})\\b|\\btonight)\\b"
+    public static final String DateTimeSpecificTimeOfDayRegex = "\\b(({RelativeRegex}\\s+{DateTimeTimeOfDayRegex})\\b|\\btoni(ght|te))\\b"
             .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
@@ -669,7 +669,7 @@ public class EnglishDateTime {
             .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
             .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
-    public static final String PeriodSpecificTimeOfDayRegex = "\\b({LaterEarlyRegex}?this\\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btonight)\\b"
+    public static final String PeriodSpecificTimeOfDayRegex = "\\b({LaterEarlyRegex}?this\\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btoni(ght|te))\\b"
             .replace("{PeriodTimeOfDayRegex}", PeriodTimeOfDayRegex)
             .replace("{StrictRelativeRegex}", StrictRelativeRegex)
             .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
@@ -763,6 +763,8 @@ public class EnglishDateTime {
     public static final String WithinNextPrefixRegex = "\\b(within(\\s+the)?(\\s+(?<next>{NextPrefixRegex}))?)\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex);
 
+    public static final String TodayNowRegex = "\\b(today|now)\\b";
+
     public static final String MorningStartEndRegex = "(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)"
             .replace("{AmDescRegex}", AmDescRegex);
 
@@ -771,7 +773,7 @@ public class EnglishDateTime {
 
     public static final String EveningStartEndRegex = "(^(evening))|((evening)$)";
 
-    public static final String NightStartEndRegex = "(^(over|to)?night)|((over|to)?night$)";
+    public static final String NightStartEndRegex = "(^(over|to)?ni(ght|te))|((over|to)?ni(ght|te)$)";
 
     public static final String InexactNumberRegex = "\\b((a\\s+)?few|some|several|(?<NumTwoTerm>(a\\s+)?couple(\\s+of)?))\\b";
 
@@ -1353,6 +1355,7 @@ public class EnglishDateTime {
         .put("\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b")
         .put("\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b")
         .put("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)")
+        .put("^\\d+m$", "^\\d+m$")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");

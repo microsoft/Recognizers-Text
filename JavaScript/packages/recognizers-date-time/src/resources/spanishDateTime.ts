@@ -68,6 +68,7 @@ export namespace SpanishDateTime {
     export const InConnectorRegex = `\\b(in)\\b`;
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `\\b(dentro\\s+de)\\b`;
+    export const TodayNowRegex = `\\b(hoy|ahora)\\b`;
     export const FromRegex = `((de(sde)?)(\\s*la(s)?)?)$`;
     export const BetweenRegex = `(entre\\s*(la(s)?)?)`;
     export const WeekDayRegex = `\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b`;

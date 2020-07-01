@@ -193,15 +193,21 @@
   {
     "Input": "organiser une réunion dans 3 semaines",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2020-06-30T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "dans 3 semaines",
         "Type": "datetimeV2.date",
         "Value": {
-          "values": []
+          "values": [
+            {
+              "timex": "2020-07-21",
+              "type": "date",
+              "value": "2020-07-21"
+            }
+          ]
         },
         "Start": 22,
         "Length": 15
@@ -211,15 +217,21 @@
   {
     "Input": "organiser une réunion dans 3 mois",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2020-06-30T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "dans 3 mois",
         "Type": "datetimeV2.date",
         "Value": {
-          "values": []
+          "values": [
+            {
+              "timex": "2020-09-30",
+              "type": "date",
+              "value": "2020-09-30"
+            }
+          ]
         },
         "Start": 22,
         "Length": 11
@@ -229,15 +241,21 @@
   {
     "Input": "organiser une réunion dans 3 annees",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2020-06-30T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "dans 3 annees",
         "Type": "datetimeV2.date",
         "Value": {
-          "values": []
+          "values": [
+            {
+              "timex": "2023-06-30",
+              "type": "date",
+              "value": "2023-06-30"
+            }
+          ]
         },
         "Start": 22,
         "Length": 13

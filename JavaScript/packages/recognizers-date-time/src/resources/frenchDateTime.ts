@@ -189,6 +189,7 @@ export namespace FrenchDateTime {
     export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `^[.]`;
+    export const TodayNowRegex = `\\b(aujourd'hui|maintenant)\\b`;
     export const MorningStartEndRegex = `(^(matin))|((matin)$)`;
     export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
     export const EveningStartEndRegex = `(^(soir[ée]e|soir))|((soir[ée]e|soir)$)`;

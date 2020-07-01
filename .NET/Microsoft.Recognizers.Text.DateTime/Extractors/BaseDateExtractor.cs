@@ -156,6 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.Config.DateRegexList)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
                     // some match might be part of the date range entity, and might be split in a wrong way
@@ -296,9 +297,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (result.Start >= 0)
                 {
                     // Handling cases like '(Monday,) Jan twenty two'
-                    var frontStr = text.Substring(0, result.Start ?? 0);
+                    var prefixStr = text.Substring(0, result.Start ?? 0);
 
-                    var match = this.Config.MonthEnd.Match(frontStr);
+                    var match = this.Config.MonthEnd.Match(prefixStr);
                     if (match.Success)
                     {
                         var startIndex = match.Index;
@@ -341,6 +342,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
                     matches = this.Config.WeekDayAndDayOfMonthRegex.Matches(text);
+
                     foreach (Match matchCase in matches)
                     {
                         if (matchCase.Success)
@@ -356,13 +358,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
 
-                                // calculate matchLength considering that matchCase can preceed or follow result
-                                var matchLength = matchCase.Index < result.Start ? result.Start + result.Length - matchCase.Index : matchCase.Index + matchCase.Length - result.Start;
+                                // Calculate matchLength considering that matchCase can precede or follow result
+                                var matchLength = matchCase.Index < result.Start ?
+                                                      result.Start + result.Length - matchCase.Index :
+                                                      matchCase.Index + matchCase.Length - result.Start;
 
                                 if (!date.Equals(DateObject.MinValue) &&
                                     numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
                                     matchCase.Length == matchLength)
                                 {
+
                                     if (matchCase.Index < result.Start)
                                     {
                                         ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
@@ -412,6 +417,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Handling cases like '20th of next month'
                     var suffixStr = text.Substring(result.Start + result.Length ?? 0);
                     var beginMatch = this.Config.RelativeMonthRegex.MatchBegin(suffixStr.Trim(), trim: true);
+
                     if (beginMatch.Success && beginMatch.Index == 0)
                     {
                         var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
@@ -421,6 +427,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // Check if prefix contains 'the', include it if any
                         var prefix = text.Substring(0, resStart ?? 0);
                         var prefixMatch = this.Config.PrefixArticleRegex.Match(prefix);
+
                         if (prefixMatch.Success)
                         {
                             resStart = prefixMatch.Index;
@@ -589,6 +596,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> ExtractInConnector(string text, string firstStr, string secondStr, Token duration, out bool success, bool inPrefix)
         {
             List<Token> ret = new List<Token>();
+
             var match = inPrefix ? Config.InConnectorRegex.MatchEnd(firstStr, trim: true) : Config.InConnectorRegex.MatchBegin(firstStr, trim: true);
             success = match.Success;
 

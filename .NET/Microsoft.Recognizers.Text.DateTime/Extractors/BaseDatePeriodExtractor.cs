@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -53,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var durations = new List<Token>();
             var durationExtractions = config.DurationExtractor.Extract(text, reference);
+
             foreach (var durationExtraction in durationExtractions)
             {
                 var match = config.DateUnitRegex.Match(durationExtraction.Text);
@@ -119,6 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var prefix = beforeStr.Substring(0, index).Trim();
                     var durationText = text.Substring(duration.Start, duration.Length);
+
                     var numbersInPrefix = config.CardinalExtractor.Extract(prefix);
                     var numbersInDuration = config.CardinalExtractor.Extract(durationText);
 
@@ -174,13 +177,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er, bool inPrefix)
         {
             var ret = new List<Token>();
+
             var match = regex.Match(text);
-            bool isMatchAtEdge = inPrefix ? text.Trim().EndsWith(match.Value.Trim()) : text.Trim().StartsWith(match.Value.Trim());
+            bool isMatchAtEdge = inPrefix ?
+                                 text.Trim().EndsWith(match.Value.Trim()) :
+                                 text.Trim().StartsWith(match.Value.Trim());
+
             if (match.Success && isMatchAtEdge)
             {
                 var startIndex = inPrefix ? text.LastIndexOf(match.Value) : (int)er.Start;
                 var endIndex = (int)er.Start + (int)er.Length;
                 endIndex += inPrefix ? 0 : match.Index + match.Length;
+
                 ret.Add(new Token(startIndex, endIndex));
             }
 
@@ -193,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             bool isMatchInfixOfSource = false;
             if (match.Index > 0 && match.Index + match.Length < source.Length)
             {
-                if (source.Substring(match.Index, match.Length).Equals(match.Value))
+                if (source.AsSpan(match.Index, match.Length).Equals(match.Value.AsSpan(), StringComparison.InvariantCulture))
                 {
                     isMatchInfixOfSource = true;
                 }
@@ -353,12 +361,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var afterString = text.Substring((er.Start + er.Length).Value);
+                var afterString = text.AsSpan((er.Start + er.Length).Value);
                 var trimmedAfterString = afterString.TrimStart();
                 var whiteSpacesCount = afterString.Length - trimmedAfterString.Length;
                 var afterStringOffset = (er.Start + er.Length).Value + whiteSpacesCount;
 
-                var match = this.config.CenturySuffixRegex.Match(trimmedAfterString);
+                var match = this.config.CenturySuffixRegex.Match(trimmedAfterString.ToString());
 
                 if (match.Success)
                 {
@@ -442,12 +450,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.SimpleCasesRegexes)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
                     var matchYear = this.config.YearRegex.Match(match.Value);
+
                     if (matchYear.Success && matchYear.Length == match.Value.Length)
                     {
                         var year = config.DatePointExtractor.GetYearFromText(matchYear);
+
                         if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                         {
                             continue;
@@ -460,6 +471,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (InfixBoundaryCheck(match, text))
                         {
                             var substr = text.Substring(match.Index - 1, 6);
+
                             if (this.config.IllegalYearRegex.IsMatch(substr))
                             {
                                 continue;
@@ -584,6 +596,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // handle "from/between" together with till words (till/until/through...)
                     var beforeStr = text.Substring(0, periodBegin).Trim();
+
                     if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex) ||
                         this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
                     {
@@ -671,7 +684,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (extractionResult.Start != null && extractionResult.Length != null)
                 {
                     var beforeString = text.Substring(0, (int)extractionResult.Start);
-                    var afterString = text.Substring((int)extractionResult.Start + (int)extractionResult.Length, text.Length - (int)extractionResult.Start - (int)extractionResult.Length);
+                    var afterString = text.Substring((int)extractionResult.Start + (int)extractionResult.Length,
+                                                     text.Length - (int)extractionResult.Start - (int)extractionResult.Length);
+
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult, inPrefix: true));
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult, inPrefix: true));
 
@@ -746,14 +761,20 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Matches "within (the next)?" part (in beforeStr or afterStr) in "within Days/Weeks/Months/Years"
         private Token MatchWithinNextAffixRegex(string text, Token duration, bool inPrefix)
         {
-            var beforeStr = text.Substring(0, duration.Start);
-            var afterStr = text.Substring(duration.Start + duration.Length);
             int startToken = -1;
             int endToken = -1;
-            var match = inPrefix ? config.WithinNextPrefixRegex.MatchEnd(beforeStr, trim: true) : config.WithinNextPrefixRegex.MatchBegin(afterStr, trim: true);
+
+            var beforeStr = text.Substring(0, duration.Start);
+            var afterStr = text.Substring(duration.Start + duration.Length);
+
+            var match = inPrefix ?
+                        config.WithinNextPrefixRegex.MatchEnd(beforeStr, trim: true) :
+                        config.WithinNextPrefixRegex.MatchBegin(afterStr, trim: true);
+
             if (match.Success)
             {
                 var durationStr = text.Substring(duration.Start, duration.Length);
+
                 var matchDate = config.DateUnitRegex.Match(durationStr);
                 var matchTime = config.TimeUnitRegex.Match(durationStr);
 
@@ -761,6 +782,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     startToken = inPrefix ? match.Index : duration.Start;
                     endToken = inPrefix ? duration.End : duration.End + match.Index + match.Length;
+
                     if (!inPrefix)
                     {
                         // Check prefix for "next"
@@ -779,7 +801,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> ExtractWithinNextPrefix(string subStr, ExtractResult extractionResult, bool inPrefix)
         {
             var tokens = new List<Token>();
+
             var match = this.config.WithinNextPrefixRegex.Match(subStr);
+
             if (match.Success)
             {
                 var isNext = !string.IsNullOrEmpty(match.Groups[Constants.NextGroupName].Value);

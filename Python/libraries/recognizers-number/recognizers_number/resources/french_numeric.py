@@ -101,6 +101,8 @@ class FrenchNumeric:
                               ("dix", 10),
                               ("onze", 11),
                               ("douze", 12),
+                              ("douzaine", 12),
+                              ("douzaines", 12),
                               ("treize", 13),
                               ("quatorze", 14),
                               ("quinze", 15),

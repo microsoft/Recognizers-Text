@@ -193,6 +193,8 @@ public class SpanishDateTime {
 
     public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de)\\b";
 
+    public static final String TodayNowRegex = "\\b(hoy|ahora)\\b";
+
     public static final String FromRegex = "((de(sde)?)(\\s*la(s)?)?)$";
 
     public static final String BetweenRegex = "(entre\\s*(la(s)?)?)";

@@ -64,7 +64,7 @@ def test_datetime_parser(
         simple_parser_assert(spec_info, actual, expected, 'type', 'Type')
 
         if 'Value' in expected:
-            assert actual.value
+            assert_verbose(actual.value is None, False, spec_info)
 
         if actual.value and 'Value' in expected:
             simple_parser_assert(spec_info, actual.value, expected['Value'], 'timex', 'Timex')
@@ -104,11 +104,13 @@ def test_datetime_mergedparser(
         simple_extractor_assert(spec_info, actual, expected, 'length', 'Length')
 
         if 'Value' in expected:
-            assert actual.value
+            assert_verbose(actual.value is None, False, spec_info)
 
         if actual.value and 'Value' in expected:
             if 'values' in expected['Value']:
                 assert isinstance(actual.value['values'], list)
+
+                assert len(expected['Value']) == len(actual.value)
 
                 for actual_values, expected_values in zip(actual.value['values'], expected['Value']['values']):
                     for key in expected_values.keys():

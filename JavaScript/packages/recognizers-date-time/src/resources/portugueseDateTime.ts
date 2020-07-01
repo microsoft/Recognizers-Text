@@ -61,6 +61,7 @@ export namespace PortugueseDateTime {
     export const InConnectorRegex = `\\b(em)\\b`;
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `^[.]`;
+    export const TodayNowRegex = `\\b(hoje|agora)\\b`;
     export const CenturySuffixRegex = `^[.]`;
     export const FromRegex = `((desde|de)(\\s*a(s)?)?)$`;
     export const BetweenRegex = `(entre\\s*([oa](s)?)?)`;
