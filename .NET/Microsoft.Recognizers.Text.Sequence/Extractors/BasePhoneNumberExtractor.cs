@@ -97,6 +97,37 @@ namespace Microsoft.Recognizers.Text.Sequence
                     continue;
                 }
 
+                if (CountDigits(er.Text) == 16 && !er.Text.StartsWith("+"))
+                {
+                    ers.Remove(er);
+                    i--;
+                    continue;
+                }
+
+                if (CountDigits(er.Text) == 15)
+                {
+                    var flag = false;
+                    foreach (var numSpan in er.Text.Split(' '))
+                    {
+                        if (CountDigits(numSpan) == 4 || CountDigits(numSpan) == 3)
+                        {
+                            flag = false;
+                        }
+                        else
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+
+                    if (flag == false)
+                    {
+                        ers.Remove(er);
+                        i--;
+                        continue;
+                    }
+                }
+
                 if (er.Start + er.Length < text.Length)
                 {
                     var ch = text[(int)(er.Start + er.Length)];
