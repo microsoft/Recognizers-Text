@@ -3004,7 +3004,6 @@
   {
     "Input": "بنتان اثنتان",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اثنتان",
@@ -3020,8 +3019,8 @@
   },
   {
     "Input": "اثنتان وخمسون بنتا",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اثنتان وخمسون",
@@ -3037,8 +3036,8 @@
   },
   {
     "Input": "مائتان واثنتا ألف بنت",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائتان واثنتا ألف",
@@ -3072,7 +3071,6 @@
   {
     "Input": "مائة وثلاثون على خمس من الطاولات",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة وثلاثون على خمس",
@@ -3088,8 +3086,8 @@
   },
   {
     "Input": "مائة واثنتان وثلاثون على خمس",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة واثنتان وثلاثون على خمس",
@@ -3301,8 +3299,8 @@
   },
   {
     "Input": "خرجت اثنتا عشرة مهندسة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "اثنتا عشرة",
@@ -3620,8 +3618,8 @@
   },
   {
     "Input": "اشتريتُ مائة وثلاثين على خمس من الطاولات",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة وثلاثين على خمس",
@@ -4024,8 +4022,8 @@
   },
   {
     "Input": "ثلاث وعشرون على خمس",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاث وعشرون على خمس",
@@ -4193,8 +4191,8 @@
   },
   {
     "Input": "ثلاث وعشرين على خمس",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاث وعشرين على خمس",
@@ -6567,7 +6565,6 @@
     "Input": "أربعة ألف و ثلاثمائة و صفر رقمان صالحان",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "أربعة ألف و ثلاثمائة",
@@ -6577,7 +6574,7 @@
           "value": "4300"
         },
         "Start": 0,
-        "End": 13
+        "End": 19
       },
       {
         "Text": "صفر",
@@ -6586,8 +6583,8 @@
           "subtype": "integer",
           "value": "0"
         },
-        "Start": 18,
-        "End": 20
+        "Start": 23,
+        "End": 25
       }
     ]
   },
