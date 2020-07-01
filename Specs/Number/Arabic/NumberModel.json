@@ -3251,7 +3251,6 @@
     "Input": "المائة",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المائة",
@@ -3269,7 +3268,6 @@
     "Input": "ثلث",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلث",
