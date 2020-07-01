@@ -2356,8 +2356,8 @@
   },
   {
     "Input": "‫مائتان واثنا الف قلم",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائتان واثنا الف",
@@ -2475,7 +2475,6 @@
   {
     "Input": "لعبت أربعون بنتا في ملعب المدرسة ",
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "أربعون",
