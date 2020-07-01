@@ -177,9 +177,9 @@ TillRegex: !simpleRegex
 MoreRegex: !simpleRegex
   def: (?:(اكثر|فوق|أكبر|أعظم|أطول|يتجاوز|تفوق|أعلى|أكثر)|(?<!<|=)>)
 LessRegex: !simpleRegex
-  def: (?:(أقل|اقل|اصغر|أصغر|أخفض|ادنى)(\s*من)?|تحت|(?<!>|=)<)
+  def: (?:(أقل|اقل|اصغر|أصغر|أخفض|ادنى|يصل إلى)(\s*من)?|تحت|(?<!>|=)<)
 EqualRegex: !simpleRegex
-  def: (يساوي|(?<!<|>)=)
+  def: (يساوي|تساوي| تساوي|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
   def: (((ليس|لا)\s+{LessRegex})|(على\s+الأقل))
   references: [LessRegex]
@@ -205,7 +205,7 @@ LessRegexNoNumberSucceed: !simpleRegex
 EqualRegexNoNumberSucceed: !simpleRegex
   def: ((يساوي)(?!(\s*\d+)))
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s*(أو|او)?\s+({MoreRegex}))(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s+(أو|او)?\s+({MoreRegex}))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})\s*(?<number1>({NumberSplitMark}.)+)
+  def: ({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s*(أو|او)?\s+({MoreRegex}))(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|(({EqualRegex})\s+(?<number1>({NumberSplitMark}.)+)(أو|او)?\s+({MoreRegex})(\s+(من))?)|({EqualRegex}\s+(أو|او)?\s+({MoreRegex}))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})\s*(?<number1>({NumberSplitMark}.)+)
   references: [MoreOrEqual, MoreRegex, NumberSplitMark,EqualRegex]
 OneNumberRangeMoreRegex3: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*(و|أو)\s*({MoreRegex})
