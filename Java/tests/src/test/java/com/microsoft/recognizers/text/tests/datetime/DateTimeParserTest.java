@@ -22,6 +22,18 @@ import com.microsoft.recognizers.text.datetime.english.parsers.EnglishTimeParser
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.TimeParser;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDatePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDurationParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchSetParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParser;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeAltParser;
@@ -114,7 +126,7 @@ public class DateTimeParserTest extends AbstractTest {
                     DateTimeParseResult actual = t.getValue1();
 
                     Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
-                    Assert.assertTrue(getMessage(currentCase, "text"), expected.getText().equalsIgnoreCase(actual.getText()));
+                    Assert.assertTrue(getMessage(currentCase, "text") + String.format(" expected: \"%s\" actual: \"%s\"", expected.getText(), actual.getText()), expected.getText().equalsIgnoreCase(actual.getText()));
 
                     Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
                     Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
@@ -179,6 +191,8 @@ public class DateTimeParserTest extends AbstractTest {
                     return getEnglishParser(name);
                 case Culture.Spanish:
                     return getSpanishParser(name);
+                case Culture.French:
+                    return getFrenchParser(name);
                 default:
                     throw new AssumptionViolatedException("Parser Type/Name not supported.");
             }
@@ -244,6 +258,35 @@ public class DateTimeParserTest extends AbstractTest {
                 return new TimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimePeriodParser":
                 return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            default:
+                throw new AssumptionViolatedException("Parser Type/Name not supported.");
+        }
+    }
+    private static IDateTimeParser getFrenchParser(String name) {
+
+        switch (name) {
+            case "DateParser":
+                return new BaseDateParser(new FrenchDateParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DatePeriodParser":
+                return new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            //case "DateTimeAltParser":
+            //    return new BaseDateTimeAltParser(new FrenchDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimeParser":
+                return new BaseDateTimeParser(new FrenchDateTimeParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimePeriodParser":
+                return new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DurationParser":
+                return new BaseDurationParser(new FrenchDurationParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "HolidayParser":
+                return new BaseHolidayParser(new FrenchHolidayParserConfiguration());
+            case "SetParser":
+                return new BaseSetParser(new FrenchSetParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "MergedParser":
+                return new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(DateTimeOptions.None));
+            case "TimeParser":
+                return new FrenchTimeParser(new FrenchTimeParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimePeriodParser":
+                return new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }
