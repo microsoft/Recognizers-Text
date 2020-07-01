@@ -2186,20 +2186,19 @@
     ]
   },
   {
-    "Input": "٤آلاف و٣ مئة  و٠ رقمان  صالحان",
-    "Comment": "Requires further research on language",
+    "Input": "٤ آلاف ٣ مائة و ٠ رقمان صالحان",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "٤ آلاف و٣ مائة",
+        "Text": "٤ آلاف ٣ مائة",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
           "value": "4300"
         },
         "Start": 0,
-        "End": 13
+        "End": 12
       },
       {
         "Text": "٠",
@@ -2208,26 +2207,15 @@
           "subtype": "integer",
           "value": "0"
         },
-        "Start": 17,
-        "End": 17
-      },
-      {
-        "Text": "اثنين",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 20,
-        "End": 24
+        "Start": 16,
+        "End": 16
       }
     ]
   },
   {
-    "Input": "٤٠٠٠  ٣ مئة و٢١ رقمان صالحان.",
-    "Comment": "Requires further research on language",
+    "Input": "٤٠٠٠  ٣ مائة و ٢١ رقمان صالحان.",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٤٠٠٠",
@@ -2240,32 +2228,48 @@
         "End": 3
       },
       {
-        "Text": "٣ مائة و٢١",
+        "Text": "٣ مائة و ٢١",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
           "value": "321"
         },
         "Start": 6,
-        "End": 15
-      },
-      {
-        "Text": "اثنين",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 17,
-        "End": 21
+        "End": 16
       }
     ]
   },
   {
-    "Input": "٣ مئة و٢,١٢ مئة  رقمان صالحان.",
-    "Comment": "Requires further research on language",
+    "Input": "٣ مائة و ٢,١٢ مائة رقمان صالحان",
     "NotSupportedByDesign": "javascript, java, python",
     "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٣ مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "٢,١٢ مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "212"
+        },
+        "Start": 9,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "٣ مئة وناقص واحد رقمان صحيحان",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "٣ مئة",
@@ -2278,62 +2282,14 @@
         "End": 4
       },
       {
-        "Text": "٢,١٢ مئة ",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "decimal",
-          "value": "212"
-        },
-        "Start": 7,
-        "End": 15
-      },
-      {
-        "Text": "اثنين",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 2,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "٣ مئة و سالب واحد رقمان صالحان.",
-    "Comment": "Requires further research on language",
-    "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
-    "Results": [
-      {
-        "Text": "٣ مئة",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "300"
-        },
-        "Start": 0,
-        "End": 5
-      },
-      {
-        "Text": "سالب واحد",
+        "Text": "ناقص واحد",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
           "value": "-1"
         },
-        "Start": 8,
-        "End": 17
-      },
-      {
-        "Text": "اثنين",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "2"
-        },
-        "Start": 19,
-        "End": 23
+        "Start": 7,
+        "End": 15
       }
     ]
   },
@@ -2380,44 +2336,7 @@
         "End": 51
       }
     ]
-  },
-  {
-    "Input": "الأرقام هي ١ ،  ٢٣٤ ، ٥٦٧",
-    "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
-    "Results": [
-      {
-        "Text": "١",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "1"
-        },
-        "Start": 11,
-        "End": 11
-      },
-      {
-        "Text": "٢٣٤",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "234"
-        },
-        "Start": 16,
-        "End": 18
-      },
-      {
-        "Text": "٥٦٧",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "567"
-        },
-        "Start": 22,
-        "End": 24
-      }
-    ]
-  },
+  }, 
   {
     "Input": "اثنان وخمسون كتابا جديدا ",
     "IgnoreResolution": true,
@@ -2849,8 +2768,8 @@
   },
   {
     "Input": "٨٩ .٥٦٧ ٢٣٤ ١ هو تنسيق رقم صالح ",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "٨٩ .٥٦٧ ٢٣٤ ١",
@@ -2981,41 +2900,7 @@
         "End": 16
       }
     ]
-  },
-  {
-    "Input": "واحد على خمسة وعشرون ",
-    "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
-    "Results": [
-      {
-        "Text": "واحد على خمسة وعشرون",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.04"
-        },
-        "Start": 0,
-        "End": 19
-      }
-    ]
-  },
-  {
-    "Input": "مائة على ألف وخمسة ",
-    "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
-    "Results": [
-      {
-        "Text": "مائة على ألف وخمسة",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.0995024875621891"
-        },
-        "Start": 0,
-        "End": 17
-      }
-    ]
-  },
+  }, 
   {
     "Input": "ثلاثة وعشرون على خمسة ",
     "IgnoreResolution": true,
@@ -3030,6 +2915,1350 @@
         },
         "Start": 0,
         "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "كتابان اثنان",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "اثنان",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "اثنان وخمسون كتابا",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "اثنان وخمسون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "مائتان واثنا ألف قلم",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائتان واثنا ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثون على خمسة من الاقلام",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاثون على خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "مائة وواحد وستون قلم",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وواحد وستون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },  
+  {
+    "Input": "بنتان اثنتان",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنتان",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 6,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "اثنتان وخمسون بنتا",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنتان وخمسون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "مائتان واثنتا ألف بنت",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائتان واثنتا ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "مائتان فاصلة صفر ثلاثة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائتان فاصلة صفر ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثون على خمس من الطاولات",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة وثلاثون على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "مائة واثنتان وثلاثون على خمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة واثنتان وثلاثون على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "واحد على مائة وخمس وعشرون",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "واحد على مائة وخمس وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "مائتان",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائتان",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "مائة وواحدة وستون طاولة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة وواحدة وستون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "ثلاث مائة وواحدة وثلاثون طاولة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "ثلاث مائة وواحدة وثلاثون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "١ في واحدة و عشرون",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "١ في واحدة و عشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "عشرون بنتا",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "عشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "20"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "شارك في الجولة ثلاثون طالبة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثلاثون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "30"
+        },
+        "Start": 15,
+        "End": 20
+      }
+    ]
+  }, 
+  {
+    "Input": "نجحت خمسون طالبًة في الامتحان السنوي",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "خمسون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "50"
+        },
+        "Start": 5,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "ستون درهم لمساعدة الفقراء في العالم",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ستون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "60"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "سبعون طاولة لمكتبتنا المدرسية",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "سبعون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "هناك ثمانون ملفًا في شركة صديقي",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثمانون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "80"
+        },
+        "Start": 5,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "تسعون طالبًة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "تسعون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "90"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "خرجت اثنتا عشرة مهندسة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنتا عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 5,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ كتابين اثنين",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "اثنين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 15,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ اثنين وخمسين كتابا",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "اثنين وخمسين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 8,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ مائتين واثني ألف قلم",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائتين واثني ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 8,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ مائة وثلاثين على خمسة من الاقلام",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاثين على خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 8,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "مائة واثنين وثلاثين على خمسة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة واثنين وثلاثين على خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "واحد على مائة وخمسة وعشرين",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "واحد على مائة وخمسة وعشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ مائة وواحد وستين قلم",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وواحد وستين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 8,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ ثلاث مائة وواحد وثلاثين قلم",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثلاث مائة وواحد وثلاثين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 8,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثة ارباع",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاثة ارباع",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "100.75"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "١ في واحد و عشرين",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "١ في واحد و عشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "قابلنا اثني عشر مهندسا الذين خرجوا",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "اثني عشر",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 7,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "تحدثتُ مع تسعة عشر صديقا في الصف",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "تسعة عشر",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "19"
+        },
+        "Start": 10,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "زرتُ سبعة عشر منزلاً في قريتنا.",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "سبعة عشر",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "تحدثنا مع ثلاثة عشر معلما",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثلاثة عشر",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "13"
+        },
+        "Start": 10,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ طاولتين اثنتين",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنتين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 16,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "رأيتُ اثنتين و خمسين بنتا",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنتين و خمسين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 6,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "رأيتُ مائتين واثنتي ألف طاولة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائتين واثنتي ألف",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 6,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "مائتين فاصلة صفر ثلاثة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائتين فاصلة صفر ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ مائة وثلاثين على خمس من الطاولات",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة وثلاثين على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 8,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "مائة واثنتين وثلاثين على خمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة واثنتين وثلاثين على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "واحد على مائة وخمس وعشرين",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "واحد على مائة وخمس وعشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ مائة وواحدة وستين طاولة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة وواحدة وستين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 8,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ ثلاث مائة وواحدة وثلاثين طاولة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "ثلاث مائة وواحدة وثلاثين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 8,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "١ في واحدة و عشرين",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "١ في واحدة و عشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "اشتريتُ عشرين حقيبة في السنة الماضية",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "عشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "20"
+        },
+        "Start": 8,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "وزعتُ الجوائز على ثلاثين طالبة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثلاثين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "30"
+        },
+        "Start": 18,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "رأيتُ أربعين بنتا اللاتي يلعبن في ملعب المدرسة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "أربعين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40"
+        },
+        "Start": 6,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "قدرتُ خمسين طالبة اللاتي نجحن في الامتحان السنوي",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "خمسين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "50"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "أنفقت ستين حقيبة لمساعدة الفقراء في العالم",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ستين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "60"
+        },
+        "Start": 6,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "التقينا ثمانين موظفة في شركة صديقي",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثمانين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "80"
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "درَستُ تسعين طالبًة اليوم.",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "تسعين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "90"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "قابلنا إحدى عشرة أستاذة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "إحدى عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "11"
+        },
+        "Start": 7,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "قابلنا اثنتي عشرة مهندسة اللاتي خرجن",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "اثنتي عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 7,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "تحدثتُ مع تسع عشرة صديقة في الصف",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "تسع عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "19"
+        },
+        "Start": 10,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "زرتُ سبع عشرة عائلة في قريتنا.",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "سبع عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "ذبحتُ ست عشرة بقرة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ست عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "تحدثنا مع ثلاث عشرة معلمة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثلاث عشرة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "13"
+        },
+        "Start": 10,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثة واثنان على ثلاثة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاثة واثنان على ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "خمس وتسعون مائة على خمسة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس وتسعون مائة على خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاث واثنان على ثلاث",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاث واثنان على ثلاث",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "واحد على خمس وعشرون",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "واحد على خمس وعشرون",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "خمس وتسعون مائة على خمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس وتسعون مائة على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "ثلاث وعشرون على خمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "ثلاث وعشرون على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاثة واثنين على ثلاثة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاثة واثنين على ثلاثة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "واحد على خمسة وعشرين",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "واحد على خمسة وعشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "خمس وتسعين مائة على خمسة",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس وتسعين مائة على خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "ثلاثة وعشرين على خمسة",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ثلاثة وعشرين على خمسة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "مائة وثلاث واثنين على ثلاث",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "مائة وثلاث واثنين على ثلاث",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "واحد على خمس وعشرين",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "واحد على خمس وعشرين",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "واحد على ثلاث",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "واحد على ثلاث",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "مائة على ألف وخمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "مائة على ألف وخمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "خمس وتسعين مائة على خمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "خمس وتسعين مائة على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "ثلاث وعشرين على خمس",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "ثلاث وعشرين على خمس",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "٣ مائة ومئتان هما رقمان صحيحان",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٣ مائة",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "مئتان",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "200"
+        },
+        "Start": 8,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": " سيتم التعرف على ٤٢٣ ٠٠٠٠  بصفة رقمين ",
+    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "٤٢٣",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "423"
+        },
+        "Start": 16,
+        "End": 18
+      },
+      {
+        "Text": "٠٠٠٠",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 20,
+        "End": 23
       }
     ]
   },
@@ -3251,6 +4480,7 @@
     "Input": "المائة",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "المائة",
@@ -3268,6 +4498,7 @@
     "Input": "ثلث",
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلث",
@@ -3283,9 +4514,9 @@
   },
   {
     "Input": "مائة و ثلاثة و ثلث",
-    "IgnoreResolution": true,
     "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة و ثلاثة و ثلث",
