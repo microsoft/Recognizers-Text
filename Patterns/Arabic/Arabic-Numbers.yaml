@@ -9,7 +9,7 @@ MultiDecimalSeparatorCulture: !bool true
 RoundNumberIntegerRegex: !simpleRegex
   def: (?:مائتان|مائة|مائة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|آلاف|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|مليونين|ألفين|مئة|الف|ومائتين|ثلاثمائة|الفين|بألفين|مئتان|الآف)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (وخمسة|بإثنان|(و\s*)?(و\s*)?احد|وأربعة|واثنان|اثنان|وثلاثة|ثلاثة|واربعة|أربعة|خمسة|وستة|ستة|وسبعة|سبعة|وثمانية|ثمانية|ثمانٍ|وتسعة|تسع|أحد|اثني|ثلاث|صفر|سبع|(?<!درَ)ست|اربع(ة)?|السادس|الثامنة|تسعة|اثنين|وإثنين|(و\s*)?(و\s*)?احدُ|الواحد:?)
+  def: (وخمسة|بإثنان|(و\s*)?(و\s*)?احد|وأربعة|(و)?(اثنا)ن?|(و\s*)?(ثلاث)ة?|واربعة|أربعة|خمسة|وستة|ستة|وسبعة|سبعة|وثمانية|ثمانية|ثمانٍ|وتسعة|تسع|أحد|اثني|صفر|سبع|(?<!درَ)ست|اربع(ة)?|السادس|الثامنة|تسعة|اثنين|وإثنين|(و\s*)?(و\s*)?احدُ|الواحد:?)
 TwoToNineIntegerRegex: !simpleRegex
   def: (?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|ست|ستة)
 NegativeNumberTermsRegex: !simpleRegex
@@ -116,7 +116,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b){ArabicBuiltInFraction}|{AllIntRegex}\s(و\s|و){ArabicBuiltInFraction}|(({AllIntRegex}\s(و\s|و)?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|أرباع|وربع|ارباع|واحد وربع|نصف|ربع|أنصاف|ربعين|أرباع|ارباع))(?=\b)
   references: [AllIntRegex, ArabicBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|نصف|(و?)\s*ربع|ونصف|ثمن))|(و ربع|الربع|النصف|نصف|))(?=\b)
+  def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|نصف|(و?)\s*ربع|ونصف|ثمن|(و\s*)?(ثلثين)))|(و ربع|الربع|النصف|نصف|))(?=\b)
   references: [AllIntRegex, AllOrdinalRegex, NumberOrdinalRegex]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(فوق|على|في|جزء|من|أجزاء من|اجزاء من|جزء من)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)  
@@ -143,7 +143,7 @@ DoubleWithMultiplierRegex: !nestedRegex
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e[+-]*((\d+[\.,])?\d+)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^[+-]*((\d+[\.,])?\d+)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)[+-]*\^[+-]*((\d+[\.,])?\d+)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
   def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+[\.,]\d+))(?!([\.,]\d+))(?={placeholder})
   params: [placeholder]
