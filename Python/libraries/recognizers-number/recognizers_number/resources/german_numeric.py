@@ -15,66 +15,59 @@ from .base_numbers import BaseNumbers
 
 class GermanNumeric:
     LangMarker = 'Ger'
-    CompoundNumberLanguage = False
-    MultiDecimalSeparatorCulture = True
-    RoundNumberIntegerRegex = f'(?:hundert|tausend|million|billion|trillion|hunderttausend|zehn millionen)'
-    ZeroToNineIntegerRegex = f'(?:drei|sieben|acht|vier|fünf|null|neun|eins|zwei|sechs)'
-    TwoToNineIntegerRegex = f'(?:drei|sieben|acht|vier|fünf|neun|zwei|sechs)'
-    NegativeNumberTermsRegex = f'(?<negTerm>(minus|negative)\\s+)'
-    NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*'
-    AnIntRegex = f'(an?)(?=\\s)'
-    TenToNineteenIntegerRegex = f'(?:siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|sechszehn|elf|zwölf|zehn)'
-    TensNumberIntegerRegex = f'(?:siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fünfzig|sechszig)'
-    SeparaIntRegex = f'(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(und\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))'
-    AllIntRegex = f'(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(und\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(und\\s+)?)*{SeparaIntRegex})'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = False
+    ZeroToNineIntegerRegex = f'(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine[rn]?|zwei|zwo|sechs)'
+    RoundNumberIntegerRegex = f'((ein)?hundert|tausend|(\\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\\s*))'
+    AnIntRegex = f'(eine?)(?=\\s)'
+    TenToNineteenIntegerRegex = f'(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)'
+    TensNumberIntegerRegex = f'(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)'
+    NegativeNumberTermsRegex = f'^[.]'
+    NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'
+    SeparaIntRegex = f'((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s*{RoundNumberIntegerRegex})+))'
+    AllIntRegex = f'(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
 
     def NumbersWithPlaceHolder(placeholder):
-        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})'
-    IndianNumberingSystemRegex = f'(?<=\\b)((?:\\d{{1,2}},(?:\\d{{2}},)*\\d{{3}})(?=\\b))'
-    NumbersWithSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
-    RoundNumberIntegerRegexWithLocks = f'(?<=\\b)\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
-    NumbersWithDozenSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s+dutzend(e)?(?=\\b)'
+        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})'
+    NumbersWithSuffix = f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
+    RoundNumberIntegerRegexWithLocks = f'(?<=\\b)\\d+\\s*{RoundNumberIntegerRegex}(?=\\b)'
+    NumbersWithDozenSuffix = f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dutzend(e)?(?=\\b)'
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
-    AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((halb\\s+)?a\\s+dutzend)|({AllIntRegex}\\s+dutzend(e)?))(?=\\b)'
-    RoundNumberOrdinalRegex = f'(?:hundertste|tausenste|millionste|billionste|trillionste)'
-    NumberOrdinalRegex = f'(?:erstens|zweitens|drittens|viertens|fünftens|sechstens|siebentens|achtens|neuntens|zehntens|elftens|zwölftens|dreizehntens|vierzehntens|fünfzehntens|sechszehtens|siebzehntens|achtzehntens|neunzehntens|zwanzigst|dreißigst|vierzigst|fünfzigst|sechszigst|siebzigst|achtzigst|neunzigst)'
-    RelativeOrdinalRegex = f'(?<relativeOrdinal>(nächster|vorheriger|aktueller)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|letzter|nächster|vorheriger|aktueller)'
-    BasicOrdinalRegex = f'({NumberOrdinalRegex}|{RelativeOrdinalRegex})'
-    SuffixBasicOrdinalRegex = f'(?:(((({TensNumberIntegerRegex}(\\s+(und\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(und\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})'
-    SuffixRoundNumberOrdinalRegex = f'(?:({AllIntRegex}\\s+){RoundNumberOrdinalRegex})'
-    AllOrdinalRegex = f'(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'
-    OrdinalSuffixRegex = f'(?<=\\b)(?:(\\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\\b)'
-    OrdinalNumericRegex = f'(?<=\\b)(?:\\d{{1,3}}(\\s*,\\s*\\d{{3}})*\\s*th)(?=\\b)'
-    OrdinalRoundNumberRegex = f'(?<!an?\\s+){RoundNumberOrdinalRegex}'
+    AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((ein\\s+)?halbes\\s+dutzend)|({AllIntRegex}\\s+dutzend(e)?))(?=\\b)'
+    RoundNumberOrdinalRegex = f'(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)'
+    RelativeOrdinalRegex = f'(?<relativeOrdinal>(ante)?penultimate|letzter|nächster|vorheriger|aktueller)'
+    BasicOrdinalRegex = f'(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)'
+    SuffixBasicOrdinalRegex = f'({BasicOrdinalRegex}|({ZeroToNineIntegerRegex}(und|\\s){BasicOrdinalRegex}))'
+    SuffixRoundNumberOrdinalRegex = f'(({AllIntRegex}\\s*){RoundNumberOrdinalRegex})'
+    AllOrdinalRegex = f'(({AllIntRegex}\\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'
+    OrdinalSuffixRegex = f'^[\\.]'
+    OrdinalNumericRegex = f'(?<=\\b)(\\d{{1,3}}\\.)(?=(\\s+|^))'
+    OrdinalRoundNumberRegex = f'(?<!eine?\\s+){RoundNumberOrdinalRegex}'
     OrdinalGermanRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
-    FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(und\\s+)?)?(an?|eins)(\\s+|\\s*-\\s*)(?!\\berster\\b|\\bzweiter\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(es)?|viertel))|(halb))(?=\\b)'
-    FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
-    FractionPrepositionWithinPercentModeRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
-    AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
-    AllFloatRegex = f'{AllIntRegex}(\\s+punkt){AllPointRegex}'
-    DoubleWithMultiplierRegex = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
-    DoubleExponentialNotationRegex = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)'
-    DoubleCaretExponentialNotationRegex = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
+    FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\\b)'
+    FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)'
+    AllPointRegex = f'((\\s*{ZeroToNineIntegerRegex})+|(\\s*{SeparaIntRegex}))'
+    AllFloatRegex = f'({AllIntRegex}(\\s*komma\\s*){AllPointRegex})'
+    DoubleWithMultiplierRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
+    DoubleExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)'
+    DoubleCaretExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
 
     def DoubleDecimalPointRegex(placeholder):
-        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
-    DoubleIndianDecimalPointRegex = f'(?<=\\b)((?:\\d{{1,2}},(?:\\d{{2}},)*\\d{{3}})(?:\\.\\d{{2}})(?=\\b))'
+        return f'(?<=\\b)((\\d{{1,3}})(\\.\\d{{3}})*(\\,\\d+)?)(?={placeholder})'
 
     def DoubleWithoutIntegralRegex(placeholder):
-        return f'(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
-    DoubleWithRoundNumber = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
+        return f'(?<=\\s|^)(?<!(\\d+))\\.\\d+(?!(\\.\\d+))(?={placeholder})'
+    DoubleWithRoundNumber = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+\\,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     ConnectorRegex = f'(?<spacer>und)'
-    NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(Prozent(e)?)\\b)'
-    FractionNumberWithSuffixPercentage = f'(({BaseNumbers.FractionNumberReplaceToken})\\s+of)'
-    NumberWithPrefixPercentage = f'(Prozent+von)(\\s*)({BaseNumbers.NumberReplaceToken})'
-    NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+von)\\s*({BaseNumbers.NumberReplaceToken})'
-    TillRegex = f'(bis|bis zu|--|-|—|——|~|–)'
+    NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent(punkte)?\\b)'
+    NumberWithPrefixPercentage = f'(prozent)(\\s*)({BaseNumbers.NumberReplaceToken})'
+    TillRegex = f'(bis(\\s+zu)?|--|-|—|——|~|–)'
     MoreRegex = f'(?:(größer|höher|mehr)(\\s+als)?|über|darüber(hinaus)?|(?<!<|=)>)'
     LessRegex = f'(?:(weniger|winziger|kleiner|wenig)(\\s+als)?|darunter|unter|(?<!>|=)<)'
     EqualRegex = f'(gleich(\\s+(als|zu))?|(?<!<|>)=)'
@@ -85,8 +78,8 @@ class GermanNumeric:
     LessOrEqual = f'(({LessRegex}\\s+(oder)?\\s+{EqualRegex})|({EqualRegex}\\s+(oder)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(oder)?\\s+{EqualRegex})?|({EqualRegex}\\s+(oder)?\\s+)?{LessOrEqualPrefix}|<\\s*=|≤)'
     LessOrEqualSuffix = f'((und|oder)\\s+(weniger|geringer|kleiner|winziger)((?!\\s+als)|(\\s+als(?!(\\s*\\d+)))))'
     NumberSplitMark = f'(?![,.](?!\\d+))'
-    MoreRegexNoNumberSucceed = f'((größer|mehr|höhrer|breiter)((?!\\s+als)|\\s+(als(?!(\\s*\\d+))))|(darüber|über)(?!(\\s*\\d+)))'
-    LessRegexNoNumberSucceed = f'((kleiner|weniger|winziger)((?!\\s+als)|\\s+(als(?!(\\s*\\d+))))|(unter|darunter)(?!(\\s*\\d+)))'
+    MoreRegexNoNumberSucceed = f'((größer|mehr|höhrer|breiter)((?!\\s+als)|\\s+(als(?!(\\s*\\d+))))|((dar)?über)(?!(\\s*\\d+)))'
+    LessRegexNoNumberSucceed = f'((kleiner|weniger|winziger)((?!\\s+als)|\\s+(als(?!(\\s*\\d+))))|((dar)?unter)(?!(\\s*\\d+)))'
     EqualRegexNoNumberSucceed = f'(gleich(s|ing)?((?!\\s+(zu|als))|(\\s+(zu|als)(?!(\\s*\\d+)))))'
     OneNumberRangeMoreRegex1 = f'({MoreOrEqual}|{MoreRegex})\\s*(der\\s+)?(?<number1>({NumberSplitMark}.)+)'
     OneNumberRangeMoreRegex2 = f'(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}'
@@ -97,28 +90,33 @@ class GermanNumeric:
     OneNumberRangeEqualRegex = f'{EqualRegex}\\s*(the\\s+)?(?<number1>({NumberSplitMark}.)+)'
     TwoNumberRangeRegex1 = f'zwischen\\s*(der\\s+)?(?<number1>({NumberSplitMark}.)+)\\s*und\\s*(der\\s+)?(?<number2>({NumberSplitMark}.)+)'
     TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(und|aber|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})'
-    TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\\s*(und|aber|,)\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})'
-    TwoNumberRangeRegex4 = f'(von\\s+)?(?<number1>({NumberSplitMark}(?!\\bvon\\b).)+)\\s*{TillRegex}\\s*(the\\s+)?(?<number2>({NumberSplitMark}.)+)'
-    AmbiguousFractionConnectorsRegex = f'(\\bin\\b)'
-    DecimalSeparatorChar = '.'
+    TwoNumberRangeRegex3 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(und|aber|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})'
+    TwoNumberRangeRegex4 = f'(von\\s+)?(?<number1>({NumberSplitMark}(?!\\bvon\\b).)+)\\s*{TillRegex}\\s*(der\\s+)?(?<number2>({NumberSplitMark}.)+)'
+    AmbiguousFractionConnectorsRegex = f'^[.]'
+    DecimalSeparatorChar = ','
     FractionMarkerToken = 'over'
-    NonDecimalSeparatorChar = ','
+    NonDecimalSeparatorChar = '.'
     HalfADozenText = 'sechs'
     WordSeparatorToken = 'und'
-    WrittenDecimalSeparatorTexts = [r'punkt']
+    WrittenDecimalSeparatorTexts = [r'komma']
     WrittenGroupSeparatorTexts = [r'punkt']
     WrittenIntegerSeparatorTexts = [r'und']
-    WrittenFractionSeparatorTexts = [r'und']
-    HalfADozenRegex = f'halbes\\s+a\\s+dutzend'
-    DigitalNumberRegex = f'((?<=\\b)(hundert|tausend|[mb]illion|trillion|hundertausend|zehn millionen|dutzend(e)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    WrittenFractionSeparatorTexts = [r'durch']
+    HalfADozenRegex = f'ein\\s+halbes\\s+dutzend'
+    DigitalNumberRegex = f'((?<=\\b)(hundert|tausend|million(en)?|mio|milliarde(n)?|mrd|billion(en)?|dutzend(e)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("ein", 1),
                               ("null", 0),
                               ("eine", 1),
                               ("eins", 1),
+                              ("einer", 1),
+                              ("einen", 1),
+                              ("beiden", 2),
                               ("zwei", 2),
+                              ("zwo", 2),
                               ("drei", 3),
                               ("vier", 4),
                               ("fünf", 5),
+                              ("fuenf", 5),
                               ("sechs", 6),
                               ("sieben", 7),
                               ("acht", 8),
@@ -126,12 +124,13 @@ class GermanNumeric:
                               ("zehn", 10),
                               ("elf", 11),
                               ("zwölf", 12),
+                              ("zwoelf", 12),
                               ("dutzend", 12),
-                              ("dutzende", 12),
                               ("dreizehn", 13),
                               ("vierzehn", 14),
                               ("fünfzehn", 15),
-                              ("sechszehn", 16),
+                              ("fuenfzehn", 15),
+                              ("sechzehn", 16),
                               ("siebzehn", 17),
                               ("achtzehn", 18),
                               ("neunzehn", 19),
@@ -139,185 +138,265 @@ class GermanNumeric:
                               ("dreißig", 30),
                               ("vierzig", 40),
                               ("fünfzig", 50),
-                              ("sechszig", 60),
+                              ("fuenfzig", 50),
+                              ("sechzig", 60),
                               ("siebzig", 70),
                               ("achtzig", 80),
                               ("neunzig", 90),
                               ("hundert", 100),
-                              ("einhundert", 100),
                               ("tausend", 1000),
-                              ("eintausend", 1000),
                               ("million", 1000000),
-                              ("billion", 1000000000),
-                              ("trillion", 1000000000000),
-                              ("hunderttausend", 100000),
-                              ("einhunderttausend", 100000),
-                              ("zehn millionen", 10000000)])
-    OrdinalNumberMap = dict([("erstens", 1),
-                             ("zweitens", 2),
-                             ("drittens", 2),
-                             ("viertens", 2),
-                             ("fünftens", 3),
-                             ("sechstens", 4),
-                             ("siebentens", 7),
-                             ("achtens", 8),
-                             ("neuntens", 9),
-                             ("zehntens", 10),
-                             ("elftens", 11),
-                             ("zwölftens", 12),
-                             ("dreizehntens", 13),
-                             ("vierzehntens", 14),
-                             ("fühnzehntens", 15),
-                             ("sechszehntens", 16),
-                             ("siebzehntens", 17),
-                             ("achtzehntens", 18),
-                             ("neunzehntens", 19),
-                             ("zwanzigstens", 20),
-                             ("dreißigstens", 30),
-                             ("vierzigstens", 40),
-                             ("fünzigstens", 50),
-                             ("sechzigstens", 60),
-                             ("siebzigstens", 70),
-                             ("achtzigstens", 80),
-                             ("neunzigstens", 90),
-                             ("hundertstens", 100),
-                             ("einhundertstens", 100),
-                             ("tausendstens", 1000),
-                             ("einstens", 1000),
-                             ("millionstens", 1000000),
-                             ("billionstens", 1000000000),
-                             ("trillionstens", 1000000000000),
-                             ("erste", 1),
-                             ("zweite", 2),
-                             ("halbe", 2),
-                             ("dritte", 2),
-                             ("vierte", 2),
-                             ("viertel", 2),
-                             ("fünfte", 3),
-                             ("sechste", 4),
-                             ("siebente", 7),
-                             ("achte", 8),
-                             ("neunte", 9),
-                             ("zehnte", 10),
-                             ("elfte", 11),
-                             ("zwölfte", 12),
-                             ("dreizehnte", 13),
-                             ("vierzehnte", 14),
-                             ("fühnzehnte", 15),
-                             ("sechszehnte", 16),
-                             ("siebzehnte", 17),
-                             ("achtzehnte", 18),
-                             ("neunzehnte", 19),
-                             ("zwanzigste", 20),
-                             ("dreißigste", 30),
-                             ("vierzigste", 40),
-                             ("fünzigste", 50),
-                             ("sechzigste", 60),
-                             ("siebzigste", 70),
-                             ("achtzigste", 80),
-                             ("neunzigste", 90),
-                             ("hundertste", 100),
-                             ("einhundertste", 100),
-                             ("tausendste", 1000),
-                             ("eintausendste", 1000),
-                             ("millionste", 1000000),
-                             ("billionste", 1000000000),
-                             ("trillionste", 1000000000000),
+                              ("mio", 1000000),
+                              ("millionen", 1000000),
+                              ("milliard", 100000000),
+                              ("milliarde", 1000000000),
+                              ("mrd", 1000000000),
+                              ("milliarden", 1000000000),
+                              ("billion", 1000000000000),
+                              ("billionen", 1000000000000)])
+    OrdinalNumberMap = dict([("zuerst", 1),
+                             ("erst", 1),
                              ("erster", 1),
+                             ("erste", 1),
+                             ("erstes", 1),
+                             ("ersten", 1),
+                             ("zweit", 2),
                              ("zweiter", 2),
+                             ("zweite", 2),
+                             ("zweites", 2),
+                             ("zweiten", 2),
+                             ("halb", 2),
+                             ("halbe", 2),
+                             ("halbes", 2),
+                             ("hälfte", 2),
+                             ("haelfte", 2),
+                             ("dritt", 3),
                              ("dritter", 3),
+                             ("dritte", 3),
+                             ("drittes", 3),
+                             ("dritten", 3),
+                             ("drittel", 3),
+                             ("viert", 4),
                              ("vierter", 4),
-                             ("vierteln", 4),
+                             ("vierte", 4),
+                             ("viertes", 4),
+                             ("vierten", 4),
+                             ("viertel", 4),
+                             ("fünft", 5),
                              ("fünfter", 5),
+                             ("fünfte", 5),
+                             ("fünftes", 5),
+                             ("fünften", 5),
+                             ("fuenft", 5),
+                             ("fuenfter", 5),
+                             ("fuenfte", 5),
+                             ("fuenftes", 5),
+                             ("fuenften", 5),
+                             ("fünftel", 5),
+                             ("fuenftel", 5),
+                             ("sechst", 6),
                              ("sechster", 6),
-                             ("siebenter", 7),
+                             ("sechste", 6),
+                             ("sechstes", 6),
+                             ("sechsten", 6),
+                             ("sechstel", 6),
+                             ("siebt", 7),
+                             ("siebter", 7),
+                             ("siebte", 7),
+                             ("siebtes", 7),
+                             ("siebten", 7),
+                             ("siebtel", 7),
+                             ("acht", 8),
                              ("achter", 8),
+                             ("achte", 8),
+                             ("achtes", 8),
+                             ("achten", 8),
+                             ("achtel", 8),
+                             ("neunt", 9),
                              ("neunter", 9),
+                             ("neunte", 9),
+                             ("neuntes", 9),
+                             ("neunten", 9),
+                             ("neuntel", 9),
+                             ("zehnt", 10),
                              ("zehnter", 10),
+                             ("zehnte", 10),
+                             ("zehntes", 10),
+                             ("zehnten", 10),
+                             ("zehntel", 10),
+                             ("elft", 11),
                              ("elfter", 11),
+                             ("elfte", 11),
+                             ("elftes", 11),
+                             ("elften", 11),
+                             ("elftel", 11),
+                             ("zwölft", 12),
                              ("zwölfter", 12),
+                             ("zwölfte", 12),
+                             ("zwölftes", 12),
+                             ("zwölften", 12),
+                             ("zwoelft", 12),
+                             ("zwoelfter", 12),
+                             ("zwoelfte", 12),
+                             ("zwoelftes", 12),
+                             ("zwoelften", 12),
+                             ("zwölftel", 12),
+                             ("zwoelftel", 12),
+                             ("dreizehnt", 13),
                              ("dreizehnter", 13),
+                             ("dreizehnte", 13),
+                             ("dreizehntes", 13),
+                             ("dreizehnten", 13),
+                             ("dreizehntel", 13),
+                             ("vierzehnt", 14),
                              ("vierzehnter", 14),
+                             ("vierzehnte", 14),
+                             ("vierzehntes", 14),
+                             ("vierzehnten", 14),
+                             ("vierzehntel", 14),
+                             ("fünfzehnt", 15),
                              ("fünfzehnter", 15),
-                             ("sechszehnter", 16),
+                             ("fünfzehnte", 15),
+                             ("fünfzehntes", 15),
+                             ("fünfzehnten", 15),
+                             ("fünfzehntel", 15),
+                             ("fuenfzehnt", 15),
+                             ("fuenfzehnter", 15),
+                             ("fuenfzehnte", 15),
+                             ("fuenfzehntes", 15),
+                             ("fuenfzehnten", 15),
+                             ("fuenfzehntel", 15),
+                             ("sechzehnt", 16),
+                             ("sechzehnter", 16),
+                             ("sechzehnte", 16),
+                             ("sechzehntes", 16),
+                             ("sechzehnten", 16),
+                             ("sechzehntel", 16),
+                             ("siebzehnt", 17),
                              ("siebzehnter", 17),
-                             ("achtzehner", 18),
+                             ("siebzehnte", 17),
+                             ("siebzehntes", 17),
+                             ("siebzehnten", 17),
+                             ("siebzehntel", 17),
+                             ("achtzehnt", 18),
+                             ("achtzehnter", 18),
+                             ("achtzehnte", 18),
+                             ("achtzehntes", 18),
+                             ("achtzehnten", 18),
+                             ("achtzehntel", 18),
+                             ("neunzehnt", 19),
                              ("neunzehnter", 19),
+                             ("neunzehnte", 19),
+                             ("neunzehntes", 19),
+                             ("neunzehnten", 19),
+                             ("neunzehntel", 19),
+                             ("zwanzigst", 20),
                              ("zwanzigster", 20),
+                             ("zwanzigste", 20),
+                             ("zwanzigstes", 20),
+                             ("zwanzigsten", 20),
+                             ("zwangtigstel", 20),
+                             ("dreißigst", 30),
                              ("dreißigster", 30),
+                             ("dreißigste", 30),
+                             ("dreißigstes", 30),
+                             ("dreißigsten", 30),
+                             ("dreißigstel", 30),
+                             ("vierzigst", 40),
                              ("vierzigster", 40),
+                             ("vierzigste", 40),
+                             ("vierzigstes", 40),
+                             ("vierzigsten", 40),
+                             ("vierzigstel", 40),
+                             ("fünfzigst", 50),
                              ("fünfzigster", 50),
-                             ("sechszigster", 60),
+                             ("fünfzigste", 50),
+                             ("fünfzigsten", 50),
+                             ("fünfzigstes", 50),
+                             ("fünfzigstel", 50),
+                             ("fuenfzigst", 50),
+                             ("fuenfzigster", 50),
+                             ("fuenfzigste", 50),
+                             ("fuenfzigstes", 50),
+                             ("fuenfzigsten", 50),
+                             ("fuenfzigstel", 50),
+                             ("sechzigst", 60),
+                             ("sechzigster", 60),
+                             ("sechzigste", 60),
+                             ("sechzigstes", 60),
+                             ("sechzigsten", 60),
+                             ("sechzigstel", 60),
+                             ("siebzigst", 70),
                              ("siebzigster", 70),
+                             ("siebzigste", 70),
+                             ("siebzigstes", 70),
+                             ("siebzigsten", 70),
+                             ("siebzigstel", 70),
+                             ("achtzigst", 80),
                              ("achtzigster", 80),
+                             ("achtzigste", 80),
+                             ("achtzigstes", 80),
+                             ("achtzigsten", 80),
+                             ("achtzigstel", 80),
+                             ("neunzigst", 90),
                              ("neunzigster", 90),
-                             ("hunderster", 100),
+                             ("neunzigste", 90),
+                             ("neunzigstes", 90),
+                             ("neunzigsten", 90),
+                             ("neunzigstel", 90),
+                             ("hundertst", 100),
+                             ("hundertster", 100),
+                             ("hundertste", 100),
+                             ("hundertstes", 100),
+                             ("hundertsten", 100),
+                             ("hundertstel", 100),
+                             ("tausendst", 1000),
                              ("tausendster", 1000),
-                             ("eintausendster", 1000),
+                             ("tausendste", 1000),
+                             ("tausendstes", 1000),
+                             ("tausendsten", 1000),
+                             ("tausendstel", 1000),
+                             ("millionst", 1000000),
                              ("millionster", 1000000),
-                             ("billionster", 1000000000),
-                             ("trillionster", 1000000000000)])
+                             ("millionste", 1000000),
+                             ("millionstes", 1000000),
+                             ("millionsten", 1000000),
+                             ("millionstel", 1000000),
+                             ("milliardster", 1000000000),
+                             ("milliardste", 1000000000),
+                             ("milliardstes", 1000000000),
+                             ("milliardsten", 1000000000),
+                             ("milliardstel", 1000000000),
+                             ("billionster", 1000000000000),
+                             ("billionste", 1000000000000),
+                             ("billionstes", 1000000000000),
+                             ("billionsten", 1000000000000),
+                             ("billionstel", 1000000000000)])
     RoundNumberMap = dict([("hundert", 100),
-                           ("einhundert", 100),
                            ("tausend", 1000),
-                           ("eintausend", 1000),
                            ("million", 1000000),
-                           ("billion", 1000000000),
-                           ("trillion", 1000000000000),
-                           ("hunderttausend", 100000),
-                           ("einhunderttausend", 100000),
-                           ("zehn millionen", 10000000),
-                           ("hundertste", 100),
-                           ("einhundertste", 100),
-                           ("tausenste", 1000),
-                           ("millionste", 1000000),
-                           ("billionste", 1000000000),
-                           ("trillionste", 1000000000000),
-                           ("hundertster", 100),
-                           ("einhundertster", 100),
-                           ("tausenster", 1000),
-                           ("millionster", 1000000),
-                           ("billionster", 1000000000),
-                           ("trillionster", 1000000000000),
+                           ("millionen", 1000000),
+                           ("mio", 1000000),
+                           ("milliard", 1000000000),
+                           ("milliarde", 1000000000),
+                           ("milliarden", 1000000000),
+                           ("mrd", 1000000000),
+                           ("billion", 1000000000000),
+                           ("billionen", 1000000000000),
+                           ("hundertstel", 100),
+                           ("tausendstel", 1000),
+                           ("millionstel", 1000000),
+                           ("milliardstel", 1000000000),
+                           ("billionstel", 1000000000000),
+                           ("hundredths", 100),
                            ("dutzend", 12),
                            ("dutzende", 12),
                            ("k", 1000),
                            ("m", 1000000),
-                           ("mm", 1000000),
-                           ("mil", 1000000),
                            ("g", 1000000000),
                            ("b", 1000000000),
                            ("t", 1000000000000)])
-    AmbiguityFiltersDict = dict([("\\bone\\b", "\\b(der|die|das|wer)\\s+(ein)\\b")])
-    RelativeReferenceOffsetMap = dict([("letztes", "0"),
-                                       ("letzte", "0"),
-                                       ("letzter", "0"),
-                                       ("nächstes", "1"),
-                                       ("nächste", "1"),
-                                       ("nächster", "1"),
-                                       ("aktuelles", "0"),
-                                       ("aktuelle", "0"),
-                                       ("aktueller", "0"),
-                                       ("vorheriges", "-1"),
-                                       ("vorherige", "-1"),
-                                       ("vorheriger", "-1"),
-                                       ("zweitletztes", "-1"),
-                                       ("zweitletzter", "-1"),
-                                       ("zweitletzte", "-1"),
-                                       ("vorvorletztes", "-2"),
-                                       ("vorvorletzte", "-2"),
-                                       ("vorvorletzter", "-2"),
-                                       ("drittletztes", "-2"),
-                                       ("drittletzte", "-2"),
-                                       ("drittletzter", "-2")
-                                       ])
-    RelativeReferenceRelativeToMap = dict([("letzer", "end"),
-                                           ("nächster", "aktueller"),
-                                           ("letzter", "aktueller"),
-                                           ("aktuelles", "aktueller"),
-                                           ("aktuelle", "aktueller"),
-                                           ("zweitletzter", "ende"),
-                                           ("drittletzte", "ende"),
-                                           ("nächstes", "aktuell"),
-                                           ("vorheriger", "aktueller")])
+    AmbiguityFiltersDict = dict([("^[.]", "")])
+    RelativeReferenceOffsetMap = dict([("", "")])
+    RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

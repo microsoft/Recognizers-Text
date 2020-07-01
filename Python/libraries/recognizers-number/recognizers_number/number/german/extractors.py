@@ -119,11 +119,11 @@ class GermanIntegerExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     GermanNumeric.AllIntRegexWithLocks),
-                val='IntegerEng'),
+                val='IntegerGer'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     GermanNumeric.AllIntRegexWithDozenSuffixLocks),
-                val='IntegerEng')
+                val='IntegerGer')
         ]
 
 
@@ -165,7 +165,7 @@ class GermanDoubleExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     GermanNumeric.DoubleAllFloatRegex),
-                val='DoubleEng'),
+                val='DoubleGer'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     GermanNumeric.DoubleExponentialNotationRegex),
@@ -199,11 +199,11 @@ class GermanFractionExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     GermanNumeric.FractionNounRegex),
-                val='FracEng'),
+                val='FracGer'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     GermanNumeric.FractionNounWithArticleRegex),
-                val='FracEng')
+                val='FracGer')
         ]
 
         if mode != NumberMode.Unit:
@@ -211,7 +211,7 @@ class GermanFractionExtractor(BaseNumberExtractor):
                 ReVal(
                     re=RegExpUtility.get_safe_reg_exp(
                         GermanNumeric.FractionPrepositionRegex),
-                    val='FracEng'))
+                    val='FracGer'))
 
 
 class GermanOrdinalExtractor(BaseNumberExtractor):
@@ -233,10 +233,10 @@ class GermanOrdinalExtractor(BaseNumberExtractor):
                 val='OrdinalNum'),
             ReVal(
                 re=GermanNumeric.OrdinalGermanRegex,
-                val='OrdEng'),
+                val='OrdGer'),
             ReVal(
                 re=GermanNumeric.OrdinalRoundNumberRegex,
-                val='OrdEng')
+                val='OrdGer')
         ]
 
 

@@ -71,6 +71,7 @@ class SpanishDateTime:
     InConnectorRegex = f'\\b(in)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'\\b(dentro\\s+de)\\b'
+    TodayNowRegex = f'\\b(hoy|ahora)\\b'
     FromRegex = f'((de(sde)?)(\\s*la(s)?)?)$'
     BetweenRegex = f'(entre\\s*(la(s)?)?)'
     WeekDayRegex = f'\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b'

@@ -192,6 +192,7 @@ class FrenchDateTime:
     InConnectorRegex = f'\\b(dans|en|sur)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
+    TodayNowRegex = f'\\b(aujourd\'hui|maintenant)\\b'
     MorningStartEndRegex = f'(^(matin))|((matin)$)'
     AfternoonStartEndRegex = f'(^((d\'|l\')?apr[eè]s-midi))|(((d\'|l\')?apr[eè]s-midi)$)'
     EveningStartEndRegex = f'(^(soir[ée]e|soir))|((soir[ée]e|soir)$)'
