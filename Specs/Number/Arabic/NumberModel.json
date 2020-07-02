@@ -3136,8 +3136,8 @@
   },
   {
     "Input": "مائة وواحدة وستون طاولة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة وواحدة وستون",
@@ -3153,8 +3153,8 @@
   },
   {
     "Input": "ثلاث مائة وواحدة وثلاثون طاولة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاث مائة وواحدة وثلاثون",
@@ -3170,8 +3170,8 @@
   },
   {
     "Input": "١ في واحدة و عشرون",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١ في واحدة و عشرون",
@@ -3669,8 +3669,8 @@
   },
   {
     "Input": "اشتريتُ مائة وواحدة وستين طاولة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "مائة وواحدة وستين",
@@ -3686,8 +3686,8 @@
   },
   {
     "Input": "اشتريتُ ثلاث مائة وواحدة وثلاثين طاولة",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "ثلاث مائة وواحدة وثلاثين",
@@ -3703,8 +3703,8 @@
   },
   {
     "Input": "١ في واحدة و عشرين",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "١ في واحدة و عشرين",
