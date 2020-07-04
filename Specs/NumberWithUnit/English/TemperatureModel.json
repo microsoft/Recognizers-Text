@@ -395,7 +395,7 @@
     ]
   },
   {
-    "Input": "convert 200 celsius celsius into fahrenheit",
+    "Input": "convert 200 celsius into fahrenheit",
     "Results": [
       {
         "Text": "200 celsius",
