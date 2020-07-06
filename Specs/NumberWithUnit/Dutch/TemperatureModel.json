@@ -420,7 +420,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "converteer 200 graden Celsius celsius naar Fahrenheit",
+    "Input": "converteer 200 graden Celsius naar Fahrenheit",
     "Results": [
       {
         "Text": "200 graden celsius",

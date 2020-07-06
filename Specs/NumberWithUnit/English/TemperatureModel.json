@@ -475,7 +475,7 @@
     ]
   },
   {
-    "Input": "50 degrees celsius celsius to fahrenheit",
+    "Input": "50 degrees celsius to fahrenheit",
     "Results": [
       {
         "Text": "50 degrees celsius",
