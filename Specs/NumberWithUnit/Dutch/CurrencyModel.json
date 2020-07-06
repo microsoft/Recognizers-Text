@@ -113,10 +113,9 @@
   },
   {
     "Input": "De internationale symbolen voor munteenheden kunnen voor of achter het bedrag staan (bijvoorbeeld 200 EUR, EUR 500). In Nederland is het gebruikelijk de muntcode voor het bedrag te zetten, in Vlaanderen erachter.",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "200 EUR",
+        "Text": "200 eur",
         "TypeName": "currency",
         "Resolution": {
           "unit": "Euro",
@@ -124,7 +123,7 @@
         }
       },
       {
-        "Text": "EUR 500",
+        "Text": "eur 500",
         "TypeName": "currency",
         "Resolution": {
           "unit": "Euro",
@@ -178,13 +177,14 @@
   },
   {
     "Input": "Hij is me nog een tientje schuldig.",
+    "Comment": "Fractions are supported, however amounts higher than 1 Euro are not, such as 'tientje', 10 Euro. Also, 'dubbeltje' and 'stuiver' are still in use, but 'tientje' not, ref: https://nl.wikipedia.org/wiki/Nederlandse_gulden",
     "Results": [
       {
         "Text": "tientje",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Euro",
-          "value": "10"
+          "unit": "Tientje",
+          "value": "1"
         }
       }
     ],
@@ -195,11 +195,11 @@
     "Input": "Een kwartje is 25 cent.",
     "Results": [
       {
-        "Text": "kwartje",
+        "Text": "een kwartje",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Netherlands guilder",
-          "value": "0,25"
+          "unit": "Kwartje",
+          "value": "1"
         }
       },
       {
@@ -207,22 +207,21 @@
         "TypeName": "currency",
         "Resolution": {
           "unit": "Cent",
-          "value": "0,25"
+          "value": "25"
         }
       }
     ],
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Een dubbeltje is 10 cent.",
     "Results": [
       {
-        "Text": "dubbeltje",
+        "Text": "een dubbeltje",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Netherlands guilder",
-          "value": "0,1"
+          "unit": "Dubbeltje",
+          "value": "1"
         }
       },
       {
@@ -230,22 +229,21 @@
         "TypeName": "currency",
         "Resolution": {
           "unit": "Cent",
-          "value": "0,1"
+          "value": "10"
         }
       }
     ],
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Een stuiver is 5 cent.",
     "Results": [
       {
-        "Text": "stuiver",
+        "Text": "een stuiver",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Netherlands guilder",
-          "value": "0,05"
+          "unit": "Stuiver",
+          "value": "1"
         }
       },
       {
@@ -253,11 +251,10 @@
         "TypeName": "currency",
         "Resolution": {
           "unit": "Cent",
-          "value": "0,05"
+          "value": "5"
         }
       }
     ],
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
