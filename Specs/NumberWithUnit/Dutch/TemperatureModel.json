@@ -433,24 +433,14 @@
         "End": 28
       },
       {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 22,
-        "End": 28
-      },
-      {
         "Text": "fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 43,
-        "End": 52
+        "Start": 35,
+        "End": 44
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
