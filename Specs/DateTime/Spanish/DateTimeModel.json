@@ -6870,31 +6870,6 @@
     ]
   },
   {
-    "Input": "el rango es de 2014 a 2018.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "de 2014 a 2018",
-        "Start": 12,
-        "End": 25,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2014-01-01,2018-01-01,P4Y)",
-              "type": "daterange",
-              "start": "2014-01-01",
-              "end": "2018-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "el rango es del año 2014 al 2018.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -11190,30 +11165,6 @@
     ]
   },
   {
-    "Input": "supongo que una hora y media es suficiente para terminar la tarea.",
-    "Context": {
-      "ReferenceDateTime": "2018-12-05T12:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "una hora y media ",
-        "Start": 12,
-        "End": 28,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1.5H",
-              "type": "duration",
-              "value": "5400"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "supongo que una y media hora es suficiente para terminar la tarea.",
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
@@ -11224,30 +11175,6 @@
         "Text": "una y media hora ",
         "Start": 12,
         "End": 28,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1.5H",
-              "type": "duration",
-              "value": "5400"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "supongo que una y media hora es suficiente para terminar la tarea.",
-    "Context": {
-      "ReferenceDateTime": "2018-12-05T12:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "una y media hora",
-        "Start": 12,
-        "End": 27,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -12087,14 +12014,6 @@
     "Results": []
   },
   {
-    "Input": "¿es esta una fecha válida? 32 - 2015",
-    "Context": {
-      "ReferenceDateTime": "2019-02-27T00:00:00"
-    },
-    "NotSupported": "javascript, java, python",
-    "Results": []
-  },
-  {
     "Input": "¿es esta una fecha válida? diciembre de 2015",
     "Context": {
       "ReferenceDateTime": "2019-02-27T00:00:00"
@@ -12118,22 +12037,6 @@
         }
       }
     ]
-  },
-  {
-    "Input": "¿es esta una fecha válida? 32-2015",
-    "Context": {
-      "ReferenceDateTime": "2019-02-27T00:00:00"
-    },
-    "NotSupported": "javascript, java, python",
-    "Results": []
-  },
-  {
-    "Input": "¿es esta una fecha válida? 32-2015",
-    "Context": {
-      "ReferenceDateTime": "2019-02-27T00:00:00"
-    },
-    "NotSupported": "javascript, java, python",
-    "Results": []
   },
   {
     "Input": "tel: +86 138-2010-2015",
@@ -14386,31 +14289,6 @@
   {
     "Input": "ventas del último trimestre",
     "Context": {
-      "ReferenceDateTime": "2019-07-04T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "último trimestre",
-        "Start": 11,
-        "End": 26,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2019-04-01,2019-07-01,P3M)",
-              "type": "daterange",
-              "start": "2019-04-01",
-              "end": "2019-07-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "ventas del último trimestre",
-    "Context": {
       "ReferenceDateTime": "2019-01-28T00:00:00"
     },
     "NotSupported": "javascript, python, java",
@@ -14427,31 +14305,6 @@
               "type": "daterange",
               "start": "2018-10-01",
               "end": "2019-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "discutamos el trabajo para el próximo trimestre.",
-    "Context": {
-      "ReferenceDateTime": "2019-07-04T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "el próximo trimestre",
-        "Start": 27,
-        "End": 46,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2019-10-01,2020-01-01,P3M)",
-              "type": "daterange",
-              "start": "2019-10-01",
-              "end": "2020-01-01"
             }
           ]
         }
@@ -14647,35 +14500,6 @@
               "timex": "XXXX-12-27T00:30",
               "type": "datetime",
               "value": "2019-12-27 00:30:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "lo compré por $12 el 27 de diciembre",
-    "Context": {
-      "ReferenceDateTime": "2019-07-04T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "el 27 de diciembre",
-        "Start": 18,
-        "End": 35,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-12-27",
-              "type": "date",
-              "value": "2018-12-27"
-            },
-            {
-              "timex": "XXXX-12-27",
-              "type": "date",
-              "value": "2019-12-27"
             }
           ]
         }
@@ -17390,14 +17214,39 @@
     "Results": []
   },
   {
-    "Input": "el covid-19 fue muy serio el 02-feb-2020-03-mar-2020",
+    "Input": "el covid-19 fue muy serio el 02-feb-2020 - 03-mar-2020",
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "02-feb-2020-03-mar-2020",
+        "Text": "02-feb-2020 - 03-mar-2020",
+        "Start": 29,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-02-02,2020-03-03,P30D)",
+              "type": "daterange",
+              "start": "2020-02-02",
+              "end": "2020-03-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "el covid-19 fue muy serio el 02-02-2020 - 03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "02-02-2020 - 03-03-2020",
         "Start": 29,
         "End": 51,
         "TypeName": "datetimeV2.daterange",
@@ -17709,54 +17558,6 @@
         "Text": "4-jul-95",
         "Start": 0,
         "End": 7,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "1995-07-04",
-              "type": "date",
-              "value": "1995-07-04"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "cuatro de julio de 1995",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript,python",
-    "Results": [
-      {
-        "Text": "cuatro de julio de 1995",
-        "Start": 0,
-        "End": 22,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "1995-07-04",
-              "type": "date",
-              "value": "1995-07-04"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "cuatro de julio, 1995",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript,python",
-    "Results": [
-      {
-        "Text": "cuatro de julio, 1995",
-        "Start": 0,
-        "End": 20,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
