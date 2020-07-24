@@ -4841,7 +4841,7 @@
     "NotSupportedByDesign": "javascript,python,java,dotnet",
     "Results": [
       {
-        "Text": "4月の最後の月曜日から10月1日まで",
+        "Text": "4月の最終月曜日から10月1日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
@@ -4856,6 +4856,1508 @@
         },
         "Start": 0,
         "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "一月十日から十二日まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一月十日から十二日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-10,XXXX-01-12,P2D)",
+          "FutureResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-10",
+            "endDate": "2017-01-12"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "2016年一月十日から十二日にわたって",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年一月十日から十二日にわたって",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-10,2016-01-12,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-01-10",
+            "endDate": "2016-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-10",
+            "endDate": "2016-01-12"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "1月19日から20日まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1月19日から20日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-19,XXXX-01-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2018-01-19",
+            "endDate": "2018-01-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-19",
+            "endDate": "2017-01-20"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "一月十日から廿日にまで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一月十日から廿日にまで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-10,XXXX-01-20,P10D)",
+          "FutureResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-01-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-10",
+            "endDate": "2017-01-20"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "来年の4月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来年の4月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-04",
+          "FutureResolution": {
+            "startDate": "2018-04-01",
+            "endDate": "2018-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-04-01",
+            "endDate": "2018-05-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "去年の5月に会ったことある。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "去年の5月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "次の週末",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "次の週末",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W13-WE",
+          "FutureResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-04-03"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-04-03"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "会議は来週になりました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来週",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W13",
+          "FutureResolution": {
+            "startDate": "2017-03-27",
+            "endDate": "2017-04-03"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-27",
+            "endDate": "2017-04-03"
+          }
+        },
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "来月まで終わります。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-04",
+          "FutureResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-05-01"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "来週はどうですか？",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来週",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W13",
+          "FutureResolution": {
+            "startDate": "2017-03-27",
+            "endDate": "2017-04-03"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-27",
+            "endDate": "2017-04-03"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "来年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "オリンピックは2008年に行われました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008",
+          "FutureResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "10月の第1週は建国記念日の連休です。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10月の第1週",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10-W01",
+          "FutureResolution": {
+            "startDate": "2017-09-25",
+            "endDate": "2017-10-02"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-03",
+            "endDate": "2016-10-10"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "3月28日から4月15日まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3月28日から4月15日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-03-28,XXXX-04-15,P18D)",
+          "FutureResolution": {
+            "startDate": "2017-03-28",
+            "endDate": "2017-04-15"
+          },
+          "PastResolution": {
+            "startDate": "2016-03-28",
+            "endDate": "2016-04-15"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "先週",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "先週",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-03-15,2017-03-22,P1W)",
+          "FutureResolution": {
+            "startDate": "2017-03-15",
+            "endDate": "2017-03-22"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-15",
+            "endDate": "2017-03-22"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "前の二ヶ月間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "前の二ヶ月間",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-01-22,2017-03-22,P2M)",
+          "FutureResolution": {
+            "startDate": "2017-01-22",
+            "endDate": "2017-03-22"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-22",
+            "endDate": "2017-03-22"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "この三年間、一番売れるブランドはなんですか？",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "この三年間",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-03-22,2017-03-22,P3Y)",
+          "FutureResolution": {
+            "startDate": "2014-03-22",
+            "endDate": "2017-03-22"
+          },
+          "PastResolution": {
+            "startDate": "2014-03-22",
+            "endDate": "2017-03-22"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "翌年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "翌年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-03-23,2018-03-23,P1Y)",
+          "FutureResolution": {
+            "startDate": "2017-03-23",
+            "endDate": "2018-03-23"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-23",
+            "endDate": "2018-03-23"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "次の二日間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "次の二日間",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-03-23,2017-03-25,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-03-23",
+            "endDate": "2017-03-25"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-23",
+            "endDate": "2017-03-25"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今夏",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今夏",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "今年の第一クォーター",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今年の第一クォーター",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-01-01,2017-04-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-04-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2016年から2018年にわたって",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年から2018年にわたって",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2018-01-01,P2Y)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "2016年から2018年まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年から2018年まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2018-01-01,P2Y)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "二〇一六年から二〇一八年まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇一六年から二〇一八年まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2018-01-01,P2Y)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "前世紀の90年代",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "前世紀の90年代",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2000-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2000-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2000-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "今世紀の20年代",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "今世紀の20年代",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "1980年代",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1980年代",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1980-01-01,1990-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1980-01-01",
+            "endDate": "1990-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1980-01-01",
+            "endDate": "1990-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "50年代のごろ",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "50年代のごろ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX50-01-01,XX60-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2050-01-01",
+            "endDate": "2060-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1950-01-01",
+            "endDate": "1960-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "彼は1870年代に生まれました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1870年代",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1870-01-01,1880-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1870-01-01",
+            "endDate": "1880-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1870-01-01",
+            "endDate": "1880-01-01"
+          }
+        },
+        "Start": 2,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "1870年代",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1870年代",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1870-01-01,1880-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1870-01-01",
+            "endDate": "1880-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1870-01-01",
+            "endDate": "1880-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "90年代",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "90年代",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX90-01-01,XX00-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2090-01-01",
+            "endDate": "2100-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2000-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "789年に",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "789年に",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0789",
+          "FutureResolution": {
+            "startDate": "0789-01-01",
+            "endDate": "0790-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0789-01-01",
+            "endDate": "0790-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2015年一月十日から十二日まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2015年一月十日から十二日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-10,2015-01-12,P2D)",
+          "FutureResolution": {
+            "startDate": "2015-01-10",
+            "endDate": "2015-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-10",
+            "endDate": "2015-01-12"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2009年から2010年までの小麦も生産量は二倍に増えた",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2009年から2010年まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2009-01-01,2010-01-01,P1Y)",
+          "FutureResolution": {
+            "startDate": "2009-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2009-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "この三年間、犯罪者数は年々減っています。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "この三年間",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-03-22,2017-03-22,P3Y)",
+          "FutureResolution": {
+            "startDate": "2014-03-22",
+            "endDate": "2017-03-22"
+          },
+          "PastResolution": {
+            "startDate": "2014-03-22",
+            "endDate": "2017-03-22"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2009年と比べて、激しく変化したことがわかりました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2009年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2009",
+          "FutureResolution": {
+            "startDate": "2009-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2009-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2018は年を示そうです。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "彼は2007年後に学校に来たことはありません。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2007年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2007",
+          "FutureResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2008-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2008-01-01"
+          }
+        },
+        "Start": 2,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "彼は2007年前すでに卒業しました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2007年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2007",
+          "FutureResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2008-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2008-01-01"
+          }
+        },
+        "Start": 2,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2008年の五輪は北京で行われました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008",
+          "FutureResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2008年の五輪は北京で行われました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2008年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008",
+          "FutureResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2008年、五輪は北京で行われました。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008",
+          "FutureResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "過去の十年間北京は著しく変わりました。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-24T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "過去の十年間",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2008-07-24,2018-07-24,P10Y)",
+          "FutureResolution": {
+            "startDate": "2008-07-24",
+            "endDate": "2018-07-24"
+          },
+          "PastResolution": {
+            "startDate": "2008-07-24",
+            "endDate": "2018-07-24"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2007年から2009年までの間",
+    "Context": {
+      "ReferenceDateTime": "2018-09-05T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2007年から2009年までの間",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2007-01-01,2009-01-01,P2Y)",
+          "FutureResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2007年から2009年までの間に",
+    "Context": {
+      "ReferenceDateTime": "2018-09-05T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2007年から2009年までの間に",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2007-01-01,2009-01-01,P2Y)",
+          "FutureResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2007-01-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "2011年から2017年までの売り上げをまとめてもらえますか？",
+    "Context": {
+      "ReferenceDateTime": "2018-09-12T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2011年から2017年まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2018-01-01,P8Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "　2018年10月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "　2018年10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-10",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2018年12月は0月ではありません。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2018年12月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-10",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年10月は10月です。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-12",
+          "FutureResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008年　十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年　十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2016年6月1日から6月30日まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016年6月1日から6月30日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-06-01,2016-06-30,P29D)",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-06-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-06-30"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "2008年十月一日から2019年二月三日まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年十月一日から2019年二月三日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-10-01,2019-02-03,P125D)",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2019-02-03"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2019-02-03"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "費用をとる期間は2019年6月1日から6月30日までです。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2019年6月1日から6月30日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-06-01,2019-06-30,P29D)",
+          "FutureResolution": {
+            "startDate": "2019-06-01",
+            "endDate": "2019-06-30"
+          },
+          "PastResolution": {
+            "startDate": "2019-06-01",
+            "endDate": "2019-06-30"
+          }
+        },
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "私は四月最後の月曜日から十月一日までいません。",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "四月最後の月曜日から十月一日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
+          "FutureResolution": {
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 2,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "私は八月最後の月曜日から十月一日までいません。",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "八月最後の月曜日から十月一日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
+          "FutureResolution": {
+            "startDate": "2019-08-26",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-27",
+            "endDate": "2018-10-01"
+          }
+        },
+        "Start": 2,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "私は先週の木曜日から十月一日までいません。",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T17:09:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "先週の木曜日から十月一日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-07-25,XXXX-10-01,P68D)",
+          "FutureResolution": {
+            "startDate": "2019-07-25",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-25",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 2,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "私は7月4日から6日まで北京に行きます。",
+    "Context": {
+      "ReferenceDateTime": "2019-08-08T16:09:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7月4日から6日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-07-04,XXXX-07-06,P2D)",
+          "FutureResolution": {
+            "startDate": "2020-07-04",
+            "endDate": "2020-07-06"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-04",
+            "endDate": "2019-07-06"
+          }
+        },
+        "Start": 2,
+        "Length": 10
       }
     ]
   }

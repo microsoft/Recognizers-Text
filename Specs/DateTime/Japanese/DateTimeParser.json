@@ -1531,14 +1531,14 @@
     ]
   },
   {
-    "Input": "私は2016-12-16T12:23:59に戻ります",
+    "Input": "私は2016-12-16t12:23:59に戻ります",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "2016-12-16T12:23:59",
+        "Text": "2016-12-16t12:23:59",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-12-16T12:23:59",
@@ -1696,6 +1696,270 @@
         },
         "Start": 2,
         "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月29日の朝7時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月29日の朝7時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T07",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 07:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "2010-1-29の夜6時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010-1-29の夜6時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T18",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 18:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2010/01/29の正午12時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010/01/29の正午12時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T12",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 12:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2010.1.29の5時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010.1.29の5時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T05",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 05:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 05:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "1987年1月11日の8時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1987年1月11日の8時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "1987-01-11T08",
+          "FutureResolution": {
+            "dateTime": "1987-01-11 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "1987-01-11 08:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "旧暦2015年10月1日の午前9時20分",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦2015年10月1日の午前9時20分",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2015-10-01T09:20",
+          "FutureResolution": {
+            "dateTime": "2015-10-01 09:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2015-10-01 09:20:00"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "1月19日の午後5時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1月19日の午後5時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-19T17:00",
+          "FutureResolution": {
+            "dateTime": "2017-01-19 17:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-19 17:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "明日午後5時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日午後5時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T17:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 17:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今夜6時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今夜6時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T18",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 18:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "今日朝5時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日朝5時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T05",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今日朝8時15分",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日朝8時15分",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T08:15",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 08:15:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 08:15:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   }

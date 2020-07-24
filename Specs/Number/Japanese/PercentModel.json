@@ -1,7 +1,6 @@
 [
   {
     "Input": "今日は九パーセントの確率は雨",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -17,7 +16,6 @@
   },
   {
     "Input": "この車は19パーセントの確率が遅れた",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -33,7 +31,6 @@
   },
   {
     "Input": "彼女は50パーセントこのことはできません",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -49,7 +46,6 @@
   },
   {
     "Input": "共有29.5パーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -65,7 +61,6 @@
   },
   {
     "Input": "彼は13,000.2パーセント告白失败",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -81,7 +76,6 @@
   },
   {
     "Input": "彼は3500パーセント告白失败",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -97,7 +91,6 @@
   },
   {
     "Input": "僕2,100パーセント告白失败",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -112,8 +105,7 @@
     ]
   },
   {
-    "Input": "僕１，１２３パーセント告白失败",
-    "Comment": "PendingValidation",
+    "Input": "僕1,123パーセント告白失败",
     "NotSupported": "python",
     "Results": [
       {
@@ -129,7 +121,6 @@
   },
   {
     "Input": "今日は3.2kパーセントの確率で雪が降る",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -145,7 +136,6 @@
   },
   {
     "Input": "今日は3.2kパ ーセ ントの確率で雪が降る",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -161,7 +151,6 @@
   },
   {
     "Input": "今日は15kパ ーセ ントの確率で雪が降る",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -176,8 +165,7 @@
     ]
   },
   {
-    "Input": "今日は１２０パ ーセ ントの確率で雪が降る",
-    "Comment": "PendingValidation",
+    "Input": "今日は120パ ーセ ントの確率で雪が降る",
     "NotSupported": "python",
     "Results": [
       {
@@ -192,8 +180,7 @@
     ]
   },
   {
-    "Input": "今日は９，９９９パ ーセ ントの確率で雪が降る",
-    "Comment": "PendingValidation",
+    "Input": "今日は9,999パ ーセ ントの確率で雪が降る",
     "NotSupported": "python",
     "Results": [
       {
@@ -208,8 +195,7 @@
     ]
   },
   {
-    "Input": "２．４パーセント",
-    "Comment": "PendingValidation",
+    "Input": "2.4パーセント",
     "NotSupported": "python",
     "Results": [
       {
@@ -225,7 +211,6 @@
   },
   {
     "Input": "-22.2%",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -240,8 +225,7 @@
     ]
   },
   {
-    "Input": "２２％",
-    "Comment": "PendingValidation",
+    "Input": "22%",
     "NotSupported": "python",
     "Results": [
       {
@@ -256,8 +240,7 @@
     ]
   },
   {
-    "Input": "－1２２％",
-    "Comment": "PendingValidation",
+    "Input": "-122%",
     "NotSupported": "python",
     "Results": [
       {
@@ -273,7 +256,6 @@
   },
   {
     "Input": "22パーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -288,8 +270,7 @@
     ]
   },
   {
-    "Input": "１２０パーセント",
-    "Comment": "PendingValidation",
+    "Input": "120パーセント",
     "NotSupported": "python",
     "Results": [
       {
@@ -305,7 +286,6 @@
   },
   {
     "Input": "15kパーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -321,7 +301,6 @@
   },
   {
     "Input": "1,111パーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -336,8 +315,7 @@
     ]
   },
   {
-    "Input": "９，９９９パーセント",
-    "Comment": "PendingValidation",
+    "Input": "9,999パーセント",
     "NotSupported": "python",
     "Results": [
       {
@@ -352,8 +330,7 @@
     ]
   },
   {
-    "Input": "５６.２パーセント",
-    "Comment": "PendingValidation",
+    "Input": "56.2パーセント",
     "NotSupported": "python",
     "Results": [
       {
@@ -369,7 +346,6 @@
   },
   {
     "Input": "3.2パーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -385,7 +361,6 @@
   },
   {
     "Input": "12.56パーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -400,8 +375,7 @@
     ]
   },
   {
-    "Input": "０.４パーセント",
-    "Comment": "PendingValidation",
+    "Input": "0.4パーセント",
     "NotSupported": "python",
     "Results": [
       {
@@ -417,7 +391,6 @@
   },
   {
     "Input": "15,123パーセント",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -432,8 +405,7 @@
     ]
   },
   {
-    "Input": "１１１，１１１パーセント",
-    "Comment": "PendingValidation",
+    "Input": "111,111パーセント",
     "NotSupported": "python",
     "Results": [
       {
@@ -448,24 +420,7 @@
     ]
   },
   {
-    "Input": "１５kパーセント",
-    "Comment": "PendingValidation",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "15kパーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "15000%"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "５．５％",
-    "Comment": "PendingValidation",
+    "Input": "5.5%",
     "NotSupported": "python",
     "Results": [
       {
@@ -480,8 +435,7 @@
     ]
   },
   {
-    "Input": "２．４パ ー   セ    ン ト",
-    "Comment": "PendingValidation",
+    "Input": "2.4パ ー   セ    ン ト",
     "NotSupported": "python",
     "Results": [
       {
@@ -496,8 +450,7 @@
     ]
   },
   {
-    "Input": "５２.５ k   パ ー セ  ン     ト",
-    "Comment": "PendingValidation",
+    "Input": "52.5 k   パ ー セ  ン     ト",
     "NotSupported": "python",
     "Results": [
       {
@@ -513,7 +466,6 @@
   },
   {
     "Input": "今日この服は5割引になります",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -529,7 +481,6 @@
   },
   {
     "Input": "今日この服はの5.6割引になります",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -544,8 +495,7 @@
     ]
   },
   {
-    "Input": "今日この服はの２.５割引になります",
-    "Comment": "PendingValidation",
+    "Input": "今日この服はの2.5割引になります",
     "NotSupported": "python",
     "Results": [
       {
@@ -560,8 +510,7 @@
     ]
   },
   {
-    "Input": "９割",
-    "Comment": "PendingValidation",
+    "Input": "9割",
     "NotSupported": "python",
     "Results": [
       {
@@ -576,8 +525,7 @@
     ]
   },
   {
-    "Input": "7.２割",
-    "Comment": "PendingValidation",
+    "Input": "7.2割",
     "NotSupported": "python",
     "Results": [
       {
@@ -592,24 +540,7 @@
     ]
   },
   {
-    "Input": "１０ 割",
-    "Comment": "PendingValidation",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "10 割",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "１0 割",
-    "Comment": "PendingValidation",
+    "Input": "10 割",
     "NotSupported": "python",
     "Results": [
       {
@@ -625,7 +556,6 @@
   },
   {
     "Input": "十 割",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -641,7 +571,6 @@
   },
   {
     "Input": "9.9割",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -657,7 +586,6 @@
   },
   {
     "Input": "10割",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -673,7 +601,6 @@
   },
   {
     "Input": "十割",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -688,8 +615,7 @@
     ]
   },
   {
-    "Input": "２.５割",
-    "Comment": "PendingValidation",
+    "Input": "2.5割",
     "NotSupported": "python",
     "Results": [
       {
@@ -704,8 +630,7 @@
     ]
   },
   {
-    "Input": "２割",
-    "Comment": "PendingValidation",
+    "Input": "2割",
     "NotSupported": "python",
     "Results": [
       {
@@ -720,8 +645,7 @@
     ]
   },
   {
-    "Input": "2割,2.5割,２．１割，２割",
-    "Comment": "PendingValidation",
+    "Input": "2割,2.5割,2.1割,2割",
     "NotSupported": "python",
     "Results": [
       {
@@ -757,14 +681,13 @@
         "Resolution": {
           "value": "20%"
         },
-        "Start": 13,
-        "End": 14
+        "Start": 0,
+        "End": 1
       }
     ]
   },
   {
     "Input": "五割",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -780,7 +703,6 @@
   },
   {
     "Input": "クラスの女子は3割を占める",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -796,7 +718,6 @@
   },
   {
     "Input": "クラスの女子は5割半を占める",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -812,7 +733,6 @@
   },
   {
     "Input": "女子学生は七割半を占めている",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -828,7 +748,6 @@
   },
   {
     "Input": "女子学生は3.8割を占めている",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -844,7 +763,6 @@
   },
   {
     "Input": "女子学生は三割を占めている",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -860,7 +778,6 @@
   },
   {
     "Input": "今シーズンの打率は3割8分7厘でした",
-    "Comment": "PendingValidation",
     "NotSupported": "python",
     "Results": [
       {
@@ -875,239 +792,14 @@
     ]
   },
   {
-    "Input": "回答率は100%です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "半額",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "100%",
+        "Text": "半額",
         "TypeName": "percentage",
         "Resolution": {
-          "value": "100%"
-        },
-        "Start": 4,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイの電車の乗車率は240%です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "240%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "240%"
-        },
-        "Start": 12,
-        "End": 15
-      }
-    ]
-  },
-  {
-    "Input": "20%の人がパソコンを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "20%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "30%の人が犬を飼っています。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "30%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "30%"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "10%の人がパスポートを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "10%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "10%"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "私の体脂肪率は22%です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "22%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "22%"
-        },
-        "Start": 7,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイのバスの乗車率は210%です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "210%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "210%"
-        },
-        "Start": 12,
-        "End": 15
-      }
-    ]
-  },
-  {
-    "Input": "今年の売り上げは前年比の-5%です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "-5%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "-5%"
-        },
-        "Start": 12,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "回答率は100パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "100パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        },
-        "Start": 4,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイの電車の乗車率は240パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "240パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "240%"
-        },
-        "Start": 12,
-        "End": 19
-      }
-    ]
-  },
-  {
-    "Input": "20パーセントの人がパソコンを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "20パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "10パーセントの人がパスポートを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "10パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "10%"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "私の体脂肪率は22パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "22パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "22%"
-        },
-        "Start": 7,
-        "End": 13
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイのバスの乗車率は210パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "210パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "210%"
-        },
-        "Start": 12,
-        "End": 19
-      }
-    ]
-  },
-  {
-    "Input": "今年の売り上げは前年比の-5パーセントでした。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "-5パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "-5%"
-        },
-        "Start": 12,
-        "End": 18
-      }
-    ]
-  },
-  {
-    "Input": "２割の人がパソコンを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "2割",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
+          "value": "50%"
         },
         "Start": 0,
         "End": 1
@@ -1115,11 +807,196 @@
     ]
   },
   {
-    "Input": "３割の人が犬を飼っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "半額",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "6.5割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "3割",
+        "Text": "6.5割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "65%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "9割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "90%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "7.6割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7.6割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "76%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "7.2割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7.2割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "72%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2.8割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2.8割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "72%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "六点五割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "六点五割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "65%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "十割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "四分の一の割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四分の一の割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "75%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "0.1割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0.1割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "99%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "零点一割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "零点一割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "99%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "6.9割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6.9割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "31%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "三割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
@@ -1130,14 +1007,14 @@
     ]
   },
   {
-    "Input": "１割の人がパスポートを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "五割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1割",
+        "Text": "五割",
         "TypeName": "percentage",
         "Resolution": {
-          "value": "10%"
+          "value": "5%"
         },
         "Start": 0,
         "End": 1
@@ -1145,288 +1022,58 @@
     ]
   },
   {
-    "Input": "この問題の回答率は100%だ。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "100%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        },
-        "Start": 9,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "今日の会議の出席率は20%だ。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "20%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
-        },
-        "Start": 10,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "江戸川区のインド人の割合は10%です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "10%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "10%"
-        },
-        "Start": 13,
-        "End": 15
-      }
-    ]
-  },
-  {
-    "Input": "詳細については次のURLをご確認ください。 http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "十割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": []
   },
   {
-    "Input": "次のURLを参考にしてくだい。 https://www.test.com/search?q=30%25%2020%",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": []
-  },
-  {
-    "Input": "回答率は１００％です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "9.5割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "100%",
+        "Text": "9.5割",
         "TypeName": "percentage",
         "Resolution": {
-          "value": "100%"
-        },
-        "Start": 4,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイの電車の乗車率は２４０％です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "240%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "240%"
-        },
-        "Start": 12,
-        "End": 15
-      }
-    ]
-  },
-  {
-    "Input": "２０％の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "20%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
+          "value": "95%"
         },
         "Start": 0,
-        "End": 2
+        "End": 3
       }
     ]
   },
   {
-    "Input": "１０％の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "3.5割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "10%",
+        "Text": "3.5割",
         "TypeName": "percentage",
         "Resolution": {
-          "value": "10%"
+          "value": "35%"
         },
         "Start": 0,
-        "End": 2
+        "End": 3
       }
     ]
   },
   {
-    "Input": "売り上げは前年度比−５％です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "2.5割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "-5%",
+        "Text": "2.5割",
         "TypeName": "percentage",
         "Resolution": {
-          "value": "-5%"
-        },
-        "Start": 9,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "回答率は百％です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "百%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        },
-        "Start": 4,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイの電車の乗車率は二百四十％です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "二百四十%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "240%"
-        },
-        "Start": 12,
-        "End": 16
-      }
-    ]
-  },
-  {
-    "Input": "二十％の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "二十%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
+          "value": "25%"
         },
         "Start": 0,
-        "End": 2
+        "End": 3
       }
     ]
   },
   {
-    "Input": "十％の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "十%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "10%"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "売り上げは前年度比マイナス五％です。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "マイナス五%",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "-5%"
-        },
-        "Start": 9,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "回答率は百パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "百パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        },
-        "Start": 4,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "ムンバイの電車の乗車率は二百四十パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "二百四十パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "240%"
-        },
-        "Start": 12,
-        "End": 20
-      }
-    ]
-  },
-  {
-    "Input": "二十パーセントの人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "二十パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "十パーセントの人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "十パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "10%"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "売り上げは前年度比マイナス五パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "マイナス五パーセント",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "-5%"
-        },
-        "Start": 9,
-        "End": 18
-      }
-    ]
-  },
-  {
-    "Input": "二割の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "二割",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "二割",
@@ -1440,17 +1087,1364 @@
     ]
   },
   {
-    "Input": "一割の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "Input": "8割引",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "一割",
+        "Text": "8割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "八割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "八割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "6.2割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6.2割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "38%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "2割|2.5割|2.1割|2割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "2.5割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 3,
+        "End": 6
+      },
+      {
+        "Text": "2.1割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "21%"
+        },
+        "Start": 8,
+        "End": 11
+      },
+      {
+        "Text": "2割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "九割|五割|八点五割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "九割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "90%"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "五割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 3,
+        "End": 4
+      },
+      {
+        "Text": "八点五割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "85%"
+        },
+        "Start": 6,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "2割引|2.5割引|2.1割引|2割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "2.5割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 4,
+        "End": 8
+      },
+      {
+        "Text": "2.1割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "21%"
+        },
+        "Start": 10,
+        "End": 14
+      },
+      {
+        "Text": "2割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "一割引|四点五割引|一点五割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "90%"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "四点五割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "55%"
+        },
+        "Start": 4,
+        "End": 8
+      },
+      {
+        "Text": "一点五割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "85%"
+        },
+        "Start": 10,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "五割引き",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五割引き",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "百分の2.4",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の2.4",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2.4%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "20~30ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "二十~三十パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "5/100",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "5/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "5%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "百五十ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百五十ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "150%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "600%",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "600%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2.4ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2.4ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2.4%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-22.20%",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-22.20%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-22.2%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "22パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "マイナス122%",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス122%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-122%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "百分の22",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の22",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "百分の120",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の120",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "120%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "百分の1,500",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の1,500",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "15000%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "百分の1,111",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の1,111",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1111%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "百分の9,999",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の9,999",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "9999%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "12ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "12%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2,123ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2,123ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2123%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "二十ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "4.5ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4.5ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "4.5%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "50%",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "50%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "百分の一点五",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "百分の一点五",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1.5%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "56.2/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "56.2/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "56.2%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "12/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "12%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "3,000/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3,000/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "3000%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "百分の千百二十三",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の千百二十三",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1123%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "百分の三万二千",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の三万二千",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "3200%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "百分の三点二",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の三点二",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "3.2%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "12.54ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12.54ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "12.56%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "0.4ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0.4ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.4%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "15,123ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15,123ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "15123%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "111,111ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "111,111ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "111111%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "25パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "25パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "12,000ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12,000ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "12000%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "15,000ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15,000ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "15000%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "七十五万ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "七十五万ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "750000%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "100056.33パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100056.33パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100056.33%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "七十五点二ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "七十五点二ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "75.2%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "七十五ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "七十五ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "75%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "千七十五ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千七十五ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1075%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "100パーセント」",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "100パーセント」",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "百パーセント",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "百パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "百二十パーセント",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "百二十パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "120.5%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2.4/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2.4/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2.4%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1,669/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,669/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1669%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "52.5/100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "52.5/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "52.5%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2.2/500",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "百分の2.2上昇した",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の2.2",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2.2%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "5パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "5%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "5.50パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5.50パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "5.5%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "るくポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "るくポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "120.5/100",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "120.5/100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "120.5%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "百分の2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の2",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "百分の669",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の669",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "669%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "百分の525,000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の525,000",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "52500%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "百分の一百二十点五",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "百分の一百二十点五",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "120.5%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "3.5割引",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3.5割引",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "65%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "2割",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2割",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "二十?三十ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "150ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "150ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "150%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "600ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "600ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "20ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "12.56ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12.56ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "12.56%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "一万二千ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一万二千ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "12000%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "一万五千ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一万五千ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "15000%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "12,056.33ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12,056.33ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100056.33%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "75.2ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "75.2ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "75.2%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "75ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "75ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "75%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1,075ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,075ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1075%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "百分の百二十点五",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "百分の百二十点五",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "120.5%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "六ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "六ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "二点四ポイント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二点四ポイント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2.4%"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "アップル引き割り九割引き",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "九割引き",
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
         },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": " http://proquest.umi.com/pqdweb?rqt=305&sq=issn%280024%2d9114%29%20and%20%28ti%28using%203d%20cad%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3e01%2f01%2f2000%20and%20%3c12%2f31%2f2000%29&clientid=17859を訪ねてください",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "https://www.test.com/search?q=30%25%2020%を訪ねてください",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "アルコール量6%のビールと32.5%の白酒",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "6%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6%"
+        },
+        "Start": 6,
+        "End": 7
+      },
+      {
+        "Text": "32.5%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "32.5%"
+        },
+        "Start": 13,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "百分の2イコール百分の二、2%と同じだ。",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "百分の2",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2%"
+        },
         "Start": 0,
-        "End": 1
+        "End": 3
+      },
+      {
+        "Text": "百分の二",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2%"
+        },
+        "Start": 8,
+        "End": 11
+      },
+      {
+        "Text": "2%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2%"
+        },
+        "Start": 13,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "アルコール量が5から20パーセントの商品を探す",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "20パーセント",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 10,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "10日間株の引け値が七〇%が1を超える",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "七〇%",
+        "Start": 10,
+        "End": 12,
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "70%"
+        }
       }
     ]
   }

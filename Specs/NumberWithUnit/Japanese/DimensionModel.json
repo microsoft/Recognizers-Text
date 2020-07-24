@@ -7,7 +7,7 @@
       {
         "Text": "200ポンド",
         "Start": 7,
-        "End": 13,
+        "End": 12,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Pound",
@@ -29,7 +29,7 @@
           "unit": "Milliliter"
         },
         "Start": 0,
-        "End": 3
+        "End": 7
       }
     ]
   },
@@ -45,8 +45,8 @@
           "value": "3",
           "unit": "Inch"
         },
-        "Start": 33,
-        "End": 38
+        "Start": 32,
+        "End": 35
       }
     ]
   },
@@ -62,8 +62,8 @@
           "value": "10",
           "unit": "Mile"
         },
-        "Start": 39,
-        "End": 47
+        "Start": 3,
+        "End": 7
       }
     ]
   },
@@ -79,8 +79,8 @@
           "value": "10.5",
           "unit": "Mile"
         },
-        "Start": 19,
-        "End": 30
+        "Start": 27,
+        "End": 33
       }
     ]
   },
@@ -96,8 +96,8 @@
           "value": "6",
           "unit": "Mile"
         },
-        "Start": 4,
-        "End": 11
+        "Start": 14,
+        "End": 17
       }
     ]
   },
@@ -113,8 +113,8 @@
           "value": "2",
           "unit": "Foot"
         },
-        "Start": 152,
-        "End": 159
+        "Start": 48,
+        "End": 52
       }
     ]
   },
@@ -130,8 +130,8 @@
           "value": "68",
           "unit": "Ounce"
         },
-        "Start": 57,
-        "End": 64
+        "Start": 70,
+        "End": 74
       }
     ]
   },
@@ -147,8 +147,8 @@
           "value": "45",
           "unit": "Acre"
         },
-        "Start": 148,
-        "End": 154
+        "Start": 52,
+        "End": 57
       }
     ]
   },
@@ -164,8 +164,8 @@
           "value": "10",
           "unit": "Foot"
         },
-        "Start": 136,
-        "End": 142
+        "Start": 42,
+        "End": 47
       }
     ]
   },
@@ -181,8 +181,8 @@
           "value": "2400000000",
           "unit": "Gallon"
         },
-        "Start": 133,
-        "End": 151
+        "Start": 21,
+        "End": 26
       }
     ]
   },
@@ -198,8 +198,8 @@
           "value": "10",
           "unit": "Gallon"
         },
-        "Start": 2,
-        "End": 10
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -215,8 +215,8 @@
           "value": "1500000",
           "unit": "Gallon"
         },
-        "Start": 39,
-        "End": 56
+        "Start": 20,
+        "End": 26
       }
     ]
   },
@@ -232,8 +232,8 @@
           "value": "2",
           "unit": "Pound"
         },
-        "Start": 22,
-        "End": 31
+        "Start": 11,
+        "End": 14
       }
     ]
   },
@@ -249,8 +249,8 @@
           "value": "25",
           "unit": "Pound"
         },
-        "Start": 121,
-        "End": 129
+        "Start": 34,
+        "End": 38
       }
     ]
   },
@@ -266,8 +266,8 @@
           "value": "900000000000",
           "unit": "Cubic foot"
         },
-        "Start": 78,
-        "End": 100
+        "Start": 28,
+        "End": 37
       }
     ]
   },
@@ -283,8 +283,8 @@
           "value": "660",
           "unit": "Square meter"
         },
-        "Start": 125,
-        "End": 141
+        "Start": 52,
+        "End": 60
       }
     ]
   },
@@ -300,8 +300,8 @@
           "value": "200",
           "unit": "Mile"
         },
-        "Start": 23,
-        "End": 31
+        "Start": 20,
+        "End": 25
       }
     ]
   },
@@ -317,8 +317,8 @@
           "value": "3",
           "unit": "Foot"
         },
-        "Start": 41,
-        "End": 50
+        "Start": 11,
+        "End": 15
       }
     ]
   },
@@ -334,8 +334,8 @@
           "value": "190000",
           "unit": "Square meter"
         },
-        "Start": 28,
-        "End": 48
+        "Start": 53,
+        "End": 61
       }
     ]
   },
@@ -351,8 +351,8 @@
           "value": "3",
           "unit": "Ton"
         },
-        "Start": 183,
-        "End": 191
+        "Start": 32,
+        "End": 34
       }
     ]
   },
@@ -368,8 +368,8 @@
           "value": "130",
           "unit": "Gallon"
         },
-        "Start": 276,
-        "End": 286
+        "Start": 54,
+        "End": 59
       }
     ]
   },
@@ -385,8 +385,8 @@
           "value": "6",
           "unit": "Foot"
         },
-        "Start": 57,
-        "End": 64
+        "Start": 32,
+        "End": 36
       }
     ]
   },
@@ -402,13 +402,13 @@
           "value": "16000",
           "unit": "Metric ton"
         },
-        "Start": 87,
-        "End": 104
+        "Start": 47,
+        "End": 56
       }
     ]
   },
   {
-    "Input": "486 は、IBMが 初期のパソコン用に16ビット8088 チップを採用して以来、市場を支配し始めたインテルチップの長いシリーズの系列である。",
+    "Input": "486 は、ibmが 初期のパソコン用に16ビット8088 チップを採用して以来、市場を支配し始めたインテルチップの長いシリーズの系列である。",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -419,8 +419,8 @@
           "value": "16",
           "unit": "Bit"
         },
-        "Start": 117,
-        "End": 122
+        "Start": 20,
+        "End": 24
       }
     ]
   },
@@ -436,8 +436,8 @@
           "value": "188",
           "unit": "Mile per hour"
         },
-        "Start": 43,
-        "End": 59
+        "Start": 14,
+        "End": 21
       }
     ]
   },
@@ -453,8 +453,8 @@
           "value": "100",
           "unit": "Meter"
         },
-        "Start": 53,
-        "End": 62
+        "Start": 21,
+        "End": 27
       }
     ]
   },
@@ -470,8 +470,8 @@
           "value": "2.5",
           "unit": "Mile"
         },
-        "Start": 82,
-        "End": 89
+        "Start": 58,
+        "End": 63
       }
     ]
   },
@@ -487,8 +487,8 @@
           "value": "4",
           "unit": "Mile"
         },
-        "Start": 6,
-        "End": 14
+        "Start": 13,
+        "End": 16
       }
     ]
   },
@@ -504,8 +504,8 @@
           "value": "325",
           "unit": "Kilometer"
         },
-        "Start": 72,
-        "End": 84
+        "Start": 20,
+        "End": 24
       }
     ]
   },
@@ -521,8 +521,8 @@
           "value": "4",
           "unit": "Inch"
         },
-        "Start": 0,
-        "End": 7
+        "Start": 57,
+        "End": 60
       }
     ]
   },
@@ -538,8 +538,8 @@
           "value": "0.25",
           "unit": "Mile"
         },
-        "Start": 44,
-        "End": 51
+        "Start": 22,
+        "End": 27
       }
     ]
   },
@@ -555,8 +555,8 @@
           "value": "1.6",
           "unit": "Kilometer"
         },
-        "Start": 52,
-        "End": 57
+        "Start": 29,
+        "End": 33
       }
     ]
   },
@@ -572,8 +572,8 @@
           "value": "17",
           "unit": "Kilometer"
         },
-        "Start": 35,
-        "End": 39
+        "Start": 18,
+        "End": 21
       }
     ]
   },
@@ -589,8 +589,8 @@
           "value": "776",
           "unit": "Foot"
         },
-        "Start": 99,
-        "End": 106
+        "Start": 38,
+        "End": 44
       }
     ]
   },
@@ -606,13 +606,13 @@
           "value": "500",
           "unit": "Meter"
         },
-        "Start": 94,
-        "End": 103
+        "Start": 58,
+        "End": 64
       }
     ]
   },
   {
-    "Input": "1995 年にキャノンは、 内部画像安定を搭載したSLRレンズ ef 75 -300ミリ f / 4 - 5 . 6 is usm を初めて商品化した。",
+    "Input": "1995 年にキャノンは、 内部画像安定を搭載したslrレンズ ef 75 -300ミリ f / 4 - 5 . 6 is usm を初めて商品化した。",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -623,8 +623,8 @@
           "value": "300",
           "unit": "Millimeter"
         },
-        "Start": 110,
-        "End": 114
+        "Start": 39,
+        "End": 43
       }
     ]
   },
@@ -640,8 +640,8 @@
           "value": "7.62",
           "unit": "Millimeter"
         },
-        "Start": 82,
-        "End": 87
+        "Start": 32,
+        "End": 37
       }
     ]
   },
@@ -657,8 +657,8 @@
           "value": "34500",
           "unit": "Metric ton"
         },
-        "Start": 109,
-        "End": 126
+        "Start": 40,
+        "End": 54
       }
     ]
   },
@@ -674,8 +674,8 @@
           "value": "291890",
           "unit": "Metric ton"
         },
-        "Start": 42,
-        "End": 60
+        "Start": 45,
+        "End": 58
       }
     ]
   },
@@ -691,8 +691,8 @@
           "value": "190",
           "unit": "Square kilometer"
         },
-        "Start": 45,
-        "End": 51
+        "Start": 9,
+        "End": 19
       }
     ]
   },
@@ -708,8 +708,8 @@
           "value": "2204.62",
           "unit": "Pound"
         },
-        "Start": 25,
-        "End": 39
+        "Start": 9,
+        "End": 20
       },
       {
         "Text": "メートルトン",
@@ -718,8 +718,8 @@
           "value": null,
           "unit": "Metric ton"
         },
-        "Start": 2,
-        "End": 11
+        "Start": 1,
+        "End": 6
       }
     ]
   },
@@ -730,7 +730,7 @@
     "Results": []
   },
   {
-    "Input": "さっとダイレクトメールを送って、E メールアドレスをききなさい。",
+    "Input": "さっとダイレクトメールを送って、e メールアドレスをききなさい。",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
@@ -743,7 +743,7 @@
       {
         "Text": "1メートル",
         "Start": 0,
-        "End": 5,
+        "End": 4,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
@@ -753,7 +753,7 @@
       {
         "Text": "10デシメートル",
         "Start": 7,
-        "End": 15,
+        "End": 14,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Decimeter",
@@ -774,8 +774,8 @@
           "unit": "Megabit",
           "value": "100"
         },
-        "Start": 25,
-        "End": 30
+        "Start": 12,
+        "End": 19
       }
     ]
   },
@@ -786,14 +786,14 @@
     "Results": []
   },
   {
-    "Input": "2pmとは、 2 ピクトメーターのことだと彼は言った。",
+    "Input": "2pmとは、2ピクトメーターのことだと彼は言った。",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2pm",
         "Start": 0,
-        "End": 3,
+        "End": 2,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Picometer",
@@ -802,8 +802,8 @@
       },
       {
         "Text": "2ピクトメーター",
-        "Start": 8,
-        "End": 16,
+        "Start": 6,
+        "End": 13,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Picometer",
@@ -820,7 +820,7 @@
       {
         "Text": "1マイル",
         "Start": 4,
-        "End": 8,
+        "End": 7,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Mile",
@@ -828,5 +828,127 @@
         }
       }
     ]
+  },
+  {
+    "Input": "去年、チンジャンの蝦米共同産業の生産額が百八十億人民元突破、十万人の就業も促進し、ロブスターの養殖農家平均で一万六千元増収し、全省のロブスター養殖業を三百八十七ムー引っ張しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三百八十七ムー",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3870000",
+          "unit": "Mu"
+        },
+        "Start": 75,
+        "End": 81
+      }
+    ]
+  },
+  {
+    "Input": "陽西の唐辛子絶賛発売中、毎日平均で二十万キロも珠江デルタで完売",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十万キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200000",
+          "unit": "Kilogram"
+        },
+        "Start": 17,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "今の身長は百六十八センチです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百六十八センチ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 5,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "オーストラリアとビクトリアの警察がモルボルンで一トン近いのメタンフェタミンを鹵獲。オーストラリア史上最大のメタンフェタミン密輸案件となっております。（オーストラリア連邦警察）",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一トン",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Ton"
+        },
+        "Start": 23,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "今となって、身長は168センチになった",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "168センチ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 9,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "身長はいま、168cmも到達しました",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "168cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "ここの水深は250メートル超え",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "250メートル",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "250",
+          "unit": "Meter"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "dimensionってどういう意味ですか",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "今日の午後二時、サプライズがあります！",
+    "NotSupported": "java",
+    "Results": []
   }
 ]
