@@ -741,6 +741,18 @@
     ]
   },
   {
+    "Input": "明日の午前",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日の午前",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "昨日の午後2時から明日の4時まで",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -753,50 +765,14 @@
     ]
   },
   {
-    "Input": "昨日5:00-6:00",
+    "Input": "1月15日の4時から2月3日の9時までの間",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "昨日5:00-6:00",
+        "Text": "1月15日の4時から2月3日の9時までの間",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "前の3時間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "前の3時間",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "明日の2時から4時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日の2時から4時まで",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "昨日の午後2時から4時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の午後2時から4時まで",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 13
+        "Length": 21
       }
     ]
   },
@@ -822,11 +798,47 @@
     ]
   },
   {
-    "Input": "明日の午前",
+    "Input": "前の一時間",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "明日の午前",
+        "Text": "前の一時間",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "昨日の夜",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日の夜",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "昨夜",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨夜",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "あと5分間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "あと5分間",
         "Type": "datetimerange",
         "Start": 0,
         "Length": 5
@@ -846,6 +858,30 @@
     ]
   },
   {
+    "Input": "前の3時間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "前の3時間",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "昨日の午後2時から4時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日の午後2時から4時まで",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
     "Input": "2019年7月25日の朝の糧油相場の簡単な分析",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -854,18 +890,6 @@
         "Type": "datetimerange",
         "Start": 0,
         "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "昨日の夜",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の夜",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 4
       }
     ]
   },
@@ -882,50 +906,26 @@
     ]
   },
   {
-    "Input": "1月15日の4時から2月3日の9時までの間",
+    "Input": "明日の2時から4時まで",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1月15日の4時から2月3日の9時までの間",
+        "Text": "明日の2時から4時まで",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 21
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "昨夜",
+    "Input": "昨日5:00-6:00",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "昨夜",
+        "Text": "昨日5:00-6:00",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "前の一時間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "前の一時間",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "あと5分間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "あと5分間",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 5
+        "Length": 11
       }
     ]
   }

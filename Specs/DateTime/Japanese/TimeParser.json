@@ -1364,70 +1364,22 @@
     ]
   },
   {
-    "Input": "朝十時ぐらい",
+    "Input": "夜19:30",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "朝十時ぐらい",
+        "Text": "夜19:30",
         "Type": "time",
         "Value": {
-          "Timex": "T10",
+          "Timex": "T19:30",
           "FutureResolution": {
-            "time": "10:00:00"
+            "time": "19:30:00"
           },
           "PastResolution": {
-            "time": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "未明二時半",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "未明二時半",
-        "Type": "time",
-        "Value": {
-          "Timex": "T02:30",
-          "FutureResolution": {
-            "time": "02:30:00"
-          },
-          "PastResolution": {
-            "time": "02:30:00"
-          }
-        },
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "夜十時ぐらい",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "夜十時ぐらい",
-        "Type": "time",
-        "Value": {
-          "Timex": "T22",
-          "FutureResolution": {
-            "time": "22:00:00"
-          },
-          "PastResolution": {
-            "time": "22:00:00"
+            "time": "19:30:00"
           }
         },
         "Start": 0,
@@ -1460,26 +1412,26 @@
     ]
   },
   {
-    "Input": "彼はいつも夜八時に晩ご飯を食べます",
+    "Input": "零時かっきり",
     "Context": {
-      "ReferenceDateTime": "2019-08-19T00:00:00"
+      "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "夜八時",
+        "Text": "零時かっきり",
         "Type": "time",
         "Value": {
-          "Timex": "T20",
+          "Timex": "T00",
           "FutureResolution": {
-            "time": "20:00:00"
+            "time": "00:00:00"
           },
           "PastResolution": {
-            "time": "20:00:00"
+            "time": "00:00:00"
           }
         },
-        "Start": 5,
-        "Length": 3
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1508,22 +1460,22 @@
     ]
   },
   {
-    "Input": "午後十一時半",
+    "Input": "朝十時ぐらい",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "午後十一時半",
+        "Text": "朝十時ぐらい",
         "Type": "time",
         "Value": {
-          "Timex": "T23:30",
+          "Timex": "T10",
           "FutureResolution": {
-            "time": "23:30:00"
+            "time": "10:00:00"
           },
           "PastResolution": {
-            "time": "23:30:00"
+            "time": "10:00:00"
           }
         },
         "Start": 0,
@@ -1532,22 +1484,22 @@
     ]
   },
   {
-    "Input": "夜19:30",
+    "Input": "夜十時ぐらい",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "夜19:30",
+        "Text": "夜十時ぐらい",
         "Type": "time",
         "Value": {
-          "Timex": "T19:30",
+          "Timex": "T22",
           "FutureResolution": {
-            "time": "19:30:00"
+            "time": "22:00:00"
           },
           "PastResolution": {
-            "time": "19:30:00"
+            "time": "22:00:00"
           }
         },
         "Start": 0,
@@ -1556,74 +1508,26 @@
     ]
   },
   {
-    "Input": "零時かっきり",
+    "Input": "彼はいつも夜八時に晩ご飯を食べます",
     "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
+      "ReferenceDateTime": "2019-08-19T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "零時かっきり",
+        "Text": "夜八時",
         "Type": "time",
         "Value": {
-          "Timex": "T00",
+          "Timex": "T20",
           "FutureResolution": {
-            "time": "00:00:00"
+            "time": "20:00:00"
           },
           "PastResolution": {
-            "time": "00:00:00"
+            "time": "20:00:00"
           }
         },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "午後五時",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後五時",
-        "Type": "time",
-        "Value": {
-          "Timex": "T17:00",
-          "FutureResolution": {
-            "time": "17:00:00"
-          },
-          "PastResolution": {
-            "time": "17:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "夜9:30",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "夜9:30",
-        "Type": "time",
-        "Value": {
-          "Timex": "T21:30",
-          "FutureResolution": {
-            "time": "21:30:00"
-          },
-          "PastResolution": {
-            "time": "21:30:00"
-          }
-        },
-        "Start": 0,
-        "Length": 5
+        "Start": 5,
+        "Length": 3
       }
     ]
   },
@@ -1652,26 +1556,50 @@
     ]
   },
   {
-    "Input": "十時頃以降",
+    "Input": "午後五時",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "十時頃",
+        "Text": "午後五時",
         "Type": "time",
         "Value": {
-          "Timex": "T10",
+          "Timex": "T17:00",
           "FutureResolution": {
-            "time": "10:00:00"
+            "time": "17:00:00"
           },
           "PastResolution": {
-            "time": "10:00:00"
+            "time": "17:00:00"
           }
         },
         "Start": 0,
-        "Length": 3
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "午後十一時半",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後十一時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:30",
+          "FutureResolution": {
+            "time": "23:30:00"
+          },
+          "PastResolution": {
+            "time": "23:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -1696,6 +1624,78 @@
         },
         "Start": 0,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "十時頃以降",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十時頃",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "夜9:30",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜9:30",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:30",
+          "FutureResolution": {
+            "time": "21:30:00"
+          },
+          "PastResolution": {
+            "time": "21:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "未明二時半",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "未明二時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T02:30",
+          "FutureResolution": {
+            "time": "02:30:00"
+          },
+          "PastResolution": {
+            "time": "02:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   }

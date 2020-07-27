@@ -340,46 +340,22 @@
     ]
   },
   {
-    "Input": "元宵節",
+    "Input": "重陽節",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "元宵節",
+        "Text": "重陽節",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-01-15",
+          "Timex": "XXXX-09-09",
           "FutureResolution": {
-            "date": "2018-01-15"
+            "date": "2017-09-09"
           },
           "PastResolution": {
-            "date": "2017-01-15"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "建軍節",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "建軍節",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-08-01",
-          "FutureResolution": {
-            "date": "2017-08-01"
-          },
-          "PastResolution": {
-            "date": "2016-08-01"
+            "date": "2016-09-09"
           }
         },
         "Start": 0,
@@ -412,150 +388,6 @@
     ]
   },
   {
-    "Input": "エイプリルフール",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "エイプリルフール",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-01",
-          "FutureResolution": {
-            "date": "2017-04-01"
-          },
-          "PastResolution": {
-            "date": "2016-04-01"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "大晦日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "大晦日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-12-31",
-          "FutureResolution": {
-            "date": "2017-12-31"
-          },
-          "PastResolution": {
-            "date": "2016-12-31"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "ダブル十一",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "ダブル十一",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-11",
-          "FutureResolution": {
-            "date": "2017-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-11"
-          }
-        },
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "旧正月",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "旧正月",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2018-01-01"
-          },
-          "PastResolution": {
-            "date": "2017-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "中秋",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "中秋",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-08-15",
-          "FutureResolution": {
-            "date": "2017-08-15"
-          },
-          "PastResolution": {
-            "date": "2016-08-15"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "中秋節",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "中秋節",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-08-15",
-          "FutureResolution": {
-            "date": "2017-08-15"
-          },
-          "PastResolution": {
-            "date": "2016-08-15"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
     "Input": "新年",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -576,78 +408,6 @@
         },
         "Start": 0,
         "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "母の日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "母の日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-WXX-7-2",
-          "FutureResolution": {
-            "date": "2017-05-14"
-          },
-          "PastResolution": {
-            "date": "2016-05-08"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "教師の日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "教師の日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-09-10",
-          "FutureResolution": {
-            "date": "2017-09-10"
-          },
-          "PastResolution": {
-            "date": "2016-09-10"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "青年の日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "青年の日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-04",
-          "FutureResolution": {
-            "date": "2017-05-04"
-          },
-          "PastResolution": {
-            "date": "2016-05-04"
-          }
-        },
-        "Start": 0,
-        "Length": 4
       }
     ]
   },
@@ -676,74 +436,26 @@
     ]
   },
   {
-    "Input": "シングルデー",
+    "Input": "子供の日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "シングルデー",
+        "Text": "子供の日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-11-11",
+          "Timex": "XXXX-06-01",
           "FutureResolution": {
-            "date": "2017-11-11"
+            "date": "2017-06-01"
           },
           "PastResolution": {
-            "date": "2016-11-11"
+            "date": "2016-06-01"
           }
         },
         "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "国慶節",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "国慶節",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-01",
-          "FutureResolution": {
-            "date": "2017-10-01"
-          },
-          "PastResolution": {
-            "date": "2016-10-01"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "ハロウィン",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "ハロウィン",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-31",
-          "FutureResolution": {
-            "date": "2017-10-31"
-          },
-          "PastResolution": {
-            "date": "2016-10-31"
-          }
-        },
-        "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
@@ -796,74 +508,26 @@
     ]
   },
   {
-    "Input": "端午の節句",
+    "Input": "国際婦人デー",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "端午の節句",
+        "Text": "国際婦人デー",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-05-05",
+          "Timex": "XXXX-03-08",
           "FutureResolution": {
-            "date": "2017-05-05"
+            "date": "2018-03-08"
           },
           "PastResolution": {
-            "date": "2016-05-05"
+            "date": "2017-03-08"
           }
         },
         "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "バレンタインデー",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "バレンタインデー",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-02-14",
-          "FutureResolution": {
-            "date": "2018-02-14"
-          },
-          "PastResolution": {
-            "date": "2017-02-14"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "清明節",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "清明節",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-04",
-          "FutureResolution": {
-            "date": "2017-04-04"
-          },
-          "PastResolution": {
-            "date": "2016-04-04"
-          }
-        },
-        "Start": 0,
-        "Length": 3
+        "Length": 6
       }
     ]
   },
@@ -892,26 +556,242 @@
     ]
   },
   {
-    "Input": "クリスマスイブ",
+    "Input": "端午の節句",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "クリスマスイブ",
+        "Text": "端午の節句",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-12-24",
+          "Timex": "XXXX-05-05",
           "FutureResolution": {
-            "date": "2017-12-24"
+            "date": "2017-05-05"
           },
           "PastResolution": {
-            "date": "2016-12-24"
+            "date": "2016-05-05"
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "母の日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "母の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-WXX-7-2",
+          "FutureResolution": {
+            "date": "2017-05-14"
+          },
+          "PastResolution": {
+            "date": "2016-05-08"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "大晦日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大晦日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "建軍節",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "建軍節",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-01",
+          "FutureResolution": {
+            "date": "2017-08-01"
+          },
+          "PastResolution": {
+            "date": "2016-08-01"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "父の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "父の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "元旦に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "元旦",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "2015年の父の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年の父の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "クリスマスに戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "クリスマス",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "清明節",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "清明節",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-04",
+          "FutureResolution": {
+            "date": "2017-04-04"
+          },
+          "PastResolution": {
+            "date": "2016-04-04"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "青年の日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "青年の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-04",
+          "FutureResolution": {
+            "date": "2017-05-04"
+          },
+          "PastResolution": {
+            "date": "2016-05-04"
+          }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -940,22 +820,70 @@
     ]
   },
   {
-    "Input": "重陽節",
+    "Input": "クリスマスイブ",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "重陽節",
+        "Text": "クリスマスイブ",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-09-09",
+          "Timex": "XXXX-12-24",
           "FutureResolution": {
-            "date": "2017-09-09"
+            "date": "2017-12-24"
           },
           "PastResolution": {
-            "date": "2016-09-09"
+            "date": "2016-12-24"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "来年の元旦に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "来年の元旦",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "大晦日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大晦日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2017-12-31"
+          },
+          "PastResolution": {
+            "date": "2016-12-31"
           }
         },
         "Start": 0,
@@ -964,50 +892,122 @@
     ]
   },
   {
-    "Input": "子供の日",
+    "Input": "国慶節",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "子供の日",
+        "Text": "国慶節",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-06-01",
+          "Timex": "XXXX-10-01",
           "FutureResolution": {
-            "date": "2017-06-01"
+            "date": "2017-10-01"
           },
           "PastResolution": {
-            "date": "2016-06-01"
+            "date": "2016-10-01"
           }
         },
         "Start": 0,
-        "Length": 4
+        "Length": 3
       }
     ]
   },
   {
-    "Input": "国際婦人デー",
+    "Input": "シングルデー",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "国際婦人デー",
+        "Text": "シングルデー",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-03-08",
+          "Timex": "XXXX-11-11",
           "FutureResolution": {
-            "date": "2018-03-08"
+            "date": "2017-11-11"
           },
           "PastResolution": {
-            "date": "2017-03-08"
+            "date": "2016-11-11"
           }
         },
         "Start": 0,
         "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "元宵節",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "元宵節",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-15",
+          "FutureResolution": {
+            "date": "2018-01-15"
+          },
+          "PastResolution": {
+            "date": "2017-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "中秋節",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "中秋節",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-15",
+          "FutureResolution": {
+            "date": "2017-08-15"
+          },
+          "PastResolution": {
+            "date": "2016-08-15"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "2010年の感謝祭の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年の感謝祭の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1032,6 +1032,270 @@
         },
         "Start": 0,
         "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "教師の日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "教師の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-09-10",
+          "FutureResolution": {
+            "date": "2017-09-10"
+          },
+          "PastResolution": {
+            "date": "2016-09-10"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "ダブル十一",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ダブル十一",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-11",
+          "FutureResolution": {
+            "date": "2017-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "感謝祭に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "感謝祭",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "ハロウィン",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ハロウィン",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-31",
+          "FutureResolution": {
+            "date": "2017-10-31"
+          },
+          "PastResolution": {
+            "date": "2016-10-31"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "クリスマスの日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "クリスマスの日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "バレンタインデー",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "バレンタインデー",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-14",
+          "FutureResolution": {
+            "date": "2018-02-14"
+          },
+          "PastResolution": {
+            "date": "2017-02-14"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "旧正月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧正月",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2018-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "復活祭に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "復活祭",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "中秋",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "中秋",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-15",
+          "FutureResolution": {
+            "date": "2017-08-15"
+          },
+          "PastResolution": {
+            "date": "2016-08-15"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "エイプリルフール",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "エイプリルフール",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-01",
+          "FutureResolution": {
+            "date": "2017-04-01"
+          },
+          "PastResolution": {
+            "date": "2016-04-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "感謝祭の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "感謝祭の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   }

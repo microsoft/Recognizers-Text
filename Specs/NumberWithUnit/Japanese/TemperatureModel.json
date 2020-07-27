@@ -11,8 +11,8 @@
           "value": "40",
           "unit": "C"
         },
-        "Start": 27,
-        "End": 40
+        "Start": 6,
+        "End": 11
       }
     ]
   },
@@ -28,8 +28,8 @@
           "value": "90",
           "unit": "F"
         },
-        "Start": 4,
-        "End": 16
+        "Start": 8,
+        "End": 13
       }
     ]
   },
@@ -46,7 +46,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 19
+        "End": 9
       }
     ]
   },
@@ -63,7 +63,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 6
+        "End": 3
       }
     ]
   },
@@ -80,7 +80,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 13
+        "End": 6
       }
     ]
   },
@@ -96,8 +96,8 @@
           "value": "30",
           "unit": "C"
         },
-        "Start": 23,
-        "End": 40
+        "Start": 3,
+        "End": 7
       }
     ]
   },
@@ -113,8 +113,8 @@
           "value": "98.6",
           "unit": "F"
         },
-        "Start": 22,
-        "End": 44
+        "Start": 4,
+        "End": 10
       }
     ]
   },
@@ -131,7 +131,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 12
+        "End": 5
       }
     ]
   },
@@ -148,7 +148,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 4
       }
     ]
   },
@@ -165,7 +165,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 22
+        "End": 7
       }
     ]
   },
@@ -182,7 +182,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 7
       }
     ]
   },
@@ -199,7 +199,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 7
       }
     ]
   },
@@ -216,7 +216,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 7
       }
     ]
   },
@@ -232,8 +232,8 @@
           "value": "98",
           "unit": "Degree"
         },
-        "Start": 27,
-        "End": 36
+        "Start": 6,
+        "End": 10
       }
     ]
   },
@@ -249,8 +249,8 @@
           "value": "85",
           "unit": "Degree"
         },
-        "Start": 22,
-        "End": 24
+        "Start": 8,
+        "End": 10
       }
     ]
   },
@@ -266,8 +266,8 @@
           "value": "5",
           "unit": "Degree"
         },
-        "Start": 25,
-        "End": 33
+        "Start": 3,
+        "End": 4
       }
     ]
   },
@@ -283,8 +283,8 @@
           "value": "70",
           "unit": "F"
         },
-        "Start": 23,
-        "End": 34
+        "Start": 3,
+        "End": 7
       }
     ]
   },
@@ -300,8 +300,8 @@
           "value": "20",
           "unit": "Degree"
         },
-        "Start": 25,
-        "End": 34
+        "Start": 3,
+        "End": 5
       }
     ]
   },
@@ -317,8 +317,8 @@
           "value": "100",
           "unit": "Degree"
         },
-        "Start": 23,
-        "End": 33
+        "Start": 3,
+        "End": 6
       }
     ]
   },
@@ -334,8 +334,8 @@
           "value": "75",
           "unit": "F"
         },
-        "Start": 24,
-        "End": 35
+        "Start": 3,
+        "End": 7
       }
     ]
   },
@@ -351,8 +351,8 @@
           "value": "40",
           "unit": "C"
         },
-        "Start": 26,
-        "End": 35
+        "Start": 3,
+        "End": 7
       }
     ]
   },
@@ -368,8 +368,8 @@
           "value": "50",
           "unit": "Degree"
         },
-        "Start": 26,
-        "End": 32
+        "Start": 3,
+        "End": 5
       }
     ]
   },
@@ -385,8 +385,8 @@
           "value": "10",
           "unit": "C"
         },
-        "Start": 8,
-        "End": 17
+        "Start": 0,
+        "End": 4
       },
       {
         "Text": "華氏",
@@ -395,8 +395,8 @@
           "value": null,
           "unit": "F"
         },
-        "Start": 22,
-        "End": 31
+        "Start": 6,
+        "End": 7
       }
     ]
   },
@@ -412,8 +412,8 @@
           "value": "101",
           "unit": "F"
         },
-        "Start": 22,
-        "End": 35
+        "Start": 8,
+        "End": 13
       },
       {
         "Text": "華氏",
@@ -423,7 +423,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 9
+        "End": 1
       },
       {
         "Text": "摂氏",
@@ -432,8 +432,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 14,
-        "End": 20
+        "Start": 4,
+        "End": 5
       },
       {
         "Text": "摂氏",
@@ -442,8 +442,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 49,
-        "End": 55
+        "Start": 4,
+        "End": 5
       }
     ]
   },
@@ -459,8 +459,8 @@
           "value": "51",
           "unit": "F"
         },
-        "Start": 18,
-        "End": 30
+        "Start": 0,
+        "End": 4
       },
       {
         "Text": "摂氏",
@@ -469,8 +469,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 35,
-        "End": 49
+        "Start": 6,
+        "End": 7
       }
     ]
   },
@@ -486,8 +486,8 @@
           "value": "106",
           "unit": "F"
         },
-        "Start": 8,
-        "End": 28
+        "Start": 0,
+        "End": 5
       },
       {
         "Text": "摂氏",
@@ -496,8 +496,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 33,
-        "End": 47
+        "Start": 7,
+        "End": 8
       }
     ]
   },
@@ -513,8 +513,8 @@
           "value": "45",
           "unit": "F"
         },
-        "Start": 8,
-        "End": 28
+        "Start": 0,
+        "End": 4
       },
       {
         "Text": "摂氏",
@@ -523,8 +523,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 33,
-        "End": 39
+        "Start": 6,
+        "End": 7
       }
     ]
   },
@@ -540,8 +540,8 @@
           "value": "-20",
           "unit": "F"
         },
-        "Start": 15,
-        "End": 37
+        "Start": 0,
+        "End": 8
       },
       {
         "Text": "摂氏",
@@ -550,24 +550,40 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 42,
-        "End": 48
+        "Start": 10,
+        "End": 11
       }
     ]
   },
   {
-    "Input": "外の気温は98度です",
+    "Input": "20℃",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "98度",
+        "Text": "20℃",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "98",
-          "unit": "Degree"
+          "value": "20",
+          "unit": "C"
         },
-        "Start": 5,
-        "End": 7
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "彼は三十九度まで高熱があるよ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三十九度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "39",
+          "unit": "C"
+        },
+        "Start": 2,
+        "End": 5
       }
     ]
   },
@@ -578,18 +594,18 @@
     "Results": []
   },
   {
-    "Input": "温度の単位って℃ですか",
+    "Input": "通常は華氏温度98.6度となります",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "℃",
+        "Text": "華氏温度98.6度",
         "TypeName": "temperature",
         "Resolution": {
-          "value": null,
-          "unit": "C"
+          "value": "98.6",
+          "unit": "F"
         },
-        "Start": 7,
-        "End": 7
+        "Start": 3,
+        "End": 11
       }
     ]
   },
@@ -626,50 +642,18 @@
     ]
   },
   {
-    "Input": "彼は三十九度まで高熱があるよ",
+    "Input": "温度の単位って℃ですか",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "三十九度",
+        "Text": "℃",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "39",
+          "value": null,
           "unit": "C"
         },
-        "Start": 2,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "華氏温度とすれば100度です",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100度",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "100",
-          "unit": "F"
-        },
-        "Start": 8,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "通常は華氏温度98.6度となります",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "華氏温度98.6度",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "98.6",
-          "unit": "F"
-        },
-        "Start": 3,
-        "End": 11
+        "Start": 7,
+        "End": 7
       }
     ]
   },
@@ -700,18 +684,34 @@
     ]
   },
   {
-    "Input": "20℃",
+    "Input": "華氏温度とすれば100度です",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "20℃",
+        "Text": "100度",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "20",
-          "unit": "C"
+          "value": "100",
+          "unit": "F"
         },
-        "Start": 0,
-        "End": 2
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "外の気温は98度です",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "98度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        },
+        "Start": 5,
+        "End": 7
       }
     ]
   }

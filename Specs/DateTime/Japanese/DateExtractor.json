@@ -2490,23 +2490,11 @@
     ]
   },
   {
-    "Input": "会議は今週の月曜日になりました。",
+    "Input": "２００４年八月十五日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "今週の月曜日",
-        "Type": "date",
-        "Start": 3,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "昭和62年一月十一日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昭和62年一月十一日",
+        "Text": "２００４年八月十五日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2514,50 +2502,68 @@
     ]
   },
   {
-    "Input": "コルタナ、2営業日以内にskype通話を設定してください。",
+    "Input": "コルタナさん、7-6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2営業日以内",
+        "Text": "7-6 金曜日",
         "Type": "date",
-        "Start": 5,
-        "Length": 6
+        "Start": 7,
+        "Length": 7
       }
     ]
   },
   {
-    "Input": "弥明後日はいいですか？",
+    "Input": "コルタナさん、7/6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "弥明後日",
+        "Text": "7/6 金曜日",
         "Type": "date",
-        "Start": 0,
-        "Length": 4
+        "Start": 7,
+        "Length": 7
       }
     ]
   },
   {
-    "Input": "寛政元年01月29日",
+    "Input": "昭和６２年一月十一日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "寛政元年01月29日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "平成27年5月13日、時間がありますか？",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成27年5月13日",
+        "Text": "昭和６２年一月十一日",
         "Type": "date",
         "Start": 0,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "明後日、空いていますか？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明後日、空いていますか？",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "すみません、６月１５日出発の航空便を予約しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6月15日",
+        "Type": "date",
+        "Start": 6,
+        "Length": 5
       }
     ]
   },
@@ -2574,6 +2580,45 @@
     ]
   },
   {
+    "Input": "コルタナさん、2018-7-6 金曜日にジムとの Skype を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2018-7-6 金曜日",
+        "Type": "date",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "１３５７年６月１０日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "１３５７年６月１０日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "７月４日に北京に到着します。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7月4日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
     "Input": "明日はいいですか？",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -2586,11 +2631,11 @@
     ]
   },
   {
-    "Input": "2015年5月13日、空いていますか？",
+    "Input": "平成２７年５月１３日、時間がありますか？",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2015年5月13日",
+        "Text": "平成２７年５月１３日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2598,11 +2643,53 @@
     ]
   },
   {
-    "Input": "すみません、6月15日の朝出発の航空便を予約しました。",
+    "Input": "27日水曜日のジョー・スミスさんとのミーティング",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "6月15日の朝",
+        "Text": "27日水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2日の土曜日の予定は何ですか",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2日の土曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "３６７年１月１日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "３６７年１月１日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "すみません、６月１５日の朝出発の航空便を予約しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "６月１５日の朝",
         "Type": "date",
         "Start": 6,
         "Length": 7
@@ -2610,38 +2697,14 @@
     ]
   },
   {
-    "Input": "2004年8月15日",
+    "Input": "９月８日に着きます",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2004年8月15日",
+        "Text": "9月8日",
         "Type": "date",
         "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "旧暦の正月初一",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "旧暦の正月初一",
-        "Type": "date",
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "2010年1月29日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2010年1月29日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 10
+        "Length": 4
       }
     ]
   },
@@ -2658,170 +2721,11 @@
     ]
   },
   {
-    "Input": "すみません、6月15日出発の航空便を予約しました。",
+    "Input": "平成２２年１月２９日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "6月15日",
-        "Type": "date",
-        "Start": 6,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "二〇〇九年十月十二日、月曜日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二〇〇九年十月十二日、月曜日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "去年の今月の十日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "去年の今月の十日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "コルタナさん、7-6 金曜日にジムとの skype を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2018-07-06T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "7-6 金曜日",
-        "Type": "date",
-        "Start": 7,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "10月12日、月曜日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10月12日、月曜日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "平成二十二年一月二十九日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成二十二年一月二十九日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "マイクロウエーブは旧暦の1月30日にイベントがあります。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "旧暦の1月30日",
-        "Type": "date",
-        "Start": 9,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "7月4日に北京に到着します。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "7月4日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "平成12年8月15日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成12年8月15日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "1357年6月10日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1357年6月10日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "9月8日に着きます",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "9月8日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "大晦日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "大晦日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "先週の月曜日はテストがありました",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "先週の月曜日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "平成22年1月29日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成22年1月29日",
+        "Text": "平成２２年１月２９日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2841,42 +2745,6 @@
     ]
   },
   {
-    "Input": "先週の水曜日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "先週の水曜日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "旧暦の2015年10月1日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "旧暦の2015年10月1日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "2004年八月十五日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2004年八月十五日",
-        "Type": "date",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "今月の十日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -2889,34 +2757,358 @@
     ]
   },
   {
-    "Input": "明後日、空いていますか？",
+    "Input": "コルタナ、今週の金曜日6月15日のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "明後日、空いていますか？",
+        "Text": "今週の金曜日6月15日",
         "Type": "date",
-        "Start": 0,
-        "Length": 12
+        "Start": 5,
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "コルタナさん、2018-7-6 金曜日にジムとの skype を設定して。",
+    "Input": "コルタナ、今週の金曜日6月23日のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今週の金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 6
+      },
+      {
+        "Text": "6月23日",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、今週の金曜日（6月15日）のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今週の金曜日（6月15日）",
+        "Type": "date",
+        "Start": 5,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、2018年7月6日金曜日のいつかジムとスカイプ通話を設定してください。",
     "Context": {
       "ReferenceDateTime": "2018-07-06T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2018-7-6 金曜日",
+        "Text": "2018年7月6日金曜日",
         "Type": "date",
-        "Start": 7,
+        "Start": 5,
         "Length": 12
       }
     ]
   },
   {
-    "Input": "コルタナさん、7.6 金曜日にジムとの skype を設定して。",
+    "Input": "旧暦の２０１５年お正月の１日は春節です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の２０１５年お正月の１日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "先週の月曜日はテストがありました",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "先週の月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "21日木曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21日木曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "3週間で出発します。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3週間で",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "一昨昨日はどうでしたか？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一昨昨日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "旧暦の正月初一",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の正月初一",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2004年8月15日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2004年8月15日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "旧暦の２０１５年１０月１日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の２０１５年１０月１日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "3 週間後に出発します。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 週間後",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、7月6日金曜日のいつかジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7月6日金曜日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "寛政元年０１月２９日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "寛政元年０１月２９日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "27日水曜日のスミスさんとのミーティング",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "27日水曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "大晦日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大晦日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "7日木曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7日木曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月29日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月29日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "弥明後日はいいですか？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "弥明後日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "マイクロウエーブは旧暦の１月３０日にイベントがあります。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の１月３０日",
+        "Type": "date",
+        "Start": 9,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "去年の今月の十日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "去年の今月の十日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "もうすぐ１月１９日になります。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1月19日",
+        "Type": "date",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、今週の金曜日6月22日のいつかにジムとスカイプ通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今週の金曜日6月22日",
+        "Type": "date",
+        "Start": 5,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "１０月１２日、月曜日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "１０月１２日、月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "会議は今週の月曜日になりました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今週の月曜日",
+        "Type": "date",
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "コルタナさん、7.6 金曜日にジムとの Skype を設定して。",
     "Context": {
       "ReferenceDateTime": "2018-07-06T00:00:00"
     },
@@ -2931,26 +3123,44 @@
     ]
   },
   {
-    "Input": "367年1月1日",
+    "Input": "22日金曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "367年1月1日",
+        "Text": "22日金曜日",
         "Type": "date",
         "Start": 0,
-        "Length": 8
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "もうすぐ1月19日になります。",
+    "Input": "平成二十二年一月二十九日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1月19日",
+        "Text": "平成二十二年一月二十九日",
         "Type": "date",
-        "Start": 4,
-        "Length": 5
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "23日土曜日に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "23日土曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2967,21 +3177,6 @@
     ]
   },
   {
-    "Input": "コルタナさん、7/6 金曜日にジムとの skype を設定して。",
-    "Context": {
-      "ReferenceDateTime": "2018-07-06T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "7/6 金曜日",
-        "Type": "date",
-        "Start": 7,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "最近はお元気ですか？",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -2994,26 +3189,65 @@
     ]
   },
   {
-    "Input": "旧暦の2015年お正月の1日は春節です。",
+    "Input": "先週の水曜日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の2015年お正月の1日",
+        "Text": "先週の水曜日",
         "Type": "date",
         "Start": 0,
-        "Length": 14
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "一昨昨日はどうでしたか？",
+    "Input": "平成１２年８月１５日",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "一昨昨日",
+        "Text": "平成１２年８月１５日",
         "Type": "date",
         "Start": 0,
-        "Length": 4
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "15日金曜日にもどります",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15日金曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "２０１５年５月１３日、空いていますか？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年5月13日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "二〇〇九年十月十二日、月曜日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇〇九年十月十二日、月曜日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
       }
     ]
   }
