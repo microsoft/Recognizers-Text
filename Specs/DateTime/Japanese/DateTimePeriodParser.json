@@ -1782,162 +1782,6 @@
     ]
   },
   {
-    "Input": "昨日の午後2時から4時まで",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の午後2時から4時まで",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-06T14,2016-11-06T16,PT2H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-06 14:00:00",
-            "endDateTime": "2016-11-06 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-06 14:00:00",
-            "endDateTime": "2016-11-06 16:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "昨日の午後2時から明日4時まで",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の午後2時から明日4時まで",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-06 14:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-06 14:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 15
-      }
-    ]
-  },
-  {
-    "Input": "昨日5:00-6:00",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日5:00-6:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-06T05:00,2016-11-06T06:00,PT1H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-06 05:00:00",
-            "endDateTime": "2016-11-06 06:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-06 05:00:00",
-            "endDateTime": "2016-11-06 06:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "1月15日の4時から2月3日の9時までの間",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月15日の4時から2月3日の9時までの間",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(XXXX-01-15T04,XXXX-02-03T09,PT461H)",
-          "FutureResolution": {
-            "startDateTime": "2017-01-15 04:00:00",
-            "endDateTime": "2017-02-03 09:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-01-15 04:00:00",
-            "endDateTime": "2017-02-03 09:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "2時-明日の4時",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2時-明日の4時",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T02:00:00,2016-11-08T04:00:00,PT26H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 02:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 02:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "昨夜",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨夜",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-06TEV",
-          "FutureResolution": {
-            "startDateTime": "2016-11-06 16:00:00",
-            "endDateTime": "2016-11-06 20:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-06 16:00:00",
-            "endDateTime": "2016-11-06 20:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
     "Input": "昨日の夜",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1960,58 +1804,6 @@
         },
         "Start": 0,
         "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "明日の午前",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日の午前",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TMO",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "前の一時間",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "前の一時間",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T15:12:00,2016-11-07T16:12:00,PT1H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 15:12:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 15:12:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 0,
-        "Length": 5
       }
     ]
   },
@@ -2042,84 +1834,6 @@
     ]
   },
   {
-    "Input": "前の3時間",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "前の3時間",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T13:12:00,2016-11-07T16:12:00,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 13:12:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 13:12:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "未来の3時間に",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "未来の3時間に",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "今から8時までの会議を予約してください。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今から8時まで",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T20:00:00,PT4H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 20:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 20:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "今夜8時から9時まで会議室がありますか？",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -2142,58 +1856,6 @@
         },
         "Start": 0,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "今夜7時から7時30分までの会議を予約してください。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今夜7時から7時30分まで",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T19:00:00,2016-11-07T19:30:00,PT0H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 19:00:00",
-            "endDateTime": "2016-11-07 19:30:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 19:00:00",
-            "endDateTime": "2016-11-07 19:30:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "明日の昼には暇がないです。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日の昼",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TMI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 11:00:00",
-            "endDateTime": "2016-11-08 13:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 11:00:00",
-            "endDateTime": "2016-11-08 13:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 4
       }
     ]
   },
@@ -2224,28 +1886,129 @@
     ]
   },
   {
-    "Input": "台風は7月5日の夜に通過します。",
+    "Input": "前の3時間",
     "Context": {
-      "ReferenceDateTime": "2019-08-09T16:12:00"
+      "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "7月5日の夜",
+        "Text": "前の3時間",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "XXXX-07-05TEV",
+          "Timex": "(2016-11-07T13:12:00,2016-11-07T16:12:00,PT3H)",
           "FutureResolution": {
-            "startDateTime": "2020-07-05 16:00:00",
-            "endDateTime": "2020-07-05 20:00:00"
+            "startDateTime": "2016-11-07 13:12:00",
+            "endDateTime": "2016-11-07 16:12:00"
           },
           "PastResolution": {
-            "startDateTime": "2019-07-05 16:00:00",
-            "endDateTime": "2019-07-05 20:00:00"
+            "startDateTime": "2016-11-07 13:12:00",
+            "endDateTime": "2016-11-07 16:12:00"
           }
         },
-        "Start": 3,
-        "Length": 6
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2019年7月25日の朝の糧油相場の簡単な分析",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年7月25日の朝",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2019-07-25TMO",
+          "FutureResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-25 08:00:00",
+            "endDateTime": "2019-07-25 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "昨日5:00-6:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日5:00-6:00",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-06T05:00,2016-11-06T06:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 05:00:00",
+            "endDateTime": "2016-11-06 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 05:00:00",
+            "endDateTime": "2016-11-06 06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "昨日の午後2時から4時まで",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日の午後2時から4時まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-06T14,2016-11-06T16,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 14:00:00",
+            "endDateTime": "2016-11-06 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 14:00:00",
+            "endDateTime": "2016-11-06 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "明日の朝は朝ごはんを食べないつもりです。",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日の朝",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2019-08-20TMO",
+          "FutureResolution": {
+            "startDateTime": "2019-08-20 08:00:00",
+            "endDateTime": "2019-08-20 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-08-20 08:00:00",
+            "endDateTime": "2019-08-20 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -2276,50 +2039,50 @@
     ]
   },
   {
-    "Input": "8月7日の朝に早稲田大学に着きます。",
+    "Input": "2時-明日の4時",
     "Context": {
-      "ReferenceDateTime": "2019-08-19T16:12:00"
+      "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "8月7日の朝",
+        "Text": "2時-明日の4時",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "XXXX-08-07TMO",
+          "Timex": "(2016-11-07T02:00:00,2016-11-08T04:00:00,PT26H)",
           "FutureResolution": {
-            "startDateTime": "2020-08-07 08:00:00",
-            "endDateTime": "2020-08-07 12:00:00"
+            "startDateTime": "2016-11-07 02:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2019-08-07 08:00:00",
-            "endDateTime": "2019-08-07 12:00:00"
+            "startDateTime": "2016-11-07 02:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
           }
         },
         "Start": 0,
-        "Length": 6
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "明日の朝は朝ごはんを食べないつもりです。",
+    "Input": "明日の昼には暇がないです。",
     "Context": {
-      "ReferenceDateTime": "2019-08-19T16:12:00"
+      "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "明日の朝",
+        "Text": "明日の昼",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2019-08-20TMO",
+          "Timex": "2016-11-08TMI",
           "FutureResolution": {
-            "startDateTime": "2019-08-20 08:00:00",
-            "endDateTime": "2019-08-20 12:00:00"
+            "startDateTime": "2016-11-08 11:00:00",
+            "endDateTime": "2016-11-08 13:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2019-08-20 08:00:00",
-            "endDateTime": "2019-08-20 12:00:00"
+            "startDateTime": "2016-11-08 11:00:00",
+            "endDateTime": "2016-11-08 13:00:00"
           }
         },
         "Start": 0,
@@ -2328,11 +2091,37 @@
     ]
   },
   {
+    "Input": "1月15日の4時から2月3日の9時までの間",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1月15日の4時から2月3日の9時までの間",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-01-15T04,XXXX-02-03T09,PT461H)",
+          "FutureResolution": {
+            "startDateTime": "2017-01-15 04:00:00",
+            "endDateTime": "2017-02-03 09:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-01-15 04:00:00",
+            "endDateTime": "2017-02-03 09:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
     "Input": "タキシードは8月7日の夜にお宅に送ります。",
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "8月7日の夜",
@@ -2350,29 +2139,6 @@
         },
         "Start": 6,
         "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "2019年7月25日の朝の糧油相場の簡単な分析",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2019年7月25日の朝",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2019-07-25TMO",
-          "FutureResolution": {
-            "startDateTime": "2019-07-25 08:00:00",
-            "endDateTime": "2019-07-25 12:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2019-07-25 08:00:00",
-            "endDateTime": "2019-07-25 12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 12
       }
     ]
   },
@@ -2403,11 +2169,63 @@
     ]
   },
   {
+    "Input": "今から8時までの会議を予約してください。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今から8時まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T20:00:00,PT4H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "昨夜",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨夜",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 16:00:00",
+            "endDateTime": "2016-11-06 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 16:00:00",
+            "endDateTime": "2016-11-06 20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
     "Input": "7月25日の午前中、7月25日、7月25日の朝は全てサポートされている測定例です。",
     "Context": {
       "ReferenceDateTime": "2019-08-19T16:12:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "7月25日の午前中",
@@ -2442,6 +2260,188 @@
         },
         "Start": 16,
         "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "未来の3時間に",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "未来の3時間に",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "前の一時間",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "前の一時間",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T15:12:00,2016-11-07T16:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 15:12:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 15:12:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今夜7時から7時30分までの会議を予約してください。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今夜7時から7時30分まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T19:00:00,2016-11-07T19:30:00,PT0H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 19:00:00",
+            "endDateTime": "2016-11-07 19:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 19:00:00",
+            "endDateTime": "2016-11-07 19:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "台風は7月5日の夜に通過します。",
+    "Context": {
+      "ReferenceDateTime": "2019-08-09T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7月5日の夜",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-07-05TEV",
+          "FutureResolution": {
+            "startDateTime": "2020-07-05 16:00:00",
+            "endDateTime": "2020-07-05 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-05 16:00:00",
+            "endDateTime": "2019-07-05 20:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "昨日の午後2時から明日4時まで",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日の午後2時から明日4時まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 14:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 14:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "明日の午前",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日の午前",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "8月7日の朝に早稲田大学に着きます。",
+    "Context": {
+      "ReferenceDateTime": "2019-08-19T16:12:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8月7日の朝",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-08-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2020-08-07 08:00:00",
+            "endDateTime": "2020-08-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-08-07 08:00:00",
+            "endDateTime": "2019-08-07 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   }

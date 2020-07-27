@@ -675,40 +675,19 @@
     ]
   },
   {
-    "Input": "毎日事件が起こる",
+    "Input": "毎年事件が起こる",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "毎日",
+        "Text": "毎年",
         "Type": "set",
         "Value": {
-          "Timex": "P1D",
+          "Timex": "P1Y",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "set": "Set: P1Y"
           },
           "PastResolution": {
-            "set": "Set: P1D"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "毎週事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "毎週",
-        "Type": "set",
-        "Value": {
-          "Timex": "P1W",
-          "FutureResolution": {
-            "set": "Set: P1W"
-          },
-          "PastResolution": {
-            "set": "Set: P1W"
+            "set": "Set: P1Y"
           }
         },
         "Start": 0,
@@ -738,19 +717,19 @@
     ]
   },
   {
-    "Input": "毎年事件が起こる",
+    "Input": "毎日事件が起こる",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "毎年",
+        "Text": "毎日",
         "Type": "set",
         "Value": {
-          "Timex": "P1Y",
+          "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1Y"
+            "set": "Set: P1D"
           },
           "PastResolution": {
-            "set": "Set: P1Y"
+            "set": "Set: P1D"
           }
         },
         "Start": 0,
@@ -797,6 +776,27 @@
         },
         "Start": 0,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "毎週事件が起こる",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "毎週",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   }

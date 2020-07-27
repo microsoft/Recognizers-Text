@@ -849,54 +849,6 @@
     ]
   },
   {
-    "Input": "2年間",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2年間",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P2Y",
-          "FutureResolution": {
-            "duration": "63072000"
-          },
-          "PastResolution": {
-            "duration": "63072000"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "5分間",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5分間",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT5M",
-          "FutureResolution": {
-            "duration": "300"
-          },
-          "PastResolution": {
-            "duration": "300"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
     "Input": "3日間",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -965,6 +917,54 @@
         },
         "Start": 0,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "5分間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5分間",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT5M",
+          "FutureResolution": {
+            "duration": "300"
+          },
+          "PastResolution": {
+            "duration": "300"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "2年間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2年間",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2Y",
+          "FutureResolution": {
+            "duration": "63072000"
+          },
+          "PastResolution": {
+            "duration": "63072000"
+          }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   }

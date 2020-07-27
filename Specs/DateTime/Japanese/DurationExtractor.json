@@ -481,54 +481,6 @@
     ]
   },
   {
-    "Input": "二年間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二年間",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "六日間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "六日間",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "七週間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "七週間",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "五時間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五時間",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
     "Input": "三年半",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -553,6 +505,42 @@
     ]
   },
   {
+    "Input": "五時間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五時間",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "六日間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "六日間",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "二年間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二年間",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
     "Input": "三ヶ月半",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -561,6 +549,18 @@
         "Type": "duration",
         "Start": 0,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "七週間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "七週間",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 3
       }
     ]
   }

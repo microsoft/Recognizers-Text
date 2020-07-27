@@ -866,8 +866,7 @@
   },
   {
     "Input": "今日十時頃以降、マイクロソフトビルの入り口で会いましょう",
-    "NotSupported": "javascript, python",
-    "NotSupportedByDesign": "Java",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "今日十時頃以降",
@@ -879,8 +878,7 @@
   },
   {
     "Input": "今日夜十時頃以降、マイクロソフトビルの入り口で会いましょう",
-    "NotSupported": "javascript, python",
-    "NotSupportedByDesign": "Java",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "今日夜十時頃以降",

@@ -806,6 +806,18 @@
     ]
   },
   {
+    "Input": "昭和62年一月十一日八時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和62年一月十一日八時",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
     "Input": "2010年1月29日朝7時",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -830,42 +842,6 @@
     ]
   },
   {
-    "Input": "2010年1月29日正午",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2010年1月29日正午",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "平成二十二年一月二十九日五時",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成二十二年一月二十九日五時",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "昭和62年一月十一日八時",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昭和62年一月十一日八時",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "旧暦の2015年10月1日朝9時20分",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -878,38 +854,14 @@
     ]
   },
   {
-    "Input": "一月十九日午後五時",
+    "Input": "2010年1月29日正午",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "一月十九日午後五時",
+        "Text": "2010年1月29日正午",
         "Type": "datetime",
         "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "明日の午後五時",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日の午後五時",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "今夜六時",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今夜六時",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 4
+        "Length": 12
       }
     ]
   },
@@ -938,18 +890,6 @@
     ]
   },
   {
-    "Input": "今日の朝8時15分",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日の朝8時15分",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
     "Input": "今は都合が悪い",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -962,14 +902,62 @@
     ]
   },
   {
-    "Input": "すみません、6月15日夜8時出発の航空便を予約しました。",
+    "Input": "今日の朝8時15分",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "6月15日夜8時",
+        "Text": "今日の朝8時15分",
         "Type": "datetime",
-        "Start": 6,
-        "Length": 8
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "一月十九日午後五時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一月十九日午後五時",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "平成二十二年一月二十九日五時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成二十二年一月二十九日五時",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "今夜六時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今夜六時",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "明日の午後五時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日の午後五時",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -979,6 +967,18 @@
     "Results": [
       {
         "Text": "6月15日朝8時",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "すみません、6月15日夜8時出発の航空便を予約しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6月15日夜8時",
         "Type": "datetime",
         "Start": 6,
         "Length": 8
