@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -6,11 +7,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         private readonly NumberWithUnitParser numberWithUnitParser;
 
-        public BaseMergedUnitParser(BaseNumberWithUnitParserConfiguration config)
+        public BaseMergedUnitParser(BaseNumberWithUnitParserConfiguration config, NumberWithUnitOptions options = NumberWithUnitOptions.None)
         {
             this.Config = config;
             numberWithUnitParser = new NumberWithUnitParser(config);
+            this.Options = options;
         }
+
+        public virtual NumberWithUnitOptions Options { get; } = NumberWithUnitOptions.None;
 
         protected BaseNumberWithUnitParserConfiguration Config { get; private set; }
 
@@ -22,6 +26,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             if (extResult.Type.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.Ordinal))
             {
                 pr = new BaseCurrencyParser(Config).Parse(extResult);
+            }
+            else if ((this.Options & NumberWithUnitOptions.EnableCompoundTypes) != 0 && extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) && extResult.Data is List<ExtractResult>)
+            {
+                pr = new BaseMergedDimensionsParser(Config).Parse(extResult);
             }
             else
             {
