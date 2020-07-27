@@ -741,86 +741,14 @@
     ]
   },
   {
-    "Input": "明日の2時から4時まで",
+    "Input": "7月25日の朝の中小企業株式公告のまとめ",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "明日の2時から4時まで",
+        "Text": "7月25日の朝",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "昨夜",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨夜",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "1月15日の4時から2月3日の9時までの間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月15日の4時から2月3日の9時までの間",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "昨日の午後2時から4時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の午後2時から4時まで",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "昨日の夜",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の夜",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "あと5分間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "あと5分間",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "2時-明日の4時",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2時-明日の4時",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 8
+        "Length": 7
       }
     ]
   },
@@ -837,6 +765,18 @@
     ]
   },
   {
+    "Input": "あと5分間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "あと5分間",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "昨日の午後2時から明日の4時まで",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -849,14 +789,26 @@
     ]
   },
   {
-    "Input": "7月25日の朝の中小企業株式公告のまとめ",
+    "Input": "昨日の午後2時から4時まで",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "7月25日の朝",
+        "Text": "昨日の午後2時から4時まで",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 7
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "2時-明日の4時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2時-明日の4時",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -869,6 +821,18 @@
         "Type": "datetimerange",
         "Start": 0,
         "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "昨夜",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨夜",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -906,14 +870,14 @@
     ]
   },
   {
-    "Input": "明日の午前",
+    "Input": "昨日の夜",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "明日の午前",
+        "Text": "昨日の夜",
         "Type": "datetimerange",
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
@@ -926,6 +890,42 @@
         "Type": "datetimerange",
         "Start": 0,
         "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "明日の午前",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日の午前",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "明日の2時から4時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明日の2時から4時まで",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "1月15日の4時から2月3日の9時までの間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1月15日の4時から2月3日の9時までの間",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 21
       }
     ]
   }

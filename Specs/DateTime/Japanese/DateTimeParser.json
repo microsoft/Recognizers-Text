@@ -1724,26 +1724,50 @@
     ]
   },
   {
-    "Input": "今夜6時",
+    "Input": "今日朝8時15分",
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "今夜6時",
+        "Text": "今日朝8時15分",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T18",
+          "Timex": "2016-11-07T08:15",
           "FutureResolution": {
-            "dateTime": "2016-11-07 18:00:00"
+            "dateTime": "2016-11-07 08:15:00"
           },
           "PastResolution": {
-            "dateTime": "2016-11-07 18:00:00"
+            "dateTime": "2016-11-07 08:15:00"
           }
         },
         "Start": 0,
-        "Length": 4
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "旧暦2015年10月1日の午前9時20分",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦2015年10月1日の午前9時20分",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2015-10-01T09:20",
+          "FutureResolution": {
+            "dateTime": "2015-10-01 09:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2015-10-01 09:20:00"
+          }
+        },
+        "Start": 0,
+        "Length": 20
       }
     ]
   },
@@ -1772,26 +1796,26 @@
     ]
   },
   {
-    "Input": "旧暦2015年10月1日の午前9時20分",
+    "Input": "2010/01/29の正午12時",
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦2015年10月1日の午前9時20分",
+        "Text": "2010/01/29の正午12時",
         "Type": "datetime",
         "Value": {
-          "Timex": "2015-10-01T09:20",
+          "Timex": "2010-01-29T12",
           "FutureResolution": {
-            "dateTime": "2015-10-01 09:20:00"
+            "dateTime": "2010-01-29 12:00:00"
           },
           "PastResolution": {
-            "dateTime": "2015-10-01 09:20:00"
+            "dateTime": "2010-01-29 12:00:00"
           }
         },
         "Start": 0,
-        "Length": 20
+        "Length": 16
       }
     ]
   },
@@ -1868,26 +1892,26 @@
     ]
   },
   {
-    "Input": "今日朝8時15分",
+    "Input": "2010.1.29の5時",
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "今日朝8時15分",
+        "Text": "2010.1.29の5時",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T08:15",
+          "Timex": "2010-01-29T05",
           "FutureResolution": {
-            "dateTime": "2016-11-07 08:15:00"
+            "dateTime": "2010-01-29 05:00:00"
           },
           "PastResolution": {
-            "dateTime": "2016-11-07 08:15:00"
+            "dateTime": "2010-01-29 05:00:00"
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 12
       }
     ]
   },
@@ -1916,50 +1940,26 @@
     ]
   },
   {
-    "Input": "2010.1.29の5時",
+    "Input": "今夜6時",
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2010.1.29の5時",
+        "Text": "今夜6時",
         "Type": "datetime",
         "Value": {
-          "Timex": "2010-01-29T05",
+          "Timex": "2016-11-07T18",
           "FutureResolution": {
-            "dateTime": "2010-01-29 05:00:00"
+            "dateTime": "2016-11-07 18:00:00"
           },
           "PastResolution": {
-            "dateTime": "2010-01-29 05:00:00"
+            "dateTime": "2016-11-07 18:00:00"
           }
         },
         "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "2010/01/29の正午12時",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T14:07:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2010/01/29の正午12時",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "2010-01-29T12",
-          "FutureResolution": {
-            "dateTime": "2010-01-29 12:00:00"
-          },
-          "PastResolution": {
-            "dateTime": "2010-01-29 12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 16
+        "Length": 4
       }
     ]
   }

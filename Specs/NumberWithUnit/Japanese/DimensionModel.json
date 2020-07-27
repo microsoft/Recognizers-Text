@@ -830,112 +830,6 @@
     ]
   },
   {
-    "Input": "去年、チンジャンの蝦米共同産業の生産額が百八十億人民元突破、十万人の就業も促進し、ロブスターの養殖農家平均で一万六千元増収し、全省のロブスター養殖業を三百八十七ムー引っ張しました。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "三百八十七ムー",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "3870000",
-          "unit": "Mu"
-        },
-        "Start": 75,
-        "End": 81
-      }
-    ]
-  },
-  {
-    "Input": "オーストラリアとビクトリアの警察がモルボルンで一トン近いのメタンフェタミンを鹵獲。オーストラリア史上最大のメタンフェタミン密輸案件となっております。（オーストラリア連邦警察）",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一トン",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "1",
-          "unit": "Ton"
-        },
-        "Start": 23,
-        "End": 25
-      }
-    ]
-  },
-  {
-    "Input": "dimensionってどういう意味ですか",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "今の身長は百六十八センチです",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百六十八センチ",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "168",
-          "unit": "Centimeter"
-        },
-        "Start": 5,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "今日の午後二時、サプライズがあります！",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "身長はいま、168cmも到達しました",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "168cm",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "168",
-          "unit": "Centimeter"
-        },
-        "Start": 6,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "陽西の唐辛子絶賛発売中、毎日平均で二十万キロも珠江デルタで完売",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二十万キロ",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "200000",
-          "unit": "Kilogram"
-        },
-        "Start": 17,
-        "End": 21
-      }
-    ]
-  },
-  {
-    "Input": "ここの水深は250メートル超え",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "250メートル",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "250",
-          "unit": "Meter"
-        },
-        "Start": 6,
-        "End": 12
-      }
-    ]
-  },
-  {
     "Input": "2pmとは、2ピクトメーターのことだと彼は言った。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -962,6 +856,75 @@
     ]
   },
   {
+    "Input": "今の身長は百六十八センチです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百六十八センチ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 5,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "dimensionってどういう意味ですか",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "ここの水深は250メートル超え",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "250メートル",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "250",
+          "unit": "Meter"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "身長はいま、168cmも到達しました",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "168cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "去年、チンジャンの蝦米共同産業の生産額が百八十億人民元突破、十万人の就業も促進し、ロブスターの養殖農家平均で一万六千元増収し、全省のロブスター養殖業を三百八十七ムー引っ張しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三百八十七ムー",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3870000",
+          "unit": "Mu"
+        },
+        "Start": 75,
+        "End": 81
+      }
+    ]
+  },
+  {
     "Input": "今となって、身長は168センチになった",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -974,6 +937,43 @@
         },
         "Start": 9,
         "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "オーストラリアとビクトリアの警察がモルボルンで一トン近いのメタンフェタミンを鹵獲。オーストラリア史上最大のメタンフェタミン密輸案件となっております。（オーストラリア連邦警察）",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一トン",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Ton"
+        },
+        "Start": 23,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "今日の午後二時、サプライズがあります！",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "陽西の唐辛子絶賛発売中、毎日平均で二十万キロも珠江デルタで完売",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十万キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200000",
+          "unit": "Kilogram"
+        },
+        "Start": 17,
+        "End": 21
       }
     ]
   }

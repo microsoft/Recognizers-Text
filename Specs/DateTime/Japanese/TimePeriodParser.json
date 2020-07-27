@@ -1325,6 +1325,188 @@
     ]
   },
   {
+    "Input": "17時55分23秒から18時33分02秒まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "17時55分23秒から18時33分02秒まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "FutureResolution": {
+            "startTime": "17:55:23",
+            "endTime": "18:33:02"
+          },
+          "PastResolution": {
+            "startTime": "17:55:23",
+            "endTime": "18:33:02"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "午後五時から午前三時まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後五時から午前三時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17:00,T03:00,PT10H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "夜",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "午後五時から夜七時半まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後五時から夜七時半まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T19:30,PT2H30M)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "19:30:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "19:30:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "昼",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昼",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMI",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "午後五時から6時まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後五時から6時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17:00,T18:00,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "5時から6時まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5時から6時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05:00,T06:00,PT1H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "06:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
     "Input": "朝五時から六時まで",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -1342,6 +1524,32 @@
           },
           "PastResolution": {
             "startTime": "05:00:00",
+            "endTime": "06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "五時半から六時まで",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五時半から六時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05:30,T06,PT0H30M)",
+          "FutureResolution": {
+            "startTime": "05:30:00",
+            "endTime": "06:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:30:00",
             "endTime": "06:00:00"
           }
         },
@@ -1373,84 +1581,6 @@
         },
         "Start": 0,
         "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "午後五時から6時まで",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後五時から6時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T17:00,T18:00,PT1H)",
-          "FutureResolution": {
-            "startTime": "17:00:00",
-            "endTime": "18:00:00"
-          },
-          "PastResolution": {
-            "startTime": "17:00:00",
-            "endTime": "18:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "17時55分23秒から18時33分02秒まで",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "17時55分23秒から18時33分02秒まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
-          "FutureResolution": {
-            "startTime": "17:55:23",
-            "endTime": "18:33:02"
-          },
-          "PastResolution": {
-            "startTime": "17:55:23",
-            "endTime": "18:33:02"
-          }
-        },
-        "Start": 0,
-        "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "5時から6時まで",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5時から6時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T05:00,T06:00,PT1H)",
-          "FutureResolution": {
-            "startTime": "05:00:00",
-            "endTime": "06:00:00"
-          },
-          "PastResolution": {
-            "startTime": "05:00:00",
-            "endTime": "06:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 8
       }
     ]
   },
@@ -1503,136 +1633,6 @@
         },
         "Start": 0,
         "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "五時半から六時まで",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五時半から六時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T05:30,T06,PT0H30M)",
-          "FutureResolution": {
-            "startTime": "05:30:00",
-            "endTime": "06:00:00"
-          },
-          "PastResolution": {
-            "startTime": "05:30:00",
-            "endTime": "06:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "午後五時から夜七時半まで",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後五時から夜七時半まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T17,T19:30,PT2H30M)",
-          "FutureResolution": {
-            "startTime": "17:00:00",
-            "endTime": "19:30:00"
-          },
-          "PastResolution": {
-            "startTime": "17:00:00",
-            "endTime": "19:30:00"
-          }
-        },
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "夜",
-    "Context": {
-      "ReferenceDateTime": "2018-10-11T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "夜",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TEV",
-          "FutureResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
-          },
-          "PastResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 1
-      }
-    ]
-  },
-  {
-    "Input": "昼",
-    "Context": {
-      "ReferenceDateTime": "2018-10-11T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昼",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMI",
-          "FutureResolution": {
-            "startTime": "11:00:00",
-            "endTime": "13:00:00"
-          },
-          "PastResolution": {
-            "startTime": "11:00:00",
-            "endTime": "13:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 1
-      }
-    ]
-  },
-  {
-    "Input": "午後五時から午前三時まで",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後五時から午前三時まで",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T17:00,T03:00,PT10H)",
-          "FutureResolution": {
-            "startTime": "17:00:00",
-            "endTime": "03:00:00"
-          },
-          "PastResolution": {
-            "startTime": "17:00:00",
-            "endTime": "03:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 12
       }
     ]
   },

@@ -501,40 +501,6 @@
     ]
   },
   {
-    "Input": "人民元五十元",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "人民元五十元",
-        "Start": 0,
-        "End": 5,
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "unit": "Chinese yuan",
-          "value": "50"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "中国人民銀行の5306憶台湾ドルの預金証書が期限切れになりました",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5306憶台湾ドル",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "TWD",
-          "value": "530600000000",
-          "unit": "New Taiwan dollar"
-        },
-        "Start": 7,
-        "End": 15
-      }
-    ]
-  },
-  {
     "Input": "十ドル",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -552,36 +518,53 @@
     ]
   },
   {
-    "Input": "1ユーロで大丈夫です",
+    "Input": "8億人民元",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1ユーロ",
+        "Text": "8億人民元",
+        "Start": 0,
+        "End": 4,
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "EUR",
-          "value": "1",
-          "unit": "Euro"
-        },
-        "Start": 0,
-        "End": 3
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "800000000"
+        }
       }
     ]
   },
   {
-    "Input": "このパソコンは2ドルとなってます",
+    "Input": "東芝の再編はもう一万憶が必要、取引銀行に借り入れを申請した。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2ドル",
+        "Text": "一万憶",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "USD",
-          "value": "2",
-          "unit": "United States dollar"
+          "isoCurrency": "JPY",
+          "value": "1000000000000",
+          "unit": "Japanese yen"
         },
-        "Start": 7,
-        "End": 9
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "その中で、四川省の彩民一口で一千万人民元の基本大賞あたりました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一千万人民元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "10000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 14,
+        "End": 19
       }
     ]
   },
@@ -603,19 +586,19 @@
     ]
   },
   {
-    "Input": "千円あります",
+    "Input": "ある人が江蘇省に15人民元でロト引いてたら1600萬の大あたりました　賞金プールは36.57憶人民元となってます",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "千円",
+        "Text": "15人民元",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
-          "value": "1000",
+          "value": "15",
           "unit": "Chinese yuan"
         },
-        "Start": 0,
-        "End": 1
+        "Start": 8,
+        "End": 12
       }
     ]
   },
@@ -648,6 +631,57 @@
     ]
   },
   {
+    "Input": "10円5銭",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10円5銭",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "10.05",
+          "unit": "Japanese yen"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "このパソコンは2ドル3セントとなってます",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2ドル3セント",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2.03",
+          "unit": "United States dollar"
+        },
+        "Start": 7,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "人民元八千元",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "人民元八千元",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "8000"
+        }
+      }
+    ]
+  },
+  {
     "Input": "4人民元　5ドル",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -676,6 +710,91 @@
     ]
   },
   {
+    "Input": "1.0092スイスフランを交換します",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.0092スイスフラン",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CHF",
+          "value": "1.0092",
+          "unit": "Swiss franc"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "今回抽選後、賞金プールは36.57憶人民元まで到達",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "36.57憶人民元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "3657000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 12,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "中国人民銀行の5306憶台湾ドルの預金証書が期限切れになりました",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5306憶台湾ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TWD",
+          "value": "530600000000",
+          "unit": "New Taiwan dollar"
+        },
+        "Start": 7,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "宝安テクノロジーはIPE GROUP LIMITEDの株主15人と買収契約をサインしました。一株あたり1.95香港ドル",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.95香港ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "HKD",
+          "value": "1.95",
+          "unit": "Hong Kong dollar"
+        },
+        "Start": 51,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "千円あります",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千円",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "1000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
     "Input": "このスマホケースは五元三角で大丈夫です",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -688,57 +807,6 @@
           "unit": "Chinese yuan"
         },
         "Start": 9,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "東芝の再編はもう一万憶が必要、取引銀行に借り入れを申請した。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一万憶",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "JPY",
-          "value": "1000000000000",
-          "unit": "Japanese yen"
-        },
-        "Start": 8,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "50元6角3分",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "50元6角3分",
-        "Start": 0,
-        "End": 6,
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "unit": "Chinese yuan",
-          "value": "50.63"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "ある人が江蘇省に15人民元でロト引いてたら1600萬の大あたりました　賞金プールは36.57憶人民元となってます",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "15人民元",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "value": "15",
-          "unit": "Chinese yuan"
-        },
-        "Start": 8,
         "End": 12
       }
     ]
@@ -757,91 +825,6 @@
         },
         "Start": 8,
         "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "二千十六年、買収などの直接投資において、中国のキャッシュアウトフロー纯额は千二百憶ドルも到達",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "千二百憶ドル",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "USD",
-          "value": "120000000000",
-          "unit": "United States dollar"
-        },
-        "Start": 37,
-        "End": 42
-      }
-    ]
-  },
-  {
-    "Input": "1.0092スイスフランを交換します",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1.0092スイスフラン",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CHF",
-          "value": "1.0092",
-          "unit": "Swiss franc"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "その中で、四川省の彩民一口で一千万人民元の基本大賞あたりました。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一千万人民元",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "value": "10000000",
-          "unit": "Chinese yuan"
-        },
-        "Start": 14,
-        "End": 19
-      }
-    ]
-  },
-  {
-    "Input": "8億人民元",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "8億人民元",
-        "Start": 0,
-        "End": 4,
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "unit": "Chinese yuan",
-          "value": "800000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "宝安テクノロジーはIPE GROUP LIMITEDの株主15人と買収契約をサインしました。一株あたり1.95香港ドル",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1.95香港ドル",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "HKD",
-          "value": "1.95",
-          "unit": "Hong Kong dollar"
-        },
-        "Start": 51,
-        "End": 58
       }
     ]
   },
@@ -874,70 +857,53 @@
     ]
   },
   {
-    "Input": "今回抽選後、賞金プールは36.57憶人民元まで到達",
+    "Input": "50元6角3分",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "36.57憶人民元",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "value": "3657000000",
-          "unit": "Chinese yuan"
-        },
-        "Start": 12,
-        "End": 20
-      }
-    ]
-  },
-  {
-    "Input": "10円5銭",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10円5銭",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "JPY",
-          "value": "10.05",
-          "unit": "Japanese yen"
-        },
+        "Text": "50元6角3分",
         "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "人民元八千元",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "人民元八千元",
-        "Start": 0,
-        "End": 5,
+        "End": 6,
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
           "unit": "Chinese yuan",
-          "value": "8000"
+          "value": "50.63"
         }
       }
     ]
   },
   {
-    "Input": "このパソコンは2ドル3セントとなってます",
+    "Input": "二千十六年、買収などの直接投資において、中国のキャッシュアウトフロー纯额は千二百憶ドルも到達",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2ドル3セント",
+        "Text": "千二百憶ドル",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "USD",
-          "value": "2.03",
+          "value": "120000000000",
+          "unit": "United States dollar"
+        },
+        "Start": 37,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "このパソコンは2ドルとなってます",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2",
           "unit": "United States dollar"
         },
         "Start": 7,
-        "End": 13
+        "End": 9
       }
     ]
   },
@@ -955,6 +921,40 @@
         },
         "Start": 0,
         "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1ユーロで大丈夫です",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1ユーロ",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "value": "1",
+          "unit": "Euro"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "人民元五十元",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "人民元五十元",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "50"
+        }
       }
     ]
   }

@@ -865,18 +865,6 @@
     ]
   },
   {
-    "Input": "今日十時頃以降、マイクロソフトビルの入り口で会いましょう",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日十時頃以降",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "今日夜十時頃以降、マイクロソフトビルの入り口で会いましょう",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -885,6 +873,18 @@
         "Type": "datetime",
         "Start": 0,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "今日十時頃以降、マイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日十時頃以降",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 7
       }
     ]
   }

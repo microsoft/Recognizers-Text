@@ -1,5 +1,31 @@
 [
   {
+    "Input": "今日夜十時ぐらい以降",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日夜十時ぐらい以降",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-01-05T22",
+              "Mod": "after",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-05 22:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
     "Input": "十時ぐらい以降",
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
@@ -55,32 +81,6 @@
         },
         "Start": 0,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "今日夜十時ぐらい以降",
-    "Context": {
-      "ReferenceDateTime": "2020-01-05T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日夜十時ぐらい以降",
-        "Type": "datetimeV2.datetimerange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2020-01-05T22",
-              "Mod": "after",
-              "type": "datetimerange",
-              "sourceEntity": "datetimepoint",
-              "start": "2020-01-05 22:00:00"
-            }
-          ]
-        },
-        "Start": 0,
-        "Length": 10
       }
     ]
   }

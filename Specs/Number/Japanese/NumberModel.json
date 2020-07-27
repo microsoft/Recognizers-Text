@@ -8519,64 +8519,225 @@
     "Results": []
   },
   {
-    "Input": "1991年1月16日夜パリ時間20時：フランスのミッテラン大統領はテレビ演説し、湾岸危機の平和的解決はすでに戦争に移り、フランスは全ての戦闘準備をもう整えたと発表しました。",
+    "Input": "110万",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1991",
+        "Text": "110万",
+        "Start": 0,
+        "End": 3,
         "TypeName": "number",
         "Resolution": {
-          "value": "1991"
+          "value": "1100000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "零点二七九",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "零点二七九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2789"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "2.5",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2.5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "400.5",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "400.5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "400.5"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "答えは四ではなくて、五です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 10,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "このコンピューターは二ドルです。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "500余り万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "500余り万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "百分の二",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百分の二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.02"
         },
         "Start": 0,
         "End": 3
-      },
+      }
+    ]
+  },
+  {
+    "Input": "110万3000斤",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
       {
-        "Text": "1",
+        "Text": "110万3000斤",
+        "Start": 0,
+        "End": 8,
         "TypeName": "number",
         "Resolution": {
-          "value": "1"
+          "value": "1103000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "50"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "21点2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21点2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21.2"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "四百五十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "450"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "9年8トン",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
         },
         "Start": 0,
         "End": 0
       },
       {
-        "Text": "16",
+        "Text": "8",
         "TypeName": "number",
         "Resolution": {
-          "value": "16"
+          "value": "8"
         },
-        "Start": 7,
-        "End": 8
-      },
-      {
-        "Text": "20",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "20"
-        },
-        "Start": 15,
-        "End": 16
+        "Start": 2,
+        "End": 2
       }
     ]
   },
   {
-    "Input": "350又三分の一",
+    "Input": "マイナス一また二分の一",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "350又三分の一",
+        "Text": "マイナス一また二分の一",
         "TypeName": "number",
         "Resolution": {
-          "value": "350.333333333333"
+          "value": "-1.5"
         },
         "Start": 0,
-        "End": 7
+        "End": 10
       }
     ]
   },
   {
-    "Input": "これは5ではなく、201です。",
+    "Input": "これは5で、あれは4です。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -8589,445 +8750,13 @@
         }
       },
       {
-        "Text": "201",
+        "Text": "4",
         "Start": 9,
-        "End": 11,
+        "End": 9,
         "TypeName": "number",
         "Resolution": {
-          "value": "201"
+          "value": "4"
         }
-      }
-    ]
-  },
-  {
-    "Input": "1005",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1005",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1005"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "1300",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1300",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "13000"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "あなたを見るとすぐ笑う。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "10",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "1万3千",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1万3千",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "13000"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "靴下5足で9.9です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5",
-        "Start": 2,
-        "End": 2,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      },
-      {
-        "Text": "9.9",
-        "Start": 5,
-        "End": 7,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9.9"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "マイナス32",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス32",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-32"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "四千三百億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四千三百億",
-        "Start": 0,
-        "End": 4,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "430000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "3千9百65",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3千9百65",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3965"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "十万七千八百五十四",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十万七千八百五十四",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "107854"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "10万651パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "1点1^+23",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1点1^+23",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "8.95430243255239"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "千六百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "千六百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1600"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "マイナス0.5",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス0.5",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-0.5"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "マイナス10012",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス10012",
-        "Start": 0,
-        "End": 8,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-10012"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "一百二十三万四千五百六十七",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "二十三万四",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "234"
-        },
-        "Start": 2,
-        "End": 6
-      },
-      {
-        "Text": "五百六十七",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "567"
-        },
-        "Start": 8,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "350また3分の1",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "350また3分の1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "350.333333333333"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "二人は二千二百二十二拾二。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二人は二千二百二十二拾二。",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2222"
-        },
-        "Start": 0,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "10012",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10012",
-        "Start": 0,
-        "End": 4,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10012"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "50ダース",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "50ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "600"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "二ドル",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "二重",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "3足",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "78万506",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "78万506",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "780506"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "明ちゃんは指が10本あります。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10",
-        "Start": 7,
-        "End": 8,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "第十の刃",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "第十の刃",
-        "Start": 0,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "100あまり万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100あまり万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "九百九十",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "九百九十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "990"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "9万4百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "9万4百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "90400"
-        },
-        "Start": 0,
-        "End": 3
       }
     ]
   },
@@ -9074,6 +8803,26 @@
     ]
   },
   {
+    "Input": "百九十九個",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百九十九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "199"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "陸地",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
     "Input": "マイナス3分のマイナス百五十七",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -9089,7 +8838,534 @@
     ]
   },
   {
-    "Input": "1991年1月16日夜パリ時間20時：フランスのミッテラン大統領はテレビで演説し、湾岸危機の平和解決はすでに戦争に譲られ、フランスはすべての戦闘準備を既に整えたと発表しました。",
+    "Input": "1001",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1001",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1001"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "45642万15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "45642万15",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "456420015"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "45億4004万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "45億4004万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4540040000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "4千万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4千万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "これは四川ではなく、五台山です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 10,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10余万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10余万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "千五十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1050"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "十万七千八百五十四",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十万七千八百五十四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "107854"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "四千また二分の三",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四千また二分の三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.000714285714285714"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "二百三十三、577、及び千六百点五",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二百三十三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "233"
+        },
+        "Start": 0,
+        "End": 4
+      },
+      {
+        "Text": "577",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "577"
+        },
+        "Start": 6,
+        "End": 8
+      },
+      {
+        "Text": "千六百点五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1600.5"
+        },
+        "Start": 12,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "10万7千8百56",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10万7千8百56",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "107854"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "全て",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "1万250",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1万250",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10250"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "二千三百五十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二千三百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2350"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "9百万4百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9百万4百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9000400"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "3896万4965",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3896万4965",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "38964965"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2212",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2212",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "四川の出身です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "55.579パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "20万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "2千万点5544",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2千万点5544",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20000000.5544"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "54600",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "54600",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "54600"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "4005万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4005万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40050000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "五分の一",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五分の一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "四百六十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四百六十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "460"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "百万又50万分の25",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百万又50万分の25",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000.00005"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "これは5ではなく、201です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "201",
+        "Start": 9,
+        "End": 11,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "201"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "25分の1014",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "25分の1014",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40.56"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "マイナス零点四",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス零点四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1234万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1234万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12340000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "105千万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "105千万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1050000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "15.7",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15.7",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15.7"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "40万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "40万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "400000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "4000万6000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4000万6000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40006000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "マイナス1点2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス1点2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1991年1月16日夜パリ時間20時：フランスのミッテラン大統領はテレビ演説し、湾岸危機の平和的解決はすでに戦争に移り、フランスは全ての戦闘準備をもう整えたと発表しました。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -9131,152 +9407,50 @@
     ]
   },
   {
-    "Input": "二点三",
+    "Input": "6足",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "二点三",
+        "Text": "6",
+        "Start": 0,
+        "End": 0,
         "TypeName": "number",
         "Resolution": {
-          "value": "2.3"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "100対",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "50対のイヤリング",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "50",
-        "Start": 0,
-        "End": 1,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "50"
+          "value": "6"
         }
       }
     ]
   },
   {
-    "Input": "マイナス1点2",
+    "Input": "二百五十、250、まだ二五〇があります。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "マイナス1点2",
+        "Text": "二百五十",
         "TypeName": "number",
         "Resolution": {
-          "value": "-1.2"
+          "value": "250"
         },
         "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "16分の5",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
+        "End": 3
+      },
       {
-        "Text": "16分の5",
+        "Text": "250",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.3125"
+          "value": "250"
         },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "10万7千8百56",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
+        "Start": 5,
+        "End": 7
+      },
       {
-        "Text": "10万7千8百56",
+        "Text": "二五〇",
         "TypeName": "number",
         "Resolution": {
-          "value": "107854"
+          "value": "250"
         },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "一万五千億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一万五千億",
-        "Start": 0,
-        "End": 4,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1500000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "マイナス三十二",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス三十二",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-32"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "2点789",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2点789",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2.789"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "マイナス6.6",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス6.6",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-6.6"
-        },
-        "Start": 0,
-        "End": 6
+        "Start": 11,
+        "End": 13
       }
     ]
   },
@@ -9296,19 +9470,14 @@
     ]
   },
   {
-    "Input": "6051パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "100",
+    "Input": "150",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "100",
+        "Text": "150",
         "TypeName": "number",
         "Resolution": {
-          "value": "100"
+          "value": "150"
         },
         "Start": 0,
         "End": 2
@@ -9316,241 +9485,47 @@
     ]
   },
   {
-    "Input": "10ダースのリンゴ",
+    "Input": "三百五十また三分の一",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "10ダース",
+        "Text": "三百五十また三分の一",
         "TypeName": "number",
         "Resolution": {
-          "value": "120"
+          "value": "350.333333333333"
         },
         "Start": 0,
-        "End": 4
+        "End": 9
       }
     ]
   },
   {
-    "Input": "九十二万四千",
+    "Input": "十億六万五百六",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "九十二万四千",
+        "Text": "十億六万五百六",
         "TypeName": "number",
         "Resolution": {
-          "value": "924000"
+          "value": "1000060506"
         },
         "Start": 0,
-        "End": 5
+        "End": 6
       }
     ]
   },
   {
-    "Input": "450",
+    "Input": "9万4百",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "450",
+        "Text": "9万4百",
         "TypeName": "number",
         "Resolution": {
-          "value": "450"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "5億6",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5億6",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "500000006"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "零点五",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "零点五",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.5"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "3また千分の23",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3また千分の23",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3.023"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "25分の1014",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "25分の1014",
-        "Start": 0,
-        "End": 7,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "40.56"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "199個",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "199個",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "199"
+          "value": "90400"
         },
         "Start": 0,
         "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "1ドル",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "十億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十億",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000000"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "2450",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2450",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2450"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "百対",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "4万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "40000"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "五十五兆十二億四万五千二百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五十五兆十二億四万五千二百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "55001200045200"
-        },
-        "Start": 0,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "9年8トン",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "9",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "8",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "8"
-        },
-        "Start": 2,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "45億4004万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "45億4004万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4540040000"
-        },
-        "Start": 0,
-        "End": 7
       }
     ]
   },
@@ -9570,29 +9545,64 @@
     ]
   },
   {
-    "Input": "マイナス一また二分の一",
+    "Input": "10012.15",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "マイナス一また二分の一",
+        "Text": "10012.15",
+        "Start": 0,
+        "End": 7,
         "TypeName": "number",
         "Resolution": {
-          "value": "-1.5"
-        },
-        "Start": 0,
-        "End": 10
+          "value": "10012.15"
+        }
       }
     ]
   },
   {
-    "Input": "75400",
+    "Input": "一見",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "十六万五百六",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "75400",
+        "Text": "十六万五百六",
         "TypeName": "number",
         "Resolution": {
-          "value": "75400"
+          "value": "160506"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "マイナス405億404万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス405億404万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-40504040000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "4004万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4004万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40040000"
         },
         "Start": 0,
         "End": 4
@@ -9600,19 +9610,138 @@
     ]
   },
   {
-    "Input": "マイナス10",
+    "Input": "指輪１対は8000です。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "マイナス10",
+        "Text": "１",
+        "Start": 2,
+        "End": 2,
         "TypeName": "number",
         "Resolution": {
-          "value": "-10"
+          "value": "1"
+        }
+      },
+      {
+        "Text": "8000",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100056",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100056",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100056"
         },
         "Start": 0,
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "十足",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "千六百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千六百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1600"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "百二十数億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百二十数億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12000000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "四十四",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四十四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "44"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "2.2億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2.2億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "220000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "1ドル",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
   },
   {
     "Input": "1また4/3の夢、1/2の努力",
@@ -9639,80 +9768,17 @@
     ]
   },
   {
-    "Input": "1500余り万",
+    "Input": "101万1000",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1500余り万",
+        "Text": "101万1000",
         "TypeName": "number",
         "Resolution": {
-          "value": "15000000"
+          "value": "1011000"
         },
         "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "1012章、1018章、と1803章で、それぞれこのことに言及しました。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1012章",
-        "Start": 0,
-        "End": 4,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1012"
-        }
-      },
-      {
-        "Text": "1018章",
-        "Start": 6,
-        "End": 10,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1018"
-        }
-      },
-      {
-        "Text": "1803章",
-        "Start": 13,
-        "End": 17,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1803"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "0.5",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "0.5",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.5"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "五兆六十二億四万五千二百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五兆六十二億四万五千二百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5006200045200"
-        },
-        "Start": 0,
-        "End": 11
+        "End": 7
       }
     ]
   },
@@ -9732,374 +9798,17 @@
     ]
   },
   {
-    "Input": "答えは四で、五ではないです。",
+    "Input": "百対",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "四",
-        "Start": 3,
-        "End": 3,
+        "Text": "百",
         "TypeName": "number",
         "Resolution": {
-          "value": "4"
-        }
-      },
-      {
-        "Text": "五",
-        "Start": 6,
-        "End": 6,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "「一」と「五」",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一",
-        "Start": 1,
-        "End": 1,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "五",
-        "Start": 5,
-        "End": 5,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "千五百あまり万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "千五百あまり万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "15000000"
+          "value": "100"
         },
         "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "リンゴは1ドル割引します。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "百九十九個",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百九十九",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "199"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "10,000.23",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10,000.23",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000.233"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "110万3000斤",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "110万3000斤",
-        "Start": 0,
-        "End": 8,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1103000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "5分の1",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5分の1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.2"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "これは5で、あれは4です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5",
-        "Start": 3,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      },
-      {
-        "Text": "4",
-        "Start": 9,
-        "End": 9,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "2000点0",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2000点0",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2000"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "陸地",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "4千万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4千万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "40000000"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "10余万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10余万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100000"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "りんごを一割引します",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "2020年三月五日",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2020年三月五日",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.6"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "1点6",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1点6",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1.6"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "21点2",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21点2",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "21.2"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "1000万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1000万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "百万又50万分の25",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百万又50万分の25",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000.00005"
-        },
-        "Start": 0,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "2千万点5544",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2千万点5544",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "20000000.5544"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "十億六万五百六",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十億六万五百六",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000060506"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "二十数万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二十数万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "200000"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "55兆12億4万5千2百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "55兆12億4万5千2百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "55001200045200"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "1万12",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1万12",
-        "Start": 0,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10012"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "百余り万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百余り万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000"
-        },
-        "Start": 0,
-        "End": 3
+        "End": 0
       }
     ]
   },
@@ -10119,869 +9828,6 @@
     ]
   },
   {
-    "Input": "100056",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100056",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100056"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "4000万6000",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4000万6000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "40006000"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "1.2時間の会議",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        },
-        "Start": 2,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "千二百三十四万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "千二百三十四万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "12340000"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "千五十",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "千五十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1050"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "10012.15",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10012.15",
-        "Start": 0,
-        "End": 7,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10012.15"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "マイナス一点五",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス一点五",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-1.5"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "54600",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "54600",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "54600"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "400.5",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "400.5",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "400.5"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "10万56",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10万56",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100056"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "15.7",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "15.7",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "15.7"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "十六万五百六",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十六万五百六",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "160506"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "五分の一",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五分の一",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.2"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "100分の2",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100分の2",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.02"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "5,450",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5,450",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5450"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "1234万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1234万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "12340000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "三百五十又三分の一",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "三百五十又三分の一",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "350.333333333333"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "マイナス2.5 M",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス2.5 M",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-2500000"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "101万1000",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "101万1000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1011000"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "四百五十",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四百五十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "450"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "一見",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "これは一ではなくて、9台です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一",
-        "Start": 3,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "9",
-        "Start": 10,
-        "End": 10,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "数量は一ではないですが、五です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一",
-        "Start": 3,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "五",
-        "Start": 12,
-        "End": 12,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "これは四川ではなく、五です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五",
-        "Start": 10,
-        "End": 10,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "500余り万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "500余り万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5000000"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "10018.15",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10018.15",
-        "Start": 0,
-        "End": 7,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10018.15"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "七万五千四百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "七万五千四百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "75400"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "8385万2336.33",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "8385万2336.33",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "83852326.33"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "百一万一千",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百一万一千",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1011000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "3896万4965",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3896万4965",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "38964965"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "12",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "12",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "12"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "百万四",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百万四",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000004"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "20万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "20万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "200000"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "二点二",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二点二",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2.2"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "40万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "40万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "400000"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "千余り万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "千余り万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000000"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "611.255パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "5千2百36",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5千2百36",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5236"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "四点八",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四点八",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4.8"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "百分の二",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百分の二",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.02"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "500余万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "500余万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5000000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "二千四百五十",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二千四百五十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2450"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "9百万4百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "9百万4百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9000400"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "四十四",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四十四",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "44"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "2212",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2212",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2222"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "15",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "15",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "15"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "5月16日2020年",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5月16日2020年",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3.2"
-        },
-        "Start": 0,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "4005万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4005万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "40050000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "55.579パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "マイナス3分のマイナス157",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス3分のマイナス157",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52.3333333333333"
-        },
-        "Start": 0,
-        "End": 13
-      }
-    ]
-  },
-  {
-    "Input": "答えは四ではなくて、五です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四",
-        "Start": 3,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4"
-        }
-      },
-      {
-        "Text": "五",
-        "Start": 10,
-        "End": 10,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "200.2",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "200",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "200"
-        },
-        "Start": 0,
-        "End": 2
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "これは四川ではなく、五台山です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五",
-        "Start": 10,
-        "End": 10,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "3分の157",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3分の157",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52.3333333333333"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "150222,250,まだ二分の",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "150222",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1502222"
-        },
-        "Start": 0,
-        "End": 5
-      },
-      {
-        "Text": "250",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 7,
-        "End": 9
-      },
-      {
-        "Text": "二",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        },
-        "Start": 13,
-        "End": 13
-      }
-    ]
-  },
-  {
     "Input": "6,544",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -10997,178 +9843,7 @@
     ]
   },
   {
-    "Input": "11.92億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "11.92億",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1192000000"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "2300.1",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2300.1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2300.1"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "100万又50万分の25",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100万又50万分の25",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000.00005"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "1ダース",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1ダース",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "12"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "4,565",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4,565",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4565"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "二百三十三、577、及び千六百点五",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二百三十三",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "233"
-        },
-        "Start": 0,
-        "End": 4
-      },
-      {
-        "Text": "577",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "577"
-        },
-        "Start": 6,
-        "End": 8
-      },
-      {
-        "Text": "千六百点五",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1600.5"
-        },
-        "Start": 12,
-        "End": 16
-      }
-    ]
-  },
-  {
-    "Input": "150対",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "150",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "150"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "二百五十、250、まだ2百5十があります。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二百五十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "250",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 5,
-        "End": 7
-      },
-      {
-        "Text": "2百5十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 11,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "130",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "130",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "130"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "1,234,567.30",
+    "Input": "1,244,667.123 5.8",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -11181,72 +9856,51 @@
         "End": 0
       },
       {
-        "Text": "234",
+        "Text": "244",
         "TypeName": "number",
         "Resolution": {
-          "value": "234"
+          "value": "244"
         },
         "Start": 2,
         "End": 4
       },
       {
-        "Text": "567.3",
+        "Text": "667.123",
         "TypeName": "number",
         "Resolution": {
-          "value": "567.3"
+          "value": "667.123"
         },
         "Start": 6,
-        "End": 10
+        "End": 12
+      },
+      {
+        "Text": "5.8",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5.8"
+        },
+        "Start": 14,
+        "End": 16
       }
     ]
   },
   {
-    "Input": "五十",
+    "Input": "10012",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "五十",
+        "Text": "10012",
+        "Start": 0,
+        "End": 4,
         "TypeName": "number",
         "Resolution": {
-          "value": "50"
-        },
-        "Start": 0,
-        "End": 1
+          "value": "10012"
+        }
       }
     ]
   },
   {
-    "Input": "9万400",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "9万400",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "90400"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "マイナス8.954302433",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス8.954302433",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-8.95430243255239"
-        },
-        "Start": 0,
-        "End": 14
-      }
-    ]
-  },
-  {
-    "Input": "10斤",
+    "Input": "10足",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -11257,96 +9911,6 @@
         },
         "Start": 0,
         "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "百五十二",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百五十二",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "152"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "百",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "10億6万506",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10億6万506",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000060506"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "1000余万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1000余万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000000"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "二分の一",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二分の一",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.5"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "四十五億四千四万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四十五億四千四万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4540040000"
-        },
-        "Start": 0,
-        "End": 7
       }
     ]
   },
@@ -11447,14 +10011,44 @@
     ]
   },
   {
-    "Input": "四百六十",
+    "Input": "50ダース",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "四百六十",
+        "Text": "50ダース",
         "TypeName": "number",
         "Resolution": {
-          "value": "460"
+          "value": "600"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "2点789",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2点789",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.789"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "百余り万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百余り万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000"
         },
         "Start": 0,
         "End": 3
@@ -11462,553 +10056,32 @@
     ]
   },
   {
-    "Input": "四川の出身です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "4.78兆",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4.78兆",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4780000000000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "零点二七九",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "零点二七九",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.2789"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "250",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "250",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "1000004",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1000004",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000004"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "十余万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十余万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100000"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "400余り",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "400",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "400"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "マイナス一万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス一万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-10000"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "五億六",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "五億六",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "500000006"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "マイナス405億404万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス405億404万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-40504040000"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "百二十数億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百二十数億",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "12000000000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "10点233",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10点233",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10.233"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "四千また二分の三",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "四千また二分の三",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.000714285714285714"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "110万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "110万",
-        "Start": 0,
-        "End": 3,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1100000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "百五十",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "百五十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "150"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "十足",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": "シングルランキングトップ3のブランド",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3",
-        "Start": 12,
-        "End": 12,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "45622",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "45622",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "45622"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "マイナス零点四",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス零点四",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-0.4"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "このコンピューターは二ドルです。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "4億",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4億",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "400000000"
-        },
-        "Start": 0,
-        "End": 1
-      }
-    ]
-  },
-  {
-    "Input": "1,244,667.123 5.8",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 0
-      },
-      {
-        "Text": "244",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "244"
-        },
-        "Start": 2,
-        "End": 4
-      },
-      {
-        "Text": "667.123",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "667.123"
-        },
-        "Start": 6,
-        "End": 12
-      },
-      {
-        "Text": "5.8",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "5.8"
-        },
-        "Start": 14,
-        "End": 16
-      }
-    ]
-  },
-  {
-    "Input": "マイナス1270兆",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス1270兆",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-1.2732E+15"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "陸地にはたくさんの動物がいます。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "指輪１対は8000です。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "１",
-        "Start": 2,
-        "End": 2,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "8000",
-        "Start": 5,
-        "End": 8,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "8000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "8385万2326.33",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "8385万2326.33",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "83852326.33"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "2.7890e-1",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2.7890e-1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.2789"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "101万3020",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "101万3020",
-        "Start": 0,
-        "End": 7,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1013012"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "10足",
+    "Input": "明ちゃんは指が10本あります。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "10",
+        "Start": 7,
+        "End": 8,
         "TypeName": "number",
         "Resolution": {
           "value": "10"
-        },
-        "Start": 0,
-        "End": 1
+        }
       }
     ]
   },
   {
-    "Input": "三分の百五十七",
+    "Input": "九万四千",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "三分の百五十七",
+        "Text": "九万四千",
         "TypeName": "number",
         "Resolution": {
-          "value": "52.3333333333333"
+          "value": "94000"
         },
         "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "全て",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "1230兆",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1230兆",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1.232E+15"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "2.5",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2.5",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2.5"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "マイナス45億404万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス45億404万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-4504040000"
-        },
-        "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "16分の2225",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "16分の2225",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "139.0625"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "1万250",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1万250",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10250"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "マイナス三分のマイナス百五十七",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "マイナス三分のマイナス百五十七",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52.3333333333333"
-        },
-        "Start": 0,
-        "End": 14
+        "End": 3
       }
     ]
   },
@@ -12028,89 +10101,14 @@
     ]
   },
   {
-    "Input": "三百五十また三分の一",
+    "Input": "3足",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "三百五十また三分の一",
+        "Text": "3",
         "TypeName": "number",
         "Resolution": {
-          "value": "350.333333333333"
-        },
-        "Start": 0,
-        "End": 9
-      }
-    ]
-  },
-  {
-    "Input": "45642万15",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "45642万15",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "456420015"
-        },
-        "Start": 0,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "900万400",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "900万400",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9000400"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "500分の2333",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "500分の2333",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4.666"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "16万506",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "16万506",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "160506"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
-    "Input": "九",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "九",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9"
+          "value": "3"
         },
         "Start": 0,
         "End": 0
@@ -12118,52 +10116,47 @@
     ]
   },
   {
-    "Input": "1001",
+    "Input": "10",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1001",
+        "Text": "10",
         "TypeName": "number",
         "Resolution": {
-          "value": "1001"
+          "value": "10"
         },
         "Start": 0,
-        "End": 3
+        "End": 1
       }
     ]
   },
   {
-    "Input": "10000",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
-    "Input": "六",
+    "Input": "10250",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "六",
+        "Text": "10250",
         "TypeName": "number",
         "Resolution": {
-          "value": "6"
+          "value": "10250"
         },
         "Start": 0,
-        "End": 0
+        "End": 4
       }
     ]
   },
   {
-    "Input": "1,234,567",
+    "Input": "マイナス45億404万",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1,234,567",
+        "Text": "マイナス45億404万",
         "TypeName": "number",
         "Resolution": {
-          "value": "1234567"
+          "value": "-4504040000"
         },
         "Start": 0,
-        "End": 8
+        "End": 10
       }
     ]
   },
@@ -12183,14 +10176,44 @@
     ]
   },
   {
-    "Input": "4004万",
+    "Input": "1,234,567",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "4004万",
+        "Text": "1,234,567",
         "TypeName": "number",
         "Resolution": {
-          "value": "40040000"
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "7万5千4百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7万5千4百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "75400"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "75400",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "75400",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "75400"
         },
         "Start": 0,
         "End": 4
@@ -12198,17 +10221,482 @@
     ]
   },
   {
-    "Input": "4兆",
+    "Input": "4,565",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "4兆",
-        "Start": 0,
-        "End": 1,
+        "Text": "4,565",
         "TypeName": "number",
         "Resolution": {
-          "value": "4000000000000"
+          "value": "4565"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "0.5",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0.5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "611.255パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "三百五十又三分の一",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三百五十又三分の一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "350.333333333333"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "8385万2326.33",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8385万2326.33",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "83852326.33"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "100分の2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100分の2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.02"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "二千四百五十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二千四百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2450"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "0.23456",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0.23456",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "数量は一ではないですが、五です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
         }
+      },
+      {
+        "Text": "五",
+        "Start": 12,
+        "End": 12,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "マイナス10012",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス10012",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "16分の5",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16分の5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.3125"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "10018.15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10018.15",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10018.15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "マイナス8.954302433",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス8.954302433",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "55兆12億4万5千2百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "55兆12億4万5千2百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "55001200045200"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "りんごを一割引します",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "101万3020",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "101万3020",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1013012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "これは四川ではなく、五です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 10,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "900万400",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "900万400",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9000400"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "1300",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1300",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "13000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "16万506",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16万506",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "160506"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1000万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "マイナス3分のマイナス157",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス3分のマイナス157",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52.3333333333333"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "二百五十、250、まだ2百5十があります。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "250"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "250",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "250"
+        },
+        "Start": 5,
+        "End": 7
+      },
+      {
+        "Text": "2百5十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "250"
+        },
+        "Start": 11,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "100あまり万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100あまり万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "3また千分の23",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3また千分の23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3.023"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "6051パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "一百二十三万四千五百六十七",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "二十三万四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        },
+        "Start": 2,
+        "End": 6
+      },
+      {
+        "Text": "五百六十七",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567"
+        },
+        "Start": 8,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "350又三分の一",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "350又三分の一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "350.333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "130",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "130",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "130"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "450",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "450",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "450"
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -12309,17 +10797,1308 @@
     ]
   },
   {
-    "Input": "7万5千4百",
+    "Input": "1005",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "7万5千4百",
+        "Text": "1005",
         "TypeName": "number",
         "Resolution": {
-          "value": "75400"
+          "value": "1005"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "百万四",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百万四",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000004"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "「一」と「五」",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 1,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 5,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "答えは四で、五ではないです。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "十億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "二十数万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十数万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "4.78兆",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4.78兆",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4780000000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "十余万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十余万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "1500余り万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1500余り万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "五億六",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五億六",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500000006"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "5月16日2020年",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5月16日2020年",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1012章、1018章、と1803章で、それぞれこのことに言及しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1012章",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1012"
+        }
+      },
+      {
+        "Text": "1018章",
+        "Start": 6,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1018"
+        }
+      },
+      {
+        "Text": "1803章",
+        "Start": 13,
+        "End": 17,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1803"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "8385万2336.33",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8385万2336.33",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "83852326.33"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "10万56",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10万56",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100056"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "199個",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "199個",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "199"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "百五十二",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百五十二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "152"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "四千三百億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四千三百億",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "430000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二ドル",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "150222,250,まだ二分の",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "150222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1502222"
         },
         "Start": 0,
         "End": 5
+      },
+      {
+        "Text": "250",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "250"
+        },
+        "Start": 7,
+        "End": 9
+      },
+      {
+        "Text": "二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 13,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "400余り",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "400",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "400"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "12",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "78万506",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "78万506",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "780506"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "千五百あまり万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千五百あまり万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1000余万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000余万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "100対",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "九百九十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "九百九十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "990"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "4000万6千",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4000万6千",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40006000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1万12",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1万12",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "500余万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "500余万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "16分の2225",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16分の2225",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "139.0625"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "あなたを見るとすぐ笑う。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "250",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "250",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "250"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "百五十",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百五十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "150"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "1000004",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1000004",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000004"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "4兆",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4兆",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2.7890e-1",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2.7890e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2789"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1010又３分の１",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1010又３分の１",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1010.33333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "マイナス0.5",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス0.5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.5"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "5億6",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5億6",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500000006"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "マイナス10",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "三分の百五十七",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三分の百五十七",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52.3333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "50対のイヤリング",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "50",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "これは一ではなくて、9台です。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "9",
+        "Start": 10,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2300.1",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2300.1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2300.1"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "五十五兆十二億四万五千二百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五十五兆十二億四万五千二百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "55001200045200"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "二重",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "10ダースのリンゴ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10ダース",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "120"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "45622",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "45622",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "45622"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "3分の157",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3分の157",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52.3333333333333"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "マイナス32",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス32",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-32"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "100万又50万分の25",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100万又50万分の25",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000.00005"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1991年1月16日夜パリ時間20時：フランスのミッテラン大統領はテレビで演説し、湾岸危機の平和解決はすでに戦争に譲られ、フランスはすべての戦闘準備を既に整えたと発表しました。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1991",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1991"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "16",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        },
+        "Start": 7,
+        "End": 8
+      },
+      {
+        "Text": "20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20"
+        },
+        "Start": 15,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "六",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "六",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "二人は二千二百二十二拾二。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二人は二千二百二十二拾二。",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "リンゴは1ドル割引します。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "500分の2333",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "500分の2333",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.666"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "千二百三十四万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千二百三十四万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12340000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "3千9百65",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3千9百65",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3965"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567.30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        },
+        "Start": 2,
+        "End": 4
+      },
+      {
+        "Text": "567.3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567.3"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "150対",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "150",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "150"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "マイナス三十二",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス三十二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-32"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1万3千",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1万3千",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "13000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10万651パーセント",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "1点1^+23",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1点1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "マイナス一万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス一万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "百一万一千",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百一万一千",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1011000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1ダース",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1ダース",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10斤",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "2020年三月五日",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2020年三月五日",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1230兆",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1230兆",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1.2時間の会議",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 2,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "10点233",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10点233",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10.233"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "200.2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "200",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "11.92億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11.92億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1192000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "10,000.23",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10,000.23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000.233"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "5分の1",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5分の1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "九十二万四千",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "九十二万四千",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "924000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "四点八",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四点八",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "5,450",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5,450",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5450"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "マイナス2.5 M",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス2.5 M",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-2500000"
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -12357,29 +12136,53 @@
     ]
   },
   {
-    "Input": "150",
+    "Input": "靴下5足で9.9です。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "150",
+        "Text": "5",
+        "Start": 2,
+        "End": 2,
         "TypeName": "number",
         "Resolution": {
-          "value": "150"
-        },
-        "Start": 0,
-        "End": 2
+          "value": "5"
+        }
+      },
+      {
+        "Text": "9.9",
+        "Start": 5,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9.9"
+        }
       }
     ]
   },
   {
-    "Input": "九万四千",
+    "Input": "シングルランキングトップ3のブランド",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "九万四千",
+        "Text": "3",
+        "Start": 12,
+        "End": 12,
         "TypeName": "number",
         "Resolution": {
-          "value": "94000"
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "千余り万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "千余り万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
         },
         "Start": 0,
         "End": 3
@@ -12387,59 +12190,14 @@
     ]
   },
   {
-    "Input": "6足",
+    "Input": "七万五千四百",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "6",
-        "Start": 0,
-        "End": 0,
+        "Text": "七万五千四百",
         "TypeName": "number",
         "Resolution": {
-          "value": "6"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "10250",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10250",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10250"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "105千万",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "105千万",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1050000000"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "二千三百五十",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二千三百五十",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2350"
+          "value": "75400"
         },
         "Start": 0,
         "End": 5
@@ -12447,14 +12205,104 @@
     ]
   },
   {
-    "Input": "4000万6千",
+    "Input": "二分の一",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "4000万6千",
+        "Text": "二分の一",
         "TypeName": "number",
         "Resolution": {
-          "value": "40006000"
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "4億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "400000000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "9万400",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9万400",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "90400"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "100",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "零点五",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "零点五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "マイナス三分のマイナス百五十七",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス三分のマイナス百五十七",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52.3333333333333"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "マイナス一点五",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス一点五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.5"
         },
         "Start": 0,
         "End": 6
@@ -12462,80 +12310,232 @@
     ]
   },
   {
-    "Input": "二百五十、250、まだ二五〇があります。",
+    "Input": "350また3分の1",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "二百五十",
+        "Text": "350また3分の1",
         "TypeName": "number",
         "Resolution": {
-          "value": "250"
+          "value": "350.333333333333"
         },
         "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "250",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 5,
-        "End": 7
-      },
-      {
-        "Text": "二五〇",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "250"
-        },
-        "Start": 11,
-        "End": 13
+        "End": 8
       }
     ]
   },
   {
-    "Input": "1010又３分の１",
+    "Input": "2450",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "1010又３分の１",
-        "Start": 0,
-        "End": 8,
+        "Text": "2450",
         "TypeName": "number",
         "Resolution": {
-          "value": "1010.33333333333"
+          "value": "2450"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2000点0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2000点0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "五兆六十二億四万五千二百",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五兆六十二億四万五千二百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5006200045200"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "マイナス1270兆",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス1270兆",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "二点二",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二点二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.2"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "二点三",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二点三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.3"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "陸地にはたくさんの動物がいます。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "四十五億四千四万",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四十五億四千四万",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4540040000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "九",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "一万五千億",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一万五千億",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000000000"
         }
       }
     ]
   },
   {
-    "Input": "2.2億",
+    "Input": "1点6",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2.2億",
+        "Text": "1点6",
         "TypeName": "number",
         "Resolution": {
-          "value": "220000000"
+          "value": "1.6"
         },
         "Start": 0,
-        "End": 3
+        "End": 2
       }
     ]
   },
   {
-    "Input": "0.23456",
+    "Input": "第十の刃",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "0.23456",
+        "Text": "第十の刃",
+        "Start": 0,
+        "End": 3,
         "TypeName": "number",
         "Resolution": {
-          "value": "0.23456"
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "マイナス6.6",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス6.6",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-6.6"
         },
         "Start": 0,
         "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "5千2百36",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5千2百36",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5236"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "10億6万506",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10億6万506",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000060506"
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   }

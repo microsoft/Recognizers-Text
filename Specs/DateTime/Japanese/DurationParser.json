@@ -849,54 +849,6 @@
     ]
   },
   {
-    "Input": "３日間",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "３日間",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "５分間",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "５分間",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT5M",
-          "FutureResolution": {
-            "duration": "300"
-          },
-          "PastResolution": {
-            "duration": "300"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
     "Input": "15週間",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -917,6 +869,30 @@
         },
         "Start": 0,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "３日間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "３日間",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -961,6 +937,30 @@
           },
           "PastResolution": {
             "duration": "63072000"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "５分間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "５分間",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT5M",
+          "FutureResolution": {
+            "duration": "300"
+          },
+          "PastResolution": {
+            "duration": "300"
           }
         },
         "Start": 0,

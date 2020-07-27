@@ -1760,6 +1760,57 @@
     "Results": []
   },
   {
+    "Input": "三万回目",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三万回目",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30000",
+          "offset": "30000",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "二百五十位",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二百五十位",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "250",
+          "offset": "250",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "十四位",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十四位",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "14",
+          "offset": "14",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
     "Input": "一位　二位　三位　四位",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -1810,23 +1861,6 @@
     ]
   },
   {
-    "Input": "十四位",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十四位",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "14",
-          "offset": "14",
-          "relativeTo": "start"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
     "Input": "だいさん",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -1840,40 +1874,6 @@
         },
         "Start": 0,
         "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "三万回目",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "三万回目",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "30000",
-          "offset": "30000",
-          "relativeTo": "start"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
-    "Input": "二百五十位",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二百五十位",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "250",
-          "offset": "250",
-          "relativeTo": "start"
-        },
-        "Start": 0,
-        "End": 4
       }
     ]
   }

@@ -117,38 +117,6 @@
     "Results": []
   },
   {
-    "Input": "彼女はもう7歳になったから、小学校に行けるよ。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "7歳",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "7",
-          "unit": "Year"
-        },
-        "Start": 5,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "この事件はまだ赤ちゃんが10ヶ月の時に起きたことだ。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10ヶ月",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "10",
-          "unit": "Month"
-        },
-        "Start": 12,
-        "End": 15
-      }
-    ]
-  },
-  {
     "Input": "12才",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -161,54 +129,6 @@
         },
         "Start": 0,
         "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "生まれて90日も立つ子供は病院へ検査しに行くべきだ。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "90日",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "90",
-          "unit": "Day"
-        },
-        "Start": 4,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "彼女は1945年5月8日生まれで、今は六十才だ。",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "六十才",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "60",
-          "unit": "Year"
-        },
-        "Start": 19,
-        "End": 21
-      }
-    ]
-  },
-  {
-    "Input": "12月初生まれならば、もう三歳だね",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "三歳",
-        "TypeName": "age",
-        "Resolution": {
-          "value": "3",
-          "unit": "Week"
-        },
-        "Start": 13,
-        "End": 14
       }
     ]
   },
@@ -229,17 +149,81 @@
     ]
   },
   {
-    "Input": "私はまだ29才だよ！",
+    "Input": "彼女は5歳の時に、自転車を漕げるようになった。",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "29才",
+        "Text": "5歳",
         "TypeName": "age",
         "Resolution": {
-          "value": "29",
+          "value": "5",
           "unit": "Year"
         },
-        "Start": 4,
+        "Start": 3,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "彼女は1945年5月8日生まれで、今は六十才だ。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "六十才",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 19,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "この事件はまだ赤ちゃんが10ヶ月の時に起きたことだ。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10ヶ月",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 12,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "12月初生まれならば、もう三歳だね",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三歳",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 13,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "彼女はもう7歳になったから、小学校に行けるよ。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7歳",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "7",
+          "unit": "Year"
+        },
+        "Start": 5,
         "End": 6
       }
     ]
@@ -261,18 +245,34 @@
     ]
   },
   {
-    "Input": "彼女は5歳の時に、自転車を漕げるようになった。",
+    "Input": "私はまだ29才だよ！",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "5歳",
+        "Text": "29才",
         "TypeName": "age",
         "Resolution": {
-          "value": "5",
+          "value": "29",
           "unit": "Year"
         },
-        "Start": 3,
-        "End": 4
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "生まれて90日も立つ子供は病院へ検査しに行くべきだ。",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "90日",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 4,
+        "End": 6
       }
     ]
   }

@@ -556,6 +556,44 @@
     ]
   },
   {
+    "Input": "外の気温は98度です",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "98度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        },
+        "Start": 5,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "アンナトークで数をいつかください",
+    "Comment": "Temporary regression",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "サーモスタットを八十五度まで設置しましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "八十五度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
     "Input": "通常は華氏温度98.6度となります",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -570,12 +608,6 @@
         "End": 11
       }
     ]
-  },
-  {
-    "Input": "アンナトークで数をいつかください",
-    "Comment": "Temporary regression",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
   },
   {
     "Input": "彼は三十九度まで高熱があるよ",
@@ -594,15 +626,47 @@
     ]
   },
   {
-    "Input": "サーモスタットを八十五度まで設置しましょう",
+    "Input": "温度を5度上げましょう",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "八十五度",
+        "Text": "5度",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "85",
+          "value": "5",
           "unit": "Degree"
+        },
+        "Start": 3,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "温度の単位って℃ですか",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "℃",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 7,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "華氏温度とすれば100度です",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
         },
         "Start": 8,
         "End": 11
@@ -648,70 +712,6 @@
         },
         "Start": 0,
         "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "温度の単位って℃ですか",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "℃",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 7,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "外の気温は98度です",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "98度",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "98",
-          "unit": "Degree"
-        },
-        "Start": 5,
-        "End": 7
-      }
-    ]
-  },
-  {
-    "Input": "温度を5度上げましょう",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5度",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "5",
-          "unit": "Degree"
-        },
-        "Start": 3,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "華氏温度とすれば100度です",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "100度",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": "100",
-          "unit": "F"
-        },
-        "Start": 8,
-        "End": 11
       }
     ]
   }
