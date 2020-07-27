@@ -513,114 +513,6 @@
     ]
   },
   {
-    "Input": "早朝四時から六時までの間",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "早朝四時から六時までの間",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "午後五時から六時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後五時から六時まで",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "深夜20時～早朝4時",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "深夜20時～早朝4時",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "昼",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昼",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 1
-      }
-    ]
-  },
-  {
-    "Input": "午後5時から6時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後5時から6時まで",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "深夜12時から未明2時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "深夜12時から未明2時まで",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "午後四時から夜八時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後四時から夜八時まで",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "夜",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "夜",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 1
-      }
-    ]
-  },
-  {
-    "Input": "午後五時半から六時半まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "午後五時半から六時半まで",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "早朝四時から六時まで",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -629,18 +521,6 @@
         "Type": "timerange",
         "Start": 0,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "4時から6時まで",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4時から6時まで",
-        "Type": "timerange",
-        "Start": 0,
-        "Length": 8
       }
     ]
   },
@@ -657,14 +537,26 @@
     ]
   },
   {
-    "Input": "午前",
+    "Input": "夜",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "午前",
+        "Text": "夜",
         "Type": "timerange",
         "Start": 0,
-        "Length": 2
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "深夜20時～早朝4時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "深夜20時～早朝4時",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -681,14 +573,62 @@
     ]
   },
   {
-    "Input": "夜9時30分から午前3時まで",
+    "Input": "午後四時から夜八時まで",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "夜9時30分から午前3時まで",
+        "Text": "午後四時から夜八時まで",
         "Type": "timerange",
         "Start": 0,
-        "Length": 14
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "昼",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昼",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "早朝四時から六時までの間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "早朝四時から六時までの間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "4時から6時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4時から6時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "深夜12時から未明2時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "深夜12時から未明2時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -701,6 +641,66 @@
         "Type": "timerange",
         "Start": 0,
         "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午後5時から6時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後5時から6時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後五時から六時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後五時から六時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "夜9時30分から午前3時まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜9時30分から午前3時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午前",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午前",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "午後五時半から六時半まで",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後五時半から六時半まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 12
       }
     ]
   }

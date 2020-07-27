@@ -846,11 +846,6 @@
     ]
   },
   {
-    "Input": "今日の午後二時、サプライズがあります！",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
-  },
-  {
     "Input": "オーストラリアとビクトリアの警察がモルボルンで一トン近いのメタンフェタミンを鹵獲。オーストラリア史上最大のメタンフェタミン密輸案件となっております。（オーストラリア連邦警察）",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -863,6 +858,48 @@
         },
         "Start": 23,
         "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "dimensionってどういう意味ですか",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "今の身長は百六十八センチです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "百六十八センチ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 5,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "今日の午後二時、サプライズがあります！",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "身長はいま、168cmも到達しました",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "168cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "168",
+          "unit": "Centimeter"
+        },
+        "Start": 6,
+        "End": 10
       }
     ]
   },
@@ -883,34 +920,18 @@
     ]
   },
   {
-    "Input": "今の身長は百六十八センチです",
+    "Input": "ここの水深は250メートル超え",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "百六十八センチ",
+        "Text": "250メートル",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "168",
-          "unit": "Centimeter"
+          "value": "250",
+          "unit": "Meter"
         },
-        "Start": 5,
-        "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "今となって、身長は168センチになった",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "168センチ",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "168",
-          "unit": "Centimeter"
-        },
-        "Start": 9,
-        "End": 14
+        "Start": 6,
+        "End": 12
       }
     ]
   },
@@ -941,40 +962,19 @@
     ]
   },
   {
-    "Input": "身長はいま、168cmも到達しました",
+    "Input": "今となって、身長は168センチになった",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "168cm",
+        "Text": "168センチ",
         "TypeName": "dimension",
         "Resolution": {
           "value": "168",
           "unit": "Centimeter"
         },
-        "Start": 6,
-        "End": 10
+        "Start": 9,
+        "End": 14
       }
     ]
-  },
-  {
-    "Input": "ここの水深は250メートル超え",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "250メートル",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "250",
-          "unit": "Meter"
-        },
-        "Start": 6,
-        "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "dimensionってどういう意味ですか",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
   }
 ]

@@ -247,30 +247,6 @@
     ]
   },
   {
-    "Input": "毎年事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "毎年",
-        "Type": "set",
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "毎日事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "毎日",
-        "Type": "set",
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
     "Input": "毎週事件が起こる",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -283,14 +259,26 @@
     ]
   },
   {
-    "Input": "毎月事件が起こる",
+    "Input": "毎年事件が起こる",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "毎月",
+        "Text": "毎年",
         "Type": "set",
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "毎週日曜日午後八時に事件が起こる",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "毎週日曜日午後八時",
+        "Type": "set",
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -307,14 +295,26 @@
     ]
   },
   {
-    "Input": "毎週日曜日午後八時に事件が起こる",
+    "Input": "毎月事件が起こる",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "毎週日曜日午後八時",
+        "Text": "毎月",
         "Type": "set",
         "Start": 0,
-        "Length": 9
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "毎日事件が起こる",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "毎日",
+        "Type": "set",
+        "Start": 0,
+        "Length": 2
       }
     ]
   }

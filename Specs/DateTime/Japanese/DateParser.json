@@ -626,10 +626,10 @@
   },
   {
     "Input": "私は第三火曜日に戻ります",
-    "Comment": "Translated from 'third thursday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "Comment": "Translated from 'third thursday'.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -677,10 +677,10 @@
   },
   {
     "Input": "私は2015年9月18日に戻ります",
-    "Comment": "Translated from 9-18-15(MDY)",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Translated from 9-18-15(MDY)",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1196,10 +1196,10 @@
   },
   {
     "Input": "私は2016/04/21に戻ります",
-    "Comment": "Translated from 21/04/2016(DMY).",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Translated from 21/04/2016(DMY).",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -1221,10 +1221,10 @@
   },
   {
     "Input": "私は21/04/16に戻ります",
-    "Comment": "Unnecessary. Japanese don't use DMY form.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Unnecessary. Japanese don't use DMY form.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -1966,10 +1966,10 @@
   },
   {
     "Input": "私は7月の第一金曜日に戻ります",
-    "Comment": "Translated from 'the first friday of july' which is 7th month.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Translated from 'the first friday of july' which is 7th month.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -2255,10 +2255,10 @@
   },
   {
     "Input": "私は今月の27日に戻ろうと思っています",
-    "Comment": "Fix needed: translated from 'the 27', w/o month term.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Fix needed: translated from 'the 27', w/o month term.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -2304,10 +2304,10 @@
   },
   {
     "Input": "私は今月27日に戻ろうと思っています",
-    "Comment": "Fix needed: translated from 'the 27th', w/o month term.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Fix needed: translated from 'the 27th', w/o month term.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -2593,10 +2593,10 @@
   },
   {
     "Input": "私は第２の日曜日に戻ります",
-    "Comment": "Translated from 'second Sunday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "Comment": "Translated from 'second Sunday'.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -2642,10 +2642,10 @@
   },
   {
     "Input": "私は第3の火曜日に戻ります",
-    "Comment": "Translated from 'third Tuesday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "Comment": "Translated from 'third Tuesday'.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -2667,10 +2667,10 @@
   },
   {
     "Input": "私は第五の日曜日に戻ります",
-    "Comment": "Translated from 'fifth Sunday'.",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "Comment": "Translated from 'fifth Sunday'.",
     "NotSupportedByDesign": "dotNet, javascript, python, java",
     "Results": [
       {
@@ -3675,335 +3675,46 @@
     ]
   },
   {
-    "Input": "私は第1の日曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "第1の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-03",
-          "FutureResolution": {
-            "date": "2017-09-03"
-          },
-          "PastResolution": {
-            "date": "2017-09-03"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私はその日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "その日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は次の日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "次の日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-08",
-          "FutureResolution": {
-            "date": "2016-11-08"
-          },
-          "PastResolution": {
-            "date": "2016-11-08"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は二年前に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二年前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2014-11-07",
-          "FutureResolution": {
-            "date": "2014-11-07"
-          },
-          "PastResolution": {
-            "date": "2014-11-07"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "今から2週先の日曜日のご都合はいかがでしょうか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2週先の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-20",
-          "FutureResolution": {
-            "date": "2018-05-20"
-          },
-          "PastResolution": {
-            "date": "2018-05-20"
-          }
-        },
-        "Start": 3,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は1月の1日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月の1日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2016-01-01"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "２０１５年５月１３日、空いていますか？",
+    "Input": "1月19日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2015年5月13日",
+        "Text": "1月19日",
         "Type": "date",
         "Value": {
-          "Timex": "2015-05-13",
+          "Timex": "XXXX-01-19",
           "FutureResolution": {
-            "date": "2015-05-13"
+            "date": "2018-01-19"
           },
           "PastResolution": {
-            "date": "2015-05-13"
+            "date": "2017-01-19"
           }
         },
         "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は1月1日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月1日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2016-01-01"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は第五の日曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "Comment": "Translated from 'fifth Sunday'.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "第五の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-31",
-          "FutureResolution": {
-            "date": "0001-01-01"
-          },
-          "PastResolution": {
-            "date": "0001-01-01"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は今月の三十一日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今月の三十一日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-31",
-          "FutureResolution": {
-            "date": "0001-01-01"
-          },
-          "PastResolution": {
-            "date": "0001-01-01"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は4月22日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4月22日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
         "Length": 5
       }
     ]
   },
   {
-    "Input": "私は02/22/2016に戻ります",
+    "Input": "２９日にご飯に行きますか？",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2018-02-10T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "02/22/2016",
+        "Text": "２９日",
         "Type": "date",
         "Value": {
-          "Timex": "2016-02-22",
+          "Timex": "XXXX-XX-29",
           "FutureResolution": {
-            "date": "2016-02-22"
+            "date": "2018-03-29"
           },
           "PastResolution": {
-            "date": "2016-02-22"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は2016年4月21日に戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2016年4月21日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "十二日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "十二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-12",
-          "FutureResolution": {
-            "date": "2017-04-12"
-          },
-          "PastResolution": {
-            "date": "2017-03-12"
+            "date": "2018-01-29"
           }
         },
         "Start": 0,
@@ -4012,73 +3723,217 @@
     ]
   },
   {
-    "Input": "私は15-9-18に戻ります",
+    "Input": "水曜日",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2018-09-18T18:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "15-9-18",
+        "Text": "水曜日",
         "Type": "date",
         "Value": {
-          "Timex": "2015-09-18",
+          "Timex": "XXXX-WXX-3",
           "FutureResolution": {
-            "date": "2015-09-18"
+            "date": "2018-09-19"
           },
           "PastResolution": {
-            "date": "2015-09-18"
+            "date": "2018-09-12"
           }
         },
-        "Start": 2,
-        "Length": 7
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
   {
-    "Input": "私は71/05/05に戻ります",
+    "Input": "月曜日",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2018-09-18T18:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "71/05/05",
+        "Text": "月曜日",
         "Type": "date",
         "Value": {
-          "Timex": "1971-05-05",
+          "Timex": "XXXX-WXX-1",
           "FutureResolution": {
-            "date": "1971-05-05"
+            "date": "2018-09-24"
           },
           "PastResolution": {
-            "date": "1971-05-05"
+            "date": "2018-09-17"
           }
         },
-        "Start": 2,
-        "Length": 8
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
   {
-    "Input": "私は2015/08/12に戻ります",
+    "Input": "１９８９年０５月０５日は空いていますか？",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2015/08/12",
+        "Text": "1989年05月05日",
         "Type": "date",
         "Value": {
-          "Timex": "2015-08-12",
+          "Timex": "1989-05-05",
           "FutureResolution": {
-            "date": "2015-08-12"
+            "date": "1989-05-05"
           },
           "PastResolution": {
-            "date": "2015-08-12"
+            "date": "1989-05-05"
           }
         },
-        "Start": 2,
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "１０月１２日、月曜日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "１０月１２日、月曜日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-12",
+          "FutureResolution": {
+            "date": "2017-10-12"
+          },
+          "PastResolution": {
+            "date": "2016-10-12"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "月曜日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "月曜日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "date": "2017-03-27"
+          },
+          "PastResolution": {
+            "date": "2017-03-20"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "先週の月曜日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "先週の月曜日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-03-13",
+          "FutureResolution": {
+            "date": "2017-03-13"
+          },
+          "PastResolution": {
+            "date": "2017-03-13"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "平成１５年七月七日は空いていますか？",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成１５年七月七日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2007-03-07",
+          "FutureResolution": {
+            "date": "2007-03-07"
+          },
+          "PastResolution": {
+            "date": "2007-03-07"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "平成二十二年一月二十九日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成二十二年一月二十九日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-01-29",
+          "FutureResolution": {
+            "date": "2010-01-29"
+          },
+          "PastResolution": {
+            "date": "2010-01-29"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "平成２２年１月２９日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成２２年１月２９日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-01-29",
+          "FutureResolution": {
+            "date": "2010-01-29"
+          },
+          "PastResolution": {
+            "date": "2010-01-29"
+          }
+        },
+        "Start": 0,
         "Length": 10
       }
     ]
@@ -4108,664 +3963,38 @@
     ]
   },
   {
-    "Input": "私は今月の27日に戻ろうと思っています",
+    "Input": "明日",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Comment": "Fix needed: translated from 'the 27', w/o month term.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今月の27日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2015-11-27"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は来月の二十日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "来月の二十日",
+        "Text": "明日",
         "Type": "date",
         "Value": {
-          "Timex": "2016-12-20",
+          "Timex": "2017-03-23",
           "FutureResolution": {
-            "date": "2016-12-20"
+            "date": "2017-03-23"
           },
           "PastResolution": {
-            "date": "2016-12-20"
+            "date": "2017-03-23"
           }
         },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は2016/04/21に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Comment": "Translated from 21/04/2016(DMY).",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2016/04/21",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-WXX-5",
-          "FutureResolution": {
-            "date": "2016-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は二日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-02",
-          "FutureResolution": {
-            "date": "2016-12-02"
-          },
-          "PastResolution": {
-            "date": "2016-11-02"
-          }
-        },
-        "Start": 2,
+        "Start": 0,
         "Length": 2
       }
     ]
   },
   {
-    "Input": "私はこの日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "この日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "２９日に映画を観に行きますか？",
-    "Context": {
-      "ReferenceDateTime": "2016-02-10T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２９日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-29",
-          "FutureResolution": {
-            "date": "2016-02-29"
-          },
-          "PastResolution": {
-            "date": "2016-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は次の日曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "次の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-20",
-          "FutureResolution": {
-            "date": "2016-11-20"
-          },
-          "PastResolution": {
-            "date": "2016-11-20"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私たちは1か月と21日前に打ち合わせをしました",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1か月と21日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        },
-        "Start": 4,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は2017年3月7日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2017年3月7日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-03-07",
-          "FutureResolution": {
-            "date": "2017-03-07"
-          },
-          "PastResolution": {
-            "date": "2017-03-07"
-          }
-        },
-        "Start": 2,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私が数日前にeメールを送付した相手",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "数日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-04",
-          "FutureResolution": {
-            "date": "2016-11-04"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は8月2日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "8月2日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-08-02",
-          "FutureResolution": {
-            "date": "2017-08-02"
-          },
-          "PastResolution": {
-            "date": "2016-08-02"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "３６７年１月１日",
+    "Input": "一月十九日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "３６７年１月１日",
-        "Type": "date",
-        "Value": {
-          "Timex": "0367-01-01",
-          "FutureResolution": {
-            "date": "0367-01-01"
-          },
-          "PastResolution": {
-            "date": "0367-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "昨日から2日間あなたはどこにいましたか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-31T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日から2日間",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-28",
-          "FutureResolution": {
-            "date": "2018-05-28"
-          },
-          "PastResolution": {
-            "date": "2018-05-28"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "3週間で私は去ります",
-    "Context": {
-      "ReferenceDateTime": "2018-07-05T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3週間",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-07-26",
-          "FutureResolution": {
-            "date": "2018-07-26"
-          },
-          "PastResolution": {
-            "date": "2018-07-26"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "2015年5月13日は予定がありますか？",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2015年5月13日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-05-13",
-          "FutureResolution": {
-            "date": "2015-05-13"
-          },
-          "PastResolution": {
-            "date": "2015-05-13"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は明日から二日で戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2018-04-20T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日から二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-04-23",
-          "FutureResolution": {
-            "date": "2018-04-23"
-          },
-          "PastResolution": {
-            "date": "2018-04-23"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は2年1か月21日前にここを立ち去りました",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2年1か月21日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-10-02",
-          "FutureResolution": {
-            "date": "2015-10-02"
-          },
-          "PastResolution": {
-            "date": "2015-10-02"
-          }
-        },
-        "Start": 2,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私たちは1か月、21日前に打ち合わせを行いました",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1か月、21日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        },
-        "Start": 4,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "今から2個先の日曜日は予定がありますか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2個先の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-20",
-          "FutureResolution": {
-            "date": "2018-05-20"
-          },
-          "PastResolution": {
-            "date": "2018-05-20"
-          }
-        },
-        "Start": 3,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "2010年1月29日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2010年1月29日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2010-01-29",
-          "FutureResolution": {
-            "date": "2010-01-29"
-          },
-          "PastResolution": {
-            "date": "2010-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "２００３年７月２７日は空いていますか？",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2003年7月27日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2027-03-07",
-          "FutureResolution": {
-            "date": "2027-03-07"
-          },
-          "PastResolution": {
-            "date": "2027-03-07"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は4/22に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は2018年一月十二日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2018年一月十二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-12",
-          "FutureResolution": {
-            "date": "2018-01-12"
-          },
-          "PastResolution": {
-            "date": "2018-01-12"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は二十二日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二十二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-22",
-          "FutureResolution": {
-            "date": "2016-11-22"
-          },
-          "PastResolution": {
-            "date": "2016-10-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "旧暦の正月初一",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "旧暦の正月初一",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2018-01-01"
-          },
-          "PastResolution": {
-            "date": "2017-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私はあなたと来月の最初の金曜日にお会いします",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T09:58:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来月の最初の金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-WXX-5-#1",
-          "FutureResolution": {
-            "date": "2018-04-06"
-          },
-          "PastResolution": {
-            "date": "2018-04-06"
-          }
-        },
-        "Start": 6,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "1月19日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月19日",
+        "Text": "一月十九日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-19",
@@ -4782,314 +4011,26 @@
     ]
   },
   {
-    "Input": "私は今から2週間以内に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2週間以内",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-21",
-          "FutureResolution": {
-            "date": "2016-11-21"
-          },
-          "PastResolution": {
-            "date": "2016-11-21"
-          }
-        },
-        "Start": 5,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は23日の土曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "23日の土曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-23",
-          "FutureResolution": {
-            "date": "2017-09-23"
-          },
-          "PastResolution": {
-            "date": "2017-09-23"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は2027年3月7日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2027年3月7日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2027-03-07",
-          "FutureResolution": {
-            "date": "2027-03-07"
-          },
-          "PastResolution": {
-            "date": "2027-03-07"
-          }
-        },
-        "Start": 2,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "2016年11月16日",
-    "Context": {
-      "ReferenceDateTime": "2016-11-14T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2016年11月16日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-16",
-          "FutureResolution": {
-            "date": "2016-11-16"
-          },
-          "PastResolution": {
-            "date": "2016-11-16"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "この間",
+    "Input": "旧暦の２０１５年一月一日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "この間",
+        "Text": "旧暦の２０１５年一月一日",
         "Type": "date",
         "Value": {
-          "Timex": "2017-03-22",
+          "Timex": "2015-01-01",
           "FutureResolution": {
-            "date": "2017-03-22"
+            "date": "2015-01-01"
           },
           "PastResolution": {
-            "date": "2017-03-22"
+            "date": "2015-01-01"
           }
         },
         "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "１０月１２日、月曜日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "１０月１２日、月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-12",
-          "FutureResolution": {
-            "date": "2017-10-12"
-          },
-          "PastResolution": {
-            "date": "2016-10-12"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "昨日留守しました",
-    "Context": {
-      "ReferenceDateTime": "2018-07-30T12:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-07-29",
-          "FutureResolution": {
-            "date": "2018-07-29"
-          },
-          "PastResolution": {
-            "date": "2018-07-29"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "私は今から2週間後に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今から2週間後",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-21",
-          "FutureResolution": {
-            "date": "2016-11-21"
-          },
-          "PastResolution": {
-            "date": "2016-11-21"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "旧暦の２０１５年１０月１日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "旧暦の２０１５年１０月１日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-10-01",
-          "FutureResolution": {
-            "date": "2015-10-01"
-          },
-          "PastResolution": {
-            "date": "2015-10-01"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "平成２２年１月２９日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成２２年１月２９日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2010-01-29",
-          "FutureResolution": {
-            "date": "2010-01-29"
-          },
-          "PastResolution": {
-            "date": "2010-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私たちは一か月と二十一日前に打ち合わせを行いました",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一か月と二十一日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        },
-        "Start": 4,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "大晦日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "大晦日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-30",
-          "FutureResolution": {
-            "date": "2018-01-30"
-          },
-          "PastResolution": {
-            "date": "2017-01-30"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私が1か月前にeメールを送付した相手は誰ですか",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1か月前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-10-07",
-          "FutureResolution": {
-            "date": "2016-10-07"
-          },
-          "PastResolution": {
-            "date": "2016-10-07"
-          }
-        },
-        "Start": 2,
-        "Length": 4
+        "Length": 12
       }
     ]
   },
@@ -5118,119 +4059,166 @@
     ]
   },
   {
-    "Input": "私は5月21日に戻ります",
+    "Input": "２００３年７月２７日は空いていますか？",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "5月21日",
+        "Text": "2003年7月27日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-05-21",
+          "Timex": "2027-03-07",
           "FutureResolution": {
-            "date": "2017-05-21"
+            "date": "2027-03-07"
           },
           "PastResolution": {
-            "date": "2016-05-21"
+            "date": "2027-03-07"
           }
         },
-        "Start": 2,
-        "Length": 5
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "私は先週の日曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "先週の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は2３日目の土曜日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2３日目の土曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-23",
-          "FutureResolution": {
-            "date": "2017-09-23"
-          },
-          "PastResolution": {
-            "date": "2017-09-23"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は21/04/16に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Comment": "Unnecessary. Japanese don't use DMY form.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21/04/16",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "月曜日",
+    "Input": "旧暦の正月初一",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "月曜日",
+        "Text": "旧暦の正月初一",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-WXX-1",
+          "Timex": "XXXX-01-01",
           "FutureResolution": {
-            "date": "2017-03-27"
+            "date": "2018-01-01"
           },
           "PastResolution": {
-            "date": "2017-03-20"
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "昨日留守しました",
+    "Context": {
+      "ReferenceDateTime": "2018-07-30T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昨日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-07-29",
+          "FutureResolution": {
+            "date": "2018-07-29"
+          },
+          "PastResolution": {
+            "date": "2018-07-29"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "２００４年八月十五日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "２００４年八月十五日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2004-08-15",
+          "FutureResolution": {
+            "date": "2004-08-15"
+          },
+          "PastResolution": {
+            "date": "2004-08-15"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "二〇〇九年十月十二日、月曜日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇〇九年十月十二日、月曜日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2009-10-12",
+          "FutureResolution": {
+            "date": "2009-10-12"
+          },
+          "PastResolution": {
+            "date": "2009-10-12"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "去年の今月の十日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "去年の今月の十日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-03-10",
+          "FutureResolution": {
+            "date": "2016-03-10"
+          },
+          "PastResolution": {
+            "date": "2016-03-10"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "明後日は空いていますか？",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明後日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-09-20",
+          "FutureResolution": {
+            "date": "2018-09-20"
+          },
+          "PastResolution": {
+            "date": "2018-09-20"
           }
         },
         "Start": 0,
@@ -5263,313 +4251,169 @@
     ]
   },
   {
-    "Input": "去年の今月の十日",
+    "Input": "寛政元年０１月２９日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "去年の今月の十日",
+        "Text": "寛政元年０１月２９日",
         "Type": "date",
         "Value": {
-          "Timex": "2016-03-10",
+          "Timex": "1789-01-29",
           "FutureResolution": {
-            "date": "2016-03-10"
+            "date": "1789-01-29"
           },
           "PastResolution": {
-            "date": "2016-03-10"
+            "date": "1789-01-29"
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "私は5月の21日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "5月の21日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-21",
-          "FutureResolution": {
-            "date": "2017-05-21"
-          },
-          "PastResolution": {
-            "date": "2016-05-21"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は21日木曜日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21日木曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-21",
-          "FutureResolution": {
-            "date": "2017-09-21"
-          },
-          "PastResolution": {
-            "date": "2017-09-21"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は1989年5月5日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1989年5月5日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1989-05-05",
-          "FutureResolution": {
-            "date": "1989-05-05"
-          },
-          "PastResolution": {
-            "date": "1989-05-05"
-          }
-        },
-        "Start": 2,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私は今週の金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今週の金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-11",
-          "FutureResolution": {
-            "date": "2016-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-11"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は1月22日水曜に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月22日水曜",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-22",
-          "FutureResolution": {
-            "date": "2017-01-22"
-          },
-          "PastResolution": {
-            "date": "2016-01-22"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は二十二日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二十二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-22",
-          "FutureResolution": {
-            "date": "2016-11-22"
-          },
-          "PastResolution": {
-            "date": "2016-10-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は3-7-2017に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3-7-2017",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-03-07",
-          "FutureResolution": {
-            "date": "2017-03-07"
-          },
-          "PastResolution": {
-            "date": "2017-03-07"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "明日",
+    "Input": "平成二十七年五月十三日は、どこにいましたか？",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "明日",
+        "Text": "平成二十七年五月十三日",
         "Type": "date",
         "Value": {
-          "Timex": "2017-03-23",
+          "Timex": "2015-05-13",
           "FutureResolution": {
-            "date": "2017-03-23"
+            "date": "2015-05-13"
           },
           "PastResolution": {
-            "date": "2017-03-23"
+            "date": "2015-05-13"
           }
         },
         "Start": 0,
-        "Length": 2
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "私は来週の金曜日に戻ります",
+    "Input": "四日前",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "来週の金曜日",
+        "Text": "四日前",
         "Type": "date",
         "Value": {
-          "Timex": "2016-11-18",
+          "Timex": "2017-03-19",
           "FutureResolution": {
-            "date": "2016-11-18"
+            "date": "2017-03-19"
           },
           "PastResolution": {
-            "date": "2016-11-18"
+            "date": "2017-03-19"
           }
         },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は27日には戻ろうと思っています！",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "27日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 2,
+        "Start": 0,
         "Length": 3
       }
     ]
   },
   {
-    "Input": "私は前日に戻りました",
+    "Input": "平成１２年８月１５日",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "前日",
+        "Text": "平成１２年８月１５日",
         "Type": "date",
         "Value": {
-          "Timex": "2016-11-06",
+          "Timex": "2000-08-15",
           "FutureResolution": {
-            "date": "2016-11-06"
+            "date": "2000-08-15"
           },
           "PastResolution": {
-            "date": "2016-11-06"
+            "date": "2000-08-15"
           }
         },
-        "Start": 2,
-        "Length": 2
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "私は15日に戻ります",
+    "Input": "昭和６２年一月十一日",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "15日",
+        "Text": "昭和６２年一月十一日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-XX-15",
+          "Timex": "1987-01-11",
           "FutureResolution": {
-            "date": "2016-11-15"
+            "date": "1987-01-11"
           },
           "PastResolution": {
-            "date": "2016-10-15"
+            "date": "1987-01-11"
           }
         },
-        "Start": 2,
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "旧暦の２０１５年１０月１日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の２０１５年１０月１日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-01",
+          "FutureResolution": {
+            "date": "2015-10-01"
+          },
+          "PastResolution": {
+            "date": "2015-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "この間",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "この間",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-03-22",
+          "FutureResolution": {
+            "date": "2017-03-22"
+          },
+          "PastResolution": {
+            "date": "2017-03-22"
+          }
+        },
+        "Start": 0,
         "Length": 3
       }
     ]
@@ -5599,1711 +4443,26 @@
     ]
   },
   {
-    "Input": "私は２０１６年１月１２日月曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２０１６年１月１２日月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-01-12",
-          "FutureResolution": {
-            "date": "2016-01-12"
-          },
-          "PastResolution": {
-            "date": "2016-01-12"
-          }
-        },
-        "Start": 2,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "私は05/05/89に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "05/05/89",
-        "Type": "date",
-        "Value": {
-          "Timex": "1989-05-05",
-          "FutureResolution": {
-            "date": "1989-05-05"
-          },
-          "PastResolution": {
-            "date": "1989-05-05"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は22日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-22",
-          "FutureResolution": {
-            "date": "2016-11-22"
-          },
-          "PastResolution": {
-            "date": "2016-10-22"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は22日の金曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22日の金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-22",
-          "FutureResolution": {
-            "date": "2017-09-22"
-          },
-          "PastResolution": {
-            "date": "2017-09-22"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "平成二十七年五月十三日は、どこにいましたか？",
+    "Input": "大晦日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "平成二十七年五月十三日",
+        "Text": "大晦日",
         "Type": "date",
         "Value": {
-          "Timex": "2015-05-13",
+          "Timex": "XXXX-01-30",
           "FutureResolution": {
-            "date": "2015-05-13"
+            "date": "2018-01-30"
           },
           "PastResolution": {
-            "date": "2015-05-13"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "平成１５年七月七日は空いていますか？",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成１５年七月七日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2007-03-07",
-          "FutureResolution": {
-            "date": "2007-03-07"
-          },
-          "PastResolution": {
-            "date": "2007-03-07"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私は最後の日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "最後の日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は2015年8月12日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2015年8月12日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-08-12",
-          "FutureResolution": {
-            "date": "2015-08-12"
-          },
-          "PastResolution": {
-            "date": "2015-08-12"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "2015年5月13日はお暇ですか？",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2015年5月13日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-05-13",
-          "FutureResolution": {
-            "date": "2015-05-13"
-          },
-          "PastResolution": {
-            "date": "2015-05-13"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "平成１２年８月１５日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成１２年８月１５日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2000-08-15",
-          "FutureResolution": {
-            "date": "2000-08-15"
-          },
-          "PastResolution": {
-            "date": "2000-08-15"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は今日から4日で戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2018-04-20T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日から4日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-04-23",
-          "FutureResolution": {
-            "date": "2018-04-23"
-          },
-          "PastResolution": {
-            "date": "2018-04-23"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は来週の木曜日に旅行に行きます",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T22:16:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来週の木曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-03-27",
-          "FutureResolution": {
-            "date": "2018-03-27"
-          },
-          "PastResolution": {
-            "date": "2018-03-27"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は21日の木曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21日の木曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-21",
-          "FutureResolution": {
-            "date": "2017-09-21"
-          },
-          "PastResolution": {
-            "date": "2017-09-21"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は来週の日曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来週の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-20",
-          "FutureResolution": {
-            "date": "2016-11-20"
-          },
-          "PastResolution": {
-            "date": "2016-11-20"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は4.22に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "先週の日曜日",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "先週の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "昭和６２年一月十一日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昭和６２年一月十一日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1987-01-11",
-          "FutureResolution": {
-            "date": "1987-01-11"
-          },
-          "PastResolution": {
-            "date": "1987-01-11"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は第三火曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "Comment": "Translated from 'third thursday'.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "第三火曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-19",
-          "FutureResolution": {
-            "date": "2017-09-19"
-          },
-          "PastResolution": {
-            "date": "2017-09-19"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は明後日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明後日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-09",
-          "FutureResolution": {
-            "date": "2016-11-09"
-          },
-          "PastResolution": {
-            "date": "2016-11-09"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は二日前に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-05",
-          "FutureResolution": {
-            "date": "2016-11-05"
-          },
-          "PastResolution": {
-            "date": "2016-11-05"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "１９０１年の９月10日に",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "１９０１年の９月10日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1901-09-10",
-          "FutureResolution": {
-            "date": "1901-09-10"
-          },
-          "PastResolution": {
-            "date": "1901-09-10"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "私たちは次の月の20日に打ち合わせを行いました",
-    "Context": {
-      "ReferenceDateTime": "2017-12-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "次の月の20日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-20",
-          "FutureResolution": {
-            "date": "2018-01-20"
-          },
-          "PastResolution": {
-            "date": "2018-01-20"
-          }
-        },
-        "Start": 4,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は来週の火曜日に旅行に行きます",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T22:16:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来週の火曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-03-27",
-          "FutureResolution": {
-            "date": "2018-03-27"
-          },
-          "PastResolution": {
-            "date": "2018-03-27"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は30日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "30日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-30",
-          "FutureResolution": {
-            "date": "2016-11-30"
-          },
-          "PastResolution": {
-            "date": "2016-10-30"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は7月の第一金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Comment": "Translated from 'the first friday of july' which is 7th month.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "7月の第一金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-07-WXX-5-#1",
-          "FutureResolution": {
-            "date": "2017-07-07"
-          },
-          "PastResolution": {
-            "date": "2016-07-01"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は21日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-21",
-          "FutureResolution": {
-            "date": "2016-11-21"
-          },
-          "PastResolution": {
-            "date": "2016-10-21"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は二日目に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二日目",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-02",
-          "FutureResolution": {
-            "date": "2016-12-02"
-          },
-          "PastResolution": {
-            "date": "2016-11-02"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は今月27日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Comment": "Fix needed: translated from 'the 27th', w/o month term.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今月27日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2015-11-27"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は10月の2日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10月の2日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "今週の月曜日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今週の月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-03-20",
-          "FutureResolution": {
-            "date": "2017-03-20"
-          },
-          "PastResolution": {
-            "date": "2017-03-20"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は2015年9月18日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Comment": "Translated from 9-18-15(MDY)",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2015年9月18日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-09-18",
-          "FutureResolution": {
-            "date": "2015-09-18"
-          },
-          "PastResolution": {
-            "date": "2015-09-18"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は4-22に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は６月２２日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "６月２２日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-06-22",
-          "FutureResolution": {
-            "date": "2017-06-22"
-          },
-          "PastResolution": {
-            "date": "2016-06-22"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は2年と21日後にここを離れる予定です",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2年と21日後",
-        "Type": "date",
-        "Value": {
-          "Timex": "2019-12-14",
-          "FutureResolution": {
-            "date": "2019-12-14"
-          },
-          "PastResolution": {
-            "date": "2019-12-14"
-          }
-        },
-        "Start": 2,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "二千年の九月十日",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二千年の九月十日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2000-09-10",
-          "FutureResolution": {
-            "date": "2000-09-10"
-          },
-          "PastResolution": {
-            "date": "2000-09-10"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は今日戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "私は１３日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "１３日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-30",
-          "FutureResolution": {
-            "date": "2016-11-30"
-          },
-          "PastResolution": {
-            "date": "2016-10-30"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は21日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-21",
-          "FutureResolution": {
-            "date": "2016-11-21"
-          },
-          "PastResolution": {
-            "date": "2016-10-21"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私が数月前にeメールを送付した相手は誰ですか",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "数月前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-08-07",
-          "FutureResolution": {
-            "date": "2016-08-07"
-          },
-          "PastResolution": {
-            "date": "2016-08-07"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は昨日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "私は先月の第3水曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T10:45:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "先月の第3水曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-02-WXX-3-#3",
-          "FutureResolution": {
-            "date": "2018-02-21"
-          },
-          "PastResolution": {
-            "date": "2018-02-21"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私が数月前にeメールを送付した相手",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "数月前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-08-07",
-          "FutureResolution": {
-            "date": "2016-08-07"
-          },
-          "PastResolution": {
-            "date": "2016-08-07"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "明日から3週間の予定はいかがですか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-31T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日から3週間",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-06-22",
-          "FutureResolution": {
-            "date": "2018-06-22"
-          },
-          "PastResolution": {
-            "date": "2018-06-22"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私はこの金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "この金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-11",
-          "FutureResolution": {
-            "date": "2016-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-11"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は3-7-07に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "3-7-07",
-        "Type": "date",
-        "Value": {
-          "Timex": "2007-03-07",
-          "FutureResolution": {
-            "date": "2007-03-07"
-          },
-          "PastResolution": {
-            "date": "2007-03-07"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "１９８９年０５月０５日は空いていますか？",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1989年05月05日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1989-05-05",
-          "FutureResolution": {
-            "date": "1989-05-05"
-          },
-          "PastResolution": {
-            "date": "1989-05-05"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "今日はどんな日でしたか？",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "今日から2日後に予定はありますか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-31T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日から2日後",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-06-02",
-          "FutureResolution": {
-            "date": "2018-06-02"
-          },
-          "PastResolution": {
-            "date": "2018-06-02"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "私は第3の火曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "Comment": "Translated from 'third Tuesday'.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "第3の火曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-19",
-          "FutureResolution": {
-            "date": "2017-09-19"
-          },
-          "PastResolution": {
-            "date": "2017-09-19"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "来週の日曜日に宿題をします",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T22:16:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来週の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-04-01",
-          "FutureResolution": {
-            "date": "2018-04-01"
-          },
-          "PastResolution": {
-            "date": "2018-04-01"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は22日目に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22日目",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-22",
-          "FutureResolution": {
-            "date": "2016-11-22"
-          },
-          "PastResolution": {
-            "date": "2016-10-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "2004年8月15日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2004年8月15日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2004-08-15",
-          "FutureResolution": {
-            "date": "2004-08-15"
-          },
-          "PastResolution": {
-            "date": "2004-08-15"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は2007年3月7日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2007年3月7日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2007-03-07",
-          "FutureResolution": {
-            "date": "2007-03-07"
-          },
-          "PastResolution": {
-            "date": "2007-03-07"
-          }
-        },
-        "Start": 2,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "２９日にご飯に行きますか？",
-    "Context": {
-      "ReferenceDateTime": "2018-02-10T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２９日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-29",
-          "FutureResolution": {
-            "date": "2018-03-29"
-          },
-          "PastResolution": {
-            "date": "2018-01-29"
+            "date": "2017-01-30"
           }
         },
         "Start": 0,
         "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は1971年5月5日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1971年5月5日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1971-05-05",
-          "FutureResolution": {
-            "date": "1971-05-05"
-          },
-          "PastResolution": {
-            "date": "1971-05-05"
-          }
-        },
-        "Start": 2,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私は22/04に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は10-2に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10-2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は昨日戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "私は２２日金曜に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２２日金曜",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-22",
-          "FutureResolution": {
-            "date": "2017-09-22"
-          },
-          "PastResolution": {
-            "date": "2017-09-22"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "水曜日",
-    "Context": {
-      "ReferenceDateTime": "2018-09-18T18:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "水曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-WXX-3",
-          "FutureResolution": {
-            "date": "2018-09-19"
-          },
-          "PastResolution": {
-            "date": "2018-09-12"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "1978年9月21日に",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1978年9月21日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1978-09-21",
-          "FutureResolution": {
-            "date": "1978-09-21"
-          },
-          "PastResolution": {
-            "date": "1978-09-21"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は27日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "27日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は2016年1月12日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2016年1月12日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-01-12",
-          "FutureResolution": {
-            "date": "2016-01-12"
-          },
-          "PastResolution": {
-            "date": "2016-01-12"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "先週の月曜日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "先週の月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-03-13",
-          "FutureResolution": {
-            "date": "2017-03-13"
-          },
-          "PastResolution": {
-            "date": "2017-03-13"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "二〇〇九年十月十二日、月曜日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "二〇〇九年十月十二日、月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2009-10-12",
-          "FutureResolution": {
-            "date": "2009-10-12"
-          },
-          "PastResolution": {
-            "date": "2009-10-12"
-          }
-        },
-        "Start": 0,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "私の一日はどんな感じですか",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "私の一日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は27に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "27",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "１３５７年６月１０日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "１３５７年６月１０日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1357-06-10",
-          "FutureResolution": {
-            "date": "1357-06-10"
-          },
-          "PastResolution": {
-            "date": "1357-06-10"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "２０１７年３月7日に帰ります。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2017年3月7日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-07-03",
-          "FutureResolution": {
-            "date": "2017-07-03"
-          },
-          "PastResolution": {
-            "date": "2017-07-03"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私が数日前にeメールを送付した相手は誰ですか",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "数日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-04",
-          "FutureResolution": {
-            "date": "2016-11-04"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は10月2日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10月2日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 2,
-        "Length": 5
       }
     ]
   },
@@ -7332,294 +4491,6 @@
     ]
   },
   {
-    "Input": "私は昨日から4日で戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2018-04-20T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日から4日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-04-23",
-          "FutureResolution": {
-            "date": "2018-04-23"
-          },
-          "PastResolution": {
-            "date": "2018-04-23"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "2週後の月曜日は予定がありますか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2週後の月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-21",
-          "FutureResolution": {
-            "date": "2018-05-21"
-          },
-          "PastResolution": {
-            "date": "2018-05-21"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "2015.5.13は予定がありますか？",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2015.5.13",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-05-13",
-          "FutureResolution": {
-            "date": "2015-05-13"
-          },
-          "PastResolution": {
-            "date": "2015-05-13"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "私は今日から二日で戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2018-04-20T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今日から二日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-04-23",
-          "FutureResolution": {
-            "date": "2018-04-23"
-          },
-          "PastResolution": {
-            "date": "2018-04-23"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は2016年2月22日に戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2016年2月22日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-02-22",
-          "FutureResolution": {
-            "date": "2016-02-22"
-          },
-          "PastResolution": {
-            "date": "2016-02-22"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "明後日",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明後日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-09",
-          "FutureResolution": {
-            "date": "2016-11-09"
-          },
-          "PastResolution": {
-            "date": "2016-11-09"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "寛政元年０１月２９日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "寛政元年０１月２９日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1789-01-29",
-          "FutureResolution": {
-            "date": "1789-01-29"
-          },
-          "PastResolution": {
-            "date": "1789-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "昨日の2日前あなたはどこにいましたか？",
-    "Context": {
-      "ReferenceDateTime": "2018-05-31T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日の2日前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-28",
-          "FutureResolution": {
-            "date": "2018-05-28"
-          },
-          "PastResolution": {
-            "date": "2018-05-28"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "来月の第2月曜日の都合はいかがですか？",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T10:45:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来月の第2月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-WXX-1-#2",
-          "FutureResolution": {
-            "date": "2018-04-09"
-          },
-          "PastResolution": {
-            "date": "2018-04-09"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "一月十九日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一月十九日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-19",
-          "FutureResolution": {
-            "date": "2018-01-19"
-          },
-          "PastResolution": {
-            "date": "2017-01-19"
-          }
-        },
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "平成二十二年一月二十九日",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "平成二十二年一月二十九日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2010-01-29",
-          "FutureResolution": {
-            "date": "2010-01-29"
-          },
-          "PastResolution": {
-            "date": "2010-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "２０１８年１月２１日　日曜日に",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２０１８年１月２１日　日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-21",
-          "FutureResolution": {
-            "date": "2018-01-21"
-          },
-          "PastResolution": {
-            "date": "2018-01-21"
-          }
-        },
-        "Start": 0,
-        "Length": 14
-      }
-    ]
-  },
-  {
     "Input": "二十九日に会社に行きますか？",
     "Context": {
       "ReferenceDateTime": "2016-03-10T00:00:00"
@@ -7644,458 +4515,50 @@
     ]
   },
   {
-    "Input": "私は２２日金曜に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２２日金曜",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-22",
-          "FutureResolution": {
-            "date": "2017-09-22"
-          },
-          "PastResolution": {
-            "date": "2017-09-22"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "私は15日金曜日に戻ろうと思っています",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "15日金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-15",
-          "FutureResolution": {
-            "date": "2017-09-15"
-          },
-          "PastResolution": {
-            "date": "2017-09-15"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は前日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "前日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "私は1月初旬に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1月初旬",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2016-01-01"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は21-04-2016に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21-04-2016",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "13.5.2015 はお暇ですか？",
+    "Input": "今週の月曜日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "13.5.2015",
+        "Text": "今週の月曜日",
         "Type": "date",
         "Value": {
-          "Timex": "2015-05-13",
+          "Timex": "2017-03-20",
           "FutureResolution": {
-            "date": "2015-05-13"
+            "date": "2017-03-20"
           },
           "PastResolution": {
-            "date": "2015-05-13"
+            "date": "2017-03-20"
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "明後日は空いていますか？",
-    "Context": {
-      "ReferenceDateTime": "2018-09-18T18:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明後日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-09-20",
-          "FutureResolution": {
-            "date": "2018-09-20"
-          },
-          "PastResolution": {
-            "date": "2018-09-20"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は10/2に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "10/2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "２００４年八月十五日",
+    "Input": "１３５７年６月１０日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "２００４年八月十五日",
+        "Text": "１３５７年６月１０日",
         "Type": "date",
         "Value": {
-          "Timex": "2004-08-15",
+          "Timex": "1357-06-10",
           "FutureResolution": {
-            "date": "2004-08-15"
+            "date": "1357-06-10"
           },
           "PastResolution": {
-            "date": "2004-08-15"
+            "date": "1357-06-10"
           }
         },
         "Start": 0,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は明日戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "明日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-08",
-          "FutureResolution": {
-            "date": "2016-11-08"
-          },
-          "PastResolution": {
-            "date": "2016-11-08"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "私は2018年1月12日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2018年1月12日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-12",
-          "FutureResolution": {
-            "date": "2018-01-12"
-          },
-          "PastResolution": {
-            "date": "2018-01-12"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "１９０１年の９月１０日に",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "１９０１年の９月１０日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1901-09-10",
-          "FutureResolution": {
-            "date": "1901-09-10"
-          },
-          "PastResolution": {
-            "date": "1901-09-10"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "7月の第1金曜日に戻ります。",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "7月の第1金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-07-WXX-5-#1",
-          "FutureResolution": {
-            "date": "2017-07-07"
-          },
-          "PastResolution": {
-            "date": "2016-07-01"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は27日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "27日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は21日木曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "21日木曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-21",
-          "FutureResolution": {
-            "date": "2017-09-21"
-          },
-          "PastResolution": {
-            "date": "2017-09-21"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は08/12,2015に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "08/12,2015",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-08-12",
-          "FutureResolution": {
-            "date": "2015-08-12"
-          },
-          "PastResolution": {
-            "date": "2015-08-12"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は15日金曜日に戻りました",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "15日金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-15",
-          "FutureResolution": {
-            "date": "2017-09-15"
-          },
-          "PastResolution": {
-            "date": "2017-09-15"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は2016年6月15日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2016年6月15日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-06-15",
-          "FutureResolution": {
-            "date": "2016-06-15"
-          },
-          "PastResolution": {
-            "date": "2016-06-15"
-          }
-        },
-        "Start": 2,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私が1か月前にeメールを送付した相手",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1か月前",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-10-07",
-          "FutureResolution": {
-            "date": "2016-10-07"
-          },
-          "PastResolution": {
-            "date": "2016-10-07"
-          }
-        },
-        "Start": 2,
-        "Length": 4
       }
     ]
   },
@@ -8124,143 +4587,22 @@
     ]
   },
   {
-    "Input": "私たちは1391年12月5日に打ち合わせを行いました",
-    "Context": {
-      "ReferenceDateTime": "2017-12-18T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1391年12月5日",
-        "Type": "date",
-        "Value": {
-          "Timex": "1391-12-05",
-          "FutureResolution": {
-            "date": "1391-12-05"
-          },
-          "PastResolution": {
-            "date": "1391-12-05"
-          }
-        },
-        "Start": 4,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "私は第２の日曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2017-09-27T00:00:00"
-    },
-    "Comment": "Translated from 'second Sunday'.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "第２の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-09-10",
-          "FutureResolution": {
-            "date": "2017-09-10"
-          },
-          "PastResolution": {
-            "date": "2017-09-10"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は一昨日戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "一昨日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-05",
-          "FutureResolution": {
-            "date": "2016-11-05"
-          },
-          "PastResolution": {
-            "date": "2016-11-05"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "2018年1月22日月曜日",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2018年1月22日月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-22",
-          "FutureResolution": {
-            "date": "2018-01-22"
-          },
-          "PastResolution": {
-            "date": "2018-01-22"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "私は今月の第一金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "今月の第一金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-WXX-5-#1",
-          "FutureResolution": {
-            "date": "2016-11-04"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        },
-        "Start": 2,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "四日前",
+    "Input": "十二日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "四日前",
+        "Text": "十二日",
         "Type": "date",
         "Value": {
-          "Timex": "2017-03-19",
+          "Timex": "XXXX-XX-12",
           "FutureResolution": {
-            "date": "2017-03-19"
+            "date": "2017-04-12"
           },
           "PastResolution": {
-            "date": "2017-03-19"
+            "date": "2017-03-12"
           }
         },
         "Start": 0,
@@ -8269,74 +4611,146 @@
     ]
   },
   {
-    "Input": "私は3-7-27に戻ります",
+    "Input": "２０１７年３月7日に帰ります。",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "3-7-27",
+        "Text": "2017年3月7日",
         "Type": "date",
         "Value": {
-          "Timex": "2027-03-07",
+          "Timex": "2017-07-03",
           "FutureResolution": {
-            "date": "2027-03-07"
+            "date": "2017-07-03"
           },
           "PastResolution": {
-            "date": "2027-03-07"
+            "date": "2017-07-03"
           }
         },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "私は1か月2年21日後にここを離れます",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1か月2年21日後",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-10-02",
-          "FutureResolution": {
-            "date": "2015-10-02"
-          },
-          "PastResolution": {
-            "date": "2015-10-02"
-          }
-        },
-        "Start": 2,
+        "Start": 0,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "旧暦の２０１５年一月一日",
+    "Input": "2004年8月15日",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の２０１５年一月一日",
+        "Text": "2004年8月15日",
         "Type": "date",
         "Value": {
-          "Timex": "2015-01-01",
+          "Timex": "2004-08-15",
           "FutureResolution": {
-            "date": "2015-01-01"
+            "date": "2004-08-15"
           },
           "PastResolution": {
-            "date": "2015-01-01"
+            "date": "2004-08-15"
           }
         },
         "Start": 0,
-        "Length": 12
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月29日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-01-29",
+          "FutureResolution": {
+            "date": "2010-01-29"
+          },
+          "PastResolution": {
+            "date": "2010-01-29"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "２９日に映画を観に行きますか？",
+    "Context": {
+      "ReferenceDateTime": "2016-02-10T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "２９日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-29",
+          "FutureResolution": {
+            "date": "2016-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-01-29"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "３６７年１月１日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "３６７年１月１日",
+        "Type": "date",
+        "Value": {
+          "Timex": "0367-01-01",
+          "FutureResolution": {
+            "date": "0367-01-01"
+          },
+          "PastResolution": {
+            "date": "0367-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "２０１５年５月１３日、空いていますか？",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年5月13日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   }
