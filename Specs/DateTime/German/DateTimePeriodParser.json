@@ -622,5 +622,31 @@
         "Length": 21
       }
     ]
+  },
+  {
+    "Input": "Er kommt voraussichtlich übernächste Woche am Donnerstag zwischen 2 und 3 Uhr zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächste Woche am Donnerstag zwischen 2 und 3 Uhr",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-24T02,2016-11-24T03,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-24 02:00:00",
+            "endDateTime": "2016-11-24 03:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-24 02:00:00",
+            "endDateTime": "2016-11-24 03:00:00"
+          }
+        },
+        "Start": 25,
+        "Length": 52
+      }
+    ]
   }
 ]

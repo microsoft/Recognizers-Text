@@ -694,5 +694,29 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "Übernächste Woche am Freitag ist er wieder da",
+    "Context": {
+      "ReferenceDateTime": "2020-07-27T18:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "Übernächste Woche am Freitag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-08-14",
+          "FutureResolution": {
+            "date": "2020-08-14"
+          },
+          "PastResolution": {
+            "date": "2020-08-14"
+          }
+        },
+        "Start": 0,
+        "Length": 28
+      }
+    ]
   }
 ]
