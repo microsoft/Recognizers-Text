@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
-using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -11,9 +9,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         private const int DefaultFractionalSubunit = 1;
 
         private readonly NumberWithUnitParser numberWithUnitParser;
-
-        private ImmutableDictionary<string, IEnumerable<double>> dimensionUnitMultiplesMap =
-                        NumbersWithUnitDefinitions.DimensionUnitMultiplesMap.ToImmutableDictionary(x => x.Key, x => x.Value);
 
         public BaseMergedDimensionsParser(BaseNumberWithUnitParserConfiguration config)
         {
@@ -111,7 +106,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     result.ResolutionStr = parseResult.ResolutionStr;
 
                     // Extract main unit identifier and multiplier.
-                    dimensionUnitMultiplesMap.TryGetValue(unitValue, out mainUnitMultiplier);
+                    this.Config.DimensionUnitMultiplesMap.TryGetValue(unitValue, out mainUnitMultiplier);
 
                     // If the main unit can't be recognized, finish process this group.
                     if (mainUnitMultiplier == null)
@@ -144,7 +139,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
 
                     // Extract fraction unit identifier and multiplier.
-                    dimensionUnitMultiplesMap.TryGetValue(unitValue, out var fractionUnitCode);
+                    this.Config.DimensionUnitMultiplesMap.TryGetValue(unitValue, out var fractionUnitCode);
 
                     // Check if the fraction identifier matches the main identifier and the fraction multiplier is smaller than the main multiplier.
                     if (fractionUnitCode != null && fractionUnitCode.ElementAt(0) == mainUnitMultiplier.ElementAt(0) &&
