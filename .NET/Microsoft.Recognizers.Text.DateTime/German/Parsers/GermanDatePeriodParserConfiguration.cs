@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -22,6 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        public static readonly Regex AfterNextPrefixRegex =
+            new Regex(DateTimeDefinitions.AfterNextPrefixRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -226,7 +230,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimmedText))
+
+            var afterNextMatch = AfterNextPrefixRegex.Match(text);
+
+            if (afterNextMatch.Success)
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
