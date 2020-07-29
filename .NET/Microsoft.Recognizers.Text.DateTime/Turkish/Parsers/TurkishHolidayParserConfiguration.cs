@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.Turkish;
 using DateObject = System.DateTime;

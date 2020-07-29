@@ -881,15 +881,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             CollectionAssert.AreEquivalent(
                 new[]
                 {
-                Constants.TimexTypes.Date,
-                Constants.TimexTypes.TimeRange,
-                Constants.TimexTypes.DateTimeRange,
-                Constants.TimexTypes.Time,
-                Constants.TimexTypes.DateTime,
-                Constants.TimexTypes.Duration,
-                Constants.TimexTypes.DateRange,
-                Constants.TimexTypes.Definite,
-            }, timex.Types.ToList());
+                    Constants.TimexTypes.Date,
+                    Constants.TimexTypes.TimeRange,
+                    Constants.TimexTypes.DateTimeRange,
+                    Constants.TimexTypes.Time,
+                    Constants.TimexTypes.DateTime,
+                    Constants.TimexTypes.Duration,
+                    Constants.TimexTypes.DateRange,
+                    Constants.TimexTypes.Definite,
+                }, timex.Types.ToList());
 
             Assert.AreEqual(2017, timex.Year);
             Assert.AreEqual(9, timex.Month);
@@ -920,14 +920,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             CollectionAssert.AreEquivalent(
                 new[]
                 {
-                Constants.TimexTypes.Date,
-                Constants.TimexTypes.TimeRange,
-                Constants.TimexTypes.DateTimeRange,
-                Constants.TimexTypes.Time,
-                Constants.TimexTypes.DateTime,
-                Constants.TimexTypes.Duration,
-                Constants.TimexTypes.DateRange,
-            }, timex.Types.ToList());
+                    Constants.TimexTypes.Date,
+                    Constants.TimexTypes.TimeRange,
+                    Constants.TimexTypes.DateTimeRange,
+                    Constants.TimexTypes.Time,
+                    Constants.TimexTypes.DateTime,
+                    Constants.TimexTypes.Duration,
+                    Constants.TimexTypes.DateRange,
+                }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);

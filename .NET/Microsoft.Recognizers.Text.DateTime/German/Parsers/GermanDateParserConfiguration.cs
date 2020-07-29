@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+
             DateRegexes = new GermanDateExtractorConfiguration(this).DateRegexList;
             OnRegex = GermanDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
@@ -44,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
             UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
             PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
