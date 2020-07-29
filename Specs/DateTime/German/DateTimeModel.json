@@ -1213,6 +1213,56 @@
     ]
   },
   {
+    "Input": "Kommen Sie in der übernächsten Woche am Donnerstag zwischen 4 und 6 Uhr nachmittags",
+    "Context": {
+      "ReferenceDateTime": "2020-07-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächsten woche am donnerstag zwischen 4 und 6 uhr nachmittags",
+        "Start": 18,
+        "End": 82,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-08-13T16,2020-08-13T18,PT2H)",
+              "type": "datetimerange",
+              "start": "2020-08-13 16:00:00",
+              "end": "2020-08-13 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wie sieht es übernächste Woche aus?",
+    "Context": {
+      "ReferenceDateTime": "2020-07-29T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "übernächste woche",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-W33",
+              "type": "daterange",
+              "start": "2020-08-10",
+              "end": "2020-08-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Der Euro ist im harten Handel heute um 15% gegenüber dem US-Dollar gefallen.",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
