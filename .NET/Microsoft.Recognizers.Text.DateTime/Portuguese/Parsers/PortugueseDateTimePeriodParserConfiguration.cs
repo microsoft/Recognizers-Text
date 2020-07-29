@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -125,18 +126,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
+
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            // TODO: modify it according to the corresponding function in English part
-            if (trimmedText.EndsWith("madrugada"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("madrugada", StringComparison.Ordinal))
             {
                 timeStr = "TDA";
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimmedText.EndsWith("manha"))
+            else if (trimmedText.EndsWith("manha", StringComparison.Ordinal))
             {
                 timeStr = "TMO";
                 beginHour = 8;
@@ -148,13 +150,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimmedText.EndsWith("tarde"))
+            else if (trimmedText.EndsWith("tarde", StringComparison.Ordinal))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimmedText.EndsWith("noite"))
+            else if (trimmedText.EndsWith("noite", StringComparison.Ordinal))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -175,9 +177,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim();
             var swift = 0;
 
-            // TODO: Replace with a regex
+            // @TODO move hardcoded values to resources file
             if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
-                trimmedText.Equals("anoche"))
+                trimmedText.Equals("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }

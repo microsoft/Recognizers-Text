@@ -552,7 +552,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 var pr = cardinalParser.Parse(ers[0]);
                 var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim();
-                if (srcUnit.StartsWith("个"))
+                if (srcUnit.StartsWith("个", StringComparison.Ordinal))
                 {
                     srcUnit = srcUnit.Substring(1);
                 }

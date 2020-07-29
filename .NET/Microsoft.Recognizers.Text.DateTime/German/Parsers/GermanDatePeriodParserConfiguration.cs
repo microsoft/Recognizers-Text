@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -261,49 +262,49 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o));
+            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
     }
 }

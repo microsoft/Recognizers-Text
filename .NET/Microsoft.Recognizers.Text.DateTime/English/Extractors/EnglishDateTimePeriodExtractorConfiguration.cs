@@ -79,6 +79,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
 
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
         public EnglishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
@@ -174,7 +177,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("from", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
@@ -186,7 +192,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("between", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
@@ -197,9 +206,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            var rangeConnetorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
-
-            return rangeConnetorRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

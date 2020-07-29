@@ -107,27 +107,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var timeOfDay = string.Empty;
 
-            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.MidDayTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.MidDayTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.MidDay;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Night;
             }
@@ -151,6 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
+
             var ret = new DateTimeResolutionResult();
 
             if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))

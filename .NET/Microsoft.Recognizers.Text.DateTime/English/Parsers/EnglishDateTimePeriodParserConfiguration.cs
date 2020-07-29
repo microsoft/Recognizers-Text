@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -186,11 +187,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             // @TODO Move hardcoded terms to resource file
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (trimmedText.StartsWith("next", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("last", StringComparison.Ordinal))
             {
                 swift = -1;
             }

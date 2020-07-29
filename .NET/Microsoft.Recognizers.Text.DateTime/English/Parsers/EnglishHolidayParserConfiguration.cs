@@ -23,15 +23,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var swift = -10;
 
             // @TODO move hardcoded terms to resources file
-            if (trimmedText.StartsWith("next"))
+
+            if (trimmedText.StartsWith("next", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("last", StringComparison.Ordinal))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("this"))
+            else if (trimmedText.StartsWith("this", StringComparison.Ordinal))
             {
                 swift = 0;
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Turkish;
@@ -72,23 +73,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             endMin = 0;
 
             var timeOfDay = string.Empty;
-            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
+
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal) ||
+                                                             trimmedText.StartsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal) ||
+                                                                    trimmedText.StartsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal) ||
+                                                                  trimmedText.StartsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o) || trimmedText.StartsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal) ||
+                                                                trimmedText.StartsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Night;
             }

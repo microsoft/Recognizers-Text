@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
@@ -34,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             // handle cases like "三年半"
             var hasHalfSuffix = false;
-            if (er.Text.EndsWith("半"))
+            if (er.Text.EndsWith("半", StringComparison.Ordinal))
             {
                 er.Length -= 1;
                 er.Text = er.Text.Substring(0, er.Text.Length - 1);
@@ -55,11 +56,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (hasHalfSuffix)
             {
-                numStr = (double.Parse(numStr) + 0.5).ToString(CultureInfo.InvariantCulture);
+                numStr = (double.Parse(numStr, CultureInfo.InvariantCulture) + 0.5).ToString(CultureInfo.InvariantCulture);
             }
 
             dateTimeParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : string.Empty) + numStr + unitStr[0];
-            dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
+            dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr, CultureInfo.InvariantCulture) * UnitValueMap[unitStr];
             dateTimeParseResult.Success = true;
 
             if (dateTimeParseResult.Success)

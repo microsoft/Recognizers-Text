@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -102,11 +103,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             // @TODO Move all hardcoded strings to resource file
 
-            if ((trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
+            if ((trimmedText.EndsWith("morgen", StringComparison.Ordinal) ||
+                 trimmedText.EndsWith("morgens", StringComparison.Ordinal)) &&
+                hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour < Constants.HalfDayHourCount)
+            else if (!(trimmedText.EndsWith("morgen", StringComparison.Ordinal) ||
+                       trimmedText.EndsWith("morgens", StringComparison.Ordinal)) &&
+                     hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -120,17 +125,25 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             // @TODO Move all hardcoded strings to resource file
 
-            if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") ||
-                trimmedText.Equals("aktuelle") || trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") ||
-                trimmedText.Equals("derzeit"))
+            if (trimmedText.EndsWith("jetzt", StringComparison.Ordinal) ||
+                trimmedText.Equals("momentan", StringComparison.Ordinal) ||
+                trimmedText.Equals("gerade", StringComparison.Ordinal) ||
+                trimmedText.Equals("aktuell", StringComparison.Ordinal) ||
+                trimmedText.Equals("aktuelle", StringComparison.Ordinal) ||
+                trimmedText.Equals("im moment", StringComparison.Ordinal) ||
+                trimmedText.Equals("in diesem moment", StringComparison.Ordinal) ||
+                trimmedText.Equals("derzeit", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("neulich") || trimmedText.Equals("vorher") || trimmedText.Equals("vorhin"))
+            else if (trimmedText.Equals("neulich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("vorher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("vorhin", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("so früh wie möglich") || trimmedText.Equals("asap"))
+            else if (trimmedText.Equals("so früh wie möglich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("asap", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
@@ -148,11 +161,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächster"))
+            if (trimmedText.StartsWith("nächsten", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächste", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächstes", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächster", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letzte") || trimmedText.StartsWith("letztes") || trimmedText.StartsWith("letzter"))
+            else if (trimmedText.StartsWith("letzten", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letzte", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letztes", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letzter", StringComparison.Ordinal))
             {
                 swift = -1;
             }

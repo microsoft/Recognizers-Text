@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -20,6 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+
             DateRegexes = new FrenchDateExtractorConfiguration(this).DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
@@ -44,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
             UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
             PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
@@ -151,31 +154,36 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             var swift = 0;
 
+            // @TODO move hardcoded values to resource files
+
             // today
-            if (trimmedText.Equals("aujourd'hui") || trimmedText.Equals("auj"))
+            if (trimmedText.Equals("aujourd'hui", StringComparison.Ordinal) ||
+                trimmedText.Equals("auj", StringComparison.Ordinal))
             {
                 swift = 0;
             }
-            else if (trimmedText.Equals("demain") || trimmedText.Equals("a2m1") ||
-                     trimmedText.Equals("lendemain") || trimmedText.Equals("jour suivant"))
+            else if (trimmedText.Equals("demain", StringComparison.Ordinal) ||
+                     trimmedText.Equals("a2m1", StringComparison.Ordinal) ||
+                     trimmedText.Equals("lendemain", StringComparison.Ordinal) ||
+                     trimmedText.Equals("jour suivant", StringComparison.Ordinal))
             {
                 swift = 1;
             } // yesterday
-            else if (trimmedText.Equals("hier"))
+            else if (trimmedText.Equals("hier", StringComparison.Ordinal))
             {
                 swift = -1;
             }
-            else if (trimmedText.EndsWith("après demain") || // day after tomorrow
-                     trimmedText.EndsWith("après-demain"))
+            else if (trimmedText.EndsWith("après demain", StringComparison.Ordinal) || // day after tomorrow
+                     trimmedText.EndsWith("après-demain", StringComparison.Ordinal))
             {
                 swift = 2;
             }
-            else if (trimmedText.StartsWith("avant-hier") || // day before yesterday
-                     trimmedText.StartsWith("avant hier"))
+            else if (trimmedText.StartsWith("avant-hier", StringComparison.Ordinal) || // day before yesterday
+                     trimmedText.StartsWith("avant hier", StringComparison.Ordinal))
             {
                 swift = -2;
             } // dernier
-            else if (trimmedText.EndsWith("dernier"))
+            else if (trimmedText.EndsWith("dernier", StringComparison.Ordinal))
             {
                 swift = -1;
             }
@@ -186,13 +194,20 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public int GetSwiftMonthOrYear(string text)
         {
             var trimmedText = text.Trim();
+
             var swift = 0;
-            if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
+
+            // @TODO move hardcoded values to resource files
+
+            if (trimmedText.EndsWith("prochaine", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochain", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"))
+            else if (trimmedText.Equals("dernière", StringComparison.Ordinal) ||
+                     trimmedText.Equals("dernières", StringComparison.Ordinal) ||
+                     trimmedText.Equals("derniere", StringComparison.Ordinal) ||
+                     trimmedText.Equals("dernieres", StringComparison.Ordinal))
             {
                 swift = -1;
             }
@@ -203,8 +218,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
+
+            // @TODO move hardcoded values to resource files
+
+            return trimmedText.Equals("dernière", StringComparison.Ordinal) ||
+                   trimmedText.Equals("dernières", StringComparison.Ordinal) ||
+                   trimmedText.Equals("derniere", StringComparison.Ordinal) ||
+                   trimmedText.Equals("dernieres", StringComparison.Ordinal);
         }
 
         public string Normalize(string text)

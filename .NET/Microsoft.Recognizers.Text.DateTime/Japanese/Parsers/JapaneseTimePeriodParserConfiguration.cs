@@ -104,31 +104,32 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             endHour = 0;
             endMin = 0;
 
-            if (trimmedText.EndsWith("上午"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("上午", StringComparison.Ordinal))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (trimmedText.EndsWith("下午"))
+            else if (trimmedText.EndsWith("下午", StringComparison.Ordinal))
             {
                 timex = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimmedText.EndsWith("晚上"))
+            else if (trimmedText.EndsWith("晚上", StringComparison.Ordinal))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimmedText.Equals("白天"))
+            else if (trimmedText.Equals("白天", StringComparison.Ordinal))
             {
                 timex = "TDT";
                 beginHour = 8;
                 endHour = 18;
             }
-            else if (trimmedText.EndsWith("深夜"))
+            else if (trimmedText.EndsWith("深夜", StringComparison.Ordinal))
             {
                 timex = "TNI";
                 beginHour = 20;
@@ -149,6 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             int day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
+
             var ret = new DateTimeResolutionResult();
 
             if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))

@@ -285,7 +285,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("vom"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("vom", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("vom", StringComparison.Ordinal);
                 return true;
@@ -297,7 +300,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("zwischen"))
+            if (text.EndsWith("zwischen", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("zwischen", StringComparison.Ordinal);
                 return true;

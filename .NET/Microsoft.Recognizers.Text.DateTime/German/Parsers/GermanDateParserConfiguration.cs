@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
@@ -160,7 +161,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("letzten");
+
+            // @TODO move hardcoded values to resources file
+
+            return trimmedText.Equals("letzten", StringComparison.Ordinal);
         }
 
         public string Normalize(string text)
