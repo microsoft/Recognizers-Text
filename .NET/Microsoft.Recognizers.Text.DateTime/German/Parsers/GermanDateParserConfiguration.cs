@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            AfterNextPrefixRegex = new Regex(DateTimeDefinitions.AfterNextPrefixRegex, RegexOptions.Singleline);
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
             UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
             PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
@@ -114,6 +115,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex NextPrefixRegex { get; }
 
+        public Regex AfterNextPrefixRegex { get; }
+
         public Regex PreviousPrefixRegex { get; }
 
         public Regex UpcomingPrefixRegex { get; }
@@ -146,7 +149,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimmedText))
+
+            var afterNextMatch = AfterNextPrefixRegex.Match(text);
+
+            if (afterNextMatch.Success)
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
