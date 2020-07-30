@@ -180,7 +180,7 @@ EarlyPrefixRegex: !simpleRegex
 MidPrefixRegex: !simpleRegex
   def: \b(?<MidPrefix>mid-?|middle of)\b
 LaterPrefixRegex: !simpleRegex
-  def: \b(?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))\b
+  def: \b(?<LatePrefix>late|(the\s+)?end of|(?<RelLate>later(\s+in)?))\b
 PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
@@ -684,7 +684,7 @@ StrictRangeConnectorRegex : !nestedRegex
   def: (?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 ComplexDatePeriodRegex: !nestedRegex
-  def: (?:((from|during|in)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<end>.+)|((between)\s+)(?<start>.+)\s*({StrictRangeConnectorRegex})\s*(?<end>.+))
+  def: (?:((from|during|in)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<end>(.*(?<EndOf>end\s+of))?.+)|((between)\s+)(?<start>.+)\s*({StrictRangeConnectorRegex})\s*(?<end>(.*(?<EndOf>end\s+of))?.+))
   references: [ YearRegex, StrictTillRegex, StrictRangeConnectorRegex ]
 # Do not localize FailFastRegex to other cultures at this momment. Experimental feature. To be improved.
 FailFastRegex: !nestedRegex

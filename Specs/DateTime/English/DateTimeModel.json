@@ -17841,5 +17841,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The range is from 2007 to the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "from 2007 to the end of 2008",
+        "Start": 13,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P24M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

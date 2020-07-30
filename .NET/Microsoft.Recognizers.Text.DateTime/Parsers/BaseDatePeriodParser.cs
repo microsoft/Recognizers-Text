@@ -377,8 +377,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (endResolution.Success)
                         {
-                            futureEnd = ((Tuple<DateObject, DateObject>)endResolution.FutureValue).Item1;
-                            pastEnd = ((Tuple<DateObject, DateObject>)endResolution.PastValue).Item1;
+                            if (match.Groups["EndOf"].Success)
+                            {
+                                futureEnd = ((Tuple<DateObject, DateObject>)endResolution.FutureValue).Item2;
+                                pastEnd = ((Tuple<DateObject, DateObject>)endResolution.PastValue).Item2;
+                            }
+                            else
+                            {
+                                futureEnd = ((Tuple<DateObject, DateObject>)endResolution.FutureValue).Item1;
+                                pastEnd = ((Tuple<DateObject, DateObject>)endResolution.PastValue).Item1;
+                            }
+
                             if (endResolution.Timex.Contains("-W"))
                             {
                                 isEndByWeek = true;
