@@ -199,7 +199,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string MiddlePauseRegex = @"^[.]";
       public const string PrefixArticleRegex = @"^[\.]";
       public const string OrRegex = @"^[.]";
-      public static readonly string YearPlusNumberRegex = $@"\b(años?\s+((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
+      public static readonly string SpecialYearTermsRegex = $@"\b(años?\s+({SpecialYearPrefixes}\s+)?(de\s+)?)";
+      public static readonly string YearPlusNumberRegex = $@"\b({SpecialYearTermsRegex}((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
       public const string NumberAsTimeRegex = @"^[.]";
       public const string TimeBeforeAfterRegex = @"^[.]";
       public const string DateNumberConnectorRegex = @"^[.]";
