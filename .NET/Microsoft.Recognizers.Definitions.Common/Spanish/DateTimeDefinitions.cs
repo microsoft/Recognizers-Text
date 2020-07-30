@@ -493,7 +493,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string DurationUnitRegex = @"^[\.]";
       public const string DurationConnectorRegex = @"^[.]";
       public const string SuffixAfterRegex = @"^[.](?!$)";
-      public const string YearPeriodRegex = @"^[.]";
+      public static readonly string YearPeriodRegex = $@"((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
       public const string FutureSuffixRegex = @"\b(despu[ée]s)\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
