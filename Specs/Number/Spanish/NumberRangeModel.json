@@ -1300,5 +1300,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "x es no menos de 194 y menos de 12.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no menos de 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[194,)"
+        },
+        "Start": 5,
+        "End": 19
+      },
+      {
+        "Text": "menos de 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        },
+        "Start": 23,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "x es no más de 12 y más de 194.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no más de 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12]"
+        },
+        "Start": 5,
+        "End": 16
+      },
+      {
+        "Text": "más de 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(194,)"
+        },
+        "Start": 20,
+        "End": 29
+      }
+    ]
   }
 ]

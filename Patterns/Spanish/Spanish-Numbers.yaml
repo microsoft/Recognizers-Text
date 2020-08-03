@@ -179,7 +179,7 @@ LessRegexNoNumberSucceed: !simpleRegex
 EqualRegexNoNumberSucceed: !simpleRegex
   def: ((igual(es)?|equivalentes?|equivalen?)((?!\s+(al?|que|del?))|(\s+(al?|que|del?)(?!(\s*\d+)))))
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)
+  def: (?<!no\s+)({MoreOrEqual}|{MoreRegex})\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)
   references: [ MoreOrEqual, MoreRegex, NumberSplitMark ]
 OneNumberRangeMoreRegex2: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
@@ -188,7 +188,7 @@ OneNumberRangeMoreSeparateRegex: !nestedRegex
   def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ({LessOrEqual}|{LessRegex})\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)
+  def: (?<!no\s+)({LessOrEqual}|{LessRegex})\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)
   references: [ LessOrEqual, LessRegex, NumberSplitMark ]
 OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}

@@ -90,10 +90,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string MoreRegexNoNumberSucceed = @"((m[áa]s|mayor(es)?|superior(es)?)((?!\s+(que|del?|a))|\s+((que|del?)(?!(\s*\d+))))|(por encima)(?!(\s*\d+)))";
       public const string LessRegexNoNumberSucceed = @"((meno(s|r(es)?)|inferior(es)?)((?!\s+(que|del?|a))|\s+((que|del?)(?!(\s*\d+))))|(por debajo)(?!(\s*\d+)))";
       public const string EqualRegexNoNumberSucceed = @"((igual(es)?|equivalentes?|equivalen?)((?!\s+(al?|que|del?))|(\s+(al?|que|del?)(?!(\s*\d+)))))";
-      public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeMoreRegex1 = $@"(?<!no\s+)({MoreOrEqual}|{MoreRegex})\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}";
       public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){EqualRegexNoNumberSucceed})";
-      public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)";
+      public static readonly string OneNumberRangeLessRegex1 = $@"(?<!no\s+)({LessOrEqual}|{LessRegex})\s*((el|las?|los)\s+)?(?<number2>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeLessRegex2 = $@"(?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}";
       public static readonly string OneNumberRangeLessSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+o\s+){EqualRegexNoNumberSucceed})";
       public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*((el|las?|los)\s+)?(?<number1>({NumberSplitMark}.)+)";

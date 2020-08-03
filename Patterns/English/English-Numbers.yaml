@@ -180,7 +180,7 @@ LessRegexNoNumberSucceed: !simpleRegex
 EqualRegexNoNumberSucceed: !simpleRegex
   def: (equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)
+  def: (?<!no\s+)({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)
   references: [ MoreOrEqual, MoreRegex, NumberSplitMark ]
 OneNumberRangeMoreRegex2: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
@@ -189,7 +189,7 @@ OneNumberRangeMoreSeparateRegex: !nestedRegex
   def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  def: (?<!no\s+)({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
   references: [ LessOrEqual, LessRegex, NumberSplitMark ]
 OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
