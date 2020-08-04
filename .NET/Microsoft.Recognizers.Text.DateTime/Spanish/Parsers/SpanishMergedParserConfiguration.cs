@@ -6,12 +6,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public SpanishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
+            SinceRegex = (config.Options & DateTimeOptions.ExperimentalMode) != 0 ?
+                new Regex(DateTimeDefinitions.SinceRegex1, RegexFlags) : new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
             AroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
             EqualRegex = SpanishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = SpanishMergedExtractorConfiguration.SuffixAfterRegex;

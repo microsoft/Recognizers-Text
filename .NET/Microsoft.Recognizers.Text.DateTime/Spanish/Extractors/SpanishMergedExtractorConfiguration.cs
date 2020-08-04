@@ -16,8 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+        // used in Experimental mode
+        public static readonly Regex SinceRegex1 =
+            new Regex(DateTimeDefinitions.SinceRegex1, RegexFlags);
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
@@ -72,6 +73,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
             {
                 numOptions = NumberOptions.NoProtoCache;
+            }
+
+            if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                SinceRegex = SinceRegex1;
             }
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
@@ -136,6 +142,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
 
         public Regex FailFastRegex { get; } = null;
+
+        // Used in Standard mode
+        public Regex SinceRegex { get; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
 

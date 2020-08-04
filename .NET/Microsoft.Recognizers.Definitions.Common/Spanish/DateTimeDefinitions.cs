@@ -183,7 +183,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string HolidayRegex3 = $@"\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\s+(del?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
       public const string BeforeRegex = @"(antes(\s+del?(\s+las?)?)?)";
       public const string AfterRegex = @"(despu[eé]s(\s*del?(\s+las?)?)?)";
-      public const string SinceRegex = @"(desde(\s+(las?|el))?|de)";
+      public const string SinceRegex = @"(desde(\s+(las?|el))?)";
+      public const string SinceRegex1 = @"(desde(\s+(las?|el))?|de)";
       public const string AroundRegex = @"(?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)";
       public const string PeriodicRegex = @"\b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b";
       public const string EachExpression = @"cada|tod[oa]s\s*(l[oa]s)?";
