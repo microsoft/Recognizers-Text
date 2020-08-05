@@ -14028,17 +14028,18 @@
     "Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
     "Results": [
       {
-        "Text": "the month",
-        "Start": 63,
+        "Text": "before the thirty-first day of the month",
+        "Start": 32,
         "End": 71,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "2019-08",
+              "timex": "2019-08-31",
+              "Mod": "before",
               "type": "daterange",
-              "start": "2019-08-01",
-              "end": "2019-09-01"
+              "sourceEntity": "datetimepoint",
+              "end": "2019-08-31"
             }
           ]
         }
@@ -17301,6 +17302,56 @@
               "type": "daterange",
               "sourceEntity": "datetimerange",
               "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back before the twenty-sixth day of the month",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before the twenty-sixth day of the month",
+        "Start": 18,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-07-26",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2020-07-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back after the 15th day of next month",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after the 15th day of next month",
+        "Start": 18,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-08-15",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-08-15"
             }
           ]
         }
