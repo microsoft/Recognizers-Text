@@ -115,6 +115,10 @@ DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
 TokenBeforeTime: 'at '
+FromRegex: !simpleRegex
+  def: \b(from)$
+BetweenTokenRegex: !simpleRegex
+  def: \b(between)$
 SimpleCasesRegex: !nestedRegex
   def: \b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex, RangePrefixRegex ]
@@ -180,7 +184,7 @@ EarlyPrefixRegex: !simpleRegex
 MidPrefixRegex: !simpleRegex
   def: \b(?<MidPrefix>mid-?|middle of)\b
 LaterPrefixRegex: !simpleRegex
-  def: \b(?<LatePrefix>late|(the\s+)?end of|(?<RelLate>later(\s+in)?))\b
+  def: \b(?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))\b
 PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
@@ -683,8 +687,14 @@ StrictTillRegex: !nestedRegex
 StrictRangeConnectorRegex : !nestedRegex
   def: (?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
+TillRegexWithDet: !nestedRegex
+  def: ({TillRegex}(\s+the\b)?)
+  references: [ TillRegex ]
+RangeConnectorRegexWithDet: !nestedRegex
+  def: ({RangeConnectorRegex}(\s+the\b)?)
+  references: [ RangeConnectorRegex ]
 ComplexDatePeriodRegex: !nestedRegex
-  def: (?:((from|during|in)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<end>(.*(?<EndOf>end\s+of))?.+)|((between)\s+)(?<start>.+)\s*({StrictRangeConnectorRegex})\s*(?<end>(.*(?<EndOf>end\s+of))?.+))
+  def: (?:((from|during|in)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<EndOf>(the\s+)?end\s+of\s+)?(?<end>.+)|((between)\s+)(?<start>.+)\s*({StrictRangeConnectorRegex})\s*(?<EndOf>(the\s+)?end\s+of\s+)?(?<end>.+))
   references: [ YearRegex, StrictTillRegex, StrictRangeConnectorRegex ]
 # Do not localize FailFastRegex to other cultures at this momment. Experimental feature. To be improved.
 FailFastRegex: !nestedRegex

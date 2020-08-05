@@ -13,10 +13,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         // Base regexes
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TillRegexWithDet, RegexFlags);
 
         public static readonly Regex RangeConnectorRegex =
-            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangeConnectorRegexWithDet, RegexFlags);
 
         public static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
@@ -167,6 +167,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenTokenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -329,28 +335,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-
-            // @TODO move hardcoded values to resources file
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
 
             if (text.EndsWith("from", StringComparison.Ordinal))
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between", StringComparison.Ordinal))
+            var betweenMatch = BetweenTokenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)

@@ -377,6 +377,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (endResolution.Success)
                         {
+                            // When the second group refers to the 'end of' a period, the end resolution of the period should be used.
                             if (match.Groups["EndOf"].Success)
                             {
                                 futureEnd = ((Tuple<DateObject, DateObject>)endResolution.FutureValue).Item2;
