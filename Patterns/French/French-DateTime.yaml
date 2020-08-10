@@ -445,6 +445,8 @@ LaterRegex: !simpleRegex
 AgoRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(dans|en|sur)\b
 SinceYearSuffixRegex: !simpleRegex

@@ -144,6 +144,8 @@ MonthOfRegex: !nestedRegex
   references: [ OfPrepositionRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>años?|mes(es)?|semanas?)\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !simpleRegex

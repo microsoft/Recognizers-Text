@@ -527,6 +527,8 @@ LaterRegex: !simpleRegex
   def: \b(dopo|da\s+adesso|da\s+questo\s+momento)\b
 AgoRegex: !simpleRegex
   def: \b(fa|prima|addietro)\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(in|tra|fra|a)\b
 SinceYearSuffixRegex: !nestedRegex

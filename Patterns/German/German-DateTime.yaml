@@ -458,6 +458,8 @@ AroundRegex: !simpleRegex
   def: (\b(ca\.?|gegen|circa)\s*\b)
 LaterRegex: !simpleRegex
   def: \b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !simpleRegex

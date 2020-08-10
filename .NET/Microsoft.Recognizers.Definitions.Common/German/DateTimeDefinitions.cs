@@ -203,6 +203,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string AgoRegex = @"\b(danach)\b";
       public const string AroundRegex = @"(\b(ca\.?|gegen|circa)\s*\b)";
       public const string LaterRegex = @"\b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b";
+      public const string BeforeAfterRegex = @"^[.]";
       public const string InConnectorRegex = @"\b(in)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public static readonly string WithinNextPrefixRegex = $@"\b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b";

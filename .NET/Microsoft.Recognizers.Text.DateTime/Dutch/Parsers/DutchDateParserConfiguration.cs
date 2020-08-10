@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             StrictRelativeRegex = DutchDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = DutchDateExtractorConfiguration.BeforeAfterRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
@@ -121,6 +122,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

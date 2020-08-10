@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
             StrictRelativeRegex = FrenchDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
+            BeforeAfterRegex = FrenchDateExtractorConfiguration.BeforeAfterRegex;
             RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
@@ -125,6 +126,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

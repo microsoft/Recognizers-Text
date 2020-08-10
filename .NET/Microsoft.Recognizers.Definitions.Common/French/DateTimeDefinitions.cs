@@ -196,6 +196,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string AgoPrefixRegex = @"\b(y a)\b";
       public const string LaterRegex = @"\b(plus tard)\b";
       public const string AgoRegex = @"^[.]";
+      public const string BeforeAfterRegex = @"^[.]";
       public const string InConnectorRegex = @"\b(dans|en|sur)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public const string WithinNextPrefixRegex = @"^[.]";

@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
             StrictRelativeRegex = GermanDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = GermanDateExtractorConfiguration.YearSuffix;
+            BeforeAfterRegex = GermanDateExtractorConfiguration.BeforeAfterRegex;
             RelativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
@@ -124,6 +125,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
