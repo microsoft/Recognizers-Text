@@ -11,13 +11,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
         public static readonly Regex H1 =
-            new Regex(DateTimeDefinitions.HolidayRegex1, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex1CS, RegexFlags);
 
         public static readonly Regex H2 =
-            new Regex(DateTimeDefinitions.HolidayRegex2, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex2CS, RegexFlags);
 
         public static readonly Regex H3 =
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex3CS, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {
