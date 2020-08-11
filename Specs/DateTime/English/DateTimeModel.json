@@ -14025,7 +14025,6 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
     "Results": [
       {
         "Text": "before the thirty-first day of the month",
@@ -17352,6 +17351,89 @@
               "type": "daterange",
               "sourceEntity": "datetimepoint",
               "start": "2020-08-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back on the 15th day of next month",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 15th day of next month",
+        "Start": 21,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-08-15",
+              "type": "date",
+              "value": "2020-08-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back after the 15th day of June",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after the 15th day of june",
+        "Start": 18,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-15",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-06-15"
+            },
+            {
+              "timex": "XXXX-06-15",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2021-06-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back on the twenty third day of September",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "twenty third day of september",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-23",
+              "type": "date",
+              "value": "2019-09-23"
+            },
+            {
+              "timex": "XXXX-09-23",
+              "type": "date",
+              "value": "2020-09-23"
             }
           ]
         }

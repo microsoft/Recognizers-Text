@@ -287,7 +287,7 @@ DateExtractorA: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, MonthRegex, DayRegex, WeekDayRegex ]
 OfMonth: !nestedRegex
-  def: ^\s*of\s*{MonthRegex}
+  def: ^\s*(day\s+)?of\s*{MonthRegex}
   references: [ MonthRegex ]
 MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(the)?\s*$'
