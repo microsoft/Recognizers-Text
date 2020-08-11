@@ -10,20 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
-        public static readonly Regex H1 =
-            new Regex(DateTimeDefinitions.HolidayRegex1CS, RegexFlags);
-
-        public static readonly Regex H2 =
-            new Regex(DateTimeDefinitions.HolidayRegex2CS, RegexFlags);
-
-        public static readonly Regex H3 =
-            new Regex(DateTimeDefinitions.HolidayRegex3CS, RegexFlags);
+        public static readonly Regex H =
+            new Regex(DateTimeDefinitions.HolidayRegexCS, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {
-            H1,
-            H2,
-            H3,
+            H,
         };
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
