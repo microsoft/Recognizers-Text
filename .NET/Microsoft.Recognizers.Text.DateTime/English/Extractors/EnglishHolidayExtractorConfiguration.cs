@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
         public static readonly Regex H =
-            new Regex(DateTimeDefinitions.HolidayRegexCS, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {

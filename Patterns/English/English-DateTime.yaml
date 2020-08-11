@@ -522,24 +522,15 @@ ConjunctionRegex: !simpleRegex
 # Major holidays + holiday w/ weekday in name
 HolidayList1: !simpleRegex
   def: (?<holiday>mardi gras|(washington|mao)'s birthday|juneteenth|(jubilee|freedom)(\s+day)|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|may\s*day|yuan dan|christmas eve|(christmas|xmas)(\s+day)?|black friday|yuandan|easter(\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)
-HolidayRegex1: !nestedRegex
-  def: \b{HolidayList1}(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
-  references: [ HolidayList1, YearRegex, RelativeRegex ]
 # Extra religious or local holidays
 HolidayList2: !simpleRegex
   def: (?<holiday>(thanks\s*giving|all saint's|white lover|s(?:ain)?t?(\.)?\s+(?:patrick|george)(?:')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+day)?)
-HolidayRegex2: !nestedRegex
-  def: \b{HolidayList2}(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
-  references: [ HolidayList2, YearRegex, RelativeRegex ]
 # General holidays (must be followed by "day")
 HolidayList3: !simpleRegex
   def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)
-HolidayRegex3: !nestedRegex
-  def: \b{HolidayList3}(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
-  references: [ HolidayList3, YearRegex, RelativeRegex ]
-# Combined holiday regex with support for relative holidays (e.g. 'next easter')
-HolidayRegexCS: !nestedRegex
-  def: \b({StrictRelativeRegex}\s+)?({HolidayList1}|{HolidayList2}|{HolidayList3})(?(1)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?)\b
+# Combined holiday regex
+HolidayRegex: !nestedRegex
+  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?))\b
   references: [ HolidayList1, HolidayList2, HolidayList3, YearRegex, RelativeRegex, StrictRelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)
