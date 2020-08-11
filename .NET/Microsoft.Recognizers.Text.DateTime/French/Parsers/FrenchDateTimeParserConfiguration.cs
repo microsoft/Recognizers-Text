@@ -6,13 +6,15 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
+    public class FrenchDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
-            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -35,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             UnspecificEndOfRegex = FrenchDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = FrenchTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = FrenchDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = FrenchDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
 
@@ -92,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex DateNumberConnectorRegex { get; }
 
         public Regex PrepositionRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

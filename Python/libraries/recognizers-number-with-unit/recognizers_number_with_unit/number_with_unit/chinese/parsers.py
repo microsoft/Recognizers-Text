@@ -8,6 +8,7 @@ from recognizers_number.number.chinese.parsers import ChineseNumberParserConfigu
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParserConfiguration
 from recognizers_number_with_unit.resources.chinese_numeric_with_unit import ChineseNumericWithUnit
 
+
 class ChineseNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration):
     @property
     def internal_number_parser(self) -> Parser:
@@ -25,15 +26,19 @@ class ChineseNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
         super().__init__(culture_info)
-        self._internal_number_extractor = ChineseNumberExtractor(ChineseNumberExtractorMode.EXTRACT_ALL)
-        self._internal_number_parser = AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, ChineseNumberParserConfiguration(culture_info))
+        self._internal_number_extractor = ChineseNumberExtractor(
+            ChineseNumberExtractorMode.EXTRACT_ALL)
+        self._internal_number_parser = AgnosticNumberParserFactory.get_parser(
+            ParserType.NUMBER, ChineseNumberParserConfiguration(culture_info))
         self.currency_name_to_iso_code_map = ChineseNumericWithUnit.CurrencyNameToIsoCodeMap
         self.currency_fraction_code_list = ChineseNumericWithUnit.FractionalUnitNameToCodeMap
+
 
 class ChineseAgeParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(ChineseNumericWithUnit.AgeSuffixList)
+
 
 class ChineseCurrencyParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
@@ -41,10 +46,12 @@ class ChineseCurrencyParserConfiguration(ChineseNumberWithUnitParserConfiguratio
         self.add_dict_to_unit_map(ChineseNumericWithUnit.CurrencySuffixList)
         self.add_dict_to_unit_map(ChineseNumericWithUnit.CurrencyPrefixList)
 
+
 class ChineseDimensionParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(ChineseNumericWithUnit.DimensionSuffixList)
+
 
 class ChineseTemperatureParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):

@@ -1328,13 +1328,13 @@
     "Input": "三双",
     "Results": [
       {
-        "Text": "三双",
+        "Text": "三",
         "TypeName": "number",
         "Resolution": {
-          "value": "6"
+          "value": "3"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -1342,24 +1342,10 @@
     "Input": "一百对",
     "Results": [
       {
-        "Text": "一百对",
+        "Text": "一百",
         "TypeName": "number",
         "Resolution": {
-          "value": "200"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "十双",
-    "Results": [
-      {
-        "Text": "十双",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "20"
+          "value": "100"
         },
         "Start": 0,
         "End": 1
@@ -1367,16 +1353,30 @@
     ]
   },
   {
+    "Input": "十双",
+    "Results": [
+      {
+        "Text": "十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
     "Input": "一百五十对",
     "Results": [
       {
-        "Text": "一百五十对",
+        "Text": "一百五十",
         "TypeName": "number",
         "Resolution": {
-          "value": "300"
+          "value": "150"
         },
         "Start": 0,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -1509,13 +1509,13 @@
     "Input": "两双",
     "Results": [
       {
-        "Text": "两双",
+        "Text": "两",
         "TypeName": "number",
         "Resolution": {
-          "value": "4"
+          "value": "2"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -2449,13 +2449,13 @@
     "Input": "三雙",
     "Results": [
       {
-        "Text": "三雙",
+        "Text": "三",
         "TypeName": "number",
         "Resolution": {
-          "value": "6"
+          "value": "3"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -2463,24 +2463,10 @@
     "Input": "壹百對",
     "Results": [
       {
-        "Text": "壹百對",
+        "Text": "壹百",
         "TypeName": "number",
         "Resolution": {
-          "value": "200"
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "十雙",
-    "Results": [
-      {
-        "Text": "十雙",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "20"
+          "value": "100"
         },
         "Start": 0,
         "End": 1
@@ -2488,16 +2474,30 @@
     ]
   },
   {
+    "Input": "十雙",
+    "Results": [
+      {
+        "Text": "十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
     "Input": "壹百五十對",
     "Results": [
       {
-        "Text": "壹百五十對",
+        "Text": "壹百五十",
         "TypeName": "number",
         "Resolution": {
-          "value": "300"
+          "value": "150"
         },
         "Start": 0,
-        "End": 4
+        "End": 3
       }
     ]
   },
@@ -2588,13 +2588,13 @@
     "Input": "兩雙",
     "Results": [
       {
-        "Text": "兩雙",
+        "Text": "兩",
         "TypeName": "number",
         "Resolution": {
-          "value": "4"
+          "value": "2"
         },
         "Start": 0,
-        "End": 1
+        "End": 0
       }
     ]
   },
@@ -4230,5 +4230,611 @@
         }
       }
     ]
+  },
+  {
+    "Input": "一万零十二",
+    "Results": [
+      {
+        "Text": "一万零十二",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一万零一十二",
+    "Results": [
+      {
+        "Text": "一万零一十二",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一百零一万零三千零十二",
+    "Results": [
+      {
+        "Text": "一百零一万零三千零十二",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1013012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一百零十万",
+    "Results": [
+      {
+        "Text": "一百零十万",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1100000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一千零十二章一千零十八章和一千八百零三章中，分别提到了此事",
+    "Results": [
+      {
+        "Text": "一千零十二",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1012"
+        }
+      },
+      {
+        "Text": "一千零十八",
+        "Start": 6,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1018"
+        }
+      },
+      {
+        "Text": "一千八百零三",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1803"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "负一万零十二",
+    "Results": [
+      {
+        "Text": "负一万零十二",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一万零十二点一五",
+    "Results": [
+      {
+        "Text": "一万零十二点一五",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10012.15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一万零一十八点一五",
+    "Results": [
+      {
+        "Text": "一万零一十八点一五",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10018.15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二十五分之一千零拾肆",
+    "Results": [
+      {
+        "Text": "二十五分之一千零拾肆",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40.56"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一百零十万三千斤",
+    "Results": [
+      {
+        "Text": "一百零十万三千",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1103000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一千零十又3分之1",
+    "Results": [
+      {
+        "Text": "一千零十又3分之1",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1010.33333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "零十",
+    "Results": [
+      {
+        "Text": "零十",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "第零十刃",
+    "Results": [
+      {
+        "Text": "零十",
+        "Start": 1,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这不是五这是二百零一",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "二百零一",
+        "Start": 6,
+        "End": 9,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "201"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这是五那是四",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "四",
+        "Start": 5,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这不是四川这是五台山",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这不是四川这是五",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这不是一这是九台",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "九",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "答案是四不是五",
+    "Results": [
+      {
+        "Text": "四",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "答案不是四而是五",
+    "Results": [
+      {
+        "Text": "四",
+        "Start": 4,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "数量不是一却是五",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 4,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "五",
+        "Start": 7,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一万五千亿",
+    "Results": [
+      {
+        "Text": "一万五千亿",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "四千三百亿",
+    "Results": [
+      {
+        "Text": "四千三百亿",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "430000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "四万亿",
+    "Results": [
+      {
+        "Text": "四万亿",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "袜子五双九点九",
+    "Results": [
+      {
+        "Text": "五",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "九点九",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "六双",
+    "Results": [
+      {
+        "Text": "六",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五十对耳环",
+    "Results": [
+      {
+        "Text": "五十",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "戒指一对八千",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 2,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "八千",
+        "Start": 4,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "单销量排名前三的品牌",
+    "Results": [
+      {
+        "Text": "三",
+        "Start": 6,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "三的另一种写法是叁",
+    "Results": [
+      {
+        "Text": "三",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      },
+      {
+        "Text": "一",
+        "Start": 3,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "叁",
+        "Start": 8,
+        "End": 8,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "陽光九九是食物品牌",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "美味十足",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "一塊蛋糕",
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "一",
+        "Start": 0,
+        "End": 0,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这是我的队伍",
+    "NotSupported": "python, javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "小明每天收拾房间",
+    "Results": []
+  },
+  {
+    "Input": "《朝花夕拾》是鲁迅的作品",
+    "Results": []
+  },
+  {
+    "Input": "这个人很放肆",
+    "Results": []
+  },
+  {
+    "Input": "这个岛屿远离大陆",
+    "Results": []
+  },
+  {
+    "Input": "海陆空部队",
+    "Results": []
+  },
+  {
+    "Input": "这个人很肆意妄为",
+    "Results": []
+  },
+  {
+    "Input": "这个人很肆无忌惮",
+    "Results": []
+  },
+  {
+    "Input": "岛屿远离陆地",
+    "Results": []
+  },
+  {
+    "Input": "登陆部队已经上岸",
+    "Results": []
+  },
+  {
+    "Input": "他在海滩上拾取贝壳",
+    "Results": []
+  },
+  {
+    "Input": "小明拾起石子",
+    "Results": []
+  },
+  {
+    "Input": "没有人拾到她的东西",
+    "Results": []
   }
 ]

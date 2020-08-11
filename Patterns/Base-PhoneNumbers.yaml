@@ -1,38 +1,69 @@
 ---
 NumberReplaceToken: '@builtin.phonenumber'
-GeneralPhoneNumberRegex: !simpleRegex
-  def: (\b(((\d[\s]?){7,15}\d))(?!-)\b)|(\(\d{5}\)\s?\d{5,6})|\+\d{2}\(\d\)\d{10}
-BRPhoneNumberRegex: !simpleRegex
-  def: (((\B\(\s?))\d{2,3}(\s?\))|(\b\d{2,3}))\s?\d{4,5}-?\d{3,5}(?!-)\b
-UKPhoneNumberRegex: !simpleRegex
-  def: (((\b(00)|\B\+)\s?)?(\b\d{2}\s?)?((\s?\(0\)[-\s]?|\b|(?<=(\b^#)\d{2}))\d{2,5}|\(0\d{3,4}\))[/-]?\s?(\d{5,8}|\d{3,4}[-\s]?\d{3,4})(?!-)\b)
-DEPhoneNumberRegex: !simpleRegex
-  def: ((\+\d{2}\s?((\(0\))?\d\s?)?|\b)(\d{2,4}\s?[-/]?[\s\d]{7,10}\d)(?!-)\b)
-USPhoneNumberRegex: !simpleRegex
-  def: ((((\B\+)|\b)1(\s|-)?)|\b)?(\d{3}\)[-\s]?|\(\d{3}\)[-\s]?|\b\d{3}\s?[-\.]?\s?)\d{3}\s?[-\.]?\s?\d{4}(\s?(x|X|ext)\s?\d{3,5})?(?!(-\s?\d))\b
-CNPhoneNumberRegex: !simpleRegex
-  def: ((\b00\s?)?\+?86\s?-?\s?)?(((\b|(?<=86))\d{2,5}\s?-?\s?|\(\d{2,5}\)\s?)\d{4}\s?-?\s?\d{4}(\s?-?\s?\d{4})?|(\b|(?<=86))\d{3}\s?-?\s?\d{4}\s?-?\s?\d{4})(?!-)\b
-DKPhoneNumberRegex: !simpleRegex
-  def: ((\(\s?(\+\s?|00)45\s?\)\s?)|(((?<!\d)\+\s?|\b00)45\s?)|\b)(\s?\(0\)\s?)?((\d{8})|(\d{4}\s?-?\s?\d{4,6})|((\d{2}[\s-]){3}\d{2})|(\d{2}\s?-?\s?\d{3}\s?-?\s?\d{3}))(?!-)\b
-ITPhoneNumberRegex: !simpleRegex
-  def: ((\(\s?(\+\s?|00)39\s?\)\s?)|(((?<!\d)\+\s?|\b00)39\s?)|\b)((0[\d\s-]{4,12}\d)|(3[\d\s-]{7,12}\d))(?!-)\b
-NLPhoneNumberRegex: !simpleRegex
-  def: ((((\(\s?(\+\s?|00)31\s?\)\s?)|(((?<!\d)\+\s?|\b00)31\s?))?(((\b|(?<=31))0?\d{1,3}|\(\s?0?\d{1,3}\s?\)|\(0\)[-\s]?\d{1,3})\s?-?[\d\s]{5,11}\d))|\b\d{10,12})(?!-)\b
-SpecialPhoneNumberRegex: !simpleRegex
-  def: \b(\d{3,4}[/-]\d{1,4}[/-]\d{3,4})\b
+WordBoundariesRegex: !simpleRegex
+  def: '\b'
+NonWordBoundariesRegex: !simpleRegex
+  def: '\B'
+EndWordBoundariesRegex: !simpleRegex
+  def: '\b'
+PreCheckPhoneNumberRegex: !simpleRegex
+  def: (\d{1,4}.){2,4}\s?\d{2,3}
+GeneralPhoneNumberRegex: !paramsRegex
+  def: ({WordBoundariesRegex}(((\d[\s]?){4,12}))(-?[\d\s?]{3}\d)(?!-){EndWordBoundariesRegex})|(\(\d{5}\)\s?\d{5,6})|\+\d{2}\(\d\)\d{10}
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+BRPhoneNumberRegex: !paramsRegex
+  def: ((\(\s?(\+\s?|00)55\s?\)\s?)|(((?<!\d)\+\s?|{WordBoundariesRegex}00)55\s?)|{WordBoundariesRegex})?((({NonWordBoundariesRegex}\(\s?))\d{2,3}(\s?\))|({WordBoundariesRegex}\d{2,3}))\s?\d{4,5}-?\d{3,5}(?!-){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, NonWordBoundariesRegex, EndWordBoundariesRegex  ]
+UKPhoneNumberRegex: !paramsRegex
+  def: ((({WordBoundariesRegex}(00)|{NonWordBoundariesRegex}\+)\s?)?({WordBoundariesRegex}\d{2}\s?)?((\s?\(0\)[-\s]?|{WordBoundariesRegex}|(?<=(\b^#)\d{2}))\d{2,5}|\(0\d{3,4}\))[/-]?\s?(\d{5,8}|\d{3,4}[-\s]?\d{3,4})(?!-){EndWordBoundariesRegex})
+  params: [ WordBoundariesRegex, NonWordBoundariesRegex, EndWordBoundariesRegex  ]
+DEPhoneNumberRegex: !paramsRegex
+  def: ((\+\d{2}\s?((\(0\))?\d\s?)?|{WordBoundariesRegex})(\d{2,4}\s?[-/]?[\s\d]{7,10}\d)(?!-){EndWordBoundariesRegex})
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+USPhoneNumberRegex: !paramsRegex
+  def: ((((({NonWordBoundariesRegex}\+)|{WordBoundariesRegex})1(\s|-)?)|{WordBoundariesRegex})?(\d{3}\)[-\s]?|\(\d{3}\)[-\.\s]?|{WordBoundariesRegex}\d{3}\s?[-\.]?\s?)|{WordBoundariesRegex})[2-9]\d{2}\s?[-\.]?\s?\d{4}(\s?(x|X|ext)\s?\d{3,5})?(?!(-\s?\d)){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, NonWordBoundariesRegex,EndWordBoundariesRegex  ]
+CNPhoneNumberRegex: !paramsRegex
+  def: (({WordBoundariesRegex}00\s?)?\+?(86|82|81)\s?-?\s?)?((({WordBoundariesRegex}|(?<=(86|82|81)))\d{2,5}\s?-?\s?|\(\d{2,5}\)\s?)\d{4}\s?-?\s?\d{4}(\s?-?\s?\d{4})?|(\b|(?<=(86|82|81)))\d{3}\s?-?\s?\d{4}\s?-?\s?\d{4})(?!-){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+DKPhoneNumberRegex: !paramsRegex
+  def: ((\(\s?(\+\s?|00)45\s?\)\s?)|(((?<!\d)\+\s?|\b00)45\s?)|{WordBoundariesRegex})(\s?\(0\)\s?)?((\d{8})|(\d{4}\s?-?\s?\d{4,6})|((\d{2}[\s-]){3}\d{2})|(\d{2}\s?-?\s?\d{3}\s?-?\s?\d{3}))(?!-){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+ITPhoneNumberRegex: !paramsRegex
+  def: ((\(\s?(\+\s?|00)39\s?\)\s?)|(((?<!\d)\+\s?|\b00)39\s?)|{WordBoundariesRegex})((0[\d-]{4,12}\d)|(3[\d-]{7,12}\d)|(0[\d\s]{4,12}\d)|(3[\d\s]{7,12}\d))(?!-){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+NLPhoneNumberRegex: !paramsRegex
+  def: ((((\(\s?(\+\s?|00)31\s?\)\s?)|(((?<!\d)\+\s?|{WordBoundariesRegex}00)31\s?))?((({WordBoundariesRegex}|(?<=31))0?\d{1,3}|\(\s?0?\d{1,3}\s?\)|\(0\)[-\s]?\d{1,3})((-?[\d]{5,11})|(\s[\d\s]{5,11}))\d))|\b\d{10,12})(?!-){EndWordBoundariesRegex}
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+SpecialPhoneNumberRegex: !paramsRegex
+  def: ({WordBoundariesRegex}(\d{3,4}[/-]\d{1,4}[/-]\d{3,4}){EndWordBoundariesRegex})
+  params: [ WordBoundariesRegex, EndWordBoundariesRegex  ]
+# NoAreaCodeUSPhoneNumberRegex is only for the score increment but not for tagging.
+NoAreaCodeUSPhoneNumberRegex: !simpleRegex
+  def: (?<!(-|-\s|\d|\)|\)\s|\.))[2-9]\d{2}\s?[-\.]\s?\d{4}(?!(-\s?\d))\b
+InternationDialingPrefixRegex: !simpleRegex
+  def: 0(0|11)$
 TypicalDeductionRegexList: !list
   types: [string]
   entries:
-    - ^\d{3}-\d{2}-\d{4}$
     - ^\d{5}-\d{4}$
+    - \)\.
+    - ^0(0|11)(-)
 PhoneNumberMaskRegex: !simpleRegex
-  def: ([0-9A-E]{2}(\s[0-9A-E]{2}){7})
+  def: ([0-9a-e]{2}(\s[0-9a-e]{2}){7})
 CountryCodeRegex: !simpleRegex
   def: ^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})
 AreaCodeIndicatorRegex: !simpleRegex
   def: \(
 FormatIndicatorRegex: !simpleRegex
   def: (\s|-|/|\.)+
+ColonMarkers: !list
+  types: [char]
+  entries:
+  - ':'
+# Handle cases like "tel:123456" and "1767:1771"
+ColonPrefixCheckRegex: !simpleRegex
+  def: (([a-z])\s*$)
 SpecialBoundaryMarkers: !list
   types: [char]
   entries:
@@ -47,4 +78,21 @@ BoundaryMarkers: !list
     - '+'
     - '#'
     - '*'
+ForbiddenPrefixMarkers: !list
+  types: [char]
+  entries:
+    - ','
+    - ':'
+    - '%'
+ForbiddenSuffixMarkers: !list
+  types: [char]
+  entries:
+    - '/'
+    - '+'
+    - '#'
+    - '*'
+    - ':'
+    - '%'
+SSNFilterRegex: !simpleRegex
+  def: ^\d{3}-\d{2}-\d{4}$
 ...

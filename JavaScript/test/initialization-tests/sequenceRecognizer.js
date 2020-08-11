@@ -9,7 +9,7 @@ var InvalidCulture = "vo-id";
 
 var controlModel = new Recognizer.PhoneNumberModel(
     new Recognizer.PhoneNumberParser(),
-    new Recognizer.PhoneNumberExtractor());
+    new Recognizer.BasePhoneNumberExtractor(new Recognizer.EnglishPhoneNumberExtractorConfiguration()));
 
 function clearCache() {
     var recognizer = new SequenceRecognizer();

@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Chinese\Chinese-Ip.yaml";
+	this.Language = "Chinese";
+	this.ClassName = "IpDefinitions";
+#>
+<#@ include file=".\CommonDefinitions.ttinclude"#>

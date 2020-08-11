@@ -1,13 +1,18 @@
 ﻿using System.Collections.Generic;
-
+using Microsoft.Recognizers.Text.Choice.Arabic;
+using Microsoft.Recognizers.Text.Choice.Bulgarian;
 using Microsoft.Recognizers.Text.Choice.Chinese;
 using Microsoft.Recognizers.Text.Choice.Dutch;
 using Microsoft.Recognizers.Text.Choice.English;
 using Microsoft.Recognizers.Text.Choice.French;
 using Microsoft.Recognizers.Text.Choice.German;
+using Microsoft.Recognizers.Text.Choice.Hindi;
+using Microsoft.Recognizers.Text.Choice.Italian;
 using Microsoft.Recognizers.Text.Choice.Japanese;
 using Microsoft.Recognizers.Text.Choice.Portuguese;
 using Microsoft.Recognizers.Text.Choice.Spanish;
+using Microsoft.Recognizers.Text.Choice.Swedish;
+using Microsoft.Recognizers.Text.Choice.Turkish;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
@@ -68,6 +73,14 @@ namespace Microsoft.Recognizers.Text.Choice
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new GermanBooleanExtractorConfiguration())));
 
             RegisterModel<BooleanModel>(
+                Culture.Hindi,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new HindiBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Italian,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ItalianBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
                 Culture.Japanese,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new JapaneseBooleanExtractorConfiguration())));
 
@@ -78,6 +91,22 @@ namespace Microsoft.Recognizers.Text.Choice
             RegisterModel<BooleanModel>(
                 Culture.Spanish,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new SpanishBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Swedish,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new SwedishBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Bulgarian,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new BulgarianBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Arabic,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ArabicBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Turkish,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new TurkishBooleanExtractorConfiguration())));
         }
     }
 }

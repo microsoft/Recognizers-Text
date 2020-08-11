@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -28,8 +29,8 @@ namespace Microsoft.Recognizers.Text.Number
 
             for (var idx = 0; idx < ers.Count - 1; idx++)
             {
-                if (!((string)ers[idx].Data).StartsWith(Constants.INTEGER_PREFIX) ||
-                    !((string)ers[idx + 1].Data).StartsWith(Constants.INTEGER_PREFIX))
+                if (!((string)ers[idx].Data).StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal) ||
+                    !((string)ers[idx + 1].Data).StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
                     groups[idx + 1] = groups[idx] + 1;
                     continue;
@@ -45,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
-                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
+                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                 // Separated by whitespace
                 if (string.IsNullOrEmpty(middleStr))
@@ -70,7 +71,9 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (idx == 0 || groups[idx] != groups[idx - 1])
                 {
-                    var tmpExtractResult = ers[idx];
+
+                    var tmpExtractResult = ers[idx].Clone();
+
                     tmpExtractResult.Data = new List<ExtractResult>
                     {
                         new ExtractResult
@@ -82,6 +85,7 @@ namespace Microsoft.Recognizers.Text.Number
                             Type = ers[idx].Type,
                         },
                     };
+
                     result.Add(tmpExtractResult);
                 }
 

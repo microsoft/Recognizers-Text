@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.numberwithunit.resources;
@@ -23,5 +26,7 @@ public class BaseUnits {
 
     public static final String AmbiguousTimeTerm = "pm";
 
-    public static final String AmbiguousUnitNumberMultiplierRegex = "(\\s[Kk])";
+    public static final String AmbiguousUnitNumberMultiplierRegex = "(\\s([Kk]|mil))";
+
+    public static final String SingleCharUnitRegex = "^\\b(c|f|g|k|l|m|s)(\\s*\\.|\\b)$";
 }

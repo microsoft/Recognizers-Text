@@ -20,7 +20,7 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
     readonly utilityConfiguration: SpanishDateTimeUtilityConfiguration;
 
     readonly fromRegex: RegExp;
-    readonly connectorAndRegex: RegExp;
+    readonly RangeConnectorRegex: RegExp;
     readonly betweenRegex: RegExp;
 
     constructor() {
@@ -38,7 +38,7 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
         this.generalEndingRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.GeneralEndingRegex, "gis");
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex, "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex, "gis");
+        this.RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex, "gis");
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex, "gis");
     }
 
@@ -47,7 +47,7 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
     }
 
     hasConnectorToken(text: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, text).matched;
+        return RegExpUtility.getFirstMatchIndex(this.RangeConnectorRegex, text).matched;
     }
 
     getBetweenTokenIndex(text: string): { matched: boolean; index: number; } {

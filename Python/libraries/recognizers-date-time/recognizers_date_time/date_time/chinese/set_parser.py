@@ -10,6 +10,7 @@ from ..parsers import DateTimeParser, DateTimeParseResult
 from ..extractors import DateTimeExtractor
 from .set_parser_config import ChineseSetParserConfiguration
 
+
 class ChineseSetParser(BaseSetParser):
     def __init__(self):
         config = ChineseSetParserConfiguration()
@@ -31,10 +32,12 @@ class ChineseSetParser(BaseSetParser):
             inner_result = self.parser_time_everyday(source.text, reference)
 
         if not inner_result.success:
-            inner_result = self.parse_each(self.config.date_time_extractor, self.config.date_time_parser, source.text, reference)
+            inner_result = self.parse_each(
+                self.config.date_time_extractor, self.config.date_time_parser, source.text, reference)
 
         if not inner_result.success:
-            inner_result = self.parse_each(self.config.date_extractor, self.config.date_parser, source.text, reference)
+            inner_result = self.parse_each(
+                self.config.date_extractor, self.config.date_parser, source.text, reference)
 
         if inner_result.success:
             inner_result.future_resolution[TimeTypeConstants.SET] = inner_result.future_value
@@ -59,7 +62,8 @@ class ChineseSetParser(BaseSetParser):
         if not (source_unit and source_unit in self.config.unit_map):
             return result
 
-        get_matched_unit_timex = self.config.get_matched_unit_timex(source_unit)
+        get_matched_unit_timex = self.config.get_matched_unit_timex(
+            source_unit)
         if not get_matched_unit_timex.matched:
             return result
 

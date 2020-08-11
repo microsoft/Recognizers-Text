@@ -3,11 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDatePeriodParserConfiguration : IOptionsConfiguration
+    public interface IDatePeriodParserConfiguration : ISimpleDatePeriodParserConfiguration, IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
-
-        IDateExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
 
@@ -36,8 +34,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MonthWithYear { get; }
 
         Regex MonthNumWithYear { get; }
-
-        Regex YearRegex { get; }
 
         Regex PastRegex { get; }
 
@@ -71,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NextPrefixRegex { get; }
 
-        Regex PastPrefixRegex { get; }
+        Regex PreviousPrefixRegex { get; }
 
         Regex ThisPrefixRegex { get; }
 
@@ -103,9 +99,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex CenturySuffixRegex { get; }
 
-        Regex RelativeRegex { get; }
-
         Regex UnspecificEndOfRangeRegex { get; }
+
+        Regex NowRegex { get; }
+
+        Regex SpecialDayRegex { get; }
+
+        Regex TodayNowRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -117,11 +117,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, string> SeasonMap { get; }
 
+        IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
+
         IImmutableDictionary<string, int> WrittenDecades { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }
 
         IImmutableDictionary<string, int> SpecialDecadeCases { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         bool IsFuture(string text);
 

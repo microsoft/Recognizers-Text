@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -57,7 +58,7 @@ public class OrdinalExtractor extends BaseNumberExtractor {
         builder.put(Pattern.compile(EnglishNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
         builder.put(Pattern.compile(EnglishNumeric.OrdinalNumericRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
         builder.put(Pattern.compile(EnglishNumeric.OrdinalEnglishRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdEng");
-        builder.put(Pattern.compile(EnglishNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdEng");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdEng");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

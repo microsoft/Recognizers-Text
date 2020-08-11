@@ -8,17 +8,20 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.Number.German
 {
-    public class GermanNumberParserConfiguration : INumberParserConfiguration
+    public class GermanNumberParserConfiguration : BaseNumberParserConfiguration
     {
-        public GermanNumberParserConfiguration()
-            : this(new CultureInfo(Culture.German))
-        {
-        }
 
-        public GermanNumberParserConfiguration(CultureInfo ci)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public GermanNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-            this.LangMarker = NumbersDefinitions.LangMarker;
-            this.CultureInfo = ci;
+
+            this.Config = config;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
+            this.CultureInfo = new CultureInfo(config.Culture);
+
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
@@ -33,54 +36,19 @@ namespace Microsoft.Recognizers.Text.Number.German
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumbersDefinitions.OrdinalNumberMap.ToImmutableDictionary();
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
         }
-
-        public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
-
-        public NumberOptions Options { get; }
-
-        public CultureInfo CultureInfo { get; private set; }
-
-        public char DecimalSeparatorChar { get; private set; }
-
-        public Regex DigitalNumberRegex { get; private set; }
-
-        public Regex FractionPrepositionRegex { get; }
-
-        public Regex NegativeNumberSignRegex { get; private set; }
-
-        public string FractionMarkerToken { get; private set; }
-
-        public Regex HalfADozenRegex { get; private set; }
-
-        public string HalfADozenText { get; private set; }
-
-        public string LangMarker { get; private set; }
-
-        public char NonDecimalSeparatorChar { get; private set; }
 
         public string NonDecimalSeparatorText { get; private set; }
 
-        public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
-
-        public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
-
-        public string WordSeparatorToken { get; private set; }
-
-        public IEnumerable<string> WrittenDecimalSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenGroupSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenIntegerSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var fracWords = new List<string>();
             var tokenList = tokens.ToList();
@@ -100,40 +68,6 @@ namespace Microsoft.Recognizers.Text.Number.German
             }
 
             return fracWords;
-        }
-
-        public long ResolveCompositeNumber(string numberStr)
-        {
-            if (numberStr.Contains("-"))
-            {
-                var numbers = numberStr.Split('-');
-                long ret = 0;
-                foreach (var number in numbers)
-                {
-                    if (OrdinalNumberMap.ContainsKey(number))
-                    {
-                        ret += OrdinalNumberMap[number];
-                    }
-                    else if (CardinalNumberMap.ContainsKey(number))
-                    {
-                        ret += CardinalNumberMap[number];
-                    }
-                }
-
-                return ret;
-            }
-
-            if (this.OrdinalNumberMap.ContainsKey(numberStr))
-            {
-                return this.OrdinalNumberMap[numberStr];
-            }
-
-            if (this.CardinalNumberMap.ContainsKey(numberStr))
-            {
-                return this.CardinalNumberMap[numberStr];
-            }
-
-            return 0;
         }
     }
 }

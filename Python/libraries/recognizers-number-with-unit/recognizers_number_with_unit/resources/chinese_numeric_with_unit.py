@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class ChineseNumericWithUnit:
     AgeAmbiguousValues = [r'岁']
     AgeSuffixList = dict([("Year", "岁|周岁"),
@@ -67,7 +72,7 @@ class ChineseNumericWithUnit:
                                ("Att", "att"),
                                ("Lesotho loti", "莱索托洛提|莱索托马洛蒂"),
                                ("South African rand", "南非兰特"),
-                               ("Macedonian denar", "马其顿代纳尔|马其顿币|第纳尔|代纳尔"),
+                               ("Macedonian denar", "马其顿代纳尔|马其顿币|代纳尔"),
                                ("Deni", "第尼"),
                                ("Malagasy ariary", "马达加斯加阿里亚里"),
                                ("Iraimbilanja", "伊莱姆比拉贾"),
@@ -195,7 +200,6 @@ class ChineseNumericWithUnit:
                                ("South Sudanese pound", "南苏丹镑"),
                                ("Sudanese pound", "苏丹镑"),
                                ("Syrian pound", "叙利亚镑"),
-                               ("Pound", "英镑"),
                                ("Pence", "便士"),
                                ("Shilling", "先令"),
                                ("United States dollar", "美元|美金|美圆"),
@@ -214,7 +218,7 @@ class ChineseNumericWithUnit:
                                ("Fijian dollar", "斐济元|斐币"),
                                ("Guyanese dollar", "圭亚那元"),
                                ("Hong Kong dollar", "蚊|港元|港圆|港币"),
-                               ("Macau Pataca", "澳元|澳门币|澳门元"),
+                               ("Macau Pataca", "澳门币|澳门元"),
                                ("New Taiwan dollar", "箍|新台币|台币"),
                                ("Jamaican dollar", "牙买加元"),
                                ("Kiribati dollar", "吉里巴斯元"),
@@ -223,7 +227,7 @@ class ChineseNumericWithUnit:
                                ("Surinamese dollar", "苏里南元"),
                                ("Trinidad and Tobago dollar", "特立尼达多巴哥元"),
                                ("Tuvaluan dollar", "吐瓦鲁元"),
-                               ("Chinese yuan", "人民币|人民币元|块钱|块|元|圆"),
+                               ("Chinese yuan", "人民币|人民币元|元人民币|块钱|块|元|圆"),
                                ("Fen", "分钱|分"),
                                ("Jiao", "毛钱|毛|角钱|角"),
                                ("Finnish markka", "芬兰马克"),
@@ -573,6 +577,8 @@ class ChineseNumericWithUnit:
                                 ("Terabyte", "万亿字节|兆兆字节|tb"),
                                 ("Petabyte", "千兆兆|千万亿字节|pb")])
     DimensionAmbiguousValues = [r'丈', r'位', r'克', r'分', r'升', r'寸', r'尺', r'斗', r'斤', r'桶', r'毫', r'石', r'码', r'磅', r'米', r'罐', r'里', r'm', r'km', r'dm', r'cm', r'mm', r'l', r'ml', r'kg', r'mg', r'g', r't', r'b', r'byte', r'kb', r'mb', r'gb', r'tb', r'pb']
+    AmbiguityFiltersDict = dict([("五角", "五角大楼"),
+                                 ("普尔", "标准普尔")])
     TemperatureSuffixList = dict([("F", "华氏温度|华氏度|°f"),
                                   ("K", "开尔文温度|开氏度|凯氏度|K|k"),
                                   ("R", "兰氏温度|°r"),

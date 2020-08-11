@@ -1,0 +1,1593 @@
+[
+  {
+    "Input": "शुक्रवार को 12:30 pm पर लिए लंच जोड़ो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को 12:30 pm",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-04 12:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-11 12:30:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "नवंबर 30th वाले हफ्ते में मेरे पास क्या है?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर 30th वाले हफ्ते",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2015-11-30",
+              "end": "2015-12-07"
+            },
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2016-11-28",
+              "end": "2016-12-05"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चार लोगों के लिए सोमवार को बारह बजे",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार को बारह बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-10-31 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T00",
+              "type": "datetime",
+              "value": "2016-10-31 00:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T00",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "आज आधी रात के लिए 649 जोड़ो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज आधी रात",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "आज रात लगभग 8 बजे मुझे सीएटल के एक पिज़्ज़ा जॉइंट में 3 लोगो के लिए आरक्षण चाहिए ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज रात लगभग 8 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T20",
+              "type": "datetime",
+              "value": "2016-11-07 20:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "ईस्टर के लिए एक अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "ईस्टर 2019 के लिए एक अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर 2019",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "परसों ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "परसों",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "परसों सुबह 8 बजे",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "परसों सुबह 8 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09T08",
+              "type": "datetime",
+              "value": "2016-11-09 08:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "शुक्रवार को दोपहर में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को दोपहर में",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "शुक्रवार को दोपहर में 3 बजे",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को दोपहर में 3 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-04 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-11 15:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "कल सुबह 9 बजे के लिए एक अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल सुबह 9 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मेरे कैलेंडर में मंगलवार इकतीस तारिख को मुन्ने की शादी डाल दो",
+    "Context": {
+      "ReferenceDateTime": "2017-10-15T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार इकतीस",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-10-31",
+              "type": "date",
+              "value": "2017-10-31"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "8 मिनट में एक मीटिंग शेड्यूल करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 मिनट में",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:08:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:08:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "10 घंटे में एक बैठक का समय निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 घंटे में",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T10:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 10:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "10 दिनों में एक बैठक निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 दिनों में",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "3 सप्ताह में एक बैठक निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 सप्ताह में",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "शाम 8 बजे के बाद",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 8 बजे के बाद",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "शाम 8 बजे से पहले",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शाम 8 बजे से पहले",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "8 pm से",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 pm से",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "2016-2-30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016-2-30",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2015-1-32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "2017-13-12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मेरे निजी कैलेंडर में सोमवार और बुधवार को शाम 3 बजे के लिए योग जोड़ दो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-10-31"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 6
+      },
+      {
+        "Text": "बुधवार को शाम 3 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-02 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-09 15:00:00"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "हर हफ्ते सुबह 8 बजे एक मुलाक़ात रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर हफ्ते",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      },
+      {
+        "Text": "सुबह 8 बजे",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "हर महीने के दूसरे शनिवार को रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर महीने",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      },
+      {
+        "Text": "दूसरे शनिवार",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-12",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "ईस्टर रविवार को एक अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर रविवार",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "ईस्टर सोमवार 2017 को एक अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर सोमवार 2017",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-04-17",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "कल सुबह मेरे कैलेंडर पे 1 घंटा सुरक्षित रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल सुबह",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "1 घंटा",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "जुलाई 22 की दिल्ली वाली मुलाक़ात को बदलकर अगस्त 22 कर दो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई 22",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2016-07-22"
+            },
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2017-07-22"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      },
+      {
+        "Text": "अगस्त 22",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2016-08-22"
+            },
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2017-08-22"
+            }
+          ]
+        },
+        "Start": 41,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "शुक्रवार को बरिश्ता में 3 लोगों के लिए दोपहर को",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      },
+      {
+        "Text": "दोपहर को",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        },
+        "Start": 39,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "अगले मंगलवार 12:00 बजे से पहले कभी भी दिल्ली में दवाई की दूकान से जॉर्डन की दवाई ले लेना",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले मंगलवार 12:00 बजे से पहले",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-15T12:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 12:00:00"
+            },
+            {
+              "timex": "2016-11-15T00:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 00:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर 2 बजे से पूर्व एक मुलाक़ात रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 2 बजे से पूर्व",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "दोपहर 2 बजे से पहले एक मुलाक़ात रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 2 बजे से पहले",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं सुबह दस बजे वाला अपॉइंटमेंट को बीस में बदल देती हूँ ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह दस बजे",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "बीस",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 35,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं टेन ए.एम. वाले अपॉइंटमेंट को ट्वेंटी में बदल देती हूँ ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "टेन ए.एम.",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 4,
+        "Length": 9
+      },
+      {
+        "Text": "ट्वेंटी",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 33,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं ten am वाले अपॉइंटमेंट को nine में बदल देती हूँ ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 4,
+        "Length": 6
+      },
+      {
+        "Text": "nine",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        },
+        "Start": 30,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं 10 a.m. वाले अपॉइंटमेंट को 26 में बदल देती हूँ!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 a.m.",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "5 मिनटों में वापस आता हूँ ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मिनटों में",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "5 मिनटों में",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मिनटों में",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "सुबह के दौरान रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सुबह",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "कल तक जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल तक",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "कल से पहले जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल से पहले",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "आज रात लगभग 8 बजे मुझे सीएटल वाले पिज़्ज़ा जॉइंट में 3 लोगों के लिए आरक्षण चाहिए",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज रात लगभग 8 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T20",
+              "type": "datetime",
+              "value": "2016-11-07 20:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "ईस्टर के लिए अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "ईस्टर 2019 के लिए अपॉइंटमेंट रखो ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर 2019",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "कल सुबह 9 बजे का अपॉइंटमेंट रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल सुबह 9 बजे",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "8 मिनट में मीटिंग शेड्यूल करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 मिनट में",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:08:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:08:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "10 घंटे में बैठक का समय निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 घंटे में",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T10:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 10:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "बैठक 10 दिनों में निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 दिनों में",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        },
+        "Start": 5,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "बैठक 3 सप्ताह में निर्धारित करें",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 सप्ताह में",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
+            }
+          ]
+        },
+        "Start": 5,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मुलाक़ात हर हफ्ते सुबह 8 बजे की रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर हफ्ते",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 8
+      },
+      {
+        "Text": "सुबह 8 बजे",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "अपॉइंटमेंट ईस्टर रविवार को रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर रविवार",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "अपॉइंटमेंट ईस्टर सोमवार 2017 को रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ईस्टर सोमवार 2017",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-04-17",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मुलाक़ात दोपहर 2 बजे से पूर्व रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 2 बजे से पूर्व",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मुलाक़ात दोपहर 2 बजे से पहले रखो",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 2 बजे से पहले",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  }
+]

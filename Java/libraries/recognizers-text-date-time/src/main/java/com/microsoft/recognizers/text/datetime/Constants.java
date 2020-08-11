@@ -15,6 +15,9 @@ public class Constants {
     public static final String SYS_DATETIME_DATETIMEALT = "datetimealt";
     public static final String SYS_DATETIME_TIMEZONE = "timezone";
 
+    // SourceEntity Types
+    public static final String SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
+
     // Model Name
     public static final String MODEL_DATETIME = "datetime";
 
@@ -97,6 +100,7 @@ public class Constants {
     public static final int NegativeSign = -1;
 
     public static final int TrimesterMonthCount = 3;
+    public static final int QuarterCount = 4;
     public static final int SemesterMonthCount = 6;
     public static final int WeekDayCount = 7;
     public static final int CenturyYearsCount = 100;
@@ -131,6 +135,7 @@ public class Constants {
     public static final String RightAmPmGroupName = "rightDesc";
 
     public static final String DECADE_UNIT = "10Y";
+    public static final String FORTNIGHT_UNIT = "2W";
 
     // Timex
     public static final String[] DatePeriodTimexSplitter = { ",", "(", ")" };

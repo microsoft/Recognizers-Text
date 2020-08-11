@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Choice
@@ -19,8 +20,18 @@ namespace Microsoft.Recognizers.Text.Choice
 
         public List<ModelResult> Parse(string query)
         {
-            var extractResults = Extractor.Extract(query);
-            var parseResults = extractResults.Select(r => Parser.Parse(r));
+            var parseResults = Enumerable.Empty<ParseResult>();
+
+            try
+            {
+                var extractResults = Extractor.Extract(query);
+                parseResults = extractResults.Select(r => Parser.Parse(r));
+            }
+            catch (Exception)
+            {
+                // Nothing to do. Exceptions in parse should not break users of recognizers.
+                // No result.
+            }
 
             return parseResults.Select(pr => new ModelResult()
             {

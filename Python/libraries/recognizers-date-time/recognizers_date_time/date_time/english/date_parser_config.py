@@ -10,7 +10,12 @@ from ..utilities import DateTimeUtilityConfiguration
 from ..base_date import DateParserConfiguration
 from ..base_configs import BaseDateParserConfiguration
 
+
 class EnglishDateParserConfiguration(DateParserConfiguration):
+    @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
     @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
@@ -22,6 +27,10 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
+
+    @property
+    def date_extractor(self) -> DateTimeExtractor:
+        return self._date_extractor
 
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -118,14 +127,18 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     # The following three regexes only used in this configuration
     # They are not used in the base parser, therefore they are not extracted
     # If the spanish date parser need the same regexes, they should be extracted
-    _relative_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDayRegex)
-    _next_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
-    _past_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
+    _relative_day_regex = RegExpUtility.get_safe_reg_exp(
+        EnglishDateTime.RelativeDayRegex)
+    _next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+        EnglishDateTime.NextPrefixRegex)
+    _past_prefix_regex = RegExpUtility.get_safe_reg_exp(
+        EnglishDateTime.PreviousPrefixRegex)
 
     def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor
         self._cardinal_extractor = config.cardinal_extractor
+        self._date_extractor = config.date_extractor
         self._duration_extractor = config.duration_extractor
         self._number_parser = config.number_parser
         self._duration_parser = config.duration_parser
@@ -136,7 +149,6 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         self._cardinal_map = config.cardinal_map
         self._date_regex = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor1),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor2),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor3),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor4),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor5),
@@ -148,25 +160,39 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor9S),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractorA),
         ]
-        self._on_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.OnRegex)
-        self._special_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecialDayRegex)
-        self._next_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextDateRegex)
-        self._unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateUnitRegex)
-        self._month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.MonthRegex)
-        self._week_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekDayRegex)
-        self._last_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.LastDateRegex)
-        self._this_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.ThisRegex)
-        self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekDayOfMonthRegex)
-        self._for_the_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.ForTheRegex)
-        self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekDayAndDayOfMonthRegex)
-        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeMonthRegex)
+        self._on_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.OnRegex)
+        self._special_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecialDayRegex)
+        self._next_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.NextDateRegex)
+        self._unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DateUnitRegex)
+        self._month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MonthRegex)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayRegex)
+        self._last_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.LastDateRegex)
+        self._this_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.ThisRegex)
+        self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayOfMonthRegex)
+        self._for_the_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.ForTheRegex)
+        self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayAndDayOfMonthRegex)
+        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeMonthRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = EnglishDateTime.DateTokenPrefix
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
 
     def get_swift_day(self, source: str) -> int:
         trimmed_text = source.strip().lower()
         swift = 0
-        matches = regex.search(EnglishDateParserConfiguration._relative_day_regex, source)
+        matches = regex.search(
+            EnglishDateParserConfiguration._relative_day_regex, source)
         if trimmed_text == 'today':
             swift = 0
         elif trimmed_text == 'tomorrow' or trimmed_text == 'tmr':
@@ -192,8 +218,10 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     def get_swift(self, source: str) -> int:
         trimmed_text = source.strip().lower()
         swift = 0
-        next_prefix_matches = regex.search(EnglishDateParserConfiguration._next_prefix_regex, trimmed_text)
-        past_prefix_matches = regex.search(EnglishDateParserConfiguration._past_prefix_regex, trimmed_text)
+        next_prefix_matches = regex.search(
+            EnglishDateParserConfiguration._next_prefix_regex, trimmed_text)
+        past_prefix_matches = regex.search(
+            EnglishDateParserConfiguration._past_prefix_regex, trimmed_text)
         if next_prefix_matches:
             swift = 1
         elif past_prefix_matches:

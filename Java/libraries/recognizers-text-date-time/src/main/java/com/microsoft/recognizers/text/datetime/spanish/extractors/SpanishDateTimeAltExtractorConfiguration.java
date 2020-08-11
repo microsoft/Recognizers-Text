@@ -19,7 +19,7 @@ public class SpanishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     private static final Pattern DayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DayRegex);
 
     public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+    public static final Pattern PreviousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
     public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
     public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AmRegex);
     public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PmRegex);
@@ -28,7 +28,7 @@ public class SpanishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     public static final Iterable<Pattern> RelativePrefixList = new ArrayList<Pattern>() {
         {
             add(ThisPrefixRegex);
-            add(PastPrefixRegex);
+            add(PreviousPrefixRegex);
             add(NextPrefixRegex);
         }
     };
@@ -72,6 +72,11 @@ public class SpanishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     @Override
     public Pattern getOrRegex() {
         return OrRegex;
+    }
+
+    @Override
+    public Pattern getThisPrefixRegex() {
+        return ThisPrefixRegex;
     }
 
     @Override

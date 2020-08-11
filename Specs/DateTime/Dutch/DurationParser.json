@@ -4,6 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3u",
@@ -20,15 +21,14 @@
         "Start": 7,
         "Length": 2
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 dagen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 dagen",
@@ -45,15 +45,14 @@
         "Start": 7,
         "Length": 7
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3,5 jaar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3,5 jaar",
@@ -70,15 +69,14 @@
         "Start": 7,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 u weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 u",
@@ -95,15 +93,14 @@
         "Start": 7,
         "Length": 3
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 uur",
@@ -120,15 +117,14 @@
         "Start": 7,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 maanden weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 maanden",
@@ -145,15 +141,14 @@
         "Start": 7,
         "Length": 9
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 minuten weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 minuten",
@@ -170,15 +165,14 @@
         "Start": 7,
         "Length": 9
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 3 min weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3 min",
@@ -195,40 +189,14 @@
         "Start": 7,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ben 3,5 seconden weg ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "3,5 seconden",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3.5S",
-          "FutureResolution": {
-            "duration": "3.5"
-          },
-          "PastResolution": {
-            "duration": "3.5"
-          }
-        },
-        "Start": 7,
-        "Length": 12
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 123,45 sec weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "123,45 sec",
@@ -245,15 +213,14 @@
         "Start": 7,
         "Length": 10
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben twee weken weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee weken",
@@ -270,15 +237,14 @@
         "Start": 7,
         "Length": 10
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "I'k ben twintig min weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twintig min",
@@ -295,18 +261,17 @@
         "Start": 8,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben vierentwintig uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "vierentwintig",
+        "Text": "vierentwintig uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT24H",
@@ -318,17 +283,16 @@
           }
         },
         "Start": 7,
-        "Length": 13
+        "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de hele dag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele dag",
@@ -345,15 +309,14 @@
         "Start": 7,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de hele week weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele week",
@@ -370,15 +333,14 @@
         "Start": 7,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de hele maand weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de hele maand",
@@ -395,15 +357,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben het hele jaar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het hele jaar",
@@ -420,15 +381,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de volle dag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volle dag",
@@ -445,15 +405,14 @@
         "Start": 7,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de volle week weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volle week",
@@ -470,15 +429,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben de volle maand weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volle maand",
@@ -495,15 +453,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben het volle jaar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het volle jaar",
@@ -520,15 +477,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een uur",
@@ -545,15 +501,14 @@
         "Start": 7,
         "Length": 7
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "half jaar",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "half jaar",
@@ -570,15 +525,14 @@
         "Start": 0,
         "Length": 9
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "een half jaar",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een half jaar",
@@ -595,15 +549,14 @@
         "Start": 0,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben anderhalf uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -620,15 +573,14 @@
         "Start": 7,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben anderhalve dag weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "anderhalve dag",
@@ -636,27 +588,26 @@
         "Value": {
           "Timex": "P1.5D",
           "FutureResolution": {
-            "duration": "7776000"
+            "duration": "129600"
           },
           "PastResolution": {
-            "duration": "7776000"
+            "duration": "129600"
           }
         },
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
-    "Input": "Ik ben een kwartier uur weg",
+    "Input": "Ik ben een kwartier weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "kwartier",
+        "Text": "een kwartier",
         "Type": "duration",
         "Value": {
           "Timex": "PT0.25H",
@@ -667,21 +618,44 @@
             "duration": "900"
           }
         },
-        "Start": 11,
-        "Length": 8
+        "Start": 7,
+        "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Ik ben een kwart uur weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een kwart uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT0.25H",
+          "FutureResolution": {
+            "duration": "900"
+          },
+          "PastResolution": {
+            "duration": "900"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
   },
   {
     "Input": "Ik ben een half uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "half uur",
+        "Text": "een half uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT0.5H",
@@ -692,18 +666,17 @@
             "duration": "1800"
           }
         },
-        "Start": 11,
-        "Length": 8
+        "Start": 7,
+        "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben twee uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twee uur",
@@ -720,15 +693,14 @@
         "Start": 7,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben tweeëneenhalf uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeëneenhalf uur",
@@ -745,16 +717,14 @@
         "Start": 7,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 1 jaar, 1 maand en 21 dagen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 jaar, 1 maand en 21 dagen",
@@ -771,15 +741,14 @@
         "Start": 7,
         "Length": 27
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben 2 dagen en 1 maand weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2 dagen en 1 maand",
@@ -796,15 +765,14 @@
         "Start": 7,
         "Length": 18
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "ik ben een week en drie dagen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een week en drie dagen",
@@ -821,15 +789,14 @@
         "Start": 7,
         "Length": 22
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een paar weken weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een paar weken",
@@ -846,15 +813,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben een paar dagen weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "een paar dagen",
@@ -871,15 +837,14 @@
         "Start": 7,
         "Length": 14
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben minder dan een paar dagen weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "minder dan een paar dagen",
@@ -897,15 +862,14 @@
         "Start": 7,
         "Length": 25
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben meer dan een uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "meer dan een uur",
@@ -923,14 +887,14 @@
         "Start": 7,
         "Length": 16
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik ben nog een uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een uur",
@@ -947,15 +911,14 @@
         "Start": 7,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Ik bedacht me dat je nog een week weg bent",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een week",
@@ -972,15 +935,14 @@
         "Start": 21,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Kunnen we nog een maand wachten?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nog een maand",
@@ -997,8 +959,890 @@
         "Start": 10,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3u",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3u",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 16,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3,5jaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3,5jaar",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3 u",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 u",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 16,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3 uren",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 uren",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3 maanden",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 maanden",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3 minuten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 3 min",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 123,45 sec",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123,45 sec",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT123.45S",
+          "FutureResolution": {
+            "duration": "123.45"
+          },
+          "PastResolution": {
+            "duration": "123.45"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor twee weken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee weken",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor twintig minuten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twintig minuten",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT20M",
+          "FutureResolution": {
+            "duration": "1200"
+          },
+          "PastResolution": {
+            "duration": "1200"
+          }
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor de hele dag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de hele dag",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor de hele week",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de hele week",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor de hele maand",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de hele maand",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor het hele jaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "het hele jaar",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor de gehele dag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de gehele dag",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor de gehele week",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de gehele week",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor de gehele maand",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de gehele maand",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor het gehele jaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "het gehele jaar",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor een uur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor gehele dag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "gehele dag",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 30 minuten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30 minuten",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT30M",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor anderhalf uur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "anderhalf uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor halfuur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "halfuur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT0.5H",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor twee uren",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee uren",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H",
+          "FutureResolution": {
+            "duration": "7200"
+          },
+          "PastResolution": {
+            "duration": "7200"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor tweeënhalf uur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweeënhalf uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2.5H",
+          "FutureResolution": {
+            "duration": "9000"
+          },
+          "PastResolution": {
+            "duration": "9000"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 1 jaar, 1 maand, 21 dagen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 jaar, 1 maand, 21 dagen",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y1M21D",
+          "FutureResolution": {
+            "duration": "35942400"
+          },
+          "PastResolution": {
+            "duration": "35942400"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor 2 dagen, 1 maand",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 dagen, 1 maand",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M2D",
+          "FutureResolution": {
+            "duration": "2764800"
+          },
+          "PastResolution": {
+            "duration": "2764800"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor een week en drie dagen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een week en drie dagen",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W3D",
+          "FutureResolution": {
+            "duration": "864000"
+          },
+          "PastResolution": {
+            "duration": "864000"
+          }
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor een aantal weken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een aantal weken",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "duration": "1814400"
+          },
+          "PastResolution": {
+            "duration": "1814400"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben een aantal dagen weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een aantal dagen",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben minder dan een aantal dagen weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "minder dan een aantal dagen",
+        "Type": "duration",
+        "Value": {
+          "Mod": "less",
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        },
+        "Start": 7,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor meer dan een uur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "meer dan een uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "Mod": "more",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor nog een uur",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "nog een uur",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik besefte dat je nog een week weg bent",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "nog een week",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Kunnen we nog een werkdag wachten?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "nog een werkdag",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1BD",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 10,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor twee decennia",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee decennia",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P20Y",
+          "FutureResolution": {
+            "duration": "630720000"
+          },
+          "PastResolution": {
+            "duration": "630720000"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek voor veertien dagen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "veertien dagen",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P14D",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
   }
 ]

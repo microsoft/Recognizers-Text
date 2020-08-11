@@ -1,4 +1,8 @@
-﻿using DateObject = System.DateTime;
+﻿using System.Globalization;
+
+using Microsoft.Recognizers.Text.Utilities;
+
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -24,9 +28,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var lowerText = text.ToLowerInvariant();
 
-            var match = GermanTimeExtractorConfiguration.IshRegex.MatchExact(lowerText, trim: true);
+            var match = GermanTimeExtractorConfiguration.IshRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -34,10 +37,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 var hour = Constants.HalfDayHourCount;
                 if (!string.IsNullOrEmpty(hourStr))
                 {
-                    hour = int.Parse(hourStr);
+                    hour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                 }
 
-                ret.Timex = "T" + hour.ToString("D2");
+                ret.Timex = "T" + hour.ToString("D2", CultureInfo.InvariantCulture);
                 ret.FutureValue =
                     ret.PastValue =
                         DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);

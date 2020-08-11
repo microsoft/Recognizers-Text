@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class SpanishTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
         public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -37,43 +40,44 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimmedPrefix = prefix.Trim();
 
-            if (trimedPrefix.StartsWith("cuarto") || trimedPrefix.StartsWith("y cuarto"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedPrefix.StartsWith("cuarto", StringComparison.Ordinal) || trimmedPrefix.StartsWith("y cuarto", StringComparison.Ordinal))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("menos cuarto"))
+            else if (trimmedPrefix.StartsWith("menos cuarto", StringComparison.Ordinal))
             {
                 deltaMin = -15;
             }
-            else if (trimedPrefix.StartsWith("media") || trimedPrefix.StartsWith("y media"))
+            else if (trimmedPrefix.StartsWith("media", StringComparison.Ordinal) || trimmedPrefix.StartsWith("y media", StringComparison.Ordinal))
             {
                 deltaMin = 30;
             }
             else
             {
-                var match = SpanishTimeExtractorConfiguration.LessThanOneHour.Match(trimedPrefix);
+                var match = SpanishTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
-                    deltaMin = int.Parse(minStr);
+                    deltaMin = int.Parse(minStr, CultureInfo.InvariantCulture);
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     Numbers.TryGetValue(minStr, out deltaMin);
                 }
             }
 
-            if (trimedPrefix.EndsWith("pasadas") || trimedPrefix.EndsWith("pasados") ||
-                trimedPrefix.EndsWith("pasadas las") || trimedPrefix.EndsWith("pasados las") ||
-                trimedPrefix.EndsWith("pasadas de las") || trimedPrefix.EndsWith("pasados de las"))
+            if (trimmedPrefix.EndsWith("pasadas", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados", StringComparison.Ordinal) ||
+                trimmedPrefix.EndsWith("pasadas las", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados las", StringComparison.Ordinal) ||
+                trimmedPrefix.EndsWith("pasadas de las", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados de las", StringComparison.Ordinal))
             {
-            // deltaMin it's positive
+                // deltaMin it's positive
             }
-            else if (trimedPrefix.EndsWith("para la") || trimedPrefix.EndsWith("para las") ||
-                     trimedPrefix.EndsWith("antes de la") || trimedPrefix.EndsWith("antes de las"))
+            else if (trimmedPrefix.EndsWith("para la", StringComparison.Ordinal) || trimmedPrefix.EndsWith("para las", StringComparison.Ordinal) ||
+                     trimmedPrefix.EndsWith("antes de la", StringComparison.Ordinal) || trimmedPrefix.EndsWith("antes de las", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }
@@ -90,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var trimedSuffix = suffix.Trim().ToLowerInvariant();
+            var trimedSuffix = suffix.Trim();
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
 
             var deltaHour = 0;

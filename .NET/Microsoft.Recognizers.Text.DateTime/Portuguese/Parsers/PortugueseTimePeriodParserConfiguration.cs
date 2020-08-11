@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -6,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
+    public class PortugueseTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public PortugueseTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -15,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             TimeZoneParser = config.TimeZoneParser;
+
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeFromTo;
@@ -22,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeOfDayRegex = PortugueseTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = PortugueseTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = PortugueseTimePeriodExtractorConfiguration.TillRegex;
+
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }
@@ -54,30 +57,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
             var timeOfDay = string.Empty;
-            if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o)))
+
+            if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.EarlyMorning;
             }
-            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Night;
             }

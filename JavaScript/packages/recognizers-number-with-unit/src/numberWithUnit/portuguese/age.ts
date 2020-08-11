@@ -6,7 +6,7 @@ import { PortugueseNumericWithUnit } from "../../resources/portugueseNumericWith
 export class PortugueseAgeExtractorConfiguration extends PortugueseNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -20,13 +20,13 @@ export class PortugueseAgeExtractorConfiguration extends PortugueseNumberWithUni
 
         this.suffixList = PortugueseNumericWithUnit.AgeSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.ambiguousUnitList = PortugueseNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 
 export class PortugueseAgeParserConfiguration extends PortugueseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Portuguese);
         }
 

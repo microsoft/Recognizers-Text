@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public GermanCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public GermanCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
             SeasonMap = DateTimeDefinitions.SeasonMap.ToImmutableDictionary();
+            SpecialYearPrefixesMap = DateTimeDefinitions.SpecialYearPrefixesMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.CardinalMap.ToImmutableDictionary();
             DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
@@ -25,11 +26,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(numConfig));
+
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));

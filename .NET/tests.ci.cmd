@@ -23,10 +23,11 @@ IF NOT EXIST "%VSTestDir%\vstest.console.exe" (
 ECHO # Running .NET Tests
 SET testcontainer=
 FOR /R %%f IN (*Tests.dll) DO (
-	(ECHO "%%f" | FIND /V "\bin\%configuration%" 1>NUL) || (
+	(ECHO "%%f" | FINDSTR /V "\bin\%configuration%" 1>NUL) || (
 		SET testcontainer=!testcontainer! "%%f"
 	)
 )
+
 ECHO "!VsTestDir!\vstest.console"
 CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
 IF %ERRORLEVEL% NEQ 0 GOTO TEST_ERROR

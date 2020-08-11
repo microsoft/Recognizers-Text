@@ -7,8 +7,56 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
+    public class FrenchDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
+            IntegerExtractor = config.IntegerExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
+            DurationParser = config.DurationParser;
+            DateRegexes = new FrenchDateExtractorConfiguration(this).DateRegexList;
+            OnRegex = FrenchDateExtractorConfiguration.OnRegex;
+            SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = FrenchDateExtractorConfiguration.SpecialDayWithNumRegex;
+            NextRegex = FrenchDateExtractorConfiguration.NextDateRegex;
+            ThisRegex = FrenchDateExtractorConfiguration.ThisRegex;
+            LastRegex = FrenchDateExtractorConfiguration.LastDateRegex;
+            UnitRegex = FrenchDateExtractorConfiguration.DateUnitRegex;
+            WeekDayRegex = FrenchDateExtractorConfiguration.WeekDayRegex;
+            StrictWeekDay = FrenchDateExtractorConfiguration.StrictWeekDay;
+            MonthRegex = FrenchDateExtractorConfiguration.MonthRegex;
+            WeekDayOfMonthRegex = FrenchDateExtractorConfiguration.WeekDayOfMonthRegex;
+            ForTheRegex = FrenchDateExtractorConfiguration.ForTheRegex;
+            WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = FrenchDateExtractorConfiguration.WeekDayAndDayRegex;
+            RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
+            StrictRelativeRegex = FrenchDateExtractorConfiguration.StrictRelativeRegex;
+            YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+            DayOfMonth = config.DayOfMonth;
+            DayOfWeek = config.DayOfWeek;
+            MonthOfYear = config.MonthOfYear;
+            CardinalMap = config.CardinalMap;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
+        }
+
         public string DateTokenPrefix { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -55,7 +103,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex WeekDayAndDayOfMothRegex { get; }
 
+        public Regex WeekDayAndDayRegex { get; }
+
         public Regex RelativeMonthRegex { get; }
+
+        public Regex StrictRelativeRegex { get; }
 
         public Regex YearSuffix { get; }
 
@@ -64,6 +116,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex RelativeDayRegex { get; }
 
         public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
+
+        public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
 
@@ -85,57 +141,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
+        bool IDateParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public static int GetSwiftDay(string text)
         {
-            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
-            IntegerExtractor = config.IntegerExtractor;
-            OrdinalExtractor = config.OrdinalExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
-            DateExtractor = config.DateExtractor;
-            DurationParser = config.DurationParser;
-            DateRegexes = new FrenchDateExtractorConfiguration(this).DateRegexList;
-            OnRegex = FrenchDateExtractorConfiguration.OnRegex;
-            SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
-            SpecialDayWithNumRegex = FrenchDateExtractorConfiguration.SpecialDayWithNumRegex;
-            NextRegex = FrenchDateExtractorConfiguration.NextRegex;
-            ThisRegex = FrenchDateExtractorConfiguration.ThisRegex;
-            LastRegex = FrenchDateExtractorConfiguration.LastRegex;
-            UnitRegex = FrenchDateExtractorConfiguration.DateUnitRegex;
-            WeekDayRegex = FrenchDateExtractorConfiguration.WeekDayRegex;
-            StrictWeekDay = FrenchDateExtractorConfiguration.StrictWeekDay;
-            MonthRegex = FrenchDateExtractorConfiguration.MonthRegex;
-            WeekDayOfMonthRegex = FrenchDateExtractorConfiguration.WeekDayOfMonthRegex;
-            ForTheRegex = FrenchDateExtractorConfiguration.ForTheRegex;
-            WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
-            RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
-            YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
-            RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
-            DayOfMonth = config.DayOfMonth;
-            DayOfWeek = config.DayOfWeek;
-            MonthOfYear = config.MonthOfYear;
-            CardinalMap = config.CardinalMap;
-            UnitMap = config.UnitMap;
-            UtilityConfiguration = config.UtilityConfiguration;
-            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
-            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
-            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
-            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
-            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
-        }
-
-        public int GetSwiftDay(string text)
-        {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.Equals("aujourd'hui") || trimmedText.Equals("auj")) //today
+
+            // today
+            if (trimmedText.Equals("aujourd'hui") || trimmedText.Equals("auj"))
             {
                 swift = 0;
             }
@@ -143,8 +160,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                      trimmedText.Equals("lendemain") || trimmedText.Equals("jour suivant"))
             {
                 swift = 1;
-            }
-            else if (trimmedText.Equals("hier")) // yesterday
+            } // yesterday
+            else if (trimmedText.Equals("hier"))
             {
                 swift = -1;
             }
@@ -157,8 +174,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                      trimmedText.StartsWith("avant hier"))
             {
                 swift = -2;
-            }
-            else if (trimmedText.EndsWith("dernier")) // dernier
+            } // dernier
+            else if (trimmedText.EndsWith("dernier"))
             {
                 swift = -1;
             }
@@ -166,9 +183,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return swift;
         }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
             {
@@ -185,9 +202,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"));
+            var trimmedText = text.Trim();
+            return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
+                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
         }
 
         public string Normalize(string text)

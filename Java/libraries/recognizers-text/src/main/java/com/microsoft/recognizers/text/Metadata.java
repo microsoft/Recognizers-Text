@@ -11,6 +11,26 @@ public class Metadata {
     // Currently, this flag is only used in Chinese DateTime as other languages don't have this ambiguity cases.
     private boolean isDurationWithBeforeAndAfter = false;
 
+    private boolean isHoliday = false;
+
+    public boolean getIsHoliday() {
+        return isHoliday;
+    }
+
+    public void setIsHoliday(boolean isHoliday) {
+        this.isHoliday = isHoliday;
+    }
+
+    private boolean hasMod = false;
+
+    public boolean getHasMod() {
+        return hasMod;
+    }
+
+    public void setHasMod(boolean hasMod) {
+        this.hasMod = hasMod;
+    }
+
     public boolean getIsPossiblyIncludePeriodEnd() {
         return possiblyIncludePeriodEnd;
     }

@@ -8,77 +8,69 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
-    public class ChineseNumberParserConfiguration : ICJKNumberParserConfiguration
+
+    public class ChineseNumberParserConfiguration : BaseNumberParserConfiguration, ICJKNumberParserConfiguration
     {
-        public ChineseNumberParserConfiguration()
-               : this(new CultureInfo(Culture.Chinese))
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public ChineseNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-        }
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
+            this.CultureInfo = new CultureInfo(config.Culture);
+            this.Config = config;
 
-        public ChineseNumberParserConfiguration(CultureInfo ci)
-        {
-            LangMarker = NumbersDefinitions.LangMarker;
-            CultureInfo = ci;
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
-            DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
-            FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
-            NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
-            HalfADozenText = NumbersDefinitions.HalfADozenText;
-            WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
+            this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
+            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
+            this.NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
+            this.HalfADozenText = NumbersDefinitions.HalfADozenText;
+            this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
+            this.ZeroChar = NumbersDefinitions.ZeroChar;
+            this.PairChar = NumbersDefinitions.PairChar;
 
-            WrittenDecimalSeparatorTexts = Enumerable.Empty<string>();
-            WrittenGroupSeparatorTexts = Enumerable.Empty<string>();
-            WrittenIntegerSeparatorTexts = Enumerable.Empty<string>();
-            WrittenFractionSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenDecimalSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenGroupSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenIntegerSeparatorTexts = Enumerable.Empty<string>();
+            this.WrittenFractionSeparatorTexts = Enumerable.Empty<string>();
 
-            CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
-            OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
-            RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
-            ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
-            RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
-            FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
-            TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
-            UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
-            RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
+            this.CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
+            this.OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
+            this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
+            this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
+            this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
+            this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
+            this.TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
+            this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
-            HalfADozenRegex = null;
+            this.HalfADozenRegex = null;
 
             // @TODO Change init to follow design in other languages
-            DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
-            DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.Singleline);
-            DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexOptions.Singleline);
-            PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.Singleline);
-            DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexOptions.Singleline);
-            FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexOptions.Singleline);
-            NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.Singleline);
-            SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline);
-            PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.Singleline);
-            RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexOptions.Singleline);
-            FractionPrepositionRegex = null;
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexFlags);
+            this.DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexFlags);
+            this.PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags);
+            this.DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags);
+            this.FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexFlags);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexFlags);
+            this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
+            this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
+            this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
+            this.FractionPrepositionRegex = null;
         }
 
-        public NumberOptions Options { get; }
-
-        public CultureInfo CultureInfo { get; private set; }
-
-        public char DecimalSeparatorChar { get; private set; }
-
-        public Regex DigitalNumberRegex { get; private set; }
-
-        public Regex FractionPrepositionRegex { get; }
-
-        public string FractionMarkerToken { get; private set; }
-
-        public Regex HalfADozenRegex { get; private set; }
-
-        public string HalfADozenText { get; private set; }
-
-        public string LangMarker { get; private set; }
-
-        public char NonDecimalSeparatorChar { get; private set; }
-
         public string NonDecimalSeparatorText { get; private set; }
+
+        public char ZeroChar { get; private set; }
+
+        public char PairChar { get; private set; }
 
         public Regex DigitNumRegex { get; private set; }
 
@@ -90,8 +82,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public Regex FracSplitRegex { get; private set; }
 
-        public Regex NegativeNumberSignRegex { get; private set; }
-
         public Regex PointRegex { get; private set; }
 
         public Regex SpeGetNumberRegex { get; private set; }
@@ -99,12 +89,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public Regex PairRegex { get; private set; }
 
         public Regex RoundNumberIntegerRegex { get; private set; }
-
-        public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
-
-        public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
-
-        public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
 
         public ImmutableDictionary<char, double> ZeroToNineMap { get; private set; }
 
@@ -118,24 +102,27 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public ImmutableList<char> RoundDirectList { get; private set; }
 
-        public string WordSeparatorToken { get; private set; }
+        public ImmutableList<char> TenChars { get; private set; }
 
-        public IEnumerable<string> WrittenDecimalSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenGroupSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenIntegerSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             return tokens;
         }
 
-        public long ResolveCompositeNumber(string numberStr)
+        public override long ResolveCompositeNumber(string numberStr)
         {
             return 0;
+        }
+
+        // Handle cases like "last", "next one", "previous one"
+        public override string ResolveSpecificString(string numberStr)
+        {
+            if (this.RelativeReferenceMap.ContainsKey(numberStr))
+            {
+                return this.RelativeReferenceMap[numberStr];
+            }
+
+            return string.Empty;
         }
     }
 }

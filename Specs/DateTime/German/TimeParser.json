@@ -481,5 +481,68 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "Es ist viertel 6",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "viertel 6",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:15",
+          "FutureResolution": {
+            "time": "05:15:00"
+          },
+          "PastResolution": {
+            "time": "05:15:00"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Es ist viertel vor 6",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "viertel vor 6",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:45",
+          "FutureResolution": {
+            "time": "05:45:00"
+          },
+          "PastResolution": {
+            "time": "05:45:00"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Es ist dreiviertel 6",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dreiviertel 6",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:45",
+          "FutureResolution": {
+            "time": "05:45:00"
+          },
+          "PastResolution": {
+            "time": "05:45:00"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
   }
 ]

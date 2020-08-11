@@ -15,7 +15,6 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DurationParsingUtil;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.GetModAndDateResult;
 import com.microsoft.recognizers.text.datetime.utilities.NthBusinessDayResult;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
@@ -26,6 +25,7 @@ import com.microsoft.recognizers.text.utilities.MatchGroup;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.sql.Time;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -75,36 +75,36 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 if (innerResult.getMod() != null && innerResult.getMod().equals(Constants.BEFORE_MOD)) {
                     innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
                             .build());
 
                     innerResult.setPastResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
                             .build());
                 } else if (innerResult.getMod() != null && innerResult.getMod().equals(Constants.AFTER_MOD)) {
                     innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
                             .build());
 
                     innerResult.setPastResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
                             .build());
                 } else if (innerResult.getFutureValue() != null && innerResult.getPastValue() != null) {
                     innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()))
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()))
                             .build());
 
                     innerResult.setPastResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()))
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()))
                             .build());
                 } else {
                     innerResult.setFutureResolution(new HashMap<>());
@@ -315,8 +315,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     LocalDateTime startDate = DateUtil.safeCreateFromMinValue(startYear, 1, 1);
                     LocalDateTime endDate = DateUtil.safeCreateFromMinValue(startYear + Constants.CenturyYearsCount, 1, 1);
 
-                    String startLuisStr = FormatUtil.luisDate(startDate);
-                    String endLuisStr = FormatUtil.luisDate(endDate);
+                    String startLuisStr = DateTimeFormatUtil.luisDate(startDate);
+                    String endLuisStr = DateTimeFormatUtil.luisDate(endDate);
                     String durationTimex = "P" + Constants.CenturyYearsCount + "Y";
 
                     ret.setTimex(String.format("(%s,%s,%s)", startLuisStr, endLuisStr, durationTimex));
@@ -663,9 +663,9 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 swift = this.config.getSwiftDayOrMonth(trimmedText);
 
                 if (this.config.isWeekOnly(trimmedText)) {
-                    LocalDateTime monday = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
+                    LocalDateTime thursday = DateUtil.thisDate(referenceDate, DayOfWeek.THURSDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
 
-                    ret.setTimex(isRef ? TimexUtility.generateWeekTimex() : TimexUtility.generateWeekTimex(monday));
+                    ret.setTimex(isRef ? TimexUtility.generateWeekTimex() : TimexUtility.generateWeekTimex(thursday));
 
                     LocalDateTime beginDate = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
 
@@ -732,6 +732,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     LocalDateTime date = referenceDate.plusYears(swift);
                     year = date.getYear();
 
+                    if (!StringUtility.isNullOrEmpty(match.getMatch().get().getGroup("special").value)) {
+                        String specialYearPrefixes = this.config.getSpecialYearPrefixesMap().get(match.getMatch().get().getGroup("special").value.toLowerCase());
+                        swift = this.config.getSwiftYear(trimmedText);
+                        year = swift < -1 ? Constants.InvalidYear : year;
+                        ret.setTimex(TimexUtility.generateYearTimex(year, specialYearPrefixes));
+                        ret.setSuccess(true);
+                        return ret;
+                    }
+
                     LocalDateTime beginDate = DateUtil.safeCreateFromMinValue(year, 1, 1);
 
                     LocalDateTime endValue = DateUtil.safeCreateFromMinValue(year, 12, 31);
@@ -758,7 +767,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                         }
                     }
 
-                    ret.setTimex(isRef ? TimexUtility.generateYearTimex() : TimexUtility.generateYearTimex(date));
+                    year = isRef ? Constants.InvalidYear : year;
+                    ret.setTimex(TimexUtility.generateYearTimex(year));
 
                     ret.setFutureValue(new Pair<>(beginDate, endDate));
                     ret.setPastValue(new Pair<>(beginDate, endDate));
@@ -895,7 +905,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 LocalDateTime endDayValue = DateUtil.safeCreateFromMinValue(endYear, 1, 1);
                 LocalDateTime endDay = inclusiveEndPeriod ? endDayValue.minusDays(1) : endDayValue;
 
-                ret.setTimex(String.format("(%s,%s,P%sY)", FormatUtil.luisDate(beginDay), FormatUtil.luisDate(endDay), (endYear - beginYear)));
+                ret.setTimex(String.format("(%s,%s,P%sY)", DateTimeFormatUtil.luisDate(beginDay), DateTimeFormatUtil.luisDate(endDay), (endYear - beginYear)));
                 ret.setFutureValue(new Pair<>(beginDay, endDay));
                 ret.setPastValue(new Pair<>(beginDay, endDay));
                 ret.setSuccess(true);
@@ -913,6 +923,12 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 exactMatch = RegexExtension.matchExact(this.config.getYearPlusNumberRegex(), text, true);
                 if (exactMatch.getSuccess()) {
                     year = this.config.getDateExtractor().getYearFromText(exactMatch.getMatch().get());
+                    if (!StringUtility.isNullOrEmpty(exactMatch.getMatch().get().getGroup("special").value)) {
+                        String specialYearPrefixes = this.config.getSpecialYearPrefixesMap().get(exactMatch.getMatch().get().getGroup("special").value.toLowerCase());
+                        ret.setTimex(TimexUtility.generateYearTimex(year, specialYearPrefixes));
+                        ret.setSuccess(true);
+                        return ret;
+                    }
                 }
             }
 
@@ -922,7 +938,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 LocalDateTime endDayValue = DateUtil.safeCreateFromMinValue(year + 1, 1, 1);
                 LocalDateTime endDay = inclusiveEndPeriod ? endDayValue.minusDays(1) : endDayValue;
 
-                ret.setTimex(String.format("%04d", year));
+                ret.setTimex(TimexUtility.generateYearTimex(year));
                 ret.setFutureValue(new Pair<>(beginDay, endDay));
                 ret.setPastValue(new Pair<>(beginDay, endDay));
                 ret.setSuccess(true);
@@ -940,42 +956,53 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         List<ExtractResult> er = this.config.getDateExtractor().extract(text, referenceDate);
+        DateTimeParseResult pr1 = null;
+        DateTimeParseResult pr2 = null;
         if (er.size() < 2) {
             er = this.config.getDateExtractor().extract(this.config.getTokenBeforeDate() + text, referenceDate);
-            if (er.size() < 2) {
+            if (er.size() >= 2) {
+                er.get(0).setStart(er.get(0).getStart() - this.config.getTokenBeforeDate().length());
+                er.get(1).setStart(er.get(1).getStart() - this.config.getTokenBeforeDate().length());
+                er.set(0, er.get(0));
+                er.set(1, er.get(1));
+            } else {
+                DateTimeParseResult nowPr = parseNowAsDate(text, referenceDate);
+                if (nowPr == null || er.size() < 1) {
+                    return ret;
+                }
+
+                DateTimeParseResult datePr = this.config.getDateParser().parse(er.get(0), referenceDate);
+                pr1 = datePr.getStart() < nowPr.getStart() ? datePr : nowPr;
+                pr2 = datePr.getStart() < nowPr.getStart() ? nowPr : datePr;
+            }
+
+        }
+        if (er.size() >= 2) {
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekWithWeekDayRangeRegex(), text)).findFirst();
+            String weekPrefix = null;
+            if (match.isPresent()) {
+                weekPrefix = match.get().getGroup("week").value;
+            }
+
+            if (!StringUtility.isNullOrEmpty(weekPrefix)) {
+                er.get(0).setText(String.format("%s %s", weekPrefix, er.get(0).getText()));
+                er.get(1).setText(String.format("%s %s", weekPrefix, er.get(1).getText()));
+                er.set(0, er.get(0));
+                er.set(1, er.get(1));
+            }
+
+            DateContext dateContext = getYearContext(er.get(0).getText(), er.get(1).getText(), text);
+
+            pr1 = this.config.getDateParser().parse(er.get(0), referenceDate);
+            pr2 = this.config.getDateParser().parse(er.get(1), referenceDate);
+
+            if (pr1.getValue() == null || pr2.getValue() == null) {
                 return ret;
             }
-            er.get(0).setStart(er.get(0).getStart() - this.config.getTokenBeforeDate().length());
-            er.get(1).setStart(er.get(1).getStart() - this.config.getTokenBeforeDate().length());
-            er.set(0, er.get(0));
-            er.set(1, er.get(1));
+
+            pr1 = dateContext.processDateEntityParsingResult(pr1);
+            pr2 = dateContext.processDateEntityParsingResult(pr2);
         }
-
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekWithWeekDayRangeRegex(), text)).findFirst();
-        String weekPrefix = null;
-        if (match.isPresent()) {
-            weekPrefix = match.get().getGroup("week").value;
-        }
-
-        if (!StringUtility.isNullOrEmpty(weekPrefix)) {
-            er.get(0).setText(String.format("%s %s", weekPrefix, er.get(0).getText()));
-            er.get(1).setText(String.format("%s %s", weekPrefix, er.get(1).getText()));
-            er.set(0, er.get(0));
-            er.set(1, er.get(1));
-        }
-
-        DateContext dateContext = getYearContext(er.get(0).getText(), er.get(1).getText(), text);
-
-        DateTimeParseResult pr1 = this.config.getDateParser().parse(er.get(0), referenceDate);
-        DateTimeParseResult pr2 = this.config.getDateParser().parse(er.get(1), referenceDate);
-
-        if (pr1.getValue() == null || pr2.getValue() == null) {
-            return ret;
-        }
-
-        pr1 = dateContext.processDateEntityParsingResult(pr1);
-        pr2 = dateContext.processDateEntityParsingResult(pr2);
-
 
         List<Object> subDateTimeEntities = new ArrayList<Object>();
         subDateTimeEntities.add(pr1);
@@ -1004,6 +1031,31 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         ret.setSuccess(true);
 
         return ret;
+    }
+
+    // parse entities that made up by two time points with now
+    private DateTimeParseResult parseNowAsDate(String text, LocalDateTime referenceDate) {
+        DateTimeParseResult nowPr = null;
+        LocalDateTime value = referenceDate.toLocalDate().atStartOfDay();
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
+        for (Match match : matches) {
+            DateTimeResolutionResult retNow = new DateTimeResolutionResult();
+            retNow.setTimex(DateTimeFormatUtil.luisDate(value));
+            retNow.setFutureValue(value);
+            retNow.setPastValue(value);
+
+            nowPr = new DateTimeParseResult(
+                match.index,
+                match.length,
+                match.value,
+                Constants.SYS_DATETIME_DATE,
+                null,
+                retNow,
+                "",
+                value == null ? "" : ((DateTimeResolutionResult)retNow).getTimex());
+        }
+
+        return nowPr;
     }
 
     private DateTimeResolutionResult parseDuration(String text, LocalDateTime referenceDate) {
@@ -1154,7 +1206,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         if (!beginDate.equals(endDate) || restNowSunday) {
             endDate = inclusiveEndPeriod ? endDate.minusDays(1) : endDate;
 
-            ret.setTimex(String.format("(%s,%s,%s)", FormatUtil.luisDate(beginDate), FormatUtil.luisDate(endDate), timex));
+            ret.setTimex(String.format("(%s,%s,%s)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate), timex));
             ret.setFutureValue(new Pair<>(beginDate, endDate));
             ret.setPastValue(new Pair<>(beginDate, endDate));
             ret.setSuccess(true);
@@ -1342,14 +1394,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         String cardinalStr = match.getMatch().get().getGroup("cardinal").value.toLowerCase();
-        String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
+        String orderQuarterStr = match.getMatch().get().getGroup("orderQuarter").value.toLowerCase();
+        String orderStr = StringUtility.isNullOrEmpty(orderQuarterStr) ? match.getMatch().get().getGroup("order").value.toLowerCase() : null;
         String numberStr = match.getMatch().get().getGroup("number").value;
 
         boolean noSpecificYear = false;
         int year = this.config.getDateExtractor().getYearFromText(match.getMatch().get());
 
         if (year == Constants.InvalidYear) {
-            int swift = this.config.getSwiftYear(orderStr);
+            int swift = StringUtility.isNullOrEmpty(orderQuarterStr) ? this.config.getSwiftYear(orderStr) : 0;
             if (swift < -1) {
                 swift = 0;
                 noSpecificYear = true;
@@ -1360,6 +1413,18 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         int quarterNum;
         if (!StringUtility.isNullOrEmpty(numberStr)) {
             quarterNum = Integer.parseInt(numberStr);
+        } else if (!StringUtility.isNullOrEmpty(orderQuarterStr)) {
+            int month = referenceDate.getMonthValue();
+            quarterNum = (int)Math.ceil((double)month / Constants.TrimesterMonthCount);
+            int swift = this.config.getSwiftYear(orderQuarterStr);
+            quarterNum += swift;
+            if (quarterNum <= 0) {
+                quarterNum += Constants.QuarterCount;
+                year -= 1;
+            } else if (quarterNum > Constants.QuarterCount) {
+                quarterNum -= Constants.QuarterCount;
+                year += 1;
+            }
         } else {
             quarterNum = this.config.getCardinalMap().get(cardinalStr);
         }
@@ -1384,12 +1449,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 ret.setFutureValue(new Pair<>(beginDate, endDate));
                 ret.setPastValue(new Pair<>(beginDate, endDate));
             }
+
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(-1, beginDate.getMonthValue(), 1), DateTimeFormatUtil.luisDate(-1, endDate.getMonthValue(), 1)));
         } else {
             ret.setFutureValue(new Pair<>(beginDate, endDate));
             ret.setPastValue(new Pair<>(beginDate, endDate));
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         }
 
-        ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         ret.setSuccess(true);
 
         return ret;
@@ -1501,15 +1568,17 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         if (match.getSuccess()) {
             int num = Integer.parseInt(match.getMatch().get().getGroup("number").value);
             int year = referenceDate.getYear();
-            ret.setTimex(String.format("%04d", year));
+            ret.setTimex(String.format("%04d-W%02d", year, num));
             LocalDateTime firstDay = DateUtil.safeCreateFromMinValue(year, 1, 1);
-            LocalDateTime firstWeekday = DateUtil.thisDate(firstDay, DayOfWeek.of(1).getValue());
-            LocalDateTime value = firstWeekday.plusDays(Constants.WeekDayCount * num);
-            LocalDateTime futureDate = value;
-            LocalDateTime pastDate = value;
-            ret.setTimex(String.format("%s-W%02d", ret.getTimex(), num));
-            ret.setFutureValue(new Pair<>(futureDate, futureDate.plusDays(7)));
-            ret.setPastValue(new Pair<>(pastDate, pastDate.plusDays(7)));
+            LocalDateTime firstThursday = DateUtil.thisDate(firstDay, DayOfWeek.of(4).getValue());
+
+            if (DateUtil.weekOfYear(firstThursday) == 1) {
+                num -= 1;
+            }
+
+            LocalDateTime value = firstThursday.plusDays(Constants.WeekDayCount * num - 3);
+            ret.setFutureValue(new Pair<>(value, value.plusDays(7)));
+            ret.setPastValue(new Pair<>(value, value.plusDays(7)));
             ret.setSuccess(true);
         }
         return ret;

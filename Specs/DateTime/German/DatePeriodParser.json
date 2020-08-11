@@ -130,6 +130,32 @@
     ]
   },
   {
+    "Input": "Wie ist das Wetter übernächste Woche?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächste Woche",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
     "Input": "Letzten September war ich nicht hier.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -179,32 +205,6 @@
         },
         "Start": 11,
         "Length": 25
-      }
-    ]
-  },
-  {
-    "Input": "diese Woche",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "diese Woche",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2016-W45",
-          "FutureResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
-          }
-        },
-        "Start": 0,
-        "Length": 11
       }
     ]
   },
@@ -746,7 +746,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "Wochenende",
+        "Text": "am Wochenende",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -759,8 +759,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 3,
-        "Length": 10
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1254,6 +1254,59 @@
           }
         },
         "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ab Ende 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-30T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Ende 1989",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1989",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "1989-09-01",
+            "endDate": "1990-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1989-09-01",
+            "endDate": "1990-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "bis März 2008",
+    "Context": {
+      "ReferenceDateTime": "2020-04-30T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "März 2008",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-03",
+          "FutureResolution": {
+            "startDate": "2008-03-01",
+            "endDate": "2008-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-03-01",
+            "endDate": "2008-04-01"
+          }
+        },
+        "Start": 4,
         "Length": 9
       }
     ]

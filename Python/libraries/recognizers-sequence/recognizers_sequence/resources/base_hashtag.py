@@ -4,9 +4,14 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseHashtag:
     HashtagRegex = f'((?<=\\s|^)#([a-zA-Z0-9_]+))'
 # pylint: enable=line-too-long

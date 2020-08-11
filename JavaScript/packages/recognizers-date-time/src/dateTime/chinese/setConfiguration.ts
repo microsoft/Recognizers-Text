@@ -1,8 +1,8 @@
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
-import { BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number"
+import { BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { ISetExtractorConfiguration, BaseSetExtractor, ISetParserConfiguration, BaseSetParser } from "../baseSet";
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { IDateTimeParser, DateTimeParseResult } from "../parsers"
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
+import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -34,7 +34,7 @@ class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
     readonly timePeriodExtractor: BaseTimePeriodExtractor;
     readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachUnitRegex);
         this.durationExtractor = new ChineseDurationExtractor();
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetLastRegex);
@@ -42,27 +42,29 @@ class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
         this.timeExtractor = new ChineseTimeExtractor();
         this.beforeEachDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachDayRegex);
         this.eachDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachDayRegex);
-        this.dateExtractor = new ChineseDateExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
     }
 }
 
 export class ChineseSetExtractor extends BaseSetExtractor {
 
-    constructor() {
-        super(new ChineseSetExtractorConfiguration());
+    constructor(dmyDateFormat: boolean) {
+        super(new ChineseSetExtractorConfiguration(dmyDateFormat));
     }
 
-    extract(source: string, refDate: Date): Array<ExtractResult> {
-        if (!refDate) refDate = new Date();
+    extract(source: string, refDate: Date): ExtractResult[] {
+        if (!refDate) {
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
-        let tokens: Array<Token> = new Array<Token>()
+        let tokens: Token[] = new Array<Token>()
             .concat(super.matchEachUnit(source))
             .concat(super.matchEachDuration(source, referenceDate))
             .concat(this.matchEachSpecific(this.config.timeExtractor, this.config.eachDayRegex, source, referenceDate))
             .concat(this.matchEachSpecific(this.config.dateExtractor, this.config.eachPrefixRegex, source, referenceDate))
-            .concat(this.matchEachSpecific(this.config.dateTimeExtractor, this.config.eachPrefixRegex, source, referenceDate))
+            .concat(this.matchEachSpecific(this.config.dateTimeExtractor, this.config.eachPrefixRegex, source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -73,7 +75,7 @@ export class ChineseSetExtractor extends BaseSetExtractor {
             let beforeStr = source.substr(0, er.start);
             let beforeMatch = RegExpUtility.getMatches(eachRegex, beforeStr).pop();
             if (beforeMatch) {
-                ret.push(new Token(beforeMatch.index, er.start + er.length))
+                ret.push(new Token(beforeMatch.index, er.start + er.length));
             }
         });
         return ret;
@@ -103,15 +105,15 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
     readonly setWeekDayRegex: RegExp;
     readonly setEachRegex: RegExp;
 
-    constructor() {
-        this.dateExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean) {
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
         this.durationExtractor = new ChineseDurationExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
-        this.dateParser = new ChineseDateParser();
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.timeParser = new ChineseTimeParser();
         this.durationParser = new ChineseDurationParser();
-        this.dateTimeParser = new ChineseDateTimeParser();
+        this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
         this.unitMap = ChineseDateTime.ParserConfigurationUnitMap;
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachUnitRegex);
         this.eachDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachDayRegex);
@@ -124,23 +126,33 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
 
     public getMatchedUnitTimex(source: string): { matched: boolean, timex: string } {
         let timex = '';
-        if (source === '天' || source === '日') timex = 'P1D'
-        else if (source === '周' || source === '星期') timex = 'P1W'
-        else if (source === '月') timex = 'P1M'
-        else if (source === '年') timex = 'P1Y'
+        if (source === '天' || source === '日') {
+            timex = 'P1D';
+        }
+        else if (source === '周' || source === '星期') {
+            timex = 'P1W';
+        }
+        else if (source === '月') {
+            timex = 'P1M';
+        }
+        else if (source === '年') {
+            timex = 'P1Y';
+        }
         return { matched: timex !== '', timex: timex };
     }
 }
 
 export class ChineseSetParser extends BaseSetParser {
 
-    constructor() {
-        let config = new ChineseSetParserConfiguration();
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseSetParserConfiguration(dmyDateFormat);
         super(config);
     }
 
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
-        if (!referenceDate) referenceDate = new Date();
+        if (!referenceDate) {
+            referenceDate = new Date();
+        }
         let value = null;
         if (er.type === BaseSetParser.ParserName) {
             let innerResult = this.parseEachUnit(er.text);
@@ -167,8 +179,8 @@ export class ChineseSetParser extends BaseSetParser {
 
         let ret = new DateTimeParseResult(er);
         ret.value = value,
-        ret.timexStr = value === null ? "" : value.timex,
-        ret.resolutionStr = ""
+            ret.timexStr = value === null ? "" : value.timex,
+            ret.resolutionStr = "";
 
         return ret;
     }
@@ -178,13 +190,19 @@ export class ChineseSetParser extends BaseSetParser {
 
         // handle "each month"
         let match = RegExpUtility.getMatches(this.config.eachUnitRegex, text).pop();
-        if (!match || match.length !== text.length) return ret;
+        if (!match || match.length !== text.length) {
+            return ret;
+        }
 
         let sourceUnit = match.groups("unit").value;
-        if (StringUtility.isNullOrEmpty(sourceUnit) || !this.config.unitMap.has(sourceUnit)) return ret;
+        if (StringUtility.isNullOrEmpty(sourceUnit) || !this.config.unitMap.has(sourceUnit)) {
+            return ret;
+        }
 
         let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
-        if (!getMatchedUnitTimex.matched) return ret;
+        if (!getMatchedUnitTimex.matched) {
+            return ret;
+        }
 
         ret.timex = getMatchedUnitTimex.timex;
         ret.futureValue = "Set: " + ret.timex;
@@ -196,12 +214,16 @@ export class ChineseSetParser extends BaseSetParser {
     protected parserTimeEveryday(text: string, refDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = this.config.timeExtractor.extract(text, refDate);
-        if (ers.length !== 1) return result;
+        if (ers.length !== 1) {
+            return result;
+        }
 
         let er = ers[0];
         let beforeStr = text.substr(0, er.start);
         let match = RegExpUtility.getMatches(this.config.eachDayRegex, beforeStr).pop();
-        if (!match) return result;
+        if (!match) {
+            return result;
+        }
 
         let pr = this.config.timeParser.parse(er);
         result.timex = pr.timexStr;
@@ -215,12 +237,16 @@ export class ChineseSetParser extends BaseSetParser {
     protected parseEach(extractor: IDateTimeExtractor, parser: IDateTimeParser, text: string, refDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = extractor.extract(text, refDate);
-        if (ers.length !== 1) return result;
+        if (ers.length !== 1) {
+            return result;
+        }
 
         let er = ers[0];
         let beforeStr = text.substr(0, er.start);
         let match = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr).pop();
-        if (!match) return result;
+        if (!match) {
+            return result;
+        }
 
         let timex = parser.parse(er).timexStr;
         result.timex = timex;

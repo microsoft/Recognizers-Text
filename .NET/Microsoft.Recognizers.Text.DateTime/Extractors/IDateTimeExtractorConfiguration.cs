@@ -3,7 +3,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimeExtractorConfiguration : IOptionsConfiguration
+    public interface IDateTimeExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex NowRegex { get; }
 
@@ -28,6 +28,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NumberAsTimeRegex { get; }
 
         Regex DateNumberConnectorRegex { get; }
+
+        Regex YearRegex { get; }
+
+        Regex YearSuffix { get; }
+
+        Regex SuffixAfterRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
 

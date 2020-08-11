@@ -9,7 +9,7 @@ import { BaseUnits } from "../../resources/baseUnits";
 export abstract class FrenchNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;
     abstract readonly prefixList: ReadonlyMap<string, string>;
-    abstract readonly ambiguousUnitList: ReadonlyArray<string>;
+    abstract readonly ambiguousUnitList: readonly string[];
     readonly abstract extractType: string;
 
     readonly cultureInfo: CultureInfo;
@@ -23,7 +23,7 @@ export abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
-        this.unitNumExtractor = new FrenchNumberExtractor();
+        this.unitNumExtractor = new FrenchNumberExtractor(NumberMode.Unit);
 
         this.buildPrefix = FrenchNumericWithUnit.BuildPrefix;
         this.buildSuffix = FrenchNumericWithUnit.BuildSuffix;

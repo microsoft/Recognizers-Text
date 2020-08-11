@@ -1,5 +1,20 @@
 [
   {
+    "Input": "Tel: 000 111 82-2100.",
+    "Results": [
+      {
+        "Text": "000 111 82-2100",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "000 111 82-2100"
+        }
+      }
+    ]
+  },
+  {
     "Input": "My phone number is 1 (877) 609-2233.",
     "Results": [
       {
@@ -3185,6 +3200,36 @@
     ]
   },
   {
+    "Input": "My phone number is 223-4567.",
+    "Results": [
+      {
+        "Text": "223-4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "223-4567",
+          "score": "0.55"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 012-3333.",
+    "Results": [
+      {
+        "Text": "012-3333",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "012-3333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "my phone number is 112-3333.",
+    "Results": []
+  },
+  {
     "Input": "Do you know bazinga?",
     "Results": []
   },
@@ -4173,13 +4218,13 @@
     ]
   },
   {
-    "Input": "My phone number is (797)103-4036x470.",
+    "Input": "My phone number is (797)203-4036x470.",
     "Results": [
       {
-        "Text": "(797)103-4036x470",
+        "Text": "(797)203-4036x470",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(797)103-4036x470",
+          "value": "(797)203-4036x470",
           "score": "1"
         }
       }
@@ -4301,10 +4346,10 @@
     "Input": "My phone number is 837.824.1482X63888.",
     "Results": [
       {
-        "Text": "837.824.1482X63888",
+        "Text": "837.824.1482x63888",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "837.824.1482X63888",
+          "value": "837.824.1482x63888",
           "score": "0.9"
         }
       }
@@ -4353,10 +4398,10 @@
     "Input": "My phone number is 837.824.1482 X 63888.",
     "Results": [
       {
-        "Text": "837.824.1482 X 63888",
+        "Text": "837.824.1482 x 63888",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "837.824.1482 X 63888",
+          "value": "837.824.1482 x 63888",
           "score": "1"
         }
       }
@@ -4556,5 +4601,264 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll call you at Friday, Feb-22 at 1:30 PM PT at (123).456.7890.",
+    "Results": [
+      {
+        "Text": "(123).456.7890",
+        "Start": 49,
+        "End": 62,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "(123).456.7890"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "To call #Person#, please enter 011-82-10-1234-5678.",
+    "Results": [
+      {
+        "Text": "011-82-10-1234-5678",
+        "Start": 31,
+        "End": 49,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "011-82-10-1234-5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My prefered number is +55 11 12345-6789\nThanks.",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "March 1 14377:00 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "200.38294427 is not a phone number.",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is:1234 5678.",
+    "Results": [
+      {
+        "Text": "1234 5678",
+        "Start": 19,
+        "End": 27,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.5",
+          "value": "1234 5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "+1,032.923 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "0\t0\t0",
+    "Results": []
+  },
+  {
+    "Input": "These are not phone numbers: 1 506 64, 37 41 4, 38 5145, 20 15 11, 58 2105, 19 32 2, 25 32 2, 15 3  20, 10 41 20, 8196 12, 8198 27, 8244 45, 46 358 1",
+    "Results": []
+  },
+  {
+    "Input": "1234456%, 1237812, 1237812739",
+    "Results": [
+      {
+        "Text": "1237812",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "1237812"
+        }
+      },
+      {
+        "Text": "1237812739",
+        "Start": 19,
+        "End": 28,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.5",
+          "value": "1237812739"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "91a-677-0060 is not a phone number",
+    "Results": []
+  },
+  {
+    "Input": "9a1-677-0060 and a91-677-0060 are not phone numbers",
+    "Results": []
+  },
+  {
+    "Input": "911-67-0060 is a SSN and should not be extracted",
+    "Results": []
+  },
+  {
+    "Input": "011-12-3456 is a SSN and should not be extracted",
+    "Results": []
+  },
+  {
+    "Input": "account number 12345678",
+    "Results": []
+  },
+  {
+    "Input": "account #12345678",
+    "Results": []
+  },
+  {
+    "Input": "account 12345678",
+    "Results": []
+  },
+  {
+    "Input": "card number 1234567 and phone number is +55 11 12345-6789",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 40,
+        "End": 56,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "card number 12345678 and phone number 12345678",
+    "Results": [
+      {
+        "Text": "12345678",
+        "Start": 38,
+        "End": 45,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "12345678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My card number is 12345678",
+    "Results": []
+  },
+  {
+    "Input": "OFFICE-1(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "1(516)733-3989",
+        "Start": 7,
+        "End": 20,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Purchasing Phone (914)349-8600 04/21/2020 12:37:30",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "(914)349-8600",
+        "Start": 17,
+        "End": 29,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(914)349-8600"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E-151673398",
+    "NotSupported": "java,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "OFFICE - 1(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "1(516)733-3989",
+        "Start": 9,
+        "End": 22,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Office:(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "(516)733-3989",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Her credit card is: Visa 5111 1111 1111 1111",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Her credit card is: American Express 3600 0000 0000 009",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Her credit card is: Discover 6011-0000-0000-0004",
+    "NotSupported": "java",
+    "Results": []
   }
 ]

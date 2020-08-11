@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -85,10 +87,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.TimeExtractor.Extract(text, reference);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                if (string.IsNullOrEmpty(afterStr) && this.config.BeforeEachDayRegex != null)
+                if ((string.IsNullOrEmpty(afterStr) || this.config.CheckBothBeforeAfter) && this.config.BeforeEachDayRegex != null)
                 {
                     var beforeStr = text.Substring(0, er.Start ?? 0);
                     var beforeMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
@@ -114,11 +117,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var matches = config.SetEachRegex.Matches(text);
+
             foreach (Match match in matches)
             {
                 if (match.Success)
                 {
+                    // "3pm *each* day"
                     var trimmedText = text.Remove(match.Index, match.Length);
+
                     var ers = extractor.Extract(trimmedText, reference);
                     foreach (var er in ers)
                     {
@@ -136,16 +142,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (match.Success)
                 {
+                    Tuple<string, int> weekdayTuple = config.WeekDayGroupMatchTuple(match);
+                    string weekday = weekdayTuple.Item1;
+                    int del = weekdayTuple.Item2;
+
                     var trimmedText = text.Remove(match.Index, match.Length);
-                    trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
+                    trimmedText = trimmedText.Insert(match.Index, weekday);
 
                     var ers = extractor.Extract(trimmedText, reference);
                     foreach (var er in ers)
                     {
                         if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))
                         {
-                            var len = (er.Length ?? 0) + 1;
-                            if (match.Groups[Constants.PrefixGroupName].ToString() != string.Empty)
+                            var len = (er.Length ?? 0) + del;
+                            if (match.Groups[Constants.PrefixGroupName].ToString().Length > 0)
                             {
                                 len += match.Groups[Constants.PrefixGroupName].ToString().Length;
                             }

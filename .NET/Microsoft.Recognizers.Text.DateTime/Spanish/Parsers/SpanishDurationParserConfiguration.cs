@@ -1,9 +1,10 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class SpanishDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -12,26 +13,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NumberParser = config.NumberParser;
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
+
             AnUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = SpanishDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = SpanishDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = SpanishDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = SpanishDurationExtractorConfiguration.SuffixAndRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
+
             ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = SpanishDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = SpanishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = SpanishDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = SpanishDurationExtractorConfiguration.SpecialNumberUnitRegex;
         }
 
         public IExtractor CardinalExtractor { get; }
 
         public IParser NumberParser { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public Regex NumberCombinedWithUnit { get; }
 
@@ -54,6 +59,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

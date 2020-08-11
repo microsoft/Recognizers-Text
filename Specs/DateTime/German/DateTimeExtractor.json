@@ -166,17 +166,5 @@
         "Length": 17
       }
     ]
-  },
-  {
-    "Input": "Am Ende des Monats",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "Am Ende des Monats",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 18
-      }
-    ]
   }
 ]

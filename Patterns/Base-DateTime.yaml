@@ -1,28 +1,36 @@
-﻿HourRegex: !simpleRegex
-  def: (?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)(h)?
+HourRegex: !simpleRegex
+  def: (?<hour>2[0-4]|[0-1]?\d)(h)?
+TwoDigitHourRegex: !simpleRegex
+  def: (?<hour>[0-1]\d|2[0-4])(h)?
 MinuteRegex: !simpleRegex
-  def: (?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)(?!\d)
+  def: (?<min>[0-5]?\d)(?!\d)
+TwoDigitMinuteRegex: !simpleRegex
+  def: (?<min>[0-5]\d)(?!\d)
 DeltaMinuteRegex: !simpleRegex
-  def: (?<deltamin>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)
+  def: (?<deltamin>[0-5]?\d)
 SecondRegex: !simpleRegex
-  def: (?<sec>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)
+  def: (?<sec>[0-5]?\d)
 FourDigitYearRegex: !simpleRegex
   def: \b(?<![$])(?<year>((1\d|20)\d{2})|2100)(?!\.0\b)\b
+HyphenDateRegex: !simpleRegex
+  def: ((?<year1>[0-9]{4})-?(?<month1>1[0-2]|0[1-9])-?(?<day1>3[01]|0[1-9]|[12][0-9]))|((?<month2>1[0-2]|0[1-9])-?(?<day2>3[01]|0[1-9]|[12][0-9])-?(?<year2>[0-9]{4}))|((?<day3>3[01]|0[1-9]|[12][0-9])-?(?<month3>1[0-2]|0[1-9])-?(?<year3>[0-9]{4}))
 IllegalYearRegex: !nestedRegex
   def: ([-])({FourDigitYearRegex})([-])
   references: [ FourDigitYearRegex ]
 RangeConnectorSymbolRegex: !simpleRegex
   def: (--|-|—|——|~|–)
 BaseAmDescRegex: !simpleRegex
-  def: (am\b|a\s*\.\s*m\s*\.|a(\.)?\s*m\b)
+  def: (am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)
 BasePmDescRegex: !simpleRegex
-  def: (pm\b|p\s*\.\s*m\s*\.|p(\.)?\s*m\b)
+  def: (pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)
 BaseAmPmDescRegex: !simpleRegex
   def: (ampm)
+EqualRegex: !simpleRegex
+  def: (?<!<|>)=
 MinYearNum: 1500
 MaxYearNum: 2100
 MaxTwoDigitYearFutureNum: 30
-MinTwoDigitYearPastNum: 70
+MinTwoDigitYearPastNum: 40
 DayOfMonthDictionary: !dictionary
   types: [ string, int ]
   entries:

@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
+    public class FrenchTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public FrenchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
            : base(config)
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.EndsWith("s"))
             {
                 trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);

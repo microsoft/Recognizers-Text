@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.numberwithunit.resources;
@@ -261,5 +264,15 @@ public class BaseCurrency {
         .put("Tiyin", 100L)
         .put("Hào", 10L)
         .put("Ngwee", 100L)
+        .build();
+
+    public static final ImmutableMap<String, Long> NonStandardFractionalSubunits = ImmutableMap.<String, Long>builder()
+        .put("JOD", 1000L)
+        .put("KWD", 1000L)
+        .put("BHD", 1000L)
+        .put("OMR", 1000L)
+        .put("YDD", 1000L)
+        .put("TND", 1000L)
+        .put("MRO", 5L)
         .build();
 }

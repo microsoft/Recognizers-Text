@@ -1,6 +1,4 @@
 import { BaseDateTime } from "../resources/baseDateTime";
-import { EnglishDateTime } from "../resources/englishDateTime";
-import { ChineseDateTime } from "../resources/chineseDateTime";
 
 export class Constants {
     static readonly SYS_DATETIME_DATE: string = "date";
@@ -12,9 +10,13 @@ export class Constants {
     static readonly SYS_DATETIME_DURATION: string = "duration";
     static readonly SYS_DATETIME_SET: string = "set";
 
+    // SourceEntity Types
+    static readonly SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
+
     // key
     static readonly TimexKey: string = "timex";
     static readonly ModKey: string = "Mod";
+    static readonly SourceEntity: string = "sourceEntity";
     static readonly TypeKey: string = "type";
     static readonly IsLunarKey: string = "isLunar";
     static readonly ResolveKey: string = "resolve";
@@ -26,6 +28,7 @@ export class Constants {
 
     static readonly SemesterMonthCount: number = 6;
     static readonly TrimesterMonthCount: number = 3;
+    static readonly QuarterCount: number = 4;
     static readonly FourDigitsYearLength: number = 4;
     static readonly MaxMonth: number = 11;
     static readonly MinMonth: number = 0;
@@ -61,13 +64,44 @@ export class Constants {
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
 
+    // Timex
+    static readonly TimexYear: string = "Y";
+    static readonly TimexMonth: string = "M";
+    static readonly TimexMonthFull: string = "MON";
+    static readonly TimexWeek: string = "W";
+    static readonly TimexDay: string = "D";
+    static readonly TimexBusinessDay: string = "BD";
+    static readonly TimexWeekend: string = "WE";
+    static readonly TimexHour: string = "H";
+    static readonly TimexMinute: string = "M";
+    static readonly TimexSecond: string = "S";
+    static readonly TimexFuzzy: string = 'X';
+    static readonly TimexFuzzyYear: string = "XXXX";
+    static readonly TimexFuzzyMonth: string = "XX";
+    static readonly TimexFuzzyWeek: string = "WXX";
+    static readonly TimexFuzzyDay: string = "XX";
+    static readonly DateTimexConnector: string = "-";
+    static readonly TimeTimexConnector: string = ":";
+    static readonly GeneralPeriodPrefix: string = "P";
+    static readonly TimeTimexPrefix: string = "T";
+
+    // Timex of TimeOfDay
     static readonly EarlyMorning: string = "TDA";
     static readonly Morning: string = "TMO";
+    static readonly MidDay: string = "TMI";
     static readonly Afternoon: string = "TAF";
     static readonly Evening: string = "TEV";
     static readonly Daytime: string = "TDT";
     static readonly Night: string = "TNI";
     static readonly BusinessHour: string = "TBH";
+
+    // Invalid year
+    public readonly InvalidYear: number = Number.MIN_VALUE;
+    public readonly InvalidMonth: number = Number.MIN_VALUE;
+    public readonly InvalidDay: number = Number.MIN_VALUE;
+    public readonly InvalidHour: number = Number.MIN_VALUE;
+    public readonly InvalidMinute: number = Number.MIN_VALUE;
+    public readonly InvalidSecond: number = Number.MIN_VALUE;
 }
 
 export class TimeTypeConstants {

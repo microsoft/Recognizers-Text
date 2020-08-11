@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimePeriodExtractorConfiguration : IOptionsConfiguration
+    public interface IDateTimePeriodExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TimeUnitRegex { get; }
 
-        Regex PastPrefixRegex { get; }
+        Regex PreviousPrefixRegex { get; }
 
         Regex NextPrefixRegex { get; }
 
@@ -57,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor SingleDateExtractor { get; }
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeExtractor TimePeriodExtractor { get; }
+
+        IDateTimeExtractor TimeZoneExtractor { get; }
 
         bool GetFromTokenIndex(string text, out int index);
 

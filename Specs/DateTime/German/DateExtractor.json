@@ -196,6 +196,18 @@
     ]
   },
   {
+    "Input": "Ich komme übernächste Woche Freitag zurück.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächste Woche Freitag",
+        "Type": "date",
+        "Start": 10,
+        "Length": 25
+      }
+    ]
+  },
+  {
     "Input": "Ich komme irgendwann nächstes Jahr im Sommer wieder.",
     "NotSupported": "javascript, python",
     "Results": [
@@ -264,6 +276,78 @@
         "Type": "date",
         "Start": 11,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "sende eine geburtstagsabfrage für morgen",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Start": 34,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.10.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28.10.",
+        "Type": "date",
+        "Start": 33,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28.oktober",
+        "Type": "date",
+        "Start": 33,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28. Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28. oktober",
+        "Type": "date",
+        "Start": 33,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.10.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28.10.",
+        "Type": "date",
+        "Start": 33,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.Oktober",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28.oktober",
+        "Type": "date",
+        "Start": 33,
+        "Length": 10
       }
     ]
   }

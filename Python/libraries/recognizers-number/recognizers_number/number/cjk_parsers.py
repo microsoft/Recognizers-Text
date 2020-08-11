@@ -14,6 +14,7 @@ from recognizers_number.culture import CultureInfo
 
 getcontext().prec = 15
 
+
 class CJKNumberParserConfiguration(NumberParserConfiguration):
     @property
     @abstractmethod
@@ -24,32 +25,37 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @abstractmethod
     def round_number_map_char(self) -> Dict[str, int]:
         pass
-    
+
     @property
     @abstractmethod
     def full_to_half_map(self) -> Dict[str, int]:
         pass
-    
+
     @property
     @abstractmethod
     def trato_sim_map(self) -> Dict[str, int]:
         pass
-    
+
     @property
     @abstractmethod
     def unit_map(self) -> Dict[str, int]:
         pass
-    
+
     @property
     @abstractmethod
     def round_direct_list(self) -> List[str]:
         pass
-    
+
+    @property
+    @abstractmethod
+    def ten_chars(self) -> List[str]:
+        pass
+
     @property
     @abstractmethod
     def digit_num_regex(self) -> Pattern:
         pass
-    
+
     @property
     @abstractmethod
     def dozen_regex(self) -> Pattern:
@@ -59,12 +65,12 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @abstractmethod
     def percentage_regex(self) -> Pattern:
         pass
-    
+
     @property
     @abstractmethod
     def double_and_round_regex(self) -> Pattern:
         pass
-    
+
     @property
     @abstractmethod
     def frac_split_regex(self) -> Pattern:
@@ -79,7 +85,7 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @abstractmethod
     def spe_get_number_regex(self) -> Pattern:
         pass
-    
+
     @property
     @abstractmethod
     def pair_regex(self) -> Pattern:
@@ -89,6 +95,17 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @abstractmethod
     def round_number_integer_regex(self) -> Pattern:
         pass
+
+    @property
+    @abstractmethod
+    def zero_char(self) -> str:
+        pass
+
+    @property
+    @abstractmethod
+    def pair_char(self) -> str:
+        pass
+
 
 class CJKNumberParser(BaseNumberParser):
     def __init__(self, config: CJKNumberParserConfiguration):
@@ -112,13 +129,15 @@ class CJKNumberParser(BaseNumberParser):
         if 'Per' in extra:
             result = self.per_parse(simplified_source)
         elif 'Num' in extra:
-            simplified_source.text = self.replace_full_with_half(simplified_source.text)
+            simplified_source.text = self.replace_full_with_half(
+                simplified_source.text)
             result = self._digit_number_parse(simplified_source)
             if regex.search(self.config.negative_number_sign_regex, simplified_source.text) and result.value > 0:
                 result.value = result.value * -1
             result.resolution_str = self.__format(result.value)
         elif 'Pow' in extra:
-            simplified_source.text = self.replace_full_with_half(simplified_source.text)
+            simplified_source.text = self.replace_full_with_half(
+                simplified_source.text)
             result = self._power_number_parse(simplified_source)
             result.resolution_str = self.__format(result.value)
         elif 'Frac' in extra:
@@ -168,13 +187,14 @@ class CJKNumberParser(BaseNumberParser):
             elif source_text == '10成' or source_text == '10割' or source_text == '十割':
                 result.value = 100
             else:
-                matches = list(regex.finditer(self.config.spe_get_number_regex, source_text))
+                matches = list(regex.finditer(
+                    self.config.spe_get_number_regex, source_text))
                 int_number: int
                 if len(matches) == 2:
                     int_number_char = matches[0].group()[0]
-                    if int_number_char == '対' or int_number_char == '对':
+                    if int_number_char == self.config.pair_char:
                         int_number = 5
-                    elif int_number_char == '十' or int_number_char == '拾':
+                    elif int_number_char in self.config.ten_chars:
                         int_number = 10
                     else:
                         int_number = self.config.zero_to_nine_map[int_number_char]
@@ -198,19 +218,21 @@ class CJKNumberParser(BaseNumberParser):
 
                     int_number = self.config.zero_to_nine_map[int_number_char]
 
-                    result.value = (int_number + point_number + dot_number) * 10
+                    result.value = (
+                        int_number + point_number + dot_number) * 10
                 else:
                     int_number_char = matches[0].group()[0]
-                    if int_number_char == '对' or int_number_char == '対':
+                    if int_number_char == self.config.pair_char:
                         int_number = 5
-                    elif int_number_char == '十' or int_number_char == '拾':
+                    elif int_number_char in self.config.ten_chars:
                         int_number = 10
                     else:
                         int_number = self.config.zero_to_nine_map[int_number_char]
                     result.value = int_number * 10
 
         elif 'Num' in source.data:
-            double_match = regex.search(self.config.percentage_regex, source_text)
+            double_match = regex.search(
+                self.config.percentage_regex, source_text)
             double_text = double_match.group()
 
             if any(x for x in ['k', 'K', 'ｋ', 'Ｋ'] if x in double_text):
@@ -224,12 +246,13 @@ class CJKNumberParser(BaseNumberParser):
             result.value = self.get_digit_value(double_text, power)
 
         else:
-            double_match = regex.search(self.config.percentage_regex, source_text)
+            double_match = regex.search(
+                self.config.percentage_regex, source_text)
             double_text = self.replace_unit(double_match.group())
 
             split_result = regex.split(self.config.point_regex, double_text)
             if split_result[0] == '':
-                split_result[0] = '零'
+                split_result[0] = self.config.zero_char
 
             double_value = self.get_int_value(split_result[0])
             if len(split_result) == 2:
@@ -260,7 +283,7 @@ class CJKNumberParser(BaseNumberParser):
             )
         else:
             result_part = parts(
-                intval='零',
+                intval=self.config.zero_char,
                 demo=split_result[0],
                 num=split_result[1]
             )
@@ -293,11 +316,13 @@ class CJKNumberParser(BaseNumberParser):
         else:
             split_result = regex.split(self.config.point_regex, source_text)
             if split_result[0] == '':
-                split_result[0] = '零'
+                split_result[0] = self.config.zero_char
             if regex.search(self.config.negative_number_sign_regex, split_result[0]) is not None:
-                result.value = self.get_int_value(split_result[0]) - self.get_point_value(split_result[1])
+                result.value = self.get_int_value(
+                    split_result[0]) - self.get_point_value(split_result[1])
             else:
-                result.value = self.get_int_value(split_result[0]) + self.get_point_value(split_result[1])
+                result.value = self.get_int_value(
+                    split_result[0]) + self.get_point_value(split_result[1])
 
         result.resolution_str = self.__format(result.value)
         return result
@@ -340,10 +365,10 @@ class CJKNumberParser(BaseNumberParser):
         if regex.search(self.config.dozen_regex, result_str) is not None:
             dozen = True
             if self.config.culture_info.code == Culture.Chinese:
-#            if isinstance(self.config, ChineseNumberParserConfiguration):
-               result_str = result_str[:-1]
+                #            if isinstance(self.config, ChineseNumberParserConfiguration):
+                result_str = result_str[:-1]
             elif self.config.culture_info.code == Culture.Japanese:
-#            if isinstance(self.config, CJKNumberParserConfiguration):
+                #            if isinstance(self.config, CJKNumberParserConfiguration):
                 result_str = result_str[:-3]
         elif regex.search(self.config.pair_regex, result_str) is not None:
             pair = True
@@ -352,12 +377,11 @@ class CJKNumberParser(BaseNumberParser):
         result_str = self.replace_unit(result_str)
         int_value = 0
         part_value = 0
-        before_value = 0
+        before_value = 1
         is_round_before = False
         round_before = -1
         round_default = 1
         negative = False
-        has_number = False
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
@@ -367,8 +391,6 @@ class CJKNumberParser(BaseNumberParser):
             c = result_str[i]
             if c in self.config.round_number_map_char:
                 round_recent = self.config.round_number_map_char[c]
-                if not has_number:
-                    before_value = 1
                 if round_before != -1 and round_recent > round_before:
                     if is_round_before:
                         int_value += part_value * round_recent
@@ -386,22 +408,22 @@ class CJKNumberParser(BaseNumberParser):
                         int_value += part_value
                         part_value = 0
 
-                has_number = False
-                before_value = 0
                 round_default = round_recent / 10
             elif c in self.config.zero_to_nine_map:
-                has_number = True
                 if i != len(result_str)-1:
-                    if c == '零' and result_str[i+1] not in self.config.round_number_map_char:
+                    is_not_round_next = result_str[i + 1] in self.config.ten_chars or result_str[
+                        i + 1] not in self.config.round_number_map_char
+                    if c == self.config.zero_char and is_not_round_next:
+                        before_value = 1
                         round_default = 1
                     else:
-                        before_value = before_value * 10 + self.config.zero_to_nine_map[c]
+                        before_value = self.config.zero_to_nine_map[c]
                         is_round_before = False
                 else:
                     if i == len(result_str)-1 and self.config.culture_info.code == Culture.Japanese:
                         round_default = 1
-                    part_value += before_value * 10
-                    part_value += self.config.zero_to_nine_map[c] * round_default
+                    part_value += self.config.zero_to_nine_map[c] * \
+                        round_default
                     int_value += part_value
                     part_value = 0
         if negative:

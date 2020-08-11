@@ -4,29 +4,29 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    public class SpanishDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
-        public static readonly Regex PastPrefixRegex =
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+        public static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
 
         public static readonly Regex RangePrefixRegex =
-            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
 
         public static readonly Regex[] RelativePrefixList =
         {
-            ThisPrefixRegex, PastPrefixRegex, NextPrefixRegex,
+            ThisPrefixRegex, PreviousPrefixRegex, NextPrefixRegex,
         };
 
         public static readonly Regex[] AmPmRegexList =
@@ -34,13 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             AmRegex, PmRegex,
         };
 
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.OrRegex, RegexFlags);
 
         private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public SpanishDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+        public SpanishDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
@@ -56,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
+
+        Regex IDateTimeAltExtractorConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 
         Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
 

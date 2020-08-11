@@ -4,9 +4,14 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseEmail:
     EmailRegex = f'(([-a-zA-Z0-9_\\+\\.]+)@([-a-zA-Z\\d\\.]+)\\.([a-zA-Z\\.]{{2,6}}))'
     IPv4Regex = f'(?<ipv4>(\\d{{1,3}}\\.){{3}}\\d{{1,3}})'

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 using DateObject = System.DateTime;
@@ -89,17 +91,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
             {
-                build.Append(timeResult.Hour.ToString("D2"));
+                build.Append(timeResult.Hour.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Minute >= 0)
             {
-                build.Append(":" + timeResult.Minute.ToString("D2"));
+                build.Append(":" + timeResult.Minute.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Second >= 0)
             {
-                build.Append(":" + timeResult.Second.ToString("D2"));
+                build.Append(":" + timeResult.Second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             return build.ToString();
@@ -160,6 +162,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
 
             return spanTimex.ToString();
+        }
+
+        // used to filter ambiguous extractions e.g. 'morgen' in German and Dutch
+        public static List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
+        {
+            return timePeriodErs;
         }
     }
 }

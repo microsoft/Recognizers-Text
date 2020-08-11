@@ -6,7 +6,7 @@ import { SpanishNumericWithUnit } from "../../resources/spanishNumericWithUnit";
 export class SpanishAgeExtractorConfiguration extends SpanishNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -20,13 +20,13 @@ export class SpanishAgeExtractorConfiguration extends SpanishNumberWithUnitExtra
 
         this.suffixList = SpanishNumericWithUnit.AgeSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 
 export class SpanishAgeParserConfiguration extends SpanishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Spanish);
         }
 

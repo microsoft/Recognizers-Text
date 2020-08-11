@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalField;
+import java.time.temporal.WeekFields;
+import java.util.Locale;
 
 public class DateUtil {
 
@@ -140,5 +143,10 @@ public class DateUtil {
     public static LocalDateTime plusPeriodInNanos(LocalDateTime reference, double period, ChronoUnit unit) {
         long nanos = unit.getDuration().toNanos();
         return reference.plusNanos(Math.round(nanos * period));
+    }
+
+    public static int weekOfYear(LocalDateTime date) {
+        TemporalField woy = WeekFields.ISO.weekOfYear();
+        return date.get(woy);
     }
 }

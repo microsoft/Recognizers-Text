@@ -6,23 +6,31 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
+    public class FrenchDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodParserConfiguration
     {
         // @TODO move to resources - French - relative
         public static readonly Regex NextPrefixRegex =
-            new Regex(@"(prochain|prochaine)\b", RegexOptions.Singleline);
+            new Regex(@"(prochain|prochaine)\b", RegexFlags);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(@"(dernier)\b", RegexOptions.Singleline);
+            new Regex(@"(dernier)\b", RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(@"(ce|cette)\b", RegexOptions.Singleline);
+            new Regex(@"(ce|cette)\b", RegexFlags);
+
+        public static readonly Regex NextSuffixRegex =
+            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+
+        public static readonly Regex PastSuffixRegex =
+            new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -76,12 +84,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             LessThanRegex = FrenchDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = FrenchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
+            NowRegex = FrenchDatePeriodExtractorConfiguration.NowRegex;
+            SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            SpecialYearPrefixesMap = config.SpecialYearPrefixesMap;
             WrittenDecades = config.WrittenDecades;
             SpecialDecadeCases = config.SpecialDecadeCases;
         }
@@ -182,15 +194,23 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex CenturySuffixRegex { get; }
 
+        public Regex NowRegex { get; }
+
+        public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
+
+        Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 
-        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodParserConfiguration.PreviousPrefixRegex => PastPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 
-        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
-
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
+        bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -201,6 +221,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
+
+        public IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
 
         public IImmutableDictionary<string, int> WrittenDecades { get; }
 
@@ -295,7 +317,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
+            return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
+                (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && (NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)))) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 

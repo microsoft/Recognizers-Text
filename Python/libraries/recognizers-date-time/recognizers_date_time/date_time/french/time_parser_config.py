@@ -6,6 +6,8 @@ from ...resources.french_date_time import FrenchDateTime
 from ..base_time import TimeParserConfiguration, AdjustParams
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from .time_extractor_config import FrenchTimeExtractorConfiguration
+from ..parsers import DateTimeParser
+
 
 class FrenchTimeParserConfiguration(TimeParserConfiguration):
     @property
@@ -28,15 +30,24 @@ class FrenchTimeParserConfiguration(TimeParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
+    @property
+    def time_zone_parser(self) -> DateTimeParser:
+        return self._time_zone_parser
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._time_token_prefix: str = FrenchDateTime.TimeTokenPrefix
-        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AtRegex)
-        self._time_regexes: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list()
-        self.less_than_one_hour = RegExpUtility.get_safe_reg_exp(FrenchDateTime.LessThanOneHour)
-        self.time_suffix = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeSuffix)
+        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AtRegex)
+        self._time_regexes: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list(
+        )
+        self.less_than_one_hour = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.LessThanOneHour)
+        self.time_suffix = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeSuffix)
 
         self._utility_configuration = config.utility_configuration
         self._numbers: Dict[str, int] = config.numbers
+        self._time_zone_parser = config.time_zone_parser
 
     def adjust_by_prefix(self, prefix: str, adjust: AdjustParams):
         delta_min = 0
@@ -55,7 +66,8 @@ class FrenchTimeParserConfiguration(TimeParserConfiguration):
                 if min_str:
                     delta_min = int(min_str)
                 else:
-                    min_str = RegExpUtility.get_group(match, 'deltaminnum').lower()
+                    min_str = RegExpUtility.get_group(
+                        match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
         if trimmed_prefix.endswith('à'):

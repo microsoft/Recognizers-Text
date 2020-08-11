@@ -20,15 +20,16 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
     }
 
     public FrenchNumberParserConfiguration(NumberOptions options) {
-        this(new CultureInfo(Culture.Portuguese), options);
+        this(new CultureInfo(Culture.French), options);
     }
 
     public FrenchNumberParserConfiguration(CultureInfo cultureInfo, NumberOptions options) {
         super(
                 FrenchNumeric.LangMarker,
                 cultureInfo,
+                FrenchNumeric.CompoundNumberLanguage,
+                FrenchNumeric.MultiDecimalSeparatorCulture,
                 options,
-
                 FrenchNumeric.NonDecimalSeparatorChar,
                 FrenchNumeric.DecimalSeparatorChar,
                 FrenchNumeric.FractionMarkerToken,

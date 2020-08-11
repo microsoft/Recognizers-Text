@@ -132,12 +132,13 @@ public class TimexUtility {
         }
     }
 
-    public static String generateYearTimex() {
-        return Constants.TimexFuzzyYear;
+    public static String generateYearTimex(int year) {
+        return DateTimeFormatUtil.luisDate(year);
     }
 
-    public static String generateYearTimex(LocalDateTime date) {
-        return String.format("%04d", date.getYear());
+    public static String generateYearTimex(int year, String specialYearPrefixes) {
+        String yearStr = DateTimeFormatUtil.luisDate(year);
+        return String.format("%s%s", specialYearPrefixes, yearStr);
     }
 
     public static String generateDurationTimex(double number, String unitStr, boolean isLessThanDay) {
@@ -145,7 +146,9 @@ public class TimexUtility {
             if (Constants.DECADE_UNIT.equals(unitStr)) {
                 number = number * 10;
                 unitStr = Constants.TimexYear;
-
+            } else if (Constants.FORTNIGHT_UNIT.equals(unitStr)) {
+                number = number * 2;
+                unitStr = Constants.TimexWeek;
             } else {
                 unitStr = unitStr.substring(0, 1);
             }

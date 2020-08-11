@@ -1,0 +1,722 @@
+[
+  {
+    "Input": "मैं 2018 के ईस्टर संडे को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018 के ईस्टर संडे",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-01",
+          "FutureResolution": {
+            "date": "2018-04-01"
+          },
+          "PastResolution": {
+            "date": "2018-04-01"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं क्रिसमस के दिन वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "क्रिसमस के दिन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं नए साल की शाम को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नए साल की शाम",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं न्यू इयर ईव को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "न्यू इयर ईव",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं क्रिसमस पर वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "क्रिसमस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं होली पर वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "होली",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-03-23",
+          "FutureResolution": {
+            "date": "2017-03-12"
+          },
+          "PastResolution": {
+            "date": "2016-03-23"
+          }
+        },
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं थैंक्स गिविंग के दिन वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "थैंक्स गिविंग के दिन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं थैंक्सगिविंग पर वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "थैंक्सगिविंग",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं फादर्स डे पे वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फादर्स डे",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल दिवाली पर जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल दिवाली",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-19",
+          "FutureResolution": {
+            "date": "2017-10-19"
+          },
+          "PastResolution": {
+            "date": "2017-10-19"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2010 के थैंक्स गिविंग पर वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2010 के थैंक्स गिविंग",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2010 के ब्लैक फ़्राइड पर गया था",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2010 के ब्लैक फ़्राइड",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-26",
+          "FutureResolution": {
+            "date": "2010-11-26"
+          },
+          "PastResolution": {
+            "date": "2010-11-26"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैंने यह सायबर मंडे 2015 को खरीदा था.",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सायबर मंडे 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-11-30",
+          "FutureResolution": {
+            "date": "2015-11-30"
+          },
+          "PastResolution": {
+            "date": "2015-11-30"
+          }
+        },
+        "Start": 9,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "वह सेंट पैट्रिक्स डे 2018 पर वापस आया",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सेंट पैट्रिक्स डे 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-17",
+          "FutureResolution": {
+            "date": "2018-03-17"
+          },
+          "PastResolution": {
+            "date": "2018-03-17"
+          }
+        },
+        "Start": 3,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "वह प्रेसिडेंट्स डे 2017 को वापस गया",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रेसिडेंट्स डे 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-02-WXX-1-3",
+          "FutureResolution": {
+            "date": "2017-02-20"
+          },
+          "PastResolution": {
+            "date": "2017-02-20"
+          }
+        },
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2017 के पृथ्वी दिवस पे वापस जाऊँगी",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2017 के पृथ्वी दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2017-04-22"
+          }
+        },
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं हैलोवीन को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हैलोवीन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-31",
+          "FutureResolution": {
+            "date": "2017-10-31"
+          },
+          "PastResolution": {
+            "date": "2016-10-31"
+          }
+        },
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015 के फादर्स डे पर वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 के फादर्स डे",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं Cyber Monday को वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2019-10-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Cyber Monday",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-02",
+          "FutureResolution": {
+            "date": "2019-12-02"
+          },
+          "PastResolution": {
+            "date": "2018-11-26"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां मजदूर दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मजदूर दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मार्टिन लूथर किंग दिवस को अमरीका में छुट्टी होती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्टिन लूथर किंग दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-WXX-1-3",
+          "FutureResolution": {
+            "date": "2019-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "एम. एल. के. दिवस एक अमरीकी संघीय छुट्टी है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एम. एल. के. दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-WXX-1-3",
+          "FutureResolution": {
+            "date": "2019-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां श्रमिक दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "श्रमिक दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां अंतर्राष्ट्रीय मजदूर दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतर्राष्ट्रीय मजदूर दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "मैं यहां मई दिवस पर दिल्ली आया हूं",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "गणतंत्र दिवस तो दिल्ली में मनाई जाती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गणतंत्र दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-26",
+          "FutureResolution": {
+            "date": "2019-01-26"
+          },
+          "PastResolution": {
+            "date": "2018-01-26"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "स्वतंत्रता दिवस को लाल किला पर परेड होती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "स्वतंत्रता दिवस",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-15",
+          "FutureResolution": {
+            "date": "2018-08-15"
+          },
+          "PastResolution": {
+            "date": "2017-08-15"
+          }
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "गांधी जयंती के दिन छुट्टी होती है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गांधी जयंती के दिन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2018-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "रक्षाबंधन के दिन राजपत्रित छुट्टी नहीं है",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रक्षाबंधन के दिन",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-26",
+          "FutureResolution": {
+            "date": "2018-08-26"
+          },
+          "PastResolution": {
+            "date": "2017-08-07"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "बैसाखी हर साल अलग-अलग तारीख को पड़ती है.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बैसाखी हर साल",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-14",
+          "FutureResolution": {
+            "date": "2019-04-14"
+          },
+          "PastResolution": {
+            "date": "2018-04-14"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  }
+]

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public FrenchCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+        public FrenchCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
             SeasonMap = DateTimeDefinitions.SeasonMap.ToImmutableDictionary();
+            SpecialYearPrefixesMap = DateTimeDefinitions.SpecialYearPrefixesMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.CardinalMap.ToImmutableDictionary();
             DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
@@ -25,11 +26,20 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
+            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
+
             DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));

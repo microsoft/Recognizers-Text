@@ -4,9 +4,8 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ICommonDateTimeParserConfiguration : IOptionsConfiguration
+    public interface ICommonDateTimeParserConfiguration : IDateTimeOptionsConfiguration
     {
-
         IExtractor CardinalExtractor { get; }
 
         IExtractor IntegerExtractor { get; }
@@ -54,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, long> UnitValueMap { get; }
 
         IImmutableDictionary<string, string> SeasonMap { get; }
+
+        IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

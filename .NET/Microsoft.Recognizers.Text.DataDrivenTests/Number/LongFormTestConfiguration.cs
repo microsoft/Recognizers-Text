@@ -22,11 +22,17 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; }
 
+        public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; private set; }
+
+        public INumberOptionsConfiguration Config { get; }
+
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
-
-        public NumberOptions Options { get; }
 
         public CultureInfo CultureInfo { get; }
 
@@ -40,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public string HalfADozenText { get; }
 
-        public string LangMarker { get; } = "SelfDefined";
+        public string LanguageMarker { get; } = "SelfDefined";
 
         public char NonDecimalSeparatorChar { get; }
 
@@ -59,6 +65,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         // Test-specific initialization: the Regex matches nothing.
         public Regex NegativeNumberSignRegex { get; } = new Regex(@"[^\s\S]");
 
+        public bool IsCompoundNumberLanguage { get; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; }
+
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             throw new NotImplementedException();
@@ -68,5 +78,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             throw new NotImplementedException();
         }
+
+        public (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            return (false, double.MinValue);
+        }
+
     }
 }

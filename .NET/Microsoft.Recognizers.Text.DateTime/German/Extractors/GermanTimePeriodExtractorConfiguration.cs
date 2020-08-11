@@ -7,58 +7,62 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
+    public class GermanTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
 
         public static readonly Regex HourRegex =
-            new Regex(DateTimeDefinitions.HourRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
 
         public static readonly Regex PeriodHourNumRegex =
-            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexFlags);
 
         public static readonly Regex PeriodDescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DescRegex, RegexFlags);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
 
         public static readonly Regex PureNumFromTo =
-            new Regex(DateTimeDefinitions.PureNumFromTo, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
 
         public static readonly Regex PureNumBetweenAnd =
-            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
 
-        public static readonly Regex SpecificTimeFromTo = new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeFromTo =
+            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexFlags);
 
-        public static readonly Regex SpecificTimeBetweenAnd = new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeBetweenAnd =
+            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexFlags);
 
         public static readonly Regex PrepositionRegex =
-            new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
 
         public static readonly Regex TimeOfDayRegex =
-            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
         public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
 
         public static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
 
         public static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
 
         public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
 
-        public GermanTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public GermanTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
@@ -82,12 +86,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IEnumerable<Regex> PureNumberRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
 
+        bool ITimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
+        // @TODO move hardcoded strings to YAML file
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
@@ -115,6 +122,21 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsConnectorToken(string text)
         {
             return text.Equals("und");
+        }
+
+        // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning".
+        // When the extractor extracts "Abend" in this example it will take the string before that to look for a relative shift to another day like "yesterday", "tomorrow" etc.
+        // When trying to do this on the string "morgen" it will be extracted as a time period ("morning") by the TimePeriodExtractor, and not as "tomorrow".
+        // Filtering out the string "morgen" from the TimePeriodExtractor will fix the problem as only in the case where "morgen" is NOT a time period the string "morgen" will be passed to this extractor.
+        // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
+        {
+            if (text.Equals("morgen"))
+            {
+                timePeriodErs.Clear();
+            }
+
+            return timePeriodErs;
         }
     }
 }

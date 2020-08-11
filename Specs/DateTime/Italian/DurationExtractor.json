@@ -1,485 +1,529 @@
 [
   {
     "Input": "Andrò via per 3h",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3h",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 2
       }
     ]
   },
   {
     "Input": "Andrò via per 3 giorni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3 giorni",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Andrò via per 3,5anni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3,5anni",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Andrò via per 3 h",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3 h",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Andrò via per 3 ore",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3 ore",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Andrò via per 3 mesi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3 mesi",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Andrò via per 3 minuti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3 minuti",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Andrò via per 3 min",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3 min",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Andrò via per 3.5 secondi ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "3.5 secondi",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via per 123.45 sec",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "123.45 sec",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Andrò via per due settimane",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "due settimane",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Andrò via per venti min",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "venti min",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Andrò via per ventiquattro ore",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "ventiquattro ore",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Andrò via per tutto il giorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tutto il giorno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Andrò via per tutta la settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tutta la settimana",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Andrò via per tutto il mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tutto il mese",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Andrò via per tutto l'anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "tutto l'anno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Andrò via per il giorno intero",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "giorno intero",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Andrò via per la settimana intera",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "settimana intera",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Andrò via per il mese intero",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "mese intero",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 17,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via per l'anno intero",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "anno intero",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via per l'intero giorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "intero giorno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Andrò via per l'intera settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "intera settimana",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 16,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Andrò via per l'intero mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "intero mese",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via per l'intero anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "intero anno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Andrò via per un'ora",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un'ora",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Andrò via per un anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un anno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "metà anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "metà anno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Andrò via per 30 minuti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "30 minuti",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Andrò via per una mezzora",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "una mezzora",
-        "Type": "duration"
+        "Text": "mezzora",
+        "Type": "duration",
+        "Start": 18,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Andrò via per mezzora",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "mezzora",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Andrò via per un'ora e mezza",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un'ora e mezza",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Andrò via per due ore",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "due ore",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Andrò via due ore e mezza",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "due ore e mezza",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "In una settimana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "una settimana",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "In un giorno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un giorno",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 3,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "per un'ora",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un'ora",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "per un mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "un mese",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Andrò via per poche ore",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "poche ore",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Andrò via per pochi minuti",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "pochi minuti",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Andrò via per alcuni giorni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "alcuni giorni",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Andrò via per diversi giorni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "diversi giorni",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Andrò via per 1 anno 1 mese 21 giorni",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "1 anno 1 mese 21 giorni",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Andrò via per 2 giorni 1 mese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "2 giorni 1 mese",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 14,
+        "Length": 15
       }
     ]
   }

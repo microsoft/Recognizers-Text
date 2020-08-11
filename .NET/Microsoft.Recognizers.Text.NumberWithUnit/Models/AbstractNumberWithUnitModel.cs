@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Preprocess the query
             query = QueryProcessor.Preprocess(query, caseSensitive: true);
 
-            List<ModelResult> extractionResults = new List<ModelResult>();
+            var extractionResults = new List<ModelResult>();
 
             try
             {
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                         foreach (var extractionResult in extractionResults)
                         {
-                            if (extractionResult.Start == result.Start && extractionResult.End == result.End)
+                            if (result.Start <= extractionResult.Start && result.End >= extractionResult.End)
                             {
                                 shouldAdd = false;
                             }

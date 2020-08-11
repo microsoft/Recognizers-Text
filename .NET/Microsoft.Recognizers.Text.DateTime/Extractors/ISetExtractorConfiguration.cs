@@ -1,8 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ISetExtractorConfiguration : IOptionsConfiguration
+    public interface ISetExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         Regex LastRegex { get; }
 
@@ -20,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SetEachRegex { get; }
 
+        bool CheckBothBeforeAfter { get; }
+
         IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
@@ -33,5 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeExtractor TimePeriodExtractor { get; }
 
         IDateTimeExtractor DateTimePeriodExtractor { get; }
+
+        Tuple<string, int> WeekDayGroupMatchTuple(Match match);
     }
 }

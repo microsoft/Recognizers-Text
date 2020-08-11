@@ -54,6 +54,51 @@
             大约早上10:00
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.SkipFromToMerge">
+            <summary>
+            SkipFromToMerge
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.SplitDateAndTime">
+            <summary>
+            SplitDateAndTime
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.CalendarMode">
+            <summary>
+            CalendarMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.ExtendedTypes">
+            <summary>
+            ExtendedTypes
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.FailFast">
+            <summary>
+            FailFast, mode that aborts extraction/tagging quickly for non-entity cases. May be removed later.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.ExperimentalMode">
+            <summary>
+            ExperimentalMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.EnablePreview">
+            <summary>
+            EnablePreview
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.DurationType.WithNumber">
             <summary>
             Types of DurationType.
@@ -87,6 +132,26 @@
         <member name="F:Microsoft.Recognizers.Text.DateTime.DurationParsingUtil.MultiDurationType.DateTime">
             <summary>
             Represents the time of the date
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificYear">
+            <summary>
+            NonspecificYear
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificMonth">
+            <summary>
+            NonspecificMonth
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.NonspecificDay">
+            <summary>
+            NonspecificDay
             </summary>
         </member>
     </members>

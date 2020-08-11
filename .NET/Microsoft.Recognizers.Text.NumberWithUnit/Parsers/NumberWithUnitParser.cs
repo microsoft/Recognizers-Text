@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -8,29 +9,48 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         public NumberWithUnitParser(INumberWithUnitParserConfiguration config)
         {
-            this.config = config;
+            this.Config = config;
         }
 
-        protected INumberWithUnitParserConfiguration config { get; private set; }
+        protected INumberWithUnitParserConfiguration Config { get; private set; }
+
+        public static void AddIfNotContained(List<string> unitKeys, string unit)
+        {
+            var add = true;
+            foreach (var unitKey in unitKeys)
+            {
+                if (unitKey.Contains(unit))
+                {
+                    add = false;
+                    break;
+                }
+            }
+
+            if (add)
+            {
+                unitKeys.Add(unit);
+            }
+        }
 
         public ParseResult Parse(ExtractResult extResult)
         {
             var ret = new ParseResult(extResult);
+
             ExtractResult numberResult;
 
             if (extResult.Data is ExtractResult unitResult)
             {
                 numberResult = unitResult;
             }
-            else if (extResult.Type.Equals(Constants.SYS_NUM))
+            else if (extResult.Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
             {
-                ret.Value = config.InternalNumberParser.Parse(extResult).Value;
+                ret.Value = Config.InternalNumberParser.Parse(extResult).Value;
                 return ret;
             }
             else
             {
                 // If there is no unitResult, means there is just unit
-                numberResult = new ExtractResult { Start = -1, Length = 0 };
+                numberResult = new ExtractResult { Start = -1, Length = 0, Text = string.Empty };
             }
 
             // Key contains units
@@ -70,20 +90,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Unit type depends on last unit in suffix
             var lastUnit = unitKeys.Last();
             var normalizedLastUnit = lastUnit.ToLowerInvariant();
-            if (!string.IsNullOrEmpty(config.ConnectorToken) && normalizedLastUnit.StartsWith(config.ConnectorToken))
+            if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken))
             {
-                normalizedLastUnit = normalizedLastUnit.Substring(config.ConnectorToken.Length).Trim();
-                lastUnit = lastUnit.Substring(config.ConnectorToken.Length).Trim();
+                normalizedLastUnit = normalizedLastUnit.Substring(Config.ConnectorToken.Length).Trim();
+                lastUnit = lastUnit.Substring(Config.ConnectorToken.Length).Trim();
             }
 
-            if (!string.IsNullOrWhiteSpace(key) && config.UnitMap != null)
+            if (!string.IsNullOrWhiteSpace(key) && Config.UnitMap != null)
             {
-                if (config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
-                    config.UnitMap.TryGetValue(normalizedLastUnit, out unitValue))
+                if (Config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
+                    Config.UnitMap.TryGetValue(normalizedLastUnit, out unitValue))
                 {
                     var numValue = string.IsNullOrEmpty(numberResult.Text) ?
                         null :
-                        this.config.InternalNumberParser.Parse(numberResult);
+                        this.Config.InternalNumberParser.Parse(numberResult);
 
                     ret.Value = new UnitValue
                     {
@@ -97,24 +117,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             ret.Text = ret.Text.ToLowerInvariant();
 
             return ret;
-        }
-
-        public void AddIfNotContained(List<string> unitKeys, string unit)
-        {
-            var add = true;
-            foreach (var unitKey in unitKeys)
-            {
-                if (unitKey.Contains(unit))
-                {
-                    add = false;
-                    break;
-                }
-            }
-
-            if (add)
-            {
-                unitKeys.Add(unit);
-            }
         }
     }
 }

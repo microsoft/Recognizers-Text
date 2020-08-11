@@ -1,7 +1,7 @@
-import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime"
+import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { ICommonDateTimeParserConfiguration } from "../parsers"
+import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 
 export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfiguration {
@@ -116,7 +116,8 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                 if (amStr) {
                     if (adjust.hour >= 12) {
                         deltaHour = -12;
-                    } else {
+                    }
+                    else {
                         adjust.hasAm = true;
                     }
                 }
@@ -133,13 +134,16 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                             deltaHour = 0;
                             if (adjust.hour === 12) {
                                 adjust.hasPm = true;
-                            } else {
+                            }
+                            else {
                                 adjust.hasAm = true;
                             }
-                        } else {
+                        }
+                        else {
                             adjust.hasPm = true;
                         }
-                    } else if (RegExpUtility.getMatches(this.nightRegex, pmStr).length > 0) {
+                    }
+                    else if (RegExpUtility.getMatches(this.nightRegex, pmStr).length > 0) {
                         // for hour <=3 or === 12, we treat it as am, for example 1 in the night (midnight) === 1am
                         if (adjust.hour <= 3 || adjust.hour === 12) {
                             if (adjust.hour === 12) {
@@ -147,10 +151,12 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                             }
                             deltaHour = 0;
                             adjust.hasAm = true;
-                        } else {
+                        }
+                        else {
                             adjust.hasPm = true;
                         }
-                    } else {
+                    }
+                    else {
                         adjust.hasPm = true;
                     }
                 }

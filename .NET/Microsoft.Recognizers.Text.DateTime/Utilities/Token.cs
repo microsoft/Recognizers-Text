@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Text.InternalCache;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class Token
+    public class Token : ICloneableType<Token>
     {
+
         public Token(int s, int e, Metadata metadata = null)
         {
             Start = s;
@@ -29,6 +33,24 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 return End - Start;
             }
+        }
+
+        public static List<Token> GetTokenFromRegex(Regex regex, string text)
+        {
+            var ret = new List<Token>();
+
+            if (regex == null)
+            {
+                return ret;
+            }
+
+            var matches = regex.Matches(text);
+            foreach (Match match in matches)
+            {
+                ret.Add(new Token(match.Index, match.Index + match.Length));
+            }
+
+            return ret;
         }
 
         public static List<ExtractResult> MergeAllTokens(List<Token> tokens, string text, string extractorName)
@@ -91,6 +113,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        public Token Clone()
+        {
+            return (Token)MemberwiseClone();
         }
     }
 }

@@ -9,66 +9,73 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        private static readonly ConcurrentDictionary<(NumberOptions, string), FractionExtractor> Instances =
-            new ConcurrentDictionary<(NumberOptions, string), FractionExtractor>();
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private FractionExtractor(NumberOptions options)
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor>();
+
+        private FractionExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
-            Options = options;
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(
-                        NumbersDefinitions.FractionNounRegex, RegexOptions.Singleline),
+                        NumbersDefinitions.FractionNounRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH)
                 },
             };
 
-            if ((Options & NumberOptions.PercentageMode) != 0)
+            // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
+            if (config.Mode != NumberMode.Unit)
             {
-                regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH));
-            }
-            else
-            {
-                regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH));
+                if ((Options & NumberOptions.PercentageMode) != 0)
+                {
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH));
+                }
+                else
+                {
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH));
+                }
             }
 
             Regexes = regexes.ToImmutableDictionary();
         }
 
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+        public sealed override NumberOptions Options { get; }
 
-        protected sealed override NumberOptions Options { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        public static FractionExtractor GetInstance(NumberOptions options = NumberOptions.None, string placeholder = "")
+        public static FractionExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (options, placeholder);
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = (config.Mode, config.Options);
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new FractionExtractor(options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new FractionExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }

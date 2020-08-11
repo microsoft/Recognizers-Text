@@ -11,7 +11,9 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimePar
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.SpanishDateTime;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.StringExtension;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
@@ -45,11 +47,12 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     private final Pattern forTheRegex;
     private final Pattern weekDayAndDayOfMonthRegex;
     private final Pattern relativeMonthRegex;
+    private final Pattern strictRelativeRegex;
     private final Pattern yearSuffix;
     private final Pattern relativeWeekDayRegex;
     private final Pattern relativeDayRegex;
     private final Pattern nextPrefixRegex;
-    private final Pattern pastPrefixRegex;
+    private final Pattern previousPrefixRegex;
 
     private final ImmutableMap<String, Integer> dayOfMonth;
     private final ImmutableMap<String, Integer> dayOfWeek;
@@ -88,11 +91,12 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
         forTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
         weekDayAndDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
         relativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
+        strictRelativeRegex = SpanishDateExtractorConfiguration.StrictRelativeRegex;
         yearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
         relativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
         relativeDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDayRegex);
         nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         dayOfMonth = config.getDayOfMonth();
         dayOfWeek = config.getDayOfWeek();
         monthOfYear = config.getMonthOfYear();
@@ -217,6 +221,11 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     }
 
     @Override
+    public Pattern getStrictRelativeRegex() {
+        return strictRelativeRegex;
+    }
+
+    @Override
     public Pattern getYearSuffix() {
         return yearSuffix;
     }
@@ -238,7 +247,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
 
     @Override
     public Pattern getPastPrefixRegex() {
-        return pastPrefixRegex;
+        return previousPrefixRegex;
     }
 
     @Override
@@ -297,7 +306,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     }
 
     @Override
-    public Integer getSwiftMonth(String text) {
+    public Integer getSwiftMonthOrYear(String text) {
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
         int swift = 0;
 
@@ -306,7 +315,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
             swift = 1;
         }
 
-        regexMatcher = pastPrefixRegex.matcher(trimmedText);
+        regexMatcher = previousPrefixRegex.matcher(trimmedText);
         if (regexMatcher.find()) {
             swift = -1;
         }
@@ -322,10 +331,6 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
 
     @Override
     public String normalize(String text) {
-        return text.replace('á', 'a')
-                .replace('é', 'e')
-                .replace('í', 'i')
-                .replace('ó', 'o')
-                .replace('ú', 'u');
+        return StringExtension.normalize(text, SpanishDateTime.SpecialCharactersEquivalent);
     }
 }

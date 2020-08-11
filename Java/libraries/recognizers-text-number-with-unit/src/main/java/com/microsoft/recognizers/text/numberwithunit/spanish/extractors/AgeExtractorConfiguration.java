@@ -36,7 +36,7 @@ public class AgeExtractorConfiguration extends SpanishNumberWithUnitExtractorCon
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return Collections.emptyList();
+        return SpanishNumericWithUnit.AmbiguousAgeUnitList;
     }
 
     public static Map<String, String> AgeSuffixList = SpanishNumericWithUnit.AgeSuffixList;

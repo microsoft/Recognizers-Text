@@ -10,6 +10,7 @@ from ..utilities import DateTimeUtilityConfiguration
 from ..base_configs import BaseDateParserConfiguration
 from ..base_datetime import DateTimeParserConfiguration, MatchedTimex
 
+
 class FrenchDateTimeParserConfiguration(DateTimeParserConfiguration):
     @property
     def token_before_date(self) -> str:
@@ -102,15 +103,24 @@ class FrenchDateTimeParserConfiguration(DateTimeParserConfiguration):
     def __init__(self, config: BaseDateParserConfiguration):
         self._token_before_date = FrenchDateTime.TokenBeforeDate
         self._token_before_time = FrenchDateTime.TokenBeforeTime
-        self._now_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NowRegex)
-        self._am_time_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AMTimeRegex)
-        self._pm_time_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PMTimeRegex)
-        self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleTimeOfTodayAfterRegex)
-        self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex)
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SpecificTimeOfDayRegex)
-        self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SpecificEndOfRegex)
-        self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.UnspecificEndOfRegex)
-        self._unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeUnitRegex)
+        self._now_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NowRegex)
+        self._am_time_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AMTimeRegex)
+        self._pm_time_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PMTimeRegex)
+        self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SimpleTimeOfTodayAfterRegex)
+        self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SimpleTimeOfTodayBeforeRegex)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeOfDayRegex)
+        self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificEndOfRegex)
+        self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.UnspecificEndOfRegex)
+        self._unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeUnitRegex)
 
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
@@ -134,10 +144,10 @@ class FrenchDateTimeParserConfiguration(DateTimeParserConfiguration):
         if source.endswith('maintenant'):
             timex = 'PRESENT_REF'
         elif (
-                source == 'récemment' or 
-                source == 'précédemment' or 
-                source == 'auparavant'
-            ):
+            source == 'récemment' or
+            source == 'précédemment' or
+            source == 'auparavant'
+        ):
             timex = 'PAST_REF'
         elif source == 'dès que possible' or source == 'dqp':
             timex = 'FUTURE_REF'
@@ -151,18 +161,18 @@ class FrenchDateTimeParserConfiguration(DateTimeParserConfiguration):
         swift = 0
 
         if (
-                source.startswith('prochain') or
-                source.endswith('prochain') or
-                source.startswith('prochaine') or
-                source.endswith('prochaine')
-            ):
+            source.startswith('prochain') or
+            source.endswith('prochain') or
+            source.startswith('prochaine') or
+            source.endswith('prochaine')
+        ):
             swift = -1
         elif (
-                source.startswith('dernier') or
-                source.startswith('dernière') or
-                source.endswith('dernier') or
-                source.endswith('dernière')
-            ):
+            source.startswith('dernier') or
+            source.startswith('dernière') or
+            source.endswith('dernier') or
+            source.endswith('dernière')
+        ):
             swift = 1
 
         return swift

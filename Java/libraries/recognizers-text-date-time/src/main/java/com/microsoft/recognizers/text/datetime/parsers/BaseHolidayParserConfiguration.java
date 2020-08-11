@@ -72,6 +72,7 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
         holidays.put("memorial", BaseHolidayParserConfiguration::memorialDay);
         holidays.put("thanksgiving", BaseHolidayParserConfiguration::thanksgivingDay);
         holidays.put("thanksgivingday", BaseHolidayParserConfiguration::thanksgivingDay);
+        holidays.put("blackfriday", BaseHolidayParserConfiguration::blackFriday);
         holidays.put("martinlutherking", BaseHolidayParserConfiguration::martinLutherKingDay);
         holidays.put("washingtonsbirthday", BaseHolidayParserConfiguration::washingtonsBirthday);
 
@@ -82,6 +83,7 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
 
     public abstract String sanitizeHolidayToken(String holiday);
 
+    // @TODO auto-generate from YAML
     private static LocalDateTime canberraDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 3, getDay(year, 3, 0, DayOfWeek.MONDAY));
     }
@@ -110,12 +112,20 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
         return DateUtil.safeCreateFromMinValue(year, 9, getDay(year, 9, 0, DayOfWeek.MONDAY));
     }
 
+    protected static LocalDateTime internationalWorkersDay(int year) {
+        return DateUtil.safeCreateFromMinValue(year, 5, 1);
+    }
+
     protected static LocalDateTime columbusDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 10, getDay(year, 10, 1, DayOfWeek.MONDAY));
     }
 
     protected static LocalDateTime thanksgivingDay(int year) {
         return DateUtil.safeCreateFromMinValue(year, 11, getDay(year, 11, 3, DayOfWeek.THURSDAY));
+    }
+
+    protected static LocalDateTime blackFriday(int year) {
+        return DateUtil.safeCreateFromMinValue(year, 11, getDay(year, 11, 3, DayOfWeek.FRIDAY));
     }
 
     protected static int getDay(int year, int month, int week, DayOfWeek dayOfWeek) {

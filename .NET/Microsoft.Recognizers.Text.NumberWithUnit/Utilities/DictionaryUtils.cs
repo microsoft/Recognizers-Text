@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 {
-    public class DictionaryUtils
+    public static class DictionaryUtils
     {
         // Safely bind dictionary which contains several key-value pairs to the destination dictionary.
         // This function is used to bind all the prefix and suffix for units.
-        public static void BindDictionary(IDictionary<string, string> dictionary,
-            IDictionary<string, string> sourceDictionary)
+        public static void BindDictionary(IDictionary<string, string> dictionary, IDictionary<string, string> sourceDictionary)
         {
-            if (dictionary == null) return;
+            if (dictionary == null)
+            {
+                return;
+            }
 
             foreach (var pair in dictionary)
             {
@@ -29,11 +32,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 
             foreach (var token in values)
             {
-                if (string.IsNullOrWhiteSpace(token) || sourceDictionary.ContainsKey(token))
+                if (string.IsNullOrWhiteSpace(token) || (sourceDictionary.ContainsKey(token) && sourceDictionary[token].Equals(key)))
                 {
                     continue;
                 }
 
+                // This segment of code is going to break if there're duplicated key-values in the resource files.
+                // Those duplicates should be fixed before committing.
                 sourceDictionary.Add(token, key);
             }
         }

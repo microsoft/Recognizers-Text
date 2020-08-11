@@ -1,26 +1,30 @@
-import { IExtractor, ExtractResult, QueryProcessor } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, QueryProcessor, MetaData } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
+import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers";
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
 import { IDateTimeExtractor } from "./baseDateTime";
 
 export class Token {
-    constructor(start: number, end: number) {
+    constructor(start: number, end: number, metaData: MetaData = null) {
         this.start = start;
         this.end = end;
+        this.metaData = metaData;
     }
 
     start: number;
     end: number;
+    metaData: MetaData;
 
     get length(): number {
         return this.end - this.start;
     }
 
-    static mergeAllTokens(tokens: Token[], source: string, extractorName: string): Array<ExtractResult> {
-        let ret: Array<ExtractResult> = [];
-        let mergedTokens: Array<Token> = [];
-        tokens = tokens.sort((a, b) => { return a.start < b.start ? -1 : 1 });
+    static mergeAllTokens(tokens: Token[], source: string, extractorName: string): ExtractResult[] {
+        let ret: ExtractResult[] = [];
+        let mergedTokens: Token[] = [];
+        tokens = tokens.sort((a, b) => {
+            return a.start < b.start ? -1 : 1;
+        });
         tokens.forEach(token => {
             if (token) {
                 let bAdd = true;
@@ -47,7 +51,8 @@ export class Token {
                 start: token.start,
                 length: token.length,
                 text: source.substr(token.start, token.length),
-                type: extractorName
+                type: extractorName,
+                metaData: token.metaData
             });
         });
         return ret;
@@ -69,7 +74,7 @@ export enum AgoLaterMode {
 }
 
 export class AgoLaterUtil {
-    static extractorDurationWithBeforeAndAfter(source: string, er: ExtractResult, ret: Token[], config: IDateTimeUtilityConfiguration): Array<Token> {
+    static extractorDurationWithBeforeAndAfter(source: string, er: ExtractResult, ret: Token[], config: IDateTimeUtilityConfiguration): Token[] {
         let pos = er.start + er.length;
         if (pos <= source.length) {
             let afterString = source.substring(pos);
@@ -87,7 +92,9 @@ export class AgoLaterUtil {
                 else {
                     value = MatchingUtil.getInIndex(beforeString, config.inConnectorRegex);
                     // for range unit like "week, month, year", it should output dateRange or datetimeRange
-                    if (RegExpUtility.getMatches(config.rangeUnitRegex, er.text).length > 0) return ret;
+                    if (RegExpUtility.getMatches(config.rangeUnitRegex, er.text).length > 0) {
+                        return ret;
+                    }
                     if (value.matched && er.start && er.length && er.start >= value.index) {
                         ret.push(new Token(er.start - value.index, er.start + er.length));
                     }
@@ -100,11 +107,17 @@ export class AgoLaterUtil {
     static parseDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IDateTimeExtractor, durationParser: IDateTimeParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let duration = durationExtractor.extract(source, referenceDate).pop();
-        if (!duration) return result;
+        if (!duration) {
+            return result;
+        }
         let pr = durationParser.parse(duration, referenceDate);
-        if (!pr) return result;
+        if (!pr) {
+            return result;
+        }
         let match = RegExpUtility.getMatches(unitRegex, source).pop();
-        if (!match) return result;
+        if (!match) {
+            return result;
+        }
         let afterStr = source.substr(duration.start + duration.length);
         let beforeStr = source.substr(0, duration.start);
         let srcUnit = match.groups('unit').value;
@@ -113,14 +126,18 @@ export class AgoLaterUtil {
             .replace('P', '')
             .replace('T', '');
         let num = Number.parseInt(numStr, 10);
-        if (!num) return result;
+        if (!num) {
+            return result;
+        }
         return AgoLaterUtil.getAgoLaterResult(pr, num, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
     }
 
     static getAgoLaterResult(durationParseResult: DateTimeParseResult, num: number, unitMap: ReadonlyMap<string, string>, srcUnit: string, afterStr: string, beforeStr: string, referenceDate: Date, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode) {
         let result = new DateTimeResolutionResult();
         let unitStr = unitMap.get(srcUnit);
-        if (!unitStr) return result;
+        if (!unitStr) {
+            return result;
+        }
         let numStr = num.toString();
         let containsAgo = MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.agoRegex);
         let containsLaterOrIn = MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.laterRegex) || MatchingUtil.containsInIndex(beforeStr, utilityConfiguration.inConnectorRegex);
@@ -208,13 +225,13 @@ export class DateTimeFormatUtil {
     public static luisDate(year: number, month: number, day: number): string {
         if (year === -1) {
             if (month === -1) {
-                return new Array("XXXX", "XX", DateTimeFormatUtil.toString(day, 2)).join("-");
+                return ["XXXX", "XX", DateTimeFormatUtil.toString(day, 2)].join("-");
             }
 
-            return new Array("XXXX", DateTimeFormatUtil.toString(month + 1, 2), DateTimeFormatUtil.toString(day, 2)).join("-");
+            return ["XXXX", DateTimeFormatUtil.toString(month + 1, 2), DateTimeFormatUtil.toString(day, 2)].join("-");
         }
 
-        return new Array(DateTimeFormatUtil.toString(year, 4), DateTimeFormatUtil.toString(month + 1, 2), DateTimeFormatUtil.toString(day, 2)).join("-");
+        return [DateTimeFormatUtil.toString(year, 4), DateTimeFormatUtil.toString(month + 1, 2), DateTimeFormatUtil.toString(day, 2)].join("-");
     }
 
     public static luisDateFromDate(date: Date): string {
@@ -222,7 +239,7 @@ export class DateTimeFormatUtil {
     }
 
     public static luisTime(hour: number, min: number, second: number): string {
-        return new Array(DateTimeFormatUtil.toString(hour, 2), DateTimeFormatUtil.toString(min, 2), DateTimeFormatUtil.toString(second, 2)).join(":");
+        return [DateTimeFormatUtil.toString(hour, 2), DateTimeFormatUtil.toString(min, 2), DateTimeFormatUtil.toString(second, 2)].join(":");
     }
 
     public static luisTimeFromDate(time: Date): string {
@@ -234,15 +251,15 @@ export class DateTimeFormatUtil {
     }
 
     public static formatDate(date: Date): string {
-        return new Array(DateTimeFormatUtil.toString(date.getFullYear(), 4),
-            DateTimeFormatUtil.toString(date.getMonth() + 1, 2),
-            DateTimeFormatUtil.toString(date.getDate(), 2)).join("-");
+        return [DateTimeFormatUtil.toString(date.getFullYear(), 4),
+        DateTimeFormatUtil.toString(date.getMonth() + 1, 2),
+        DateTimeFormatUtil.toString(date.getDate(), 2)].join("-");
     }
 
     public static formatTime(time: Date) {
-        return new Array(DateTimeFormatUtil.toString(time.getHours(), 2),
-            DateTimeFormatUtil.toString(time.getMinutes(), 2),
-            DateTimeFormatUtil.toString(time.getSeconds(), 2)).join(":");
+        return [DateTimeFormatUtil.toString(time.getHours(), 2),
+        DateTimeFormatUtil.toString(time.getMinutes(), 2),
+        DateTimeFormatUtil.toString(time.getSeconds(), 2)].join(":");
     }
 
     public static formatDateTime(datetime: Date): string {
@@ -252,7 +269,8 @@ export class DateTimeFormatUtil {
     public static shortTime(hour: number, minute: number, second: number): string {
         if (minute < 0 && second < 0) {
             return `T${DateTimeFormatUtil.toString(hour, 2)}`;
-        } else if (second < 0) {
+        }
+        else if (second < 0) {
             return `T${DateTimeFormatUtil.toString(hour, 2)}:${DateTimeFormatUtil.toString(minute, 2)}`;
         }
         return `T${DateTimeFormatUtil.toString(hour, 2)}:${DateTimeFormatUtil.toString(minute, 2)}:${DateTimeFormatUtil.toString(second, 2)}`;
@@ -269,7 +287,7 @@ export class DateTimeFormatUtil {
         if (span > 0 && span < 60) {
             result = `${result}${span}M`;
         }
-        
+
         span = DateUtils.totalSeconds(from, to) - (span * 60);
         if (span > 0 && span < 60) {
             result = `${result}${span}S`;
@@ -283,7 +301,9 @@ export class DateTimeFormatUtil {
         let split = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
-            if (lastPos !== match.index) split.push(timeStr.substring(lastPos, match.index));
+            if (lastPos !== match.index) {
+                split.push(timeStr.substring(lastPos, match.index));
+            }
             split.push(timeStr.substring(match.index, match.index + match.length));
             lastPos = match.index + match.length;
         });
@@ -331,7 +351,7 @@ export class DateTimeResolutionResult {
     pastResolution: StringMap;
     futureValue: any;
     pastValue: any;
-    subDateTimeEntities: Array<any>;
+    subDateTimeEntities: any[];
 
     constructor() {
         this.success = false;
@@ -369,8 +389,15 @@ export class DateUtils {
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
-        if (start === 0) start = 7;
-        if (target === 0) target = 7;
+        
+        if (start === 0) {
+            start = 7;
+        }
+        
+        if (target === 0) {
+            target = 7;
+        }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start + 7);
         return result;
@@ -379,8 +406,15 @@ export class DateUtils {
     static this(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
-        if (start === 0) start = 7;
-        if (target === 0) target = 7;
+        
+        if (start === 0) {
+            start = 7;
+        }
+        
+        if (target === 0) {
+            target = 7;
+        }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start);
         return result;
@@ -389,8 +423,15 @@ export class DateUtils {
     static last(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
-        if (start === 0) start = 7;
-        if (target === 0) target = 7;
+        
+        if (start === 0) {
+            start = 7;
+        }
+        
+        if (target === 0) {
+            target = 7;
+        }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start - 7);
         return result;
@@ -474,20 +515,21 @@ export class DateUtils {
 
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
         // Create a copy of this date object
-	    let target  = new Date(referenceDate.valueOf());
-    
+        let target = new Date(referenceDate.valueOf());
+
         // ISO week date weeks start on monday
         // so correct the day number
-        let dayNr   = (referenceDate.getDay() + 6) % 7;
-    
+        let dayNr = (referenceDate.getDay() + 6) % 7;
+
         // ISO 8601 states that week 1 is the week
         // with the first thursday of that year.
         // Set the target date to the thursday in the target week
         target.setDate(target.getDate() - dayNr + 3);
-    
+
         // Store the millisecond value of the target date
         let firstThursday = target.valueOf();
-    
+        let thursday = new Date(firstThursday);
+
         // Set the target to the first thursday of the year
         // First set the target to january first
         target.setMonth(0, 1);
@@ -495,11 +537,11 @@ export class DateUtils {
         if (target.getDay() !== 4) {
             target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
         }
-    
+
         // The weeknumber is the number of weeks between the 
         // first thursday of the year and the thursday in the target week
         let weekNo = 1 + Math.ceil((firstThursday - target.valueOf()) / 604800000); // 604800000 = 7 * 24 * 3600 * 1000
-        return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
+        return { weekNo: weekNo, year: thursday.getFullYear() };
     }
 
     static minValue(): Date {
@@ -524,7 +566,7 @@ export class DateUtils {
         if (month >= 12) {
             year += (month + 1) / 12;
             month %= 12;
-        }       
+        }
         return this.safeCreateFromMinValue(year, month, day);
     }
 
@@ -545,7 +587,9 @@ export class DateUtils {
         return Math.floor(diffDays / DateUtils.oneDay);
     }
 
-    private static validDays(year: number) { return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }
+    private static validDays(year: number) {
+        return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    }
 
     static isValidDate(year: number, month: number, day: number): boolean {
         return year > 0 && year <= 9999
@@ -558,6 +602,30 @@ export class DateUtils {
             && minute >= 0 && minute < 60
             && second >= 0 && minute < 60;
     }
+}
+
+export class HolidayFunctions {
+
+    static calculateHolidayByEaster(year: number, days = 0): Date {
+
+        let day = 0;
+        let month = 2; // In JavaScript month is 0 indexed
+
+        let g = year % 19;
+        let c = year / 100;
+        let h = (c - ~~(c / 4) - ~~(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
+        let i = h - (~~(h / 28) * (1 - (~~(h / 28) * (29 / (h + 1)) * ~~((21 - g) / 11))));
+
+        day = i - ((year + ~~(year / 4) + i + 2 - c + ~~(c / 4)) % 7) + 28;
+
+        if (day > 31) {
+            month++;
+            day -= 31;
+        }
+
+        return DateUtils.addDays(DateUtils.safeCreateFromMinValue(year, month, day), days);
+    }
+
 }
 
 export class TimexUtil {
@@ -573,6 +641,11 @@ export class TimexUtil {
                 result.timeX = Constants.Morning;
                 result.beginHour = 8;
                 result.endHour = 12;
+                break;
+            case Constants.MidDay:
+                result.timeX = Constants.MidDay;
+                result.beginHour = 11;
+                result.endHour = 13;
                 break;
             case Constants.Afternoon:
                 result.timeX = Constants.Afternoon;

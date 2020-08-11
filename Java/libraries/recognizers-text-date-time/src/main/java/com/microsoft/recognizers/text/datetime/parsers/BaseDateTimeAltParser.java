@@ -7,8 +7,8 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeAltParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -160,10 +160,10 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 case Constants.SYS_DATETIME_DATEPERIOD:
                     startPointType = TimeTypeConstants.START_DATE;
                     endPointType = TimeTypeConstants.END_DATE;
-                    pastStartPointResolution = FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
-                    pastEndPointResolution = FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
-                    futureStartPointResolution = FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
-                    futureEndPointResolution = FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+                    pastStartPointResolution = DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
+                    pastEndPointResolution = DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
+                    futureStartPointResolution = DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
+                    futureEndPointResolution = DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
                     break;
 
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
@@ -171,13 +171,13 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                     endPointType = TimeTypeConstants.END_DATETIME;
 
                     if (ret.getPastValue() instanceof Pair<?, ?>) {
-                        pastStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
-                        pastEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
-                        futureStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
-                        futureEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+                        pastStartPointResolution = DateTimeFormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
+                        pastEndPointResolution = DateTimeFormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
+                        futureStartPointResolution = DateTimeFormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
+                        futureEndPointResolution = DateTimeFormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
                     } else if (ret.getPastValue() instanceof LocalDateTime) {
-                        pastStartPointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getPastValue());
-                        futureStartPointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getFutureValue());
+                        pastStartPointResolution = DateTimeFormatUtil.formatDateTime((LocalDateTime)ret.getPastValue());
+                        futureStartPointResolution = DateTimeFormatUtil.formatDateTime((LocalDateTime)ret.getFutureValue());
                     }
 
                     break;
@@ -185,10 +185,10 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 case Constants.SYS_DATETIME_TIMEPERIOD:
                     startPointType = TimeTypeConstants.START_TIME;
                     endPointType = TimeTypeConstants.END_TIME;
-                    pastStartPointResolution = FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
-                    pastEndPointResolution = FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
-                    futureStartPointResolution = FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
-                    futureEndPointResolution = FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+                    pastStartPointResolution = DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
+                    pastEndPointResolution = DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
+                    futureStartPointResolution = DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
+                    futureEndPointResolution = DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
                     break;
                 default:
                     break;
@@ -198,17 +198,17 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
             switch (type) {
                 case Constants.SYS_DATETIME_DATE:
                     singlePointType = TimeTypeConstants.DATE;
-                    singlePointResolution = FormatUtil.formatDate((LocalDateTime)ret.getFutureValue());
+                    singlePointResolution = DateTimeFormatUtil.formatDate((LocalDateTime)ret.getFutureValue());
                     break;
 
                 case Constants.SYS_DATETIME_DATETIME:
                     singlePointType = TimeTypeConstants.DATETIME;
-                    singlePointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getFutureValue());
+                    singlePointResolution = DateTimeFormatUtil.formatDateTime((LocalDateTime)ret.getFutureValue());
                     break;
 
                 case Constants.SYS_DATETIME_TIME:
                     singlePointType = TimeTypeConstants.TIME;
-                    singlePointResolution = FormatUtil.formatTime((LocalDateTime)ret.getFutureValue());
+                    singlePointResolution = DateTimeFormatUtil.formatTime((LocalDateTime)ret.getFutureValue());
                     break;
                 default:
                     break;

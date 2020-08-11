@@ -8,25 +8,19 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public OrdinalExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     // だい一百五十四
-                    new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.AllOrdinalRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.JAPANESE)
                 },
-                {
-                    // だい２５６５
-                    new Regex(NumbersDefinitions.OrdinalNumbersRegex, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.JAPANESE)
-                },
-                {
-                    // 2折 ２.５折
-                    new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
-                },
+
             };
 
             Regexes = regexes.ToImmutableDictionary();

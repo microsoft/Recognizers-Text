@@ -1621,5 +1621,145 @@
         "Length": 25
       }
     ]
+  },
+  {
+    "Input": "3pm : I'll be out on this week",
+    "Results": [
+      {
+        "Text": "3pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "time": "15:00:00"
+          },
+          "PastResolution": {
+            "time": "15:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "this week 8am should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "8am",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "this week 8p.m. should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "8p.m.",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8 p.m. should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "8 p.m.",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8p.m. should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "8p.m.",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "week 10 10:20 should be a daterange and a time.",
+    "Results": [
+      {
+        "Text": "10:20",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:20",
+          "FutureResolution": {
+            "time": "10:20:00"
+          },
+          "PastResolution": {
+            "time": "10:20:00"
+          }
+        },
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "The target time is 8.10 pm",
+    "Results": [
+      {
+        "Text": "8.10 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:10",
+          "FutureResolution": {
+            "time": "20:10:00"
+          },
+          "PastResolution": {
+            "time": "20:10:00"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
   }
 ]

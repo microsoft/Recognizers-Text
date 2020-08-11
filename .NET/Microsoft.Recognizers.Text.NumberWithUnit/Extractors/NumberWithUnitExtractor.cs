@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -12,7 +14,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly StringMatcher suffixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
         private readonly StringMatcher prefixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+
         private readonly Regex separateRegex;
+        private readonly Regex singleCharUnitRegex = new Regex(BaseUnits.SingleCharUnitRegex,
+                                                               RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         private readonly int maxPrefixMatchLen;
 
@@ -46,13 +51,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             separateRegex = BuildSeparateRegexFromSet();
         }
 
-        public bool ValidateUnit(string source)
+        public static bool ValidateUnit(string source)
         {
-            return !source.StartsWith("-");
+            return !source.StartsWith("-", StringComparison.Ordinal);
         }
 
         public List<ExtractResult> Extract(string source)
         {
+
             var result = new List<ExtractResult>();
 
             if (!PreCheckStr(source))
@@ -63,14 +69,36 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
             var sourceLen = source.Length;
             var prefixMatched = false;
+            var unitIsPrefix = new List<bool>();
 
             MatchCollection nonUnitMatches = null;
-            var prefixMatch = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
-            var suffixMatch = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
+            var prefixMatches = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
+            var suffixMatches = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
 
-            if (prefixMatch.Count > 0 || suffixMatch.Count > 0)
+            if (prefixMatches.Count > 0 || suffixMatches.Count > 0)
             {
                 var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+
+                // Checking if there are conflicting interpretations between currency unit as prefix and suffix for each number.
+                // For example, in Chinese, "$20，300美圆" should be broken into two entities instead of treating 20,300 as one number: "$20" and "300美圆".
+                if (numbers.Count() > 0 && CheckExtractorType(Constants.SYS_UNIT_CURRENCY) && prefixMatches.Count() > 0 && suffixMatches.Count() > 0)
+                {
+
+                    foreach (var number in numbers)
+                    {
+                        int start = (int)number.Start, length = (int)number.Length;
+                        var numberPrefix = prefixMatches.Any(o => o.Start + o.Length == number.Start);
+                        var numberSuffix = suffixMatches.Any(o => o.Start == number.Start + number.Length);
+
+                        if (numberPrefix != false && numberSuffix != false && number.Text.Contains(","))
+                        {
+                            int commaIndex = (int)number.Start + number.Text.IndexOf(",");
+                            source = source.Substring(0, commaIndex) + " " + source.Substring(commaIndex + 1);
+                        }
+                    }
+
+                    numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+                }
 
                 // Special case for cases where number multipliers clash with unit
                 var ambiguousMultiplierRegex = this.config.AmbiguousUnitNumberMultiplierRegex;
@@ -99,21 +127,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var maxFindPref = Math.Min(maxPrefixMatchLen, number.Start.Value);
                     var maxFindSuff = sourceLen - start - length;
 
+                    var closeMatch = false;
                     if (maxFindPref != 0)
                     {
                         // Scan from left to right, find the longest match
                         var lastIndex = start;
                         MatchResult<string> bestMatch = null;
 
-                        foreach (var m in prefixMatch)
+                        foreach (var m in prefixMatches)
                         {
                             if (m.Length > 0 && m.End > start)
                             {
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() == m.Text)
+                            var unitStr = source.Substring(m.Start, lastIndex - m.Start);
+                            if (m.Length > 0 && unitStr.Trim() == m.Text)
                             {
+                                if (unitStr == m.Text)
+                                {
+                                    closeMatch = true;
+                                }
+
                                 bestMatch = m;
                                 break;
                             }
@@ -123,18 +158,47 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         {
                             var offSet = lastIndex - bestMatch.Start;
                             var unitStr = source.Substring(bestMatch.Start, offSet);
-                            mappingPrefix.Add(number.Start.Value, new PrefixUnitResult { Offset = offSet, UnitStr = unitStr });
+                            mappingPrefix[number.Start.Value] = new PrefixUnitResult { Offset = offSet, UnitStr = unitStr };
                         }
                     }
 
                     mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
+
+                    // For currency unit, such as "$ 10 $ 20", get candidate "$ 10" "10 $" "$20" then select to get result.
+                    // So add "$ 10" to result here, then get "10 $" in the suffixMatch.
+                    // But for case like "摄氏温度10度", "摄氏温度10" will skip this and continue to extend the suffix.
+                    if (prefixUnit != null && !prefixMatched && CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
+                    {
+                        var er = new ExtractResult
+                        {
+                            Start = number.Start - prefixUnit.Offset,
+                            Length = number.Length + prefixUnit.Offset,
+                            Text = prefixUnit.UnitStr + number.Text,
+                            Type = this.config.ExtractType,
+                        };
+
+                        // Relative position will be used in Parser
+                        var numberData = number.Clone();
+                        numberData.Start = start - er.Start;
+                        er.Data = numberData;
+
+                        result.Add(er);
+                        unitIsPrefix.Add(true);
+                    }
+
                     if (maxFindSuff > 0)
                     {
+                        // If the number already get close prefix currency unit, skip the suffix match.
+                        if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY) && closeMatch)
+                        {
+                            continue;
+                        }
+
                         // find the best suffix unit
                         var maxlen = 0;
                         var firstIndex = start + length;
 
-                        foreach (var m in suffixMatch)
+                        foreach (var m in suffixMatches)
                         {
                             if (m.Length > 0 && m.Start >= firstIndex)
                             {
@@ -142,7 +206,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 if (maxlen < endpos)
                                 {
                                     var midStr = source.Substring(firstIndex, m.Start - firstIndex);
-                                    if (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken))
+                                    if (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken, StringComparison.Ordinal))
                                     {
                                         maxlen = endpos;
                                     }
@@ -153,6 +217,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         if (maxlen != 0)
                         {
                             var substr = source.Substring(start, length + maxlen);
+
                             var er = new ExtractResult
                             {
                                 Start = start,
@@ -161,7 +226,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 Type = this.config.ExtractType,
                             };
 
-                            if (prefixUnit != null)
+                            if (prefixUnit != null && !CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
                             {
                                 prefixMatched = true;
                                 er.Start -= prefixUnit.Offset;
@@ -170,12 +235,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
 
                             // Relative position will be used in Parser
-                            number.Start = start - er.Start;
-                            er.Data = number;
+                            var numberData = number.Clone();
+                            numberData.Start = start - er.Start;
+                            er.Data = numberData;
 
                             // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
                             var isNotUnit = false;
-                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
+                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal))
                             {
                                 if (nonUnitMatches == null)
                                 {
@@ -198,10 +264,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
 
                             result.Add(er);
+                            unitIsPrefix.Add(false);
                         }
                     }
 
-                    if (prefixUnit != null && !prefixMatched)
+                    if (prefixUnit != null && !prefixMatched && !CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
                     {
                         var er = new ExtractResult
                         {
@@ -212,8 +279,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         };
 
                         // Relative position will be used in Parser
-                        number.Start = start - er.Start;
-                        er.Data = number;
+                        var numberData = number.Clone();
+                        numberData.Start = start - er.Start;
+                        er.Data = numberData;
+
                         result.Add(er);
                     }
                 }
@@ -229,8 +298,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 ExtractSeparateUnits(source, result, nonUnitMatches);
 
-                // Remove common ambiguous cases
-                result = FilterAmbiguity(result, source);
+            }
+
+            // Remove common ambiguous cases
+            result = FilterAmbiguity(result, source);
+
+            if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
+            {
+                result = SelectCandidates(source, result, unitIsPrefix);
             }
 
             return result;
@@ -244,6 +319,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 int start = numDependResult.Start.Value;
                 int i = 0;
+
                 do
                 {
                     matchResult[start + i++] = true;
@@ -275,7 +351,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                             // Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
                             var isNotUnit = false;
-                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
+                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM, StringComparison.Ordinal))
                             {
                                 foreach (Match nonUnitMatch in nonUnitMatches)
                                 {
@@ -306,7 +382,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
         }
 
-        protected StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
+        protected static StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
         {
             StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
             List<string> matchTerms = collection.SelectMany(words =>
@@ -329,7 +405,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
 
                 var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
-                var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+                var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
                 var regex = new Regex(pattern, options);
                 regexes.Add(regex);
@@ -388,9 +464,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return null;
             }
 
-            regexTokens.Sort(new DinoComparer());
+            regexTokens.Sort(new StringComparer());
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
-            var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+            var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
             var regex = new Regex(pattern, options);
             return regex;
@@ -407,22 +483,107 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return isSubMatch;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
+
             if (this.config.AmbiguityFiltersDict != null)
             {
-                foreach (var regex in config.AmbiguityFiltersDict)
+                foreach (var regex in this.config.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                 .ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er =>
+                                                                      !matches.Any(m => m.Index < er.Start + er.Length &&
+                                                                                   m.Index + m.Length > er.Start)).ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
+            // Filter single-char units if not exact match
+            extractResults = extractResults.Where(er => !(er.Length != text.Length && singleCharUnitRegex.IsMatch(er.Text))).ToList();
+
+            return extractResults;
+        }
+
+        private bool CheckExtractorType(string extractorType)
+        {
+            return this.config.ExtractType.Equals(extractorType, StringComparison.Ordinal);
+        }
+
+        private List<ExtractResult> SelectCandidates(string source, List<ExtractResult> extractResults, List<bool> unitIsPrefix)
+        {
+            int totalCandidate = unitIsPrefix.Count;
+            bool haveConflict = false;
+            for (var index = 1; index < totalCandidate; index++)
+            {
+                if (extractResults[index - 1].Start + extractResults[index - 1].Length > extractResults[index].Start)
+                {
+                    haveConflict = true;
+                }
+            }
+
+            if (!haveConflict)
+            {
+                return extractResults;
+            }
+
+            var prefixResult = new List<ExtractResult>();
+            var suffixResult = new List<ExtractResult>();
+            int currentEnd = -1;
+            for (var index = 0; index < totalCandidate; index++)
+            {
+                if (currentEnd < extractResults[index].Start)
+                {
+                    currentEnd = (int)(extractResults[index].Start + extractResults[index].Length);
+                    prefixResult.Add(extractResults[index]);
+                }
+                else
+                {
+                    if (unitIsPrefix[index])
+                    {
+                        prefixResult.RemoveAt(prefixResult.Count - 1);
+                        currentEnd = (int)(extractResults[index].Start + extractResults[index].Length);
+                        prefixResult.Add(extractResults[index]);
+                    }
+                }
+            }
+
+            currentEnd = source.Length;
+            for (var index = totalCandidate - 1; index >= 0; index--)
+            {
+                if (currentEnd >= extractResults[index].Start + extractResults[index].Length)
+                {
+                    currentEnd = (int)extractResults[index].Start;
+                    suffixResult.Add(extractResults[index]);
+                }
+                else
+                {
+                    if (!unitIsPrefix[index])
+                    {
+                        suffixResult.RemoveAt(suffixResult.Count - 1);
+                        currentEnd = (int)extractResults[index].Start;
+                        suffixResult.Add(extractResults[index]);
+                    }
+                }
+            }
+
+            // Add Separate unit
+            for (var index = totalCandidate; index < extractResults.Count; index++)
+            {
+                prefixResult.Add(extractResults[index]);
+                suffixResult.Add(extractResults[index]);
+            }
+
+            if (suffixResult.Count > prefixResult.Count)
+            {
+                return suffixResult;
+            }
+
+            return prefixResult;
         }
     }
 }

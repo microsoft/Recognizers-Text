@@ -1,16 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Text.InternalCache;
 
 namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class BaseNumberExtractor : IExtractor
     {
         public static readonly Regex CurrencyRegex =
-            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
+            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
+
+        protected static readonly ResultsCache<ExtractResult> ResultsCache = new ResultsCache<ExtractResult>(4);
+
+        protected BaseNumberExtractor(NumberOptions options = NumberOptions.None)
+        {
+            Options = options;
+        }
+
+        public virtual NumberOptions Options { get; } = NumberOptions.None;
 
         internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
@@ -18,14 +29,15 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual string ExtractType { get; } = string.Empty;
 
-        protected virtual NumberOptions Options { get; } = NumberOptions.None;
-
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
 
         protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
 
+        protected virtual Regex RelativeReferenceRegex { get; } = null;
+
         public virtual List<ExtractResult> Extract(string source)
         {
+
             if (string.IsNullOrEmpty(source))
             {
                 return new List<ExtractResult>();
@@ -40,8 +52,14 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (Match m in collection.Key)
                 {
-                    // In ExperimentalMode, AmbigiuousFraction like "30000 in 2009" needs to be skipped
+                    // In ExperimentalMode, AmbiguousFraction like "30000 in 2009" needs to be skipped
                     if ((Options & NumberOptions.ExperimentalMode) != 0 && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
+                    {
+                        continue;
+                    }
+
+                    // If SuppressExtendedTypes is on, cases like "last", "next" should be skipped
+                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && m.Groups[Constants.RelativeOrdinalGroupName].Success)
                     {
                         continue;
                     }
@@ -69,8 +87,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
-                            var type = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
-                                .Select(p => (p.Value.Priority, p.Value.Name)).Min().Item2;
+                            var (_, type, originalMatch) = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
+                                .Select(p => (p.Value.Priority, p.Value.Name, p.Key)).Min();
 
                             // Extract negative numbers
                             if (NegativeNumberTermsRegex != null)
@@ -79,7 +97,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 if (match.Success)
                                 {
                                     start = match.Index;
-                                    length = length + match.Length;
+                                    length += match.Length;
                                     substr = match.Value + substr;
                                 }
                             }
@@ -92,6 +110,17 @@ namespace Microsoft.Recognizers.Text.Number
                                 Type = ExtractType,
                                 Data = type,
                             };
+
+                            // Add Metadata information for Ordinal
+                            if (ExtractType.Contains(Constants.MODEL_ORDINAL))
+                            {
+                                er.Metadata = new Metadata();
+                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 &&
+                                    originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
+                                {
+                                    er.Metadata.IsOrdinalRelative = true;
+                                }
+                            }
 
                             result.Add(er);
                         }
@@ -108,33 +137,39 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
+        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault,
+                                                               RegexOptions flags = RegexOptions.Singleline)
         {
-            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
-            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());
+            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString(CultureInfo.InvariantCulture));
+            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString(CultureInfo.InvariantCulture));
 
             var regexDefinition = type.DecimalsMark.Equals('\0') ?
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-            return new Regex(regexDefinition, RegexOptions.Singleline);
+            return new Regex(regexDefinition, flags);
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
             if (AmbiguityFiltersDict != null)
             {
                 foreach (var regex in AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start)).ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length &&
+                                                                                          m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
+            return extractResults;
         }
     }
 }

@@ -6,9 +6,15 @@ from recognizers_number import CJKNumberParser, ChineseIntegerExtractor, Chinese
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..base_date import DateParserConfiguration
+from ..extractors import DateTimeExtractor
 
 
 class ChineseDateParserConfiguration(DateParserConfiguration):
+
+    @property
+    def check_both_before_after(self) -> bool:
+        pass
+
     @property
     def ordinal_extractor(self) -> any:
         return None
@@ -20,6 +26,10 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
     def cardinal_extractor(self) -> any:
         return None
+
+    @property
+    def date_extractor(self) -> DateTimeExtractor:
+        return self._date_extractor
 
     @property
     def duration_extractor(self) -> any:
@@ -47,7 +57,7 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
 
     @property
     def unit_map(self) -> any:
-        return None
+        return ChineseDateTime.ParserConfigurationUnitMap
 
     @property
     def cardinal_map(self) -> any:
@@ -95,7 +105,7 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
 
     @property
     def week_day_of_month_regex(self) -> any:
-        return None
+        return self._week_day_of_month_regex
 
     @property
     def for_the_regex(self) -> any:
@@ -162,22 +172,39 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         ]
 
         if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
+            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.DateRegexList7))
+            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.DateRegexList6))
         else:
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
+            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.DateRegexList6))
+            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.DateRegexList7))
 
-        self._date_regex.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8))
+        self._date_regex.append(RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateRegexList8))
 
         self._month_of_year = ChineseDateTime.ParserConfigurationMonthOfYear
         self._day_of_month = ChineseDateTime.ParserConfigurationDayOfMonth
         self._day_of_week = ChineseDateTime.ParserConfigurationDayOfWeek
-        self._special_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecialDayRegex)
-        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecialDayWithNumRegex)
-        self._this_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateThisRegex)
-        self._next_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateNextRegex)
-        self._last_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateLastRegex)
-        self._week_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekDayRegex)
+        self._special_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SpecialDayRegex)
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SpecialDayWithNumRegex)
+        self._this_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateThisRegex)
+        self._next_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateNextRegex)
+        self._last_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateLastRegex)
+        self._unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateUnitRegex)
+        self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
+        self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.WeekDayOfMonthRegex)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.WeekDayRegex)
         self._integer_extractor = ChineseIntegerExtractor()
         self._number_parser = CJKNumberParser(ChineseNumberParserConfiguration())
+        self._date_extractor = None

@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class FrenchNumericWithUnit:
     AgeSuffixList = dict([("Ans", "ans"),
                           ("Mois", "mois d'âge|mois d'age|mois"),
@@ -28,7 +33,7 @@ class FrenchNumericWithUnit:
                                ("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani"),
                                ("Pul", "pul"),
                                ("Euro", "euros|euro|€|eur|d'euros"),
-                               ("Cent", "cents|cent|-cents|-cent|sen"),
+                               ("Cent", "cents|cent|-cents|-cent"),
                                ("lek Albanais", "lek albanais|leks|lek"),
                                ("Qindarkë", "qindarkë|qindarkës|qindarke|qindarkes"),
                                ("Kwanza angolais", "kwanza angolais|kz|aoa|kwanza|kwanzas"),
@@ -71,7 +76,7 @@ class FrenchNumericWithUnit:
                                ("Litas lituanien", "litas lituanien|ltl|lit lithuanien|litas lithuanie"),
                                ("Yen Japonais", "yen japonais|yen japon|yens|jpy|yen|¥|-yen"),
                                ("Tenge kazakh", "tenge kazakh|kzt"),
-                               ("Shilling kényan", "shilling kényan|sh|kes|shillings kényans"),
+                               ("Shilling kényan", "shilling kényan|kes|shillings kényans"),
                                ("Won coréen", "won coréen|won coréens|₩"),
                                ("Won sud-coréen", "won sud-coréen|won sud coréen|won sud-coréens|krw"),
                                ("Corée du nord won", "corée du nord won|corée nord won|kpw"),
@@ -118,7 +123,7 @@ class FrenchNumericWithUnit:
                                ("Sene", "sene"),
                                ("Dobra", "dobra|db|std"),
                                ("Leone", "leone|sll"),
-                               ("Florins Néerlandais", "florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl"),
+                               ("Florins Néerlandais", "florins hollandais|florins néerlandais|florins|ang|florin|fl"),
                                ("Lilangeni", "lilangeni|szl"),
                                ("Somoni tadjikistan", "somoni tadjikistan|tjs|somoni"),
                                ("Diram", "dirams|diram"),
@@ -138,7 +143,7 @@ class FrenchNumericWithUnit:
                                ("Qəpik", "qəpik"),
                                ("Shilling somalien", "shilling somalien|shillings somalien|sos"),
                                ("Shilling tanzanien", "shilling tanzanien|shillings tanzanien|tzs|tsh|shilling tanzanienne|shillings tanzanienne"),
-                               ("Shilling ougandais", "shilling ougandais|shillings ougandais|sh|ugx"),
+                               ("Shilling ougandais", "shilling ougandais|shillings ougandais|ugx"),
                                ("Leu roumain", "leu roumain|lei|leu roumaine|ron"),
                                ("Leu moldave", "leu meoldave|mdl"),
                                ("Leu", "leu"),
@@ -219,20 +224,20 @@ class FrenchNumericWithUnit:
                                ("Livre syrienne", "livre syrienne|ل.س|syp|livre syrie|livres syrie|£ syrie"),
                                ("Livre", "livre|livres|-livre|-livres|£"),
                                ("Pence", "pence"),
-                               ("Shilling", "shilling|shillings"),
-                               ("Penny", "penny|sou|centime"),
-                               ("Dollar Américain", "dollar américain|$ américain|$ americain|usd|$usd|$ usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis"),
+                               ("Shilling", "shilling|shillings|sh"),
+                               ("Penny", "penny|sou"),
+                               ("Dollar États-Unis", "dollar américain|$ américain|$ americain|usd|$usd|$ usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis"),
                                ("Dollar des Caraïbes orientales", "dollar des caraïbes orientales|dollar des caraibes orientales|xcd|$ caraibes orientales|$ caraïbes orientales"),
                                ("Dollar Australien", "dollar australien|dollars australiens|$ australien|aud|$australien|australien $|$ australie|dollar australie"),
                                ("Dollar des bahamas", "dollar des bahamas|dollar bahamas|$ bahamas|bsd|bahama $|dollar bahama|$ bahamas"),
-                               ("Dollar bermudes", "dollar des bermudes|dollar bermude|dollar bermudes|$ bermudes|bmd"),
-                               ("Dollar belize", "dollar de Belize|dollar belizien|bzd|$ belize"),
+                               ("Dollar des bermudes", "dollar des bermudes|dollar bermude|dollar bermudes|$ bermudes|bmd"),
+                               ("Dollar de belize", "dollar de Belize|dollar belizien|bzd|$ belize"),
                                ("Dollar îles Vierges britanniques", "dollar îles vierges britanniques|dollar iles vierges britanniques|$ iles vierges britanniques"),
-                               ("Dollar brunei", "dollar de brunei|$ brunei|bnd|dollar brunei"),
+                               ("Dollar de brunei", "dollar de brunei|$ brunei|bnd|dollar brunei"),
                                ("Sen", "sen"),
-                               ("Dollar singapour", "dollar de singapour|dollar singapour|$ sinapour|sgd|$s"),
+                               ("Dollar de Singapour", "dollar de singapour|dollar singapour|$ sinapour|sgd|$s"),
                                ("Dollar Canadien", "dollar canadien|dollars canadien|$ canadien|cad|$can|$c|$ c|dollar canada|dollar canadienne|$ canada|$cad|cad$"),
-                               ("Dollar iles caimanes", "dollars des îles caïmanes|dollar des îles caïmanes|dollars des iles caimanes|dollar iles caimanes|kyd|$ci"),
+                               ("Dollar des îles Caïmans", "dollars des îles caïmanes|dollar des îles caïmanes|dollars des iles caimanes|dollar iles caimanes|kyd|$ci"),
                                ("Dollar néo-zélandais", "dollar néo-zélandais|dollar néo zélandais|dollar neo-zelandais|dollar neo zelandais|$nz|$ néo-zélandais|$ neo zelandais"),
                                ("Dollar îles cook", "dollar îles cook|dollar iles cook|$ iles cook"),
                                ("Dollar des fidji", "dollar des fidji|$ fidji|dollar fidji|dollar de fidji|dollars des fidji|dollars de fidji"),
@@ -241,7 +246,7 @@ class FrenchNumericWithUnit:
                                ("Dollar jamaïcain", "dollar jamaïcain|dollars jamaïcain|dollar jamaicain|dollars jamaicain|$j|$ jamaïque|dollar jamaïque|jmd"),
                                ("Dollar libérien", "dollar libérien|dollars libérien|dollar liberien|dollars liberien|lrd|$ libérien|$ liberia|$ liberien"),
                                ("Dollar namibien", "dollar namibien|dollars namibien|$ namibien|nad|$n|dollar namibie|dollars namibie|$ namibie"),
-                               ("Dollar des îles salomon", "dollar des îles Salomon|dollar des iles salomon|$si|sbd|$ iles salomon|$ îles salomon"),
+                               ("Dollar des îles Salomon", "dollar des îles Salomon|dollar des iles salomon|$si|sbd|$ iles salomon|$ îles salomon"),
                                ("Dollar du suriname", "dollar du suriname|srd|$ du suriname|$ suriname|dollar suriname|dollars suriname|dollars du suriname"),
                                ("Nouveau dollar de Taïwan", "nouveau dollar de taïwan|nouveau dollar de taiwan|twd|ntd|$nt"),
                                ("Dollar trinidadien", "dollar trinidadien|dollars trinidadien|ttd|$ trinidadien"),
@@ -253,9 +258,9 @@ class FrenchNumericWithUnit:
     CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
     CurrencyPrefixList = dict([("Dollar", "$"),
                                ("Dollar États-Unis", "$us|usd|us$"),
-                               ("Dollar Caraïbes orientales", "xcd|$ec"),
-                               ("Dollar australien", "a$|$a|aud"),
-                               ("Dollar bahamas", "bsd|b$"),
+                               ("Dollar des Caraïbes orientales", "xcd|$ec"),
+                               ("Dollar Australien", "a$|$a|aud"),
+                               ("Dollar des bahamas", "bsd|b$"),
                                ("Dollar barbadien", "bbd|bds$"),
                                ("Dollar de belize", "bz$|bzd"),
                                ("Dollar des bermudes", "bd$|bmd"),
@@ -265,7 +270,7 @@ class FrenchNumericWithUnit:
                                ("Dollar des îles Caïmans", "ci$|kyd"),
                                ("Dollar néo-zélandais", "nz$|nzd"),
                                ("Dollar de Fidji", "$fj|fjd"),
-                               ("Dolar guyanien", "g$|gyd"),
+                               ("Dollar guyanien", "g$|gyd"),
                                ("Dollar de Hong Kong", "hkd|hk$"),
                                ("Dollar jamaïcain", "j$|jmd"),
                                ("Dollar libérien", "lrd|l$"),
@@ -275,12 +280,10 @@ class FrenchNumericWithUnit:
                                ("Réal brésilien", "r$|brl|reais"),
                                ("Guaraní paraguayen", "₲|gs.|pyg"),
                                ("Dollar trinidadien", "ttd|titis"),
-                               ("Yuan renminbi", "cny|rmb|¥|元"),
-                               ("Yen", "¥|jpy"),
+                               ("Yuan Chinois", "cny|rmb|￥|元"),
+                               ("Yen Japonais", "¥|jpy"),
                                ("Euro", "€|eur"),
-                               ("Pound", "£"),
-                               ("Florín", "ƒ"),
-                               ("Livre", "£|gbp")])
+                               ("Livre", "£")])
     AmbiguousCurrencyUnitList = [r'din.', r'kina', r'lari', r'taka', r'tala', r'vatu', r'yuan', r'bob', r'btn', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'mga', r'mop', r'nad', r'omr', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sos', r'std', r'try', r'yer']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
                                   ("Kilobit", "kilobit|kilobits|kb|kbit|kbits"),
@@ -294,7 +297,7 @@ class FrenchNumericWithUnit:
                                   ("Gigaoctet", "gigaoctet|gigaoctets|Go|Gio|GB|GiB|gigabyte|gigabytes"),
                                   ("Téraoctet", "téraoctet|téraoctets|To|Tio|TB|TiB|térabyte|térabytes"),
                                   ("Pétaoctet", "pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes")])
-    AmbiguousDimensionUnitList = [r'mi', r'barils', r'grain', r'l', r'pierre', r'fps', r'pts']
+    AmbiguousDimensionUnitList = [r'mi', r'barils', r'grain', r'pierre', r'fps', r'pts']
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
@@ -312,8 +315,7 @@ class FrenchNumericWithUnit:
                              ("Pied", "pied|pieds"),
                              ("Yard", "yards|yard|yd"),
                              ("Pouce", "pouce|pouces")])
-    AmbiguousLengthUnitList = [r'm', r'yard', r'yards', r'pm', r'pt', r'pts']
-    AmbuguousLengthUnitList = [r'm', r'pouce', r'pm']
+    AmbiguousLengthUnitList = [r'm', r'm.', r'yard', r'yards', r'pm', r'pouce', r'pt', r'pts']
     SpeedSuffixList = dict([("Mètre par seconde", "m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes"),
                             ("Kilomètre par heure", "km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure"),
                             ("Kilomètre par minute", "km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes"),
@@ -323,10 +325,10 @@ class FrenchNumericWithUnit:
                             ("Pied par seconde", "ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s"),
                             ("Pied par minute", "pieds/minute|pied/minute|ft/minute|ft/min|pied/min")])
     TemperatureSuffixList = dict([("Kelvin", "k|K|kelvin"),
-                                  ("F", "°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit"),
+                                  ("F", "°f|° f|degres f|degrés f|deg f|degrés fahrenheit|degres fahrenheit|fahrenheit|deg fahrenheit|degs fahrenheit"),
                                   ("R", "rankine|°r|° r"),
-                                  ("C", "°c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade"),
-                                  ("Degré", "degrés|degres|deg.|°| °|degré|degre|deg")])
+                                  ("C", "°c|° c|degres c|degrés c|deg c|degrés celsius|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade"),
+                                  ("Degré", "degrés|degres|deg.|°|degré|degre|deg|degs")])
     VolumeSuffixList = dict([("Mètre cube", "m3|m^3|m³|mètre cube|mètres cube|metre cube|metres cube"),
                              ("Centimètre cube", "cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube"),
                              ("Millimètre cube", "mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube"),
@@ -341,13 +343,13 @@ class FrenchNumericWithUnit:
                              ("Centilitre", "cl|centilitres|centilitre"),
                              ("Onces liquides", "onces liquides|once liquide|once liquides"),
                              ("Baril", "baril|barils|bbl")])
-    AmbiguousVolumeUnitList = [r'ounce', r'oz', r'l', r'cup', r'peck', r'cord', r'gill']
+    AmbiguousVolumeUnitList = [r'oz', r'l']
     WeightSuffixList = dict([("Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos"),
                              ("Gram", "g|gramme|grammes"),
                              ("Milligramme", "mg|milligramme|milligrammes"),
                              ("Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique"),
                              ("Tonne", "tonne|tonnes|-tonnes|-tonne"),
                              ("Livre", "livre|livres")])
-    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram']
+    AmbiguousWeightUnitList = [r'g', r'oz']
     AmbiguityFiltersDict = dict([("\\bcent\\b", "\\bpour\\s+cent\\b")])
 # pylint: enable=line-too-long

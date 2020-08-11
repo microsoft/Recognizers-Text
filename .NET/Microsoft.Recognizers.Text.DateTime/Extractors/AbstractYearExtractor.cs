@@ -1,12 +1,14 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class AbstractYearExtractor : IDateExtractor
     {
-        public AbstractYearExtractor(IDateExtractorConfiguration config)
+
+        protected AbstractYearExtractor(IDateExtractorConfiguration config)
         {
             this.Config = config;
         }
@@ -22,9 +24,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year = Constants.InvalidYear;
 
             var yearStr = match.Groups["year"].Value;
-            if (!string.IsNullOrEmpty(yearStr))
+            var writtenYearStr = match.Groups["fullyear"].Value;
+
+            if (!string.IsNullOrEmpty(yearStr) && !yearStr.Equals(writtenYearStr, StringComparison.Ordinal))
             {
-                year = int.Parse(yearStr);
+                year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                 if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                 {
                     year += 1900;
@@ -60,7 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Exclude pure number like "nineteen", "twenty four"
-                    if ((firstTwoYearNum < 100 && lastTwoYearNum == 0) || (firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1))
+                    if ((firstTwoYearNum < 100 && lastTwoYearNum == 0) ||
+                        (firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1))
                     {
                         year = Constants.InvalidYear;
                         return year;
@@ -73,6 +78,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         year = (firstTwoYearNum * 100) + lastTwoYearNum;
+                    }
+                }
+                else
+                {
+
+                    if (!string.IsNullOrEmpty(writtenYearStr))
+                    {
+                        var er = new ExtractResult
+                        {
+                            Text = writtenYearStr,
+                            Start = match.Groups["fullyear"].Index,
+                            Length = match.Groups["fullyear"].Length,
+                        };
+
+                        year = Convert.ToInt32((double)(this.Config.NumberParser.Parse(er).Value ?? 0));
+
+                        if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+                        {
+                            year += 1900;
+                        }
+                        else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+                        {
+                            year += 2000;
+                        }
                     }
                 }
             }

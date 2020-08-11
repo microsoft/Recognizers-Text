@@ -1,24 +1,25 @@
 [
   {
-    "Input": "I'll go back on easter",
+    "Input": "I'll go back on easter sunday 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
-        "Text": "easter",
+        "Text": "easter sunday 2018",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "2018-04-01",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2018-04-01"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2018-04-01"
           }
         },
         "Start": 16,
-        "Length": 6
+        "Length": 18
       }
     ]
   },
@@ -253,6 +254,148 @@
     ]
   },
   {
+    "Input": "I'll go back on black friday 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "black friday 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-26",
+          "FutureResolution": {
+            "date": "2010-11-26"
+          },
+          "PastResolution": {
+            "date": "2010-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on cyber monday 2015",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "cyber monday 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-11-30",
+          "FutureResolution": {
+            "date": "2015-11-30"
+          },
+          "PastResolution": {
+            "date": "2015-11-30"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on saint patrick's day 2018",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "saint patrick's day 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-17",
+          "FutureResolution": {
+            "date": "2018-03-17"
+          },
+          "PastResolution": {
+            "date": "2018-03-17"
+          }
+        },
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on presidents' day 2017",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "presidents' day 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-02-WXX-1-3",
+          "FutureResolution": {
+            "date": "2017-02-20"
+          },
+          "PastResolution": {
+            "date": "2017-02-20"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on earth day 2017",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "earth day 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2017-04-22"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on halloween",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "halloween",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-31",
+          "FutureResolution": {
+            "date": "2017-10-31"
+          },
+          "PastResolution": {
+            "date": "2016-10-31"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
     "Input": "I'll go back on father's day of 2015",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -272,6 +415,30 @@
         },
         "Start": 16,
         "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on cyber monday",
+    "Context": {
+      "ReferenceDateTime": "2019-10-01T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "cyber monday",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-02",
+          "FutureResolution": {
+            "date": "2019-12-02"
+          },
+          "PastResolution": {
+            "date": "2018-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 12
       }
     ]
   },

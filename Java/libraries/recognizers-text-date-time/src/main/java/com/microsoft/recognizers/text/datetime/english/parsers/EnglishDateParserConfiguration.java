@@ -52,6 +52,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         forTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
         weekDayAndDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
         relativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
+        strictRelativeRegex = EnglishDateExtractorConfiguration.StrictRelativeRegex;
         relativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
 
         yearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
@@ -64,7 +65,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
 
         relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex);
         nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        previousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
         sameDayTerms = Collections.unmodifiableList(EnglishDateTime.SameDayTerms);
         plusOneDayTerms = Collections.unmodifiableList(EnglishDateTime.PlusOneDayTerms);
         plusTwoDayTerms = Collections.unmodifiableList(EnglishDateTime.PlusTwoDayTerms);
@@ -96,6 +97,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     private final Pattern forTheRegex;
     private final Pattern weekDayAndDayOfMonthRegex;
     private final Pattern relativeMonthRegex;
+    private final Pattern strictRelativeRegex;
     private final Pattern yearSuffix;
     private final Pattern relativeWeekDayRegex;
 
@@ -117,7 +119,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     // If the spanish date parser need the same regexes, they should be extracted
     private final Pattern relativeDayRegex;
     private final Pattern nextPrefixRegex;
-    private final Pattern pastPrefixRegex;
+    private final Pattern previousPrefixRegex;
 
     @Override
     public String getDateTokenPrefix() {
@@ -230,6 +232,11 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
+    public Pattern getStrictRelativeRegex() {
+        return strictRelativeRegex;
+    }
+
+    @Override
     public Pattern getYearSuffix() {
         return yearSuffix;
     }
@@ -251,7 +258,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
 
     @Override
     public Pattern getPastPrefixRegex() {
-        return pastPrefixRegex;
+        return previousPrefixRegex;
     }
 
     @Override
@@ -310,7 +317,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
-    public Integer getSwiftMonth(String text) {
+    public Integer getSwiftMonthOrYear(String text) {
         return getSwift(text);
     }
 
@@ -320,7 +327,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         Integer swift = 0;
 
         Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(pastPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
 
         if (matchNext.isPresent()) {
             swift = 1;

@@ -8,9 +8,9 @@ import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.ITimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeResult;
 import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
+import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.utilities.Capture;
@@ -77,20 +77,20 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 ImmutableMap.Builder<String, String> futureResolution = ImmutableMap.builder();
                 futureResolution.put(
                         TimeTypeConstants.START_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()));
+                        DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()));
                 futureResolution.put(
                         TimeTypeConstants.END_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()));
+                        DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()));
 
                 innerResult.setFutureResolution(futureResolution.build());
 
                 ImmutableMap.Builder<String, String> pastResolution = ImmutableMap.builder();
                 pastResolution.put(
                         TimeTypeConstants.START_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()));
+                        DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()));
                 pastResolution.put(
                         TimeTypeConstants.END_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()));
+                        DateTimeFormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()));
 
                 innerResult.setPastResolution(pastResolution.build());
 
@@ -470,12 +470,12 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 endDateTime = endDateTime.plusHours(24);
             }
 
-            String beginStr = FormatUtil.shortTime(beginDateTime.getHour(), beginMinute, beginSecond);
-            String endStr = FormatUtil.shortTime(endDateTime.getHour(), endMinute, endSecond);
+            String beginStr = DateTimeFormatUtil.shortTime(beginDateTime.getHour(), beginMinute, beginSecond);
+            String endStr = DateTimeFormatUtil.shortTime(endDateTime.getHour(), endMinute, endSecond);
 
             ret.setSuccess(true);
 
-            ret.setTimex(String.format("(%s,%s,%s)", beginStr, endStr, FormatUtil.luisTimeSpan(Duration.between(beginDateTime, endDateTime))));
+            ret.setTimex(String.format("(%s,%s,%s)", beginStr, endStr, DateTimeFormatUtil.luisTimeSpan(Duration.between(beginDateTime, endDateTime))));
 
             ret.setFutureValue(new Pair<LocalDateTime, LocalDateTime>(beginDateTime, endDateTime));
             ret.setPastValue(new Pair<LocalDateTime, LocalDateTime>(beginDateTime, endDateTime));
@@ -649,6 +649,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 text = text.replace(early, "");
                 hasEarly = true;
                 ret.setComment(Constants.Comment_Early);
+                ret.setMod(Constants.EARLY_MOD);
             }
 
             if (!hasEarly && !StringUtility.isNullOrEmpty(match.get().getGroup("late").value)) {
@@ -656,6 +657,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 text = text.replace(late, "");
                 hasLate = true;
                 ret.setComment(Constants.Comment_Late);
+                ret.setMod(Constants.LATE_MOD);
             }
         }
         MatchedTimeRangeResult timexResult = this.config.getMatchedTimexRange(text, "", 0, 0, 0);

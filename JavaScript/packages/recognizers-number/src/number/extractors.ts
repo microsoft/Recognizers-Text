@@ -11,15 +11,22 @@ export interface RegExpValue {
     value: string;
 }
 
+export interface RegExpRegExp {
+    regExpKey: RegExp;
+    regExpValue: RegExp;
+}
+
 export abstract class BaseNumberExtractor implements IExtractor {
 
-    regexes: Array<RegExpValue>;
+    regexes: RegExpValue[];
+
+    ambiguityFiltersDict: RegExpRegExp[];
 
     protected extractType: string = "";
 
-    protected negativeNumberTermsRegex : RegExp = null;
+    protected negativeNumberTermsRegex: RegExp = null;
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string): ExtractResult[] {
         if (!source || source.trim().length === 0) {
             return [];
         }
@@ -81,7 +88,25 @@ export abstract class BaseNumberExtractor implements IExtractor {
             }
         }
 
+        result = this.filterAmbiguity(result, source);
         return result;
+    }
+
+    private filterAmbiguity(extractResults: ExtractResult[], text: string) {
+        if (this.ambiguityFiltersDict !== null && this.ambiguityFiltersDict !== undefined){
+            for (let regex of this.ambiguityFiltersDict){
+                for (let extractResult of extractResults){
+                    if (RegExpUtility.isMatch(regex.regExpKey, extractResult.text)){
+                        let matches = RegExpUtility.getMatches(regex.regExpValue, text);
+                        if (matches && matches.length){
+                            extractResults = extractResults.filter(er => matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start) === undefined);
+                        }
+                    }
+                }
+            }
+        }
+
+        return extractResults;
     }
 
     protected generateLongFormatNumberRegexes(type: LongFormatType, placeholder: string = BaseNumbers.PlaceHolderDefault): RegExp {
@@ -98,7 +123,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
 }
 
 export abstract class BasePercentageExtractor implements IExtractor {
-    regexes: Array<RegExp>;
+    regexes: RegExp[];
 
     protected static readonly numExtType: string = Constants.SYS_NUM;
 
@@ -111,12 +136,12 @@ export abstract class BasePercentageExtractor implements IExtractor {
         this.regexes = this.initRegexes();
     }
 
-    protected abstract initRegexes(): Array<RegExp>;
+    protected abstract initRegexes(): RegExp[];
 
     extract(source: string): ExtractResult[] {
         let originSource = source;
         let positionMap: Map<number, number>;
-        let numExtResults: Array<ExtractResult>;
+        let numExtResults: ExtractResult[];
 
         // preprocess the source sentence via extracting and replacing the numbers in it
         let preprocess = this.preprocessStrWithNumberExtracted(originSource);
@@ -172,7 +197,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
     private preprocessStrWithNumberExtracted(str: string): {
         source: string,
         positionMap: Map<number, number>,
-        numExtResults: Array<ExtractResult>
+        numExtResults: ExtractResult[]
     } {
         let positionMap = new Map<number, number>();
 
@@ -180,7 +205,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
         let replaceText = BaseNumbers.NumberReplaceToken;
 
         let match = new Array<number>(str.length);
-        let strParts = new Array<Array<number>>();
+        let strParts = new Array<number[]>();
         let start: number;
         let end: number;
         for (let i = 0; i < str.length; i++) {
@@ -240,7 +265,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
     }
 
     // replace the @sys.num to the real patterns, directly modifies the ExtractResult
-    private postProcessing(results: Array<ExtractResult>, originSource: string, positionMap: Map<number, number>, numExtResults: Array<ExtractResult>): void {
+    private postProcessing(results: ExtractResult[], originSource: string, positionMap: Map<number, number>, numExtResults: ExtractResult[]): void {
         let replaceText = BaseNumbers.NumberReplaceToken;
         for (let i = 0; i < results.length; i++) {
             let start = results[i].start;
@@ -271,7 +296,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
     }
 
     // read the rules
-    protected buildRegexes(regexStrs: Array<string>, ignoreCase: boolean = true): Array<RegExp> {
+    protected buildRegexes(regexStrs: string[], ignoreCase: boolean = true): RegExp[] {
         return regexStrs.map(regexStr => {
             let options = "gs";
             if (ignoreCase) {

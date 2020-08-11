@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -6,8 +7,11 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
+    public class SpanishDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public SpanishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -17,9 +21,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexOptions.Singleline);
+
+            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
+
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -27,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             UnspecificEndOfRegex = SpanishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = SpanishDateTimeExtractorConfiguration.UnitRegex;
             DateNumberConnectorRegex = SpanishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = SpanishDateTimeExtractorConfiguration.YearRegex;
+
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -85,21 +94,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex ConnectorRegex { get; }
 
+        public Regex YearRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             int result = hour;
 
-            // TODO: Replace with a regex
-            if ((trimmedText.EndsWith("mañana") || trimmedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
+            // @TODO: move hardcoded values to resources file
+            if ((trimmedText.EndsWith("mañana", StringComparison.Ordinal) || trimmedText.EndsWith("madrugada", StringComparison.Ordinal)) &&
+                hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimmedText.EndsWith("mañana") || trimmedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
+            else if (!(trimmedText.EndsWith("mañana", StringComparison.Ordinal) || trimmedText.EndsWith("madrugada", StringComparison.Ordinal)) &&
+                     hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -109,17 +122,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.EndsWith("ahora") || trimmedText.EndsWith("mismo") || trimmedText.EndsWith("momento"))
+
+            var trimmedText = text.Trim();
+
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("ahora", StringComparison.Ordinal) || trimmedText.EndsWith("mismo", StringComparison.Ordinal) || trimmedText.EndsWith("momento", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.EndsWith("posible") || trimmedText.EndsWith("pueda") ||
-                     trimmedText.EndsWith("puedas") || trimmedText.EndsWith("podamos") || trimmedText.EndsWith("puedan"))
+            else if (trimmedText.EndsWith("posible", StringComparison.Ordinal) || trimmedText.EndsWith("pueda", StringComparison.Ordinal) ||
+                     trimmedText.EndsWith("puedas", StringComparison.Ordinal) || trimmedText.EndsWith("podamos", StringComparison.Ordinal) || trimmedText.EndsWith("puedan", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
-            else if (trimmedText.EndsWith("mente"))
+            else if (trimmedText.EndsWith("mente", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
@@ -134,10 +150,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
 
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

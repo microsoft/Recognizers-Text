@@ -31,6 +31,7 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
 
     @Override
     public List<ExtractResult> extract(String input, LocalDateTime reference) {
+
         List<Token> tokens = new ArrayList<>();
         tokens.addAll(basicRegexMatch(input));
         tokens.addAll(atRegexMatch(input));
@@ -38,9 +39,11 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         tokens.addAll(specialCasesRegexMatch(input));
 
         List<ExtractResult> timeErs = Token.mergeAllTokens(tokens, input, getExtractorName());
+
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             timeErs = mergeTimeZones(timeErs, config.getTimeZoneExtractor().extract(input, reference), input);
         }
+
         return timeErs;
     }
 
@@ -78,13 +81,25 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
     }
 
     public final List<Token> basicRegexMatch(String text) {
+
         List<Token> ret = new ArrayList<>();
+
         for (Pattern regex : this.config.getTimeRegexList()) {
+
             Match[] matches = RegExpUtility.getMatches(regex, text);
             for (Match match : matches) {
-                ret.add(new Token(match.index, match.index + match.length));
+
+                // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
+                String lth = match.getGroup("lth").value;
+
+                if ((lth == null || lth.length() == 0) ||
+                        (lth.length() != match.length && !(match.length == lth.length() + 1 && match.value.endsWith(" ")))) {
+
+                    ret.add(new Token(match.index, match.index + match.length));
+                }
             }
         }
+
         return ret;
     }
 

@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
@@ -41,7 +42,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex);
     public static final Pattern FromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-    public static final Pattern ConnectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+    public static final Pattern RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
     public static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
     public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeUnitRegex);
@@ -55,6 +56,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     private final IDateTimeExtractor singleDateTimeExtractor;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor timeZoneExtractor;
 
     public static final Iterable<Pattern> SimpleCases = new ArrayList<Pattern>() {
         {
@@ -79,6 +81,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
         singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(options));
         timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(options));
+        timeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(options));
     }
 
     @Override
@@ -114,6 +117,11 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     @Override
     public IDateTimeExtractor getTimePeriodExtractor() {
         return timePeriodExtractor;
+    }
+
+    @Override
+    public IDateTimeExtractor getTimeZoneExtractor() {
+        return timeZoneExtractor;
     }
 
     @Override
@@ -269,7 +277,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
 
     @Override
     public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(ConnectorAndRegex, text)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(RangeConnectorRegex, text)).findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
     }
 }

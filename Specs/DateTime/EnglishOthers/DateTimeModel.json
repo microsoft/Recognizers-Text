@@ -114,7 +114,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "yesterday afternoon from 3-8pm",
@@ -139,7 +139,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "from 3-8pm yesterday afternoon",
@@ -232,7 +232,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "between 3 and 8 yesterday",
@@ -263,7 +263,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "between 3 and 8am next monday",
@@ -288,7 +288,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "between 3am - 12pm next monday",
@@ -313,7 +313,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "6-8 next monday",
@@ -344,7 +344,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, python",
     "Results": [
       {
         "Text": "next monday 6-8",
@@ -400,7 +400,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10-1-2018-10-7-2018",
@@ -425,7 +425,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/1/2018 - 10/7/2018",
@@ -450,7 +450,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/1/2018-10/7/2018",
@@ -475,7 +475,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "between 10/1-11/7",
@@ -506,7 +506,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "jan-feb 2017",
@@ -531,7 +531,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "nov-feb 2017",
@@ -556,7 +556,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "nov-feb 5th, 2017",
@@ -581,7 +581,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "nov 18-dec 19, 2015",
@@ -606,7 +606,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "nov 18 2014-dec 19 2015",
@@ -631,7 +631,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "on november 18-19",
@@ -712,7 +712,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "from 5/1-5/7, 2020",
@@ -737,7 +737,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "from 5/1-5/7/2020",
@@ -762,7 +762,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "from 5/1/2019-5/7/2020",
@@ -861,6 +861,54 @@
               "timex": "XXXX-07-11",
               "type": "date",
               "value": "2019-07-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "book room from 10/06/2019 to 12/06/2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "from 10/06/2019 to 12/06/2019",
+        "Start": 10,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-06-10,2019-06-12,P2D)",
+              "type": "daterange",
+              "start": "2019-06-10",
+              "end": "2019-06-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The target time is 8.10 pm",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8.10 pm",
+        "Start": 19,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:10",
+              "type": "time",
+              "value": "20:10:00"
             }
           ]
         }

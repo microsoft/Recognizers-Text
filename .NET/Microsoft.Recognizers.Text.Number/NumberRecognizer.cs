@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Number.Arabic;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
+using Microsoft.Recognizers.Text.Number.Hindi;
+using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Swedish;
+using Microsoft.Recognizers.Text.Number.Turkish;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -46,9 +51,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public static List<ModelResult> RecognizePercentage(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
-            var recognizer = new NumberRecognizer(options);
-            var model = recognizer.GetPercentageModel(culture, fallbackToDefaultCulture);
-            return model.Parse(query);
+            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         public static List<ModelResult> RecognizeNumberRange(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
@@ -78,209 +81,377 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected override void InitializeConfiguration()
         {
+
+            RegisterModel<NumberModel>(
+                Culture.Arabic,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    Arabic.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Arabic, options, NumberMode.PureNumber))));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Arabic,
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    Arabic.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+
+            RegisterModel<PercentModel>(
+                Culture.Arabic,
+                options => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ArabicNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    new Arabic.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+
+            RegisterModel<NumberRangeModel>(
+                Culture.Arabic,
+                options => new NumberRangeModel(
+                    new BaseNumberRangeParser(new ArabicNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Arabic, options))),
+                    new Arabic.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Arabic, options))));
+
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
-                    English.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.English, options))),
+                    English.MergedNumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.English, options, NumberMode.PureNumber))));
 
             RegisterModel<OrdinalModel>(
                 Culture.English,
                 options => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(options)),
-                    English.OrdinalExtractor.GetInstance()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.English, options))),
+                    English.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.English, options))));
 
             RegisterModel<PercentModel>(
                 Culture.English,
                 options => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration(options)),
-                    new English.PercentageExtractor(options)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.English, options))),
+                    new English.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.English, options))));
 
             RegisterModel<NumberRangeModel>(
                 Culture.English,
                 options => new NumberRangeModel(
-                    new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
-                    new English.NumberRangeExtractor(options)));
+                    new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.English, options))),
+                    new English.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.English, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Chinese,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                    new Chinese.NumberExtractor()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Chinese, options))),
+                    new Chinese.NumberExtractor(new BaseNumberOptionsConfiguration(Culture.Chinese, options))));
 
             RegisterModel<OrdinalModel>(
                 Culture.Chinese,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()),
-                    new Chinese.OrdinalExtractor()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Chinese, options))),
+                    new Chinese.OrdinalExtractor(new BaseNumberOptionsConfiguration(Culture.Chinese, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Chinese,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
-                    new Chinese.PercentageExtractor()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Chinese, options))),
+                    new Chinese.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Chinese, options))));
 
             RegisterModel<NumberRangeModel>(
                 Culture.Chinese,
                 (options) => new NumberRangeModel(
-                            new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
-                            new Chinese.NumberRangeExtractor(options)));
+                            new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration(
+                                                          new BaseNumberOptionsConfiguration(Culture.Chinese, options))),
+                            new Chinese.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Chinese, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Spanish,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
-                    Spanish.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Spanish, options))),
+                    Spanish.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Spanish, options, NumberMode.PureNumber))));
 
             RegisterModel<OrdinalModel>(
                 Culture.Spanish,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
-                    Spanish.OrdinalExtractor.GetInstance()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Spanish, options))),
+                    Spanish.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Spanish, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Spanish,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
-                    new Spanish.PercentageExtractor()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Spanish, options))),
+                    new Spanish.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Spanish, options))));
 
             RegisterModel<NumberRangeModel>(
                 Culture.Spanish,
                 (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new SpanishNumberRangeParserConfiguration()),
-                    new Spanish.NumberRangeExtractor(options)));
+                    new BaseNumberRangeParser(new SpanishNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Spanish, options))),
+                    new Spanish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Spanish, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Portuguese,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
-                    Portuguese.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Portuguese, options))),
+                    Portuguese.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Portuguese, options, NumberMode.PureNumber))));
 
             RegisterModel<OrdinalModel>(
                 Culture.Portuguese,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration()),
-                    Portuguese.OrdinalExtractor.GetInstance()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Portuguese, options))),
+                    Portuguese.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Portuguese, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Portuguese,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
-                    new Portuguese.PercentageExtractor()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Portuguese, options))),
+                    new Portuguese.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Portuguese, options))));
 
             RegisterModel<NumberModel>(
                 Culture.French,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.French, options))),
                     French.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.French,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.French, options))),
                     French.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.French,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.French, options))),
                     new French.PercentageExtractor()));
 
             RegisterModel<NumberModel>(
                 Culture.German,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.German, options))),
                     German.NumberExtractor.GetInstance(NumberMode.PureNumber)));
 
             RegisterModel<OrdinalModel>(
                 Culture.German,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new GermanNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new GermanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.German, options))),
                     German.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.German,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.German, options))),
                     new German.PercentageExtractor()));
 
-            /*
             RegisterModel<NumberModel>(
                Culture.Italian,
                (options) => new NumberModel(
-                   AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration()),
+                   AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration(
+                                                             new BaseNumberOptionsConfiguration(Culture.Italian, options))),
                    Italian.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Italian,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ItalianNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ItalianNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Italian, options))),
                     Italian.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.Italian,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ItalianNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ItalianNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Italian, options))),
                     new Italian.PercentageExtractor()));
-            */
+
+            RegisterModel<NumberRangeModel>(
+                Culture.Italian,
+                (options) => new NumberRangeModel(
+                    new BaseNumberRangeParser(new ItalianNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Italian, options))),
+                    new Italian.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Italian, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Japanese,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new JapaneseNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new JapaneseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
                     new Japanese.NumberExtractor()));
 
             RegisterModel<OrdinalModel>(
                 Culture.Japanese,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new JapaneseNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new JapaneseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
                     new Japanese.OrdinalExtractor()));
 
             RegisterModel<PercentModel>(
                 Culture.Japanese,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
                     new Japanese.PercentageExtractor()));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Japanese,
                 (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
-                    new Japanese.NumberRangeExtractor(options)));
-            */
+                    new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
+                    new Japanese.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Korean,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
                     new Korean.NumberExtractor()));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Korean,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.OrdinalExtractor()));
+
+            RegisterModel<NumberRangeModel>(
+              Culture.Korean,
+              (options) => new NumberRangeModel(
+                          new BaseNumberRangeParser(new KoreanNumberRangeParserConfiguration(
+                                                        new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                          new Korean.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Korean, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Dutch,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration()),
-                    Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
+                    Dutch.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Dutch, options, NumberMode.PureNumber))));
 
             RegisterModel<OrdinalModel>(
                 Culture.Dutch,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
-                    Dutch.OrdinalExtractor.GetInstance()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
+                    Dutch.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
+
+            RegisterModel<PercentModel>(
+                Culture.Korean,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new KoreanNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Korean, options))),
+                    new Korean.PercentageExtractor()));
 
             RegisterModel<PercentModel>(
                 Culture.Dutch,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration()),
-                    new Dutch.PercentageExtractor(options)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
+                    new Dutch.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Dutch,
                 (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
-                    new Dutch.NumberRangeExtractor(options)));
-            */
+                    new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration(
+                                                    new BaseNumberOptionsConfiguration(Culture.Dutch, options))),
+                    new Dutch.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Dutch, options))));
+
+            RegisterModel<NumberModel>(
+               Culture.Turkish,
+               (options) => new NumberModel(
+                   AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new TurkishNumberParserConfiguration(
+                                                             new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
+                   Turkish.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Turkish,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new TurkishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
+                    Turkish.OrdinalExtractor.GetInstance()));
+
+            RegisterModel<PercentModel>(
+                Culture.Turkish,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new TurkishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
+                    new Turkish.PercentageExtractor(options)));
+
+            RegisterModel<NumberRangeModel>(
+               Culture.Turkish,
+               options => new NumberRangeModel(
+                   new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration(
+                                                 new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
+                   new Turkish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Turkish, options))));
+
+            RegisterModel<NumberModel>(
+                Culture.Hindi,
+                options => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    Hindi.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Hindi,
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    Hindi.OrdinalExtractor.GetInstance(options)));
+
+            RegisterModel<PercentModel>(
+                Culture.Hindi,
+                options => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new HindiNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    new Hindi.PercentageExtractor(options)));
+
+            RegisterModel<NumberRangeModel>(
+                Culture.Hindi,
+                options => new NumberRangeModel(
+                    new BaseNumberRangeParser(new HindiNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.Hindi, options))),
+                    new Hindi.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Hindi, options))));
+
+            RegisterModel<NumberModel>(
+                Culture.Swedish,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    Swedish.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Swedish, options, NumberMode.PureNumber))));
+
+            RegisterModel<OrdinalModel>(
+                Culture.Swedish,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    Swedish.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
+
+            RegisterModel<PercentModel>(
+                Culture.Swedish,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+                    new Swedish.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
+
+            // RegisterModel<NumberRangeModel>(
+            //    Culture.Swedish,
+            //    (options) => new NumberRangeModel(
+            //        new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration(
+            //                                        new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
+            //        new Swedish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)

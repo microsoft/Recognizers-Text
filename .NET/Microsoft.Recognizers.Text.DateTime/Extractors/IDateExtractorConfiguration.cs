@@ -5,11 +5,13 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateExtractorConfiguration : IOptionsConfiguration
+    public interface IDateExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         IEnumerable<Regex> DateRegexList { get; }
 
         IEnumerable<Regex> ImplicitDateList { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         Regex OfMonth { get; }
 
@@ -17,13 +19,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekDayEnd { get; }
 
+        Regex WeekDayStart { get; }
+
         Regex DateUnitRegex { get; }
 
         Regex ForTheRegex { get; }
 
         Regex WeekDayAndDayOfMonthRegex { get; }
 
+        Regex WeekDayAndDayRegex { get; }
+
         Regex RelativeMonthRegex { get; }
+
+        Regex StrictRelativeRegex { get; }
 
         Regex WeekDayRegex { get; }
 
@@ -36,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex LessThanRegex { get; }
 
         Regex InConnectorRegex { get; }
+
+        Regex SinceYearSuffixRegex { get; }
 
         Regex RangeUnitRegex { get; }
 

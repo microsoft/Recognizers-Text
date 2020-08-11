@@ -1,10 +1,40 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class SpanishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = config.DurationExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateExtractor = config.DateExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
+
+            DurationParser = config.DurationParser;
+            TimeParser = config.TimeParser;
+            DateParser = config.DateParser;
+            DateTimeParser = config.DateTimeParser;
+            DatePeriodParser = config.DatePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
+            UnitMap = config.UnitMap;
+
+            EachPrefixRegex = SpanishSetExtractorConfiguration.EachPrefixRegex;
+            PeriodicRegex = SpanishSetExtractorConfiguration.PeriodicRegex;
+            EachUnitRegex = SpanishSetExtractorConfiguration.EachUnitRegex;
+            EachDayRegex = SpanishSetExtractorConfiguration.EachDayRegex;
+            SetWeekDayRegex = SpanishSetExtractorConfiguration.SetWeekDayRegex;
+            SetEachRegex = SpanishSetExtractorConfiguration.SetEachRegex;
+        }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
@@ -47,54 +77,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SetEachRegex { get; }
 
-        public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            DurationExtractor = config.DurationExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateExtractor = config.DateExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
-
-            DurationParser = config.DurationParser;
-            TimeParser = config.TimeParser;
-            DateParser = config.DateParser;
-            DateTimeParser = config.DateTimeParser;
-            DatePeriodParser = config.DatePeriodParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DateTimePeriodParser = config.DateTimePeriodParser;
-            UnitMap = config.UnitMap;
-
-            EachPrefixRegex = SpanishSetExtractorConfiguration.EachPrefixRegex;
-            PeriodicRegex = SpanishSetExtractorConfiguration.PeriodicRegex;
-            EachUnitRegex = SpanishSetExtractorConfiguration.EachUnitRegex;
-            EachDayRegex = SpanishSetExtractorConfiguration.EachDayRegex;
-            SetWeekDayRegex = SpanishSetExtractorConfiguration.SetWeekDayRegex;
-            SetEachRegex = SpanishSetExtractorConfiguration.SetEachRegex;
-        }
-
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diariamente"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diariamente", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semanalmente"))
+            else if (trimmedText.Equals("semanalmente", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("quincenalmente"))
+            else if (trimmedText.Equals("quincenalmente", StringComparison.Ordinal))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensualmente"))
+            else if (trimmedText.Equals("mensualmente", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("anualmente"))
+            else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }
@@ -109,22 +113,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.Equals("día") || trimmedText.Equals("dia") ||
-                trimmedText.Equals("días") || trimmedText.Equals("dias"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.Equals("día", StringComparison.Ordinal) || trimmedText.Equals("dia", StringComparison.Ordinal) ||
+                trimmedText.Equals("días", StringComparison.Ordinal) || trimmedText.Equals("dias", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semana") || trimmedText.Equals("semanas"))
+            else if (trimmedText.Equals("semana", StringComparison.Ordinal) || trimmedText.Equals("semanas", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mes") || trimmedText.Equals("meses"))
+            else if (trimmedText.Equals("mes", StringComparison.Ordinal) || trimmedText.Equals("meses", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("año") || trimmedText.Equals("años"))
+            else if (trimmedText.Equals("año", StringComparison.Ordinal) || trimmedText.Equals("años", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }
@@ -136,5 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             return true;
         }
+
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

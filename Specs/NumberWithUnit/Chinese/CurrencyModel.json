@@ -161,7 +161,7 @@
   },
   {
     "Input": "10日元5日本銭",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "10日元5日本銭",
@@ -258,7 +258,7 @@
   },
   {
     "Input": "这台电脑两美元又三美分",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "两美元又三美分",
@@ -275,7 +275,7 @@
   },
   {
     "Input": "这个手机壳五元三毛",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "五元三毛",
@@ -292,7 +292,7 @@
   },
   {
     "Input": "这个手机壳花费你五美元和花费我三块",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "五美元",
@@ -331,6 +331,228 @@
         },
         "Start": 2,
         "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "50元6角三分",
+    "NotSupported": "python,dotnet",
+    "Results": [
+      {
+        "Text": "50元6角三分",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "50.63"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "人民币 美元",
+    "Results": [
+      {
+        "Text": "人民币",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": null
+        }
+      },
+      {
+        "Text": "美元",
+        "Start": 4,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": null
+        }
+      }
+    ]
+  },
+  {
+    "Input": "人民币美元",
+    "Results": [
+      {
+        "Text": "人民币",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": null
+        }
+      },
+      {
+        "Text": "美元",
+        "Start": 3,
+        "End": 4,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": null
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4人民币 5美元",
+    "Results": [
+      {
+        "Text": "4人民币",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "4"
+        }
+      },
+      {
+        "Text": "5美元",
+        "Start": 5,
+        "End": 7,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4人民币5美元",
+    "Results": [
+      {
+        "Text": "4人民币",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "4"
+        }
+      },
+      {
+        "Text": "5美元",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "8亿元人民币",
+    "Results": [
+      {
+        "Text": "8亿元人民币",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "800000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "人民币  50元",
+    "NotSupported":"javascript, java, dotnet, python",
+    "Results": [
+      {
+        "Text": "人民币  50元",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "人民币 8千元",
+    "NotSupported": "javascript, java, dotnet, python",
+    "Results": [
+      {
+        "Text": "人民币 8千元",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "8000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五角大楼宣布了作战计划",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "标准普尔指数下降",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "在下面的价格中选一个，$20，300美圆, ￥300, ok?",
+    "Results": [
+      {
+        "Text": "$20",
+        "Start": 11,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "20"
+        }
+      },
+      {
+        "Text": "300美圆",
+        "Start": 15,
+        "End": 19,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "300"
+        }
+      },
+      {
+        "Text": "￥300",
+        "Start": 22,
+        "End": 25,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "300"
+        }
       }
     ]
   }

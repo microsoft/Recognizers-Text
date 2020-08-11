@@ -9,10 +9,15 @@ HEADER_COMMENT = '''# ----------------------------------------------------------
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------'''
-EOL = '\n'  # Follow recommendation: Do not use os.linesep as a line terminator when 
-            # writing files opened in text mode (the default); use a single '\n' instead, on all platforms.
+EOL = '\n'  # Follow recommendation: Do not use os.linesep as a line terminator when
+# writing files opened in text mode (the default); use a single '\n' instead, on all platforms.
 CLASS_INDENT = '    '
+
+
 def generate(yaml_file_path: str, py_file_name: str, header: str, footer: str):
     yaml_raw = open(yaml_file_path, encoding="utf-8")
     yaml_object = parse(yaml_raw)
@@ -20,12 +25,17 @@ def generate(yaml_file_path: str, py_file_name: str, header: str, footer: str):
 
     if not os.path.exists(os.path.dirname(py_file_name)):
         os.makedirs(os.path.dirname(py_file_name))
-    with open(py_file_name, mode='w', encoding='utf-8' ) as file:
+    with open(py_file_name, mode='w', encoding='utf-8', newline=EOL) as file:
         file.write(HEADER_COMMENT + EOL + EOL)
         file.write(header + EOL)
 
-        for line in code:
-            file.write(CLASS_INDENT + line.write() + EOL)
+        for block in code:
+            lines = block.write().splitlines()
+            for line in lines:
+                if not line:
+                    file.write(EOL)
+                else:
+                    file.write(CLASS_INDENT + line + EOL)
 
         file.write(footer)
         file.write(EOL)

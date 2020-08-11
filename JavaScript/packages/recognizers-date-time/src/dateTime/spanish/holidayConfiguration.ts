@@ -1,6 +1,6 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { DateUtils } from "../utilities";
+import { DateUtils, HolidayFunctions } from "../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 
 export class SpanishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
@@ -18,7 +18,7 @@ export class SpanishHolidayExtractorConfiguration implements IHolidayExtractorCo
 export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfiguration {
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
 
     constructor() {
@@ -35,7 +35,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
         this.variableHolidaysTimexDictionary = SpanishDateTime.VariableHolidaysTimexDictionary;
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
     }
 
@@ -46,7 +46,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
                 ["padres", SpanishHolidayParserConfiguration.FathersDay],
                 ["madres", SpanishHolidayParserConfiguration.MothersDay],
                 ["acciondegracias", SpanishHolidayParserConfiguration.ThanksgivingDay],
-                ["trabajador", SpanishHolidayParserConfiguration.LabourDay],
+                ["trabajador", SpanishHolidayParserConfiguration.InternationalWorkersDay],
                 ["delaraza", SpanishHolidayParserConfiguration.ColumbusDay],
                 ["memoria", SpanishHolidayParserConfiguration.MemorialDay],
                 ["pascuas", SpanishHolidayParserConfiguration.EasterDay],
@@ -63,15 +63,33 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
 
     // All JavaScript dates are zero-based (-1)
-    private static NewYear(year: number): Date { return new Date(year, 1 - 1, 1); }
-    private static NewYearEve(year: number): Date { return new Date(year, 12 - 1, 31); }
-    private static ChristmasDay(year: number): Date { return new Date(year, 12 - 1, 25); }
-    private static ChristmasEve(year: number): Date { return new Date(year, 12 - 1, 24); }
-    private static FemaleDay(year: number): Date { return new Date(year, 3 - 1, 8); }
-    private static ChildrenDay(year: number): Date { return new Date(year, 6 - 1, 1); }
-    private static HalloweenDay(year: number): Date { return new Date(year, 10 - 1, 31); }
-    private static TeacherDay(year: number): Date { return new Date(year, 9 - 1, 11); }
-    private static EasterDay(year: number): Date { return DateUtils.minValue(); }
+    private static NewYear(year: number): Date {
+        return new Date(year, 1 - 1, 1);
+    }
+    private static NewYearEve(year: number): Date {
+        return new Date(year, 12 - 1, 31);
+    }
+    private static ChristmasDay(year: number): Date {
+        return new Date(year, 12 - 1, 25);
+    }
+    private static ChristmasEve(year: number): Date {
+        return new Date(year, 12 - 1, 24);
+    }
+    private static FemaleDay(year: number): Date {
+        return new Date(year, 3 - 1, 8);
+    }
+    private static ChildrenDay(year: number): Date {
+        return new Date(year, 6 - 1, 1);
+    }
+    private static HalloweenDay(year: number): Date {
+        return new Date(year, 10 - 1, 31);
+    }
+    private static TeacherDay(year: number): Date {
+        return new Date(year, 9 - 1, 11);
+    }
+    private static EasterDay(year: number): Date {
+        return HolidayFunctions.calculateHolidayByEaster(year);
+    }
 
     getSwiftYear(text: string): number {
         let trimedText = text.trim().toLowerCase();
@@ -81,7 +99,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
             swift = 1;
         }
 
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched) {
             swift = -1;
         }
         else if (RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched) {

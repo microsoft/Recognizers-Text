@@ -1,20 +1,21 @@
 ﻿using System;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.Utilities;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
-        public DateTimePeriodParser(IDateTimePeriodParserConfiguration configuration) : base(configuration)
+        public DateTimePeriodParser(IDateTimePeriodParserConfiguration configuration)
+            : base(configuration)
         {
         }
 
         protected override DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             // Handle morning, afternoon..
             if (!this.Config.GetMatchedTimeRange(trimmedText, out string timeStr, out int beginHour, out int endHour, out int endMin))
@@ -34,7 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+                        new Tuple<DateObject, DateObject>(
+                            DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
                             DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMin, endMin));
                 ret.Success = true;
                 return ret;

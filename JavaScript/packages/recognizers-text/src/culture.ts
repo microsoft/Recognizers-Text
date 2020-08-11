@@ -1,6 +1,7 @@
 export class Culture {
 
   static readonly English: string = "en-us"
+  static readonly EnglishOthers: string = "en-*"
   static readonly Chinese: string = "zh-cn"
   static readonly Spanish: string = "es-es"
   static readonly Portuguese: string = "pt-br"
@@ -10,8 +11,9 @@ export class Culture {
   static readonly Dutch: string = "nl-nl"
   static readonly Italian: string = "it-it"
 
-  static readonly supportedCultures: Array<Culture> = [
+  static readonly supportedCultures: Culture[] = [
     new Culture("English", Culture.English),
+    new Culture("EnglishOthers", Culture.EnglishOthers),
     new Culture("Chinese", Culture.Chinese),
     new Culture("Spanish", Culture.Spanish),
     new Culture("Portuguese", Culture.Portuguese),
@@ -26,27 +28,27 @@ export class Culture {
   readonly cultureCode: string
 
   protected constructor(cultureName: string, cultureCode: string) {
-    this.cultureName = cultureName
-    this.cultureCode = cultureCode
+    this.cultureName = cultureName;
+    this.cultureCode = cultureCode;
   }
 
-  static getSupportedCultureCodes(): Array<string> {
-    return Culture.supportedCultures.map(c => c.cultureCode)
+  static getSupportedCultureCodes(): string[] {
+    return Culture.supportedCultures.map(c => c.cultureCode);
   }
 
   static mapToNearestLanguage(cultureCode: string): string {
-    if (cultureCode !== undefined) {    
+    if (cultureCode !== undefined) {
       cultureCode = cultureCode.toLowerCase();
-      var supportedCultureCodes = Culture.getSupportedCultureCodes();
-      
-      if (supportedCultureCodes.indexOf(cultureCode) < 0) {
-        var culturePrefix = cultureCode.split('-')[0].trim();
+      let supportedCultureCodes = Culture.getSupportedCultureCodes();
 
-        supportedCultureCodes.forEach(function(supportedCultureCode) {
+      if (supportedCultureCodes.indexOf(cultureCode) < 0) {
+        let culturePrefix = cultureCode.split('-')[0].trim();
+
+        supportedCultureCodes.forEach(function (supportedCultureCode) {
           if (supportedCultureCode.startsWith(culturePrefix)) {
             cultureCode = supportedCultureCode;
           }
-        })
+        });
       }
     }
 

@@ -1,4 +1,4 @@
-import { IMergedExtractorConfiguration, BaseMergedExtractor, IMergedParserConfiguration, BaseMergedParser } from "../baseMerged"
+import { IMergedExtractorConfiguration, BaseMergedExtractor, IMergedParserConfiguration, BaseMergedParser } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseSetExtractor, BaseSetParser } from "../baseSet";
@@ -7,19 +7,19 @@ import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
 import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration"
-import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration"
-import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration"
-import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration"
-import { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./timePeriodConfiguration"
-import { ChineseDatePeriodExtractor, ChineseDatePeriodParser } from "./datePeriodConfiguration"
-import { ChineseDateTimePeriodExtractor, ChineseDateTimePeriodParser } from "./dateTimePeriodConfiguration"
-import { ChineseSetExtractor, ChineseSetParser } from "./setConfiguration"
-import { ChineseHolidayExtractorConfiguration, ChineseHolidayParser } from "./holidayConfiguration"
+import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration";
+import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
+import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
+import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration";
+import { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./timePeriodConfiguration";
+import { ChineseDatePeriodExtractor, ChineseDatePeriodParser } from "./datePeriodConfiguration";
+import { ChineseDateTimePeriodExtractor, ChineseDateTimePeriodParser } from "./dateTimePeriodConfiguration";
+import { ChineseSetExtractor, ChineseSetParser } from "./setConfiguration";
+import { ChineseHolidayExtractorConfiguration, ChineseHolidayParser } from "./holidayConfiguration";
 import { DateTimeOptions } from "../dateTimeRecognizer";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
@@ -43,17 +43,20 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly fromToRegex: RegExp
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
+    readonly ambiguousRangeModifierPrefix: RegExp
+    readonly potentialAmbiguousRangeRegex: RegExp
     readonly numberEndingPattern: RegExp
+    readonly unspecificDatePeriodRegex: RegExp
     readonly filterWordRegexList: RegExp[]
 
-    constructor() {
-        this.dateExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean) {
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
-        this.datePeriodExtractor = new ChineseDatePeriodExtractor();
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
+        this.datePeriodExtractor = new ChineseDatePeriodExtractor(dmyDateFormat);
         this.timePeriodExtractor = new ChineseTimePeriodExtractor();
-        this.dateTimePeriodExtractor = new ChineseDateTimePeriodExtractor();
-        this.setExtractor = new ChineseSetExtractor();
+        this.dateTimePeriodExtractor = new ChineseDateTimePeriodExtractor(dmyDateFormat);
+        this.setExtractor = new ChineseSetExtractor(dmyDateFormat);
         this.holidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
         this.durationExtractor = new ChineseDurationExtractor();
     }
@@ -62,17 +65,19 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
 export class ChineseMergedExtractor extends BaseMergedExtractor {
     private readonly dayOfMonthRegex: RegExp;
 
-    constructor(options: DateTimeOptions) {
-        let config = new ChineseMergedExtractorConfiguration();
+    constructor(options: DateTimeOptions, dmyDateFormat: boolean = false) {
+        let config = new ChineseMergedExtractorConfiguration(dmyDateFormat);
         super(config, options);
         this.dayOfMonthRegex = RegExpUtility.getSafeRegExp(`^\\d{1,2}号`, 'gi');
     }
 
-    extract(source: string, refDate: Date): Array<ExtractResult> {
-        if (!refDate) refDate = new Date();
+    extract(source: string, refDate: Date): ExtractResult[] {
+        if (!refDate) {
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
-        let result: Array<ExtractResult> = new Array<ExtractResult>();
+        let result: ExtractResult[] = new Array<ExtractResult>();
         this.addTo(result, this.config.dateExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.timeExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.durationExtractor.extract(source, referenceDate), source);
@@ -110,7 +115,8 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
             }
             if (!isFound) {
                 destination.push(er);
-            } else if (rmIndex >= 0) {
+            }
+            else if (rmIndex >= 0) {
                 destination.splice(rmIndex, rmLength);
                 destination.splice(0, destination.length, ...this.moveOverlap(destination, er));
                 destination.splice(rmIndex, 0, er);
@@ -122,7 +128,7 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
         let duplicated = new Array<number>();
         for (let i = 0; i < destination.length; i++) {
             if (result.text.includes(destination[i].text)
-            && (result.start === destination[i].start || result.start + result.length === destination[i].start + destination[i].length)) {
+                && (result.start === destination[i].start || result.start + result.length === destination[i].start + destination[i].length)) {
                 duplicated.push(i);
             }
         }
@@ -163,26 +169,26 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
     readonly durationParser: BaseDurationParser;
     readonly setParser: BaseSetParser;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedBeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
 
-        this.dateParser = new ChineseDateParser();
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.holidayParser = new ChineseHolidayParser();
         this.timeParser = new ChineseTimeParser();
-        this.dateTimeParser = new ChineseDateTimeParser();
-        this.datePeriodParser = new ChineseDatePeriodParser();
+        this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
+        this.datePeriodParser = new ChineseDatePeriodParser(dmyDateFormat);
         this.timePeriodParser = new ChineseTimePeriodParser();
-        this.dateTimePeriodParser = new ChineseDateTimePeriodParser();
+        this.dateTimePeriodParser = new ChineseDateTimePeriodParser(dmyDateFormat);
         this.durationParser = new ChineseDurationParser();
-        this.setParser = new ChineseSetParser();
+        this.setParser = new ChineseSetParser(dmyDateFormat);
     }
 }
 
 export class ChineseMergedParser extends BaseMergedParser {
-    constructor() {
-        let config = new ChineseMergedParserConfiguration();
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseMergedParserConfiguration(dmyDateFormat);
         super(config, 0);
     }
 
@@ -246,16 +252,17 @@ export class ChineseMergedParser extends BaseMergedParser {
             pr.value = val;
         }
 
+        let hasRangeChangingMod = hasBefore || hasAfter || hasSince;
         pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter, hasSince);
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter, hasSince)}`;
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasRangeChangingMod)}`;
 
         return pr;
     }
 }
 
 export class ChineseFullMergedParser extends BaseMergedParser {
-    constructor() {
-        let config = new ChineseMergedParserConfiguration();
+    constructor(dmyDateFormat: boolean = false) {
+        let config = new ChineseMergedParserConfiguration(dmyDateFormat);
         super(config, 0);
     }
 
@@ -269,14 +276,14 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let modStr = "";
         let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).pop();
         let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).pop();
-        if (beforeMatch) {
+        if (beforeMatch && !this.isDurationWithAgoAndLater(er)) {
             hasBefore = true;
             er.start += beforeMatch.length;
             er.length -= beforeMatch.length;
             er.text = er.text.substring(beforeMatch.length);
             modStr = beforeMatch.value;
         }
-        else if (afterMatch) {
+        else if (afterMatch && !this.isDurationWithAgoAndLater(er)) {
             hasAfter = true;
             er.start += afterMatch.length;
             er.length -= afterMatch.length;
@@ -335,23 +342,27 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         }
 
         pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter);
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter)}`;
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore || hasAfter)}`;
 
         return pr;
     }
 
-    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): { [s: string]: Array<StringMap>; } {
-        if (!slot) return null;
+    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): { [s: string]: StringMap[]; } {
+        if (!slot) {
+            return null;
+        }
 
         let result = new Map<string, any>();
         let resolutions = new Array<StringMap>();
 
         let type = slot.type;
-        let outputType = this.determineDateTimeType(type, hasBefore, hasAfter);
+        let outputType = this.determineDateTimeType(type, hasBefore || hasAfter);
         let timex = slot.timexStr;
 
         let value: DateTimeResolutionResult = slot.value;
-        if (!value) return null;
+        if (!value) {
+            return null;
+        }
 
         let isLunar = value.isLunar;
         let mod = value.mod;
@@ -372,16 +383,24 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let futureValues = Array.from(this.getValues(future)).sort();
         let pastValues = Array.from(this.getValues(past)).sort();
         if (isEqual(futureValues, pastValues)) {
-            if (pastValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
-        } else {
-            if (pastValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
-            if (futureValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
+            if (pastValues.length > 0) {
+                this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
+            }
+        }
+        else {
+            if (pastValues.length > 0) {
+                this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            }
+            if (futureValues.length > 0) {
+                this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
+            }
         }
 
         if (comment && comment === 'ampm') {
             if (result.has('resolve')) {
                 this.resolveAMPM(result, 'resolve');
-            } else {
+            }
+            else {
                 this.resolveAMPM(result, 'resolveToPast');
                 this.resolveAMPM(result, 'resolveToFuture');
             }
@@ -420,12 +439,22 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         };
     }
 
-    protected determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): string {
-        if (hasBefore || hasAfter || hasSince) {
-            if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
-            if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
-            if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
+    protected determineDateTimeType(type: string, hasMod: boolean): string {
+        if (hasMod) {
+            if (type === Constants.SYS_DATETIME_DATE) {
+                return Constants.SYS_DATETIME_DATEPERIOD;
+            }
+            if (type === Constants.SYS_DATETIME_TIME) {
+                return Constants.SYS_DATETIME_TIMEPERIOD;
+            }
+            if (type === Constants.SYS_DATETIME_DATETIME) {
+                return Constants.SYS_DATETIME_DATETIMEPERIOD;
+            }
         }
         return type;
+    }
+
+    protected isDurationWithAgoAndLater(er: ExtractResult): boolean {
+        return er.metaData && er.metaData.IsDurationWithAgoAndLater;
     }
 }

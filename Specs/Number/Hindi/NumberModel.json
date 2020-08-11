@@ -1,0 +1,3068 @@
+[
+  {
+    "Input": "192.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "168"
+        },
+        "Start": 4,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "वह 180.25एमएल लिक्विड",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "वह 180मिलि लिक्विड",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": " 29किमी रोड",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": " उस मई के 4थे दिन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "वह .25एम.एल. लिक्विड",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": ".08",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ".08",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "एक",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "कोई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": ".23456000",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ".23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ तीन और एक तिहाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ तीन और एक तिहाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103.333333333333"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ तीन और दो तिहाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ तीन और दो तिहाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "सोलह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोलह",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "दो तिहाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो तिहाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.666666666666667"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ सोलह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ सोलह",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "इक्कीस सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीस सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2100"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "इक्कीस सौ इक्कीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीस सौ इक्कीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2121"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ छह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ छह",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ एकसठ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ एकसठ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "एक का दस खरबवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का दस खरबवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ दो हजार",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ दो हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "तीन सौ छह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन सौ छह",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "306"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ का दस खरबवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ का दस खरबवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-10"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "आधा दर्जन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधा दर्जन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " 3 दर्जन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 दर्जन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक दर्जन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक दर्जन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "तीन दर्जन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन दर्जन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "तीन सौ और दो दर्जन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन सौ और दो दर्जन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "324"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "9.2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9.2321312"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " -9.2321312",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-9.2321312"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 1,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "तीन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123456789101231"
+        },
+        "Start": 1,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        },
+        "Start": 1,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": " 2.33k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.33k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2330"
+        },
+        "Start": 1,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "100 हजार",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100 हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "20 लाख",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 लाख",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "10 खरब",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 खरब",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "दस खरब",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दस खरब",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ दस खरब",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ दस खरब",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ दस खरब तीन सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ दस खरब तीन सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ दस खरब और तीन सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ दस खरब और तीन सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "बावन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बावन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "फ़िफ़्टी टू",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फ़िफ़्टी टू",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "तीन सौ इकत्तीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन सौ इकत्तीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ और दो हजार",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ और दो हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "दो हजार और दो सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार और दो सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " 2.33 k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2330"
+        },
+        "Start": 1,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ दशमलव शून्य तीन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ दशमलव शून्य तीन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "दो सौ पॉइंट इकहत्तर",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौ पॉइंट इकहत्तर",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200.71"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": " 322 सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "322 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "32200"
+        },
+        "Start": 1,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "सत्तर",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सत्तर",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "एक के आठवें हिस्से",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक के आठवें",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "पांच बटा आठ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांच बटा आठ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "आधा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधा",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "तीन चौथाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन चौथाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "बीस और तीन बटे पांच",
+    "comment": "FractionParseregex not differentiate And",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस और तीन बटे पांच",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "तेईस का पाँचवाँ भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तेईस का पाँचवाँ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "बीस और तीन और तीन बटे पांच",
+    "comment": "FractionParseregex not differentiate And",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस और तीन और तीन बटे पांच",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23.6"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "दस लाख दो हजार दो सौ तीन का पाँचवाँ हिस्सा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दस लाख दो हजार दो सौ तीन का पाँचवाँ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "डेढ़",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ़",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.5"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "एक चौथाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक चौथाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक और एक चौथाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और एक चौथाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "पांच और एक चौथाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांच और एक चौथाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ और तीन चौथाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ और तीन चौथाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100.75"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "एक का सौवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का सौवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1.1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.0004"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^+23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-2.5^-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^--23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1.1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "एक का पाँचवाँ भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का पाँचवाँ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "एक लाख का दस खरबवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक लाख का दस खरबवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-07"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "एक का पाँचवाँ हिस्सा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का पाँचवाँ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "तीन का पांचवां भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन का पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "बीस का पांचवां भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस का पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "तीन और एक का पाँचवाँ भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन और एक का पाँचवाँ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "इक्कीस का पांचवां भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीस का पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4.2"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "एक का इक्कीसवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का इक्कीसवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "एक का पच्चीसवां भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का पच्चीसवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ तीस का पांचवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ तीस का पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "तीन का इक्कीसवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन का इक्कीसवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ तीस और दो का पांचवां भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ तीस और दो का पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "130.4"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ के पैंतीसवें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ के पैंतीसवें",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ बत्तीस का पाँचवा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ बत्तीस का पाँचवा",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ बत्तीस की पांचवीं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ बत्तीस की पांचवीं",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ बत्तीस के पांचवें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ बत्तीस के पांचवें",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "एक का एक सौ पांचवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक का एक सौ पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "एक के एक सौ पांचवें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक के एक सौ पांचवें",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "सौ का एक हजार पांचवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सौ का एक हजार पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "एक तिहाई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक तिहाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "1 बटा इक्कीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 बटा इक्कीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1 बटा एक सौ इक्कीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 बटा एक सौ इक्कीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "1 बटा तीन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 बटा तीन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1 बटा 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 बटा 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक बटा 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक बटा 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा बीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक बटा बीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा एक सौ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक बटा एक सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा एक सौ पच्चीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक बटा एक सौ पच्चीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "दिल्ली के लिए एक फ़र्स्ट क्लास सीट बुक कीजिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 14,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "माइनस पंचानबे सौ का पाँचवा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस पंचानबे सौ का पाँचवा",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1900"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "माइनस पंचानबे सौ की पांचवीं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस पंचानबे सौ की पांचवीं",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1900"
+        },
+        "Start": 0,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "जवाब है माइनस वन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस वन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 8,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "जवाब है माइनस एक सौ पैंतीसवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस एक सौ पैंतीसवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-2.85714285714286"
+        },
+        "Start": 8,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "जवाब है माइनस एक बटा 20",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस एक बटा 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.05"
+        },
+        "Start": 8,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "जवाब है माइनस पांच दशमलव पांच",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस पांच दशमलव पांच",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5.5"
+        },
+        "Start": 8,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "जवाब है माइनस पांच",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस पांच",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5"
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "पांच का आठवां भाग",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांच का आठवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "पंचानबे सौ का पांचवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पंचानबे सौ का पांचवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "पंचानबे सौ की पांचवीं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पंचानबे सौ की पांचवीं",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "तीन में से एक",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन में से एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "इक्कीस में से 1",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीस में से 1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "बीस में पच्चीसवां हिस्सा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस में पच्चीसवां",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.8"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "पांच बटे आठ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांच बटे आठ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "फिलहाल, चीन की आबादी 1 414 021 100 है.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 414 021 100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1414021100"
+        },
+        "Start": 21,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 को दो संख्याओं के रूप में पहचाना जाएगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "423"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 7
+      },
+      {
+        "Text": "दो",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+      },
+        "Start": 12,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "12,34,567.89 एक मान्य संख्या प्रारूप है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,34,567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567.89"
+        },
+        "Start": 0,
+        "End": 11
+      },
+      {
+        "Text": "एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 13,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "शून्य ही 0 है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शून्य",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 4
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 9,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "5/17/2018 को कभी मिल सकते हैं?",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17"
+        },
+        "Start": 2,
+        "End": 3
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2018"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "मेरा फोन नंबर है +1-222-2222/2222",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 18,
+        "End": 18
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "222"
+        },
+        "Start": 20,
+        "End": 22
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 24,
+        "End": 27
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2222"
+        },
+        "Start": 29,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "मैं आपको 1 करोड़ दे सकता हूं.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 करोड़",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
+        },
+        "Start": 9,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1मि कोई संख्या नहीं है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं आपको 3 सौ और 21 युआन दे सकता हूं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 सौ और 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 9,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "4 हजार 3 सौ और 21 एक मान्य संख्या है.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4 हजार 3 सौ और 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 16
+      },
+      {
+        "Text": "एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 18,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "4 हजार 3 सौ और 0 दो अमान्य संख्याएं हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 हजार 3 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 10
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 15,
+        "End": 15
+      },
+      {
+        "Text": "दो",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 17,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "4000 3 सौ और 21 दो अमान्य संख्याएं हैं। ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4000"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "3 सौ और 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 14
+      },
+      {
+        "Text": "दो",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 16,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "3 सौ और 2 सौ अमान्य संख्याएं हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "2 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "3 सौ और 2.12 सौ दो अमान्य संख्याएं हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "2.12 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "212"
+        },
+        "Start": 8,
+        "End": 14
+      },
+      {
+        "Text": "दो",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 16,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "3 सौ और निगेटिव एक दो अमान्य संख्याएं हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "निगेटिव एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 8,
+        "End": 17
+      },
+      {
+        "Text": "दो",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 19,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "3 सौ और एक एक मान्य संख्या है।",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 सौ और एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 11,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "आपने जो बताया है वह अमान्य है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "आपका ये वाला मान्य नहीं है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "आपको कौन सा पसंद है?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "वो वाल सचमुच अच्छा है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "कोलकाता में छब्बीस लोग दुर्घटना में मारे गए ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "छब्बीस",
+        "Start": 12,
+        "End": 17,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "आधे से ज़्यादा लोग यहां आए।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधे",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं आपको thirteen hundred dollars दे सकता हूं.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "thirteen hundred",
+        "Start": 9,
+        "End": 24,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "वहां कुल थ्री डज़न आम थे.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "थ्री डज़न",
+        "Start": 9,
+        "End": 16,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "जवाब है माइनस फ़ाइव",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "माइनस फ़ाइव",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "उत्तर है प्लस सेवेनटीन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सेवेनटीन",
+        "Start": 14,
+        "End": 21,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "five hundred twenty rupees में एक जीन्स मिला है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "five hundred twenty",
+        "Start": 0,
+        "End": 18,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "520"
+        }
+      },
+      {
+        "Text": "एक",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 31,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "भारत की आबादी एक सौ पच्चीस करोड़ पैंतीस लाख अट्ठाइस हजार चार सौ तेरह है.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ पच्चीस करोड़ पैंतीस लाख अट्ठाइस हजार चार सौ तेरह",
+        "Start": 14,
+        "End": 67,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1253528413"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं आपको ३ सौ और २१ युआन दे सकता हूं।",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "३ सौ और २१",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 9,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "१ खरब",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१ खरब",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "१ बटा इक्कीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१ बटा इक्कीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "१ बटा एक सौ इक्कीस",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१ बटा एक सौ इक्कीस",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "१ बटा तीन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१ बटा तीन",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "१ बटा ३",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१ बटा ३",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा ३",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "एक बटा ३",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक बटा २०",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "एक बटा २०",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "१०० हजार",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१०० हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": ".०८",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": ".०८",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "१२,३४,५६७",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१२,३४,५६७",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "१, २३४, ५६७",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "१",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "२३४",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "५६७",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "- १०k",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "- १०k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " ३",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "३",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 1,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "२० लाख",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Devanagari script",
+    "Results": [
+      {
+        "Text": "२० लाख",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "मेरे पास डेढ़ सौ रुपए हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ़ सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "150"
+        },
+        "Start": 9,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "उसके पास डेढ हजार रुपए थे.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "उसने डेढ़ लाख कमाए।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ़ लाख",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "150000"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "उसने डेढ़ लीटर तेल लिया।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ़",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.5"
+        },
+        "Start": 5,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं आपको ढाई हजार रुपए दुंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ढाई हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2500"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "उसके पास ढाई किलो आम थे।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ढाई",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2.5"
+        },
+        "Start": 9,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "सवा किलो लड्डू चढाउंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सवा",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं आपको सावा सौ रुपए दुंगा।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सावा सौ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "125"
+        },
+        "Start": 9,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आपसे सवा लाख रुपए लेने हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सवा लाख",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "125000"
+        },
+        "Start": 10,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "मेरे पास 4,23,523 रुपए हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Indian numeric system",
+    "Results": [
+      {
+        "Text": "4,23,523",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "423523"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "मेरे पास ३,२३४ रुपए हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Indian numeric system",
+    "Results": [
+      {
+        "Text": "३,२३४",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3234"
+        },
+        "Start": 9,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "मेरे पास 65,55,45,70,113 रुपए हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Indian numeric system",
+    "Results": [
+      {
+        "Text": "65,55,45,70,113",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "65554570113"
+        },
+        "Start": 9,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "हजार",
+    "Comment": "Developmemt test case",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हजार",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "40 000 का मतलब हिंदी में 40000 नहीं होता.",
+    "Comment": "40 000 not valid in Hindi, needs change in BaseNumber",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 3,
+        "End": 5
+      },
+      {
+        "Text": "40000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        },
+        "Start": 24,
+        "End": 28
+      }
+    ]
+  }
+]

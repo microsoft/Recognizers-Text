@@ -14,7 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AroundRegex { get; }
 
-        Regex DateAfter { get; }
+        Regex EqualRegex { get; }
+
+        Regex SuffixAfter { get; }
 
         Regex YearRegex { get; }
 
@@ -23,5 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser HolidayParser { get; }
 
         StringMatcher SuperfluousWordMatcher { get; }
+
+        bool CheckBothBeforeAfter { get; }
     }
 }

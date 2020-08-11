@@ -6,7 +6,7 @@ import { FrenchNumericWithUnit } from "../../resources/frenchNumericWithUnit";
 export class FrenchCurrencyExtractorConfiguration extends FrenchNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -27,7 +27,7 @@ export class FrenchCurrencyExtractorConfiguration extends FrenchNumberWithUnitEx
 
 export class FrenchCurrencyParserConfiguration extends FrenchNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.French);
         }
 

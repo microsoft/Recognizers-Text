@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.numberwithunit.resources;
@@ -82,7 +85,7 @@ public class ChineseNumericWithUnit {
         .put("Att", "att")
         .put("Lesotho loti", "莱索托洛提|莱索托马洛蒂")
         .put("South African rand", "南非兰特")
-        .put("Macedonian denar", "马其顿代纳尔|马其顿币|第纳尔|代纳尔")
+        .put("Macedonian denar", "马其顿代纳尔|马其顿币|代纳尔")
         .put("Deni", "第尼")
         .put("Malagasy ariary", "马达加斯加阿里亚里")
         .put("Iraimbilanja", "伊莱姆比拉贾")
@@ -210,7 +213,6 @@ public class ChineseNumericWithUnit {
         .put("South Sudanese pound", "南苏丹镑")
         .put("Sudanese pound", "苏丹镑")
         .put("Syrian pound", "叙利亚镑")
-        .put("Pound", "英镑")
         .put("Pence", "便士")
         .put("Shilling", "先令")
         .put("United States dollar", "美元|美金|美圆")
@@ -229,7 +231,7 @@ public class ChineseNumericWithUnit {
         .put("Fijian dollar", "斐济元|斐币")
         .put("Guyanese dollar", "圭亚那元")
         .put("Hong Kong dollar", "蚊|港元|港圆|港币")
-        .put("Macau Pataca", "澳元|澳门币|澳门元")
+        .put("Macau Pataca", "澳门币|澳门元")
         .put("New Taiwan dollar", "箍|新台币|台币")
         .put("Jamaican dollar", "牙买加元")
         .put("Kiribati dollar", "吉里巴斯元")
@@ -238,7 +240,7 @@ public class ChineseNumericWithUnit {
         .put("Surinamese dollar", "苏里南元")
         .put("Trinidad and Tobago dollar", "特立尼达多巴哥元")
         .put("Tuvaluan dollar", "吐瓦鲁元")
-        .put("Chinese yuan", "人民币|人民币元|块钱|块|元|圆")
+        .put("Chinese yuan", "人民币|人民币元|元人民币|块钱|块|元|圆")
         .put("Fen", "分钱|分")
         .put("Jiao", "毛钱|毛|角钱|角")
         .put("Finnish markka", "芬兰马克")
@@ -604,6 +606,11 @@ public class ChineseNumericWithUnit {
         .build();
 
     public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("五角", "五角大楼")
+        .put("普尔", "标准普尔")
+        .build();
 
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "华氏温度|华氏度|°f")

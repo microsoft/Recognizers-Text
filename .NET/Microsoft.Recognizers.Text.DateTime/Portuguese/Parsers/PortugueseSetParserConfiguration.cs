@@ -1,9 +1,13 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    public class PortugueseSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
+    public class PortugueseSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -77,25 +81,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
-            if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diaria") || trimmedText.EndsWith("diariamente"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diaria", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("diariamente", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semanalmente"))
+            else if (trimmedText.Equals("semanalmente", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("quinzenalmente"))
+            else if (trimmedText.Equals("quinzenalmente", StringComparison.Ordinal))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensalmente"))
+            else if (trimmedText.Equals("mensalmente", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("anualmente"))
+            else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }
@@ -110,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
             if (trimmedText.Equals("dia") || trimmedText.Equals("dias"))
             {
@@ -136,5 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             return true;
         }
+
+        public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
     }
 }

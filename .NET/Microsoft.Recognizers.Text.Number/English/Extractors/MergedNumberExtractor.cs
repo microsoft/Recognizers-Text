@@ -7,16 +7,16 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     internal class MergedNumberExtractor : BaseMergedNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), MergedNumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), MergedNumberExtractor>();
 
-        public MergedNumberExtractor(NumberMode mode, NumberOptions options)
+        public MergedNumberExtractor(BaseNumberOptionsConfiguration config)
         {
-            NumberExtractor = English.NumberExtractor.GetInstance(mode, options);
-            RoundNumberIntegerRegexWithLocks =
-                new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.Singleline);
-            ConnectorRegex =
-                new Regex(NumbersDefinitions.ConnectorRegex, RegexOptions.Singleline);
+            NumberExtractor = English.NumberExtractor.GetInstance(config);
+            RoundNumberIntegerRegexWithLocks = new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
+            ConnectorRegex = new Regex(NumbersDefinitions.ConnectorRegex, RegexFlags);
         }
 
         public sealed override BaseNumberExtractor NumberExtractor { get; set; }
@@ -25,18 +25,18 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public sealed override Regex ConnectorRegex { get; set; }
 
-        public static MergedNumberExtractor GetInstance(
-            NumberMode mode = NumberMode.Default,
-            NumberOptions options = NumberOptions.None)
+        public static MergedNumberExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (mode, options);
-            if (!Instances.ContainsKey(cacheKey))
+
+            var extractorKey = (config.Mode, config.Options);
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new MergedNumberExtractor(mode, options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new MergedNumberExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }

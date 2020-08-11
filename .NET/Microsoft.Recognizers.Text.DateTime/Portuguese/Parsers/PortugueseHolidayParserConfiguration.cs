@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public PortugueseHolidayParserConfiguration(IOptionsConfiguration config)
+        public PortugueseHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             this.HolidayRegexList = PortugueseHolidayExtractorConfiguration.HolidayRegexList;
@@ -18,15 +18,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
 
             if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-
-            if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
+            else if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -62,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 { "pai", FathersDay },
                 { "mae", MothersDay },
                 { "acaodegracas", ThanksgivingDay },
-                { "trabalho", LabourDay },
+                { "trabalho", InternationalWorkersDay },
                 { "pascoa", Easter },
                 { "natal", ChristmasDay },
                 { "vesperadenatal", ChristmasEve },
@@ -92,6 +91,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private static DateObject TeacherDay(int year) => new DateObject(year, 9, 11);
 
-        private static DateObject Easter(int year) => DateObject.MinValue;
+        private static DateObject Easter(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
     }
 }

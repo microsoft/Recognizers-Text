@@ -4,15 +4,20 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseCurrency:
     CurrencyFractionMapping = dict([("CNY", "FEN|JIAO"),
                                     ("__D", "CENT"),
                                     ("RUB", "KOPEK"),
                                     ("AFN", "PUL"),
-                                    ("EUR", "CENT"),
+                                    ("EUR", "CENT|KWARTJE|DUBBELTJE|STUIVER"),
                                     ("ALL", "QINDARKE"),
                                     ("_ALP", "PENNY"),
                                     ("GBP", "PENNY"),
@@ -248,5 +253,15 @@ class BaseCurrency:
                                      ("Kopiyka", 100),
                                      ("Tiyin", 100),
                                      ("Hào", 10),
-                                     ("Ngwee", 100)])
+                                     ("Ngwee", 100),
+                                     ("Kwartje", 4),
+                                     ("Dubbeltje", 10),
+                                     ("Stuiver", 20)])
+    NonStandardFractionalSubunits = dict([("JOD", 1000),
+                                          ("KWD", 1000),
+                                          ("BHD", 1000),
+                                          ("OMR", 1000),
+                                          ("YDD", 1000),
+                                          ("TND", 1000),
+                                          ("MRO", 5)])
 # pylint: enable=line-too-long

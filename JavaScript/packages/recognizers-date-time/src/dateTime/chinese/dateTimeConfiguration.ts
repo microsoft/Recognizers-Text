@@ -1,8 +1,9 @@
-import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
-import { BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number"
-import { Constants, TimeTypeConstants } from "../constants";
+import { IExtractor, ExtractResult, RegExpUtility, StringUtility, MetaData } from "@microsoft/recognizers-text";
+import { AgnosticNumberParserFactory, BaseNumberParser, BaseNumberExtractor, ChineseIntegerExtractor, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "@microsoft/recognizers-text-number";
+import { Constants as NumberConstants  } from "@microsoft/recognizers-text-number";
+import { Constants , TimeTypeConstants } from "../constants";
 import { IDateTimeExtractor, IDateTimeExtractorConfiguration, BaseDateTimeExtractor, IDateTimeParserConfiguration, BaseDateTimeParser } from "../baseDateTime";
-import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
+import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
@@ -13,7 +14,7 @@ import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { Token, IDateTimeUtilityConfiguration, DateUtils, DateTimeFormatUtil, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { IDateTimeParser, DateTimeParseResult } from "../parsers"
+import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 
 class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
     readonly datePointExtractor: ChineseDateExtractor
@@ -32,8 +33,8 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
     readonly prepositionRegex: RegExp
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
 
-    constructor() {
-        this.datePointExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean) {
+        this.datePointExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timePointExtractor = new ChineseTimeExtractor();
         this.prepositionRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PrepositionRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
@@ -44,33 +45,46 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
     isConnectorToken(source: string): boolean {
         return StringUtility.isNullOrEmpty(source)
             || source === ','
-            || RegExpUtility.isMatch(this.prepositionRegex, source)
+            || RegExpUtility.isMatch(this.prepositionRegex, source);
     }
 }
 
 export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
-    constructor() {
-        super(new ChineseDateTimeExtractorConfiguration());
+    static beforeRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.BeforeRegex);
+    static afterRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.AfterRegex);
+    static dateTimePeriodUnitRegex: RegExp = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodUnitRegex);
+    private readonly durationExtractor: ChineseDurationExtractor;
+
+    constructor(dmyDateFormat: boolean) {
+        super(new ChineseDateTimeExtractorConfiguration(dmyDateFormat));
+        this.durationExtractor = new ChineseDurationExtractor();
     }
 
-    extract(source: string, refDate: Date): Array<ExtractResult> {
-        if (!refDate) refDate = new Date();
+    extract(source: string, refDate: Date): ExtractResult[] {
+        if (!refDate) {
+            refDate = new Date();
+        }
         let referenceDate = refDate;
 
-        let tokens: Array<Token> = new Array<Token>()
-        .concat(this.mergeDateAndTime(source, referenceDate))
-        .concat(this.basicRegexMatch(source))
-        .concat(this.timeOfToday(source, referenceDate));
+        let tokens: Token[] = new Array<Token>()
+            .concat(this.mergeDateAndTime(source, referenceDate))
+            .concat(this.basicRegexMatch(source))
+            .concat(this.timeOfToday(source, referenceDate))
+            .concat(this.durationWithAgoAndLater(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected mergeDateAndTime(source: string, refDate: Date): Array<Token> {
-        let tokens: Array<Token> = new Array<Token>();
+    protected mergeDateAndTime(source: string, refDate: Date): Token[] {
+        let tokens: Token[] = new Array<Token>();
         let ers = this.config.datePointExtractor.extract(source, refDate);
-        if (ers.length < 1) return tokens;
+        if (ers.length < 1) {
+            return tokens;
+        }
         ers = ers.concat(this.config.timePointExtractor.extract(source, refDate));
-        if (ers.length < 2) return tokens;
+        if (ers.length < 2) {
+            return tokens;
+        }
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
         while (i < ers.length - 1) {
@@ -78,7 +92,9 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
             while (j < ers.length && ExtractResult.isOverlap(ers[i], ers[j])) {
                 j++;
             }
-            if (j >= ers.length) break;
+            if (j >= ers.length) {
+                break;
+            }
             if (ers[i].type === Constants.SYS_DATETIME_DATE && ers[j].type === Constants.SYS_DATETIME_TIME) {
                 let middleBegin = ers[i].start + ers[i].length;
                 let middleEnd = ers[j].start;
@@ -100,8 +116,8 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
         return tokens;
     }
 
-    private timeOfToday(source: string, refDate: Date): Array<Token> {
-        let tokens: Array<Token> = new Array<Token>();
+    private timeOfToday(source: string, refDate: Date): Token[] {
+        let tokens: Token[] = new Array<Token>();
         this.config.timePointExtractor.extract(source, refDate).forEach(er => {
             let beforeStr = source.substr(0, er.start);
             let innerMatch = RegExpUtility.getMatches(this.config.nightRegex, er.text).pop();
@@ -109,7 +125,9 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
                 beforeStr = source.substr(0, er.start + innerMatch.length);
             }
 
-            if (StringUtility.isNullOrWhitespace(beforeStr)) return;
+            if (StringUtility.isNullOrWhitespace(beforeStr)) {
+                return;
+            }
 
             let match = RegExpUtility.getMatches(this.config.timeOfTodayBeforeRegex, beforeStr).pop();
             if (match && StringUtility.isNullOrWhitespace(beforeStr.substr(match.index + match.length))) {
@@ -119,6 +137,27 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
             }
         });
         return tokens;
+    }
+
+    // Process case like "5分钟前" "二小时后"
+    protected durationWithAgoAndLater(source: string, refDate: Date): Token[] {
+        let ret = [];
+        let durationEr = this.durationExtractor.extract(source, refDate);
+        durationEr.forEach(er => {
+            let pos = er.start + er.length;
+            if (pos < source.length) {
+                let suffix = source.substr(pos, 1);
+                let beforeMatch = RegExpUtility.getMatches(ChineseDateTimeExtractor.beforeRegex, suffix).pop();
+                let afterMatch = RegExpUtility.getMatches(ChineseDateTimeExtractor.afterRegex, suffix).pop();
+
+                if (beforeMatch && suffix.startsWith(beforeMatch.value) || afterMatch && suffix.startsWith(afterMatch.value)) {
+                    let metadata = new MetaData();
+                    metadata.IsDurationWithAgoAndLater = true;
+                    ret.push(new Token(er.start, pos + 1, metadata));
+                }
+            }
+        });
+        return ret;
     }
 }
 
@@ -146,15 +185,18 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
-        this.dateExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean) {
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
-        this.dateParser = new ChineseDateParser();
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.timeParser = new ChineseTimeParser();
         this.pmTimeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimeSimplePmRegex);
         this.amTimeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimeSimpleAmRegex);
         this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfTodayRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
+        this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
+        this.unitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateUnitRegex);
+        this.unitMap = ChineseDateTime.ParserConfigurationUnitMap;
     }
 
     haveAmbiguousToken(text: string, matchedText: string): boolean {
@@ -165,9 +207,11 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         let trimmedText = text.trim().toLowerCase();
         if (trimmedText.endsWith('现在')) {
             return { matched: true, timex: 'PRESENT_REF' };
-        } else if (trimmedText === '刚刚才' || trimmedText === '刚刚' || trimmedText === '刚才') {
+        }
+        else if (trimmedText === '刚刚才' || trimmedText === '刚刚' || trimmedText === '刚才') {
             return { matched: true, timex: 'PAST_REF' };
-        } else if (trimmedText === '立刻' || trimmedText === '马上') {
+        }
+        else if (trimmedText === '立刻' || trimmedText === '马上') {
             return { matched: true, timex: 'FUTURE_REF' };
         }
         return { matched: false, timex: null };
@@ -177,7 +221,8 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         let swift = 0;
         if (text === '明晚' || text === '明早' || text === '明晨') {
             swift = 1;
-        } else if (text === '昨晚') {
+        }
+        else if (text === '昨晚') {
             swift = -1;
         }
         return swift;
@@ -187,7 +232,8 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         let result = hour;
         if (hour < 12 && ['今晚', '明晚', '昨晚'].some(o => o === text)) {
             result += 12;
-        } else if (hour >= 12 && ['今早', '今晨', '明早', '明晨'].some(o => o === text)) {
+        }
+        else if (hour >= 12 && ['今早', '今晨', '明早', '明晨'].some(o => o === text)) {
             result -= 12;
         }
         return result;
@@ -195,13 +241,19 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
 }
 
 export class ChineseDateTimeParser extends BaseDateTimeParser {
-    constructor() {
-        let config = new ChineseDateTimeParserConfiguration();
+    private readonly durationExtractor: ChineseDurationExtractor;
+    private readonly integerExtractor: BaseNumberExtractor
+    constructor(dmyDateFormat: boolean) {
+        let config = new ChineseDateTimeParserConfiguration(dmyDateFormat);
         super(config);
+        this.durationExtractor = new ChineseDurationExtractor();
+        this.integerExtractor = new ChineseIntegerExtractor();
     }
 
     parse(er: ExtractResult, refTime?: Date): DateTimeParseResult {
-        if (!refTime) refTime = new Date();
+        if (!refTime) {
+            refTime = new Date();
+        }
         let referenceTime = refTime;
 
         let value = null;
@@ -212,6 +264,9 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
             }
             if (!innerResult.success) {
                 innerResult = this.parseTimeOfToday(er.text, referenceTime);
+            }
+            if (!innerResult.success) {
+                innerResult = this.parserDurationWithAgoAndLater(er.text, referenceTime);
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
@@ -224,8 +279,8 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
 
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
-            ret.timexStr = value === null ? "" : value.timex,
-            ret.resolutionStr = ""
+                ret.timexStr = value === null ? "" : value.timex,
+                ret.resolutionStr = "";
         };
 
         return ret;
@@ -245,7 +300,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
             return ret;
         }
 
-        let pr1 = this.config.dateParser.parse(er1[0], new Date(referenceTime.toDateString()))
+        let pr1 = this.config.dateParser.parse(er1[0], new Date(referenceTime.toDateString()));
         let pr2 = this.config.timeParser.parse(er2[0], referenceTime);
         if (pr1.value === null || pr2.value === null) {
             return ret;
@@ -332,5 +387,86 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
         }
 
         return ret;
+    }
+
+    // Handle cases like "5分钟前", "1小时以后"
+    protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let durationRes = this.durationExtractor.extract(source, referenceDate);
+
+        if (durationRes) {
+            let match = RegExpUtility.getMatches(ChineseDateTimeExtractor.dateTimePeriodUnitRegex, source).pop();
+            if (match) {
+                let suffix = source.substring(durationRes[0].start + durationRes[0].length);
+                let srcUnit = match.groups('unit').value;
+
+                let numberStr = source.substring(durationRes[0].start, match.index - durationRes[0].start);
+                let number =  this.parseChineseWrittenNumberToValue(numberStr);
+
+                if (this.config.unitMap.has(srcUnit)) {
+                    let unitStr = this.config.unitMap.get(srcUnit);
+
+                    let beforeMatch = RegExpUtility.getMatches(ChineseDateTimeExtractor.beforeRegex, suffix).pop();
+                    if (beforeMatch && suffix.startsWith(beforeMatch.value)) {
+                        let date : Date;
+                        switch (unitStr) {
+                            case Constants.TimexHour:
+                                date = DateUtils.addHours(referenceDate, -number);
+                                break;
+                            case Constants.TimexMinute:
+                                date = DateUtils.addMinutes(referenceDate, -number);
+                                break;
+                            case Constants.TimexSecond:
+                                date = DateUtils.addSeconds(referenceDate, -number);
+                                break;
+                            default:
+                                return result;
+                        }
+
+                        result.timex = DateTimeFormatUtil.luisDateFromDate(date);
+                        result.futureValue = result.pastValue = date;
+                        result.success = true;
+                        return result;
+                    }
+
+                    let afterMatch = RegExpUtility.getMatches(ChineseDateExtractor.afterRegex, suffix).pop();
+                    if (afterMatch && suffix.startsWith(afterMatch.value)) {
+                        let date: Date;
+                        switch (unitStr) {
+                            case Constants.TimexHour:
+                                date = DateUtils.addHours(referenceDate, number);
+                                break;
+                            case Constants.TimexMinute:
+                                date = DateUtils.addMinutes(referenceDate, number);
+                                break;
+                            case Constants.TimexSecond:
+                                date = DateUtils.addSeconds(referenceDate, number);
+                                break;
+                            default:
+                                return result;
+                        }
+
+                        result.timex = DateTimeFormatUtil.luisDateFromDate(date);
+                        result.futureValue = result.pastValue = date;
+                        result.success = true;
+                        return result;
+                    }
+                }
+
+            }
+        }
+
+        return result;
+    }
+
+    // convert Chinese Number to Integer
+    private parseChineseWrittenNumberToValue(source: string): number {
+        let num = -1;
+        let er = this.integerExtractor.extract(source);
+        if (er && er[0].type === NumberConstants.SYS_NUM_INTEGER) {
+            num = Number.parseInt(this.config.numberParser.parse(er[0]).value);
+        }
+
+        return num;
     }
 }

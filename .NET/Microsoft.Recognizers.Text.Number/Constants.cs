@@ -19,22 +19,33 @@ namespace Microsoft.Recognizers.Text.Number
         public const string MODEL_NUMBER = "number";
         public const string MODEL_NUMBERRANGE = "numberrange";
         public const string MODEL_ORDINAL = "ordinal";
+        public const string MODEL_ORDINAL_RELATIVE = "ordinal.relative";
         public const string MODEL_PERCENTAGE = "percentage";
 
         // NARROW NO-BREAK SPACE
         public const char NO_BREAK_SPACE = '\u202f';
 
-        // Language Markers
+        // Language Markers - ISO 639-2 B
         public const string ENGLISH = "Eng";
-        public const string CHINESE = "Chs";
-        public const string FRENCH = "Fr";
+        public const string CHINESE = "Chi";
+        public const string FRENCH = "Fre";
         public const string GERMAN = "Ger";
         public const string JAPANESE = "Jpn";
         public const string PORTUGUESE = "Por";
         public const string SPANISH = "Spa";
-        public const string DUTCH = "Nl";
+        public const string DUTCH = "Dut";
         public const string KOREAN = "Kor";
         public const string ITALIAN = "Ita";
+        public const string SWEDISH = "Swe";
+        public const string BULGARIAN = "Bul";
+        public const string TURKISH = "Tur";
+        public const string HINDI = "Hin";
+        public const string ARABIC = "Ara";
+
+        /// <summary>
+        /// Substitute for language markers for Japanese.
+        /// </summary>
+        public const string JAPANESE_SUBS = "Jap";
 
         // Regex Prefixes / Suffixes
         public const string FRACTION_PREFIX = "Frac";
@@ -45,6 +56,14 @@ namespace Microsoft.Recognizers.Text.Number
         public const string NUMBER_SUFFIX = "Num";
         public const string POWER_SUFFIX = "Pow";
         public const string SPECIAL_SUFFIX = "Spe";
+
+        // Ordinal.relative attribute values
+        public const string RELATIVE_START = "start";
+        public const string RELATIVE_END = "end";
+        public const string RELATIVE_CURRENT = "current";
+
+        // Groups' names for named groups in regexes
+        public const string RelativeOrdinalGroupName = "relativeOrdinal";
 
         // Number subtypes
         public const string INTEGER = "integer";

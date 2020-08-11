@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
@@ -58,6 +59,7 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     private final IDateTimeExtractor singleDateTimeExtractor;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor timeZoneExtractor;
 
     private final Pattern weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex);
     private final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
@@ -79,6 +81,7 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
         singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
+        timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
     }
 
     @Override
@@ -128,7 +131,7 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
 
     @Override
     public Pattern getPastPrefixRegex() {
-        return EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+        return EnglishDatePeriodExtractorConfiguration.PreviousPrefixRegex;
     }
 
     @Override
@@ -239,6 +242,11 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     @Override
     public IDateTimeExtractor getTimePeriodExtractor() {
         return timePeriodExtractor;
+    }
+
+    @Override
+    public IDateTimeExtractor getTimeZoneExtractor() {
+        return timeZoneExtractor;
     }
 
     // TODO: these three methods are the same in DatePeriod, should be abstracted

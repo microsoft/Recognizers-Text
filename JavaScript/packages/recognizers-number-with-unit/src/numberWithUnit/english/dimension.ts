@@ -16,7 +16,7 @@ export class EnglishDimensionExtractorConfiguration extends EnglishNumberWithUni
 
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -30,7 +30,7 @@ export class EnglishDimensionExtractorConfiguration extends EnglishNumberWithUni
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousDimensionUnitList
+        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousDimensionUnitList;
     }
 }
 

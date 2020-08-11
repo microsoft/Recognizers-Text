@@ -6,7 +6,7 @@ import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
 export class EnglishAgeExtractorConfiguration extends EnglishNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -26,7 +26,7 @@ export class EnglishAgeExtractorConfiguration extends EnglishNumberWithUnitExtra
 
 export class EnglishAgeParserConfiguration extends EnglishNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.English);
         }
 

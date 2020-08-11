@@ -56,9 +56,9 @@ public class QueryProcessor {
         return query;
     }
 
-    private static String tokens = "(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)";
-    private static String expression = "(?<=(\\s|\\d))" + tokens + "\\b";
-    private static Pattern special_tokens_regex = Pattern.compile(expression, Pattern.UNICODE_CHARACTER_CLASS);
+    private static final String tokens = "(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)";
+    private static final String expression = "(?<=(\\s|\\d))" + tokens + "\\b";
+    private static final Pattern special_tokens_regex = Pattern.compile(expression, Pattern.UNICODE_CHARACTER_CLASS);
 
     private static String toLowerTermSensitive(String input) {
 

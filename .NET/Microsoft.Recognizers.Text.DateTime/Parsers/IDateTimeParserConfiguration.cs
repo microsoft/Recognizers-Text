@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimeParserConfiguration : IOptionsConfiguration
+    public interface IDateTimeParserConfiguration : IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 
@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex UnitRegex { get; }
 
         Regex DateNumberConnectorRegex { get; }
+
+        Regex YearRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

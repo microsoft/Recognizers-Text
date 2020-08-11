@@ -20,7 +20,7 @@ public class SpanishMergedParserConfiguration extends SpanishCommonDateTimeParse
         afterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
         sinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
         aroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
-        dateAfterRegex = SpanishMergedExtractorConfiguration.DateAfterRegex;
+        suffixAfterRegex = SpanishMergedExtractorConfiguration.SuffixAfterRegex;
         yearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
         superfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
@@ -32,7 +32,7 @@ public class SpanishMergedParserConfiguration extends SpanishCommonDateTimeParse
     private final Pattern afterRegex;
     private final Pattern sinceRegex;
     private final Pattern aroundRegex;
-    private final Pattern dateAfterRegex;
+    private final Pattern suffixAfterRegex;
     private final Pattern yearRegex;
     private final IDateTimeParser getParser;
     private final IDateTimeParser holidayParser;
@@ -54,8 +54,8 @@ public class SpanishMergedParserConfiguration extends SpanishCommonDateTimeParse
         return aroundRegex;
     }
 
-    public Pattern getDateAfterRegex() {
-        return dateAfterRegex;
+    public Pattern getSuffixAfterRegex() {
+        return suffixAfterRegex;
     }
 
     public Pattern getYearRegex() {

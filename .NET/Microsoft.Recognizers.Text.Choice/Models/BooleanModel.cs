@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.Choice
 
         protected override SortedDictionary<string, object> GetResolution(ParseResult parseResult)
         {
-            var data = parseResult.Data as OptionsParseDataResult;
+            var data = parseResult.Data as ChoiceParseDataResult;
             var results = new SortedDictionary<string, object>()
             {
                 { "value", parseResult.Value },

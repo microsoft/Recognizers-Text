@@ -30,10 +30,11 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
-    readonly connectorAndRegex: RegExp;
+    readonly RangeConnectorRegex: RegExp;
     readonly betweenRegex: RegExp;
+    readonly nowRegex: RegExp
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex),
@@ -69,10 +70,11 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeUnitRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
-        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.integerExtractor = new SpanishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
@@ -87,7 +89,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, source).matched;
+        return RegExpUtility.getFirstMatchIndex(this.RangeConnectorRegex, source).matched;
     }
 }
 
@@ -128,12 +130,13 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly unitMap: ReadonlyMap<string, string>;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
     readonly numberCombinedWithUnit: RegExp;
 
     readonly cardinalExtractor: IExtractor;
     readonly numberParser: IParser;
+    readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = SpanishDateTime.TokenBeforeDate;
@@ -170,8 +173,9 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificEndOfRangeRegex);
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
         this.inConnectorRegex = config.utilityConfiguration.inConnectorRegex;
         this.unitMap = config.unitMap;
@@ -189,7 +193,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
             swift = 1;
         }
 
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched) {
             swift = -1;
         }
 
@@ -203,7 +207,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
             swift = 1;
         }
 
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched) {
             swift = -1;
         }
         else if (RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched) {
@@ -252,6 +256,6 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     isLastCardinal(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched;
+        return RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched;
     }
 }

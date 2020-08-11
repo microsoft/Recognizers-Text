@@ -4,10 +4,15 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class EnglishNumericWithUnit:
     AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age"),
                           ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age"),
@@ -29,7 +34,7 @@ class EnglishNumericWithUnit:
                                ("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani"),
                                ("Pul", "pul"),
                                ("Euro", "euros|euro|€|eur"),
-                               ("Cent", "cents|cent|-cents|-cent|sen"),
+                               ("Cent", "cents|cent|-cents|-cent"),
                                ("Albanian lek", "albanian lek|leks|lek"),
                                ("Qindarkë", "qindarkë|qindarkës|qindarke|qindarkes"),
                                ("Angolan kwanza", "angolan kwanza|kz|aoa|kwanza|kwanzas|angolan kwanzas"),
@@ -75,7 +80,7 @@ class EnglishNumericWithUnit:
                                ("Lithuanian litas", "ltl|lithuanian litas|lithuan litas|lithuanian lit|lithuan lit"),
                                ("Japanese yen", "japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens"),
                                ("Kazakhstani tenge", "kazakhstani tenge|kazakh tenge|kazak tenge|kzt"),
-                               ("Kenyan shilling", "kenyan shilling|sh|kes"),
+                               ("Kenyan shilling", "kenyan shilling|kes"),
                                ("North Korean won", "north korean won|kpw|north korean wons"),
                                ("South Korean won", "south korean won|krw|south korean wons"),
                                ("Korean won", "korean won|₩|korean wons"),
@@ -108,7 +113,7 @@ class EnglishNumericWithUnit:
                                ("Kuruş", "kuruş"),
                                ("Omani rial", "omani rial|omr|ر.ع."),
                                ("Panamanian balboa", "panamanian balboa|b/.|pab"),
-                               ("Centesimo", "centesimo|céntimo"),
+                               ("Centesimo", "centesimo"),
                                ("Papua New Guinean kina", "papua new guinean kina|kina|pgk"),
                                ("Toea", "toea"),
                                ("Paraguayan guaraní", "paraguayan guaraní|₲|pyg"),
@@ -125,7 +130,7 @@ class EnglishNumericWithUnit:
                                ("São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra|std"),
                                ("Sierra Leonean leone", "sierra leonean leone|sll|leone|le"),
                                ("Peseta", "pesetas|peseta"),
-                               ("Netherlands guilder", "florin|netherlands antillean guilder|ang|ƒ|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl"),
+                               ("Netherlands guilder", "florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl"),
                                ("Swazi lilangeni", "swazi lilangeni|lilangeni|szl|emalangeni"),
                                ("Tajikistani somoni", "tajikistani somoni|tjs|somoni"),
                                ("Diram", "dirams|diram"),
@@ -147,7 +152,7 @@ class EnglishNumericWithUnit:
                                ("Somali shilling", "somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos"),
                                ("Somaliland shilling", "somaliland shillings|somaliland shilling|soomaaliland shilin"),
                                ("Tanzanian shilling", "tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings"),
-                               ("Ugandan shilling", "ugandan shilling|ugandan shillings|sh|ugx|uganda shilling|uganda shillings"),
+                               ("Ugandan shilling", "ugandan shilling|ugandan shillings|ugx|uganda shilling|uganda shillings"),
                                ("Romanian leu", "romanian leu|lei|ron|romania leu"),
                                ("Moldovan leu", "moldovan leu|mdl|moldova leu"),
                                ("Leu", "leu"),
@@ -157,7 +162,7 @@ class EnglishNumericWithUnit:
                                ("Indian rupee", "indian rupees|indian rupee|inr|₹|india rupees|india rupee"),
                                ("Seychellois rupee", "seychellois rupees|seychellois rupee|scr|sr|sre"),
                                ("Mauritian rupee", "mauritian rupees|mauritian rupee|mur"),
-                               ("Maldivian rufiyaa", "maldivian rufiyaas|maldivian rufiyaa|rf|mvr|.ރ|maldive rufiyaas|maldive rufiyaa"),
+                               ("Maldivian rufiyaa", "maldivian rufiyaas|maldivian rufiyaa|mvr|.ރ|maldive rufiyaas|maldive rufiyaa"),
                                ("Sri Lankan rupee", "sri lankan rupees|sri lankan rupee|lkr|රු|ரூ"),
                                ("Indonesian rupiah", "indonesian rupiah|rupiah|perak|rp|idr"),
                                ("Rupee", "rupee|rupees|rs"),
@@ -233,7 +238,7 @@ class EnglishNumericWithUnit:
                                ("Tristan da Cunha pound", "tristan da cunha pounds|tristan da cunha pound|tristan da cunha £"),
                                ("Pound", "pounds|pound|-pounds|-pound|£"),
                                ("Pence", "pence"),
-                               ("Shilling", "shillings|shilling|shilingi"),
+                               ("Shilling", "shillings|shilling|shilingi|sh"),
                                ("Penny", "pennies|penny"),
                                ("United States dollar", "united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars"),
                                ("East Caribbean dollar", "east caribbean dollars|east caribbean dollar|east Caribbean $|xcd"),
@@ -640,12 +645,11 @@ class EnglishNumericWithUnit:
                              ("Teaspoon", "teaspoon|teaspoons"),
                              ("Tablespoon", "tablespoon|tablespoons"),
                              ("Pint", "pint|pints"),
-                             ("Volume unit", "fluid dram|gill|quart|minim|barrel|cord|peck|bushel|hogshead")])
+                             ("Volume unit", "fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl")])
     AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'peck', r'cord', r'gill']
     WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos"),
                              ("Gram", "g|gram|grams"),
                              ("Milligram", "mg|milligram|milligrams"),
-                             ("Barrel", "barrels|barrel"),
                              ("Gallon", "-gallon|gallons|gallon"),
                              ("Metric ton", "metric tons|metric ton"),
                              ("Ton", "-ton|ton|tons|tonne|tonnes"),
@@ -653,4 +657,5 @@ class EnglishNumericWithUnit:
                              ("Ounce", "-ounce|ounce|oz|ounces"),
                              ("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")])
     AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs']
+    AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")])
 # pylint: enable=line-too-long

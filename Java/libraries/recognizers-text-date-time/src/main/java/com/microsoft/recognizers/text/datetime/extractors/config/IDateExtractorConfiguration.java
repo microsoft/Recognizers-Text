@@ -28,6 +28,8 @@ public interface IDateExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getRelativeMonthRegex();
 
+    Pattern getStrictRelativeRegex();
+
     Pattern getWeekDayRegex();
 
     Pattern getPrefixArticleRegex();

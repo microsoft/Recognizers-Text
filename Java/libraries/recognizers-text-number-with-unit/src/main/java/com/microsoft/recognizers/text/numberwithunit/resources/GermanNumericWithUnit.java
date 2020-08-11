@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.numberwithunit.resources;
@@ -22,6 +25,8 @@ public class GermanNumericWithUnit {
         .put("Week", "woche alt|wochen alt|wochen|woche")
         .put("Day", "tag alt|tage alt|tagen|tage")
         .build();
+
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("jahren", "jahre", "monaten", "monate", "wochen", "woche", "tagen", "tage");
 
     public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Square kilometer", "qkm|quadratkilometer|km^2|km²")
@@ -43,7 +48,7 @@ public class GermanNumericWithUnit {
         .put("Afghan afghani", "afghanischer afghani|afghanische afghani|afghanischen afghani|؋|afn|afghani")
         .put("Pul", "pul")
         .put("Euro", "euro|€|eur")
-        .put("Cent", "cent|-cent|sen")
+        .put("Cent", "cent|-cent")
         .put("Albanian lek", "albaninischer Lek|albanische Lek|albanischen Lek")
         .put("Qindarkë", "qindarkë|qindarkës|qindarke|qindarkes")
         .put("Angolan kwanza", "angolanischer kwanza|angolanische kwanza|angolanischen kwanza|kz|aoa|kwanza|kwanzas")
@@ -68,7 +73,7 @@ public class GermanNumericWithUnit {
         .put("Céntimo", "céntimo")
         .put("Croatian kuna", "kroatischer kuna|kroatische kuna|kroatischen kuna|kn|hrk|kuna")
         .put("Lipa", "lipa")
-        .put("Czech koruna", "tschechische krone|tschechischen kronen|tschechischer kronen|czk|kč|krone|kronen")
+        .put("Czech koruna", "tschechische krone|tschechischen kronen|tschechischer kronen|czk|kč")
         .put("Haléř", "haléř")
         .put("Eritrean nakfa", "eritreischer nakfa|eritreische nakfa|eritreischen nakfa|nfk|ern|nakfa")
         .put("Ethiopian birr", "äthiopischer birr|äthiopische birr|äthiopischen birr|etb")
@@ -89,7 +94,7 @@ public class GermanNumericWithUnit {
         .put("Lithuanian litas", "ltl|litauischer litas|litauische litas|litauischen litas")
         .put("Japanese yen", "japaneser yen|japanese yen|japanesen yen|jpy|yen|¥")
         .put("Kazakhstani tenge", "kasachischer tenge|kasachische tenge|kasachischen tenge|kzt")
-        .put("Kenyan shilling", "kenia-schilling|sh|kes")
+        .put("Kenyan shilling", "kenia-schilling|kes")
         .put("North Korean won", "nordkoreanischer won|nordkoreanische won|nordkoreanischen won|kpw")
         .put("South Korean won", "südkoreanischer won|südkoreanische won|südkoreanischen won|krw")
         .put("Korean won", "koreanischer won|koreanische won|koreanischen won|₩")
@@ -122,7 +127,7 @@ public class GermanNumericWithUnit {
         .put("Kuruş", "kuruş")
         .put("Omani rial", "omanischer rial|omanische rial|omanischen rial|omr|ر.ع.")
         .put("Panamanian balboa", "panamaischer balboa|panamaische balboa|panamaischen balboa|b/.|pab")
-        .put("Centesimo", "centesimo|céntimo")
+        .put("Centesimo", "centesimo")
         .put("Papua New Guinean kina", "papua-neuguinea-kina|kina|pgk")
         .put("Toea", "toea")
         .put("Paraguayan guaraní", "paraguayischer guaraní|paraguayische guaraní|paraguayischen guaraní|guaraní|₲|pyg")
@@ -139,7 +144,7 @@ public class GermanNumericWithUnit {
         .put("São Tomé and Príncipe dobra", "são-toméischer dobra|são-toméische dobra|são-toméischen dobra|dobra|std")
         .put("Sierra Leonean leone", "sierra-leonischer leone|sierra-leonische leone|sierra-leonischen leone|sll|leone|le")
         .put("Peseta", "pesetas|peseta")
-        .put("Netherlands guilder", "florin|antillen-gulden|niederländische-antillen-gulden|antillen gulden|ang|ƒ|niederländischer gulden|niederländische gulden|niederländischen gulden|gulden|fl")
+        .put("Netherlands guilder", "florin|antillen-gulden|niederländische-antillen-gulden|antillen gulden|ang|niederländischer gulden|niederländische gulden|niederländischen gulden|gulden|fl")
         .put("Swazi lilangeni", "swazi-lilangeni|swazi lilangeni|lilangeni|szl|swazi-emalangeni|swazi emalangeni")
         .put("Tajikistani somoni", "tadschikischer somoni|tadschikische somoni|tadschikischen somoni|tadschikistan-somoni|tadschikistan somoni|tajikischer somoni|tajikische somoni|tajikischen somoni|tajikistan-somoni|tajikistan somoni|tjs")
         .put("Diram", "dirams|diram")
@@ -161,7 +166,7 @@ public class GermanNumericWithUnit {
         .put("Somali shilling", "somalia-schilling|sh.so.|sos")
         .put("Somaliland shilling", "somaliland-schilling")
         .put("Tanzanian shilling", "tansania-schilling|tsh|tzs")
-        .put("Ugandan shilling", "uganda-schilling|sh|ugx")
+        .put("Ugandan shilling", "uganda-schilling|ugx")
         .put("Romanian leu", "rumänischer leu|rumänische leu|rumänischen leu|rumaenischer leu|rumaenische leu|rumaenischen leu|lei|ron")
         .put("Moldovan leu", "moldauischer leu|moldauische leu|moldauischen leu|mdl|moldau leu")
         .put("Leu", "leu")
@@ -171,7 +176,7 @@ public class GermanNumericWithUnit {
         .put("Indian rupee", "indischer rupie|indische rupie|indischen rupie|indischer rupien|indische rupien|indischen rupien|inr|₹")
         .put("Seychellois rupee", "seychellen-rupie|seychellen-rupien|scr|sr|sre")
         .put("Mauritian rupee", "mauritius-rupie|mauritius-rupien|mur")
-        .put("Maldivian rufiyaa", "maledivischer rufiyaa|maledivische rufiyaa|maledivischen rufiyaa|rf|mvr|.ރ")
+        .put("Maldivian rufiyaa", "maledivischer rufiyaa|maledivische rufiyaa|maledivischen rufiyaa|mvr|.ރ")
         .put("Sri Lankan rupee", "sri-lanka-rupie|sri-lanka-rupien|lkr|රු|ரூ")
         .put("Indonesian rupiah", "indonesischer rupiah|indonesische rupiah|indonesischen rupiah|rupiah|perak|rp|idr")
         .put("Rupee", "rupie|rs")
@@ -247,7 +252,7 @@ public class GermanNumericWithUnit {
         .put("Tristan da Cunha pound", "tristan-da-cunha-pfund|tristan-da-cunha-£")
         .put("Pound", "pfund|£")
         .put("Pence", "pence")
-        .put("Shilling", "shillings|shilling|shilingi")
+        .put("Shilling", "shillings|shilling|shilingi|sh")
         .put("Penny", "pennies|penny")
         .put("United States dollar", "us-dollar|us$|usd|amerikanischer dollar|amerikanische dollar|amerikanischen dollar")
         .put("East Caribbean dollar", "ostkaribischer dollar|ostkaribische dollar|ostkaribischen dollar|ostkaribische $|xcd")
@@ -393,10 +398,10 @@ public class GermanNumericWithUnit {
 
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "grad fahrenheit|°fahrenheit|°f|fahrenheit")
-        .put("K", "k|K|kelvin")
+        .put("K", "k|K|kelvin|grad kelvin|°kelvin|°k|°K")
         .put("R", "rankine|°r")
         .put("D", "delisle|°de")
-        .put("C", "grad celsius|°celsius|°c")
+        .put("C", "grad celsius|°celsius|°c|celsius")
         .put("Degree", "grad|°")
         .build();
 
@@ -420,7 +425,7 @@ public class GermanNumericWithUnit {
         .put("Teaspoon", "teelöffel|teeloeffel")
         .put("Tablespoon", "esslöffel|essloeffel")
         .put("Pint", "pinte")
-        .put("Volume unit", "fluid dram|Fluid drachm|Flüssigdrachme|Gill|Quart|Minim|Barrel|Cord|Peck|Beck|Scheffel|Hogshead|Oxhoft")
+        .put("Volume unit", "fluid dram|fluid drachm|flüssigdrachme|gill|quart|minim|cord|peck|beck|scheffel|hogshead|oxhoft")
         .build();
 
     public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "unze", "oz", "cup", "peck", "cord", "gill");
@@ -439,4 +444,8 @@ public class GermanNumericWithUnit {
         .build();
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
+        .build();
 }

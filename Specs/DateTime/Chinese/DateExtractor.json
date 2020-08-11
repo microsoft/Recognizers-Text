@@ -353,7 +353,7 @@
   },
   {
     "Input": "1789-01-29",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1789-01-29",
@@ -365,7 +365,7 @@
   },
   {
     "Input": "1357年6月10日",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1357年6月10日",
@@ -377,7 +377,7 @@
   },
   {
     "Input": "三六七年一月一日",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "三六七年一月一日",
@@ -439,6 +439,50 @@
         "Type": "date",
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "你好我6月15号的飞机",
+    "Results": [
+      {
+        "Text": "6月15号",
+        "Type": "date",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "你好我6月15号一早的飞机",
+    "Results": [
+      {
+        "Text": "6月15号",
+        "Type": "date",
+        "Start": 3,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "我将于7月4日到达北京",
+    "Results": [
+      {
+        "Text": "7月4日",
+        "Type": "date",
+        "Start": 3,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "我会在九月八号到",
+    "Results": [
+      {
+        "Text": "九月八号",
+        "Type": "date",
+        "Start": 3,
+        "Length": 4
       }
     ]
   }

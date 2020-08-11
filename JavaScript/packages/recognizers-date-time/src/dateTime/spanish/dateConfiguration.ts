@@ -18,6 +18,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
     readonly ordinalExtractor: BaseNumberExtractor;
@@ -26,36 +27,39 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
+
+        let enableDmy = dmyDateFormat || SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor3, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis") :
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis") :
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis") :
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis") :
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis") :
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis") :
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
-                
+
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10, "gis"),
         ];
         this.implicitDateList = [
@@ -76,6 +80,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
         this.forTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.StrictRelativeRegex, "gis");
         this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex, "gis");
         this.dayOfWeek = SpanishDateTime.DayOfWeek;
         this.ordinalExtractor = new SpanishOrdinalExtractor();
@@ -112,6 +117,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
@@ -119,9 +125,9 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     // TODO: implement the relative day regex if needed. If yes, they should be abstracted
     static readonly relativeDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDayRegex);
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-    static readonly pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+    static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
 
-    constructor(config: SpanishCommonDateTimeParserConfiguration) {
+    constructor(config: SpanishCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;
@@ -133,7 +139,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = new SpanishDateExtractorConfiguration().dateRegexList;
+        this.dateRegex = new SpanishDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayRegex, "gis");
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayWithNumRegex, "gis");
@@ -147,6 +153,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.forTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.StrictRelativeRegex, "gis");
         this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = SpanishDateTime.DateTokenPrefix;
@@ -160,34 +167,39 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         // TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
         if (trimedText === "hoy" || trimedText === "el dia") {
             swift = 0;
-        } else if (trimedText === "mañana" ||
+        }
+        else if (trimedText === "mañana" ||
             trimedText.endsWith("dia siguiente") ||
             trimedText.endsWith("el dia de mañana") ||
             trimedText.endsWith("proximo dia")) {
             swift = 1;
-        } else if (trimedText === "ayer") {
+        }
+        else if (trimedText === "ayer") {
             swift = -1;
-        } else if (trimedText.endsWith("pasado mañana") ||
+        }
+        else if (trimedText.endsWith("pasado mañana") ||
             trimedText.endsWith("dia despues de mañana")) {
             swift = 2;
-        } else if (trimedText.endsWith("anteayer") ||
+        }
+        else if (trimedText.endsWith("anteayer") ||
             trimedText.endsWith("dia antes de ayer")) {
             swift = -2;
-        } else if (trimedText.endsWith("ultimo dia")) {
+        }
+        else if (trimedText.endsWith("ultimo dia")) {
             swift = -1;
         }
 
         return swift;
     }
 
-    getSwiftMonth(source: string): number {
+    getSwiftMonthOrYear(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
         if (RegExpUtility.getMatches(SpanishDateParserConfiguration.nextPrefixRegex, trimedText).length) {
             swift = 1;
         }
 
-        if (RegExpUtility.getMatches(SpanishDateParserConfiguration.pastPrefixRegex, trimedText).length) {
+        if (RegExpUtility.getMatches(SpanishDateParserConfiguration.previousPrefixRegex, trimedText).length) {
             swift = -1;
         }
 
@@ -196,7 +208,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
 
     isCardinalLast(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return RegExpUtility.getMatches(SpanishDateParserConfiguration.pastPrefixRegex, trimedText).length > 0;
+        return RegExpUtility.getMatches(SpanishDateParserConfiguration.previousPrefixRegex, trimedText).length > 0;
     }
 
     private static normalize(source: string): string {

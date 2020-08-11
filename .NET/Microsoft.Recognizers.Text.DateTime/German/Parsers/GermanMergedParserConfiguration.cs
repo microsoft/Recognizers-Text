@@ -1,21 +1,24 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public sealed class GermanMergedParserConfiguration : GermanCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public GermanMergedParserConfiguration(IOptionsConfiguration config)
+        public GermanMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
             SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
             AroundRegex = GermanMergedExtractorConfiguration.AroundRegex;
-            DateAfter = GermanMergedExtractorConfiguration.DateAfterRegex;
+            EqualRegex = GermanMergedExtractorConfiguration.EqualRegex;
+            SuffixAfter = GermanMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
+
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
@@ -32,7 +35,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex AroundRegex { get; }
 
-        public Regex DateAfter { get; }
+        public Regex EqualRegex { get; }
+
+        public Regex SuffixAfter { get; }
 
         public Regex YearRegex { get; }
 
@@ -41,5 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
+
+        bool IMergedParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

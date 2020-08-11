@@ -1,0 +1,1143 @@
+[
+  {
+    "Input": "नोट में अंतिम वाक्य को डिलीट कर दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम",
+        "Start": 8,
+        "End": 12,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आखिरी से दूसरा दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी से दूसरा",
+        "Start": 5,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे पिछला पर केवल एक दिखाएं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछला पर केवल एक",
+        "Start": 5,
+        "End": 20,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आखिरी से पहले का दिखाएं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी से पहले का",
+        "Start": 5,
+        "End": 20,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आखिरी का दूसरा दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी का दूसरा",
+        "Start": 5,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे अंतिम वाले का पिछला दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम वाले का पिछला",
+        "Start": 5,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे अंतिम से दूसरा दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम से दूसरा",
+        "Start": 5,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "अंतिम वाक्य को डिलीट कर दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे पिछला वाला दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछला वाला",
+        "Start": 5,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे अगला वाला दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगला वाला",
+        "Start": 5,
+        "End": 13,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आखिरी की दो किताबें चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी की",
+        "Start": 5,
+        "End": 12,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे वो आखिरी वाली किताब चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी वाली",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे अगली 3 किताबें चाहिए।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगली",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे अगली चीज दीजिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगली चीज",
+        "Start": 5,
+        "End": 12,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "आखिरी कुकी मुझे चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आखिरी के बगल वाला चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी के बगल वाला",
+        "Start": 5,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "पिछले पृष्ठ पर ले जाएं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "तीस खरबवां",
+    "Results": [
+      {
+        "Text": "तीस खरबवां",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3000000000000",
+          "relativeTo": "start",
+          "value": "3000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "हजार खरबवां",
+    "Results": [
+      {
+        "Text": "हजार खरबवां",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000000000000",
+          "relativeTo": "start",
+          "value": "100000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "11वां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11वां",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "21वां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21वां",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30वां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30वां",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2रा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2रा",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ग्यारहवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ग्यारहवां",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "बीसवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीसवां",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "पच्चीसवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पच्चीसवां",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "25",
+          "relativeTo": "start",
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "इक्कीसवीं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इक्कीसवीं",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "एक सौ पच्चीसवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक सौ पच्चीसवां",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "125",
+          "relativeTo": "start",
+          "value": "125"
+        }
+      }
+    ]
+  },
+  {
+    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "दस खरबवां",
+    "Results": [
+      {
+        "Text": "दस खरबवां",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000000000000",
+          "relativeTo": "start",
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "दो सौ दस खरब और तीन सौ बाइसवां",
+    "Results": [
+      {
+        "Text": "दो सौ दस खरब और तीन सौ बाइसवां",
+        "Start": 0,
+        "End": 29,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21000000000322",
+          "relativeTo": "start",
+          "value": "21000000000322"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "दो सौवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सौवां",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "200",
+          "relativeTo": "start",
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "दिल्ली के लिए प्रथम श्रेणी की एक सीट बुक करें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रथम",
+        "Start": 14,
+        "End": 18,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे पहली दो किताबें पसंद हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहली",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे पहली पसंद है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहली",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "पहला शब्द कहें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहला",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "वह दूसरे स्थान पर आई",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरे",
+        "Start": 3,
+        "End": 7,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "वो अंतिम वाले से पहले वाला सही है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम वाले से पहले वाला",
+        "Start": 3,
+        "End": 25,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा मतलब वो आखिरी वाले का पिछला वाला",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी वाले का पिछला वाला",
+        "Start": 13,
+        "End": 36,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मेरा मतलब अभी वाला",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अभी वाला",
+        "Start": 10,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "वर्तमान पृष्ठ पर देखें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "वर्तमान",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "नोट में लास्ट सेन्टेंस को डिलीट कर दें?",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "लास्ट",
+        "Start": 8,
+        "End": 12,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे सेकेंड लिस्ट दिखाओ",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सेकेंड",
+        "Start": 5,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "आपका मतलब प्रीवियस है या नेक्स्ट है?",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रीवियस",
+        "Start": 10,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      },
+      {
+        "Text": "नेक्स्ट",
+        "Start": 25,
+        "End": 31,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "फ़र्स्ट पेज पर ही लिखा है.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फ़र्स्ट",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "किसी थर्ड पर्सन को बताने की जरूरत नहीं है.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "थर्ड",
+        "Start": 5,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3",
+          "relativeTo": "start",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "इलेवेन्थ सीट आपकी है.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इलेवेन्थ",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "उसका रैंक थर्टी थर्ड है.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "थर्टी थर्ड",
+        "Start": 10,
+        "End": 19,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "33",
+          "relativeTo": "start",
+          "value": "33"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "नेक्स्ट थ्री बुक्स सेलेक्ट कर लो.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नेक्स्ट",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "करेंट पेज पर देखो.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "करेंट",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "टेन्थ पेज पर यह लिखा है.",
+    "Comment": "Code mixed cases",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "टेन्थ",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "10",
+          "relativeTo": "start",
+          "value": "10"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "११वां",
+    "Comment": "Davenagari script",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "११वां",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "२१वां",
+    "Comment": "Davenagari script",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "२१वां",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "३०वां",
+    "Comment": "Davenagari script",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "३०वां",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "२रा",
+    "Comment": "Davenagari script",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "२रा",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "नोट में last sentence को delete कर दें?",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 8,
+        "End": 11,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे second list दिखाओ",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "second",
+        "Start": 5,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "आपका मतलब previous है या next है?",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "previous",
+        "Start": 10,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      },
+      {
+        "Text": "next",
+        "Start": 25,
+        "End": 28,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "first page पर ही लिखा है.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "किसी third person को बताने की जरूरत नहीं है.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "third",
+        "Start": 5,
+        "End": 9,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3",
+          "relativeTo": "start",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eleventh seat आपकी है.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eleventh",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "उसका rank thirty third है.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "thirty third",
+        "Start": 10,
+        "End": 21,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "33",
+          "relativeTo": "start",
+          "value": "33"
+        }
+      }
+      
+    ]
+  },
+  {
+    "Input": "next three books select कर लो.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "current पेज पर देखो.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "current",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tenth page पर यह लिखा है.",
+    "Comment": "Code mixed cases Roman letters",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tenth",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "10",
+          "relativeTo": "start",
+          "value": "10"
+        }
+      }
+      
+    ]
+  }
+]

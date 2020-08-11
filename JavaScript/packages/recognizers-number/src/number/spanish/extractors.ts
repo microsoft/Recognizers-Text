@@ -1,9 +1,9 @@
-import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
+import { BaseNumberExtractor, RegExpValue, RegExpRegExp, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { SpanishNumeric } from "../../resources/spanishNumeric";
 import { BaseNumbers } from "../../resources/baseNumbers";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class SpanishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
@@ -32,10 +32,21 @@ export class SpanishNumberExtractor extends BaseNumberExtractor {
         cardExtract.regexes.forEach(r => regexes.push(r));
 
         // Add Fraction
-        let fracExtract = new SpanishFractionExtractor();
+        let fracExtract = new SpanishFractionExtractor(mode);
         fracExtract.regexes.forEach(r => regexes.push(r));
 
         this.regexes = regexes;
+
+        // Add filter
+        let ambiguityFiltersDict = new Array<RegExpRegExp>();
+
+        if (mode != NumberMode.Unit) {            
+            for (let [ key, value ] of SpanishNumeric.AmbiguityFiltersDict){
+                ambiguityFiltersDict.push({ regExpKey: RegExpUtility.getSafeRegExp(key, "gs"), regExpValue: RegExpUtility.getSafeRegExp(value, "gs")})
+            }
+        }
+
+        this.ambiguityFiltersDict = ambiguityFiltersDict;
     }
 }
 
@@ -160,7 +171,7 @@ export class SpanishFractionExtractor extends BaseNumberExtractor {
 
     protected extractType: string = Constants.SYS_NUM_FRACTION;
 
-    constructor() {
+    constructor(mode: NumberMode = NumberMode.Default) {
         super();
 
         let regexes = new Array<RegExpValue>(
@@ -179,12 +190,16 @@ export class SpanishFractionExtractor extends BaseNumberExtractor {
             {
                 regExp: RegExpUtility.getSafeRegExp(SpanishNumeric.FractionNounWithArticleRegex),
                 value: "FracSpa"
-            },
-            {
-                regExp: RegExpUtility.getSafeRegExp(SpanishNumeric.FractionPrepositionRegex),
-                value: "FracSpa"
             }
         );
+
+        // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
+        if (mode != NumberMode.Unit) {
+            regexes.push({
+                regExp: RegExpUtility.getSafeRegExp(SpanishNumeric.FractionPrepositionRegex),
+                value: "FracSpa"
+                });
+        };
 
         this.regexes = regexes;
     }
@@ -212,10 +227,10 @@ export class SpanishOrdinalExtractor extends BaseNumberExtractor {
 
 export class SpanishPercentageExtractor extends BasePercentageExtractor {
     constructor() {
-        super(new SpanishNumberExtractor())
+        super(new SpanishNumberExtractor());
     }
 
-    protected initRegexes(): Array<RegExp> {
+    protected initRegexes(): RegExp[] {
         let regexStrs = [
             SpanishNumeric.NumberWithPrefixPercentage
         ];

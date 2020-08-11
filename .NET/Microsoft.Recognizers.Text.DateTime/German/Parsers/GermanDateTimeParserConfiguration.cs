@@ -5,8 +5,11 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
+    public class GermanDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -20,8 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             NowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
@@ -30,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             UnspecificEndOfRegex = GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = GermanDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
@@ -85,14 +89,19 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex DateNumberConnectorRegex { get; }
 
+        public Regex YearRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             int result = hour;
+
+            // @TODO Move all hardcoded strings to resource file
+
             if ((trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
@@ -107,9 +116,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
+
+            // @TODO Move all hardcoded strings to resource file
+
             if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") ||
-                trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") || trimmedText.Equals("derzeit"))
+                trimmedText.Equals("aktuelle") || trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") ||
+                trimmedText.Equals("derzeit"))
             {
                 timex = "PRESENT_REF";
             }
@@ -132,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächster"))

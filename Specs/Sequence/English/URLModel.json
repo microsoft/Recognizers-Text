@@ -1,7 +1,6 @@
 [
   {
     "Input": "https://abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://abc.com",
@@ -14,7 +13,6 @@
   },
   {
     "Input": "ftp://abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ftp://abc.com",
@@ -27,7 +25,6 @@
   },
   {
     "Input": "http://abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com",
@@ -40,7 +37,6 @@
   },
   {
     "Input": "www.abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "www.abc.com",
@@ -53,7 +49,6 @@
   },
   {
     "Input": "www.abc.com.cn",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "www.abc.com.cn",
@@ -66,7 +61,6 @@
   },
   {
     "Input": "abc.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "abc.com",
@@ -79,7 +73,6 @@
   },
   {
     "Input": "http://abc.com/file_name",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/file_name",
@@ -92,7 +85,6 @@
   },
   {
     "Input": "http://abc.com/file_path/",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/file_path/",
@@ -105,7 +97,6 @@
   },
   {
     "Input": "http://abc.com/file_path/123.html",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/file_path/123.html",
@@ -118,7 +109,6 @@
   },
   {
     "Input": "http://abc.com/search?id=123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/search?id=123",
@@ -131,7 +121,6 @@
   },
   {
     "Input": "http://abc.com/search?id=123&name=Alice",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/search?id=123&name=Alice",
@@ -144,7 +133,6 @@
   },
   {
     "Input": "http://abc.com/123#cite_1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com/123#cite_1",
@@ -157,7 +145,6 @@
   },
   {
     "Input": "http://abc.com:8080",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://abc.com:8080",
@@ -170,7 +157,6 @@
   },
   {
     "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://frank.website.com/CV/#cite_2",
@@ -183,32 +169,26 @@
   },
   {
     "Input": "Alice@abc.com is an email rather than url",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "https:// is invalid",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "http://# is invalid",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "httt://abc.com is invalid, no such protocol",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "http://127.0.0.1:8080",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://127.0.0.1:8080",
@@ -221,7 +201,6 @@
   },
   {
     "Input": "http://localhost:8080",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://localhost:8080",
@@ -234,7 +213,6 @@
   },
   {
     "Input": "http://localhost:8080#123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://localhost:8080#123",
@@ -247,7 +225,6 @@
   },
   {
     "Input": "http://localhost:8080/#/123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://localhost:8080/#/123",
@@ -260,7 +237,6 @@
   },
   {
     "Input": "http://127.0.0.1:8080/#/123",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://127.0.0.1:8080/#/123",
@@ -273,7 +249,6 @@
   },
   {
     "Input": "['http://twitter.com/#!/KCGtechnoly/status/9042443475840', None]",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "http://twitter.com/#!/KCGtechnoly/status/9042443475840",
@@ -286,12 +261,10 @@
   },
   {
     "Input": "The DNS server is 8.8.8.8",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "MORE:https://bit.ly/2jm6eu3",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://bit.ly/2jm6eu3",
@@ -306,7 +279,6 @@
   },
   {
     "Input": "May 5th.https://t.co/YCUZfuyyHZ",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://t.co/YCUZfuyyHZ",
@@ -321,7 +293,6 @@
   },
   {
     "Input": "All of these are valid URLs: bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "bit.ly",
@@ -372,12 +343,10 @@
   },
   {
     "Input": "john.de@cooso.com.au",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Please visit https://luis.ai?action=add for more information",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "https://luis.ai?action=add",
@@ -392,7 +361,155 @@
   },
   {
     "Input": "Please visit https://luis.xxx?action=add for more information",
-    "NotSupportedByDesign": "javascript, python",
+    "NotSupportedByDesign": "javascript",
     "Results": []
+  },
+  {
+    "Input": "working..is isn't a valid domain name.",
+    "Results": []
+  },
+  {
+    "Input": "7.am is more likely a datetime string rather than a valid domain name.",
+    "Results": []
+  },
+  {
+    "Input": "Please visit https://7.am for more information.",
+    "Results": [
+      {
+        "Text": "https://7.am",
+        "Start": 13,
+        "End": 24,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://7.am"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please visit 27.pm and s7.am for more information.",
+    "Results": [
+      {
+        "Text": "27.pm",
+        "Start": 13,
+        "End": 17,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "27.pm"
+        }
+      },
+      {
+        "Text": "s7.am",
+        "Start": 23,
+        "End": 27,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "s7.am"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.",
+    "NotSupportedByDesign": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+        "Start": 19,
+        "End": 79,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.",
+    "Results": []
+  },
+  {
+    "Input": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+    "Results": [
+      {
+        "Text": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
+        "Start": 0,
+        "End": 60,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "abc.d-ef.123ghi.com.sa/",
+    "Results": [
+      {
+        "Text": "abc.d-ef.123ghi.com.sa/",
+        "Start": 0,
+        "End": 22,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.d-ef.123ghi.com.sa/"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "...",
+    "Results": []
+  },
+  {
+    "Input": "http://a.b-.co",
+    "NotSupportedBy": "dotnet,python,java",
+    "Results": [
+      {
+        "Text": "http://a.b-.co",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://a.b-.co"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://362",
+    "Results": []
+  },
+  {
+    "Input": "abc.def.ghi.com.sa",
+    "Results": [
+      {
+        "Text": "abc.def.ghi.com.sa",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.def.ghi.com.sa"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "https://web.archive.org/web/20160308231823/http://63-characters-is-the-longest-possible-domain-name-for-a-website.com/",
+    "Results": [
+      {
+        "Text": "https://web.archive.org/web/20160308231823/http://63-characters-is-the-longest-possible-domain-name-for-a-website.com/",
+        "Start": 0,
+        "End": 117,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://web.archive.org/web/20160308231823/http://63-characters-is-the-longest-possible-domain-name-for-a-website.com/"
+        }
+      }
+    ]
   }
 ]

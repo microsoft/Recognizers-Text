@@ -1,0 +1,343 @@
+[
+  {
+    "Input": "जब वह पांच वर्ष की थी, उसने बाइक चलाना सीख लिया था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पांच वर्ष की थी",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Year"
+        },
+        "Start": 6,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "यह कहानी दस साल पुरानी है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दस साल पुरानी",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Year"
+        },
+        "Start": 9,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं केवल 29 साल का हूं!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29 साल का",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 9,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "अब, पंचानबे साल की आयु के बाद, नजरिया बदल जाता है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पंचानबे साल की आयु",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Year"
+        },
+        "Start": 4,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "चीन की दीवार 500 साल से ज़्यादा पुरानी है और 5,000 मील से ज़्यादा लंबी है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "500 साल से ज़्यादा पुरानी",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Year"
+        },
+        "Start": 13,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "उनकी उमर 60 साल है; वह 4 मई, 1945 में पैदा हुई थीं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "60 साल",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 9,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "करीबन 3 साल की उमर तक 25% मामलों का पता नहीं चलता है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 साल की उमर",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Year"
+        },
+        "Start": 6,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "उस एक साल पुराने वादे को पूरा करने का दबाव कब आएगा?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक साल पुराने",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Year"
+        },
+        "Start": 3,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "यह तब हुआ था जब बच्चा केवल दस महीने का था.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दस महीने का",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 27,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "समिति प्रस्ताव 8 महीने पहले की है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8 महीने पहले की",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Month"
+        },
+        "Start": 15,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "लगभग 50% मामलों का पता अठारह महीने की उम्र में लग जाता है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अठारह महीने की उम्र",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Month"
+        },
+        "Start": 23,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "यह संभव है, लेकिन 2006 में उनमें से 95% तीन महीने से कम उम्र के थे।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन महीने",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Month"
+        },
+        "Start": 40,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "यदि हम दिसंबर में आगे बढ़ते हैं, तो यह तीन हफ़्ते पुरानी होगी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीन हफ़्ते पुरानी",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 38,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "6 हफ़्ते की उम्र में, कोई क्रिसमस मना सकता है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "6 हफ़्ते की उम्र",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "उपभोग की कोई 90 दिन पुरानी बिल के लिए बहुत देर हो चुकी होती है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "90 दिन पुरानी",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 13,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "वह लगभग 40 - 50 साल का है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50 साल का",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "वह करीब फोर्टी-फ़िफ़्टी यर्स के हैं",
+    "Comment": "Code-mixed for when the value as well as the unit retains pronounciation from English, but is transliterated to Devanagari.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फ़िफ़्टी यर्स के",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "50",
+          "unit": "Year"
+        },
+        "Start": 15,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "यह बच्चा केवल सिक्स वीक्स का था",
+    "Comment": "Code-mixed for when the value as well as the unit retains pronounciation from English, but is transliterated to Devanagari.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सिक्स वीक्स का",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 14,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "वह करीब forty-fifty years के हैं",
+    "Comment": "Code-mixed for when all words except the numeric value and it's unit are in Devanagari, and the rest in Roman.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "fifty years",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "50",
+          "unit": "Year"
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "यह बच्चा केवल six weeks का था",
+    "Comment": "Code-mixed for when both the age as well as unit is in Roman script, and the other words are in Devanagari",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "six weeks का",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 14,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "मैं केवल twenty nine year का हूं",
+    "Comment": "Code-mixed for when both Devanagari and Roman scripts are used (numeric value and unit in Roman, and the rest in Devanagari).",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twenty nine year का",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 9,
+        "End": 27
+      }
+    ]
+  }
+]

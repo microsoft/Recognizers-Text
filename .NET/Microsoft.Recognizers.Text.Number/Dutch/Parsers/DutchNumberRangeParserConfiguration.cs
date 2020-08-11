@@ -6,26 +6,27 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class DutchNumberRangeParserConfiguration : INumberRangeParserConfiguration
     {
-        public DutchNumberRangeParserConfiguration()
-            : this(new CultureInfo(Culture.Dutch))
-        {
-        }
 
-        public DutchNumberRangeParserConfiguration(CultureInfo ci)
-        {
-            CultureInfo = ci;
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-            NumberExtractor = Dutch.NumberExtractor.GetInstance();
-            OrdinalExtractor = Dutch.OrdinalExtractor.GetInstance();
+        public DutchNumberRangeParserConfiguration(INumberOptionsConfiguration config)
+        {
+            CultureInfo = new CultureInfo(config.Culture);
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
+
+            NumberExtractor = Dutch.NumberExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Dutch.OrdinalExtractor.GetInstance(numConfig);
 
             // @TODO Change init to follow design in other languages
-            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
-            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.Singleline);
-            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.Singleline);
-            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexOptions.Singleline);
-            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexOptions.Singleline);
-            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.Singleline);
-            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.Singleline);
+            NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(config));
+
+            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
+            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
+            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);
+            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexFlags);
+            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags);
+            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags);
         }
 
         public CultureInfo CultureInfo { get; private set; }

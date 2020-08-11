@@ -1,21 +1,27 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public sealed class ItalianMergedParserConfiguration : ItalianCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        public ItalianMergedParserConfiguration(IOptionsConfiguration options)
-            : base(options)
+        public ItalianMergedParserConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             BeforeRegex = ItalianMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = ItalianMergedExtractorConfiguration.AfterRegex;
             SinceRegex = ItalianMergedExtractorConfiguration.SinceRegex;
             AroundRegex = ItalianMergedExtractorConfiguration.AroundRegex;
-            DateAfter = ItalianMergedExtractorConfiguration.DateAfterRegex;
+            EqualRegex = ItalianMergedExtractorConfiguration.EqualRegex;
+            SuffixAfter = ItalianMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = ItalianDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = ItalianMergedExtractorConfiguration.SuperfluousWordMatcher;
+            DateParser = new BaseDateParser(new ItalianDateParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new ItalianDatePeriodParserConfiguration(this));
+            DateTimeParser = new BaseDateTimeParser(new ItalianDateTimeParserConfiguration(this));
+            DurationParser = new BaseDurationParser(new ItalianDurationParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new ItalianTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new ItalianDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new ItalianSetParserConfiguration(this));
@@ -31,7 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex AroundRegex { get; }
 
-        public Regex DateAfter { get; }
+        public Regex EqualRegex { get; }
+
+        public Regex SuffixAfter { get; }
 
         public Regex YearRegex { get; }
 
@@ -40,5 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
+
+        bool IMergedParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

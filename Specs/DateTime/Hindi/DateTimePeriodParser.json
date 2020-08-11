@@ -1,0 +1,2252 @@
+[
+  {
+    "Input": "मैं 1 दिन और 5 घंटों के अंदर वापस आ जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 दिन और 5 घंटों के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-08 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-08 21:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं 15 सेकंड्स के अंदर वापस आ जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 सेकंड्स के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:12:15"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:12:15"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज पाँच से सात बजे तक बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज पाँच से सात बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 4/22/2016 को 5 से 6 बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4/22/2016 को 5 से 6 बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्रैल 22 को 5 से 6  बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रैल 22 को 5 से 6  बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 05:00:00",
+            "endDateTime": "2017-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं 22 अप्रैल की शाम 5 से 6 बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 अप्रैल की शाम 5 से 6 बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 17:00:00",
+            "endDateTime": "2017-04-22 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 17:00:00",
+            "endDateTime": "2016-04-22 18:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 जनवरी को 5 से 6 बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 जनवरी को 5 से 6 बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-01-01 05:00:00",
+            "endDateTime": "2017-01-01 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-01 06:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल दोपहर 3 बजे से 4 बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल दोपहर 3 बजे से 4 बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल 3:00 से 4:00 बजे तक बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल 3:00 से 4:00 बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल साढ़े सात बजे से शाम चार बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल साढ़े सात बजे से शाम चार बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज शाम 4 बजे से कल शाम 5 बजे तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज शाम 4 बजे से कल शाम 5 बजे",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं  दोपहर 2:00 बजे, 2016-2-21 से 3:32, 04/23/2016 तक बाहर रहूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दोपहर 2:00 बजे, 2016-2-21 से 3:32, 04/23/2016",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        },
+        "Start": 5,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज शाम 4 बजे से 5 बजे के बीच बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज शाम 4 बजे से 5 बजे के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 जन, 2016 को शाम 4 बजे से आज शाम 5 बजे के बीच बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 जन, 2016 को शाम 4 बजे से आज शाम 5 बजे",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज रात वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज रात",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज रात 8 बजे को वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज रात",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इसी रात को वापस जाऊँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इसी रात",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस शाम को वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शाम",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज सुबह वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज सुबह",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज दोपहर वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज दोपहर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगली रात वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगली रात",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी रात वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी रात",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल रात को वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल रात को",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले सोमवार दोपहर वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सोमवार दोपहर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-14TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी 3 मिनट में वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी 3 मिनट",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं अंतिम 3 मिनट में वापस जाउंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम 3 मिनट",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 मिनट के बाद जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 मिनट के बाद",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 मिनटों वापस जाऊँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 मिनटों",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 5 घंटे में वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 5 घंटे",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी मिनट में वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी मिनट",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले घंटे वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले घंटे",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले कुछ घंटों में वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले कुछ घंटों",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार सुबह वापस लौट जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार सुबह",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "इस मंगलवार की सुबह समय निकालने में कृपया आप हमें मदद कर सकते हैं?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मंगलवार की सुबह",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कृपया मंगलवार को सुबह 30 मिनट के लिए एक बैठक का आयोजन करें।",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को सुबह",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 6,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार दोपहर में वापस जाऊँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार दोपहर में",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार शाम को वापस लौट जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार शाम को",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार सुबह जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार सुबह जल्दी",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को सुबह जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को सुबह जल्दी",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की सुबह देर से मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की सुबह देर से",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की दोपहर जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की दोपहर जल्दी",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की दोपहर देर से मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की दोपहर देर से",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को शाम को जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को शाम को जल्दी",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मंगलवार की शाम देर से मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की शाम देर से",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की रात जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की रात जल्दी",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की देर रात में मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की देर रात में",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलिए मंगलवार देर-दोपहर को मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार देर-दोपहर को",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की शाम जल्दी मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की शाम जल्दी",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को देर रात में मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को देर रात में",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "बाकी के दिन मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाकी के दिन",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "चलो आज के बचे दिन में मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज के बचे दिन",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "चलो मेरे बाकी के बचे दिन में मीटिंग करते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मेरे बाकी के बचे दिन",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो इस दिन के बाकी बचे भाग में मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दिन के बाकी बचे भाग",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो बाकी के बचे दिन में मिलते हैं",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाकी के बचे दिन",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2:00 PM, 2016-2-21 से 3:32, 04/23/2016 तक बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2:00 PM, 2016-2-21 से 3:32, 04/23/2016",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        },
+        "Start": 4,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना,  विशाल के साथ बिज़नेस बैठक के लिए शुक्रवार दोपहर 1 बजे और 4 बजे के बीच,  कृपया एक स्काइप कॉल शेड्यूल करें।",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार दोपहर 1 बजे और 4 बजे के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-03 13:00:00",
+            "endDateTime": "2017-11-03 16:00:00"
+          }
+        },
+        "Start": 43,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप हमें कल सुबह 8 बजे से दोपहर 2 बजे के बीच शेड्यूल कर सकते हैं?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल सुबह 8 बजे से दोपहर 2 बजे के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप हमें 9 दिसंबर को 8 AM और 2 PM के बीच शेड्यूल कर सकते हैं?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9 दिसंबर को 8 AM और 2 PM के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-12-09 08:00:00",
+            "endDateTime": "2017-12-09 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-12-09 08:00:00",
+            "endDateTime": "2016-12-09 14:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है इस शुक्रवार, दोपहर को",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार, दोपहर को",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        },
+        "Start": 105,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है इस शुक्रवार दोपहर को!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार दोपहर को",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        },
+        "Start": 105,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है अगले शुक्रवार को दोपहर में!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले शुक्रवार को दोपहर में",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-24TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-24 12:00:00",
+            "endDateTime": "2017-11-24 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-24 12:00:00",
+            "endDateTime": "2017-11-24 16:00:00"
+          }
+        },
+        "Start": 105,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है आखिरी शुक्रवार को दोपहर में!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी शुक्रवार को दोपहर में",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-10TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 12:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 12:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        },
+        "Start": 105,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, विशाल के साथ बिज़नेस बैठक के लिए शुक्रवार को दोपहर 1 बजे और 4 बजे के बीच कृपया एक स्काइप कॉल शेड्यूल करें।",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को दोपहर 1 बजे और 4 बजे के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        },
+        "Start": 42,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया विशाल के साथ बिज़नेस बैठक के लिए शुक्रवार को दोपहर में 1 PM और 4 PM के बीच एक स्काइप कॉल शेड्यूल करें।",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को दोपहर में 1 PM और 4 PM के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        },
+        "Start": 48,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया एक स्काइप मीटिंग 2018-09-23 1p.m से 4 तक शेड्यूल करें। ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018-09-23 1p.m से 4 तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        },
+        "Start": 33,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया एक स्काइप मीटिंग 2018-09-23 1:30p.m से 4 तक शेड्यूल करें। ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018-09-23 1:30p.m से 4 तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:30:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:30:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        },
+        "Start": 33,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मिलते हैं 5 फरवरी की सुबह",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 फरवरी की सुबह",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-02-05TMO",
+          "FutureResolution": {
+            "startDateTime": "2017-02-05 08:00:00",
+            "endDateTime": "2017-02-05 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-05 08:00:00",
+            "endDateTime": "2016-02-05 12:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार सुबह वापस जाऊँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार सुबह",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार दोपहर को वापस भेजूंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार दोपहर को",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "यह भविष्य में 2 घंटे होगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "भविष्य में 2 घंटे",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          }
+        },
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+
+  {
+    "Input": "मैं 5 मिनटों के अंदर वापस आऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मिनटों के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:17:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:17:00"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं 5 घंटों के अंदर वापस आ जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 घंटों के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+
+  {
+    "Input": "यह कार्य 2 दिन 1 घंटा 5 मिनट 30 सेकंड के अंदर पूरा होगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 दिन 1 घंटा 5 मिनट 30 सेकंड के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        },
+        "Start": 9,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "यह कार्य अगले 2 दिनों 1 घंटे 5 मिनट 30 सेकंड के अंदर पूरा होगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 2 दिनों 1 घंटे 5 मिनट 30 सेकंड के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        },
+        "Start": 9,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "यह कार्य आगामी 2 दिनों 1 घंटा 5 मिनट 30 सेकंड के अंदर पूरा होगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आगामी 2 दिनों 1 घंटा 5 मिनट 30 सेकंड के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        },
+        "Start": 9,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 5 घंटों के अंदर वापस आ जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 5 घंटों के अंदर",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं सोमवार 8 से 9 तक वापस आऊंगा।",
+    "Context": {
+      "ReferenceDateTime": "2018-04-19T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार 8 से 9 तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2018-04-23 08:00:00",
+            "endDateTime": "2018-04-23 09:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-04-16 08:00:00",
+            "endDateTime": "2018-04-16 09:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "सोमवार 12-4 को समय खोजने में कोर्टाना हमें मदद कर सकता है।",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार 12-4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
+          "FutureResolution": {
+            "startDateTime": "2018-05-21 00:00:00",
+            "endDateTime": "2018-05-21 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-05-14 00:00:00",
+            "endDateTime": "2018-05-14 04:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "सोमवार 11-4 को समय खोजने में कोर्टाना हमें मदद कर सकता है।",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सोमवार 11-4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2018-05-21 11:00:00",
+            "endDateTime": "2018-05-21 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-05-14 11:00:00",
+            "endDateTime": "2018-05-14 16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 10 और 11:30 के बीच होगा",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 10 और 11:30 के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          }
+        },
+        "Start": 3,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "यह 10 और 11:30 के बीच 1/1/2015 को होगा",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 और 11:30 के बीच 1/1/2015",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          }
+        },
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 10:30 से 3 बजे तक होगा",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 10:30 से 3 बजे तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 3 और 5 के बीच होगा",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 3 और 5 के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 3:30 से 5:55 तक होगा",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 3:30 से 5:55 तक",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03:30,2015-01-01T05:55,PT2H25M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:30:00",
+            "endDateTime": "2015-01-01 05:55:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:30:00",
+            "endDateTime": "2015-01-01 05:55:00"
+          }
+        },
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप हमें अगले सप्ताह शुक्रवार को 8 AM से 2 PM के बीच शेड्यूल कर सकते हैं?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह शुक्रवार को 8 AM से 2 PM के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-17T08,2017-11-17T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 08:00:00",
+            "endDateTime": "2017-11-17 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 08:00:00",
+            "endDateTime": "2017-11-17 14:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल साढ़े सात बजे और शाम 4 बजे के बीच बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल साढ़े सात बजे और शाम 4 बजे के बीच",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 4,
+        "Length": 36
+      }
+    ]
+  }
+]

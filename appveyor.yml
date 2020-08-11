@@ -1,11 +1,11 @@
 # AppVeyor build configuration for JavaScript project
 version: 1.0.{build}
 
-image: Visual Studio 2017
+image: Visual Studio 2019
 environment:
   nodejs_version: "Stable"
   PYTHON: "C:\\Python36-x64"
-  JAVA_HOME: "C:\\Program Files\\Java\\jdk9"
+  JAVA_HOME: "C:\\Program Files\\Java\\jdk11"
 platform: Any CPU
 configuration: Release
 
@@ -32,17 +32,17 @@ build:
 build_script:
 - cmd: >-
     CALL wmic os get caption, version, osarchitecture
-
+    
     CALL node -v
-
+    
     CALL npm -v
-
+    
     CALL node -e "console.log(process.versions.v8);"
-
+    
     cd .NET\
     
     build.ci.cmd
-
+    
     cd ..\JavaScript\
     
     build.ci.cmd
@@ -50,7 +50,7 @@ build_script:
     cd ..\Python\
     
     build.ci.cmd
-
+    
     cd ..\java\
     
     build.ci.cmd
@@ -75,3 +75,5 @@ artifacts:
       name: NuGets
     - path: 'Java\libraries\**\recognizers-text*.jar'
       name: JARs
+    - path: 'Python\libraries\dist\*'
+      name: Wheels

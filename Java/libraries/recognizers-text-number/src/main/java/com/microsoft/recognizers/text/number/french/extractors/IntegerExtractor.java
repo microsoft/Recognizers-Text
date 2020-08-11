@@ -37,8 +37,8 @@ public class IntegerExtractor extends BaseNumberExtractor {
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder), "IntegerNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.RoundNumberIntegerRegexWithLocks, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.NumbersWithDozenSuffix, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.AllIntRegexWithLocks, Pattern.UNICODE_CHARACTER_CLASS), "IntegerFr");
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.UNICODE_CHARACTER_CLASS), "IntegerFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.AllIntRegexWithLocks, Pattern.UNICODE_CHARACTER_CLASS), "Integer" + FrenchNumeric.LangMarker);
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.UNICODE_CHARACTER_CLASS), "Integer" + FrenchNumeric.LangMarker);
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum");
 

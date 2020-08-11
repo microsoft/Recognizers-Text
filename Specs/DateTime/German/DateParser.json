@@ -250,12 +250,12 @@
         "Text": "Freitag",
         "Type": "date",
         "Value": {
-          "Timex": "2016-11-11",
+          "Timex": "XXXX-WXX-5",
           "FutureResolution": {
             "date": "2016-11-11"
           },
           "PastResolution": {
-            "date": "2016-11-11"
+            "date": "2016-11-04"
           }
         },
         "Start": 13,
@@ -524,6 +524,198 @@
         },
         "Start": 11,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "sende eine geburtstagsabfrage für morgen",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-12-03",
+          "FutureResolution": {
+            "date": "2019-12-03"
+          },
+          "PastResolution": {
+            "date": "2019-12-03"
+          }
+        },
+        "Start": 34,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.10.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28.10.",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28.Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28.oktober",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für den 28. Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "den 28. oktober",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28. Oktober",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28. oktober",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "send eine geburtstagsabfrage für 28.10.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-02T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28.10.",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-28",
+          "FutureResolution": {
+            "date": "2020-10-28"
+          },
+          "PastResolution": {
+            "date": "2019-10-28"
+          }
+        },
+        "Start": 33,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "28. Dezember 2012",
+    "Context": {
+      "ReferenceDateTime": "2020-04-30T18:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "28. Dezember 2012",
+        "Type": "date",
+        "Value": {
+          "Timex": "2012-12-28",
+          "FutureResolution": {
+            "date": "2012-12-28"
+          },
+          "PastResolution": {
+            "date": "2012-12-28"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Übernächste Woche am Freitag ist er wieder da",
+    "Context": {
+      "ReferenceDateTime": "2020-07-27T18:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "Übernächste Woche am Freitag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-08-14",
+          "FutureResolution": {
+            "date": "2020-08-14"
+          },
+          "PastResolution": {
+            "date": "2020-08-14"
+          }
+        },
+        "Start": 0,
+        "Length": 28
       }
     ]
   }

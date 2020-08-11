@@ -18,27 +18,31 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
-    readonly nonDateUnitRegex : RegExp;
+    readonly nonDateUnitRegex: RegExp;
     readonly ordinalExtractor: BaseNumberExtractor;
     readonly integerExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
+
+        let enableDmy = dmyDateFormat || FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor3, "gis"),
-            
-            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"):
+
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis") :
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"),
 
-            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
-                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"):
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis") :
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
 
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
@@ -65,6 +69,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
         this.forTheRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.StrictRelativeRegex, "gis");
         this.weekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex, "gis");
         this.dayOfWeek = FrenchDateTime.DayOfWeek;
         this.ordinalExtractor = new FrenchOrdinalExtractor();
@@ -72,7 +77,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
         this.numberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         this.utilityConfiguration = new FrenchDateTimeUtilityConfiguration();
-        this.nonDateUnitRegex = RegExpUtility.getSafeRegExp("(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b","gis");
+        this.nonDateUnitRegex = RegExpUtility.getSafeRegExp("(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b", "gis");
     }
 }
 
@@ -94,7 +99,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly specialDayWithNumRegex: RegExp;
     readonly nextRegex: RegExp;
     readonly unitRegex: RegExp;
-    readonly strictWeekDay : RegExp;
+    readonly strictWeekDay: RegExp;
     readonly monthRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly lastRegex: RegExp;
@@ -103,11 +108,12 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
-    constructor(config: FrenchCommonDateTimeParserConfiguration) {
+    constructor(config: FrenchCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;
@@ -119,7 +125,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = new FrenchDateExtractorConfiguration().dateRegexList;
+        this.dateRegex = new FrenchDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayRegex, "gis");
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex, "gis");
@@ -134,6 +140,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.forTheRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.StrictRelativeRegex, "gis");
         this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = FrenchDateTime.DateTokenPrefix;
@@ -146,33 +153,39 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
 
         if (trimedText === "aujourd'hui" || trimedText === "auj") {
             swift = 0;
-        } else if (trimedText === "demain" ||
+        }
+        else if (trimedText === "demain" ||
             trimedText.endsWith("a2m1") ||
             trimedText.endsWith("lendemain") ||
             trimedText.endsWith("jour suivant")) {
             swift = 1;
-        } else if (trimedText === "hier") {
+        }
+        else if (trimedText === "hier") {
             swift = -1;
-        } else if (trimedText.endsWith("après demain") ||
+        }
+        else if (trimedText.endsWith("après demain") ||
             trimedText.endsWith("après-demain") ||
             trimedText.endsWith("apres-demain")) {
             swift = 2;
-        } else if (trimedText.endsWith("avant-hier") ||
+        }
+        else if (trimedText.endsWith("avant-hier") ||
             trimedText.endsWith("avant hier")) {
             swift = -2;
-        } else if (trimedText.endsWith("dernier")) {
+        }
+        else if (trimedText.endsWith("dernier")) {
             swift = -1;
         }
 
         return swift;
     }
 
-    getSwiftMonth(source: string): number {
+    getSwiftMonthOrYear(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
         if (trimedText.endsWith("prochaine") || trimedText.endsWith("prochain")) {
             swift = 1;
-        } else if (trimedText === "dernière" ||
+        }
+        else if (trimedText === "dernière" ||
             trimedText.endsWith("dernières") ||
             trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernieres")) {
@@ -184,9 +197,9 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
 
     isCardinalLast(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText.endsWith("dernière") || 
-            trimedText.endsWith("dernières") || 
-            trimedText.endsWith("derniere") || 
+        return (trimedText.endsWith("dernière") ||
+            trimedText.endsWith("dernières") ||
+            trimedText.endsWith("derniere") ||
             trimedText.endsWith("dernieres"));
     }
 }

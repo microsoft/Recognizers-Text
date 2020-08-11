@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseHolidayExtractor : IDateTimeExtractor
     {
-        private static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
+        private const string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
         private readonly IHolidayExtractorConfiguration config;
 
@@ -24,7 +24,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(HolidayMatch(text));
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
+            foreach (var er in ers)
+            {
+                er.Metadata = new Metadata
+                {
+                    IsHoliday = true,
+                };
+            }
+
+            return ers;
         }
 
         private List<Token> HolidayMatch(string text)

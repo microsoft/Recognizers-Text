@@ -1008,7 +1008,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "零八年",
@@ -1151,6 +1151,311 @@
         },
         "Start": 6,
         "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "2018年10月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-10",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年10月的月份是10",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-10",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年十二月的月份不是0",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-12",
+          "FutureResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2008年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008年 十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2008年 十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "时间从2016年6月1日-6月30日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从2016年6月1日-6月30日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-06-01,2016-06-30,P29D)",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-06-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-06-30"
+          }
+        },
+        "Start": 2,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "18年10月1日到19年2月3日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18年10月1日到19年2月3日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-10-01,2019-02-03,P125D)",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2019-02-03"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2019-02-03"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "计费周期 2019年6月1日-6月30日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2019年6月1日-6月30日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-06-01,2019-06-30,P29D)",
+          "FutureResolution": {
+            "startDate": "2019-06-01",
+            "endDate": "2019-06-30"
+          },
+          "PastResolution": {
+            "startDate": "2019-06-01",
+            "endDate": "2019-06-30"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "我从四月的最后一个星期一到十月一日不在",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从四月的最后一个星期一到十月一日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
+          "FutureResolution": {
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 1,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "我从8月的最后一个星期一到十月一日不在",
+    "Context": {
+      "ReferenceDateTime": "2019-07-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从8月的最后一个星期一到十月一日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
+          "FutureResolution": {
+            "startDate": "2019-08-26",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-27",
+            "endDate": "2018-10-01"
+          }
+        },
+        "Start": 1,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "我从上周四到十月一日都不在",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T17:09:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从上周四到十月一日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-07-25,XXXX-10-01,P68D)",
+          "FutureResolution": {
+            "startDate": "2019-07-25",
+            "endDate": "2019-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-25",
+            "endDate": "2019-10-01"
+          }
+        },
+        "Start": 1,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "我是7月4日到7月6日去北京",
+    "Context": {
+      "ReferenceDateTime": "2019-08-08T16:09:00"
+    },
+    "Results": [
+      {
+        "Text": "7月4日到7月6日",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-07-04,XXXX-07-06,P2D)",
+          "FutureResolution": {
+            "startDate": "2020-07-04",
+            "endDate": "2020-07-06"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-04",
+            "endDate": "2019-07-06"
+          }
+        },
+        "Start": 2,
+        "Length": 9
       }
     ]
   }

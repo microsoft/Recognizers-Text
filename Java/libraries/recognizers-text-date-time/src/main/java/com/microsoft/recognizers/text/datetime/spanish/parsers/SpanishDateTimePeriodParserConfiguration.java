@@ -38,6 +38,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
     private final IDateTimeParser dateTimeParser;
     private final IDateTimeParser timePeriodParser;
     private final IDateTimeParser durationParser;
+    private final IDateTimeParser timeZoneParser;
 
     private final Pattern pureNumberFromToRegex;
     private final Pattern pureNumberBetweenAndRegex;
@@ -84,6 +85,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
         timePeriodParser = config.getTimePeriodParser();
         durationParser = config.getDurationParser();
         dateTimeParser = config.getDateTimeParser();
+        timeZoneParser = config.getTimeZoneParser();
 
         pureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
         pureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -171,6 +173,11 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
     @Override
     public IDateTimeParser getDurationParser() {
         return durationParser;
+    }
+
+    @Override
+    public IDateTimeParser getTimeZoneParser() {
+        return timeZoneParser;
     }
 
     @Override
@@ -321,7 +328,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
 
         String trimmedText = text.trim().toLowerCase();
 
-        Pattern regex = Pattern.compile(SpanishDateTime.PastPrefixRegex);
+        Pattern regex = Pattern.compile(SpanishDateTime.PreviousPrefixRegex);
         Matcher regexMatcher = regex.matcher(trimmedText);
 
         int swift = 0;

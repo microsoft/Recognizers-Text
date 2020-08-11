@@ -2,18 +2,92 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
+        private static readonly Regex NumberOrConnectorRegex = new Regex(@"^[0-9-]+$", RegexOptions.Compiled);
+
         private readonly IMergedExtractorConfiguration config;
 
         public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
         {
             this.config = config;
+        }
+
+        public static bool HasTokenIndex(string text, Regex regex, out int index, bool inPrefix)
+        {
+            index = -1;
+
+            // Support cases has two or more specific tokens
+            // For example, "show me sales after 2010 and before 2018 or before 2000"
+            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+            RegexOptions regexFlags = inPrefix ? RegexOptions.RightToLeft | RegexOptions.Singleline : RegexOptions.Singleline;
+            var match = Regex.Match(text, regex.ToString(), regexFlags);
+
+            if (match.Success)
+            {
+                var subStr = inPrefix ? text.Substring(match.Index + match.Length) : text.Substring(0, match.Index);
+                if (string.IsNullOrEmpty(subStr))
+                {
+                    index = inPrefix ? match.Index : match.Length;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text, bool potentialAmbiguity = false)
+        {
+            var beforeStr = text.Substring(0, er.Start ?? 0);
+            var afterStr = text.Substring(er.Start + er.Length ?? 0);
+
+            // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+            if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
+            {
+                var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                {
+                    return false;
+                }
+            }
+
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex, inPrefix: true))
+            {
+                var modLength = beforeStr.Length - tokenIndex;
+
+                er.Length += modLength;
+                er.Start -= modLength;
+                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                er.Metadata = AssignModMetadata(er.Metadata);
+
+                return true;
+            }
+            else if (this.config.CheckBothBeforeAfter)
+            {
+                // check also afterStr
+                afterStr = text.Substring(er.Start + er.Length ?? 0);
+                if (HasTokenIndex(afterStr.TrimStart(), tokenRegex, out tokenIndex, inPrefix: false))
+                {
+                    var modLength = tokenIndex + afterStr.Length - afterStr.TrimStart().Length;
+
+                    er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    er.Data = Constants.HAS_MOD;
+                    er.Metadata = AssignModMetadata(er.Metadata);
+
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public List<ExtractResult> Extract(string text)
@@ -25,14 +99,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<ExtractResult>();
 
+            if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
+            {
+                // @TODO needs better handling of holidays and timezones.
+                // AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
+                // ret = AddMod(ret, text);
+
+                return ret;
+            }
+
             var originText = text;
             List<MatchResult<string>> superfluousWordMatches = null;
+
+            // Push
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(
-                    text,
-                    this.config.SuperfluousWordMatcher,
-                    out superfluousWordMatches);
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
             }
 
             // The order is important, since there can be conflicts in merging
@@ -76,48 +158,32 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
+            // Pop
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                ret = MatchingUtil.PosProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
+                ret = MatchingUtil.PostProcessRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
             }
 
             return ret;
         }
 
-        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        private Metadata AssignModMetadata(Metadata metadata)
         {
-            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
-
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            if (metadata == null)
             {
-                var modLength = beforeStr.Length - tokenIndex;
-
-                er.Length += modLength;
-                er.Start -= modLength;
-                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-
-                return true;
+                metadata = new Metadata { HasMod = true };
+            }
+            else
+            {
+                metadata.HasMod = true;
             }
 
-            return false;
+            return metadata;
         }
 
-        public bool HasTokenIndex(string text, Regex regex, out int index)
+        private bool IsFailFastCase(string input)
         {
-            index = -1;
-
-            // Support cases has two or more specific tokens
-            // For example, "show me sales after 2010 and before 2018 or before 2000"
-            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
-
-            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
-            {
-                index = match.Index;
-                return true;
-            }
-
-            return false;
+            return (config.FailFastRegex != null) && (!config.FailFastRegex.IsMatch(input));
         }
 
         private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
@@ -202,37 +268,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
             {
-                foreach (var regex in config.AmbiguityFiltersDict)
+                foreach (var regex in this.config.AmbiguityFiltersDict)
                 {
-                    if (regex.Key.IsMatch(text))
+                    foreach (var extractResult in extractResults)
                     {
-                        var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er =>
-                                !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                            .ToList();
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
                     }
                 }
             }
 
-            return ers;
-        }
+            // @TODO: Refactor to remove this method and use the general ambiguity filter approach
+            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
+                    .ToList();
 
-        private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
-        {
-            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
-            {
-                var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
-                if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return extractResults;
         }
 
         // Handle cases like "move 3pm appointment to 4"
@@ -242,8 +300,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var extractResult in extractResults)
             {
-                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME) ||
-                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) ||
+                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
                 {
                     var stringAfter = text.Substring((int)extractResult.Start + (int)extractResult.Length);
                     var match = this.config.NumberEndingPattern.Match(stringAfter);
@@ -278,45 +336,59 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!success)
                 {
-                    success = TryMergeModifierToken(er, config.SinceRegex, text);
+                    // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+                    success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
                 }
 
                 if (!success)
                 {
-                    TryMergeModifierToken(er, config.AroundRegex, text);
+                    success = TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
+                if (!success)
                 {
-                    // 2012 or after/above
-                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+                    success = TryMergeModifierToken(er, config.EqualRegex, text);
+                }
 
-                    var match = config.DateAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                {
+                    // 2012 or after/above, 3 pm or later
+                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
-                    if (match.Success)
+                    if (afterStr.Length > 1)
                     {
-                        var isFollowedByOtherEntity = true;
 
-                        if (match.Length == afterStr.Trim().Length)
-                        {
-                            isFollowedByOtherEntity = false;
-                        }
-                        else
-                        {
-                            var nextStr = afterStr.Trim().Substring(match.Length).Trim();
-                            var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
+                        var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
-                            if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                        if (match.Success && match.Value != ".")
+                        {
+                            var isFollowedByOtherEntity = true;
+
+                            if (match.Length == afterStr.Trim().Length)
                             {
                                 isFollowedByOtherEntity = false;
                             }
-                        }
+                            else
+                            {
+                                var nextStr = afterStr.Trim().Substring(match.Length).Trim();
+                                var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                        if (!isFollowedByOtherEntity)
-                        {
-                            var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
-                            er.Length += modLength;
-                            er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                                {
+                                    isFollowedByOtherEntity = false;
+                                }
+                            }
+
+                            if (!isFollowedByOtherEntity)
+                            {
+                                var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
+                                er.Length += modLength;
+                                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                                er.Metadata = AssignModMetadata(er.Metadata);
+                            }
                         }
                     }
                 }

@@ -1,196 +1,300 @@
 [
   {
     "Input": "tre trilionesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "tre trilionesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3000000000000"
+          "value": "3E+18",
+          "offset":"3E+18",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "trilionesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "trilionesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1000000000000"
+          "value": "1E+18",
+          "offset":"1E+18",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
-    "Input": "cento trilioni",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "cento trilionesimo",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "cento trilioni",
+        "Text": "cento trilionesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000000000"
+          "value": "1E+20",
+          "offset":"1E+20",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
-    "Input": "11th",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "11°",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "11th",
+        "Text": "11°",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
-    "Input": "21st",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "21esima",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "21st",
+        "Text": "21esima",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21"
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
-    "Input": "30th",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "30mo",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "30th",
+        "Text": "30mo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30"
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
-    "Input": "2nd",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "2°",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "2nd",
+        "Text": "2°",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "undicesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "undicesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "ventesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ventesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "20"
+          "value": "20",
+          "offset":"20",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "venticinquesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "venticinquesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "ventunesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "ventunesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21"
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
-    "Input": "centoventicinquensimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "Input": "centoventicinquesimo",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "centoventicinquensimo",
+        "Text": "centoventicinquesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "duecentesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "duecentesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "200"
+          "value": "200",
+          "offset":"200",
+          "relativeTo":"start"
         }
       }
     ]
   },
   {
     "Input": "Prenota un posto in prima classe per Seattle",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "prima",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trentaseiesimo",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "trentaseiesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "36",
+          "offset":"36",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinto",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "quinto",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "5",
+          "offset":"5",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento milionesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "cento milionesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000",
+          "offset":"100000000",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trentesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "trentesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30",
+            "offset":"30",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dodicesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dodicesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "12",
+          "offset":"12",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il centoventisettesimo classificato",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "centoventisettesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "127",
+          "offset":"127",
+          "relativeTo":"start"
         }
       }
     ]

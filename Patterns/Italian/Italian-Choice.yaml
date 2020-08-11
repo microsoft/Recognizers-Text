@@ -1,0 +1,9 @@
+---
+LangMarker: Ita
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d\u00E0-\u00FC]'
+TrueRegex: !simpleRegex
+  def: \b(vero|s[iì]|certo|sicuro|ok|d'accordo|(?<!non\s+)va\s+bene)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(falso|no|per\s+(niente|nulla)|niente\s+affatto|non\s+va\s+bene|non\s+è\s+ok)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)

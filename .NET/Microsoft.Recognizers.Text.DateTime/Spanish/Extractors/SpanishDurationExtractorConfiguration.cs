@@ -1,45 +1,79 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
+    public class SpanishDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDurationExtractorConfiguration
     {
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
+        public static readonly Regex UnitRegex =
+            new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
 
         // TODO: improve Spanish the SuffixAndRegex
-        public static readonly Regex SuffixAndRegex = new Regex(DateTimeDefinitions.SuffixAndRegex, RegexOptions.Singleline);
-        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexOptions.Singleline);
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DurationNumberCombinedWithUnit, RegexOptions.Singleline);
+        public static readonly Regex SuffixAndRegex =
+            new Regex(DateTimeDefinitions.SuffixAndRegex, RegexFlags);
+
+        public static readonly Regex FollowedUnit =
+            new Regex(DateTimeDefinitions.FollowedUnit, RegexFlags);
+
+        public static readonly Regex NumberCombinedWithUnit =
+            new Regex(DateTimeDefinitions.DurationNumberCombinedWithUnit, RegexFlags);
 
         // TODO: add half in AnUnitRegex
-        public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.Singleline);
-        public static readonly Regex DuringRegex = new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.Singleline);
-        public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.AllRegex, RegexOptions.Singleline);
-        public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.Singleline);
+        public static readonly Regex AnUnitRegex =
+            new Regex(DateTimeDefinitions.AnUnitRegex, RegexFlags);
 
-        public static readonly Regex ConjunctionRegex = new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.Singleline);
+        public static readonly Regex DuringRegex =
+            new Regex(DateTimeDefinitions.DuringRegex, RegexFlags);
 
-        public static readonly Regex InexactNumberRegex = new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.Singleline);
-        public static readonly Regex InexactNumberUnitRegex = new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.Singleline);
+        public static readonly Regex AllRegex =
+            new Regex(DateTimeDefinitions.AllRegex, RegexFlags);
 
-        public static readonly Regex RelativeDurationUnitRegex = new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.Singleline);
+        public static readonly Regex HalfRegex =
+            new Regex(DateTimeDefinitions.HalfRegex, RegexFlags);
 
-        public static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
+        public static readonly Regex ConjunctionRegex =
+            new Regex(DateTimeDefinitions.ConjunctionRegex, RegexFlags);
 
-        public static readonly Regex DurationConnectorRegex = new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.Singleline);
+        public static readonly Regex InexactNumberRegex =
+            new Regex(DateTimeDefinitions.InexactNumberRegex, RegexFlags);
+
+        public static readonly Regex InexactNumberUnitRegex =
+            new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexFlags);
+
+        public static readonly Regex RelativeDurationUnitRegex =
+            new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexFlags);
+
+        public static readonly Regex DurationUnitRegex =
+            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+
+        public static readonly Regex DurationConnectorRegex =
+            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
+
+        public static readonly Regex SpecialNumberUnitRegex = null;
 
         public static readonly Regex MoreThanRegex =
-            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexFlags);
 
         public static readonly Regex LessThanRegex =
-            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexFlags);
 
-        public SpanishDurationExtractorConfiguration(IOptionsConfiguration config)
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public SpanishDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance(numConfig);
+
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
@@ -49,6 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
+
+        bool IDurationExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         Regex IDurationExtractorConfiguration.FollowedUnit => FollowedUnit;
 
@@ -75,6 +111,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
 
         Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
+
+        Regex IDurationExtractorConfiguration.SpecialNumberUnitRegex => SpecialNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 

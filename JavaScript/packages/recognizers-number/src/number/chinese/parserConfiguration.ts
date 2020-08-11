@@ -2,7 +2,7 @@ import { ParseResult } from "@microsoft/recognizers-text";
 import { ICJKNumberParserConfiguration } from "../cjkParsers";
 import { CultureInfo, Culture } from "../../culture";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
-import { RegExpUtility } from "@microsoft/recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class ChineseNumberParserConfiguration implements ICJKNumberParserConfiguration {
 
@@ -18,17 +18,20 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
     readonly nonDecimalSeparatorChar: string;
     readonly decimalSeparatorChar: string;
     readonly wordSeparatorToken: string;
-    readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
-    readonly writtenFractionSeparatorTexts: ReadonlyArray<string>;
-    
+    readonly zeroChar: string;
+    readonly pairChar: string;
+    readonly writtenDecimalSeparatorTexts: readonly string[];
+    readonly writtenGroupSeparatorTexts: readonly string[];
+    readonly writtenIntegerSeparatorTexts: readonly string[];
+    readonly writtenFractionSeparatorTexts: readonly string[];
+
     readonly zeroToNineMap: ReadonlyMap<string, number>;
     readonly roundNumberMapChar: ReadonlyMap<string, number>;
     readonly fullToHalfMap: ReadonlyMap<string, string>;
     readonly tratoSimMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
-    readonly roundDirectList: ReadonlyArray<string>;
+    readonly roundDirectList: readonly string[];
+    readonly tenChars: readonly string[];
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
@@ -53,6 +56,8 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.nonDecimalSeparatorChar = ChineseNumeric.NonDecimalSeparatorChar;
         this.halfADozenText = ChineseNumeric.HalfADozenText;
         this.wordSeparatorToken = ChineseNumeric.WordSeparatorToken;
+        this.zeroChar = ChineseNumeric.ZeroChar;
+        this.pairChar = ChineseNumeric.PairChar;
 
         this.writtenDecimalSeparatorTexts = [];
         this.writtenGroupSeparatorTexts = [];
@@ -71,6 +76,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.tratoSimMap = ChineseNumeric.TratoSimMap;
         this.unitMap = ChineseNumeric.UnitMap;
         this.roundDirectList = ChineseNumeric.RoundDirectList;
+        this.tenChars = ChineseNumeric.TenChars;
         this.digitNumRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DigitNumRegex, "gis");
         this.dozenRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DozenRegex, "gis");
         this.percentageRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageRegex, "gis");
@@ -83,7 +89,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.roundNumberIntegerRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.RoundNumberIntegerRegex, "gis");
     }
 
-    normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {
+    normalizeTokenSet(tokens: readonly string[], context: ParseResult): readonly string[] {
         return tokens;
     }
 

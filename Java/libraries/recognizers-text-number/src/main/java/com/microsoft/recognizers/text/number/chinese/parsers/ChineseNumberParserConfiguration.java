@@ -18,6 +18,8 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
         super(
                 ChineseNumeric.LangMarker,
                 new CultureInfo(Culture.Chinese),
+                ChineseNumeric.CompoundNumberLanguage,
+                ChineseNumeric.MultiDecimalSeparatorCulture,
                 NumberOptions.None,
                 ChineseNumeric.NonDecimalSeparatorChar,
                 ChineseNumeric.DecimalSeparatorChar,
@@ -49,10 +51,12 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 Pattern.compile(ChineseNumeric.DoubleAndRoundRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.PairRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.DozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(ChineseNumeric.RoundNumberIntegerRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS)
+                Pattern.compile(ChineseNumeric.RoundNumberIntegerRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                ChineseNumeric.ZeroChar,
+                ChineseNumeric.TenChars,
+                ChineseNumeric.PairChar
         );
     }
-
 
     @Override
     public List<String> normalizeTokenSet(List<String> tokens, ParseResult context) {

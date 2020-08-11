@@ -1,9 +1,10 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
+    public class FrenchDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public FrenchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -18,10 +19,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             HalfDateUnitRegex = FrenchDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = FrenchDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = FrenchDurationExtractorConfiguration.DurationFollowedUnit;
+
             ConjunctionRegex = FrenchDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = FrenchDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = FrenchDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = FrenchDurationExtractorConfiguration.DurationUnitRegex;
+            SpecialNumberUnitRegex = FrenchDurationExtractorConfiguration.SpecialNumberUnitRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
@@ -29,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -54,6 +58,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

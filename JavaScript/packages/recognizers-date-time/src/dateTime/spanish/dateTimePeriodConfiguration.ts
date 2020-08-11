@@ -31,7 +31,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly timeUnitRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly nextPrefixRegex: RegExp;
     readonly relativeTimeUnitRegex: RegExp;
     readonly restOfDateTimeRegex: RegExp;
@@ -40,15 +40,15 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly middlePauseRegex: RegExp;
 
     readonly fromRegex: RegExp;
-    readonly connectorAndRegex: RegExp;
+    readonly RangeConnectorRegex: RegExp;
     readonly betweenRegex: RegExp;
 
 
-    constructor() {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo),
             RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd)
-        ]
+        ];
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
@@ -56,7 +56,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedUnit);
         this.timeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit);
         this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex);
@@ -64,17 +64,17 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex);
         this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex);
         this.generalEndingRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.GeneralEndingRegex);
-        this.middlePauseRegex= RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
+        this.middlePauseRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.RangeConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
 
         this.cardinalExtractor = new SpanishCardinalExtractor();
 
-        this.singleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+        this.singleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(dmyDateFormat));
         this.singleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
     }
@@ -88,7 +88,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     }
 
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, source).matched;
+        return RegExpUtility.getFirstMatchIndex(this.RangeConnectorRegex, source).matched;
     }
 }
 
@@ -106,7 +106,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
     readonly unitRegex: RegExp;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
 
     readonly numbers: ReadonlyMap<string, number>;
@@ -141,7 +141,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.numbers = config.numbers;
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
 
         this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo);
@@ -215,7 +215,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         let swift = 0;
 
         // TODO: Replace with a regex
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched ||
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched ||
             trimedText === "anoche") {
             swift = -1;
         }

@@ -4,9 +4,14 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseIp:
     Ipv4Regex = f'\\b(1\\d{{2}}|2[0-4]\\d|25[0-5]|0?[1-9]\\d|0{{0,2}}\\d)((\\.(1\\d{{2}}|2[0-4]\\d|25[0-5]|0?[1-9]\\d|0{{0,2}}\\d)){{3}})\\b'
     BasicIpv6Element = f'([\\da-fA-F]{{1,4}})'

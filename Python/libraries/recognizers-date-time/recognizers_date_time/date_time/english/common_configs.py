@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Pattern
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
@@ -32,8 +32,14 @@ from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
 from .datetime_parser_config import EnglishDateTimeParserConfiguration
 from .datetimeperiod_extractor_config import EnglishDateTimePeriodExtractorConfiguration
 from .datetimeperiod_parser_config import EnglishDateTimePeriodParserConfiguration
+from ..base_timezone import BaseTimeZoneParser
+
 
 class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
+    @property
+    def check_both_before_after(self) -> Pattern:
+        return self._check_both_before_after
+
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
@@ -45,6 +51,10 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
     def ordinal_extractor(self) -> BaseNumberExtractor:
         return self._ordinal_extractor
+
+    @property
+    def time_zone_parser(self) -> BaseTimeZoneParser:
+        return self._time_zone_parser
 
     @property
     def number_parser(self) -> BaseNumberParser:
@@ -157,19 +167,37 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._integer_extractor = EnglishIntegerExtractor()
         self._ordinal_extractor = EnglishOrdinalExtractor()
-        self._day_of_month = {**BaseDateTime.DayOfMonthDictionary, **EnglishDateTime.DayOfMonth}
-        self._number_parser = BaseNumberParser(EnglishNumberParserConfiguration())
-        self._date_extractor = BaseDateExtractor(EnglishDateExtractorConfiguration())
-        self._time_extractor = BaseTimeExtractor(EnglishTimeExtractorConfiguration())
-        self._duration_extractor = BaseDurationExtractor(EnglishDurationExtractorConfiguration())
-        self._date_period_extractor = BaseDatePeriodExtractor(EnglishDatePeriodExtractorConfiguration())
-        self._time_period_extractor = BaseTimePeriodExtractor(EnglishTimePeriodExtractorConfiguration())
-        self._date_time_extractor = BaseDateTimeExtractor(EnglishDateTimeExtractorConfiguration())
-        self._date_time_period_extractor = BaseDateTimePeriodExtractor(EnglishDateTimePeriodExtractorConfiguration())
-        self._duration_parser = BaseDurationParser(EnglishDurationParserConfiguration(self))
-        self._date_parser = BaseDateParser(EnglishDateParserConfiguration(self))
-        self._time_parser = EnglishTimeParser(EnglishTimeParserConfiguration(self))
-        self._date_period_parser = BaseDatePeriodParser(EnglishDatePeriodParserConfiguration(self))
-        self._time_period_parser = BaseTimePeriodParser(EnglishTimePeriodParserConfiguration(self))
-        self._date_time_parser = BaseDateTimeParser(EnglishDateTimeParserConfiguration(self))
-        self._date_time_period_parser = BaseDateTimePeriodParser(EnglishDateTimePeriodParserConfiguration(self))
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
+        self._day_of_month = {
+            **BaseDateTime.DayOfMonthDictionary, **EnglishDateTime.DayOfMonth}
+        self._time_zone_parser = BaseTimeZoneParser()
+        self._number_parser = BaseNumberParser(
+            EnglishNumberParserConfiguration())
+        self._date_extractor = BaseDateExtractor(
+            EnglishDateExtractorConfiguration())
+        self._time_extractor = BaseTimeExtractor(
+            EnglishTimeExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            EnglishDurationExtractorConfiguration())
+        self._date_period_extractor = BaseDatePeriodExtractor(
+            EnglishDatePeriodExtractorConfiguration())
+        self._time_period_extractor = BaseTimePeriodExtractor(
+            EnglishTimePeriodExtractorConfiguration())
+        self._date_time_extractor = BaseDateTimeExtractor(
+            EnglishDateTimeExtractorConfiguration())
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(
+            EnglishDateTimePeriodExtractorConfiguration())
+        self._duration_parser = BaseDurationParser(
+            EnglishDurationParserConfiguration(self))
+        self._date_parser = BaseDateParser(
+            EnglishDateParserConfiguration(self))
+        self._time_parser = EnglishTimeParser(
+            EnglishTimeParserConfiguration(self))
+        self._date_period_parser = BaseDatePeriodParser(
+            EnglishDatePeriodParserConfiguration(self))
+        self._time_period_parser = BaseTimePeriodParser(
+            EnglishTimePeriodParserConfiguration(self))
+        self._date_time_parser = BaseDateTimeParser(
+            EnglishDateTimeParserConfiguration(self))
+        self._date_time_period_parser = BaseDateTimePeriodParser(
+            EnglishDateTimePeriodParserConfiguration(self))

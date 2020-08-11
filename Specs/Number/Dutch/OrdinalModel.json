@@ -1,460 +1,522 @@
 [
   {
     "Input": "drie biljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drie biljoenste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3000000000000"
+          "value": "3000000000000",
+          "offset":"3000000000000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "een biljoenste",
-    "Results": [],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   },
   {
     "Input": "honderd biljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderd biljoenste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000000000"
+          "value": "100000000000000",
+          "offset":"100000000000000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "11e",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11e",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "derde",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "derde",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "30ste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "30ste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30"
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweede",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweede",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "elfde",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elfde",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "nulde",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "nulde",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "0"
+          "value": "0",
+          "offset":"0",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "twintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "twintigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "20"
+          "value": "20",
+          "offset":"20",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "vijfendertigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vijfendertigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "35"
+          "value": "35",
+          "offset":"35",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "eenentwintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eenentwintigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21"
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdvijfentwintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdvijfentwintigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "biljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "biljoenste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1000000000000"
+          "value": "1000000000000",
+          "offset":"1000000000000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "eerste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweehonderdste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweehonderdste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "200"
+          "value": "200",
+          "offset":"200",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdachtste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdachtste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "108"
+          "value": "108",
+          "offset":"108",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdenachtste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdenachtste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "108"
+          "value": "108",
+          "offset":"108",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweeduizend zestiende",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeduizend zestiende",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2016"
+          "value": "2016",
+          "offset":"2016",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "tweeduizend en zestiende",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweeduizend en zestiende",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2016"
+          "value": "2016",
+          "offset":"2016",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "zeventien miljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zeventien miljoenste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "17000000"
+          "value": "17000000",
+          "offset":"17000000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "vier miljoenste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vier miljoenste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "4000000"
+          "value": "4000000",
+          "offset":"4000000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "vier miljoen vierhonderdduizendste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vier miljoen vierhonderdduizendste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "4400000"
+          "value": "4400000",
+          "offset":"4400000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "drieduizend tweehonderdtwintigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drieduizend tweehonderdtwintigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3220"
+          "value": "3220",
+          "offset":"3220",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdvijfendertigste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdvijfendertigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "135"
+          "value": "135",
+          "offset":"135",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdentweede",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdentweede",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "102"
+          "value": "102",
+          "offset":"102",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "drieduizendste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "drieduizendste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3000"
+          "value": "3000",
+          "offset":"3000",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdeende",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdeende",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "101"
+          "value": "101",
+          "offset":"101",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdeneende",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdeneende",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "101"
+          "value": "101",
+          "offset":"101",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "honderdeerste",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "honderdeerste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "101"
+          "value": "101",
+          "offset":"101",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "duizendeende",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "duizendeende",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1001"
+          "value": "1001",
+          "offset":"1001",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "duizendeerste",
     "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "duizendeerste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1001"
+          "value": "1001",
+          "offset":"1001",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "achthonderdzevende",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "achthonderdzevende",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "807"
+          "value": "807",
+          "offset":"807",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   },
   {
     "Input": "driehonderdachtste",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "driehonderdachtste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "308"
+          "value": "308",
+          "offset":"308",
+          "relativeTo":"start"
         }
       }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
+    ]
   }
 ]

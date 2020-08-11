@@ -6,7 +6,7 @@ import { PortugueseNumericWithUnit } from "../../resources/portugueseNumericWith
 export class PortugueseCurrencyExtractorConfiguration extends PortugueseNumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
     readonly prefixList: ReadonlyMap<string, string>;
-    readonly ambiguousUnitList: ReadonlyArray<string>;
+    readonly ambiguousUnitList: readonly string[];
     readonly extractType: string;
 
     constructor(ci?: CultureInfo) {
@@ -27,7 +27,7 @@ export class PortugueseCurrencyExtractorConfiguration extends PortugueseNumberWi
 
 export class PortugueseCurrencyParserConfiguration extends PortugueseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Portuguese);
         }
 

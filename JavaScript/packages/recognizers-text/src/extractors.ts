@@ -1,5 +1,7 @@
+import { MetaData } from "./metaData";
+
 export interface IExtractor {
-    extract(input: string): Array<ExtractResult>
+    extract(input: string): ExtractResult[]
 }
 
 export class ExtractResult {
@@ -8,14 +10,15 @@ export class ExtractResult {
     text: string;
     type: string;
     data?: any;
+    metaData?: MetaData;
 
     static isOverlap(erA: ExtractResult, erB: ExtractResult): boolean {
-        return !( erA.start >= erB.start + erB.length ) && !( erB.start >= erA.start + erA.length );
+        return !(erA.start >= erB.start + erB.length) && !(erB.start >= erA.start + erA.length);
     }
 
     static isCover(er1: ExtractResult, er2: ExtractResult): boolean {
         return ((er2.start < er1.start) && ((er2.start + er2.length) >= (er1.start + er1.length)))
-        || ((er2.start <= er1.start) && ((er2.start + er2.length) > (er1.start + er1.length)));
+            || ((er2.start <= er1.start) && ((er2.start + er2.length) > (er1.start + er1.length)));
     }
 
     static getFromText(source: string): ExtractResult {
@@ -24,6 +27,6 @@ export class ExtractResult {
             length: source.length,
             text: source,
             type: 'custom'
-        }
+        };
     }
 }

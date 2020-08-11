@@ -9,5 +9,7 @@
         public const string Score = "score";
         public const string IsoCurrency = "isoCurrency";
         public const string SubType = "subtype";
+        public const string Offset = "offset";
+        public const string RelativeTo = "relativeTo";
     }
 }

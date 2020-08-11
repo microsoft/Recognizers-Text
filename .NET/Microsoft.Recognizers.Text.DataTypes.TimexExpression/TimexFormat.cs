@@ -1,6 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Globalization;
+
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexFormat
@@ -173,7 +175,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.Month != null && timex.WeekOfMonth != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-WXX-{timex.WeekOfMonth}";
+                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{timex.WeekOfMonth?.ToString("D2", CultureInfo.InvariantCulture)}";
             }
 
             if (timex.Month != null)

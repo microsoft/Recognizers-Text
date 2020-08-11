@@ -3,19 +3,22 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
+    public class EnglishTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
@@ -46,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             int deltaMin;
 
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimedPrefix = prefix.Trim();
 
             if (trimedPrefix.StartsWith("half"))
             {
@@ -70,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
             }
@@ -92,9 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var lowerSuffix = suffix.ToLowerInvariant();
             var deltaHour = 0;
-            var match = TimeSuffixFull.MatchExact(lowerSuffix, trim: true);
+            var match = TimeSuffixFull.MatchExact(suffix, trim: true);
 
             if (match.Success)
             {

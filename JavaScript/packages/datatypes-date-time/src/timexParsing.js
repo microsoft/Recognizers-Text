@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
-const timexregex = require('./timexregex.js');
+const timexregex = require('./timexRegex.js');
 
 const parseString = function (timex, obj) {
     // a reference to the present

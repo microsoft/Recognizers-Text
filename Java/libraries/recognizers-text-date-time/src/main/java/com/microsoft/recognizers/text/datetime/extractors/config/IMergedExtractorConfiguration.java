@@ -50,11 +50,15 @@ public interface IMergedExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getSingleAmbiguousMonthRegex();
 
+    Pattern getAmbiguousRangeModifierPrefix();
+
+    Pattern getPotentialAmbiguousRangeRegex();
+
     Pattern getPrepositionSuffixRegex();
 
     Pattern getNumberEndingPattern();
 
-    Pattern getDateAfterRegex();
+    Pattern getSuffixAfterRegex();
 
     Pattern getUnspecificDatePeriodRegex();
 

@@ -1271,5 +1271,26 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "I'll leave for a fortnight.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "a fortnight",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
   }
 ]

@@ -130,5 +130,38 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "我这会儿没有空",
+    "Results": [
+      {
+        "Text": "这会儿",
+        "Type": "datetime",
+        "Start": 1,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "你好我6月15号晚八点的飞机",
+    "Results": [
+      {
+        "Text": "6月15号晚八点",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "你好我6月15号早上八点的飞机",
+    "Results": [
+      {
+        "Text": "6月15号早上八点",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 9
+      }
+    ]
   }
 ]

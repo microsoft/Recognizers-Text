@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class TimeZoneUtility
+    public static class TimeZoneUtility
     {
         public static List<ExtractResult> MergeTimeZones(List<ExtractResult> originalErs, List<ExtractResult> timeZoneErs, string text)
         {
@@ -29,6 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                             };
                         }
                     }
+
+                    // Make sure timezone info propagates to longer span entity.
+                    if (er.IsOverlap(timeZoneEr))
+                    {
+                        er.Data = new Dictionary<string, object>()
+                            {
+                                { Constants.SYS_DATETIME_TIMEZONE, timeZoneEr },
+                            };
+                    }
                 }
             }
 
@@ -38,6 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool ShouldResolveTimeZone(ExtractResult er, DateTimeOptions options)
         {
             var enablePreview = (options & DateTimeOptions.EnablePreview) != 0;
+            if (!enablePreview)
+            {
+                return false;
+            }
+
             var hasTimeZoneData = false;
 
             if (er.Data is Dictionary<string, object>)
@@ -50,7 +67,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            return enablePreview && hasTimeZoneData;
+            return hasTimeZoneData;
+        }
+
+        public static StringMatcher BuildMatcherFromLists(params List<string>[] collections)
+        {
+            StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+            List<string> matcherList = new List<string>();
+
+            foreach (List<string> collection in collections)
+            {
+                collection.ForEach(o => matcherList.Add(o.Trim().ToLowerInvariant()));
+            }
+
+            matcherList = matcherList.Distinct().ToList();
+
+            matcher.Init(matcherList);
+
+            return matcher;
         }
     }
 }

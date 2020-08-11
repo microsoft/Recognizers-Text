@@ -9,7 +9,8 @@ var SpanishCommonDateTimeParserConfiguration = Recognizers.SpanishCommonDateTime
 var FrenchCommonDateTimeParserConfiguration = Recognizers.FrenchCommonDateTimeParserConfiguration;
 
 var LanguagesConfig = {
-    'English': new EnglishCommonDateTimeParserConfiguration(),
+    'English': new EnglishCommonDateTimeParserConfiguration(), 
+    'EnglishOthers': new EnglishCommonDateTimeParserConfiguration(true),
     'Spanish': new SpanishCommonDateTimeParserConfiguration(),
     'French': new FrenchCommonDateTimeParserConfiguration(),
     'Chinese': null
@@ -67,6 +68,9 @@ function createParser(lang, parser, commonConfig) {
         }
 
         // resolve config
+        if (lang === "EnglishOthers") {
+            lang = "English";
+        }
         var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Configuration;
         var configTypeName = lang + parser + Constants.ParserConfiguration;
         var ConfigType = Recognizers[configTypeName];

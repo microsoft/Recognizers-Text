@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ITimePeriodExtractorConfiguration : IOptionsConfiguration
+    public interface ITimePeriodExtractorConfiguration : IDateTimeOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 
@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IEnumerable<Regex> SimpleCasesRegex { get; }
 
         IEnumerable<Regex> PureNumberRegex { get; }
+
+        bool CheckBothBeforeAfter { get; }
 
         Regex TillRegex { get; }
 
@@ -28,5 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool IsConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
+
+        List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs);
     }
 }

@@ -33,7 +33,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
     public static final Pattern FollowedDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
     public static final Pattern NumberCombinedWithDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    public static final Pattern PreviousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
     public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
     public static final Pattern FutureSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureSuffixRegex);
     public static final Pattern WeekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
@@ -51,6 +51,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
     public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
     public static final Pattern CenturySuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CenturySuffixRegex);
     public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
+    public static final Pattern NowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex);
 
     // composite regexes
     public static final Pattern SimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex);
@@ -100,7 +101,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
         }
     };
 
-    private final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
+    public static final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     private final String[] durationDateRestrictions = EnglishDateTime.DurationDateRestrictions.toArray(new String[0]);
 
     private final IDateTimeExtractor datePointExtractor;
@@ -161,7 +162,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
 
     @Override
     public Pattern getPastRegex() {
-        return PastPrefixRegex;
+        return PreviousPrefixRegex;
     }
 
     @Override
@@ -242,6 +243,11 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
     @Override
     public Pattern getCenturySuffixRegex() {
         return CenturySuffixRegex;
+    }
+
+    @Override
+    public Pattern getNowRegex() {
+        return NowRegex;
     }
 
     @Override

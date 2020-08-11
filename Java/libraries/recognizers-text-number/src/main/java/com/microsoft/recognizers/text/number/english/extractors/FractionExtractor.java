@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.number.english.extractors;
 
 import com.microsoft.recognizers.text.number.Constants;
+import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import org.javatuples.Pair;
 
 public class FractionExtractor extends BaseNumberExtractor {
 
@@ -37,18 +39,19 @@ public class FractionExtractor extends BaseNumberExtractor {
         return Optional.empty();
     }
 
-    private static final ConcurrentHashMap<NumberOptions, FractionExtractor> instances = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Pair<NumberMode, NumberOptions>, FractionExtractor> instances = new ConcurrentHashMap<>();
 
-    public static FractionExtractor getInstance(NumberOptions options) {
-        if (!instances.containsKey(options)) {
-            FractionExtractor instance = new FractionExtractor(options);
-            instances.put(options, instance);
+    public static FractionExtractor getInstance(NumberMode mode, NumberOptions options) {
+        Pair<NumberMode, NumberOptions> key = Pair.with(mode, options);
+        if (!instances.containsKey(key)) {
+            FractionExtractor instance = new FractionExtractor(mode, options);
+            instances.put(key, instance);
         }
 
-        return instances.get(options);
+        return instances.get(key);
     }
 
-    private FractionExtractor(NumberOptions options) {
+    private FractionExtractor(NumberMode mode, NumberOptions options) {
         this.options = options;
 
         HashMap<Pattern, String> builder = new HashMap<>();
@@ -58,10 +61,12 @@ public class FractionExtractor extends BaseNumberExtractor {
         builder.put(Pattern.compile(EnglishNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
         builder.put(Pattern.compile(EnglishNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
 
-        if ((options.ordinal() & NumberOptions.PercentageMode.ordinal()) != 0) {
-            builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionWithinPercentModeRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
-        } else {
-            builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
+        if (mode != NumberMode.Unit) {
+            if ((options.ordinal() & NumberOptions.PercentageMode.ordinal()) != 0) {
+                builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionWithinPercentModeRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
+            } else {
+                builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
+            }
         }
 
         this.regexes = Collections.unmodifiableMap(builder);

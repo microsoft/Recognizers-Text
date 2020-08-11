@@ -4,5 +4,20 @@
         <name>Microsoft.Recognizers.Text.NumberWithUnit</name>
     </assembly>
     <members>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.None">
+            <summary>
+            Represents None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.EnablePreview">
+            <summary>
+            EnablePreview
+            </summary>
+        </member>
     </members>
 </doc>

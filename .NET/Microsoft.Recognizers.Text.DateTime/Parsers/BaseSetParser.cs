@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -24,9 +25,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
             object value = null;
-            if (er.Type.Equals(ParserName))
+
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseEachUnit(er.Text);
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEachDuration(er.Text, refDate);
@@ -37,8 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParserTimeEveryday(er.Text, refDate);
                 }
 
-                // NOTE: Please do not change the order of following function
-                // datetimeperiod>dateperiod>timeperiod>datetime>date>time
+                // NOTE: Do not change the order of the following calls, due to type precedence
+                // datetimeperiod > dateperiod > timeperiod > datetime > date > time
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text, refDate);
@@ -73,12 +76,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.SET, (string) innerResult.FutureValue},
+                        { TimeTypeConstants.SET, (string)innerResult.FutureValue },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.SET, (string) innerResult.PastValue},
+                        { TimeTypeConstants.SET, (string)innerResult.PastValue },
                     };
 
                     value = innerResult;
@@ -93,17 +96,33 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = "",
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
         }
 
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
+        private DateTimeResolutionResult ResolveSet(ref DateTimeResolutionResult result, string innerTimex)
+        {
+            result.Timex = innerTimex;
+            result.FutureValue = result.PastValue = "Set: " + innerTimex;
+            result.Success = true;
+
+            return result;
+        }
+
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
+
             var ers = this.config.DurationExtractor.Extract(text, refDate);
+
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
@@ -113,10 +132,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (this.config.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + pr.TimexStr;
-                ret.Success = true;
-                return ret;
+
+                ret = ResolveSet(ref ret, pr.TimexStr);
             }
 
             return ret;
@@ -125,18 +142,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseEachUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
+
             // handle "daily", "weekly"
             var match = this.config.PeriodicRegex.Match(text);
             if (match.Success)
             {
+                // @TODO refactor to pass match
                 if (!this.config.GetMatchedDailyTimex(text, out string timex))
                 {
                     return ret;
                 }
 
-                ret.Timex = timex;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
+                ret = ResolveSet(ref ret, timex);
 
                 return ret;
             }
@@ -147,23 +164,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (exactMatch.Success)
             {
                 var sourceUnit = exactMatch.Groups["unit"].Value;
+                if (string.IsNullOrEmpty(sourceUnit))
+                {
+                    sourceUnit = exactMatch.Groups["specialUnit"].Value;
+                }
+
                 if (!string.IsNullOrEmpty(sourceUnit) && this.config.UnitMap.ContainsKey(sourceUnit))
                 {
+                    // @TODO refactor to pass match
                     if (!this.config.GetMatchedUnitTimex(sourceUnit, out string timex))
                     {
                         return ret;
                     }
 
-                    //"handle every other month"
+                    // "handle every other month"
                     if (exactMatch.Groups["other"].Success)
                     {
                         timex = timex.Replace("1", "2");
                     }
 
-                    ret.Timex = timex;
-                    ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                    ret.Success = true;
-                    return ret;
+                    ret = ResolveSet(ref ret, timex);
                 }
             }
 
@@ -173,21 +193,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParserTimeEveryday(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
+
             var ers = this.config.TimeExtractor.Extract(text, refDate);
+
             if (ers.Count != 1)
             {
                 return ret;
             }
 
-            var afterStr = text.Replace(ers[0].Text, "");
+            var afterStr = text.Replace(ers[0].Text, string.Empty);
             var match = this.config.EachDayRegex.Match(afterStr);
+
             if (match.Success)
             {
                 var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
+
+                ret = ResolveSet(ref ret, pr.TimexStr);
             }
 
             return ret;
@@ -196,13 +217,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseEach(IDateTimeExtractor extractor, IDateTimeParser parser, string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
+
             List<ExtractResult> ers = null;
+            var success = false;
+
             // remove key words of set type from text
             var match = config.SetEachRegex.Match(text);
-            var success = false;
             if (match.Success)
             {
                 var trimmedText = text.Remove(match.Index, match.Length);
+
                 ers = extractor.Extract(trimmedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
                 {
@@ -215,7 +239,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var trimmedText = text.Remove(match.Index, match.Length);
-                trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
+
+                trimmedText = trimmedText.Insert(match.Index, config.WeekDayGroupMatchString(match));
+
                 ers = extractor.Extract(trimmedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
                 {
@@ -226,18 +252,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (success)
             {
                 var pr = parser.Parse(ers[0], refDate);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
+
+                ret = ResolveSet(ref ret, pr.TimexStr);
             }
 
             return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }
