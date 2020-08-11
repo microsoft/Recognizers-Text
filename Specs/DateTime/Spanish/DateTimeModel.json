@@ -1590,5 +1590,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "El rango es de 2014.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2014",
+        "Start": 15,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014",
+              "type": "daterange",
+              "start": "2014-01-01",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

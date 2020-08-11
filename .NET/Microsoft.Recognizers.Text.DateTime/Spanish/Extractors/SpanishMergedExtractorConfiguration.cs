@@ -87,6 +87,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
 
+        // Used in Standard mode
+        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -142,9 +145,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
 
         public Regex FailFastRegex { get; } = null;
-
-        // Used in Standard mode
-        public Regex SinceRegex { get; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
 
