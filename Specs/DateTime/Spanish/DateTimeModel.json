@@ -1491,5 +1491,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Muestra ventas en el año fiscal de 2016",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "año fiscal de 2016",
+        "Start": 21,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FY2016",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

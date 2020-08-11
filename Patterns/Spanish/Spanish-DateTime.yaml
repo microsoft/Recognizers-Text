@@ -506,9 +506,12 @@ PrefixArticleRegex: !simpleRegex
 OrRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+SpecialYearTermsRegex: !nestedRegex
+  def: \b(años?\s+({SpecialYearPrefixes}\s+)?(de\s+)?)
+  references: [ SpecialYearPrefixes ]
 YearPlusNumberRegex: !nestedRegex
-  def: \b(años?\s+((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
-  references: [ FullTextYearRegex ]
+  def: \b({SpecialYearTermsRegex}((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
+  references: [ FullTextYearRegex, SpecialYearTermsRegex ]
 NumberAsTimeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
