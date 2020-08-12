@@ -17362,7 +17362,7 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python, java, javascript",
     "Results": [
       {
         "Text": "the 15th day of next month",
@@ -17418,7 +17418,7 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python, java, javascript",
     "Results": [
       {
         "Text": "twenty third day of september",
