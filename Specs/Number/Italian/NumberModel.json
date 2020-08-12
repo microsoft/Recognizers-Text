@@ -1847,5 +1847,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "tr",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "ha compiuto settant'anni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "settant",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ha compiuto settant anni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   }
 ]
