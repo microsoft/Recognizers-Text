@@ -793,7 +793,7 @@
       {
         "Text": "2pm",
         "Start": 0,
-        "End": 3,
+        "End": 2,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Picometer",

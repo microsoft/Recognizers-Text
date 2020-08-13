@@ -2724,8 +2724,8 @@
       },
       {
         "Text": "2週間以内に",
-        "Start": 5,
-        "End": 10,
+        "Start": 20,
+        "End": 25,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -11497,8 +11497,8 @@
       },
       {
         "Text": "７月２５日",
-        "Start": 0,
-        "End": 4,
+        "Start": 9,
+        "End": 13,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -11517,8 +11517,8 @@
       },
       {
         "Text": "７月２５日朝",
-        "Start": 0,
-        "End": 5,
+        "Start": 15,
+        "End": 20,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
