@@ -189,7 +189,8 @@ export namespace SpanishDateTime {
     export const MiddlePauseRegex = `^[.]`;
     export const PrefixArticleRegex = `^[\\.]`;
     export const OrRegex = `^[.]`;
-    export const YearPlusNumberRegex = `\\b(años?\\s+((?<year>(\\d{2,4}))|${FullTextYearRegex}))\\b`;
+    export const SpecialYearTermsRegex = `\\b(años?\\s+(${SpecialYearPrefixes}\\s+)?(de\\s+)?)`;
+    export const YearPlusNumberRegex = `\\b(${SpecialYearTermsRegex}((?<year>(\\d{2,4}))|${FullTextYearRegex}))\\b`;
     export const NumberAsTimeRegex = `^[.]`;
     export const TimeBeforeAfterRegex = `^[.]`;
     export const DateNumberConnectorRegex = `^[.]`;
@@ -240,7 +241,7 @@ export namespace SpanishDateTime {
     export const DurationUnitRegex = `^[\\.]`;
     export const DurationConnectorRegex = `^[.]`;
     export const SuffixAfterRegex = `^[.](?!$)`;
-    export const YearPeriodRegex = `^[.]`;
+    export const YearPeriodRegex = `((((de(sde)?|durante|en)\\s+)?${YearRegex}\\s*(${TillRegex})\\s*${YearRegex})|(((entre)\\s+)${YearRegex}\\s*(${RangeConnectorRegex})\\s*${YearRegex}))`;
     export const FutureSuffixRegex = `\\b(despu[ée]s)\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
