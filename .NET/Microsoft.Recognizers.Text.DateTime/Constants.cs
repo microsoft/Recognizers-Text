@@ -110,6 +110,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // hours of one half day
         public const int HalfDayHourCount = 12;
 
+        // hours of one quarter day
+        public const int QuarterDayHourCount = 6;
+
         // hours of a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 

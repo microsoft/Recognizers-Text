@@ -247,7 +247,7 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
         
         if (trimmedText.endsWith("morning") && hour >= Constants.HalfDayHourCount) {
             result -= Constants.HalfDayHourCount;
-        } else if (!trimmedText.endsWith("morning") && hour < Constants.HalfDayHourCount) {
+        } else if (!trimmedText.endsWith("morning") && hour < Constants.HalfDayHourCount && !(trimmedText.endsWith("night") && hour < 6)) {
             result += Constants.HalfDayHourCount;
         }
         
