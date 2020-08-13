@@ -113,8 +113,9 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            if (culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
-                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal))
+            if (culture != null && (
+                culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
             {
                 return GetModel<URLModel>(Culture.Chinese, fallbackToDefaultCulture);
             }

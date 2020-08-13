@@ -196,6 +196,18 @@
     ]
   },
   {
+    "Input": "Ich komme übernächste Woche Freitag zurück.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächste Woche Freitag",
+        "Type": "date",
+        "Start": 10,
+        "Length": 25
+      }
+    ]
+  },
+  {
     "Input": "Ich komme irgendwann nächstes Jahr im Sommer wieder.",
     "NotSupported": "javascript, python",
     "Results": [

@@ -130,6 +130,32 @@
     ]
   },
   {
+    "Input": "Wie ist das Wetter übernächste Woche?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächste Woche",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
     "Input": "Letzten September war ich nicht hier.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

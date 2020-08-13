@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -82,23 +83,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
-            if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diaria") || trimmedText.EndsWith("diariamente"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diaria", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("diariamente", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semanalmente"))
+            else if (trimmedText.Equals("semanalmente", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("quinzenalmente"))
+            else if (trimmedText.Equals("quinzenalmente", StringComparison.Ordinal))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensalmente"))
+            else if (trimmedText.Equals("mensalmente", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("anualmente"))
+            else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }

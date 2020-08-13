@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -104,12 +105,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             int result = hour;
 
-            // TODO: Replace with a regex
-            if ((trimmedText.EndsWith("mañana") || trimmedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
+            // @TODO: move hardcoded values to resources file
+            if ((trimmedText.EndsWith("mañana", StringComparison.Ordinal) || trimmedText.EndsWith("madrugada", StringComparison.Ordinal)) &&
+                hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimmedText.EndsWith("mañana") || trimmedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
+            else if (!(trimmedText.EndsWith("mañana", StringComparison.Ordinal) || trimmedText.EndsWith("madrugada", StringComparison.Ordinal)) &&
+                     hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -119,17 +122,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
+
             var trimmedText = text.Trim();
-            if (trimmedText.EndsWith("ahora") || trimmedText.EndsWith("mismo") || trimmedText.EndsWith("momento"))
+
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("ahora", StringComparison.Ordinal) || trimmedText.EndsWith("mismo", StringComparison.Ordinal) || trimmedText.EndsWith("momento", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.EndsWith("posible") || trimmedText.EndsWith("pueda") ||
-                     trimmedText.EndsWith("puedas") || trimmedText.EndsWith("podamos") || trimmedText.EndsWith("puedan"))
+            else if (trimmedText.EndsWith("posible", StringComparison.Ordinal) || trimmedText.EndsWith("pueda", StringComparison.Ordinal) ||
+                     trimmedText.EndsWith("puedas", StringComparison.Ordinal) || trimmedText.EndsWith("podamos", StringComparison.Ordinal) || trimmedText.EndsWith("puedan", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
-            else if (trimmedText.EndsWith("mente"))
+            else if (trimmedText.EndsWith("mente", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }

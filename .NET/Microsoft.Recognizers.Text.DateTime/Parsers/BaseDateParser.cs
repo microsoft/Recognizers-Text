@@ -308,6 +308,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     value = referenceDate.Upcoming((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
                 }
+                else if (config.GetSwiftMonthOrYear(trimmedText) == 2)
+                {
+                    value = value.AddDays(7);
+                }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
