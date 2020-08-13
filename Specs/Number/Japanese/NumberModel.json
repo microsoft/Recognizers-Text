@@ -675,8 +675,8 @@
         "Resolution": {
           "value": "205"
         },
-        "Start": 0,
-        "End": 2
+        "Start": 5,
+        "End": 7
       },
       {
         "Text": "二百五",
@@ -684,8 +684,8 @@
         "Resolution": {
           "value": "205"
         },
-        "Start": 0,
-        "End": 2
+        "Start": 11,
+        "End": 13
       }
     ]
   },
@@ -791,8 +791,8 @@
         "Resolution": {
           "value": "1"
         },
-        "Start": 0,
-        "End": 0
+        "Start": 5,
+        "End": 5
       },
       {
         "Text": "16",
@@ -1202,7 +1202,7 @@
     "Input": "-2.5 M",
     "Results": [
       {
-        "Text": "-2.5 M",
+        "Text": "-2.5 m",
         "TypeName": "number",
         "Resolution": {
           "value": "-2500000"
@@ -1244,7 +1244,7 @@
     "Input": "21.2E0",
     "Results": [
       {
-        "Text": "21.2E0",
+        "Text": "21.2e0",
         "TypeName": "number",
         "Resolution": {
           "value": "21.2"
