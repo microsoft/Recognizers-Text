@@ -19,18 +19,22 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
+
             var swift = -10;
-            if (trimmedText.EndsWith("prochain"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("prochain", StringComparison.Ordinal))
             {
                 // next - 'l'annee prochain'
                 swift = 1;
             }
-            else if (trimmedText.EndsWith("dernier"))
+            else if (trimmedText.EndsWith("dernier", StringComparison.Ordinal))
             {
                 // last - 'l'annee dernier'
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("cette"))
+            else if (trimmedText.StartsWith("cette", StringComparison.Ordinal))
             {
                 // this - 'cette annees'
                 swift = 0;
@@ -75,16 +79,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 { "aprilfools", FoolDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
-                { "cincodemayoday", CincoDeMayoday },
+                { "cincodemayoday", CincoDeMayoDay },
                 { "baptisteday", BaptisteDay },
                 { "usindependenceday", UsaIndependenceDay },
                 { "independenceday", UsaIndependenceDay },
                 { "bastilleday", BastilleDay },
                 { "halloweenday", HalloweenDay },
-                { "allhallowday", AllHallowDay },
-                { "allsoulsday", AllSoulsday },
+                { "allhallowday", AllHallowsDay },
+                { "allsoulsday", AllSoulsDay },
                 { "guyfawkesday", GuyFawkesDay },
-                { "veteransday", Veteransday },
+                { "veteransday", VeteransDay },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
                 { "fathersday", FathersDay },
@@ -133,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
 
-        private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
+        private static DateObject CincoDeMayoDay(int year) => new DateObject(year, 5, 5);
 
         private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
 
@@ -143,13 +147,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
 
-        private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
+        private static DateObject AllHallowsDay(int year) => new DateObject(year, 11, 1);
 
-        private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
+        private static DateObject AllSoulsDay(int year) => new DateObject(year, 11, 2);
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject VeteransDay(int year) => new DateObject(year, 11, 11);
 
         private static new DateObject FathersDay(int year) => new DateObject(year, 6, 17);
 

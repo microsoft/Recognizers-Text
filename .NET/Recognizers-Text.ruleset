@@ -357,7 +357,11 @@
   </Rules>
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1707" Action="None" />
+	<Rule Id="CA1801" Action="None" /> <!-- Disabling Remove unused method parameter warning -->
+	<Rule Id="CA1823" Action="None" /> <!-- Disabling Unused field warning -->
     <Rule Id="CA1308" Action="None" /> <!-- Disabling ToUpper warning -->
+	<Rule Id="CA1062" Action="None" /> <!-- Disabling Check null warning -->
+	<Rule Id="CA1303" Action="None" /> <!-- Disabling Log hardcoded string warning -->
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA0001" Action="Error" />

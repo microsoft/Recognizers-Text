@@ -265,7 +265,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             result.Value = ret;
-            result.ResolutionStr = ret.ToString(CultureInfo.InvariantCulture);
+            result.ResolutionStr = ret.ToString("G15", CultureInfo.InvariantCulture);
 
             return result;
         }
@@ -821,7 +821,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             // The former number is an order of magnitude larger than the later number, and they must be integers
             return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
+                   former > later && former.ToString("G15", CultureInfo.InvariantCulture).Length > later.ToString("G15", CultureInfo.InvariantCulture).Length && later > 0;
         }
 
         // Test if big and combine with small.
@@ -839,7 +839,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (Config.CultureInfo != null && value is double)
             {
-                resolutionStr = ((double)value).ToString(Config.CultureInfo);
+                resolutionStr = ((double)value).ToString("G15", Config.CultureInfo);
             }
 
             return resolutionStr;

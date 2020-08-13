@@ -113,6 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             if (match.Success)
             {
                 var oclockStr = match.Groups["oclock"].Value;
+
                 if (string.IsNullOrEmpty(oclockStr))
                 {
                     var matchAmStr = match.Groups[Constants.AmGroupName].Value;

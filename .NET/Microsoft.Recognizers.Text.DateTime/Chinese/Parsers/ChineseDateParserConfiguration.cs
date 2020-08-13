@@ -635,9 +635,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var durationRes = durationExtractor.Extract(text, referenceDate);
             var numStr = string.Empty;
             var unitStr = string.Empty;
+
+            var durationRes = durationExtractor.Extract(text, referenceDate);
+
             if (durationRes.Count > 0)
             {
                 var match = ChineseDateExtractorConfiguration.UnitRegex.Match(text);
@@ -654,7 +656,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         unitStr = this.config.UnitMap[srcUnit];
 
                         var beforeMatch = ChineseDateExtractorConfiguration.BeforeRegex.Match(suffix);
-                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -682,7 +684,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         }
 
                         var afterMatch = ChineseDateExtractorConfiguration.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -752,7 +754,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 foreach (var ch in yearChsStr)
                 {
                     num *= 10;
-                    er = integerExtractor.Extract(ch.ToString());
+
+                    er = integerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
+
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))

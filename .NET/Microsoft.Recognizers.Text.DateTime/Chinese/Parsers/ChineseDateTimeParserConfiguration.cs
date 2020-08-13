@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
@@ -50,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             EqualRegex = ChineseMergedExtractorConfiguration.EqualRegex;
         }
 
-        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
+        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear, CultureInfo.InvariantCulture);
 
         public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
 
@@ -130,31 +132,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var value = 0;
 
-            if (text.Equals("今天") || text.Equals("今日") || text.Equals("最近"))
+            // @TODO move hardcoded values to resources file
+
+            if (text.Equals("今天", StringComparison.Ordinal) ||
+                text.Equals("今日", StringComparison.Ordinal) ||
+                text.Equals("最近", StringComparison.Ordinal))
             {
                 value = 0;
             }
-            else if (text.StartsWith("明"))
+            else if (text.StartsWith("明", StringComparison.Ordinal))
             {
                 value = 1;
             }
-            else if (text.StartsWith("昨"))
+            else if (text.StartsWith("昨", StringComparison.Ordinal))
             {
                 value = -1;
             }
-            else if (text.Equals("大后天") || text.Equals("大後天"))
+            else if (text.Equals("大后天", StringComparison.Ordinal) ||
+                     text.Equals("大後天", StringComparison.Ordinal))
             {
                 value = 3;
             }
-            else if (text.Equals("大前天"))
+            else if (text.Equals("大前天", StringComparison.Ordinal))
             {
                 value = -3;
             }
-            else if (text.Equals("后天") || text.Equals("後天"))
+            else if (text.Equals("后天", StringComparison.Ordinal) ||
+                     text.Equals("後天", StringComparison.Ordinal))
             {
                 value = 2;
             }
-            else if (text.Equals("前天"))
+            else if (text.Equals("前天", StringComparison.Ordinal))
             {
                 value = -2;
             }

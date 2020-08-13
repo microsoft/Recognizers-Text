@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -108,11 +109,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("morning", StringComparison.Ordinal) &&
+                hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
+            else if (!trimmedText.EndsWith("morning", StringComparison.Ordinal) &&
+                     hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -124,15 +129,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("now"))
+            if (trimmedText.EndsWith("now", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("recently") || trimmedText.Equals("previously"))
+            else if (trimmedText.Equals("recently", StringComparison.Ordinal) ||
+                     trimmedText.Equals("previously", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("as soon as possible") || trimmedText.Equals("asap"))
+            else if (trimmedText.Equals("as soon as possible", StringComparison.Ordinal) ||
+                     trimmedText.Equals("asap", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
@@ -150,11 +157,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (trimmedText.StartsWith("next", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("last", StringComparison.Ordinal))
             {
                 swift = -1;
             }
