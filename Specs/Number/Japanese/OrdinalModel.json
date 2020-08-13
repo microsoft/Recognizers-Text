@@ -148,7 +148,7 @@
   },
   {
     "Input": "第一位第二位第三位第四位",
-    "NotSupported": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "第一",
