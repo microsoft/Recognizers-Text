@@ -439,7 +439,7 @@
       {
         "Text": "0時",
         "Type": "time",
-        "Start": 3,
+        "Start": 9,
         "Length": 2
       }
     ]
@@ -861,6 +861,30 @@
         "Type": "date",
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "今日夜十時頃以降、マイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日夜十時頃以降",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "今日十時頃以降、マイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日十時頃以降",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 7
       }
     ]
   }
