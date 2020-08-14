@@ -129,9 +129,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim();
 
             if (AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour >= Constants.HalfDayHourCount)
-
-            if (trimmedText.EndsWith("morning", StringComparison.Ordinal) &&
-                hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
@@ -153,12 +150,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 timex = "PRESENT_REF";
             }
             else if (RecentlyTimeRegex.IsExactMatch(trimmedText, trim: true))
-                     trimmedText.Equals("previously", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
             else if (AsapTimeRegex.IsExactMatch(trimmedText, trim: true))
-                     trimmedText.Equals("asap", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
