@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AllRegex = @"\b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
-      public static readonly string HolidayList1 = $@"(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))";
+      public static readonly string HolidayList1 = $@"(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag|pinksteren))";
       public static readonly string HolidayList2 = $@"(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))";
       public static readonly string HolidayList3 = $@"(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))";
       public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
@@ -715,6 +715,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"eerstekerstdag", new string[] { @"eerstekerstdag", @"1ekerstdag" } },
             { @"tweedekerstdag", new string[] { @"tweedekerstdag", @"2ekerstdag" } },
             { @"dagvandearbeid", new string[] { @"dagvandearbeid", @"dagvandenarbeid" } },
+            { @"whitesunday", new string[] { @"pinksteren" } },
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
             { @"easterday", new string[] { @"pasen", @"paasdag" } },
             { @"fathers", new string[] { @"vaderdag", @"vadersdag" } },
@@ -737,11 +738,12 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"allsaintsday", new string[] { @"allerheiligen" } },
             { @"allsoulsday", new string[] { @"allerzielen" } },
             { @"christmaseve", new string[] { @"kerstavond" } },
+            { @"yuandan", new string[] { @"yuandan" } },
+            { @"chinesenewyear", new string[] { @"chineesnieuwjaar", @"lentefestival", @"lentefeest" } },
             { @"columbus", new string[] { @"columbusdag", @"columbusday" } },
             { @"thanksgiving", new string[] { @"thanksgivingday", @"thanksgiving", @"dankzeggingsdag" } },
             { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday", @"martinlutherkingdag", @"mlkdag" } },
             { @"washingtonsbirthday", new string[] { @"washingtonsbirthday", @"washingtonbirthday" } },
-            { @"yuandan", new string[] { @"yuandan" } },
             { @"memorial", new string[] { @"memorialday" } },
             { @"youthday", new string[] { @"jongerendag" } },
             { @"childrenday", new string[] { @"kinderendag" } },

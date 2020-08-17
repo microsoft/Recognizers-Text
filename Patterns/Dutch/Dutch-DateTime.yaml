@@ -564,7 +564,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
 HolidayList1: !nestedRegex
-  def: (?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))
+  def: (?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag|pinksteren))
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
   def: (?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))
@@ -1141,6 +1141,7 @@ HolidayNames: !dictionary
     tweedekerstdag: [ tweedekerstdag, 2ekerstdag ] # 26 May
     dagvandearbeid: [ dagvandearbeid, dagvandenarbeid ] # 1 May
     # International Holidays
+    whitesunday: [ pinksteren ]
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     easterday: [ pasen, paasdag ]
     fathers: [ vaderdag, vadersdag ]
@@ -1163,12 +1164,13 @@ HolidayNames: !dictionary
     allsaintsday: [ allerheiligen ] # Duplicate of allhallowday?
     allsoulsday: [ allerzielen ]
     christmaseve: [ kerstavond ]
-    # Holidays not celebrated extensively in the Netherlands
+    yuandan: [ yuandan ]
+    chinesenewyear: [chineesnieuwjaar, lentefestival, lentefeest] 
+    # US Holidays, not celebrated extensively in the Netherlands
     columbus: [ columbusdag, columbusday ] # TODO or remove?
     thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
     martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ] # TODO or remove?
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
-    yuandan: [ yuandan ] # TODO or remove?
     memorial: [ memorialday ] # US only, no Dutch variant
     youthday: [ jongerendag ] # TODO or remove?
     childrenday: [ kinderendag ] # TODO or remove?

@@ -106,6 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "bevrijdingsdag", Bevrijdingsdag },
                 { "dodenherdenking", Dodenherdenking },
                 { "dagvandearbeid", Dagvandearbeid },
+                { "whitesunday", WhiteSunday },
             };
         }
 
@@ -188,5 +189,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject DutchVeteransday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetLastDay(year, 6, DayOfWeek.Saturday));
 
         private static DateObject Dagvandearbeid(int year) => new DateObject(year, 5, 1);
+
+        private static DateObject WhiteSunday(int year) => EasterDay(year).AddDays(49);
     }
 }
