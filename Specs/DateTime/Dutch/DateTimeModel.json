@@ -9980,6 +9980,8 @@
     "Context": {
       "ReferenceDateTime": "2020-08-17T00:00:00"
     },
+    "Comment": "Last Kingsday should be 2020, not 2019. Relative date should first look for a date in the same year.",
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -10008,8 +10010,8 @@
     "Results": [
       {
         "Text": "volgende koningsdag",
-        "Start": 13,
-        "End": 29,
+        "Start": 17,
+        "End": 37,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
