@@ -613,5 +613,29 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "Met pinksteren ga ik een weekendje weg.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "pinksteren",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-31",
+          "FutureResolution": {
+            "date": "2021-05-23"
+          },
+          "PastResolution": {
+            "date": "2020-05-31"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
   }
 ]
