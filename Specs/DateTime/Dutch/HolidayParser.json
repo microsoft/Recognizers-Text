@@ -613,5 +613,29 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "Goede Vrijdag is de vrijdag voor Pasen.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Goede Vrijdag",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-10",
+          "FutureResolution": {
+            "date": "2021-04-02"
+          },
+          "PastResolution": {
+            "date": "2020-04-10"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
   }
 ]

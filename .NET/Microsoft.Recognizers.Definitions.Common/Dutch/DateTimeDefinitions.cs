@@ -236,9 +236,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AllRegex = @"\b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
-      public static readonly string HolidayRegex1 = $@"\b(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex2 = $@"\b(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex3 = $@"\b(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
+      public static readonly string HolidayList1 = $@"(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))";
+      public static readonly string HolidayList2 = $@"(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))";
+      public static readonly string HolidayList3 = $@"(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))";
+      public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
       public static readonly string AMTimeRegex = $@"(?<am>{ApostrofsRegex}\s*(morgens|ochtends)|in\s+de\s+(morgen|ochtend))";
       public static readonly string PMTimeRegex = $@"(?<pm>{ApostrofsRegex}\s*(middags|avonds|nachts)|(in\s+de\s+)?(deze\s+)?((na)?middag|avond|nacht))\b";
       public const string InclusiveModPrepositions = @"(?<include>((in|tegen|tijdens|op)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))";
@@ -717,6 +718,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
             { @"easterday", new string[] { @"pasen", @"paasdag" } },
             { @"fathers", new string[] { @"vaderdag", @"vadersdag" } },
+            { @"goodfriday", new string[] { @"goedevrijdag" } },
             { @"mothers", new string[] { @"moederdag", @"moedersdag" } },
             { @"singleday", new string[] { @"singleday", @"vrijgezellendag" } },
             { @"femaleday", new string[] { @"femaleday", @"vrouwendag" } },

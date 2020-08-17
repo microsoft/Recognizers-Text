@@ -563,16 +563,19 @@ HalfRegex: !simpleRegex
   def: (((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
-HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
+HolidayList1: !nestedRegex
+  def: (?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))
   references: [ YearRegex, RelativeRegex ]
-# TODO: re-add oude?jaardsavond
-HolidayRegex2: !nestedRegex
-  def: \b(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
+HolidayList2: !nestedRegex
+  def: (?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))
   references: [ YearRegex, RelativeRegex ]
-HolidayRegex3: !nestedRegex # -dag suffix
-  def: \b(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
+HolidayList3: !nestedRegex # -dag suffix
+  def: (?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))
   references: [ YearRegex, RelativeRegex ]
+# Combined holiday regex
+HolidayRegex: !nestedRegex
+  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b
+  references: [ HolidayList1, HolidayList2, HolidayList3, YearRegex, RelativeRegex, StrictRelativeRegex ]
 AMTimeRegex: !nestedRegex
   def: (?<am>{ApostrofsRegex}\s*(morgens|ochtends)|in\s+de\s+(morgen|ochtend))
   references: [ ApostrofsRegex ]
@@ -1141,6 +1144,7 @@ HolidayNames: !dictionary
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     easterday: [ pasen, paasdag ]
     fathers: [ vaderdag, vadersdag ]
+    goodfriday: [ goedevrijdag ]
     mothers: [ moederdag, moedersdag ]
     singleday: [ singleday, vrijgezellendag ]
     femaleday: [ femaleday, vrouwendag ]

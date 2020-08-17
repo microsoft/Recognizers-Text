@@ -97,6 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "newyeareve", NewYearEve },
                 { "oudejaarsavond", NewYearEve },
                 { "easterday", EasterDay },
+                { "goodfriday", GoodFriday },
                 { "kingsday", KingsDay },
                 { "queensday", QueensDay },
                 { "prinsjesdag", Prinsjesdag },
@@ -168,7 +169,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => DateObject.MinValue;
+        private static DateObject GoodFriday(int year) => EasterDay(year).AddDays(-2);
+
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject KingsDay(int year) => new DateObject(year, 4, 27);
 
