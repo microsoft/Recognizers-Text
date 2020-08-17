@@ -536,6 +536,14 @@ AMTimeRegex: !simpleRegex
   def: (?<am>morning)
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
+NightTimeRegex: !simpleRegex
+  def: (night)
+NowTimeRegex: !simpleRegex
+  def: (now)
+RecentlyTimeRegex: !simpleRegex
+  def: (recently|previously)
+AsapTimeRegex: !simpleRegex
+  def: (as soon as possible|asap)
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))
 BeforeRegex: !nestedRegex

@@ -16975,5 +16975,97 @@
         }
       }
     ]
+  },
+  {
+    "Input": "tonight at 1am",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight at 1am",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T01",
+              "type": "datetime",
+              "value": "2019-12-26 01:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight at 2am",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight at 2am",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T02",
+              "type": "datetime",
+              "value": "2019-12-26 02:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight around 7",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 7",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T19",
+              "type": "datetime",
+              "value": "2019-12-26 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight around 3",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 3",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T03",
+              "type": "datetime",
+              "value": "2019-12-26 03:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
