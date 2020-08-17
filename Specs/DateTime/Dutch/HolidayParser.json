@@ -2,7 +2,7 @@
   {
     "Input": "Ik ga terug met Pasen",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2020-08-17T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -10,12 +10,12 @@
         "Text": "Pasen",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "XXXX-04-12",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2021-04-04"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2020-04-12"
           }
         },
         "Start": 16,
@@ -299,30 +299,6 @@
         },
         "Start": 32,
         "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga op Pasen terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Pasen",
-        "Type": "date",
-        "Value": {
-          "Timex": "",
-          "FutureResolution": {
-            "date": "0001-01-01"
-          },
-          "PastResolution": {
-            "date": "0001-01-01"
-          }
-        },
-        "Start": 9,
-        "Length": 5
       }
     ]
   },
@@ -615,7 +591,7 @@
     ]
   },
   {
-    "Input": "Goede Vrijdag is de vrijdag voor Pasen.",
+    "Input": "Goede Vrijdag is de vrijdag voor het paas weekend.",
     "Context": {
       "ReferenceDateTime": "2020-08-17T00:00:00"
     },
@@ -623,6 +599,30 @@
     "Results": [
       {
         "Text": "Goede Vrijdag",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-10",
+          "FutureResolution": {
+            "date": "2021-04-02"
+          },
+          "PastResolution": {
+            "date": "2020-04-10"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Wanneer was de laatste koningsdag.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "laatste koningsdag",
         "Type": "date",
         "Value": {
           "timex": "XXXX-04-10",

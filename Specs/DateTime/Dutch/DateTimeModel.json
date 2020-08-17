@@ -9974,5 +9974,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ik heb op de vorige koningsdag veel leuke activiteiten gedaan!",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vorige koningsdag",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-04-27",
+              "type": "date",
+              "value": "2020-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hopelijk gaat de volgende koningsdag weer wel gewoon door.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende koningsdag",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-27",
+              "type": "date",
+              "value": "2021-04-27"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
