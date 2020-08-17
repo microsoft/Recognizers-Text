@@ -570,7 +570,7 @@ HolidayList2: !nestedRegex
   def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|dag|yuandan|valentijn)
   references: [ YearRegex, RelativeRegex ]
 HolidayList3: !nestedRegex # -dag suffix
-  def: (?<holiday>(martin luther king|mlk|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)\s*dag)
+  def: (?<holiday>(martin luther king|mlk|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)dag)
   references: [ YearRegex, RelativeRegex ]
 # Combined holiday regex
 HolidayRegex: !nestedRegex
