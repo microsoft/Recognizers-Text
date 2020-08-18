@@ -96,14 +96,14 @@
     ]
   },
   {
-    "Input": "Ik ga terug op oudejaarsavond",
+    "Input": "Ik ga terug op oudjaarsavond",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "oudejaarsavond",
+        "Text": "oudjaarsavond",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-12-31",
@@ -115,7 +115,7 @@
           }
         },
         "Start": 15,
-        "Length": 14
+        "Length": 13
       }
     ]
   },
@@ -637,5 +637,162 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "Met oud en nieuw steken we vuurwerk af.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "oud en nieuw",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2020-12-31"
+          },
+          "PastResolution": {
+            "date": "2019-12-31"
+          }
+        },
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Oudejaarsavond (ook wel: Silvester of silvesteravond) wordt jaarlijks gevierd op de laatste dag van het jaar, 31 december.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Oudejaarsavond",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2020-12-31"
+          },
+          "PastResolution": {
+            "date": "2019-12-31"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      },
+      {
+        "Text": "Silvester",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2020-12-31"
+          },
+          "PastResolution": {
+            "date": "2019-12-31"
+          }
+        },
+        "Start": 25,
+        "Length": 9
+      },
+      {
+        "Text": "silvesteravond",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2020-12-31"
+          },
+          "PastResolution": {
+            "date": "2019-12-31"
+          }
+        },
+        "Start": 38,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "De derde dinsdag van september is een belangrijke dag voor de Nederlandse politiek en wordt Prinsjesdag genoemd.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Prinsjesdag",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-09-15",
+          "FutureResolution": {
+            "date": "2020-09-15"
+          },
+          "PastResolution": {
+            "date": "2019-09-17"
+          }
+        },
+        "Start": 92,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "De Nationale Dodenherdenking, Nationale Herdenking of Dodenherdenking vindt jaarlijks in Nederland plaats op 4 mei, met onder andere twee minuten (vroeger een minuut) stilte om 20.00 uur.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nationale Dodenherdenking",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-04",
+          "FutureResolution": {
+            "date": "2021-05-04"
+          },
+          "PastResolution": {
+            "date": "2020-05-04"
+          }
+        },
+        "Start": 3,
+        "Length": 25
+      },
+      {
+        "Text": "Nationale Herdenking",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-04",
+          "FutureResolution": {
+            "date": "2021-05-04"
+          },
+          "PastResolution": {
+            "date": "2020-05-04"
+          }
+        },
+        "Start": 30,
+        "Length": 20
+      },
+      {
+        "Text": "Dodenherdenking",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-04",
+          "FutureResolution": {
+            "date": "2021-05-04"
+          },
+          "PastResolution": {
+            "date": "2020-05-04"
+          }
+        },
+        "Start": 54,
+        "Length": 15
+      }
+    ]
   }
 ]
+
