@@ -110,6 +110,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "sinterklaas", Sinterklaas },
                 { "stmartinsday", StMartinsDay },
                 { "driekoningen", Driekoningen },
+                { "ketikoti", KetiKoti },
+                { "ramadan", Ramadan },
+                { "sacrifice", Sacrifice },
             };
         }
 
@@ -200,5 +203,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject WhiteSunday(int year) => EasterDay(year).AddDays(49);
 
         private static DateObject Driekoningen(int year) => new DateObject(year, 1, 6);
+
+        private static DateObject KetiKoti(int year) => new DateObject(year, 7, 1);
+
+        private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
+
+        private static DateObject Sacrifice(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Sacrifice);
     }
 }

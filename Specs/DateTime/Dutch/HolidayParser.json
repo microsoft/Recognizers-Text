@@ -1123,5 +1123,107 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "Ketikoti (ook wel geschreven als Keti-koti of Keti Koti) is een jaarlijks terugkerende Surinaamse feestdag ter viering van de afschaffing van de slavernij.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ketikoti",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-01",
+          "FutureResolution": {
+            "date": "2021-07-01"
+          },
+          "PastResolution": {
+            "date": "2020-07-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      },
+      {
+        "Text": "Keti-koti",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-01",
+          "FutureResolution": {
+            "date": "2021-07-01"
+          },
+          "PastResolution": {
+            "date": "2020-07-01"
+          }
+        },
+        "Start": 33,
+        "Length": 9
+      },
+      {
+        "Text": "Keti Koti",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-01",
+          "FutureResolution": {
+            "date": "2021-07-01"
+          },
+          "PastResolution": {
+            "date": "2020-07-01"
+          }
+        },
+        "Start": 46,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Het Offerfeest is het tweede eid-feest in de islam.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Offerfeest",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-30",
+          "FutureResolution": {
+            "date": "2021-07-19"
+          },
+          "PastResolution": {
+            "date": "2020-07-30"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ramadan is de negende maand van de islamitische maankalender.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ramadan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-23",
+          "FutureResolution": {
+            "date": "2021-05-12"
+          },
+          "PastResolution": {
+            "date": "2020-05-23"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
   }
 ]
