@@ -567,10 +567,10 @@ HolidayList1: !nestedRegex
   def: (?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond)
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
-  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|feest van de arbeid|yuandan|valentijn)
+  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn)
   references: [ YearRegex, RelativeRegex ]
 HolidayList3: !nestedRegex # -dag suffix
-  def: (?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)dag)
+  def: (?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)
   references: [ YearRegex, RelativeRegex ]
 # Combined holiday regex
 HolidayRegex: !nestedRegex
@@ -1134,13 +1134,14 @@ HolidayNames: !dictionary
     prinsjesdag: [ prinsjesdag ] # 3rd Tuesday of September
     dodenherdenking: [ nationaledodenherdenking, nationaleherdenking, dodenherdenking] # 4 May
     bevrijdingsdag: [ bevrijdingsdag ] # 5 May
-    hemelvaartsdag: [ hemelvaartsdag ] # 39 Days after Easter
-    teachersday: [ dagvandeleraar ] # Dutch Teachersday is on a different date - 5 October
+    teachersday: [ dagvandeleraar, dagvandeleerkracht,dagvandeleerkrachten ] # Dutch Teachersday is on a different date - 5 October
     veteransday: [ nederlandseveteranendag, veteranendag ] # Dutch Veteranendag is on a different date - last Saturday of June
     eerstekerstdag: [ eerstekerstdag, 1ekerstdag ] # 25 May
     tweedekerstdag: [ tweedekerstdag, 2ekerstdag ] # 26 May
     dagvandearbeid: [ dagvandearbeid, feestvandearbeid ] # 1 May
+    treeplantingday: [ nationaleboomfeestdag, boomfeestdag, boomplantdag ] # 3rd Wednesday in March
     # International Holidays
+    ascensionday: [ hemelvaartsdag ] # 39 Days after Easter
     whitesunday: [ pinksteren ]
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     easterday: [ pasen, paasdag ]
@@ -1149,7 +1150,6 @@ HolidayNames: !dictionary
     mothers: [ moederdag, moedersdag ]
     singleday: [ singleday, vrijgezellendag ]
     femaleday: [ femaleday, vrouwendag ]
-    treeplantingday: [ boomplantdag, boomfeestdag ]
     girlsday: [ girlsday, meisjesdag ]
     newyear: [ nieuwjaar ]
     newyearday: [ nieuwjaarsdag]
@@ -1167,9 +1167,9 @@ HolidayNames: !dictionary
     yuandan: [ yuandan ]
     chinesenewyear: [chineesnieuwjaar, lentefestival, lentefeest] 
     # US Holidays, not celebrated extensively in the Netherlands
-    columbus: [ columbusdag, columbusday ] # TODO or remove?
     thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
-    martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ] # TODO or remove?
+    martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ]
+    columbus: [ columbusdag, columbusday ] # TODO or remove?
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
     memorial: [ memorialday ] # US only, no Dutch variant
     youthday: [ jongerendag ] # TODO or remove?
@@ -1180,7 +1180,6 @@ HolidayNames: !dictionary
     stpatrickday: [ stpatrickday ] # TODO or remove?
     groundhougday: [ groundhougday, bosmarmottendag ]
     inaugurationday: [ inaugurationday, inauguratiedag ]
-    arborday: [ boomfeestdag ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:

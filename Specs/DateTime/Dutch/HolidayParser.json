@@ -958,6 +958,109 @@
         "Length": 24
       }
     ]
+  },
+  {
+    "Input": "De Dag van de Leraar, ook Dag van de Leerkracht(en) genoemd, is een speciale dag om waardering te tonen voor onderwijzers. In onder andere België, Duitsland, Nederland en het Verenigd Koninkrijk valt de dag op 5 oktober.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Dag van de Leraar",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-10-05",
+          "FutureResolution": {
+            "date": "2020-10-05"
+          },
+          "PastResolution": {
+            "date": "2019-10-05"
+          }
+        },
+        "Start": 3,
+        "Length": 17
+      },
+      {
+        "Text": "Dag van de Leerkracht",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-10-05",
+          "FutureResolution": {
+            "date": "2020-10-05"
+          },
+          "PastResolution": {
+            "date": "2019-10-05"
+          }
+        },
+        "Start": 26,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Op Hemelvaartsdag wordt binnen het christendom herdacht dat Jezus Christus is opgevaren naar God, zijn Vader in de hemel, negenendertig dagen na zijn opstanding uit de dood.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Hemelvaartsdag",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2021-05-13"
+          },
+          "PastResolution": {
+            "date": "2020-05-21"
+          }
+        },
+        "Start": 3,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "De Nationale Boomfeestdag (tot 1980 ook Boomplantdag genoemd) wordt in Nederland jaarlijks gehouden op de derde woensdag in maart.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nationale Boomfeestdag",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-03-18",
+          "FutureResolution": {
+            "date": "2021-03-17"
+          },
+          "PastResolution": {
+            "date": "2020-03-18"
+          }
+        },
+        "Start": 3,
+        "Length": 22
+      },
+      {
+        "Text": "Boomplantdag",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-03-18",
+          "FutureResolution": {
+            "date": "2021-03-17"
+          },
+          "PastResolution": {
+            "date": "2020-03-18"
+          }
+        },
+        "Start": 40,
+        "Length": 12
+      }
+    ]
   }
 ]
+
 

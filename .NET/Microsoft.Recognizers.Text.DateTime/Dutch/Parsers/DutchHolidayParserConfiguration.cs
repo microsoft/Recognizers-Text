@@ -66,8 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "youthday", YouthDay },
                 { "childrenday", ChildrenDay },
                 { "femaleday", FemaleDay },
-                { "treeplantingday", TreePlantDay },
-                { "arborday", TreePlantDay },
+                { "treeplantingday", DutchTreePlantDay },
                 { "girlsday", GirlsDay },
                 { "whiteloverday", WhiteLoverDay },
                 { "loverday", ValentinesDay },
@@ -106,6 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "bevrijdingsdag", Bevrijdingsdag },
                 { "dodenherdenking", Dodenherdenking },
                 { "dagvandearbeid", Dagvandearbeid },
+                { "ascensionday", AscensionDay },
                 { "whitesunday", WhiteSunday },
             };
         }
@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
 
-        private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
+        private static DateObject DutchTreePlantDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 3, GetDay(year, 3, 2, DayOfWeek.Wednesday));
 
         private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
 
@@ -168,8 +168,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
-
         private static DateObject GoodFriday(int year) => EasterDay(year).AddDays(-2);
 
         private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
@@ -189,6 +187,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject DutchVeteransday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetLastDay(year, 6, DayOfWeek.Saturday));
 
         private static DateObject Dagvandearbeid(int year) => new DateObject(year, 5, 1);
+
+        private static DateObject AscensionDay(int year) => EasterDay(year).AddDays(39);
 
         private static DateObject WhiteSunday(int year) => EasterDay(year).AddDays(49);
     }
