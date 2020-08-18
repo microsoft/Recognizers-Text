@@ -115,7 +115,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+
+            if (text.EndsWith("from", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
@@ -127,7 +128,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+
+            if (text.EndsWith("between", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
@@ -138,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("and");
+            return text.Equals("and", StringComparison.Ordinal);
         }
 
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);

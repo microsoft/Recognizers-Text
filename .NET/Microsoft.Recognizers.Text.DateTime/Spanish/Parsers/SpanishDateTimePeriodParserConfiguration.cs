@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -45,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PrefixDayRegex = SpanishDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             BeforeRegex = SpanishDateTimePeriodExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishDateTimePeriodExtractorConfiguration.AfterRegex;
+
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -128,14 +130,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             endHour = 0;
             endMin = 0;
 
-            // TODO: modify it according to the coresponding function in English part
-            if (trimmedText.EndsWith("madrugada"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("madrugada", StringComparison.Ordinal))
             {
                 timeStr = "TDA";
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimmedText.EndsWith("mañana"))
+            else if (trimmedText.EndsWith("mañana", StringComparison.Ordinal))
             {
                 timeStr = "TMO";
                 beginHour = 8;
@@ -147,13 +149,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimmedText.EndsWith("tarde"))
+            else if (trimmedText.EndsWith("tarde", StringComparison.Ordinal))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimmedText.EndsWith("noche"))
+            else if (trimmedText.EndsWith("noche", StringComparison.Ordinal))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -174,9 +176,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            // TODO: Replace with a regex
+            // @TODO move hardcoded values to resources file
             if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
-                trimmedText.Equals("anoche"))
+                trimmedText.Equals("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }

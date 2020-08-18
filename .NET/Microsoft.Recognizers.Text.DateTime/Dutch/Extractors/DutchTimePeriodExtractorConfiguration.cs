@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
                 foreach (var timePeriodEr in timePeriodErs)
                 {
-                    if (!timePeriodEr.Text.Equals(morgenStr))
+                    if (!timePeriodEr.Text.Equals(morgenStr, StringComparison.Ordinal))
                     {
                         timePeriodErsResult.Add(timePeriodEr);
                     }

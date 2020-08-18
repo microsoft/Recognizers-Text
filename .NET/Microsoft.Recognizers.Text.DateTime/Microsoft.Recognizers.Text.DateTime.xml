@@ -134,6 +134,12 @@
             Represents the time of the date
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.Ramadan">
+            <summary>Ramadan</summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.Sacrifice">
+            <summary>Sacrifice</summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.None">
             <summary>
             None

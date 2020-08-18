@@ -16927,5 +16927,145 @@
         }
       }
     ]
+  },
+  {
+    "Input": "When is the next new year day?",
+    "Context": {
+      "ReferenceDateTime": "2019-07-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next new year day",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-01-01",
+              "type": "date",
+              "value": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the last easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-03-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last easter",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-01",
+              "type": "date",
+              "value": "2018-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tonight at 1am",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight at 1am",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T01",
+              "type": "datetime",
+              "value": "2019-12-26 01:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight at 2am",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight at 2am",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T02",
+              "type": "datetime",
+              "value": "2019-12-26 02:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight around 7",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 7",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T19",
+              "type": "datetime",
+              "value": "2019-12-26 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight around 3",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 3",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T03",
+              "type": "datetime",
+              "value": "2019-12-26 03:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

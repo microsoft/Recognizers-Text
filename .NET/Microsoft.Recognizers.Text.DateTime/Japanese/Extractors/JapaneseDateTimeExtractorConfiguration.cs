@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     }
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || PrepositionRegex.IsMatch(middleStr))
+                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",", StringComparison.Ordinal) || PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
@@ -174,8 +174,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var beforeMatch = BeforeRegex.Match(suffix);
                     var afterMatch = AfterRegex.Match(suffix);
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) ||
-                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
+                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
                     {
                         var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));

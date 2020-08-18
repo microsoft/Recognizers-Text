@@ -180,7 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     // handle "从"
                     var beforeStr = text.Substring(0, periodBegin);
-                    if (beforeStr.Trim().EndsWith("从"))
+                    if (beforeStr.Trim().EndsWith("从", StringComparison.Ordinal))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
                     }

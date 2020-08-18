@@ -75,13 +75,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var prefixMatches = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
             var suffixMatches = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
 
-            if (prefixMatches.Count > 0 || suffixMatches.Count > 0)
+            if (prefixMatches.Any() || suffixMatches.Any())
             {
                 var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
 
                 // Checking if there are conflicting interpretations between currency unit as prefix and suffix for each number.
                 // For example, in Chinese, "$20，300美圆" should be broken into two entities instead of treating 20,300 as one number: "$20" and "300美圆".
-                if (numbers.Count() > 0 && CheckExtractorType(Constants.SYS_UNIT_CURRENCY) && prefixMatches.Count() > 0 && suffixMatches.Count() > 0)
+                if (numbers.Any() && CheckExtractorType(Constants.SYS_UNIT_CURRENCY) && prefixMatches.Any() && suffixMatches.Any())
                 {
 
                     foreach (var number in numbers)

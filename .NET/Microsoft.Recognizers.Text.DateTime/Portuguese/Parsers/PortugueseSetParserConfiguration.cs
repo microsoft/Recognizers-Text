@@ -118,19 +118,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
-            if (trimmedText.Equals("dia") || trimmedText.Equals("dias"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.Equals("dia", StringComparison.Ordinal) || trimmedText.Equals("dias", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semana") || trimmedText.Equals("semanas"))
+            else if (trimmedText.Equals("semana", StringComparison.Ordinal) || trimmedText.Equals("semanas", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mes") || trimmedText.Equals("meses"))
+            else if (trimmedText.Equals("mes", StringComparison.Ordinal) || trimmedText.Equals("meses", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("ano") || trimmedText.Equals("anos"))
+            else if (trimmedText.Equals("ano", StringComparison.Ordinal) || trimmedText.Equals("anos", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }

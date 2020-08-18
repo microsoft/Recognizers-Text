@@ -302,20 +302,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var yearNum = match.Groups["year"].Value;
             var yearJap = match.Groups["yearJap"].Value;
             var yearRel = match.Groups["yearrel"].Value;
+
+            // @TODO move hardcoded values to resources file
+
             if (!string.IsNullOrEmpty(yearNum))
             {
                 hasYear = true;
-                if (yearNum.EndsWith("年"))
+                if (yearNum.EndsWith("年", StringComparison.Ordinal))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
 
-                year = int.Parse(yearNum);
+                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
             else if (!string.IsNullOrEmpty(yearJap))
             {
                 hasYear = true;
-                if (yearJap.EndsWith("年"))
+                if (yearJap.EndsWith("年", StringComparison.Ordinal))
                 {
                     yearJap = yearJap.Substring(0, yearJap.Length - 1);
                 }
@@ -325,11 +328,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             else if (!string.IsNullOrEmpty(yearRel))
             {
                 hasYear = true;
-                if (yearRel.EndsWith("前年") || yearRel.EndsWith("先年"))
+                if (yearRel.EndsWith("前年", StringComparison.Ordinal) ||
+                    yearRel.EndsWith("先年", StringComparison.Ordinal))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("来年"))
+                else if (yearRel.EndsWith("来年", StringComparison.Ordinal))
                 {
                     year++;
                 }
@@ -404,7 +408,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 foreach (var ch in yearJapStr)
                 {
                     num *= 10;
-                    er = IntegerExtractor.Extract(ch.ToString());
+                    er = IntegerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))

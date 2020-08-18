@@ -186,9 +186,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
 
+                    // @TODO move hardcoded values to resources file
+
                     // handle "from"
                     var beforeStr = text.Substring(0, periodBegin);
-                    if (beforeStr.Trim().EndsWith("从"))
+                    if (beforeStr.Trim().EndsWith("从", StringComparison.Ordinal))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
                     }
@@ -199,7 +201,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 }
 
                 // handle "between {TimePoint} and {TimePoint}"
-                if (middleStr.Equals("和") || middleStr.Equals("与") || middleStr.Equals("到"))
+                if (middleStr.Equals("和", StringComparison.Ordinal) ||
+                    middleStr.Equals("与", StringComparison.Ordinal) ||
+                    middleStr.Equals("到", StringComparison.Ordinal))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);

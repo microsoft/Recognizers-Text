@@ -312,17 +312,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (!string.IsNullOrEmpty(yearNum))
             {
                 hasYear = true;
-                if (yearNum.EndsWith("年"))
+                if (yearNum.EndsWith("年", StringComparison.Ordinal))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
 
-                year = int.Parse(yearNum);
+                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
                 hasYear = true;
-                if (yearChs.EndsWith("年"))
+                if (yearChs.EndsWith("年", StringComparison.Ordinal))
                 {
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
@@ -332,11 +332,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             else if (!string.IsNullOrEmpty(yearRel))
             {
                 hasYear = true;
-                if (yearRel.EndsWith("去年"))
+                if (yearRel.EndsWith("去年", StringComparison.Ordinal))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("明年"))
+                else if (yearRel.EndsWith("明年", StringComparison.Ordinal))
                 {
                     year++;
                 }

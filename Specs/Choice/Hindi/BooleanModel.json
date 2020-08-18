@@ -36,7 +36,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.454545454545455
+          "score": 0.4545454545454546
         }
       }
     ]
@@ -64,7 +64,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.485714285714286
+          "score": 0.4857142857142857
         }
       }
     ]

@@ -165,17 +165,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private List<Token> DurationWithAgoAndLater(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
+
             var durationEr = DurationExtractor.Extract(text, referenceTime);
+
             foreach (var er in durationEr)
             {
                 var pos = (int)er.Start + (int)er.Length;
+
                 if (pos < text.Length)
                 {
                     var suffix = text.Substring(pos);
                     var beforeMatch = BeforeRegex.Match(suffix);
                     var afterMatch = AfterRegex.Match(suffix);
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) || (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
+                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
                     {
                         var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
