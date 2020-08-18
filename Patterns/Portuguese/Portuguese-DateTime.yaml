@@ -3,7 +3,7 @@
 LangMarker: Por
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
-  def: (?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\s+(o|[aà](s)?))?
+  def: (?<till>\b(at[eé]h?|[aà]s|ao?)\b|--|-|—|——)(\s+\b(o|[aà](s)?)\b)?
 RangeConnectorRegex: !nestedRegex
   def: (?<and>(e\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]

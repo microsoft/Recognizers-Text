@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
     {
       public const string LangMarker = @"Por";
       public const bool CheckBothBeforeAfter = false;
-      public const string TillRegex = @"(?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\s+(o|[aà](s)?))?";
+      public const string TillRegex = @"(?<till>\b(at[eé]h?|[aà]s|ao?)\b|--|-|—|——)(\s+\b(o|[aà](s)?)\b)?";
       public static readonly string RangeConnectorRegex = $@"(?<and>(e\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)";
       public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";

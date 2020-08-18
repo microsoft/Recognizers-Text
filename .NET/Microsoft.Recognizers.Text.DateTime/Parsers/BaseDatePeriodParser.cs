@@ -946,6 +946,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
+                // Parse expressions "till date", "to date"
+                if (match.Groups["toDate"].Success)
+                {
+                    ret.Timex = "PRESENT_REF";
+                    ret.FutureValue = ret.PastValue = referenceDate;
+                    ret.Mod = Constants.BEFORE_MOD;
+                    ret.Success = true;
+                    return ret;
+                }
+
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     swift = this.config.GetSwiftYear(trimmedText);

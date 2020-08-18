@@ -25,6 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
+        public static readonly Regex NowDateRegex =
+            new Regex(DateTimeDefinitions.NowDateRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static IList<string> monthTermsPadded =
@@ -92,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             LessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
-            NowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
+            NowRegex = NowDateRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
             TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
