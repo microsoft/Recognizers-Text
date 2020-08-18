@@ -107,6 +107,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "dagvandearbeid", Dagvandearbeid },
                 { "ascensionday", AscensionDay },
                 { "whitesunday", WhiteSunday },
+                { "sinterklaas", Sinterklaas },
+                { "stmartinsday", StMartinsDay },
+                { "driekoningen", Driekoningen },
             };
         }
 
@@ -117,6 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
 
         private static DateObject SecondChristmasDay(int year) => new DateObject(year, 12, 26);
+
+        private static DateObject StMartinsDay(int year) => new DateObject(year, 11, 11);
 
         private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
 
@@ -182,6 +187,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject Bevrijdingsdag(int year) => new DateObject(year, 5, 5);
 
+        private static DateObject Sinterklaas(int year) => new DateObject(year, 12, 5);
+
         private static DateObject DutchTeachersDay(int year) => new DateObject(year, 10, 5);
 
         private static DateObject DutchVeteransday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetLastDay(year, 6, DayOfWeek.Saturday));
@@ -191,5 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject AscensionDay(int year) => EasterDay(year).AddDays(39);
 
         private static DateObject WhiteSunday(int year) => EasterDay(year).AddDays(49);
+
+        private static DateObject Driekoningen(int year) => new DateObject(year, 1, 6);
     }
 }

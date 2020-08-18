@@ -1060,7 +1060,68 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "Op 5 december is het in Nederland Sinterklaasavond (Pakjesavond).",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sinterklaasavond",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-12-05",
+          "FutureResolution": {
+            "date": "2020-12-05"
+          },
+          "PastResolution": {
+            "date": "2019-12-05"
+          }
+        },
+        "Start": 34,
+        "Length": 16
+      },
+      {
+        "Text": "Pakjesavond",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-12-05",
+          "FutureResolution": {
+            "date": "2020-12-05"
+          },
+          "PastResolution": {
+            "date": "2019-12-05"
+          }
+        },
+        "Start": 52,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Driekoningen is een christelijke feestdag die elk jaar op 6 januari wordt gevierd.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Driekoningen",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-01-06",
+          "FutureResolution": {
+            "date": "2021-01-06"
+          },
+          "PastResolution": {
+            "date": "2020-01-06"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
   }
 ]
-
-

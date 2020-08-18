@@ -564,10 +564,10 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
 HolidayList1: !nestedRegex
-  def: (?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond)
+  def: (?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
-  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn)
+  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen)
   references: [ YearRegex, RelativeRegex ]
 HolidayList3: !nestedRegex # -dag suffix
   def: (?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)
@@ -1140,14 +1140,17 @@ HolidayNames: !dictionary
     tweedekerstdag: [ tweedekerstdag, 2ekerstdag ] # 26 May
     dagvandearbeid: [ dagvandearbeid, feestvandearbeid ] # 1 May
     treeplantingday: [ nationaleboomfeestdag, boomfeestdag, boomplantdag ] # 3rd Wednesday in March
+    sinterklaas: [ sinterklaas, sinterklaasavond, sinterklaasfeest, pakjesavond ] # 5 December
+    driekoningen: [ driekoningen] # 6 January
     # International Holidays
+    stmartinsday: [ sint-maartensfeest, sint-maarten] # 11 November
     ascensionday: [ hemelvaartsdag ] # 39 Days after Easter
     whitesunday: [ pinksteren ]
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     easterday: [ pasen, paasdag ]
-    fathers: [ vaderdag, vadersdag ]
+    fathers: [ vaderdag ]
     goodfriday: [ goedevrijdag ]
-    mothers: [ moederdag, moedersdag ]
+    mothers: [ moederdag ]
     singleday: [ singleday, vrijgezellendag ]
     femaleday: [ femaleday, vrouwendag ]
     girlsday: [ girlsday, meisjesdag ]
@@ -1161,25 +1164,17 @@ HolidayNames: !dictionary
     bastilleday: [ fransenationalefeestdag, bestormingvandebastille ]
     halloweenday: [ halloween, allerheiligenavond ]
     allhallowday: [ allerheiligen ]
-    allsaintsday: [ allerheiligen ] # Duplicate of allhallowday?
     allsoulsday: [ allerzielen ]
     christmaseve: [ kerstavond ]
     yuandan: [ yuandan ]
-    chinesenewyear: [chineesnieuwjaar, lentefestival, lentefeest] 
+    chinesenewyear: [chineesnieuwjaar, lentefestival, lentefeest] # Not implemented yet
+    suikerfeest: [ suikerfeest ] # Not implemented yet
+    offerfeest: [ offerfeest ] # Not implemented yet
     # US Holidays, not celebrated extensively in the Netherlands
     thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
     martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ]
-    columbus: [ columbusdag, columbusday ] # TODO or remove?
-    washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
-    memorial: [ memorialday ] # US only, no Dutch variant
-    youthday: [ jongerendag ] # TODO or remove?
-    childrenday: [ kinderendag ] # TODO or remove?
     stgeorgeday: [ sintjoris ]
-    mayday: [ dagvandearbeid ]
     usindependenceday: [ amerikaanseonafhankelijkheidsdag, usonafhankelijkheidsdag ]
-    stpatrickday: [ stpatrickday ] # TODO or remove?
-    groundhougday: [ groundhougday, bosmarmottendag ]
-    inaugurationday: [ inaugurationday, inauguratiedag ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
