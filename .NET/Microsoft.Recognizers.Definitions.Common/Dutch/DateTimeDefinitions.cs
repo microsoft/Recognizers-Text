@@ -237,8 +237,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
       public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)";
-      public static readonly string HolidayList2 = $@"(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest)";
-      public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)";
+      public static readonly string HolidayList2 = $@"(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)";
+      public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse|us\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)";
       public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
       public static readonly string AMTimeRegex = $@"(?<am>{ApostrofsRegex}\s*(morgens|ochtends)|in\s+de\s+(morgen|ochtend))";
       public static readonly string PMTimeRegex = $@"(?<pm>{ApostrofsRegex}\s*(middags|avonds|nachts)|(in\s+de\s+)?(deze\s+)?((na)?middag|avond|nacht))\b";
@@ -726,15 +726,11 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"fathers", new string[] { @"vaderdag" } },
             { @"goodfriday", new string[] { @"goedevrijdag" } },
             { @"mothers", new string[] { @"moederdag" } },
-            { @"singleday", new string[] { @"singleday", @"vrijgezellendag" } },
-            { @"femaleday", new string[] { @"femaleday", @"vrouwendag" } },
-            { @"girlsday", new string[] { @"girlsday", @"meisjesdag" } },
             { @"newyear", new string[] { @"nieuwjaar" } },
             { @"newyearday", new string[] { @"nieuwjaarsdag" } },
             { @"newyearsday", new string[] { @"nieuwjaarsdag" } },
             { @"newyeareve", new string[] { @"oudejaarsavond", @"oudjaarsavond", @"silvester", @"silvesteravond", @"oudennieuw", @"oud&nieuw" } },
             { @"valentinesday", new string[] { @"valentijnsdag", @"valetijnsdag" } },
-            { @"aprilfools", new string[] { @"1aprilgrap", @"1april" } },
             { @"independenceday", new string[] { @"onafhankelijkheidsdag" } },
             { @"bastilleday", new string[] { @"fransenationalefeestdag", @"bestormingvandebastille" } },
             { @"halloweenday", new string[] { @"halloween", @"allerheiligenavond" } },
@@ -748,8 +744,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"sacrifice", new string[] { @"offerfeest" } },
             { @"thanksgiving", new string[] { @"thanksgivingday", @"thanksgiving", @"dankzeggingsdag" } },
             { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday", @"martinlutherkingdag", @"mlkdag" } },
-            { @"stgeorgeday", new string[] { @"sintjoris" } },
-            { @"usindependenceday", new string[] { @"amerikaanseonafhankelijkheidsdag", @"usonafhankelijkheidsdag" } }
+            { @"usindependenceday", new string[] { @"amerikaanseonafhankelijkheidsdag", @"usonafhankelijkheidsdag" } },
+            { @"blackfriday", new string[] { @"blackfriday" } },
+            { @"cybermonday", new string[] { @"cybermonday" } }
         };
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {

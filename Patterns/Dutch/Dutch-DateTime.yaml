@@ -567,10 +567,10 @@ HolidayList1: !nestedRegex
   def: (?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
-  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest)
+  def: (?<holiday>black friday|cyber monday|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)
   references: [ YearRegex, RelativeRegex ]
 HolidayList3: !nestedRegex # -dag suffix
-  def: (?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)
+  def: (?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse|us\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)
   references: [ YearRegex, RelativeRegex ]
 # Combined holiday regex
 HolidayRegex: !nestedRegex
@@ -1142,7 +1142,7 @@ HolidayNames: !dictionary
     treeplantingday: [ nationaleboomfeestdag, boomfeestdag, boomplantdag ] # 3rd Wednesday in March
     sinterklaas: [ sinterklaas, sinterklaasavond, sinterklaasfeest, pakjesavond ] # 5 December
     driekoningen: [ driekoningen] # 6 January
-    ketikoti: [ ketikoti, keti-koti]
+    ketikoti: [ ketikoti, keti-koti] # 1 July
     # International Holidays
     stmartinsday: [ sint-maartensfeest, sint-maarten] # 11 November
     ascensionday: [ hemelvaartsdag ] # 39 Days after Easter
@@ -1152,17 +1152,13 @@ HolidayNames: !dictionary
     fathers: [ vaderdag ]
     goodfriday: [ goedevrijdag ]
     mothers: [ moederdag ]
-    singleday: [ singleday, vrijgezellendag ]
-    femaleday: [ femaleday, vrouwendag ]
-    girlsday: [ girlsday, meisjesdag ]
     newyear: [ nieuwjaar ]
     newyearday: [ nieuwjaarsdag]
     newyearsday: [ nieuwjaarsdag ]
     newyeareve: [ oudejaarsavond, oudjaarsavond, silvester, silvesteravond, oudennieuw, oud&nieuw ]
     valentinesday: [ valentijnsdag, valetijnsdag ]
-    aprilfools: [ 1aprilgrap, 1april ]
     independenceday: [ onafhankelijkheidsdag ]
-    bastilleday: [ fransenationalefeestdag, bestormingvandebastille ]
+    bastilleday: [ fransenationalefeestdag, bestormingvandebastille ] # 14 July
     halloweenday: [ halloween, allerheiligenavond ]
     allhallowday: [ allerheiligen ]
     allsoulsday: [ allerzielen ]
@@ -1175,8 +1171,9 @@ HolidayNames: !dictionary
     # US Holidays, not celebrated extensively in the Netherlands
     thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ]
     martinlutherking: [ martinlutherkingday, martinlutherkingjrday, martinlutherkingdag, mlkdag ]
-    stgeorgeday: [ sintjoris ]
     usindependenceday: [ amerikaanseonafhankelijkheidsdag, usonafhankelijkheidsdag ]
+    blackfriday: [ blackfriday ]
+    cybermonday: [ cybermonday ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
