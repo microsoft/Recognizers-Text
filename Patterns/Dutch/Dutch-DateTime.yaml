@@ -567,10 +567,10 @@ HolidayList1: !nestedRegex
   def: (?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond)
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
-  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|yuandan|valentijn)
+  def: (?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|feest van de arbeid|yuandan|valentijn)
   references: [ YearRegex, RelativeRegex ]
 HolidayList3: !nestedRegex # -dag suffix
-  def: (?<holiday>(martin luther king|mlk|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)dag)
+  def: (?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)dag)
   references: [ YearRegex, RelativeRegex ]
 # Combined holiday regex
 HolidayRegex: !nestedRegex
@@ -1139,7 +1139,7 @@ HolidayNames: !dictionary
     veteransday: [ nederlandseveteranendag, veteranendag ] # Dutch Veteranendag is on a different date - last Saturday of June
     eerstekerstdag: [ eerstekerstdag, 1ekerstdag ] # 25 May
     tweedekerstdag: [ tweedekerstdag, 2ekerstdag ] # 26 May
-    dagvandearbeid: [ dagvandearbeid, dagvandenarbeid ] # 1 May
+    dagvandearbeid: [ dagvandearbeid, feestvandearbeid ] # 1 May
     # International Holidays
     whitesunday: [ pinksteren ]
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]

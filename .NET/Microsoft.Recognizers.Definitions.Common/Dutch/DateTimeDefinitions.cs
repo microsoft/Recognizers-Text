@@ -237,8 +237,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
       public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaarsavond|silvester|silvesteravond)";
-      public static readonly string HolidayList2 = $@"(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|yuandan|valentijn)";
-      public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)dag)";
+      public static readonly string HolidayList2 = $@"(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|feest van de arbeid|yuandan|valentijn)";
+      public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse\s+)?onafhankelijkheids|onafhankelijkheids|nederlandse veteranen|veteranen|boomplant|boomfeest)dag)";
       public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
       public static readonly string AMTimeRegex = $@"(?<am>{ApostrofsRegex}\s*(morgens|ochtends)|in\s+de\s+(morgen|ochtend))";
       public static readonly string PMTimeRegex = $@"(?<pm>{ApostrofsRegex}\s*(middags|avonds|nachts)|(in\s+de\s+)?(deze\s+)?((na)?middag|avond|nacht))\b";
@@ -714,7 +714,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"veteransday", new string[] { @"nederlandseveteranendag", @"veteranendag" } },
             { @"eerstekerstdag", new string[] { @"eerstekerstdag", @"1ekerstdag" } },
             { @"tweedekerstdag", new string[] { @"tweedekerstdag", @"2ekerstdag" } },
-            { @"dagvandearbeid", new string[] { @"dagvandearbeid", @"dagvandenarbeid" } },
+            { @"dagvandearbeid", new string[] { @"dagvandearbeid", @"feestvandearbeid" } },
             { @"whitesunday", new string[] { @"pinksteren" } },
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
             { @"easterday", new string[] { @"pasen", @"paasdag" } },
