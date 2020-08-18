@@ -10006,6 +10006,7 @@
     "Context": {
       "ReferenceDateTime": "2020-08-17T00:00:00"
     },
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
