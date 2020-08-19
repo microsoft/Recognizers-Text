@@ -116,10 +116,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // For the 'after' mod
                 // 1. Cases like "After January", the end of the period should be the start of the new period, not the end
+                // (but not for cases like "After the beginning of January")
                 // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
                 if (mod.StartsWith(Constants.AFTER_MOD, StringComparison.Ordinal))
                 {
-                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end) && !mod.EndsWith(Constants.EARLY_MOD, StringComparison.Ordinal))
                     {
                         res.Add(DateTimeResolutionKey.Start, end);
                     }

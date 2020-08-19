@@ -17240,5 +17240,38 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back after the beginning of March",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "after the beginning of march",
+        "Start": 13,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03",
+              "Mod": "after-start",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2016-03-01"
+            },
+            {
+              "timex": "XXXX-03",
+              "Mod": "after-start",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-03-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
