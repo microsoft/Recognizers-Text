@@ -17163,5 +17163,82 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back by end of this month",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "by end of this month",
+        "Start": 13,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2016-12-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back before end of this year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "before end of this year",
+        "Start": 13,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back end of this year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "end of this year",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2016-07-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
