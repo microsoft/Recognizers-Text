@@ -236,9 +236,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AllRegex = @"\b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
-      public static readonly string HolidayRegex1 = $@"\b(?<holiday>(goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|bevrijdingsdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex2 = $@"\b(?<holiday>(nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid|martin luther kingdag|mlkdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex3 = $@"\b(?<holiday>(yuandan|valentijnsdag|valentijn|oude?jaarsavond|nieuwjaarsdag|eerste paasdag|tweede paasdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerstdag|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
+      public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)";
+      public static readonly string HolidayList2 = $@"(?<holiday>black friday|cyber monday|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)";
+      public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse|us\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)";
+      public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
       public static readonly string AMTimeRegex = $@"(?<am>{ApostrofsRegex}\s*(morgens|ochtends)|in\s+de\s+(morgen|ochtend))";
       public static readonly string PMTimeRegex = $@"(?<pm>{ApostrofsRegex}\s*(middags|avonds|nachts)|(in\s+de\s+)?(deze\s+)?((na)?middag|avond|nacht))\b";
       public const string InclusiveModPrepositions = @"(?<include>((in|tegen|tijdens|op)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))";
@@ -708,48 +709,44 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"prinsjesdag", new string[] { @"prinsjesdag" } },
             { @"dodenherdenking", new string[] { @"nationaledodenherdenking", @"nationaleherdenking", @"dodenherdenking" } },
             { @"bevrijdingsdag", new string[] { @"bevrijdingsdag" } },
-            { @"hemelvaartsdag", new string[] { @"hemelvaartsdag" } },
-            { @"teachersday", new string[] { @"dagvandeleraar" } },
+            { @"teachersday", new string[] { @"dagvandeleraar", @"dagvandeleerkracht", @"dagvandeleerkrachten" } },
             { @"veteransday", new string[] { @"nederlandseveteranendag", @"veteranendag" } },
             { @"eerstekerstdag", new string[] { @"eerstekerstdag", @"1ekerstdag" } },
             { @"tweedekerstdag", new string[] { @"tweedekerstdag", @"2ekerstdag" } },
-            { @"dagvandearbeid", new string[] { @"dagvandearbeid", @"dagvandenarbeid" } },
+            { @"dagvandearbeid", new string[] { @"dagvandearbeid", @"feestvandearbeid" } },
+            { @"treeplantingday", new string[] { @"nationaleboomfeestdag", @"boomfeestdag", @"boomplantdag" } },
+            { @"sinterklaas", new string[] { @"sinterklaas", @"sinterklaasavond", @"sinterklaasfeest", @"pakjesavond" } },
+            { @"driekoningen", new string[] { @"driekoningen" } },
+            { @"ketikoti", new string[] { @"ketikoti", @"keti-koti" } },
+            { @"stmartinsday", new string[] { @"sint-maartensfeest", @"sint-maarten" } },
+            { @"ascensionday", new string[] { @"hemelvaartsdag" } },
+            { @"whitesunday", new string[] { @"pinksteren" } },
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
             { @"easterday", new string[] { @"pasen", @"paasdag" } },
-            { @"fathers", new string[] { @"vaderdag", @"vadersdag" } },
-            { @"mothers", new string[] { @"moederdag", @"moedersdag" } },
-            { @"singleday", new string[] { @"singleday", @"vrijgezellendag" } },
-            { @"femaleday", new string[] { @"femaleday", @"vrouwendag" } },
-            { @"treeplantingday", new string[] { @"boomplantdag", @"boomfeestdag" } },
-            { @"girlsday", new string[] { @"girlsday", @"meisjesdag" } },
-            { @"newyear", new string[] { @"oudennieuw", @"oud&nieuw" } },
+            { @"fathers", new string[] { @"vaderdag" } },
+            { @"goodfriday", new string[] { @"goedevrijdag" } },
+            { @"mothers", new string[] { @"moederdag" } },
+            { @"newyear", new string[] { @"nieuwjaar" } },
             { @"newyearday", new string[] { @"nieuwjaarsdag" } },
             { @"newyearsday", new string[] { @"nieuwjaarsdag" } },
-            { @"newyeareve", new string[] { @"oudejaarsavond", @"oudjaarsavond", @"silvester", @"silvesteravond" } },
+            { @"newyeareve", new string[] { @"oudjaar", @"oudejaar", @"oudejaarsavond", @"oudjaarsavond", @"silvester", @"silvesteravond", @"oudennieuw", @"oud&nieuw" } },
             { @"valentinesday", new string[] { @"valentijnsdag", @"valetijnsdag" } },
-            { @"aprilfools", new string[] { @"1aprilgrap", @"1april" } },
             { @"independenceday", new string[] { @"onafhankelijkheidsdag" } },
             { @"bastilleday", new string[] { @"fransenationalefeestdag", @"bestormingvandebastille" } },
             { @"halloweenday", new string[] { @"halloween", @"allerheiligenavond" } },
             { @"allhallowday", new string[] { @"allerheiligen" } },
-            { @"allsaintsday", new string[] { @"allerheiligen" } },
             { @"allsoulsday", new string[] { @"allerzielen" } },
             { @"christmaseve", new string[] { @"kerstavond" } },
-            { @"columbus", new string[] { @"columbusdag", @"columbusday" } },
+            { @"yuandan", new string[] { @"yuandan" } },
+            { @"chinesenewyear", new string[] { @"chineesnieuwjaar", @"lentefestival", @"lentefeest" } },
+            { @"ramadan", new string[] { @"ramadan" } },
+            { @"eidalfitr", new string[] { @"suikerfeest" } },
+            { @"sacrifice", new string[] { @"offerfeest" } },
             { @"thanksgiving", new string[] { @"thanksgivingday", @"thanksgiving", @"dankzeggingsdag" } },
             { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday", @"martinlutherkingdag", @"mlkdag" } },
-            { @"washingtonsbirthday", new string[] { @"washingtonsbirthday", @"washingtonbirthday" } },
-            { @"yuandan", new string[] { @"yuandan" } },
-            { @"memorial", new string[] { @"memorialday" } },
-            { @"youthday", new string[] { @"jongerendag" } },
-            { @"childrenday", new string[] { @"kinderendag" } },
-            { @"stgeorgeday", new string[] { @"sintjoris" } },
-            { @"mayday", new string[] { @"dagvandearbeid" } },
             { @"usindependenceday", new string[] { @"amerikaanseonafhankelijkheidsdag", @"usonafhankelijkheidsdag" } },
-            { @"stpatrickday", new string[] { @"stpatrickday" } },
-            { @"groundhougday", new string[] { @"groundhougday", @"bosmarmottendag" } },
-            { @"inaugurationday", new string[] { @"inaugurationday", @"inauguratiedag" } },
-            { @"arborday", new string[] { @"boomfeestdag" } }
+            { @"blackfriday", new string[] { @"blackfriday" } },
+            { @"cybermonday", new string[] { @"cybermonday" } }
         };
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
