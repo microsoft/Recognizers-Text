@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
 
@@ -10,29 +11,38 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public EnglishHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
+
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
 
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
             var swift = -10;
 
-            // @TODO move hardcoded terms to resources file
-
-            if (trimmedText.StartsWith("next", StringComparison.Ordinal))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last", StringComparison.Ordinal))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("this", StringComparison.Ordinal))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
