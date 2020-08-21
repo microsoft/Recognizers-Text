@@ -950,5 +950,20 @@
         "End": 23
       }
     ]
+  },
+  {
+    "Input": "I am 5' tall",
+    "Results": [
+      {
+        "Text": "5'",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Foot"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
   }
 ]

@@ -687,7 +687,8 @@ namespace Microsoft.Recognizers.Definitions.English
             @"pts",
             @"in",
             @"dm",
-            @""""
+            @"""",
+            @"'"
         };
       public const string BuildPrefix = @"(?<=(\s|^))";
       public const string BuildSuffix = @"(?=(\s|\W|$))";
@@ -706,7 +707,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Mile", @"-mile|mile|miles" },
             { @"Yard", @"yard|yards" },
             { @"Inch", @"-inch|inch|inches|in|""" },
-            { @"Foot", @"-foot|foot|feet|ft" },
+            { @"Foot", @"-foot|foot|feet|ft|'" },
             { @"Light year", @"light year|light-year|light years|light-years" },
             { @"Pt", @"pt|pts" }
         };

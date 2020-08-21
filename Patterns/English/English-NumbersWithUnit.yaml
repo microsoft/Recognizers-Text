@@ -771,6 +771,7 @@ AmbiguousDimensionUnitList: !list
     - in
     - dm
     - '"'
+    - "'"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
@@ -793,7 +794,7 @@ LengthSuffixList: !dictionary
     Mile: -mile|mile|miles
     Yard: yard|yards
     Inch: -inch|inch|inches|in|"
-    Foot: -foot|foot|feet|ft
+    Foot: -foot|foot|feet|ft|'
     Light year: light year|light-year|light years|light-years
     Pt: pt|pts
 AmbiguousLengthUnitList: !list
