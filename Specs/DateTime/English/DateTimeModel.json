@@ -17273,5 +17273,38 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back before the end of December",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "before the end of december",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
