@@ -443,8 +443,8 @@ TimeNumberCombinedWithUnit: !nestedRegex
 BusinessHourSplitStrings: ['business', 'hour']
 NowRegex: !simpleRegex
   def: \b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b
-#Used in DatePeriodParser to parse patterns like "from March to date"
-NowDateRegex: !nestedRegex
+#Used in DatePeriodParser to parse patterns like "from March to date" ("^date$" is English specific and does not need to be translated).
+NowParseRegex: !nestedRegex
   def: \b({NowRegex}|^(date)$)\b
   references: [ NowRegex ]
 SuffixRegex: !simpleRegex

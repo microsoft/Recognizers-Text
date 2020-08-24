@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
       public const string NowRegex = @"\b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b";
-      public static readonly string NowDateRegex = $@"\b({NowRegex}|^(date)$)\b";
+      public static readonly string NowParseRegex = $@"\b({NowRegex}|^(date)$)\b";
       public const string SuffixRegex = @"^\s*(in the\s+)?(morning|afternoon|evening|night)\b";
       public const string NonTimeContextTokens = @"(building)";
       public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>morning|afternoon|night|evening)\b";
