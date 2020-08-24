@@ -16,8 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+        // used in Experimental mode
+        public static readonly Regex SinceRegex1 =
+            new Regex(DateTimeDefinitions.SinceRegex1, RegexFlags);
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
@@ -74,12 +75,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 numOptions = NumberOptions.NoProtoCache;
             }
 
+            if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                SinceRegex = SinceRegex1;
+            }
+
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
+
+        // Used in Standard mode
+        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 
