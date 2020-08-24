@@ -17067,5 +17067,101 @@
         }
       }
     ]
+  },
+  {
+    "Input": "When was the previous easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous easter",
+        "Start": 13,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-01",
+              "type": "date",
+              "value": "2018-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the last easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last easter",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the next easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next easter",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the following easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "following easter",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-04-12",
+              "type": "date",
+              "value": "2020-04-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

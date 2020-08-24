@@ -94,6 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var orderStr = match.Groups["order"].Value;
             int year;
             var hasYear = false;
+            var swift = 0;
 
             if (!string.IsNullOrEmpty(yearStr))
             {
@@ -102,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (!string.IsNullOrEmpty(orderStr))
             {
-                var swift = this.config.GetSwiftYear(orderStr);
+                swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
                 {
                     return ret;
@@ -132,7 +133,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var value = referenceDate;
                 if (this.config.HolidayFuncDictionary.TryGetValue(holidayKey, out Func<int, DateObject> function))
                 {
-                    value = function(year);
+                    // With relative holidays like 'next(last) easter' the year must not be shifted
+                    // when the reference date precedes(follows) the holiday date.
+                    if (string.IsNullOrEmpty(yearStr) && swift != 0)
+                    {
+                        value = function(referenceDate.Year);
+                        if ((swift > 0 && value < referenceDate) || (swift < 0 && value > referenceDate))
+                        {
+                            value = function(year);
+                        }
+                        else
+                        {
+                            year = referenceDate.Year;
+                        }
+                    }
+                    else
+                    {
+                        value = function(year);
+                    }
 
                     // @TODO should be checking if variable holiday to produce better timex. Fixing is a breaking change.
                     this.config.VariableHolidaysTimexDictionary.TryGetValue(holidayKey, out timexStr);
