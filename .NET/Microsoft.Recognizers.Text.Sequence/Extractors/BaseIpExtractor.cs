@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         // The Ipv6 address regexes is written following the Recommendation: https://tools.ietf.org/html/rfc5952
         public BaseIpExtractor(IpConfiguration config)
         {
+            this.config = config;
+
             var regexes = new Dictionary<Regex, string>
             {
                 {
