@@ -348,6 +348,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (beforeMatch.Success)
                 {
                     hasBefore = true;
+                    hasAround = beforeMatch.Groups["approx"].Success;
                     er.Start += matchIsAfter ? 0 : beforeMatch.Length;
                     er.Length -= beforeMatch.Length;
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(beforeMatch.Length);
@@ -361,6 +362,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (afterMatch.Success)
                 {
                     hasAfter = true;
+                    hasAround = afterMatch.Groups["approx"].Success;
                     er.Start += matchIsAfter ? 0 : afterMatch.Length;
                     er.Length -= afterMatch.Length;
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(afterMatch.Length);
@@ -374,6 +376,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (sinceMatch.Success)
                 {
                     hasSince = true;
+                    hasAround = sinceMatch.Groups["approx"].Success;
                     er.Start += matchIsAfter ? 0 : sinceMatch.Length;
                     er.Length -= sinceMatch.Length;
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(sinceMatch.Length);
@@ -432,6 +435,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.BEFORE_MOD : Constants.UNTIL_MOD);
 
+                if (hasAround)
+                {
+                    val.Mod = CombineMod(Constants.APPROX_MOD, val.Mod);
+                    hasAround = false;
+                }
+
                 pr.Value = val;
             }
 
@@ -442,13 +451,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
 
-                if (!hasInclusiveModifier)
+                val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.AFTER_MOD : Constants.SINCE_MOD);
+
+                if (hasAround)
                 {
-                    val.Mod = CombineMod(val.Mod, Constants.AFTER_MOD);
-                }
-                else
-                {
-                    val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
+                    val.Mod = CombineMod(Constants.APPROX_MOD, val.Mod);
+                    hasAround = false;
                 }
 
                 pr.Value = val;
@@ -461,6 +469,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
+
+                if (hasAround)
+                {
+                    val.Mod = CombineMod(Constants.APPROX_MOD, val.Mod);
+                    hasAround = false;
+                }
+
                 pr.Value = val;
             }
 

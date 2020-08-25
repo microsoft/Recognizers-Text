@@ -18109,5 +18109,83 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I am feeling sick from around 1pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from around 1pm",
+        "Start": 18,
+        "End": 32,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "Mod": "since-approx",
+              "type": "timerange",
+              "start": "13:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick before around 2pm today",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "before around 2pm today",
+        "Start": 18,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-17T14",
+              "Mod": "before-approx",
+              "type": "datetimerange",
+              "end": "2018-08-17 14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick after around 3:30pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after around 3:30pm",
+        "Start": 18,
+        "End": 36,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15:30",
+              "Mod": "after-approx",
+              "type": "timerange",
+              "start": "15:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
