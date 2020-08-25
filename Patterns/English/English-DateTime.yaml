@@ -554,6 +554,8 @@ AsapTimeRegex: !simpleRegex
   def: (as soon as possible|asap)
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))
+AroundRegex: !simpleRegex
+  def: (?:\b(?:around|circa)\s*\b)
 BeforeRegex: !nestedRegex
   def: ((\b{InclusiveModPrepositions}?(?:before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*?)(?<approx>\s*{AroundRegex})?|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?
   references: [ InclusiveModPrepositions, AroundRegex ]
@@ -564,8 +566,6 @@ AfterRegex: !nestedRegex
 SinceRegex: !nestedRegex
   def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)?from)\b\s*?)(?<approx>\s*{AroundRegex})?|(?<!\w|<)(>=))(\s+the)?
   references: [ AroundRegex ]
-AroundRegex: !simpleRegex
-  def: (?:\b(?:around|circa)\s*\b)
 AgoRegex: !simpleRegex
   def: \b(ago|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
