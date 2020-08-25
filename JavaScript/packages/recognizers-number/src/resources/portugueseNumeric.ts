@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace PortugueseNumeric {
-    export const LangMarker = 'Por';
+    export const LangMarker = `Por`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = false;
     export const HundredsNumberIntegerRegex = `(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))`;
@@ -67,17 +67,17 @@ export namespace PortugueseNumeric {
     export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
     export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)`;
     export const AmbiguousFractionConnectorsRegex = `^[.]`;
-    export const DecimalSeparatorChar = ',';
-    export const FractionMarkerToken = 'sobre';
-    export const NonDecimalSeparatorChar = '.';
-    export const HalfADozenText = 'seis';
-    export const WordSeparatorToken = 'e';
+    export const DecimalSeparatorChar = `,`;
+    export const FractionMarkerToken = `sobre`;
+    export const NonDecimalSeparatorChar = `.`;
+    export const HalfADozenText = `seis`;
+    export const WordSeparatorToken = `e`;
     export const WrittenDecimalSeparatorTexts = [ "virgula","vírgula" ];
     export const WrittenGroupSeparatorTexts = [ "ponto" ];
     export const WrittenIntegerSeparatorTexts = [ "e" ];
     export const WrittenFractionSeparatorTexts = [ "com" ];
     export const WrittenFractionSuffix = [ "avo","ava" ];
-    export const PluralSuffix = 's';
+    export const PluralSuffix = `s`;
     export const HalfADozenRegex = `meia\\s+d[uú]zia`;
     export const DigitalNumberRegex = `((?<=\\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
     export const CardinalNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["zero", 0],["hum", 1],["um", 1],["uma", 1],["dois", 2],["duas", 2],["meia", 2],["meio", 2],["tres", 3],["três", 3],["quatro", 4],["cinco", 5],["seis", 6],["sete", 7],["oito", 8],["nove", 9],["dez", 10],["dezena", 10],["déz", 10],["onze", 11],["doze", 12],["dúzia", 12],["duzia", 12],["dúzias", 12],["duzias", 12],["treze", 13],["catorze", 14],["quatorze", 14],["quinze", 15],["dezesseis", 16],["dezasseis", 16],["dezessete", 17],["dezassete", 17],["dezoito", 18],["dezenove", 19],["dezanove", 19],["vinte", 20],["trinta", 30],["quarenta", 40],["cinquenta", 50],["cincoenta", 50],["sessenta", 60],["setenta", 70],["oitenta", 80],["noventa", 90],["cem", 100],["cento", 100],["duzentos", 200],["duzentas", 200],["trezentos", 300],["trezentas", 300],["quatrocentos", 400],["quatrocentas", 400],["quinhentos", 500],["quinhentas", 500],["seiscentos", 600],["seiscentas", 600],["setecentos", 700],["setecentas", 700],["oitocentos", 800],["oitocentas", 800],["novecentos", 900],["novecentas", 900],["mil", 1000],["milhão", 1000000],["milhao", 1000000],["milhões", 1000000],["milhoes", 1000000],["bilhão", 1000000000],["bilhao", 1000000000],["bilhões", 1000000000],["bilhoes", 1000000000],["trilhão", 1000000000000],["trilhao", 1000000000000],["trilhões", 1000000000000],["trilhoes", 1000000000000]]);
