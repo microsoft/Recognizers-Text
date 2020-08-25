@@ -11,16 +11,16 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace JapaneseNumeric {
-    export const LangMarker = 'Jpn';
+    export const LangMarker = `Jpn`;
     export const CompoundNumberLanguage = true;
     export const MultiDecimalSeparatorCulture = false;
-    export const DecimalSeparatorChar = '.';
-    export const FractionMarkerToken = '';
-    export const NonDecimalSeparatorChar = ' ';
-    export const HalfADozenText = '';
-    export const WordSeparatorToken = '';
-    export const ZeroChar = '零';
-    export const PairChar = '対';
+    export const DecimalSeparatorChar = `.`;
+    export const FractionMarkerToken = ``;
+    export const NonDecimalSeparatorChar = ` `;
+    export const HalfADozenText = ``;
+    export const WordSeparatorToken = ``;
+    export const ZeroChar = `零`;
+    export const PairChar = `対`;
     export const RoundNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["k", 1000],["m", 1000000],["g", 1000000000],["t", 1000000000000],["b", 1000000000]]);
     export const RoundNumberMapChar: ReadonlyMap<string, number> = new Map<string, number>([["十", 10],["百", 100],["千", 1000],["万", 10000],["億", 100000000],["兆", 1000000000000]]);
     export const ZeroToNineMap: ReadonlyMap<string, number> = new Map<string, number>([["0", 0],["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["零", 0],["〇", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["半", 0.5]]);
@@ -41,7 +41,7 @@ export namespace JapaneseNumeric {
     export const NegativeNumberTermsRegexNum = `((?<!(\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)|[-−－])[-−－])`;
     export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*|^${NegativeNumberTermsRegexNum}.*`;
     export const SpeGetNumberRegex = `${ZeroToNineFullHalfRegex}|${ZeroToNineIntegerRegex}|[半対]|[分厘]`;
-    export const PairRegex = '.*[対膳足]$';
+    export const PairRegex = `.*[対膳足]$`;
     export const RoundNumberIntegerRegex = `(十|百|千|万(?!万)|億|兆)`;
     export const AllowListRegex = `(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\\s|$|つ|月|の|と)`;
     export const NotSingleRegex = `(?<!(第|だい))((${RoundNumberIntegerRegex}+((${ZeroToNineIntegerRegex}+|${RoundNumberIntegerRegex})+|${ZeroToNineFullHalfRegex}+|十)\\s*(以上)?))|((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*(${RoundNumberIntegerRegex}\\s*){1,2})\\s*(([零]?(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*${RoundNumberIntegerRegex}{0,1})\\s*)*\\s*(\\s*(以上)?)`;
