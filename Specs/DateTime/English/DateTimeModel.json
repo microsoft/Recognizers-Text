@@ -17441,5 +17441,80 @@
         }
       }
     ]
+  },
+  {
+    "Input": "How many Azure clusters docked till date?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "till date",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "daterange",
+              "Mod": "before",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many Azure clusters docked to date?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "to date",
+        "Start": 31,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "daterange",
+              "Mod": "before",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many Azure clusters docked from March to date?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from march to date",
+        "Start": 31,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-03-01,2016-11-07,P251D)",
+              "type": "daterange",
+              "start": "2016-03-01",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

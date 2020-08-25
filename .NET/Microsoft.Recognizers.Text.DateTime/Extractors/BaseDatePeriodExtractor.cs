@@ -588,8 +588,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
+                var endPointStr = extractionResults[idx + 1].Text;
 
-                if (config.TillRegex.IsExactMatch(middleStr, trim: true))
+                if (config.TillRegex.IsExactMatch(middleStr, trim: true) || (string.IsNullOrEmpty(middleStr) &&
+                    config.TillRegex.MatchBegin(endPointStr, trim: true).Success))
                 {
                     var periodBegin = extractionResults[idx].Start ?? 0;
                     var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
