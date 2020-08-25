@@ -1275,5 +1275,53 @@
         "End": 25
       }
     ]
+  },
+  {
+    "Input": "x is no less than 194 and less than 12.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no less than 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[194,)"
+        },
+        "Start": 5,
+        "End": 20
+      },
+      {
+        "Text": "less than 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        },
+        "Start": 26,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "x is no more than 12 and more than 194.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no more than 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12]"
+        },
+        "Start": 5,
+        "End": 19
+      },
+      {
+        "Text": "more than 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(194,)"
+        },
+        "Start": 25,
+        "End": 37
+      }
+    ]
   }
 ]
