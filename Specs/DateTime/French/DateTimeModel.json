@@ -2589,5 +2589,121 @@
         "End": 30
       }
     ]
+  },
+  {
+    "Input": "Je vais partir pour 3 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        },
+        "Start": 20,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir pour une durée de 3 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        },
+        "Start": 33,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir le 17 pour trois heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "17",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-17",
+              "type": "date",
+              "value": "2016-10-17"
+            },
+            {
+              "timex": "XXXX-XX-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        },
+        "Start": 18,
+        "End": 19
+      },
+      {
+        "Text": "trois heures",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        },
+        "Start": 26,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir pour quatre heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "quatre heures",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT4H",
+              "type": "duration",
+              "value": "14400"
+            }
+          ]
+        },
+        "Start": 20,
+        "End": 32
+      }
+    ]
   }
 ]

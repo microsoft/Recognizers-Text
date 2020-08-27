@@ -99,13 +99,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.TimeRegex3, RegexFlags),
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            new Regex(DateTimeDefinitions.TimeRegex4, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex4CS, RegexFlags),
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex5, RegexFlags),
 
             // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            new Regex(DateTimeDefinitions.TimeRegex6, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex6CS, RegexFlags),
 
             // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex7, RegexFlags),
