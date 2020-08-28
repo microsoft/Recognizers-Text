@@ -277,20 +277,12 @@ TimeRegex3: !nestedRegex
 TimeRegex4: !nestedRegex
   def: \b{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?\s+{TimeSuffix}\b
   references: [ TimePrefix, BasicTime, DescRegex, TimeSuffix ]
-#Same as Timeregex4 but with conditional statement to avoid to extract durations like "pour 3 heures"
-TimeRegex4CS: !nestedRegex
-  def: (?<=(?<DurationPrep>(pour|durée de)\s+)|){TimeRegex4}(?(DurationPrep)(?<!heures?))
-  references: [ TimeRegex4 ]
 TimeRegex5: !nestedRegex
   def: \b{BasicTime}((\s*{DescRegex})(\s+{TimePrefix})?|\s+{TimePrefix})
   references: [ TimePrefix, BasicTime, DescRegex ]
 TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
-#Same as Timeregex6 but with conditional statement to avoid to extract durations like "pour 3 heures"
-TimeRegex6CS: !nestedRegex
-  def: (?<=(?<DurationPrep>(pour|durée de)\s+)|){TimeRegex6}(?(DurationPrep)(?<!heures?))
-  references: [ TimeRegex6 ]
 TimeRegex7: !nestedRegex
   def: \b{TimeSuffix}\s+[àa]\s+{BasicTime}((\s*{DescRegex})|\b)
   references: [ TimeSuffix, BasicTime, DescRegex ]
@@ -1063,6 +1055,11 @@ AmbiguityFiltersDict: !dictionary
   entries:
     '^([eé]t[eé])$': '(?<!((l\s*[''`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b'
     '^(mer)$': '(?<!((le|ce)\s+))mer\b'
+# Used to exclude duration matches (e.g. "pour 3 heures") from time extractions
+AmbiguityTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'heures?$': '(pour|durée\s+de)\s*'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

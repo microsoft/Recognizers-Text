@@ -17,5 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string TimeTokenPrefix { get; }
 
+        Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
     }
 }

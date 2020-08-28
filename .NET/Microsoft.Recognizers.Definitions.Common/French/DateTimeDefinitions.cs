@@ -128,10 +128,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"\b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?";
       public static readonly string TimeRegex4 = $@"\b{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?\s+{TimeSuffix}\b";
-      public static readonly string TimeRegex4CS = $@"(?<=(?<DurationPrep>(pour|durée de)\s+)|){TimeRegex4}(?(DurationPrep)(?<!heures?))";
       public static readonly string TimeRegex5 = $@"\b{BasicTime}((\s*{DescRegex})(\s+{TimePrefix})?|\s+{TimePrefix})";
       public static readonly string TimeRegex6 = $@"{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
-      public static readonly string TimeRegex6CS = $@"(?<=(?<DurationPrep>(pour|durée de)\s+)|){TimeRegex6}(?(DurationPrep)(?<!heures?))";
       public static readonly string TimeRegex7 = $@"\b{TimeSuffix}\s+[àa]\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex8 = $@"\b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)";
@@ -716,6 +714,10 @@ namespace Microsoft.Recognizers.Definitions.French
         {
             { @"^([eé]t[eé])$", @"(?<!((l\s*['`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b" },
             { @"^(mer)$", @"(?<!((le|ce)\s+))mer\b" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
+        {
+            { @"heures?$", @"(pour|durée\s+de)\s*" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

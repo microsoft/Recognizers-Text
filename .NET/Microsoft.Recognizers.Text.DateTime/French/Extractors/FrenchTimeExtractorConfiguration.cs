@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -99,13 +100,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.TimeRegex3, RegexFlags),
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            new Regex(DateTimeDefinitions.TimeRegex4CS, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex4, RegexFlags),
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex5, RegexFlags),
 
             // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            new Regex(DateTimeDefinitions.TimeRegex6CS, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex6, RegexFlags),
 
             // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex7, RegexFlags),
@@ -143,5 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimeFiltersDict);
     }
 }
