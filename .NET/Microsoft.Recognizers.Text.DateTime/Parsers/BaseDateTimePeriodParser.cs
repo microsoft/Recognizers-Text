@@ -597,6 +597,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime);
 
+                    // Try to add TokenBeforeDate if no result is found because it is not always included in the DateTimePeriod extraction
+                    // (e.g. "I'll leave on the 17 from 2 to 4 pm" -> "the 17 from 2 to 4 pm")
+                    if (dateResult.Count == 0)
+                    {
+                        dateResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime);
+                    }
+
                     // check if TokenBeforeDate is null
                     var dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim() : trimmedText.Replace(ers[0].Text, string.Empty).Trim();
                     if (this.Config.CheckBothBeforeAfter)
@@ -710,6 +717,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // Parse following date
                 var dateExtractResult = this.Config.DateExtractor.Extract(trimmedText.Replace(match.Value, string.Empty), referenceTime);
+
+                // Try to add TokenBeforeDate if no result is found because it is not always included in the DateTimePeriod extraction
+                // (e.g. "I'll leave on the 17 from 2 to 4 pm" -> "the 17 from 2 to 4 pm")
+                if (dateExtractResult.Count == 0)
+                {
+                    dateExtractResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, match.Index), referenceTime);
+                }
 
                 DateObject futureDate, pastDate;
                 if (dateExtractResult.Count > 0)

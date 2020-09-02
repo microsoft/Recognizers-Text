@@ -2465,5 +2465,129 @@
         "End": 20
       }
     ]
+  },
+  {
+    "Input": "Je serai le 17 de 14h à 16h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "17 de 14h à 16h",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-10-17 14:00:00",
+              "end": "2016-10-17 16:00:00"
+            },
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-17 14:00:00",
+              "end": "2016-11-17 16:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai le 17 de 14 à 16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "17 de 14 à 16",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-10-17 14:00:00",
+              "end": "2016-10-17 16:00:00"
+            },
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-17 14:00:00",
+              "end": "2016-11-17 16:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai le 17 entre 14 et 16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "17 entre 14 et 16",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-10-17 14:00:00",
+              "end": "2016-10-17 16:00:00"
+            },
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-17 14:00:00",
+              "end": "2016-11-17 16:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai le 17 entre 14h et 16h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "17 entre 14h et 16h",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-10-17 14:00:00",
+              "end": "2016-10-17 16:00:00"
+            },
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-17 14:00:00",
+              "end": "2016-11-17 16:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "End": 30
+      }
+    ]
   }
 ]
