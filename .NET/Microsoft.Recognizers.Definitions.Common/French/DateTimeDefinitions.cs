@@ -717,7 +717,7 @@ namespace Microsoft.Recognizers.Definitions.French
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {
-            { @"heures?$", @"(pour|durée\s+de)\s*" }
+            { @"heures?$", @"\b(pour|durée\s+de)\s+(\S+\s+){1,2}heures?\b" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

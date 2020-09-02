@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (regex.Key.IsMatch(extractResult.Text))
                         {
                             var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index + m.Length == er.Start))
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
                                 .ToList();
                         }
                     }

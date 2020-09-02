@@ -1059,7 +1059,7 @@ AmbiguityFiltersDict: !dictionary
 AmbiguityTimeFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'heures?$': '(pour|durée\s+de)\s*'
+    'heures?$': '\b(pour|durée\s+de)\s+(\S+\s+){1,2}heures?\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
