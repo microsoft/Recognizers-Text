@@ -2705,5 +2705,78 @@
         "End": 32
       }
     ]
+  },
+  {
+    "Input": "Je vais partir pour la ville à 3 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03",
+              "type": "time",
+              "value": "03:00:00"
+            },
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        },
+        "Start": 31,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 3 heures pour 2 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03",
+              "type": "time",
+              "value": "03:00:00"
+            },
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 24
+      },
+      {
+        "Text": "2 heures",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        },
+        "Start": 31,
+        "End": 38
+      }
+    ]
   }
 ]
