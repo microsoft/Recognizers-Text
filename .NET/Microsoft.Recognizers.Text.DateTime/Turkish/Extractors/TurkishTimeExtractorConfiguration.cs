@@ -144,5 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

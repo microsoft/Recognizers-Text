@@ -1055,6 +1055,11 @@ AmbiguityFiltersDict: !dictionary
   entries:
     '^([eé]t[eé])$': '(?<!((l\s*[''`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b'
     '^(mer)$': '(?<!((le|ce)\s+))mer\b'
+# Used to exclude duration matches (e.g. "pour 3 heures") from time extractions
+AmbiguityTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'heures?$': '\b(pour|durée\s+de)\s+(\S+\s+){1,2}heures?\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
