@@ -2734,5 +2734,109 @@
         "End": 15
       }
     ]
+  },
+  {
+    "Input": "The result is 8 in 5",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "8",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "8"
+        },
+        "Start": 14,
+        "End": 14
+      },
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 19,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "there are 12 out of 10",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 10,
+        "End": 11
+      },
+      {
+        "Text": "10",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10"
+        },
+        "Start": 20,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "I see five out of three pieces",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "five",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 6,
+        "End": 9
+      },
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 18,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "I count 12 in six boxes",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 8,
+        "End": 9
+      },
+      {
+        "Text": "six",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 14,
+        "End": 16
+      }
+    ]
   }
 ]
