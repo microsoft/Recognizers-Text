@@ -13,10 +13,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         // Base regexes
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.TillRegexWithDet, RegexFlags);
+            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
 
         public static readonly Regex RangeConnectorRegex =
-            new Regex(DateTimeDefinitions.RangeConnectorRegexWithDet, RegexFlags);
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         public static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
@@ -337,8 +337,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             var fromMatch = FromTokenRegex.Match(text);
             if (fromMatch.Success)
-
-            if (text.EndsWith("from", StringComparison.Ordinal))
             {
                 index = fromMatch.Index;
             }
