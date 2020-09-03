@@ -9,5 +9,10 @@
             None
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.Sequence.SequenceOptions.Relaxed">
+            <summary>
+            Relaxed. Likely match, don't perform extra validation.
+            </summary>
+        </member>
     </members>
 </doc>

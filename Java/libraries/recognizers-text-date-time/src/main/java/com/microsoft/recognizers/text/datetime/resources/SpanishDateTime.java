@@ -562,6 +562,8 @@ public class SpanishDateTime {
 
     public static final String SinceRegex = "(desde(\\s+(las?|el))?)";
 
+    public static final String SinceRegex1 = "(desde(\\s+(las?|el))?|de)";
+
     public static final String AroundRegex = "(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)";
 
     public static final String PeriodicRegex = "\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b";

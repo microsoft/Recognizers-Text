@@ -11,7 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace SpanishDateTime {
-    export const LangMarker = 'Spa';
+    export const LangMarker = `Spa`;
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>hasta|al?|--|-|—|——)(\\s+(el|la(s)?))?`;
     export const RangeConnectorRegex = `(?<and>y\\s*(el|(la(s)?)?)|${BaseDateTime.RangeConnectorSymbolRegex})`;
@@ -174,6 +174,7 @@ export namespace SpanishDateTime {
     export const BeforeRegex = `(antes(\\s+del?(\\s+las?)?)?)`;
     export const AfterRegex = `(despu[eé]s(\\s*del?(\\s+las?)?)?)`;
     export const SinceRegex = `(desde(\\s+(las?|el))?)`;
+    export const SinceRegex1 = `(desde(\\s+(las?|el))?|de)`;
     export const AroundRegex = `(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)`;
     export const PeriodicRegex = `\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b`;
     export const EachExpression = `cada|tod[oa]s\\s*(l[oa]s)?`;
@@ -202,7 +203,7 @@ export namespace SpanishDateTime {
     export const YearSuffix = `((,|\\sde)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
     export const AgoRegex = `\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes)\\b`;
     export const LaterRegex = `\\b(despu[eé]s|desde\\s+ahora|a\\s+partir\\s+de\\s+(?<day>hoy|ayer|mañana))\\b`;
-    export const Tomorrow = 'mañana';
+    export const Tomorrow = `mañana`;
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["años", "Y"],["año", "Y"],["meses", "MON"],["mes", "MON"],["semanas", "W"],["semana", "W"],["dias", "D"],["dia", "D"],["días", "D"],["día", "D"],["jornada", "D"],["horas", "H"],["hora", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutos", "M"],["minuto", "M"],["mins", "M"],["min", "M"],["segundos", "S"],["segundo", "S"],["segs", "S"],["seg", "S"]]);
     export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["años", 31536000],["año", 31536000],["meses", 2592000],["mes", 2592000],["semanas", 604800],["semana", 604800],["dias", 86400],["dia", 86400],["días", 86400],["día", 86400],["horas", 3600],["hora", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutos", 60],["minuto", 60],["mins", 60],["min", 60],["segundos", 1],["segundo", 1],["segs", 1],["seg", 1]]);
     export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["fiscal", "FY"],["escolar", "SY"]]);
@@ -215,10 +216,10 @@ export namespace SpanishDateTime {
     export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["padres", ["diadelpadre"]],["madres", ["diadelamadre"]],["acciondegracias", ["diadegracias","diadeacciondegracias","acciondegracias"]],["trabajador", ["diadeltrabajador"]],["delaraza", ["diadelaraza","diadeladiversidadcultural"]],["memoria", ["diadelamemoria"]],["pascuas", ["diadepascuas","pascuas"]],["navidad", ["navidad","diadenavidad"]],["nochebuena", ["diadenochebuena","nochebuena"]],["añonuevo", ["añonuevo","diadeañonuevo"]],["nochevieja", ["nochevieja","diadenochevieja"]],["yuandan", ["yuandan"]],["maestro", ["diadelmaestro"]],["todoslossantos", ["todoslossantos"]],["niño", ["diadelniño"]],["mujer", ["diadelamujer"]]]);
     export const VariableHolidaysTimexDictionary: ReadonlyMap<string, string> = new Map<string, string>([["padres", "-06-WXX-7-3"],["madres", "-05-WXX-7-2"],["acciondegracias", "-11-WXX-4-4"],["delaraza", "-10-WXX-1-2"],["memoria", "-03-WXX-2-4"]]);
     export const DoubleNumbers: ReadonlyMap<string, number> = new Map<string, number>([["mitad", 0.5],["cuarto", 0.25]]);
-    export const DateTokenPrefix = 'en ';
-    export const TimeTokenPrefix = 'a las ';
-    export const TokenBeforeDate = 'el ';
-    export const TokenBeforeTime = 'a las ';
+    export const DateTokenPrefix = `en `;
+    export const TimeTokenPrefix = `a las `;
+    export const TokenBeforeDate = `el `;
+    export const TokenBeforeTime = `a las `;
     export const UpcomingPrefixRegex = `.^`;
     export const NextPrefixRegex = `(pr[oó]xim[oa]|siguiente|${UpcomingPrefixRegex})\\b`;
     export const PastPrefixRegex = `.^`;
@@ -245,7 +246,7 @@ export namespace SpanishDateTime {
     export const FutureSuffixRegex = `\\b(despu[ée]s)\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
-    export const DefaultLanguageFallback = 'DMY';
+    export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [ "hoy" ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
     export const EarlyMorningTermList = [ "madrugada" ];

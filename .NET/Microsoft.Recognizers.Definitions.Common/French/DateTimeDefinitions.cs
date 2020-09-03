@@ -715,6 +715,10 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"^([eé]t[eé])$", @"(?<!((l\s*['`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b" },
             { @"^(mer)$", @"(?<!((le|ce)\s+))mer\b" }
         };
+      public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
+        {
+            { @"heures?$", @"\b(pour|durée\s+de|pendant)\s+(\S+\s+){1,2}heures?\b" }
+        };
       public static readonly IList<string> MorningTermList = new List<string>
         {
             @"matinee",

@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace FrenchNumeric {
-    export const LangMarker = 'Fre';
+    export const LangMarker = `Fre`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
     export const RoundNumberIntegerRegex = `(cent|mille|millions?|milliards?|billions?)`;
@@ -65,11 +65,11 @@ export namespace FrenchNumeric {
     export const DoubleCaretExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))(\\d+([,\\.]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
     export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(pourcentages|pourcents|pourcentage|pourcent)\\b)`;
     export const NumberWithPrefixPercentage = `((?<!${BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\\s*)(${BaseNumbers.NumberReplaceToken})(?=\\s|$)`;
-    export const DecimalSeparatorChar = ',';
-    export const FractionMarkerToken = 'sur';
-    export const NonDecimalSeparatorChar = '.';
-    export const HalfADozenText = 'six';
-    export const WordSeparatorToken = 'et';
+    export const DecimalSeparatorChar = `,`;
+    export const FractionMarkerToken = `sur`;
+    export const NonDecimalSeparatorChar = `.`;
+    export const HalfADozenText = `six`;
+    export const WordSeparatorToken = `et`;
     export const WrittenDecimalSeparatorTexts = [ "virgule" ];
     export const WrittenGroupSeparatorTexts = [ "point","points" ];
     export const WrittenIntegerSeparatorTexts = [ "et","-" ];
