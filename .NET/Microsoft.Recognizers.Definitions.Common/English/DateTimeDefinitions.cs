@@ -193,7 +193,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string NowParseRegex = $@"\b({NowRegex}|^(date)$)\b";
       public const string SuffixRegex = @"^\s*(in the\s+)?(morning|afternoon|evening|night)\b";
       public const string NonTimeContextTokens = @"(building)";
-      public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>morning|afternoon|night|evening)\b";
+      public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>morning|(?<pm>afternoon|night|evening))\b";
       public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\btoni(ght|te))\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|in|on))?\s*$";

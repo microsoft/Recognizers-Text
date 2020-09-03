@@ -17578,5 +17578,107 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be out between 7 and 9:30 last night",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 7 and 9:30 last night",
+        "Start": 12,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T19,2018-05-31T21:30,PT2H30M)",
+              "type": "datetimerange",
+              "start": "2018-05-31 19:00:00",
+              "end": "2018-05-31 21:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen between 10 and 11:30 this morning",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 10 and 11:30 this morning",
+        "Start": 15,
+        "End": 47,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T10,2018-05-31T11:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2018-05-31 10:00:00",
+              "end": "2018-05-31 11:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen next evening between 10:30 and 11:45",
+    "Context": {
+      "ReferenceDateTime": "2018-05-30T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next evening between 10:30 and 11:45",
+        "Start": 15,
+        "End": 50,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T22:30,2018-05-31T23:45,PT1H15M)",
+              "type": "datetimerange",
+              "start": "2018-05-31 22:30:00",
+              "end": "2018-05-31 23:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out between 7 and 9 last night",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T16:12:00"
+    },
+    "Comment": "Not currently supported because 'between 7 and 9' is not recognized as TimePeriod",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 7 and 9 last night",
+        "Start": 12,
+        "End": 37,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T19,2018-05-31T21,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-05-31 19:00:00",
+              "end": "2018-05-31 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

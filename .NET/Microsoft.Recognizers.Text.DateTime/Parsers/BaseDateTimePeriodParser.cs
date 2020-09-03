@@ -300,6 +300,84 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var ers = this.Config.DateExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime);
 
+                // Consider cases with specific time of day e.g. "between 7 and 9:30 last night"
+                if (ers.Count == 0)
+                {
+                    match = Config.SpecificTimeOfDayRegex.Match(trimmedText);
+                    if (match.Success)
+                    {
+                        var matchStr = match.Value;
+
+                        // Handle "last", "next"
+                        var swift = this.Config.GetSwiftPrefix(matchStr);
+                        var timeOfDayDate = referenceTime.AddDays(swift).Date;
+
+                        var dateTimexStr = DateTimeFormatUtil.FormatDate(timeOfDayDate);
+
+                        var futDate = DateObject.MinValue.SafeCreateFromValue(timeOfDayDate.Year, timeOfDayDate.Month, timeOfDayDate.Day, 0, 0, 0);
+                        var pasDate = futDate;
+
+                        var timePeriodParseResult = Config.TimePeriodParser.Parse(timePeriodErs[0]);
+                        var timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.Value;
+
+                        if (timePeriodResolutionResult == null)
+                        {
+                            return ParsePureNumberCases(text, referenceTime);
+                        }
+
+                        var periodTimex = timePeriodResolutionResult.Timex;
+
+                        var rangeTimexComponents = TimexUtility.GetRangeTimexComponents(periodTimex);
+
+                        if (rangeTimexComponents.IsValid)
+                        {
+                            var beginTimex = TimexUtility.CombineDateAndTimeTimex(dateTimexStr, rangeTimexComponents.BeginTimex);
+                            var endTimex = TimexUtility.CombineDateAndTimeTimex(dateTimexStr, rangeTimexComponents.EndTimex);
+
+                            var timePeriodFutureValue = (Tuple<DateObject, DateObject>)timePeriodResolutionResult.FutureValue;
+                            var beginTime = timePeriodFutureValue.Item1;
+                            var endTime = timePeriodFutureValue.Item2;
+                            var hour1 = beginTime.Hour;
+                            var hour2 = endTime.Hour;
+
+                            if (match.Groups["pm"].Success)
+                            {
+                                if (hour1 <= Constants.HalfDayHourCount)
+                                {
+                                    hour1 += Constants.HalfDayHourCount;
+                                    List<string> timexList = new List<string>(beginTimex.Split('T'));
+                                    beginTimex = timexList[0] + 'T' + hour1 + timexList[1].Substring(2);
+                                }
+
+                                if (hour2 <= Constants.HalfDayHourCount)
+                                {
+                                    hour2 += Constants.HalfDayHourCount;
+                                    List<string> timexList = new List<string>(endTimex.Split('T'));
+                                    endTimex = timexList[0] + 'T' + hour2 + timexList[1].Substring(2);
+                                }
+                            }
+
+                            ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(beginTimex, endTimex, rangeTimexComponents.DurationTimex);
+
+                            ret.FutureValue = new Tuple<DateObject, DateObject>(
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    futDate.Year, futDate.Month, futDate.Day, hour1, beginTime.Minute, beginTime.Second),
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    futDate.Year, futDate.Month, futDate.Day, hour2, endTime.Minute, endTime.Second));
+
+                            ret.PastValue = new Tuple<DateObject, DateObject>(
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    pasDate.Year, pasDate.Month, pasDate.Day, hour1, beginTime.Minute, beginTime.Second),
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    pasDate.Year, pasDate.Month, pasDate.Day, hour2, endTime.Minute, endTime.Second));
+
+                            ret.Success = true;
+
+                            return ret;
+                        }
+                    }
+                }
+
                 if (ers.Count == 0 || ers[0].Length < beforeStr.Length)
                 {
                     var valid = false;

@@ -452,7 +452,7 @@ SuffixRegex: !simpleRegex
 NonTimeContextTokens: !simpleRegex
   def: (building)
 DateTimeTimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>morning|afternoon|night|evening)\b
+  def: \b(?<timeOfDay>morning|(?<pm>afternoon|night|evening))\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\btoni(ght|te))\b
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]

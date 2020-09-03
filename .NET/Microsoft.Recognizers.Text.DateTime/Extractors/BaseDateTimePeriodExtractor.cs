@@ -426,7 +426,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Date followed by morning, afternoon or morning, afternoon followed by Date
-            if (dateErs.Count == 0)
+            if (dateErs.Count == 0 && ret.Count == 0)
             {
                 return ret;
             }
