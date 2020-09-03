@@ -325,11 +325,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             DateObject result;
             int i = start ? 0 : 1;
-            if (match.Groups["EndOf"].Captures[i].Length > 0)
+            if (match.Groups["EndOf"].Captures.Count >= 2 && match.Groups["EndOf"].Captures[i].Length > 0)
             {
                 result = date.Item2;
             }
-            else if (match.Groups["MiddleOf"].Captures[i].Length > 0)
+            else if (match.Groups["MiddleOf"].Captures.Count >= 2 && match.Groups["MiddleOf"].Captures[i].Length > 0)
             {
                 var startDate = date.Item1;
                 var endDate = date.Item2;
