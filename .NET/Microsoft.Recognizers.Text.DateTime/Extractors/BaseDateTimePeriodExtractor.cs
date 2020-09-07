@@ -559,6 +559,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
+
+                // Try to extract a pure number period in before-string
+                if (e.Start > 0)
+                {
+                    var beforeStr = text.Substring(0, e.Start);
+                    if (!string.IsNullOrEmpty(beforeStr))
+                    {
+                        ret.AddRange(MatchPureNumberCases(beforeStr, e, before: true));
+                    }
+                }
+
+                // Try to extract a pure number period in after-string
+                if (e.End < text.Length)
+                {
+                    var afterStr = text.Substring(e.End);
+                    if (!string.IsNullOrEmpty(afterStr))
+                    {
+                        ret.AddRange(MatchPureNumberCases(afterStr, e, before: false));
+                    }
+                }
             }
 
             return ret;
@@ -736,5 +756,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new Token(startOut, endOut);
         }
 
+        private List<Token> MatchPureNumberCases(string text, Token tok, bool before)
+        {
+            var ret = new List<Token>();
+            foreach (var regex in this.config.SimpleCasesRegex)
+            {
+                var matches = regex.Matches(text);
+                foreach (Match match in matches)
+                {
+                    var midStr = before ? text.Substring(match.Index + match.Length) : text.Substring(0, match.Index);
+                    if (string.IsNullOrWhiteSpace(midStr))
+                    {
+                        if (before)
+                        {
+                            ret.Add(new Token(match.Index, tok.Start + tok.Length));
+                        }
+                        else
+                        {
+                            ret.Add(new Token(tok.Start, tok.End + match.Index + match.Length));
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
     }
 }

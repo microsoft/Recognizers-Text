@@ -317,8 +317,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var futDate = DateObject.MinValue.SafeCreateFromValue(timeOfDayDate.Year, timeOfDayDate.Month, timeOfDayDate.Day, 0, 0, 0);
                         var pasDate = futDate;
 
-                        var timePeriodParseResult = Config.TimePeriodParser.Parse(timePeriodErs[0]);
-                        var timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.Value;
+                        var timePeriodParseResult = timePeriodErs.Count > 0 ? Config.TimePeriodParser.Parse(timePeriodErs[0]) : null;
+                        var timePeriodResolutionResult = timePeriodErs.Count > 0 ? (DateTimeResolutionResult)timePeriodParseResult.Value : null;
 
                         if (timePeriodResolutionResult == null)
                         {
@@ -822,7 +822,39 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    return ret;
+                    // Consider cases with specific time of day e.g. "between 7 and 9 last night"
+                    match = Config.SpecificTimeOfDayRegex.Match(trimmedText);
+                    if (match.Success)
+                    {
+                        var matchStr = match.Value;
+                        ret.Comment = null;
+
+                        // Handle "last", "next"
+                        var swift = this.Config.GetSwiftPrefix(matchStr);
+                        var timeOfDayDate = referenceTime.AddDays(swift).Date;
+
+                        dateStr = DateTimeFormatUtil.FormatDate(timeOfDayDate);
+
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(timeOfDayDate.Year, timeOfDayDate.Month, timeOfDayDate.Day, 0, 0, 0);
+                        pastDate = futureDate;
+
+                        if (match.Groups["pm"].Success)
+                        {
+                            if (beginHour <= Constants.HalfDayHourCount)
+                            {
+                                beginHour += Constants.HalfDayHourCount;
+                            }
+
+                            if (endHour <= Constants.HalfDayHourCount)
+                            {
+                                endHour += Constants.HalfDayHourCount;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return ret;
+                    }
                 }
 
                 var pastHours = endHour - beginHour;
