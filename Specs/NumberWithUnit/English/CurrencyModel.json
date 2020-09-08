@@ -2267,5 +2267,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I would like to buy this item for USD 200.",
+    "Results": [
+      {
+        "Text": "usd 200",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "200",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
   }
 ]
