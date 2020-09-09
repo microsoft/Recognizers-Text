@@ -200,7 +200,7 @@ export namespace EnglishDateTime {
     export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\\b`;
     export const SuffixAndRegex = `(?<suffix>\\s*(and)\\s+(an?\\s+)?(?<suffix_num>half|quarter))`;
     export const PeriodicRegex = `\\b(?<periodic>((?<multiplier>semi|bi|tri)(\\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\\b`;
-    export const EachUnitRegex = `(?<each>(each|every|once an?)(?<other>\\s+other)?\\s+(${DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|${WeekDayRegex}))`;
+    export const EachUnitRegex = `(?<each>(each|every|any|once an?)(?<other>\\s+other)?\\s+(${DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|${WeekDayRegex}))`;
     export const EachPrefixRegex = `\\b(?<each>(each|every|once an?)\\s*$)`;
     export const SetEachRegex = `\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)\\b`;
     export const SetLastRegex = `(?<last>following|next|upcoming|this|${LastNegPrefix}last|past|previous|current)`;
@@ -246,7 +246,7 @@ export namespace EnglishDateTime {
     export const FromToRegex = `\\b(from).+(to)\\b.+`;
     export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
     export const SingleAmbiguousTermsRegex = `^(the\\s+)?(day|week|month|year)$`;
-    export const UnspecificDatePeriodRegex = `^(week(end)?|month|year)$`;
+    export const UnspecificDatePeriodRegex = `^(week|month|year)$`;
     export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
     export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
     export const ForTheRegex = `\\b((((?<=for\\s+)the\\s+${FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.(?!\\d)|!|\\?|$)))`;
