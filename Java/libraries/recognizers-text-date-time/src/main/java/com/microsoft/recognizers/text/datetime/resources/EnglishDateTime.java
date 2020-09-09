@@ -131,7 +131,7 @@ public class EnglishDateTime {
 
     public static final String SingleWeekDayRegex = "\\b(?<weekday>sunday|saturday|(?:mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|((?<=on\\s+)(sat|sun)))\\b";
 
-    public static final String RelativeMonthRegex = "(?<relmonth>(of\\s+)?{RelativeRegex}\\s+month)\\b"
+    public static final String RelativeMonthRegex = "(?<relmonth>((day\\s+)?of\\s+)?{RelativeRegex}\\s+month)\\b"
             .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String WrittenMonthRegex = "(((the\\s+)?month of\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))";
@@ -182,7 +182,7 @@ public class EnglishDateTime {
 
     public static final String SpecialYearPrefixes = "(calendar|(?<special>fiscal|school))";
 
-    public static final String OneWordPeriodRegex = "\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|({RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b"
+    public static final String OneWordPeriodRegex = "\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(?<toDate>((un)?till?|to)\\s+date)|({RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b"
             .replace("{StrictRelativeRegex}", StrictRelativeRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex)
@@ -394,7 +394,7 @@ public class EnglishDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String OfMonth = "^\\s*of\\s*{MonthRegex}"
+    public static final String OfMonth = "^\\s*(day\\s+)?of\\s*{MonthRegex}"
             .replace("{MonthRegex}", MonthRegex);
 
     public static final String MonthEnd = "{MonthRegex}\\s*(the)?\\s*$"
@@ -632,11 +632,14 @@ public class EnglishDateTime {
 
     public static final String NowRegex = "\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b";
 
+    public static final String NowParseRegex = "\\b({NowRegex}|^(date)$)\\b"
+            .replace("{NowRegex}", NowRegex);
+
     public static final String SuffixRegex = "^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b";
 
     public static final String NonTimeContextTokens = "(building)";
 
-    public static final String DateTimeTimeOfDayRegex = "\\b(?<timeOfDay>morning|afternoon|night|evening)\\b";
+    public static final String DateTimeTimeOfDayRegex = "\\b(?<timeOfDay>morning|(?<pm>afternoon|night|evening))\\b";
 
     public static final String DateTimeSpecificTimeOfDayRegex = "\\b(({RelativeRegex}\\s+{DateTimeTimeOfDayRegex})\\b|\\btoni(ght|te))\\b"
             .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)

@@ -1184,6 +1184,10 @@ public class FrenchDateTime {
         .put("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")
         .build();
 
+    public static final ImmutableMap<String, String> AmbiguityTimeFiltersDict = ImmutableMap.<String, String>builder()
+        .put("heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b")
+        .build();
+
     public static final List<String> MorningTermList = Arrays.asList("matinee", "matin", "matinée");
 
     public static final List<String> AfternoonTermList = Arrays.asList("apres-midi", "apres midi", "après midi", "après-midi");

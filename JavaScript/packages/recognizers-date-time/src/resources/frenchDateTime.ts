@@ -256,6 +256,7 @@ export namespace FrenchDateTime {
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"]]);
+    export const AmbiguityTimeFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b"]]);
     export const MorningTermList = [ "matinee","matin","matinée" ];
     export const AfternoonTermList = [ "apres-midi","apres midi","après midi","après-midi" ];
     export const EveningTermList = [ "soir","soiree","soirée" ];
