@@ -495,7 +495,7 @@ SuffixAndRegex: !simpleRegex
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
 EachUnitRegex: !nestedRegex
-  def: (?<each>(each|every|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex}))
+  def: (?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex}))
   references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
@@ -611,7 +611,7 @@ SingleAmbiguousMonthRegex: !simpleRegex
 SingleAmbiguousTermsRegex: !simpleRegex
   def: ^(the\s+)?(day|week|month|year)$
 UnspecificDatePeriodRegex: !simpleRegex
-  def: ^(week(end)?|month|year)$
+  def: ^(week|month|year)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
 FlexibleDayRegex: !simpleRegex

@@ -14808,6 +14808,21 @@
             }
           ]
         }
+      },
+      {
+        "Text": "any year",
+        "Start": 19,
+        "End": 26,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
       }
     ]
   },
@@ -17675,6 +17690,104 @@
               "type": "datetimerange",
               "start": "2018-05-31 19:00:00",
               "end": "2018-05-31 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom weekend.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "weekend",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W45-WE",
+              "type": "daterange",
+              "start": "2016-11-12",
+              "end": "2016-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom the weekend.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the weekend",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W45-WE",
+              "type": "daterange",
+              "start": "2016-11-12",
+              "end": "2016-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom any weekend.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "any weekend",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom all weekends.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java, dotnet",
+    "Results": [
+      {
+        "Text": "all weekends",
+        "Start": 16,
+        "End": 27,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "value": "not resolved"
             }
           ]
         }
