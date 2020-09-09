@@ -70,7 +70,7 @@ export namespace ChineseNumeric {
     export const DoubleScientificNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?(${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]${ZeroToNineFullHalfRegex}*)`;
     export const OrdinalRegex = `第${AllIntRegex}`;
     export const OrdinalNumbersRegex = `第${ZeroToNineFullHalfRegex}+`;
-    export const AllFractionNumber = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*又\\s*)?${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*分\\s*之\\s*${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})`;
+    export const AllFractionNumber = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*又\\s*)?${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*分\\s*之\\s*${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})(${PointRegexStr}${AllIntRegex}*)?`;
     export const FractionNotationSpecialsCharsRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+\\s+${ZeroToNineFullHalfRegex}+[/／]${ZeroToNineFullHalfRegex}+`;
     export const FractionNotationRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[/／]${ZeroToNineFullHalfRegex}+`;
     export const PercentagePointRegex = `(?<!${AllIntRegex})(${AllFloatRegex}|${AllIntRegex})\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;

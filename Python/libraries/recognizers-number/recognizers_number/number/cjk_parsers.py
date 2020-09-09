@@ -303,6 +303,9 @@ class CJKNumberParser(BaseNumberParser):
     def get_value_from_part(self, part: str) -> float:
         if self.is_digit(part):
             return self.get_digit_value(part, 1.0)
+        split_result = regex.split(self.config.point_regex, part)
+        if len(split_result) == 2:
+            return self.get_int_value(split_result[0]) + self.get_point_value(split_result[1])
         return self.get_int_value(part)
 
     def dou_parse(self, source: ExtractResult) -> ParseResult:

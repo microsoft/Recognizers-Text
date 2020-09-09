@@ -302,10 +302,11 @@ public class ChineseNumeric {
     public static final String OrdinalNumbersRegex = "第{ZeroToNineFullHalfRegex}+"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
 
-    public static final String AllFractionNumber = "{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*又\\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*分\\s*之\\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})"
+    public static final String AllFractionNumber = "{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*又\\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*分\\s*之\\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})({PointRegexStr}{AllIntRegex}*)?"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
-            .replace("{AllIntRegex}", AllIntRegex);
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{PointRegexStr}", PointRegexStr);
 
     public static final String FractionNotationSpecialsCharsRegex = "({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+\\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+"
             .replace("{NegativeNumberTermsRegexNum}", NegativeNumberTermsRegexNum)

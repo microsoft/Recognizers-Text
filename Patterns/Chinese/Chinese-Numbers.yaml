@@ -254,8 +254,8 @@ OrdinalNumbersRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex]
 #FractionExtractor
 AllFractionNumber: !nestedRegex
-  def: '{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*又\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*之\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})'
-  references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, AllIntRegex]
+  def: '{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*又\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*之\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})({PointRegexStr}{AllIntRegex}*)?'
+  references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, AllIntRegex, PointRegexStr]
 FractionNotationSpecialsCharsRegex: !nestedRegex
   def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
