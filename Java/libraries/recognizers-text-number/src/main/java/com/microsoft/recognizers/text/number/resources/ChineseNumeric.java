@@ -208,7 +208,7 @@ public class ChineseNumeric {
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{AllowListRegex}", AllowListRegex);
 
-    public static final String AllIntRegex = "((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|[十拾]|{RoundNumberIntegerRegex}\\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|零)\\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})"
+    public static final String AllIntRegex = "((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])?\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|[十拾]|{RoundNumberIntegerRegex}\\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|零)\\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})"
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
