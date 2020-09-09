@@ -2615,12 +2615,32 @@
   {
     "Input": "百分之五十五点五七九",
     "NotSupported": "java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "百分之五十五点五七九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.55579"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
   },
   {
     "Input": "百分之十万零六百五十一",
     "NotSupported": "javascript, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "百分之十万零六百五十一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1006.51"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
   },
   {
     "Input": "六千零五十一个百分点",
