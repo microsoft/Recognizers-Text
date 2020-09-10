@@ -92,6 +92,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         Pattern digitNumRegex = cjkConfig.getDigitNumRegex();
+        Pattern pointRegex = cjkConfig.getPointRegex();
 
         double intValue = digitNumRegex.matcher(intPart).find() ?
                 getDigitValue(intPart, 1.0) :
@@ -103,7 +104,10 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         double demoValue = digitNumRegex.matcher(demoPart).find() ?
                 getDigitValue(demoPart, 1.0) :
-                getIntValue(demoPart);
+                (pointRegex.matcher(demoPart).find() ?
+                getIntValue(pointRegex.split(demoPart)[0]) + getPointValue(pointRegex.split(demoPart)[1]) :
+                getIntValue(demoPart));
+                
 
         if (cjkConfig.getNegativeNumberSignRegex().matcher(intPart).find()) {
             result.setValue(intValue - numValue / demoValue);

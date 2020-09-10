@@ -2614,7 +2614,7 @@
   },
   {
     "Input": "百分之五十五点五七九",
-    "NotSupported": "java",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "百分之五十五点五七九",
@@ -2629,7 +2629,7 @@
   },
   {
     "Input": "百分之十万零六百五十一",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "百分之十万零六百五十一",
