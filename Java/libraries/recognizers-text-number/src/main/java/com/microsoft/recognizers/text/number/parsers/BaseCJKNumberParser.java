@@ -100,7 +100,9 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         double numValue = digitNumRegex.matcher(numPart).find() ?
                 getDigitValue(numPart, 1.0) :
-                getIntValue(numPart);
+                (pointRegex.matcher(numPart).find() ?
+                getIntValue(pointRegex.split(numPart)[0]) + getPointValue(pointRegex.split(numPart)[1]) :
+                getIntValue(numPart));
 
         double demoValue = digitNumRegex.matcher(demoPart).find() ?
                 getDigitValue(demoPart, 1.0) :

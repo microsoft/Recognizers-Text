@@ -157,7 +157,9 @@ namespace Microsoft.Recognizers.Text.Number
 
             var numValue = Config.DigitNumRegex.IsMatch(numPart)
                 ? GetDigitValue(numPart, 1.0)
-                : GetIntValue(numPart);
+                : (Config.PointRegex.IsMatch(numPart)
+                ? GetIntValue(Config.PointRegex.Split(numPart)[0]) + GetPointValue(Config.PointRegex.Split(numPart)[1])
+                : GetIntValue(numPart));
 
             var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
                 ? GetDigitValue(demoPart, 1.0)
