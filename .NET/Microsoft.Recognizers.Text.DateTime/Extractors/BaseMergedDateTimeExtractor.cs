@@ -327,6 +327,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var er in ers)
             {
+                TryMergeModifierToken(er, config.AroundRegex, text);
                 var success = TryMergeModifierToken(er, config.BeforeRegex, text);
 
                 if (!success)
@@ -338,11 +339,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
                     success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
-                }
-
-                if (!success)
-                {
-                    success = TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
                 if (!success)

@@ -18187,5 +18187,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I am feeling sick around 1pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "around 1pm",
+        "Start": 18,
+        "End": 27,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
