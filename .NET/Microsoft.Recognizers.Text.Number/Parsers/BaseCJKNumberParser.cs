@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.Number
             var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
                 ? GetDigitValue(demoPart, 1.0)
                 : (Config.PointRegex.IsMatch(demoPart)
-                ? GetIntValue(Config.PointRegex.Split(demoPart)[0]) + GetPointValue(Config.PointRegex.Split(demoPart)[1]) 
+                ? GetIntValue(Config.PointRegex.Split(demoPart)[0]) + GetPointValue(Config.PointRegex.Split(demoPart)[1])
                 : GetIntValue(demoPart));
 
             if (Config.NegativeNumberSignRegex.IsMatch(intPart))
