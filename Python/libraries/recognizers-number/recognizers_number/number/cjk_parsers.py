@@ -260,7 +260,13 @@ class CJKNumberParser(BaseNumberParser):
                     double_value -= self.get_point_value(split_result[1])
                 else:
                     double_value += self.get_point_value(split_result[1])
-            result.value = double_value
+
+        percentage_num_search = regex.search(self.config.percentage_num_regex, source_text)
+        if percentage_num_search:
+            split_result = regex.search(self.config.percentage_num_regex, source_text).group()
+            split_result = regex.split(self.config.frac_split_regex, split_result)
+            demo_value = self.get_value_from_part(split_result[0])
+            result.value /= (demo_value / 100)
 
         result.resolution_str = self.__format(result.value) + '%'
         return result

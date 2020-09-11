@@ -2614,31 +2614,41 @@
   },
   {
     "Input": "百分之五十五点五七九",
+    "NotSupported":"java",
+    "Results": []
+  },
+  {
+    "Input": "百分之十万零六百五十一",
+    "NotSupported":"java",
+    "Results": []
+  },
+  {
+    "Input": "一百分之五十五点五七九",
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "百分之五十五点五七九",
+        "Text": "一百分之五十五点五七九",
         "TypeName": "number",
         "Resolution": {
           "value": "0.55579"
         },
         "Start": 0,
-        "End": 9
+        "End": 10
       }
     ]
   },
   {
-    "Input": "百分之十万零六百五十一",
+    "Input": "一百分之十万零六百五十一",
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "百分之十万零六百五十一",
+        "Text": "一百分之十万零六百五十一",
         "TypeName": "number",
         "Resolution": {
           "value": "1006.51"
         },
         "Start": 0,
-        "End": 10
+        "End": 11
       }
     ]
   },

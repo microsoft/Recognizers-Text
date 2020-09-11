@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
             this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
             this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
+            this.PercentageNumRegex = new Regex(NumbersDefinitions.PercentageNumRegex, RegexFlags);
             this.FractionPrepositionRegex = null;
         }
 
@@ -77,6 +78,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public Regex DozenRegex { get; private set; }
 
         public Regex PercentageRegex { get; private set; }
+
+        public Regex PercentageNumRegex { get; private set; }
 
         public Regex DoubleAndRoundRegex { get; private set; }
 
