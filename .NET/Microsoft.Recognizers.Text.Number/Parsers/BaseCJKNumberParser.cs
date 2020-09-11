@@ -330,23 +330,26 @@ namespace Microsoft.Recognizers.Text.Number
                 result.Value = doubleValue;
             }
 
-            var percentageNumSearch = Config.PercentageNumRegex.Match(resultText);
-            if (percentageNumSearch.Length != 0)
+            if (Config.PercentageNumRegex != null)
             {
-                string demoPart = percentageNumSearch.Value;
-                var splitResult = Config.FracSplitRegex.Split(demoPart);
-                demoPart = splitResult[0];
-                var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
-                    ? GetDigitValue(demoPart, 1.0)
-                    : GetIntValue(demoPart);
+                var percentageNumSearch = Config.PercentageNumRegex.Match(resultText);
+                if (percentageNumSearch.Length != 0)
+                {
+                    string demoPart = percentageNumSearch.Value;
+                    var splitResult = Config.FracSplitRegex.Split(demoPart);
+                    demoPart = splitResult[0];
+                    var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
+                        ? GetDigitValue(demoPart, 1.0)
+                        : GetIntValue(demoPart);
 
-                if (demoValue < 100 && demoValue > 0)
-                {
-                    result.Value = (double)result.Value * (100 / demoValue);
-                }
-                else if (demoValue > 100)
-                {
-                    result.Value = (double)result.Value / (demoValue / 100);
+                    if (demoValue < 100 && demoValue > 0)
+                    {
+                        result.Value = (double)result.Value * (100 / demoValue);
+                    }
+                    else if (demoValue > 100)
+                    {
+                        result.Value = (double)result.Value / (demoValue / 100);
+                    }
                 }
             }
 
