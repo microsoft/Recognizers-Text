@@ -224,22 +224,6 @@
     ]
   },
   {
-    "Input": "Mitt telefonnummer är: +46 498 12 34 56.",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "+46 498 12 34 56",
-        "Start": 23,
-        "End": 38,
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "score": "1",
-          "value": "+46 498 12 34 56"
-        }
-      }
-    ]
-  },
-  {
     "Input": "Mitt telefonnummer är: 08-123 456 67.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
