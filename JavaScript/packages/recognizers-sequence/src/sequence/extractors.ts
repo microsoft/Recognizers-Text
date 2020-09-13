@@ -141,6 +141,31 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
             if ((Digits < 7 && er.data !== "ITPhoneNumber") || er.text.match(BasePhoneNumbers.SSNFilterRegex)) {
                 continue;
             }
+            if (Digits === 16 && !(er.text.substring(0, 1) === "+")) {
+                continue;
+            }
+            if (Digits === 15) {
+                let flag = false;
+                let numSpans = er.text.split(" ");
+                for (let numSpan of numSpans) {
+                    let numSpanDigit = 0;
+                    for (let t of numSpan) {
+                        if (t.match(digitRegex)) {
+                            numSpanDigit++;
+                        }
+                    }
+                    if (numSpanDigit == 4 || numSpanDigit == 3) {
+                        flag = false;
+                    }
+                    else {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag == false) {
+                    continue;
+                }
+            }
             if (er.start + er.length < source.length) {
                 let ch = source[ er.start+er.length ];
                 if (BasePhoneNumbers.ForbiddenSuffixMarkers.indexOf(ch) !== -1){

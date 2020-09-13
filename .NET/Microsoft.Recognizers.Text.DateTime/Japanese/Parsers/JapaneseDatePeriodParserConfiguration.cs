@@ -1305,23 +1305,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            // pare year
+            // Parse year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
             var yearJap = match.Groups["yearJap"].Value;
             var yearRel = match.Groups["yearrel"].Value;
+
+            // @TODO move hardcoded values to resources file
             if (!string.IsNullOrEmpty(yearNum))
             {
-                if (yearNum.EndsWith("年"))
+                if (yearNum.EndsWith("年", StringComparison.Ordinal))
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
 
-                year = int.Parse(yearNum);
+                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
             else if (!string.IsNullOrEmpty(yearJap))
             {
-                if (yearJap.EndsWith("年"))
+                if (yearJap.EndsWith("年", StringComparison.Ordinal))
                 {
                     yearJap = yearJap.Substring(0, yearJap.Length - 1);
                 }
@@ -1330,11 +1332,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
-                if (yearRel.EndsWith("前年") || yearRel.EndsWith("先年"))
+                if (yearRel.EndsWith("前年", StringComparison.Ordinal) || yearRel.EndsWith("先年", StringComparison.Ordinal))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("来年"))
+                else if (yearRel.EndsWith("来年", StringComparison.Ordinal))
                 {
                     year++;
                 }

@@ -395,7 +395,7 @@
     ]
   },
   {
-    "Input": "convert 200 celsius celsius into fahrenheit",
+    "Input": "convert 200 celsius into fahrenheit",
     "Results": [
       {
         "Text": "200 celsius",
@@ -408,24 +408,14 @@
         "End": 18
       },
       {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 20,
-        "End": 26
-      },
-      {
         "Text": "fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 33,
-        "End": 42
+        "Start": 25,
+        "End": 34
       }
     ]
   },
@@ -475,7 +465,7 @@
     ]
   },
   {
-    "Input": "50 degrees celsius celsius to fahrenheit",
+    "Input": "50 degrees celsius to fahrenheit",
     "Results": [
       {
         "Text": "50 degrees celsius",
@@ -488,24 +478,14 @@
         "End": 17
       },
       {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 19,
-        "End": 25
-      },
-      {
         "Text": "fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "F"
         },
-        "Start": 30,
-        "End": 39
+        "Start": 22,
+        "End": 31
       }
     ]
   },

@@ -1491,5 +1491,129 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Muestra ventas en el año fiscal de 2016",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "año fiscal de 2016",
+        "Start": 21,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FY2016",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El rango es desde 1840 hasta 2000.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde 1840 hasta 2000",
+        "Start": 12,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(1840-01-01,2000-01-01,P160Y)",
+              "type": "daterange",
+              "start": "1840-01-01",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El rango es entre 2008 y 2011.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 2008 y 2011",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2008-01-01,2011-01-01,P3Y)",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2011-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El rango es de 2008 a 2010.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 2008 a 2010",
+        "Start": 12,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2008-01-01,2010-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El rango es de 2014.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2014",
+        "Start": 15,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014",
+              "type": "daterange",
+              "start": "2014-01-01",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

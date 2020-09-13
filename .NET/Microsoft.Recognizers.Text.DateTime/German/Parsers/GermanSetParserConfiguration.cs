@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -79,32 +80,59 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("täglich") || trimmedText.Equals("täglicher") || trimmedText.Equals("tägliches") ||
-                trimmedText.Equals("tägliche") || trimmedText.Equals("täglichen") || trimmedText.Equals("alltäglich") ||
-                trimmedText.Equals("alltäglicher") || trimmedText.Equals("alltägliches") || trimmedText.Equals("alltägliche") ||
-                trimmedText.Equals("alltäglichen") ||
-                trimmedText.Equals("jeden tag"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.Equals("täglich", StringComparison.Ordinal) ||
+                trimmedText.Equals("täglicher", StringComparison.Ordinal) ||
+                trimmedText.Equals("tägliches", StringComparison.Ordinal) ||
+                trimmedText.Equals("tägliche", StringComparison.Ordinal) ||
+                trimmedText.Equals("täglichen", StringComparison.Ordinal) ||
+                trimmedText.Equals("alltäglich", StringComparison.Ordinal) ||
+                trimmedText.Equals("alltäglicher", StringComparison.Ordinal) ||
+                trimmedText.Equals("alltägliches", StringComparison.Ordinal) ||
+                trimmedText.Equals("alltägliche", StringComparison.Ordinal) ||
+                trimmedText.Equals("alltäglichen", StringComparison.Ordinal) ||
+                trimmedText.Equals("jeden tag", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("wöchentlich") || trimmedText.Equals("wöchentlicher") || trimmedText.Equals("wöchentliches") ||
-                     trimmedText.Equals("wöchentliche") || trimmedText.Equals("wöchentlichen") || trimmedText.Equals("allwöchentlich") ||
-                     trimmedText.Equals("allwöchentlicher") || trimmedText.Equals("allwöchentliches") || trimmedText.Equals("allwöchentliche") ||
-                     trimmedText.Equals("allwöchentlichen"))
+            else if (trimmedText.Equals("wöchentlich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("wöchentlicher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("wöchentliches", StringComparison.Ordinal) ||
+                     trimmedText.Equals("wöchentliche", StringComparison.Ordinal) ||
+                     trimmedText.Equals("wöchentlichen", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allwöchentlich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allwöchentlicher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allwöchentliches", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allwöchentliche", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allwöchentlichen", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("monatlich") || trimmedText.Equals("monatlicher") || trimmedText.Equals("monatliches") ||
-                     trimmedText.Equals("monatliche") || trimmedText.Equals("monatlichen") || trimmedText.Equals("allmonatlich") ||
-                     trimmedText.Equals("allmonatlicher") || trimmedText.Equals("allmonatliches") || trimmedText.Equals("allmonatliche") ||
-                     trimmedText.Equals("allmonatlichen"))
+            else if (trimmedText.Equals("monatlich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("monatlicher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("monatliches", StringComparison.Ordinal) ||
+                     trimmedText.Equals("monatliche", StringComparison.Ordinal) ||
+                     trimmedText.Equals("monatlichen", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allmonatlich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allmonatlicher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allmonatliches", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allmonatliche", StringComparison.Ordinal) ||
+                     trimmedText.Equals("allmonatlichen", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("jährlich") || trimmedText.Equals("jährlicher") || trimmedText.Equals("jährliches") ||
-                     trimmedText.Equals("jährliche") || trimmedText.Equals("jährlichen") || trimmedText.Equals("alljährlich") ||
-                     trimmedText.Equals("alljährlicher") || trimmedText.Equals("alljährliches") || trimmedText.Equals("alljährliche") ||
-                     trimmedText.Equals("alljährlichen"))
+            else if (trimmedText.Equals("jährlich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("jährlicher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("jährliches", StringComparison.Ordinal) ||
+                     trimmedText.Equals("jährliche", StringComparison.Ordinal) ||
+                     trimmedText.Equals("jährlichen", StringComparison.Ordinal) ||
+                     trimmedText.Equals("alljährlich", StringComparison.Ordinal) ||
+                     trimmedText.Equals("alljährlicher", StringComparison.Ordinal) ||
+                     trimmedText.Equals("alljährliches", StringComparison.Ordinal) ||
+                     trimmedText.Equals("alljährliche", StringComparison.Ordinal) ||
+                     trimmedText.Equals("alljährlichen", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }
@@ -120,19 +148,22 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("tag"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.Equals("tag", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("woche"))
+            else if (trimmedText.Equals("woche", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("monat"))
+            else if (trimmedText.Equals("monat", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("jahr"))
+            else if (trimmedText.Equals("jahr", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }

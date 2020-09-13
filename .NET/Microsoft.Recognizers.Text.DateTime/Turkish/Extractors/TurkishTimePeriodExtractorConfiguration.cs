@@ -153,5 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         {
             return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
+
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
     }
 }

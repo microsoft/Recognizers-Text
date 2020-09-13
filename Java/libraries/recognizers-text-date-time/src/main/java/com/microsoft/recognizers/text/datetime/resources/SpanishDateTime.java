@@ -193,6 +193,8 @@ public class SpanishDateTime {
 
     public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de)\\b";
 
+    public static final String TodayNowRegex = "\\b(hoy|ahora)\\b";
+
     public static final String FromRegex = "((de(sde)?)(\\s*la(s)?)?)$";
 
     public static final String BetweenRegex = "(entre\\s*(la(s)?)?)";
@@ -560,6 +562,8 @@ public class SpanishDateTime {
 
     public static final String SinceRegex = "(desde(\\s+(las?|el))?)";
 
+    public static final String SinceRegex1 = "(desde(\\s+(las?|el))?|de)";
+
     public static final String AroundRegex = "(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)";
 
     public static final String PeriodicRegex = "\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b";
@@ -602,8 +606,12 @@ public class SpanishDateTime {
 
     public static final String OrRegex = "^[.]";
 
-    public static final String YearPlusNumberRegex = "\\b(años?\\s+((?<year>(\\d{2,4}))|{FullTextYearRegex}))\\b"
-            .replace("{FullTextYearRegex}", FullTextYearRegex);
+    public static final String SpecialYearTermsRegex = "\\b(años?\\s+({SpecialYearPrefixes}\\s+)?(de\\s+)?)"
+            .replace("{SpecialYearPrefixes}", SpecialYearPrefixes);
+
+    public static final String YearPlusNumberRegex = "\\b({SpecialYearTermsRegex}((?<year>(\\d{2,4}))|{FullTextYearRegex}))\\b"
+            .replace("{FullTextYearRegex}", FullTextYearRegex)
+            .replace("{SpecialYearTermsRegex}", SpecialYearTermsRegex);
 
     public static final String NumberAsTimeRegex = "^[.]";
 
@@ -945,7 +953,10 @@ public class SpanishDateTime {
 
     public static final String SuffixAfterRegex = "^[.](?!$)";
 
-    public static final String YearPeriodRegex = "^[.]";
+    public static final String YearPeriodRegex = "((((de(sde)?|durante|en)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((entre)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{TillRegex}", TillRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex);
 
     public static final String FutureSuffixRegex = "\\b(despu[ée]s)\\b";
 

@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var term in terms)
             {
-                if (text.EndsWith(term))
+                if (text.EndsWith(term, StringComparison.Ordinal))
                 {
                     result = true;
                     break;
@@ -307,6 +307,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (this.config.UpcomingPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     value = referenceDate.Upcoming((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                }
+                else if (config.GetSwiftMonthOrYear(trimmedText) == 2)
+                {
+                    value = value.AddDays(7);
                 }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);

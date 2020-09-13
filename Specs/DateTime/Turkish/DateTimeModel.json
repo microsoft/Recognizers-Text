@@ -426,9 +426,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 ocak 2016 - 22/01/2016",
+        "Text": "12 ocak 2016 - 22/01/2016 arası",
         "Start": 0,
-        "End": 24,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [

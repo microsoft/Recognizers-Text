@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;
@@ -178,14 +178,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("volgende"))
+            if (FutureRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("vorige") || trimmedText.StartsWith("laatste"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

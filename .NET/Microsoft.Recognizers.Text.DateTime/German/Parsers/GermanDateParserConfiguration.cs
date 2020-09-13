@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
@@ -19,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+
             DateRegexes = new GermanDateExtractorConfiguration(this).DateRegexList;
             OnRegex = GermanDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
@@ -39,9 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            AfterNextPrefixRegex = new Regex(DateTimeDefinitions.AfterNextPrefixRegex, RegexOptions.Singleline);
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
             UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
             PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
@@ -113,6 +117,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex NextPrefixRegex { get; }
 
+        public Regex AfterNextPrefixRegex { get; }
+
         public Regex PreviousPrefixRegex { get; }
 
         public Regex UpcomingPrefixRegex { get; }
@@ -145,7 +151,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimmedText))
+
+            var afterNextMatch = AfterNextPrefixRegex.Match(text);
+
+            if (afterNextMatch.Success)
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
@@ -160,7 +173,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("letzten");
+
+            // @TODO move hardcoded values to resources file
+
+            return trimmedText.Equals("letzten", StringComparison.Ordinal);
         }
 
         public string Normalize(string text)

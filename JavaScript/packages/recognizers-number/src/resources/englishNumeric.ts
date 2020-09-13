@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace EnglishNumeric {
-    export const LangMarker = 'Eng';
+    export const LangMarker = `Eng`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
     export const RoundNumberIntegerRegex = `(?:hundred|thousand|million|billion|trillion|lakh|crore)`;
@@ -91,11 +91,11 @@ export namespace EnglishNumeric {
     export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})`;
     export const TwoNumberRangeRegex4 = `(from\\s+)?(?<number1>(${NumberSplitMark}(?!\\bfrom\\b).)+)\\s*${TillRegex}\\s*(the\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
     export const AmbiguousFractionConnectorsRegex = `(\\bin\\b)`;
-    export const DecimalSeparatorChar = '.';
-    export const FractionMarkerToken = 'over';
-    export const NonDecimalSeparatorChar = ',';
-    export const HalfADozenText = 'six';
-    export const WordSeparatorToken = 'and';
+    export const DecimalSeparatorChar = `.`;
+    export const FractionMarkerToken = `over`;
+    export const NonDecimalSeparatorChar = `,`;
+    export const HalfADozenText = `six`;
+    export const WordSeparatorToken = `and`;
     export const WrittenDecimalSeparatorTexts = [ "point" ];
     export const WrittenGroupSeparatorTexts = [ "punto" ];
     export const WrittenIntegerSeparatorTexts = [ "and" ];

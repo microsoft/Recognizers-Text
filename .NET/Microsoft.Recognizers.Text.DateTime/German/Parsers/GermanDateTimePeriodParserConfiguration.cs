@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
@@ -181,11 +182,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächstes"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.StartsWith("nächster", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächste", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächsten", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächstes", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("letzter") || trimmedText.StartsWith("letzte") || trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letztes"))
+            else if (trimmedText.StartsWith("letzter", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letzte", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letzten", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letztes", StringComparison.Ordinal))
             {
                 swift = -1;
             }

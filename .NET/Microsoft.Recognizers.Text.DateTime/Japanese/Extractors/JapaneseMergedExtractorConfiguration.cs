@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
@@ -23,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DenyFilterRegex = new Regex(@"^\d{1,2}号", RegexFlags);
 
         private static readonly JapaneseDateExtractorConfiguration DateExtractor = new JapaneseDateExtractorConfiguration();
 
@@ -70,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            CheckBlackList(ref ret, text);
+            CheckDenyList(ref ret, text);
 
             AddMod(ret, text);
 
@@ -80,10 +83,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         // add some negative case
-        private static void CheckBlackList(ref List<ExtractResult> extractResults, string text)
+        private static void CheckDenyList(ref List<ExtractResult> extractResults, string text)
         {
             var ret = new List<ExtractResult>();
-            var regex = new Regex(@"^\d{1,2}号");
 
             foreach (var extractResult in extractResults)
             {
@@ -92,15 +94,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     var tmpChar = text.Substring(endIndex, 1);
 
+                    // @TODO move hardcoded values to resources file
+
                     // for cases like "12周岁"
-                    if (extractResult.Text.EndsWith("周") && endIndex < text.Length && tmpChar.Equals("岁"))
+                    if (extractResult.Text.EndsWith("周", StringComparison.Ordinal) &&
+                        endIndex < text.Length &&
+                        tmpChar.Equals("岁", StringComparison.Ordinal))
                     {
                         continue;
                     }
                 }
 
                 // for cases like "12号"
-                if (regex.Match(extractResult.Text).Success)
+                if (DenyFilterRegex.Match(extractResult.Text).Success)
                 {
                     continue;
                 }

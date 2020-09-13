@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex4, RegexFlags),
                     NumberRangeConstants.LESS
                 },
-        };
+            };
 
             Regexes = regexes.ToImmutableDictionary();
 

@@ -112,7 +112,7 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
         if (trimmedText.endsWith("morning") && hour >= 12) {
             result -= 12;
         }
-        else if (!trimmedText.endsWith("morning") && hour < 12) {
+        else if (!trimmedText.endsWith("morning") && hour < 12 && !(trimmedText.endsWith("night") && hour < 6)) {
             result += 12;
         }
         return result;

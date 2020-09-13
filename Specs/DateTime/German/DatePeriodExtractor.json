@@ -444,6 +444,18 @@
     ]
   },
   {
+    "Input": "Übernächste Woche bin ich nicht hier.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Übernächste Woche",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
     "Input": "Nächsten Monat bin ich nicht hier.",
     "NotSupported": "javascript, python",
     "Results": [

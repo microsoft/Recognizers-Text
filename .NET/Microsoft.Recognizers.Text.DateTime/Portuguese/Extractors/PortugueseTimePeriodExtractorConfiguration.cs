@@ -128,5 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             return RangeConnectorRegex.IsExactMatch(text, true);
         }
+
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
     }
 }

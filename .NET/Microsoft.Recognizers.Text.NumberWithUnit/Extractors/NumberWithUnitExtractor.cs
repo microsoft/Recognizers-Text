@@ -75,9 +75,30 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var prefixMatches = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
             var suffixMatches = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
 
-            if (prefixMatches.Count > 0 || suffixMatches.Count > 0)
+            if (prefixMatches.Any() || suffixMatches.Any())
             {
                 var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+
+                // Checking if there are conflicting interpretations between currency unit as prefix and suffix for each number.
+                // For example, in Chinese, "$20，300美圆" should be broken into two entities instead of treating 20,300 as one number: "$20" and "300美圆".
+                if (numbers.Any() && CheckExtractorType(Constants.SYS_UNIT_CURRENCY) && prefixMatches.Any() && suffixMatches.Any())
+                {
+
+                    foreach (var number in numbers)
+                    {
+                        int start = (int)number.Start, length = (int)number.Length;
+                        var numberPrefix = prefixMatches.Any(o => o.Start + o.Length == number.Start);
+                        var numberSuffix = suffixMatches.Any(o => o.Start == number.Start + number.Length);
+
+                        if (numberPrefix != false && numberSuffix != false && number.Text.Contains(","))
+                        {
+                            int commaIndex = (int)number.Start + number.Text.IndexOf(",");
+                            source = source.Substring(0, commaIndex) + " " + source.Substring(commaIndex + 1);
+                        }
+                    }
+
+                    numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+                }
 
                 // Special case for cases where number multipliers clash with unit
                 var ambiguousMultiplierRegex = this.config.AmbiguousUnitNumberMultiplierRegex;

@@ -1348,13 +1348,13 @@
     ]
   },
   {
-    "Input": "who did I email few month ago",
+    "Input": "who did I email few months ago?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "few month ago",
+        "Text": "few months ago",
         "Type": "date",
         "Value": {
           "Timex": "2016-08-07",
@@ -1366,18 +1366,18 @@
           }
         },
         "Start": 16,
-        "Length": 13
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "who did I email a few day ago",
+    "Input": "who did I email a few days ago?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "a few day ago",
+        "Text": "a few days ago",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-04",
@@ -1389,7 +1389,7 @@
           }
         },
         "Start": 16,
-        "Length": 13
+        "Length": 14
       }
     ]
   },

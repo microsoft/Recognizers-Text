@@ -161,6 +161,8 @@ public class PortugueseDateTime {
 
     public static final String WithinNextPrefixRegex = "^[.]";
 
+    public static final String TodayNowRegex = "\\b(hoje|agora)\\b";
+
     public static final String CenturySuffixRegex = "^[.]";
 
     public static final String FromRegex = "((desde|de)(\\s*a(s)?)?)$";

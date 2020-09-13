@@ -1009,12 +1009,12 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "equals to 20000 in 1998",
+        "Text": "equals to 20000",
         "Start": 14,
-        "End": 36,
+        "End": 28,
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[10.01001001001,10.01001001001]"
+          "value": "[20000,20000]"
         }
       }
     ]
@@ -1029,12 +1029,12 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "from 200 to 3000000 in 2008",
+        "Text": "from 200 to 3000000",
         "Start": 14,
-        "End": 40,
+        "End": 32,
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[200,1494.02390438247)"
+          "value": "[200,3000000)"
         }
       }
     ]
@@ -1273,6 +1273,54 @@
         },
         "Start": 20,
         "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "x is no less than 194 and less than 12.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no less than 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[194,)"
+        },
+        "Start": 5,
+        "End": 20
+      },
+      {
+        "Text": "less than 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        },
+        "Start": 26,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "x is no more than 12 and more than 194.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no more than 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12]"
+        },
+        "Start": 5,
+        "End": 19
+      },
+      {
+        "Text": "more than 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(194,)"
+        },
+        "Start": 25,
+        "End": 37
       }
     ]
   }

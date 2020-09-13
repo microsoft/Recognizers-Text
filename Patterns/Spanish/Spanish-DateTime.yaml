@@ -464,6 +464,8 @@ AfterRegex: !simpleRegex
   def: (despu[eé]s(\s*del?(\s+las?)?)?)
 SinceRegex: !simpleRegex
   def: (desde(\s+(las?|el))?)
+SinceRegex1: !simpleRegex
+  def: (desde(\s+(las?|el))?|de)
 AroundRegex: !simpleRegex
   def: (?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)
 # SpanishSetExtractorConfiguration
@@ -506,9 +508,12 @@ PrefixArticleRegex: !simpleRegex
 OrRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+SpecialYearTermsRegex: !nestedRegex
+  def: \b(años?\s+({SpecialYearPrefixes}\s+)?(de\s+)?)
+  references: [ SpecialYearPrefixes ]
 YearPlusNumberRegex: !nestedRegex
-  def: \b(años?\s+((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
-  references: [ FullTextYearRegex ]
+  def: \b({SpecialYearTermsRegex}((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
+  references: [ FullTextYearRegex, SpecialYearTermsRegex ]
 NumberAsTimeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -861,9 +866,9 @@ DurationConnectorRegex: !simpleRegex
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.](?!$)
-YearPeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+YearPeriodRegex: !nestedRegex
+  def: ((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
+  references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(despu[ée]s)\b
 WrittenDecades: !dictionary

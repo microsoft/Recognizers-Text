@@ -184,6 +184,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string BeforeRegex = @"(antes(\s+del?(\s+las?)?)?)";
       public const string AfterRegex = @"(despu[eé]s(\s*del?(\s+las?)?)?)";
       public const string SinceRegex = @"(desde(\s+(las?|el))?)";
+      public const string SinceRegex1 = @"(desde(\s+(las?|el))?|de)";
       public const string AroundRegex = @"(?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)";
       public const string PeriodicRegex = @"\b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b";
       public const string EachExpression = @"cada|tod[oa]s\s*(l[oa]s)?";
@@ -199,7 +200,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string MiddlePauseRegex = @"^[.]";
       public const string PrefixArticleRegex = @"^[\.]";
       public const string OrRegex = @"^[.]";
-      public static readonly string YearPlusNumberRegex = $@"\b(años?\s+((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
+      public static readonly string SpecialYearTermsRegex = $@"\b(años?\s+({SpecialYearPrefixes}\s+)?(de\s+)?)";
+      public static readonly string YearPlusNumberRegex = $@"\b({SpecialYearTermsRegex}((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
       public const string NumberAsTimeRegex = @"^[.]";
       public const string TimeBeforeAfterRegex = @"^[.]";
       public const string DateNumberConnectorRegex = @"^[.]";
@@ -492,7 +494,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string DurationUnitRegex = @"^[\.]";
       public const string DurationConnectorRegex = @"^[.]";
       public const string SuffixAfterRegex = @"^[.](?!$)";
-      public const string YearPeriodRegex = @"^[.]";
+      public static readonly string YearPeriodRegex = $@"((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
       public const string FutureSuffixRegex = @"\b(despu[ée]s)\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {

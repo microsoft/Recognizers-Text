@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Definitions
             { @"__D", @"CENT" },
             { @"RUB", @"KOPEK" },
             { @"AFN", @"PUL" },
-            { @"EUR", @"CENT" },
+            { @"EUR", @"CENT|KWARTJE|DUBBELTJE|STUIVER" },
             { @"ALL", @"QINDARKE" },
             { @"_ALP", @"PENNY" },
             { @"GBP", @"PENNY" },
@@ -266,7 +266,10 @@ namespace Microsoft.Recognizers.Definitions
             { @"Kopiyka", 100 },
             { @"Tiyin", 100 },
             { @"Hào", 10 },
-            { @"Ngwee", 100 }
+            { @"Ngwee", 100 },
+            { @"Kwartje", 4 },
+            { @"Dubbeltje", 10 },
+            { @"Stuiver", 20 }
         };
       public static readonly Dictionary<string, long> NonStandardFractionalSubunits = new Dictionary<string, long>
         {

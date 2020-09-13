@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -102,7 +103,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 }
             }
 
-            if (trimmedPrefix.EndsWith("zum"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedPrefix.EndsWith("zum", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }
@@ -126,6 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             if (match.Success)
             {
                 var oclockStr = match.Groups["oclock"].Value;
+
                 if (string.IsNullOrEmpty(oclockStr))
                 {
                     var matchAmStr = match.Groups[Constants.AmGroupName].Value;

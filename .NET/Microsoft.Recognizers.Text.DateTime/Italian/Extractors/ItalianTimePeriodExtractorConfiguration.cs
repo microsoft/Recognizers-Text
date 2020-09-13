@@ -80,6 +80,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
+        private static readonly Regex RangePmRegex =
+            new Regex(DateTimeDefinitions.RangePmRegex, RegexFlags);
+
         public ItalianTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
@@ -102,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IEnumerable<Regex> SimpleCasesRegex => new[]
         {
-            PureNumFromTo, PureNumBetweenAnd, AmRegex, PmRegex, SpecificTimeFromTo, SpecificTimeBetweenAnd,
+            PureNumFromTo, PureNumBetweenAnd, AmRegex, RangePmRegex, SpecificTimeFromTo, SpecificTimeBetweenAnd,
         };
 
         public IEnumerable<Regex> PureNumberRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
@@ -156,5 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             return ConnectorAndRegex.IsMatch(text) || FullTillRegex.IsExactMatch(text, false);
         }
+
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
     }
 }

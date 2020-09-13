@@ -110,12 +110,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var originText = text;
             List<MatchResult<string>> superfluousWordMatches = null;
+
+            // Push
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(
-                    text,
-                    this.config.SuperfluousWordMatcher,
-                    out superfluousWordMatches);
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
             }
 
             // The order is important, since there can be conflicts in merging
@@ -159,6 +158,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
+            // Pop
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 ret = MatchingUtil.PostProcessRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
