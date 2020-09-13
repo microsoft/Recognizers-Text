@@ -756,6 +756,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new Token(startOut, endOut);
         }
 
+        // The method matches pure number ranges. It is used inside MatchTimeOfDay, so the condition IsNullOrWhiteSpace(midStr) implies
+        // that the range must be contiguous to a TimeOfDay expression (e.g. "last night from 7 to 9").
         private List<Token> MatchPureNumberCases(string text, Token tok, bool before)
         {
             var ret = new List<Token>();
