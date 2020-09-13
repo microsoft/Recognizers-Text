@@ -473,7 +473,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Rwandan franc: RWF
     Russian ruble: RUB
     Transnistrian ruble: PRB
-    Belarusian ruble: BYN
+    New Belarusian ruble: BYN
     Algerian dinar: DZD
     Bahraini dinar: BHD
     Iraqi dinar: IQD
@@ -642,7 +642,7 @@ CurrencyPrefixList: !dictionary
   entries:
 # Currency Prefix Symbols/Terms
     Dollar: $
-    United States dollar: united states $|us$|us $|u.s. $|u.s $|usd
+    United States dollar: united states $|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: australian $|australia $
     Bahamian dollar: bahamian $|bahamia $
@@ -699,6 +699,7 @@ AmbiguousCurrencyUnitList: !list
     - toea
     - vatu
     - yuan
+    - all
     - ang
     - ban
     - bob

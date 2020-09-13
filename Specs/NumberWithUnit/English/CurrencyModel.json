@@ -2270,6 +2270,7 @@
   },
   {
     "Input": "I would like to buy this item for USD 200.",
+    "NotSupported": "python, java, javascript",
     "Results": [
       {
         "Text": "usd 200",
@@ -2278,6 +2279,40 @@
           "value": "200",
           "unit": "United States dollar",
           "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "I would like to buy this item for EUR 125.",
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "eur 125",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "I would like to buy this item for GBP 350.",
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "gbp 350",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "350",
+          "unit": "British pound",
+          "isoCurrency": "GBP"
         },
         "Start": 34,
         "End": 40

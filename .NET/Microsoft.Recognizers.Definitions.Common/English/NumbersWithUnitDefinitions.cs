@@ -398,7 +398,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Rwandan franc", @"RWF" },
             { @"Russian ruble", @"RUB" },
             { @"Transnistrian ruble", @"PRB" },
-            { @"Belarusian ruble", @"BYN" },
+            { @"New Belarusian ruble", @"BYN" },
             { @"Algerian dinar", @"DZD" },
             { @"Bahraini dinar", @"BHD" },
             { @"Iraqi dinar", @"IQD" },
@@ -562,7 +562,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dollar", @"$" },
-            { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $|usd" },
+            { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $" },
             { @"East Caribbean dollar", @"east caribbean $" },
             { @"Australian dollar", @"australian $|australia $" },
             { @"Bahamian dollar", @"bahamian $|bahamia $" },
@@ -619,6 +619,7 @@ namespace Microsoft.Recognizers.Definitions.English
             @"toea",
             @"vatu",
             @"yuan",
+            @"all",
             @"ang",
             @"ban",
             @"bob",
