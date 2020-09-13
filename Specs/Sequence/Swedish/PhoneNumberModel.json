@@ -206,5 +206,288 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: +46 498 12 34 56.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46 498 12 34 56",
+        "Start": 23,
+        "End": 38,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46 498 12 34 56"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: +46 498 12 34 56.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46 498 12 34 56",
+        "Start": 23,
+        "End": 38,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46 498 12 34 56"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 08-123 456 67.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "08-123 456 67",
+        "Start": 23,
+        "End": 35,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "08-123 456 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 08-123 45 67.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "08-123 45 67",
+        "Start": 23,
+        "End": 34,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "08-123 45 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 08-12 45 67.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "08-12 45 67",
+        "Start": 23,
+        "End": 33,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.9",
+          "value": "08-12 45 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 046-123 45 67.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "046-123 45 67",
+        "Start": 23,
+        "End": 35,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "046-123 45 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 046-12 45 67.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "046-12 45 67",
+        "Start": 23,
+        "End": 34,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "046-12 45 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 046-124 67.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "046-124 67",
+        "Start": 23,
+        "End": 32,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.7",
+          "value": "046-124 67"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 0414-12 34 56.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "0414-12 34 56",
+        "Start": 23,
+        "End": 35,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "0414-12 34 56"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: 0414-123 45.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "0414-123 45",
+        "Start": 23,
+        "End": 33,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "0414-123 45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: +46 414 123 45.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46 414 123 45",
+        "Start": 23,
+        "End": 36,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46 414 123 45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt telefonnummer är: +46(0)41412345.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46(0)41412345",
+        "Start": 23,
+        "End": 36,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46(0)41412345"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mitt föredragna nummer är +55 11 12345-6789\nTack.",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 26,
+        "End": 42,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "(081)  342-86221d verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "-2208960000 verkar inte vara ett telefonnummer..",
+    "Results": []
+  },
+  {
+    "Input": "-77.034040723966 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "0.000000012 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "P0-001-000016155-9 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "16/04/2010 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "2020-01-19 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "16-04-2010 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "2009/2010 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "T005-2333-100731-SW-2 verkar inte vara ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "March 1 14377:00 är inte ett telefonnummer",
+    "Results": []
+  },
+  {
+    "Input": "200.38294427 är inte ett telefonnummer.",
+    "Results": []
+  },
+  {
+    "Input": "Tel: 08-12 45 67 67 67 är inget telefonnummer",
+    "Results": []
+  },
+  {
+    "Input": "Tel: +46 7 12 45 67 kan inte vara ett svenskt telefonnummer",
+    "Results": []
+  },
+  {
+    "Input": "Tel: +46 8 12 34 56",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "+46 8 12 34 56",
+        "Start": 5,
+        "End": 18,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+46 8 12 34 56"
+        }
+      }
+    ]
   }
 ]
