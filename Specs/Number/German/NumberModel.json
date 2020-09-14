@@ -784,7 +784,7 @@
   },
   {
     "Input": "Es gibt anderthalb Stücke",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "anderthalb",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "Es gibt einundhalb Stücke",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "einundhalb",
@@ -814,7 +814,7 @@
   },
   {
     "Input": "Es gibt dreiviertel Stücke",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "dreiviertel",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Es gibt zweieinhalb Stücke",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "zweieinhalb",
@@ -844,7 +844,7 @@
   },
   {
     "Input": "Es gibt dreieinhalb Stücke",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "dreieinhalb",
