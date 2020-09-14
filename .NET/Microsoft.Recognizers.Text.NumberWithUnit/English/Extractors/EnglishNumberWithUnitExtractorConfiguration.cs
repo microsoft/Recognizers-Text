@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
 
         private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
+            new Regex(BaseUnits.PmNonUnitRegex + "|" + NumbersWithUnitDefinitions.QuotationRegex, RegexFlags);
 
         protected EnglishNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {

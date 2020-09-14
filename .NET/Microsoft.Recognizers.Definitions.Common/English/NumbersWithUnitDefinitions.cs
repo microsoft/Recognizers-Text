@@ -559,6 +559,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Ngwee", @"NGWEE" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
+      public const string QuotationRegex = @"(?<Quote>\u0022(?!\s)[^\u0022]+(?<!\s)\u0022|\u0027(?!\s)[^\u0027]+(?<!\s)\u0027)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dollar", @"$" },
