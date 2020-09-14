@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -59,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
+            CardinalExtractor = Number.German.NumberExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
