@@ -898,5 +898,57 @@
         "End": 38
       }
     ]
+  },
+  {
+    "Input": "The length is 12 m 2 dm more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 m",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Meter"
+        },
+        "Start": 14,
+        "End": 17
+      },
+      {
+        "Text": "2 dm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Decimeter"
+        },
+        "Start": 19,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "The length is 12 ft 2 in more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 ft",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Foot"
+        },
+        "Start": 14,
+        "End": 18
+      },
+      {
+        "Text": "2 in",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Inch"
+        },
+        "Start": 20,
+        "End": 23
+      }
+    ]
   }
 ]
