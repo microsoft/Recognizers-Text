@@ -111,6 +111,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         Unit = unitValue,
                     };
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
+
+                    if (this.Config.TypeList.TryGetValue(unitValue, out var unitType))
+                    {
+                        ret.Type = unitType;
+                    }
                 }
             }
 

@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Hindi;
 
@@ -22,5 +23,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Hindi
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; } = null;
     }
 }
