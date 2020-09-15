@@ -52,8 +52,11 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string OrdinalGermanRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
+      public const string FractionUnitsRegex = @"((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))";
+      public const string FractionHalfRegex = @"(einhalb)$";
+      public static readonly string[] OneHalfTokens = { @"ein", @"halb" };
+      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)|{FractionUnitsRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(er|e|es)?|hälfte))|{AllIntRegex}ein(halb))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s*komma\s*){AllPointRegex})";

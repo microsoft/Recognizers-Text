@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            CardinalExtractor = config.CardinalExtractor;
+            CardinalExtractor = Number.German.NumberExtractor.GetInstance();
             NumberParser = config.NumberParser;
 
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this), false);
