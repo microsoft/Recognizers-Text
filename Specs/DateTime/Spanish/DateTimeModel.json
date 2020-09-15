@@ -1181,8 +1181,8 @@
     "Results": [
       {
         "Text": "una",
-        "Start": 6,
-        "End": 8,
+        "Start": 23,
+        "End": 25,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -2161,9 +2161,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 8:00:31 de la mañana, 14 de octubre.",
-        "Start": 12,
-        "End": 51,
+        "Text": "8:00:31 de la mañana, 14 de octubre",
+        "Start": 16,
+        "End": 50,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -2214,8 +2214,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las diez esta noche",
-        "Start": 12,
+        "Text": "diez esta noche",
+        "Start": 16,
         "End": 30,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -2238,8 +2238,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 8 a.m. esta mañana",
-        "Start": 12,
+        "Text": "8 a.m. esta mañana",
+        "Start": 16,
         "End": 33,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -2262,8 +2262,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "final de mañana",
-        "Start": 13,
+        "Text": "al final de mañana",
+        "Start": 10,
         "End": 27,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -2286,8 +2286,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "final del domingo",
-        "Start": 13,
+        "Text": "al final del domingo",
+        "Start": 10,
         "End": 29,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -2315,8 +2315,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "fin de domingo",
-        "Start": 13,
+        "Text": "al fin de domingo",
+        "Start": 10,
         "End": 26,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -2339,8 +2339,23 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las cinco hasta las siete",
-        "Start": 11,
+        "Text": "hoy",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "cinco hasta las siete",
+        "Start": 15,
         "End": 35,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -2370,9 +2385,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 5 a las 6 de la tarde de 22 de abril.",
-        "Start": 10,
-        "End": 50,
+        "Text": "de las 5 a las 6 de la tarde de 22 de abril",
+        "Start": 7,
+        "End": 49,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -2971,8 +2986,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las tres de la tarde cada día",
-        "Start": 9,
+        "Text": "tres de la tarde cada día",
+        "Start": 13,
         "End": 37,
         "TypeName": "datetimeV2.set",
         "Resolution": {
@@ -3043,8 +3058,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 7:56:30 de la tarde",
-        "Start": 12,
+        "Text": "7:56:30 de la tarde",
+        "Start": 16,
         "End": 34,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -3067,8 +3082,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las siete y media",
-        "Start": 4,
+        "Text": "siete y media",
+        "Start": 8,
         "End": 20,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -3096,9 +3111,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las ocho y veinte de la tarde",
-        "Start": -1,
-        "End": 27,
+        "Text": "ocho y veinte de la noche",
+        "Start": 8,
+        "End": 32,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -3216,8 +3231,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las once y cuarenta de la mañana",
-        "Start": 10,
+        "Text": "once y cuarenta de la mañana",
+        "Start": 14,
         "End": 41,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -3240,8 +3255,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 12 del mediodía",
-        "Start": 0,
+        "Text": "12 del mediodía",
+        "Start": 4,
         "End": 18,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -3289,8 +3304,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las cinco a las siete de la mañana",
-        "Start": 7,
+        "Text": "cinco a las siete de la mañana",
+        "Start": 11,
         "End": 40,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -3314,9 +3329,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre las 5 y las 6 de la tarde.",
+        "Text": "entre las 5 y las 6 de la tarde",
         "Start": 7,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -3339,8 +3354,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 4:00 a las 7 en punto",
-        "Start": 7,
+        "Text": "4:00 a las 7 en punto",
+        "Start": 11,
         "End": 31,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -3370,9 +3385,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "de las 3 de la mañana hasta las 5 de la tarde.",
+        "Text": "de las 3 de la mañana hasta las 5 de la tarde",
         "Start": 7,
-        "End": 52,
+        "End": 51,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -3420,8 +3435,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "por la mañana",
-        "Start": 11,
+        "Text": "la mañana",
+        "Start": 15,
         "End": 23,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -3445,8 +3460,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "por la tarde",
-        "Start": 11,
+        "Text": "la tarde",
+        "Start": 15,
         "End": 22,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -3625,8 +3640,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las nueve en punto de la mañana",
-        "Start": 25,
+        "Text": "nueve en punto de la mañana",
+        "Start": 29,
         "End": 55,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -3640,8 +3655,8 @@
         }
       },
       {
-        "Text": "las diez en punto",
-        "Start": 59,
+        "Text": "diez en punto",
+        "Start": 63,
         "End": 75,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -4250,8 +4265,8 @@
         }
       },
       {
-        "Text": "mes que viene",
-        "Start": 38,
+        "Text": "el mes que viene",
+        "Start": 35,
         "End": 50,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4308,16 +4323,16 @@
     ]
   },
   {
-    "Input": "Cortana puede ayudarnos a encontrar un tiempo el lunes, 4 de diciembre.",
+    "Input": "Cortana puede ayudarnos a encontrar un tiempo el lunes, de las 12 a las 4.",
     "Context": {
       "ReferenceDateTime": "2018-05-16T16:12:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "lunes, 4 de diciembre",
+        "Text": "lunes, de las 12 a las 4",
         "Start": 49,
-        "End": 69,
+        "End": 72,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4351,6 +4366,35 @@
     ]
   },
   {
+    "Input": "Cortana puede ayudarnos a encontrar un tiempo el lunes, 4 de diciembre.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "lunes, 4 de diciembre",
+        "Start": 49,
+        "End": 69,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-04",
+              "type": "date",
+              "value": "2019-12-04"
+            },
+            {
+              "timex": "XXXX-12-04",
+              "type": "date",
+              "value": "2020-12-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Cortana puede ayudarnos a encontrar un tiempo el lunes, 4 noviembre.",
     "Context": {
       "ReferenceDateTime": "2018-05-16T16:12:00"
@@ -4361,32 +4405,18 @@
         "Text": "lunes, 4 noviembre",
         "Start": 49,
         "End": 66,
-        "TypeName": "datetimeV2.datetimerange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-05-14 11:00:00",
-              "end": "2018-05-14 16:00:00"
+              "timex": "XXXX-11-04",
+              "type": "date",
+              "value": "2019-11-04"
             },
             {
-              "timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-05-21 11:00:00",
-              "end": "2018-05-21 16:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-1T23,XXXX-WXX-2T04,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-05-14 23:00:00",
-              "end": "2018-05-15 04:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-1T23,XXXX-WXX-2T04,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-05-21 23:00:00",
-              "end": "2018-05-22 04:00:00"
+              "timex": "XXXX-11-04",
+              "type": "date",
+              "value": "2020-11-04"
             }
           ]
         }
@@ -4721,8 +4751,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "mediodía de hoy",
-        "Start": 18,
+        "Text": "al mediodía de hoy",
+        "Start": 21,
         "End": 32,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -4921,7 +4951,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "ABR 2017",
+        "Text": "abr 2017",
         "Start": 19,
         "End": 26,
         "TypeName": "datetimeV2.daterange",
@@ -11147,8 +11177,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 3 p.m.",
-        "Start": 17,
+        "Text": "3 p.m.",
+        "Start": 21,
         "End": 26,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -11965,8 +11995,8 @@
         }
       },
       {
-        "Text": "las 3 p.m. hoy",
-        "Start": 148,
+        "Text": "3 p.m. hoy",
+        "Start": 152,
         "End": 161,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -12125,8 +12155,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 9:00 de la mañana",
-        "Start": 10,
+        "Text": "9:00 de la mañana",
+        "Start": 14,
         "End": 30,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -12286,8 +12316,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 3 pm o más tarde",
-        "Start": 12,
+        "Text": "3 pm o más tarde",
+        "Start": 16,
         "End": 31,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -12312,8 +12342,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 3 pm o más tarde el lunes",
-        "Start": 12,
+        "Text": "3 pm o más tarde el lunes",
+        "Start": 16,
         "End": 40,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -12345,8 +12375,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 9.am",
-        "Start": 12,
+        "Text": "9.am",
+        "Start": 16,
         "End": 19,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -13820,8 +13850,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 13:00 28 de febrero de 2013",
-        "Start": 18,
+        "Text": "13:00 28 de febrero de 2013",
+        "Start": 22,
         "End": 48,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -14136,8 +14166,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las cinco y media mañana por la tarde",
-        "Start": 12,
+        "Text": "cinco y media mañana por la tarde",
+        "Start": 16,
         "End": 48,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -14524,8 +14554,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 11:30 a.m. a las 12:30 a.m. 27 de diciembre",
-        "Start": 10,
+        "Text": "11:30 a.m. a las 12:30 a.m. 27 de diciembre",
+        "Start": 14,
         "End": 56,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -14708,8 +14738,8 @@
         }
       },
       {
-        "Text": "las 8 a.m",
-        "Start": 13,
+        "Text": "8 a.m",
+        "Start": 17,
         "End": 21,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -14748,8 +14778,8 @@
         }
       },
       {
-        "Text": "las 20:00",
-        "Start": 13,
+        "Text": "20:00",
+        "Start": 17,
         "End": 21,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -16190,8 +16220,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las siete p.m.",
-        "Start": 35,
+        "Text": "siete p.m.",
+        "Start": 39,
         "End": 48,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -16816,8 +16846,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las 8:30 p.m. hoy",
-        "Start": 12,
+        "Text": "8:30 p.m. hoy",
+        "Start": 16,
         "End": 28,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -16888,8 +16918,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "las ocho y diez p.m.",
-        "Start": 20,
+        "Text": "ocho y diez p.m.",
+        "Start": 24,
         "End": 39,
         "TypeName": "datetimeV2.time",
         "Resolution": {

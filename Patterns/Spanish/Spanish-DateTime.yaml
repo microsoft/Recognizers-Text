@@ -24,7 +24,7 @@ DescRegex: !nestedRegex
   def: (?<desc>({AmDescRegex}|{PmDescRegex}))
   references: [ AmDescRegex, PmDescRegex ]
 OfPrepositionRegex: !simpleRegex
-  def: (\bd(o|a|el?)\b)
+  def: (\bd(o|al?|el?)\b)
 AfterNextSuffixRegex: !simpleRegex
   def: \b(que\s+viene|pasad[oa])\b
 RangePrefixRegex: !simpleRegex
@@ -109,13 +109,13 @@ AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 EarlyPrefixRegex: !nestedRegex
-  def: \b(?<EarlyPrefix>((comienzos?|inicios?)\s+({OfPrepositionRegex})))\b
+  def: \b(?<EarlyPrefix>((comienzos?|inicios?|temprano)\s+({OfPrepositionRegex}(\sd[ií]a)?))|(?<RelEarly>m[aá]s\stemprano(\sde)?))\b
   references: [OfPrepositionRegex]
 MidPrefixRegex: !nestedRegex
   def: \b(?<MidPrefix>(mediados\s+({OfPrepositionRegex})))\b
   references: [OfPrepositionRegex]
 LaterPrefixRegex: !nestedRegex
-  def: \b(?<LatePrefix>((fines|finales)\s+({OfPrepositionRegex})))\b
+  def: \b(?<LatePrefix>(fin(al)?es\s+({OfPrepositionRegex}))|(?<RelLate>m[aá]s\starde(\sde)?))\b
   references: [OfPrepositionRegex]
 PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
@@ -430,7 +430,7 @@ DurationNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\,\d*)?){UnitRegex}
   references: [ UnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b(una?)\s+{UnitRegex}
+  def: \b(una?|otr[ao])\s+{UnitRegex}
   references: [ UnitRegex ]
 DuringRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
@@ -443,9 +443,9 @@ ConjunctionRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 InexactNumberRegex: !simpleRegex
-  def: \b(pocos?|algo|varios)\b
+  def: \b(pocos?|algo|vari[ao]s|algun[ao]s)\b
 InexactNumberUnitRegex: !nestedRegex
-  def: \b(pocos?|algo|varios)\s+{UnitRegex}
+  def: \b(pocos?|algo|vari[ao]s|algun[ao]s)\s+{UnitRegex}
   references: [ UnitRegex ]
 # SpanishHolidayExtractorConfiguration
 HolidayRegex1: !nestedRegex
@@ -459,11 +459,11 @@ HolidayRegex3: !nestedRegex
   references: [ YearRegex ]
 # SpanishMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
-  def: (antes(\s+del?(\s+las?)?)?)
+  def: (ante(s|rior)(\s+del?(\s+las?)?)?)
 AfterRegex: !simpleRegex
   def: (despu[eé]s(\s*del?(\s+las?)?)?)
 SinceRegex: !simpleRegex
-  def: (desde(\s+(las?|el))?)
+  def: ((desde|a partir de)(\s+(las?|el))?)
 AroundRegex: !simpleRegex
   def: (?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)
 # SpanishSetExtractorConfiguration
@@ -821,11 +821,11 @@ PreviousPrefixRegex: !nestedRegex
 PreviousSuffixRegex: !simpleRegex
   def: \b(pasad[ao])\b
 ThisPrefixRegex: !simpleRegex
-  def: (est[ea])\b
+  def: (est?[ea])\b
 RelativeDayRegex: !simpleRegex
   def: (?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+días)|(días\s+((que\s+viene)|pasado)))\b
 RestOfDateRegex: !simpleRegex
-  def: \bresto\s+((del|de)\s+)?((la|el|est[ae])\s+)?(?<duration>semana|mes|año|decada)(\s+actual)?\b
+  def: \bresto\s+((del|de)\s+)?((la|el|est?[ae])\s+)?(?<duration>semana|mes|año|decada)(\s+actual)?\b
 RelativeDurationUnitRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: ^[\.]
@@ -845,9 +845,9 @@ UnspecificDatePeriodRegex: !simpleRegex
   def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
-  def: \b(on|in|at|around|for|during|since|from|to)$
+  def: \b(en|el|la|cerca|desde|durante|hasta)$
 RestOfDateTimeRegex: !simpleRegex
-  def: \bresto\s+((del|de)\s+)?((la|el|est[ae])\s+)?(?<unit>(día|jornada))(\s+de\s+hoy)?\b
+  def: \bresto\s+((del?)\s+)?((la|el|est[ae])\s+)?(?<unit>(día|jornada))(\s+de\s+hoy)?\b
 SetWeekDayRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]
@@ -884,7 +884,7 @@ DurationDateRestrictions: [ hoy ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'null': 'null'
+    '^mi$': '\bmi\b'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ]
