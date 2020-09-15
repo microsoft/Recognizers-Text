@@ -177,6 +177,7 @@ class SpanishDateTime:
     BeforeRegex = f'(antes(\\s+del?(\\s+las?)?)?)'
     AfterRegex = f'(despu[eé]s(\\s*del?(\\s+las?)?)?)'
     SinceRegex = f'(desde(\\s+(las?|el))?)'
+    SinceRegex1 = f'(desde(\\s+(las?|el))?|de)'
     AroundRegex = f'(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)'
     PeriodicRegex = f'\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b'
     EachExpression = f'cada|tod[oa]s\\s*(l[oa]s)?'
@@ -192,7 +193,8 @@ class SpanishDateTime:
     MiddlePauseRegex = f'^[.]'
     PrefixArticleRegex = f'^[\\.]'
     OrRegex = f'^[.]'
-    YearPlusNumberRegex = f'\\b(años?\\s+((?<year>(\\d{{2,4}}))|{FullTextYearRegex}))\\b'
+    SpecialYearTermsRegex = f'\\b(años?\\s+({SpecialYearPrefixes}\\s+)?(de\\s+)?)'
+    YearPlusNumberRegex = f'\\b({SpecialYearTermsRegex}((?<year>(\\d{{2,4}}))|{FullTextYearRegex}))\\b'
     NumberAsTimeRegex = f'^[.]'
     TimeBeforeAfterRegex = f'^[.]'
     DateNumberConnectorRegex = f'^[.]'
@@ -449,7 +451,7 @@ class SpanishDateTime:
     DurationUnitRegex = f'^[\\.]'
     DurationConnectorRegex = f'^[.]'
     SuffixAfterRegex = f'^[.](?!$)'
-    YearPeriodRegex = f'^[.]'
+    YearPeriodRegex = f'((((de(sde)?|durante|en)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((entre)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
     FutureSuffixRegex = f'\\b(despu[ée]s)\\b'
     WrittenDecades = dict([("", 0)])
     SpecialDecadeCases = dict([("", 0)])

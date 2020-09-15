@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace SpanishNumeric {
-    export const LangMarker = 'Spa';
+    export const LangMarker = `Spa`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
     export const HundredsNumberIntegerRegex = `(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))`;
@@ -81,9 +81,11 @@ export namespace SpanishNumeric {
     export const LessRegexNoNumberSucceed = `((meno(s|r(es)?)|inferior(es)?)((?!\\s+(que|del?|a))|\\s+((que|del?)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))`;
     export const EqualRegexNoNumberSucceed = `((igual(es)?|equivalentes?|equivalen?)((?!\\s+(al?|que|del?))|(\\s+(al?|que|del?)(?!(\\s*\\d+)))))`;
     export const OneNumberRangeMoreRegex1 = `(${MoreOrEqual}|${MoreRegex})\\s*((el|las?|los)\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeMoreRegex1LB = `(?<!no\\s+)${OneNumberRangeMoreRegex1}`;
     export const OneNumberRangeMoreRegex2 = `(?<number1>(${NumberSplitMark}.)+)\\s*${MoreOrEqualSuffix}`;
     export const OneNumberRangeMoreSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${MoreRegexNoNumberSucceed})|(${MoreRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${EqualRegexNoNumberSucceed})`;
     export const OneNumberRangeLessRegex1 = `(${LessOrEqual}|${LessRegex})\\s*((el|las?|los)\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeLessRegex1LB = `(?<!no\\s+)${OneNumberRangeLessRegex1}`;
     export const OneNumberRangeLessRegex2 = `(?<number2>(${NumberSplitMark}.)+)\\s*${LessOrEqualSuffix}`;
     export const OneNumberRangeLessSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${LessRegexNoNumberSucceed})|(${LessRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${EqualRegexNoNumberSucceed})`;
     export const OneNumberRangeEqualRegex = `${EqualRegex}\\s*((el|las?|los)\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
@@ -92,11 +94,11 @@ export namespace SpanishNumeric {
     export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})\\s*(\\by\\b|\\be\\b|pero|,)\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})`;
     export const TwoNumberRangeRegex4 = `(de(sde)?\\s+)?((el|las?|los)\\s+)?(?<number1>(${NumberSplitMark}(?!\\b(entre|de(sde)?|es)\\b).)+)\\s*${TillRegex}\\s*((el|las?|los)\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
     export const AmbiguousFractionConnectorsRegex = `(\\b(en|de)\\b)`;
-    export const DecimalSeparatorChar = ',';
-    export const FractionMarkerToken = 'sobre';
-    export const NonDecimalSeparatorChar = '.';
-    export const HalfADozenText = 'seis';
-    export const WordSeparatorToken = 'y';
+    export const DecimalSeparatorChar = `,`;
+    export const FractionMarkerToken = `sobre`;
+    export const NonDecimalSeparatorChar = `.`;
+    export const HalfADozenText = `seis`;
+    export const WordSeparatorToken = `y`;
     export const WrittenDecimalSeparatorTexts = [ "coma","con" ];
     export const WrittenGroupSeparatorTexts = [ "punto" ];
     export const WrittenIntegerSeparatorTexts = [ "y" ];

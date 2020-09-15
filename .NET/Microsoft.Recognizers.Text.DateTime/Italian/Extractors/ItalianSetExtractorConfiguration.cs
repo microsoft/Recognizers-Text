@@ -84,34 +84,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
             string weekday = string.Empty;
             int del = 0;
-            if (match.Groups["g0"].ToString() != string.Empty)
+            if (match.Groups["g0"].Length != 0)
             {
-                weekday = match.Groups["g0"].ToString() + "a";
+                weekday = match.Groups["g0"] + "a";
                 del = 0;
             }
-            else if (match.Groups["g1"].ToString() != string.Empty)
+            else if (match.Groups["g1"].Length != 0)
             {
-                weekday = match.Groups["g1"].ToString() + "io";
+                weekday = match.Groups["g1"] + "io";
                 del = -1;
             }
-            else if (match.Groups["g2"].ToString() != string.Empty)
+            else if (match.Groups["g2"].Length != 0)
             {
-                weekday = match.Groups["g2"].ToString() + "e";
+                weekday = match.Groups["g2"] + "e";
                 del = 0;
             }
-            else if (match.Groups["g3"].ToString() != string.Empty)
+            else if (match.Groups["g3"].Length != 0)
             {
-                weekday = match.Groups["g3"].ToString() + "ì";
+                weekday = match.Groups["g3"] + "ì";
                 del = 0;
             }
-            else if (match.Groups["g4"].ToString() != string.Empty)
+            else if (match.Groups["g4"].Length != 0)
             {
-                weekday = match.Groups["g4"].ToString() + "a";
+                weekday = match.Groups["g4"] + "a";
                 del = 1;
             }
-            else if (match.Groups["g5"].ToString() != string.Empty)
+            else if (match.Groups["g5"].Length != 0)
             {
-                weekday = match.Groups["g5"].ToString() + "o";
+                weekday = match.Groups["g5"] + "o";
                 del = 0;
             }
 

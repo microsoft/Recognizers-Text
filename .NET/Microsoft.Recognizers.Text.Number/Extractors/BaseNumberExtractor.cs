@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         public virtual NumberOptions Options { get; } = NumberOptions.None;
 
+        public virtual BaseNumberParser NumberParser { get; }
+
         internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected virtual ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
@@ -62,6 +64,20 @@ namespace Microsoft.Recognizers.Text.Number
                     if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && m.Groups[Constants.RelativeOrdinalGroupName].Success)
                     {
                         continue;
+                    }
+
+                    // Matches containing separators 'in', 'out of' should be considered fractions only when numerator < denominator
+                    if (m.Groups["ambiguousSeparator"].Success)
+                    {
+                        var numerator = m.Groups["numerator"];
+                        var denominator = m.Groups["denominator"];
+                        int num = ParseNumber(numerator);
+                        int den = ParseNumber(denominator);
+
+                        if (num > den)
+                        {
+                            continue;
+                        }
                     }
 
                     for (var j = 0; j < m.Length; j++)
@@ -170,6 +186,26 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return extractResults;
+        }
+
+        private int ParseNumber(Group numerator)
+        {
+            var isParsed = int.TryParse(numerator.Value, out int num);
+            if (!isParsed)
+            {
+                var er = new ExtractResult
+                {
+                    Start = numerator.Index,
+                    Length = numerator.Length,
+                    Text = numerator.Value,
+                    Type = "Integer",
+                    Data = null,
+                };
+                var pr = NumberParser.Parse(er);
+                int.TryParse(pr.ResolutionStr, out num);
+            }
+
+            return num;
         }
     }
 }

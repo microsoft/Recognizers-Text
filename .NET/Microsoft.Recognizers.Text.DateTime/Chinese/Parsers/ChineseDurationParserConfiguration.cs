@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
@@ -34,7 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             // handle cases like "三年半"
             var hasHalfSuffix = false;
-            if (er.Text.EndsWith("半"))
+
+            if (er.Text.EndsWith("半", StringComparison.Ordinal))
             {
                 er.Length -= 1;
                 er.Text = er.Text.Substring(0, er.Text.Length - 1);

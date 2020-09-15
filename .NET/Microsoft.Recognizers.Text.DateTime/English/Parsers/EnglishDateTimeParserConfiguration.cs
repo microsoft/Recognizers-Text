@@ -1,8 +1,10 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -14,7 +16,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PmTimeRegex =
             new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
 
+        public static readonly Regex NightTimeRegex =
+             new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex NowTimeRegex =
+            new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+
+        private static readonly Regex RecentlyTimeRegex =
+            new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+
+        private static readonly Regex AsapTimeRegex =
+            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+
+        private static readonly Regex NextPrefixRegex =
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+
+        private static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
@@ -108,11 +128,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
+            if (AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
+            else if (!AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.HalfDayHourCount &&
+                !(NightTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.QuarterDayHourCount))
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -124,15 +145,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("now"))
+            if (NowTimeRegex.MatchEnd(trimmedText, trim: true).Success)
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("recently") || trimmedText.Equals("previously"))
+            else if (RecentlyTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("as soon as possible") || trimmedText.Equals("asap"))
+            else if (AsapTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "FUTURE_REF";
             }
@@ -150,11 +171,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (NextPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
             {
                 swift = -1;
             }

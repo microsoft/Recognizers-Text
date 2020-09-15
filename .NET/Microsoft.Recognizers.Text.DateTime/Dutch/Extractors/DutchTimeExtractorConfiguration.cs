@@ -148,5 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

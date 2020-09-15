@@ -320,6 +320,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             return firstDayOfNextMonth.AddDays(-1);
         }
 
+        // Shift resolution when a modifier like "end of" or "middle of" is present.
+        private static DateObject ShiftResolution(Tuple<DateObject, DateObject> date, Match match, bool start)
+        {
+            DateObject result;
+            int i = start ? 0 : 1;
+            if (match.Groups["EndOf"].Captures.Count >= 2 && match.Groups["EndOf"].Captures[i].Length > 0)
+            {
+                result = date.Item2;
+            }
+            else if (match.Groups["MiddleOf"].Captures.Count >= 2 && match.Groups["MiddleOf"].Captures[i].Length > 0)
+            {
+                var startDate = date.Item1;
+                var endDate = date.Item2;
+                var shift = (int)((endDate - startDate).TotalDays / 2);
+                result = startDate.AddDays(shift);
+            }
+            else
+            {
+                result = date.Item1;
+            }
+
+            return result;
+        }
+
         // Process case like "from|between START to|and END" where START/END can be daterange or datepoint
         private DateTimeResolutionResult ParseComplexDatePeriod(string text, DateObject referenceDate)
         {
@@ -351,8 +375,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (startResolution.Success)
                     {
-                        futureBegin = ((Tuple<DateObject, DateObject>)startResolution.FutureValue).Item1;
-                        pastBegin = ((Tuple<DateObject, DateObject>)startResolution.PastValue).Item1;
+                        // When the start group contains modifiers such as 'end of', 'middle of', the begin resolution must be updated accordingly.
+                        futureBegin = ShiftResolution((Tuple<DateObject, DateObject>)startResolution.FutureValue, match, start: true);
+                        pastBegin = ShiftResolution((Tuple<DateObject, DateObject>)startResolution.PastValue, match, start: true);
 
                         if (startResolution.Timex.Contains("-W"))
                         {
@@ -377,8 +402,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (endResolution.Success)
                         {
-                            futureEnd = ((Tuple<DateObject, DateObject>)endResolution.FutureValue).Item1;
-                            pastEnd = ((Tuple<DateObject, DateObject>)endResolution.PastValue).Item1;
+                            // When the end group contains modifiers such as 'end of', 'middle of', the end resolution must be updated accordingly.
+                            futureEnd = ShiftResolution((Tuple<DateObject, DateObject>)endResolution.FutureValue, match, start: false);
+                            pastEnd = ShiftResolution((Tuple<DateObject, DateObject>)endResolution.PastValue, match, start: false);
+
                             if (endResolution.Timex.Contains("-W"))
                             {
                                 isEndByWeek = true;
@@ -942,6 +969,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(
                                 DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1), referenceDate);
+                    ret.Success = true;
+                    return ret;
+                }
+
+                // Parse expressions "till date", "to date"
+                if (match.Groups["toDate"].Success)
+                {
+                    ret.Timex = "PRESENT_REF";
+                    ret.FutureValue = ret.PastValue = referenceDate;
+                    ret.Mod = Constants.BEFORE_MOD;
                     ret.Success = true;
                     return ret;
                 }

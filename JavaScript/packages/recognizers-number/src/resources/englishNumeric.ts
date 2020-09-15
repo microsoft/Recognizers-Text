@@ -11,7 +11,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace EnglishNumeric {
-    export const LangMarker = 'Eng';
+    export const LangMarker = `Eng`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
     export const RoundNumberIntegerRegex = `(?:hundred|thousand|million|billion|trillion|lakh|crore)`;
@@ -48,7 +48,7 @@ export namespace EnglishNumeric {
     export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
     export const FractionNounWithArticleRegex = `(?<=\\b)(((${AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)`;
-    export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
+    export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|(?<ambiguousSeparator>in|out\\s+of))\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
     export const FractionPrepositionWithinPercentModeRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
     export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
     export const AllFloatRegex = `${AllIntRegex}(\\s+point)${AllPointRegex}`;
@@ -80,9 +80,11 @@ export namespace EnglishNumeric {
     export const LessRegexNoNumberSucceed = `((less|lower|smaller|fewer)((?!\\s+than)|\\s+(than(?!(\\s*\\d+))))|(below|under)(?!(\\s*\\d+)))`;
     export const EqualRegexNoNumberSucceed = `(equal(s|ing)?((?!\\s+(to|than))|(\\s+(to|than)(?!(\\s*\\d+)))))`;
     export const OneNumberRangeMoreRegex1 = `(${MoreOrEqual}|${MoreRegex})\\s*(the\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeMoreRegex1LB = `(?<!no\\s+)${OneNumberRangeMoreRegex1}`;
     export const OneNumberRangeMoreRegex2 = `(?<number1>(${NumberSplitMark}.)+)\\s*${MoreOrEqualSuffix}`;
     export const OneNumberRangeMoreSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+or\\s+)${MoreRegexNoNumberSucceed})|(${MoreRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+or\\s+)${EqualRegexNoNumberSucceed})`;
     export const OneNumberRangeLessRegex1 = `(${LessOrEqual}|${LessRegex})\\s*(the\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeLessRegex1LB = `(?<!no\\s+)${OneNumberRangeLessRegex1}`;
     export const OneNumberRangeLessRegex2 = `(?<number2>(${NumberSplitMark}.)+)\\s*${LessOrEqualSuffix}`;
     export const OneNumberRangeLessSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+or\\s+)${LessRegexNoNumberSucceed})|(${LessRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+or\\s+)${EqualRegexNoNumberSucceed})`;
     export const OneNumberRangeEqualRegex = `${EqualRegex}\\s*(the\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
@@ -91,11 +93,11 @@ export namespace EnglishNumeric {
     export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})`;
     export const TwoNumberRangeRegex4 = `(from\\s+)?(?<number1>(${NumberSplitMark}(?!\\bfrom\\b).)+)\\s*${TillRegex}\\s*(the\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
     export const AmbiguousFractionConnectorsRegex = `(\\bin\\b)`;
-    export const DecimalSeparatorChar = '.';
-    export const FractionMarkerToken = 'over';
-    export const NonDecimalSeparatorChar = ',';
-    export const HalfADozenText = 'six';
-    export const WordSeparatorToken = 'and';
+    export const DecimalSeparatorChar = `.`;
+    export const FractionMarkerToken = `over`;
+    export const NonDecimalSeparatorChar = `,`;
+    export const HalfADozenText = `six`;
+    export const WordSeparatorToken = `and`;
     export const WrittenDecimalSeparatorTexts = [ "point" ];
     export const WrittenGroupSeparatorTexts = [ "punto" ];
     export const WrittenIntegerSeparatorTexts = [ "and" ];

@@ -14,11 +14,11 @@ class DefaultWriter extends CodeWriter {
 
     constructor(name: string, definition: string) {
         super(name);
-        this.definition = sanitize(definition);
+        this.definition = sanitizeDefinition(definition);
     }
 
     write() {
-        return `export const ${this.name} = '${this.definition}';`;
+        return `export const ${this.name} = \`${this.definition}\`;`;
     }
 }
 
@@ -40,7 +40,7 @@ class SimpleRegexWriter extends CodeWriter {
 
     constructor(name: string, definition: string) {
         super(name);
-        this.definition = sanitize(definition, 'regex');
+        this.definition = sanitizeDefinition(definition, 'regex');
     }
 
     write() {
@@ -58,7 +58,7 @@ class NestedRegexWriter extends CodeWriter {
             let token = `\${${value}}`;
             definition = definition.replace(regex, token);
         });
-        this.definition = sanitize(definition, 'regex');
+        this.definition = sanitizeDefinition(definition, 'regex');
     }
 
     write() {
@@ -78,7 +78,7 @@ class ParamsRegexWriter extends CodeWriter {
             definition = definition.replace(regex, token);
         });
         this.params = params.join(': string, ').concat(': string');
-        this.definition = sanitize(definition, 'regex');
+        this.definition = sanitizeDefinition(definition, 'regex');
     }
 
     write() {
@@ -94,6 +94,7 @@ class DictionaryWriter extends CodeWriter {
     constructor(name: string, keyType: string, valueType: string, entries: Record<string, any>) {
         super(name);
         this.entries = [];
+
         this.keyType = toJsType(keyType);
         this.valueType = toJsType(valueType);
 
@@ -108,7 +109,7 @@ class DictionaryWriter extends CodeWriter {
         }
 
         for (let propName in entries) {
-            this.entries.push(`["${sanitize(propName, this.keyType)}", ${valueQuote1}${sanitize(entries[propName], this.valueType)}${valueQuote2}]`);
+            this.entries.push(`["${sanitizeElement(propName, this.keyType)}", ${valueQuote1}${sanitizeElement(entries[propName], this.valueType)}${valueQuote2}]`);
         }
     }
 
@@ -117,16 +118,32 @@ class DictionaryWriter extends CodeWriter {
     }
 }
 
+function sanitizeElement(value: string, valueType: string): string {
+    return sanitizeValue(value, valueType, false);
+}
 
-function sanitize(value: string, valueType: string = null): string {
+function sanitizeDefinition(value: string, valueType: string = null): string {
+    
     if (!valueType) {
         valueType = typeof value;
     }
+
+    return sanitizeValue(value, valueType, true);
+}
+
+function sanitizeValue(value: string, valueType: string, directUse: boolean = false): string {
+
     if (valueType === 'number' || valueType === 'boolean') {
         return value;
     }
 
     let stringified = JSON.stringify(value);
+
+    // Escape backtick, only if value is directly used, as code generation will output values as backticked strings.
+    if (directUse) {
+        stringified = stringified.replace(/(?<!(\\))`/gi, '\\`');
+    }
+
     return stringified.slice(1, stringified.length - 1);
 }
 
@@ -136,6 +153,9 @@ function toJsType(type: string): string {
         case 'long':
         case 'double':
         case 'int': return 'number';
+        case 'long[]':
+        case 'int[]':
+        case 'double[]': return 'number[]';
         default: return type;
     }
 }
@@ -149,7 +169,7 @@ class ArrayWriter extends CodeWriter {
         this.entries = [];
         this.valueType = typeof (entries[0]);
         entries.forEach(element => {
-            this.entries.push(`"${sanitize(element)}"`);
+            this.entries.push(`"${sanitizeElement(element, typeof element)}"`);
         });
     }
 
@@ -159,8 +179,11 @@ class ArrayWriter extends CodeWriter {
 }
 
 export function GenerateCode(root: any): CodeWriter[] {
+
     let lines: CodeWriter[] = [];
+
     for (let tokenName in root) {
+        
         let token = root[tokenName];
         if (token instanceof DataTypes.SimpleRegex) {
             lines.push(new SimpleRegexWriter(tokenName, token.def));
@@ -187,5 +210,6 @@ export function GenerateCode(root: any): CodeWriter[] {
             lines.push(new DefaultWriter(tokenName, token));
         }
     };
+
     return lines;
 }

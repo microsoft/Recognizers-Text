@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
-        public static readonly Regex[] TermFilterRegexes = { };
+        public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 

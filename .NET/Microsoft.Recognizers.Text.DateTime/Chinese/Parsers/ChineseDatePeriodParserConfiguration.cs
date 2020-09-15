@@ -222,7 +222,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 foreach (var ch in yearChsStr)
                 {
                     num *= 10;
-                    er = integerExtractor.Extract(ch.ToString());
+
+                    er = integerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
+
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
@@ -263,7 +265,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var yearStr = match.Groups["year"].Value;
                 if (!string.IsNullOrEmpty(yearStr))
                 {
-                    year = int.Parse(yearStr);
+                    year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= this.config.TwoNumYear)
                     {
                         year += 1900;
@@ -387,8 +389,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     var yearFrom = yearMatch[0].Groups["year"].Value;
                     var yearTo = yearMatch[1].Groups["year"].Value;
-                    beginYear = int.Parse(yearFrom);
-                    endYear = int.Parse(yearTo);
+                    beginYear = int.Parse(yearFrom, CultureInfo.InvariantCulture);
+                    endYear = int.Parse(yearTo, CultureInfo.InvariantCulture);
                 }
                 else if (yearInChineseMatch.Count == 2)
                 {
@@ -403,7 +405,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         var yearFrom = yearMatch[0].Groups["year"].Value;
                         var yearTo = yearInChineseMatch[0].Groups["yearch"].Value;
-                        beginYear = int.Parse(yearFrom);
+                        beginYear = int.Parse(yearFrom, CultureInfo.InvariantCulture);
                         endYear = ConvertChineseToInteger(yearTo);
                     }
                     else
@@ -411,7 +413,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         var yearFrom = yearInChineseMatch[0].Groups["yearch"].Value;
                         var yearTo = yearMatch[0].Groups["year"].Value;
                         beginYear = ConvertChineseToInteger(yearFrom);
-                        endYear = int.Parse(yearTo);
+                        endYear = int.Parse(yearTo, CultureInfo.InvariantCulture);
                     }
                 }
 
@@ -558,7 +560,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
 
-                year = int.Parse(yearNum);
+                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
@@ -640,7 +642,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     var swift = -10;
+
                     var yearRel = match.Groups["yearrel"].Value;
+
                     if (!string.IsNullOrEmpty(yearRel))
                     {
                         if (IsNextYear(yearRel))
@@ -834,7 +838,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     yearStr = yearStr.Substring(0, yearStr.Length - 1).Trim();
                 }
 
-                var year = int.Parse(yearStr);
+                var year = int.Parse(yearStr, CultureInfo.InvariantCulture);
 
                 return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
@@ -1173,7 +1177,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals("最后一"))
+            if (cardinalStr.Equals("最后一", StringComparison.Ordinal))
             {
                 cardinal = 5;
             }
@@ -1186,11 +1190,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith("下个"))
+                if (trimmedText.StartsWith("下个", StringComparison.Ordinal))
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith("上个"))
+                else if (trimmedText.StartsWith("上个", StringComparison.Ordinal))
                 {
                     swift = -1;
                 }
@@ -1260,7 +1264,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         yearNum = yearNum.Substring(0, yearNum.Length - 1);
                     }
 
-                    year = int.Parse(yearNum);
+                    year = int.Parse(yearNum, CultureInfo.InvariantCulture);
                 }
                 else if (!string.IsNullOrEmpty(yearChs))
                 {
@@ -1331,7 +1335,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
 
-                year = int.Parse(yearNum);
+                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
             else if (!string.IsNullOrEmpty(yearChs))
             {
@@ -1493,55 +1497,55 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         private bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         private bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         private bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         private bool IsThisYear(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         private bool IsLastYear(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.LastYearTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.LastYearTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         private bool IsNextYear(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.NextYearTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.NextYearTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         private bool IsYearAfterNext(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearAfterNextTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.YearAfterNextTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         private bool IsYearBeforeLast(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearBeforeLastTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.YearBeforeLastTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
     }
 }

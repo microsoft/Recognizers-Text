@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using DateObject = System.DateTime;
@@ -199,8 +200,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var beforeMatch = BeforeRegex.Match(suffix);
                     var afterMatch = AfterRegex.Match(suffix);
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) ||
-                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
+                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
                     {
                         var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));

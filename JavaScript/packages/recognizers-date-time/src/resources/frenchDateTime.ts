@@ -11,7 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace FrenchDateTime {
-    export const LangMarker = 'Fre';
+    export const LangMarker = `Fre`;
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
     export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
@@ -172,10 +172,10 @@ export namespace FrenchDateTime {
     export const HolidayRegex2 = `\\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance(\\s+am[eé]ricaine)?|guy fawkes)(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
     export const HolidayRegex3 = `(?<holiday>(jour\\s*(d[eu]|des)\\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|thanks\\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?`;
     export const HolidayRegex4 = `(?<holiday>(f[eê]te\\s*(d[eu]|des)\\s*)(travail|m[eè]res?|p[eè]res?))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
-    export const DateTokenPrefix = 'le ';
-    export const TimeTokenPrefix = 'à ';
-    export const TokenBeforeDate = 'le ';
-    export const TokenBeforeTime = 'à ';
+    export const DateTokenPrefix = `le `;
+    export const TimeTokenPrefix = `à `;
+    export const TokenBeforeDate = `le `;
+    export const TokenBeforeTime = `à `;
     export const AMTimeRegex = `(?<am>matin([ée]e)?)`;
     export const PMTimeRegex = `\\b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\\s*ce|du)\\s+)?soir)\\b`;
     export const BeforeRegex = `\\b(avant)\\b`;
@@ -253,9 +253,10 @@ export namespace FrenchDateTime {
     export const NightRegex = `\\b(minuit|nuit)\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
-    export const DefaultLanguageFallback = 'DMY';
+    export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"]]);
+    export const AmbiguityTimeFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b"]]);
     export const MorningTermList = [ "matinee","matin","matinée" ];
     export const AfternoonTermList = [ "apres-midi","apres midi","après midi","après-midi" ];
     export const EveningTermList = [ "soir","soiree","soirée" ];

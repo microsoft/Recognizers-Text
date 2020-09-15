@@ -91,13 +91,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static bool IsLessThanDay(string unit)
         {
-            return unit.Equals("S") || unit.Equals("M") || unit.Equals("H");
+            return unit.Equals("S", StringComparison.Ordinal) ||
+                   unit.Equals("M", StringComparison.Ordinal) ||
+                   unit.Equals("H", StringComparison.Ordinal);
         }
 
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
+
             var ers = DurationExtractor.Extract(text, refDate);
+
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
@@ -128,19 +132,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var sourceUnit = match.Groups["unit"].Value;
                 if (!string.IsNullOrEmpty(sourceUnit) && this.config.UnitMap.ContainsKey(sourceUnit))
                 {
-                    if (sourceUnit.Equals("天") || sourceUnit.Equals("日"))
+
+                    // @TODO move hardcoded values to resources file
+
+                    if (sourceUnit.Equals("天", StringComparison.Ordinal) ||
+                        sourceUnit.Equals("日", StringComparison.Ordinal))
                     {
                         ret.Timex = "P1D";
                     }
-                    else if (sourceUnit.Equals("周") || sourceUnit.Equals("星期"))
+                    else if (sourceUnit.Equals("周", StringComparison.Ordinal) ||
+                             sourceUnit.Equals("星期", StringComparison.Ordinal))
                     {
                         ret.Timex = "P1W";
                     }
-                    else if (sourceUnit.Equals("月"))
+                    else if (sourceUnit.Equals("月", StringComparison.Ordinal))
                     {
                         ret.Timex = "P1M";
                     }
-                    else if (sourceUnit.Equals("年"))
+                    else if (sourceUnit.Equals("年", StringComparison.Ordinal))
                     {
                         ret.Timex = "P1Y";
                     }

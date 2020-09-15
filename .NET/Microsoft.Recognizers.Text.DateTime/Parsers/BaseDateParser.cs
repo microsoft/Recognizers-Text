@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var term in terms)
             {
-                if (text.EndsWith(term))
+                if (text.EndsWith(term, StringComparison.Ordinal))
                 {
                     result = true;
                     break;

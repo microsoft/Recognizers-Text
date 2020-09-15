@@ -464,6 +464,8 @@ AfterRegex: !simpleRegex
   def: (despu[eé]s(\s*del?(\s+las?)?)?)
 SinceRegex: !simpleRegex
   def: ((desde|a partir de)(\s+(las?|el))?)
+SinceRegex1: !simpleRegex
+  def: (desde(\s+(las?|el))?|de)
 AroundRegex: !simpleRegex
   def: (?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)
 # SpanishSetExtractorConfiguration

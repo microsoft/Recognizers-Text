@@ -11,13 +11,13 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace ChineseDateTime {
-    export const LangMarker = 'Chi';
+    export const LangMarker = `Chi`;
     export const MonthRegex = `(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|01月|02月|03月|04月|05月|06月|07月|08月|09月|10月|11月|12月|1月|2月|3月|4月|5月|6月|7月|8月|9月|大年(?!龄|纪|级))`;
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)`;
     export const DateDayRegexInChinese = `(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)`;
     export const DayRegexNumInChinese = `(?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)`;
     export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)`;
-    export const TwoNumYear = '50';
+    export const TwoNumYear = `50`;
     export const YearNumRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)`;
     export const SimpleYearRegex = `(?<year>(\\d{2,4}))`;
     export const ZeroToNineIntegerRegexChs = `[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]`;
@@ -151,10 +151,10 @@ export namespace ChineseDateTime {
     export const ParserConfigurationUntil = `(直到|直至|截至|截止(到)?)`;
     export const ParserConfigurationSincePrefix = `(自从|自|自打|打|从)`;
     export const ParserConfigurationSinceSuffix = `(以来|开始|起)`;
-    export const ParserConfigurationLastWeekDayToken = '最后一个';
-    export const ParserConfigurationNextMonthToken = '下一个';
-    export const ParserConfigurationLastMonthToken = '上一个';
-    export const ParserConfigurationDatePrefix = ' ';
+    export const ParserConfigurationLastWeekDayToken = `最后一个`;
+    export const ParserConfigurationNextMonthToken = `下一个`;
+    export const ParserConfigurationLastMonthToken = `上一个`;
+    export const ParserConfigurationDatePrefix = ` `;
     export const ParserConfigurationUnitMap: ReadonlyMap<string, string> = new Map<string, string>([["年", "Y"],["月", "MON"],["个月", "MON"],["日", "D"],["周", "W"],["天", "D"],["小时", "H"],["时", "H"],["分钟", "M"],["分", "M"],["秒钟", "S"],["秒", "S"],["星期", "W"]]);
     export const ParserConfigurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
     export const MonthTerms = [ "月" ];
@@ -186,7 +186,7 @@ export namespace ChineseDateTime {
     export const MergedAfterRegex = `(后|後|之后|之後)$`;
     export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
     export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
-    export const DefaultLanguageFallback = 'DMY';
+    export const DefaultLanguageFallback = `DMY`;
     export const MorningTermList = [ "早","上午","早间","早上","清晨" ];
     export const MidDayTermList = [ "中午","正午" ];
     export const AfternoonTermList = [ "下午","午后" ];

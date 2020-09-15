@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -78,25 +79,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.Equals("dagelijks"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.Equals("dagelijks", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("wekelijks"))
+            else if (trimmedText.Equals("wekelijks", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("tweewekelijks"))
+            else if (trimmedText.Equals("tweewekelijks", StringComparison.Ordinal))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("maandelijks"))
+            else if (trimmedText.Equals("maandelijks", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("elk jaar") || trimmedText.Equals("jaarlijks"))
+            else if (trimmedText.Equals("elk jaar", StringComparison.Ordinal) ||
+                     trimmedText.Equals("jaarlijks", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }
@@ -111,20 +115,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("dag"))
+            var trimmedText = text.Trim();
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.Equals("dag", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("week"))
+            else if (trimmedText.Equals("week", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("maand"))
+            else if (trimmedText.Equals("maand", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("jaar"))
+            else if (trimmedText.Equals("jaar", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }

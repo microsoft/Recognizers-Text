@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 
 export namespace ChinesePhoneNumbers {
-    export const NumberReplaceToken = '@builtin.phonenumber';
+    export const NumberReplaceToken = `@builtin.phonenumber`;
     export const WordBoundariesRegex = `(\\b|(?<=[\\u0800-\\u9FFF]))`;
     export const NonWordBoundariesRegex = `(\\B|(?<=[\\u0800-\\u9FFF]))`;
     export const EndWordBoundariesRegex = `(\\b|(?=[\\u0800-\\u9FFF]))`;

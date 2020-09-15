@@ -125,15 +125,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                if (trimmedText.EndsWith("现在"))
+
+                // @TODO move hardcoded values to resource files
+                if (trimmedText.EndsWith("现在", StringComparison.Ordinal))
                 {
                     ret.Timex = "PRESENT_REF";
                 }
-                else if (trimmedText.Equals("刚刚才") || trimmedText.Equals("刚刚") || trimmedText.Equals("刚才"))
+                else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
+                         trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
+                         trimmedText.Equals("刚才", StringComparison.Ordinal))
                 {
                     ret.Timex = "PAST_REF";
                 }
-                else if (trimmedText.Equals("立刻") || trimmedText.Equals("马上"))
+                else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
+                         trimmedText.Equals("马上", StringComparison.Ordinal))
                 {
                     ret.Timex = "FUTURE_REF";
                 }
@@ -258,6 +263,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var matchStr = match.Value;
 
                 var swift = 0;
+
+                // @TODO move hardcoded values to resources file
+
                 switch (matchStr)
                 {
                     case "今晚":
@@ -371,7 +379,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         }
 
                         var afterMatch = ChineseDateTimeExtractorConfiguration.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)

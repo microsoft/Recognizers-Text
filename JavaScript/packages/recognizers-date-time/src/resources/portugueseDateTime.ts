@@ -11,9 +11,9 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace PortugueseDateTime {
-    export const LangMarker = 'Por';
+    export const LangMarker = `Por`;
     export const CheckBothBeforeAfter = false;
-    export const TillRegex = `(?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\\s+(o|[aà](s)?))?`;
+    export const TillRegex = `(?<till>\\b(at[eé]h?|[aà]s|ao?)\\b|--|-|—|——)(\\s+\\b(o|[aà](s)?)\\b)?`;
     export const RangeConnectorRegex = `(?<and>(e\\s*(([àa]s?)|o)?)|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)`;
     export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
@@ -189,7 +189,7 @@ export namespace PortugueseDateTime {
     export const ComplexDatePeriodRegex = `^[.]`;
     export const AgoRegex = `\\b(antes|atr[áa]s|no passado)\\b`;
     export const LaterRegex = `\\b(depois d[eoa]s?|ap[óo]s (as)?|desde (as|o)|desde|no futuro|mais tarde)\\b`;
-    export const Tomorrow = 'amanh[ãa]';
+    export const Tomorrow = `amanh[ãa]`;
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["anos", "Y"],["ano", "Y"],["meses", "MON"],["mes", "MON"],["mês", "MON"],["semanas", "W"],["semana", "W"],["dias", "D"],["dia", "D"],["horas", "H"],["hora", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutos", "M"],["minuto", "M"],["mins", "M"],["min", "M"],["segundos", "S"],["segundo", "S"],["segs", "S"],["seg", "S"]]);
     export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["anos", 31536000],["ano", 31536000],["meses", 2592000],["mes", 2592000],["mês", 2592000],["semanas", 604800],["semana", 604800],["dias", 86400],["dia", 86400],["horas", 3600],["hora", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutos", 60],["minuto", 60],["mins", 60],["min", 60],["segundos", 1],["segundo", 1],["segs", 1],["seg", 1]]);
     export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
@@ -202,10 +202,10 @@ export namespace PortugueseDateTime {
     export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["pai", ["diadopai","diadospais"]],["mae", ["diadamae","diadasmaes"]],["acaodegracas", ["diadegracas","diadeacaodegracas","acaodegracas"]],["trabalho", ["diadotrabalho","diadotrabalhador","diadostrabalhadores"]],["pascoa", ["diadepascoa","pascoa"]],["natal", ["natal","diadenatal"]],["vesperadenatal", ["vesperadenatal"]],["anonovo", ["anonovo","diadeanonovo","diadoanonovo"]],["vesperadeanonovo", ["vesperadeanonovo","vesperadoanonovo"]],["yuandan", ["yuandan"]],["todosossantos", ["todosossantos"]],["professor", ["diadoprofessor","diadosprofessores"]],["crianca", ["diadacrianca","diadascriancas"]],["mulher", ["diadamulher"]]]);
     export const VariableHolidaysTimexDictionary: ReadonlyMap<string, string> = new Map<string, string>([["pai", "-06-WXX-7-3"],["mae", "-05-WXX-7-2"],["acaodegracas", "-11-WXX-4-4"],["memoria", "-03-WXX-2-4"]]);
     export const DoubleNumbers: ReadonlyMap<string, number> = new Map<string, number>([["metade", 0.5],["quarto", 0.25]]);
-    export const DateTokenPrefix = 'em ';
-    export const TimeTokenPrefix = 'as ';
-    export const TokenBeforeDate = 'o ';
-    export const TokenBeforeTime = 'as ';
+    export const DateTokenPrefix = `em `;
+    export const TimeTokenPrefix = `as `;
+    export const TokenBeforeDate = `o `;
+    export const TokenBeforeTime = `as `;
     export const UpcomingPrefixRegex = `.^`;
     export const NextPrefixRegex = `(pr[oó]xim[oa]|seguinte|${UpcomingPrefixRegex})\\b`;
     export const PastPrefixRegex = `.^`;
@@ -235,7 +235,7 @@ export namespace PortugueseDateTime {
     export const FutureSuffixRegex = `^[.]`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
-    export const DefaultLanguageFallback = 'DMY';
+    export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
