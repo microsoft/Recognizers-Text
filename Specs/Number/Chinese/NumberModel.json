@@ -2653,6 +2653,97 @@
     ]
   },
   {
+    "Input": "一千分之一",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一千分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.001"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "壹仟分之贰",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "壹仟分之贰",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.002"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "一万分之三",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一万分之三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0003"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "壹萬分之肆",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "壹萬分之肆",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0004"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "一百万分之五",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一百万分之五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.000005"
+      },
+      "Start": 0,
+      "End": 5
+    }]
+  },
+  {
+    "Input": "一千万分之六",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一千万分之六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6E-07"
+      },
+      "Start": 0,
+      "End": 5
+    }]
+  },
+  {
+    "Input": "一万万分之七",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一万万分之七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "7E-08"
+      },
+      "Start": 0,
+      "End": 5
+    }]
+  },
+  {
     "Input": "六千零五十一个百分点",
     "Results": []
   },
