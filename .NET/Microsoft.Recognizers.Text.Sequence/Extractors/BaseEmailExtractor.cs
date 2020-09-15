@@ -48,7 +48,6 @@ namespace Microsoft.Recognizers.Text.Sequence
             else
             {
                 // Not return malformed e-mail addresses and trim ending '.'
-
                 foreach (var result in results)
                 {
                     if (result.Text.EndsWith(".", StringComparison.Ordinal))

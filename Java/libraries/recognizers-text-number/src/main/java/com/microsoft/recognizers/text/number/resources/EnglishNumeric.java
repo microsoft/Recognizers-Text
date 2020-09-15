@@ -132,7 +132,7 @@ public class EnglishNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)"
+    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|(?<ambiguousSeparator>in|out\\s+of))\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{BaseNumbers.CommonCurrencySymbol}", BaseNumbers.CommonCurrencySymbol);
 
@@ -233,6 +233,9 @@ public class EnglishNumeric {
             .replace("{MoreRegex}", MoreRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
+    public static final String OneNumberRangeMoreRegex1LB = "(?<!no\\s+){OneNumberRangeMoreRegex1}"
+            .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1);
+
     public static final String OneNumberRangeMoreRegex2 = "(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}"
             .replace("{MoreOrEqualSuffix}", MoreOrEqualSuffix)
             .replace("{NumberSplitMark}", NumberSplitMark);
@@ -248,6 +251,9 @@ public class EnglishNumeric {
             .replace("{LessOrEqual}", LessOrEqual)
             .replace("{LessRegex}", LessRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeLessRegex1LB = "(?<!no\\s+){OneNumberRangeLessRegex1}"
+            .replace("{OneNumberRangeLessRegex1}", OneNumberRangeLessRegex1);
 
     public static final String OneNumberRangeLessRegex2 = "(?<number2>({NumberSplitMark}.)+)\\s*{LessOrEqualSuffix}"
             .replace("{LessOrEqualSuffix}", LessOrEqualSuffix)
