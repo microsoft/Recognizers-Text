@@ -17841,5 +17841,223 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The range is from 2007 to the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2007 to the end of 2008",
+        "Start": 13,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P24M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is between 2007 and the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 2007 and the end of 2008",
+        "Start": 13,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P24M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It has been closed from April until the end of June.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from april until the end of june",
+        "Start": 19,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+              "type": "daterange",
+              "start": "2016-04-01",
+              "end": "2016-07-01"
+            },
+            {
+              "timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2007 to the start of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2007 to the start of 2008",
+        "Start": 13,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2008-01-01,P12M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is between the end of 2007 and the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between the end of 2007 and the end of 2008",
+        "Start": 13,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2008-01-01,2009-01-01,P12M)",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from the middle of 2007 to the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from the middle of 2007 to the end of 2008",
+        "Start": 13,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-07-02,2009-01-01,P18M)",
+              "type": "daterange",
+              "start": "2007-07-02",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from the end of March to the middle of September.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from the end of march to the middle of september",
+        "Start": 13,
+        "End": 60,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-01,XXXX-09-16,P5M)",
+              "type": "daterange",
+              "start": "2016-04-01",
+              "end": "2016-09-16"
+            },
+            {
+              "timex": "(XXXX-04-01,XXXX-09-16,P5M)",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is between the middle of March and the end of September.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between the middle of march and the end of september",
+        "Start": 13,
+        "End": 64,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-03-16,XXXX-10-01,P7M)",
+              "type": "daterange",
+              "start": "2016-03-16",
+              "end": "2016-10-01"
+            },
+            {
+              "timex": "(XXXX-03-16,XXXX-10-01,P7M)",
+              "type": "daterange",
+              "start": "2017-03-16",
+              "end": "2017-10-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
