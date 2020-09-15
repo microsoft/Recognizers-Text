@@ -4382,12 +4382,12 @@
             {
               "timex": "XXXX-12-04",
               "type": "date",
-              "value": "2019-12-04"
+              "value": "2017-12-04"
             },
             {
               "timex": "XXXX-12-04",
               "type": "date",
-              "value": "2020-12-04"
+              "value": "2018-12-04"
             }
           ]
         }
@@ -4411,12 +4411,12 @@
             {
               "timex": "XXXX-11-04",
               "type": "date",
-              "value": "2019-11-04"
+              "value": "2017-11-04"
             },
             {
               "timex": "XXXX-11-04",
               "type": "date",
-              "value": "2020-11-04"
+              "value": "2018-11-04"
             }
           ]
         }
@@ -6002,7 +6002,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "Roman numerals not yet supported",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "siglo XV",
@@ -6027,7 +6028,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "Roman numerals not yet supported",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "siglo XXI",
@@ -6107,9 +6109,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "después de feb.",
+        "Text": "después de feb",
         "Start": 22,
-        "End": 36,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6246,7 +6248,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "1 Feb no más tardar a las 6:00",
+        "Text": "1 feb no más tardar a las 6:00",
         "Start": 9,
         "End": 38,
         "TypeName": "datetimeV2.datetimerange",
@@ -6545,16 +6547,16 @@
     ]
   },
   {
-    "Input": "Mostrar ventas en 31ª semana",
+    "Input": "Mostrar ventas en semana 31",
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "31ª semana",
+        "Text": "semana 31",
         "Start": 18,
-        "End": 27,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6755,8 +6757,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2014 a 2018",
-        "Start": 15,
+        "Text": "de 2014 a 2018",
+        "Start": 12,
         "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -6780,8 +6782,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2014 ~ 2018",
-        "Start": 15,
+        "Text": "de 2014 ~ 2018",
+        "Start": 12,
         "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -6805,8 +6807,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2014 hasta 2018",
-        "Start": 18,
+        "Text": "desde 2014 hasta 2018",
+        "Start": 12,
         "End": 32,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -7055,8 +7057,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2014 hasta mayo de 2018",
-        "Start": 15,
+        "Text": "de 2014 hasta mayo de 2018",
+        "Start": 12,
         "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -7080,9 +7082,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2014 hasta 2do Mayo 2018",
-        "Start": -1,
-        "End": 22,
+        "Text": "desde 2014 hasta 2 mayo 2018",
+        "Start": 12,
+        "End": 39,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7134,7 +7136,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "viernes 6 Jul",
+        "Text": "viernes 6 jul",
         "Start": 57,
         "End": 69,
         "TypeName": "datetimeV2.date",
@@ -7298,8 +7300,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "la una y media de la tarde, 24 Ene",
-        "Start": 15,
+        "Text": "una y media de la tarde, 24 ene",
+        "Start": 18,
         "End": 48,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -7672,8 +7674,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "hoy por la tarde",
-        "Start": 29,
+        "Text": "desde hoy por la tarde",
+        "Start": 23,
         "End": 44,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -7770,7 +7772,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-09-WXX-1-#1T13,XXXX-09-WXX-1-#1T15,PT2H)",
+              "timex": "(XXXX-09-WXX-1-#1T13:00,XXXX-09-WXX-1-#1T15:00,PT2H)",
               "type": "datetimerange",
               "start": "2018-09-03 13:00:00",
               "end": "2018-09-03 15:00:00"
@@ -7905,12 +7907,27 @@
   },
   {
     "Input": "Cortana, ¿puedes preparar algo para el día 21?",
-    "Comment": "Only supported in CalendarMode",
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "el dia 21",
+        "Start": 36,
+        "End": 44,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-21",
+              "type": "daterange",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "Cortana, ¿puedes preparar algo alrededor del 21ro este mes?",
@@ -8450,14 +8467,14 @@
     ]
   },
   {
-    "Input": "reserve una sala de reuniones mañana de 10 a.m. a 12 a.m.",
+    "Input": "reserve una sala de reuniones mañana de 10 a.m. a 12 p.m.",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "mañana de 10 a.m. a 12 a.m.",
+        "Text": "mañana de 10 a.m. a 12 p.m.",
         "Start": 30,
         "End": 56,
         "TypeName": "datetimeV2.datetimerange",
@@ -8468,21 +8485,6 @@
               "type": "datetimerange",
               "start": "2018-09-01 10:00:00",
               "end": "2018-09-01 12:00:00"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "mañana",
-        "Start": 30,
-        "End": 35,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2018-09-01",
-              "type": "date",
-              "value": "2018-09-01"
             }
           ]
         }
@@ -8497,9 +8499,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "tan pronto como el primer trimestre de próximo año.",
+        "Text": "tan pronto como el primer trimestre de próximo año",
         "Start": 10,
-        "End": 60,
+        "End": 59,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8982,16 +8984,16 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-06-04T09:30,XXXX-06-04T16:30,PT7H)",
+              "timex": "(XXXX-04-06T09:30,XXXX-04-06T16:30,PT7H)",
               "type": "datetimerange",
-              "start": "2018-06-04 09:30:00",
-              "end": "2018-06-04 16:30:00"
+              "start": "2018-04-06 09:30:00",
+              "end": "2018-04-06 16:30:00"
             },
             {
-              "timex": "(XXXX-06-04T09:30,XXXX-06-04T16:30,PT7H)",
+              "timex": "(XXXX-04-06T09:30,XXXX-04-06T16:30,PT7H)",
               "type": "datetimerange",
-              "start": "2019-06-04 09:30:00",
-              "end": "2019-06-04 16:30:00"
+              "start": "2019-04-06 09:30:00",
+              "end": "2019-04-06 16:30:00"
             }
           ]
         }
@@ -12251,9 +12253,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "antes del año 2019.",
+        "Text": "antes del año 2019",
         "Start": 20,
-        "End": 38,
+        "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -13407,8 +13409,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "26 a 28 de junio en 2020",
-        "Start": 19,
+        "Text": "de 26 a 28 de junio en 2020",
+        "Start": 16,
         "End": 42,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -13432,8 +13434,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "26 de junio de 2019 a 28 de junio de 2020",
-        "Start": 19,
+        "Text": "de 26 de junio de 2019 a 28 de junio de 2020",
+        "Start": 16,
         "End": 59,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -13526,7 +13528,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "Week-long holidays not yet supported. Incorrect resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "la semana santa 2018",
@@ -15241,9 +15244,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "martes a las siete de la tarde el día 4.",
+        "Text": "martes a las siete de la tarde el día 4",
         "Start": 16,
-        "End": 55,
+        "End": 54,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
