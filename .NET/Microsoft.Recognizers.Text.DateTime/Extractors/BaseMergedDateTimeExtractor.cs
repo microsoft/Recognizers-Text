@@ -327,6 +327,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var er in ers)
             {
+                // AroundRegex is matched non-exclusively before the other relative regexes in order to catch also combined modifiers e.g. "before around 1pm"
                 TryMergeModifierToken(er, config.AroundRegex, text);
                 var success = TryMergeModifierToken(er, config.BeforeRegex, text);
 
