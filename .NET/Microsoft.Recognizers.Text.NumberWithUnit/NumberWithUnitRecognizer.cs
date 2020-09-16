@@ -510,6 +510,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Hindi.CurrencyParserConfiguration())
                     },
                 }));
+
+            RegisterModel<AgeModel>(
+                Culture.Swedish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.AgeParserConfiguration())
+                    },
+                }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
