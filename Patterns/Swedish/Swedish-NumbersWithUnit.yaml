@@ -3,10 +3,10 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age
-    Month: months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age
-    Week: weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age
-    Day: days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age
+    Year: år gammal|år gammalt|år gamla|års ålder|-årigt|-årig|-åringen|-åring|-års|års|år
+    Month: månader gammal|månader gammalt|månad gammalt|månader gammal|månad gammal|månader gamla|månad gamla|månads ålder|månaders ålder|-månads|månad|-månaders|månaders|månader
+    Week: veckor gammal|vecka gammal|veckor gammalt|vecka gammalt|veckor gamla|vecka gamla|veckas ålder|veckors ålder|vecka|-veckors|veckors|veckor
+    Day: dagar gammal|dagar gammalt|dag gammal|dag gammalt|dagar gamla|dag gamla|dags ålder|dagars ålder|dagar|-dagars|dagars|dagsgammalt|dagsgammal|dag
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
