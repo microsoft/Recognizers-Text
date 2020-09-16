@@ -18059,5 +18059,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "It will happen this working week",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "this working week",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W26",
+              "type": "daterange",
+              "start": "2018-06-25",
+              "end": "2018-06-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen on next workweek",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "next workweek",
+        "Start": 18,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-07"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
