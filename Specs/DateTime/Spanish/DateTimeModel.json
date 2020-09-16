@@ -1646,14 +1646,14 @@
     ]
   },
   {
-    "Input": "Regresaré el 22 de april.",
+    "Input": "Regresaré el 22 de abril.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "22 de april",
+        "Text": "22 de abril",
         "Start": 13,
         "End": 23,
         "TypeName": "datetimeV2.date",
@@ -14557,8 +14557,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "11:30 a.m. a las 12:30 a.m. 27 de diciembre",
-        "Start": 14,
+        "Text": "de las 11:30 a.m. a las 12:30 a.m. 27 de diciembre",
+        "Start": 7,
         "End": 56,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -14656,7 +14656,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "30 Dic",
+        "Text": "30 dic",
         "Start": 10,
         "End": 15,
         "TypeName": "datetimeV2.date",
@@ -14692,7 +14692,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
+              "timex": "T15:00",
               "type": "time",
               "value": "15:00:00"
             }
@@ -14741,14 +14741,14 @@
         }
       },
       {
-        "Text": "8 a.m",
+        "Text": "8 a.m.",
         "Start": 17,
-        "End": 21,
+        "End": 23,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "T08",
+              "timex": "T08:00",
               "type": "time",
               "value": "08:00:00"
             }
@@ -14788,7 +14788,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T20",
+              "timex": "T20:00",
               "type": "time",
               "value": "20:00:00"
             }
@@ -14989,11 +14989,11 @@
         "Resolution": {
           "values": [
             {
-              "timex": "TMO",
+              "timex": "TDA",
               "Mod": "start",
               "type": "timerange",
-              "start": "08:00:00",
-              "end": "10:00:00"
+              "start": "04:00:00",
+              "end": "08:00:00"
             }
           ]
         }
@@ -15158,7 +15158,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "zona horaria del Pacífico",
@@ -15186,18 +15186,15 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "la 1 p.m. zona horaria de montaña",
-        "Start": 16,
-        "End": 48,
+        "Text": "1 p.m.",
+        "Start": 19,
+        "End": 24,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "T13",
+              "timex": "T13:00",
               "type": "time",
-              "timezone": "UTC-06:00",
-              "timezoneText": "mountain timezone",
-              "utcOffsetMins": "-360",
               "value": "13:00:00"
             }
           ]
@@ -15391,8 +15388,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el martes de próxima semana",
-        "Start": 22,
+        "Text": "martes de próxima semana",
+        "Start": 25,
         "End": 48,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -15591,7 +15588,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "3 Marzo",
+        "Text": "3 marzo",
         "Start": 0,
         "End": 6,
         "TypeName": "datetimeV2.date",
@@ -15770,7 +15767,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "30 Feb 2019",
+        "Text": "30 feb 2019",
         "Start": 0,
         "End": 10,
         "TypeName": "datetimeV2.date",
@@ -15943,8 +15940,8 @@
       },
       {
         "Text": "esta semana",
-        "Start": 83,
-        "End": 93,
+        "Start": 122,
+        "End": 132,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -15967,8 +15964,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana pasada",
-        "Start": 26,
+        "Text": "la semana pasada",
+        "Start": 23,
         "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -16131,16 +16128,16 @@
     ]
   },
   {
-    "Input": "reunámonos después de desayuno",
+    "Input": "reunámonos después del desayuno",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "después de desayuno",
+        "Text": "después del desayuno",
         "Start": 11,
-        "End": 29,
+        "End": 30,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -16156,16 +16153,16 @@
     ]
   },
   {
-    "Input": "reunámonos antes de almuerzo",
+    "Input": "reunámonos antes del almuerzo",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "antes de almuerzo",
+        "Text": "antes del almuerzo",
         "Start": 11,
-        "End": 27,
+        "End": 28,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -16181,16 +16178,16 @@
     ]
   },
   {
-    "Input": "reunámonos alrededor de cena",
+    "Input": "reunámonos alrededor de la cena",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "alrededor de cena",
+        "Text": "alrededor de la cena",
         "Start": 11,
-        "End": 27,
+        "End": 30,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -16363,16 +16360,16 @@
     ]
   },
   {
-    "Input": "¿Está bien 30 minunots después?",
+    "Input": "¿Está bien 30 minutos después?",
     "Context": {
       "ReferenceDateTime": "2019-11-01T15:16:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "30 minunots después",
+        "Text": "30 minutos después",
         "Start": 11,
-        "End": 29,
+        "End": 28,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -16520,7 +16517,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2019-T1",
+        "Text": "2019-t1",
         "Start": 9,
         "End": 15,
         "TypeName": "datetimeV2.daterange",
@@ -16545,8 +16542,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "tercer trimestre de 2019",
-        "Start": 12,
+        "Text": "el tercer trimestre de 2019",
+        "Start": 9,
         "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -17169,16 +17166,16 @@
     ]
   },
   {
-    "Input": "¿Cuántos clusters acoplaron entre enero de 2019 y hoy?",
+    "Input": "¿Cuántos clusters acoplaron entre enero de 2019 y ahora?",
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre enero de 2019 y hoy",
+        "Text": "entre enero de 2019 y ahora",
         "Start": 28,
-        "End": 52,
+        "End": 55,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -17219,16 +17216,16 @@
     ]
   },
   {
-    "Input": "¿Cuántos clusters acoplaron entre enero de 2019 y este entonces?",
+    "Input": "¿Cuántos clusters acoplaron entre enero de 2019 y hoy?",
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre enero de 2019 y este entonces",
+        "Text": "entre enero de 2019 y hoy",
         "Start": 28,
-        "End": 62,
+        "End": 52,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -17366,10 +17363,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2017-10-01,2017-11-02,P32D)",
+              "timex": "(2017-01-10,2017-02-11,P32D)",
               "type": "daterange",
-              "start": "2017-10-01",
-              "end": "2017-11-02"
+              "start": "2017-01-10",
+              "end": "2017-02-11"
             }
           ]
         }
@@ -17445,7 +17442,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "Día Internacional de los Trabajadores",
+        "Text": "día internacional de los trabajadores",
         "Start": 15,
         "End": 51,
         "TypeName": "datetimeV2.date",
@@ -17619,7 +17616,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "4-Jul-95",
+        "Text": "4-jul-95",
         "Start": 0,
         "End": 7,
         "TypeName": "datetimeV2.date",
@@ -17698,6 +17695,21 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
+        "Text": "verano",
+        "Start": 43,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
         "Text": "tres meses",
         "Start": 53,
         "End": 62,
@@ -17724,21 +17736,6 @@
               "type": "daterange",
               "start": "1992-06-01",
               "end": "1992-08-01"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "verano",
-        "Start": 43,
-        "End": 48,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "SU",
-              "type": "daterange",
-              "value": "not resolved"
             }
           ]
         }
@@ -17890,7 +17887,7 @@
     ]
   },
   {
-    "Input": "mañana en skype para negocios entre las 3:00 p.m. y las 5:00 p.m.",
+    "Input": "mañana en skype for business entre las 3:00 p.m. y las 5:00 p.m.",
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
@@ -17913,8 +17910,8 @@
       },
       {
         "Text": "entre las 3:00 p.m. y las 5:00 p.m.",
-        "Start": 30,
-        "End": 64,
+        "Start": 29,
+        "End": 63,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -18402,7 +18399,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
+              "timex": "T15:00",
               "type": "time",
               "value": "15:00:00"
             }
@@ -18566,7 +18563,7 @@
     ]
   },
   {
-    "Input": "Agrega reunión con el jefe a mi calendario: martes a las 9 a.m.",
+    "Input": "Agrega reunión con el jefe a mi calendario los martes a las 9 a.m.",
     "Context": {
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
@@ -18574,8 +18571,8 @@
     "Results": [
       {
         "Text": "martes a las 9 a.m.",
-        "Start": 44,
-        "End": 62,
+        "Start": 47,
+        "End": 65,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [

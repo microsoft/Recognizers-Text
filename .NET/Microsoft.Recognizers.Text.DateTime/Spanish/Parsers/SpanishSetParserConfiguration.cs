@@ -82,7 +82,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
 
             // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diariamente", StringComparison.Ordinal))
+            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diariamente", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("diarias", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
@@ -97,6 +98,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             else if (trimmedText.Equals("mensualmente", StringComparison.Ordinal))
             {
                 timex = "P1M";
+            }
+            else if (trimmedText.Equals("bimensualmente", StringComparison.Ordinal) || trimmedText.Equals("bimensuales", StringComparison.Ordinal))
+            {
+                timex = "P2M";
             }
             else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
             {
