@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string SpecificEndOfRegex = @"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$";
       public const string UnspecificEndOfRegex = @"^[.]";
       public const string UnspecificEndOfRangeRegex = @"^[.]";
-      public const string UnitRegex = @"(?<unit>años?|(bi|tri|quadri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\b";
+      public const string UnitRegex = @"(?<unit>años?|(bi|tri|quadri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?)\b";
       public const string ConnectorRegex = @"^(,|t|para las?|(cerca|alrededor) de las?)$";
       public const string TimeHourNumRegex = @"(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)";
       public static readonly string PureNumFromTo = $@"((desde|de)\s+(la(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
@@ -238,6 +238,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"horas", @"H" },
             { @"hora", @"H" },
             { @"hrs", @"H" },
+            { @"hras", @"H" },
+            { @"hra", @"H" },
             { @"hr", @"H" },
             { @"h", @"H" },
             { @"minutos", @"M" },
@@ -264,6 +266,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"horas", 3600 },
             { @"hora", 3600 },
             { @"hrs", 3600 },
+            { @"hras", 3600 },
+            { @"hra", 3600 },
             { @"hr", 3600 },
             { @"h", 3600 },
             { @"minutos", 60 },

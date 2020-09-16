@@ -376,7 +376,7 @@ UnspecificEndOfRangeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 UnitRegex: !simpleRegex
-  def: (?<unit>años?|(bi|tri|quadri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\b
+  def: (?<unit>años?|(bi|tri|quadri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?)\b
 ConnectorRegex: !simpleRegex
   def: ^(,|t|para las?|(cerca|alrededor) de las?)$
 # SpanishTimePeriodExtractorConfiguration
@@ -571,6 +571,8 @@ UnitMap: !dictionary
     horas: H
     hora: H
     hrs: H
+    hras: H
+    hra: H
     hr: H
     h: H
     minutos: M
@@ -597,6 +599,8 @@ UnitValueMap: !dictionary
     horas: 3600
     hora: 3600
     hrs: 3600
+    hras: 3600
+    hra: 3600
     hr: 3600
     h: 3600
     minutos: 60
