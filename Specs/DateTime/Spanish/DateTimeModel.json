@@ -2312,7 +2312,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "al fin de domingo",
@@ -2506,8 +2507,8 @@
             {
               "timex": "2016-11-14TAF",
               "type": "datetimerange",
-              "start": "2016-11-14 12:00:00",
-              "end": "2016-11-14 16:00:00"
+              "start": "2016-11-14 16:00:00",
+              "end": "2016-11-14 20:00:00"
             }
           ]
         }
@@ -2599,7 +2600,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "tres años y medio",
@@ -2719,7 +2721,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "un mes entero",
@@ -2767,7 +2770,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "unas horas",
@@ -2815,7 +2819,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "unos días",
@@ -3180,7 +3185,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "cerca de mediodía",
@@ -3204,7 +3210,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "alrededor de las once",
@@ -3432,7 +3439,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "la mañana",
@@ -3457,7 +3465,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "la tarde",
@@ -4305,8 +4314,8 @@
         }
       },
       {
-        "Text": "semana pasada",
-        "Start": 47,
+        "Text": "la semana pasada",
+        "Start": 44,
         "End": 59,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4697,7 +4706,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-22T16:12:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el mes",
@@ -4722,7 +4732,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "temprano al día miércoles",
@@ -4748,7 +4759,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "al mediodía de hoy",
@@ -4774,7 +4786,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más tarde hoy",
@@ -4800,7 +4813,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "del año",
@@ -4825,7 +4839,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "del mes",
@@ -4850,7 +4865,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "la semana",
@@ -5004,7 +5020,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "principios de semana",
@@ -5054,7 +5071,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "comienzos de este año",
@@ -5164,7 +5182,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "finales de este mes",
@@ -5214,7 +5233,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más tarde durante el año",
@@ -5914,7 +5934,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el 9º de mayo",
@@ -5958,7 +5979,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el día 9 Mayo",
@@ -6195,7 +6217,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próximo miércoles más tarde de las diez de la mañana",
@@ -6245,7 +6268,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1 feb no más tardar a las 6:00",
@@ -6476,7 +6500,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el año",
@@ -6501,7 +6526,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "toda la semana",
@@ -6576,7 +6602,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-02T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "primera semana",
@@ -6601,7 +6628,8 @@
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1ª semana",
@@ -7618,7 +7646,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -7935,7 +7963,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "alrededor del 21ro este mes",
@@ -7960,7 +7989,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-16T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "mañana alrededor de las 10 de la mañana",
@@ -7985,7 +8015,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "esta semana",
@@ -8027,7 +8058,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "tan tarde como 7 a.m.",
@@ -8053,7 +8085,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "tan tarde como mañana",
@@ -8248,7 +8281,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-29T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "18",
@@ -8497,7 +8530,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-06T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "tan pronto como el primer trimestre de próximo año",
@@ -8523,7 +8557,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "año posterior a 2012",
@@ -8549,7 +8584,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "año 2012 o posterior",
@@ -8575,7 +8611,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "año 2016 y más tarde",
@@ -8601,7 +8638,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1/1/2016 y más tarde",
@@ -8627,7 +8665,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1ro de enero de 2016 y después",
@@ -8654,7 +8693,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1-ene-2016",
@@ -10423,7 +10462,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -10556,7 +10595,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "final del día",
@@ -10604,7 +10644,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el fin de día",
@@ -10628,7 +10669,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-23T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "final de año",
@@ -10703,7 +10745,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-23T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "finales de año",
@@ -10729,7 +10772,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-27T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "fin de mes",
@@ -10755,7 +10799,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -10947,7 +10991,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -10998,7 +11042,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -11074,7 +11118,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -11523,7 +11567,8 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "después de medianos de mayo",
@@ -12511,7 +12556,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "inicios de 7 de enero",
@@ -12544,7 +12590,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "empienzando el 7 de enero",
@@ -12655,7 +12702,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "primeros de 7 de enero",
@@ -12688,7 +12736,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "comenzando el 7-ene",
@@ -13388,7 +13437,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-27T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "30 minutos después",
@@ -13657,7 +13707,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -13683,7 +13733,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -13709,7 +13759,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14314,7 +14364,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14340,7 +14390,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14366,7 +14416,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14392,7 +14442,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-28T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14418,7 +14468,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próximo trimestre",
@@ -14443,7 +14494,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-28T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14469,7 +14520,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14495,7 +14546,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14521,7 +14572,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -14920,7 +14971,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "final de la tarde",
@@ -14946,7 +14998,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más tarde en la tarde",
@@ -14997,7 +15050,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "temprano en la mañana",
@@ -15023,7 +15077,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "semana que viene",
@@ -15065,7 +15120,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "semana que viene",
@@ -15107,12 +15163,13 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "semana que viene",
-        "Start": -1,
-        "End": 14,
+        "Text": "próxima semana",
+        "Start": 25,
+        "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -15401,7 +15458,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -15426,7 +15483,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más tarde esta tarde",
@@ -15452,7 +15510,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "fin de esta mañana",
@@ -15478,7 +15537,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "temprano esta tarde",
@@ -15529,7 +15589,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "semana próxima",
@@ -15989,7 +16050,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -16011,16 +16072,17 @@
     ]
   },
   {
-    "Input": "Por favor programe una llamada dde Teams de ½ hora.",
+    "Input": "Por favor programe una llamada de Teams de ½ hora.",
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "½ hora",
-        "Start": 44,
-        "End": 49,
+        "Start": 43,
+        "End": 48,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -16128,7 +16190,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MTIME Mealtime support.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "después del desayuno",
@@ -16153,7 +16216,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MTIME Mealtime support.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "antes del almuerzo",
@@ -16178,7 +16242,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MTIME Mealtime support.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "alrededor de la cena",
@@ -16512,7 +16577,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "2019-t1",
@@ -16562,7 +16628,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1º trimestre-2019",
@@ -16587,7 +16654,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "3º trimestre-2019",
@@ -16628,7 +16696,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -16660,7 +16728,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -16692,7 +16760,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -16724,7 +16792,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -16756,7 +16824,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MTIME Mealtime support.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "hora de almuerzo",
@@ -16781,11 +16850,12 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MTIME Mealtime support.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "a la hora de almuerzo",
-        "Start": 46,
+        "Text": "la hora de almuerzo",
+        "Start": 48,
         "End": 66,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -16991,7 +17061,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de 26 Jun de 2020 a 28 Jun de 2020",
@@ -17016,7 +17087,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "finales de 2000",
@@ -17042,7 +17114,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "mediados de 2000",
@@ -17068,7 +17141,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "principios de 2000",
@@ -17094,7 +17168,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "a partir de los finales de 1989",
@@ -17120,7 +17195,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "desde los últimos de 1989",
@@ -17146,7 +17222,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "desde medianos de 1989",
@@ -17172,7 +17249,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "entre enero de 2019 y ahora",
@@ -17197,7 +17275,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "entre enero de 2019 y mañana",
@@ -17222,7 +17301,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "entre enero de 2019 y hoy",
@@ -17297,7 +17377,8 @@
     "Context": {
       "ReferenceDateTime": "2020-05-06T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "entre agosto de 2019 y ahora",
@@ -17412,7 +17493,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -17495,7 +17576,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -17520,7 +17601,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -17965,7 +18046,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "SETREF. Set implementation to be refined.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "semestralmente",
@@ -17989,7 +18071,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "SETREF. Set implementation to be refined.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "semestral",
@@ -18013,7 +18096,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -18088,7 +18171,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "SETREF. Set implementation to be refined.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "anual",
@@ -18112,7 +18196,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "SETREF. Set implementation to be refined.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "cada trimestre",
@@ -18204,7 +18289,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -18229,7 +18314,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -18254,7 +18339,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -18279,7 +18364,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -18311,7 +18396,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -18352,7 +18437,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-15T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter.half, week, weekend, etc. Including relatives.",
+    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
