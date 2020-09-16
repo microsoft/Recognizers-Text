@@ -35,8 +35,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string AfterNextSuffixRegex = @"\b(que\s+viene|pasad[oa])\b";
       public const string RangePrefixRegex = @"((de(sde)?|entre)\s+(la(s)?\s+)?)";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
-      public const string RelativeRegex = @"(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b";
-      public const string StrictRelativeRegex = @"(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b";
+      public const string RelativeRegex = @"(?<rela>est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))\b";
+      public const string StrictRelativeRegex = @"(?<rela>est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))\b";
       public const string WrittenOneToNineRegex = @"(un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";
       public const string WrittenOneHundredToNineHundredRegex = @"(doscient[oa]s|trescient[oa]s|cuatrocient[ao]s|quinient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|cien(to)?)";
       public static readonly string WrittenOneToNinetyNineRegex = $@"(((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\s+y\s+{WrittenOneToNineRegex})?)|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+((entre|entre\s+el)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b";
       public static readonly string DayBetweenRegex = $@"\b((entre|entre\s+el)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b";
       public const string SpecialYearPrefixes = @"((del\s+)?calend[aá]rio|(?<special>fiscal|escolar))";
-      public static readonly string OneWordPeriodRegex = $@"\b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})";
+      public static readonly string OneWordPeriodRegex = $@"\b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+)({DateUnitRegex}|(fin\s+de\s+)?semana)(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex}|(año|mes|((el\s+)?fin\s+de\s+)?semana))\b";
       public static readonly string MonthWithYearRegex = $@"\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})(\s+|(\s*[,-]\s*))((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b";
       public static readonly string MonthNumWithYearRegex = $@"\b(({YearRegex}(\s*?)[/\-\.~](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-\.~](\s*?){YearRegex}))\b";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima)\s+semana\s+{MonthSuffixRegex})";
@@ -64,9 +64,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string QuarterRegex = $@"(el\s+)?{QuarterTermRegex}((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o|a[ñn]o(\s+{AfterNextSuffixRegex})))?";
       public static readonly string QuarterRegexYearFront = $@"({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o)\s+(el\s+)?{QuarterTermRegex}";
       public const string AllHalfYearRegex = @"^[.]";
-      public static readonly string EarlyPrefixRegex = $@"\b(?<EarlyPrefix>((comienzos?|inicios?)\s+({OfPrepositionRegex})))\b";
+      public static readonly string EarlyPrefixRegex = $@"\b(?<EarlyPrefix>((comienzos?|inicios?|principios?)\s+({OfPrepositionRegex})))\b";
       public static readonly string MidPrefixRegex = $@"\b(?<MidPrefix>(mediados\s+({OfPrepositionRegex})))\b";
-      public static readonly string LaterPrefixRegex = $@"\b(?<LatePrefix>((fines|finales)\s+({OfPrepositionRegex})))\b";
+      public static readonly string LaterPrefixRegex = $@"\b(?<LatePrefix>((fin((al)?es)?)\s+({OfPrepositionRegex})))\b";
       public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})";
       public const string PrefixDayRegex = @"^[.]";
       public const string CenturySuffixRegex = @"^[.]";
