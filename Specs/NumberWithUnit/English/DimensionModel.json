@@ -968,6 +968,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "12",
+          "subtype": "Length",
           "unit": "Meter"
         },
         "Start": 14,
@@ -978,6 +979,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
+          "subtype": "Length",
           "unit": "Decimeter"
         },
         "Start": 19,
@@ -994,6 +996,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "12",
+          "subtype": "Length",
           "unit": "Foot"
         },
         "Start": 14,
@@ -1004,6 +1007,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
+          "subtype": "Length",
           "unit": "Inch"
         },
         "Start": 20,
