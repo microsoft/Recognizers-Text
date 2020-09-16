@@ -734,12 +734,12 @@ namespace Microsoft.Recognizers.Definitions.Swedish
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
-            { @"F", @"degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f" },
+            { @"F", @"grader fahrenheit|grad fahrenheit|gr fahrenheit|gr. fahrenheit|°f|grad f|grader f|fahrenheit|f" },
             { @"K", @"k|K|kelvin" },
-            { @"R", @"rankine|°r" },
-            { @"D", @"delisle|°de" },
-            { @"C", @"degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c" },
-            { @"Degree", @"degree|degrees|deg.|deg|°" }
+            { @"R", @"rankine|°ra|°r" },
+            { @"D", @"delisle|°de|°d" },
+            { @"C", @"grader celsius|grad celsius|gr. celsius|gr celsius|grader c|gr. c|gr c|°c|celsiusgrader|celsius|c" },
+            { @"Degree", @"gr.|grader|grad|°" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
         {

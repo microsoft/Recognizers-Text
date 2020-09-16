@@ -27,11 +27,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         //    TestNumberWithUnit(testSpec);
         // }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void TemperatureModel(TestModel testSpec)
-        // {
-        //    TestNumberWithUnit(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TemperatureModel(TestModel testSpec)
+        {
+            TestNumberWithUnit(testSpec);
+        }
     }
 }
