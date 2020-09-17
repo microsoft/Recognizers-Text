@@ -30,6 +30,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex FractionPrepositionRegex { get; }
 
+        Regex RoundMultiplierRegex { get; }
+
         string FractionMarkerToken { get; }
 
         Regex HalfADozenRegex { get; }
@@ -104,6 +106,8 @@ namespace Microsoft.Recognizers.Text.Number
         public Regex DigitalNumberRegex { get; set; }
 
         public Regex FractionPrepositionRegex { get; set; }
+
+        public Regex RoundMultiplierRegex { get; set; } = null;
 
         public string FractionMarkerToken { get; set; }
 

@@ -2318,5 +2318,56 @@
         "End": 40
       }
     ]
+  },
+  {
+    "Input": "It costs half million usd.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "half million usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "500000"
+        },
+        "Start": 9,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "It costs quarter million us dollars.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "quarter million us dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "250000"
+        },
+        "Start": 9,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "It costs three quarters billion us dollars.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three quarters billion us dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "750000000"
+        },
+        "Start": 9,
+        "End": 41
+      }
+    ]
   }
 ]
