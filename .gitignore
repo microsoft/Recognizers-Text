@@ -10,3 +10,4 @@ Python/.cache/v/cache/lastfailed
 /JavaScript/*.lerna_backup
 .DS_Store
 /JavaScript/packages/**/*.tgz
+.history
