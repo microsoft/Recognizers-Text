@@ -33,9 +33,9 @@ TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
-  def: (?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b
+  def: (?<rela>est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))\b
 StrictRelativeRegex: !simpleRegex
-  def: (?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b
+  def: (?<rela>est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))\b
 WrittenOneToNineRegex: !simpleRegex
   def: (un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)
 WrittenOneHundredToNineHundredRegex: !simpleRegex
@@ -77,7 +77,7 @@ DayBetweenRegex: !nestedRegex
 SpecialYearPrefixes: !simpleRegex
   def: ((del\s+)?calend[aá]rio|(?<special>fiscal|escolar))
 OneWordPeriodRegex: !nestedRegex
-  def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+){DateUnitRegex}(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex})
+  def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+)({DateUnitRegex}|(fin\s+de\s+)?semana)(\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\s+{AfterNextSuffixRegex}))|va\s+de\s+{DateUnitRegex}|(año|mes|((el\s+)?fin\s+de\s+)?semana))\b
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, AfterNextSuffixRegex,DateUnitRegex]
 MonthWithYearRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})(\s+|(\s*[,-]\s*))((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b
@@ -109,13 +109,13 @@ AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 EarlyPrefixRegex: !nestedRegex
-  def: \b(?<EarlyPrefix>((comienzos?|inicios?)\s+({OfPrepositionRegex})))\b
+  def: \b(?<EarlyPrefix>((comienzos?|inicios?|principios?)\s+({OfPrepositionRegex})))\b
   references: [OfPrepositionRegex]
 MidPrefixRegex: !nestedRegex
   def: \b(?<MidPrefix>(mediados\s+({OfPrepositionRegex})))\b
   references: [OfPrepositionRegex]
 LaterPrefixRegex: !nestedRegex
-  def: \b(?<LatePrefix>((fines|finales)\s+({OfPrepositionRegex})))\b
+  def: \b(?<LatePrefix>((fin((al)?es)?)\s+({OfPrepositionRegex})))\b
   references: [OfPrepositionRegex]
 PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})

@@ -1615,5 +1615,83 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Volveré a principios de año",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "principios de año",
+        "Start": 10,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2016-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Volveré a inicio de mes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "inicio de mes",
+        "Start": 10,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-11-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Estaré de regreso a fin de mes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de mes",
+        "Start": 20,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2016-11-16",
+              "end": "2016-12-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
