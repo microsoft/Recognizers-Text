@@ -1838,7 +1838,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "desde 23/04 el próximo mes",
@@ -2158,7 +2159,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions. Wrongly affecting resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "8:00:31 de la mañana, 14 de octubre",
@@ -2171,11 +2173,6 @@
               "timex": "XXXX-10-14T08:00:31",
               "type": "datetime",
               "value": "2016-10-14 08:00:31"
-            },
-            {
-              "timex": "XXXX-10-14T08:00:31",
-              "type": "datetime",
-              "value": "2017-10-14 08:00:31"
             }
           ]
         }
@@ -2333,7 +2330,7 @@
     ]
   },
   {
-    "Input": "Hoy saldré las cinco hasta las siete",
+    "Input": "Hoy saldré de las cinco hasta las siete",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2356,8 +2353,8 @@
       },
       {
         "Text": "cinco hasta las siete",
-        "Start": 15,
-        "End": 35,
+        "Start": 18,
+        "End": 38,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -2505,7 +2502,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-14TAF",
+              "timex": "2016-11-14TEV",
               "type": "datetimerange",
               "start": "2016-11-14 16:00:00",
               "end": "2016-11-14 20:00:00"
@@ -2988,7 +2985,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "tres de la tarde cada día",
@@ -3259,7 +3257,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "TYPE Incorrect extracted type.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "12 del mediodía",
@@ -3515,7 +3514,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "dentro de 5 minutos",
@@ -3539,7 +3539,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en 5 mins",
@@ -3563,7 +3564,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próxima semana lun 9 a.m.",
@@ -3646,7 +3648,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "TYPE Incorrect extracted type.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "nueve en punto de la mañana",
@@ -3778,7 +3781,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próxima semana el martes",
@@ -3822,7 +3826,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próxima semana el martes 9 a.m.",
@@ -4106,7 +4111,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "dentro de 9 meses",
@@ -4147,7 +4153,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en 2 semanas",
@@ -4186,7 +4193,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próximos cinco días",
@@ -4227,7 +4235,8 @@
     "Context": {
       "ReferenceDateTime": "2018-04-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1.º de julio",
@@ -4256,7 +4265,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-25T01:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "2 horas",
@@ -4919,7 +4929,15 @@
     "Results": []
   },
   {
-    "Input": "Buen día.",
+    "Input": "lindo día.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Tengas un buen día.",
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
@@ -5259,7 +5277,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "dos días después de hoy",
@@ -5379,7 +5398,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled. *",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "entre las 10 y las 11:30 el primer día de enero de 2015",
@@ -5493,16 +5513,48 @@
     ]
   },
   {
-    "Input": "Sucederá de tres y media a cinco menos seis el 1/1/2015",
+    "Input": "Sucederá de tres y media a seis menos cinco el 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "Comment": "FORMAT not properly handled. Issues parsing 5 to 6",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de tres y media a seis menos cinco el 1/1/2015",
+        "Start": 9,
+        "End": 54,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T03:30,2015-01-01T05:55,PT2H25M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 03:30:00",
+              "end": "2015-01-01 05:55:00"
+            },
+            {
+              "timex": "(2015-01-01T15:30,2015-01-01T17:55,PT2H25M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 15:30:00",
+              "end": "2015-01-01 17:55:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sucederá de 3:30 a 5:55 el 1/1/2015",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "de tres y media a cinco menos seis el 1/1/2015",
+        "Text": "de 3:30 a 5:55 el 1/1/2015",
         "Start": 9,
-        "End": 54,
+        "End": 34,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -5671,7 +5723,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "este viernes (15 Jun)",
@@ -5703,7 +5756,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más de cuatro días",
@@ -5744,7 +5798,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más de 1 hora y media",
@@ -5769,7 +5824,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más de 2 semanas antes de hoy",
@@ -5794,7 +5850,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más de dos días anteriores de ayer",
@@ -5819,7 +5876,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "menos de 3 días posteriores de mañana",
@@ -5844,7 +5902,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "más de 2 semanas después de hoy",
@@ -5869,7 +5928,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "dentro de 3 minutos a partir de ahora",
@@ -6249,6 +6309,35 @@
         "Text": "martes pasado a las dos de la tarde",
         "Start": 11,
         "End": 45,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T14",
+              "type": "datetime",
+              "value": "2020-09-15 14:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T14",
+              "type": "datetime",
+              "value": "2020-09-22 14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sucedió el martes antes de las dos de la tarde.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes antes de las dos de la tarde",
+        "Start": 11,
+        "End": 45,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -6312,7 +6401,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "la próxima semana",
@@ -6430,7 +6520,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "hoy a las 9 a.",
+        "Text": "hoy a las 9 a",
         "Start": 28,
         "End": 41,
         "TypeName": "datetimeV2.datetime",
@@ -6454,7 +6544,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "hoy a las 9 p.",
+        "Text": "hoy a las 9 p",
         "Start": 28,
         "End": 41,
         "TypeName": "datetimeV2.datetime",
@@ -6662,7 +6752,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "dentro de dos minutos",
@@ -6686,7 +6777,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en dos meses",
@@ -6710,7 +6802,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en dos semanas",
@@ -6734,7 +6827,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "dentro de dos años",
@@ -7082,7 +7176,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de 2014 hasta mayo de 2018",
@@ -7107,7 +7202,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "desde 2014 hasta 2 mayo 2018",
@@ -7132,7 +7228,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-06T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "viernes(6/7)",
@@ -7219,7 +7316,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-06T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "viernes 6-jul-2018",
@@ -7243,7 +7341,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-09T22:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "menos de 2 horas",
@@ -7447,7 +7546,7 @@
     ]
   },
   {
-    "Input": "La historia sucedió el año anterior a la independencia.",
+    "Input": "La historia sucedió el año anterior a la revolucion.",
     "Context": {
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
@@ -7476,7 +7575,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "HOLIDAY",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "día de independencia de este año",
@@ -7500,7 +7600,8 @@
     "Context": {
       "ReferenceDateTime": "2018-07-24T13:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "HOLIDAY",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "antes de día de independencia",
@@ -7529,7 +7630,7 @@
     ]
   },
   {
-    "Input": "Cortana, puede encontrarnos algún tiempo el martes o miércoles desde 4 de octubre",
+    "Input": "Cortana, puede encontrarnos algún tiempo el martes o miércoles 10-4",
     "Context": {
       "ReferenceDateTime": "2018-07-30T13:00:00"
     },
@@ -7556,9 +7657,9 @@
         }
       },
       {
-        "Text": "miércoles desde 4 de octubre",
+        "Text": "miércoles 10-4",
         "Start": 53,
-        "End": 80,
+        "End": 66,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -7592,11 +7693,63 @@
     ]
   },
   {
+    "Input": "Cortana, puede encontrarnos algún tiempo el martes o miércoles de las 10 a las 4",
+    "Context": {
+      "ReferenceDateTime": "2018-07-30T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes",
+        "Start": 44,
+        "End": 49,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-07-24"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-07-31"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "miércoles de las 10 a las 4",
+        "Start": 53,
+        "End": 79,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-3T10,XXXX-WXX-3T16,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-07-25 10:00:00",
+              "end": "2018-07-25 16:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-3T10,XXXX-WXX-3T16,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-08-01 10:00:00",
+              "end": "2018-08-01 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "por favor programe algo para la semana siguiente",
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "semana siguiente",
@@ -7667,14 +7820,15 @@
     ]
   },
   {
-    "Input": "Me iré el 22 de mayo (martes) -11: 30 a.m.PST.",
+    "Input": "Me iré el 22 de mayo (martes) - 11:30 a.m. PT.",
     "Context": {
       "ReferenceDateTime": "2018-07-30T20:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "2 de mayo (martes) -11: 30 a.m.",
+        "Text": "2 de mayo (martes) - 11:30 a.m.",
         "Start": 11,
         "End": 41,
         "TypeName": "datetimeV2.datetime",
@@ -7696,15 +7850,15 @@
     ]
   },
   {
-    "Input": "La puerta está abierta desde hoy por la tarde hasta mañana por la mañana.",
+    "Input": "La puerta está abierta de hoy por la tarde hasta mañana por la mañana.",
     "Context": {
       "ReferenceDateTime": "2018-07-31T12:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "desde hoy por la tarde",
-        "Start": 23,
+        "Text": "de hoy por la tarde",
+        "Start": 20,
         "End": 44,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -7741,7 +7895,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-01T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "miércoles por la tarde la semana que viene",
@@ -7766,7 +7921,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-01T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "primer lunes por la tarde de próximo mes",
@@ -7816,7 +7972,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "la semana del 18.º",
@@ -7847,7 +8004,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el día 18",
@@ -7876,11 +8034,12 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "el 4.º",
-        "Start": 40,
+        "Text": "4.º",
+        "Start": 43,
         "End": 45,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -7939,7 +8098,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el dia 21",
@@ -8112,7 +8272,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-20T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "WORKDAYS",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "próximos cuatro días laborables",
@@ -8134,11 +8295,39 @@
     ]
   },
   {
+    "Input": "Cortana, ¿puedes planear algo para los 4 días de trabajo siguientes?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T10:00:00"
+    },
+    "Comment": "WORKDAYS",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 días  de trabajo siguientes",
+        "Start": 39,
+        "End": 66,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-22,2018-08-28,P4BD)",
+              "type": "daterange",
+              "list": "2018-08-22,2018-08-23,2018-08-24,2018-08-27",
+              "start": "2018-08-22",
+              "end": "2018-08-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Cortana, ¿puedes planear algo para los 4 días hábiles siguientes?",
     "Context": {
       "ReferenceDateTime": "2018-08-21T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "WORKDAYS",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "4 días hábiles siguientes",
@@ -8164,7 +8353,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "WORKDAYS",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "4 días laborables anteriores",
@@ -8190,7 +8380,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled. *",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1er de octubre",
@@ -8330,7 +8521,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "5 próximos años",
@@ -8355,7 +8547,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "2 próximos meses",
@@ -8718,7 +8911,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1/1/2016",
@@ -8755,16 +8949,16 @@
     ]
   },
   {
-    "Input": "Las acciones de este banco cayeron un 20% en año hasta fecha.",
+    "Input": "Las acciones de este banco cayeron un 20% en año hasta la fecha.",
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año hasta fecha",
+        "Text": "año hasta la fecha",
         "Start": 45,
-        "End": 59,
+        "End": 62,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8784,7 +8978,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "2018 o más tarde",
@@ -8920,7 +9115,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-21T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "lunes a las 2.30",
@@ -8985,7 +9181,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "jueves 29/03 11.00 a.m.",
@@ -9045,7 +9242,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de marzo a mayo",
@@ -9076,7 +9274,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "entre agosto y octubre",
@@ -9101,7 +9300,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de mayo a marzo",
@@ -9157,7 +9357,8 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de mayo a septiembre",
@@ -9217,14 +9418,14 @@
     "Results": []
   },
   {
-    "Input": "¿Nos vamos a las cuarto menos siete?",
+    "Input": "¿Nos vamos a las siete menos cuarto?",
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "a las cuarto menos siete",
+        "Text": "a las siete menos cuarto",
         "Start": 11,
         "End": 34,
         "TypeName": "datetimeV2.time",
@@ -9289,7 +9490,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-17T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en dos días",
@@ -9392,7 +9594,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled. Works with spaces around middle -",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de 1-10-2018-7-10-2018",
@@ -9492,7 +9695,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "enero-febrero de 2017",
@@ -9517,7 +9721,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de noviembre a febrero de 2017",
@@ -9542,7 +9747,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de noviembre a 5 de febrero de 2017",
@@ -9648,7 +9854,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de este mayo a octubre de 2020",
@@ -9673,7 +9880,8 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RANGECRIT. Null resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de mayo a octubre, 2020",
@@ -9797,7 +10005,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions. Wrongly affecting resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "lunes por la mañana de 10 a.m. a 12 p.m.",
@@ -9859,7 +10068,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions. Wrongly affecting resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "ayer por la tarde de 3 a 8 de la tarde",
@@ -9884,7 +10094,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions. Wrongly affecting resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "de 3 a 8 p.m. ayer por la tarde",
@@ -9905,16 +10116,17 @@
     ]
   },
   {
-    "Input": "¿Dónde estabas de 8 a.m.-3 ayer por la tarde",
+    "Input": "¿Dónde estabas de 8 a.m. - 3 ayer por la tarde",
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "POD. Refine support for part-of-day mentions. Wrongly affecting resolution.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "de 8 a.m.-3 ayer por la tarde",
+        "Text": "de 8 a.m. - 3 ayer por la tarde",
         "Start": 15,
-        "End": 43,
+        "End": 45,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -10166,16 +10378,16 @@
     ]
   },
   {
-    "Input": "¿Cuál es tu plan para Dic 08?",
+    "Input": "¿Cuál es tu plan para Dic 2008?",
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "dic 08",
+        "Text": "dic 2008",
         "Start": 22,
-        "End": 27,
+        "End": 29,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -10245,7 +10457,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-08T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "el dia anterior",
@@ -10340,7 +10553,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-15T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "lunes que viene",
@@ -10379,7 +10593,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-15T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "lunes siguiente",
@@ -11250,7 +11465,8 @@
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "una hora y media",
@@ -11270,35 +11486,12 @@
     ]
   },
   {
-    "Input": "Supongo que una hora y una media es suficiente para terminar la tarea.",
-    "Context": {
-      "ReferenceDateTime": "2018-12-05T12:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "una hora y una media",
-        "Start": 12,
-        "End": 31,
-        "TypeName": "datetimeV2.duration",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "PT1.5H",
-              "type": "duration",
-              "value": "5400"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "Supongo que una y media hora es suficiente para terminar la tarea.",
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "una y media hora",
@@ -11322,7 +11515,8 @@
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "una hora y 30 minutos",
@@ -11346,7 +11540,8 @@
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "uno y cuarto año",
@@ -11370,7 +11565,8 @@
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FRACDUR. Refine support for fractional durations/intervals.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "un año y tres meses",
@@ -11456,7 +11652,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "lunes 21",
@@ -11485,7 +11682,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-21T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "lunes 21",
@@ -11509,7 +11707,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "domingo 31",
@@ -11538,7 +11737,8 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "FORMAT not properly handled.",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "viernes 31",
@@ -11601,7 +11801,8 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RES_MOD incorrectly, not as range",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "antes de primeros de septiembre",
@@ -11634,7 +11835,8 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RES_MOD incorrectly, not as range",	
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "desde últimos de julio",
@@ -11675,7 +11877,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "este próximo viernes",
@@ -11723,7 +11926,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "viernes siguiente",
@@ -11771,7 +11975,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "este miércoles pasado",
@@ -11795,7 +12000,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "miércoles pasado",
@@ -11819,7 +12025,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "miércoles anterior",
@@ -11843,7 +12050,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "RELPERIOD. Refine support for relative periods.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "miércoles pasado",
@@ -12253,7 +12461,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en dos años desde 2011",
@@ -12277,7 +12486,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "en dos semanas desde el año 2011",
@@ -15256,7 +15466,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "MERGE Merge sub-entities for consistency with English.",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "noche de 4 Mar",
@@ -18122,7 +18333,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "WORKDAYS",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "todos los días laborables",

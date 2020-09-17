@@ -1110,63 +1110,13 @@
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de 2016",
+    "Input": "Estare afuera el tercer trimestre de 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de 2016",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-07-01,2016-10-01,P3M)",
-          "FutureResolution": {
-            "startDate": "2016-07-01",
-            "endDate": "2016-10-01"
-          },
-          "PastResolution": {
-            "startDate": "2016-07-01",
-            "endDate": "2016-10-01"
-          }
-        },
-        "Start": 14,
-        "Length": 30
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera el tercer cuatrimestre de este año",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "el tercer cuatrimestre de este año",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-07-01,2016-10-01,P3M)",
-          "FutureResolution": {
-            "startDate": "2016-07-01",
-            "endDate": "2016-10-01"
-          },
-          "PastResolution": {
-            "startDate": "2016-07-01",
-            "endDate": "2016-10-01"
-          }
-        },
-        "Start": 14,
-        "Length": 34
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera 2016 el tercer cuatrimestre",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "2016 el tercer cuatrimestre",
+        "Text": "el tercer trimestre de 2016",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1181,6 +1131,56 @@
         },
         "Start": 14,
         "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera el tercer trimestre de este año",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "el tercer trimestre de este año",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 14,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera 2016 el tercer trimestre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 el tercer trimestre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 14,
+        "Length": 24
       }
     ]
   },

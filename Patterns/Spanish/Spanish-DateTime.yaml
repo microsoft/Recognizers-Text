@@ -98,7 +98,7 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterTermRegex: !simpleRegex
-  def: \b((?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|([1234](\.)?º))\s+(trimestre|cuarto)|t(?<number>[1-4]))\b
+  def: \b((?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|([1234](\.)?º))\s+(trimestre|cuarto)|[tq](?<number>[1-4]))\b
 QuarterRegex: !nestedRegex
   def: (el\s+)?{QuarterTermRegex}((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o|a[ñn]o(\s+{AfterNextSuffixRegex})))?
   references: [ YearRegex, QuarterTermRegex, RelativeRegex, AfterNextSuffixRegex]
@@ -376,7 +376,7 @@ UnspecificEndOfRangeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 UnitRegex: !simpleRegex
-  def: (?<unit>años?|(bi|tri|quadri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?)\b
+  def: (?<unit>años?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?)\b
 ConnectorRegex: !simpleRegex
   def: ^(,|t|para las?|(cerca|alrededor) de las?)$
 # SpanishTimePeriodExtractorConfiguration
@@ -457,9 +457,9 @@ HolidayRegex3: !nestedRegex
   references: [ YearRegex ]
 # SpanishMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
-  def: (ante(s|rior)(\s+del?(\s+las?)?)?)
+  def: (\b(ante(s|rior)(\s+del?(\s+las?)?)?)|(?<!\w|>)((?<include><\s*=)|<))
 AfterRegex: !simpleRegex
-  def: ((despu[eé]s|posterior)(\s*del?(\s+las?)?)?)
+  def: ((\b(despu[eé]s|posterior)(\s*del?(\s+las?)?)?)|(?<!\w|<)((?<include>>\s*=)|>))
 SinceRegex: !simpleRegex
   def: ((cualquier\s+tiempo\s+)?(desde|a partir de)(\s+(las?|el))?)
 SinceRegex1: !simpleRegex
@@ -555,8 +555,8 @@ UnitMap: !dictionary
     mes: MON
     trimestre: 3MON
     trimestres: 3MON
-    quadrimestre: 4MON
-    quadrimestres: 4MON
+    cuatrimestre: 4MON
+    cuatrimestres: 4MON
     semestre: 6MON
     semestres: 6MON
     bimestre: 2MON
@@ -669,6 +669,25 @@ DayOfWeek: !dictionary
     sabado: 6
     sábado: 6
     domingo: 0
+    dom: 0
+    lun: 1
+    mar: 2
+    mie: 3
+    mié: 3
+    jue: 4
+    vie: 5
+    sab: 6
+    sáb: 6
+    dom.: 0
+    lun.: 1
+    mar.: 2
+    mie.: 3
+    mié.: 3
+    jue.: 4
+    vie.: 5
+    sab.: 6
+    sáb.: 6
+    do: 0
     lu: 1
     ma: 2
     mi: 3
@@ -869,8 +888,7 @@ SingleAmbiguousMonthRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: ^(the\s+)?(may|march)$
 UnspecificDatePeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: ^(semana|mes|a[nñ]o)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(en|el|la|cerca|desde|durante|hasta|hacia)$
 RestOfDateTimeRegex: !simpleRegex
