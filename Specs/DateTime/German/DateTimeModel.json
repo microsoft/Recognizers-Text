@@ -1467,10 +1467,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
-        "Text": "der woche",
-        "Start": 6,
+        "Text": "unter der woche",
+        "Start": 0,
         "End": 14,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -1479,7 +1480,7 @@
               "timex": "2019-W32",
               "type": "daterange",
               "start": "2019-08-05",
-              "end": "2019-08-12"
+              "end": "2019-08-10"
             }
           ]
         }
@@ -2339,6 +2340,81 @@
               "timex": "PT5.5H",
               "type": "duration",
               "value": "19800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es wird unter der woche passieren",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "unter der woche",
+        "Start": 8,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es wird nächste arbeitswoche passieren",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "nächste arbeitswoche",
+        "Start": 8,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W33",
+              "type": "daterange",
+              "start": "2019-08-12",
+              "end": "2019-08-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es ist letzte werktags passiert",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "letzte werktags",
+        "Start": 7,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W31",
+              "type": "daterange",
+              "start": "2019-07-29",
+              "end": "2019-08-03"
             }
           ]
         }
