@@ -530,6 +530,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Swedish.TemperatureParserConfiguration())
                     },
                 }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Swedish,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.DimensionParserConfiguration())
+                    },
+                }));
+
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
