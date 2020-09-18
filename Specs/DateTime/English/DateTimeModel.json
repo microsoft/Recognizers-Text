@@ -18108,7 +18108,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "around 1pm",
@@ -18133,7 +18133,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "before around 2pm today",
@@ -18159,7 +18159,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "after around 3:30pm",
