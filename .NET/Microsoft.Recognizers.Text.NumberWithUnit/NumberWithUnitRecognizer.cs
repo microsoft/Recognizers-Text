@@ -541,6 +541,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
+            RegisterModel<CurrencyModel>(
+                Culture.Swedish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Swedish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Swedish.CurrencyParserConfiguration())
+                    },
+                }));
+
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

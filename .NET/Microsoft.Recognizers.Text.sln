@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -482,6 +482,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{ACCA0A3A-3935-4E4E-BDBA-0BEDDDF8D428}"
 	ProjectSection(SolutionItems) = preProject
 		..\Specs\NumberWithUnit\Swedish\AgeModel.json = ..\Specs\NumberWithUnit\Swedish\AgeModel.json
+		..\Specs\NumberWithUnit\Swedish\CurrencyModel.json = ..\Specs\NumberWithUnit\Swedish\CurrencyModel.json
 		..\Specs\NumberWithUnit\Swedish\DimensionModel.json = ..\Specs\NumberWithUnit\Swedish\DimensionModel.json
 		..\Specs\NumberWithUnit\Swedish\TemperatureModel.json = ..\Specs\NumberWithUnit\Swedish\TemperatureModel.json
 	EndProjectSection

@@ -158,55 +158,56 @@ CurrencySuffixList: !dictionary
   types: [ string, string ]
   entries:
 #Abkhazian apsar
-    Abkhazian apsar: abkhazian apsar|apsars
+    Abkhazian apsar: abchazisk apsar|apsar|аԥсар|āpsār
 #Afghan afghani
-    Afghan afghani: afghan afghani|؋|afn|afghanis|afghani
-    Pul: pul
+    Afghan afghani: afghani|؋|afn|afghanis|afghani|افغانۍ|افغانی
+#Not in cirkulation Pul: pula
 #Euro
     Euro: euros|euro|€|eur
     Cent: cents|cent|-cents|-cent
 #Albanian lek
 #No use of "ALL" "L"
-    Albanian lek: albanian lek|leks|lek
+    Albanian lek: albansk lek|lekë|lek
     Qindarkë: qindarkë|qindarkës|qindarke|qindarkes
 #Angolan kwanza
-    Angolan kwanza: angolan kwanza|kz|aoa|kwanza|kwanzas|angolan kwanzas
+    Angolan kwanza: angolansk kwanza|kz|aoa|kwanza|kwanzas|angolanska kwanzas
 #Armenian
 #No use of "AMD"
-    Armenian dram: armenian drams|armenian dram
+    Armenian dram: dram
 #Aruban florin
-    Aruban florin: aruban florin|ƒ|awg|aruban florins
+    Aruban florin: arubansk florin|ƒ|awg|arubanska floriner|florin|floriner|arubaanse florin
 #Bangladeshi taka
-    Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas
-    Paisa: poisha|paisa
+    Bangladeshi taka: taka|৳|bdt|takas|tākā|tk
+    Paisa: paisa
 #Bhutanese ngultrum
-    Bhutanese ngultrum: bhutanese ngultrum|nu.|btn
-    Chetrum: chetrums|chetrum
+    Bhutanese ngultrum: ngultrum|nu.|btn|ngultrums|dNgul Tam
+    Chetrum: chhertum|chhertums
 #Bolivian boliviano
-    Bolivian boliviano: bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos
+    Bolivian boliviano: boliviano|bob|bs.|bolivianos
 #Bosnia and Herzegovina convertible mark
-    Bosnia and Herzegovina convertible mark: bosnia and herzegovina convertible mark|bam
-    Fening: fenings|fenings
+    Bosnia and Herzegovina convertible mark: konvertibilna marka|bam|конвертибилна марка|konvertibilnih maraka
+    Fening: feninga
 #Botswana pula
-    Botswana pula: botswana pula|bwp|pula|pulas|botswana pulas
-    Thebe: thebe
+    Botswana pula: pula|pulas
+    Thebe: thebe|thebes
 #Brazilian real
-    Brazilian real: brazilian real|r$|brl|brazil real|brazil reals|brazilian reals
+    Brazilian real: real|r$|brl
+#Missing: Centavos: centavos
 #Bulgarian lev
-    Bulgarian lev: bulgarian lev|bgn|лв|bulgaria lev|bulgaria levs|bulgarian levs
-    Stotinka: stotinki|stotinka
+    Bulgarian lev: lev|bgn|лв|bălgarska lev|leva
+    Stotinka: stotinki
 #Cambodian riel
-    Cambodian riel: cambodian riel|khr|៛|cambodia riel|cambodia riels|cambodian riels
+    Cambodian riel: riel|khr|៛|រៀល
 #Cape Verdean escudo
 #No use of "esc" and "$"
-    Cape Verdean escudo: cape verdean escudo|cve
+    Cape Verdean escudo: kapverdisk escudo|kapverdiska escudos|cve
 #Costa Rican colón
-    Costa Rican colón: costa rican colón|costa rican colóns|crc|₡|costa rica colón|costa rica colóns|costa rican colon|costa rican colons|costa rica colon|costa rica colons
+    Costa Rican colón: costaricansk colón|crc|costaricansk colon
 #Salvadoran colón
-    Salvadoran colón: svc|salvadoran colón|salvadoran colóns|salvador colón|salvador colóns|salvadoran colon|salvadoran colons|salvador colon|salvador colons
-    Céntimo: céntimo
+    Salvadoran colón: salvadoransk colón|salvadoransk colon|svc
+    Céntimo: céntimo|centimo
 #Croatian kuna
-    Croatian kuna: croatian kuna|kn|hrk|croatia kuna|croatian kunas|croatian kuna kunas
+    Croatian kuna: Kroatisk kuna|hrvatska kuna|hrk|kn
     Lipa: lipa
 #Czech koruna
     Czech koruna: czech koruna|czk|kč|czech korunas
@@ -326,7 +327,7 @@ CurrencySuffixList: !dictionary
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
-    Netherlands guilder: florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
+    Netherlands guilder: netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
 #Swazi lilangeni
     Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni
 #Tajikistani somoni
@@ -381,7 +382,7 @@ CurrencySuffixList: !dictionary
     Norwegian krone: norwegian krone|nok|norway krone|norway krones|norwegian krones
     Faroese króna: faroese króna|faroese krona
     Icelandic króna: icelandic króna|isk|icelandic krona|iceland króna|iceland krona
-    Swedish krona: swedish krona|sek|swedan krona
+    Swedish krona: swedish krona|sek|swedan krona|spänn
     Krone: kronor|krona|króna|krone|krones|kr|-kr
     Øre: Øre|oyra|eyrir
 #Franc
