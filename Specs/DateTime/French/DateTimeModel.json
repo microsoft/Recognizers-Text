@@ -2819,7 +2819,7 @@
     ]
   },
   {
-    "Input": "Je retournerai 02 04 2009.",
+    "Input": "Je retournerai 02 04 2009 à la maison.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2846,6 +2846,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 4 2009",
@@ -2865,7 +2867,7 @@
     ]
   },
   {
-    "Input": "Je retournerai 18 08 1978.",
+    "Input": "Je retournerai 18 08 1978 à la maison.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2892,6 +2894,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "18 8 1978",
@@ -2911,7 +2915,7 @@
     ]
   },
   {
-    "Input": "Je retournerai 18 08 78.",
+    "Input": "Je retournerai 18 08 78 à la maison.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2938,6 +2942,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "18 8 78",
