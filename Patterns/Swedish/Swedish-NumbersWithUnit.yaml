@@ -210,38 +210,39 @@ CurrencySuffixList: !dictionary
     Croatian kuna: Kroatisk kuna|hrvatska kuna|hrk|kn
     Lipa: lipa
 #Czech koruna
-    Czech koruna: czech koruna|czk|kč|czech korunas
+    Czech koruna: tjeckisk krona|tjeckiska kronor|czk|kč|tjeckisk koruna|tjeckiska koruna|tjeckiska korunas|koruna česká
     Haléř: haléř
 #Eritrean nakfa
-    Eritrean nakfa: eritrean nakfa|nfk|ern|eritrean nakfas
+    Eritrean nakfa: eritrean nakfa|nfk|ern|eritrean nakfas|nakfas|nakfa
 #Ethiopian birr
     Ethiopian birr: ethiopian birr|etb
 #Gambian dalasi
-    Gambian dalasi: gmd
+    Gambian dalasi: gmd|dalasi
     Butut: bututs|butut
 #Georgian lari
-    Georgian lari: georgian lari|lari|gel|₾
+    Georgian lari: georgisk lari|lari|gel|₾|ქართული ლარი|kartuli lari
     Tetri: tetri
 #Ghanaian cedi
-    Ghanaian cedi: ghanaian cedi|ghs|₵|gh₵
+    Ghanaian cedi: ghana cedi|ghs|₵|gh₵
     Pesewa: pesewas|pesewa
 #Guatemalan quetzal
-    Guatemalan quetzal: guatemalan quetzal|gtq|guatemala quetzal
+    Guatemalan quetzal: quetzal|quetzales|gtq|quetzal guatemalteco
+ #   Centavos: centavo|centavos
 #Haitian gourde
 #No use of G
-    Haitian gourde: haitian gourde|htg
+    Haitian gourde: gourde|haitisk gourde|htg
 #Honduran lempira
 #No use of L
-    Honduran lempira: honduran lempira|hnl
+    Honduran lempira: lempira|hnl|lempira hondureño
 #Hungarian forint
-    Hungarian forint: hungarian forint|huf|ft|hungary forint|hungary forints|hungarian forints
+    Hungarian forint: ungersk forint|huf|ft|forint|magyar forint
     Fillér: fillér
 #Iranian rial
-    Iranian rial: iranian rial|irr|iran rial|iran rials|iranian rials
-    Yemeni rial: yemeni rial|yer|yemeni rials
-    Israeli new shekel: ₪|ils|agora
+    Iranian rial: iransk rial|iransk riyal|irr|iranska rial|iranska riyal|irani rial
+    Yemeni rial: jemenitisk rial|jemenitisk riyal|yer|yemeni rials|yemeni rial|ر.ي
+    Israeli new shekel: ₪|ils|agora|שקל חדש|sheqel khadash|nis
 #Lithuanian litas
-    Lithuanian litas: ltl|lithuanian litas|lithuan litas|lithuanian lit|lithuan lit
+    Lithuanian litas: ltl|litas
 #Japanese yen
     Japanese yen: japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens
 #Kazakhstani tenge
