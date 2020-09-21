@@ -978,6 +978,8 @@
   },
   {
     "Input": "The measures are 3' and 6' more or less",
+    "Comment": "In python, _filter_ambiguity works differently from the .NET FilterAmbiguity and AmbiguityFiltersDict is matched (..6[' m]ore...)",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "3'",
