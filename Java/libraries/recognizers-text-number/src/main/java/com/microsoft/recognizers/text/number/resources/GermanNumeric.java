@@ -112,15 +112,23 @@ public class GermanNumeric {
 
     public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
+    public static final String FractionUnitsRegex = "((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))";
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\\b)"
+    public static final String FractionHalfRegex = "(einhalb)$";
+
+    public static final List<String> OneHalfTokens = Arrays.asList("ein", "halb");
+
+    public static final String FractionNounRegex = "(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)|{FractionUnitsRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
+            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
+            .replace("{FractionUnitsRegex}", FractionUnitsRegex);
+
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(er|e|es)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
+            .replace("{FractionUnitsRegex}", FractionUnitsRegex);
 
     public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)

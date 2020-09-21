@@ -1467,10 +1467,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
-        "Text": "der woche",
-        "Start": 6,
+        "Text": "unter der woche",
+        "Start": 0,
         "End": 14,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -1479,7 +1480,7 @@
               "timex": "2019-W32",
               "type": "daterange",
               "start": "2019-08-05",
-              "end": "2019-08-12"
+              "end": "2019-08-10"
             }
           ]
         }
@@ -2242,6 +2243,178 @@
               "timex": "T19:15",
               "type": "time",
               "value": "19:15:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Spule anderthalb Stunden vor",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "anderthalb stunden vor",
+        "Start": 6,
+        "End": 27,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-06T22:30:00,2016-11-07T00:00:00,PT1.5H)",
+              "type": "datetimerange",
+              "start": "2016-11-06 22:30:00",
+              "end": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Spring zweieinhalb Stunden nach vorne",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "zweieinhalb stunden",
+        "Start": 7,
+        "End": 25,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2.5H",
+              "type": "duration",
+              "value": "9000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wir haben anderthalb Stunden gewartet.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "anderthalb stunden",
+        "Start": 10,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1.5H",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wir haben fünfeinhalb Stunden gewartet.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "fünfeinhalb stunden",
+        "Start": 10,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT5.5H",
+              "type": "duration",
+              "value": "19800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es wird unter der woche passieren",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "unter der woche",
+        "Start": 8,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W32",
+              "type": "daterange",
+              "start": "2019-08-05",
+              "end": "2019-08-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es wird nächste arbeitswoche passieren",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "nächste arbeitswoche",
+        "Start": 8,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W33",
+              "type": "daterange",
+              "start": "2019-08-12",
+              "end": "2019-08-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es ist letzte werktags passiert",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "letzte werktags",
+        "Start": 7,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W31",
+              "type": "daterange",
+              "start": "2019-07-29",
+              "end": "2019-08-03"
             }
           ]
         }

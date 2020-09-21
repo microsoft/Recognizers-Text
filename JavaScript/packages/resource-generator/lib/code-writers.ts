@@ -1,5 +1,4 @@
 import { DataTypes } from "./data-types";
-import { values } from "lodash";
 
 export abstract class CodeWriter {
     readonly name: string;
@@ -95,6 +94,7 @@ class DictionaryWriter extends CodeWriter {
     constructor(name: string, keyType: string, valueType: string, entries: Record<string, any>) {
         super(name);
         this.entries = [];
+
         this.keyType = toJsType(keyType);
         this.valueType = toJsType(valueType);
 
@@ -153,6 +153,9 @@ function toJsType(type: string): string {
         case 'long':
         case 'double':
         case 'int': return 'number';
+        case 'long[]':
+        case 'int[]':
+        case 'double[]': return 'number[]';
         default: return type;
     }
 }

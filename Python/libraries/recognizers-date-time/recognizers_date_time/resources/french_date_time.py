@@ -663,6 +663,7 @@ class FrenchDateTime:
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
                                  ("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")])
+    AmbiguityTimeFiltersDict = dict([("heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b")])
     MorningTermList = [r'matinee', r'matin', r'matinée']
     AfternoonTermList = [r'apres-midi', r'apres midi', r'après midi', r'après-midi']
     EveningTermList = [r'soir', r'soiree', r'soirée']

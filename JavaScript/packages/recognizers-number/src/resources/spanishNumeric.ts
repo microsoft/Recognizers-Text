@@ -81,9 +81,11 @@ export namespace SpanishNumeric {
     export const LessRegexNoNumberSucceed = `((meno(s|r(es)?)|inferior(es)?)((?!\\s+(que|del?|a))|\\s+((que|del?)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))`;
     export const EqualRegexNoNumberSucceed = `((igual(es)?|equivalentes?|equivalen?)((?!\\s+(al?|que|del?))|(\\s+(al?|que|del?)(?!(\\s*\\d+)))))`;
     export const OneNumberRangeMoreRegex1 = `(${MoreOrEqual}|${MoreRegex})\\s*((el|las?|los)\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeMoreRegex1LB = `(?<!no\\s+)${OneNumberRangeMoreRegex1}`;
     export const OneNumberRangeMoreRegex2 = `(?<number1>(${NumberSplitMark}.)+)\\s*${MoreOrEqualSuffix}`;
     export const OneNumberRangeMoreSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${MoreRegexNoNumberSucceed})|(${MoreRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${EqualRegexNoNumberSucceed})`;
     export const OneNumberRangeLessRegex1 = `(${LessOrEqual}|${LessRegex})\\s*((el|las?|los)\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeLessRegex1LB = `(?<!no\\s+)${OneNumberRangeLessRegex1}`;
     export const OneNumberRangeLessRegex2 = `(?<number2>(${NumberSplitMark}.)+)\\s*${LessOrEqualSuffix}`;
     export const OneNumberRangeLessSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${LessRegexNoNumberSucceed})|(${LessRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+o\\s+)${EqualRegexNoNumberSucceed})`;
     export const OneNumberRangeEqualRegex = `${EqualRegex}\\s*((el|las?|los)\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
