@@ -88,7 +88,7 @@ public class DictionaryWriter implements ICodeWriter {
             case "string[]":
                 return  "String[]";
             case "double[]":
-                return  "Double[]";
+                return  "String[]";
             default:
                 throw new IllegalArgumentException("Type '" + type + "' is not supported.");
         }
