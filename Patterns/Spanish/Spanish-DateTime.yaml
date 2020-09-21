@@ -462,7 +462,7 @@ AfterRegex: !simpleRegex
   def: ((\b(despu[eé]s|posterior)(\s*del?(\s+las?)?)?)|(?<!\w|<)((?<include>>\s*=)|>))
 SinceRegex: !simpleRegex
   def: ((cualquier\s+tiempo\s+)?(desde|a partir de)(\s+(las?|el))?)
-SinceRegex1: !simpleRegex
+SinceRegexExp: !simpleRegex
   def: ((cualquier\s+tiempo\s+)?desde(\s+(las?|el))?|de)
 AroundRegex: !simpleRegex
   def: (?:\b(?:cerca|alrededor|aproximadamente)(\s+de\s+(las?|el))?\s*\b)

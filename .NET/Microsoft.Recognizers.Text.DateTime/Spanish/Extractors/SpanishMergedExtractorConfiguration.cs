@@ -17,8 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
         // used in Experimental mode
-        public static readonly Regex SinceRegex1 =
-            new Regex(DateTimeDefinitions.SinceRegex1, RegexFlags);
+        public static readonly Regex SinceRegexExp =
+            new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
             {
-                SinceRegex = SinceRegex1;
+                SinceRegex = SinceRegexExp;
             }
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
