@@ -16,7 +16,7 @@ from .base_date_time import BaseDateTime
 class SpanishDateTime:
     LangMarker = 'Spa'
     CheckBothBeforeAfter = False
-    TillRegex = f'(?<till>hasta|al?|--|-|—|——)(\\s+(el|la(s)?))?'
+    TillRegex = f'(?<till>hasta|hacia|al?|~|--|-|—|——)(\\s+(el|la(s)?))?'
     RangeConnectorRegex = f'(?<and>y\\s*(el|(la(s)?)?)|{BaseDateTime.RangeConnectorSymbolRegex})'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)'
     MonthNumRegex = f'(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b'
@@ -24,45 +24,45 @@ class SpanishDateTime:
     PmDescRegex = f'({BaseDateTime.BasePmDescRegex})'
     AmPmDescRegex = f'({BaseDateTime.BaseAmPmDescRegex})'
     DescRegex = f'(?<desc>({AmDescRegex}|{PmDescRegex}))'
-    OfPrepositionRegex = f'(\\bd(o|a|el?)\\b)'
+    OfPrepositionRegex = f'(\\bd(o|al?|el?)\\b)'
     AfterNextSuffixRegex = f'\\b(que\\s+viene|pasad[oa])\\b'
-    RangePrefixRegex = f'((de(sde)?|entre)\\s+(la(s)?\\s+)?)'
+    RangePrefixRegex = f'((de(l|sde)?|entre)\\s+(la(s)?\\s+)?)'
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
-    RelativeRegex = f'(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b'
-    StrictRelativeRegex = f'(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b'
+    RelativeRegex = f'(?<rela>est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))\\b'
+    StrictRelativeRegex = f'(?<rela>est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))\\b'
     WrittenOneToNineRegex = f'(un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)'
     WrittenOneHundredToNineHundredRegex = f'(doscient[oa]s|trescient[oa]s|cuatrocient[ao]s|quinient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|cien(to)?)'
     WrittenOneToNinetyNineRegex = f'(((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\\s+y\\s+{WrittenOneToNineRegex})?)|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)'
     FullTextYearRegex = f'\\b(?<fullyear>((dos\\s+)?mil)(\\s+{WrittenOneHundredToNineHundredRegex})?(\\s+{WrittenOneToNinetyNineRegex})?)'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
     RelativeMonthRegex = f'(?<relmonth>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+mes)|(mes\\s+((que\\s+viene)|pasado)))\\b'
-    MonthRegex = f'\\b(?<month>abr(il)?|ago(sto)?|dic(iembre)?|feb(rero)?|ene(ro)?|ju[ln](io)?|mar(zo)?|mayo?|nov(iembre)?|oct(ubre)?|sep?t(iembre)?|sep)\\b'
+    MonthRegex = f'\\b(?<month>abr(\\.|il)?|ago(\\.|sto)?|dic(\\.|iembre)?|feb(\\.|rero)?|ene(\\.|ro)?|ju[ln](\\.|io)?|mar(\\.|zo)?|may(\\.|o)?|nov(\\.|iembre)?|oct(\\.|ubre)?|sep?t(\\.|iembre)?|sep(\\.|)?)\\b'
     MonthSuffixRegex = f'(?<msuf>((del?|la|el)\\s+)?({RelativeMonthRegex}|{MonthRegex}))'
-    DateUnitRegex = f'(?<unit>años?|mes(es)?|semanas?|d[ií]as?)\\b'
+    DateUnitRegex = f'(?<unit>años?|mes(es)?|semanas?|d[ií]as?(?<business>\\s+(h[aá]biles|laborales))?)\\b'
     PastRegex = f'(?<past>\\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\\b)'
     FutureRegex = f'(?<past>\\b(siguiente(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|en)\\b)'
-    SimpleCasesRegex = f'\\b((desde\\s+el|desde|del?)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
-    MonthFrontSimpleCasesRegex = f'\\b{MonthSuffixRegex}\\s+((desde\\s+el|desde|del)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
+    SimpleCasesRegex = f'\\b((desde(\\s+el)?|entre|del?)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
+    MonthFrontSimpleCasesRegex = f'\\b{MonthSuffixRegex}\\s+((desde(\\s+el)?|entre|del)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+((entre|entre\\s+el)\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
-    DayBetweenRegex = f'\\b((entre|entre\\s+el)\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
+    DayBetweenRegex = f'\\b((entre(\\s+el)?)\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)(en\\s+|del\\s+|de\\s+)?{YearRegex})?\\b'
     SpecialYearPrefixes = f'((del\\s+)?calend[aá]rio|(?<special>fiscal|escolar))'
-    OneWordPeriodRegex = f'\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})'
-    MonthWithYearRegex = f'\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?({MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b'
+    OneWordPeriodRegex = f'\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+)({DateUnitRegex}|(fin\\s+de\\s+)?semana)(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex}|(año|mes|((el\\s+)?fin\\s+de\\s+)?semana))\\b'
+    MonthWithYearRegex = f'\\b(((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\\s+)?({MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b'
     MonthNumWithYearRegex = f'\\b(({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex}))\\b'
-    WeekOfMonthRegex = f'(?<wom>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima)\\s+semana\\s+{MonthSuffixRegex})'
+    WeekOfMonthRegex = f'(?<wom>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|([12345](\\.)?ª)|[uú]ltima)\\s+semana\\s+{MonthSuffixRegex})'
     WeekOfYearRegex = f'(?<woy>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?|([12345]ª))\\s+semana(\\s+del?)?\\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))'
     FollowedDateUnit = f'^\\s*{DateUnitRegex}'
     NumberCombinedWithDateUnit = f'\\b(?<num>\\d+(\\.\\d*)?){DateUnitRegex}'
-    QuarterTermRegex = f'(?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\\s+(cuatrimestre|cuarto)'
+    QuarterTermRegex = f'\\b((?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|([1234](\\.)?º))\\s+(trimestre|cuarto)|[tq](?<number>[1-4]))\\b'
     QuarterRegex = f'(el\\s+)?{QuarterTermRegex}((\\s+del?|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o|a[ñn]o(\\s+{AfterNextSuffixRegex})))?'
     QuarterRegexYearFront = f'({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o)\\s+(el\\s+)?{QuarterTermRegex}'
-    AllHalfYearRegex = f'^[.]'
-    EarlyPrefixRegex = f'\\b(?<EarlyPrefix>((comienzos?|inicios?)\\s+({OfPrepositionRegex})))\\b'
+    AllHalfYearRegex = f'(?<cardinal>primer|1er|segundo|2do|[12](\\.)?º)\\s+semestre'
+    EarlyPrefixRegex = f'\\b(?<EarlyPrefix>((comienzos?|inicios?|principios?|temprano)\\s+({OfPrepositionRegex}(\\sd[ií]a)?))|(?<RelEarly>m[aá]s\\stemprano(\\sde)?))\\b'
     MidPrefixRegex = f'\\b(?<MidPrefix>(mediados\\s+({OfPrepositionRegex})))\\b'
-    LaterPrefixRegex = f'\\b(?<LatePrefix>((fines|finales)\\s+({OfPrepositionRegex})))\\b'
+    LaterPrefixRegex = f'\\b(?<LatePrefix>(fin((al)?es)?\\s+({OfPrepositionRegex}))|(?<RelLate>m[aá]s\\starde(\\sde)?))\\b'
     PrefixPeriodRegex = f'({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})'
     PrefixDayRegex = f'^[.]'
-    CenturySuffixRegex = f'^[.]'
+    CenturySuffixRegex = f'(^siglo)\\b'
     SeasonRegex = f'\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente)|{PrefixPeriodRegex})\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b'
     WhichWeekRegex = f'\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
     WeekOfRegex = f'((del?|el|la)\\s+)?(semana)(\\s*)({OfPrepositionRegex})'
@@ -71,7 +71,7 @@ class SpanishDateTime:
     InConnectorRegex = f'\\b(in)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'\\b(dentro\\s+de)\\b'
-    TodayNowRegex = f'\\b(hoy|ahora)\\b'
+    TodayNowRegex = f'\\b(hoy|ahora|este entonces)\\b'
     FromRegex = f'((de(sde)?)(\\s*la(s)?)?)$'
     BetweenRegex = f'(entre\\s*(la(s)?)?)'
     WeekDayRegex = f'\\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\\b'
@@ -85,7 +85,7 @@ class SpanishDateTime:
     ForTheRegex = f'^[.]'
     WeekDayAndDayOfMonthRegex = f'^[.]'
     WeekDayAndDayRegex = f'^[.]'
-    WeekDayOfMonthRegex = f'(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
+    WeekDayOfMonthRegex = f'(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|((1|2|3|4|5)(\\.)?[ºª])|[uú]ltim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
     AmbiguousRangeModifierPrefix = f'^[.]'
     NumberEndingPattern = f'^[.]'
@@ -119,7 +119,7 @@ class SpanishDateTime:
     TimePrefix = f'(?<prefix>{LessThanOneHour}(\\s+(pasad[ao]s)\\s+(de\\s+las|las)?|\\s+(para|antes\\s+de)?\\s+(las?))?)'
     TimeSuffix = f'(?<suffix>({LessThanOneHour}\\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))'
     BasicTime = f'(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})'
-    AtRegex = f'\\b(?<=\\b((a|de(sde)?)\\s+las?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?'
+    AtRegex = f'\\b(?<=\\b((a|de(sde)?)\\s+las?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?(DescRegex)?'
     ConnectNumRegex = f'({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*{DescRegex})'
     TimeRegex1 = f'(\\b{TimePrefix}\\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*({DescRegex}|\\s*\\bh\\b)'
     TimeRegex2 = f'(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)'
@@ -134,7 +134,7 @@ class SpanishDateTime:
     TimeRegex11 = f'\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b'
     TimeRegex12 = f'(\\b{TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
     PrepositionRegex = f'\\b(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b'
-    NowRegex = f'\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente)\\b'
+    NowRegex = f'\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente|este entonces)\\b'
     SuffixRegex = f'^\\s*(((y|a|en|por)\\s+la|al)\\s+)?(mañana|madrugada|medio\\s*d[ií]a|tarde|noche)\\b'
     TimeOfDayRegex = f'\\b(?<timeOfDay>mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|a?noche)\\b'
     SpecificTimeOfDayRegex = f'\\b(((((a\\s+)?la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\\s+)?{TimeOfDayRegex}))\\b'
@@ -145,7 +145,7 @@ class SpanishDateTime:
     SpecificEndOfRegex = f'((a|e)l\\s+)?fin(alizar|al)?(\\s+(el|de(l)?)(\\s+d[ií]a)?(\\s+de)?)?\\s*$'
     UnspecificEndOfRegex = f'^[.]'
     UnspecificEndOfRangeRegex = f'^[.]'
-    UnitRegex = f'(?<unit>años?|mes(es)?|semanas?|d[ií]as?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\\b'
+    UnitRegex = f'(?<unit>años?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?)\\b'
     ConnectorRegex = f'^(,|t|para las?|(cerca|alrededor) de las?)$'
     TimeHourNumRegex = f'(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)'
     PureNumFromTo = f'((desde|de)\\s+(la(s)?\\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{TillRegex}\\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?'
@@ -164,22 +164,22 @@ class SpanishDateTime:
     SuffixAndRegex = f'(?<suffix>\\s*(y)\\s+((un[ao]?)\\s+)?(?<suffix_num>media|cuarto))'
     FollowedUnit = f'^\\s*{UnitRegex}'
     DurationNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\,\\d*)?){UnitRegex}'
-    AnUnitRegex = f'\\b(una?)\\s+{UnitRegex}'
+    AnUnitRegex = f'\\b(una?|otr[ao])\\s+{UnitRegex}'
     DuringRegex = f'^[.]'
     AllRegex = f'\\b(?<all>tod[oa]?\\s+(el|la)\\s+(?<unit>año|mes|semana|d[ií]a))\\b'
     HalfRegex = f'\\b(?<half>medi[oa]\\s+(?<unit>ano|mes|semana|d[íi]a|hora))\\b'
     ConjunctionRegex = f'^[.]'
-    InexactNumberRegex = f'\\b(pocos?|algo|varios)\\b'
-    InexactNumberUnitRegex = f'\\b(pocos?|algo|varios)\\s+{UnitRegex}'
+    InexactNumberRegex = f'\\b(pocos?|algo|vari[ao]s|algun[ao]s)\\b'
+    InexactNumberUnitRegex = f'\\b(pocos?|algo|vari[ao]s|algun[ao]s)\\s+{UnitRegex}'
     HolidayRegex1 = f'\\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\\s+(del?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b'
     HolidayRegex2 = f'\\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\\s+(del?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b'
-    HolidayRegex3 = f'\\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\\s+(del?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b'
-    BeforeRegex = f'(antes(\\s+del?(\\s+las?)?)?)'
-    AfterRegex = f'(despu[eé]s(\\s*del?(\\s+las?)?)?)'
-    SinceRegex = f'(desde(\\s+(las?|el))?)'
-    SinceRegex1 = f'(desde(\\s+(las?|el))?|de)'
+    HolidayRegex3 = f'\\b(?<holiday>(d[ií]a( internacional)?( del?( l[ao]s?)?)? )(trabajador(es)?|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\\s+(del?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b'
+    BeforeRegex = f'(\\b(ante(s|rior)(\\s+del?(\\s+las?)?)?)|(?<!\\w|>)((?<include><\\s*=)|<))'
+    AfterRegex = f'((\\b(despu[eé]s|posterior)(\\s*del?(\\s+las?)?)?)|(?<!\\w|<)((?<include>>\\s*=)|>))'
+    SinceRegex = f'((cualquier\\s+tiempo\\s+)?(desde|a partir de)(\\s+(las?|el))?)'
+    SinceRegexExp = f'((cualquier\\s+tiempo\\s+)?desde(\\s+(las?|el))?|de)'
     AroundRegex = f'(?:\\b(?:cerca|alrededor|aproximadamente)(\\s+de\\s+(las?|el))?\\s*\\b)'
-    PeriodicRegex = f'\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b'
+    PeriodicRegex = f'\\b(?<periodic>a\\s*diario|diaria(s|mente)|(bi|tri)?(semanal|quincenal|mensual|semestral|anual)(es|mente)?)\\b'
     EachExpression = f'cada|tod[oa]s\\s*(l[oa]s)?'
     EachUnitRegex = f'(?<each>({EachExpression})\\s*{UnitRegex})'
     EachPrefixRegex = f'(?<each>({EachExpression})\\s*$)'
@@ -199,7 +199,7 @@ class SpanishDateTime:
     TimeBeforeAfterRegex = f'^[.]'
     DateNumberConnectorRegex = f'^[.]'
     CenturyRegex = f'^[.]'
-    DecadeRegex = f'(?<decade>diez|veinte|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)'
+    DecadeRegex = f'(?<decade>diez|veinte|treinta|cuarenta|cincuenta|se[st]enta|ochenta|noventa)'
     DecadeWithCenturyRegex = f'(los\\s+)?((((d[ée]cada(\\s+de)?)\\s+)(((?<century>\\d|1\\d|2\\d)?(?<decade>\\d0))))|a[ñn]os\\s+((((dos\\s+)?mil\\s+)?({WrittenOneHundredToNineHundredRegex}\\s+)?{DecadeRegex})|((dos\\s+)?mil\\s+)?({WrittenOneHundredToNineHundredRegex})(\\s+{DecadeRegex}?)|((dos\\s+)?mil)(\\s+{WrittenOneHundredToNineHundredRegex}\\s+)?{DecadeRegex}?))'
     RelativeDecadeRegex = f'\\b(((el|las?)\\s+)?{RelativeRegex}\\s+(((?<number>[\\d]+)|{WrittenOneToNineRegex})\\s+)?d[eé]cadas?)\\b'
     ComplexDatePeriodRegex = f'^[.]'
@@ -211,6 +211,14 @@ class SpanishDateTime:
                     ("año", "Y"),
                     ("meses", "MON"),
                     ("mes", "MON"),
+                    ("trimestre", "3MON"),
+                    ("trimestres", "3MON"),
+                    ("cuatrimestre", "4MON"),
+                    ("cuatrimestres", "4MON"),
+                    ("semestre", "6MON"),
+                    ("semestres", "6MON"),
+                    ("bimestre", "2MON"),
+                    ("bimestres", "2MON"),
                     ("semanas", "W"),
                     ("semana", "W"),
                     ("dias", "D"),
@@ -221,6 +229,8 @@ class SpanishDateTime:
                     ("horas", "H"),
                     ("hora", "H"),
                     ("hrs", "H"),
+                    ("hras", "H"),
+                    ("hra", "H"),
                     ("hr", "H"),
                     ("h", "H"),
                     ("minutos", "M"),
@@ -244,6 +254,8 @@ class SpanishDateTime:
                          ("horas", 3600),
                          ("hora", 3600),
                          ("hrs", 3600),
+                         ("hras", 3600),
+                         ("hra", 3600),
                          ("hr", 3600),
                          ("h", 3600),
                          ("minutos", 60),
@@ -297,13 +309,31 @@ class SpanishDateTime:
                       ("sabado", 6),
                       ("sábado", 6),
                       ("domingo", 0),
+                      ("dom", 0),
+                      ("lun", 1),
+                      ("mar", 2),
+                      ("mie", 3),
+                      ("mié", 3),
+                      ("jue", 4),
+                      ("vie", 5),
+                      ("sab", 6),
+                      ("sáb", 6),
+                      ("dom.", 0),
+                      ("lun.", 1),
+                      ("mar.", 2),
+                      ("mie.", 3),
+                      ("mié.", 3),
+                      ("jue.", 4),
+                      ("vie.", 5),
+                      ("sab.", 6),
+                      ("sáb.", 6),
+                      ("do", 0),
                       ("lu", 1),
                       ("ma", 2),
                       ("mi", 3),
                       ("ju", 4),
                       ("vi", 5),
-                      ("sa", 6),
-                      ("do", 0)])
+                      ("sa", 6)])
     MonthOfYear = dict([("enero", 1),
                         ("febrero", 2),
                         ("marzo", 3),
@@ -331,6 +361,20 @@ class SpanishDateTime:
                         ("oct", 10),
                         ("nov", 11),
                         ("dic", 12),
+                        ("ene.", 1),
+                        ("feb.", 2),
+                        ("mar.", 3),
+                        ("abr.", 4),
+                        ("may.", 5),
+                        ("jun.", 6),
+                        ("jul.", 7),
+                        ("ago.", 8),
+                        ("sept.", 9),
+                        ("sep.", 9),
+                        ("set.", 9),
+                        ("oct.", 10),
+                        ("nov.", 11),
+                        ("dic.", 12),
                         ("1", 1),
                         ("2", 2),
                         ("3", 3),
@@ -405,7 +449,7 @@ class SpanishDateTime:
     HolidayNames = dict([("padres", ["diadelpadre"]),
                          ("madres", ["diadelamadre"]),
                          ("acciondegracias", ["diadegracias", "diadeacciondegracias", "acciondegracias"]),
-                         ("trabajador", ["diadeltrabajador"]),
+                         ("trabajador", ["diadeltrabajador", "diainternacionaldelostrabajadores"]),
                          ("delaraza", ["diadelaraza", "diadeladiversidadcultural"]),
                          ("memoria", ["diadelamemoria"]),
                          ("pascuas", ["diadepascuas", "pascuas"]),
@@ -414,10 +458,12 @@ class SpanishDateTime:
                          ("añonuevo", ["a\u00f1onuevo", "diadea\u00f1onuevo"]),
                          ("nochevieja", ["nochevieja", "diadenochevieja"]),
                          ("yuandan", ["yuandan"]),
+                         ("earthday", ["diadelatierra"]),
                          ("maestro", ["diadelmaestro"]),
                          ("todoslossantos", ["todoslossantos"]),
                          ("niño", ["diadelni\u00f1o"]),
-                         ("mujer", ["diadelamujer"])])
+                         ("mujer", ["diadelamujer"]),
+                         ("independencia", ["diadelaindependencia", "diadeindependencia", "independencia"])])
     VariableHolidaysTimexDictionary = dict([("padres", "-06-WXX-7-3"),
                                             ("madres", "-05-WXX-7-2"),
                                             ("acciondegracias", "-11-WXX-4-4"),
@@ -434,17 +480,17 @@ class SpanishDateTime:
     PastPrefixRegex = f'.^'
     PreviousPrefixRegex = f'([uú]ltim[oa]|{PastPrefixRegex})\\b'
     PreviousSuffixRegex = f'\\b(pasad[ao])\\b'
-    ThisPrefixRegex = f'(est[ea])\\b'
+    ThisPrefixRegex = f'(est?[ea])\\b'
     RelativeDayRegex = f'(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+días)|(días\\s+((que\\s+viene)|pasado)))\\b'
-    RestOfDateRegex = f'\\bresto\\s+((del|de)\\s+)?((la|el|est[ae])\\s+)?(?<duration>semana|mes|año|decada)(\\s+actual)?\\b'
+    RestOfDateRegex = f'\\bresto\\s+((del|de)\\s+)?((la|el|est?[ae])\\s+)?(?<duration>semana|mes|año|decada)(\\s+actual)?\\b'
     RelativeDurationUnitRegex = f'^[\\.]'
-    ReferencePrefixRegex = f'(mism[ao]|aquel)\\b'
+    ReferencePrefixRegex = f'(mism[ao]|aquel|est?e)\\b'
     ReferenceDatePeriodRegex = f'\\b{ReferencePrefixRegex}\\s+({DateUnitRegex}|fin\\s+de\\s+semana)\\b'
     FromToRegex = f'\\b(from).+(to)\\b.+'
     SingleAmbiguousMonthRegex = f'^(the\\s+)?(may|march)$'
-    UnspecificDatePeriodRegex = f'^[.]'
-    PrepositionSuffixRegex = f'\\b(on|in|at|around|for|during|since|from|to)$'
-    RestOfDateTimeRegex = f'\\bresto\\s+((del|de)\\s+)?((la|el|est[ae])\\s+)?(?<unit>(día|jornada))(\\s+de\\s+hoy)?\\b'
+    UnspecificDatePeriodRegex = f'^(semana|mes|a[nñ]o)$'
+    PrepositionSuffixRegex = f'\\b(en|el|la|cerca|desde|durante|hasta|hacia)$'
+    RestOfDateTimeRegex = f'\\bresto\\s+((del?)\\s+)?((la|el|est[ae])\\s+)?(?<unit>(día|jornada))(\\s+de\\s+hoy)?\\b'
     SetWeekDayRegex = f'^[\\.]'
     NightRegex = f'\\b(medionoche|noche)\\b'
     CommonDatePrefixRegex = f'^[\\.]'
@@ -457,7 +503,7 @@ class SpanishDateTime:
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = [r'hoy']
-    AmbiguityFiltersDict = dict([("null", "null")])
+    AmbiguityFiltersDict = dict([("^mi$", "\\bmi\\b")])
     EarlyMorningTermList = [r'madrugada']
     MorningTermList = [r'mañana']
     AfternoonTermList = [r'pasado mediodia', r'pasado el mediodia']
@@ -470,7 +516,7 @@ class SpanishDateTime:
     MinusTwoDayTerms = [r'anteayer', r'dia antes de ayer']
     MonthTerms = [r'mes', r'meses']
     MonthToDateTerms = [r'mes a la fecha', r'meses a la fecha']
-    WeekendTerms = [r'fin de semana']
+    WeekendTerms = [r'finde', r'fin de semana', r'fines de semana']
     WeekTerms = [r'semana']
     YearTerms = [r'año', r'años']
     YearToDateTerms = [r'año a la fecha', r'años a la fecha']

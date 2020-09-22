@@ -50,7 +50,7 @@ export namespace SpanishDateTime {
     export const WeekOfYearRegex = `(?<woy>(la\\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?|([12345]ª))\\s+semana(\\s+del?)?\\s+(${YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))`;
     export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
     export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
-    export const QuarterTermRegex = `(?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\\s+(cuatrimestre|cuarto)`;
+    export const QuarterTermRegex = `(?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\\s+(trimestre|cuarto)`;
     export const QuarterRegex = `(el\\s+)?${QuarterTermRegex}((\\s+del?|\\s*,\\s*)?\\s+(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o|a[ñn]o(\\s+${AfterNextSuffixRegex})))?`;
     export const QuarterRegexYearFront = `(${YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o)\\s+(el\\s+)?${QuarterTermRegex}`;
     export const AllHalfYearRegex = `^[.]`;
