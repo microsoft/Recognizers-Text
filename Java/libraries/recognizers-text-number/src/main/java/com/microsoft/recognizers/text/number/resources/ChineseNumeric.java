@@ -426,7 +426,7 @@ public class ChineseNumeric {
 
     public static final String OneNumberRangeMoreRegex2 = "比\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*更?[大多高]";
 
-    public static final String OneNumberRangeMoreRegex3 = "(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|以上|之上|更[大多高])(?![万亿萬億]{1,2})";
+    public static final String OneNumberRangeMoreRegex3 = "(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})";
 
     public static final String OneNumberRangeLessRegex1 = "({LessOrEqual}|{LessRegex})\\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\\d+))|。)).)+)"
             .replace("{LessOrEqual}", LessOrEqual)
