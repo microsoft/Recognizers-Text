@@ -7185,8 +7185,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de 2014 hasta mayo de 2018",
@@ -7211,8 +7210,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde 2014 hasta 2 mayo 2018",
@@ -9257,8 +9255,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de marzo a mayo",
@@ -9289,8 +9286,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre agosto y octubre",
@@ -9315,8 +9311,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de mayo a marzo",
@@ -9373,8 +9368,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de mayo a septiembre",
@@ -9714,8 +9708,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "enero-febrero de 2017",
@@ -9740,8 +9733,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de noviembre a febrero de 2017",
@@ -9766,8 +9758,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de noviembre a 5 de febrero de 2017",
@@ -9873,8 +9864,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de este mayo a octubre de 2020",
@@ -9899,8 +9889,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de mayo a octubre, 2020",
@@ -13242,8 +13231,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-16T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de abril a junio de 2017",
@@ -13268,8 +13256,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-16T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde abril de 2016 hasta junio de 2017",
@@ -13294,8 +13281,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-22T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de enero a abril de 2015",
@@ -13942,8 +13928,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2017-t1",
@@ -14071,8 +14056,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2017 t1 a 2018 t1",
@@ -14889,16 +14873,16 @@
     ]
   },
   {
-    "Input": "Saldré de las 11:30 a.m. a las 12:30 a.m. 27 de diciembre",
+    "Input": "Saldré de las 11:30 a.m. a las 12:30 27 de diciembre",
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "de las 11:30 a.m. a las 12:30 a.m. 27 de diciembre",
+        "Text": "de las 11:30 a.m. a las 12:30 27 de diciembre",
         "Start": 7,
-        "End": 56,
+        "End": 51,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -16964,8 +16948,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "RANGECRIT.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "3º trimestre-2019",
@@ -17373,11 +17356,10 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "RANGECRIT.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "de 26 Jun de 2020 a 28 Jun de 2020",
+        "Text": "de 26 jun de 2020 a 28 jun de 2020",
         "Start": 10,
         "End": 43,
         "TypeName": "datetimeV2.daterange",
@@ -17561,8 +17543,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "Comment": "RANGECRIT.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre enero de 2019 y ahora",
@@ -17587,8 +17568,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "Comment": "RANGECRIT.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre enero de 2019 y mañana",
@@ -17613,8 +17593,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
-    "Comment": "RANGECRIT.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre enero de 2019 y hoy",
@@ -17689,8 +17668,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-06T18:00:00"
     },
-    "Comment": "RANGECRIT.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre agosto de 2019 y ahora",
@@ -18092,8 +18070,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "RANGECRIT. Null resolution.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "verano",
@@ -19127,6 +19104,37 @@
               "type": "daterange",
               "start": "2016-11-16",
               "end": "2016-12-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Saldré de las 11:30 a.m. a las 5:30 p.m. 27 de diciembre",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 11:30 a.m. a las 5:30 p.m. 27 de diciembre",
+        "Start": 7,
+        "End": 55,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-27T11:30,XXXX-12-27T17:30,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-12-27 11:30:00",
+              "end": "2018-12-27 17:30:00"
+            },
+            {
+              "timex": "(XXXX-12-27T11:30,XXXX-12-27T17:30,PT6H)",
+              "type": "datetimerange",
+              "start": "2019-12-27 11:30:00",
+              "end": "2019-12-27 17:30:00"
             }
           ]
         }

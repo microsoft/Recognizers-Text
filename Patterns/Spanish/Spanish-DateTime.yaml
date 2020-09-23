@@ -3,9 +3,9 @@
 LangMarker: Spa
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
-  def: (?<till>hasta|hacia|al?|~|--|-|—|——)(\s+(el|la(s)?))?
+  def: (?<till>\b(hasta|hacia|al?)\b|~|--|-|—|——)(\s+(el|la(s)?)\b)?
 RangeConnectorRegex: !nestedRegex
-  def: (?<and>y\s*(el|(la(s)?)?)|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<and>\b(y\s*(el|(la(s)?)?))\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 DayRegex: !simpleRegex
   def: (?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)
@@ -28,7 +28,7 @@ OfPrepositionRegex: !simpleRegex
 AfterNextSuffixRegex: !simpleRegex
   def: \b(que\s+viene|pasad[oa])\b
 RangePrefixRegex: !simpleRegex
-  def: ((de(l|sde)?|entre)\s+(la(s)?\s+)?)
+  def: ((de(l|sde)?|entre)(\s+la(s)?)?)
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
@@ -100,10 +100,10 @@ NumberCombinedWithDateUnit: !nestedRegex
 QuarterTermRegex: !simpleRegex
   def: \b((?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|([1234](\.)?º))\s+(trimestre|cuarto)|[tq](?<number>[1-4]))\b
 QuarterRegex: !nestedRegex
-  def: (el\s+)?{QuarterTermRegex}((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o|a[ñn]o(\s+{AfterNextSuffixRegex})))?
+  def: (el\s+)?{QuarterTermRegex}((\s+(del?\s+)?|\s*[,-]\s*)({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o|a[ñn]o(\s+{AfterNextSuffixRegex})))?
   references: [ YearRegex, QuarterTermRegex, RelativeRegex, AfterNextSuffixRegex]
 QuarterRegexYearFront: !nestedRegex
-  def: ({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o)\s+(el\s+)?{QuarterTermRegex}
+  def: ({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o)(?:\s*-\s*|\s+(el\s+)?)?{QuarterTermRegex}
   references: [ YearRegex, QuarterTermRegex ]
 AllHalfYearRegex: !simpleRegex
   def: (?<cardinal>primer|1er|segundo|2do|[12](\.)?º)\s+semestre
@@ -219,7 +219,7 @@ DateExtractor2: !nestedRegex
   references: [ MonthRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor3: !nestedRegex
   # (domingo,)? 6 de Abril
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*,\s*){DateYearRegex})?\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*,\s*|\s+de\s+|\s*-\s*){DateYearRegex})?\b
   references: [ DayRegex, MonthRegex, WeekDayRegex, DateYearRegex ]
 # The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
@@ -392,10 +392,10 @@ TimeRegexWithDotConnector: !nestedRegex
   def: ({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})
   references: [ BaseDateTime.HourRegex, BaseDateTime.MinuteRegex ]
 SpecificTimeFromTo: !nestedRegex
-  def: ({RangePrefixRegex})?(?<time1>(({TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
+  def: ({RangePrefixRegex}\s+)?(?<time1>(({TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
   references: [ TimeRegex2, TimeRegexWithDotConnector, TillRegex, BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, RangePrefixRegex ]
 SpecificTimeBetweenAnd: !nestedRegex
-  def: ({BetweenRegex})(?<time1>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
+  def: ({BetweenRegex}\s+)(?<time1>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
   references: [ BetweenRegex, TimeRegex1, TimeRegex2, TimeRegexWithDotConnector, RangeConnectorRegex, BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex ]
 TimeUnitRegex: !simpleRegex
   def: ([^A-Za-z]{1,}|\b)(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b
@@ -532,9 +532,9 @@ DecadeWithCenturyRegex: !nestedRegex
 RelativeDecadeRegex: !nestedRegex
   def: \b(((el|las?)\s+)?{RelativeRegex}\s+(((?<number>[\d]+)|{WrittenOneToNineRegex})\s+)?d[eé]cadas?)\b
   references: [ RelativeRegex,WrittenOneToNineRegex ]
-ComplexDatePeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+ComplexDatePeriodRegex: !nestedRegex
+  def: (?:((de(sde)?)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((entre)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
+  references: [ TillRegex, RangeConnectorRegex ]
 YearSuffix: !nestedRegex
   def: ((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
@@ -639,24 +639,34 @@ CardinalMap: !dictionary
     1er: 1
     1ro: 1
     1ra: 1
+    1.º: 1
+    1º: 1
     segundo: 2
     segunda: 2
     2do: 2
     2da: 2
+    2.º: 2
+    2º: 2
     tercer: 3
     tercero: 3
     tercera: 3
     3er: 3
     3ro: 3
     3ra: 3
+    3.º: 3
+    3º: 3
     cuarto: 4
     cuarta: 4
     4to: 4
     4ta: 4
+    4.º: 4
+    4º: 4
     quinto: 5
     quinta: 5
     5to: 5
     5ta: 5
+    5.º: 5
+    5º: 5
 DayOfWeek: !dictionary
   types: [ string, int ]
   entries:
