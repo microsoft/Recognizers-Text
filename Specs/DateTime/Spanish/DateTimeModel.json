@@ -19109,5 +19109,36 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Saldré de las 11:30 a.m. a las 5:30 p.m. 27 de diciembre",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 11:30 a.m. a las 5:30 p.m. 27 de diciembre",
+        "Start": 7,
+        "End": 55,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-27T11:30,XXXX-12-27T17:30,PT6H)",
+              "type": "datetimerange",
+              "start": "2018-12-27 11:30:00",
+              "end": "2018-12-27 17:30:00"
+            },
+            {
+              "timex": "(XXXX-12-27T11:30,XXXX-12-27T17:30,PT6H)",
+              "type": "datetimerange",
+              "start": "2019-12-27 11:30:00",
+              "end": "2019-12-27 17:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
