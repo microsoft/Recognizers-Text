@@ -16,10 +16,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        // used in Experimental mode
-        public static readonly Regex SinceRegexExp =
-            new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
-
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
@@ -106,6 +102,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         // Used in Standard mode
         public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        // used in Experimental mode
+        public static Regex SinceRegexExp { get; } = new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 

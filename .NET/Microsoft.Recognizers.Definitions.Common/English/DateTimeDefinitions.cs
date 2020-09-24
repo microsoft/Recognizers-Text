@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string RelativeDurationUnitRegex = $@"(?:(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string ReferenceDatePeriodRegex = $@"\b{ReferencePrefixRegex}\s+(?<duration>week|month|year|decade|weekend)\b";
       public const string ConnectorRegex = @"^(-|,|for|t|around|@)$";
-      public const string FromToRegex = @"(\b(from).+(to)\b.+|\b(from)\s+\d{4}\s+and\s+\d{4})";
+      public const string FromToRegex = @"(\b(from).+(to|and|or)\b.+)";
       public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
       public const string SingleAmbiguousTermsRegex = @"^(the\s+)?(day|week|month|year)$";
       public const string UnspecificDatePeriodRegex = @"^(week|month|year)$";

@@ -611,7 +611,7 @@ ReferenceDatePeriodRegex: !nestedRegex
 ConnectorRegex: !simpleRegex
   def: ^(-|,|for|t|around|@)$
 FromToRegex: !simpleRegex
-  def: (\b(from).+(to)\b.+|\b(from)\s+\d{4}\s+and\s+\d{4})
+  def: (\b(from).+(to|and|or)\b.+)
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
 # Filter ambiguous single word datetime extractions in CalendarMode or when adding a modifier

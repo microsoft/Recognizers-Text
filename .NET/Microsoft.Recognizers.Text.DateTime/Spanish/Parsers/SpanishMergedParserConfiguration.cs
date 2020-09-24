@@ -6,8 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
-
         public SpanishMergedParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
