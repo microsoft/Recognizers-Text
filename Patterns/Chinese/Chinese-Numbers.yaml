@@ -355,7 +355,7 @@ OneNumberRangeMoreRegex1: !nestedRegex
 OneNumberRangeMoreRegex2: !simpleRegex
   def: 比\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*更?[大多高]
 OneNumberRangeMoreRegex3: !simpleRegex
-  def: (?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|以上|之上|更[大多高])(?![万亿萬億]{1,2})
+  def: (?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})
 OneNumberRangeLessRegex1: !nestedRegex
   def: ({LessOrEqual}|{LessRegex})\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)
   references: [ LessOrEqual, LessRegex ]
