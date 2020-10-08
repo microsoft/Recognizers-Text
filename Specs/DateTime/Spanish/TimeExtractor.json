@@ -540,6 +540,7 @@
   },
   {
     "Input": "Volvere al mediodia",
+    "NotSupported": "python, java, javascript",
     "Results": [
       {
         "Text": "mediodia",
@@ -551,6 +552,7 @@
   },
   {
     "Input": "Volvere al medio dia",
+    "NotSupported": "python, java, javascript",
     "Results": [
       {
         "Text": "medio dia",
