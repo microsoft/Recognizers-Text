@@ -831,31 +831,41 @@
     },
     "Results": [
       {
-        "Text": "viernes en londres a las 5",
+        "Text": "viernes",
         "Start": 21,
-        "End": 46,
-        "TypeName": "datetimeV2.datetime",
+        "End": 27,
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-5T05",
-              "type": "datetime",
-              "value": "2020-05-29 05:00:00"
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2020-05-29"
             },
             {
-              "timex": "XXXX-WXX-5T05",
-              "type": "datetime",
-              "value": "2020-06-05 05:00:00"
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2020-06-05"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5",
+        "Start": 46,
+        "End": 46,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T05",
+              "type": "time",
+              "value": "05:00:00"
             },
             {
-              "timex": "XXXX-WXX-5T17",
-              "type": "datetime",
-              "value": "2020-05-29 17:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-5T17",
-              "type": "datetime",
-              "value": "2020-06-05 17:00:00"
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
             }
           ]
         }
@@ -869,21 +879,36 @@
     },
     "Results": [
       {
-        "Text": "viernes en londres a las 5 de la tarde",
+        "Text": "viernes",
         "Start": 21,
-        "End": 58,
-        "TypeName": "datetimeV2.datetime",
+        "End": 27,
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-5T17",
-              "type": "datetime",
-              "value": "2020-05-29 17:00:00"
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2020-05-29"
             },
             {
-              "timex": "XXXX-WXX-5T17",
-              "type": "datetime",
-              "value": "2020-06-05 17:00:00"
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2020-06-05"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5 de la tarde",
+        "Start": 46,
+        "End": 58,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
             }
           ]
         }
@@ -1338,7 +1363,8 @@
             {
               "timex": "T15",
               "Mod": "approx",
-              "type": "timerange"
+              "type": "timerange",
+              "value": "15:00:00"
             }
           ]
         }
@@ -2310,8 +2336,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "al fin de domingo",
@@ -2321,7 +2346,12 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-13T23:59:59",
+              "timex": "XXXX-WXX-7T23:59:59",
+              "type": "datetime",
+              "value": "2016-11-06 23:59:59"
+            },
+            {
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
               "value": "2016-11-13 23:59:59"
             }
@@ -3185,8 +3215,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "cerca de mediodía",
@@ -3197,7 +3226,8 @@
           "values": [
             {
               "timex": "T12",
-              "type": "time",
+              "Mod": "approx",
+              "type": "timerange",
               "value": "12:00:00"
             }
           ]
@@ -3210,8 +3240,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "alrededor de las once",
@@ -3222,8 +3251,15 @@
           "values": [
             {
               "timex": "T11",
-              "type": "time",
+              "Mod": "approx",
+              "type": "timerange",
               "value": "11:00:00"
+            },
+            {
+              "timex": "T23",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "23:00:00"
             }
           ]
         }
@@ -4744,8 +4780,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "temprano al día miércoles",
@@ -4771,22 +4806,19 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "al mediodía de hoy",
-        "Start": 21,
+        "Text": "mediodía de hoy",
+        "Start": 18,
         "End": 32,
-        "TypeName": "datetimeV2.datetimerange",
+        "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
             {
-              "timex": "2018-05-18",
-              "Mod": "mid",
-              "type": "datetimerange",
-              "start": "2018-05-18 10:00:00",
-              "end": "2018-05-18 14:00:00"
+              "timex": "2018-05-18T12",
+              "type": "datetime",
+              "value": "2018-05-18 12:00:00"
             }
           ]
         }
@@ -4798,8 +4830,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "más tarde hoy",
@@ -5036,17 +5067,16 @@
     ]
   },
   {
-    "Input": "Podríamos haber programado un horario para reunirnos a principios de semana.",
+    "Input": "Podríamos haber programado un horario para reunirnos mas temprano en la semana.",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "principios de semana",
-        "Start": 55,
-        "End": 74,
+        "Text": "mas temprano en la semana",
+        "Start": 53,
+        "End": 77,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5087,17 +5117,16 @@
     ]
   },
   {
-    "Input": "Podríamos haber programado un horario para reunirnos a comienzos de este año.",
+    "Input": "Podríamos haber programado un horario para reunirnos más temprano de este año.",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "comienzos de este año",
-        "Start": 55,
-        "End": 75,
+        "Text": "más temprano de este año",
+        "Start": 53,
+        "End": 76,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -5198,16 +5227,15 @@
     ]
   },
   {
-    "Input": "Por favor, encuéntranos un momento para encontrarnos a finales de este mes",
+    "Input": "Por favor, encuéntranos un momento para encontrarnos más tarde de este mes",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "finales de este mes",
-        "Start": 55,
+        "Text": "más tarde de este mes",
+        "Start": 53,
         "End": 73,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -5249,17 +5277,16 @@
     ]
   },
   {
-    "Input": "Por favor, encuéntranos un momento para encontrarnos más tarde durante el año",
+    "Input": "Por favor, encuéntranos un momento para encontrarnos más tarde en el año",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "más tarde durante el año",
+        "Text": "más tarde en el año",
         "Start": 53,
-        "End": 76,
+        "End": 71,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6280,8 +6307,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "próximo miércoles más tarde de las diez de la mañana",
@@ -6316,14 +6342,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-2T14",
+              "timex": "2018-06-19T14",
               "type": "datetime",
               "value": "2018-06-19 14:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-2T14",
-              "type": "datetime",
-              "value": "2018-06-26 14:00:00"
             }
           ]
         }
@@ -6361,8 +6382,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1 feb no más tardar a las 6:00",
@@ -8133,8 +8153,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "alrededor del 21ro este mes",
@@ -8155,17 +8174,16 @@
     ]
   },
   {
-    "Input": "Cortana, ¿puedes hacer algo para mañana alrededor de las 10 de la mañana?",
+    "Input": "Cortana, ¿puedes hacer algo para alrededor de mañana a las 10 de la mañana?",
     "Context": {
       "ReferenceDateTime": "2018-08-16T10:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "mañana alrededor de las 10 de la mañana",
+        "Text": "alrededor de mañana a las 10 de la mañana",
         "Start": 33,
-        "End": 71,
+        "End": 73,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -8185,8 +8203,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "esta semana",
@@ -8228,8 +8245,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "tan tarde como 7 a.m.",
@@ -8239,7 +8255,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T07:00",
+              "timex": "T07",
               "Mod": "until",
               "type": "timerange",
               "end": "07:00:00",
@@ -8255,8 +8271,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "tan tarde como mañana",
@@ -8734,8 +8749,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-06T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "tan pronto como el primer trimestre de próximo año",
@@ -8761,8 +8775,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "año posterior a 2012",
@@ -8788,8 +8801,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "año 2012 o posterior",
@@ -8815,8 +8827,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "año 2016 y más tarde",
@@ -8842,8 +8853,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1/1/2016 y más tarde",
@@ -8869,8 +8879,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1ro de enero de 2016 y después",
@@ -8922,8 +8931,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1/1/2016",
@@ -10821,12 +10829,11 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "final del día",
-        "Start": 32,
+        "Text": "al final del día",
+        "Start": 29,
         "End": 44,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -10871,8 +10878,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "el fin de día",
@@ -10896,8 +10902,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-23T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "final de año",
@@ -10973,8 +10978,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-23T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "finales de año",
@@ -11000,8 +11004,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-27T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "fin de mes",
@@ -11780,8 +11783,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "después de medianos de mayo",
@@ -12815,29 +12817,21 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "inicios de 7 de enero",
         "Start": 55,
         "End": 75,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
-              "type": "daterange",
-              "start": "2019-01-07",
-              "sourceEntity": "datetimepoint"
-            },
-            {
-              "timex": "XXXX-01-07",
-              "Mod": "after",
-              "type": "daterange",
-              "start": "2020-01-07",
-              "sourceEntity": "datetimepoint"
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2020-01-07 00:00:00",
+              "end": "2020-01-07 12:00:00"
             }
           ]
         }
@@ -12849,8 +12843,7 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "empienzando el 7 de enero",
@@ -12962,12 +12955,11 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "primeros de 7 de enero",
-        "Start": 53,
+        "Text": "a primeros de 7 de enero",
+        "Start": 51,
         "End": 74,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -12996,8 +12988,7 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "comenzando el 7-ene",
@@ -13534,8 +13525,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "Comment": "CRIT Range support.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde este viernes 12/05 hasta próximo domingo 20/05",
@@ -14081,21 +14071,36 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "CRIT Range support.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "durante el primer trimestre de 2017 y el tercer trimestre de 2018",
-        "Start": 22,
+        "Text": "el primer trimestre de 2017",
+        "Start": 30,
+        "End": 56,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-04-01,P3M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-04-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "el tercer trimestre de 2018",
+        "Start": 60,
         "End": 86,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "(2017-01-01,2018-07-01,P18M)",
+              "timex": "(2018-07-01,2018-10-01,P3M)",
               "type": "daterange",
-              "start": "2017-01-01",
-              "end": "2018-07-01"
+              "start": "2018-07-01",
+              "end": "2018-10-01"
             }
           ]
         }
@@ -15254,8 +15259,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "final de la tarde",
@@ -15265,11 +15269,11 @@
         "Resolution": {
           "values": [
             {
-              "timex": "TAF",
+              "timex": "TEV",
               "Mod": "end",
               "type": "timerange",
-              "start": "14:00:00",
-              "end": "16:00:00"
+              "start": "18:00:00",
+              "end": "20:00:00"
             }
           ]
         }
@@ -15281,8 +15285,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "más tarde en la tarde",
@@ -15292,11 +15295,11 @@
         "Resolution": {
           "values": [
             {
-              "timex": "TAF",
+              "timex": "TEV",
               "Mod": "end",
               "type": "timerange",
-              "start": "14:00:00",
-              "end": "16:00:00"
+              "start": "18:00:00",
+              "end": "20:00:00"
             }
           ]
         }
@@ -15333,8 +15336,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "temprano en la mañana",
@@ -15360,12 +15362,11 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana que viene",
-        "Start": 22,
+        "Text": "la semana que viene",
+        "Start": 19,
         "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -15387,11 +15388,11 @@
         "Resolution": {
           "values": [
             {
-              "timex": "TAF",
+              "timex": "TEV",
               "Mod": "end",
               "type": "timerange",
-              "start": "14:00:00",
-              "end": "16:00:00"
+              "start": "18:00:00",
+              "end": "20:00:00"
             }
           ]
         }
@@ -15403,12 +15404,11 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana que viene",
-        "Start": 25,
+        "Text": "la semana que viene",
+        "Start": 22,
         "End": 40,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -15446,12 +15446,11 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "próxima semana",
-        "Start": 25,
+        "Text": "la próxima semana",
+        "Start": 22,
         "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -15773,8 +15772,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "más tarde esta tarde",
@@ -15784,11 +15782,11 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019-08-01TAF",
+              "timex": "2019-08-01TEV",
               "Mod": "end",
               "type": "datetimerange",
-              "start": "2019-08-01 14:00:00",
-              "end": "2019-08-01 16:00:00"
+              "start": "2019-08-01 18:00:00",
+              "end": "2019-08-01 20:00:00"
             }
           ]
         }
@@ -15800,8 +15798,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "fin de esta mañana",
@@ -15827,8 +15824,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "temprano esta tarde",
@@ -17381,8 +17377,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "finales de 2000",
@@ -17408,8 +17403,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "mediados de 2000",
@@ -17435,8 +17429,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "principios de 2000",
@@ -17462,8 +17455,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "a partir de los finales de 1989",
@@ -17489,8 +17481,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde los últimos de 1989",
@@ -17516,8 +17507,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "Comment": "MOD. Refine support for modifiers: early/earlier/late, from/since, mid/start/end",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde medianos de 1989",
@@ -19135,6 +19125,444 @@
               "type": "datetimerange",
               "start": "2019-12-27 11:30:00",
               "end": "2019-12-27 17:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Las ventas aumentaron durante desde primer trimestre de 2017 - tercer trimestre de 2018",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde primer trimestre de 2017 - tercer trimestre de 2018",
+        "Start": 30,
+        "End": 86,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-07-01,P18M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré al final de este domingo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "al final de este domingo",
+        "Start": 10,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-13T23:59:59",
+              "type": "datetime",
+              "value": "2016-11-13 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Podríamos haber programado un horario para reunirnos a principios de semana.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "principios de semana",
+        "Start": 55,
+        "End": 74,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W22",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2018-05-28",
+              "end": "2018-05-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Podríamos haber programado un horario para reunirnos a comienzos de este año.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "comienzos de este año",
+        "Start": 55,
+        "End": 75,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Por favor, encuéntranos un momento para encontrarnos a finales de este mes",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "finales de este mes",
+        "Start": 55,
+        "End": 73,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-05-16",
+              "end": "2018-06-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, ¿puedes hacer algo para mañana alrededor de las 10 de la mañana?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-16T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mañana alrededor de las 10 de la mañana",
+        "Start": 33,
+        "End": 71,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-17T10",
+              "type": "datetime",
+              "value": "2018-08-17 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tengo una reunión en londres el viernes a las 5",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "viernes a las 5",
+        "Start": 32,
+        "End": 46,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T05",
+              "type": "datetime",
+              "value": "2020-05-29 05:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T05",
+              "type": "datetime",
+              "value": "2020-06-05 05:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-05-29 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-06-05 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tengo una reunión en londres el viernes a las 5 de la tarde",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "viernes a las 5 de la tarde",
+        "Start": 32,
+        "End": 58,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-05-29 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-06-05 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Puede organizar una reunión de equipos de Microsoft a partir del 7 de enero para analizar las plantillas ARM?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a partir del 7 de enero",
+        "Start": 53,
+        "End": 75,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2019-01-07",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2020-01-07",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos a tomar un café la próxima semana más tarde en la noche.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la próxima semana",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W30",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "más tarde en la noche",
+        "Start": 40,
+        "End": 60,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "22:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Qué pasó al final del pasado mediodía?",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "final del pasado mediodía",
+        "Start": 13,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Qué pasó más tarde pasado el mediodía?",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "más tarde pasado el mediodía",
+        "Start": 10,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos a tomar café la semana que viene más tarde por el pasado medio dia",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semana que viene",
+        "Start": 19,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W30",
+              "type": "daterange",
+              "start": "2019-07-22",
+              "end": "2019-07-29"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "más tarde por el pasado medio dia",
+        "Start": 39,
+        "End": 71,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nos vemos más tarde este pasado mediodia.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "más tarde este pasado mediodia",
+        "Start": 10,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-01TAF",
+              "Mod": "end",
+              "type": "datetimerange",
+              "start": "2019-08-01 14:00:00",
+              "end": "2019-08-01 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Me iré a Pekín al mediados de hoy.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-18T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mediados de hoy",
+        "Start": 18,
+        "End": 32,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-18",
+              "Mod": "mid",
+              "type": "datetimerange",
+              "start": "2018-05-18 10:00:00",
+              "end": "2018-05-18 14:00:00"
             }
           ]
         }

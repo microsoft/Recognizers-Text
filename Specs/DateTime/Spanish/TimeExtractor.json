@@ -542,10 +542,10 @@
     "Input": "Volvere al mediodia",
     "Results": [
       {
-        "Text": "al mediodia",
+        "Text": "mediodia",
         "Type": "time",
-        "Start": 8,
-        "Length": 11
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
@@ -553,10 +553,10 @@
     "Input": "Volvere al medio dia",
     "Results": [
       {
-        "Text": "al medio dia",
+        "Text": "medio dia",
         "Type": "time",
-        "Start": 8,
-        "Length": 12
+        "Start": 11,
+        "Length": 9
       }
     ]
   },

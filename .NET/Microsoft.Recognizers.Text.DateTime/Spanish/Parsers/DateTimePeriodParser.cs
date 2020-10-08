@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -7,6 +8,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
+        public static readonly Regex ConnectorRegex =
+            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public DateTimePeriodParser(IDateTimePeriodParserConfiguration configuration)
             : base(configuration)
         {
@@ -25,8 +31,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             var exactMatch = this.Config.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
 
+            if (!exactMatch.Success)
+            {
+                exactMatch = this.Config.PeriodTimeOfDayWithDateRegex.MatchExact(trimmedText, trim: true);
+            }
+
             if (exactMatch.Success)
             {
+                // Extract early/late prefix from text if any
+                bool hasEarly = false;
+                if (!string.IsNullOrEmpty(exactMatch.Groups["early"].Value))
+                {
+                    hasEarly = true;
+                    ret.Comment = Constants.Comment_Early;
+                    ret.Mod = Constants.EARLY_MOD;
+                    endHour = beginHour + 2;
+
+                    // Handling special case: night ends with 23:59 due to C# issues.
+                    if (endMin == 59)
+                    {
+                        endMin = 0;
+                    }
+                }
+
+                if (!hasEarly && !string.IsNullOrEmpty(exactMatch.Groups["late"].Value))
+                {
+                    ret.Comment = Constants.Comment_Late;
+                    ret.Mod = Constants.LATE_MOD;
+                    beginHour = beginHour + 2;
+                }
+
                 var swift = this.Config.GetSwiftPrefix(trimmedText);
 
                 var date = referenceTime.AddDays(swift).Date;
@@ -54,6 +88,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 var ers = this.Config.DateExtractor.Extract(beforeStr, referenceTime);
 
                 if (ers.Count == 0)
+                {
+                    return ret;
+                }
+
+                // Check if Date and TimeOfDay are contiguous
+                var middleStr = beforeStr.Substring((int)ers[0].Start + (int)ers[0].Length).Trim();
+                if (!(string.IsNullOrWhiteSpace(middleStr) || ConnectorRegex.IsMatch(middleStr)))
                 {
                     return ret;
                 }
