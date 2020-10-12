@@ -154,7 +154,7 @@ AmbiguousWeightUnitList: !list
   - g
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
-#Reference Source: https://en.wikipedia.org/wiki/List_of_circulating_currencies
+#Reference Source: https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_l%C3%A4nders_valutor
   types: [ string, string ]
   entries:
 #Abkhazian apsar
@@ -244,27 +244,27 @@ CurrencySuffixList: !dictionary
 #Lithuanian litas
     Lithuanian litas: ltl|litas
 #Japanese yen
-    Japanese yen: japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens
+    Japanese yen: japanska yen|japanska yen|jpy|yen|-yen|¥
 #Kazakhstani tenge
-    Kazakhstani tenge: kazakhstani tenge|kazakh tenge|kazak tenge|kzt
+    Kazakhstani tenge: tenge|kzt|тиын|теңг
 #Kenyan shilling
-    Kenyan shilling: kenyan shilling|kes
+    Kenyan shilling: kenyansk shilling|kes
 #North Korean won
-    North Korean won: north korean won|kpw|north korean wons
-    South Korean won: south korean won|krw|south korean wons
-    Korean won: korean won|₩|korean wons
+    North Korean won: nordkoreansk won|kpw|₩n
+    South Korean won: sydkoreansk won|krw|
+    Korean won: koreansk won|₩|koreanska won|wŏn|원
 #Kyrgyzstani som
-    Kyrgyzstani som: kyrgyzstani som|kgs
+    Kyrgyzstani som: kirgizistansk som|kgs|Кыргыз сом
 #Uzbekitan som
-    Uzbekitan som: uzbekitan som|uzs
+    Uzbekitan som: uzbekistansk som|uzs|Ўзбек сўм
 #Lao kip
-    Lao kip: lao kip|lak|₭n|₭
+    Lao kip: kip|lak|₭n|₭
     Att: att
 #Lesotho loti
-    Lesotho loti: lesotho loti|lsl|loti
+    Lesotho loti: loti|maloti|lsl
     Sente: sente|lisente
 #South African rand
-    South African rand: south african rand|zar|south africa rand|south africa rands|south african rands
+    South African rand: rand
 #Macanese pataca
     Macanese pataca: macanese pataca|mop$|mop
     Avo: avos|avo
