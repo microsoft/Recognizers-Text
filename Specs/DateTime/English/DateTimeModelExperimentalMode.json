@@ -4152,7 +4152,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -7636,6 +7636,184 @@
               "timex": "P3M",
               "type": "set",
               "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "my vacation will start from October",
+    "Context": {
+      "ReferenceDateTime": "2019-08-24T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from october",
+        "Start": 23,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2018-10-01"
+            },
+            {
+              "timex": "XXXX-10",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2019-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here from the end of 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from the end of 1989",
+        "Start": 19,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "since-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "1989-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here from mid 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from mid 1989",
+        "Start": 19,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "since-mid",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "1989-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick from around 1pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from around 1pm",
+        "Start": 18,
+        "End": 32,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "Mod": "since-approx",
+              "type": "timerange",
+              "start": "13:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2014",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 2014",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2014-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2015 and 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015",
+        "Start": 18,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2016",
+        "Start": 27,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2017-01-01"
             }
           ]
         }
