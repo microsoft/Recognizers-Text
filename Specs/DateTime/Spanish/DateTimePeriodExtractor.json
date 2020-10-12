@@ -205,7 +205,8 @@
   },
   {
     "Input": "Regresaré por la noche",
-    "NotSupportedByDesign": "javascript",
+    "Comment": "In English only 'this night' is supported, 'at night' or 'by night' are not extracted as DateTimePeriod",
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "la noche",
@@ -217,7 +218,8 @@
   },
   {
     "Input": "Regresaré a la madrugada",
-    "NotSupportedByDesign": "javascript",
+    "Comment": "In English only 'this night' is supported, 'at night' or 'by night' are not extracted as DateTimePeriod",
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "a la madrugada",
@@ -240,7 +242,9 @@
   },
   {
     "Input": "Regresaré por la mañana",
-    "NotSupportedByDesign": "javascript",
+    "Comment": "In English only 'this night' is supported, 'at night' or 'by night' are not extracted as DateTimePeriod",
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
+
     "Results": [
       {
         "Text": "la mañana",
@@ -1364,5 +1368,16 @@
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": []
+  },
+  {
+    "Input": "Regresaré esta madrugada",
+    "Results": [
+      {
+        "Text": "esta madrugada",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 14
+      }
+    ]
   }
 ]

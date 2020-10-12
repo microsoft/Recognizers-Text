@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -37,9 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex NumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
 
-        // TODO: add this according to corresponding English regex
         public static readonly Regex TimeOfDayRegex =
-            new Regex(string.Empty, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
@@ -129,6 +129,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             return RangeConnectorRegex.IsExactMatch(text, true);
         }
 
-        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
+        // In Spanish "mañana" can mean both "tomorrow" and "morning". This method filters the isolated occurrences of "mañana" from the
+        // TimePeriodExtractor results as it is more likely to mean "tomorrow" in these cases.
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
+        {
+            {
+                var morningStr = DateTimeDefinitions.MorningTermList[0];
+                List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+                foreach (var timePeriodEr in timePeriodErs)
+                {
+                    if (!timePeriodEr.Text.Equals(morningStr, StringComparison.Ordinal))
+                    {
+                        timePeriodErsResult.Add(timePeriodEr);
+                    }
+                }
+
+                return timePeriodErsResult;
+            }
+        }
     }
 }

@@ -1612,7 +1612,8 @@
             {
               "timex": "T23",
               "Mod": "approx",
-              "type": "timerange"
+              "type": "timerange",
+              "value": "23:00:00"
             }
           ]
         },
