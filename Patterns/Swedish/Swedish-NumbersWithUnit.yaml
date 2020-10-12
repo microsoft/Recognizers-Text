@@ -266,19 +266,19 @@ CurrencySuffixList: !dictionary
 #South African rand
     South African rand: rand
 #Macanese pataca
-    Macanese pataca: macanese pataca|mop$|mop
+    Macanese pataca: pataca|mop$|mop
     Avo: avos|avo
 #Macedonian denar
-    Macedonian denar: macedonian denar|mkd|ден
-    Deni: deni
+    Macedonian denar: makedonisk denar|mkd|ден|Mdi
+    Deni: deni|denari
 #Malagasy ariary
-    Malagasy ariary: malagasy ariary|mga
+    Malagasy ariary: ariary|mga|ma|Ariary malgache
     Iraimbilanja: iraimbilanja
 #Malawian kwacha
-    Malawian kwacha: malawian kwacha|mk|mwk
+    Malawian kwacha: malawisk kwacha|mk|mwk
     Tambala: tambala
 #Malaysian ringgit
-    Malaysian ringgit: malaysian ringgit|rm|myr|malaysia ringgit|malaysia ringgits|malaysian ringgits
+    Malaysian ringgit: malaysisk ringgit|malaysisk dollar|rm|myr
 #Mauritanian ouguiya
     Mauritanian ouguiya: mauritanian ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritanian ouguiyas
     Khoums: khoums
