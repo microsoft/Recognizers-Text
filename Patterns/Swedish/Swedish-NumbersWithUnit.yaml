@@ -280,30 +280,30 @@ CurrencySuffixList: !dictionary
 #Malaysian ringgit
     Malaysian ringgit: malaysisk ringgit|malaysisk dollar|rm|myr
 #Mauritanian ouguiya
-    Mauritanian ouguiya: mauritanian ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritanian ouguiyas
+    Mauritanian ouguiya: mauretansk ouguiya|ouguiya|um|mro
     Khoums: khoums
 #Mongolian tögrög
-    Mongolian tögrög: mongolian tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongolian tögrögs|mongolian togrog|mongolian togrogs|mongolia togrog|mongolia togrogs
+    Mongolian tögrög: tögrög|tugrik|mnt|₮|төгрөг
 #Mozambican metical
-    Mozambican metical: mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals
+    Mozambican metical: metical|metical moçambicano nuevo|mt|mzn
 #Burmese kyat
-    Burmese kyat: burmese kyat|ks|mmk
+    Burmese kyat: kyat|kyap|ks|mmk|
     Pya: pya
 #Nicaraguan córdoba
-    Nicaraguan córdoba: nicaraguan córdoba|nio
+    Nicaraguan córdoba: córdoba|nio|C$|córdoba oro nicaragüense
 #Nigerian naira
-    Nigerian naira: nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas
+    Nigerian naira: naira|naira|ngn|₦|nigerian naira
     Kobo: kobo
 #Turkish lira
-    Turkish lira: turkish lira|try|tl|turkey lira|turkey liras|turkish liras
+    Turkish lira: turkiska lira|try|tl|turkisk lira|türk Lirası
     Kuruş: kuruş
 #Omani rial
-    Omani rial: omani rial|omr|ر.ع.
+    Omani rial: omansk rial|omani rial|omr|ر.ع.
 #Panamanian balboa
-    Panamanian balboa: panamanian balboa|b/.|pab
-    Centesimo: centesimo
+    Panamanian balboa: balboa|b/.|pab
+    Centesimo: centésimo|centésimos|centesimos|centesimo
 #Papua New Guinean kina
-    Papua New Guinean kina: papua new guinean kina|kina|pgk
+    Papua New Guinean kina: kina|pgk
     Toea: toea
 #Paraguayan guaraní
     Paraguayan guaraní: paraguayan guaraní|₲|pyg
