@@ -13,6 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
+        public static readonly Regex NextSuffixRegex =
+            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+
         public static readonly Regex PreviousPrefixRegex =
             new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
@@ -24,6 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex AfterNextSuffixRegex =
             new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
+
+        public static readonly Regex RelativeSuffixRegex =
+            new Regex(DateTimeDefinitions.RelativeSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
             new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
@@ -235,12 +241,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (AfterNextSuffixRegex.IsMatch(trimmedText))
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-
-            if (PreviousPrefixRegex.IsMatch(trimmedText) || PreviousSuffixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText) || PreviousSuffixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -252,12 +261,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             var swift = -10;
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (AfterNextSuffixRegex.IsMatch(trimmedText))
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-
-            if (PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText) || PreviousSuffixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -285,7 +297,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (DateTimeDefinitions.MonthTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.MonthTerms.Any(o => trimmedText.Contains(o)) && RelativeSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
@@ -298,14 +310,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o)) && RelativeSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
             return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText))) &&
+                   (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && RelativeSuffixRegex.IsMatch(trimmedText))) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o));
         }
 
@@ -313,7 +325,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && RelativeSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)

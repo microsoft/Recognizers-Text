@@ -4233,8 +4233,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "próximos cinco días",
@@ -4305,8 +4304,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-25T01:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2 horas",
@@ -6358,8 +6356,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "martes antes de las dos de la tarde",
@@ -6369,10 +6366,16 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018-06-19T14",
+              "timex": "XXXX-WXX-2T14",
               "Mod": "before",
               "type": "datetimerange",
               "end": "2018-06-19 14:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-26 14:00:00"
             }
           ]
         }
@@ -6427,8 +6430,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la próxima semana",
@@ -6670,8 +6672,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la semana después de la próxima",
@@ -7581,13 +7582,12 @@
     "Context": {
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año anterior",
-        "Start": 20,
-        "End": 34,
+        "Text": "año",
+        "Start": 23,
+        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -7780,12 +7780,11 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana siguiente",
-        "Start": 32,
+        "Text": "la semana siguiente",
+        "Start": 29,
         "End": 47,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -8549,8 +8548,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "5 próximos años",
@@ -8575,8 +8573,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2 próximos meses",
@@ -9000,8 +8997,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018 o más tarde",
@@ -10477,8 +10473,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-08T12:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "el dia anterior",
@@ -10573,8 +10568,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-15T12:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "lunes que viene",
@@ -10613,8 +10607,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-15T12:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "lunes siguiente",
@@ -11894,8 +11887,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "este próximo viernes",
@@ -11943,8 +11935,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "viernes siguiente",
@@ -11992,8 +11983,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "este miércoles pasado",
@@ -12017,8 +12007,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Comment": "'miércoles pasado' seems to translate to 'last Wednesday' instead of 'past Wednesday'. Only 'este miércoles pasado' corresponds to 'this past Wednesday'.",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "miércoles pasado",
@@ -12028,9 +12018,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019-01-30",
+              "timex": "2019-01-23",
               "type": "date",
-              "value": "2019-01-30"
+              "value": "2019-01-23"
             }
           ]
         }
@@ -12042,8 +12032,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "miércoles anterior",
@@ -12067,8 +12056,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "miércoles pasado",
@@ -13696,8 +13684,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-27T12:00:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "30 minutos después",
@@ -16716,8 +16703,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-01T15:16:00"
     },
-    "Comment": "RELPERIOD. Refine support for relative periods.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "30 minutos después",
@@ -19651,6 +19637,55 @@
               "type": "daterange",
               "sourceEntity": "datetimepoint",
               "end": "2007-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sucedió el martes anterior antes de las dos de la tarde.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes anterior antes de las dos de la tarde",
+        "Start": 11,
+        "End": 54,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-19T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-19 14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Dónde estuviste este pasado miércoles?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "este pasado miércoles",
+        "Start": 17,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-30",
+              "type": "date",
+              "value": "2019-01-30"
             }
           ]
         }
