@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string MidnightRegex = @"(?<midnight>mitte(r|n in der )nacht)";
       public const string MidmorningRegex = @"(?<midmorning>mitten am vormittag)";
       public const string MidafternoonRegex = @"(?<midafternoon>mitten am nachmittag)";
-      public const string MiddayRegex = @"((?<midday>(am )?mittags?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(mittags?)))";
+      public const string MiddayRegex = @"((?<midday>(am\s+)?mittag(s(zeit)?)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(mittags?)))";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"(((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?![%\d])|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b(noonish)\b";
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string SpecificTimeFromTo = $@"((?<preDesc>({PmRegex}|{AmRegex})\s+)?(von)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
       public static readonly string SpecificTimeBetweenAnd = $@"(?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
       public const string PrepositionRegex = @"(?<prep>^(um|am|vo[mn]|in|zur)(\s+(de[rmn]))?$)";
-      public const string TimeOfDayRegex = @"\b(?<timeOfDay>(((((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?((am )?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))))\b";
+      public const string TimeOfDayRegex = @"\b(?<timeOfDay>(((?<early>(früh(\s+am|er)|am frühen)(\s+|-))|(?<late>(spät(\s+am|er)?|am späten)(\s*|-)))?((am\s+)?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}$";
       public static readonly string TimeNumberCombinedWithUnit = $@"(?<num>\d+(\,\d*)?){TimeUnitRegex}";

@@ -271,7 +271,7 @@ MidmorningRegex: !simpleRegex
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>mitten am nachmittag)
 MiddayRegex: !simpleRegex
-  def: ((?<midday>(am )?mittags?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(mittags?)))
+  def: ((?<midday>(am\s+)?mittag(s(zeit)?)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(mittags?)))
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
@@ -340,7 +340,7 @@ SpecificTimeBetweenAnd: !nestedRegex
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(um|am|vo[mn]|in|zur)(\s+(de[rmn]))?$)
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>(((((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?((am )?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))))\b
+  def: \b(?<timeOfDay>(((?<early>(früh(\s+am|er)|am frühen)(\s+|-))|(?<late>(spät(\s+am|er)?|am späten)(\s*|-)))?((am\s+)?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
