@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string ThisRegex = $@"(((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))";
       public static readonly string LastDateRegex = $@"({PreviousPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{PreviousPrefixRegex}\s*woche))";
       public static readonly string NextDateRegex = $@"({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))";
-      public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))";
+      public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|(?<!\bam\s+)morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?)))\b";
       public static readonly string RelativeDayRegex = $@"((((de[rmns])\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
       public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";

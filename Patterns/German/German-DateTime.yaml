@@ -156,7 +156,7 @@ NextDateRegex: !nestedRegex
   def: ({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))
+  def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|(?<!\bam\s+)morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))
   references: [ RelativeRegex]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?)))\b
