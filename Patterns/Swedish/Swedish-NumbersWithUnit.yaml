@@ -306,63 +306,63 @@ CurrencySuffixList: !dictionary
     Papua New Guinean kina: kina|pgk
     Toea: toea
 #Paraguayan guaraní
-    Paraguayan guaraní: paraguayan guaraní|₲|pyg
+    Paraguayan guaraní: guaraní|guarani|₲|pyg
 #Peruvian sol
-    Peruvian sol: peruvian sol|soles|sol|peruvian nuevo sol
+    Peruvian sol: sol|nuevo sol peruano|pen
 #Polish zloty
-    Polish złoty: złoty|polish złoty|zł|pln|zloty|polish zloty|poland zloty|poland złoty
+    Polish złoty: złoty|polsk złoty|zł|pln|zloty|złoty polski
     Grosz: groszy|grosz|grosze
 #Qatari riyal
-    Qatari riyal: qatari riyal|qar|qatari riyals|qatar riyal|qatar riyals
-    Saudi riyal: saudi riyal|sar|saudi riyals
-    Riyal: riyal|riyals|rial|﷼
-    Dirham: dirham|dirhem|dirhm
-    Halala: halalas|halala
+    Qatari riyal: qatarisk rial|qatarisk riyal|qar|ر.ق
+    Saudi riyal: saudiarabisk riyal|saudiarabisk rial|sar|riyāl suʿūdī
+    Riyal: riyal|rial|﷼
+    Dirham: dirham|dirhem|dirhm|درهم
+    Halala: hallalas|hallala|هللة
 #Samoan tālā
-    Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala
+    Samoan tālā: tālā|tala|ws$|wst
     Sene: sene
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
+    São Tomé and Príncipe dobra: dobra|dobras|std|dobra são-tomeano
 #Sierra Leonean leone
     Sierra Leonean leone: sierra leonean leone|sll|leone|le
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
-    Netherlands guilder: netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
+    Netherlands guilder: antillergulden|antilliaanse gulden|ang|nederländska gulden|-gulden|holländska gulden|fl|naƒ
 #Swazi lilangeni
-    Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni
+    Swazi lilangeni: lilangeni|szl|emalangeni
 #Tajikistani somoni
-    Tajikistani somoni: tajikistani somoni|tjs|somoni
-    Diram: dirams|diram
+    Tajikistani somoni: somoni|tjs|сомонӣ
+    Diram: diram|дирам
 #Thai baht
-    Thai baht: thai baht|฿|thb|baht
-    Satang: satang|satangs
+    Thai baht: ฿t|thb|baht|บาทไทย
+    Satang: satang|สตางค์
 #Tongan paʻanga
-    Tongan paʻanga: tongan paʻanga|paʻanga|tongan pa'anga|pa'anga
+    Tongan paʻanga: paʻanga|T$|pa''anga
     Seniti: seniti
 #Ukrainian hryvnia
-    Ukrainian hryvnia: ukrainian hryvnia|hyrvnia|uah|₴|ukrain hryvnia|ukrain hryvnias|ukrainian hryvnias
+    Ukrainian hryvnia: ukrainska hryvnia|ukrainsk hryvnia|hyrvnia|uah|₴|гривня
 #Vanuatu vatu
-    Vanuatu vatu: vanuatu vatu|vatu|vuv
+    Vanuatu vatu: vatu|vuv
 #Venezuelan bolívar
-    Venezuelan bolívar: venezuelan bolívar|venezuelan bolívars|bs.f.|vef|bolívar fuerte|venezuelan bolivar|venezuelan bolivars|venezuela bolivar|venezuela bolivarsvenezuelan bolivar|venezuelan bolivars
+    Venezuelan bolívar: bolívar|bs.f.|vef|fuerte
 #Vietnamese dong
     Vietnamese dong: vietnamese dong|vnd|đồng|vietnam dong|vietnamese dongs|vietnam dongs
 #Zambian kwacha
-    Zambian kwacha: zambian kwacha|zk|zmw|zambia kwacha|kwachas|zambian kwachas
+    Zambian kwacha: zambisk kwacha|zk|zmw|zambian kwacha
 #Dirham
-    Moroccan dirham: moroccan dirham|mad|د.م.
-    United Arab Emirates dirham: united arab emirates dirham|د.إ|aed
+    Moroccan dirham: marockansk dirham|mad|د.م.
+    United Arab Emirates dirham: emiratisk dirham|د.إ|aed
 #Manat
-    Azerbaijani manat: azerbaijani manat|azn
-    Turkmenistan manat: turkmenistan manat|turkmenistan new manat|tmt
+    Azerbaijani manat: azerbajdzjansk manat|azn|Azərbaycan manatı
+    Turkmenistan manat: turkmensk manat|turkmensk ny manat|tmt
     Manat: manats|manat
-    Qəpik: qəpik
+    Qəpik: qəpik|gepik
 #Shilling
-    Somali shilling: somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos
-    Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin
-    Tanzanian shilling: tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings
-    Ugandan shilling: ugandan shilling|ugandan shillings|ugx|uganda shilling|uganda shillings
+    Somali shilling: somalisk shilling|shilin soomaali|sh.so.|sos
+    Somaliland shilling: somaliländsk shilling|somaliländsk shilin
+    Tanzanian shilling: tanzanisk shilling|tsh|tzs|shilingi tanzania
+    Ugandan shilling: ugandisk shilling|ugandiska shilling|ugx
 #Leu
     Romanian leu: romanian leu|lei|ron|romania leu
     Moldovan leu: moldovan leu|mdl|moldova leu
