@@ -45,6 +45,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public IDictionary<string, long> NonStandardFractionalSubunits { get; }
 
+        public virtual ImmutableDictionary<string, IEnumerable<double>> DimensionUnitMultiplesMap { get; }
+
         public CultureInfo CultureInfo { get; }
 
         public abstract IParser InternalNumberParser { get; }

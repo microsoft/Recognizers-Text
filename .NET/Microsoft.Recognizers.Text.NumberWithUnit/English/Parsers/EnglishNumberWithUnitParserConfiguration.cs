@@ -1,4 +1,7 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Globalization;
+using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
 
@@ -22,5 +25,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override ImmutableDictionary<string, IEnumerable<double>> DimensionUnitMultiplesMap =>
+            NumbersWithUnitDefinitions.DimensionUnitMultiplesMap.ToImmutableDictionary(x => x.Key, x => x.Value);
     }
 }

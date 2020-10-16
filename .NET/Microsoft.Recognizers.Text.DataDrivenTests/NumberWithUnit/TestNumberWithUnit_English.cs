@@ -29,6 +29,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
+        public void DimensionModelCompoundMode(TestModel testSpec)
+        {
+            TestNumberWithUnit(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
         public void TemperatureModel(TestModel testSpec)
         {
             TestNumberWithUnit(testSpec);

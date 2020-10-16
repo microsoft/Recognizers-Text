@@ -92,8 +92,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                        new BaseMergedUnitExtractor(new English.DimensionExtractorConfiguration(), options),
+                        new BaseMergedUnitParser(new English.DimensionParserConfiguration(), options)
                     },
                 }));
 

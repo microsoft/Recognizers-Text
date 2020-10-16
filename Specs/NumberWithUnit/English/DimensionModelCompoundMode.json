@@ -1,0 +1,266 @@
+[
+  {
+    "Input": "The length is 15 m 31 cm more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "15 m 31 cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "15.31",
+          "unit": "Meter"
+        },
+        "Start": 14,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The length is 9 km 18 dm more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "9 km 18 dm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "9.0018",
+          "unit": "Kilometer"
+        },
+        "Start": 14,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The length is 12 ft 2 in more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 ft 2 in",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12.1666666666667",
+          "unit": "Foot"
+        },
+        "Start": 14,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The length is 23 km 2 in more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "23 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "23",
+          "unit": "Kilometer"
+        },
+        "Start": 14,
+        "End": 18
+      },
+      {
+        "Text": "2 in",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Inch"
+        },
+        "Start": 20,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The length is 12 km and a half",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 km and a half",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12.5",
+          "unit": "Kilometer"
+        },
+        "Start": 14,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "The length is 12 km 80 m 45 cm 3 feet more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 km 80 m 45 cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12.08045",
+          "unit": "Kilometer"
+        },
+        "Start": 14,
+        "End": 29
+      },
+      {
+        "Text": "3 feet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Foot"
+        },
+        "Start": 31,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "The length is 12 km 80 m 45 cm 3 light years more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 km 80 m 45 cm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12.08045",
+          "unit": "Kilometer"
+        },
+        "Start": 14,
+        "End": 29
+      },
+      {
+        "Text": "3 light years",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Light year"
+        },
+        "Start": 31,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "The area is 4 km2 and 32 sq dam more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4 km2 and 32 sq dam",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4.0032",
+          "unit": "Square kilometer"
+        },
+        "Start": 12,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "The area is 14 square miles and 5 acres more or less",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "14 square miles and 5 acres",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "14.0078125",
+          "unit": "Square mile"
+        },
+        "Start": 12,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "This tank contains 20l 15cl and 5ml of gasoline",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "20l 15cl and 5ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "20.155",
+          "unit": "Liter"
+        },
+        "Start": 19,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "We need 2 pints and 0.4 of oil",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2 pints and 0.4",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.4",
+          "unit": "Pint"
+        },
+        "Start": 8,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "The weight is 6 grams and 24 mg",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "6 grams and 24 mg",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6.024",
+          "unit": "Gram"
+        },
+        "Start": 14,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "Take 3lb 4oz and 15g of sand",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3lb 4oz",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3.25",
+          "unit": "Pound"
+        },
+        "Start": 5,
+        "End": 11
+      },
+      {
+        "Text": "15g",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "15",
+          "unit": "Gram"
+        },
+        "Start": 17,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "The archive contains 1GB and 300MB of data",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1GB and 300MB",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.3",
+          "unit": "Gigabyte"
+        },
+        "Start": 21,
+        "End": 33
+      }
+    ]
+  }
+]

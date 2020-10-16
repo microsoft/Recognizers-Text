@@ -14,6 +14,11 @@
             NoProtoCache
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.EnableCompoundTypes">
+            <summary>
+            EnableCompoundTypes, mode that extracts compound dimension units as single entities.
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.EnablePreview">
             <summary>
             EnablePreview

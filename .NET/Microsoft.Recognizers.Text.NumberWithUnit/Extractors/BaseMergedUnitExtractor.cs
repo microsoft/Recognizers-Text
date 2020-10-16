@@ -10,11 +10,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly NumberWithUnitExtractor numberWithUnitExtractor;
 
-        public BaseMergedUnitExtractor(INumberWithUnitExtractorConfiguration config)
+        public BaseMergedUnitExtractor(INumberWithUnitExtractorConfiguration config, NumberWithUnitOptions options = NumberWithUnitOptions.None)
         {
             this.config = config;
             this.numberWithUnitExtractor = new NumberWithUnitExtractor(config);
+            this.Options = options;
         }
+
+        public virtual NumberWithUnitOptions Options { get; }
 
         public List<ExtractResult> Extract(string source)
         {
@@ -22,6 +25,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             // Only merge currency's compound units for now.
             if (config.ExtractType.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.Ordinal))
+            {
+                ers = MergeCompoundUnits(source);
+            }
+            else if ((this.Options & NumberWithUnitOptions.EnableCompoundTypes) != 0 && config.ExtractType.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal))
             {
                 ers = MergeCompoundUnits(source);
             }
@@ -126,7 +133,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     result[group].Length = periodEnd - periodBegin;
                     result[group].Text = source.Substring(periodBegin, periodEnd - periodBegin);
-                    result[group].Type = Constants.SYS_UNIT_CURRENCY;
+                    result[group].Type = config.ExtractType;
                     (result[group].Data as List<ExtractResult>)?.Add(ers[idx + 1]);
                 }
             }
