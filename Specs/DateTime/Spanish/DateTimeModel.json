@@ -19570,5 +19570,91 @@
         }
       }
     ]
+  },
+  {
+    "Input": "después del 1 de enero de 2007 y no más tarde que el 1 de enero de 2010",
+    "Context": {
+      "ReferenceDateTime": "2019-12-15T01:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "después del 1 de enero de 2007",
+        "Start": 0,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2007-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "no más tarde que el 1 de enero de 2010",
+        "Start": 33,
+        "End": 70,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "desde el 1 de enero de 2010 o no más tarde que el 1 de enero de 2007",
+    "Context": {
+      "ReferenceDateTime": "2019-12-15T01:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "desde el 1 de enero de 2010",
+        "Start": 0,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2010-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "no más tarde que el 1 de enero de 2007",
+        "Start": 30,
+        "End": 67,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2007-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

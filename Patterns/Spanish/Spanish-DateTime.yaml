@@ -470,7 +470,7 @@ HolidayRegex3: !nestedRegex
   references: [ YearRegex ]
 # SpanishMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
-  def: (\b((ante(s|rior)|m[aá]s\s+temprano|no\s+m[aá]s\s+tard(e|ar)|(?<include>tan\s+tarde\s+como))(\s+(del?|a)(\s+(el|las?|los?))?)?)|(?<!\w|>)((?<include><\s*=)|<))
+  def: (\b((ante(s|rior)|m[aá]s\s+temprano|no\s+m[aá]s\s+tard(e|ar)|(?<include>tan\s+tarde\s+como))(\s+(del?|a|que)(\s+(el|las?|los?))?)?)|(?<!\w|>)((?<include><\s*=)|<))
 AfterRegex: !simpleRegex
   def: ((\b(despu[eé]s|(año\s+)?posterior|m[aá]s\s+tarde|a\s+primeros)(\s*(del?|en|a)(\s+(el|las?|los?))?)?|(empi?en?zando|comenzando)(\s+(el|las?|los?))?)\b|(?<!\w|<)((?<include>>\s*=)|>))
 SinceRegex: !simpleRegex
