@@ -2444,5 +2444,176 @@
         }
       }
     ]
+  },
+  {
+    "Input": "gehe zur Vormittagszeit",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "vormittagszeit",
+        "Start": 9,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "gehe zur Mittagszeit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "mittagszeit",
+        "Start": 9,
+        "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "gehe auf Spätabends",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "spätabends",
+        "Start": 9,
+        "End": 18,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "18:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "gehe auf Spätnachmittags",
+    "Context": {
+      "ReferenceDateTime": "2019-08-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "spätnachmittags",
+        "Start": 9,
+        "End": 23,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "Mod": "end",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "gehe nach Mitternacht",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nach mitternacht",
+        "Start": 5,
+        "End": 20,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "00:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "gehe vor Mitternacht",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "vor mitternacht",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "00:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "gehe um Mitternacht",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "mitternacht",
+        "Start": 8,
+        "End": 18,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
