@@ -772,8 +772,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             // For the 'before' mod
             // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
             // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-            if (mod.equals(Constants.BEFORE_MOD)) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(Constants.BEFORE_MOD)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.LATE_MOD)) {
                     res.put(DateTimeResolutionKey.END, start);
                 } else {
                     res.put(DateTimeResolutionKey.END, end);
@@ -785,8 +785,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             // For the 'after' mod
             // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
             // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-            if (mod.equals(Constants.AFTER_MOD)) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(Constants.AFTER_MOD)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.EARLY_MOD)) {
                     res.put(DateTimeResolutionKey.START, end);
                 } else {
                     res.put(DateTimeResolutionKey.START, start);

@@ -17181,7 +17181,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "by end of this month",
@@ -17207,7 +17207,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "before end of this year",
@@ -17258,7 +17258,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "after the beginning of march",
@@ -17291,7 +17291,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "before the end of december",
