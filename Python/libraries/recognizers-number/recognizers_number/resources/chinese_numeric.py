@@ -201,7 +201,7 @@ class ChineseNumeric:
     LessOrEqualSuffix = f'(或|或者)\\s*(以下|之下|更[小少低])'
     OneNumberRangeMoreRegex1 = f'({MoreOrEqual}|{MoreRegex})\\s*(?<number1>((?!([并且而並的同時时]|([,，](?!\\d+))|。)).)+)'
     OneNumberRangeMoreRegex2 = f'比\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*更?[大多高]'
-    OneNumberRangeMoreRegex3 = f'(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|以上|之上|更[大多高])(?![万亿萬億]{{1,2}})'
+    OneNumberRangeMoreRegex3 = f'(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{{0,2}})'
     OneNumberRangeLessRegex1 = f'({LessOrEqual}|{LessRegex})\\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\\d+))|。)).)+)'
     OneNumberRangeLessRegex2 = f'比\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)\\s*更?[小少低]'
     OneNumberRangeLessRegex3 = f'(?<number2>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*(以下|之下|更[小少低])'

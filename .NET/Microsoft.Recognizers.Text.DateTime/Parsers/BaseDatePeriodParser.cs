@@ -1012,16 +1012,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     swift = this.config.GetSwiftDayOrMonth(trimmedText);
+                    var isWorkingWeek = match.Groups["business"].Success;
 
-                    if (this.config.IsWeekOnly(trimmedText))
+                    if (this.config.IsWeekOnly(trimmedText) || isWorkingWeek)
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
+                        var endDay = isWorkingWeek ? DayOfWeek.Friday : DayOfWeek.Sunday;
 
                         ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
                         var endDate = inclusiveEndPeriod
-                                        ? referenceDate.This(DayOfWeek.Sunday).AddDays(Constants.WeekDayCount * swift)
-                                        : referenceDate.This(DayOfWeek.Sunday).AddDays(Constants.WeekDayCount * swift).AddDays(1);
+                                        ? referenceDate.This(endDay).AddDays(Constants.WeekDayCount * swift)
+                                        : referenceDate.This(endDay).AddDays(Constants.WeekDayCount * swift).AddDays(1);
 
                         if (earlyPrefix)
                         {

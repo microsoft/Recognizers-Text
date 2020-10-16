@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -30,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = SpanishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            SpecificTimeOfDayRegex = SpanishDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
             TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PreviousPrefixRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
@@ -130,34 +131,33 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             endHour = 0;
             endMin = 0;
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("madrugada", StringComparison.Ordinal))
+            if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timeStr = "TDA";
+                timeStr = Constants.EarlyMorning;
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimmedText.EndsWith("mañana", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timeStr = "TMO";
+                timeStr = Constants.Morning;
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (trimmedText.Contains("pasado mediodia") || trimmedText.Contains("pasado el mediodia"))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timeStr = "TAF";
+                timeStr = Constants.Afternoon;
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimmedText.EndsWith("tarde", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timeStr = "TEV";
+                timeStr = Constants.Evening;
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimmedText.EndsWith("noche", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timeStr = "TNI";
+                timeStr = Constants.Night;
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;

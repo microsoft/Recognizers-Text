@@ -154,215 +154,213 @@ AmbiguousWeightUnitList: !list
   - g
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
-#Reference Source: https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_l%C3%A4nders_valutor
+#Reference Source: https://en.wikipedia.org/wiki/List_of_circulating_currencies
   types: [ string, string ]
   entries:
 #Abkhazian apsar
-    Abkhazian apsar: abchazisk apsar|apsar|аԥсар|āpsār
+    Abkhazian apsar: abkhazian apsar|apsars
 #Afghan afghani
-    Afghan afghani: afghani|؋|afn|afghanis|afghani|افغانۍ|افغانی
-#Not in cirkulation Pul: pula
+    Afghan afghani: afghan afghani|؋|afn|afghanis|afghani
+    Pul: pul
 #Euro
     Euro: euros|euro|€|eur
     Cent: cents|cent|-cents|-cent
 #Albanian lek
 #No use of "ALL" "L"
-    Albanian lek: albansk lek|lekë|lek
+    Albanian lek: albanian lek|leks|lek
     Qindarkë: qindarkë|qindarkës|qindarke|qindarkes
 #Angolan kwanza
-    Angolan kwanza: angolansk kwanza|kz|aoa|kwanza|kwanzas|angolanska kwanzas
+    Angolan kwanza: angolan kwanza|kz|aoa|kwanza|kwanzas|angolan kwanzas
 #Armenian
 #No use of "AMD"
-    Armenian dram: dram
+    Armenian dram: armenian drams|armenian dram
 #Aruban florin
-    Aruban florin: arubansk florin|ƒ|awg|arubanska floriner|florin|floriner|arubaanse florin
+    Aruban florin: aruban florin|ƒ|awg|aruban florins
 #Bangladeshi taka
-    Bangladeshi taka: taka|৳|bdt|takas|tākā|tk
-    Paisa: paisa
+    Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas
+    Paisa: poisha|paisa
 #Bhutanese ngultrum
-    Bhutanese ngultrum: ngultrum|nu.|btn|ngultrums|dNgul Tam
-    Chetrum: chhertum|chhertums
+    Bhutanese ngultrum: bhutanese ngultrum|nu.|btn
+    Chetrum: chetrums|chetrum
 #Bolivian boliviano
-    Bolivian boliviano: boliviano|bob|bs.|bolivianos
+    Bolivian boliviano: bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos
 #Bosnia and Herzegovina convertible mark
-    Bosnia and Herzegovina convertible mark: konvertibilna marka|bam|конвертибилна марка|konvertibilnih maraka
-    Fening: feninga
+    Bosnia and Herzegovina convertible mark: bosnia and herzegovina convertible mark|bam
+    Fening: fenings|fenings
 #Botswana pula
-    Botswana pula: pula|pulas
-    Thebe: thebe|thebes
+    Botswana pula: botswana pula|bwp|pula|pulas|botswana pulas
+    Thebe: thebe
 #Brazilian real
-    Brazilian real: real|r$|brl
-#Missing: Centavos: centavos
+    Brazilian real: brazilian real|r$|brl|brazil real|brazil reals|brazilian reals
 #Bulgarian lev
-    Bulgarian lev: lev|bgn|лв|bălgarska lev|leva
-    Stotinka: stotinki
+    Bulgarian lev: bulgarian lev|bgn|лв|bulgaria lev|bulgaria levs|bulgarian levs
+    Stotinka: stotinki|stotinka
 #Cambodian riel
-    Cambodian riel: riel|khr|៛|រៀល
+    Cambodian riel: cambodian riel|khr|៛|cambodia riel|cambodia riels|cambodian riels
 #Cape Verdean escudo
 #No use of "esc" and "$"
-    Cape Verdean escudo: kapverdisk escudo|kapverdiska escudos|cve
+    Cape Verdean escudo: cape verdean escudo|cve
 #Costa Rican colón
-    Costa Rican colón: costaricansk colón|crc|costaricansk colon
+    Costa Rican colón: costa rican colón|costa rican colóns|crc|₡|costa rica colón|costa rica colóns|costa rican colon|costa rican colons|costa rica colon|costa rica colons
 #Salvadoran colón
-    Salvadoran colón: salvadoransk colón|salvadoransk colon|svc
-    Céntimo: céntimo|centimo
+    Salvadoran colón: svc|salvadoran colón|salvadoran colóns|salvador colón|salvador colóns|salvadoran colon|salvadoran colons|salvador colon|salvador colons
+    Céntimo: céntimo
 #Croatian kuna
-    Croatian kuna: Kroatisk kuna|hrvatska kuna|hrk|kn
+    Croatian kuna: croatian kuna|kn|hrk|croatia kuna|croatian kunas|croatian kuna kunas
     Lipa: lipa
 #Czech koruna
-    Czech koruna: tjeckisk krona|tjeckiska kronor|czk|kč|tjeckisk koruna|tjeckiska koruna|tjeckiska korunas|koruna česká
+    Czech koruna: czech koruna|czk|kč|czech korunas
     Haléř: haléř
 #Eritrean nakfa
-    Eritrean nakfa: eritrean nakfa|nfk|ern|eritrean nakfas|nakfas|nakfa
+    Eritrean nakfa: eritrean nakfa|nfk|ern|eritrean nakfas
 #Ethiopian birr
     Ethiopian birr: ethiopian birr|etb
 #Gambian dalasi
-    Gambian dalasi: gmd|dalasi
+    Gambian dalasi: gmd
     Butut: bututs|butut
 #Georgian lari
-    Georgian lari: georgisk lari|lari|gel|₾|ქართული ლარი|kartuli lari
+    Georgian lari: georgian lari|lari|gel|₾
     Tetri: tetri
 #Ghanaian cedi
-    Ghanaian cedi: ghana cedi|ghs|₵|gh₵
+    Ghanaian cedi: ghanaian cedi|ghs|₵|gh₵
     Pesewa: pesewas|pesewa
 #Guatemalan quetzal
-    Guatemalan quetzal: quetzal|quetzales|gtq|quetzal guatemalteco
- #   Centavos: centavo|centavos
+    Guatemalan quetzal: guatemalan quetzal|gtq|guatemala quetzal
 #Haitian gourde
 #No use of G
-    Haitian gourde: gourde|haitisk gourde|htg
+    Haitian gourde: haitian gourde|htg
 #Honduran lempira
 #No use of L
-    Honduran lempira: lempira|hnl|lempira hondureño
+    Honduran lempira: honduran lempira|hnl
 #Hungarian forint
-    Hungarian forint: ungersk forint|huf|ft|forint|magyar forint
+    Hungarian forint: hungarian forint|huf|ft|hungary forint|hungary forints|hungarian forints
     Fillér: fillér
 #Iranian rial
-    Iranian rial: iransk rial|iransk riyal|irr|iranska rial|iranska riyal|irani rial
-    Yemeni rial: jemenitisk rial|jemenitisk riyal|yer|yemeni rials|yemeni rial|ر.ي
-    Israeli new shekel: ₪|ils|agora|שקל חדש|sheqel khadash|nis
+    Iranian rial: iranian rial|irr|iran rial|iran rials|iranian rials
+    Yemeni rial: yemeni rial|yer|yemeni rials
+    Israeli new shekel: ₪|ils|agora
 #Lithuanian litas
-    Lithuanian litas: ltl|litas
+    Lithuanian litas: ltl|lithuanian litas|lithuan litas|lithuanian lit|lithuan lit
 #Japanese yen
-    Japanese yen: japanska yen|japanska yen|jpy|yen|-yen|¥
+    Japanese yen: japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens
 #Kazakhstani tenge
-    Kazakhstani tenge: tenge|kzt|тиын|теңг
+    Kazakhstani tenge: kazakhstani tenge|kazakh tenge|kazak tenge|kzt
 #Kenyan shilling
-    Kenyan shilling: kenyansk shilling|kes
+    Kenyan shilling: kenyan shilling|kes
 #North Korean won
-    North Korean won: nordkoreansk won|kpw|₩n
-    South Korean won: sydkoreansk won|krw|
-    Korean won: koreansk won|₩|koreanska won|wŏn|원
+    North Korean won: north korean won|kpw|north korean wons
+    South Korean won: south korean won|krw|south korean wons
+    Korean won: korean won|₩|korean wons
 #Kyrgyzstani som
-    Kyrgyzstani som: kirgizistansk som|kgs|Кыргыз сом
+    Kyrgyzstani som: kyrgyzstani som|kgs
 #Uzbekitan som
-    Uzbekitan som: uzbekistansk som|uzs|Ўзбек сўм
+    Uzbekitan som: uzbekitan som|uzs
 #Lao kip
-    Lao kip: kip|lak|₭n|₭
+    Lao kip: lao kip|lak|₭n|₭
     Att: att
 #Lesotho loti
-    Lesotho loti: loti|maloti|lsl
+    Lesotho loti: lesotho loti|lsl|loti
     Sente: sente|lisente
 #South African rand
-    South African rand: rand
+    South African rand: south african rand|zar|south africa rand|south africa rands|south african rands
 #Macanese pataca
-    Macanese pataca: pataca|mop$|mop
+    Macanese pataca: macanese pataca|mop$|mop
     Avo: avos|avo
 #Macedonian denar
-    Macedonian denar: makedonisk denar|mkd|ден|Mdi
-    Deni: deni|denari
+    Macedonian denar: macedonian denar|mkd|ден
+    Deni: deni
 #Malagasy ariary
-    Malagasy ariary: ariary|mga|ma|Ariary malgache
+    Malagasy ariary: malagasy ariary|mga
     Iraimbilanja: iraimbilanja
 #Malawian kwacha
-    Malawian kwacha: malawisk kwacha|mk|mwk
+    Malawian kwacha: malawian kwacha|mk|mwk
     Tambala: tambala
 #Malaysian ringgit
-    Malaysian ringgit: malaysisk ringgit|malaysisk dollar|rm|myr
+    Malaysian ringgit: malaysian ringgit|rm|myr|malaysia ringgit|malaysia ringgits|malaysian ringgits
 #Mauritanian ouguiya
-    Mauritanian ouguiya: mauretansk ouguiya|ouguiya|um|mro
+    Mauritanian ouguiya: mauritanian ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritanian ouguiyas
     Khoums: khoums
 #Mongolian tögrög
-    Mongolian tögrög: tögrög|tugrik|mnt|₮|төгрөг
+    Mongolian tögrög: mongolian tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongolian tögrögs|mongolian togrog|mongolian togrogs|mongolia togrog|mongolia togrogs
 #Mozambican metical
-    Mozambican metical: metical|metical moçambicano nuevo|mt|mzn
+    Mozambican metical: mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals
 #Burmese kyat
-    Burmese kyat: kyat|kyap|ks|mmk|
+    Burmese kyat: burmese kyat|ks|mmk
     Pya: pya
 #Nicaraguan córdoba
-    Nicaraguan córdoba: córdoba|nio|C$|córdoba oro nicaragüense
+    Nicaraguan córdoba: nicaraguan córdoba|nio
 #Nigerian naira
-    Nigerian naira: naira|naira|ngn|₦|nigerian naira
+    Nigerian naira: nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas
     Kobo: kobo
 #Turkish lira
-    Turkish lira: turkiska lira|try|tl|turkisk lira|türk Lirası
+    Turkish lira: turkish lira|try|tl|turkey lira|turkey liras|turkish liras
     Kuruş: kuruş
 #Omani rial
-    Omani rial: omansk rial|omani rial|omr|ر.ع.
+    Omani rial: omani rial|omr|ر.ع.
 #Panamanian balboa
-    Panamanian balboa: balboa|b/.|pab
-    Centesimo: centésimo|centésimos|centesimos|centesimo
+    Panamanian balboa: panamanian balboa|b/.|pab
+    Centesimo: centesimo
 #Papua New Guinean kina
-    Papua New Guinean kina: kina|pgk
+    Papua New Guinean kina: papua new guinean kina|kina|pgk
     Toea: toea
 #Paraguayan guaraní
-    Paraguayan guaraní: guaraní|guarani|₲|pyg
+    Paraguayan guaraní: paraguayan guaraní|₲|pyg
 #Peruvian sol
-    Peruvian sol: sol|nuevo sol peruano|pen
+    Peruvian sol: peruvian sol|soles|sol|peruvian nuevo sol
 #Polish zloty
-    Polish złoty: złoty|polsk złoty|zł|pln|zloty|złoty polski
+    Polish złoty: złoty|polish złoty|zł|pln|zloty|polish zloty|poland zloty|poland złoty
     Grosz: groszy|grosz|grosze
 #Qatari riyal
-    Qatari riyal: qatarisk rial|qatarisk riyal|qar|ر.ق
-    Saudi riyal: saudiarabisk riyal|saudiarabisk rial|sar|riyāl suʿūdī
-    Riyal: riyal|rial|﷼
-    Dirham: dirham|dirhem|dirhm|درهم
-    Halala: hallalas|hallala|هللة
+    Qatari riyal: qatari riyal|qar|qatari riyals|qatar riyal|qatar riyals
+    Saudi riyal: saudi riyal|sar|saudi riyals
+    Riyal: riyal|riyals|rial|﷼
+    Dirham: dirham|dirhem|dirhm
+    Halala: halalas|halala
 #Samoan tālā
-    Samoan tālā: tālā|tala|ws$|wst
+    Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala
     Sene: sene
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: dobra|dobras|std|dobra são-tomeano
+    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
 #Sierra Leonean leone
     Sierra Leonean leone: sierra leonean leone|sll|leone|le
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
-    Netherlands guilder: antillergulden|antilliaanse gulden|ang|nederländska gulden|-gulden|holländska gulden|fl|naƒ
+    Netherlands guilder: florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
 #Swazi lilangeni
-    Swazi lilangeni: lilangeni|szl|emalangeni
+    Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni
 #Tajikistani somoni
-    Tajikistani somoni: somoni|tjs|сомонӣ
-    Diram: diram|дирам
+    Tajikistani somoni: tajikistani somoni|tjs|somoni
+    Diram: dirams|diram
 #Thai baht
-    Thai baht: ฿t|thb|baht|บาทไทย
-    Satang: satang|สตางค์
+    Thai baht: thai baht|฿|thb|baht
+    Satang: satang|satangs
 #Tongan paʻanga
-    Tongan paʻanga: paʻanga|T$|pa''anga
+    Tongan paʻanga: tongan paʻanga|paʻanga|tongan pa'anga|pa'anga
     Seniti: seniti
 #Ukrainian hryvnia
-    Ukrainian hryvnia: ukrainska hryvnia|ukrainsk hryvnia|hyrvnia|uah|₴|гривня
+    Ukrainian hryvnia: ukrainian hryvnia|hyrvnia|uah|₴|ukrain hryvnia|ukrain hryvnias|ukrainian hryvnias
 #Vanuatu vatu
-    Vanuatu vatu: vatu|vuv
+    Vanuatu vatu: vanuatu vatu|vatu|vuv
 #Venezuelan bolívar
-    Venezuelan bolívar: bolívar|bs.f.|vef|fuerte
+    Venezuelan bolívar: venezuelan bolívar|venezuelan bolívars|bs.f.|vef|bolívar fuerte|venezuelan bolivar|venezuelan bolivars|venezuela bolivar|venezuela bolivarsvenezuelan bolivar|venezuelan bolivars
 #Vietnamese dong
     Vietnamese dong: vietnamese dong|vnd|đồng|vietnam dong|vietnamese dongs|vietnam dongs
 #Zambian kwacha
-    Zambian kwacha: zambisk kwacha|zk|zmw|zambian kwacha
+    Zambian kwacha: zambian kwacha|zk|zmw|zambia kwacha|kwachas|zambian kwachas
 #Dirham
-    Moroccan dirham: marockansk dirham|mad|د.م.
-    United Arab Emirates dirham: emiratisk dirham|د.إ|aed
+    Moroccan dirham: moroccan dirham|mad|د.م.
+    United Arab Emirates dirham: united arab emirates dirham|د.إ|aed
 #Manat
-    Azerbaijani manat: azerbajdzjansk manat|azn|Azərbaycan manatı
-    Turkmenistan manat: turkmensk manat|turkmensk ny manat|tmt
+    Azerbaijani manat: azerbaijani manat|azn
+    Turkmenistan manat: turkmenistan manat|turkmenistan new manat|tmt
     Manat: manats|manat
-    Qəpik: qəpik|gepik
+    Qəpik: qəpik
 #Shilling
-    Somali shilling: somalisk shilling|shilin soomaali|sh.so.|sos
-    Somaliland shilling: somaliländsk shilling|somaliländsk shilin
-    Tanzanian shilling: tanzanisk shilling|tsh|tzs|shilingi tanzania
-    Ugandan shilling: ugandisk shilling|ugandiska shilling|ugx
+    Somali shilling: somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos
+    Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin
+    Tanzanian shilling: tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings
+    Ugandan shilling: ugandan shilling|ugandan shillings|ugx|uganda shilling|uganda shillings
 #Leu
     Romanian leu: romanian leu|lei|ron|romania leu
     Moldovan leu: moldovan leu|mdl|moldova leu
@@ -383,7 +381,7 @@ CurrencySuffixList: !dictionary
     Norwegian krone: norwegian krone|nok|norway krone|norway krones|norwegian krones
     Faroese króna: faroese króna|faroese krona
     Icelandic króna: icelandic króna|isk|icelandic krona|iceland króna|iceland krona
-    Swedish krona: swedish krona|sek|swedan krona|spänn
+    Swedish krona: swedish krona|sek|swedan krona
     Krone: kronor|krona|króna|krone|krones|kr|-kr
     Øre: Øre|oyra|eyrir
 #Franc

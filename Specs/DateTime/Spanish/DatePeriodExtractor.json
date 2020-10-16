@@ -389,24 +389,24 @@
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de 2016",
+    "Input": "Estare afuera el tercer trimestre de 2016",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de 2016",
+        "Text": "el tercer trimestre de 2016",
         "Type": "daterange",
         "Start": 14,
-        "Length": 30
+        "Length": 27
       }
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de este año",
+    "Input": "Estare afuera el tercer trimestre de este año",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de este año",
+        "Text": "el tercer trimestre de este año",
         "Type": "daterange",
         "Start": 14,
-        "Length": 34
+        "Length": 31
       }
     ]
   },
