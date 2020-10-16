@@ -347,7 +347,7 @@ CurrencySuffixList: !dictionary
 #Venezuelan bolívar
     Venezuelan bolívar: bolívar|bs.f.|vef|fuerte
 #Vietnamese dong
-    Vietnamese dong: vietnamese dong|vnd|đồng|vietnam dong|vietnamese dongs|vietnam dongs
+    Vietnamese dong: dong|vnd|đồng|₫
 #Zambian kwacha
     Zambian kwacha: zambisk kwacha|zk|zmw|zambian kwacha
 #Dirham
