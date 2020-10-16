@@ -128,10 +128,16 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Sonntag in 2 Wochen",
+        "Text": "Sonntag",
         "Type": "date",
         "Start": 11,
-        "Length": 19
+        "Length": 7
+      },
+      {
+        "Text": "in 2 Wochen",
+        "Type": "date",
+        "Start": 19,
+        "Length": 11
       }
     ]
   },
