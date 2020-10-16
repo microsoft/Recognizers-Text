@@ -364,28 +364,28 @@ CurrencySuffixList: !dictionary
     Tanzanian shilling: tanzanisk shilling|tsh|tzs|shilingi tanzania
     Ugandan shilling: ugandisk shilling|ugandiska shilling|ugx
 #Leu
-    Romanian leu: romanian leu|lei|ron|romania leu
-    Moldovan leu: moldovan leu|mdl|moldova leu
+    Romanian leu: rumänsk leu|lei|ron|rumänska leu
+    Moldovan leu: moldavisk leu|mdl|moldaviska leu
     Leu: leu
     Ban: bani|-ban|ban
 #Rupee
-    Nepalese rupee: nepalese rupees|nepalese rupee|npr
-    Pakistani rupee: pakistani rupees|pakistani rupee|pkr
-    Indian rupee: indian rupees|indian rupee|inr|₹|india rupees|india rupee
-    Seychellois rupee: seychellois rupees|seychellois rupee|scr|sr|sre
-    Mauritian rupee: mauritian rupees|mauritian rupee|mur
-    Maldivian rufiyaa: maldivian rufiyaas|maldivian rufiyaa|mvr|.ރ|maldive rufiyaas|maldive rufiyaa
-    Sri Lankan rupee: sri lankan rupees|sri lankan rupee|lkr|රු|ரூ
-    Indonesian rupiah: indonesian rupiah|rupiah|perak|rp|idr
-    Rupee: rupee|rupees|rs
+    Nepalese rupee: nepalesisk rupie|npr
+    Pakistani rupee: pakistansk rupie|pkr
+    Indian rupee: indiska rupier|indisk rupie|inr|₹
+    Seychellois rupee: seychelliska rupier|scr|sr|sre
+    Mauritian rupee: mauritiska rupier|mauritisk rupie|mur
+    Maldivian rufiyaa: rufiyah|mvr|.ރ
+    Sri Lankan rupee: lankesiska rupier|lankesisk rupee|lkr|රු|ரூ
+    Indonesian rupiah: rupiah|perak|rp|idr
+    Rupee: rupie|rupier|rs
 #Krone
-    Danish krone: danish krone|dkk|denmark krone|denmark krones|danish krones
-    Norwegian krone: norwegian krone|nok|norway krone|norway krones|norwegian krones
-    Faroese króna: faroese króna|faroese krona
-    Icelandic króna: icelandic króna|isk|icelandic krona|iceland króna|iceland krona
-    Swedish krona: swedish krona|sek|swedan krona|spänn
-    Krone: kronor|krona|króna|krone|krones|kr|-kr
-    Øre: Øre|oyra|eyrir
+    Danish krone: danska kronor|dansk krona|dkk
+    Norwegian krone: norska kronor|norsk krona|nok
+    Faroese króna: färöiska kronor|färöisk krona|fok
+    Icelandic króna: isländska kronor|isländsk krona
+    Swedish krona: svenska kronor|svensk krona|sek|spänn
+    Krone: kronor|krona|króna|kr|-kr
+    Øre: Øre|oyra|eyrir|öre
 #Franc
     West African CFA franc: west african cfa franc|xof|west africa cfa franc|west africa franc|west african franc
     Central African CFA franc: central african cfa franc|xaf|central africa cfa franc|central african franc|central africa franc
