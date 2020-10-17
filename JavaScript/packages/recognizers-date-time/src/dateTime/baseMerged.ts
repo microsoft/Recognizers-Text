@@ -353,7 +353,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.beforeMod;
+            val.mod = combineMod(val.Mod, TimeTypeConstants.beforeMod);
             pr.value = val;
         }
 
@@ -362,7 +362,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.afterMod;
+            val.mod = combineMod(val.Mod, TimeTypeConstants.afterMod);
             pr.value = val;
         }
 
@@ -371,7 +371,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.sinceMod;
+            val.mod = combineMod(val.Mod, TimeTypeConstants.sinceMod);
             pr.value = val;
         }
 
@@ -426,6 +426,15 @@ export class BaseMergedParser implements IDateTimeParser {
             return this.config.setParser.parse(extractorResult, referenceDate);
         }
         return null;
+    }
+    
+    protected combineMod(originalMod: string, newMod: string): string {
+        let combinedMod = newMod;
+        if (!originalMod) {
+            combineMod = newMod + "-" + originalMod;
+        }
+        
+        return combineMod;
     }
 
     protected determineDateTimeType(type: string, hasMod: boolean): string {

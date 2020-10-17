@@ -186,9 +186,9 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
 
             if (!hasInclusiveModifier) {
-                val.setMod(Constants.BEFORE_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.BEFORE_MOD));
             } else {
-                val.setMod(Constants.UNTIL_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.UNTIL_MOD));
             }
 
             pr.setValue(val);
@@ -203,9 +203,9 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
 
             if (!hasInclusiveModifier) {
-                val.setMod(Constants.AFTER_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.AFTER_MOD));
             } else {
-                val.setMod(Constants.SINCE_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
             }
 
             pr.setValue(val);
@@ -218,7 +218,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setLength(pr.getLength() + modStr.length());
 
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-            val.setMod(Constants.SINCE_MOD);
+            val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
             pr.setValue(val);
         }
 
@@ -229,7 +229,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setLength(pr.getLength() + modStr.length());
 
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-            val.setMod(Constants.APPROX_MOD);
+            val.setMod(combineMod(val.getMod(), Constants.APPROX_MOD));
             pr.setValue(val);
         }
 
@@ -239,7 +239,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setLength(pr.getLength() + modStr.length());
 
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-            val.setMod(Constants.SINCE_MOD);
+            val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
             pr.setValue(val);
             hasSince = true;
         }
@@ -249,7 +249,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getSuffixAfterRegex(), pr.getText())).findFirst();
             if (match.isPresent() && match.get().index != 0) {
                 DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-                val.setMod(Constants.SINCE_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
                 pr.setValue(val);
                 hasSince = true;
             }
@@ -575,6 +575,14 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         result.put(ResolutionKey.ValueSet, resolutions);
 
         return result;
+    }
+    
+    private String combineMod(String originalMod, String newMod) {
+        String combinedMod = newMod;
+        if (originalMod != null && originalMod != "") {
+            combinedMod = newMod + "-" + originalMod;
+        }
+        return combinedMod;
     }
 
     private String determineResolutionDateTimeType(LinkedHashMap<String, String> pastResolutionStr) {
