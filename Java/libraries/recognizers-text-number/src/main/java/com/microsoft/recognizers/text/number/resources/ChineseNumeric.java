@@ -279,7 +279,7 @@ public class ChineseNumeric {
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
-    public static final String DoubleWithThousandsRegex = "{NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2}"
+    public static final String DoubleWithThousandsRegex = "({NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2})|({NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}{1,3}(,{ZeroToNineFullHalfRegex}{3})+([\\.．]{ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2})"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
 
