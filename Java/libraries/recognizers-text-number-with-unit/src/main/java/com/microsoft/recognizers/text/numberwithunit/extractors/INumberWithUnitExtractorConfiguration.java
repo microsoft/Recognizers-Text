@@ -31,5 +31,7 @@ public interface INumberWithUnitExtractorConfiguration {
     
     Pattern getAmbiguousUnitNumberMultiplierRegex();
 
+    Pattern getHalfUnitRegex();
+
     Map<Pattern, Pattern> getAmbiguityFiltersDict();
 }

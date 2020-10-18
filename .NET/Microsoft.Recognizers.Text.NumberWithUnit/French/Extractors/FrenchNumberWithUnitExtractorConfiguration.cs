@@ -50,6 +50,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
+        public virtual Regex HalfUnitRegex => null;
+
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }

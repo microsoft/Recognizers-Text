@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
 import com.microsoft.recognizers.text.number.chinese.extractors.NumberExtractor;
+import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.ChineseNumericWithUnit;
 import com.microsoft.recognizers.text.numberwithunit.resources.EnglishNumericWithUnit;
@@ -55,6 +56,10 @@ public abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
     
     public Pattern getAmbiguousUnitNumberMultiplierRegex() {
         return null;
+    }
+
+    public Pattern getHalfUnitRegex() {
+        return Pattern.compile(ChineseNumeric.HalfUnitRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public abstract String getExtractType();

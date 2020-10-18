@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
+        public virtual Regex HalfUnitRegex => null;
+
         public IExtractor IntegerExtractor { get; }
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;

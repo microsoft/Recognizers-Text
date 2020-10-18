@@ -60,6 +60,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
 
             var result = new List<ExtractResult>();
+            IOrderedEnumerable<ExtractResult> numbers;
 
             if (!PreCheckStr(source))
             {
@@ -75,19 +76,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var prefixMatches = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
             var suffixMatches = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
 
-            // Remove matches with wrong length, e.g. both 'm2' and 'm 2' are extracted but only 'm2' represents a unit.
-            for (int i = suffixMatches.Count - 1; i >= 0; i--)
+            if (prefixMatches.Any() || suffixMatches.Any())
             {
-                var m = suffixMatches[i];
-                if (m.CanonicalValues.All(l => l.Length != m.Length))
-                {
-                    suffixMatches.RemoveAt(i);
-                }
-            }
-
-            if (prefixMatches.Count > 0 || suffixMatches.Count > 0)
-            {
-                var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+                numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
 
                 // Checking if there are conflicting interpretations between currency unit as prefix and suffix for each number.
                 // For example, in Chinese, "$20，300美圆" should be broken into two entities instead of treating 20,300 as one number: "$20" and "300美圆".
@@ -297,6 +288,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
                 }
             }
+            else
+            {
+                numbers = null;
+            }
 
             // Extract Separate unit
             if (separateRegex != null)
@@ -316,6 +311,54 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
             {
                 result = SelectCandidates(source, result, unitIsPrefix);
+            }
+
+            // Expand Chinese Half Patterns
+            if (this.config.HalfUnitRegex != null && numbers != null)
+            {
+                var match = new List<ExtractResult>();
+                foreach (var number in numbers)
+                {
+                    if (this.config.HalfUnitRegex.Matches(number.Text).Count == 1)
+                    {
+                        match.Add(number);
+                    }
+
+                }
+
+                if (match.Count > 0)
+                {
+                    var res = new List<ExtractResult>();
+                    foreach (var er in result)
+                    {
+                        int start = (int)er.Start;
+                        int length = (int)er.Length;
+                        var match_suffix = new List<ExtractResult>();
+                        foreach (var mr in match)
+                        {
+                            if (mr.Start == (start + length))
+                            {
+                                match_suffix.Add(mr);
+                            }
+                        }
+
+                        if (match_suffix.Count == 1)
+                        {
+                            var mr = match_suffix[0];
+                            er.Length += mr.Length;
+                            er.Text += mr.Text;
+                            var tmp = new List<ExtractResult>();
+                            tmp.Add((ExtractResult)er.Data);
+                            tmp.Add(mr);
+                            er.Data = tmp;
+                        }
+
+                        res.Add(er);
+                    }
+
+                    result = res;
+                }
+
             }
 
             return result;

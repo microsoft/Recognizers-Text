@@ -58,6 +58,10 @@ public abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
         return null;
     }
 
+    public Pattern getHalfRegex() {
+        return null;
+    }
+
     public abstract String getExtractType();
     
     public abstract Map<String, String> getSuffixList();
