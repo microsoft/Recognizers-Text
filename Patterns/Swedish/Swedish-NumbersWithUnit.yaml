@@ -387,32 +387,32 @@ CurrencySuffixList: !dictionary
     Krone: kronor|krona|króna|kr|-kr
     Øre: Øre|oyra|eyrir|öre
 #Franc
-    West African CFA franc: west african cfa franc|xof|west africa cfa franc|west africa franc|west african franc
-    Central African CFA franc: central african cfa franc|xaf|central africa cfa franc|central african franc|central africa franc
-    Comorian franc: comorian franc|kmf
-    Congolese franc: congolese franc|cdf
-    Burundian franc: burundian franc|bif
-    Djiboutian franc: djiboutian franc|djf
+    West African CFA franc: västafrikanska cfa franc|xof|västafrikansk cfa franc
+    Central African CFA franc: centralafrikanska cfa franc|xaf|centralafrikansk cfa franc
+    Comorian franc: komorisk franc|kmf
+    Congolese franc: kongolesisk franc|cdf
+    Burundian franc: burundisk francbif
+    Djiboutian franc: djiboutisk franc|djf
     CFP franc: cfp franc|xpf
-    Guinean franc: guinean franc|gnf
-    Swiss franc: swiss francs|swiss franc|chf|sfr.
-    Rwandan franc: Rwandan franc|rwf|rf|r₣|frw
+    Guinean franc: guinesisk franc|gnf
+    Swiss franc: schweizisk franc|schweizerfranc|chf|sfr.
+    Rwandan franc: rwandisk franc|rwandiska franc|rwf|rf|r₣|frw
     Belgian franc: belgian franc|bi.|b.fr.|bef|belgium franc
     Rappen: rappen|-rappen
     Franc: francs|franc|fr.|fs
     Centime: centimes|centime|santim
 #Ruble
-    Russian ruble: russian ruble|₽|rub|russia ruble|russia ₽|russian ₽|russian rubles|russia rubles
-    New Belarusian ruble: new belarusian ruble|byn|new belarus ruble|new belarus rubles|new belarusian rubles
-    Old Belarusian ruble: old belarusian ruble|byr|old belarus ruble|old belarus rubles|old belarusian rubles
-    Transnistrian ruble: transnistrian ruble|prb|р.
-    Belarusian ruble: belarusian ruble|belarus ruble|belarus rubles|belarusian rubles
+    Russian ruble: ryska rubel|rysk rubel|₽|rub
+    New Belarusian ruble: ny belarusisk rubel|byn
+    Old Belarusian ruble: gammal belarusisk rubel|byr
+    Transnistrian ruble: transnistrisk rubel|prb|р.
+    Belarusian ruble: belarusisk rubel
     Kopek: kopek|kopeks
     Kapyeyka: kapyeyka
-    Ruble: rubles|ruble|br
+    Ruble: rubel|br
 #Dinar
-    Algerian dinar: algerian dinar|د.ج|dzd|algerian dinars|algeria dinar|algeria dinars
-    Bahraini dinar: bahraini dinars|bahraini dinar|bhd|.د.ب
+    Algerian dinar: algerisk dinar|د.ج|dzd|algeriska dinarer
+    Bahraini dinar: bahrainsk dinar|bahrainska dinarer|bhd|.د.ب
     Santeem: santeem|santeems
     Iraqi dinar: iraqi dinars|iraqi dinar|iraq dinars|iraq dinar|iqd|ع.د
     Jordanian dinar: jordanian dinars|jordanian dinar|د.ا|jod|jordan dinar|jordan dinars
