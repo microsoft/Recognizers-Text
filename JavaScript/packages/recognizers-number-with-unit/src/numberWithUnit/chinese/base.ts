@@ -20,6 +20,7 @@ export abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
+    readonly halfUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -30,6 +31,7 @@ export abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
         this.connectorToken = ChineseNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(ChineseNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
+        this.halfUnitRegex = RegExpUtility.getSafeRegExp(ChineseNumericWithUnit.HalfUnitRegex);
     }
 }
 

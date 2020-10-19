@@ -19,6 +19,7 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
+    readonly halfUnitRegex: RegExp;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -262,6 +263,40 @@ export class NumberWithUnitExtractor implements IExtractor {
 
         // remove common ambiguous cases
         result = this.filterAmbiguity(result, source);
+
+        // expand Chinese half patterns
+        if (this.config.halfUnitRegex != null){
+            let match = new Array<ExtractResult>();
+            for (let number of numbers) {
+                if (RegExpUtility.getMatches(this.config.halfUnitRegex, number.text).length > 0){
+                    match.push(number);
+                }
+            }
+            if (match.length > 0){
+                let res = new Array<ExtractResult>();
+                for (let er of result){
+                    let start = er.start;
+                    let length = er.length;
+                    let matchSuffix = new Array<ExtractResult>();
+                    for (let mr of match){
+                        if (mr.start == start + length){
+                            matchSuffix.push(mr);
+                        }
+                    }
+                    if (matchSuffix.length === 1){
+                        let mr = matchSuffix[0];
+                        er.length += mr.length;
+                        er.text += mr.text;
+                        let tmp = new Array<ExtractResult>();
+                        tmp.push(er.data);
+                        tmp.push(mr);
+                        er.data = tmp;
+                    }
+                    res.push(er);
+                }
+                result = res;
+            }
+        }
 
         return result;
     }

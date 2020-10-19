@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
 
         private static readonly Regex HalfUnitsRegex =
-            new Regex(NumbersDefinitions.HalfUnitRegex, RegexFlags);
+            new Regex(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags);
 
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {

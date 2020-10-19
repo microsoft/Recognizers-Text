@@ -20,6 +20,7 @@ export abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
+    readonly halfUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -30,6 +31,7 @@ export abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
         this.connectorToken = PortugueseNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(PortugueseNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
+        this.halfUnitRegex = null;
     }
 }
 

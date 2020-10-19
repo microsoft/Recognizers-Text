@@ -138,7 +138,6 @@
   },
   {
     "Input": "一吨半",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "一吨半",
@@ -154,7 +153,6 @@
   },
   {
     "Input": "两米半",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "两米半",
@@ -170,7 +168,6 @@
   },
   {
     "Input": "三斤半",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "三斤半",
@@ -186,7 +183,6 @@
   },
   {
     "Input": "十五斤半",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "十五斤半",

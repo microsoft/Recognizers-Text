@@ -5,7 +5,6 @@ from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseNumberExtractorMode
-from recognizers_number.resources.chinese_numeric import ChineseNumeric
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.chinese_numeric_with_unit import ChineseNumericWithUnit
@@ -82,7 +81,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
             ChineseNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
             BaseUnits.PmNonUnitRegex)
-        self._half_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.HalfUnitRegex)
+        self._half_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.HalfUnitRegex)
 
 
 # pylint: enable=abstract-method
