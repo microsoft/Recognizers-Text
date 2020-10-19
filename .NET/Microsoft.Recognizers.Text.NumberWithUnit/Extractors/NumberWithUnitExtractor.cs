@@ -76,7 +76,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var prefixMatches = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
             var suffixMatches = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
 
-            if (prefixMatches.Any() || suffixMatches.Any())
+            // Remove matches with wrong length, e.g. both 'm2' and 'm 2' are extracted but only 'm2' represents a unit.
+            for (int i = suffixMatches.Count - 1; i >= 0; i--)
+            {
+                var m = suffixMatches[i];
+                if (m.CanonicalValues.All(l => l.Length != m.Length))
+                {
+                    suffixMatches.RemoveAt(i);
+                }
+            }
+
+            if (prefixMatches.Count > 0 || suffixMatches.Count > 0)
             {
                 numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
 

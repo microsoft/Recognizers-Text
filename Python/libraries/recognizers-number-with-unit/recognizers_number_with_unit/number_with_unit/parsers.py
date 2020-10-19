@@ -86,7 +86,7 @@ class NumberWithUnitParser(Parser):
 
         # Unit type depends on last unit in suffix.
         last_unit = unit_keys[-1]
-        if half_result:
+        if half_result and half_result.text in last_unit:
             last_unit = last_unit[:-1 * half_result.length]
         normalized_last_unit = last_unit.lower()
         if self.config.connector_token and normalized_last_unit.startswith(self.config.connector_token):

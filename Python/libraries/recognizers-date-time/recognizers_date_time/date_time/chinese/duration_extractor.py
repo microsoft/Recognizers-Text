@@ -37,10 +37,6 @@ class ChineseDurationExtractor(ChineseBaseDateTimeExtractor):
 
             # match suffix
             suffix = source[er_result.start + er_result.length:]
-            match = regex.search(self.half_suffix_regex, suffix)
-            if match is not None and match.start() == 0:
-                er_result.text = er_result.text + match.group()
-                er_result.length = er_result.length + len(match.group())
             result.append(er_result)
 
         return result
