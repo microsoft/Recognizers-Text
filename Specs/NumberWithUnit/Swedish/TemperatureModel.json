@@ -1,7 +1,6 @@
 [
   {
     "Input": "utanför är temperaturen 40 gr celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "40 gr celsius",
@@ -17,7 +16,6 @@
   },
   {
     "Input": "det är 90 fahrenheit i texas",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "90 fahrenheit",
@@ -33,7 +31,6 @@
   },
   {
     "Input": "-5 grader fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-5 grader fahrenheit",
@@ -49,7 +46,6 @@
   },
   {
     "Input": "6 gr. C",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "6 gr. c",
@@ -65,7 +61,6 @@
   },
   {
     "Input": "98,6 grader f är normal temperatur",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "98,6 grader f",
@@ -81,7 +76,6 @@
   },
   {
     "Input": "ställ in temperaturen på 30 grader celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "30 grader celsius",
@@ -97,7 +91,6 @@
   },
   {
     "Input": "normal temperatur är 98,6 grader fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "98,6 grader fahrenheit",
@@ -113,7 +106,6 @@
   },
   {
     "Input": "100 grader f",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "100 grader f",
@@ -129,7 +121,6 @@
   },
   {
     "Input": "20 grader c",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20 grader c",
@@ -145,7 +136,6 @@
   },
   {
     "Input": "100,2 grader fahrenheit är lågt",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "100,2 grader fahrenheit",
@@ -161,7 +151,6 @@
   },
   {
     "Input": "10,5 celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "10,5 celsius",
@@ -177,7 +166,6 @@
   },
   {
     "Input": "20 grader celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20 grader celsius",
@@ -193,7 +181,6 @@
   },
   {
     "Input": "20,3 celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20,3 celsius",
@@ -209,7 +196,6 @@
   },
   {
     "Input": "34,5 celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "34,5 celsius",
@@ -225,7 +211,6 @@
   },
   {
     "Input": "utanför är temperaturen 98 grader",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "98 grader",
@@ -241,7 +226,6 @@
   },
   {
     "Input": "ställ in termostaten på 85°",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "85°",
@@ -257,7 +241,6 @@
   },
   {
     "Input": "höj temperaturen med 5 grader",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "5 grader",
@@ -273,7 +256,6 @@
   },
   {
     "Input": "ställ in temperaturen på 70 grader f",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "70 grader f",
@@ -289,7 +271,6 @@
   },
   {
     "Input": "höj temperaturen med 20 grader",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20 grader",
@@ -305,7 +286,6 @@
   },
   {
     "Input": "ställ in temperaturen på 100 grader",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "100 grader",
@@ -321,7 +301,6 @@
   },
   {
     "Input": "behåll temperaturen på 75 grader f",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "75 grader f",
@@ -337,7 +316,6 @@
   },
   {
     "Input": "lämna temperaturen på 40 celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "40 celsius",
@@ -353,7 +331,6 @@
   },
   {
     "Input": "lämna temperaturen på 50 gr.",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "50 gr.",
@@ -369,7 +346,6 @@
   },
   {
     "Input": "omvandla 10 celsius till fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "10 celsius",
@@ -395,7 +371,6 @@
   },
   {
     "Input": "34,9 celsiusgrader till fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "34,9 celsiusgrader",
@@ -421,7 +396,6 @@
   },
   {
     "Input": "omvandla 200 celsius till fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "200 celsius",
@@ -447,7 +421,6 @@
   },
   {
     "Input": "fahrenheit till celsius 101 fahrenheit är så mycket celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "101 fahrenheit",
@@ -493,7 +466,6 @@
   },
   {
     "Input": "50 grader celsius till fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "50 grader celsius",
@@ -519,7 +491,6 @@
   },
   {
     "Input": "skulle du kunna omvandla 51 fahrenheit till grader celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "51 fahrenheit",
@@ -545,7 +516,6 @@
   },
   {
     "Input": "omvandla 106 grader fahrenheit till grader celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "106 grader fahrenheit",
@@ -571,7 +541,6 @@
   },
   {
     "Input": "omvandla 1 grad fahrenheit till celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 grad fahrenheit",
@@ -597,7 +566,6 @@
   },
   {
     "Input": "omvandla 1 grad celsius till fahrenheit",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 grad celsius",
@@ -623,7 +591,6 @@
   },
   {
     "Input": "hur man omvandlar - 20 grader fahrenheit till celsius",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "- 20 grader fahrenheit",
