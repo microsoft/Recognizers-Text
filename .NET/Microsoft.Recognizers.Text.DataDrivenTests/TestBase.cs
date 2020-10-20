@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumberWithUnit(TestModel testSpec)
         {
             TestPreValidation(testSpec);
-            ValidateResults(testSpec, new[] { ResolutionKey.Unit });
+            ValidateResults(testSpec, new[] { ResolutionKey.Unit, ResolutionKey.SubType });
         }
 
         public void TestCurrency(TestModel testSpec)
