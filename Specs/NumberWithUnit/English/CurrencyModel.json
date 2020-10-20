@@ -2354,6 +2354,23 @@
     ]
   },
   {
+    "Input": "It costs a quarter million us dollars.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a quarter million us dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "250000"
+        },
+        "Start": 9,
+        "End": 36
+      }
+    ]
+  },
+  {
     "Input": "It costs three quarters billion us dollars.",
     "NotSupported": "javascript, java, python",
     "Results": [

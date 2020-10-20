@@ -95,8 +95,8 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\s+of\s+a)?\s+{RoundNumberIntegerRegex})?|(half(\s+a)?|quarter(\s+of\s+a)?)\s+{RoundNumberIntegerRegex})(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+  def: (?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|(?<ambiguousSeparator>in|out\s+of))\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
