@@ -493,13 +493,13 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"Pollice cubo", @"pollice cubo|pollice cubico|pollici cubici|pollici cubi" },
             { @"Piede cubo", @"piede cubo|piedi cubi|piede cubico|piedi cubici" },
             { @"Miglia cubica", @"miglio cubo|miglio cubico|miglia cubica|miglia cubiche" },
-            { @"Oncia", @"oncia|once" },
             { @"Oncia liquida", @"oncia fluida|once fluide|oncia liquida|once liquide" },
             { @"Cucchiaino", @"cucchiaino|cucchiaini" },
             { @"Cucchiaio", @"cucchiaio|cucchiai" },
             { @"Tazza", @"tazza|tazze" },
             { @"Pinta", @"pinta|pinte" },
-            { @"Gallone", @"gallone|galloni" }
+            { @"Gallone", @"gallone|galloni" },
+            { @"Barile", @"barili|barile" }
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
@@ -515,8 +515,6 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"Chilogrammo", @"kg|kilogrammo|chilogrammo|chilogrammi|kilogrammi|kilo|kili|chilo|chili" },
             { @"Grammo", @"g|grammo|grammi|gr" },
             { @"Milligrammo", @"mg|milligrammo|milligrammi" },
-            { @"Barile", @"barili|barile" },
-            { @"Gallone", @"gallone|galloni" },
             { @"Tonnellata", @"tonnellata|tonnellate" },
             { @"Libbra", @"libbra|libbre" },
             { @"Oncia", @"oncia|once" }
