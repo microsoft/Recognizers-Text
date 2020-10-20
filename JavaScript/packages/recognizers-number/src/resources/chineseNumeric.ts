@@ -64,7 +64,7 @@ export namespace ChineseNumeric {
     export const DoubleSpecialsCharsWithNegatives = `(?<!(${ZeroToNineFullHalfRegex}+|\\.\\.|．．))(${NegativeNumberTermsRegexNum}\\s*)?[\\.．]${ZeroToNineFullHalfRegex}+(?!${ZeroToNineFullHalfRegex}*([\\.．]${ZeroToNineFullHalfRegex}+))`;
     export const SimpleDoubleSpecialsChars = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}{1,3}([,，]${ZeroToNineFullHalfRegex}{3})+[\\.．]${ZeroToNineFullHalfRegex}+`;
     export const DoubleWithMultiplierRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+\\s*${BaseNumbers.NumberMultiplierRegex}`;
-    export const DoubleWithThousandsRegex = `${NegativeNumberTermsRegex}?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2}`;
+    export const DoubleWithThousandsRegex = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+)|(${ZeroToNineFullHalfRegex}{1,3}(,${ZeroToNineFullHalfRegex}{3})+))([\\.．]${ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2}`;
     export const DoubleAllFloatRegex = `(?<![百佰]\\s*分\\s*之\\s*((${AllIntRegex}[点點]*)|${AllFloatRegex})*)${AllFloatRegex}(?!${ZeroToNineIntegerRegex}*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
     export const DoubleExponentialNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]${ZeroToNineFullHalfRegex}*)|[0０](?!${ZeroToNineFullHalfRegex}+))`;
     export const DoubleScientificNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?(${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]${ZeroToNineFullHalfRegex}*)`;

@@ -4836,5 +4836,33 @@
   {
     "Input": "没有人拾到她的东西",
     "Results": []
+  },
+  {
+    "Input": "1,100万",
+    "Results": [
+      {
+        "Text": "1,100万",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "11000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,100.9亿",
+    "Results": [
+      {
+        "Text": "1,100.9亿",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "110090000000"
+        }
+      }
+    ]
   }
 ]
