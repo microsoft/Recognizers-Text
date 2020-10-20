@@ -48,11 +48,6 @@ public class TemperatureExtractorConfiguration extends SpanishNumberWithUnitExtr
     }
 
     @Override
-    public Pattern getHalfUnitRegex() {
-        return null;
-    }
-
-    @Override
     public List<String> getAmbiguousUnitList() {
         return Collections.emptyList();
     }

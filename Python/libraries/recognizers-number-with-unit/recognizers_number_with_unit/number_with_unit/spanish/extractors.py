@@ -46,10 +46,6 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         return None
 
-    @property
-    def half_unit_regex(self) -> Pattern:
-        return None
-
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)

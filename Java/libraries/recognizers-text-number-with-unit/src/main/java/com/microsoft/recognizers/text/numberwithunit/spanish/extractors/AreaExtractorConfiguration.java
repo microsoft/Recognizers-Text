@@ -8,7 +8,6 @@ import com.microsoft.recognizers.text.numberwithunit.resources.SpanishNumericWit
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class AreaExtractorConfiguration extends SpanishNumberWithUnitExtractorConfiguration {
 
@@ -38,11 +37,6 @@ public class AreaExtractorConfiguration extends SpanishNumberWithUnitExtractorCo
     @Override
     public List<String> getAmbiguousUnitList() {
         return Collections.emptyList();
-    }
-
-    @Override
-    public Pattern getHalfUnitRegex() {
-        return null;
     }
 
     public static Map<String, String> AreaSuffixList = SpanishNumericWithUnit.AreaSuffixList;

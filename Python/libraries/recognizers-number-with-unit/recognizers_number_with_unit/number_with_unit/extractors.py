@@ -156,7 +156,9 @@ class NumberWithUnitExtractor(Extractor):
         self.separate_regex = self._build_separate_regex_from_config()
 
     def extract(self, source: str) -> List[ExtractResult]:
+        return self._extract(source)
 
+    def _extract(self, source: str) -> List[ExtractResult]:
         if not self._pre_check_str(source):
             return []
 
@@ -303,23 +305,6 @@ class NumberWithUnitExtractor(Extractor):
 
             # Remove common ambiguous cases
             result = self._filter_ambiguity(result, source)
-
-       # Expand Chinese Half Patterns
-        if self.config.half_unit_regex and numbers:
-            match = [number for number in numbers if regex.match(self.config.half_unit_regex, number.text)]
-            if match:
-                res = []
-                for er in result:
-                    start = er.start
-                    length = er.length
-                    match_suffix = [mr for mr in match if mr.start == (start + length)]
-                    if len(match_suffix) == 1:
-                        mr = match_suffix[0]
-                        er.length += mr.length
-                        er.text += mr.text
-                        er.data = [er.data, mr]
-                    res.append(er)
-                result = res
 
         return result
 

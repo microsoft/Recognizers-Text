@@ -1,6 +1,6 @@
 import { RegExpUtility, ExtractResult } from "@microsoft/recognizers-text";
 import { CultureInfo, Culture, BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
-import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "@microsoft/recognizers-text-number-with-unit";
+import { ChineseNumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "@microsoft/recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor } from "./baseDateTime";
 import { IDurationParserConfiguration, BaseDurationParser } from "../baseDuration";
 import { Constants, TimeTypeConstants } from "../constants";
@@ -30,13 +30,13 @@ class DurationExtractorConfiguration extends ChineseNumberWithUnitExtractorConfi
 
 export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType> {
     protected extractorName = Constants.SYS_DATETIME_DURATION; // "Duration";
-    private readonly extractor: NumberWithUnitExtractor;
+    private readonly extractor: ChineseNumberWithUnitExtractor;
     private readonly yearRegex: RegExp;
     private readonly halfSuffixRegex: RegExp;
 
     constructor() {
         super(null);
-        this.extractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
+        this.extractor = new ChineseNumberWithUnitExtractor(new DurationExtractorConfiguration());
         this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DurationYearRegex);
         this.halfSuffixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DurationHalfSuffixRegex);
     }

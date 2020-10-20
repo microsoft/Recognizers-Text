@@ -3,7 +3,7 @@ from datetime import datetime
 import regex
 
 from recognizers_text import RegExpUtility, ExtractResult
-from recognizers_number_with_unit import NumberWithUnitExtractor
+from recognizers_number_with_unit import ChineseNumberWithUnitExtractor
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from .base_date_time_extractor import ChineseBaseDateTimeExtractor
@@ -17,7 +17,7 @@ class ChineseDurationExtractor(ChineseBaseDateTimeExtractor):
 
     def __init__(self):
         super().__init__(None)
-        self.extractor = NumberWithUnitExtractor(
+        self.extractor = ChineseNumberWithUnitExtractor(
             ChineseDurationExtractorConfiguration())
         self.year_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DurationYearRegex)

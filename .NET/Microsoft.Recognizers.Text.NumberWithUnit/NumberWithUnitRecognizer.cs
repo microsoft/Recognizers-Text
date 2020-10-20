@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -116,7 +117,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Chinese.CurrencyParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new English.CurrencyParserConfiguration())
                     },
                 }));
@@ -126,11 +127,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.TemperatureExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new Chinese.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new Chinese.TemperatureParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new English.TemperatureParserConfiguration())
                     },
                 }));
@@ -140,11 +141,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.DimensionExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new Chinese.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Chinese.DimensionParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new English.DimensionParserConfiguration())
                     },
                 }));
@@ -154,11 +155,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new AgeModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.AgeExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new Chinese.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new Chinese.AgeParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new ChineseNumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     },
                 }));

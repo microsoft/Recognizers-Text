@@ -20,7 +20,6 @@ export abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
-    readonly halfUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -31,7 +30,6 @@ export abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
         this.connectorToken = FrenchNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(FrenchNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
-        this.halfUnitRegex = null;
     }
 }
 

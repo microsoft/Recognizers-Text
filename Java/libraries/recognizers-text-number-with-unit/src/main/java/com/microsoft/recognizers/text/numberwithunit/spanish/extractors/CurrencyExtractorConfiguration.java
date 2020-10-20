@@ -7,7 +7,6 @@ import com.microsoft.recognizers.text.numberwithunit.resources.SpanishNumericWit
 
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class CurrencyExtractorConfiguration  extends SpanishNumberWithUnitExtractorConfiguration {
 
@@ -37,11 +36,6 @@ public class CurrencyExtractorConfiguration  extends SpanishNumberWithUnitExtrac
     @Override
     public Map<String, String> getPrefixList() {
         return CurrencyPrefixList;
-    }
-
-    @Override
-    public Pattern getHalfUnitRegex() {
-        return null;
     }
 
     public static Map<String, String> CurrencySuffixList = SpanishNumericWithUnit.CurrencySuffixList;

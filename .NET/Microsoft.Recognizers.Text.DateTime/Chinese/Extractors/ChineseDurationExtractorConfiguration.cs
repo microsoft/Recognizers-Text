@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
+        private static readonly IExtractor InternalExtractor = new ChineseNumberWithUnitExtractor(new DurationExtractorConfiguration());
 
         private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexFlags);
 

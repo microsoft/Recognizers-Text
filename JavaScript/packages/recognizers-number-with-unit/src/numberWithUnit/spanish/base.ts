@@ -20,7 +20,6 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
-    readonly halfUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -31,7 +30,6 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
         this.connectorToken = SpanishNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(SpanishNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
-        this.halfUnitRegex = null;
     }
 }
 

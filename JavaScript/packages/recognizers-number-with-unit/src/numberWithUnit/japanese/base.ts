@@ -20,7 +20,6 @@ export abstract class JapaneseNumberWithUnitExtractorConfiguration implements IN
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
-    readonly halfUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -31,7 +30,6 @@ export abstract class JapaneseNumberWithUnitExtractorConfiguration implements IN
         this.connectorToken = JapaneseNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(JapaneseNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
-        this.halfUnitRegex = null;
     }
 }
 

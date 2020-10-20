@@ -58,10 +58,6 @@ public abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
         return null;
     }
 
-    public Pattern getHalfUnitRegex() {
-        return null;
-    }
-
     public abstract String getExtractType();
     
     public abstract Map<String, String> getSuffixList();

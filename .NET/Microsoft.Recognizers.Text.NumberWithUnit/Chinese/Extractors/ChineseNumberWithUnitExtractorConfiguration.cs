@@ -23,9 +23,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         private static readonly Regex NonUnitsRegex =
             new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
 
-        private static readonly Regex HalfUnitsRegex =
-            new Regex(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags);
-
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -45,8 +42,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public Regex NonUnitRegex => NonUnitsRegex;
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
-
-        public Regex HalfUnitRegex => HalfUnitsRegex;
 
         public abstract string ExtractType { get; }
 

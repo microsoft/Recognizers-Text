@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 public class NumberWithUnitExtractor implements IExtractor {
 
-    private final INumberWithUnitExtractorConfiguration config;
+    public final INumberWithUnitExtractorConfiguration config;
 
     private final Set<Pattern> suffixRegexes;
     private final Set<Pattern> prefixRegexes;
@@ -71,6 +71,10 @@ public class NumberWithUnitExtractor implements IExtractor {
 
     @Override
     public List<ExtractResult> extract(String source) {
+        return extractV1(source);
+    }
+
+    public List<ExtractResult> extractV1(String source) {
         List<ExtractResult> result = new ArrayList<>();
 
         if (!preCheckStr(source)) {
@@ -256,36 +260,6 @@ public class NumberWithUnitExtractor implements IExtractor {
 
         // Remove common ambiguous cases
         result = filterAmbiguity(result, source);
-
-        // Expand Chinese Half Patterns
-        if (this.config.getHalfUnitRegex() != null) {
-            Match[] match = RegExpUtility.getMatches(this.config.getHalfUnitRegex(), source);
-            if (match.length > 0) {
-                List<ExtractResult> res = new ArrayList<>();
-                for (ExtractResult er : result) {
-                    int start = er.getStart();
-                    int length = er.getLength();
-                    List<ExtractResult> matchSuffix = new ArrayList<>();
-                    for (Match mr : match) {
-                        if (mr.index == (start + length)) {
-                            ExtractResult m = new ExtractResult(mr.index, mr.length, mr.value, numbers.get(0).getType(), numbers.get(0).getData());
-                            matchSuffix.add(m);
-                        }
-                    }
-                    if (matchSuffix.size() == 1) {
-                        ExtractResult mr = matchSuffix.get(0);
-                        er.setStart(er.getLength() + mr.getLength());
-                        er.setText(er.getText() + mr.getText());
-                        List<ExtractResult> tmp = new ArrayList<>();
-                        tmp.add((ExtractResult)er.getData());
-                        tmp.add(mr);
-                        er.setData(tmp);
-                    }
-                    res.add(er);
-                }
-                result = res;
-            }
-        }
 
         return result;
     }

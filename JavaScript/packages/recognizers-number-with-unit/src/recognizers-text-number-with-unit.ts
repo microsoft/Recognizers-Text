@@ -23,6 +23,7 @@ export { ChineseAgeExtractorConfiguration, ChineseAgeParserConfiguration } from 
 export { ChineseNumberWithUnitExtractorConfiguration, ChineseNumberWithUnitParserConfiguration } from "./numberWithUnit/chinese/base";
 export { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfiguration } from "./numberWithUnit/chinese/currency";
 export { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./numberWithUnit/chinese/dimension";
+export { ChineseNumberWithUnitExtractor } from "./numberWithUnit/chinese/extractor";
 export { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./numberWithUnit/chinese/temperature";
 export { JapaneseAgeExtractorConfiguration, JapaneseAgeParserConfiguration } from "./numberWithUnit/japanese/age";
 export { JapaneseNumberWithUnitExtractorConfiguration, JapaneseNumberWithUnitParserConfiguration } from "./numberWithUnit/japanese/base";

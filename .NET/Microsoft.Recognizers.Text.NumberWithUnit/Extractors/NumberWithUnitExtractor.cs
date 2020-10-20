@@ -56,7 +56,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return !source.StartsWith("-", StringComparison.Ordinal);
         }
 
-        public List<ExtractResult> Extract(string source)
+        public virtual List<ExtractResult> Extract(string source)
+        {
+            return Extract_v1(source);
+        }
+
+        public List<ExtractResult> Extract_v1(string source)
         {
 
             var result = new List<ExtractResult>();
@@ -321,54 +326,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
             {
                 result = SelectCandidates(source, result, unitIsPrefix);
-            }
-
-            // Expand Chinese Half Patterns
-            if (this.config.HalfUnitRegex != null && numbers != null)
-            {
-                var match = new List<ExtractResult>();
-                foreach (var number in numbers)
-                {
-                    if (this.config.HalfUnitRegex.Matches(number.Text).Count == 1)
-                    {
-                        match.Add(number);
-                    }
-
-                }
-
-                if (match.Count > 0)
-                {
-                    var res = new List<ExtractResult>();
-                    foreach (var er in result)
-                    {
-                        int start = (int)er.Start;
-                        int length = (int)er.Length;
-                        var match_suffix = new List<ExtractResult>();
-                        foreach (var mr in match)
-                        {
-                            if (mr.Start == (start + length))
-                            {
-                                match_suffix.Add(mr);
-                            }
-                        }
-
-                        if (match_suffix.Count == 1)
-                        {
-                            var mr = match_suffix[0];
-                            er.Length += mr.Length;
-                            er.Text += mr.Text;
-                            var tmp = new List<ExtractResult>();
-                            tmp.Add((ExtractResult)er.Data);
-                            tmp.Add(mr);
-                            er.Data = tmp;
-                        }
-
-                        res.Add(er);
-                    }
-
-                    result = res;
-                }
-
             }
 
             return result;
