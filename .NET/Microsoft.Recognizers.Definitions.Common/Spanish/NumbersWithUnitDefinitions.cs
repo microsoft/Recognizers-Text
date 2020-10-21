@@ -302,7 +302,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Sene", @"sene" },
             { @"Libra de Santa Helena", @"libra de santa helena|libras de santa helena|shp" },
             { @"Penique de Santa Helena", @"penique de santa helena|peniques de santa helena" },
-            { @"Dobra", @"dobra|db|std" },
+            { @"Dobra", @"dobra" },
             { @"Dinar serbio", @"dinar serbio|dinares serbios|rsd" },
             { @"Para serbio", @"para serbio|para serbios" },
             { @"Rupia de Seychelles", @"rupia de seychelles|rupias de seychelles|scr" },
@@ -374,6 +374,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
+            { @"Dobra", @"db|std" },
             { @"Dólar", @"$" },
             { @"Dólar estadounidense", @"us$|u$d|usd" },
             { @"Dólar del Caribe Oriental", @"ec$|xcd" },
@@ -408,7 +409,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {
-            @"le"
+            @"le",
+            @"db",
+            @"std"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
