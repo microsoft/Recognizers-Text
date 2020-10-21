@@ -618,7 +618,7 @@ public class EnglishDateTime {
     public static final String UnspecificTimePeriodRegex = "({MealTimeRegex})"
             .replace("{MealTimeRegex}", MealTimeRegex);
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(in\\s+(the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+the\\s+)?{LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
             .replace("{LaterEarlyRegex}", LaterEarlyRegex)
             .replace("{MealTimeRegex}", MealTimeRegex);
 
@@ -763,7 +763,10 @@ public class EnglishDateTime {
     public static final String AfterRegex = "((\\b{InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
-    public static final String SinceRegex = "(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)?from)\\b\\s*?)|(?<!\\w|<)(>=))(\\s+the)?";
+    public static final String SinceRegex = "(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)from)\\b\\s*?)|(?<!\\w|<)(>=))(\\s+the)?";
+
+    public static final String SinceRegexExp = "({SinceRegex}|\\bfrom(\\s+the)?\\b)"
+            .replace("{SinceRegex}", SinceRegex);
 
     public static final String AgoRegex = "\\b(ago|before\\s+(?<day>yesterday|today))\\b";
 
@@ -817,7 +820,7 @@ public class EnglishDateTime {
 
     public static final String ConnectorRegex = "^(-|,|for|t|around|@)$";
 
-    public static final String FromToRegex = "\\b(from).+(to)\\b.+";
+    public static final String FromToRegex = "(\\b(from).+(to|and|or)\\b.+)";
 
     public static final String SingleAmbiguousMonthRegex = "^(the\\s+)?(may|march)$";
 
@@ -919,7 +922,6 @@ public class EnglishDateTime {
     public static final String StartMiddleEndRegex = "\\b((?<StartOf>((the\\s+)?(start|beginning)\\s+of\\s+)?)(?<MiddleOf>((the\\s+)?middle\\s+of\\s+)?)(?<EndOf>((the\\s+)?end\\s+of\\s+)?))";
 
     public static final String ComplexDatePeriodRegex = "(?:((from|during|in)\\s+)?{StartMiddleEndRegex}(?<start>.+)\\s*({StrictTillRegex})\\s*{StartMiddleEndRegex}(?<end>.+)|((between)\\s+){StartMiddleEndRegex}(?<start>.+)\\s*({StrictRangeConnectorRegex})\\s*{StartMiddleEndRegex}(?<end>.+))"
-            .replace("{YearRegex}", YearRegex)
             .replace("{StrictTillRegex}", StrictTillRegex)
             .replace("{StrictRangeConnectorRegex}", StrictRangeConnectorRegex)
             .replace("{StartMiddleEndRegex}", StartMiddleEndRegex);

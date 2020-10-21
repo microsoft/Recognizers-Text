@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Halala", @"halalas|halala" },
             { @"Samoan tālā", @"samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala" },
             { @"Sene", @"sene" },
-            { @"São Tomé and Príncipe dobra", @"são tomé and príncipe dobra|dobras|dobra|std" },
+            { @"São Tomé and Príncipe dobra", @"são tomé and príncipe dobra|dobras|dobra" },
             { @"Sierra Leonean leone", @"sierra leonean leone|sll|leone|le" },
             { @"Peseta", @"pesetas|peseta" },
             { @"Netherlands guilder", @"florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl" },
@@ -356,7 +356,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Qatari riyal", @"QAR" },
             { @"Saudi riyal", @"SAR" },
             { @"Samoan tālā", @"WST" },
-            { @"São Tomé and Príncipe dobra", @"STD" },
+            { @"São Tomé and Príncipe dobra", @"STN" },
             { @"Sierra Leonean leone", @"SLL" },
             { @"Swazi lilangeni", @"SZL" },
             { @"Tajikistani somoni", @"TJS" },
@@ -561,7 +561,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
+            { @"Dobra", @"db|std" },
             { @"Dollar", @"$" },
+            { @"Brazilian Real", @"R$" },
             { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $" },
             { @"East Caribbean dollar", @"east caribbean $" },
             { @"Australian dollar", @"australian $|australia $" },
@@ -650,7 +652,8 @@ namespace Microsoft.Recognizers.Definitions.English
             @"std",
             @"try",
             @"yer",
-            @"yen"
+            @"yen",
+            @"db"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {

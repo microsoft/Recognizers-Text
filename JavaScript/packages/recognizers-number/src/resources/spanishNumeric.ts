@@ -48,7 +48,7 @@ export namespace SpanishNumeric {
     export const SufixRoundOrdinalRegex = `((${AllIntRegex})(${SimpleRoundOrdinalRegex}))`;
     export const ComplexRoundOrdinalRegex = `(((${SufixRoundOrdinalRegex}(\\s)?)?${ComplexOrdinalRegex})|${SufixRoundOrdinalRegex})`;
     export const AllOrdinalRegex = `${ComplexOrdinalRegex}|${SimpleRoundOrdinalRegex}|${ComplexRoundOrdinalRegex}`;
-    export const OrdinalSuffixRegex = `(?<=\\b)(\\d*(1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa]))(?=\\b)`;
+    export const OrdinalSuffixRegex = `(?<=\\b)(\\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|(1|2|3|4|5|6|7|8|9|0)[ºª]))(?=\\b)`;
     export const OrdinalNounRegex = `(?<=\\b)${AllOrdinalRegex}(?=\\b)`;
     export const SpecialFractionInteger = `(((${AllIntRegex})i?(${ZeroToNineIntegerRegex})|(${AllIntRegex}))a?v[oa]s?)`;
     export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
@@ -69,7 +69,7 @@ export namespace SpanishNumeric {
     export const TillRegex = `(\\ba\\b|hasta|--|-|—|——|~|–)`;
     export const MoreRegex = `(más\\s+(alt[oa]s?|grandes)\\s+que|(m[áa]s|mayor(es)?|superior(es)?|por\\s+encima)((\\s+(que|del?|a))|(?=\\s+o\\b))|(?<!<|=)>)`;
     export const LessRegex = `((meno(s|r(es)?)|inferior(es)?|por\\s+debajo)((\\s+(que|del?|a)|(?=\\s+o\\b)))|más\\s+baj[oa]\\s+que|(?<!>|=)<)`;
-    export const EqualRegex = `((igual(es)?|equivalente(s)?|equivalen?|son)(\\s+(al?|que|del?))?|(?<!<|>)=)`;
+    export const EqualRegex = `((igual(es)?|equivalente(s)?|equivalen?)(\\s+(al?|que|del?))?|(?<!<|>)=)`;
     export const MoreOrEqualPrefix = `((no\\s+${LessRegex})|(por\\s+lo\\s+menos|como\\s+m[íi]nimo|al\\s+menos))`;
     export const MoreOrEqual = `((${MoreRegex}\\s+(o)?\\s+${EqualRegex})|(${EqualRegex}\\s+(o|y)\\s+${MoreRegex})|${MoreOrEqualPrefix}(\\s+(o)\\s+${EqualRegex})?|(${EqualRegex}\\s+(o)\\s+)?${MoreOrEqualPrefix}|>\\s*=)`;
     export const MoreOrEqualSuffix = `((\\b(y|o)\\b\\s+(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(alt[oa]|baj[oa]|que|del?))|(\\s+(que|del?|a)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo|por\\s+lo\\s+menos|al\\s+menos)`;

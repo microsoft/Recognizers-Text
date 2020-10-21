@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.Number
         private static readonly List<string> ExtractorsSupportingSubtype = new List<string>
         {
                 Constants.ENGLISH,
+                Constants.SPANISH,
                 Constants.SWEDISH,
                 Constants.ARABIC,
 

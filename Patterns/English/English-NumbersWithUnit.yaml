@@ -191,7 +191,7 @@ CurrencySuffixList: !dictionary
     Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala
     Sene: sene
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
+    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra
 #Sierra Leonean leone
     Sierra Leonean leone: sierra leonean leone|sll|leone|le
 #Spain
@@ -431,7 +431,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Qatari riyal: QAR
     Saudi riyal: SAR
     Samoan tālā: WST
-    São Tomé and Príncipe dobra: STD
+    São Tomé and Príncipe dobra: STN
     Sierra Leonean leone: SLL
     Swazi lilangeni: SZL
     Tajikistani somoni: TJS
@@ -641,7 +641,9 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 # Currency Prefix Symbols/Terms
+    Dobra: db|std
     Dollar: $
+    Brazilian Real: R$
     United States dollar: united states $|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: australian $|australia $
@@ -731,6 +733,7 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - yen
+    - db
 # DimensionExtractorConfiguration
 # Values in those list are usually lowercase, unless they must be matched by the letter case exactly.
 InformationSuffixList: !dictionary
