@@ -11,7 +11,7 @@ HundredsNumberIntegerRegex: !simpleRegex
 RoundNumberIntegerRegex: !simpleRegex
   def: (mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)
+  def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)
 TensNumberIntegerRegex: !simpleRegex
@@ -383,7 +383,8 @@ OrdinalNumberMap: !dictionary
 PrefixCardinalMap: !dictionary
   types: [ string, long ]
   entries:
-    hum: 1 
+    hum: 1
+    um: 1
     dois: 2 
     tres: 3 
     três: 3 
