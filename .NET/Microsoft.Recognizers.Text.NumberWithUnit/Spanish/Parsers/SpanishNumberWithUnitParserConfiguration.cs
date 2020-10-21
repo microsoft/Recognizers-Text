@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new SpanishNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -27,6 +29,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public override string ConnectorToken { get; }
 
-        public override IDictionary<string, string> TypeList { get; set; } = null;
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

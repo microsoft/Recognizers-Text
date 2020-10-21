@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new TurkishNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -25,6 +27,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
 
         public override string ConnectorToken { get; }
 
-        public override IDictionary<string, string> TypeList { get; set; } = null;
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

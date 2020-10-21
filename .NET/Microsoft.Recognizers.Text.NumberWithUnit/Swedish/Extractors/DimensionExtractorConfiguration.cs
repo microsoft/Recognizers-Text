@@ -17,6 +17,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Swedish
             .Concat(WeightExtractorConfiguration.WeightSuffixList)
             .ToImmutableDictionary(x => x.Key, x => x.Value);
 
+        public static readonly ImmutableDictionary<string, string> DimensionTypeList =
+            NumbersWithUnitDefinitions.InformationSuffixList.ToDictionary(x => x.Key, x => Constants.INFORMATION)
+            .Concat(AreaExtractorConfiguration.AreaSuffixList.ToDictionary(x => x.Key, x => Constants.AREA))
+            .Concat(LengthExtractorConfiguration.LengthSuffixList.ToDictionary(x => x.Key, x => Constants.LENGTH))
+            .Concat(SpeedExtractorConfiguration.SpeedSuffixList.ToDictionary(x => x.Key, x => Constants.SPEED))
+            .Concat(VolumeExtractorConfiguration.VolumeSuffixList.ToDictionary(x => x.Key, x => Constants.VOLUME))
+            .Concat(WeightExtractorConfiguration.WeightSuffixList.ToDictionary(x => x.Key, x => Constants.WEIGHT))
+            .ToImmutableDictionary(x => x.Key, x => x.Value);
+
         private static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
 
