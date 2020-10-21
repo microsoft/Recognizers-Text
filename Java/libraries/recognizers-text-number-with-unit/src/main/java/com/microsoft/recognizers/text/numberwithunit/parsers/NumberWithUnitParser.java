@@ -26,15 +26,31 @@ public class NumberWithUnitParser implements IParser {
         String connectorToken = this.config.getConnectorToken();
         ParseResult ret = new ParseResult(extResult);
         ExtractResult numberResult;
+        ExtractResult halfResult;
 
         if (extResult.getData() instanceof ExtractResult) {
             numberResult = (ExtractResult)extResult.getData();
+            halfResult = null;
         } else if (extResult.getType().equals(Constants.SYS_NUM)) {
             ret.setValue(config.getInternalNumberParser().parse(extResult).getValue());
             return ret;
+        } else if (extResult.getData() instanceof List) {
+            Object data = extResult.getData();
+            List<ExtractResult> dataList = new ArrayList<ExtractResult>();
+            for (Object d : (List<?>)data) {
+                dataList.add((ExtractResult)d);
+            }
+            if (dataList.size() >= 2) {
+                numberResult = dataList.get(0);
+                halfResult = dataList.get(1); 
+            } else {
+                numberResult = dataList.get(0);
+                halfResult = null;
+            }
         } else {
             // if there is no unitResult, means there is just unit
             numberResult = new ExtractResult(-1, 0, null, null, null);
+            halfResult = null;
         }
 
         // key contains units
@@ -62,6 +78,9 @@ public class NumberWithUnitParser implements IParser {
 
         /* Unit type depends on last unit in suffix.*/
         String lastUnit = unitKeys.get(unitKeys.size() - 1);
+        if (halfResult != null) {
+            lastUnit = lastUnit.substring(0, lastUnit.length() - halfResult.getText().length());
+        }
         String normalizedLastUnit = lastUnit.toLowerCase();
 
         if (connectorToken != null && !connectorToken.isEmpty() && normalizedLastUnit.startsWith(connectorToken)) {
@@ -84,8 +103,15 @@ public class NumberWithUnitParser implements IParser {
                 ParseResult numValue = numberResult.getText() == null || numberResult.getText().isEmpty() ?
                         null :
                         this.config.getInternalNumberParser().parse(numberResult);
-
                 String resolutionStr = numValue != null ? numValue.getResolutionStr() : null;
+
+                if (halfResult != null) {
+                    ParseResult halfValue = this.config.getInternalNumberParser().parse(halfResult);
+                    String tmp = halfValue != null ? halfValue.getResolutionStr() : null;
+                    if (tmp != null) {
+                        resolutionStr += tmp.substring(1, tmp.length());
+                    }
+                }
 
                 ret.setValue(new UnitValue(resolutionStr, unitValue));
                 ret.setResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());

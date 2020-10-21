@@ -1,11 +1,11 @@
 package com.microsoft.recognizers.text.numberwithunit.portuguese.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
+import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.portuguese.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
-import com.microsoft.recognizers.text.numberwithunit.resources.FrenchNumericWithUnit;
 import com.microsoft.recognizers.text.numberwithunit.resources.PortugueseNumericWithUnit;
 import com.microsoft.recognizers.text.utilities.DefinitionLoader;
 
@@ -68,5 +68,9 @@ public abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
 
     public Map<Pattern, Pattern> getAmbiguityFiltersDict() {
         return ambiguityFiltersDict;
+    }
+
+    public List<ExtractResult> expandHalfSuffix(String source, List<ExtractResult> result, List<ExtractResult> numbers) {
+        return result;
     }
 }

@@ -37,20 +37,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var ret = new ParseResult(extResult);
 
             ExtractResult numberResult;
+            ExtractResult halfResult;
 
             if (extResult.Data is ExtractResult unitResult)
             {
                 numberResult = unitResult;
+                halfResult = null;
             }
             else if (extResult.Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
             {
                 ret.Value = Config.InternalNumberParser.Parse(extResult).Value;
                 return ret;
             }
+            else if (extResult.Data is System.Collections.IList && ((List<ExtractResult>)extResult.Data).Count == 2)
+            {
+                numberResult = ((List<ExtractResult>)extResult.Data)[0];
+                halfResult = ((List<ExtractResult>)extResult.Data)[1];
+            }
             else
             {
                 // If there is no unitResult, means there is just unit
                 numberResult = new ExtractResult { Start = -1, Length = 0, Text = string.Empty };
+                halfResult = null;
             }
 
             // Key contains units
@@ -89,6 +97,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             // Unit type depends on last unit in suffix
             var lastUnit = unitKeys.Last();
+            if (halfResult != null)
+            {
+                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length);
+            }
+
             var normalizedLastUnit = lastUnit.ToLowerInvariant();
             if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken))
             {
@@ -104,10 +117,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var numValue = string.IsNullOrEmpty(numberResult.Text) ?
                         null :
                         this.Config.InternalNumberParser.Parse(numberResult);
+                    var resolution_str = numValue?.ResolutionStr;
+                    if (halfResult != null)
+                    {
+                        var halfValue = this.Config.InternalNumberParser.Parse(halfResult);
+                        resolution_str += halfValue?.ResolutionStr.Substring(1);
+                    }
 
                     ret.Value = new UnitValue
                     {
-                        Number = numValue?.ResolutionStr,
+                        Number = resolution_str,
                         Unit = unitValue,
                     };
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();

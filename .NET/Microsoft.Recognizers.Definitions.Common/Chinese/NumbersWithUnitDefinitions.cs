@@ -679,5 +679,6 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"度",
             @"k"
         };
+      public const string HalfUnitRegex = @"半";
     }
 }

@@ -33,16 +33,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var referenceTime = refDate;
 
-            // handle cases like "三年半"
-            var hasHalfSuffix = false;
-
-            if (er.Text.EndsWith("半", StringComparison.Ordinal))
-            {
-                er.Length -= 1;
-                er.Text = er.Text.Substring(0, er.Text.Length - 1);
-                hasHalfSuffix = true;
-            }
-
             var parseResult = InternalParser.Parse(er);
             var unitResult = parseResult.Value as UnitValue;
 
@@ -54,11 +44,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var dateTimeParseResult = new DateTimeResolutionResult();
             var unitStr = unitResult.Unit;
             var numStr = unitResult.Number;
-
-            if (hasHalfSuffix)
-            {
-                numStr = (double.Parse(numStr) + 0.5).ToString(CultureInfo.InvariantCulture);
-            }
 
             dateTimeParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : string.Empty) + numStr + unitStr[0];
             dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];

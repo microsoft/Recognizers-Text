@@ -1,14 +1,16 @@
 from typing import Dict, List, Pattern
+import regex
 
 from recognizers_text.culture import Culture
-from recognizers_text.extractor import Extractor
+from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseNumberExtractorMode
 from recognizers_number_with_unit.number_with_unit.constants import Constants
-from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
+from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration, NumberWithUnitExtractor
 from recognizers_number_with_unit.resources.chinese_numeric_with_unit import ChineseNumericWithUnit
 from recognizers_number_with_unit.resources.base_units import BaseUnits
+from recognizers_text.matcher.match_result import MatchResult
 
 
 # pylint: disable=abstract-method
@@ -65,6 +67,24 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def culture_info(self) -> CultureInfo:
         return self._culture_info
 
+    def expand_half_suffix(self, source, result, numbers):
+       # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        if self._half_unit_regex and numbers:
+            match = [number for number in numbers if regex.match(self._half_unit_regex, number.text)]
+            if match:
+                res = []
+                for er in result:
+                    start = er.start
+                    length = er.length
+                    match_suffix = [mr for mr in match if mr.start == (start + length)]
+                    if len(match_suffix) == 1:
+                        mr = match_suffix[0]
+                        er.length += mr.length
+                        er.text += mr.text
+                        er.data = [er.data, mr]
+                    res.append(er)
+                result = res
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
@@ -77,7 +97,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
             ChineseNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
             BaseUnits.PmNonUnitRegex)
-
+        self._half_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.HalfUnitRegex)
 
 # pylint: enable=abstract-method
 

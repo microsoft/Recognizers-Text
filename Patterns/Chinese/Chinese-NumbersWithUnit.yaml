@@ -756,4 +756,6 @@ TemperatureAmbiguousValues: !list
   entries:
     - 度
     - k
+HalfUnitRegex: !simpleRegex
+  def: 半
 ...
