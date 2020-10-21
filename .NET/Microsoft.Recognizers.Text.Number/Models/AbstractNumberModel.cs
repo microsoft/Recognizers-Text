@@ -11,16 +11,15 @@ namespace Microsoft.Recognizers.Text.Number
         // Languages supporting subtypes in the resolution to be added here
         private static readonly List<string> ExtractorsSupportingSubtype = new List<string>
         {
-                Constants.ENGLISH,
-                Constants.SPANISH,
-                Constants.SWEDISH,
-                Constants.ARABIC,
+            Constants.ARABIC,
+            Constants.ENGLISH,
+            Constants.PORTUGUESE,
+            Constants.SPANISH,
+            Constants.SWEDISH,
 
-                // TODO: Temporarily disabled as existing TestSpec not supporting
-                // Constants.JAPANESE_SUBS
-
-                // TODO: Temporarily disabled as existing TestSpec not supporting
-                // Constants.KOREAN,
+            // TODO: Temporarily disabled as existing TestSpec not supporting
+            // Constants.JAPANESE_SUBS,
+            // Constants.KOREAN,
         };
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
