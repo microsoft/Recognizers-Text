@@ -5,7 +5,6 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
-import com.microsoft.recognizers.text.numberwithunit.chinese.extractors.ChineseNumberWithUnitExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.BaseMergedUnitExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.NumberWithUnitExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.AgeModel;
@@ -232,25 +231,25 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
                 new CurrencyModel(ImmutableMap.of(
                         new BaseMergedUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.CurrencyExtractorConfiguration()),
                         new BaseMergedUnitParser(new com.microsoft.recognizers.text.numberwithunit.chinese.parsers.CurrencyParserConfiguration()),
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.CurrencyParserConfiguration()))));
         registerModel(TemperatureModel.class, Culture.Chinese, (options) ->
                 new TemperatureModel(ImmutableMap.of(
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.chinese.parsers.TemperatureParserConfiguration()),
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.TemperatureParserConfiguration()))));
         registerModel(DimensionModel.class, Culture.Chinese, (options) ->
                 new DimensionModel(ImmutableMap.of(
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.DimensionExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.chinese.parsers.DimensionParserConfiguration()),
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.DimensionExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.DimensionParserConfiguration()))));
         registerModel(AgeModel.class, Culture.Chinese, (options) ->
                 new AgeModel(ImmutableMap.of(
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.AgeExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.chinese.extractors.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.chinese.parsers.AgeParserConfiguration()),
-                        new ChineseNumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.AgeExtractorConfiguration()),
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.AgeParserConfiguration()))));
         //endregion
     }

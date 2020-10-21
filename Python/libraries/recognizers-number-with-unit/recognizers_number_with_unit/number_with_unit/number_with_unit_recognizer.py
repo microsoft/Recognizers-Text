@@ -16,8 +16,7 @@ from .english.parsers import (EnglishCurrencyParserConfiguration,
 from .chinese.extractors import (ChineseCurrencyExtractorConfiguration,
                                  ChineseTemperatureExtractorConfiguration,
                                  ChineseDimensionExtractorConfiguration,
-                                 ChineseAgeExtractorConfiguration,
-                                 ChineseNumberWithUnitExtractor)
+                                 ChineseAgeExtractorConfiguration)
 from .chinese.parsers import (ChineseCurrencyParserConfiguration,
                               ChineseTemperatureParserConfiguration,
                               ChineseDimensionParserConfiguration,
@@ -87,36 +86,36 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
                     ChineseCurrencyExtractorConfiguration()),
                 BaseMergedUnitParser(ChineseCurrencyParserConfiguration())),
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(
+                NumberWithUnitExtractor(
                     EnglishCurrencyExtractorConfiguration()),
                 NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
         ]))
         self.register_model('TemperatureModel', Culture.Chinese, lambda options: TemperatureModel([
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(
+                NumberWithUnitExtractor(
                     ChineseTemperatureExtractorConfiguration()),
                 NumberWithUnitParser(ChineseTemperatureParserConfiguration())),
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(
+                NumberWithUnitExtractor(
                     EnglishTemperatureExtractorConfiguration()),
                 NumberWithUnitParser(EnglishTemperatureParserConfiguration()))
         ]))
         self.register_model('DimensionModel', Culture.Chinese, lambda options: DimensionModel([
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(
+                NumberWithUnitExtractor(
                     ChineseDimensionExtractorConfiguration()),
                 NumberWithUnitParser(ChineseDimensionParserConfiguration())),
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(
+                NumberWithUnitExtractor(
                     EnglishDimensionExtractorConfiguration()),
                 NumberWithUnitParser(EnglishDimensionParserConfiguration()))
         ]))
         self.register_model('AgeModel', Culture.Chinese, lambda options: AgeModel([
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(ChineseAgeExtractorConfiguration()),
+                NumberWithUnitExtractor(ChineseAgeExtractorConfiguration()),
                 NumberWithUnitParser(ChineseAgeParserConfiguration())),
             ExtractorParserModel(
-                ChineseNumberWithUnitExtractor(EnglishAgeExtractorConfiguration()),
+                NumberWithUnitExtractor(EnglishAgeExtractorConfiguration()),
                 NumberWithUnitParser(EnglishAgeParserConfiguration()))
         ]))
         # endregion

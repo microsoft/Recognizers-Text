@@ -44,10 +44,6 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         return None
 
     @property
-    def half_unit_regex(self) -> Pattern:
-        return self._half_unit_regex
-
-    @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return None
 
@@ -71,6 +67,24 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def culture_info(self) -> CultureInfo:
         return self._culture_info
 
+    def expand_half_suffix(self, source, result, numbers):
+       # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        if self._half_unit_regex and numbers:
+            match = [number for number in numbers if regex.match(self._half_unit_regex, number.text)]
+            if match:
+                res = []
+                for er in result:
+                    start = er.start
+                    length = er.length
+                    match_suffix = [mr for mr in match if mr.start == (start + length)]
+                    if len(match_suffix) == 1:
+                        mr = match_suffix[0]
+                        er.length += mr.length
+                        er.text += mr.text
+                        er.data = [er.data, mr]
+                    res.append(er)
+                result = res
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
@@ -84,7 +98,6 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
             BaseUnits.PmNonUnitRegex)
         self._half_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.HalfUnitRegex)
-
 
 # pylint: enable=abstract-method
 
@@ -188,37 +201,3 @@ class ChineseTemperatureExtractorConfiguration(ChineseNumberWithUnitExtractorCon
         self._ambiguous_unit_list = ChineseNumericWithUnit.TemperatureAmbiguousValues
         self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
             BaseUnits.AmbiguousUnitNumberMultiplierRegex)
-
-
-class ChineseNumberWithUnitExtractor(NumberWithUnitExtractor):
-    def __init__(self, config):
-        super(ChineseNumberWithUnitExtractor, self).__init__(config)
-
-    def extract(self, source: str) -> List[ExtractResult]:
-        result = self._extract(source)
-
-        prefix_match: List[MatchResult] = sorted(self.prefix_matcher.find(source), key=lambda o: o.start)
-        suffix_match: List[MatchResult] = sorted(self.suffix_matcher.find(source), key=lambda o: o.start)
-
-        if len(prefix_match) > 0 or len(suffix_match) > 0:
-            numbers: List[ExtractResult] = sorted(self.config.unit_num_extractor.extract(source), key=lambda o: o.start)
-        else:
-            numbers = None
-
-       # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
-        if self.config.half_unit_regex and numbers:
-            match = [number for number in numbers if regex.match(self.config.half_unit_regex, number.text)]
-            if match:
-                res = []
-                for er in result:
-                    start = er.start
-                    length = er.length
-                    match_suffix = [mr for mr in match if mr.start == (start + length)]
-                    if len(match_suffix) == 1:
-                        mr = match_suffix[0]
-                        er.length += mr.length
-                        er.text += mr.text
-                        er.data = [er.data, mr]
-                    res.append(er)
-                result = res
-        return result

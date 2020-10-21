@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 public class NumberWithUnitExtractor implements IExtractor {
 
-    public final INumberWithUnitExtractorConfiguration config;
+    private final INumberWithUnitExtractorConfiguration config;
 
     private final Set<Pattern> suffixRegexes;
     private final Set<Pattern> prefixRegexes;
@@ -71,10 +71,6 @@ public class NumberWithUnitExtractor implements IExtractor {
 
     @Override
     public List<ExtractResult> extract(String source) {
-        return extractV1(source);
-    }
-
-    public List<ExtractResult> extractV1(String source) {
         List<ExtractResult> result = new ArrayList<>();
 
         if (!preCheckStr(source)) {
@@ -260,6 +256,9 @@ public class NumberWithUnitExtractor implements IExtractor {
 
         // Remove common ambiguous cases
         result = filterAmbiguity(result, source);
+
+        // Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        result = this.config.expandHalfSuffix(source, result, numbers);
 
         return result;
     }

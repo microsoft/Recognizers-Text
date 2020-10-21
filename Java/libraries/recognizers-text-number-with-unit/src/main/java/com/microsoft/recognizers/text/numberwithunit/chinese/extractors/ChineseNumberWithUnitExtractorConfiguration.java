@@ -1,19 +1,23 @@
 package com.microsoft.recognizers.text.numberwithunit.chinese.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
+import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
 import com.microsoft.recognizers.text.number.chinese.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.ChineseNumericWithUnit;
-import com.microsoft.recognizers.text.numberwithunit.resources.EnglishNumericWithUnit;
 import com.microsoft.recognizers.text.utilities.DefinitionLoader;
+import com.microsoft.recognizers.text.utilities.Match;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 public abstract class ChineseNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
+    private final Pattern halfUnitRegex = Pattern.compile(ChineseNumericWithUnit.HalfUnitRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     private final CultureInfo cultureInfo;
     private final IExtractor unitNumExtractor;
     private final Pattern compoundUnitConnectorRegex;
@@ -71,5 +75,38 @@ public abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
 
     public Map<Pattern, Pattern> getAmbiguityFiltersDict() {
         return ambiguityFiltersDict;
+    }
+
+    public List<ExtractResult> expandHalfSuffix(String source, List<ExtractResult> result, List<ExtractResult> numbers) {
+        // Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        if (halfUnitRegex != null) {
+            Match[] match = RegExpUtility.getMatches(halfUnitRegex, source);
+            if (match.length > 0) {
+                List<ExtractResult> res = new ArrayList<>();
+                for (ExtractResult er : result) {
+                    int start = er.getStart();
+                    int length = er.getLength();
+                    List<ExtractResult> matchSuffix = new ArrayList<>();
+                    for (Match mr : match) {
+                        if (mr.index == (start + length)) {
+                            ExtractResult m = new ExtractResult(mr.index, mr.length, mr.value, numbers.get(0).getType(), numbers.get(0).getData());
+                            matchSuffix.add(m);
+                        }
+                    }
+                    if (matchSuffix.size() == 1) {
+                        ExtractResult mr = matchSuffix.get(0);
+                        er.setStart(er.getLength() + mr.getLength());
+                        er.setText(er.getText() + mr.getText());
+                        List<ExtractResult> tmp = new ArrayList<>();
+                        tmp.add((ExtractResult)er.getData());
+                        tmp.add(mr);
+                        er.setData(tmp);
+                    }
+                    res.add(er);
+                }
+                result = res;
+            }
+        }
+        return result;
     }
 }

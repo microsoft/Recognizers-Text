@@ -15,7 +15,6 @@ import { PortugueseCurrencyExtractorConfiguration, PortugueseCurrencyParserConfi
 import { PortugueseTemperatureExtractorConfiguration, PortugueseTemperatureParserConfiguration } from "./portuguese/temperature";
 import { PortugueseDimensionExtractorConfiguration, PortugueseDimensionParserConfiguration } from "./portuguese/dimension";
 import { PortugueseAgeExtractorConfiguration, PortugueseAgeParserConfiguration } from "./portuguese/age";
-import { ChineseNumberWithUnitExtractor } from "./chinese/extractor";
 import { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfiguration } from "./chinese/currency";
 import { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./chinese/temperature";
 import { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./chinese/dimension";
@@ -107,19 +106,19 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         // #region Chinese
         this.registerModel("CurrencyModel", Culture.Chinese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new BaseMergedUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new ChineseCurrencyParserConfiguration())],
-            [new ChineseNumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
+            [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
         ])));
         this.registerModel("TemperatureModel", Culture.Chinese, (options) => new TemperatureModel(new Map<IExtractor, IParser>([
-            [new ChineseNumberWithUnitExtractor(new ChineseTemperatureExtractorConfiguration()), new NumberWithUnitParser(new ChineseTemperatureParserConfiguration())],
-            [new ChineseNumberWithUnitExtractor(new EnglishTemperatureExtractorConfiguration()), new NumberWithUnitParser(new EnglishTemperatureParserConfiguration())]
+            [new NumberWithUnitExtractor(new ChineseTemperatureExtractorConfiguration()), new NumberWithUnitParser(new ChineseTemperatureParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishTemperatureExtractorConfiguration()), new NumberWithUnitParser(new EnglishTemperatureParserConfiguration())]
         ])));
         this.registerModel("DimensionModel", Culture.Chinese, (options) => new DimensionModel(new Map<IExtractor, IParser>([
-            [new ChineseNumberWithUnitExtractor(new ChineseDimensionExtractorConfiguration()), new NumberWithUnitParser(new ChineseDimensionParserConfiguration())],
-            [new ChineseNumberWithUnitExtractor(new EnglishDimensionExtractorConfiguration()), new NumberWithUnitParser(new EnglishDimensionParserConfiguration())]
+            [new NumberWithUnitExtractor(new ChineseDimensionExtractorConfiguration()), new NumberWithUnitParser(new ChineseDimensionParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishDimensionExtractorConfiguration()), new NumberWithUnitParser(new EnglishDimensionParserConfiguration())]
         ])));
         this.registerModel("AgeModel", Culture.Chinese, (options) => new AgeModel(new Map<IExtractor, IParser>([
-            [new ChineseNumberWithUnitExtractor(new ChineseAgeExtractorConfiguration()), new NumberWithUnitParser(new ChineseAgeParserConfiguration())],
-            [new ChineseNumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
+            [new NumberWithUnitExtractor(new ChineseAgeExtractorConfiguration()), new NumberWithUnitParser(new ChineseAgeParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
         // #endregion
 

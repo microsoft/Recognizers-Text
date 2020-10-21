@@ -80,6 +80,10 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @property
     def culture_info(self) -> CultureInfo:
         return self._culture_info
+    
+    @abstractmethod
+    def expand_half_suffix(self, source, result, numbers):
+        pass
 
     def __init__(self, culture_info: CultureInfo):
         self._culture_info = culture_info
@@ -156,9 +160,6 @@ class NumberWithUnitExtractor(Extractor):
         self.separate_regex = self._build_separate_regex_from_config()
 
     def extract(self, source: str) -> List[ExtractResult]:
-        return self._extract(source)
-
-    def _extract(self, source: str) -> List[ExtractResult]:
         if not self._pre_check_str(source):
             return []
 
@@ -305,6 +306,9 @@ class NumberWithUnitExtractor(Extractor):
 
             # Remove common ambiguous cases
             result = self._filter_ambiguity(result, source)
+    
+        # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        self.config.expand_half_suffix(source, result, numbers)
 
         return result
 

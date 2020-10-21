@@ -56,14 +56,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return !source.StartsWith("-", StringComparison.Ordinal);
         }
 
-        public virtual List<ExtractResult> Extract(string source)
+        public List<ExtractResult> Extract(string source)
         {
-            return Extract_v1(source);
-        }
-
-        public List<ExtractResult> Extract_v1(string source)
-        {
-
             var result = new List<ExtractResult>();
             IOrderedEnumerable<ExtractResult> numbers;
 
@@ -327,6 +321,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 result = SelectCandidates(source, result, unitIsPrefix);
             }
+
+            // Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+            this.config.ExpandHalfSuffix(source, ref result, numbers);
 
             return result;
         }
