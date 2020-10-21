@@ -8,7 +8,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "75",
-          "unit": "Milliliter"
+          "unit": "Milliliter",
+          "subtype": "Volume"
         },
         "Start": 0,
         "End": 3
@@ -24,7 +25,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Inch"
+          "unit": "Inch",
+          "subtype": "Length"
         },
         "Start": 42,
         "End": 46
@@ -40,7 +42,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Mile"
+          "unit": "Mile",
+          "subtype": "Length"
         },
         "Start": 31,
         "End": 39
@@ -56,7 +59,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10,5",
-          "unit": "Mile"
+          "unit": "Mile",
+          "subtype": "Length"
         },
         "Start": 17,
         "End": 28
@@ -72,7 +76,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "60",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 9,
         "End": 24
@@ -88,7 +93,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "500000",
-          "unit": "Barrel"
+          "unit": "Barrel",
+          "subtype": "Weight"
         },
         "Start": 66,
         "End": 75
@@ -104,7 +110,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
-          "unit": "Foot"
+          "unit": "Foot",
+          "subtype": "Length"
         },
         "Start": 159,
         "End": 165
@@ -120,7 +127,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "68",
-          "unit": "Gram"
+          "unit": "Gram",
+          "subtype": "Weight"
         },
         "Start": 56,
         "End": 63
@@ -136,7 +144,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "45",
-          "unit": "Square hectometer"
+          "unit": "Square hectometer",
+          "subtype": "Area"
         },
         "Start": 169,
         "End": 172
@@ -152,7 +161,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Foot"
+          "unit": "Foot",
+          "subtype": "Length"
         },
         "Start": 140,
         "End": 145
@@ -168,7 +178,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2400000000",
-          "unit": "Gallon"
+          "unit": "Gallon",
+          "subtype": "Weight"
         },
         "Start": 142,
         "End": 162
@@ -184,7 +195,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Gallon"
+          "unit": "Gallon",
+          "subtype": "Weight"
         },
         "Start": 19,
         "End": 27
@@ -200,7 +212,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1500000",
-          "unit": "Gallon"
+          "unit": "Gallon",
+          "subtype": "Weight"
         },
         "Start": 51,
         "End": 69
@@ -216,7 +229,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
-          "unit": "Kilogram"
+          "unit": "Kilogram",
+          "subtype": "Weight"
         },
         "Start": 27,
         "End": 32
@@ -232,7 +246,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "15",
-          "unit": "Kilogram"
+          "unit": "Kilogram",
+          "subtype": "Weight"
         },
         "Start": 132,
         "End": 135
@@ -248,7 +263,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "900000000000",
-          "unit": "Cubic foot"
+          "unit": "Cubic foot",
+          "subtype": "Volume"
         },
         "Start": 89,
         "End": 109
@@ -264,7 +280,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "660",
-          "unit": "Square meter"
+          "unit": "Square meter",
+          "subtype": "Area"
         },
         "Start": 76,
         "End": 91
@@ -280,7 +297,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "200",
-          "unit": "Mile"
+          "unit": "Mile",
+          "subtype": "Length"
         },
         "Start": 23,
         "End": 31
@@ -296,7 +314,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Meter"
+          "unit": "Meter",
+          "subtype": "Length"
         },
         "Start": 37,
         "End": 43
@@ -312,7 +331,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "190000",
-          "unit": "Square meter"
+          "unit": "Square meter",
+          "subtype": "Area"
         },
         "Start": 25,
         "End": 43
@@ -328,7 +348,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Ton"
+          "unit": "Ton",
+          "subtype": "Weight"
         },
         "Start": 186,
         "End": 193
@@ -344,7 +365,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "130",
-          "unit": "Gallon"
+          "unit": "Gallon",
+          "subtype": "Weight"
         },
         "Start": 276,
         "End": 286
@@ -360,7 +382,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1458000",
-          "unit": "Ton"
+          "unit": "Ton",
+          "subtype": "Weight"
         },
         "Start": 162,
         "End": 172
@@ -376,7 +399,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "6",
-          "unit": "Foot"
+          "unit": "Foot",
+          "subtype": "Length"
         },
         "Start": 71,
         "End": 77
@@ -392,7 +416,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "16000",
-          "unit": "Ton"
+          "unit": "Ton",
+          "subtype": "Weight"
         },
         "Start": 79,
         "End": 87
@@ -408,7 +433,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "16",
-          "unit": "Bit"
+          "unit": "Bit",
+          "subtype": "Information"
         },
         "Start": 117,
         "End": 122
@@ -424,7 +450,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "188",
-          "unit": "Kilometer per hour"
+          "unit": "Kilometer per hour",
+          "subtype": "Speed"
         },
         "Start": 46,
         "End": 68
@@ -440,7 +467,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "100",
-          "unit": "Meter"
+          "unit": "Meter",
+          "subtype": "Length"
         },
         "Start": 55,
         "End": 63
@@ -456,7 +484,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "25,5",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 113,
         "End": 118
@@ -472,7 +501,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "4",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 7,
         "End": 18
@@ -488,7 +518,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "325",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 70,
         "End": 82
@@ -504,7 +535,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "5",
-          "unit": "Foot"
+          "unit": "Foot",
+          "subtype": "Length"
         },
         "Start": 18,
         "End": 22
@@ -520,7 +552,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "4",
-          "unit": "Inch"
+          "unit": "Inch",
+          "subtype": "Length"
         },
         "Start": 0,
         "End": 7
@@ -536,7 +569,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "0,25",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 44,
         "End": 56
@@ -552,7 +586,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1,6",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 52,
         "End": 57
@@ -568,7 +603,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "17",
-          "unit": "Kilometer"
+          "unit": "Kilometer",
+          "subtype": "Length"
         },
         "Start": 35,
         "End": 39
@@ -584,7 +620,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "776",
-          "unit": "Foot"
+          "unit": "Foot",
+          "subtype": "Length"
         },
         "Start": 98,
         "End": 105
@@ -600,7 +637,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "500",
-          "unit": "Meter"
+          "unit": "Meter",
+          "subtype": "Length"
         },
         "Start": 93,
         "End": 101
@@ -617,7 +655,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "300",
-          "unit": "Millimeter"
+          "unit": "Millimeter",
+          "subtype": "Length"
         },
         "Start": 111,
         "End": 115
@@ -633,7 +672,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "7,62",
-          "unit": "Millimeter"
+          "unit": "Millimeter",
+          "subtype": "Length"
         },
         "Start": 91,
         "End": 96
@@ -649,7 +689,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "34500",
-          "unit": "Ton"
+          "unit": "Ton",
+          "subtype": "Weight"
         },
         "Start": 107,
         "End": 115
@@ -665,7 +706,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "291890",
-          "unit": "Ton"
+          "unit": "Ton",
+          "subtype": "Weight"
         },
         "Start": 49,
         "End": 58
@@ -681,7 +723,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "190",
-          "unit": "Square kilometer"
+          "unit": "Square kilometer",
+          "subtype": "Area"
         },
         "Start": 36,
         "End": 42
@@ -709,6 +752,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
+          "subtype": "Length",
           "value": "1"
         }
       },
@@ -719,6 +763,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Decimeter",
+          "subtype": "Length",
           "value": "10"
         }
       }
@@ -734,7 +779,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Inch"
+          "unit": "Inch",
+          "subtype": "Length"
         },
         "Start": 24,
         "End": 27
@@ -750,6 +796,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Megabit",
+          "subtype": "Information",
           "value": "100"
         },
         "Start": 26,
@@ -766,6 +813,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Megabyte",
+          "subtype": "Information",
           "value": "100"
         },
         "Start": 26,
@@ -789,6 +837,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Picometer",
+          "subtype": "Length",
           "value": "2"
         }
       },
@@ -799,6 +848,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Picometer",
+          "subtype": "Length",
           "value": "2"
         }
       }
@@ -815,6 +865,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Mile",
+          "subtype": "Length",
           "value": "1"
         }
       }
@@ -836,6 +887,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
+          "subtype": "Length",
           "value": "1,8"
         }
       }
@@ -857,6 +909,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
+          "subtype": "Length",
           "value": "1"
         }
       },
@@ -867,6 +920,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
+          "subtype": "Length",
           "value": "1"
         }
       }
@@ -883,6 +937,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
+          "subtype": "Length",
           "value": "1"
         }
       },
@@ -893,6 +948,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter",
+          "subtype": "Length",
           "value": "1"
         }
       }
@@ -907,7 +963,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "12",
-          "unit": "Meter"
+          "unit": "Meter",
+          "subtype": "Length"
         },
         "Start": 11,
         "End": 14
@@ -917,7 +974,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
-          "unit": "Decimeter"
+          "unit": "Decimeter",
+          "subtype": "Length"
         },
         "Start": 16,
         "End": 19

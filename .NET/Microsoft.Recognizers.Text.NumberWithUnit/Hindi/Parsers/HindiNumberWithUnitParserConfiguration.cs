@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Hindi
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new HindiNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -24,6 +26,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Hindi
 
         public override string ConnectorToken { get; }
 
-        public override IDictionary<string, string> TypeList { get; set; } = null;
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

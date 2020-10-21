@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     };
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
 
-                    if (this.Config.TypeList.TryGetValue(unitValue, out var unitType))
+                    if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) && this.Config.TypeList.TryGetValue(unitValue, out var unitType))
                     {
                         ret.Type = unitType;
                     }
