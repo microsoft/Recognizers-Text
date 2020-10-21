@@ -6956,7 +6956,7 @@
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
     "NotSupportedByDesign": "javascript",
-    "NotSupported": "python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "la semana pasada",
@@ -6983,7 +6983,7 @@
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
     "NotSupportedByDesign": "javascript",
-    "NotSupported": "python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "semana pasada",
@@ -7010,7 +7010,7 @@
       "ReferenceDateTime": "2019-08-21T17:00:00"
     },
     "NotSupportedByDesign": "javascript",
-    "NotSupported": "python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "el mes pasado",

@@ -158,6 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
+            // Merge overlapping results
+            ret = ExtractResultExtension.MergeAllResults(ret);
+
             // Pop
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
