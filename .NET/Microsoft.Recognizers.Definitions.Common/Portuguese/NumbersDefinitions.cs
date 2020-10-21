@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const bool MultiDecimalSeparatorCulture = false;
       public const string HundredsNumberIntegerRegex = @"(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\s+)(cento))";
       public const string RoundNumberIntegerRegex = @"(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))";
-      public const string ZeroToNineIntegerRegex = @"(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)";
+      public const string ZeroToNineIntegerRegex = @"(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)";
       public const string TenToNineteenIntegerRegex = @"(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)";
       public const string TensNumberIntegerRegex = @"(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
@@ -307,6 +307,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
         {
             { @"hum", 1 },
+            { @"um", 1 },
             { @"dois", 2 },
             { @"tres", 3 },
             { @"três", 3 },
