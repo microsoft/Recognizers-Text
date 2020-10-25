@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
             PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
 
-            DayOfMonth = config.DayOfMonth;
+            DayOfMonth = DateTimeDefinitions.DayOfMonth.ToImmutableDictionary();
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
             CardinalMap = config.CardinalMap;
