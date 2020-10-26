@@ -415,19 +415,19 @@ CurrencySuffixList: !dictionary
     Bahraini dinar: bahrainsk dinar|bahrainska dinarer|bhd|.د.ب
     Santeem: santeem|santeems
     Iraqi dinar: iraqi dinars|iraqi dinar|iraq dinars|iraq dinar|iqd|ع.د
-    Jordanian dinar: jordanian dinars|jordanian dinar|د.ا|jod|jordan dinar|jordan dinars
-    Kuwaiti dinar: kuwaiti dinars|kuwaiti dinar|kwd|د.ك
-    Libyan dinar: libyan dinars|libyan dinar|libya dinars|libya dinar|lyd
-    Serbian dinar: serbian dinars|serbian dinar|din.|rsd|дин.|serbia dinars|serbia dinar
+    Jordanian dinar: jordanska dinarer|jordansk dinar|د.ا|jod
+    Kuwaiti dinar: kuwaitiska dinarer|kuwaitisk dinar|kwd|د.ك
+    Libyan dinar: libyska dinarer|libysk dinar|lyd
+    Serbian dinar: serbiska dinarer|serbisk dinar|din.|rsd|дин.|Српски Динар
     Tunisian dinar: tunisian dinars|tunisian dinar|tnd|tunisia dinars|tunisia dinar
     Yugoslav dinar: yugoslav dinars|yugoslav dinar|yun
-    Dinar: dinars|dinar|denar|-dinars|-dinar
+    Dinar: dinarer|dinar|-dinarer|-dinar
     Fils: fils|fulūs|-fils|-fil
     Para: para|napa
     Millime: millimes|millime
 #Peso
-    Argentine peso: argentine peso|ars|argetina peso|argetina pesos|argentine pesos
-    Chilean peso: chilean pesos|chilean peso|clp|chile peso|chile peso
+    Argentine peso: argentinska pesos|argentinsk peso|ars
+    Chilean peso: chilenska pesos|chilensk peso|clp
     Colombian peso: colombian pesos|colombian peso|cop|colombia peso|colombia pesos
     Cuban convertible peso: cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso
     Cuban peso: cuban pesos|cuban peso|cup|cuba pesos|cuba peso
