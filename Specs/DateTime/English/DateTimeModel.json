@@ -18843,5 +18843,47 @@
         }
       }
     ]
+  },
+  {
+    "Input": "It happened the year before 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-11-08T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the year",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2015",
+        "Start": 21,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
