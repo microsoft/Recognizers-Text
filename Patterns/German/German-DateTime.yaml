@@ -241,7 +241,7 @@ AmRegex: !simpleRegex
 LunchRegex: !simpleRegex
   def: \b(mittag(essen|s)?)\b
 NightRegex: !simpleRegex
-  def: \b(mitternacht|(nachts?|primetime))\b
+  def: \b(mitternacht|(nachts?|primetime|abends?))\b
 AmPmPrefixRegex: !simpleRegex
   def: ((((um|gegen)\s*)?((am morgen)|morgens|(vor|nach)mittags?|abends?|früh|mitternachts?)|(in der\s*)?nachts?)\s*(um|gegen|von)\s*)
 CommonDatePrefixRegex: !simpleRegex
