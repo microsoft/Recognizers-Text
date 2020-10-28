@@ -134,6 +134,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex NonDateUnitRegex =
             new Regex(@"(?<unit>heures?|hrs|secondes?|secs?|minutes?|mins?)\b", RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -253,5 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             StrictRelativeRegex = PortugueseDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = PortugueseDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = PortugueseDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = PortugueseDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -126,6 +127,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

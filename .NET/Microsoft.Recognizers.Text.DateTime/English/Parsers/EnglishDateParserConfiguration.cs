@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StrictRelativeRegex = EnglishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = EnglishDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -126,6 +127,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

@@ -661,6 +661,8 @@ AgoRegex: !simpleRegex
   def: \b((?<day>bugünden|gün|dünden|dün)\s+)?(önce(ki)?|evvel)\b
 LaterRegex: !simpleRegex
   def: \b((?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra(ki)?)|sonra|şu\s+andan\s+itibaren)(\s+gelecek)?
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(içinde)\b
 SinceNumSuffixRegex: !simpleRegex

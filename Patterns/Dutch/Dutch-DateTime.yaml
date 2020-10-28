@@ -598,6 +598,8 @@ AgoRegex: !simpleRegex
   def: \b(geleden|voor\s+(?<day>gisteren|vandaag))\b
 LaterRegex: !simpleRegex
   def: \b(later|vanaf\s+nu|(vanaf|na)\s+(?<day>morgen|vandaag))\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(in|over)(\s+de)?\b
 SinceYearSuffixRegex: !nestedRegex

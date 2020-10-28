@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             StrictRelativeRegex = SpanishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = SpanishDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -126,6 +127,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
