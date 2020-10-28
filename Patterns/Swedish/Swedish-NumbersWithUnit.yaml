@@ -428,33 +428,33 @@ CurrencySuffixList: !dictionary
 #Peso
     Argentine peso: argentinska pesos|argentinsk peso|ars
     Chilean peso: chilenska pesos|chilensk peso|clp
-    Colombian peso: colombian pesos|colombian peso|cop|colombia peso|colombia pesos
+    Colombian peso: colombianska pesos|colombiansk peso|cop
     Cuban convertible peso: cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso
-    Cuban peso: cuban pesos|cuban peso|cup|cuba pesos|cuba peso
-    Dominican peso: dominican pesos|dominican peso|dop|dominica pesos|dominica peso
-    Mexican peso: mexican pesos|mexican peso|mxn|mexico pesos|mexico peso
-    Philippine peso: piso|philippine pesos|philippine peso|₱|php
-    Uruguayan peso: uruguayan pesos|uruguayan peso|uyu
+    Cuban peso: kubanska pesos|kubansk pesocup
+    Dominican peso: dominikanska pesos|dominikansk peso|dop
+    Mexican peso: mexikanska pesos|mexikansk peso|mxn
+    Philippine peso: piso|filippinska pesos|filippinsk peso|₱|php
+    Uruguayan peso: uruguayanska pesos|uruguayansk peso|uyu
     Peso: pesos|peso
     Centavo: centavos|centavo
 #Pound
     Alderney pound: alderney pounds|alderney pound|alderney £
-    British pound: british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
+    British pound: brittiskt pund|brittiskta pund|brittiskt £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
     Guernsey pound: guernsey pounds|guernsey £|ggp
     Ascension pound: ascension pounds|ascension pound|ascension £
     Saint Helena pound: saint helena pounds|saint helena pound|saint helena £|shp
-    Egyptian pound: egyptian pounds|egyptian pound|egyptian £|egp|ج.م|egypt pounds|egypt pound
+    Egyptian pound: egyptiska pund|egyptiskt pund|egyptiskt £|egp|ج.م
     Falkland Islands pound: falkland islands pounds|falkland islands pound|falkland islands £|fkp|falkland island pounds|falkland island pound|falkland island £
     Gibraltar pound: gibraltar pounds|gibraltar pound|gibraltar £|gip
     Manx pound: manx pounds|manx pound|manx £|imp
     Jersey pound: jersey pounds|jersey pound|jersey £|jep
-    Lebanese pound: lebanese pounds|lebanese pound|lebanese £|lebanan pounds|lebanan pound|lebanan £|lbp|ل.ل
+    Lebanese pound: libanesiska pund|libanesiskt pund|libanesiskt £|lbp|ل.ل
     South Georgia and the South Sandwich Islands pound: south georgia and the south sandwich islands pounds|south georgia and the south sandwich islands pound|south georgia and the south sandwich islands £
-    South Sudanese pound: south sudanese pounds|south sudanese pound|south sudanese £|ssp|south sudan pounds|south sudan pound|south sudan £
-    Sudanese pound: sudanese pounds|sudanese pound|sudanese £|ج.س.|sdg|sudan pounds|sudan pound|sudan £
-    Syrian pound: syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £
+    South Sudanese pound: sydsudanesiska pund|sydsudanesiskt pund|sydsudanesiskt £|ssp
+    Sudanese pound: sudanesiska pund|sudanesiskt pund|sudanesiskt £|ج.س.|sdg
+    Syrian pound: syriska pund|syriskt pund|syriskt £|ل.س|syp
     Tristan da Cunha pound: tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
-    Pound: pounds|pound|-pounds|-pound|£
+    Pound: pund|-pund|£
     Pence: pence
     Shilling: shillings|shilling|shilingi|sh
     Penny: pennies|penny
