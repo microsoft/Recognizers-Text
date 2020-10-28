@@ -2755,5 +2755,68 @@
         }
       }
     ]
+  },
+  {
+    "Input": "jeden Tag um 19:13 Uhr Alarm stellen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jeden tag",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19:13 uhr",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:13",
+              "type": "time",
+              "value": "19:13:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jeden Abend um 19:13 Uhr Alarm stellen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jeden abend um 19:13 uhr",
+        "Start": 0,
+        "End": 23,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:13",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

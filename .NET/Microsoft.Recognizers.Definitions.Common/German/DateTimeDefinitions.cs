@@ -25,8 +25,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>zu|bis\s*zum|zum|bis|bis\s*hin(\s*zum)?|--|-|—|——)";
       public const string RangeConnectorRegex = @"(?<and>und|--|-|—|——)";
-      public const string RelativeRegex = @"(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?|de[rmsn]|am)";
-      public const string StrictRelativeRegex = @"(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?)";
+      public const string RelativeRegex = @"\b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?|de[rmsn]|am)";
+      public const string StrictRelativeRegex = @"\b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?)";
       public const string UpcomingPrefixRegex = @".^";
       public static readonly string NextPrefixRegex = $@"\b((über)?nächste[rns]?|kommende[rns]?|{UpcomingPrefixRegex})\b";
       public const string AfterNextPrefixRegex = @"\bübernächste[rns]?\b";
@@ -82,9 +82,9 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string ThisRegex = $@"(((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))";
       public static readonly string LastDateRegex = $@"({PreviousPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{PreviousPrefixRegex}\s*woche))";
       public static readonly string NextDateRegex = $@"({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))";
-      public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|(?<!\bam\s+)morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))";
+      public static readonly string SpecialDayRegex = $@"\b(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|(?<!\bam\s+)morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?)))\b";
-      public static readonly string RelativeDayRegex = $@"((((de[rmns])\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
+      public static readonly string RelativeDayRegex = $@"\b((((de[rmns])\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
       public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";
       public static readonly string WeekDayOfMonthRegex = $@"\b(?<wom>((an( dem)?|de[rs]|am)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rns]?)\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b";
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b";

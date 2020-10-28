@@ -18522,5 +18522,66 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll leave every day at 7:13 p.m.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "every day",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "7:13 p.m.",
+        "Start": 24,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:13",
+              "type": "time",
+              "value": "19:13:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave every evening at 7:13 p.m.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "every evening at 7:13 p.m.",
+        "Start": 11,
+        "End": 36,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:13",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
