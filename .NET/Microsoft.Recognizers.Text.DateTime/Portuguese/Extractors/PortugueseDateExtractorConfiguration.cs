@@ -144,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -199,6 +200,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

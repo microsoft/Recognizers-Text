@@ -156,6 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -208,6 +209,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

@@ -54,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
 
@@ -79,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

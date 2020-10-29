@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DurationParser { get; }
 
+        IDateTimeParser HolidayParser { get; }
+
         IEnumerable<Regex> DateRegexes { get; }
 
         Regex OnRegex { get; }

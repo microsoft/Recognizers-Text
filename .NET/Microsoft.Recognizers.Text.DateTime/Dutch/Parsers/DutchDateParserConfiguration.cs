@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new DutchHolidayParserConfiguration(this));
             DateRegexes = new DutchDateExtractorConfiguration(this).DateRegexList;
             OnRegex = DutchDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = DutchDateExtractorConfiguration.SpecialDayRegex;
@@ -74,6 +75,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 
