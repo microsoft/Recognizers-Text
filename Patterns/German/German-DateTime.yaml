@@ -56,7 +56,7 @@ YearRegex: !nestedRegex
 WeekDayRegex: !simpleRegex
   def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
 SingleWeekDayRegex: !simpleRegex
-  def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
+  def: \b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+monat(s)?)
   references: [RelativeRegex]
@@ -233,9 +233,9 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 PmRegex: !simpleRegex
-  def: ((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
+  def: \b((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
 PmRegexFull: !simpleRegex
-  def: ((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
+  def: \b((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
 AmRegex: !simpleRegex
   def: (?<am>(((am|gegen)\s+)?(früh|vormittags?)|(morgens|(am|gegen) morgen)))
 LunchRegex: !simpleRegex
@@ -243,7 +243,7 @@ LunchRegex: !simpleRegex
 NightRegex: !simpleRegex
   def: \b(mitternacht|(nachts?|primetime|abends?))\b
 AmPmPrefixRegex: !simpleRegex
-  def: ((((um|gegen)\s*)?((am morgen)|morgens|(vor|nach)mittags?|abends?|früh|mitternachts?)|(in der\s*)?nachts?)\s*(um|gegen|von)\s*)
+  def: \b((((um|gegen)\s*)?((am morgen)|morgens|(vor|nach)mittags?|abends?|früh|mitternachts?)|(in der\s*)?nachts?)\s*(um|gegen|von)\s*)
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
@@ -259,7 +259,7 @@ TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
   references: [ AmRegex, PmRegex, OclockRegex ]
 TimeSuffixFull: !nestedRegex
-  def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))
+  def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|\b(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))
   references: [ AmRegex, PmRegex, OclockRegex ]
 BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s+uhr(\s+und)?\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))
@@ -445,7 +445,7 @@ TokenBeforeTime: 'um '
 AMTimeRegex: !simpleRegex
   def: (?<am>morgens|vormittags?|früh)
 PMTimeRegex: !simpleRegex
-  def: (?<pm>nachmittags?|abends?|nachts?)
+  def: \b(?<pm>nachmittags?|abends?|nachts?)
 BeforeRegex: !simpleRegex
   def: (vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?|bis)
 AfterRegex: !simpleRegex
