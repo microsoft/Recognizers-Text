@@ -4864,5 +4864,75 @@
         }
       }
     ]
+  },
+  {
+    "Input": "1千零1",
+    "Results": [
+      {
+        "Text": "1千零1",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1001"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1千零20",
+    "Results": [
+      {
+        "Text": "1千零20",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1020"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2千零30万",
+    "Results": [
+      {
+        "Text": "2千零30万",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20300000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3万4000",
+    "Results": [
+      {
+        "Text": "3万4000",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "34000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "25万6千",
+    "Results": [
+      {
+        "Text": "25万6千",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "256000"
+        }
+      }
+    ]
   }
 ]

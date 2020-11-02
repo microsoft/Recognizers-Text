@@ -358,6 +358,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         long roundBefore = -1;
         long roundDefault = 1;
         boolean isNegative = false;
+        boolean isPreDigit = false;
 
         boolean isDozen = false;
         boolean isPair = false;
@@ -413,15 +414,30 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
-                        beforeValue = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        double tmp = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        if (isPreDigit) {
+                            beforeValue = beforeValue * 10 + tmp;
+                        } else {
+                            beforeValue = tmp;
+                        }
                         isRoundBefore = false;
                     }
                 } else {
-                    partValue += cjkConfig.getZeroToNineMap().get(intStr.charAt(i)) * roundDefault;
+                    if (Character.isDigit(intStr.charAt(i))) {
+                        roundDefault = 1;
+                    }
+                    double tmp = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                    if (isPreDigit) {
+                        beforeValue = beforeValue * 10 + tmp;
+                    } else {
+                        beforeValue = tmp;
+                    }
+                    partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
+            isPreDigit = Character.isDigit(intStr.charAt(i));
         }
 
         if (isNegative) {

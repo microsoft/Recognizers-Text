@@ -488,6 +488,7 @@ namespace Microsoft.Recognizers.Text.Number
             var isRoundBefore = false;
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
+            var isPreDigit = false;
 
             var isDozen = false;
             var isPair = false;
@@ -571,22 +572,43 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else
                         {
-                            beforeValue = Config.ZeroToNineMap[intStr[i]];
+                            double tmp = Config.ZeroToNineMap[intStr[i]];
+                            if (isPreDigit)
+                            {
+                                beforeValue = (beforeValue * 10) + tmp;
+                            }
+                            else
+                            {
+                                beforeValue = tmp;
+                            }
+
                             isRoundBefore = false;
                         }
                     }
                     else
                     {
-                        if (i == intStr.Length - 1 && (Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR"))
+                        if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") || char.IsDigit(intStr[i]))
                         {
                             roundDefault = 1;
                         }
 
-                        partValue += Config.ZeroToNineMap[intStr[i]] * roundDefault;
+                        double tmp = Config.ZeroToNineMap[intStr[i]];
+                        if (isPreDigit)
+                        {
+                            beforeValue = (beforeValue * 10) + tmp;
+                        }
+                        else
+                        {
+                            beforeValue = tmp;
+                        }
+
+                        partValue += beforeValue * roundDefault;
                         intValue += partValue;
                         partValue = 0;
                     }
                 }
+
+                isPreDigit = char.IsDigit(intStr[i]);
             }
 
             if (isNegative)

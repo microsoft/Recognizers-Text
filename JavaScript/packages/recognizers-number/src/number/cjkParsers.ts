@@ -43,6 +43,10 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             : value.toString();
     }
 
+    private isDigitCode(n: string): boolean {
+        return n >= '0' && n <= '9';
+     }
+
     parse(extResult: ExtractResult): ParseResult | null {
         let extra = '';
         let result: ParseResult;
@@ -395,6 +399,7 @@ return value;
         let roundBefore = -1;
         let roundDefault = 1;
         let isNegative = false;
+        let isPreDigit = false;
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
             isNegative = true;
@@ -439,19 +444,31 @@ return value;
                         roundDefault = 1;
                     }
  else {
-                        beforeValue = this.config.zeroToNineMap.get(currentChar);
+                        let tmp = this.config.zeroToNineMap.get(currentChar);
+                        if (isPreDigit) {
+                            beforeValue = beforeValue * 10 + tmp;
+                        } else {
+                            beforeValue = tmp;
+                        }
                         isRoundBefore = false;
                     }
                 }
  else {
-                    if (index === resultStr.length - 1 && this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
+                    if (this.config.cultureInfo.code.toLowerCase() === Culture.Japanese || this.isDigit(currentChar)) {
                         roundDefault = 1;
                     }
-                    partValue += this.config.zeroToNineMap.get(currentChar) * roundDefault;
+                    let tmp = this.config.zeroToNineMap.get(currentChar);
+                    if (isPreDigit) {
+                        beforeValue = beforeValue * 10 + tmp;
+                    } else {
+                        beforeValue = tmp;
+                    }
+                    partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
+            isPreDigit = this.isDigit(currentChar);
         }
  
         if (isNegative) {
