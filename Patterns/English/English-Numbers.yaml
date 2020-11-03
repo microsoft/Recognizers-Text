@@ -87,7 +87,7 @@ OrdinalEnglishRegex: !nestedRegex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+  def: ((((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))|[\u00BC-\u00BE\u2150-\u215E])
 RoundMultiplierRegex: !nestedRegex
   def: \b\s*((of\s+)?a\s+)?(?<multiplier>{RoundNumberIntegerRegex})$
   references: [ RoundNumberIntegerRegex ]
