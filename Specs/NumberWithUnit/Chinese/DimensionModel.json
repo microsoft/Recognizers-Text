@@ -195,5 +195,35 @@
         "End": 3
       }
     ]
+  },
+  {
+    "Input": "2.3千克",
+    "Results": [
+      {
+        "Text": "2.3千克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.3",
+          "unit": "Kilogram"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "12千米",
+    "Results": [
+      {
+        "Text": "12千米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Kilometer"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
   }
 ]
