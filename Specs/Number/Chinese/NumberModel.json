@@ -4985,5 +4985,89 @@
         }
       }
     ]
+  },
+  {
+    "Input": "二十一万亿",
+    "Results": [
+      {
+        "Text": "二十一万亿",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "二十万亿",
+    "Results": [
+      {
+        "Text": "二十万亿",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "20万亿",
+    "Results": [
+      {
+        "Text": "20万亿",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "三百五十一万亿",
+    "Results": [
+      {
+        "Text": "三百五十一万亿",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "351000000000000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "三百五十万亿",
+    "Results": [
+      {
+        "Text": "三百五十万亿",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "350000000000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "350万亿",
+    "Results": [
+      {
+        "Text": "350万亿",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "350000000000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
   }
 ]
