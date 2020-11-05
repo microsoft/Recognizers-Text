@@ -2025,5 +2025,50 @@
         }
       }
     ]
+  },
+  {
+    "Input": "十分之一",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "十分之一",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "四分之三",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "四分之三",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "75%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "两百分之一百五十二",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "两百分之一百五十二",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "76%"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
   }
 ]

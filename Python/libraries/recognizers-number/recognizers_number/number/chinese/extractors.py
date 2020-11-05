@@ -308,5 +308,9 @@ class ChinesePercentageExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.SpecialsFoldsPercentageRegex),
-                val='PerSpe')
+                val='PerSpe'),
+            ReVal(
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FractionPercentageRegex),
+                val='PerFrac')
         ]

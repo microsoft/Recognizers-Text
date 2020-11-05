@@ -301,6 +301,28 @@ namespace Microsoft.Recognizers.Text.Number
 
                 result.Value = GetDigitValue(resultText, power);
             }
+            else if (extResult.Data.ToString().Contains("Frac"))
+            {
+                // Parse fraction percentages e.g. [Den]分之[Num] in Chinese
+                var splitResult = Config.FracSplitRegex.Split(resultText);
+                string demoPart = string.Empty, numPart = string.Empty;
+
+                if (splitResult.Length == 2)
+                {
+                    demoPart = splitResult[0];
+                    numPart = splitResult[1];
+                }
+
+                var numValue = Config.DigitNumRegex.IsMatch(numPart)
+                    ? GetDigitValue(numPart, 1.0)
+                    : GetIntValue(numPart);
+
+                var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
+                    ? GetDigitValue(demoPart, 1.0)
+                    : GetIntValue(demoPart);
+
+                result.Value = (numValue / demoValue) * 100;
+            }
             else
             {
                 var doubleText = Config.PercentageRegex.Match(resultText).Value;

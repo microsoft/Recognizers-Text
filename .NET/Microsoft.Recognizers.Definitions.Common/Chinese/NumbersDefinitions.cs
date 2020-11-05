@@ -216,6 +216,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string IntegerPercentageRegex = $@"{ZeroToNineFullHalfRegex}+\s*[个個]\s*[百佰]\s*分\s*[点點]";
       public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*[个個]\s*[百佰]\s*分\s*[点點]";
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*[个個]\s*[百佰]\s*分\s*[点點]";
+      public static readonly string FractionPercentageRegex = $@"(?<denominator>{AllIntRegex})\s*分\s*之\s*(?<numerator>{AllIntRegex})";
       public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)";
       public static readonly string NumbersFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}(([\.．]?|\s*){ZeroToNineFullHalfRegex})?\s*折";
       public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegex}(\s*[点點]?\s*{ZeroToNineIntegerRegex})?\s*折";

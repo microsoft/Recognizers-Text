@@ -244,6 +244,22 @@ class CJKNumberParser(BaseNumberParser):
             elif any(x for x in ['T', 'Ｔ'] if x in double_text):
                 power = 1000000000000
             result.value = self.get_digit_value(double_text, power)
+            
+        elif 'Frac' in source.data:
+            # Parse fraction percentages e.g. [Den]分之[Num] in Chinese
+            split_result = regex.split(self.config.frac_split_regex, source_text)
+            parts = namedtuple('parts', ['demo', 'num'])
+            result_part: parts
+            if len(split_result) == 2:
+                result_part = parts(
+                    demo=split_result[0],
+                    num=split_result[1]
+                )
+
+            num_value = Decimal(self.get_value_from_part(result_part.num))
+            demo_value = Decimal(self.get_value_from_part(result_part.demo))
+
+            result.value = (num_value / demo_value) * 100
 
         else:
             double_match = regex.search(

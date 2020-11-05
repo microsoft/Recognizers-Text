@@ -125,6 +125,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     new Regex(NumbersDefinitions.SpecialsFoldsPercentageRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
+                {
+                    // [Den]分之[Num] e.g. 十分之一
+                    new Regex(NumbersDefinitions.FractionPercentageRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.FRACTION_PREFIX)
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
