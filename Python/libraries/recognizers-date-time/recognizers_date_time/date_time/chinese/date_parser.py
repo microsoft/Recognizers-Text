@@ -379,8 +379,8 @@ class ChineseDateParser(BaseDateParser):
     # Handle cases like "三天前"
     def parser_duration_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        duration_res = self.duration_extractor.extract(source, reference).pop()
-
+        duration_res = self.duration_extractor.extract(source, reference).pop() if self.duration_extractor.extract(
+            source, reference) else []
         if duration_res:
             match = self.config._unit_regex.search(source)
             if match:

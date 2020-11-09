@@ -1059,5 +1059,28 @@
         "Length": 2
       }
     ]
+  },
+  {
+    "Input": "今年圣诞节",
+    "Context": {
+      "ReferenceDateTime": "2020-11-09T11:00:00"
+    },
+    "Results": [
+      {
+        "Text": "今年圣诞节",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-12-25",
+          "FutureResolution": {
+            "date": "2020-12-25"
+          },
+          "PastResolution": {
+            "date": "2020-12-25"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]
