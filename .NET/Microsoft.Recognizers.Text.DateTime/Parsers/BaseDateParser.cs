@@ -416,19 +416,31 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
-                DateObject futureDate;
+                DateObject futureDate, pastDate;
                 var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
+                    if (futureDate < referenceDate)
+                    {
+                        futureDate = futureDate.AddMonths(+1);
+                    }
+
+                    if (pastDate >= referenceDate)
+                    {
+                        pastDate = pastDate.AddMonths(-1);
+                    }
                 }
                 else
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                 }
 
                 ret.FutureValue = futureDate;
-                ret.PastValue = ret.FutureValue;
+                ret.PastValue = pastDate;
                 ret.Success = true;
 
                 return ret;

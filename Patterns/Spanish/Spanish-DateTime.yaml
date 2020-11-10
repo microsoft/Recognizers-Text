@@ -162,8 +162,8 @@ BetweenRegex: !simpleRegex
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\b
 OnRegex: !nestedRegex
-  def: ((?<=\b(e[ln])\s+)|(\be[ln]\s+d[ií]a\s+))({DayRegex}s?|{WrittenDayRegex})\b
-  references: [ DayRegex, WrittenDayRegex ]
+  def: ((?<=\b(e[ln])\s+)|(\be[ln]\s+d[ií]a\s+))({DayRegex}s?)\b
+  references: [ DayRegex ]
 RelaxedOnRegex: !simpleRegex
   def: (?<=\b(en|d?el)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1st|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b
 SpecialDayRegex: !simpleRegex
@@ -171,9 +171,12 @@ SpecialDayRegex: !simpleRegex
 SpecialDayWithNumRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-ForTheRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+FlexibleDayRegex: !nestedRegex
+  def: (?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))
+  references: [WrittenDayRegex, DayRegex ]
+ForTheRegex: !nestedRegex
+  def: \b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+))((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.|!|\?|-|$)))
+  references: [FlexibleDayRegex, MonthRegex ]
 WeekDayAndDayOfMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -837,83 +840,6 @@ Numbers: !dictionary
     treinta: 30
     cuarenta: 40
     cincuenta: 50
-DayOfMonth: !dictionary
-  types: [ string, int ]
-  entries:
-    '01': 1
-    '02': 2
-    '03': 3
-    '04': 4
-    '05': 5
-    '06': 6
-    '07': 7
-    '08': 8
-    '09': 9
-    '1': 1
-    '2': 2
-    '3': 3
-    '4': 4
-    '5': 5
-    '6': 6
-    '7': 7
-    '8': 8
-    '9': 9
-    '10': 10
-    '11': 11
-    '11': 11
-    '12': 12
-    '12': 12
-    '13': 13
-    '13': 13
-    '14': 14
-    '15': 15
-    '16': 16
-    '17': 17
-    '18': 18
-    '19': 19
-    '20': 20
-    '21': 21
-    '22': 22
-    '23': 23
-    '24': 24
-    '25': 25
-    '26': 26
-    '27': 27
-    '28': 28
-    '29': 29
-    '30': 30
-    '31': 31
-    'uno': 1
-    'dos': 2
-    'tres': 3
-    'cuatro': 4
-    'cinco': 5
-    'seis': 6
-    'siete': 7
-    'ocho': 8
-    'nueve': 9
-    'diez': 10
-    'once': 11
-    'doce': 12
-    'trece': 13
-    'catorce': 14
-    'quince': 15
-    'dieciséis': 16
-    'diecisiete': 17
-    'dieciocho': 18
-    'diecinueve': 19
-    'veinte': 20
-    'veintiuno': 21
-    'veintidós': 22
-    'veintitrés': 23
-    'veinticuatro': 24
-    'veinticinco': 25
-    'veintiséis': 26
-    'veintisiete': 27
-    'veintiocho': 28
-    'veintinueve': 29
-    'treinta': 30
-    'treinta y uno': 31
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries:

@@ -86,11 +86,12 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string FromRegex = @"((de(sde)?)(\s*la(s)?)?)$";
       public const string BetweenRegex = @"(entre\s*(la(s)?)?)";
       public const string WeekDayRegex = @"\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|s[aá]|do)\b";
-      public static readonly string OnRegex = $@"((?<=\b(e[ln])\s+)|(\be[ln]\s+d[ií]a\s+))({DayRegex}s?|{WrittenDayRegex})\b";
+      public static readonly string OnRegex = $@"((?<=\b(e[ln])\s+)|(\be[ln]\s+d[ií]a\s+))({DayRegex}s?)\b";
       public const string RelaxedOnRegex = @"(?<=\b(en|d?el)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1st|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b";
       public const string SpecialDayRegex = @"\b((el\s+)?(d[ií]a\s+antes\s+de\s+ayer|anteayer)|((el\s+)?d[ií]a\s+(despu[eé]s\s+)?de\s+mañana|pasado\s+mañana)|(el\s)?d[ií]a\s+(siguiente|anterior)|(el\s)?pr[oó]ximo\s+d[ií]a|(el\s+)?[uú]ltimo\s+d[ií]a|(d)?el\s+d[ií]a(?!\s+d)|ayer|mañana|hoy)\b";
       public const string SpecialDayWithNumRegex = @"^[.]";
-      public const string ForTheRegex = @"^[.]";
+      public static readonly string FlexibleDayRegex = $@"(?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))";
+      public static readonly string ForTheRegex = $@"\b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+))((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.|!|\?|-|$)))";
       public const string WeekDayAndDayOfMonthRegex = @"^[.]";
       public const string WeekDayAndDayRegex = @"^[.]";
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|((1|2|3|4|5)(\.)?[ºª])|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
@@ -495,80 +496,6 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"treinta", 30 },
             { @"cuarenta", 40 },
             { @"cincuenta", 50 }
-        };
-      public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
-        {
-            { @"01", 1 },
-            { @"02", 2 },
-            { @"03", 3 },
-            { @"04", 4 },
-            { @"05", 5 },
-            { @"06", 6 },
-            { @"07", 7 },
-            { @"08", 8 },
-            { @"09", 9 },
-            { @"1", 1 },
-            { @"2", 2 },
-            { @"3", 3 },
-            { @"4", 4 },
-            { @"5", 5 },
-            { @"6", 6 },
-            { @"7", 7 },
-            { @"8", 8 },
-            { @"9", 9 },
-            { @"10", 10 },
-            { @"11", 11 },
-            { @"12", 12 },
-            { @"13", 13 },
-            { @"14", 14 },
-            { @"15", 15 },
-            { @"16", 16 },
-            { @"17", 17 },
-            { @"18", 18 },
-            { @"19", 19 },
-            { @"20", 20 },
-            { @"21", 21 },
-            { @"22", 22 },
-            { @"23", 23 },
-            { @"24", 24 },
-            { @"25", 25 },
-            { @"26", 26 },
-            { @"27", 27 },
-            { @"28", 28 },
-            { @"29", 29 },
-            { @"30", 30 },
-            { @"31", 31 },
-            { @"uno", 1 },
-            { @"dos", 2 },
-            { @"tres", 3 },
-            { @"cuatro", 4 },
-            { @"cinco", 5 },
-            { @"seis", 6 },
-            { @"siete", 7 },
-            { @"ocho", 8 },
-            { @"nueve", 9 },
-            { @"diez", 10 },
-            { @"once", 11 },
-            { @"doce", 12 },
-            { @"trece", 13 },
-            { @"catorce", 14 },
-            { @"quince", 15 },
-            { @"dieciséis", 16 },
-            { @"diecisiete", 17 },
-            { @"dieciocho", 18 },
-            { @"diecinueve", 19 },
-            { @"veinte", 20 },
-            { @"veintiuno", 21 },
-            { @"veintidós", 22 },
-            { @"veintitrés", 23 },
-            { @"veinticuatro", 24 },
-            { @"veinticinco", 25 },
-            { @"veintiséis", 26 },
-            { @"veintisiete", 27 },
-            { @"veintiocho", 28 },
-            { @"veintinueve", 29 },
-            { @"treinta", 30 },
-            { @"treinta y uno", 31 }
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {
