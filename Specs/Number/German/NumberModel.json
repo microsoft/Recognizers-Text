@@ -856,5 +856,29 @@
         "End": 18
       }
     ]
+  },
+  {
+    "Input": "das Ergebnis ist ⅙ und manchmal ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,166666666666667"
+        },
+        "Start": 17,
+        "End": 17
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        },
+        "Start": 32,
+        "End": 32
+      }
+    ]
   }
 ]

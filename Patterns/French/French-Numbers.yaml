@@ -104,8 +104,9 @@ OrdinalFrenchRegex: !nestedRegex
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex})(\s+((et)\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]

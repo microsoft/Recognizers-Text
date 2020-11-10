@@ -88,8 +88,9 @@ OrdinalItalianRegex: !nestedRegex
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+(e\s+)?\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]

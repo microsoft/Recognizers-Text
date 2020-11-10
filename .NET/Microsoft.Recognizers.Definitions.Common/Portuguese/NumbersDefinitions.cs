@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string AllOrdinalRegex = $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
       public const string OrdinalSuffixRegex = @"(?<=\b)(\d*((1|2|3|4|5|6|7|8|9|0)[oaºª]|(1|2|3|4|5|6|7|8|9)(\.[ºª])))(?=\b)";
       public static readonly string OrdinalEnglishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)";
