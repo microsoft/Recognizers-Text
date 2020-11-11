@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!eine?\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalGermanRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public const string FractionUnitsRegex = @"((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))";
       public const string FractionHalfRegex = @"(einhalb)$";
       public static readonly string[] OneHalfTokens = { @"ein", @"halb" };

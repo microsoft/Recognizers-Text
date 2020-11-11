@@ -565,6 +565,17 @@ namespace Microsoft.Recognizers.Text.Number
             var isNegative = false;
             var isFrac = digitsStr.Contains('/');
 
+            // Try to parse vulgar fraction chars
+            if (digitsStr.Length == 1 && !char.IsDigit(digitsStr.ToCharArray()[0]))
+            {
+                double fracResult = char.GetNumericValue(digitsStr.ToCharArray()[0]);
+
+                if (fracResult != -1.0)
+                {
+                    return fracResult;
+                }
+            }
+
             var calStack = new Stack<double>();
 
             for (var i = 0; i < digitsStr.Length; i++)

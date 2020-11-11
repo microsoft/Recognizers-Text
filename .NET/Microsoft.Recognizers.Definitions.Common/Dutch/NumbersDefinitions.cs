@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(één|een)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalDutchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public const string FractionUnitsRegex = @"((?<onehalf>anderhalve|anderhalf)|(?<quarter>driekwart)|half|halve|helft|kwart)";
       public const string FractionHalfRegex = @"([eë]nhalf|[eë]nhalve|ëneenhal(f|ve))$";
       public static readonly string[] OneHalfTokens = { @"een", @"half" };

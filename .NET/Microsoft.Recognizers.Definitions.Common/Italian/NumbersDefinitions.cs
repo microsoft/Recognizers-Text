@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(un)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalItalianRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+(e\s+)?\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+e\s+mezzo)|(({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
