@@ -18,6 +18,7 @@ class BaseNumbers:
 
     def IntegerRegexDefinition(placeholder, thousandsmark):
         return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({thousandsmark}\\d{{3}})+(?={placeholder})'
+    FractionNotationRegex = f'((((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))|[\\u00BC-\\u00BE\\u2150-\\u215E])'
 
     def DoubleRegexDefinition(placeholder, thousandsmark, decimalmark):
         return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({thousandsmark}\\d{{3}})+{decimalmark}\\d+(?={placeholder})'

@@ -45,7 +45,7 @@ export namespace EnglishNumeric {
     export const OrdinalRoundNumberRegex = `(?<!an?\\s+)${RoundNumberOrdinalRegex}`;
     export const OrdinalEnglishRegex = `(?<=\\b)${AllOrdinalRegex}(?=\\b)`;
     export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
-    export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
+    export const FractionNotationRegex = `${BaseNumbers.FractionNotationRegex}`;
     export const RoundMultiplierRegex = `\\b\\s*((of\\s+)?a\\s+)?(?<multiplier>${RoundNumberIntegerRegex})$`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?((${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+${RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+${RoundNumberIntegerRegex})(?=\\b)`;
     export const FractionNounWithArticleRegex = `(?<=\\b)(((${AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+${RoundNumberIntegerRegex})?))|(half))(?=\\b)`;
@@ -66,17 +66,17 @@ export namespace EnglishNumeric {
     export const FractionNumberWithSuffixPercentage = `((${BaseNumbers.FractionNumberReplaceToken})\\s+of)`;
     export const NumberWithPrefixPercentage = `(per\\s*cents?\\s+of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
     export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
-    export const TillRegex = `(to|through|--|-|—|——|~|–)`;
+    export const TillRegex = `((?<!\\bequal\\s+)to|through|--|-|—|——|~|–)`;
     export const MoreRegex = `(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)`;
     export const LessRegex = `(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)`;
     export const EqualRegex = `(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)`;
     export const MoreOrEqualPrefix = `((no\\s+${LessRegex})|(at\\s+least))`;
     export const MoreOrEqual = `(?:(${MoreRegex}\\s+(or)?\\s+${EqualRegex})|(${EqualRegex}\\s+(or)?\\s+${MoreRegex})|${MoreOrEqualPrefix}(\\s+(or)?\\s+${EqualRegex})?|(${EqualRegex}\\s+(or)?\\s+)?${MoreOrEqualPrefix}|>\\s*=|≥)`;
-    export const MoreOrEqualSuffix = `((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))|((over|above)(?!\\s+than))))`;
+    export const MoreOrEqualSuffix = `((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!((\\s+or\\s+equal\\s+to)?\\s*\\d+)))))|((over|above)(?!\\s+than))))`;
     export const LessOrEqualPrefix = `((no\\s+${MoreRegex})|(at\\s+most)|(up\\s+to))`;
     export const LessOrEqual = `((${LessRegex}\\s+(or)?\\s+${EqualRegex})|(${EqualRegex}\\s+(or)?\\s+${LessRegex})|${LessOrEqualPrefix}(\\s+(or)?\\s+${EqualRegex})?|(${EqualRegex}\\s+(or)?\\s+)?${LessOrEqualPrefix}|<\\s*=|≤)`;
     export const LessOrEqualSuffix = `((and|or)\\s+(less|lower|smaller|fewer)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))`;
-    export const NumberSplitMark = `(?![,.](?!\\d+))`;
+    export const NumberSplitMark = `(?![,.](?!\\d+))(?!\\s*\\b(and\\s+(${LessRegex}|${MoreRegex})|but|or|to)\\b)`;
     export const MoreRegexNoNumberSucceed = `((bigger|greater|more|higher|larger)((?!\\s+than)|\\s+(than(?!(\\s*\\d+))))|(above|over)(?!(\\s*\\d+)))`;
     export const LessRegexNoNumberSucceed = `((less|lower|smaller|fewer)((?!\\s+than)|\\s+(than(?!(\\s*\\d+))))|(below|under)(?!(\\s*\\d+)))`;
     export const EqualRegexNoNumberSucceed = `(equal(s|ing)?((?!\\s+(to|than))|(\\s+(to|than)(?!(\\s*\\d+)))))`;
@@ -88,7 +88,7 @@ export namespace EnglishNumeric {
     export const OneNumberRangeLessRegex1LB = `(?<!no\\s+)${OneNumberRangeLessRegex1}`;
     export const OneNumberRangeLessRegex2 = `(?<number2>(${NumberSplitMark}.)+)\\s*${LessOrEqualSuffix}`;
     export const OneNumberRangeLessSeparateRegex = `(${EqualRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+or\\s+)${LessRegexNoNumberSucceed})|(${LessRegex}\\s+(?<number1>(${NumberSplitMark}.)+)(\\s+or\\s+)${EqualRegexNoNumberSucceed})`;
-    export const OneNumberRangeEqualRegex = `${EqualRegex}\\s*(the\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
+    export const OneNumberRangeEqualRegex = `(?<!\\bthan\\s+or\\s+)${EqualRegex}\\s*(the\\s+)?(?<number1>(${NumberSplitMark}.)+)`;
     export const TwoNumberRangeRegex1 = `between\\s*(the\\s+)?(?<number1>(${NumberSplitMark}.)+)\\s*and\\s*(the\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
     export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})`;
     export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})`;

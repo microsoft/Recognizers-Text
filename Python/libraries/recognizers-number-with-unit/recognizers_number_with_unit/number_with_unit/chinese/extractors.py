@@ -68,7 +68,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         return self._culture_info
 
     def expand_half_suffix(self, source, result, numbers):
-       # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
         if self._half_unit_regex and numbers:
             match = [number for number in numbers if regex.match(self._half_unit_regex, number.text)]
             if match:
@@ -100,6 +100,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._half_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.HalfUnitRegex)
 
 # pylint: enable=abstract-method
+
 
 class ChineseAgeExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):
     @property
