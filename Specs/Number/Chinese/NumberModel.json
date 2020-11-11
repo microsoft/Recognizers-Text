@@ -2614,13 +2614,134 @@
   },
   {
     "Input": "百分之五十五点五七九",
-    "NotSupported": "java",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "百分之十万零六百五十一",
-    "NotSupported": "javascript, java",
+    "NotSupported":"java",
     "Results": []
+  },
+  {
+    "Input": "一百分之五十五点五七九",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "一百分之五十五点五七九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0.55579"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "一百分之十万零六百五十一",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "一百分之十万零六百五十一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1006.51"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "一千分之一",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一千分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.001"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "壹仟分之贰",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "壹仟分之贰",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.002"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "一万分之三",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一万分之三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0003"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "壹萬分之肆",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "壹萬分之肆",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0004"
+      },
+      "Start": 0,
+      "End": 4
+    }]
+  },
+  {
+    "Input": "一百万分之五",
+    "NotSupported": "javascript,python",
+    "Results": [{
+      "Text": "一百万分之五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5E-06"
+      },
+      "Start": 0,
+      "End": 5
+    }]
+  },
+  {
+    "Input": "一千万分之六",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一千万分之六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6E-07"
+      },
+      "Start": 0,
+      "End": 5
+    }]
+  },
+  {
+    "Input": "一万万分之七",
+    "NotSupported": "javascript",
+    "Results": [{
+      "Text": "一万万分之七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "7E-08"
+      },
+      "Start": 0,
+      "End": 5
+    }]
   },
   {
     "Input": "六千零五十一个百分点",

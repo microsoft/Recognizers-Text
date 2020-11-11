@@ -35,6 +35,7 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
+    readonly percentageNumRegex: RegExp;
     readonly doubleAndRoundRegex: RegExp;
     readonly fracSplitRegex: RegExp;
     readonly negativeNumberSignRegex: RegExp;
@@ -84,6 +85,7 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
         this.digitNumRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.DigitNumRegex, "gis");
         this.dozenRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.DozenRegex, "gis");
         this.percentageRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.PercentageRegex, "gis");
+        this.percentageNumRegex = null;
         this.doubleAndRoundRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.DoubleAndRoundRegex, "gis");
         this.fracSplitRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.FracSplitRegex, "gis");
         this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.NegativeNumberSignRegex, "is");

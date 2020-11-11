@@ -260,7 +260,15 @@ class CJKNumberParser(BaseNumberParser):
                     double_value -= self.get_point_value(split_result[1])
                 else:
                     double_value += self.get_point_value(split_result[1])
+
             result.value = double_value
+        percentage_num_search = regex.search(self.config.percentage_num_regex, source_text)
+        if percentage_num_search:
+            split_result = regex.search(self.config.percentage_num_regex, source_text).group()
+            split_result = regex.split(self.config.frac_split_regex, split_result)
+            demo_value = self.get_value_from_part(split_result[0])
+            
+            result.value /= (demo_value / 100)
 
         result.resolution_str = self.__format(result.value) + '%'
         return result
@@ -303,6 +311,9 @@ class CJKNumberParser(BaseNumberParser):
     def get_value_from_part(self, part: str) -> float:
         if self.is_digit(part):
             return self.get_digit_value(part, 1.0)
+        split_result = regex.split(self.config.point_regex, part)
+        if len(split_result) == 2:
+            return self.get_int_value(split_result[0]) + self.get_point_value(split_result[1])
         return self.get_int_value(part)
 
     def dou_parse(self, source: ExtractResult) -> ParseResult:

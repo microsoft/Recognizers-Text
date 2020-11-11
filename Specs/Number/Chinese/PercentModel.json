@@ -588,6 +588,164 @@
     ]
   },
   {
+    "Input": "千分之２．４",
+    "Results": [
+      {
+        "Text": "千分之2.4",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.24%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "千分之一",
+    "Results": [
+      {
+        "Text": "千分之一",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.1%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "仟分之贰",
+    "Results": [
+      {
+        "Text": "仟分之贰",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.2%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "万分之三",
+    "Results": [
+      {
+        "Text": "万分之三",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.03%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "萬分之肆",
+    "Results": [
+      {
+        "Text": "萬分之肆",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.04%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "百万分之五",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "百万分之五",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0.0005%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "千万分之六",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "千万分之六",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6E-05%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "万万分之七",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "万万分之七",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "7E-06%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "百万万分之七",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "百万万分之七",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "7E-08%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "千分之一百一十一",
+    "Results": [
+      {
+        "Text": "千分之一百一十一",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "11.1%"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "千分之一百一十一点一一二",
+    "Results": [
+      {
+        "Text": "千分之一百一十一点一一二",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "11.1112%"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
     "Input": "二三十个百分点",
     "Results": []
   },

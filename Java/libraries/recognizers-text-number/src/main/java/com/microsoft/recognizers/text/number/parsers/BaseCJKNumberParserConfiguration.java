@@ -49,6 +49,7 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
     private final Pattern digitNumRegex;
     private final Pattern speGetNumberRegex;
     private final Pattern percentageRegex;
+    private final Pattern percentageNumRegex;
     private final Pattern pointRegex;
     private final Pattern doubleAndRoundRegex;
     private final Pattern pairRegex;
@@ -65,7 +66,8 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
         Map<String, Long> roundNumberMap, Pattern halfADozenRegex, Pattern digitalNumberRegex, Pattern negativeNumberSignRegex, Pattern fractionPrepositionRegex, Map<Character,
         Double> zeroToNineMap, Map<Character, Long> roundNumberMapChar, Map<Character, Character> fullToHalfMap, Map<String, String> unitMap, Map<Character, Character> tratoSimMap,
         List<Character> roundDirectList, Pattern fracSplitRegex, Pattern digitNumRegex, Pattern speGetNumberRegex, Pattern percentageRegex, Pattern pointRegex,
-        Pattern doubleAndRoundRegex, Pattern pairRegex, Pattern dozenRegex, Pattern roundNumberIntegerRegex,char zeroChar, List<Character> tenChars,char pairChar) {
+        Pattern doubleAndRoundRegex, Pattern pairRegex, Pattern dozenRegex, Pattern roundNumberIntegerRegex,char zeroChar, List<Character> tenChars,char pairChar,
+        Pattern percentageNumRegex) {
 
         this.langMarker = langMarker;
         this.cultureInfo = cultureInfo;
@@ -106,6 +108,7 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
         this.pairRegex = pairRegex;
         this.dozenRegex = dozenRegex;
         this.roundNumberIntegerRegex = roundNumberIntegerRegex;
+        this.percentageNumRegex = percentageNumRegex;
     }
     //endregion
 
@@ -162,6 +165,11 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
     @Override
     public Pattern getPercentageRegex() {
         return this.percentageRegex;
+    }
+
+    @Override
+    public Pattern getPercentageNumRegex() {
+        return this.percentageNumRegex;
     }
 
     @Override
