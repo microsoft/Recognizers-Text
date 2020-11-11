@@ -267,7 +267,6 @@ class CJKNumberParser(BaseNumberParser):
             split_result = regex.search(self.config.percentage_num_regex, source_text).group()
             split_result = regex.split(self.config.frac_split_regex, split_result)
             demo_value = self.get_value_from_part(split_result[0])
-            
             result.value /= (demo_value / 100)
 
         result.resolution_str = self.__format(result.value) + '%'
