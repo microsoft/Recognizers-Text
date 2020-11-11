@@ -51,7 +51,7 @@ export namespace SpanishNumeric {
     export const OrdinalSuffixRegex = `(?<=\\b)(\\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|(1|2|3|4|5|6|7|8|9|0)[ºª]))(?=\\b)`;
     export const OrdinalNounRegex = `(?<=\\b)${AllOrdinalRegex}(?=\\b)`;
     export const SpecialFractionInteger = `(((${AllIntRegex})i?(${ZeroToNineIntegerRegex})|(${AllIntRegex}))a?v[oa]s?)`;
-    export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
+    export const FractionNotationRegex = `${BaseNumbers.FractionNotationRegex}`;
     export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((y|con)\\s+)?)?(${AllIntRegex})(\\s+((y|con)\\s)?)(((${AllOrdinalRegex})s?|(${SpecialFractionInteger})|(${SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\\b)`;
     export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(y\\s+)?)?(un|un[oa])(\\s+)((${AllOrdinalRegex})|(${SufixRoundOrdinalRegex})|(y\\s+)?medi[oa]s?)(?=\\b)`;

@@ -61,6 +61,7 @@ class PortugueseDateTime:
     WeekOfRegex = f'(semana)(\\s*)((do|da|de))'
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
     RangeUnitRegex = f'\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b'
+    BeforeAfterRegex = f'^[.]'
     InConnectorRegex = f'\\b(em)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'

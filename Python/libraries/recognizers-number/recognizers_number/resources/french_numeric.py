@@ -55,7 +55,7 @@ class FrenchNumeric:
     OrdinalSuffixRegex = f'(?<=\\b)((\\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\\b)'
     OrdinalFrenchRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
-    FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
+    FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)'
     FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
