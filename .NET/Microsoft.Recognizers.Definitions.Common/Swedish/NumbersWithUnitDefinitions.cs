@@ -683,7 +683,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"Danish krone", @"dkk" },
             { @"British pound", @"gbp" },
             { @"Dollar", @"$" },
-            { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $" },
+            { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $|usd" },
             { @"East Caribbean dollar", @"east caribbean $" },
             { @"Australian dollar", @"australian $|australia $" },
             { @"Bahamian dollar", @"bahamian $|bahamia $" },
