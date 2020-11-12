@@ -599,17 +599,17 @@
     ]
   },
   {
-    "Input": "Son 20 los estudiantes de nuestro grupo y no es una cifra significativa.",
+    "Input": "Siendo igual a 20 los estudiantes de nuestro grupo y no es una cifra significativa.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "son 20",
+        "Text": "igual a 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
         },
-        "Start": 0,
-        "End": 5
+        "Start": 7,
+        "End": 16
       }
     ]
   },

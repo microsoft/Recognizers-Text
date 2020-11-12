@@ -139,7 +139,7 @@ public class EnglishNumericWithUnit {
         .put("Halala", "halalas|halala")
         .put("Samoan tālā", "samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala")
         .put("Sene", "sene")
-        .put("São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra|std")
+        .put("São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra")
         .put("Sierra Leonean leone", "sierra leonean leone|sll|leone|le")
         .put("Peseta", "pesetas|peseta")
         .put("Netherlands guilder", "florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl")
@@ -353,7 +353,7 @@ public class EnglishNumericWithUnit {
         .put("Qatari riyal", "QAR")
         .put("Saudi riyal", "SAR")
         .put("Samoan tālā", "WST")
-        .put("São Tomé and Príncipe dobra", "STD")
+        .put("São Tomé and Príncipe dobra", "STN")
         .put("Sierra Leonean leone", "SLL")
         .put("Swazi lilangeni", "SZL")
         .put("Tajikistani somoni", "TJS")
@@ -395,7 +395,7 @@ public class EnglishNumericWithUnit {
         .put("Rwandan franc", "RWF")
         .put("Russian ruble", "RUB")
         .put("Transnistrian ruble", "PRB")
-        .put("Belarusian ruble", "BYN")
+        .put("New Belarusian ruble", "BYN")
         .put("Algerian dinar", "DZD")
         .put("Bahraini dinar", "BHD")
         .put("Iraqi dinar", "IQD")
@@ -559,7 +559,9 @@ public class EnglishNumericWithUnit {
     public static final String CompoundUnitConnectorRegex = "(?<spacer>and)";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+        .put("Dobra", "db|std")
         .put("Dollar", "$")
+        .put("Brazilian Real", "R$")
         .put("United States dollar", "united states $|us$|us $|u.s. $|u.s $")
         .put("East Caribbean dollar", "east caribbean $")
         .put("Australian dollar", "australian $|australia $")
@@ -602,7 +604,7 @@ public class EnglishNumericWithUnit {
         .put("Turkish lira", "₺")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "all", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen", "db");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")

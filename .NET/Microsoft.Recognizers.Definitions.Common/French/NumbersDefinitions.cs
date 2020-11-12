@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\b)";
       public static readonly string OrdinalFrenchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex})(\s+((et)\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(et\s+)?)?(une?)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demi[es]?)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sur\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";

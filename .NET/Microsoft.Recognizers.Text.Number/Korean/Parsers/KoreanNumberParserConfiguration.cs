@@ -62,6 +62,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
             this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
             this.FractionPrepositionRegex = null;
+            this.PercentageNumRegex = null;
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -71,6 +72,8 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         public Regex DozenRegex { get; private set; }
 
         public Regex PercentageRegex { get; private set; }
+
+        public Regex PercentageNumRegex { get; private set; }
 
         public Regex DoubleAndRoundRegex { get; private set; }
 

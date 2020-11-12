@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string YearRegex = $@"(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\b";
-      public const string SingleWeekDayRegex = @"\b(?<weekday>sunday|saturday|(?:mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b";
+      public const string SingleWeekDayRegex = @"\b(?<weekday>(?<!(easter|palm)\s+)sunday|(?<!easter\s+)saturday|(?<!(easter|cyber)\s+)monday|mon|(?<!black\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b";
       public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
@@ -212,7 +212,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))";
       public const string PeriodicRegex = @"\b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b";
-      public static readonly string EachUnitRegex = $@"(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex}))";
+      public static readonly string EachUnitRegex = $@"\b(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))";
       public const string EachPrefixRegex = @"\b(?<each>(each|every|once an?)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(each|every)(?<other>\s+other)?\s*)\b";
       public static readonly string SetLastRegex = $@"(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)";
@@ -241,7 +241,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?";
       public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
       public const string AgoRegex = @"\b(ago|before\s+(?<day>yesterday|today))\b";
-      public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\b";
+      public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b";
+      public const string BeforeAfterRegex = @"\b((?<before>before)|(?<after>from|after))\b";
       public const string InConnectorRegex = @"\b(in)\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b";

@@ -111,6 +111,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex RangeConnectorSymbolRegex =
             new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
@@ -284,5 +287,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

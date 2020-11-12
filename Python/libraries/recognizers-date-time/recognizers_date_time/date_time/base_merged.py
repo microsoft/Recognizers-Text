@@ -1007,11 +1007,17 @@ class BaseMergedParser(DateTimeParser):
         start = resolutions.get(start_type, None)
         end = resolutions.get(end_type, None)
         if mod:
-            if mod == TimeTypeConstants.BEFORE_MOD:
-                result[TimeTypeConstants.END] = start
+            if mod.startswith(TimeTypeConstants.BEFORE_MOD):
+                if mod.endswith(TimeTypeConstants.LATE_MOD):
+                    result[TimeTypeConstants.END] = end
+                else:
+                    result[TimeTypeConstants.END] = start
                 return
-            if mod == TimeTypeConstants.AFTER_MOD:
-                result[TimeTypeConstants.START] = end
+            if mod.startswith(TimeTypeConstants.AFTER_MOD):
+                if mod.endswith(TimeTypeConstants.EARLY_MOD):
+                    result[TimeTypeConstants.START] = start
+                else:
+                    result[TimeTypeConstants.START] = end
                 return
             if mod == TimeTypeConstants.SINCE_MOD:
                 result[TimeTypeConstants.START] = start

@@ -100,7 +100,7 @@ YearRegex: !nestedRegex
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\b
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>sunday|saturday|(?:mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b
+  def: \b(?<weekday>(?<!(easter|palm)\s+)sunday|(?<!easter\s+)saturday|(?<!(easter|cyber)\s+)monday|mon|(?<!black\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
@@ -499,7 +499,7 @@ SuffixAndRegex: !simpleRegex
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
 EachUnitRegex: !nestedRegex
-  def: (?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex}))
+  def: \b(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
   references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
@@ -571,8 +571,10 @@ SinceRegexExp: !nestedRegex
 AgoRegex: !simpleRegex
   def: \b(ago|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
-  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\b
+  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
+BeforeAfterRegex: !simpleRegex
+  def: \b((?<before>before)|(?<after>from|after))\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !nestedRegex

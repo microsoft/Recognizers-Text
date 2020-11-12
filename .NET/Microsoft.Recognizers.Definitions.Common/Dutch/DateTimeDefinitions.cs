@@ -249,6 +249,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AroundRegex = @"(\b(rond(om)?|ongeveer(\s+om)?)\s*\b)";
       public const string AgoRegex = @"\b(geleden|voor\s+(?<day>gisteren|vandaag))\b";
       public const string LaterRegex = @"\b(later|vanaf\s+nu|(vanaf|na)\s+(?<day>morgen|vandaag))\b";
+      public const string BeforeAfterRegex = @"^[.]";
       public const string InConnectorRegex = @"\b(in|over)(\s+de)?\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}((vanaf|sedert|sinds)\s+(het\s+)?jaar\s+)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b((binnen)(\s+de|het)?(\s+(?<next>{NextPrefixRegex}))?)\b";

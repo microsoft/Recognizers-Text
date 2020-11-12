@@ -1,4 +1,4 @@
-import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
+import { ExtractResult, IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, SpanishNumberExtractor, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
@@ -30,6 +30,9 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
         this.connectorToken = SpanishNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(SpanishNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
+    }
+
+    expandHalfSuffix(source: string, result: ExtractResult[], numbers: ExtractResult[]) {
     }
 }
 

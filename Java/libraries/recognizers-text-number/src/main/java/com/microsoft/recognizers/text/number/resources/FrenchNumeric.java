@@ -143,7 +143,8 @@ public class FrenchNumeric {
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
+    public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
+            .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
     public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)

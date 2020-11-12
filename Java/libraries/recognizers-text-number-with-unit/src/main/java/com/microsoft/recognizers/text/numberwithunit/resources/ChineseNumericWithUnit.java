@@ -628,4 +628,6 @@ public class ChineseNumericWithUnit {
         .build();
 
     public static final List<String> TemperatureAmbiguousValues = Arrays.asList("度", "k");
+
+    public static final String HalfUnitRegex = "半";
 }

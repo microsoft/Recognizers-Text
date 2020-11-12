@@ -92,13 +92,13 @@
     ]
   },
   {
-    "Input": "三年半",
+    "Input": "哎三年半过去了呀",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "Results": [
       {
-        "Text": "三年",
+        "Text": "三年半",
         "Type": "duration",
         "Value": {
           "Timex": "P3.5Y",
@@ -109,8 +109,46 @@
             "duration": "110376000"
           }
         },
-        "Start": 0,
-        "Length": 2
+        "Start": 1,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "嗨三年半过去了，马上一年半又要过去了",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "三年半",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
+        },
+        "Start": 1,
+        "Length": 3
+      },
+      {
+        "Text": "一年半",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1.5Y",
+          "FutureResolution": {
+            "duration": "47304000"
+          },
+          "PastResolution": {
+            "duration": "47304000"
+          }
+        },
+        "Start": 10,
+        "Length": 3
       }
     ]
   }

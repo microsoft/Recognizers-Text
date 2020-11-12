@@ -5625,5 +5625,81 @@
         }
       }
     ]
+  },
+  {
+    "Input": "嗨三年半过去了",
+    "Context": {
+      "ReferenceDateTime": "2020-10-20T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "三年半",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3.5Y",
+              "type": "duration",
+              "value": "110376000"
+            }
+          ]
+        },
+        "Start": 1,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "嗨三年半过去了，马上一年半又要过去了",
+    "Context": {
+      "ReferenceDateTime": "2020-10-20T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "三年半",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3.5Y",
+              "type": "duration",
+              "value": "110376000"
+            }
+          ]
+        },
+        "Start": 1,
+        "End": 3
+      },
+      {
+        "Text": "马上",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FUTURE_REF",
+              "type": "datetime",
+              "value": "2020-10-20 00:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 9
+      },
+      {
+        "Text": "一年半",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1.5Y",
+              "type": "duration",
+              "value": "47304000"
+            }
+          ]
+        },
+        "Start": 10,
+        "End": 12
+      }
+    ]
   }
 ]

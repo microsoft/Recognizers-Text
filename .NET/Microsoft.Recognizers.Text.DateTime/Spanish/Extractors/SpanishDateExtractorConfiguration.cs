@@ -118,6 +118,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
@@ -241,5 +244,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

@@ -589,4 +589,5 @@ class ChineseNumericWithUnit:
                                   ("R", "兰氏温度|兰氏"),
                                   ("C", "摄氏温度|摄氏")])
     TemperatureAmbiguousValues = [r'度', r'k']
+    HalfUnitRegex = f'半'
 # pylint: enable=line-too-long

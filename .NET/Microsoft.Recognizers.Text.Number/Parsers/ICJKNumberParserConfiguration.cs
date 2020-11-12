@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex PercentageRegex { get; }
 
+        Regex PercentageNumRegex { get; }
+
         Regex PointRegex { get; }
 
         Regex DoubleAndRoundRegex { get; }

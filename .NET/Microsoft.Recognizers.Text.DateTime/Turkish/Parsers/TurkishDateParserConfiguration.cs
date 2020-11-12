@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             StrictRelativeRegex = TurkishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = TurkishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = TurkishDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = TurkishDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -127,6 +128,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

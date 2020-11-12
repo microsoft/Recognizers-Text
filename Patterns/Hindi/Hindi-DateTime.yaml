@@ -605,6 +605,8 @@ AgoRegex: !simpleRegex
 LaterRegex: !nestedRegex
   def: \b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(में|को)
 SinceYearSuffixRegex: !nestedRegex

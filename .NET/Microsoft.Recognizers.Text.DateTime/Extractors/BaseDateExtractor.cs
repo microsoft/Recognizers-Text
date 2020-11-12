@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
             tokens.AddRange(NumberWithMonth(text, reference));
-            tokens.AddRange(ExtractRelativeDurationDate(text, reference));
+            tokens.AddRange(ExtractRelativeDurationDate(text, tokens, reference));
 
             var results = Token.MergeAllTokens(tokens, text, ExtractorName);
 
@@ -532,7 +532,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Cases like "3 days from today", "5 weeks before yesterday", "2 months after tomorrow"
         // Note that these cases are of type "date"
-        private List<Token> ExtractRelativeDurationDate(string text, DateObject reference)
+        private List<Token> ExtractRelativeDurationDate(string text, List<Token> tokens, DateObject reference)
         {
             var ret = new List<Token>();
             var durationEr = Config.DurationExtractor.Extract(text, reference);
@@ -560,6 +560,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text, er, ret, Config.UtilityConfiguration));
+
+                    // Check for combined patterns Duration + Date, e.g. '3 days before Monday', '4 weeks after January 15th'
+                    if (ret.Count < 1 && tokens.Count > 0 && er.Text != match.Value)
+                    {
+                        var afterStr = text.Substring((int)er.Start + (int)er.Length);
+                        var connector = Config.BeforeAfterRegex.MatchBegin(afterStr, trim: true);
+                        if (connector.Success)
+                        {
+                            foreach (var token in tokens)
+                            {
+                                var start = (int)er.Start + (int)er.Length + connector.Index + connector.Length;
+                                var length = token.Start - start;
+                                if (length > 0 && start + length < text.Length && string.IsNullOrWhiteSpace(text.Substring(start, length)))
+                                {
+                                    Token tok = new Token((int)er.Start, token.End);
+                                    ret.Add(tok);
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

@@ -28,4 +28,5 @@ export namespace ChineseNumericWithUnit {
     export const TemperatureSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["F", "华氏温度|华氏度|°f"],["K", "开尔文温度|开氏度|凯氏度|K|k"],["R", "兰氏温度|°r"],["C", "摄氏温度|摄氏度|°c"],["Degree", "度"]]);
     export const TemperaturePrefixList: ReadonlyMap<string, string> = new Map<string, string>([["F", "华氏温度|华氏"],["K", "开氏温度|开氏"],["R", "兰氏温度|兰氏"],["C", "摄氏温度|摄氏"]]);
     export const TemperatureAmbiguousValues = [ "度","k" ];
+    export const HalfUnitRegex = `半`;
 }

@@ -135,5 +135,65 @@
         }
       }
     ]
+  },
+  {
+    "Input": "一吨半",
+    "Results": [
+      {
+        "Text": "一吨半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.5",
+          "unit": "Ton"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "两米半",
+    "Results": [
+      {
+        "Text": "两米半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Meter"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三斤半",
+    "Results": [
+      {
+        "Text": "三斤半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3.5",
+          "unit": "Jin"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "十五斤半",
+    "Results": [
+      {
+        "Text": "十五斤半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "15.5",
+          "unit": "Jin"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
   }
 ]

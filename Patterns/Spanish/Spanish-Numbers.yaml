@@ -94,7 +94,7 @@ AllOrdinalRegex: !nestedRegex
   def: '{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
   references: [ ComplexOrdinalRegex, SimpleRoundOrdinalRegex, ComplexRoundOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)(\d*(1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa]))(?=\b)
+  def: (?<=\b)(\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|(1|2|3|4|5|6|7|8|9|0)[ºª]))(?=\b)
 OrdinalNounRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
@@ -102,8 +102,9 @@ OrdinalNounRegex: !nestedRegex
 SpecialFractionInteger: !nestedRegex
   def: ((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))a?v[oa]s?)
   references: [ AllIntRegex, ZeroToNineIntegerRegex ]
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
@@ -153,7 +154,7 @@ MoreRegex: !simpleRegex
 LessRegex: !simpleRegex
   def: ((meno(s|r(es)?)|inferior(es)?|por\s+debajo)((\s+(que|del?|a)|(?=\s+o\b)))|más\s+baj[oa]\s+que|(?<!>|=)<)
 EqualRegex: !simpleRegex
-  def: ((igual(es)?|equivalente(s)?|equivalen?|son)(\s+(al?|que|del?))?|(?<!<|>)=)
+  def: ((igual(es)?|equivalente(s)?|equivalen?)(\s+(al?|que|del?))?|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
   def: ((no\s+{LessRegex})|(por\s+lo\s+menos|como\s+m[íi]nimo|al\s+menos))
   references: [ LessRegex ]

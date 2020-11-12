@@ -50,7 +50,7 @@ export namespace FrenchNumeric {
     export const OrdinalSuffixRegex = `(?<=\\b)((\\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\\b)`;
     export const OrdinalFrenchRegex = `(?<=\\b)${AllOrdinalRegex}(?=\\b)`;
     export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
-    export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
+    export const FractionNotationRegex = `${BaseNumbers.FractionNotationRegex}`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((et)\\s+)?)?(${AllIntRegex})(\\s+((et)\\s)?)(((${AllOrdinalRegex})s?|(${SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)`;
     export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)((${AllOrdinalRegex})|(${SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)`;
     export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;

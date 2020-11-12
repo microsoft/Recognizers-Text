@@ -361,5 +361,27 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "圣诞节我想出去玩",
+    "Results": [
+      {
+        "Text": "圣诞节",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "今年圣诞节",
+    "Results": [
+      {
+        "Text": "今年圣诞节",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]
