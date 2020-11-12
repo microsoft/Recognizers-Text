@@ -399,7 +399,7 @@ return value;
         let roundBefore = -1;
         let roundDefault = 1;
         let isNegative = false;
-        let isPreDigit = false;
+        let hasPreviousDigits = false;
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
             isNegative = true;
@@ -444,11 +444,11 @@ return value;
                         roundDefault = 1;
                     }
  else {
-                        let tmp = this.config.zeroToNineMap.get(currentChar);
-                        if (isPreDigit) {
-                            beforeValue = beforeValue * 10 + tmp;
+                        let currentDigit = this.config.zeroToNineMap.get(currentChar);
+                        if (hasPreviousDigits) {
+                            beforeValue = beforeValue * 10 + currentDigit;
                         } else {
-                            beforeValue = tmp;
+                            beforeValue = currentDigit;
                         }
                         isRoundBefore = false;
                     }
@@ -457,18 +457,18 @@ return value;
                     if (this.config.cultureInfo.code.toLowerCase() === Culture.Japanese || this.isDigit(currentChar)) {
                         roundDefault = 1;
                     }
-                    let tmp = this.config.zeroToNineMap.get(currentChar);
-                    if (isPreDigit) {
-                        beforeValue = beforeValue * 10 + tmp;
+                    let currentDigit = this.config.zeroToNineMap.get(currentChar);
+                    if (hasPreviousDigits) {
+                        beforeValue = beforeValue * 10 + currentDigit;
                     } else {
-                        beforeValue = tmp;
+                        beforeValue = currentDigit;
                     }
                     partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
-            isPreDigit = this.isDigit(currentChar);
+            hasPreviousDigits = this.isDigit(currentChar);
         }
  
         if (isNegative) {

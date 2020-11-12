@@ -358,7 +358,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         long roundBefore = -1;
         long roundDefault = 1;
         boolean isNegative = false;
-        boolean isPreDigit = false;
+        boolean hasPreviousDigits = false;
 
         boolean isDozen = false;
         boolean isPair = false;
@@ -414,11 +414,11 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
-                        double tmp = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
-                        if (isPreDigit) {
-                            beforeValue = beforeValue * 10 + tmp;
+                        double currentDigit = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        if (hasPreviousDigits) {
+                            beforeValue = beforeValue * 10 + currentDigit;
                         } else {
-                            beforeValue = tmp;
+                            beforeValue = currentDigit;
                         }
                         isRoundBefore = false;
                     }
@@ -426,18 +426,18 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                     if (Character.isDigit(intStr.charAt(i))) {
                         roundDefault = 1;
                     }
-                    double tmp = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
-                    if (isPreDigit) {
-                        beforeValue = beforeValue * 10 + tmp;
+                    double currentDigit = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                    if (hasPreviousDigits) {
+                        beforeValue = beforeValue * 10 + currentDigit;
                     } else {
-                        beforeValue = tmp;
+                        beforeValue = currentDigit;
                     }
                     partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
-            isPreDigit = Character.isDigit(intStr.charAt(i));
+            hasPreviousDigits = Character.isDigit(intStr.charAt(i));
         }
 
         if (isNegative) {

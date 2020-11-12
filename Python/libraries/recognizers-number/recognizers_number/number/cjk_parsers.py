@@ -382,7 +382,7 @@ class CJKNumberParser(BaseNumberParser):
         round_before = -1
         round_default = 1
         negative = False
-        is_pre_digit = False
+        has_previous_digits = False
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
@@ -418,24 +418,24 @@ class CJKNumberParser(BaseNumberParser):
                         before_value = 1
                         round_default = 1
                     else:
-                        tmp = self.config.zero_to_nine_map[c]
-                        if is_pre_digit:
-                            before_value = before_value * 10 + tmp
+                        current_digit = self.config.zero_to_nine_map[c]
+                        if has_previous_digits:
+                            before_value = before_value * 10 + current_digit
                         else:
-                            before_value = tmp
+                            before_value = current_digit
                         is_round_before = False
                 else:
                     if self.config.culture_info.code == Culture.Japanese or c.isdigit():
                         round_default = 1
-                    tmp = self.config.zero_to_nine_map[c]
-                    if is_pre_digit:
-                        before_value = before_value * 10 + tmp
+                    current_digit = self.config.zero_to_nine_map[c]
+                    if has_previous_digits:
+                        before_value = before_value * 10 + current_digit
                     else:
-                        before_value = tmp
+                        before_value = current_digit
                     part_value += before_value * round_default
                     int_value += part_value
                     part_value = 0
-            is_pre_digit = c.isdigit()
+            has_previous_digits = c.isdigit()
         if negative:
             int_value = - int_value
         if dozen:

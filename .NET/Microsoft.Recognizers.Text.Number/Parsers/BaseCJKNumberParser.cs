@@ -488,7 +488,7 @@ namespace Microsoft.Recognizers.Text.Number
             var isRoundBefore = false;
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
-            var isPreDigit = false;
+            var hasPreviousDigits = false;
 
             var isDozen = false;
             var isPair = false;
@@ -572,14 +572,14 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else
                         {
-                            double tmp = Config.ZeroToNineMap[intStr[i]];
-                            if (isPreDigit)
+                            double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                            if (hasPreviousDigits)
                             {
-                                beforeValue = (beforeValue * 10) + tmp;
+                                beforeValue = (beforeValue * 10) + currentDigit;
                             }
                             else
                             {
-                                beforeValue = tmp;
+                                beforeValue = currentDigit;
                             }
 
                             isRoundBefore = false;
@@ -592,14 +592,14 @@ namespace Microsoft.Recognizers.Text.Number
                             roundDefault = 1;
                         }
 
-                        double tmp = Config.ZeroToNineMap[intStr[i]];
-                        if (isPreDigit)
+                        double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                        if (hasPreviousDigits)
                         {
-                            beforeValue = (beforeValue * 10) + tmp;
+                            beforeValue = (beforeValue * 10) + currentDigit;
                         }
                         else
                         {
-                            beforeValue = tmp;
+                            beforeValue = currentDigit;
                         }
 
                         partValue += beforeValue * roundDefault;
@@ -608,7 +608,7 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
 
-                isPreDigit = char.IsDigit(intStr[i]);
+                hasPreviousDigits = char.IsDigit(intStr[i]);
             }
 
             if (isNegative)
