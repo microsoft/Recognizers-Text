@@ -92,6 +92,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         Pattern digitNumRegex = cjkConfig.getDigitNumRegex();
+        Pattern pointRegex = cjkConfig.getPointRegex();
 
         double intValue = digitNumRegex.matcher(intPart).find() ?
                 getDigitValue(intPart, 1.0) :
@@ -99,11 +100,14 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         double numValue = digitNumRegex.matcher(numPart).find() ?
                 getDigitValue(numPart, 1.0) :
-                getIntValue(numPart);
+                (pointRegex.matcher(numPart).find() ?
+                getIntValue(pointRegex.split(numPart)[0]) + getPointValue(pointRegex.split(numPart)[1]) :
+                getIntValue(numPart));
 
         double demoValue = digitNumRegex.matcher(demoPart).find() ?
                 getDigitValue(demoPart, 1.0) :
                 getIntValue(demoPart);
+                
 
         if (cjkConfig.getNegativeNumberSignRegex().matcher(intPart).find()) {
             result.setValue(intValue - numValue / demoValue);
@@ -225,6 +229,24 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             }
 
             result.setValue(doubleValue);
+        }
+
+        Match[] matches = RegExpUtility.getMatches(this.cjkConfig.getPercentageNumRegex(), resultText);
+        if (matches.length > 0) {
+            String demoString = matches[0].value;
+            String[] splitResult = cjkConfig.getFracSplitRegex().split(demoString);
+            String demoPart = splitResult[0];
+
+            Pattern digitNumRegex = cjkConfig.getDigitNumRegex();
+
+            double demoValue = digitNumRegex.matcher(demoPart).find() ?
+                    getDigitValue(demoPart, 1.0) :
+                    getIntValue(demoPart);
+            if (demoValue < 100) {
+                result.setValue((double)result.getValue() * (100 / demoValue));
+            } else {
+                result.setValue((double)result.getValue() / (demoValue / 100));
+            }
         }
 
         if (result.getValue() instanceof Double) {

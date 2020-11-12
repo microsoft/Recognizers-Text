@@ -589,6 +589,8 @@ public class FrenchDateTime {
 
     public static final String AgoRegex = "^[.]";
 
+    public static final String BeforeAfterRegex = "^[.]";
+
     public static final String InConnectorRegex = "\\b(dans|en|sur)\\b";
 
     public static final String SinceYearSuffixRegex = "^[.]";

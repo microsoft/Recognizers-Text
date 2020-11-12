@@ -157,7 +157,9 @@ namespace Microsoft.Recognizers.Text.Number
 
             var numValue = Config.DigitNumRegex.IsMatch(numPart)
                 ? GetDigitValue(numPart, 1.0)
-                : GetIntValue(numPart);
+                : (Config.PointRegex.IsMatch(numPart)
+                ? GetIntValue(Config.PointRegex.Split(numPart)[0]) + GetPointValue(Config.PointRegex.Split(numPart)[1])
+                : GetIntValue(numPart));
 
             var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
                 ? GetDigitValue(demoPart, 1.0)
@@ -326,6 +328,29 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 result.Value = doubleValue;
+            }
+
+            if (Config.PercentageNumRegex != null)
+            {
+                var percentageNumSearch = Config.PercentageNumRegex.Match(resultText);
+                if (percentageNumSearch.Length != 0)
+                {
+                    string demoPart = percentageNumSearch.Value;
+                    var splitResult = Config.FracSplitRegex.Split(demoPart);
+                    demoPart = splitResult[0];
+                    var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
+                        ? GetDigitValue(demoPart, 1.0)
+                        : GetIntValue(demoPart);
+
+                    if (demoValue < 100 && demoValue > 0)
+                    {
+                        result.Value = (double)result.Value * (100 / demoValue);
+                    }
+                    else if (demoValue > 100)
+                    {
+                        result.Value = (double)result.Value / (demoValue / 100);
+                    }
+                }
             }
 
             result.ResolutionStr = ((double)result.Value).ToString("G15", CultureInfo.InvariantCulture) + @"%";
