@@ -612,6 +612,8 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
+                        // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一 can be dropped
+                        // from the beginning. Japanese doesn't have such behaviour.
                         if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") || char.IsDigit(intStr[i]))
                         {
                             roundDefault = 1;

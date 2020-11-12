@@ -464,6 +464,8 @@ return value;
                     }
                 }
  else {
+                    // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一
+                    // can be dropped from the beginning. Japanese doesn't have such behaviour.
                     if (this.config.cultureInfo.code.toLowerCase() === Culture.Japanese || this.isDigit(currentChar)) {
                         roundDefault = 1;
                     }

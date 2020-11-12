@@ -435,6 +435,9 @@ class CJKNumberParser(BaseNumberParser):
                             before_value = current_digit
                         is_round_before = False
                 else:
+                    # In colloquial Chinese, 百 may be omitted from the end of a number,
+                    # similarly to how 一 can be dropped from the beginning. Japanese
+                    # doesn't have such behaviour.
                     if self.config.culture_info.code == Culture.Japanese or c.isdigit():
                         round_default = 1
                     current_digit = self.config.zero_to_nine_map[c]

@@ -4072,5 +4072,39 @@
         "End": 1
       }
     ]
+  },
+  {
+    "Input": "천삼백",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "천삼백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "천삼",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "천삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
   }
 ]
