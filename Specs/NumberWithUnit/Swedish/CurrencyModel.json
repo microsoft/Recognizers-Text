@@ -1,178 +1,366 @@
 [
   {
-    "Input": "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
+    "Input": "bilen kostar 250000 kronor",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "$ 75 million",
+        "Text": "250000 kronor",
         "TypeName": "currency",
         "Resolution": {
-          "value": "75000000",
-          "unit": "Dollar"
+          "value": "250000",
+          "unit": "Krone"
         },
-        "Start": 29,
-        "End": 40
+        "Start": 13,
+        "End": 25
       }
     ]
   },
   {
-    "Input": "finnish conglomerate nokia oy ab said it reached an agreement to buy dutch cable company nkf kabel b . v . for 420 million finnish markka .",
+    "Input": "Priset är 100元!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        }
+      }
+    ]
+
+  },
+  {
+    "Input": "Svenske pizzamiljardären säljer aktier för 70 miljoner kronor",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "420 million finnish markka",
+        "Text": "70 miljoner kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "70000000",
+          "unit": "Krone"
+        },
+        "Start": 43,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "det finska företaget köpte tillgångar till ett värde av 420 miljoner finska mark .",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "420 miljoner finska mark",
         "TypeName": "currency",
         "Resolution": {
           "value": "420000000",
           "unit": "Finnish markka"
         },
-        "Start": 111,
-        "End": 136
+        "Start": 56,
+        "End": 79
       }
     ]
   },
   {
-    "Input": "national paid siegel and shuster $94,000 to drop all claims .",
+    "Input": "DNB Markets sänker riktkursen för Ericsson till 134 kronor från 138 kronor. Rekommendationen köp upprepas. Det framgår av en analys. Aktien byter ägare på 102,60 kronor i skrivande stund på torsdagsförmiddagen.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "$94,000",
+        "Text": "134 kronor",
         "TypeName": "currency",
         "Resolution": {
-          "value": "94000",
-          "unit": "Dollar"
+          "value": "134",
+          "unit": "Krone"
         },
-        "Start": 33,
-        "End": 39
-      }
-    ]
-  },
-  {
-    "Input": "general dynamics services co . , a unit of general dynamics corp . , won a $48.2 million army contract to establish maintenance facilities for tracked vehicles in pakistan .",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
+        "Start": 48,
+        "End": 57
+      },
       {
-        "Text": "$48.2 million",
+        "Text": "138 kronor",
         "TypeName": "currency",
         "Resolution": {
-          "value": "48200000",
-          "unit": "Dollar"
+          "value": "138",
+          "unit": "Krone"
         },
-        "Start": 75,
-        "End": 87
+        "Start": 64,
+        "End": 73
+      },
+      {
+        "Text": "102,60 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "102,6",
+          "unit": "Krone"
+        },
+        "Start": 155,
+        "End": 167
       }
     ]
   },
   {
-    "Input": "the price of the second simulator ranges between c $ 16.4 million",
+    "Input": "Bara under måndagens rally i de svaga aktierna tappade blankare på de sju reseaktierna Carnival Corp, Expedia Group, Booking Holdings Inc , Royal Caribbean Group, American Airlines Group Wynn Resorts och Norwegian Cruise Line Holdings, 2,35 miljarder dollar.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "c $ 16.4 million",
+        "Text": "2,35 miljarder dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2350000000",
+          "unit": "Dollar"
+        },
+        "Start": 236,
+        "End": 256
+      }
+    ]
+  },
+  {
+    "Input": "priset för den andra simulatorn varierar med 16,4 miljoner US$",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16,4 miljoner us$",
         "TypeName": "currency",
         "Resolution": {
           "value": "16400000",
-          "unit": "Canadian dollar",
-          "isoCurrency": "CAD"
-        },
-        "Start": 49,
-        "End": 64
-      }
-    ]
-  },
-  {
-    "Input": "golar gas holding co . , a subsidiary of gotaas - larsen shipping corp . , offering of $ 280 million first preferred ship mortgage notes , via merrill lynch capital markets .",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "$ 280 million",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "280000000",
-          "unit": "Dollar"
-        },
-        "Start": 87,
-        "End": 99
-      }
-    ]
-  },
-  {
-    "Input": "bard / ems had 1988 sales of about $ 14 million , birtcher said .",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "$ 14 million",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "14000000",
-          "unit": "Dollar"
-        },
-        "Start": 35,
-        "End": 46
-      }
-    ]
-  },
-  {
-    "Input": "accord prices start at $ 12,345 .",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "$ 12,345",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "12345",
-          "unit": "Dollar"
-        },
-        "Start": 23,
-        "End": 30
-      }
-    ]
-  },
-  {
-    "Input": "` ` batman ' ' alone has racked up more than $ 247 million in box - office receipts to date , making it warner bros . ' largest grossing film ever .",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "$ 247 million",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "247000000",
-          "unit": "Dollar"
+          "unit": "United States dollar"
         },
         "Start": 45,
-        "End": 57
+        "End": 61
       }
     ]
   },
   {
-    "Input": "coyle ' s net worth was estimated at £ 8.10 million in october 2014 .",
+    "Input": "Man från Örebro satsade 48 kronor på V75 – vann 1,4 miljoner kronor: Hade ingen aning",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "£ 8.10 million",
+        "Text": "48 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48",
+          "unit": "Krone"
+        },
+        "Start": 24,
+        "End": 32
+      },
+      {
+        "Text": "1,4 miljoner kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1400000",
+          "unit": "Krone"
+        },
+        "Start": 48,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "Hans bidrag var 5 euro och 50 cent",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 euro och 50 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hans bidrag var €5,90",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "€5,90",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5,9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Det amerkanska försvaret investerade 2 miljarder amerikanska dollar i forskning rörande AI.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 miljarder amerikanska dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "2000000000"
+        },
+        "Start": 37,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "coyle ' s förmögenhet uppskattades till £ 8.10 miljoner i oktober 2014 .",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "£ 8.10 miljoner",
         "TypeName": "currency",
         "Resolution": {
           "value": "8100000",
           "unit": "Pound"
         },
-        "Start": 37,
-        "End": 50
+        "Start": 40,
+        "End": 54
       }
     ]
   },
   {
-    "Input": "net interest income sank 27 % in the quarter to $ 254 million.",
+    "Input": "inkomsträntan sjönk med 27 % under kvartalet till $ 254 miljoner.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "$ 254 million",
+        "Text": "$ 254 miljoner",
         "TypeName": "currency",
         "Resolution": {
           "value": "254000000",
           "unit": "Dollar"
         },
-        "Start": 48,
-        "End": 60
+        "Start": 50,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "inkomsträntan sjönk med 27 % under kvartalet till 254 miljoner SEK.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "254 miljoner sek",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "254000000",
+          "unit": "Swedish krona"
+        },
+        "Start": 50,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "du får 30 spänn för alltihop.",
+    "Comment": "spänn is slang for swedish krona",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 spänn",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30",
+          "unit": "Swedish krona"
+        },
+        "Start": 7,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "SEK 30",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sek 30",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30",
+          "unit": "Swedish krona"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är SEK 30000000",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sek 30000000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30000000",
+          "unit": "Swedish krona"
+        },
+        "Start": 12,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är SEK 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sek 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30000000",
+          "unit": "Swedish krona"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är NOK 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nok 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30000000",
+          "unit": "Norwegian krone"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är DKK 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dkk 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30000000",
+          "unit": "Danish krone"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är GBP 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "gbp 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "30000000",
+          "unit": "British pound"
+        },
+        "Start": 12,
+        "End": 26
       }
     ]
   },

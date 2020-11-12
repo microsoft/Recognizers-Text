@@ -497,7 +497,7 @@ CurrencySuffixList: !dictionary
     Fen: fen
     Jiao: jiao|mao
 #Additional
-    Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
+    Finnish markka: suomen markka|finska mark|finsk mark|fim|markkaa|markka
     Penni: penniä|penni
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
@@ -772,6 +772,10 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 # Currency Prefix Symbols/Terms
+    Swedish krona: sek
+    Norwegian krone: nok
+    Danish krone: dkk
+    British pound: gbp
     Dollar: $
     United States dollar: united states $|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $

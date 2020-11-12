@@ -408,7 +408,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"Chinese yuan", @"yuán|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元|人民币|人民幣" },
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao|mao" },
-            { @"Finnish markka", @"suomen markka|finnish markka|finsk mark|fim|markkaa|markka" },
+            { @"Finnish markka", @"suomen markka|finska mark|finsk mark|fim|markkaa|markka" },
             { @"Penni", @"penniä|penni" }
         };
       public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
@@ -678,6 +678,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string CompoundUnitConnectorRegex = @"(?<spacer>och)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
+            { @"Swedish krona", @"sek" },
+            { @"Norwegian krone", @"nok" },
+            { @"Danish krone", @"dkk" },
+            { @"British pound", @"gbp" },
             { @"Dollar", @"$" },
             { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $" },
             { @"East Caribbean dollar", @"east caribbean $" },
