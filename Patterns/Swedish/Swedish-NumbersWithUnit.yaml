@@ -459,9 +459,9 @@ CurrencySuffixList: !dictionary
     Shilling: shillings|shilling|shilingi|sh
     Penny: pennies|penny
 #Dollar
-    United States dollar: united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars
+    United States dollar: amerikanska dollar|amerikans dollar|amerikanska $|amerikans $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars
     East Caribbean dollar: east caribbean dollars|east caribbean dollar|east Caribbean $|xcd
-    Australian dollar: australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$
+    Australian dollar: australiska dollar|australisk dollar|australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$|aud|au$
     Bahamian dollar: bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$
     Barbadian dollar: barbadian dollars|barbadian dollar|barbadian $|bbd
     Belize dollar: belize dollars|belize dollar|belize $|bzd
@@ -493,7 +493,7 @@ CurrencySuffixList: !dictionary
     Tuvaluan dollar: tuvaluan dollars|tuvaluan dollar|tuvaluan $
     Dollar: dollars|dollar|$
 #Chinese yuan
-    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元
+    Chinese yuan: yuán|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元|人民币|人民幣
     Fen: fen
     Jiao: jiao|mao
 #Additional
@@ -767,7 +767,7 @@ FractionalUnitNameToCodeMap: !dictionary
     Hào: HAO
     Ngwee: NGWEE
 CompoundUnitConnectorRegex: !simpleRegex
-    def: (?<spacer>and)
+    def: (?<spacer>och)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
