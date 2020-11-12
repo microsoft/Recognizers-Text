@@ -4076,7 +4076,7 @@
   {
     "Input": "천삼백",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "천삼백",
@@ -4093,7 +4093,7 @@
   {
     "Input": "천삼",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "천삼",
