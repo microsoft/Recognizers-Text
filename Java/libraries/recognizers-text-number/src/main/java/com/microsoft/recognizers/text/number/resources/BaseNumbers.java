@@ -25,6 +25,8 @@ public class BaseNumbers {
             .replace("{thousandsmark}", thousandsmark);
     }
 
+    public static final String FractionNotationRegex = "((((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))|[\\u00BC-\\u00BE\\u2150-\\u215E])";
+
     public static String DoubleRegexDefinition(String placeholder, String thousandsmark, String decimalmark) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{1,3}({thousandsmark}\\d{3})+{decimalmark}\\d+(?={placeholder})"
             .replace("{placeholder}", placeholder)

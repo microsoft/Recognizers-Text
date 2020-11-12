@@ -19,6 +19,7 @@ export interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
+    readonly percentageNumRegex: RegExp;
     readonly doubleAndRoundRegex: RegExp;
     readonly fracSplitRegex: RegExp;
     readonly pointRegex: RegExp;
@@ -251,9 +252,18 @@ return value;
                     doubleValue += this.getPointValueCJK(splitResult[1]);
                 }
             }
-
             result.value = doubleValue;
         }
+        let perMatch = RegExpUtility.getMatches(this.config.percentageNumRegex, resultText);
+        if (perMatch.length > 0) {
+            let splitResult = perMatch[0].value;
+            let splitResultList = RegExpUtility.split(this.config.fracSplitRegex, splitResult);
+            let demoValue = this.isDigitCJK(splitResultList[0])
+            ? this.getDigitValueCJK(splitResult[0], 1.0)
+            : this.getIntValueCJK(splitResult[0]);
+            result.value /= (demoValue / 100);
+        }
+
 
         result.resolutionStr = this.toString(result.value) + "%";
         return result;

@@ -35,6 +35,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
+    readonly percentageNumRegex: RegExp;
     readonly doubleAndRoundRegex: RegExp;
     readonly fracSplitRegex: RegExp;
     readonly negativeNumberSignRegex: RegExp;
@@ -80,6 +81,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.digitNumRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DigitNumRegex, "gis");
         this.dozenRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DozenRegex, "gis");
         this.percentageRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageRegex, "gis");
+        this.percentageNumRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageNumRegex, "gis");
         this.doubleAndRoundRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAndRoundRegex, "gis");
         this.fracSplitRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.FracSplitRegex, "gis");
         this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.NegativeNumberSignRegex, "gis");

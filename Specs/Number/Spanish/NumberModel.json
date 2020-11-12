@@ -2815,5 +2815,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "el resultado es ⅙ y, a veces, ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,166666666666667"
+        },
+        "Start": 16,
+        "End": 16
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 30,
+        "End": 30
+      }
+    ]
   }
 ]

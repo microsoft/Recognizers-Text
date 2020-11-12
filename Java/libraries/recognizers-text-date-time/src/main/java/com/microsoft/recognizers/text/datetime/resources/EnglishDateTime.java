@@ -129,7 +129,7 @@ public class EnglishDateTime {
 
     public static final String WeekDayRegex = "\\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\\b";
 
-    public static final String SingleWeekDayRegex = "\\b(?<weekday>sunday|saturday|(?:mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|((?<=on\\s+)(sat|sun)))\\b";
+    public static final String SingleWeekDayRegex = "\\b(?<weekday>(?<!(easter|palm)\\s+)sunday|(?<!easter\\s+)saturday|(?<!(easter|cyber)\\s+)monday|mon|(?<!black\\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\\s+)(sat|sun)))\\b";
 
     public static final String RelativeMonthRegex = "(?<relmonth>((day\\s+)?of\\s+)?{RelativeRegex}\\s+month)\\b"
             .replace("{RelativeRegex}", RelativeRegex);
@@ -696,7 +696,7 @@ public class EnglishDateTime {
 
     public static final String PeriodicRegex = "\\b(?<periodic>((?<multiplier>semi|bi|tri)(\\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\\b";
 
-    public static final String EachUnitRegex = "(?<each>(each|every|any|once an?)(?<other>\\s+other)?\\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex}))"
+    public static final String EachUnitRegex = "\\b(?<each>(each|every|any|once an?)(?<other>\\s+other)?\\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))"
             .replace("{DurationUnitRegex}", DurationUnitRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
@@ -770,9 +770,11 @@ public class EnglishDateTime {
 
     public static final String AgoRegex = "\\b(ago|before\\s+(?<day>yesterday|today))\\b";
 
-    public static final String LaterRegex = "\\b(?:later(?!((\\s+in)?\\s*{OneWordPeriodRegex})|(\\s+{TimeOfDayRegex}))|from now|(from|after) (?<day>tomorrow|tmr|today))\\b"
+    public static final String LaterRegex = "\\b(?:later(?!((\\s+in)?\\s*{OneWordPeriodRegex})|(\\s+{TimeOfDayRegex})|\\s+than\\b)|from now|(from|after)\\s+(?<day>tomorrow|tmr|today))\\b"
             .replace("{OneWordPeriodRegex}", OneWordPeriodRegex)
             .replace("{TimeOfDayRegex}", TimeOfDayRegex);
+
+    public static final String BeforeAfterRegex = "\\b((?<before>before)|(?<after>from|after))\\b";
 
     public static final String InConnectorRegex = "\\b(in)\\b";
 

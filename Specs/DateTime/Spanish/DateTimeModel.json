@@ -12276,8 +12276,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-28T00:00:00"
     },
-    "Comment": "EXTBOUNDARY Extraction boundary issues",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "18 de enero de 2019",
@@ -18249,8 +18248,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "EXTBOUNDARY Extraction boundary issues",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "mañana",
@@ -18800,8 +18798,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
-    "Comment": "EXTBOUNDARY Extraction boundary issues",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "hoy",
@@ -18860,8 +18857,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
-    "Comment": "EXTBOUNDARY Extraction boundary issues",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "25 de mayo",

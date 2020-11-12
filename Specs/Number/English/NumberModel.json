@@ -2902,5 +2902,63 @@
         "End": 38
       }
     ]
+  },
+  {
+    "Input": "the result is ⅔",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅔",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 14,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "the result is ¾",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "¾",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 14,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "the result is ⅙ and sometimes ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.166666666666667"
+        },
+        "Start": 14,
+        "End": 14
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 30,
+        "End": 30
+      }
+    ]
   }
 ]
