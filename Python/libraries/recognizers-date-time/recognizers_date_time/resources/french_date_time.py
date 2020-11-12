@@ -189,6 +189,7 @@ class FrenchDateTime:
     AgoPrefixRegex = f'\\b(y a)\\b'
     LaterRegex = f'\\b(plus tard)\\b'
     AgoRegex = f'^[.]'
+    BeforeAfterRegex = f'^[.]'
     InConnectorRegex = f'\\b(dans|en|sur)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'

@@ -19,7 +19,7 @@ class PortugueseNumeric:
     MultiDecimalSeparatorCulture = False
     HundredsNumberIntegerRegex = f'(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))'
     RoundNumberIntegerRegex = f'(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))'
-    ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|uma?)'
+    ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)'
     TenToNineteenIntegerRegex = f'(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)'
     TensNumberIntegerRegex = f'(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
@@ -298,6 +298,7 @@ class PortugueseNumeric:
                              ("bilionésima", 1000000000),
                              ("bilionesima", 1000000000)])
     PrefixCardinalMap = dict([("hum", 1),
+                              ("um", 1),
                               ("dois", 2),
                               ("tres", 3),
                               ("três", 3),
