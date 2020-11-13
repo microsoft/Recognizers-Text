@@ -346,6 +346,16 @@ class TimePeriodParserConfiguration:
 
     @property
     @abstractmethod
+    def specific_time_from_to_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def specific_time_between_and_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def time_of_day_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -413,6 +423,15 @@ class BaseTimePeriodParser(DateTimeParser):
         return result
 
     def parse_simple_cases(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+
+        result = self.parse_pure_numbers(source, reference)
+        if not result.success:
+            result = self.parse_specific_time(source, reference)
+
+        return result
+
+    def parse_pure_numbers(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         year = reference.year
         month = reference.month
@@ -496,6 +515,176 @@ class BaseTimePeriodParser(DateTimeParser):
             year, month, day) + timedelta(hours=begin_hour)
         result.future_value.end = datetime(
             year, month, day) + timedelta(hours=end_hour)
+        result.past_value.start = result.future_value.start
+        result.past_value.end = result.future_value.end
+        result.success = True
+
+        return result
+
+    def parse_specific_time(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        year = reference.year
+        month = reference.month
+        day = reference.day
+
+        source = source.strip().lower()
+
+        match = regex.search(self.config.specific_time_from_to_regex, source)
+        if not match:
+            match = regex.search(
+                self.config.specific_time_between_and_regex, source)
+
+        if not match or match.start() != 0:
+            return result
+
+        # this "from .. to .." pattern is valid if followed by a Date OR "pm"
+        valid = False
+
+        time1 = RegExpUtility.get_group(match, "time1")
+        time2 = RegExpUtility.get_group(match, "time2")
+
+        # get hours
+        hour_group_list = RegExpUtility.get_group_list(match, Constants.HOUR_GROUP_NAME)
+
+        hour_str = hour_group_list[0]
+        begin_hour = self.config.numbers.get(hour_str, None)
+        if not begin_hour:
+            begin_hour = int(hour_str)
+
+        hour_str = hour_group_list[1]
+        end_hour = self.config.numbers.get(hour_str, None)
+        if not end_hour:
+            end_hour = int(hour_str)
+
+        # get minutes
+        minute_group_list = RegExpUtility.get_group_list(match, Constants.MINUTE_GROUP_NAME)
+
+        begin_minute = end_minute = -1;
+        if len(minute_group_list) > 1:
+            minute_str = minute_group_list[0]
+            begin_minute = self.config.numbers.get(minute_str, None)
+            if not begin_minute:
+                begin_minute = int(minute_str)
+
+            minute_str = minute_group_list[1]
+            end_minute = self.config.numbers.get(minute_str, None)
+            if not end_minute:
+                end_minute = int(minute_str)
+        elif len(minute_group_list) == 1:
+            minute_str = minute_group_list[0]
+            if minute_str in time1:
+                begin_minute = self.config.numbers.get(minute_str, None)
+                if not begin_minute:
+                    begin_minute = int(minute_str)
+            elif minute_str in time2:
+                end_minute = self.config.numbers.get(minute_str, None)
+                if not end_minute:
+                    end_minute = int(minute_str)
+
+
+        # parse AM/PM
+        left_desc: str = RegExpUtility.get_group(match, Constants.LEFT_DESC_GROUP_NAME)
+        right_desc: str = RegExpUtility.get_group(match, Constants.RIGHT_DESC_GROUP_NAME)
+
+        desc_capture_list = RegExpUtility.get_group_list(match, Constants.DESC_GROUP_NAME)
+        for desc_capture in desc_capture_list:
+            if desc_capture in time1 and not left_desc:
+                left_desc: str = desc_capture
+            elif desc_capture in time2 and not right_desc:
+                right_desc: str = desc_capture
+
+        has_left_am = left_desc != '' and left_desc.startswith('a')
+        has_left_pm = left_desc != '' and left_desc.startswith('p')
+        has_right_am = right_desc != '' and right_desc.startswith('a')
+        has_right_pm = right_desc != '' and right_desc.startswith('p')
+        has_left = has_left_am or has_left_pm
+        has_right = has_right_am or has_right_pm
+
+        # both time point has description like 'am' or 'pm'
+        if has_left and has_right:
+            if has_left_am:
+                if begin_hour >= 12:
+                    begin_hour -= 12
+            else:
+                if begin_hour < 12:
+                    begin_hour += 12
+            if has_right_am:
+                if end_hour > 12:
+                    end_hour -= 12
+            else:
+                if end_hour < 12:
+                    end_hour += 12
+        elif has_left or has_right:
+            # one of the time point has description like 'am' or 'pm'
+            if has_left_am:
+                if begin_hour >= 12:
+                    begin_hour -= 12
+                if end_hour < 12:
+                    if end_hour < begin_hour or (end_hour == begin_hour and end_minute < begin_minute):
+                        end_hour += 12
+            elif has_left_pm:
+                if begin_hour < 12:
+                    begin_hour += 12
+                if end_hour < 12:
+                    if end_hour < begin_hour or (end_hour == begin_hour and end_minute < begin_minute):
+                        span = begin_hour - end_hour
+                        end_hour += 24 if span >= 12 else 12
+
+            if has_right_am:
+                if end_hour >= 12:
+                    end_hour -= 12
+                if begin_hour < 12:
+                    begin_hour -= 12
+            elif has_right_pm:
+                if end_hour < 12:
+                    end_hour += 12
+                if begin_hour < 12:
+                    if end_hour < begin_hour or (end_hour == begin_hour and end_minute < begin_minute):
+                        begin_hour -= 12
+                    else:
+                        span = end_hour - begin_hour
+                        if span > 12:
+                            begin_hour += 12
+        # no 'am' or 'pm' indicator
+        elif begin_hour <= 12 and end_hour <= 12:
+            if begin_hour > end_hour or (begin_hour == end_hour and begin_minute > end_minute):
+                if begin_hour == 12:
+                    begin_hour -= 12
+                else:
+                    end_hour += 12
+            result.comment = Constants.AM_PM_GROUP_NAME
+
+        if begin_minute >= 0:
+            begin = f'T{begin_hour:02d}:{begin_minute:02d}'
+        else:
+            begin = f'T{begin_hour:02d}'
+            begin_minute = 0
+        if end_minute >= 0:
+            end = f'T{end_hour:02d}:{end_minute:02d}'
+        else:
+            end = f'T{end_hour:02d}'
+            end_minute = 0
+
+        if begin_hour > end_hour or (begin_hour == end_hour and begin_minute > end_minute):
+            end_hour += 24
+
+        difference_hour = end_hour - begin_hour
+        difference_minute = end_minute - begin_minute
+        if difference_minute < 0:
+            difference_hour -= 1
+            difference_minute += 60
+        if difference_minute != 0 and difference_hour != 0:
+            result.timex = f'({begin},{end},PT{difference_hour}H{difference_minute}M)'
+        elif difference_minute != 0 and difference_hour == 0:
+            result.timex = f'({begin},{end},PT{difference_minute}M)'
+        else:
+            result.timex = f'({begin},{end},PT{difference_hour}H)'
+        result.future_value = ResolutionStartEnd()
+        result.past_value = ResolutionStartEnd()
+        result.future_value.start = datetime(
+            year, month, day) + timedelta(hours=begin_hour, minutes = begin_minute)
+        result.future_value.end = datetime(
+            year, month, day) + timedelta(hours=end_hour, minutes = end_minute)
         result.past_value.start = result.future_value.start
         result.past_value.end = result.future_value.end
         result.success = True

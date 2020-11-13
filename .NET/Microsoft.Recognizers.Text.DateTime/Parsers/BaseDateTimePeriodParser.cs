@@ -682,8 +682,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                         dateResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime);
                     }
 
-                    // check if TokenBeforeDate is null
-                    var dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim() : trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    // check if TokenBeforeDate and TokenBeforeTime are null
+                    var dateText = trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeTime) ? dateText.Replace(Config.TokenBeforeTime.Trim(), string.Empty).Trim() : dateText;
                     if (this.Config.CheckBothBeforeAfter)
                     {
                         List<string> tokenListBeforeDate = Config.TokenBeforeDate.Split('|').ToList();

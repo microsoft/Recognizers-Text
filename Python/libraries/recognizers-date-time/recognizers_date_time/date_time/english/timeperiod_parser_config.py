@@ -36,6 +36,14 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def pure_number_between_and_regex(self) -> Pattern:
         return self._pure_number_between_and_regex
+    
+    @property
+    def specific_time_from_to_regex(self) -> Pattern:
+        return self._specific_time_from_to_regex
+
+    @property
+    def specific_time_between_and_regex(self) -> Pattern:
+        return self._specific_time_between_and_regex
 
     @property
     def time_of_day_regex(self) -> Pattern:
@@ -62,6 +70,10 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             EnglishDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PureNumBetweenAnd)
+        self._specific_time_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeFromTo)
+        self._specific_time_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeBetweenAnd)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(

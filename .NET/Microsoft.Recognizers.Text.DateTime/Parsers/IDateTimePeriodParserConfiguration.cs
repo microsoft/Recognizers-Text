@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         string TokenBeforeDate { get; }
 
+        string TokenBeforeTime { get; }
+
         IDateExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
