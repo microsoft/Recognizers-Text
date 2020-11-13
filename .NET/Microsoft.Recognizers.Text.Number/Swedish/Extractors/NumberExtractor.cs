@@ -6,28 +6,22 @@ using Microsoft.Recognizers.Definitions.Swedish;
 
 namespace Microsoft.Recognizers.Text.Number.Swedish
 {
-    public class NumberExtractor : BaseNumberExtractor
+    public class NumberExtractor : CachedNumberExtractor
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        private readonly NumberMode mode;
+        private readonly string keyPrefix;
 
         private NumberExtractor(BaseNumberOptionsConfiguration config)
             : base(config.Options)
         {
 
-            this.mode = config.Mode;
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options + "_" + config.Mode + "_" + config.Culture);
 
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + "$", RegexFlags);
-
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
-
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
-
-            Options = config.Options;
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
@@ -44,8 +38,6 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
                     builder.Add(
                         BaseNumberExtractor.CurrencyRegex,
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
-                    break;
-                case NumberMode.Unit:
                     break;
                 case NumberMode.Default:
                     break;
@@ -66,8 +58,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
             var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
 
-            // Do not filter the ambiguous number cases like 'that one' in NumberWithUnit, otherwise they can't be resolved.
-            if (mode != NumberMode.Unit)
+            // Do not filter the ambiguous number cases like '$2000' in NumberWithUnit, otherwise they can't be resolved.
+            if (config.Mode != NumberMode.Unit)
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
@@ -78,8 +70,6 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
         }
 
-        public sealed override NumberOptions Options { get; }
-
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
@@ -88,20 +78,22 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
 
-        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected sealed override Regex RelativeReferenceRegex { get; }
-
         public static NumberExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (config.Mode, config.Options);
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = (config.Mode, config.Options);
+
+            if (!Instances.ContainsKey(extractorKey))
             {
                 var instance = new NumberExtractor(config);
-                Instances.TryAdd(cacheKey, instance);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
+        }
+
+        protected override object GenKey(string input)
+        {
+            return (keyPrefix, input);
         }
     }
 }
