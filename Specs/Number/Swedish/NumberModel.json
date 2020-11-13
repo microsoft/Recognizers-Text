@@ -130,6 +130,7 @@
   {
     "Input": "4,800",
     "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
     "Results": [
       {
         "Text": "4,800",
