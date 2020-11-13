@@ -392,6 +392,7 @@ class CJKNumberParser(BaseNumberParser):
         round_before = -1
         round_default = 1
         negative = False
+        has_previous_digits = False
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
@@ -427,15 +428,27 @@ class CJKNumberParser(BaseNumberParser):
                         before_value = 1
                         round_default = 1
                     else:
-                        before_value = self.config.zero_to_nine_map[c]
+                        current_digit = self.config.zero_to_nine_map[c]
+                        if has_previous_digits:
+                            before_value = before_value * 10 + current_digit
+                        else:
+                            before_value = current_digit
                         is_round_before = False
                 else:
-                    if i == len(result_str)-1 and self.config.culture_info.code == Culture.Japanese:
+                    # In colloquial Chinese, 百 may be omitted from the end of a number,
+                    # similarly to how 一 can be dropped from the beginning. Japanese
+                    # doesn't have such behaviour.
+                    if self.config.culture_info.code == Culture.Japanese or c.isdigit():
                         round_default = 1
-                    part_value += self.config.zero_to_nine_map[c] * \
-                        round_default
+                    current_digit = self.config.zero_to_nine_map[c]
+                    if has_previous_digits:
+                        before_value = before_value * 10 + current_digit
+                    else:
+                        before_value = current_digit
+                    part_value += before_value * round_default
                     int_value += part_value
                     part_value = 0
+            has_previous_digits = c.isdigit()
         if negative:
             int_value = - int_value
         if dozen:

@@ -513,6 +513,7 @@ namespace Microsoft.Recognizers.Text.Number
             var isRoundBefore = false;
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
+            var hasPreviousDigits = false;
 
             var isDozen = false;
             var isPair = false;
@@ -596,22 +597,45 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else
                         {
-                            beforeValue = Config.ZeroToNineMap[intStr[i]];
+                            double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                            if (hasPreviousDigits)
+                            {
+                                beforeValue = (beforeValue * 10) + currentDigit;
+                            }
+                            else
+                            {
+                                beforeValue = currentDigit;
+                            }
+
                             isRoundBefore = false;
                         }
                     }
                     else
                     {
-                        if (i == intStr.Length - 1 && (Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR"))
+                        // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一 can be dropped
+                        // from the beginning. Japanese doesn't have such behaviour.
+                        if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") || char.IsDigit(intStr[i]))
                         {
                             roundDefault = 1;
                         }
 
-                        partValue += Config.ZeroToNineMap[intStr[i]] * roundDefault;
+                        double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                        if (hasPreviousDigits)
+                        {
+                            beforeValue = (beforeValue * 10) + currentDigit;
+                        }
+                        else
+                        {
+                            beforeValue = currentDigit;
+                        }
+
+                        partValue += beforeValue * roundDefault;
                         intValue += partValue;
                         partValue = 0;
                     }
                 }
+
+                hasPreviousDigits = char.IsDigit(intStr[i]);
             }
 
             if (isNegative)
