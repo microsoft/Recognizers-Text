@@ -335,7 +335,7 @@
   },
   {
     "Input": "1兆赫兹",
-    "NotSupported": "java",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "1兆赫兹",
@@ -351,7 +351,7 @@
   },
   {
     "Input": "100赫兹",
-    "NotSupported": "java",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "100赫兹",
