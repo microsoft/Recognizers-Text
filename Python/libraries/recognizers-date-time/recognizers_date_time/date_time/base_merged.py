@@ -603,7 +603,7 @@ class BaseMergedParser(DateTimeParser):
             after_match = RegExpUtility.match_begin(self.config.after_regex, source.text, True)
             since_match = RegExpUtility.match_begin(self.config.since_regex, source.text, True)
 
-            preLength = 0;
+            preLength = 0
             if before_match and before_match.success:
                 preLength = before_match.index + before_match.length
             elif after_match and after_match.success:
