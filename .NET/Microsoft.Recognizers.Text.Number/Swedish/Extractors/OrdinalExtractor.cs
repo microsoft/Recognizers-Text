@@ -7,21 +7,20 @@ using Microsoft.Recognizers.Definitions.Swedish;
 
 namespace Microsoft.Recognizers.Text.Number.Swedish
 {
-    public class OrdinalExtractor : BaseNumberExtractor
+    public class OrdinalExtractor : CachedNumberExtractor
     {
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
-            new ConcurrentDictionary<string, OrdinalExtractor>();
+        private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances = new ConcurrentDictionary<string, OrdinalExtractor>();
+
+        private readonly string keyPrefix;
 
         private OrdinalExtractor(BaseNumberOptionsConfiguration config)
             : base(config.Options)
         {
 
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
-
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options.ToString() + "_" + config.Culture);
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -50,20 +49,23 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
-        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected sealed override Regex RelativeReferenceRegex { get; }
-
         public static OrdinalExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = config.Options.ToString();
-            if (!Instances.ContainsKey(cacheKey))
+
+            var extractorKey = config.Options.ToString();
+
+            if (!Instances.ContainsKey(extractorKey))
             {
                 var instance = new OrdinalExtractor(config);
-                Instances.TryAdd(cacheKey, instance);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
+        }
+
+        protected override object GenKey(string input)
+        {
+            return (keyPrefix, input);
         }
     }
 }
