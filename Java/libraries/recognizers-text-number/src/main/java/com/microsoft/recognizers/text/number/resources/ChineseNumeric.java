@@ -199,7 +199,7 @@ public class ChineseNumeric {
 
     public static final String PairRegex = ".*[双对雙對]$";
 
-    public static final String RoundNumberIntegerRegex = "(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))";
+    public static final String RoundNumberIntegerRegex = "(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]{1,2}))";
 
     public static final String PercentageNumRegex = "(([十百千拾佰仟])|([万亿兆萬億])){1,3}\\s*分(\\s*之|\\s*点)";
 

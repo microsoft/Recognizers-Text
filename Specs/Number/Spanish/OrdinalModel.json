@@ -985,5 +985,41 @@
         "End": 26
       }
     ]
+  },
+  {
+    "Input": "5ª",
+    "Results": [
+      {
+        "Text": "5ª",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "5",
+          "offset":"5",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "encuentra ventas después o en el 30º lugar",
+    "Results": [
+      {
+        "Text": "30º",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
+        },
+        "Start": 33,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "30° C",
+    "Results": []
   }
 ]
