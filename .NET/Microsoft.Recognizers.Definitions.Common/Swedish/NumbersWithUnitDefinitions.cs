@@ -515,7 +515,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"Rwandan franc", @"RWF" },
             { @"Russian ruble", @"RUB" },
             { @"Transnistrian ruble", @"PRB" },
-            { @"Belarusian ruble", @"BYN" },
+            { @"New Belarusian ruble", @"BYN" },
             { @"Algerian dinar", @"DZD" },
             { @"Bahraini dinar", @"BHD" },
             { @"Iraqi dinar", @"IQD" },
@@ -678,10 +678,6 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string CompoundUnitConnectorRegex = @"(?<spacer>och)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
-            { @"Swedish krona", @"sek" },
-            { @"Norwegian krone", @"nok" },
-            { @"Danish krone", @"dkk" },
-            { @"British pound", @"gbp" },
             { @"Dollar", @"$" },
             { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $|usd" },
             { @"East Caribbean dollar", @"east caribbean $" },

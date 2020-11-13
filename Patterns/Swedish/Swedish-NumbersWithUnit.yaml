@@ -604,7 +604,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Rwandan franc: RWF
     Russian ruble: RUB
     Transnistrian ruble: PRB
-    Belarusian ruble: BYN
+    New Belarusian ruble: BYN
     Algerian dinar: DZD
     Bahraini dinar: BHD
     Iraqi dinar: IQD
@@ -772,10 +772,10 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 # Currency Prefix Symbols/Terms
-    Swedish krona: sek
-    Norwegian krone: nok
-    Danish krone: dkk
-    British pound: gbp
+    # Swedish krona: sek
+    # Norwegian krone: nok
+    # Danish krone: dkk
+    # British pound: gbp
     Dollar: $
     United States dollar: united states $|us$|us $|u.s. $|u.s $|usd
     East Caribbean dollar: east caribbean $

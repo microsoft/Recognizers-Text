@@ -123,6 +123,7 @@
         "Text": "16,4 miljoner us$",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "USD",
           "value": "16400000",
           "unit": "United States dollar"
         },
@@ -165,6 +166,7 @@
         "Text": "5 euro och 50 cent",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "EUR",
           "unit": "Euro",
           "value": "5,5"
         }
@@ -179,6 +181,7 @@
         "Text": "€5,90",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "EUR",
           "unit": "Euro",
           "value": "5,9"
         }
@@ -260,11 +263,29 @@
         "Text": "30 spänn",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "SEK",
           "value": "30",
           "unit": "Swedish krona"
         },
         "Start": 7,
         "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "30 SEK",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 sek",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "30",
+          "unit": "Swedish krona"
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -276,6 +297,7 @@
         "Text": "sek 30",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "SEK",
           "value": "30",
           "unit": "Swedish krona"
         },
@@ -292,6 +314,7 @@
         "Text": "sek 30000000",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "SEK",
           "value": "30000000",
           "unit": "Swedish krona"
         },
@@ -308,6 +331,7 @@
         "Text": "sek 30 miljoner",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "SEK",
           "value": "30000000",
           "unit": "Swedish krona"
         },
@@ -324,6 +348,7 @@
         "Text": "nok 30 miljoner",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "NOK",
           "value": "30000000",
           "unit": "Norwegian krone"
         },
@@ -340,6 +365,7 @@
         "Text": "dkk 30 miljoner",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "DKK",
           "value": "30000000",
           "unit": "Danish krone"
         },
@@ -356,6 +382,7 @@
         "Text": "gbp 30 miljoner",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "GBP",
           "value": "30000000",
           "unit": "British pound"
         },
@@ -372,6 +399,7 @@
         "Text": "usd 30 miljoner",
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "USD",
           "value": "30000000",
           "unit": "United States dollar"
         },
@@ -416,6 +444,7 @@
         "End": 56,
         "TypeName": "currency",
         "Resolution": {
+          "isoCurrency": "SEK",
           "value": "100",
           "unit": "Swedish krona"
         }
