@@ -335,7 +335,7 @@
   },
   {
     "Input": "1兆赫兹",
-    "NotSupported": "java, javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "1兆赫兹",
@@ -351,7 +351,7 @@
   },
   {
     "Input": "100赫兹",
-    "NotSupported": "java, javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "100赫兹",
@@ -367,6 +367,7 @@
   },
   {
     "Input": "一百千瓦",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "一百千瓦",
@@ -382,7 +383,7 @@
   },
   {
     "Input": "323千卡",
-    "NotSupported": "javascript",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "323千卡",

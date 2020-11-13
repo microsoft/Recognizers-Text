@@ -576,19 +576,7 @@ class ChineseNumericWithUnit:
                                 ("Terabyte", "万亿字节|兆兆字节|tB|TB"),
                                 ("Petabyte", "千兆兆字节|千万亿字节|pB|PB"),
                                 ("Byte", "字节|byte|Byte"),
-                                ("Kilobyte", "千字节|kB|KB"),
-                                ("Watt", "瓦|瓦特|w"),
-                                ("Kilowatt", "千瓦|千瓦特|kw"),
-                                ("Megawatt", "兆瓦|兆瓦特"),
-                                ("Terawatt", "万亿瓦|兆兆瓦"),
-                                ("Hertz", "赫|赫兹|Hz"),
-                                ("Kilohertz", "千赫|千赫兹|kHz"),
-                                ("Megahertz", "兆赫|兆赫兹|mHz"),
-                                ("Gigahertz", "十亿赫兹|千兆赫兹|十亿赫|千兆赫|gHz"),
-                                ("Calorie", "卡|卡路里|大卡|cal"),
-                                ("Kilocalorie", "千卡|千卡路里|千大卡|kcal"),
-                                ("Joule", "焦|焦耳|j"),
-                                ("Kilojoule", "千焦|千焦耳|kj")])
+                                ("Kilobyte", "千字节|kB|KB")])
     DimensionAmbiguousValues = [r'丈', r'位', r'克', r'分', r'升', r'寸', r'尺', r'斗', r'斤', r'桶', r'毫', r'石', r'码', r'磅', r'米', r'罐', r'里', r'm', r'km', r'dm', r'cm', r'mm', r'l', r'ml', r'kg', r'mg', r'g', r't', r'b', r'byte', r'kb', r'mb', r'gb', r'tb', r'pb']
     AmbiguityFiltersDict = dict([("五角", "五角大楼"),
                                  ("普尔", "标准普尔")])

@@ -604,18 +604,6 @@ public class ChineseNumericWithUnit {
         .put("Gigabyte", "十亿字节|千兆字节|gB|GB")
         .put("Terabyte", "万亿字节|兆兆字节|tB|TB")
         .put("Petabyte", "千兆兆字节|千万亿字节|pB|PB")
-        .put("Watt", "瓦|瓦特|w")
-        .put("Kilowatt", "千瓦|千瓦特|kw")
-        .put("Megawatt", "兆瓦|兆瓦特")
-        .put("Terawatt", "万亿瓦|兆兆瓦")
-        .put("Hertz", "赫|赫兹|Hz")
-        .put("Kilohertz", "千赫|千赫兹|kHz")
-        .put("Megahertz", "兆赫|兆赫兹|mHz")
-        .put("Gigahertz", "十亿赫兹|千兆赫兹|十亿赫|千兆赫|gHz")
-        .put("Calorie", "卡|卡路里|大卡|cal")
-        .put("Kilocalorie", "千卡|千卡路里|千大卡|kcal")
-        .put("Joule", "焦|焦耳|j")
-        .put("Kilojoule", "千焦|千焦耳|kj")
         .build();
 
     public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");

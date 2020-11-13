@@ -615,19 +615,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Terabyte", @"万亿字节|兆兆字节|tB|TB" },
             { @"Petabyte", @"千兆兆字节|千万亿字节|pB|PB" },
             { @"Byte", @"字节|byte|Byte" },
-            { @"Kilobyte", @"千字节|kB|KB" },
-            { @"Watt", @"瓦|瓦特|w" },
-            { @"Kilowatt", @"千瓦|千瓦特|kw" },
-            { @"Megawatt", @"兆瓦|兆瓦特" },
-            { @"Terawatt", @"万亿瓦|兆兆瓦" },
-            { @"Hertz", @"赫|赫兹|Hz" },
-            { @"Kilohertz", @"千赫|千赫兹|kHz" },
-            { @"Megahertz", @"兆赫|兆赫兹|mHz" },
-            { @"Gigahertz", @"十亿赫兹|千兆赫兹|十亿赫|千兆赫|gHz" },
-            { @"Calorie", @"卡|卡路里|大卡|cal" },
-            { @"Kilocalorie", @"千卡|千卡路里|千大卡|kcal" },
-            { @"Joule", @"焦|焦耳|j" },
-            { @"Kilojoule", @"千焦|千焦耳|kj" }
+            { @"Kilobyte", @"千字节|kB|KB" }
         };
       public static readonly IList<string> DimensionAmbiguousValues = new List<string>
         {
