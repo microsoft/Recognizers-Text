@@ -20,7 +20,7 @@ export class EnglishAgeExtractorConfiguration extends EnglishNumberWithUnitExtra
 
         this.suffixList = EnglishNumericWithUnit.AgeSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 

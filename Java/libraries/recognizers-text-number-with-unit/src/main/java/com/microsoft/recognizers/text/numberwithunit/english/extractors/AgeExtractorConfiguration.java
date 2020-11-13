@@ -36,7 +36,7 @@ public class AgeExtractorConfiguration extends EnglishNumberWithUnitExtractorCon
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return Collections.emptyList();
+        return EnglishNumericWithUnit.AmbiguousAgeUnitList;
     }
 
     public static Map<String, String> AgeSuffixList = EnglishNumericWithUnit.AgeSuffixList;
