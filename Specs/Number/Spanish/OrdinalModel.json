@@ -988,6 +988,7 @@
   },
   {
     "Input": "5ª",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "5ª",
@@ -1004,6 +1005,7 @@
   },
   {
     "Input": "encuentra ventas después o en el 30º lugar",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "30º",
