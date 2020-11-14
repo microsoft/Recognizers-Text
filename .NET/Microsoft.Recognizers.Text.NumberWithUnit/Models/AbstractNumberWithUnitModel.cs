@@ -58,6 +58,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 { ResolutionKey.Unit, ((CurrencyUnitValue)o.Value).Unit },
                                 { ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.Value).IsoCurrency },
                             }
+                            : (o.Value is UnitValue && !string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type)) ? new SortedDictionary<string, object>
+                            {
+                                { ResolutionKey.Value, ((UnitValue)o.Value).Number },
+                                { ResolutionKey.Unit, ((UnitValue)o.Value).Unit },
+                                { ResolutionKey.SubType, o.Type },
+                            }
                             : (o.Value is UnitValue) ? new SortedDictionary<string, object>
                             {
                                 { ResolutionKey.Value, ((UnitValue)o.Value).Number },

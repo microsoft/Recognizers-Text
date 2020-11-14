@@ -49,17 +49,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
 
-                // match suffix "半"
-                var suffix = source.Substring((int)(ret.Start + ret.Length));
-                var beginMatch = HalfSuffixRegex.MatchBegin(suffix, trim: true);
-
-                if (beginMatch.Success)
-                {
-                    var matchString = suffix.Substring(beginMatch.Index, beginMatch.Length);
-                    ret.Text = ret.Text + matchString;
-                    ret.Length = ret.Length + beginMatch.Length;
-                }
-
                 res.Add(ret);
             }
 

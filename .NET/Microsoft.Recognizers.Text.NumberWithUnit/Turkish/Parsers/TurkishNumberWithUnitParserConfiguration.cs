@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Turkish;
 
@@ -16,6 +17,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new TurkishNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -23,5 +26,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

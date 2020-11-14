@@ -186,9 +186,9 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
 
             if (!hasInclusiveModifier) {
-                val.setMod(Constants.BEFORE_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.BEFORE_MOD));
             } else {
-                val.setMod(Constants.UNTIL_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.UNTIL_MOD));
             }
 
             pr.setValue(val);
@@ -203,9 +203,9 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
 
             if (!hasInclusiveModifier) {
-                val.setMod(Constants.AFTER_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.AFTER_MOD));
             } else {
-                val.setMod(Constants.SINCE_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
             }
 
             pr.setValue(val);
@@ -218,7 +218,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setLength(pr.getLength() + modStr.length());
 
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-            val.setMod(Constants.SINCE_MOD);
+            val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
             pr.setValue(val);
         }
 
@@ -229,7 +229,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setLength(pr.getLength() + modStr.length());
 
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-            val.setMod(Constants.APPROX_MOD);
+            val.setMod(combineMod(val.getMod(), Constants.APPROX_MOD));
             pr.setValue(val);
         }
 
@@ -239,7 +239,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setLength(pr.getLength() + modStr.length());
 
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-            val.setMod(Constants.SINCE_MOD);
+            val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
             pr.setValue(val);
             hasSince = true;
         }
@@ -249,7 +249,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getSuffixAfterRegex(), pr.getText())).findFirst();
             if (match.isPresent() && match.get().index != 0) {
                 DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
-                val.setMod(Constants.SINCE_MOD);
+                val.setMod(combineMod(val.getMod(), Constants.SINCE_MOD));
                 pr.setValue(val);
                 hasSince = true;
             }
@@ -576,6 +576,14 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         return result;
     }
+    
+    private String combineMod(String originalMod, String newMod) {
+        String combinedMod = newMod;
+        if (originalMod != null && originalMod != "") {
+            combinedMod = newMod + "-" + originalMod;
+        }
+        return combinedMod;
+    }
 
     private String determineResolutionDateTimeType(LinkedHashMap<String, String> pastResolutionStr) {
         switch (pastResolutionStr.keySet().stream().findFirst().get()) {
@@ -772,8 +780,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             // For the 'before' mod
             // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
             // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-            if (mod.equals(Constants.BEFORE_MOD)) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(Constants.BEFORE_MOD)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.LATE_MOD)) {
                     res.put(DateTimeResolutionKey.END, start);
                 } else {
                     res.put(DateTimeResolutionKey.END, end);
@@ -785,8 +793,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             // For the 'after' mod
             // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
             // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-            if (mod.equals(Constants.AFTER_MOD)) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(Constants.AFTER_MOD)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.EARLY_MOD)) {
                     res.put(DateTimeResolutionKey.START, end);
                 } else {
                     res.put(DateTimeResolutionKey.START, start);

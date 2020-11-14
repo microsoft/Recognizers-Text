@@ -76,6 +76,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml = ..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml
 		..\Patterns\Swedish\Swedish-Choice.yaml = ..\Patterns\Swedish\Swedish-Choice.yaml
 		..\Patterns\Swedish\Swedish-Numbers.yaml = ..\Patterns\Swedish\Swedish-Numbers.yaml
+		..\Patterns\Swedish\Swedish-NumbersWithUnit.yaml = ..\Patterns\Swedish\Swedish-NumbersWithUnit.yaml
 		..\Patterns\Turkish\Turkish-DateTime.yaml = ..\Patterns\Turkish\Turkish-DateTime.yaml
 		..\Patterns\Turkish\Turkish-Numbers.yaml = ..\Patterns\Turkish\Turkish-Numbers.yaml
 		..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml = ..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml
@@ -476,6 +477,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{97D2
 		..\Specs\NumberWithUnit\Spanish\CurrencyModel.json = ..\Specs\NumberWithUnit\Spanish\CurrencyModel.json
 		..\Specs\NumberWithUnit\Spanish\DimensionModel.json = ..\Specs\NumberWithUnit\Spanish\DimensionModel.json
 		..\Specs\NumberWithUnit\Spanish\TemperatureModel.json = ..\Specs\NumberWithUnit\Spanish\TemperatureModel.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{ACCA0A3A-3935-4E4E-BDBA-0BEDDDF8D428}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\NumberWithUnit\Swedish\AgeModel.json = ..\Specs\NumberWithUnit\Swedish\AgeModel.json
+		..\Specs\NumberWithUnit\Swedish\CurrencyModel.json = ..\Specs\NumberWithUnit\Swedish\CurrencyModel.json
+		..\Specs\NumberWithUnit\Swedish\DimensionModel.json = ..\Specs\NumberWithUnit\Swedish\DimensionModel.json
+		..\Specs\NumberWithUnit\Swedish\TemperatureModel.json = ..\Specs\NumberWithUnit\Swedish\TemperatureModel.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{97D22337-7EC5-46CF-B619-C54FFD0BD5F6}"
@@ -936,6 +945,7 @@ Global
 		{97D22337-7EC5-46CF-B619-C54FFD0BD5F3} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
 		{97D22337-7EC5-46CF-B619-C54FFD0BD5F4} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
 		{97D22337-7EC5-46CF-B619-C54FFD0BD5F5} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
+		{ACCA0A3A-3935-4E4E-BDBA-0BEDDDF8D428} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
 		{97D22337-7EC5-46CF-B619-C54FFD0BD5F6} = {72FEAD3F-7C2A-4B85-9942-D9ADA122411A}
 		{2F41FB40-EA08-469A-A676-138F2E7C6273} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{2F41FB40-EA08-469A-A676-138F2E7C6274} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}

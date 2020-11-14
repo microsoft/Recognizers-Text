@@ -50,6 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseDurationWithAgoAndLater(er.Text, referenceDate);
                 }
 
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDurationWithDate(er.Text, referenceDate);
+                }
+
                 // NumberWithMonth must be the second last one, because it only need to find a number and a month to get a "success"
                 if (!innerResult.Success)
                 {
@@ -416,19 +421,31 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
-                DateObject futureDate;
+                DateObject futureDate, pastDate;
                 var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
+                    if (futureDate < referenceDate)
+                    {
+                        futureDate = futureDate.AddMonths(+1);
+                    }
+
+                    if (pastDate >= referenceDate)
+                    {
+                        pastDate = pastDate.AddMonths(-1);
+                    }
                 }
                 else
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                 }
 
                 ret.FutureValue = futureDate;
-                ret.PastValue = ret.FutureValue;
+                ret.PastValue = pastDate;
                 ret.Success = true;
 
                 return ret;
@@ -727,6 +744,71 @@ namespace Microsoft.Recognizers.Text.DateTime
                 config.UnitRegex,
                 config.UtilityConfiguration,
                 GetSwiftDay);
+        }
+
+        // Parse combined patterns Duration + Date, e.g. '3 days before Monday', '4 weeks after January 15th'
+        private DateTimeResolutionResult ParseDurationWithDate(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var durationRes = config.DurationExtractor.Extract(text, referenceDate);
+
+            foreach (var duration in durationRes)
+            {
+                var matches = config.UnitRegex.Matches(duration.Text);
+                if (matches.Count > 0)
+                {
+                    var afterStr = text.Substring((int)duration.Start + (int)duration.Length);
+
+                    // Check if the Duration entity is followed by "before|from|after"
+                    var connector = config.BeforeAfterRegex.MatchBegin(afterStr, trim: true);
+                    if (connector.Success)
+                    {
+                        // Parse Duration
+                        var pr = config.DurationParser.Parse(duration, referenceDate);
+
+                        // Parse Date
+                        if (pr.Value != null)
+                        {
+                            var dateString = afterStr.Substring(connector.Index + connector.Length).Trim();
+                            var innerResult = ParseBasicRegexMatch(dateString, referenceDate);
+                            if (!innerResult.Success)
+                            {
+                                innerResult = ParseImplicitDate(dateString, referenceDate);
+                            }
+
+                            if (!innerResult.Success)
+                            {
+                                innerResult = ParseWeekdayOfMonth(dateString, referenceDate);
+                            }
+
+                            if (!innerResult.Success)
+                            {
+                                innerResult = ParseNumberWithMonth(dateString, referenceDate);
+                            }
+
+                            if (!innerResult.Success)
+                            {
+                                innerResult = ParseSingleNumber(dateString, referenceDate);
+                            }
+
+                            // Combine parsed results Duration + Date
+                            if (innerResult.Success)
+                            {
+                                var isFuture = connector.Groups["after"].Success ? true : false;
+                                DateObject date = (DateObject)innerResult.FutureValue;
+                                var resultDateTime = DurationParsingUtil.ShiftDateTime(pr.TimexStr, date, future: isFuture);
+                                ret.Timex = $"{DateTimeFormatUtil.LuisDate(resultDateTime)}";
+
+                                ret.FutureValue = ret.PastValue = resultDateTime;
+                                ret.SubDateTimeEntities = new List<object> { pr };
+                                ret.Success = true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return ret;
         }
 
         // Parse a regex match which includes 'day', 'month' and 'year' (optional) group

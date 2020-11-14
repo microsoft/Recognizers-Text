@@ -1323,5 +1323,68 @@
         "End": 37
       }
     ]
+  },
+  {
+    "Input": "find sales greater than 30 and less than or equal to 40 and greater than or equal to 50",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "greater than 30 and less than or equal to 40",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,40]"
+        },
+        "Start": 11,
+        "End": 54
+      },
+      {
+        "Text": "greater than or equal to 50",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[50,)"
+        },
+        "Start": 60,
+        "End": 86
+      }
+    ]
+  },
+  {
+    "Input": "find sales greater than 30 and less than or equal to 40",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "greater than 30 and less than or equal to 40",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,40]"
+        },
+        "Start": 11,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "find sales less than or equal to 40 and greater than or equal to 50",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "less than or equal to 40",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,40]"
+        },
+        "Start": 11,
+        "End": 34
+      },
+      {
+        "Text": "greater than or equal to 50",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[50,)"
+        },
+        "Start": 40,
+        "End": 66
+      }
+    ]
   }
 ]

@@ -2817,5 +2817,149 @@
         "End": 63
       }
     ]
+  },
+  {
+    "Input": "Je retournerai 02 04 2009 à la maison.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "02 04 2009",
+        "Start": 15,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-04-02",
+              "type": "date",
+              "value": "2009-04-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 2 4 2009.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 4 2009",
+        "Start": 15,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-04-02",
+              "type": "date",
+              "value": "2009-04-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 18 08 1978 à la maison.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18 08 1978",
+        "Start": 15,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1978-08-18",
+              "type": "date",
+              "value": "1978-08-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 18 8 1978.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "18 8 1978",
+        "Start": 15,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1978-08-18",
+              "type": "date",
+              "value": "1978-08-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 18 08 78 à la maison.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "18 08 78",
+        "Start": 15,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1978-08-18",
+              "type": "date",
+              "value": "1978-08-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 18 8 78.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "18 8 78",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1978-08-18",
+              "type": "date",
+              "value": "1978-08-18"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

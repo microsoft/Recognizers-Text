@@ -117,6 +117,8 @@ MonthOfRegex: !simpleRegex
   def: (mes)(\s*)((do|da|de))
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>anos?|meses|m[êe]s|semanas?)\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(em)\b
 SinceYearSuffixRegex: !simpleRegex

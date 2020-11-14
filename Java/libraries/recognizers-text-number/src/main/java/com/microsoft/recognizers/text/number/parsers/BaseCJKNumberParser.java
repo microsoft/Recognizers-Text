@@ -92,6 +92,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         Pattern digitNumRegex = cjkConfig.getDigitNumRegex();
+        Pattern pointRegex = cjkConfig.getPointRegex();
 
         double intValue = digitNumRegex.matcher(intPart).find() ?
                 getDigitValue(intPart, 1.0) :
@@ -99,11 +100,14 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         double numValue = digitNumRegex.matcher(numPart).find() ?
                 getDigitValue(numPart, 1.0) :
-                getIntValue(numPart);
+                (pointRegex.matcher(numPart).find() ?
+                getIntValue(pointRegex.split(numPart)[0]) + getPointValue(pointRegex.split(numPart)[1]) :
+                getIntValue(numPart));
 
         double demoValue = digitNumRegex.matcher(demoPart).find() ?
                 getDigitValue(demoPart, 1.0) :
                 getIntValue(demoPart);
+                
 
         if (cjkConfig.getNegativeNumberSignRegex().matcher(intPart).find()) {
             result.setValue(intValue - numValue / demoValue);
@@ -225,6 +229,24 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             }
 
             result.setValue(doubleValue);
+        }
+
+        Match[] matches = RegExpUtility.getMatches(this.cjkConfig.getPercentageNumRegex(), resultText);
+        if (matches.length > 0) {
+            String demoString = matches[0].value;
+            String[] splitResult = cjkConfig.getFracSplitRegex().split(demoString);
+            String demoPart = splitResult[0];
+
+            Pattern digitNumRegex = cjkConfig.getDigitNumRegex();
+
+            double demoValue = digitNumRegex.matcher(demoPart).find() ?
+                    getDigitValue(demoPart, 1.0) :
+                    getIntValue(demoPart);
+            if (demoValue < 100) {
+                result.setValue((double)result.getValue() * (100 / demoValue));
+            } else {
+                result.setValue((double)result.getValue() / (demoValue / 100));
+            }
         }
 
         if (result.getValue() instanceof Double) {
@@ -358,6 +380,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         long roundBefore = -1;
         long roundDefault = 1;
         boolean isNegative = false;
+        boolean hasPreviousDigits = false;
 
         boolean isDozen = false;
         boolean isPair = false;
@@ -413,15 +436,30 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
-                        beforeValue = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        double currentDigit = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        if (hasPreviousDigits) {
+                            beforeValue = beforeValue * 10 + currentDigit;
+                        } else {
+                            beforeValue = currentDigit;
+                        }
                         isRoundBefore = false;
                     }
                 } else {
-                    partValue += cjkConfig.getZeroToNineMap().get(intStr.charAt(i)) * roundDefault;
+                    if (Character.isDigit(intStr.charAt(i))) {
+                        roundDefault = 1;
+                    }
+                    double currentDigit = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                    if (hasPreviousDigits) {
+                        beforeValue = beforeValue * 10 + currentDigit;
+                    } else {
+                        beforeValue = currentDigit;
+                    }
+                    partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
+            hasPreviousDigits = Character.isDigit(intStr.charAt(i));
         }
 
         if (isNegative) {

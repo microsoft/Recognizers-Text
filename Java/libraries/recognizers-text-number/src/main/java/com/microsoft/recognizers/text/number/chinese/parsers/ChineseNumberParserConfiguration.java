@@ -54,7 +54,8 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 Pattern.compile(ChineseNumeric.RoundNumberIntegerRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 ChineseNumeric.ZeroChar,
                 ChineseNumeric.TenChars,
-                ChineseNumeric.PairChar
+                ChineseNumeric.PairChar,
+                RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageNumRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS)
         );
     }
 

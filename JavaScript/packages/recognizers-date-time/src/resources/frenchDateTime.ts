@@ -75,7 +75,7 @@ export namespace FrenchDateTime {
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*[\\.\\-]?\\s*${DateYearRegex}\\b`;
-    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)${MonthRegex}((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
+    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?(?<!\\d\\s)(?<!\\d)${DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)(${MonthRegex}((\\s+|\\s*,\\s*)${DateYearRegex}(?!\\s*\\d))?|${MonthNumRegex}(\\s+|\\s*,\\s*)${DateYearRegex}(?!\\s*\\d))\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor6 = `(?<=\\b(le|sur(\\sl[ae])?)\\s+)${MonthNumRegex}[\\-\\.\\/]${DayRegex}\\b`;
@@ -186,6 +186,7 @@ export namespace FrenchDateTime {
     export const AgoPrefixRegex = `\\b(y a)\\b`;
     export const LaterRegex = `\\b(plus tard)\\b`;
     export const AgoRegex = `^[.]`;
+    export const BeforeAfterRegex = `^[.]`;
     export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `^[.]`;

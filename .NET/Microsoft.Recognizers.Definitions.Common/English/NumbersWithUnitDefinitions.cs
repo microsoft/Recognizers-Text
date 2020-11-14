@@ -23,10 +23,15 @@ namespace Microsoft.Recognizers.Definitions.English
     {
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age" },
-            { @"Month", @"months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age" },
+            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo" },
+            { @"Month", @"months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo" },
             { @"Week", @"weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age" },
             { @"Day", @"days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age" }
+        };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"yo",
+            @"mo"
         };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
@@ -142,7 +147,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Halala", @"halalas|halala" },
             { @"Samoan tālā", @"samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala" },
             { @"Sene", @"sene" },
-            { @"São Tomé and Príncipe dobra", @"são tomé and príncipe dobra|dobras|dobra|std" },
+            { @"São Tomé and Príncipe dobra", @"são tomé and príncipe dobra|dobras|dobra" },
             { @"Sierra Leonean leone", @"sierra leonean leone|sll|leone|le" },
             { @"Peseta", @"pesetas|peseta" },
             { @"Netherlands guilder", @"florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl" },
@@ -356,7 +361,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Qatari riyal", @"QAR" },
             { @"Saudi riyal", @"SAR" },
             { @"Samoan tālā", @"WST" },
-            { @"São Tomé and Príncipe dobra", @"STD" },
+            { @"São Tomé and Príncipe dobra", @"STN" },
             { @"Sierra Leonean leone", @"SLL" },
             { @"Swazi lilangeni", @"SZL" },
             { @"Tajikistani somoni", @"TJS" },
@@ -398,7 +403,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Rwandan franc", @"RWF" },
             { @"Russian ruble", @"RUB" },
             { @"Transnistrian ruble", @"PRB" },
-            { @"Belarusian ruble", @"BYN" },
+            { @"New Belarusian ruble", @"BYN" },
             { @"Algerian dinar", @"DZD" },
             { @"Bahraini dinar", @"BHD" },
             { @"Iraqi dinar", @"IQD" },
@@ -561,7 +566,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
+            { @"Dobra", @"db|std" },
             { @"Dollar", @"$" },
+            { @"Brazilian Real", @"R$" },
             { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $" },
             { @"East Caribbean dollar", @"east caribbean $" },
             { @"Australian dollar", @"australian $|australia $" },
@@ -619,6 +626,7 @@ namespace Microsoft.Recognizers.Definitions.English
             @"toea",
             @"vatu",
             @"yuan",
+            @"all",
             @"ang",
             @"ban",
             @"bob",
@@ -649,7 +657,8 @@ namespace Microsoft.Recognizers.Definitions.English
             @"std",
             @"try",
             @"yer",
-            @"yen"
+            @"yen",
+            @"db"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {

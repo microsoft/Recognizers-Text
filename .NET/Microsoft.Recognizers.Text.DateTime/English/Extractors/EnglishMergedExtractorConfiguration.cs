@@ -16,9 +16,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
-
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
@@ -86,6 +83,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 numOptions = NumberOptions.NoProtoCache;
             }
 
+            if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                SinceRegex = SinceRegexExp;
+            }
+
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
@@ -97,6 +99,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
             }
         }
+
+        // Used in Standard mode
+        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        // used in Experimental mode
+        public static Regex SinceRegexExp { get; } = new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 

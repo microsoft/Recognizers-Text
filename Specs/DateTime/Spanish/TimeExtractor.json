@@ -540,23 +540,25 @@
   },
   {
     "Input": "Volvere al mediodia",
+    "NotSupported": "python, java, javascript",
     "Results": [
       {
-        "Text": "al mediodia",
+        "Text": "mediodia",
         "Type": "time",
-        "Start": 8,
-        "Length": 11
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Volvere al medio dia",
+    "NotSupported": "python, java, javascript",
     "Results": [
       {
-        "Text": "al medio dia",
+        "Text": "medio dia",
         "Type": "time",
-        "Start": 8,
-        "Length": 12
+        "Start": 11,
+        "Length": 9
       }
     ]
   },

@@ -44,6 +44,7 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
 
         self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
         self._token_before_date = FrenchDateTime.TokenBeforeDate
+        self._token_before_time = FrenchDateTime.TokenBeforeTime
         self._prefix_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PrefixDayRegex)
         self._before_regex = RegExpUtility.get_safe_reg_exp(
@@ -119,6 +120,10 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
     @property
     def token_before_date(self) -> str:
         return self._token_before_date
+
+    @property
+    def token_before_time(self):
+        return self._token_before_time
 
     @property
     def check_both_before_after(self) -> bool:

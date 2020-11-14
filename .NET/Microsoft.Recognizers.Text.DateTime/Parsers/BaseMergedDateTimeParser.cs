@@ -881,6 +881,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             resolutionPm[DateTimeResolutionKey.End] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.End]);
                         }
 
+                        if (resolution.ContainsKey(DateTimeResolutionKey.Value))
+                        {
+                            resolutionPm[ResolutionKey.Value] = DateTimeFormatUtil.ToPm(resolution[ResolutionKey.Value]);
+                        }
+
                         resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
 

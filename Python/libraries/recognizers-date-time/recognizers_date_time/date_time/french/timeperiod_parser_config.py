@@ -33,6 +33,14 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def pure_number_between_and_regex(self) -> Pattern:
         return self._pure_number_between_and_regex
+    
+    @property
+    def specific_time_from_to_regex(self) -> Pattern:
+        return self._specific_time_from_to_regex
+
+    @property
+    def specific_time_between_and_regex(self) -> Pattern:
+        return self._specific_time_between_and_regex
 
     @property
     def time_of_day_regex(self) -> Pattern:
@@ -64,6 +72,10 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             FrenchDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PureNumBetweenAnd)
+        self._specific_time_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeFromTo)
+        self._specific_time_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeBetweenAnd)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(

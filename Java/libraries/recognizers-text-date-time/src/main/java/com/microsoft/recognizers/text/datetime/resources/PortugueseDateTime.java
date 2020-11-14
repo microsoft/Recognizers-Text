@@ -155,6 +155,8 @@ public class PortugueseDateTime {
 
     public static final String RangeUnitRegex = "\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b";
 
+    public static final String BeforeAfterRegex = "^[.]";
+
     public static final String InConnectorRegex = "\\b(em)\\b";
 
     public static final String SinceYearSuffixRegex = "^[.]";

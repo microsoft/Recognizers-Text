@@ -2838,5 +2838,127 @@
         "End": 16
       }
     ]
+  },
+  {
+    "Input": " half million",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500000"
+        },
+        "Start": 1,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": " quarter million",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "quarter million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "250000"
+        },
+        "Start": 1,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": " two thirds of a million",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two thirds of a million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "666666.666666667"
+        },
+        "Start": 1,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": " one billion and three quarters million",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one billion and three quarters million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000750000"
+        },
+        "Start": 1,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "the result is ⅔",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅔",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 14,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "the result is ¾",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "¾",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 14,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "the result is ⅙ and sometimes ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.166666666666667"
+        },
+        "Start": 14,
+        "End": 14
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 30,
+        "End": 30
+      }
+    ]
   }
 ]
