@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenListBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -65,6 +66,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 

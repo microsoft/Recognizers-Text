@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = Definitions.Spanish.DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -53,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 

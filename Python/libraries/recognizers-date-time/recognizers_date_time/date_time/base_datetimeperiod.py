@@ -850,6 +850,11 @@ class DateTimePeriodParserConfiguration:
 
     @property
     @abstractmethod
+    def token_before_time(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def check_both_before_after(self) -> bool:
         raise NotImplementedError
 
@@ -1055,9 +1060,12 @@ class BaseDateTimePeriodParser(DateTimeParser):
             if TimexUtil.is_range_timex(time_period_timex):
                 date_result = self.config.date_extractor.extract(trimmed_source.replace(extracted_results[0].text, ''), reference)
 
-                # Check if token_before_date is null
-                date_text = trimmed_source.replace(extracted_results[0].text, '').replace(self.config.token_before_date, ''). \
-                    strip() if self.config.token_before_date else trimmed_source.replace(extracted_results[0].text, '').strip()
+                # Check if token_before_date and token_before_time are null
+                date_text = trimmed_source.replace(extracted_results[0].text, '').strip()
+                if self.config.token_before_date:
+                    date_text = date_text.replace(self.config.token_before_date, '').strip()
+                if self.config.token_before_time:
+                    date_text = date_text.replace(self.config.token_before_time.strip(), '').strip()
                 if self.config.check_both_before_after:
                     token_list_before_date = list(self.config.token_before_date.split('|'))
                     for token in filter(lambda n: n, token_list_before_date):

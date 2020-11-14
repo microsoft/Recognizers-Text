@@ -18694,5 +18694,154 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be out Tuesday from 2:00 to 2:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "tuesday from 2:00 to 2:30 pm",
+        "Start": 12,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-01 14:00:00",
+              "end": "2016-11-01 14:30:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 14:00:00",
+              "end": "2016-11-08 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out Tuesday at 2:00 - 2:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "tuesday at 2:00 - 2:30 pm",
+        "Start": 12,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-01 14:00:00",
+              "end": "2016-11-01 14:30:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 14:00:00",
+              "end": "2016-11-08 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out on December 12th at 4 - 6:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "december 12th at 4 - 6:30 pm",
+        "Start": 15,
+        "End": 42,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-12T16,XXXX-12-12T18:30,PT2H30M)",
+              "type": "datetimerange",
+              "start": "2015-12-12 16:00:00",
+              "end": "2015-12-12 18:30:00"
+            },
+            {
+              "timex": "(XXXX-12-12T16,XXXX-12-12T18:30,PT2H30M)",
+              "type": "datetimerange",
+              "start": "2016-12-12 16:00:00",
+              "end": "2016-12-12 18:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out at 2:00 - 2:30 pm on Tuesday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "2:00 - 2:30 pm on tuesday",
+        "Start": 15,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-01 14:00:00",
+              "end": "2016-11-01 14:30:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 14:00:00",
+              "end": "2016-11-08 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out from 2:30 to 2:15 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "from 2:30 to 2:15 pm",
+        "Start": 12,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T02:30,T14:15,PT11H45M)",
+              "type": "timerange",
+              "start": "02:30:00",
+              "end": "14:15:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

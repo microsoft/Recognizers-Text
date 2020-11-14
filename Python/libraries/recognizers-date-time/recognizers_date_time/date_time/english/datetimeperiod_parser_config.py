@@ -33,6 +33,7 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._am_desc_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AmDescRegex)
         self._pm_desc_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PmDescRegex)
         self._token_before_date = EnglishDateTime.TokenBeforeDate
+        self._token_before_time = EnglishDateTime.TokenBeforeTime
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PureNumFromTo)
@@ -109,6 +110,10 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
     @property
     def token_before_date(self) -> str:
         return self._token_before_date
+
+    @property
+    def token_before_time(self):
+        return self._token_before_time
 
     @property
     def check_both_before_after(self) -> bool:
