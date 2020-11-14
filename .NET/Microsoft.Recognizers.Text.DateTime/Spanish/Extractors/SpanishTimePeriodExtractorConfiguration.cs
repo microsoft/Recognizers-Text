@@ -130,15 +130,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         }
 
         // In Spanish "mañana" can mean both "tomorrow" and "morning". This method filters the isolated occurrences of "mañana" from the
-        // TimePeriodExtractor results as it is more likely to mean "tomorrow" in these cases.
+        // TimePeriodExtractor results as it is more likely to mean "tomorrow" in these cases (unless it is preceded by "la").
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
         {
             {
-                var morningStr = DateTimeDefinitions.MorningTermList[0];
+                var tomorrowStr = DateTimeDefinitions.MorningTermList[0];
+                var morningStr = DateTimeDefinitions.MorningTermList[1];
                 List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
                 foreach (var timePeriodEr in timePeriodErs)
                 {
-                    if (!timePeriodEr.Text.Equals(morningStr, StringComparison.Ordinal))
+                    if (timePeriodEr.Text.Equals(tomorrowStr, StringComparison.Ordinal))
+                    {
+                        if (text.Substring(0, (int)timePeriodEr.Start + (int)timePeriodEr.Length).EndsWith(morningStr))
+                        {
+                            timePeriodErsResult.Add(timePeriodEr);
+                        }
+                    }
+                    else
                     {
                         timePeriodErsResult.Add(timePeriodEr);
                     }

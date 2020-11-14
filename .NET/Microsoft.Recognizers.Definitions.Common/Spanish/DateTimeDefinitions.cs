@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string OfPrepositionRegex = @"(\bd(o|al?|el?)\b)";
       public const string AfterNextSuffixRegex = @"\b(despu[eé]s\s+de\s+la\s+pr[oó]xima)\b";
       public const string NextSuffixRegex = @"\b(que\s+viene|pr[oó]xim[oa]|siguiente)\b";
-      public const string PreviousSuffixRegex = @"\b(pasad[ao])\b";
+      public const string PreviousSuffixRegex = @"\b(pasad[ao]|anterior(?!\s+(al?|del?)\b))\b";
       public static readonly string RelativeSuffixRegex = $@"({AfterNextSuffixRegex}|{NextSuffixRegex}|{PreviousSuffixRegex})";
       public const string RangePrefixRegex = @"((de(l|sde)?|entre)(\s+la(s)?)?)";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
@@ -588,7 +588,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {
-            @"mañana"
+            @"mañana",
+            @"la mañana"
         };
       public static readonly IList<string> AfternoonTermList = new List<string>
         {

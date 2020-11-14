@@ -32,7 +32,7 @@ AfterNextSuffixRegex: !simpleRegex
 NextSuffixRegex: !simpleRegex
   def: \b(que\s+viene|pr[oó]xim[oa]|siguiente)\b
 PreviousSuffixRegex: !simpleRegex
-  def: \b(pasad[ao])\b
+  def: \b(pasad[ao]|anterior(?!\s+(al?|del?)\b))\b
 RelativeSuffixRegex: !nestedRegex
   def: ({AfterNextSuffixRegex}|{NextSuffixRegex}|{PreviousSuffixRegex})
   references: [ AfterNextSuffixRegex, NextSuffixRegex, PreviousSuffixRegex ]
@@ -978,6 +978,7 @@ MorningTermList: !list
   types: [ string ]
   entries: 
     - mañana
+    - la mañana
 AfternoonTermList: !list
   types: [ string ]
   entries:
