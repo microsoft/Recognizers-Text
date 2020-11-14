@@ -482,6 +482,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{ACCA0A3A-3935-4E4E-BDBA-0BEDDDF8D428}"
 	ProjectSection(SolutionItems) = preProject
 		..\Specs\NumberWithUnit\Swedish\AgeModel.json = ..\Specs\NumberWithUnit\Swedish\AgeModel.json
+		..\Specs\NumberWithUnit\Swedish\CurrencyModel.json = ..\Specs\NumberWithUnit\Swedish\CurrencyModel.json
 		..\Specs\NumberWithUnit\Swedish\DimensionModel.json = ..\Specs\NumberWithUnit\Swedish\DimensionModel.json
 		..\Specs\NumberWithUnit\Swedish\TemperatureModel.json = ..\Specs\NumberWithUnit\Swedish\TemperatureModel.json
 	EndProjectSection

@@ -1,0 +1,454 @@
+[
+  {
+    "Input": "bilen kostar 250000 kronor",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "250000 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "250000",
+          "unit": "Krone"
+        },
+        "Start": 13,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Priset är 100元!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        }
+      }
+    ]
+
+  },
+  {
+    "Input": "Svenske pizzamiljardären säljer aktier för 70 miljoner kronor",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "70 miljoner kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "70000000",
+          "unit": "Krone"
+        },
+        "Start": 43,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "det finska företaget köpte tillgångar till ett värde av 420 miljoner finska mark .",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "420 miljoner finska mark",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "420000000",
+          "unit": "Finnish markka"
+        },
+        "Start": 56,
+        "End": 79
+      }
+    ]
+  },
+  {
+    "Input": "DNB Markets sänker riktkursen för Ericsson till 134 kronor från 138 kronor. Rekommendationen köp upprepas. Det framgår av en analys. Aktien byter ägare på 102,60 kronor i skrivande stund på torsdagsförmiddagen.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "134 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "134",
+          "unit": "Krone"
+        },
+        "Start": 48,
+        "End": 57
+      },
+      {
+        "Text": "138 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "138",
+          "unit": "Krone"
+        },
+        "Start": 64,
+        "End": 73
+      },
+      {
+        "Text": "102,60 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "102,6",
+          "unit": "Krone"
+        },
+        "Start": 155,
+        "End": 167
+      }
+    ]
+  },
+  {
+    "Input": "Bara under måndagens rally i de svaga aktierna tappade blankare på de sju reseaktierna Carnival Corp, Expedia Group, Booking Holdings Inc , Royal Caribbean Group, American Airlines Group Wynn Resorts och Norwegian Cruise Line Holdings, 2,35 miljarder dollar.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2,35 miljarder dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "2350000000",
+          "unit": "Dollar"
+        },
+        "Start": 236,
+        "End": 256
+      }
+    ]
+  },
+  {
+    "Input": "priset för den andra simulatorn varierar med 16,4 miljoner US$",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16,4 miljoner us$",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "16400000",
+          "unit": "United States dollar"
+        },
+        "Start": 45,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "Man från Örebro satsade 48 kronor på V75 – vann 1,4 miljoner kronor: Hade ingen aning",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "48 kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "48",
+          "unit": "Krone"
+        },
+        "Start": 24,
+        "End": 32
+      },
+      {
+        "Text": "1,4 miljoner kronor",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1400000",
+          "unit": "Krone"
+        },
+        "Start": 48,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "Hans bidrag var 5 euro och 50 cent",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 euro och 50 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "5,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hans bidrag var €5,90",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "€5,90",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "5,9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Det amerkanska försvaret investerade 2 miljarder amerikanska dollar i forskning rörande AI.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 miljarder amerikanska dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "2000000000"
+        },
+        "Start": 37,
+        "End": 66
+      }
+    ]
+  },
+  {
+    "Input": "coyle ' s förmögenhet uppskattades till £ 8.10 miljoner i oktober 2014 .",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "£ 8.10 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "8100000",
+          "unit": "Pound"
+        },
+        "Start": 40,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "inkomsträntan sjönk med 27 % under kvartalet till $ 254 miljoner.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "$ 254 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "254000000",
+          "unit": "Dollar"
+        },
+        "Start": 50,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "inkomsträntan sjönk med 27 % under kvartalet till 254 miljoner SEK.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "254 miljoner sek",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "254000000",
+          "unit": "Swedish krona"
+        },
+        "Start": 50,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "du får 30 spänn för alltihop.",
+    "Comment": "spänn is slang for swedish krona",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 spänn",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "30",
+          "unit": "Swedish krona"
+        },
+        "Start": 7,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "30 SEK",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 sek",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "30",
+          "unit": "Swedish krona"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "SEK 30",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sek 30",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "30",
+          "unit": "Swedish krona"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är SEK 30000000",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sek 30000000",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "30000000",
+          "unit": "Swedish krona"
+        },
+        "Start": 12,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är SEK 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sek 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "30000000",
+          "unit": "Swedish krona"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är NOK 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nok 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "NOK",
+          "value": "30000000",
+          "unit": "Norwegian krone"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är DKK 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dkk 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "DKK",
+          "value": "30000000",
+          "unit": "Danish krone"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är GBP 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "gbp 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "GBP",
+          "value": "30000000",
+          "unit": "British pound"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Budgeten är USD 30 miljoner",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "usd 30 miljoner",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "30000000",
+          "unit": "United States dollar"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "En krona är 100 öre",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en krona",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1",
+          "unit": "Krone"
+        },
+        "Start": 0,
+        "End": 7
+      },
+      {
+        "Text": "100 öre",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Øre"
+        },
+        "Start": 12,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Grattis! Du har nått slutet av testerna. Räcker 100 spänn som tack för besväret?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 spänn",
+        "Start": 48,
+        "End": 56,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "value": "100",
+          "unit": "Swedish krona"
+        }
+      }
+    ]
+  }
+]
