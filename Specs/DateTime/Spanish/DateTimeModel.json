@@ -19687,5 +19687,136 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Muéstrame las ventas registradas en la 4ª semana de enero",
+    "Context": {
+      "ReferenceDateTime": "2020-11-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la 4ª semana de enero",
+        "Start": 36,
+        "End": 56,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-W04",
+              "type": "daterange",
+              "start": "2020-01-20",
+              "end": "2020-01-27"
+            },
+            {
+              "timex": "XXXX-01-W04",
+              "type": "daterange",
+              "start": "2021-01-25",
+              "end": "2021-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ventas totales de abril a junio en 2017",
+    "Context": {
+      "ReferenceDateTime": "2020-11-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de abril a junio en 2017",
+        "Start": 15,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-04-01,2017-06-01,P2M)",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-06-01"
+            }
+          ]
+		}
+      }
+    ]
+  },
+  {
+    "Input": "Encuentre las ventas en febrero, marzo y julio",
+    "Context": {
+      "ReferenceDateTime": "2020-11-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "febrero",
+        "Start": 24,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02",
+              "type": "daterange",
+              "start": "2020-02-01",
+              "end": "2020-03-01"
+            },
+            {
+              "timex": "XXXX-02",
+              "type": "daterange",
+              "start": "2021-02-01",
+              "end": "2021-03-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "marzo",
+        "Start": 33,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03",
+              "type": "daterange",
+              "start": "2020-03-01",
+              "end": "2020-04-01"
+            },
+            {
+              "timex": "XXXX-03",
+              "type": "daterange",
+              "start": "2021-03-01",
+              "end": "2021-04-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "julio",
+        "Start": 41,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07",
+              "type": "daterange",
+              "start": "2020-07-01",
+              "end": "2020-08-01"
+            },
+            {
+              "timex": "XXXX-07",
+              "type": "daterange",
+              "start": "2021-07-01",
+              "end": "2021-08-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

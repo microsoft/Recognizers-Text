@@ -89,7 +89,7 @@ class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfigurati
         super().__init__(culture_info)
         self._suffix_list = EnglishNumericWithUnit.AgeSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousAgeUnitList
 
 
 class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):

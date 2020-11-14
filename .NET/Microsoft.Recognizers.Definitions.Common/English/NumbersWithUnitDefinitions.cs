@@ -23,10 +23,15 @@ namespace Microsoft.Recognizers.Definitions.English
     {
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age" },
-            { @"Month", @"months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age" },
+            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo" },
+            { @"Month", @"months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo" },
             { @"Week", @"weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age" },
             { @"Day", @"days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age" }
+        };
+      public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
+        {
+            @"yo",
+            @"mo"
         };
       public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
         {
