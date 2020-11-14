@@ -23,6 +23,10 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Cardinal
@@ -77,6 +81,10 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
+
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override Regex RelativeReferenceRegex { get; }
 
         public static NumberExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
