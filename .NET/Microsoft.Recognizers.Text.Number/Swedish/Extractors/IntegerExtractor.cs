@@ -7,20 +7,17 @@ using Microsoft.Recognizers.Definitions.Swedish;
 
 namespace Microsoft.Recognizers.Text.Number.Swedish
 {
-    public class IntegerExtractor : CachedNumberExtractor
+    public class IntegerExtractor : BaseNumberExtractor
     {
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ConcurrentDictionary<string, IntegerExtractor> Instances = new ConcurrentDictionary<string, IntegerExtractor>();
-
-        private readonly string keyPrefix;
+        private static readonly ConcurrentDictionary<string, IntegerExtractor> Instances =
+            new ConcurrentDictionary<string, IntegerExtractor>();
 
         private IntegerExtractor(BaseNumberOptionsConfiguration config)
             : base(config.Options)
         {
-
-            keyPrefix = string.Intern(ExtractType + "_" + config.Options + "_" + config.Placeholder + "_" + config.Culture);
-
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
@@ -47,20 +44,16 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SWEDISH)
                 },
-                {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, config.Placeholder, RegexFlags),
+                /*{
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
-                },
+                },*/
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, config.Placeholder, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };
@@ -70,11 +63,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
+        // "Integer";
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
 
         public static IntegerExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-
             var extractorKey = config.Placeholder;
 
             if (!Instances.ContainsKey(extractorKey))
@@ -85,11 +78,5 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
             return Instances[extractorKey];
         }
-
-        protected override object GenKey(string input)
-        {
-            return (keyPrefix, input);
-        }
-
     }
 }
