@@ -791,6 +791,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 innerResult = ParseSingleNumber(dateString, referenceDate);
                             }
 
+                            if (!innerResult.Success)
+                            {
+                                var holidayEr = new ExtractResult
+                                {
+                                    Start = 0,
+                                    Length = dateString.Length,
+                                    Text = dateString,
+                                    Type = Constants.SYS_DATETIME_DATE,
+                                    Data = null,
+                                    Metadata = new Metadata { IsHoliday = true },
+                                };
+                                innerResult = (DateTimeResolutionResult)config.HolidayParser.Parse(holidayEr, referenceDate).Value;
+                            }
+
                             // Combine parsed results Duration + Date
                             if (innerResult.Success)
                             {

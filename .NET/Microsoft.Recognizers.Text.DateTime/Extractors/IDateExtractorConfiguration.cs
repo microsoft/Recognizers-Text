@@ -61,6 +61,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor DurationExtractor { get; }
 
+        IDateTimeExtractor HolidayExtractor { get; }
+
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IImmutableDictionary<string, int> DayOfWeek { get; }

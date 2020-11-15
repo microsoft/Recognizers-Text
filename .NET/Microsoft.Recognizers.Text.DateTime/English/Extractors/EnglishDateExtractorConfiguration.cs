@@ -143,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -239,6 +240,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

@@ -535,6 +535,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> ExtractRelativeDurationDate(string text, List<Token> tokens, DateObject reference)
         {
             var ret = new List<Token>();
+            var tempTokens = new List<Token>(tokens);
             var durationEr = Config.DurationExtractor.Extract(text, reference);
 
             foreach (var er in durationEr)
@@ -561,14 +562,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text, er, ret, Config.UtilityConfiguration));
 
+                    // Take into account also holiday dates
+                    if (ret.Count < 1)
+                    {
+                        var holidayEr = Config.HolidayExtractor.Extract(text, reference);
+                        foreach (var holiday in holidayEr)
+                        {
+                            tempTokens.Add(new Token((int)holiday.Start, (int)(holiday.Start + holiday.Length)));
+                        }
+                    }
+
                     // Check for combined patterns Duration + Date, e.g. '3 days before Monday', '4 weeks after January 15th'
-                    if (ret.Count < 1 && tokens.Count > 0 && er.Text != match.Value)
+                    if (ret.Count < 1 && tempTokens.Count > 0 && er.Text != match.Value)
                     {
                         var afterStr = text.Substring((int)er.Start + (int)er.Length);
                         var connector = Config.BeforeAfterRegex.MatchBegin(afterStr, trim: true);
                         if (connector.Success)
                         {
-                            foreach (var token in tokens)
+                            foreach (var token in tempTokens)
                             {
                                 var start = (int)er.Start + (int)er.Length + connector.Index + connector.Length;
                                 var length = token.Start - start;
