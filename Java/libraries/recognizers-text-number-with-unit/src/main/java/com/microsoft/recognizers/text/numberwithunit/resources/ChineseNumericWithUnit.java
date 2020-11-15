@@ -596,13 +596,14 @@ public class ChineseNumericWithUnit {
         .put("Ton", "公吨|吨|t")
         .put("Pound", "磅")
         .put("Ounce", "盎司")
-        .put("Bit", "比特|位|b")
-        .put("Byte", "字节|byte")
-        .put("Kilobyte", "千字节|kb")
-        .put("Megabyte", "兆字节|mb")
-        .put("Gigabyte", "十亿字节|千兆字节|gb")
-        .put("Terabyte", "万亿字节|兆兆字节|tb")
-        .put("Petabyte", "千兆兆|千万亿字节|pb")
+        .put("Bit", "比特|位|b|bit")
+        .put("Kilobit", "千比特|千位|kb|Kb")
+        .put("Byte", "字节|byte|Byte")
+        .put("Kilobyte", "千字节|kB|KB")
+        .put("Megabyte", "兆字节|mB|MB")
+        .put("Gigabyte", "十亿字节|千兆字节|gB|GB")
+        .put("Terabyte", "万亿字节|兆兆字节|tB|TB")
+        .put("Petabyte", "千兆兆字节|千万亿字节|pB|PB")
         .build();
 
     public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");

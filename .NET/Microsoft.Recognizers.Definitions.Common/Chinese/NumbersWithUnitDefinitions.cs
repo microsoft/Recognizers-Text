@@ -608,13 +608,14 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Ton", @"公吨|吨|t" },
             { @"Pound", @"磅" },
             { @"Ounce", @"盎司" },
-            { @"Bit", @"比特|位|b" },
-            { @"Byte", @"字节|byte" },
-            { @"Kilobyte", @"千字节|kb" },
-            { @"Megabyte", @"兆字节|mb" },
-            { @"Gigabyte", @"十亿字节|千兆字节|gb" },
-            { @"Terabyte", @"万亿字节|兆兆字节|tb" },
-            { @"Petabyte", @"千兆兆|千万亿字节|pb" }
+            { @"Bit", @"比特|位|b|bit" },
+            { @"Kilobit", @"千比特|千位|kb|Kb" },
+            { @"Megabyte", @"兆字节|mB|MB" },
+            { @"Gigabyte", @"十亿字节|千兆字节|gB|GB" },
+            { @"Terabyte", @"万亿字节|兆兆字节|tB|TB" },
+            { @"Petabyte", @"千兆兆字节|千万亿字节|pB|PB" },
+            { @"Byte", @"字节|byte|Byte" },
+            { @"Kilobyte", @"千字节|kB|KB" }
         };
       public static readonly IList<string> DimensionAmbiguousValues = new List<string>
         {

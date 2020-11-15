@@ -569,13 +569,14 @@ class ChineseNumericWithUnit:
                                 ("Ton", "公吨|吨|t"),
                                 ("Pound", "磅"),
                                 ("Ounce", "盎司"),
-                                ("Bit", "比特|位|b"),
-                                ("Byte", "字节|byte"),
-                                ("Kilobyte", "千字节|kb"),
-                                ("Megabyte", "兆字节|mb"),
-                                ("Gigabyte", "十亿字节|千兆字节|gb"),
-                                ("Terabyte", "万亿字节|兆兆字节|tb"),
-                                ("Petabyte", "千兆兆|千万亿字节|pb")])
+                                ("Bit", "比特|位|b|bit"),
+                                ("Kilobit", "千比特|千位|kb|Kb"),
+                                ("Megabyte", "兆字节|mB|MB"),
+                                ("Gigabyte", "十亿字节|千兆字节|gB|GB"),
+                                ("Terabyte", "万亿字节|兆兆字节|tB|TB"),
+                                ("Petabyte", "千兆兆字节|千万亿字节|pB|PB"),
+                                ("Byte", "字节|byte|Byte"),
+                                ("Kilobyte", "千字节|kB|KB")])
     DimensionAmbiguousValues = [r'丈', r'位', r'克', r'分', r'升', r'寸', r'尺', r'斗', r'斤', r'桶', r'毫', r'石', r'码', r'磅', r'米', r'罐', r'里', r'm', r'km', r'dm', r'cm', r'mm', r'l', r'ml', r'kg', r'mg', r'g', r't', r'b', r'byte', r'kb', r'mb', r'gb', r'tb', r'pb']
     AmbiguityFiltersDict = dict([("五角", "五角大楼"),
                                  ("普尔", "标准普尔")])

@@ -559,7 +559,7 @@ class BaseTimePeriodParser(DateTimeParser):
         # get minutes
         minute_group_list = RegExpUtility.get_group_list(match, Constants.MINUTE_GROUP_NAME)
 
-        begin_minute = end_minute = -1;
+        begin_minute = end_minute = -1
         if len(minute_group_list) > 1:
             minute_str = minute_group_list[0]
             begin_minute = self.config.numbers.get(minute_str, None)
@@ -591,8 +591,8 @@ class BaseTimePeriodParser(DateTimeParser):
             elif desc_capture in time2 and not right_desc:
                 right_desc: str = desc_capture
 
-        begin_date_time = datetime(year, month, day, hour = begin_hour, minute = begin_minute if begin_minute > 0 else 0)
-        end_date_time = datetime(year, month, day, hour = end_hour, minute = end_minute if end_minute > 0 else 0)
+        begin_date_time = datetime(year, month, day, hour=begin_hour, minute=begin_minute if begin_minute > 0 else 0)
+        end_date_time = datetime(year, month, day, hour=end_hour, minute=end_minute if end_minute > 0 else 0)
 
         has_left_am = left_desc != '' and left_desc.startswith('a')
         has_left_pm = left_desc != '' and left_desc.startswith('p')
@@ -605,58 +605,58 @@ class BaseTimePeriodParser(DateTimeParser):
         if has_left and has_right:
             if has_left_am:
                 if begin_hour >= 12:
-                    begin_date_time -= timedelta(hours = 12)
+                    begin_date_time -= timedelta(hours=12)
             else:
                 if begin_hour < 12:
-                    begin_date_time += timedelta(hours = 12)
+                    begin_date_time += timedelta(hours=12)
             if has_right_am:
                 if end_hour > 12:
-                    end_date_time -= timedelta(hours = 12)
+                    end_date_time -= timedelta(hours=12)
             else:
                 if end_hour < 12:
-                    end_date_time += timedelta(hours = 12)
+                    end_date_time += timedelta(hours=12)
         # one of the time point has description like 'am' or 'pm'
         elif has_left or has_right:
             if has_left_am:
                 if begin_hour >= 12:
-                    begin_date_time -= timedelta(hours = 12)
+                    begin_date_time -= timedelta(hours=12)
                 if end_hour < 12:
                     if end_date_time < begin_date_time:
-                        end_date_time += timedelta(hours = 12)
+                        end_date_time += timedelta(hours=12)
             elif has_left_pm:
                 if begin_hour < 12:
-                    begin_date_time += timedelta(hours = 12)
+                    begin_date_time += timedelta(hours=12)
                 if end_hour < 12:
                     if end_date_time < begin_date_time:
-                        span : datetime = begin_date_time - end_date_time
-                        end_date_time += timedelta(hours = 24) if span >= timedelta(hours = 12) else timedelta(hours = 12)
+                        span: datetime = begin_date_time - end_date_time
+                        end_date_time += timedelta(hours=24) if span >= timedelta(hours=12) else timedelta(hours=12)
             if has_right_am:
                 if end_hour >= 12:
-                    end_date_time -= timedelta(hours = 12)
+                    end_date_time -= timedelta(hours=12)
                 if begin_hour < 12:
                     if end_date_time < begin_date_time:
-                        begin_date_time -= timedelta(hours = 12)
+                        begin_date_time -= timedelta(hours=12)
             elif has_right_pm:
                 if end_hour < 12:
-                    end_date_time += timedelta(hours = 12)
+                    end_date_time += timedelta(hours=12)
                 if begin_hour < 12:
                     if end_date_time < begin_date_time:
-                        begin_date_time -= timedelta(hours = 12)
+                        begin_date_time -= timedelta(hours=12)
                     else:
                         span = end_date_time - begin_date_time
-                        if span >= timedelta(hours = 12):
-                            begin_date_time += timedelta(hours = 12)
+                        if span >= timedelta(hours=12):
+                            begin_date_time += timedelta(hours=12)
         # no 'am' or 'pm' indicator
         elif begin_hour <= 12 and end_hour <= 12:
             if begin_date_time > end_date_time:
                 if begin_hour == 12:
-                    begin_date_time -= timedelta(hours = 12)
+                    begin_date_time -= timedelta(hours=12)
                 else:
-                    end_date_time += timedelta(hours = 12)
+                    end_date_time += timedelta(hours=12)
             result.comment = Constants.AM_PM_GROUP_NAME
 
         if end_date_time < begin_date_time:
-            end_date_time += timedelta(hours = 24)
+            end_date_time += timedelta(hours=24)
 
         if begin_minute >= 0:
             begin = f'T{begin_date_time.hour:02d}:{begin_date_time.minute:02d}'

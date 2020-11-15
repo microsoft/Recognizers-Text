@@ -195,5 +195,206 @@
         "End": 3
       }
     ]
+  },
+  {
+    "Input": "12千米",
+    "Results": [
+      {
+        "Text": "12千米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Kilometer"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2.3千克",
+    "Results": [
+      {
+        "Text": "2.3千克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.3",
+          "unit": "Kilogram"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1千克",
+    "Results": [
+      {
+        "Text": "1千克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Kilogram"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三百米",
+    "Results": [
+      {
+        "Text": "三百米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Meter"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "四十克",
+    "Results": [
+      {
+        "Text": "四十克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "40",
+          "unit": "Gram"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三千比特",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "三千比特",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Kilobit"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "五十兆字节",
+    "Results": [
+      {
+        "Text": "五十兆字节",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "50",
+          "unit": "Megabyte"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "六千字节",
+    "Results": [
+      {
+        "Text": "六千字节",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Kilobyte"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "一千比特",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "一千比特",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Kilobit"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1兆赫兹",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1兆赫兹",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Megahertz"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "100赫兹",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100赫兹",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Hertz"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "一百千瓦",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一百千瓦",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Kilowatt"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "323千卡",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "323千卡",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "323",
+          "unit": "Kilocalorie"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
   }
 ]

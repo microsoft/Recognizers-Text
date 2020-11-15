@@ -36,7 +36,7 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def pure_number_between_and_regex(self) -> Pattern:
         return self._pure_number_between_and_regex
-    
+
     @property
     def specific_time_from_to_regex(self) -> Pattern:
         return self._specific_time_from_to_regex
