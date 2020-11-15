@@ -1,5 +1,9 @@
 ---
 #AgeExtractorConfiguration
+AgePrefixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Age: Age|age
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:

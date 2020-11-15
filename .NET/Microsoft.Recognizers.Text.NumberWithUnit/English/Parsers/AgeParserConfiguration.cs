@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
                : base(ci)
         {
             this.BindDictionary(AgeExtractorConfiguration.AgeSuffixList);
+            this.BindDictionary(AgeExtractorConfiguration.AgePrefixList);
         }
     }
 }
