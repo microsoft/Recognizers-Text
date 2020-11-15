@@ -36,6 +36,7 @@ class EnglishAgeParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.AgeSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.AgePrefixList)
 
 
 class EnglishCurrencyParserConfiguration(EnglishNumberWithUnitParserConfiguration):

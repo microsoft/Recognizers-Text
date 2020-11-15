@@ -10,6 +10,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public static readonly ImmutableDictionary<string, string> AgeSuffixList =
             NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
 
+        public static readonly ImmutableDictionary<string, string> AgePrefixList =
+            NumbersWithUnitDefinitions.AgePrefixList.ToImmutableDictionary();
+
         private static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousAgeUnitList.ToImmutableList();
 
@@ -25,7 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> SuffixList => AgeSuffixList;
 
-        public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableDictionary<string, string> PrefixList => AgePrefixList;
 
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 

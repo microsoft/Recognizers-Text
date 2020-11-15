@@ -14,5 +14,6 @@ public class AgeParserConfiguration extends EnglishNumberWithUnitParserConfigura
         super(cultureInfo);
 
         this.bindDictionary(AgeExtractorConfiguration.AgeSuffixList);
+        this.bindDictionary(AgeExtractorConfiguration.AgePrefixList);
     }
 }

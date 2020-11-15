@@ -19,6 +19,10 @@ import com.google.common.collect.ImmutableMap;
 
 public class EnglishNumericWithUnit {
 
+    public static final ImmutableMap<String, String> AgePrefixList = ImmutableMap.<String, String>builder()
+        .put("Age", "Age|age")
+        .build();
+
     public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
         .put("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo")
         .put("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo")
