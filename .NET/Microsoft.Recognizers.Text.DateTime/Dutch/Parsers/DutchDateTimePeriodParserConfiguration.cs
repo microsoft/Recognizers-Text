@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -64,6 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 

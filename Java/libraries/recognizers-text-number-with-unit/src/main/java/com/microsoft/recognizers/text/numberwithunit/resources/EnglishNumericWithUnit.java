@@ -20,11 +20,13 @@ import com.google.common.collect.ImmutableMap;
 public class EnglishNumericWithUnit {
 
     public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
-        .put("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age")
-        .put("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age")
+        .put("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo")
+        .put("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo")
         .put("Week", "weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age")
         .put("Day", "days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age")
         .build();
+
+    public static final List<String> AmbiguousAgeUnitList = Arrays.asList("yo", "mo");
 
     public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Square kilometer", "sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²")

@@ -12538,5 +12538,62 @@
         "End": 7
       }
     ]
+  },
+  {
+    "Input": "一千零三",
+    "Comment" : "Not common in Japanese. Represented here for completeness of spec parity with Chinese specs, but won't happen in practice",
+    "Results": [
+      {
+        "Text": "一千零三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "一千三",
+    "Results": [
+      {
+        "Text": "一千三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "一千三百",
+    "Results": [
+      {
+        "Text": "一千三百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "千三百",
+    "Results": [
+      {
+        "Text": "千三百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
   }
 ]

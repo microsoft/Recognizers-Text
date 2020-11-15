@@ -14,10 +14,11 @@ from .base_numbers import BaseNumbers
 
 
 class EnglishNumericWithUnit:
-    AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age"),
-                          ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age"),
+    AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo"),
+                          ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo"),
                           ("Week", "weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age"),
                           ("Day", "days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age")])
+    AmbiguousAgeUnitList = [r'yo', r'mo']
     AreaSuffixList = dict([("Square kilometer", "sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²"),
                            ("Square hectometer", "sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares"),
                            ("Square decameter", "sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²"),

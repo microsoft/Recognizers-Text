@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
@@ -19,6 +20,9 @@ namespace SimpleConsole
 
         public static void Main(string[] args)
         {
+            // Encoding for 'exotic' characters e.g. '€'
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
             ShowIntro();
 
             while (true)

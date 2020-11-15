@@ -357,6 +357,9 @@ class BaseMergedExtractor(DateTimeExtractor):
     def add_mod(self, extract_results: List[ExtractResult], source: str) -> List[ExtractResult]:
 
         for extract_result in extract_results:
+            # AroundRegex is matched non-exclusively before the other relative regexes in order
+            # to catch also combined modifiers e.g. "before around 1pm"
+            self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
             success = self.try_merge_modifier_token(extract_result, self.config.before_regex, source)
 
             if not success:
@@ -364,9 +367,6 @@ class BaseMergedExtractor(DateTimeExtractor):
 
             if not success:
                 success = self.try_merge_modifier_token(extract_result, self.config.since_regex, source, True)
-
-            if not success:
-                success = self.try_merge_modifier_token(extract_result, self.config.around_regex, source)
 
             if not success:
                 success = self.try_merge_modifier_token(extract_result, self.config.equal_regex, source)
@@ -602,7 +602,16 @@ class BaseMergedParser(DateTimeParser):
             before_match = RegExpUtility.match_begin(self.config.before_regex, source.text, True)
             after_match = RegExpUtility.match_begin(self.config.after_regex, source.text, True)
             since_match = RegExpUtility.match_begin(self.config.since_regex, source.text, True)
-            around_match = RegExpUtility.match_begin(self.config.around_regex, source.text, True)
+
+            preLength = 0
+            if before_match and before_match.success:
+                preLength = before_match.index + before_match.length
+            elif after_match and after_match.success:
+                preLength = after_match.index + after_match.length
+            elif since_match and since_match.success:
+                preLength = since_match.index + since_match.length
+            aroundText = source.text[preLength:]
+            around_match = RegExpUtility.match_begin(self.config.around_regex, aroundText, True)
             equal_match = RegExpUtility.match_begin(self.config.equal_regex, source.text, True)
 
             if before_match and not before_match.success:
@@ -625,34 +634,37 @@ class BaseMergedParser(DateTimeParser):
                 equal_match = RegExpUtility.match_end(self.config.equal_regex, source.text, True)
                 match_is_after = match_is_after or equal_match.success
 
+            if around_match and around_match.success:
+                has_around = True
+                source.start += 0 if match_is_after else preLength + around_match.index + around_match.length
+                source.length -= around_match.length if match_is_after else preLength + around_match.index + around_match.length
+                source.text = source.text[0:source.length] if match_is_after else source.text[preLength + around_match.index + around_match.length:]
+                mod_str = around_match.group() if match_is_after else aroundText[0:around_match.index + around_match.length]
             if before_match and before_match.success:
                 has_before = True
-                source.start += 0 if match_is_after else before_match.length
-                source.length -= before_match.length
-                source.text = source.text[0:source.length] if match_is_after else source.text[before_match.length:]
-                mod_str = before_match.group()
+                if not (around_match and around_match.success):
+                    source.start += 0 if match_is_after else before_match.length
+                    source.length -= before_match.length
+                    source.text = source.text[0:source.length] if match_is_after else source.text[before_match.length:]
+                mod_str = before_match.group() + mod_str
                 if RegExpUtility.get_group(before_match.match[0], "include"):
                     has_inclusive_mod = True
             elif after_match and after_match.success:
                 has_after = True
-                source.start += 0 if match_is_after else after_match.length
-                source.length -= after_match.length
-                source.text = source.text[0:source.length] if match_is_after else source.text[after_match.length:]
-                mod_str = after_match.group()
+                if not (around_match and around_match.success):
+                    source.start += 0 if match_is_after else after_match.length
+                    source.length -= after_match.length
+                    source.text = source.text[0:source.length] if match_is_after else source.text[after_match.length:]
+                mod_str = after_match.group() + mod_str
                 if RegExpUtility.get_group(after_match.match[0], "include"):
                     has_inclusive_mod = True
             elif since_match and since_match.success:
                 has_since = True
-                source.start += 0 if match_is_after else since_match.length
-                source.length -= since_match.length
-                source.text = source.text[0:source.length] if match_is_after else source.text[since_match.length:]
-                mod_str = since_match.group()
-            elif around_match and around_match.success:
-                has_around = True
-                source.start += 0 if match_is_after else around_match.length
-                source.length -= around_match.length
-                source.text = source.text[0:source.length] if match_is_after else source.text[around_match.length:]
-                mod_str = around_match.group()
+                if not (around_match and around_match.success):
+                    source.start += 0 if match_is_after else since_match.length
+                    source.length -= since_match.length
+                    source.text = source.text[0:source.length] if match_is_after else source.text[since_match.length:]
+                mod_str = since_match.group() + mod_str
             elif equal_match and equal_match.success:
                 has_equal = True
                 source.start += 0 if match_is_after else equal_match.length
@@ -686,7 +698,9 @@ class BaseMergedParser(DateTimeParser):
 
             val.mod = self.combine_mod(val.mod, TimeTypeConstants.BEFORE_MOD if not has_inclusive_mod else
                                        TimeTypeConstants.UNTIL_MOD)
-
+            if has_around:
+                val.mod = self.combine_mod(TimeTypeConstants.APPROX_MOD, val.mod)
+                has_around = False
             result.value = val
 
         if has_after and result.value:
@@ -697,7 +711,9 @@ class BaseMergedParser(DateTimeParser):
 
             val.mod = self.combine_mod(val.mod, TimeTypeConstants.AFTER_MOD if not has_inclusive_mod else
                                        TimeTypeConstants.SINCE_MOD)
-
+            if has_around:
+                val.mod = self.combine_mod(TimeTypeConstants.APPROX_MOD, val.mod)
+                has_around = False
             result.value = val
 
         if has_since and result.value:
@@ -706,6 +722,9 @@ class BaseMergedParser(DateTimeParser):
             result.text = mod_str + result.text
             val = result.value
             val.mod = TimeTypeConstants.SINCE_MOD
+            if has_around:
+                val.mod = self.combine_mod(TimeTypeConstants.APPROX_MOD, val.mod)
+                has_around = False
             result.value = val
 
         if has_around and result.value:
@@ -991,13 +1010,13 @@ class BaseMergedParser(DateTimeParser):
             return
 
         if mod:
-            if mod == TimeTypeConstants.BEFORE_MOD:
+            if mod.startswith(TimeTypeConstants.BEFORE_MOD):
                 key = TimeTypeConstants.END
-            elif mod == TimeTypeConstants.AFTER_MOD:
+            elif mod.startswith(TimeTypeConstants.AFTER_MOD):
                 key = TimeTypeConstants.START
-            elif mod == TimeTypeConstants.SINCE_MOD:
+            elif mod.startswith(TimeTypeConstants.SINCE_MOD):
                 key = TimeTypeConstants.START
-            elif mod == TimeTypeConstants.UNTIL_MOD:
+            elif mod.startswith(TimeTypeConstants.UNTIL_MOD):
                 key = TimeTypeConstants.END
 
         result[key] = value

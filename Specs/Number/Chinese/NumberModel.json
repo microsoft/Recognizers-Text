@@ -4987,6 +4987,76 @@
     ]
   },
   {
+    "Input": "1千零1",
+    "Results": [
+      {
+        "Text": "1千零1",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1001"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1千零20",
+    "Results": [
+      {
+        "Text": "1千零20",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1020"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2千零30万",
+    "Results": [
+      {
+        "Text": "2千零30万",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20300000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3万4000",
+    "Results": [
+      {
+        "Text": "3万4000",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "34000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "25万6千",
+    "Results": [
+      {
+        "Text": "25万6千",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "256000"
+        }
+      }
+    ]
+  },
+  {
     "Input": "二十一万亿",
     "Results": [
       {
@@ -5067,6 +5137,62 @@
         },
         "Start": 0,
         "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "一千零三",
+    "Results": [
+      {
+        "Text": "一千零三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "一千三",
+    "Results": [
+      {
+        "Text": "一千三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "一千三百",
+    "Results": [
+      {
+        "Text": "一千三百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "千三",
+    "Results": [
+      {
+        "Text": "千三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 1
       }
     ]
   }

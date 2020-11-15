@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = Definitions.Portuguese.DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -52,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
