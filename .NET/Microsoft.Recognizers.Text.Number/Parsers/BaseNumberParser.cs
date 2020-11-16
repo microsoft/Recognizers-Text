@@ -912,7 +912,7 @@ namespace Microsoft.Recognizers.Text.Number
             // For Italian, we invert the order of Cardinal and Ordinal in singleIntFrac in order to correctly extract
             // ordinals that contain cardinals such as 'tredicesimo' (thirteenth) which starts with 'tre' (three).
             // With the standard order, the parser fails to return '13' since only the cardinal 'tre' (3) is extracted
-            if (this.Config.CultureInfo.Name == "it-IT")
+            if (this.Config.CultureInfo.Name == "it-IT" || this.Config.CultureInfo.Name == "sv-SE")
             {
                 singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                     GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +

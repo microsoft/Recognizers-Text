@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(hundrade|tusende|miljonte|miljardte|biljonte|biljardte|triljonte|triljardte)";
-      public const string NumberOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
+      public const string NumberOrdinalRegex = @"(först(e|a)(del(ar|s)?)?|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(\bnäst(a|e)|\bföregående|\bnäst\s+sist(a|e)|\bsist(a|e)|\bnuvarande|\b(före|efter)\s+nuvarande|\bförr(a|e)|\btredje\s+från\s+slutet|\bsenaste|\btidigare|\bföre\s+den\s+sist(a|e)|\b(innan|efter|före)\s+sist(a|e)))";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
@@ -223,6 +223,9 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"triljonte", 1000000000000000000 },
             { @"förstadelar", 1 },
             { @"förstedelar", 1 },
+            { @"förstedel", 1 },
+            { @"tjugoförstedel", 21 },
+            { @"förstadel", 1 },
             { @"andradelar", 2 },
             { @"andredelar", 2 },
             { @"tredjedelar", 3 },

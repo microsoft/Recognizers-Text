@@ -769,22 +769,6 @@
     ]
   },
   {
-    "Input": "femtio - två",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "femtio - två",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
     "Input": "femtio   två",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -879,22 +863,6 @@
         },
         "Start": 0,
         "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "femtio-två",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "femtio-två",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 9
       }
     ]
   },
@@ -1317,6 +1285,7 @@
   {
     "Input": "tjugo femtedelar",
     "NotSupportedByDesign": "javascript, python, java",
+    "Debug":  true,
     "Results": [
       {
         "Text": "tjugo femtedelar",
@@ -1365,8 +1334,8 @@
   {
     "Input": "en tjugoförstedel",
     "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not resolved correctly.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
     "Results": [
       {
         "Text": "en tjugoförstedel",
@@ -1376,7 +1345,7 @@
           "value": "0,0476190476190476"
         },
         "Start": 0,
-        "End": 17
+        "End": 16
       }
     ]
   },
