@@ -152,6 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 
             const RegexOptions dateRegexOption = RegexOptions.Singleline;
@@ -206,6 +207,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

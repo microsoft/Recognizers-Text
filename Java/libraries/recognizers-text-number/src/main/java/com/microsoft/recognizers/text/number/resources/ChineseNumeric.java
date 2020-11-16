@@ -199,7 +199,13 @@ public class ChineseNumeric {
 
     public static final String PairRegex = ".*[双对雙對]$";
 
-    public static final String RoundNumberIntegerRegex = "(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]{1,2}))";
+    public static final String KiloUnitNames = "[米克位焦卡赫瓦]|比特|字节|大卡";
+
+    public static final String MegaUnitNames = "[位赫瓦]|比特|字节";
+
+    public static final String RoundNumberIntegerRegex = "(((?<![十百拾佰千仟])[十百拾佰])([万亿萬億]{0,2})|([万亿萬億]{1,2})|(?<![十百拾佰千仟])[千仟]([万亿萬億]{1,2})|(?<![十百拾佰千仟])[千仟](?!{KiloUnitNames})|(兆{1,2})(?!{MegaUnitNames}))"
+            .replace("{KiloUnitNames}", KiloUnitNames)
+            .replace("{MegaUnitNames}", MegaUnitNames);
 
     public static final String PercentageNumRegex = "(([十百千拾佰仟])|([万亿兆萬億])){1,3}\\s*分(\\s*之|\\s*点)";
 

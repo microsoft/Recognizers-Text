@@ -31,7 +31,7 @@ public class AgeExtractorConfiguration extends EnglishNumberWithUnitExtractorCon
 
     @Override
     public Map<String, String> getPrefixList() {
-        return Collections.emptyMap();
+        return AgePrefixList;
     }
 
     @Override
@@ -40,4 +40,6 @@ public class AgeExtractorConfiguration extends EnglishNumberWithUnitExtractorCon
     }
 
     public static Map<String, String> AgeSuffixList = EnglishNumericWithUnit.AgeSuffixList;
+
+    public static Map<String, String> AgePrefixList = EnglishNumericWithUnit.AgePrefixList;
 }

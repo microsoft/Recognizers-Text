@@ -21,6 +21,10 @@ namespace Microsoft.Recognizers.Definitions.English
 
     public static class NumbersWithUnitDefinitions
     {
+      public static readonly Dictionary<string, string> AgePrefixList = new Dictionary<string, string>
+        {
+            { @"Age", @"Age|age" }
+        };
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
             { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo" },

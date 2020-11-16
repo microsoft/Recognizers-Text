@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new HindiHolidayParserConfiguration(this));
             DateRegexes = new HindiDateExtractorConfiguration(this).DateRegexList;
             OnRegex = HindiDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = HindiDateExtractorConfiguration.SpecialDayRegex;
@@ -79,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 

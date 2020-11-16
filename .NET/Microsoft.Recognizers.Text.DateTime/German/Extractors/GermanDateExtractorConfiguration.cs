@@ -148,6 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
 
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -203,6 +204,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

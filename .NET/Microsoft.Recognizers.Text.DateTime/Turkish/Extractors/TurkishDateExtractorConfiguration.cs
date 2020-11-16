@@ -143,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -245,6 +246,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

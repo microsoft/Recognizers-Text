@@ -177,8 +177,13 @@ SpeGetNumberRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex]
 PairRegex: .*[双对雙對]$
 #IntegerExtractor
-RoundNumberIntegerRegex: !simpleRegex
-  def: (((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]{1,2}))
+KiloUnitNames: !simpleRegex
+  def: '[米克位焦卡赫瓦]|比特|字节|大卡'
+MegaUnitNames: !simpleRegex
+  def: '[位赫瓦]|比特|字节'
+RoundNumberIntegerRegex: !nestedRegex
+  def: (((?<![十百拾佰千仟])[十百拾佰])([万亿萬億]{0,2})|([万亿萬億]{1,2})|(?<![十百拾佰千仟])[千仟]([万亿萬億]{1,2})|(?<![十百拾佰千仟])[千仟](?!{KiloUnitNames})|(兆{1,2})(?!{MegaUnitNames}))
+  references: [KiloUnitNames, MegaUnitNames]
 PercentageNumRegex: !simpleRegex
   def: '(([十百千拾佰仟])|([万亿兆萬億])){1,3}\s*分(\s*之|\s*点)'
 AllowListRegex: !simpleRegex

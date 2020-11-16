@@ -144,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -196,6 +197,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

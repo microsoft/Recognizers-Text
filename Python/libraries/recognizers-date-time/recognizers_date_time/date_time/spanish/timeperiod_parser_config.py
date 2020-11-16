@@ -28,7 +28,7 @@ class SpanishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def pure_number_from_to_regex(self) -> Pattern:
         return self._pure_number_from_to_regex
-    
+
     @property
     def specific_time_from_to_regex(self) -> Pattern:
         return self._specific_time_from_to_regex

@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new TurkishHolidayParserConfiguration(this));
             DateRegexes = new TurkishDateExtractorConfiguration(this).DateRegexList;
             OnRegex = TurkishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = TurkishDateExtractorConfiguration.SpecialDayRegex;
@@ -80,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 
