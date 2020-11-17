@@ -135,7 +135,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly numberCombinedWithUnit: RegExp;
 
     readonly cardinalExtractor: IExtractor;
-    readonly numberParser: IParser;
+    readonly numberParser: BaseNumberParser;
     readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {

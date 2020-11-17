@@ -18957,5 +18957,71 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Show sales in two thousand and twenty",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "two thousand and twenty",
+        "Start": 14,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "They left in nineteen ninety six and came back in two thousand and fifteen",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "nineteen ninety six",
+        "Start": 13,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1996",
+              "type": "daterange",
+              "start": "1996-01-01",
+              "end": "1997-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "two thousand and fifteen",
+        "Start": 50,
+        "End": 73,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

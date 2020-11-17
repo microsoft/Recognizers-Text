@@ -1767,7 +1767,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(trimmed_source)):
             return result
 
-        year = int(match.group())
+        year = int(self.config.date_extractor.get_year_from_text(match))
         begin_date = DateUtils.safe_create_from_value(
             DateUtils.min_value, year, 1, 1)
         end_date = DateUtils.safe_create_from_value(
