@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static ImmutableDictionary<string, long> swedishWrittenFractionLookupMap;
+
         public SwedishNumberParserConfiguration(INumberOptionsConfiguration config)
         {
 
@@ -44,6 +46,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+
+            swedishWrittenFractionLookupMap = NumbersDefinitions.SwedishWrittenFractionLookupMap.ToImmutableDictionary();
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -68,6 +72,24 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             }
 
             return fracWords;
+        }
+
+        public override long ResolveCompositeNumber(string numberStr)
+        {
+            var resolvedNumber = base.ResolveCompositeNumber(numberStr);
+
+            if (resolvedNumber == 0)
+            {
+                var tempResult = swedishWrittenFractionLookupMap.FirstOrDefault(k =>
+                    {
+                        return numberStr.StartsWith(k.Key);
+                    });
+
+                resolvedNumber = tempResult.Value;
+            }
+
+            return resolvedNumber;
+
         }
     }
 }

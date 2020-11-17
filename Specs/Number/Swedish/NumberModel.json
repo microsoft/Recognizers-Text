@@ -1285,7 +1285,6 @@
   {
     "Input": "tjugo femtedelar",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug":  true,
     "Results": [
       {
         "Text": "tjugo femtedelar",
@@ -1332,10 +1331,24 @@
     ]
   },
   {
-    "Input": "en tjugoförstedel",
-    "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not resolved correctly.",
+    "Input": "en tjugofemtedel",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
+    "Results": [
+      {
+        "Text": "en tjugofemtedel",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,04"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "en tjugoförstedel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en tjugoförstedel",
@@ -1350,25 +1363,25 @@
     ]
   },
   {
-    "Input": "en tjugo femtedel",
+    "Input": "en tjugoförstedels andel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "en tjugo femtedel",
+        "Text": "en tjugoförstedels",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0,04"
+          "value": "0,0476190476190476"
         },
         "Start": 0,
-        "End": 16
+        "End": 17
       }
     ]
   },
   {
     "Input": "tre tjugoförstedelar",
-    "Comment": "Correspons to writing 'Three twentyfirsts'. Compound fraction expressions are currently not handled.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
     "Results": [
       {
         "Text": "tre tjugoförstedelar",
@@ -1379,6 +1392,23 @@
         },
         "Start": 0,
         "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "hans andel var de resterande tre tjugoförstedelarna",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "tre tjugoförstedelarna",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,142857142857143"
+        },
+        "Start": 29,
+        "End": 50
       }
     ]
   },
