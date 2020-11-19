@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string SingleLiangRegex = $@"(?<!{ContinuouslyNumberRegex})两(?!{ContinuouslyNumberRegex})";
       public static readonly string NotSingleRegex = $@"((({DigitNumPlusRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*{ZeroToNineIntegerRegex})\s*|{ZeroToNineFullHalfRegex})(((({DigitNumPlusRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?(?<!两)";
       public static readonly string SingleRegex = $@"((?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?<!两)|{SingleLiangRegex})(?={AllowListRegex})";
-      public static readonly string AllIntRegex = $@"((((({DigitNumPlusRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*{ZeroToNineIntegerRegex})\s*|{ZeroToNineFullHalfRegex})(((({DigitNumPlusRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})";
+      public static readonly string AllIntRegex = $@"((((({DigitNumPlusRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾])\s*)(((({DigitNumPlusRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly string NumbersSpecialsChars = $@"(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+";

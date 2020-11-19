@@ -148,7 +148,7 @@ class ChineseNumeric:
     SingleLiangRegex = f'(?<!{ContinuouslyNumberRegex})两(?!{ContinuouslyNumberRegex})'
     NotSingleRegex = f'((({DigitNumPlusRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\\s*{ZeroToNineIntegerRegex})\\s*|{ZeroToNineFullHalfRegex})(((({DigitNumPlusRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|零)\\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?(?<!两)'
     SingleRegex = f'((?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?<!两)|{SingleLiangRegex})(?={AllowListRegex})'
-    AllIntRegex = f'((((({DigitNumPlusRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\\s*{ZeroToNineIntegerRegex})\\s*|{ZeroToNineFullHalfRegex})(((({DigitNumPlusRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|零)\\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})'
+    AllIntRegex = f'((((({DigitNumPlusRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾])\\s*)(((({DigitNumPlusRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|零)\\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
     NumbersSpecialsChars = f'(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?{ZeroToNineFullHalfRegex}+'

@@ -229,7 +229,7 @@ public class ChineseNumeric {
             .replace("{AllowListRegex}", AllowListRegex)
             .replace("{SingleLiangRegex}", SingleLiangRegex);
 
-    public static final String AllIntRegex = "((((({DigitNumPlusRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|[十拾]|{RoundNumberIntegerRegex}\\s*{ZeroToNineIntegerRegex})\\s*|{ZeroToNineFullHalfRegex})(((({DigitNumPlusRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|零)\\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})"
+    public static final String AllIntRegex = "((((({DigitNumPlusRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|[十拾])\\s*)(((({DigitNumPlusRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){1,2}|零)\\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})"
             .replace("{SingleLiangRegex}", SingleLiangRegex)
             .replace("{DigitNumPlusRegex}", DigitNumPlusRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
