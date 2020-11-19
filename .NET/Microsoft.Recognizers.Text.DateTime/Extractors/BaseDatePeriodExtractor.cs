@@ -154,14 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                match = this.config.FutureRegex.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
                 match = this.config.FutureSuffixRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
