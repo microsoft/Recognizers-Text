@@ -6,6 +6,9 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -344,8 +347,10 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
     // Parse unit phrase. "万", "億",...
     private String replaceUnit(String resultText) {
-        for (Map.Entry<String, String> p : cjkConfig.getUnitMap().entrySet()) {
-            resultText = resultText.replace(p.getKey(), p.getValue());
+        List<String> sortedUnitMap = new ArrayList<>(cjkConfig.getUnitMap().keySet());
+        Collections.sort(sortedUnitMap, (a,b) -> a.length() - b.length());
+        for (String p : sortedUnitMap) {
+            resultText = resultText.replace(p, cjkConfig.getUnitMap().get(p));
         }
 
         return resultText;
