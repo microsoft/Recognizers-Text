@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string RangePrefixRegex = @"(arası(nda|na)?|'s[iı]n[ae](\s+(kadar|dek|değin))?|((gününe|'[ae]|y[ae]|n[ae])\s+)?(kadar|dek|değin)|'y[ae](\s+(kadar|dek|değin))?|'[ea]|(?<!'\p{L}+)[ea](\s+(kadar|dek|değin)\b))";
       public const string CenturySuffixRegex = @"(^yüzyıl)";
       public const string ReferencePrefixRegex = @"(o|şu|aynı)\b";
-      public const string FutureSuffixRegex = @"\b(ileride|gelecekte)\b";
+      public static readonly string FutureSuffixRegex = $@"\b({NextPrefixRegex}|ileride|gelecekte)\b";
       public const string DayRegex = @"((?<day>10|20|30|31|(1|2)[1-9]|0?[1-9])('i|'si|'sı|'ü|'u)?)";
       public const string ImplicitDayRegex = @"(?<day>(10|20|30|31|(1|2)[1-9])('i|'si|'sı|'ü|'u))(?=\b)";
       public const string DayFromSuffixRegex = @"(?<day>(1|5|8|11|15|18|21|25|28|31)'inden|(2|7|12|17|20|22|27)'sinden|(3|4|13|14|23|24)'ünden|(6|16|26)'sından|(9|10|19|29|30)'undan)";

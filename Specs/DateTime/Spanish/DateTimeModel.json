@@ -5728,13 +5728,12 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "este viernes 15 de junio ",
+        "Text": "este viernes 15 de junio",
         "Start": 57,
-        "End": 81,
+        "End": 80,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -7556,8 +7555,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "anoche",
@@ -9431,8 +9429,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
@@ -10848,8 +10845,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "fin de día",
@@ -13064,8 +13060,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "mié 26 de octubre 15:50:06 2016",
@@ -13616,13 +13611,12 @@
     "Context": {
       "ReferenceDateTime": "2019-05-23T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "después del año 202",
+        "Text": "después del año 2020",
         "Start": 20,
-        "End": 38,
+        "End": 39,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -14100,20 +14094,35 @@
     "Context": {
       "ReferenceDateTime": "2019-06-03T12:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "primero de 2000",
-        "Start": 3,
+        "Text": "2000",
+        "Start": 14,
         "End": 17,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "2000-01-01",
-              "type": "date",
-              "value": "2000-01-01"
+              "timex": "2000",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2001-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "un día",
+        "Start": 23,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
             }
           ]
         }
@@ -14125,11 +14134,10 @@
     "Context": {
       "ReferenceDateTime": "2019-06-03T12:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "1 Ene 2012",
+        "Text": "1 ene 2012",
         "Start": 0,
         "End": 9,
         "TypeName": "datetimeV2.date",
@@ -14139,6 +14147,21 @@
               "timex": "2012-01-01",
               "type": "date",
               "value": "2012-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "un día",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
             }
           ]
         }
@@ -15633,8 +15656,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "esta tarde",
@@ -15644,10 +15666,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019-07-30TAF",
+              "timex": "2019-07-30TEV",
               "type": "datetimerange",
-              "start": "2019-07-30 12:00:00",
-              "end": "2019-07-30 16:00:00"
+              "start": "2019-07-30 16:00:00",
+              "end": "2019-07-30 20:00:00"
             }
           ]
         }
@@ -15659,8 +15681,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "esta tarde",
@@ -15670,10 +15691,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019-07-30TAF",
+              "timex": "2019-07-30TEV",
               "type": "datetimerange",
-              "start": "2019-07-30 12:00:00",
-              "end": "2019-07-30 16:00:00"
+              "start": "2019-07-30 16:00:00",
+              "end": "2019-07-30 20:00:00"
             }
           ]
         }
@@ -15685,8 +15706,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "esta tarde",
@@ -15696,10 +15716,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019-07-30TAF",
+              "timex": "2019-07-30TEV",
               "type": "datetimerange",
-              "start": "2019-07-30 12:00:00",
-              "end": "2019-07-30 16:00:00"
+              "start": "2019-07-30 16:00:00",
+              "end": "2019-07-30 20:00:00"
             }
           ]
         }
@@ -15958,8 +15978,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "3 años",
@@ -15983,8 +16002,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en 3 años",
@@ -16056,8 +16074,7 @@
   },
   {
     "Input": "6,107.31 ago-2019 no debe incluir el decimal",
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "ago-2019",
@@ -16079,14 +16096,12 @@
   },
   {
     "Input": "0.8/15 parece una fórmula",
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "8/1.5 parece una fórmula",
-    "Comment": "EXTERROR Extraction failures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
@@ -19905,6 +19920,120 @@
               "type": "daterange",
               "start": "2018-01-01",
               "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El primero de enero de 2000 fue un día especial para mí.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-03T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "primero de enero de 2000",
+        "Start": 3,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000-01-01",
+              "type": "date",
+              "value": "2000-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "un día",
+        "Start": 32,
+        "End": 37,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos a tomar un café en el edificio 34 este pasado mediodia",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "este pasado mediodia",
+        "Start": 40,
+        "End": 59,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-30TAF",
+              "type": "datetimerange",
+              "start": "2019-07-30 12:00:00",
+              "end": "2019-07-30 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos a tomar un café en el edificio 4 este pasado mediodia",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "este pasado mediodia",
+        "Start": 39,
+        "End": 58,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-30TAF",
+              "type": "datetimerange",
+              "start": "2019-07-30 12:00:00",
+              "end": "2019-07-30 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "134 este pasado mediodia",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "este pasado mediodia",
+        "Start": 4,
+        "End": 23,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-30TAF",
+              "type": "datetimerange",
+              "start": "2019-07-30 12:00:00",
+              "end": "2019-07-30 16:00:00"
             }
           ]
         }
