@@ -507,5 +507,38 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "五月三十日",
+    "Results": [
+      {
+        "Text": "五月三十日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "五月三十一日",
+    "Results": [
+      {
+        "Text": "五月三十一日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "一月二十三",
+    "Results": [
+      {
+        "Text": "一月二十三",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]

@@ -1561,39 +1561,6 @@
   },
   {
     "Input": "民国三年",
-    "Results": [
-      {
-        "Text": "民国三年",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "雍正十六年",
-    "Results": [
-      {
-        "Text": "雍正十六年",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "雍正二十三年十二月",
-    "Results": [
-      {
-        "Text": "雍正二十三年十二月",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "民国三年",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
