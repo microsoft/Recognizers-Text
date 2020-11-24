@@ -1059,5 +1059,51 @@
         "Length": 2
       }
     ]
+  },
+  {
+    "Input": "神龙二年正月初一",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙二年正月初一",
+        "Type": "date",
+        "Value": {
+          "Timex": "0706-01-01",
+          "FutureResolution": {
+            "date": "0706-01-01"
+          },
+          "PastResolution": {
+            "date": "0706-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "雍正四年大年三十",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正四年大年三十",
+        "Type": "date",
+        "Value": {
+          "Timex": "1726-01-30",
+          "FutureResolution": {
+            "date": "1726-01-30"
+          },
+          "PastResolution": {
+            "date": "1726-01-30"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
   }
 ]

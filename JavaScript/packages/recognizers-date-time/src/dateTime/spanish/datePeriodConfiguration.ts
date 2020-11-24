@@ -128,6 +128,8 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly cardinalMap: ReadonlyMap<string, number>;
     readonly seasonMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
+    readonly regionTitleRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     readonly nextPrefixRegex: RegExp;
     readonly previousPrefixRegex: RegExp;

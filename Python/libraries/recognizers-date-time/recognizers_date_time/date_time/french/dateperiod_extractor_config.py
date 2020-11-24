@@ -1,4 +1,4 @@
-from typing import List, Pattern
+from typing import Dict, List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser
@@ -208,6 +208,14 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def all_half_year_regex(self) -> Pattern:
         return self._all_half_year_regex
+
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
 
     def __init__(self):
         self._all_half_year_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AllHalfYearRegex)

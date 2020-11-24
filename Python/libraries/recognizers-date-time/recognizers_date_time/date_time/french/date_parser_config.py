@@ -129,6 +129,14 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
     def date_token_prefix(self) -> str:
         return self._date_token_prefix
 
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor

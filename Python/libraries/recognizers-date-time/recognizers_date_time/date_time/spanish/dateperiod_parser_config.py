@@ -197,6 +197,14 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def relative_decade_regex(self) -> Pattern:
         return self._relative_decade_regex
 
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._relative_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.RelativeRegex)

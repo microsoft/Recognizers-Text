@@ -164,6 +164,14 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         return None
 
     @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
+    @property
     def day_of_week(self) -> Dict[str, int]:
         return None
 

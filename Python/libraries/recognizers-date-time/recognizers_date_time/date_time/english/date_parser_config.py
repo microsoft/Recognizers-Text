@@ -124,6 +124,14 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     def date_token_prefix(self) -> str:
         return self._date_token_prefix
 
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
     # The following three regexes only used in this configuration
     # They are not used in the base parser, therefore they are not extracted
     # If the spanish date parser need the same regexes, they should be extracted

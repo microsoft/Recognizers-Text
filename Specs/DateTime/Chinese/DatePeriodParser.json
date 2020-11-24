@@ -1458,5 +1458,213 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "神龙元年十一月，武则天去世",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙元年十一月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0705-11",
+          "FutureResolution": {
+            "startDate": "0705-11-01",
+            "endDate": "0705-12-01"
+          },
+          "PastResolution": {
+            "startDate": "0705-11-01",
+            "endDate": "0705-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "康熙三年五月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙三年五月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1664-05",
+          "FutureResolution": {
+            "startDate": "1664-05-01",
+            "endDate": "1664-06-01"
+          },
+          "PastResolution": {
+            "startDate": "1664-05-01",
+            "endDate": "1664-06-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "康熙二十年9月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙二十年9月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1681-09",
+          "FutureResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          },
+          "PastResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "康熙20年9月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙20年9月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1681-09",
+          "FutureResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          },
+          "PastResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "民国三年",
+    "Results": [
+      {
+        "Text": "民国三年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "雍正十六年",
+    "Results": [
+      {
+        "Text": "雍正十六年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "雍正二十三年十二月",
+    "Results": [
+      {
+        "Text": "雍正二十三年十二月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "民国三年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "民国三年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1914",
+          "FutureResolution": {
+            "startDate": "1914-01-01",
+            "endDate": "1915-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1914-01-01",
+            "endDate": "1915-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "雍正十六年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正十六年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1738",
+          "FutureResolution": {
+            "startDate": "1738-01-01",
+            "endDate": "1739-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1738-01-01",
+            "endDate": "1739-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "雍正二十三年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正二十三年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1745-12",
+          "FutureResolution": {
+            "startDate": "1745-12-01",
+            "endDate": "1746-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1745-12-01",
+            "endDate": "1746-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
   }
 ]

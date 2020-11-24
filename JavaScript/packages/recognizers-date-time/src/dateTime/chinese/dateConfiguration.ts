@@ -137,6 +137,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     readonly relativeMonthRegex: RegExp;
     readonly strictRelativeRegex: RegExp;
     readonly relativeWeekDayRegex: RegExp;
+    readonly regionTitleRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
 
@@ -202,7 +204,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         this.weekDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekDayRegex);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
-
+        this.regionTitleRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.RegionTitleRegex);
+        this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
     }
 }
 
@@ -539,6 +542,21 @@ export class ChineseDateParser extends BaseDateParser {
 
     private convertChineseYearToNumber(source: string): number {
         let year = 0;
+
+        let regionTitleMatch = RegExpUtility.getMatches(this.config.regionTitleRegex, source).pop();
+        if (regionTitleMatch) {
+            // handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+            let basicYear = this.config.dynastyYearMap.get(regionTitleMatch.value);
+            let biasYearStr = source.substr(regionTitleMatch.value.length, source.length - regionTitleMatch.value.length);
+            let biasYear = 1;
+            if (biasYearStr != "元") {
+                let er = this.config.integerExtractor.extract(biasYearStr).pop();
+                biasYear = Number.parseInt(this.config.numberParser.parse(er).value);
+            }
+            year = basicYear + biasYear - 1;
+            return year;
+        }
+
         let er = this.config.integerExtractor.extract(source).pop();
         if (er && er.type === NumberConstants.SYS_NUM_INTEGER) {
             year = Number.parseInt(this.config.numberParser.parse(er).value);

@@ -263,6 +263,8 @@ export interface IDatePeriodParserConfiguration {
     cardinalMap: ReadonlyMap<string, number>
     seasonMap: ReadonlyMap<string, string>
     unitMap: ReadonlyMap<string, string>
+    regionTitleRegex: RegExp
+    dynastyYearMap: ReadonlyMap<string, number>
     getSwiftDayOrMonth(source: string): number
     getSwiftYear(source: string): number
     isFuture(source: string): boolean

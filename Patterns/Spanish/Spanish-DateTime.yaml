@@ -728,7 +728,6 @@ DayOfWeek: !dictionary
     ju: 4
     vi: 5
     sa: 6
-    do: 0
 MonthOfYear: !dictionary
   types: [ string, int ]
   entries:

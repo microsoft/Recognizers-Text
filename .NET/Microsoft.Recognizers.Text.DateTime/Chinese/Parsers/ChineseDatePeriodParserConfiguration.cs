@@ -207,6 +207,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var year = 0;
             var num = 0;
 
+            var regionTitleMatch = ChineseDateExtractorConfiguration.RegionTitleRegex.MatchExact(yearChsStr, trim: true);
+            if (regionTitleMatch != null && regionTitleMatch.Value != string.Empty)
+            {
+                // handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+                int basicYear = ChineseDateExtractorConfiguration.DynastyYearMap[regionTitleMatch.Value];
+                string biasYearStr = yearChsStr.Substring(regionTitleMatch.Value.Length, yearChsStr.Length - regionTitleMatch.Length);
+                int biasYear = 1;
+                if (biasYearStr != "元")
+                {
+                    biasYear = Convert.ToInt32((double)(integerParser.Parse(integerExtractor.Extract(biasYearStr)[0]).Value ?? 0));
+                }
+
+                year = basicYear + biasYear - 1;
+                return year;
+            }
+
             var er = integerExtractor.Extract(yearChsStr);
             if (er.Count != 0)
             {

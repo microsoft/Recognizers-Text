@@ -1,4 +1,4 @@
-from typing import List, Pattern
+from typing import Dict, List, Pattern
 
 from recognizers_text import Extractor
 from recognizers_text.utilities import RegExpUtility
@@ -164,6 +164,14 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def century_suffix_regex(self) -> Pattern:
         return self._century_suffix_regex
+
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
 
     def __init__(self):
         self._year_period_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearPeriodRegex)

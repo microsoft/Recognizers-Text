@@ -197,6 +197,14 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._later_regex = RegExpUtility.get_safe_reg_exp(

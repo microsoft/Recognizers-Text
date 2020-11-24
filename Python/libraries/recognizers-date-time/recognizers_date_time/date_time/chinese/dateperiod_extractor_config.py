@@ -1,4 +1,4 @@
-from typing import List, Pattern
+from typing import Dict, List, Pattern
 
 from recognizers_text import Extractor, Parser, RegExpUtility
 from recognizers_number import ChineseNumberExtractor, ChineseNumberParserConfiguration, BaseNumberParser, \
@@ -193,6 +193,14 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
 
     @property
     def range_connector_regex(self) -> Pattern:
+        return None
+
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
         return None
 
     def __init__(self):

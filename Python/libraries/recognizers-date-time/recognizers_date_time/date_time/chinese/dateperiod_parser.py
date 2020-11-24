@@ -432,6 +432,19 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
     def _convert_year(self, year_str: str, is_chinese: bool) -> int:
         year = -1
         if is_chinese:
+            region_title_match = regex.match(self.config.region_title_regex, year_str)
+            if region_title_match:
+                # handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+                basic_year = self.config.dynasty_year_map[region_title_match.group()]
+                bias_year_str = year_str[len(region_title_match.group()):]
+                if bias_year_str == "元":
+                    bias_year = 1
+                else:
+                    er = next(iter(self.integer_extractor.extract(bias_year_str)), None)
+                    bias_year = int(self.number_parser.parse(er).value)
+                year = int(basic_year + bias_year - 1)
+                return year
+
             year_num = 0
             er = next(iter(self.integer_extractor.extract(year_str)), None)
             if er and er.type == NumberConstants.SYS_NUM_INTEGER:

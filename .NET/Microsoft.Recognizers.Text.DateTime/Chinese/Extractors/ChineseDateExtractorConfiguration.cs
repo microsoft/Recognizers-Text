@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
@@ -23,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
+        public static readonly Regex RegionTitleRegex = new Regex(DateTimeDefinitions.RegionTitleRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
@@ -56,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(
                                                                                   new BaseNumberOptionsConfiguration(Culture.Chinese, NumberOptions.None)));
+
+        public static readonly ImmutableDictionary<string, int> DynastyYearMap = DateTimeDefinitions.DynastyYearMap.ToImmutableDictionary();
 
         public static readonly Regex[] DateRegexList =
         {

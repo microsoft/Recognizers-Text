@@ -132,6 +132,14 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
     def __init__(self):
         self._check_both_before_after = False
         if FrenchDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:

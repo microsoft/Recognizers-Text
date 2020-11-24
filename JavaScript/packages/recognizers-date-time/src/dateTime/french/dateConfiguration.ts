@@ -112,6 +112,8 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
+    readonly regionTitleRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(config: FrenchCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;

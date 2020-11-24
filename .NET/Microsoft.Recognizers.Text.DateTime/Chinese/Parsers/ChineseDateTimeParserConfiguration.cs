@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();
             DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
             MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
+            DynastyYearMap = DateTimeDefinitions.DynastyYearMap.ToImmutableDictionary();
             Numbers = InitNumbers();
 
             DateRegexList = ChineseDateExtractorConfiguration.DateRegexList;
@@ -44,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             RelativeRegex = ChineseDateExtractorConfiguration.RelativeRegex;
             StrictWeekDayRegex = ChineseDateExtractorConfiguration.WeekDayRegex;
             WeekDayOfMonthRegex = ChineseDateExtractorConfiguration.WeekDayOfMonthRegex;
+            RegionTitleRegex = ChineseDateExtractorConfiguration.RegionTitleRegex;
             BeforeRegex = ChineseMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = ChineseMergedExtractorConfiguration.AfterRegex;
             UntilRegex = ChineseMergedExtractorConfiguration.UntilRegex;
@@ -82,6 +84,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IDateTimeParser HolidayParser { get; }
 
+        public ImmutableDictionary<string, int> DynastyYearMap { get; }
+
         public ImmutableDictionary<string, string> UnitMap { get; }
 
         public ImmutableDictionary<string, long> UnitValueMap { get; }
@@ -101,6 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public ImmutableDictionary<string, int> Numbers { get; }
 
         public IEnumerable<Regex> DateRegexList { get; }
+
+        public Regex RegionTitleRegex { get; }
 
         public Regex NextRegex { get; }
 

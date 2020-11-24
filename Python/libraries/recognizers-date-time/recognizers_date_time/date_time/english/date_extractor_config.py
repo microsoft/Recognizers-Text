@@ -153,6 +153,14 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     def month_suffix_regex(self) -> Pattern:
         return self._month_suffix_regex
 
+    @property
+    def region_title_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
+
     def __init__(self):
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._date_regex_list = [

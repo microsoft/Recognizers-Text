@@ -485,5 +485,27 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "神龙二年正月初一",
+    "Results": [
+      {
+        "Text": "神龙二年正月初一",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "雍正四年大年三十",
+    "Results": [
+      {
+        "Text": "雍正四年大年三十",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
   }
 ]
