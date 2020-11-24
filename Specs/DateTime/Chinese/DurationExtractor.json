@@ -75,5 +75,17 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "还剩8天20时",
+    "NotSupported": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "8天20时",
+        "Type": "duration",
+        "Start": 2,
+        "Length": 5
+      }
+    ]
   }
 ]

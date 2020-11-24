@@ -347,10 +347,8 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
     // Parse unit phrase. "万", "億",...
     private String replaceUnit(String resultText) {
-        List<String> sortedUnitMap = new ArrayList<>(cjkConfig.getUnitMap().keySet());
-        Collections.sort(sortedUnitMap, (a,b) -> a.length() - b.length());
-        for (String p : sortedUnitMap) {
-            resultText = resultText.replace(p, cjkConfig.getUnitMap().get(p));
+        for (Map.Entry<String, String> p : cjkConfig.getUnitMap().entrySet()) {
+            resultText = resultText.replace(p.getKey(), p.getValue());
         }
 
         return resultText;

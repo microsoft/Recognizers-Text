@@ -9,7 +9,9 @@ import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.regex.Pattern;
 
 public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfiguration {
@@ -40,7 +42,16 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 ChineseNumeric.ZeroToNineMap,
                 ChineseNumeric.RoundNumberMapChar,
                 ChineseNumeric.FullToHalfMap,
-                ChineseNumeric.UnitMap,
+                new TreeMap<String, String>(new Comparator<String>() {
+                    @Override
+                    public int compare(String a, String b) {
+                        return a.length() > b.length() ? 1 : -1;
+                    }
+                }) {
+                {
+                    putAll(ChineseNumeric.UnitMap);
+                }
+            },
                 ChineseNumeric.TratoSimMap,
                 ChineseNumeric.RoundDirectList,
                 Pattern.compile(ChineseNumeric.FracSplitRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
