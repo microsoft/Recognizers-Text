@@ -928,5 +928,95 @@
         "End": 4
       }
     ]
+  },
+  {
+    "Input": "三十万多亿",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "三十万多亿",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30000000000000,)"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "四百六十万多亿",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "四百六十万多亿",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(460000000000000,)"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "三十一万多亿",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "三十一万多亿",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(31000000000000,)"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "四百六十一万多亿",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "四百六十一万多亿",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(461000000000000,)"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "十几万多亿",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "十几万多亿",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10000000000000,)"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "500万余亿",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "500万余亿",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(500000000000000,)"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
   }
 ]

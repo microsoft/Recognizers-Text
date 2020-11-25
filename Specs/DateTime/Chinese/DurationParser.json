@@ -151,5 +151,29 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "还剩8天20时",
+    "NotSupported": "dotnet,javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8天20时",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P8DT20H",
+          "FutureResolution": {
+            "duration": "763200"
+          },
+          "PastResolution": {
+            "duration": "763200"
+          }
+        },
+        "Start": 2,
+        "Length": 5
+      }
+    ]
   }
 ]
