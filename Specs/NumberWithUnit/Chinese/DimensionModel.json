@@ -396,5 +396,85 @@
         "End": 4
       }
     ]
+  },
+  {
+    "Input": "两万两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "两万两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "20000",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "二两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "二两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "三十两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "三十两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "30",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三千两百两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "三千两百两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3200",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1234两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "1234两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1234",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
   }
 ]
