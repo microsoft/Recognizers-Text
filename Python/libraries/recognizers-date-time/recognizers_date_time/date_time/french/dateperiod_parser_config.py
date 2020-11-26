@@ -198,7 +198,7 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._relative_decade_regex
 
     @property
-    def region_title_regex(self) -> Pattern:
+    def dynasty_year_regex(self) -> Pattern:
         return None
 
     @property

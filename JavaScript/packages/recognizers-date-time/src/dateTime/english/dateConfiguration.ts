@@ -126,8 +126,6 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
-    readonly regionTitleRegex: RegExp;
-    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     // The following three regexes only used in this configuration
     // They are not used in the base parser, therefore they are not extracted

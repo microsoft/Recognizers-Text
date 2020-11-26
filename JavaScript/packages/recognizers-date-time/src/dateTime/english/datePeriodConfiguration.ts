@@ -136,8 +136,6 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly cardinalMap: ReadonlyMap<string, number>
     readonly seasonMap: ReadonlyMap<string, string>
     readonly unitMap: ReadonlyMap<string, string>
-    readonly regionTitleRegex: RegExp;
-    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.dateExtractor = config.dateExtractor;

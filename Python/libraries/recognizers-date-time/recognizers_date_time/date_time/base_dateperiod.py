@@ -210,16 +210,6 @@ class DatePeriodExtractorConfiguration(ABC):
     def previous_prefix_regex(self) -> Pattern:
         raise NotImplementedError
 
-    @property
-    @abstractmethod
-    def region_title_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def dynasty_year_map(self) -> Dict[str, int]:
-        raise NotImplementedError
-
 
 class BaseDatePeriodExtractor(DateTimeExtractor):
     @property

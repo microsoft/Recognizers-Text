@@ -96,14 +96,6 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         return self._week_day_regex
 
     @property
-    def region_title_regex(self) -> Pattern:
-        return self._region_title_regex
-
-    @property
-    def dynasty_year_map(self) -> Dict[str, int]:
-        return self._dynasty_year_map
-
-    @property
     def last_regex(self) -> Pattern:
         return self._last_regex
 
@@ -138,6 +130,18 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
     def date_token_prefix(self) -> any:
         return None
+
+    @property
+    def dynasty_year_regex(self) -> Pattern:
+        return self._dynasty_year_regex
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return self._dynasty_year_map
+
+    @property
+    def dynasty_start_year(self) -> str:
+        return self._dynasty_start_year
 
     def get_swift_day(self, source: str) -> int:
         source = source.strip().lower()
@@ -213,9 +217,10 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             ChineseDateTime.WeekDayOfMonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayRegex)
-        self._region_title_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.RegionTitleRegex)
+        self._dynasty_year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DynastyYearRegex)
         self._dynasty_year_map = ChineseDateTime.DynastyYearMap
         self._integer_extractor = ChineseIntegerExtractor()
         self._number_parser = CJKNumberParser(ChineseNumberParserConfiguration())
         self._date_extractor = None
+        self._dynasty_start_year = ChineseDateTime.DynastyStartYear

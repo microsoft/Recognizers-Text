@@ -130,16 +130,6 @@ class DateExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def region_title_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def dynasty_year_map(self) -> Dict[str, int]:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
     def prefix_article_regex(self) -> Pattern:
         raise NotImplementedError
 

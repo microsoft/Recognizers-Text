@@ -201,8 +201,6 @@ export interface IDateParserConfiguration {
     dayOfWeek: ReadonlyMap<string, number>
     unitMap: ReadonlyMap<string, string>
     cardinalMap: ReadonlyMap<string, number>
-    regionTitleRegex: RegExp
-    dynastyYearMap: ReadonlyMap<string, number>
     dateRegex: RegExp[]
     onRegex: RegExp
     specialDayRegex: RegExp

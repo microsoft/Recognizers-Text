@@ -174,8 +174,6 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly seasonMap: ReadonlyMap<string, string>
     readonly unitMap: ReadonlyMap<string, string>
     readonly nowRegex: RegExp
-    readonly regionTitleRegex: RegExp;
-    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex);
@@ -200,8 +198,6 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodNextRegex);
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
-        this.regionTitleRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.RegionTitleRegex);
-        this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
     }
 
     getSwiftDayOrMonth(source: string): number {
@@ -302,6 +298,9 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     private readonly YearToYearSuffixRequired: RegExp;
     private readonly chineseYearRegex: RegExp;
     private readonly seasonWithYearRegex: RegExp;
+    readonly dynastyStartYear: string;
+    readonly dynastyYearRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDatePeriodParserConfiguration(dmyDateFormat);
@@ -317,6 +316,9 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         this.YearToYearSuffixRequired = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired);
         this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
         this.seasonWithYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear);
+        this.dynastyStartYear = ChineseDateTime.DynastyStartYear;
+        this.dynastyYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DynastyYearRegex);
+        this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -495,18 +497,9 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let year = -1;
         let er: ExtractResult;
         if (isChinese) {
-            let regionTitleMatch = RegExpUtility.getMatches(this.config.regionTitleRegex, yearStr).pop();
-            if (regionTitleMatch) {
-                // handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
-                let basicYear = this.config.dynastyYearMap.get(regionTitleMatch.value);
-                let biasYearStr = yearStr.substr(regionTitleMatch.value.length, yearStr.length - regionTitleMatch.value.length);
-                let biasYear = 1;
-                if (biasYearStr != "元") {
-                    let er = this.integerExtractor.extract(biasYearStr).pop();
-                    biasYear = Number.parseInt(this.numberParser.parse(er).value);
-                }
-                year = basicYear + biasYear - 1;
-                return year;
+            let dynastyYear = DateUtils.parserDynastyYear(yearStr, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.integerExtractor, this.numberParser);
+            if (dynastyYear > 0) {
+                return dynastyYear;
             }
 
             let yearNum = 0;

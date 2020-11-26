@@ -121,8 +121,6 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
-    readonly regionTitleRegex: RegExp;
-    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     // TODO: implement the relative day regex if needed. If yes, they should be abstracted
     static readonly relativeDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDayRegex);

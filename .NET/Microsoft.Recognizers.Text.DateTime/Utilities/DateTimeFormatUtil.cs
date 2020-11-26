@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -11,6 +13,28 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
         private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
+
+        public static int ParserDynastyYear(string yearStr, Regex dynastyYearRegex, string dynastyStartYear, ImmutableDictionary<string, int> dynastyYearMap, IExtractor integerExtractor, IParser numberParser)
+        {
+            int year = -1;
+            var regionTitleMatch = dynastyYearRegex.MatchExact(yearStr, trim: true);
+            if (regionTitleMatch.Success)
+            {
+                // handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+                string dynastyYearStr = regionTitleMatch.Groups["dynasty"].Value;
+                string biasYearStr = regionTitleMatch.Groups["biasYear"].Value;
+                int basicYear = dynastyYearMap[dynastyYearStr];
+                int biasYear = 1;
+                if (biasYearStr != dynastyStartYear)
+                {
+                    biasYear = Convert.ToInt32((double)(numberParser.Parse(integerExtractor.Extract(biasYearStr)[0]).Value ?? 0));
+                }
+
+                year = basicYear + biasYear - 1;
+            }
+
+            return year;
+        }
 
         public static string LuisDate(int year)
         {
