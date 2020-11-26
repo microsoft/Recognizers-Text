@@ -1613,6 +1613,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
                     // Cases like "within 3 days before/after today" is not handled here (4th condition)
+                    var isMatch = false;
                     if (config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex) && string.IsNullOrEmpty(afterStr))
                     {
@@ -1622,6 +1623,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // but for the "within" case it should start from the current day.
                         beginDate = modAndDateResult.BeginDate.AddDays(-1);
                         endDate = modAndDateResult.EndDate.AddDays(-1);
+                        isMatch = true;
                     }
                     else if (this.config.CheckBothBeforeAfter)
                     {
@@ -1644,12 +1646,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
                         beginDate = modAndDateResult.BeginDate;
                         endDate = modAndDateResult.EndDate;
-                    }
-                    else if (config.FutureRegex.IsMatch(afterStr))
-                    {
-                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
-                        beginDate = modAndDateResult.BeginDate;
-                        endDate = modAndDateResult.EndDate;
+                        isMatch = true;
                     }
 
                     if (config.FutureSuffixRegex.IsMatch(afterStr))
@@ -1661,7 +1658,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handle the "in two weeks" case which means the second week
                     if (config.InConnectorRegex.IsExactMatch(beforeStr, trim: true) &&
-                        !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
+                        !DurationParsingUtil.IsMultipleDuration(durationResult.Timex) && !isMatch)
                     {
                         modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 

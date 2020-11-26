@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
             this.TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.OrderBy(o => o.Key.Length).ToImmutableDictionary(o => o.Key, p => p.Value);
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 

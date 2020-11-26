@@ -1,8 +1,9 @@
-import { IExtractor, ExtractResult, QueryProcessor, MetaData } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, QueryProcessor, MetaData, Match, StringUtility } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers";
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
 import { IDateTimeExtractor } from "./baseDateTime";
+import { BaseNumberParser } from "@microsoft/recognizers-text-number";
 
 export class Token {
     constructor(start: number, end: number, metaData: MetaData = null) {
@@ -678,5 +679,80 @@ export class TimexUtil {
         }
 
         return result;
+    }
+}
+
+export class AbstractYearExtractor {
+
+    public static getYearFromText(match: Match, numberParser: BaseNumberParser): number {
+
+        let year = -1;
+
+        let yearStr = match.groups('year').value;
+        let writtenYearStr = match.groups('fullyear').value;
+        if (!StringUtility.isNullOrEmpty(yearStr) && !(yearStr == writtenYearStr)) {
+            year = Number.parseInt(yearStr, 10);
+            if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+            {
+                year += 1900;
+            }
+            else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+            {
+                year += 2000;
+            }
+        }
+        else { 
+            let firstTwoYearNumStr = match.groups('firsttwoyearnum').value;
+            if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
+                let er = new ExtractResult();
+                er.text = firstTwoYearNumStr;
+                er.start = match.groups('firsttwoyearnum').index;
+                er.length = match.groups('firsttwoyearnum').length;
+
+                let firstTwoYearNum = Number.parseInt(numberParser.parse(er).value, 10);
+
+                let lastTwoYearNum = 0;
+                let lastTwoYearNumStr = match.groups('lasttwoyearnum').value;
+                if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr)) {
+                    er.text = lastTwoYearNumStr;
+                    er.start = match.groups('lasttwoyearnum').index;
+                    er.length = match.groups('lasttwoyearnum').length;
+
+                    lastTwoYearNum = Number.parseInt(numberParser.parse(er).value, 10);
+                }
+
+                if (firstTwoYearNum < 100 && lastTwoYearNum === 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 === 0 && lastTwoYearNumStr.trim().split(' ').length === 1) {
+                    year = -1;
+                }
+
+                if (firstTwoYearNum >= 100) {
+                    year = (firstTwoYearNum + lastTwoYearNum);
+                }
+                else {
+                    year = (firstTwoYearNum * 100 + lastTwoYearNum);
+                }
+            }
+            else {
+                if (!StringUtility.isNullOrEmpty(writtenYearStr)) {
+                    let er = new ExtractResult();
+                    er.text = writtenYearStr;
+                    er.start = match.groups('fullyear').index;
+                    er.length = match.groups('fullyear').length;
+
+                    let year = Number.parseInt(numberParser.parse(er).value, 10);
+
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+                    {
+                        year += 1900;
+                    }
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+                    {
+                        year += 2000;
+                    }
+                }
+            }
+        }
+
+        return year;
     }
 }

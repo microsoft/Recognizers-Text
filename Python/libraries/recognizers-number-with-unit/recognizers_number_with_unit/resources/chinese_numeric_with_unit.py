@@ -569,14 +569,19 @@ class ChineseNumericWithUnit:
                                 ("Ton", "公吨|吨|t"),
                                 ("Pound", "磅"),
                                 ("Ounce", "盎司"),
+                                ("Liang", "两"),
                                 ("Bit", "比特|位|b|bit"),
                                 ("Kilobit", "千比特|千位|kb|Kb"),
+                                ("Megabit", "兆比特|兆位|mb|Mb"),
+                                ("Gigabit", "十亿比特|千兆比特|十亿位|千兆位|gb|Gb"),
+                                ("Terabit", "万亿比特|兆兆比特|万亿位|兆兆位|tb|Tb"),
+                                ("Petabit", "千兆兆比特|千万亿比特|千兆兆位|千万亿位|pb|Pb"),
+                                ("Byte", "字节|byte|Byte"),
+                                ("Kilobyte", "千字节|kB|KB"),
                                 ("Megabyte", "兆字节|mB|MB"),
                                 ("Gigabyte", "十亿字节|千兆字节|gB|GB"),
                                 ("Terabyte", "万亿字节|兆兆字节|tB|TB"),
-                                ("Petabyte", "千兆兆字节|千万亿字节|pB|PB"),
-                                ("Byte", "字节|byte|Byte"),
-                                ("Kilobyte", "千字节|kB|KB")])
+                                ("Petabyte", "千兆兆字节|千万亿字节|pB|PB")])
     DimensionAmbiguousValues = [r'丈', r'位', r'克', r'分', r'升', r'寸', r'尺', r'斗', r'斤', r'桶', r'毫', r'石', r'码', r'磅', r'米', r'罐', r'里', r'm', r'km', r'dm', r'cm', r'mm', r'l', r'ml', r'kg', r'mg', r'g', r't', r'b', r'byte', r'kb', r'mb', r'gb', r'tb', r'pb']
     AmbiguityFiltersDict = dict([("五角", "五角大楼"),
                                  ("普尔", "标准普尔")])

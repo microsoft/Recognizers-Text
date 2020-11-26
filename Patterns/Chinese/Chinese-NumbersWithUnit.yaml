@@ -683,13 +683,14 @@ DimensionSuffixList: !dictionary
     Ton: 公吨|吨|t
     Pound: 磅
     Ounce: 盎司
+    Liang: 两
 # Information
     Bit: 比特|位|b|bit
     Kilobit: 千比特|千位|kb|Kb
-    Megabyte: 兆比特|兆位|mb|Mb
-    Gigabyte: 十亿比特|千兆比特|十亿位|千兆位|gb|Gb
-    Terabyte: 万亿比特|兆兆比特|万亿位|兆兆位|tb|Tb
-    Petabyte: 千兆兆比特|千万亿比特|千兆兆位|千万亿位|pb|Pb
+    Megabit: 兆比特|兆位|mb|Mb
+    Gigabit: 十亿比特|千兆比特|十亿位|千兆位|gb|Gb
+    Terabit: 万亿比特|兆兆比特|万亿位|兆兆位|tb|Tb
+    Petabit: 千兆兆比特|千万亿比特|千兆兆位|千万亿位|pb|Pb
     Byte: 字节|byte|Byte
     Kilobyte: 千字节|kB|KB
     Megabyte: 兆字节|mB|MB

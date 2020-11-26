@@ -5195,5 +5195,23 @@
         "End": 1
       }
     ]
+  },
+  {
+    "Input": "两",
+    "Results": [
+      {
+        "Text": "两",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "两两",
+    "Results": []
   }
 ]

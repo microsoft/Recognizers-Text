@@ -670,12 +670,6 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 tokens.append(Token(duration.start, duration.end + match.index + match.length))
                 continue
 
-            match = RegExpUtility.match_begin(self.config.future_regex, after_str, True)
-
-            if match and match.success:
-                tokens.append(Token(duration.start, duration.end + match.index + match.length))
-                continue
-
             match = RegExpUtility.match_begin(self.config.future_suffix_regex, after_str, True)
 
             if match and match.success:
@@ -1767,7 +1761,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(trimmed_source)):
             return result
 
-        year = int(match.group())
+        year = int(self.config.date_extractor.get_year_from_text(match))
         begin_date = DateUtils.safe_create_from_value(
             DateUtils.min_value, year, 1, 1)
         end_date = DateUtils.safe_create_from_value(
@@ -1979,16 +1973,18 @@ class BaseDatePeriodParser(DateTimeParser):
                 mod = TimeTypeConstants.BEFORE_MOD
                 begin_date = self.__get_swift_date(end_date, duration_result.timex, False)
 
+            is_match = False
             prefix_match = self.config.future_regex.search(before_str)
 
             if prefix_match and len(prefix_match.string) == len(before_str):
                 mod = TimeTypeConstants.AFTER_MOD
                 begin_date = reference + timedelta(days=1)
                 end_date = self.__get_swift_date(begin_date, duration_result.timex, True)
+                is_match = True
 
             prefix_match = self.config.in_connector_regex.search(before_str)
 
-            if prefix_match and len(prefix_match.string) == len(before_str):
+            if prefix_match and len(prefix_match.string) == len(before_str) and not is_match:
                 mod = TimeTypeConstants.AFTER_MOD
                 begin_date = reference + timedelta(days=1)
                 end_date = self.__get_swift_date(begin_date, duration_result.timex, True)

@@ -1348,5 +1348,140 @@
         "End": 29
       }
     ]
+  },
+  {
+    "Input": "encuentre ventas que no sean mayores a 30 o menores a 20",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mayores a 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        },
+        "Start": 29,
+        "End": 40
+      },
+      {
+        "Text": "menores a 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        },
+        "Start": 44,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "busque registros que las ventas sean 12, 15 o mayores que 20",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mayores que 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)"
+        },
+        "Start": 46,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "encuentre ventas menores o iguales a 30 o mayores a 50 y no de 60",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "menores o iguales a 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        },
+        "Start": 17,
+        "End": 38
+      },
+      {
+        "Text": "mayores a 50",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        },
+        "Start": 42,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "encuentre ventas superiores a 30 e inferiores o iguales a 40 o inferiores a 10",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "superiores a 30 e inferiores o iguales a 40",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,40]"
+        },
+        "Start": 17,
+        "End": 59
+      },
+      {
+        "Text": "inferiores a 10",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        },
+        "Start": 63,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "ventas de 0 a 2 y mayores de 4",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de 0 a 2",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[0,2)"
+        },
+        "Start": 7,
+        "End": 14
+      },
+      {
+        "Text": "mayores de 4",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4,)"
+        },
+        "Start": 18,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "ventas mayores que 3 y menores que 1",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mayores que 3",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(3,)"
+        },
+        "Start": 7,
+        "End": 19
+      },
+      {
+        "Text": "menores que 1",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,1)"
+        },
+        "Start": 23,
+        "End": 35
+      }
+    ]
   }
 ]
