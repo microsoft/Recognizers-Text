@@ -389,6 +389,69 @@ SwedishWrittenFractionLookupMap: !dictionary
         tjugosjund: 27
         tjugoåttond: 28
         tjugoniond: 29
+        trettioförst: 31
+        trettoiandr: 32
+        trettiotred: 33
+        trettiofjärd: 34
+        trettiofemt: 35
+        trettiosjätted: 36
+        trettiosjund: 37
+        trettioåttond: 38
+        trettioniond: 39
+        fyrtioförst: 41
+        fyrtioandr: 42
+        fyrtiotred: 43
+        fyrtiofjärd: 44
+        fyrtiofemt: 45
+        fyrtiosjätted: 46
+        fyrtiosjund: 47
+        fyrtioåttond: 48
+        fyrtioniond: 49
+        femtioförst: 51
+        femtioandr: 52
+        femtiotred: 53
+        femtiofjärd: 54
+        femtiofemt: 55
+        femtiosjätted: 56
+        femtiosjund: 57
+        femtioåttond: 58
+        femtioniond: 59
+        sextioförst: 61
+        sextioandr: 62
+        sextiotred: 63
+        sextiofjärd: 64
+        sextiofemt: 65
+        sextiosjätted: 66
+        sextiosjund: 67
+        sextioåttond: 68
+        sextioniond: 69
+        sjuttioförst: 71
+        sjuttioandr: 72
+        sjuttiotred: 73
+        sjuttiofjärd: 74
+        sjuttiofemt: 75
+        sjuttiosjätted: 76
+        sjuttiosjund: 77
+        sjuttioåttond: 78
+        sjuttioniond: 79
+        åttioförst: 81
+        åttioandr: 82
+        åttiotred: 83
+        åttiofjärd: 84
+        åttiofemt: 85
+        åttiosjätted: 86
+        åttiosjund: 87
+        åttioåttond: 88
+        åttioniond: 89
+        nittioförst: 91
+        nittioandr: 92
+        nittiotred: 93
+        nittiofjärd: 94
+        nittiofemt: 95
+        nittiosjätted: 96
+        nittiosjund: 97
+        nittioåttond: 88
+        nittioniond: 99
         förstadelar: 1
         förstedelar: 1
         förstedel: 1
