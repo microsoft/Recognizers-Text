@@ -359,17 +359,29 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var isSpecificDate = false;
                 var isStartByWeek = false;
                 var isEndByWeek = false;
+                bool isAmbiguousStart = false, isAmbiguousEnd = false;
+                var ambiguousRes = new DateTimeResolutionResult();
                 var dateContext = GetYearContext(this.config, match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
 
                 var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
                 if (startResolution.Success)
                 {
-                    futureBegin = (DateObject)startResolution.FutureValue;
-                    pastBegin = (DateObject)startResolution.PastValue;
-                    isSpecificDate = true;
+                    // Check if the extraction is ambiguous (e.g. "mar" can be resolved to both "March" and "Tuesday" in FR, IT and ES)
+                    if (this.config.AmbiguousPointRangeRegex != null && this.config.AmbiguousPointRangeRegex.IsMatch(match.Groups["start"].Value.Trim()))
+                    {
+                        ambiguousRes = startResolution;
+                        isAmbiguousStart = true;
+                    }
+                    else
+                    {
+                        futureBegin = (DateObject)startResolution.FutureValue;
+                        pastBegin = (DateObject)startResolution.PastValue;
+                        isSpecificDate = true;
+                    }
                 }
-                else
+
+                if (!startResolution.Success || isAmbiguousStart)
                 {
                     startResolution = ParseBaseDatePeriod(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
@@ -392,11 +404,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (endResolution.Success)
                     {
-                        futureEnd = (DateObject)endResolution.FutureValue;
-                        pastEnd = (DateObject)endResolution.PastValue;
-                        isSpecificDate = true;
+                        // Check if the extraction is ambiguous
+                        if (this.config.AmbiguousPointRangeRegex != null && this.config.AmbiguousPointRangeRegex.IsMatch(match.Groups["end"].Value.Trim()))
+                        {
+                            ambiguousRes = endResolution;
+                            isAmbiguousEnd = true;
+                        }
+                        else
+                        {
+                            futureEnd = (DateObject)endResolution.FutureValue;
+                            pastEnd = (DateObject)endResolution.PastValue;
+                            isSpecificDate = true;
+                        }
                     }
-                    else
+
+                    if (!endResolution.Success || isAmbiguousEnd)
                     {
                         endResolution = ParseBaseDatePeriod(match.Groups["end"].Value.Trim(), referenceDate, dateContext);
 
@@ -415,6 +437,20 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (endResolution.Success)
                     {
+                        // When start or end is ambiguous it is better to resolve it to the type of the unambiguous extraction
+                        if (isAmbiguousStart && isSpecificDate)
+                        {
+                            startResolution = ambiguousRes;
+                            futureBegin = (DateObject)startResolution.FutureValue;
+                            pastBegin = (DateObject)startResolution.PastValue;
+                        }
+                        else if (isAmbiguousEnd && isSpecificDate)
+                        {
+                            endResolution = ambiguousRes;
+                            futureEnd = (DateObject)endResolution.FutureValue;
+                            pastEnd = (DateObject)endResolution.PastValue;
+                        }
+
                         if (futureBegin > futureEnd)
                         {
                             if (dateContext == null || dateContext.IsEmpty())

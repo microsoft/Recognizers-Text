@@ -640,6 +640,8 @@ FutureSuffixRegex: !simpleRegex
 ComplexDatePeriodRegex: !nestedRegex
   def: (((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
+AmbiguousPointRangeRegex: !simpleRegex
+  def: ^(mar)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
