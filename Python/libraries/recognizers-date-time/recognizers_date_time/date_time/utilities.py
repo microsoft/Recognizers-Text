@@ -1015,7 +1015,7 @@ class TimeZoneResolutionResult:
         self.time_zone_text: str = ''
 
 
-def parser_dynasty_year(year_str: str, dynasty_year_regex: Pattern, dynasty_start_year: str, dynasty_year_map: dict, integer_extractor, number_parser):
+def parse_chinese_dynasty_year(year_str: str, dynasty_year_regex: Pattern, dynasty_start_year: str, dynasty_year_map: dict, integer_extractor, number_parser):
     dynasty_year_match = regex.search(dynasty_year_regex, year_str)
     if dynasty_year_match and dynasty_year_match.start() == 0 and len(dynasty_year_match.group()) == len(year_str):
         # handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7

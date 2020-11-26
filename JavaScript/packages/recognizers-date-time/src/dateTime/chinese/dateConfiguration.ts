@@ -545,7 +545,7 @@ export class ChineseDateParser extends BaseDateParser {
     private convertChineseYearToNumber(source: string): number {
         let year = 0;
         
-        let dynastyYear = DateUtils.parserDynastyYear(source, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.config.integerExtractor, this.config.numberParser);
+        let dynastyYear = DateUtils.parseChineseDynastyYear(source, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.config.integerExtractor, this.config.numberParser);
         if (dynastyYear > 0) {
             return dynastyYear;
         }

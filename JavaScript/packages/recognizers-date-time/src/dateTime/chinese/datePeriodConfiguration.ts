@@ -497,7 +497,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let year = -1;
         let er: ExtractResult;
         if (isChinese) {
-            let dynastyYear = DateUtils.parserDynastyYear(yearStr, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.integerExtractor, this.numberParser);
+            let dynastyYear = DateUtils.parseChineseDynastyYear(yearStr, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.integerExtractor, this.numberParser);
             if (dynastyYear > 0) {
                 return dynastyYear;
             }

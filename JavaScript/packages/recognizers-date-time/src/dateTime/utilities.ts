@@ -387,7 +387,7 @@ export class DateUtils {
     private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
-    static parserDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {
+    static parseChineseDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {
         let year = -1;
         let regionTitleMatch = RegExpUtility.getMatches(dynastyYearRegex, yearStr).pop();
         if (regionTitleMatch && regionTitleMatch.index === 0 && regionTitleMatch.length === yearStr.length) {
