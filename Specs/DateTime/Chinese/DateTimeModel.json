@@ -5701,5 +5701,219 @@
         "End": 12
       }
     ]
+  },
+  {
+    "Input": "神龙元年十一月，武则天去世",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙元年十一月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "0705-11",
+              "type": "daterange",
+              "start": "0705-11-01",
+              "end": "0705-12-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "康熙三年五月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙三年五月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1664-05",
+              "type": "daterange",
+              "start": "1664-05-01",
+              "end": "1664-06-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "康熙二十年9月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙二十年9月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1681-09",
+              "type": "daterange",
+              "start": "1681-09-01",
+              "end": "1681-10-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "康熙20年9月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙20年9月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1681-09",
+              "type": "daterange",
+              "start": "1681-09-01",
+              "end": "1681-10-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "民国三年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "民国三年",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1914",
+              "type": "daterange",
+              "start": "1914-01-01",
+              "end": "1915-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "雍正十六年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正十六年",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1738",
+              "type": "daterange",
+              "start": "1738-01-01",
+              "end": "1739-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "雍正二十三年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正二十三年十二月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1745-12",
+              "type": "daterange",
+              "start": "1745-12-01",
+              "end": "1746-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "神龙二年正月初一",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙二年正月初一",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "0706-01-01",
+              "type": "date",
+              "value": "0706-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "雍正四年大年三十",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正四年大年三十",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1726-01-30",
+              "type": "date",
+              "value": "1726-01-30"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
   }
 ]

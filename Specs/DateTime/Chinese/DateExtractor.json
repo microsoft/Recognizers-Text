@@ -485,5 +485,60 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "神龙二年正月初一",
+    "Results": [
+      {
+        "Text": "神龙二年正月初一",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "雍正四年大年三十",
+    "Results": [
+      {
+        "Text": "雍正四年大年三十",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "五月三十日",
+    "Results": [
+      {
+        "Text": "五月三十日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "五月三十一日",
+    "Results": [
+      {
+        "Text": "五月三十一日",
+        "Type": "date",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "一月二十三",
+    "Results": [
+      {
+        "Text": "一月二十三",
+        "Type": "date",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]

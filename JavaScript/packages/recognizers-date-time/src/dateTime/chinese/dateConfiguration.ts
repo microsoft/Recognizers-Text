@@ -202,7 +202,6 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         this.weekDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekDayRegex);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
-
     }
 }
 
@@ -213,6 +212,9 @@ export class ChineseDateParser extends BaseDateParser {
     private readonly tokenLastRegex: RegExp
     private readonly monthMaxDays: number[];
     private readonly durationExtractor: ChineseDurationExtractor;
+    readonly dynastyStartYear: string;
+    readonly dynastyYearRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDateParserConfiguration(dmyDateFormat);
@@ -223,6 +225,9 @@ export class ChineseDateParser extends BaseDateParser {
         this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LastPrefixRegex);
         this.monthMaxDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         this.durationExtractor = new ChineseDurationExtractor();
+        this.dynastyStartYear = ChineseDateTime.DynastyStartYear;
+        this.dynastyYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DynastyYearRegex);
+        this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -539,6 +544,12 @@ export class ChineseDateParser extends BaseDateParser {
 
     private convertChineseYearToNumber(source: string): number {
         let year = 0;
+        
+        let dynastyYear = DateUtils.parseChineseDynastyYear(source, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.config.integerExtractor, this.config.numberParser);
+        if (dynastyYear > 0) {
+            return dynastyYear;
+        }
+
         let er = this.config.integerExtractor.extract(source).pop();
         if (er && er.type === NumberConstants.SYS_NUM_INTEGER) {
             year = Number.parseInt(this.config.numberParser.parse(er).value);

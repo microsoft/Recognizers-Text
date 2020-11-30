@@ -738,6 +738,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var year = 0;
             var num = 0;
+            int dynastyYear = DateTimeFormatUtil.ParseChineseDynastyYear(yearChsStr,
+                                                                         ChineseDateExtractorConfiguration.DynastyYearRegex,
+                                                                         ChineseDateExtractorConfiguration.DynastyStartYear,
+                                                                         ChineseDateExtractorConfiguration.DynastyYearMap,
+                                                                         integerExtractor,
+                                                                         numberParser);
+            if (dynastyYear > 0)
+            {
+                return dynastyYear;
+            }
 
             var er = integerExtractor.Extract(yearChsStr);
             if (er.Count != 0)

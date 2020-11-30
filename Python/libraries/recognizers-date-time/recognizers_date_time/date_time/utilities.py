@@ -1013,3 +1013,20 @@ class TimeZoneResolutionResult:
         self.value: str = ''
         self.utc_offset_mins: int = 0
         self.time_zone_text: str = ''
+
+
+def parse_chinese_dynasty_year(year_str: str, dynasty_year_regex: Pattern, dynasty_start_year: str, dynasty_year_map: dict, integer_extractor, number_parser):
+    dynasty_year_match = regex.search(dynasty_year_regex, year_str)
+    if dynasty_year_match and dynasty_year_match.start() == 0 and len(dynasty_year_match.group()) == len(year_str):
+        # handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+        dynasty_str = RegExpUtility.get_group(dynasty_year_match, "dynasty")
+        bias_year_str = RegExpUtility.get_group(dynasty_year_match, "biasYear")
+        basic_year = dynasty_year_map[dynasty_str]
+        if bias_year_str == dynasty_start_year:
+            bias_year = 1
+        else:
+            er = next(iter(integer_extractor.extract(bias_year_str)), None)
+            bias_year = int(number_parser.parse(er).value)
+        year = int(basic_year + bias_year - 1)
+        return year
+    return None
