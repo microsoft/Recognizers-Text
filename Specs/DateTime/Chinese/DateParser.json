@@ -1059,5 +1059,120 @@
         "Length": 2
       }
     ]
+  },
+  {
+    "Input": "神龙二年正月初一",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙二年正月初一",
+        "Type": "date",
+        "Value": {
+          "Timex": "0706-01-01",
+          "FutureResolution": {
+            "date": "0706-01-01"
+          },
+          "PastResolution": {
+            "date": "0706-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "雍正四年大年三十",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正四年大年三十",
+        "Type": "date",
+        "Value": {
+          "Timex": "1726-01-30",
+          "FutureResolution": {
+            "date": "1726-01-30"
+          },
+          "PastResolution": {
+            "date": "1726-01-30"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "五月三十日",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "五月三十日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-30",
+          "FutureResolution": {
+            "date": "2021-05-30"
+          },
+          "PastResolution": {
+            "date": "2020-05-30"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "五月三十一日",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "五月三十一日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-31",
+          "FutureResolution": {
+            "date": "2021-05-31"
+          },
+          "PastResolution": {
+            "date": "2020-05-31"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "一月二十三",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "一月二十三",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-23",
+          "FutureResolution": {
+            "date": "2021-01-23"
+          },
+          "PastResolution": {
+            "date": "2020-01-23"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]

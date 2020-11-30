@@ -198,7 +198,6 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodNextRegex);
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
-
     }
 
     getSwiftDayOrMonth(source: string): number {
@@ -299,6 +298,9 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     private readonly YearToYearSuffixRequired: RegExp;
     private readonly chineseYearRegex: RegExp;
     private readonly seasonWithYearRegex: RegExp;
+    readonly dynastyStartYear: string;
+    readonly dynastyYearRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDatePeriodParserConfiguration(dmyDateFormat);
@@ -314,6 +316,9 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         this.YearToYearSuffixRequired = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired);
         this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
         this.seasonWithYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear);
+        this.dynastyStartYear = ChineseDateTime.DynastyStartYear;
+        this.dynastyYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DynastyYearRegex);
+        this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -492,6 +497,11 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let year = -1;
         let er: ExtractResult;
         if (isChinese) {
+            let dynastyYear = DateUtils.parseChineseDynastyYear(yearStr, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.integerExtractor, this.numberParser);
+            if (dynastyYear > 0) {
+                return dynastyYear;
+            }
+
             let yearNum = 0;
             er = this.integerExtractor.extract(yearStr).pop();
             if (er && er.type === NumberConstants.SYS_NUM_INTEGER) {

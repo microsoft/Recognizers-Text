@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, QueryProcessor, MetaData, Match, StringUtility } from "@microsoft/recognizers-text";
+import { IExtractor, IParser, ExtractResult, QueryProcessor, MetaData, Match, StringUtility } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers";
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
@@ -386,6 +386,25 @@ export class DateUtils {
     private static readonly oneHour = 60 * 60 * 1000;
     private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
+
+    static parseChineseDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {
+        let year = -1;
+        let regionTitleMatch = RegExpUtility.getMatches(dynastyYearRegex, yearStr).pop();
+        if (regionTitleMatch && regionTitleMatch.index === 0 && regionTitleMatch.length === yearStr.length) {
+            // handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+            let dynastyYearStr = regionTitleMatch.groups('dynasty').value;
+            let biasYearStr = regionTitleMatch.groups('biasYear').value;
+            let basicYear = dynastyYearMap.get(dynastyYearStr);
+            let biasYear = 1;
+            if (biasYearStr != dynastyStartYear) {
+                let er = integerExtractor.extract(biasYearStr).pop();
+                biasYear = Number.parseInt(numberParser.parse(er).value);
+            }
+            year = basicYear + biasYear - 1;
+        }
+
+        return year;
+    }
 
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();

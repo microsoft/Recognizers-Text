@@ -13,6 +13,7 @@ from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils,
 from ..parsers import DateTimeParseResult
 from ..base_dateperiod import BaseDatePeriodParser
 from .dateperiod_parser_config import ChineseDatePeriodParserConfiguration
+from ..utilities import parse_chinese_dynasty_year
 
 
 class ChineseDatePeriodParser(BaseDatePeriodParser):
@@ -432,6 +433,10 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
     def _convert_year(self, year_str: str, is_chinese: bool) -> int:
         year = -1
         if is_chinese:
+            dynasty_year = parse_chinese_dynasty_year(year_str, self.config.dynasty_year_regex, self.config.dynasty_start_year, self.config.dynasty_year_map, self.integer_extractor, self.number_parser)
+            if dynasty_year is not None:
+                return dynasty_year
+
             year_num = 0
             er = next(iter(self.integer_extractor.extract(year_str)), None)
             if er and er.type == NumberConstants.SYS_NUM_INTEGER:

@@ -15,6 +15,7 @@ from ..utilities import DateTimeResolutionResult, DateTimeFormatUtil, DateUtils,
 from ..parsers import DateTimeParseResult
 from ..base_date import BaseDateParser
 from .date_parser_config import ChineseDateParserConfiguration
+from ..utilities import parse_chinese_dynasty_year
 
 
 class ChineseDateParser(BaseDateParser):
@@ -325,6 +326,10 @@ class ChineseDateParser(BaseDateParser):
 
     def convert_chinese_year_to_number(self, source: str) -> int:
         year = 0
+        dynasty_year = parse_chinese_dynasty_year(source, self.config.dynasty_year_regex, self.config.dynasty_start_year, self.config.dynasty_year_map, self.integer_extractor, self.config.number_parser)
+        if dynasty_year is not None:
+            return dynasty_year
+
         er: ExtractResult = next(
             iter(self.config.integer_extractor.extract(source)), None)
         if er and er.type == NumberConstants.SYS_NUM_INTEGER:

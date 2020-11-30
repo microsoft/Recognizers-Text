@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
@@ -56,6 +57,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(
                                                                                   new BaseNumberOptionsConfiguration(Culture.Chinese, NumberOptions.None)));
+
+        public static readonly ImmutableDictionary<string, int> DynastyYearMap = DateTimeDefinitions.DynastyYearMap.ToImmutableDictionary();
+
+        public static readonly Regex DynastyYearRegex = new Regex(DateTimeDefinitions.DynastyYearRegex, RegexFlags);
+
+        public static readonly string DynastyStartYear = DateTimeDefinitions.DynastyStartYear;
 
         public static readonly Regex[] DateRegexList =
         {
