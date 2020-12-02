@@ -153,14 +153,14 @@
     ]
   },
   {
-    "Input": "还剩8天20时",
-    "NotSupported": "dotnet,javascript,python,java",
+    "Input": "还剩8天20小时",
+    "NotSupported": "javascript,python,java",
     "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
+      "ReferenceDateTime": "2020-12-02T00:00:00"
     },
     "Results": [
       {
-        "Text": "8天20时",
+        "Text": "8天20小时",
         "Type": "duration",
         "Value": {
           "Timex": "P8DT20H",
@@ -172,7 +172,151 @@
           }
         },
         "Start": 2,
-        "Length": 5
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "还剩8天又二十个小时",
+    "NotSupported": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2020-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8天又二十个小时",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P8DT20H",
+          "FutureResolution": {
+            "duration": "763200"
+          },
+          "PastResolution": {
+            "duration": "763200"
+          }
+        },
+        "Start": 2,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "一年多三个月又20天8小时余50分钟20秒",
+    "NotSupported": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2020-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "一年多三个月又20天8小时余50分钟20秒",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y3M20DT8H50M20S",
+          "FutureResolution": {
+            "duration": "41071820"
+          },
+          "PastResolution": {
+            "duration": "41071820"
+          }
+        },
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "五个星期3小时",
+    "NotSupported": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2020-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "五个星期3小时",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P5WT3H",
+          "FutureResolution": {
+            "duration": "3034800"
+          },
+          "PastResolution": {
+            "duration": "3034800"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "一年又一个月21天",
+    "NotSupported": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2020-12-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "一年又一个月21天",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y1M21D",
+          "FutureResolution": {
+            "duration": "35942400"
+          },
+          "PastResolution": {
+            "duration": "35942400"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "两天又一个月",
+    "Context": {
+      "ReferenceDateTime": "2020-12-02T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "两天又一个月",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M2D",
+          "FutureResolution": {
+            "duration": "2764800"
+          },
+          "PastResolution": {
+            "duration": "2764800"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "一个星期又三天",
+    "Context": {
+      "ReferenceDateTime": "2020-12-02T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "一个星期又三天",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W3D",
+          "FutureResolution": {
+            "duration": "864000"
+          },
+          "PastResolution": {
+            "duration": "864000"
+          }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   }

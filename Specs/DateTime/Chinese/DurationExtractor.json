@@ -77,14 +77,86 @@
     ]
   },
   {
-    "Input": "还剩8天20时",
-    "NotSupported": "dotnet,javascript,python,java",
+    "Input": "还剩8天20小时",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
-        "Text": "8天20时",
+        "Text": "8天20小时",
         "Type": "duration",
         "Start": 2,
-        "Length": 5
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "还剩8天又二十个小时",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8天又二十个小时",
+        "Type": "duration",
+        "Start": 2,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "一年多三个月又20天8小时余50分钟20秒",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "一年多三个月又20天8小时余50分钟20秒",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "五个星期3小时",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "五个星期3小时",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "一年又一个月21天",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "一年又一个月21天",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "两天又一个月",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "两天又一个月",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "一个星期又三天",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "一个星期又三天",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 7
       }
     ]
   }
