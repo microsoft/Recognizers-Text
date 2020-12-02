@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string WeekOfRegex = @"(the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?";
       public const string MonthOfRegex = @"(month)(\s*)(of)";
       public const string MonthRegex = @"(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)";
-      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
+      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))";
       public static readonly string YearSuffix = $@"((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string OnRegex = $@"(?<=\bon\s+)({DayRegex}s?)\b";
       public const string RelaxedOnRegex = @"(?<=\b(on|at|in)\s+)((?<day>(3[0-1]|[0-2]?\d)(?:th|nd|rd|st))s?)\b";

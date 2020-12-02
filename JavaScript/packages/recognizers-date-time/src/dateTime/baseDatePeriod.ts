@@ -848,6 +848,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 return result;
             }
 
+            let isMatch = false;
             let beforeStr = source.substr(0, pr.start).trim();
             let mod: string;
             let durationResult: DateTimeResolutionResult = pr.value;
@@ -866,9 +867,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 // for future the beginDate should add 1 first
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
+                isMatch = true;
             }
             prefixMatch = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
-            if (prefixMatch && prefixMatch.length === beforeStr.length) {
+            if (prefixMatch && prefixMatch.length === beforeStr.length && !isMatch) {
                 mod = TimeTypeConstants.afterMod;
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);

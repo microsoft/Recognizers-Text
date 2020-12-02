@@ -122,6 +122,8 @@
   },
   {
     "Input": "I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+    "Comment": "Java does not correctly handle lookbehinds.",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",

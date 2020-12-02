@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string SufixRoundOrdinalRegex = $@"(({AllIntRegex})({SimpleRoundOrdinalRegex}))";
       public static readonly string ComplexRoundOrdinalRegex = $@"((({SufixRoundOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SufixRoundOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
-      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\d\.?[º°ª]))(?=\b)";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(\d*((1(er|r[oa])|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\d\.?[º°ª]))(?=\b)";
       public static readonly string OrdinalNounRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public static readonly string SpecialFractionInteger = $@"((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))a?v[oa]s?)";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";

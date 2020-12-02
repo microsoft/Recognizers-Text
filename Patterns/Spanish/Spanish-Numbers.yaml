@@ -94,7 +94,7 @@ AllOrdinalRegex: !nestedRegex
   def: '{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
   references: [ ComplexOrdinalRegex, SimpleRoundOrdinalRegex, ComplexRoundOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)(\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\d\.?[º°ª]))(?=\b)
+  def: (?<=\b)(\d*((1(er|r[oa])|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\d\.?[º°ª]))(?=\b)
 OrdinalNounRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]

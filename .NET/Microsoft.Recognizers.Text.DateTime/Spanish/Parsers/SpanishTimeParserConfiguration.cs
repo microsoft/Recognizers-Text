@@ -12,6 +12,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex PastTokenRegex =
+            new Regex(DateTimeDefinitions.PastTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
         public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -42,16 +56,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedPrefix.StartsWith("cuarto", StringComparison.Ordinal) || trimmedPrefix.StartsWith("y cuarto", StringComparison.Ordinal))
+            if (QuarterTokenRegex.IsMatch(trimmedPrefix))
             {
-                deltaMin = 15;
+                var match = QuarterTokenRegex.Match(trimmedPrefix);
+                if (match.Groups["neg"].Success)
+                {
+                    deltaMin = -15;
+                }
+                else
+                {
+                    deltaMin = 15;
+                }
             }
-            else if (trimmedPrefix.StartsWith("menos cuarto", StringComparison.Ordinal))
-            {
-                deltaMin = -15;
-            }
-            else if (trimmedPrefix.StartsWith("media", StringComparison.Ordinal) || trimmedPrefix.StartsWith("y media", StringComparison.Ordinal))
+            else if (HalfTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 30;
             }
@@ -70,16 +87,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 }
             }
 
-            if (trimmedPrefix.EndsWith("pasadas", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados", StringComparison.Ordinal) ||
-                trimmedPrefix.EndsWith("pasadas las", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados las", StringComparison.Ordinal) ||
-                trimmedPrefix.EndsWith("pasadas de las", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados de las", StringComparison.Ordinal))
+            if (ToTokenRegex.IsMatch(trimmedPrefix))
             {
-                // deltaMin it's positive
-            }
-            else if (trimmedPrefix.EndsWith("para la", StringComparison.Ordinal) || trimmedPrefix.EndsWith("para las", StringComparison.Ordinal) ||
-                     trimmedPrefix.EndsWith("antes de la", StringComparison.Ordinal) || trimmedPrefix.EndsWith("antes de las", StringComparison.Ordinal))
-            {
-                deltaMin = -deltaMin;
+                var match = ToTokenRegex.Match(trimmedPrefix);
+                if (match.Groups["neg"].Success)
+                {
+                    min = -min;
+                }
+                else
+                {
+                    deltaMin = -deltaMin;
+                }
             }
 
             min += deltaMin;
