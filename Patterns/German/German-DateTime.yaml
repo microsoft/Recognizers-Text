@@ -7,7 +7,7 @@ TillRegex: !simpleRegex
 RangeConnectorRegex : !simpleRegex
   def: (?<and>und|--|-|—|——)
 RelativeRegex: !simpleRegex
-  def: \b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?|de[rmsn]|am)
+  def: \b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|vorletzte[snm]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?|de[rmsn]|am)
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?)
 UpcomingPrefixRegex: !simpleRegex
@@ -28,6 +28,8 @@ ThisPrefixRegex: !simpleRegex
   def: \b(diese[rnms]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?)\b
 RangePrefixRegex: !simpleRegex
   def: (vo[nm]|zwischen)
+PenultimatePrefixRegex: !simpleRegex
+  def: \b(vorletzte[snm]?)\b
 DayRegex: !simpleRegex
   def: (de[rmsn]\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.|\b)
 MonthNumRegex: !simpleRegex
@@ -206,7 +208,8 @@ DateExtractor9: !nestedRegex
   def: \b({DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?)\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor10: !nestedRegex
-  def: \b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b
+  def: ^[.]
+  #def: \b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, RelativeRegex ]
 DateExtractorA: !nestedRegex
   def: ({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})(?!\s*[/\\\-\.]\s*\d+)
