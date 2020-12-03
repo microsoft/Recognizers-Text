@@ -271,6 +271,7 @@ DurationAmbiguousUnits: !list
     - 周
     - 个月
     - 年
+    - 时
 DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)
   references: [DateUnitRegex]

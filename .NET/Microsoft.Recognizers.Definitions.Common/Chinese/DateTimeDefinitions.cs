@@ -138,7 +138,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"个星期",
             @"周",
             @"个月",
-            @"年"
+            @"年",
+            @"时"
         };
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)";
       public const string DurationConnectorRegex = @"^\s*(?<connector>[多又余零]?)\s*$";
