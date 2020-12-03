@@ -5917,6 +5917,30 @@
     ]
   },
   {
+    "Input": "还剩8天20时",
+    "NotSupported": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8天20时",
+        "Start": 2,
+        "End": 6,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P8DT20H",
+              "type": "duration",
+              "value": "763200"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "还剩8天20小时",
     "NotSupported": "javascript,python,java",
     "Context": {

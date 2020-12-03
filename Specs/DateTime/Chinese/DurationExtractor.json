@@ -77,6 +77,18 @@
     ]
   },
   {
+    "Input": "还剩8天20时",
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8天20时",
+        "Type": "duration",
+        "Start": 2,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "还剩8天20小时",
     "NotSupported": "javascript,python,java",
     "Results": [

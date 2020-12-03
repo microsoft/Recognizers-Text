@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var unitStr = unitResult.Unit;
                 var numStr = unitResult.Number;
 
-                dateTimeParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : string.Empty) + numStr + unitStr[0];
+                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(double.Parse(numStr), unitStr, BaseDurationParser.IsLessThanDay(unitStr));
                 dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
                 dateTimeParseResult.Success = true;
             }

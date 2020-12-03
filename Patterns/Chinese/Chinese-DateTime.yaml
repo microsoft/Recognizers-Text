@@ -252,7 +252,7 @@ DurationSuffixList: !dictionary
   entries:
     M: 分钟
     S: 秒钟|秒
-    H: 个小时|小时|个钟头|钟头
+    H: 个小时|小时|个钟头|钟头|时
     D: 天
     W: 星期|个星期|周
     Mon: 个月
@@ -272,7 +272,7 @@ DurationAmbiguousUnits: !list
     - 个月
     - 年
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|个?钟头|天|个?星期|周|个?月|年)
+  def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)
   references: [DateUnitRegex]
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>[多又余零]?)\s*$
@@ -843,6 +843,7 @@ AmbiguityFiltersDict: !dictionary
     '周': '周岁'
     '今日': '今日头条'
     '明日': '《明日之后》'
+    '时': '时间'
 DurationUnitValueMap: !dictionary
   types: [string, long]
   entries:

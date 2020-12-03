@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         {
             { @"M", @"分钟" },
             { @"S", @"秒钟|秒" },
-            { @"H", @"个小时|小时|个钟头|钟头" },
+            { @"H", @"个小时|小时|个钟头|钟头|时" },
             { @"D", @"天" },
             { @"W", @"星期|个星期|周" },
             { @"Mon", @"个月" },
@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"个月",
             @"年"
         };
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|个?钟头|天|个?星期|周|个?月|年)";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)";
       public const string DurationConnectorRegex = @"^\s*(?<connector>[多又余零]?)\s*$";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
@@ -624,7 +624,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"^\d{1,2}号", @"^\d{1,2}号" },
             { @"周", @"周岁" },
             { @"今日", @"今日头条" },
-            { @"明日", @"《明日之后》" }
+            { @"明日", @"《明日之后》" },
+            { @"时", @"时间" }
         };
       public static readonly Dictionary<string, long> DurationUnitValueMap = new Dictionary<string, long>
         {

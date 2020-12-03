@@ -118,6 +118,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var valid = false;
                     var midStrBegin = extractorResults[secondExtractionIndex - 1].Start + extractorResults[secondExtractionIndex - 1].Length ?? 0;
                     var midStrEnd = extractorResults[secondExtractionIndex].Start ?? 0;
+                    if (midStrBegin > midStrEnd)
+                    {
+                        return extractorResults;
+                    }
+
                     var midStr = text.Substring(midStrBegin, midStrEnd - midStrBegin);
                     var match = DurationConnectorRegex.Match(midStr);
                     if (match.Success)
