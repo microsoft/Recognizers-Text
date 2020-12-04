@@ -19023,5 +19023,56 @@
         }
       }
     ]
+  },
+  {
+    "Input": "We've reached the end of today",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the end of today",
+        "Start": 14,
+        "End": 29,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-26T23:59:59",
+              "type": "datetime",
+              "value": "2018-06-26 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We've reached the end of the line",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "We've reached end of the line",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "end of",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "end of the",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
   }
 ]

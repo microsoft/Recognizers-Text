@@ -43,7 +43,6 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         tokens.addAll(timeOfTodayAfter(input, reference));
         tokens.addAll(specialTimeOfDate(input, reference));
         tokens.addAll(durationWithBeforeAndAfter(input, reference));
-        tokens.addAll(specialTimeOfDay(input, reference));
 
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
@@ -51,17 +50,6 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     @Override
     public List<ExtractResult> extract(String input) {
         return this.extract(input, LocalDateTime.now());
-    }
-
-    // Special case for 'the end of today'
-    public List<Token> specialTimeOfDay(String input, LocalDateTime reference) {
-        List<Token> ret = new ArrayList<>();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), input)).findFirst();
-        if (match.isPresent()) {
-            ret.add(new Token(match.get().index, input.length()));
-        }
-
-        return ret;
     }
 
     private List<Token> durationWithBeforeAndAfter(String input, LocalDateTime reference) {
