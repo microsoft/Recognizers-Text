@@ -252,7 +252,7 @@ DurationSuffixList: !dictionary
   entries:
     M: 分钟
     S: 秒钟|秒
-    H: 个小时|小时|个钟头|钟头
+    H: 个小时|小时|个钟头|钟头|时
     D: 天
     W: 星期|个星期|周
     Mon: 个月
@@ -271,6 +271,12 @@ DurationAmbiguousUnits: !list
     - 周
     - 个月
     - 年
+    - 时
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)
+  references: [DateUnitRegex]
+DurationConnectorRegex: !simpleRegex
+  def: ^\s*(?<connector>[多又余零]?)\s*$
 LunarHolidayRegex: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)
   references: [YearRegex, DatePeriodYearInChineseRegex]
@@ -407,12 +413,14 @@ ParserConfigurationUnitMap: !dictionary
     周: W
     天: D
     小时: H
+    个小时: H
     时: H
     分钟: M
     分: M
     秒钟: S
     秒: S
     星期: W
+    个星期: W
 ParserConfigurationUnitValueMap: !dictionary
   types: [string, long]
   entries:
@@ -836,8 +844,9 @@ AmbiguityFiltersDict: !dictionary
     '周': '周岁'
     '今日': '今日头条'
     '明日': '《明日之后》'
+    '时': '时间'
 DurationUnitValueMap: !dictionary
-  types: [string, int]
+  types: [string, long]
   entries:
     Y: 31536000
     Mon: 2592000

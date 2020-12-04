@@ -106,8 +106,10 @@ export namespace ChineseDateTime {
     export const DateTimePeriodNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateTimePeriodUnitRegex}`;
     export const DurationYearRegex = `((\\d{3,4})|0\\d|两千)\\s*年`;
     export const DurationHalfSuffixRegex = `半`;
-    export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时|个钟头|钟头"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
-    export const DurationAmbiguousUnits = [ "分钟","秒钟","秒","个小时","小时","天","星期","个星期","周","个月","年" ];
+    export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时|个钟头|钟头|时"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
+    export const DurationAmbiguousUnits = [ "分钟","秒钟","秒","个小时","小时","天","星期","个星期","周","个月","年","时" ];
+    export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)`;
+    export const DurationConnectorRegex = `^\\s*(?<connector>[多又余零]?)\\s*$`;
     export const LunarHolidayRegex = `((${YearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)`;
     export const HolidayRegexList1 = `((${YearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)`;
     export const HolidayRegexList2 = `((${YearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)`;
@@ -159,7 +161,7 @@ export namespace ChineseDateTime {
     export const ParserConfigurationNextMonthToken = `下一个`;
     export const ParserConfigurationLastMonthToken = `上一个`;
     export const ParserConfigurationDatePrefix = ` `;
-    export const ParserConfigurationUnitMap: ReadonlyMap<string, string> = new Map<string, string>([["年", "Y"],["月", "MON"],["个月", "MON"],["日", "D"],["周", "W"],["天", "D"],["小时", "H"],["时", "H"],["分钟", "M"],["分", "M"],["秒钟", "S"],["秒", "S"],["星期", "W"]]);
+    export const ParserConfigurationUnitMap: ReadonlyMap<string, string> = new Map<string, string>([["年", "Y"],["月", "MON"],["个月", "MON"],["日", "D"],["周", "W"],["天", "D"],["小时", "H"],["个小时", "H"],["时", "H"],["分钟", "M"],["分", "M"],["秒钟", "S"],["秒", "S"],["星期", "W"],["个星期", "W"]]);
     export const ParserConfigurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
     export const MonthTerms = [ "月" ];
     export const WeekendTerms = [ "周末" ];
@@ -183,7 +185,7 @@ export namespace ChineseDateTime {
     export const DateTimePeriodAFRegex = `(下午|午后|傍晚)`;
     export const DateTimePeriodEVRegex = `(晚上|夜里|夜晚|晚)`;
     export const DateTimePeriodNIRegex = `(半夜|夜间|深夜)`;
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["早", "(?<!今|明|日|号)早(?!上)"],["晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)"],["^\\d{1,2}号", "^\\d{1,2}号"],["周", "周岁"],["今日", "今日头条"],["明日", "《明日之后》"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["早", "(?<!今|明|日|号)早(?!上)"],["晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)"],["^\\d{1,2}号", "^\\d{1,2}号"],["周", "周岁"],["今日", "今日头条"],["明日", "《明日之后》"],["时", "时间"]]);
     export const DurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["Y", 31536000],["Mon", 2592000],["W", 604800],["D", 86400],["H", 3600],["M", 60],["S", 1]]);
     export const HolidayNoFixedTimex: ReadonlyMap<string, string> = new Map<string, string>([["父亲节", "-06-WXX-6-3"],["母亲节", "-05-WXX-7-2"],["感恩节", "-11-WXX-4-4"]]);
     export const MergedBeforeRegex = `(前|之前)$`;
