@@ -230,11 +230,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sec = time.Second;
 
             // Handle morning, afternoon
-            if (this.config.PMTimeRegexCache.IsMatch(text) && WithinAfternoonHours(hour))
+            if (this.config.PMTimeRegex.IsMatch(text) && WithinAfternoonHours(hour))
             {
                 hour += Constants.HalfDayHourCount;
             }
-            else if (this.config.AMTimeRegexCache.IsMatch(text) && WithinMorningHoursAndNoon(hour, min, sec))
+            else if (this.config.AMTimeRegex.IsMatch(text) && WithinMorningHoursAndNoon(hour, min, sec))
             {
                 hour -= Constants.HalfDayHourCount;
             }
@@ -249,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult)pr2.Value;
-            if (hour <= Constants.HalfDayHourCount && !this.config.PMTimeRegexCache.IsMatch(text) && !this.config.AMTimeRegexCache.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 ret.Comment = Constants.Comment_AmPm;
@@ -404,7 +404,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
             var afterStr = text.Substring(ers[0].Start + ers[0].Length ?? 0);
-            if (this.config.SpecificEndOfRegexCache.IsMatch(beforeStr) || this.config.SpecificEndOfRegexCache.IsMatch(afterStr))
+            if (this.config.SpecificEndOfRegex.IsMatch(beforeStr) || this.config.SpecificEndOfRegex.IsMatch(afterStr))
             {
                 var pr = this.config.DateParser.Parse(ers[0], refDateTime);
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;

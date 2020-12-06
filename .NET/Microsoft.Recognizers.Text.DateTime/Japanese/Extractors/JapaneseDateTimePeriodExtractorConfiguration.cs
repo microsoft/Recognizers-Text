@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var middleEnd = timePoints[idx + 1].Start ?? 0;
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrWhiteSpace(middleStr) || PrepositionRegexCache.IsMatch(middleStr))
+                    if (string.IsNullOrWhiteSpace(middleStr) || PrepositionRegex.IsMatch(middleStr))
                     {
                         var periodBegin = timePoints[idx].Start ?? 0;
                         var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -249,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 if (match.Success)
                 {
                     var middleStr = afterStr.Substring(0, match.Index);
-                    if (string.IsNullOrWhiteSpace(middleStr) || PrepositionRegexCache.IsMatch(middleStr))
+                    if (string.IsNullOrWhiteSpace(middleStr) || PrepositionRegex.IsMatch(middleStr))
                     {
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
                     }

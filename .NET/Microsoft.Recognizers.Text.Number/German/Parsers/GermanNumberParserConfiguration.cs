@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Number.German
             fracWords.RemoveAll(item => item == "/");
             for (int i = fracWords.Count - 1; i >= 0; i--)
             {
-                if (FractionHalfRegexCache.IsMatch(fracWords[i]))
+                if (FractionHalfRegex.IsMatch(fracWords[i]))
                 {
                     fracWords[i] = fracWords[i].Substring(0, fracWords[i].Length - 7);
                     fracWords.Insert(i + 1, this.WrittenFractionSeparatorTexts.ElementAt(0));

@@ -146,25 +146,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (MorningStartEndRegexCache.IsMatch(trimmedText))
+            if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AfternoonStartEndRegexCache.IsMatch(trimmedText))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EveningStartEndRegexCache.IsMatch(trimmedText))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NightStartEndRegexCache.IsMatch(trimmedText))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -185,11 +185,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (FutureRegexCache.IsMatch(trimmedText))
+            if (FutureRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

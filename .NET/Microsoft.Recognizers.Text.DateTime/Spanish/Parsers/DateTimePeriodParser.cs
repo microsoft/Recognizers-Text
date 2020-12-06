@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
                 // Check if Date and TimeOfDay are contiguous
                 var middleStr = beforeStr.Substring((int)ers[0].Start + (int)ers[0].Length).Trim();
-                if (!(string.IsNullOrWhiteSpace(middleStr) || ConnectorRegexCache.IsMatch(middleStr)))
+                if (!(string.IsNullOrWhiteSpace(middleStr) || ConnectorRegex.IsMatch(middleStr)))
                 {
                     return ret;
                 }

@@ -158,7 +158,7 @@ namespace Microsoft.Recognizers.Text.Choice
                         token = string.Empty;
                     }
                 }
-                else if (!(config.TokenRegexCache.IsMatch(letter) || string.IsNullOrWhiteSpace(letter)))
+                else if (!(config.TokenRegex.IsMatch(letter) || string.IsNullOrWhiteSpace(letter)))
                 {
                     token = token + letter;
                 }

@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsConnectorToken(string text)
         {
-            return ConnectorAndRegexCache.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text);
         }
 
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);

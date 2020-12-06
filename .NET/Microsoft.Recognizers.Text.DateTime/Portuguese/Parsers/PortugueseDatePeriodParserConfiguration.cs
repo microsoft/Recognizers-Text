@@ -228,12 +228,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (NextPrefixRegexCache.IsMatch(trimmedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -245,16 +245,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimmedText = text.Trim();
             var swift = -10;
-            if (NextPrefixRegexCache.IsMatch(trimmedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (ThisPrefixRegexCache.IsMatch(trimmedText))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -265,13 +265,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim();
-            return ThisPrefixRegexCache.IsMatch(trimmedText) || NextPrefixRegexCache.IsMatch(trimmedText);
+            return ThisPrefixRegex.IsMatch(trimmedText) || NextPrefixRegex.IsMatch(trimmedText);
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim();
-            return PreviousPrefixRegexCache.IsMatch(trimmedText);
+            return PreviousPrefixRegex.IsMatch(trimmedText);
         }
 
         public bool IsMonthOnly(string text)

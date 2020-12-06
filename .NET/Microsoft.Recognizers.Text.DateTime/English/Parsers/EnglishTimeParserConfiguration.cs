@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                             deltaHour = Constants.HalfDayHourCount;
                         }
 
-                        if (LunchRegexCache.IsMatch(matchPmStr))
+                        if (LunchRegex.IsMatch(matchPmStr))
                         {
                             if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                             {
@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegexCache.IsMatch(matchPmStr))
+                        else if (NightRegex.IsMatch(matchPmStr))
                         {
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {

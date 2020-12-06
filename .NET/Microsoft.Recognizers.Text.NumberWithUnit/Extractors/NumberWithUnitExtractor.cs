@@ -521,7 +521,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             // Filter single-char units if not exact match
-            extractResults = extractResults.Where(er => !(er.Length != text.Length && singleCharUnitRegexCache.IsMatch(er.Text))).ToList();
+            extractResults = extractResults.Where(er => !(er.Length != text.Length && singleCharUnitRegex.IsMatch(er.Text))).ToList();
 
             return extractResults;
         }

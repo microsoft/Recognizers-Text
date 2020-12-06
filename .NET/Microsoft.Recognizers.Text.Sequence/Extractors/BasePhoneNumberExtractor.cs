@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public override List<ExtractResult> Extract(string text)
         {
-            if (!PreCheckPhoneNumberRegexCache.IsMatch(text))
+            if (!PreCheckPhoneNumberRegex.IsMatch(text))
             {
                 return new List<ExtractResult>();
             }
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             for (var i = 0; i < ers.Count; i++)
             {
                 var er = ers[i];
-                if ((CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber") || SSNFilterRegexCache.IsMatch(er.Text))
+                if ((CountDigits(er.Text) < 7 && er.Data.ToString() != "ITPhoneNumber") || SSNFilterRegex.IsMatch(er.Text))
                 {
                     ers.Remove(er);
                     i--;
@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     var front = text.Substring(0, (int)(er.Start - 1));
 
                     if (this.config.FalsePositivePrefixRegex != null &&
-                            this.config.FalsePositivePrefixRegexCache.IsMatch(front))
+                            this.config.FalsePositivePrefixRegex.IsMatch(front))
                     {
                         ers.Remove(er);
                         i--;
@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                             }
 
                             // check the international dialing prefix
-                            if (InternationalDialingPrefixRegexCache.IsMatch(front))
+                            if (InternationalDialingPrefixRegex.IsMatch(front))
                             {
                                 var moveOffset = InternationalDialingPrefixRegex.Match(front).Length + 1;
                                 er.Start = er.Start - moveOffset;
@@ -195,7 +195,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                         // Handle "tel:123456".
                         if (BasePhoneNumbers.ColonMarkers.Contains(ch))
                         {
-                            if (this.config.ColonPrefixCheckRegexCache.IsMatch(front))
+                            if (this.config.ColonPrefixCheckRegex.IsMatch(front))
                             {
                                 continue;
                             }

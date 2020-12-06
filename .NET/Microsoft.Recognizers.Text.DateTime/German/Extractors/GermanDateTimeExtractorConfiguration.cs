@@ -117,8 +117,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             text = text.Trim();
             return string.IsNullOrEmpty(text)
-                    || PrepositionRegexCache.IsMatch(text)
-                    || ConnectorRegexCache.IsMatch(text);
+                    || PrepositionRegex.IsMatch(text)
+                    || ConnectorRegex.IsMatch(text);
         }
     }
 }

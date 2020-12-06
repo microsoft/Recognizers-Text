@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             for (int i = 0; i < splits.Count; i += 1)
             {
-                if (HourTimexRegexCache.IsMatch(splits[i]))
+                if (HourTimexRegex.IsMatch(splits[i]))
                 {
                     splits[i] = ToPm(splits[i]);
                 }

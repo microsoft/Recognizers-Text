@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 // "each last summer" doesn't make sense
-                if (this.config.LastRegexCache.IsMatch(er.Text))
+                if (this.config.LastRegex.IsMatch(er.Text))
                 {
                     continue;
                 }

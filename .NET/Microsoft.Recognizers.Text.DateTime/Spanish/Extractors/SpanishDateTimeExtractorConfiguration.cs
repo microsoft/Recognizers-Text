@@ -130,8 +130,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             text = text.Trim();
             return string.IsNullOrEmpty(text) ||
-                   PrepositionRegexCache.IsMatch(text) ||
-                   ConnectorRegexCache.IsMatch(text);
+                   PrepositionRegex.IsMatch(text) ||
+                   ConnectorRegex.IsMatch(text);
         }
     }
 }

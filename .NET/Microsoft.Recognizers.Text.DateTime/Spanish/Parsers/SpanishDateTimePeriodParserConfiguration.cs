@@ -180,12 +180,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var swift = 0;
 
             // @TODO move hardcoded values to resources file
-            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegexCache.IsMatch(trimmedText) ||
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
                 trimmedText.Equals("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }
-            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegexCache.IsMatch(trimmedText))
+            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }

@@ -63,15 +63,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
             var trimedPrefix = prefix.Trim();
 
-            if (HalfTokenRegexCache.IsMatch(trimedPrefix))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 30;
             }
-            else if (QuarterTokenRegexCache.IsMatch(trimedPrefix))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (ThreeQuarterTokenRegexCache.IsMatch(trimedPrefix))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 45;
             }
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                 }
             }
 
-            if (ToTokenRegexCache.IsMatch(trimedPrefix))
+            if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }
@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                             deltaHour = Constants.HalfDayHourCount;
                         }
 
-                        if (LunchRegexCache.IsMatch(matchPmStr))
+                        if (LunchRegex.IsMatch(matchPmStr))
                         {
                             if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                             {
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegexCache.IsMatch(matchPmStr))
+                        else if (NightRegex.IsMatch(matchPmStr))
                         {
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {

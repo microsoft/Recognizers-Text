@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsConnector(string text)
         {
             text = text.Trim();
-            return string.IsNullOrEmpty(text) || PrepositionRegexCache.IsMatch(text) || ConnectorRegexCache.IsMatch(text);
+            return string.IsNullOrEmpty(text) || PrepositionRegex.IsMatch(text) || ConnectorRegex.IsMatch(text);
         }
     }
 }

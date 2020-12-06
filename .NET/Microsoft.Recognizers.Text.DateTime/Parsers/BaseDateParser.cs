@@ -1021,11 +1021,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (this.config.NextPrefixRegexCache.IsMatch(trimmedText))
+            if (this.config.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (this.config.PreviousPrefixRegexCache.IsMatch(trimmedText))
+            else if (this.config.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

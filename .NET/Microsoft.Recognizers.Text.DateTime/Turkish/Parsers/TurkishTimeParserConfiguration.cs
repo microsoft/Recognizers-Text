@@ -60,11 +60,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             var trimedPrefix = prefix.Trim();
 
-            if (HalfTokenRegexCache.IsMatch(trimedPrefix))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 30;
             }
-            else if (QuarterTokenRegexCache.IsMatch(trimedPrefix))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                 }
             }
 
-            if (ToTokenRegexCache.IsMatch(trimedPrefix))
+            if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                         deltaHour = Constants.HalfDayHourCount;
                     }
 
-                    if (LunchRegexCache.IsMatch(matchPmStr))
+                    if (LunchRegex.IsMatch(matchPmStr))
                     {
                         if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                         {
@@ -153,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                             hasPm = true;
                         }
                     }
-                    else if (NightRegexCache.IsMatch(matchPmStr))
+                    else if (NightRegex.IsMatch(matchPmStr))
                     {
                         if (hour <= 3 || hour == Constants.HalfDayHourCount)
                         {

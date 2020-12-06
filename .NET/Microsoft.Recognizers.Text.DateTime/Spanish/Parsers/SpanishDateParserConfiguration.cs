@@ -160,12 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             var swift = 0;
 
-            if (NextPrefixRegexCache.IsMatch(trimmedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
-            return PreviousPrefixRegexCache.IsMatch(trimmedText);
+            return PreviousPrefixRegex.IsMatch(trimmedText);
         }
 
         public string Normalize(string text)

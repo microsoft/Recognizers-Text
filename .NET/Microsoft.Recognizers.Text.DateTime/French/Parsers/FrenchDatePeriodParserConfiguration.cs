@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) &&
-                   (NextSuffixRegexCache.IsMatch(trimmedText) || PastSuffixRegexCache.IsMatch(trimmedText)))) &&
+                   (NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)))) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 

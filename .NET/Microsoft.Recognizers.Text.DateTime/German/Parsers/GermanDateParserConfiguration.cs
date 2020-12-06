@@ -164,11 +164,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 swift = 2;
             }
-            else if (NextPrefixRegexCache.IsMatch(trimmedText))
+            else if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

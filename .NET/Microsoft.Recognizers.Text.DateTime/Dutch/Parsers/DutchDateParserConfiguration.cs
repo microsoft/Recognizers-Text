@@ -155,12 +155,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (NextPrefixRegexCache.IsMatch(trimmedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

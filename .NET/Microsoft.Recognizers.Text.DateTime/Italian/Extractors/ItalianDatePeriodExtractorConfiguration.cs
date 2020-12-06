@@ -353,7 +353,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegexCache.IsMatch(text) || FullTillRegexCache.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text) || FullTillRegex.IsMatch(text);
         }
     }
 }

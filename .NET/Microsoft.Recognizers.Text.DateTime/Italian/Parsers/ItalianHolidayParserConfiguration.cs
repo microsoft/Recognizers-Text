@@ -32,15 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             var trimmedText = text.Trim();
             var swift = -10;
-            if (NextPrefixRegexCache.IsMatch(trimmedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (ThisPrefixRegexCache.IsMatch(trimmedText))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }

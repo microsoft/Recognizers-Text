@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     }
                 }
 
-                return results.Where(r => Rfc5322ValidationRegexCache.IsMatch(r.Text)).ToList();
+                return results.Where(r => Rfc5322ValidationRegex.IsMatch(r.Text)).ToList();
             }
         }
 

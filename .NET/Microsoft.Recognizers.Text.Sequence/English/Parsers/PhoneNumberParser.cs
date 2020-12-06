@@ -43,11 +43,11 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             double score = baseScore;
 
             // Country code score or area code score
-            score += CountryCodeRegexCache.IsMatch(phoneNumberText) ?
-                                    countryCodeAward : AreaCodeRegexCache.IsMatch(phoneNumberText) ? areaCodeAward : 0;
+            score += CountryCodeRegex.IsMatch(phoneNumberText) ?
+                                    countryCodeAward : AreaCodeRegex.IsMatch(phoneNumberText) ? areaCodeAward : 0;
 
             // Formatted score
-            if (FormatIndicatorRegexCache.IsMatch(phoneNumberText))
+            if (FormatIndicatorRegex.IsMatch(phoneNumberText))
             {
                 var formatMatches = FormatIndicatorRegex.Matches(phoneNumberText);
                 int formatIndicatorCount = formatMatches.Count;
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             score -= Math.Max(Regex.Matches(phoneNumberText, continueDigitRegex).Count - 1, 0) * continueDigitDeductionScore;
 
             // Special award for US phonenumber without area code, i.e. 223-4567 or 223 - 4567
-            if (NoAreaCodeUsPhoneNumberRegexCache.IsMatch(phoneNumberText))
+            if (NoAreaCodeUsPhoneNumberRegex.IsMatch(phoneNumberText))
             {
                 score += lengthAward * 1.5;
             }

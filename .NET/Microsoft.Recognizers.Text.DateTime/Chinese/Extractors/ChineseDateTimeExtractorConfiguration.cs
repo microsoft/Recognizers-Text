@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || PrepositionRegexCache.IsMatch(middleStr))
+                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);

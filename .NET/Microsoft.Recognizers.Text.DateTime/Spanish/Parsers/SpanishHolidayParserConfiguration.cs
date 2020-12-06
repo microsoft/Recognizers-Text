@@ -21,15 +21,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = -10;
 
-            if (SpanishDatePeriodParserConfiguration.NextPrefixRegexCache.IsMatch(trimmedText))
+            if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegexCache.IsMatch(trimmedText))
+            else if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (SpanishDatePeriodParserConfiguration.ThisPrefixRegexCache.IsMatch(trimmedText))
+            else if (SpanishDatePeriodParserConfiguration.ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }

@@ -204,7 +204,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegexCache.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text);
         }
     }
 }

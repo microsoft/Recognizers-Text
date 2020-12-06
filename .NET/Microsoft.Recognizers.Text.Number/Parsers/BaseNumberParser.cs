@@ -345,7 +345,7 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var resultText = extResult.Text;
-            if (Config.FractionPrepositionRegexCache.IsMatch(resultText))
+            if (Config.FractionPrepositionRegex.IsMatch(resultText))
             {
                 var match = Config.FractionPrepositionRegex.Match(resultText);
                 var numerator = match.Groups["numerator"].Value;

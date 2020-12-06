@@ -72,15 +72,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             var trimmedPrefix = prefix.Trim();
 
-            if (HalfTokenRegexCache.IsMatch(trimmedPrefix))
+            if (HalfTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = -30;
             }
-            else if (QuarterTokenRegexCache.IsMatch(trimmedPrefix))
+            else if (QuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (ThreeQuarterTokenRegexCache.IsMatch(trimmedPrefix))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 45;
             }
@@ -99,15 +99,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 }
             }
 
-            if (ToHalfTokenRegexCache.IsMatch(trimmedPrefix))
+            if (ToHalfTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = deltaMin - 30;
             }
-            else if (ForHalfTokenRegexCache.IsMatch(trimmedPrefix))
+            else if (ForHalfTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = -deltaMin - 30;
             }
-            else if (ToTokenRegexCache.IsMatch(trimmedPrefix))
+            else if (ToTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = -deltaMin;
             }
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                             deltaHour = Constants.HalfDayHourCount;
                         }
 
-                        if (LunchRegexCache.IsMatch(stringPm))
+                        if (LunchRegex.IsMatch(stringPm))
                         {
                             // for hour>=10, <12
                             if (hour >= 10 && hour <= Constants.HalfDayHourCount)
@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegexCache.IsMatch(stringPm))
+                        else if (NightRegex.IsMatch(stringPm))
                         {
                             // For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)

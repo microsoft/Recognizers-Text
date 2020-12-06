@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new List<Token>();
 
             // handle "at 5", "at seven"
-            if (this.config.AtRegexCache.IsMatch(text))
+            if (this.config.AtRegex.IsMatch(text))
             {
                 var matches = this.config.AtRegex.Matches(text);
                 foreach (Match match in matches)
@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // handle "before 3", "after three"
                 var beforeAfterRegex = this.config.TimeBeforeAfterRegex;
-                if (beforeAfterRegexCache.IsMatch(text))
+                if (beforeAfterRegex.IsMatch(text))
                 {
                     var matches = beforeAfterRegex.Matches(text);
                     foreach (Match match in matches)
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new List<Token>();
 
             // handle "ish"
-            if (this.config.IshRegex != null && this.config.IshRegexCache.IsMatch(text))
+            if (this.config.IshRegex != null && this.config.IshRegex.IsMatch(text))
             {
                 var matches = this.config.IshRegex.Matches(text);
 

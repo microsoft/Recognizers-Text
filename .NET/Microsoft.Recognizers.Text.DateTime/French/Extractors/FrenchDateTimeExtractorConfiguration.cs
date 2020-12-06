@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsConnector(string text)
         {
-            return string.IsNullOrEmpty(text) || PrepositionRegexCache.IsMatch(text) || ConnectorRegexCache.IsMatch(text);
+            return string.IsNullOrEmpty(text) || PrepositionRegex.IsMatch(text) || ConnectorRegex.IsMatch(text);
         }
     }
 }

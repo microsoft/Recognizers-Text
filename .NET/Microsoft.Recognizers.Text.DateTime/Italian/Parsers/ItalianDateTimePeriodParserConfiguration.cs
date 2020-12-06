@@ -151,25 +151,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (MorningStartEndRegexCache.IsMatch(trimmedText))
+            if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (AfternoonStartEndRegexCache.IsMatch(trimmedText))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = 12;
                 endHour = 16;
             }
-            else if (EveningStartEndRegexCache.IsMatch(trimmedText))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NightStartEndRegexCache.IsMatch(trimmedText))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -190,11 +190,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (NextSuffixRegexCache.IsMatch(trimmedText))
+            if (NextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PastSuffixRegexCache.IsMatch(trimmedText))
+            else if (PastSuffixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

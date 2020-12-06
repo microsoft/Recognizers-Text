@@ -457,14 +457,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
-                    if (match.Length == Constants.FourDigitsYearLength && this.config.YearRegexCache.IsMatch(match.Value))
+                    if (match.Length == Constants.FourDigitsYearLength && this.config.YearRegex.IsMatch(match.Value))
                     {
                         // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID
                         if (InfixBoundaryCheck(match, text))
                         {
                             var substr = text.Substring(match.Index - 1, 6);
 
-                            if (this.config.IllegalYearRegexCache.IsMatch(substr))
+                            if (this.config.IllegalYearRegex.IsMatch(substr))
                             {
                                 continue;
                             }

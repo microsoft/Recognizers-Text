@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool IsFailFastCase(string input)
         {
-            return (config.FailFastRegex != null) && (!config.FailFastRegexCache.IsMatch(input));
+            return (config.FailFastRegex != null) && (!config.FailFastRegex.IsMatch(input));
         }
 
         private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
@@ -262,12 +262,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool ShouldSkipFromToMerge(ExtractResult er)
         {
-            return config.FromToRegexCache.IsMatch(er.Text);
+            return config.FromToRegex.IsMatch(er.Text);
         }
 
         private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers)
         {
-            ers.RemoveAll(o => this.config.UnspecificDatePeriodRegexCache.IsMatch(o.Text));
+            ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
             return ers;
         }
 
@@ -290,7 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // @TODO: Refactor to remove this method and use the general ambiguity filter approach
-            extractResults = extractResults.Where(er => !(NumberOrConnectorRegexCache.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
+            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
                     .ToList();
 
             return extractResults;

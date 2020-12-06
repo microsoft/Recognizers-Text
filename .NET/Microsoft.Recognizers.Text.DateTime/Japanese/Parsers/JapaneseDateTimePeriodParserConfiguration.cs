@@ -447,25 +447,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle morning, afternoon..
-            if (MORegexCache.IsMatch(trimmedText))
+            if (MORegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AFRegexCache.IsMatch(trimmedText))
+            else if (AFRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EVRegexCache.IsMatch(trimmedText))
+            else if (EVRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NIRegexCache.IsMatch(trimmedText))
+            else if (NIRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -482,11 +482,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (exactMatch.Success)
             {
                 var swift = 0;
-                if (JapaneseDateTimePeriodExtractorConfiguration.NextRegexCache.IsMatch(trimmedText))
+                if (JapaneseDateTimePeriodExtractorConfiguration.NextRegex.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (JapaneseDateTimePeriodExtractorConfiguration.LastRegexCache.IsMatch(trimmedText))
+                else if (JapaneseDateTimePeriodExtractorConfiguration.LastRegex.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }

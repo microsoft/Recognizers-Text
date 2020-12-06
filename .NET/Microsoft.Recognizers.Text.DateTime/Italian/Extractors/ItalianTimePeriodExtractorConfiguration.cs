@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegexCache.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text);
         }
 
         public bool GetFromTokenIndex(string text, out int index)
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool IsConnectorToken(string text)
         {
-            return ConnectorAndRegexCache.IsMatch(text) || FullTillRegex.IsExactMatch(text, false);
+            return ConnectorAndRegex.IsMatch(text) || FullTillRegex.IsExactMatch(text, false);
         }
 
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);

@@ -34,15 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             // push, save teh MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false;
-            if (BeforeRegexCache.IsMatch(er.Text))
+            if (BeforeRegex.IsMatch(er.Text))
             {
                 hasBefore = true;
             }
-            else if (AfterRegexCache.IsMatch(er.Text))
+            else if (AfterRegex.IsMatch(er.Text))
             {
                 hasAfter = true;
             }
-            else if (SinceRegexCache.IsMatch(er.Text))
+            else if (SinceRegex.IsMatch(er.Text))
             {
                 hasSince = true;
             }

@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     }
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",", StringComparison.Ordinal) || PrepositionRegexCache.IsMatch(middleStr))
+                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",", StringComparison.Ordinal) || PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);

@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return true;
             }
 
-            return ChineseHolidayExtractorConfiguration.LunarHolidayRegexCache.IsMatch(trimmedText);
+            return ChineseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
         }
 
         // merge a Date entity and a Time entity
@@ -200,11 +200,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var sec = time.Second;
 
             // handle morning, afternoon
-            if (SimplePmRegexCache.IsMatch(text) && hour < Constants.HalfDayHourCount)
+            if (SimplePmRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
             {
                 hour += Constants.HalfDayHourCount;
             }
-            else if (SimpleAmRegexCache.IsMatch(text) && hour >= Constants.HalfDayHourCount)
+            else if (SimpleAmRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
             {
                 hour -= Constants.HalfDayHourCount;
             }
@@ -220,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var val = (DateTimeResolutionResult)pr2.Value;
 
-            if (hour <= Constants.HalfDayHourCount && !SimplePmRegexCache.IsMatch(text) && !SimpleAmRegexCache.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 // ret.Timex += "ampm";

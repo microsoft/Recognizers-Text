@@ -129,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (this.config.EachPrefixRegexCache.IsMatch(beforeStr))
+            if (this.config.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
 

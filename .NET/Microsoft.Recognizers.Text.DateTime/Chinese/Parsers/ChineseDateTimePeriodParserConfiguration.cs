@@ -445,31 +445,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle morning, afternoon..
-            if (MORegexCache.IsMatch(trimmedText))
+            if (MORegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (MIRegexCache.IsMatch(trimmedText))
+            else if (MIRegex.IsMatch(trimmedText))
             {
                 timeStr = "TMI";
                 beginHour = 11;
                 endHour = 13;
             }
-            else if (AFRegexCache.IsMatch(trimmedText))
+            else if (AFRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EVRegexCache.IsMatch(trimmedText))
+            else if (EVRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NIRegexCache.IsMatch(trimmedText))
+            else if (NIRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -484,11 +484,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (ChineseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = 0;
-                if (ChineseDateTimePeriodExtractorConfiguration.NextRegexCache.IsMatch(trimmedText))
+                if (ChineseDateTimePeriodExtractorConfiguration.NextRegex.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (ChineseDateTimePeriodExtractorConfiguration.LastRegexCache.IsMatch(trimmedText))
+                else if (ChineseDateTimePeriodExtractorConfiguration.LastRegex.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }

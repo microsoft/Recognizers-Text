@@ -148,25 +148,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             var trimmedText = text.Trim();
 
-            if (MorningStartEndRegexCache.IsMatch(trimmedText))
+            if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AfternoonStartEndRegexCache.IsMatch(trimmedText))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EveningStartEndRegexCache.IsMatch(trimmedText))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NightStartEndRegexCache.IsMatch(trimmedText))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;

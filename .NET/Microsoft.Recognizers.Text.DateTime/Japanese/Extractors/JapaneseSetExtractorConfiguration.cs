@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             foreach (var er in ers)
             {
                 // "each last summer" doesn't make sense
-                if (LastRegexCache.IsMatch(er.Text))
+                if (LastRegex.IsMatch(er.Text))
                 {
                     continue;
                 }

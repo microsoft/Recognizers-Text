@@ -1166,7 +1166,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             // For the rest of datetime, it will be handled in next function
-            if (Config.RestOfDateTimeRegexCache.IsMatch(text))
+            if (Config.RestOfDateTimeRegex.IsMatch(text))
             {
                 return ret;
             }

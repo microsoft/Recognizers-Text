@@ -21,15 +21,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim();
             var swift = -10;
 
-            if (PortugueseDatePeriodParserConfiguration.NextPrefixRegexCache.IsMatch(trimmedText))
+            if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegexCache.IsMatch(trimmedText))
+            else if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (PortugueseDatePeriodParserConfiguration.ThisPrefixRegexCache.IsMatch(trimmedText))
+            else if (PortugueseDatePeriodParserConfiguration.ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }

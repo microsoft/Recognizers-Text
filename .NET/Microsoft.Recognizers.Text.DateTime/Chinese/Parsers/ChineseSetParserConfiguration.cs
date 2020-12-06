@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (ChineseSetExtractorConfiguration.EachPrefixRegexCache.IsMatch(beforeStr))
+            if (ChineseSetExtractorConfiguration.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
                 ret.Timex = pr.TimexStr;

@@ -113,37 +113,37 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             float multiplier = 1;
             string durationType;
 
-            if (DoubleMultiplierRegexCache.IsMatch(trimmedText))
+            if (DoubleMultiplierRegex.IsMatch(trimmedText))
             {
                 multiplier = 2;
             }
-            else if (HalfMultiplierRegexCache.IsMatch(trimmedText))
+            else if (HalfMultiplierRegex.IsMatch(trimmedText))
             {
                 multiplier = 0.5f;
             }
 
-            if (DayTypeRegexCache.IsMatch(trimmedText))
+            if (DayTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "D";
             }
-            else if (WeekTypeRegexCache.IsMatch(trimmedText))
+            else if (WeekTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "W";
             }
-            else if (WeekendTypeRegexCache.IsMatch(trimmedText))
+            else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "WE";
             }
-            else if (MonthTypeRegexCache.IsMatch(trimmedText))
+            else if (MonthTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "M";
             }
-            else if (QuarterTypeRegexCache.IsMatch(trimmedText))
+            else if (QuarterTypeRegex.IsMatch(trimmedText))
             {
                 durationLength = 3;
                 durationType = "M";
             }
-            else if (YearTypeRegexCache.IsMatch(trimmedText))
+            else if (YearTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "Y";
             }
