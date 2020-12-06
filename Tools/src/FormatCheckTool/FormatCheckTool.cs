@@ -28,7 +28,7 @@ namespace FormatCheckTool
 
             while (true)
             {
-                Console.WriteLine("Enter the path of specs json file to check:");
+                Console.WriteLine("Enter the specs JSON file path to be checked:");
                 var input = Console.ReadLine()?.Trim();
                 Console.WriteLine();
 
@@ -65,7 +65,7 @@ namespace FormatCheckTool
         private static void CheckPipeline(string filePath)
         {
             Console.WriteLine("-------------------------");
-            Console.WriteLine($"Begin Check file {filePath}.");
+            Console.WriteLine($"Begin to check file {filePath}.");
             Tuple<bool, List<TestModel>> data = LoadJsonFile(filePath);
             if (!data.Item1)
             {
@@ -87,28 +87,28 @@ namespace FormatCheckTool
             string flag = string.Empty;
             if (!File.Exists(filePath))
             {
-                flag = $"File {filePath} Not Exist! {PleaseCheckStr}";
+                flag = $"File {filePath} Dose Not Exist! {PleaseCheckStr}";
             }
             else
             {
                 var rawData = File.ReadAllText(filePath);
 
-                // Try to load Specs json file, and catch exception.
+                // Try to load Specs JSON file, and catch exception.
                 try
                 {
                     specs = (List<TestModel>)JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
                     if (!specs.Any())
                     {
-                        flag = $"Json File is Empty, {PleaseCheckStr}";
+                        flag = $"JSON File is Empty, {PleaseCheckStr}";
                     }
                 }
                 catch (JsonReaderException jre)
                 {
-                    flag = $"Json Reader Exception! {PleaseCheckStr}";
+                    flag = $"JSON Reader Exception! {PleaseCheckStr}";
                 }
                 catch (JsonSerializationException jse)
                 {
-                    flag = $"Json SerialzationException! {PleaseCheckStr}";
+                    flag = $"JSON SerialzationException! {PleaseCheckStr}";
                 }
                 catch (Exception e)
                 {
@@ -116,19 +116,19 @@ namespace FormatCheckTool
                 }
             }
 
-            return new Tuple<bool, List<TestModel>>(ConsoleStageResult("Json  Valid", flag), specs);
+            return new Tuple<bool, List<TestModel>>(ConsoleStageResult("JSON Valid", flag), specs);
         }
 
         private static bool CheckBasicContent(List<TestModel> data)
         {
             string flag = string.Empty;
-            return ConsoleStageResult("Basic Content", flag);
+            return ConsoleStageResult("Content Valid", flag);
         }
 
         private static bool CheckModelResult(List<TestModel> data)
         {
             string flag = string.Empty;
-            return ConsoleStageResult("Model Quantity", flag);
+            return ConsoleStageResult("Model Result", flag);
         }
 
         private static bool ConsoleStageResult(string stage, string flag)
@@ -144,8 +144,8 @@ namespace FormatCheckTool
         /// </summary>
         private static void ShowIntro()
         {
-            Console.WriteLine("Welcome to the Recognizers' Json Format Check Tool console application!");
-            Console.WriteLine("To check the specs json format correctness. You should enter the specs file path(which support simple wildcard character) and the tool will show the format check result, including json valid, basic content, quantity three parts.");
+            Console.WriteLine("Welcome to the Recognizers' JSON Format Check Tool console application!");
+            Console.WriteLine("To check the specs JSON format correctness. You should enter the specs file path which supports simple wildcard character and the tool will show the format check result.");
             Console.WriteLine();
             Console.WriteLine("Here are some path examples you could enter:");
             Console.WriteLine();
