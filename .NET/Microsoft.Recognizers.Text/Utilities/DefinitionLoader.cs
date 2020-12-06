@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text;
 
 namespace Microsoft.Recognizers.Definitions.Utilities
 {
