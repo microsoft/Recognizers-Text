@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            ThisPrefixRegex = RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
@@ -34,15 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim();
             var swift = -10;
 
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (ThisPrefixRegex.IsMatch(trimmedText))
+            else if (ThisPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 0;
             }

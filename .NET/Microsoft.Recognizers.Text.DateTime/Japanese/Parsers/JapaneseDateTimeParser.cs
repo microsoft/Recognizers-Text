@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
+        public static readonly Regex SimpleAmRegex = RegexCache.Get(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
+        public static readonly Regex SimplePmRegex = RegexCache.Get(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return true;
             }
 
-            return JapaneseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
+            return JapaneseHolidayExtractorConfiguration.LunarHolidayRegexCache.IsMatch(trimmedText);
         }
 
         // Merge a Date entity and a Time entity
@@ -198,11 +198,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var sec = time.Second;
 
             // handle morning, afternoon
-            if (SimplePmRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
+            if (SimplePmRegexCache.IsMatch(text) && hour < Constants.HalfDayHourCount)
             {
                 hour += Constants.HalfDayHourCount;
             }
-            else if (SimpleAmRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
+            else if (SimpleAmRegexCache.IsMatch(text) && hour >= Constants.HalfDayHourCount)
             {
                 hour -= Constants.HalfDayHourCount;
             }
@@ -218,7 +218,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             var val = (DateTimeResolutionResult)pr2.Value;
 
-            if (hour <= Constants.HalfDayHourCount && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !SimplePmRegexCache.IsMatch(text) && !SimpleAmRegexCache.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 // ret.Timex += "ampm";

@@ -24,8 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
+            AMTimeRegex = RegexCache.Get(DateTimeDefinitions.AmTimeRegex, RegexFlags);
+            PMTimeRegex = RegexCache.Get(DateTimeDefinitions.PmTimeRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
@@ -153,11 +153,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
+            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }

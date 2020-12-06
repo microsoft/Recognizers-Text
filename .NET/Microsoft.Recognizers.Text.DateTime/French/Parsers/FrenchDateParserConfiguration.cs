@@ -43,11 +43,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             BeforeAfterRegex = FrenchDateExtractorConfiguration.BeforeAfterRegex;
             RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+            RelativeDayRegex = RegexCache.Get(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            UpcomingPrefixRegex = RegexCache.Get(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = RegexCache.Get(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
 
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;

@@ -9,8 +9,8 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
         public ChineseIpExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            Ipv4Regex = new Regex(IpDefinitions.Ipv4Regex, RegexOptions.Compiled);
-            Ipv6Regex = new Regex(IpDefinitions.Ipv6Regex, RegexOptions.Compiled);
+            Ipv4Regex = RegexCache.Get(IpDefinitions.Ipv4Regex, RegexOptions.Compiled);
+            Ipv6Regex = RegexCache.Get(IpDefinitions.Ipv6Regex, RegexOptions.Compiled);
         }
     }
 }

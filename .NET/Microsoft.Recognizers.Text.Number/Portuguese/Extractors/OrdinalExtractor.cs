@@ -26,11 +26,11 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalEnglishRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.PORTUGUESE)
                 },
             };

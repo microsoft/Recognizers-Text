@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
             WordBoundariesRegex = PhoneNumbersDefinitions.WordBoundariesRegex;
             NonWordBoundariesRegex = PhoneNumbersDefinitions.NonWordBoundariesRegex;
             EndWordBoundariesRegex = PhoneNumbersDefinitions.EndWordBoundariesRegex;
-            ColonPrefixCheckRegex = new Regex(PhoneNumbersDefinitions.ColonPrefixCheckRegex);
+            ColonPrefixCheckRegex = RegexCache.Get(PhoneNumbersDefinitions.ColonPrefixCheckRegex);
             ForbiddenPrefixMarkers = (List<char>)PhoneNumbersDefinitions.ForbiddenPrefixMarkers;
         }
     }

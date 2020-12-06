@@ -23,8 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeParser = config.TimeParser;
 
             NowRegex = PortugueseDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
+            AMTimeRegex = RegexCache.Get(DateTimeDefinitions.AmTimeRegex, RegexFlags);
+            PMTimeRegex = RegexCache.Get(DateTimeDefinitions.PmTimeRegex, RegexFlags);
             SimpleTimeOfTodayAfterRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -153,11 +153,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
+            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
+            else if (PortugueseDatePeriodParserConfiguration.NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }

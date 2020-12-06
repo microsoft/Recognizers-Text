@@ -18,27 +18,27 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 15k,  16 G
-                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1,234,  ２，３３２，１１１
-                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 半百  半ダース
-                    new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersWithHalfDozen, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
                 {
                     // 一ダース  五十ダース
-                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersWithDozen, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
             };
@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // 一百五十五, 负一亿三百二十二.
                     // Uses an allow list to avoid extracting "西九条" from "九"
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
+                        RegexCache.Get(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
                     break;
 
@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // 一百五十五, 负一亿三百二十二, "西九条" from "九"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
+                        RegexCache.Get(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
                     break;
             }

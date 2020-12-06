@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.Number
                     regexOptions |= RegexOptions.IgnoreCase;
                 }
 
-                Regex regex = new Regex(regexString, regexOptions);
+                Regex regex = RegexCache.Get(regexString, regexOptions);
 
                 regexes.Add(regex);
             }

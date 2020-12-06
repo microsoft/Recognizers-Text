@@ -9,8 +9,8 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
         public ChineseURLExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            UrlRegex = new Regex(URLDefinitions.UrlRegex, RegexOptions.Compiled);
-            IpUrlRegex = new Regex(URLDefinitions.IpUrlRegex, RegexOptions.Compiled);
+            UrlRegex = RegexCache.Get(URLDefinitions.UrlRegex, RegexOptions.Compiled);
+            IpUrlRegex = RegexCache.Get(URLDefinitions.IpUrlRegex, RegexOptions.Compiled);
         }
     }
 }

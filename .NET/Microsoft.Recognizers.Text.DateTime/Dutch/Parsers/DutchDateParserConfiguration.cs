@@ -42,11 +42,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
             BeforeAfterRegex = DutchDateExtractorConfiguration.BeforeAfterRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+            RelativeDayRegex = RegexCache.Get(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            UpcomingPrefixRegex = RegexCache.Get(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = RegexCache.Get(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
@@ -155,12 +155,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegex.IsMatch(trimmedText))
+            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }

@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             bool isUnitMatch = false;
                             foreach (var unitRegex in regex.Item2)
                             {
-                                isUnitMatch = isUnitMatch || unitRegex.IsMatch(er.Text);
+                                isUnitMatch = isUnitMatch || unitRegexCache.IsMatch(er.Text);
                             }
 
                             if (!isUnitMatch)

@@ -40,12 +40,12 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
 
-            this.AdditionTermsRegex = new Regex(NumbersDefinitions.AdditionTermsRegex, RegexFlags);
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
-            this.FractionPrepositionInverseRegex = new Regex(NumbersDefinitions.FractionPrepositionInverseRegex, RegexFlags);
+            this.AdditionTermsRegex = RegexCache.Get(NumbersDefinitions.AdditionTermsRegex, RegexFlags);
+            this.HalfADozenRegex = RegexCache.Get(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = RegexCache.Get(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = RegexCache.Get(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.FractionPrepositionInverseRegex = RegexCache.Get(NumbersDefinitions.FractionPrepositionInverseRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

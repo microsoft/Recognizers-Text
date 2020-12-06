@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
         public static readonly Regex ConnectorRegex =
-            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ConnectorRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
                 // Check if Date and TimeOfDay are contiguous
                 var middleStr = beforeStr.Substring((int)ers[0].Start + (int)ers[0].Length).Trim();
-                if (!(string.IsNullOrWhiteSpace(middleStr) || ConnectorRegex.IsMatch(middleStr)))
+                if (!(string.IsNullOrWhiteSpace(middleStr) || ConnectorRegexCache.IsMatch(middleStr)))
                 {
                     return ret;
                 }

@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public class TurkishDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         public static readonly Regex LastTokenRegex =
-            new Regex(DateTimeDefinitions.LastRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.LastRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -46,11 +46,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             RelativeWeekDayRegex = TurkishDateExtractorConfiguration.RelativeWeekDayRegex;
             BeforeAfterRegex = TurkishDateExtractorConfiguration.BeforeAfterRegex;
 
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+            RelativeDayRegex = RegexCache.Get(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            UpcomingPrefixRegex = RegexCache.Get(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
+            PastPrefixRegex = RegexCache.Get(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
 
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
@@ -161,12 +161,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegex.IsMatch(trimmedText))
+            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }

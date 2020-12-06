@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         public EnglishPhoneNumberExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            FalsePositivePrefixRegex = new Regex(PhoneNumbersDefinitions.FalsePositivePrefixRegex);
+            FalsePositivePrefixRegex = RegexCache.Get(PhoneNumbersDefinitions.FalsePositivePrefixRegex);
         }
     }
 }

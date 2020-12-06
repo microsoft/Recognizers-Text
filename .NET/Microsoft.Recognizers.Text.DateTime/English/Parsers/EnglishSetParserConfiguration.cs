@@ -12,28 +12,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DoubleMultiplierRegex =
-            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
 
         private static readonly Regex HalfMultiplierRegex =
-            new Regex(DateTimeDefinitions.HalfMultiplierRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.HalfMultiplierRegex, RegexFlags);
 
         private static readonly Regex DayTypeRegex =
-            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DayTypeRegex, RegexFlags);
 
         private static readonly Regex WeekTypeRegex =
-            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
 
         private static readonly Regex WeekendTypeRegex =
-            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
 
         private static readonly Regex MonthTypeRegex =
-            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
 
         private static readonly Regex QuarterTypeRegex =
-            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
 
         private static readonly Regex YearTypeRegex =
-            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.YearTypeRegex, RegexFlags);
 
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -113,37 +113,37 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             float multiplier = 1;
             string durationType;
 
-            if (DoubleMultiplierRegex.IsMatch(trimmedText))
+            if (DoubleMultiplierRegexCache.IsMatch(trimmedText))
             {
                 multiplier = 2;
             }
-            else if (HalfMultiplierRegex.IsMatch(trimmedText))
+            else if (HalfMultiplierRegexCache.IsMatch(trimmedText))
             {
                 multiplier = 0.5f;
             }
 
-            if (DayTypeRegex.IsMatch(trimmedText))
+            if (DayTypeRegexCache.IsMatch(trimmedText))
             {
                 durationType = "D";
             }
-            else if (WeekTypeRegex.IsMatch(trimmedText))
+            else if (WeekTypeRegexCache.IsMatch(trimmedText))
             {
                 durationType = "W";
             }
-            else if (WeekendTypeRegex.IsMatch(trimmedText))
+            else if (WeekendTypeRegexCache.IsMatch(trimmedText))
             {
                 durationType = "WE";
             }
-            else if (MonthTypeRegex.IsMatch(trimmedText))
+            else if (MonthTypeRegexCache.IsMatch(trimmedText))
             {
                 durationType = "M";
             }
-            else if (QuarterTypeRegex.IsMatch(trimmedText))
+            else if (QuarterTypeRegexCache.IsMatch(trimmedText))
             {
                 durationLength = 3;
                 durationType = "M";
             }
-            else if (YearTypeRegex.IsMatch(trimmedText))
+            else if (YearTypeRegexCache.IsMatch(trimmedText))
             {
                 durationType = "Y";
             }

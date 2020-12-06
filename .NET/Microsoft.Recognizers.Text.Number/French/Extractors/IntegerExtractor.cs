@@ -20,11 +20,11 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersWithSuffix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -32,19 +32,19 @@ namespace Microsoft.Recognizers.Text.Number.French
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.NumbersWithDozenSuffix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.FRENCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.FRENCH)
                 },
                 {

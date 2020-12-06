@@ -20,11 +20,11 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalFrenchRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalFrenchRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.FRENCH)
                 },
             }.ToImmutableDictionary();

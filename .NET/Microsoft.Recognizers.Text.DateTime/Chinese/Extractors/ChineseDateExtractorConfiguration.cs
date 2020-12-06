@@ -13,102 +13,102 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
+        public static readonly Regex MonthRegex = RegexCache.Get(DateTimeDefinitions.MonthRegex, RegexFlags);
 
-        public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
+        public static readonly Regex DayRegex = RegexCache.Get(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.DateDayRegexInChinese, RegexFlags);
+        public static readonly Regex DayRegexInChinese = RegexCache.Get(DateTimeDefinitions.DateDayRegexInChinese, RegexFlags);
 
-        public static readonly Regex DayRegexNumInChinese = new Regex(DateTimeDefinitions.DayRegexNumInChinese, RegexFlags);
+        public static readonly Regex DayRegexNumInChinese = RegexCache.Get(DateTimeDefinitions.DayRegexNumInChinese, RegexFlags);
 
-        public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
+        public static readonly Regex MonthNumRegex = RegexCache.Get(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+        public static readonly Regex YearRegex = RegexCache.Get(DateTimeDefinitions.YearRegex, RegexFlags);
 
-        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+        public static readonly Regex RelativeRegex = RegexCache.Get(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
-        public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexFlags);
+        public static readonly Regex ZeroToNineIntegerRegexChs = RegexCache.Get(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexFlags);
 
-        public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.DateYearInChineseRegex, RegexFlags);
+        public static readonly Regex YearInChineseRegex = RegexCache.Get(DateTimeDefinitions.DateYearInChineseRegex, RegexFlags);
 
-        public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
+        public static readonly Regex WeekDayRegex = RegexCache.Get(DateTimeDefinitions.WeekDayRegex, RegexFlags);
 
-        public static readonly Regex LunarRegex = new Regex(DateTimeDefinitions.LunarRegex, RegexFlags);
+        public static readonly Regex LunarRegex = RegexCache.Get(DateTimeDefinitions.LunarRegex, RegexFlags);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateThisRegex, RegexFlags);
+        public static readonly Regex ThisRegex = RegexCache.Get(DateTimeDefinitions.DateThisRegex, RegexFlags);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateLastRegex, RegexFlags);
+        public static readonly Regex LastRegex = RegexCache.Get(DateTimeDefinitions.DateLastRegex, RegexFlags);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateNextRegex, RegexFlags);
+        public static readonly Regex NextRegex = RegexCache.Get(DateTimeDefinitions.DateNextRegex, RegexFlags);
 
-        public static readonly Regex SpecialDayRegex = new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
+        public static readonly Regex SpecialDayRegex = RegexCache.Get(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
 
-        public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
+        public static readonly Regex WeekDayOfMonthRegex = RegexCache.Get(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
-        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+        public static readonly Regex ThisRe = RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
-        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
+        public static readonly Regex LastRe = RegexCache.Get(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
 
-        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+        public static readonly Regex NextRe = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
-        public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
+        public static readonly Regex SpecialDate = RegexCache.Get(DateTimeDefinitions.SpecialDate, RegexFlags);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+        public static readonly Regex UnitRegex = RegexCache.Get(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
         public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(
                                                                                   new BaseNumberOptionsConfiguration(Culture.Chinese, NumberOptions.None)));
 
         public static readonly ImmutableDictionary<string, int> DynastyYearMap = DateTimeDefinitions.DynastyYearMap.ToImmutableDictionary();
 
-        public static readonly Regex DynastyYearRegex = new Regex(DateTimeDefinitions.DynastyYearRegex, RegexFlags);
+        public static readonly Regex DynastyYearRegex = RegexCache.Get(DateTimeDefinitions.DynastyYearRegex, RegexFlags);
 
         public static readonly string DynastyStartYear = DateTimeDefinitions.DynastyStartYear;
 
         public static readonly Regex[] DateRegexList =
         {
             // (农历)?(2016年)?一月三日(星期三)?
-            new Regex(DateTimeDefinitions.DateRegexList1, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.DateRegexList1, RegexFlags),
 
             // (2015年)?(农历)?十月初一(星期三)?
-            new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.DateRegexList2, RegexFlags),
 
             // (2015年)?(农历)?十月二十(星期三)?
-            new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.DateRegexList3, RegexFlags),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 23/7
-                new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags) :
+                RegexCache.Get(DateTimeDefinitions.DateRegexList5, RegexFlags) :
 
                 // 7/23
-                new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags),
+                RegexCache.Get(DateTimeDefinitions.DateRegexList4, RegexFlags),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 7/23
-                new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags) :
+                RegexCache.Get(DateTimeDefinitions.DateRegexList4, RegexFlags) :
 
                 // 23/7
-                new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags),
+                RegexCache.Get(DateTimeDefinitions.DateRegexList5, RegexFlags),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 23-3-2015
-                new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags) :
+                RegexCache.Get(DateTimeDefinitions.DateRegexList7, RegexFlags) :
 
                 // 3-23-2017
-                new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags),
+                RegexCache.Get(DateTimeDefinitions.DateRegexList6, RegexFlags),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 3-23-2017
-                new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags) :
+                RegexCache.Get(DateTimeDefinitions.DateRegexList6, RegexFlags) :
 
                 // 23-3-2015
-                new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags),
+                RegexCache.Get(DateTimeDefinitions.DateRegexList7, RegexFlags),
 
             // 2015-12-23
-            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.DateRegexList8, RegexFlags),
         };
 
         public static readonly Regex[] ImplicitDateList =
@@ -117,11 +117,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
         };
 
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+        public static readonly Regex BeforeRegex = RegexCache.Get(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+        public static readonly Regex AfterRegex = RegexCache.Get(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+        public static readonly Regex DateTimePeriodUnitRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

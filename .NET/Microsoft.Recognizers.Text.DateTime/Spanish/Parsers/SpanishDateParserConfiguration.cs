@@ -37,11 +37,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
             BeforeAfterRegex = SpanishDateExtractorConfiguration.BeforeAfterRegex;
 
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+            RelativeDayRegex = RegexCache.Get(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            UpcomingPrefixRegex = RegexCache.Get(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
+            PastPrefixRegex = RegexCache.Get(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
 
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
@@ -160,12 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegex.IsMatch(trimmedText))
+            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
-            return PreviousPrefixRegex.IsMatch(trimmedText);
+            return PreviousPrefixRegexCache.IsMatch(trimmedText);
         }
 
         public string Normalize(string text)

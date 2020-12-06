@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.Utilities
 
         private static string SanitizeGroups(string source)
         {
-            Regex matchGroup = new Regex(@"\?< (?<name>\w +) >");
+            Regex matchGroup = RegexCache.Get(@"\?< (?<name>\w +) >");
 
             var result = Regex.Replace(source, matchGroup.ToString(), ReplaceMatchGroup);
             return result;

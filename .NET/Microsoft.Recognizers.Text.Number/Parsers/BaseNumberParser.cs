@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number
     public class BaseNumberParser : IParser
     {
         private static readonly Regex LongFormRegex =
-            new Regex(@"\d+", RegexOptions.Singleline);
+            RegexCache.Get(@"\d+", RegexOptions.Singleline);
 
         private readonly bool isMultiDecimalSeparatorCulture = false;
 
@@ -345,7 +345,7 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var resultText = extResult.Text;
-            if (Config.FractionPrepositionRegex.IsMatch(resultText))
+            if (Config.FractionPrepositionRegexCache.IsMatch(resultText))
             {
                 var match = Config.FractionPrepositionRegex.Match(resultText);
                 var numerator = match.Groups["numerator"].Value;
@@ -932,7 +932,7 @@ namespace Microsoft.Recognizers.Text.Number
                 textNumberPattern = @"(?<=\b)(" + singleIntFrac + @")(?=\b)";
             }
 
-            return new Regex(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
+            return RegexCache.Get(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
         }
     }
 }

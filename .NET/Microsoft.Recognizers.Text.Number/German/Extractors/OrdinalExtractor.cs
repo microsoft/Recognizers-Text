@@ -20,19 +20,19 @@ namespace Microsoft.Recognizers.Text.Number.German
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalNumericRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalGermanRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalGermanRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.GERMAN)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalRoundNumberRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.GERMAN)
                 },
             };

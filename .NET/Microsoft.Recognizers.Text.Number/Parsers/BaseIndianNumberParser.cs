@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var resultText = extResult.Text;
-            if (Config.FractionPrepositionRegex.IsMatch(resultText) && !Config.AdditionTermsRegex.IsMatch(resultText))
+            if (Config.FractionPrepositionRegexCache.IsMatch(resultText) && !Config.AdditionTermsRegexCache.IsMatch(resultText))
             {
                 // condition inncludes AdditionTermsRegex in combination with FractionPrepositionRegex
                 // to account for Behaviour changes of और - In fraction cases where और is used to connect two words and may not be used as addition of two words from its left and right.
@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 result.Value = smallValue / bigValue;
             }
-            else if (Config.FractionPrepositionInverseRegex.IsMatch(resultText))
+            else if (Config.FractionPrepositionInverseRegexCache.IsMatch(resultText))
             {
                 // condition  to use FractionPrepositionInverseRegex where denominator and nominator are switched to account for
                 // में से (out of) - These type of cases are very common in Hindi. It belongs to fraction unit type. Here any word/char
@@ -546,7 +546,7 @@ namespace Microsoft.Recognizers.Text.Number
                 textNumberPattern = @"(?<=\b)(" + singleIntFrac + @")(?=\b)";
             }
 
-            return new Regex(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
+            return RegexCache.Get(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
         }
     }
 }

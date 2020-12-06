@@ -14,10 +14,10 @@ namespace Microsoft.Recognizers.Text.Number.German
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FractionHalfRegex =
-            new Regex(NumbersDefinitions.FractionHalfRegex, RegexFlags);
+            RegexCache.Get(NumbersDefinitions.FractionHalfRegex, RegexFlags);
 
         private static readonly Regex FractionUnitsRegex =
-            new Regex(NumbersDefinitions.FractionUnitsRegex, RegexFlags);
+            RegexCache.Get(NumbersDefinitions.FractionUnitsRegex, RegexFlags);
 
         private static readonly string[] OneHalfTokens = NumbersDefinitions.OneHalfTokens;
 
@@ -48,10 +48,10 @@ namespace Microsoft.Recognizers.Text.Number.German
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.HalfADozenRegex = RegexCache.Get(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = RegexCache.Get(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = RegexCache.Get(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Number.German
             fracWords.RemoveAll(item => item == "/");
             for (int i = fracWords.Count - 1; i >= 0; i--)
             {
-                if (FractionHalfRegex.IsMatch(fracWords[i]))
+                if (FractionHalfRegexCache.IsMatch(fracWords[i]))
                 {
                     fracWords[i] = fracWords[i].Substring(0, fracWords[i].Length - 7);
                     fracWords.Insert(i + 1, this.WrittenFractionSeparatorTexts.ElementAt(0));

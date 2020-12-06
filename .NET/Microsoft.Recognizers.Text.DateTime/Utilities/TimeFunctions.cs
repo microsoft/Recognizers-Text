@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 return -1;
             }
 
-            if (Regex.IsMatch(text, @"\d+"))
+            if (RegexCache.IsMatch(text, @"\d+"))
             {
                 return int.Parse(text, CultureInfo.InvariantCulture);
             }
@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         public TimeResult GetShortLeft(string text)
         {
             string des = null;
-            if (Regex.IsMatch(text, DayDescRegex))
+            if (RegexCache.IsMatch(text, DayDescRegex))
             {
                 des = text.Substring(0, text.Length - 1);
             }

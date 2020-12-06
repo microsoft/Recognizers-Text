@@ -17,17 +17,17 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // -4 5/2,       ４ ６／３
-                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 8/3
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 五分の二   七分の三
-                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.AllFractionNumber, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.JAPANESE)
                 },
             };

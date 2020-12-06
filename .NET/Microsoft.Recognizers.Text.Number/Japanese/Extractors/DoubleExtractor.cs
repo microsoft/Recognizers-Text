@@ -16,46 +16,46 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // (-)2.5, can avoid cases like ip address xx.xx.xx.xx
-                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // (-).2
-                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // えは九・二三二一三一二
-                    new Regex(NumbersDefinitions.DoubleRoundNumberSpecialsChars, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleRoundNumberSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1.0 K
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // １５.２万
-                    new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleWithThousandsRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.JAPANESE)
                 },
                 {
                     // 2e6, 21.2e0
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationKanjiRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleExponentialNotationKanjiRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
                     // 2^5
-                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.DoubleScientificNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {

@@ -45,11 +45,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             RelativeWeekDayRegex = HindiDateExtractorConfiguration.RelativeWeekDayRegex;
             BeforeAfterRegex = HindiDateExtractorConfiguration.BeforeAfterRegex;
 
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+            RelativeDayRegex = RegexCache.Get(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            UpcomingPrefixRegex = RegexCache.Get(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
+            PastPrefixRegex = RegexCache.Get(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
 
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
@@ -160,12 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PreviousPrefixRegex.IsMatch(trimmedText))
+            if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }

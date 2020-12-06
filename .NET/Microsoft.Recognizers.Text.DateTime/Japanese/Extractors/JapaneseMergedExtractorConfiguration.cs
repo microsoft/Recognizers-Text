@@ -11,21 +11,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseMergedExtractorConfiguration : IDateTimeExtractor
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
+        public static readonly Regex BeforeRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
 
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
+        public static readonly Regex AfterRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
 
-        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
+        public static readonly Regex UntilRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
 
-        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
+        public static readonly Regex SincePrefixRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
 
-        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+        public static readonly Regex SinceSuffixRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
 
-        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
+        public static readonly Regex EqualRegex = RegexCache.Get(BaseDateTime.EqualRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex DenyFilterRegex = new Regex(@"^\d{1,2}号", RegexFlags);
+        private static readonly Regex DenyFilterRegex = RegexCache.Get(@"^\d{1,2}号", RegexFlags);
 
         private static readonly JapaneseDateExtractorConfiguration DateExtractor = new JapaneseDateExtractorConfiguration();
 

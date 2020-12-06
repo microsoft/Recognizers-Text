@@ -11,14 +11,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseMergedExtractorConfiguration : IDateTimeExtractor
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
-        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
-        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
-        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
-        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
-        public static readonly Regex PotentialAmbiguousRangeRegex = new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
-        public static readonly Regex AmbiguousRangeModifierPrefix = new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+        public static readonly Regex BeforeRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
+        public static readonly Regex AfterRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
+        public static readonly Regex UntilRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
+        public static readonly Regex SincePrefixRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
+        public static readonly Regex SinceSuffixRegex = RegexCache.Get(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+        public static readonly Regex EqualRegex = RegexCache.Get(BaseDateTime.EqualRegex, RegexFlags);
+        public static readonly Regex PotentialAmbiguousRangeRegex = RegexCache.Get(DateTimeDefinitions.FromToRegex, RegexFlags);
+        public static readonly Regex AmbiguousRangeModifierPrefix = RegexCache.Get(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

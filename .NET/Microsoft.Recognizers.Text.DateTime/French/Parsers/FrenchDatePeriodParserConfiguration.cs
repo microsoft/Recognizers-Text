@@ -11,25 +11,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         // @TODO move to resources - French - relative
         public static readonly Regex NextPrefixRegex =
-            new Regex(@"(prochain|prochaine)\b", RegexFlags);
+            RegexCache.Get(@"(prochain|prochaine)\b", RegexFlags);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(@"(dernier)\b", RegexFlags);
+            RegexCache.Get(@"(dernier)\b", RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(@"(ce|cette)\b", RegexFlags);
+            RegexCache.Get(@"(ce|cette)\b", RegexFlags);
 
         public static readonly Regex NextSuffixRegex =
-            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
 
         public static readonly Regex PastSuffixRegex =
-            new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = FrenchDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
-            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
+            TodayNowRegex = RegexCache.Get(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) &&
-                   (NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)))) &&
+                   (NextSuffixRegexCache.IsMatch(trimmedText) || PastSuffixRegexCache.IsMatch(trimmedText)))) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 

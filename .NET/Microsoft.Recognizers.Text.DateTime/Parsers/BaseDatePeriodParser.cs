@@ -616,7 +616,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var isMoreThan = false;
 
                     // cases like "within 3 days from yesterday/tomorrow" does not make any sense
-                    if (this.config.TodayNowRegex.IsMatch(er.Text))
+                    if (this.config.TodayNowRegexCache.IsMatch(er.Text))
                     {
                         MatchWithinNextPrefix(beforeString, isAgo, ref isLessThanOrWithIn, ref isMoreThan);
                     }
@@ -714,7 +714,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Expressions like "today", "tomorrow",... should keep their original year
-                if (dateContext != null && !this.config.SpecialDayRegex.IsMatch(er.Text))
+                if (dateContext != null && !this.config.SpecialDayRegexCache.IsMatch(er.Text))
                 {
                     ret = dateContext.ProcessDateEntityResolution(ret);
                 }
@@ -927,7 +927,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Handle the abbreviation of DatePeriod, e.g., 'eoy(end of year)', the behavior of 'eoy' should be the same as 'end of year'
-                if (this.config.UnspecificEndOfRangeRegex.IsMatch(match.Value))
+                if (this.config.UnspecificEndOfRangeRegexCache.IsMatch(match.Value))
                 {
                     latePrefix = true;
                     trimmedText = match.Value;
@@ -1484,12 +1484,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Expressions like "today", "tomorrow",... should keep their original year
-                if (!this.config.SpecialDayRegex.IsMatch(pr1.Text))
+                if (!this.config.SpecialDayRegexCache.IsMatch(pr1.Text))
                 {
                     pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
                 }
 
-                if (!this.config.SpecialDayRegex.IsMatch(pr2.Text))
+                if (!this.config.SpecialDayRegexCache.IsMatch(pr2.Text))
                 {
                     pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
                 }
@@ -1605,7 +1605,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         return ret;
                     }
 
-                    if (config.PastRegex.IsMatch(beforeStr) || config.PastRegex.IsMatch(afterStr))
+                    if (config.PastRegexCache.IsMatch(beforeStr) || config.PastRegexCache.IsMatch(afterStr))
                     {
                         modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, false);
                         beginDate = modAndDateResult.BeginDate;
@@ -1649,7 +1649,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         isMatch = true;
                     }
 
-                    if (config.FutureSuffixRegex.IsMatch(afterStr))
+                    if (config.FutureSuffixRegexCache.IsMatch(afterStr))
                     {
                         modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
                         beginDate = modAndDateResult.BeginDate;

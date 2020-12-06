@@ -8,16 +8,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public class TurkishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
 
         public static readonly Regex AfternoonStartEndRegex =
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
 
         public static readonly Regex EveningStartEndRegex =
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
 
         public static readonly Regex NightStartEndRegex =
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -146,25 +146,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (MorningStartEndRegex.IsMatch(trimmedText))
+            if (MorningStartEndRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
+            else if (AfternoonStartEndRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EveningStartEndRegex.IsMatch(trimmedText))
+            else if (EveningStartEndRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NightStartEndRegex.IsMatch(trimmedText))
+            else if (NightStartEndRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -185,11 +185,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (FutureRegex.IsMatch(trimmedText))
+            if (FutureRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }

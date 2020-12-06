@@ -7,13 +7,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public sealed class TurkishMergedParserConfiguration : TurkishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfterRegex, RegexFlags);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

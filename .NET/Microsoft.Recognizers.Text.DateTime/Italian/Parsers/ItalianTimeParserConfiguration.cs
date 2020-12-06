@@ -11,10 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            RegexCache.Get(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            RegexCache.Get(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
         public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                             deltaHour = 12;
                         }
 
-                        if (LunchRegex.IsMatch(matchPmStr))
+                        if (LunchRegexCache.IsMatch(matchPmStr))
                         {
                             if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                             {
@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegex.IsMatch(matchPmStr))
+                        else if (NightRegexCache.IsMatch(matchPmStr))
                         {
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {

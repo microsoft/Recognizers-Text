@@ -181,12 +181,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var swift = 0;
 
             // @TODO move hardcoded values to resources file
-            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
+            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegexCache.IsMatch(trimmedText) ||
                 trimmedText.Equals("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }
-            else if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
+            else if (PortugueseDatePeriodParserConfiguration.NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }

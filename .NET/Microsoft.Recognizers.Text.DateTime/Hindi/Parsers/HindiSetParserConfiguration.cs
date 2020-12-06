@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
         public HindiSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseHashtag.HashtagRegex),
+                    RegexCache.Get(BaseHashtag.HashtagRegex),
                     Constants.HASHTAG_REGEX
                 },
             };

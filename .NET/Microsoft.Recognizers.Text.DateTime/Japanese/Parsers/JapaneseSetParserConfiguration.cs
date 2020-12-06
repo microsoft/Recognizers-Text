@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (JapaneseSetExtractorConfiguration.EachPrefixRegex.IsMatch(beforeStr))
+            if (JapaneseSetExtractorConfiguration.EachPrefixRegexCache.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
                 ret.Timex = pr.TimexStr;

@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Text.Number.English
         public MergedNumberExtractor(BaseNumberOptionsConfiguration config)
         {
             NumberExtractor = English.NumberExtractor.GetInstance(config);
-            RoundNumberIntegerRegexWithLocks = new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
-            ConnectorRegex = new Regex(NumbersDefinitions.ConnectorRegex, RegexFlags);
+            RoundNumberIntegerRegexWithLocks = RegexCache.Get(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
+            ConnectorRegex = RegexCache.Get(NumbersDefinitions.ConnectorRegex, RegexFlags);
         }
 
         public sealed override BaseNumberExtractor NumberExtractor { get; set; }

@@ -13,13 +13,13 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseTimeExtractor : IDateTimeExtractor
     {
         public static readonly Regex HourRegex =
-            new Regex(BaseDateTime.HourRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+            RegexCache.Get(BaseDateTime.HourRegex, RegexOptions.Singleline | RegexOptions.Compiled);
 
         public static readonly Regex MinuteRegex =
-            new Regex(BaseDateTime.MinuteRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+            RegexCache.Get(BaseDateTime.MinuteRegex, RegexOptions.Singleline | RegexOptions.Compiled);
 
         public static readonly Regex SecondRegex =
-            new Regex(BaseDateTime.SecondRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+            RegexCache.Get(BaseDateTime.SecondRegex, RegexOptions.Singleline | RegexOptions.Compiled);
 
         private const string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new List<Token>();
 
             // handle "at 5", "at seven"
-            if (this.config.AtRegex.IsMatch(text))
+            if (this.config.AtRegexCache.IsMatch(text))
             {
                 var matches = this.config.AtRegex.Matches(text);
                 foreach (Match match in matches)
@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // handle "before 3", "after three"
                 var beforeAfterRegex = this.config.TimeBeforeAfterRegex;
-                if (beforeAfterRegex.IsMatch(text))
+                if (beforeAfterRegexCache.IsMatch(text))
                 {
                     var matches = beforeAfterRegex.Matches(text);
                     foreach (Match match in matches)
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new List<Token>();
 
             // handle "ish"
-            if (this.config.IshRegex != null && this.config.IshRegex.IsMatch(text))
+            if (this.config.IshRegex != null && this.config.IshRegexCache.IsMatch(text))
             {
                 var matches = this.config.IshRegex.Matches(text);
 

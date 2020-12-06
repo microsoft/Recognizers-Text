@@ -9,9 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     {
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegex1, RegexFlags),
-            new Regex(DateTimeDefinitions.HolidayRegex2, RegexFlags),
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegex1, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegex2, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegex3, RegexFlags),
         };
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;

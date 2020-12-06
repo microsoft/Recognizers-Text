@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Utilities
         // Must be in sync with Base-Numbers YAML due to inter-dependency issue with different .NET targets
         private const string CaseSensitiveTerms = @"(?<=(\s|\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\b";
 
-        private static readonly Regex SpecialTokensRegex = new Regex(CaseSensitiveTerms, RegexOptions.Compiled);
+        private static readonly Regex SpecialTokensRegex = RegexCache.Get(CaseSensitiveTerms, RegexOptions.Compiled);
 
         public static string Preprocess(string query, bool caseSensitive = false, bool recode = true)
         {

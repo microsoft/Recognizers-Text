@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex PluralTokenRegex =
-            new Regex(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
 
         public TurkishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
-            if (PluralTokenRegex.IsMatch(trimmedText))
+            if (PluralTokenRegexCache.IsMatch(trimmedText))
             {
                 trimmedText = trimmedText.Substring(0, trimmedText.Length - 4);
             }

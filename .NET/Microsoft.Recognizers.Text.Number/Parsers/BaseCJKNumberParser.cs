@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 getExtResult.Text = NormalizeCharWidth(getExtResult.Text);
                 ret = DigitNumberParse(getExtResult);
-                if (Config.NegativeNumberSignRegex.IsMatch(getExtResult.Text) && (double)ret.Value > 0)
+                if (Config.NegativeNumberSignRegexCache.IsMatch(getExtResult.Text) && (double)ret.Value > 0)
                 {
                     ret.Value = -(double)ret.Value;
                 }
@@ -151,21 +151,21 @@ namespace Microsoft.Recognizers.Text.Number
                 numPart = splitResult[1];
             }
 
-            var intValue = Config.DigitNumRegex.IsMatch(intPart)
+            var intValue = Config.DigitNumRegexCache.IsMatch(intPart)
                 ? GetDigitValue(intPart, 1.0)
                 : GetIntValue(intPart);
 
-            var numValue = Config.DigitNumRegex.IsMatch(numPart)
+            var numValue = Config.DigitNumRegexCache.IsMatch(numPart)
                 ? GetDigitValue(numPart, 1.0)
-                : (Config.PointRegex.IsMatch(numPart)
+                : (Config.PointRegexCache.IsMatch(numPart)
                 ? GetIntValue(Config.PointRegex.Split(numPart)[0]) + GetPointValue(Config.PointRegex.Split(numPart)[1])
                 : GetIntValue(numPart));
 
-            var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
+            var demoValue = Config.DigitNumRegexCache.IsMatch(demoPart)
                 ? GetDigitValue(demoPart, 1.0)
                 : GetIntValue(demoPart);
 
-            if (Config.NegativeNumberSignRegex.IsMatch(intPart))
+            if (Config.NegativeNumberSignRegexCache.IsMatch(intPart))
             {
                 result.Value = intValue - (numValue / demoValue);
             }
@@ -317,7 +317,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var doubleValue = GetIntValue(splitResult[0]);
                 if (splitResult.Length == 2)
                 {
-                    if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
+                    if (Config.NegativeNumberSignRegexCache.IsMatch(splitResult[0]))
                     {
                         doubleValue -= GetPointValue(splitResult[1]);
                     }
@@ -338,7 +338,7 @@ namespace Microsoft.Recognizers.Text.Number
                     string demoPart = percentageNumSearch.Value;
                     var splitResult = Config.FracSplitRegex.Split(demoPart);
                     demoPart = splitResult[0];
-                    var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
+                    var demoValue = Config.DigitNumRegexCache.IsMatch(demoPart)
                         ? GetDigitValue(demoPart, 1.0)
                         : GetIntValue(demoPart);
 
@@ -372,7 +372,7 @@ namespace Microsoft.Recognizers.Text.Number
             var resultText = extResult.Text;
             resultText = resultText.Substring(1);
 
-            result.Value = (Config.DigitNumRegex.IsMatch(resultText) && !Config.RoundNumberIntegerRegex.IsMatch(resultText))
+            result.Value = (Config.DigitNumRegexCache.IsMatch(resultText) && !Config.RoundNumberIntegerRegexCache.IsMatch(resultText))
                 ? GetDigitValue(resultText, 1)
                 : GetIntValue(resultText);
 
@@ -394,7 +394,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             var resultText = extResult.Text;
 
-            if (Config.DoubleAndRoundRegex.IsMatch(resultText))
+            if (Config.DoubleAndRoundRegexCache.IsMatch(resultText))
             {
                 resultText = ReplaceUnit(resultText);
                 result.Value = GetDigitValue(
@@ -411,7 +411,7 @@ namespace Microsoft.Recognizers.Text.Number
                     splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
 
-                if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
+                if (Config.NegativeNumberSignRegexCache.IsMatch(splitResult[0]))
                 {
                     result.Value = GetIntValue(splitResult[0]) - GetPointValue(splitResult[1]);
                 }
@@ -462,7 +462,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             var isNegative = false;
 
-            if (Config.NegativeNumberSignRegex.IsMatch(intStr))
+            if (Config.NegativeNumberSignRegexCache.IsMatch(intStr))
             {
                 isNegative = true;
                 intStr = intStr.Substring(1);
@@ -518,7 +518,7 @@ namespace Microsoft.Recognizers.Text.Number
             var isDozen = false;
             var isPair = false;
 
-            if (Config.DozenRegex.IsMatch(intStr))
+            if (Config.DozenRegexCache.IsMatch(intStr))
             {
                 isDozen = true;
                 if (Config.CultureInfo.Name == "zh-CN")
@@ -530,13 +530,13 @@ namespace Microsoft.Recognizers.Text.Number
                     intStr = intStr.Substring(0, intStr.Length - 3);
                 }
             }
-            else if (Config.PairRegex.IsMatch(intStr))
+            else if (Config.PairRegexCache.IsMatch(intStr))
             {
                 isPair = true;
                 intStr = intStr.Substring(0, intStr.Length - 1);
             }
 
-            if (Config.NegativeNumberSignRegex.IsMatch(intStr))
+            if (Config.NegativeNumberSignRegexCache.IsMatch(intStr))
             {
                 isNegative = true;
                 if (Config.CultureInfo.Name == "ko-KR")

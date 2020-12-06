@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.Choice.French
     public class FrenchBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
-            new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline);
+            RegexCache.Get(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline);
 
         public static readonly Regex FalseRegex =
-            new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline);
+            RegexCache.Get(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline);
 
         public static readonly Regex TokenRegex =
-            new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline);
+            RegexCache.Get(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline);
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {

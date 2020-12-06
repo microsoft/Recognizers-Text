@@ -18,10 +18,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Hindi
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
+            RegexCache.Get(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
 
         private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
+            RegexCache.Get(BaseUnits.PmNonUnitRegex, RegexFlags);
 
         protected HindiNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {

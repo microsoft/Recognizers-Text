@@ -16,13 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
+        public static readonly Regex MORegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
+        public static readonly Regex AFRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
+        public static readonly Regex EVRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+        public static readonly Regex NIRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -447,25 +447,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle morning, afternoon..
-            if (MORegex.IsMatch(trimmedText))
+            if (MORegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AFRegex.IsMatch(trimmedText))
+            else if (AFRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EVRegex.IsMatch(trimmedText))
+            else if (EVRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NIRegex.IsMatch(trimmedText))
+            else if (NIRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -482,11 +482,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (exactMatch.Success)
             {
                 var swift = 0;
-                if (JapaneseDateTimePeriodExtractorConfiguration.NextRegex.IsMatch(trimmedText))
+                if (JapaneseDateTimePeriodExtractorConfiguration.NextRegexCache.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (JapaneseDateTimePeriodExtractorConfiguration.LastRegex.IsMatch(trimmedText))
+                else if (JapaneseDateTimePeriodExtractorConfiguration.LastRegexCache.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }

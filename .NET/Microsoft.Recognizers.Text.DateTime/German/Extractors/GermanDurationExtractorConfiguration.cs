@@ -8,52 +8,52 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
 
         public static readonly Regex SuffixAndRegex =
-            new Regex(DateTimeDefinitions.SuffixAndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SuffixAndRegex, RegexFlags);
 
         public static readonly Regex DurationFollowedUnit =
-            new Regex(DateTimeDefinitions.DurationFollowedUnit, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DurationFollowedUnit, RegexFlags);
 
         public static readonly Regex NumberCombinedWithDurationUnit =
-            new Regex(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexFlags);
 
         public static readonly Regex AnUnitRegex =
-            new Regex(DateTimeDefinitions.AnUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AnUnitRegex, RegexFlags);
 
         public static readonly Regex DuringRegex =
-            new Regex(DateTimeDefinitions.DuringRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DuringRegex, RegexFlags);
 
         public static readonly Regex AllRegex =
-            new Regex(DateTimeDefinitions.AllRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AllRegex, RegexFlags);
 
         public static readonly Regex HalfRegex =
-            new Regex(DateTimeDefinitions.HalfRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.HalfRegex, RegexFlags);
 
         public static readonly Regex ConjunctionRegex =
-            new Regex(DateTimeDefinitions.ConjunctionRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ConjunctionRegex, RegexFlags);
 
         public static readonly Regex InexactNumberRegex =
-            new Regex(DateTimeDefinitions.InexactNumberRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.InexactNumberRegex, RegexFlags);
 
         public static readonly Regex InexactNumberUnitRegex =
-            new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.InexactNumberUnitRegex, RegexFlags);
 
         public static readonly Regex RelativeDurationUnitRegex =
-            new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RelativeDurationUnitRegex, RegexFlags);
 
         public static readonly Regex DurationConnectorRegex =
-            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
 
         public static readonly Regex SpecialNumberUnitRegex =
-            new Regex(DateTimeDefinitions.SpecialNumberUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SpecialNumberUnitRegex, RegexFlags);
 
         public static readonly Regex MoreThanRegex =
-            new Regex(DateTimeDefinitions.MoreThanRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.MoreThanRegex, RegexFlags);
 
         public static readonly Regex LessThanRegex =
-            new Regex(DateTimeDefinitions.LessThanRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.LessThanRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

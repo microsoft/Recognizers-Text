@@ -20,11 +20,11 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalItalianRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalItalianRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.ITALIAN)
                 },
             }.ToImmutableDictionary();

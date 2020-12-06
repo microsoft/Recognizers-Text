@@ -10,12 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex, RegexFlags);
+        private static readonly Regex BeforeRegex = RegexCache.Get(DateTimeDefinitions.MergedBeforeRegex, RegexFlags);
 
-        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexFlags);
+        private static readonly Regex AfterRegex = RegexCache.Get(DateTimeDefinitions.MergedAfterRegex, RegexFlags);
 
         // TODO implement SinceRegex
-        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexFlags);
+        private static readonly Regex SinceRegex = RegexCache.Get(DateTimeDefinitions.MergedAfterRegex, RegexFlags);
 
         public ChineseMergedDateTimeParserConfiguration(IMergedParserConfiguration configuration)
             : base(configuration)
@@ -34,15 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             // push, save teh MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false;
-            if (BeforeRegex.IsMatch(er.Text))
+            if (BeforeRegexCache.IsMatch(er.Text))
             {
                 hasBefore = true;
             }
-            else if (AfterRegex.IsMatch(er.Text))
+            else if (AfterRegexCache.IsMatch(er.Text))
             {
                 hasAfter = true;
             }
-            else if (SinceRegex.IsMatch(er.Text))
+            else if (SinceRegexCache.IsMatch(er.Text))
             {
                 hasSince = true;
             }

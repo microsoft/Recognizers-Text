@@ -11,22 +11,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         public static readonly Regex AfterNextSuffixRegex =
-            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
         public static readonly Regex NowParseRegex =
-            new Regex(DateTimeDefinitions.NowParseRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NowParseRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         private static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = NowParseRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
-            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
+            TodayNowRegex = RegexCache.Get(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -250,15 +250,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             var trimmedText = text.Trim();
 
-            if (AfterNextSuffixRegex.IsMatch(trimmedText))
+            if (AfterNextSuffixRegexCache.IsMatch(trimmedText))
             {
                 swift = 2;
             }
-            else if (NextPrefixRegex.IsMatch(trimmedText))
+            else if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -272,19 +272,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             var trimmedText = text.Trim();
 
-            if (AfterNextSuffixRegex.IsMatch(trimmedText))
+            if (AfterNextSuffixRegexCache.IsMatch(trimmedText))
             {
                 swift = 2;
             }
-            else if (NextPrefixRegex.IsMatch(trimmedText))
+            else if (NextPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (ThisPrefixRegex.IsMatch(trimmedText))
+            else if (ThisPrefixRegexCache.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -308,7 +308,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (monthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (monthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegexCache.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
@@ -321,23 +321,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegexCache.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegexCache.IsMatch(trimmedText));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (yearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
+                   (yearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegexCache.IsMatch(trimmedText)) ||
                    (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) &&
-                    UnspecificEndOfRangeRegex.IsMatch(trimmedText));
+                    UnspecificEndOfRangeRegexCache.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)

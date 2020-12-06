@@ -26,9 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexFlags);
+        private static readonly Regex YearRegex = RegexCache.Get(DateTimeDefinitions.DurationYearRegex, RegexFlags);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexFlags);
+        private static readonly Regex HalfSuffixRegex = RegexCache.Get(DateTimeDefinitions.DurationHalfSuffixRegex, RegexFlags);
 
         internal override ImmutableDictionary<Regex, DurationType> Regexes { get; }
 

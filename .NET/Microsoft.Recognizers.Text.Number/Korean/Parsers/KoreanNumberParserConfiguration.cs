@@ -49,18 +49,18 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
             // @TODO Change init to follow design in other languages
             this.HalfADozenRegex = null;
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexFlags);
-            this.DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexFlags);
-            this.PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags);
-            this.DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags);
-            this.FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexFlags);
-            this.NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexFlags);
-            this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
-            this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
-            this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
+            this.DigitalNumberRegex = RegexCache.Get(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.DigitNumRegex = RegexCache.Get(NumbersDefinitions.DigitNumRegex, RegexFlags);
+            this.DozenRegex = RegexCache.Get(NumbersDefinitions.DozenRegex, RegexFlags);
+            this.PercentageRegex = RegexCache.Get(NumbersDefinitions.PercentageRegex, RegexFlags);
+            this.DoubleAndRoundRegex = RegexCache.Get(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags);
+            this.FracSplitRegex = RegexCache.Get(NumbersDefinitions.FracSplitRegex, RegexFlags);
+            this.NegativeNumberTermsRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberTermsRegex, RegexFlags);
+            this.NegativeNumberSignRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.PointRegex = RegexCache.Get(NumbersDefinitions.PointRegex, RegexFlags);
+            this.SpeGetNumberRegex = RegexCache.Get(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
+            this.PairRegex = RegexCache.Get(NumbersDefinitions.PairRegex, RegexFlags);
+            this.RoundNumberIntegerRegex = RegexCache.Get(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
             this.FractionPrepositionRegex = null;
             this.PercentageNumRegex = null;
         }

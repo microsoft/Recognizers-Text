@@ -41,11 +41,11 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
-            this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexFlags);
+            this.HalfADozenRegex = RegexCache.Get(NumbersDefinitions.HalfADozenRegex, RegexFlags);
+            this.DigitalNumberRegex = RegexCache.Get(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
+            this.NegativeNumberSignRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
+            this.FractionPrepositionRegex = RegexCache.Get(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.OneToNineOrdinalRegex = RegexCache.Get(NumbersDefinitions.OneToNineOrdinalRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

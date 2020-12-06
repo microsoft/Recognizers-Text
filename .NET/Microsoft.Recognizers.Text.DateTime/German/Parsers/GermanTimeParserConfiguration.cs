@@ -15,28 +15,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NightRegex, RegexFlags);
 
         private static readonly Regex HalfTokenRegex =
-            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
 
         private static readonly Regex QuarterToTokenRegex =
-            new Regex(DateTimeDefinitions.QuarterToTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.QuarterToTokenRegex, RegexFlags);
 
         private static readonly Regex QuarterPastTokenRegex =
-            new Regex(DateTimeDefinitions.QuarterPastTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.QuarterPastTokenRegex, RegexFlags);
 
         private static readonly Regex ThreeQuarterToTokenRegex =
-            new Regex(DateTimeDefinitions.ThreeQuarterToTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ThreeQuarterToTokenRegex, RegexFlags);
 
         private static readonly Regex ThreeQuarterPastTokenRegex =
-            new Regex(DateTimeDefinitions.ThreeQuarterPastTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ThreeQuarterPastTokenRegex, RegexFlags);
 
         public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -68,23 +68,23 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
-            if (HalfTokenRegex.IsMatch(trimmedPrefix))
+            if (HalfTokenRegexCache.IsMatch(trimmedPrefix))
             {
                 deltaMin = -30;
             }
-            else if (QuarterToTokenRegex.IsMatch(trimmedPrefix))
+            else if (QuarterToTokenRegexCache.IsMatch(trimmedPrefix))
             {
                 deltaMin = -15;
             }
-            else if (QuarterPastTokenRegex.IsMatch(trimmedPrefix))
+            else if (QuarterPastTokenRegexCache.IsMatch(trimmedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (ThreeQuarterToTokenRegex.IsMatch(trimmedPrefix))
+            else if (ThreeQuarterToTokenRegexCache.IsMatch(trimmedPrefix))
             {
                 deltaMin = -45;
             }
-            else if (ThreeQuarterPastTokenRegex.IsMatch(trimmedPrefix))
+            else if (ThreeQuarterPastTokenRegexCache.IsMatch(trimmedPrefix))
             {
                 deltaMin = 45;
             }
@@ -153,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                             deltaHour = Constants.HalfDayHourCount;
                         }
 
-                        if (LunchRegex.IsMatch(matchPmStr))
+                        if (LunchRegexCache.IsMatch(matchPmStr))
                         {
                             // for hour>=10, <12
                             if (hour >= 10 && hour <= Constants.HalfDayHourCount)
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegex.IsMatch(matchPmStr))
+                        else if (NightRegexCache.IsMatch(matchPmStr))
                         {
                             // For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)

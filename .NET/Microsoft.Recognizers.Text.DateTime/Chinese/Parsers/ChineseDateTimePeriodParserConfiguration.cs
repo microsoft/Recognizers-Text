@@ -16,15 +16,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
+        public static readonly Regex MORegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
 
-        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexFlags);
+        public static readonly Regex MIRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodMIRegex, RegexFlags);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
+        public static readonly Regex AFRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
+        public static readonly Regex EVRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+        public static readonly Regex NIRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -445,31 +445,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle morning, afternoon..
-            if (MORegex.IsMatch(trimmedText))
+            if (MORegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (MIRegex.IsMatch(trimmedText))
+            else if (MIRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TMI";
                 beginHour = 11;
                 endHour = 13;
             }
-            else if (AFRegex.IsMatch(trimmedText))
+            else if (AFRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EVRegex.IsMatch(trimmedText))
+            else if (EVRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NIRegex.IsMatch(trimmedText))
+            else if (NIRegexCache.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -484,11 +484,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (ChineseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = 0;
-                if (ChineseDateTimePeriodExtractorConfiguration.NextRegex.IsMatch(trimmedText))
+                if (ChineseDateTimePeriodExtractorConfiguration.NextRegexCache.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (ChineseDateTimePeriodExtractorConfiguration.LastRegex.IsMatch(trimmedText))
+                else if (ChineseDateTimePeriodExtractorConfiguration.LastRegexCache.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }
