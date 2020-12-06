@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text
@@ -22,5 +23,10 @@ namespace Microsoft.Recognizers.Text
         }
 
         public static Regex Get(string pattern) => Get(pattern, default);
+
+        public static bool IsMatch(string text, string pattern)
+        {
+            return Get(pattern).IsMatch(text);
+        }
     }
 }
