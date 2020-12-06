@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static void StripInequality(ExtractResult er, Regex regex, bool inPrefix)
         {
-            if (RegexCache.IsMatch(er.Text))
+            if (regex.IsMatch(er.Text))
             {
                 var originalLength = er.Text.Length;
                 er.Text = regex.Replace(er.Text, string.Empty).Trim();
