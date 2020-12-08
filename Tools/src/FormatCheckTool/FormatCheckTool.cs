@@ -121,8 +121,13 @@ namespace FormatCheckTool
 
         private static bool CheckBasicContent(List<TestModel> data)
         {
-            string flag = string.Empty;
-            return ConsoleStageResult("Content Valid", flag);
+            List<string> res = new List<string> { };
+            foreach (TestModel spec in data)
+            {
+                res.Add(CheckOneBasicContentSpec(spec));
+            }
+
+            return ConsoleStageResult("Content Valid", string.Join("|", res), true);
         }
 
         private static bool CheckModelResult(List<TestModel> data)
@@ -131,10 +136,80 @@ namespace FormatCheckTool
             return ConsoleStageResult("Model Result", flag);
         }
 
-        private static bool ConsoleStageResult(string stage, string flag)
+        private static string CheckOneBasicContentSpec(TestModel spec)
         {
-            bool res = flag.Equals(string.Empty);
-            string logStr = res ? "Success" : $"Error. {flag}";
+            string flag = string.Empty;
+            if (spec.Input.Equals(string.Empty))
+            {
+                flag = "No Input";
+            }
+            else
+            {
+                foreach (object result in spec.Results)
+                {
+                    string resultStr = CheckOneBasicContentSpecResult(spec, result);
+                    if (!resultStr.Equals(string.Empty))
+                    {
+                        flag = resultStr;
+                        break;
+                    }
+                }
+            }
+
+            return flag;
+        }
+
+        private static string CheckOneBasicContentSpecResult(TestModel spec, object result)
+        {
+            var serializeResult = JsonConvert.SerializeObject(result);
+            var dynamicResult = JsonConvert.DeserializeObject<dynamic>(serializeResult);
+            if (dynamicResult["Text"] == null || dynamicResult["Start"] == null || (dynamicResult["End"] == null && dynamicResult["Length"] == null))
+            {
+                return "Result Parameter Loss";
+            }
+
+            int start = dynamicResult["Start"];
+            int end = dynamicResult["End"] != null ? dynamicResult["End"] : dynamicResult["Length"] + start - 1;
+            var startEndStr = spec.Input.Substring(start, end - start + 1);
+            if (dynamicResult["Text"] != startEndStr)
+            {
+                return "Index Error";
+            }
+
+            return string.Empty;
+        }
+
+        private static bool ConsoleStageResult(string stage, string flag, bool isList = false)
+        {
+            bool res;
+            string logStr = string.Empty;
+            if (isList)
+            {
+                string[] flags = flag.Split("|");
+                Dictionary<string, int> flagCounter = new Dictionary<string, int>();
+                foreach (string f in flags)
+                {
+                    int oldValue;
+                    flagCounter.TryGetValue(f, out oldValue);
+                    flagCounter[f] = ++oldValue;
+                }
+
+                int emptyValue;
+                flagCounter.TryGetValue(string.Empty, out emptyValue);
+                res = emptyValue == flags.Length;
+                var flagLogs = flagCounter.Keys.Where(f => !f.Equals(string.Empty));
+                logStr = res ? $"{flags.Length} specs Success" : "Error. ";
+                foreach (string flagLog in flagLogs)
+                {
+                    logStr += $"{flagCounter[flagLog]} specs {flagLog}, ";
+                }
+            }
+            else
+            {
+                res = flag.Equals(string.Empty);
+                logStr = res ? "Success" : $"Error. {flag}";
+            }
+
             Console.WriteLine($"{stage} Check {logStr}.");
             return res;
         }
