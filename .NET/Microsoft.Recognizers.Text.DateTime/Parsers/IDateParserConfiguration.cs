@@ -73,6 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex BeforeAfterRegex { get; }
 
+        Regex PreciseDateTokens { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> DayOfMonth { get; }

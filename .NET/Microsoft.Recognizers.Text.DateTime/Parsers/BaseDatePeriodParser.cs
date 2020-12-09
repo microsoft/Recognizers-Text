@@ -1483,15 +1483,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
+                var comment1 = ((DateTimeResolutionResult)pr1.Value).Comment ?? string.Empty;
+                var comment2 = ((DateTimeResolutionResult)pr2.Value).Comment ?? string.Empty;
+
                 // Expressions like "today", "tomorrow",... should keep their original year
-                if (!this.config.SpecialDayRegex.IsMatch(pr1.Text))
+                if (comment1.Equals("AmbiguousDate") || pr1.TimexStr.StartsWith("XXXX"))
                 {
-                    pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                    // In ExperimentalMode ambiguous dates are recalculated using the other (non-ambiguous) date as reference.
+                    if ((this.config.Options & DateTimeOptions.ExperimentalMode) != 0 && !comment2.Equals("AmbiguousDate") && !pr2.TimexStr.StartsWith("XXXX"))
+                    {
+                        pr1 = this.config.DateParser.Parse(er[0], (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue);
+                    }
+                    else
+                    {
+                        // @TODO ProcessDateEntityParsingResult needs to be improved because
+                        // it produces inconsistent results with patterns like "from 5/1/2015 till three days later"
+                        pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                    }
                 }
 
-                if (!this.config.SpecialDayRegex.IsMatch(pr2.Text))
+                if (comment2.Equals("AmbiguousDate") || pr2.TimexStr.StartsWith("XXXX"))
                 {
-                    pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                    // In ExperimentalMode ambiguous dates are recalculated using the other (non-ambiguous) date as reference.
+                    if ((this.config.Options & DateTimeOptions.ExperimentalMode) != 0 && !comment1.Equals("AmbiguousDate") && !pr1.TimexStr.StartsWith("XXXX"))
+                    {
+                        pr2 = this.config.DateParser.Parse(er[1], (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue);
+                    }
+                    else
+                    {
+                        pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
+                    }
                 }
             }
 

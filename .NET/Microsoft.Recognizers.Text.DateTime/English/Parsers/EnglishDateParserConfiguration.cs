@@ -9,6 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
+        public static readonly Regex PreciseDateTokens =
+            new Regex(DateTimeDefinitions.PreciseDateTokens, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -132,6 +135,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex PastPrefixRegex { get; }
 
         public Regex BeforeAfterRegex { get; }
+
+        Regex IDateParserConfiguration.PreciseDateTokens => PreciseDateTokens;
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

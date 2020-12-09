@@ -7915,5 +7915,205 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be out 2pm 1st jun 2000 until 2am on the next day",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2pm 1st jun 2000 until 2am on the next day",
+        "Start": 12,
+        "End": 53,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-06-01T14,2000-06-02T02,PT12H)",
+              "type": "datetimerange",
+              "start": "2000-06-01 14:00:00",
+              "end": "2000-06-02 02:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2pm 1st jun 2000 until 2am on 2nd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2pm 1st jun 2000 until 2am on 2nd",
+        "Start": 12,
+        "End": 44,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-06-01T14,XXXX-XX-02T02,PT12H)",
+              "type": "datetimerange",
+              "start": "2000-06-01 14:00:00",
+              "end": "2000-06-02 02:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 1st jun 2000 until the 2nd of june",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1st jun 2000 until the 2nd of june",
+        "Start": 12,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-06-01,XXXX-06-03,P2D)",
+              "type": "daterange",
+              "start": "2000-06-01",
+              "end": "2000-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 1st jun 2000 until the 2nd of june 2000",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1st jun 2000 until the 2nd of june 2000",
+        "Start": 12,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-06-01,2000-06-03,P2D)",
+              "type": "daterange",
+              "start": "2000-06-01",
+              "end": "2000-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1/2015 till today",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1/2015 till today",
+        "Start": 13,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-05-01,2018-10-25,P1273D)",
+              "type": "daterange",
+              "start": "2015-05-01",
+              "end": "2018-10-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1/2015 till the next Wednesday",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1/2015 till the next wednesday",
+        "Start": 13,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-05-01,2015-05-07,P6D)",
+              "type": "daterange",
+              "start": "2015-05-01",
+              "end": "2015-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1/2015 till three days later",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1/2015 till three days later",
+        "Start": 13,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-05-01,2015-05-05,P4D)",
+              "type": "daterange",
+              "start": "2015-05-01",
+              "end": "2015-05-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1/2015 till three days ago",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1/2015 till three days ago",
+        "Start": 13,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-05-01,2018-10-22,P1270D)",
+              "type": "daterange",
+              "start": "2015-05-01",
+              "end": "2018-10-22"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

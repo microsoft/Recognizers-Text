@@ -1028,6 +1028,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 pr1 = this.Config.DateTimeParser.Parse(dateTimeExtractResults[0], referenceTime);
                 pr2 = this.Config.DateTimeParser.Parse(dateTimeExtractResults[1], referenceTime);
+
+                // In ExperimentalMode ambiguous dates are recalculated using the other (non-ambiguous) date as reference.
+                if ((this.Config.Options & DateTimeOptions.ExperimentalMode) != 0)
+                {
+                    DateTimeParseResult datePr1 = (DateTimeParseResult)((DateTimeResolutionResult)pr1.Value).SubDateTimeEntities[0];
+                    var comment1 = ((DateTimeResolutionResult)datePr1.Value).Comment ?? string.Empty;
+                    DateTimeParseResult datePr2 = (DateTimeParseResult)((DateTimeResolutionResult)pr2.Value).SubDateTimeEntities[0];
+                    var comment2 = ((DateTimeResolutionResult)datePr2.Value).Comment ?? string.Empty;
+                    if ((comment1.Equals("AmbiguousDate") || datePr1.TimexStr.StartsWith("XXXX")) && !comment2.Equals("AmbiguousDate") && !datePr2.TimexStr.StartsWith("XXXX"))
+                    {
+                        pr1 = this.Config.DateTimeParser.Parse(dateTimeExtractResults[0], (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue);
+                    }
+                    else if ((comment2.Equals("AmbiguousDate") || datePr2.TimexStr.StartsWith("XXXX")) && !comment1.Equals("AmbiguousDate") && !datePr1.TimexStr.StartsWith("XXXX"))
+                    {
+                        pr2 = this.Config.DateTimeParser.Parse(dateTimeExtractResults[1], (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue);
+                    }
+                }
+
                 bothHaveDates = true;
             }
             else if (dateTimeExtractResults.Count == 1 && timeExtractResults.Count == 2)
