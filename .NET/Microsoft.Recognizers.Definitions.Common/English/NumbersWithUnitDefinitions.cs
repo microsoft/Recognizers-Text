@@ -23,11 +23,11 @@ namespace Microsoft.Recognizers.Definitions.English
     {
       public static readonly Dictionary<string, string> AgePrefixList = new Dictionary<string, string>
         {
-            { @"Age", @"Age|age" }
+            { @"Age", @"Age|age|age of|i am" }
         };
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo" },
+            { @"Year", @"years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo|years" },
             { @"Month", @"months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo" },
             { @"Week", @"weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age" },
             { @"Day", @"days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age" }
@@ -813,7 +813,8 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" }
+            { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" },
+            { @"\bi am\b", @"(i am(?!\s+\d{1,2}([.;,!](?!\d)|$)))" }
         };
     }
 }

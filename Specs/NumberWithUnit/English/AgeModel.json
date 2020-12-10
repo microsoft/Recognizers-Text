@@ -275,5 +275,68 @@
         }
       }
     ]
+  },
+  {
+    "Input": "He died at the age of 74.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "age of 74",
+        "Start": 15,
+        "End": 23,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Age",
+          "value": "74"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How old are you? 25 years.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "25 years",
+        "Start": 17,
+        "End": 24,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How old are you? I am 25.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "i am 25",
+        "Start": 17,
+        "End": 23,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Age",
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am 25m.",
+    "NotSupported": "javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "I am 13 or 14 kg.",
+    "NotSupported": "javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "I am 52,3 kg.",
+    "NotSupported": "javascript, java",
+    "Results": []
   }
 ]
