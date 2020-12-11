@@ -141,5 +141,15 @@
         "Length": 14
       }
     ]
-  }
-]
+  },
+  {
+      "Input": "J'y retournerai à Noël",
+      "Results": [
+        {
+          "Text": "Noël",
+          "Type": "date",
+          "Start": 16,
+          "Length": 9
+       }
+     ]
+   },
