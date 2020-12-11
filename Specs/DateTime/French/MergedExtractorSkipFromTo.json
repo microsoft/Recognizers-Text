@@ -66,5 +66,73 @@
         "Type": "date"
       }
     ]
+  },
+  {
+    "Input": "Changez ma conférence de 9am à 11am",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 3,
+        "Text": "9am",
+        "Type": "time"
+      },
+      {
+        "Start": 29,
+        "Length": 4,
+        "Text": "11am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Changez ma conférence du 19 novembre au 23 novembre.",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 6,
+        "Text": "19 novembre",
+        "Type": "date"
+      },
+      {
+        "Start": 32,
+        "Length": 6,
+        "Text": "23 novembre",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Changez ma conférence de 9am à 11am",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 3,
+        "Text": "9am",
+        "Type": "time"
+      },
+      {
+        "Start": 29,
+        "Length": 4,
+        "Text": "11am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Changez ma conférence du 19 novembre au 23 novembre.",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 6,
+        "Text": "19 novembre",
+        "Type": "date"
+      },
+      {
+        "Start": 32,
+        "Length": 6,
+        "Text": "23 novembre",
+        "Type": "date"
+      }
+    ]
   }
 ]
