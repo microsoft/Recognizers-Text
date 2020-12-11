@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             {
                 {
                     // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags), 
+                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
