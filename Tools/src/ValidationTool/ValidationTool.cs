@@ -27,7 +27,15 @@ namespace Microsoft.Recognizers.Text.Validation
 
             foreach (string path in specsPaths)
             {
-                RunPipeline(path);
+                int status = RunPipeline(path);
+                if (status == 3)
+                {
+                    Console.WriteLine($"File {path} Pass All Validation Stages.");
+                }
+                else
+                {
+                    Console.WriteLine($"File {path} Exception In Stages {status + 1}.");
+                }
             }
 
             Console.WriteLine();
@@ -70,23 +78,25 @@ namespace Microsoft.Recognizers.Text.Validation
             return paths;
         }
 
-        private static void RunPipeline(string filePath)
+        private static int RunPipeline(string filePath)
         {
             Console.WriteLine("-------------------------");
             Console.WriteLine($"Begin to check file {filePath}.");
             BasicStageResult data = LoadJsonFile(filePath);
             if (!data.IsSucceed)
             {
-                return;
+                return 0;
             }
 
             bool stage2 = CheckBasicContent(data.Specs);
             if (!stage2)
             {
-                return;
+                return 1;
             }
 
             bool stage3 = CheckModelResult(data.Specs);
+
+            return Convert.ToInt32(data.IsSucceed) + Convert.ToInt32(stage2) + Convert.ToInt32(stage3);
         }
 
         private static BasicStageResult LoadJsonFile(string filePath)
@@ -129,33 +139,48 @@ namespace Microsoft.Recognizers.Text.Validation
 
         private static bool CheckBasicContent(List<TestModel> data)
         {
-            List<string> res = new List<string> { };
-            foreach (TestModel spec in data)
-            {
-                res.Add(CheckOneBasicContentSpec(spec));
+            List<string> logStrs = new List<string> { };
+            int errorNum = 0;
+            foreach (var item in data.Select((value, i) => new { i, value })) {
+                string logStr = GetSpecBasicContent(item.value);
+                if (!logStr.Equals(string.Empty))
+                {
+                    if (errorNum == 0)
+                    {
+                        Console.WriteLine();
+                    }
+
+                    Console.WriteLine($"\tNo.{item.i} spec error, \n\tText: {item.value.Input}, \n\tError Message: {logStr}\n");
+                    ++errorNum;
+                }
+
+                logStrs.Add(logStr);
             }
 
-            return ConsoleStageResult("Content Valid", string.Join("|", res), true);
+            return ConsoleStageResult("Content Valid", CounterLogStrs(logStrs), logStrs.Count - errorNum);
         }
 
         private static bool CheckModelResult(List<TestModel> data)
         {
+            // ToDo: Compare the Recoginzer model result with specs file result.
             string logStr = string.Empty;
             return ConsoleStageResult("Model Result", logStr);
         }
 
-        private static string CheckOneBasicContentSpec(TestModel spec)
+        private static string GetSpecBasicContent(TestModel spec)
         {
+            // Check the content in one Spec file
             string logStr = string.Empty;
             if (spec.Input.Equals(string.Empty))
             {
-                logStr = "No Input";
+                logStr = "Json File Empty";
             }
             else
             {
-                foreach (object result in spec.Results)
+                var dynamicResults = spec.CastResults<dynamic>();
+                foreach (dynamic result in dynamicResults)
                 {
-                    string resultStr = CheckOneBasicContentSpecResult(spec, result);
+                    string resultStr = GetSpecBasicResult(spec, result);
                     if (!resultStr.Equals(string.Empty))
                     {
                         logStr = resultStr;
@@ -167,60 +192,56 @@ namespace Microsoft.Recognizers.Text.Validation
             return logStr;
         }
 
-        private static string CheckOneBasicContentSpecResult(TestModel spec, object result)
+        private static string GetSpecBasicResult(TestModel spec, dynamic result)
         {
-            var serializeResult = JsonConvert.SerializeObject(result);
-            var dynamicResult = JsonConvert.DeserializeObject<dynamic>(serializeResult);
-            if (dynamicResult["Text"] == null || dynamicResult["Start"] == null || (dynamicResult["End"] == null && dynamicResult["Length"] == null))
+            // Check the content in one Spec["Result"]
+            if (result["Text"] == null || result["Start"] == null || (result["End"] == null && result["Length"] == null))
             {
-                return "Result Parameter Loss";
+                return "Spec[\"Result\"] Loss Some Parameter.";
             }
 
-            int start = dynamicResult["Start"];
-            int end = dynamicResult["End"] != null ? dynamicResult["End"] : dynamicResult["Length"] + start - 1;
+            int start = result["Start"];
+            int end = result["End"] != null ? result["End"] : result["Length"] + start - 1;
             var startEndStr = spec.Input.Substring(start, end - start + 1);
-            if (dynamicResult["Text"] != startEndStr)
+            if (result["Text"] != startEndStr)
             {
-                return "Index Error";
+                return "Spec[\"Result\"] Index Error";
             }
 
             return string.Empty;
         }
 
-        private static bool ConsoleStageResult(string stage, string logStr, bool isList = false)
+        private static string CounterLogStrs(List<string> logStrs)
+        {
+            Dictionary<string, int> logStrCounter = new Dictionary<string, int>();
+            foreach (string f in logStrs)
+            {
+                int oldValue;
+                logStrCounter.TryGetValue(f, out oldValue);
+                logStrCounter[f] = ++oldValue;
+            }
+
+            string needLogStr = string.Empty;
+            var logStrLogs = logStrCounter.Keys.Where(f => !f.Equals(string.Empty));
+            foreach (string logStrLog in logStrLogs)
+            {
+                needLogStr += $"{logStrCounter[logStrLog]} specs {logStrLog}, ";
+            }
+
+            return needLogStr;
+        }
+
+        private static bool ConsoleStageResult(string stage, string logStr, int succeedNum = -1)
         {
             // Log stage result, and return success/error bool flag.
-            bool res;
-            string needLogStr = string.Empty;
-            if (isList)
+            bool res = logStr.Equals(string.Empty);
+            string statusLogStr = res ? "Success" : $"Error. {logStr}";
+            if (succeedNum != -1)
             {
-                // Counter the number of 
-                string[] logStrs = logStr.Split("|");
-                Dictionary<string, int> logStrCounter = new Dictionary<string, int>();
-                foreach (string f in logStrs)
-                {
-                    int oldValue;
-                    logStrCounter.TryGetValue(f, out oldValue);
-                    logStrCounter[f] = ++oldValue;
-                }
-
-                int emptyValue;
-                logStrCounter.TryGetValue(string.Empty, out emptyValue);
-                res = emptyValue == logStrs.Length;
-                var logStrLogs = logStrCounter.Keys.Where(f => !f.Equals(string.Empty));
-                needLogStr = res ? $"{logStrs.Length} specs Success" : "Error. ";
-                foreach (string logStrLog in logStrLogs)
-                {
-                    needLogStr += $"{logStrCounter[logStrLog]} specs {logStrLog}, ";
-                }
-            }
-            else
-            {
-                res = logStr.Equals(string.Empty);
-                needLogStr = res ? "Success" : $"Error. {logStr}";
+                statusLogStr += $", {succeedNum} Specs Check Succeed";
             }
 
-            Console.WriteLine($"{stage} Check {needLogStr}.");
+            Console.WriteLine($"{stage} Check {statusLogStr}.");
             return res;
         }
 
