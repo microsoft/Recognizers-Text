@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string PastTokenRegex = @"\b(pasad[ao]s(\s+(de\s+)?las)?)$";
       public const string ToTokenRegex = @"\b((para|antes)(\s+(de\s+)?las?)|(?<neg>^menos))$";
       public static readonly string SpecialDateRegex = $@"(?<=\b(en)\s+el\s+){DayRegex}\b";
-      public static readonly string OfMonthRegex = $@"^\s*((día\s+)?de\s+)?{MonthSuffixRegex}";
+      public static readonly string OfMonthRegex = $@"^\s*((d[ií]a\s+)?d[eo]\s+)?{MonthSuffixRegex}";
       public static readonly string MonthEndRegex = $@"({MonthRegex}\s*(el)?\s*$)";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
       public const string WeekDayStart = @"^[\.]";

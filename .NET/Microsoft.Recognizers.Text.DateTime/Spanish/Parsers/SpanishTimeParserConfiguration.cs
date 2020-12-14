@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             if (QuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 var match = QuarterTokenRegex.Match(trimmedPrefix);
-                if (match.Groups["neg"].Success)
+                if (match.Groups[Constants.NegativeGroupName].Success)
                 {
                     deltaMin = -15;
                 }
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             if (ToTokenRegex.IsMatch(trimmedPrefix))
             {
                 var match = ToTokenRegex.Match(trimmedPrefix);
-                if (match.Groups["neg"].Success)
+                if (match.Groups[Constants.NegativeGroupName].Success)
                 {
                     min = -min;
                 }

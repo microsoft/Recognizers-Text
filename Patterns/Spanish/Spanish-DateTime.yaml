@@ -218,7 +218,7 @@ SpecialDateRegex: !nestedRegex
   def: (?<=\b(en)\s+el\s+){DayRegex}\b
   references: [ DayRegex ]
 OfMonthRegex: !nestedRegex
-  def: ^\s*((día\s+)?de\s+)?{MonthSuffixRegex}
+  def: ^\s*((d[ií]a\s+)?d[eo]\s+)?{MonthSuffixRegex}
   references: [ MonthSuffixRegex ]
 MonthEndRegex: !nestedRegex
   def: ({MonthRegex}\s*(el)?\s*$)
@@ -233,15 +233,15 @@ DateYearRegex: !nestedRegex
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   # (domingo,)? 5 de Abril
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}((\s*(de)|[/\\\.\-])\s*)?{MonthRegex}\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}((\s*(d[eo])|[/\\\.\-])\s*)?{MonthRegex}\b
   references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor2: !nestedRegex
   # (domingo,)? 5 de Abril 5, 2016
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}\s*([\.\-]|de)\s*{MonthRegex}(\s*,\s*|\s*(del?)\s*){DateYearRegex}\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}\s*([\.\-]|d[eo])\s*{MonthRegex}(\s*,\s*|\s*(del?)\s*){DateYearRegex}\b
   references: [ MonthRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor3: !nestedRegex
   # (domingo,)? 6 de Abril
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*,\s*|\s+de\s+|\s*-\s*){DateYearRegex}\b)?
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}(\s+|\s*,\s*|\s+d[eo]\s+|\s*-\s*){MonthRegex}((\s+|\s*,\s*|\s+d[eo]\s+|\s*-\s*){DateYearRegex}\b)?
   references: [ DayRegex, MonthRegex, WeekDayRegex, DateYearRegex ]
 # The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
@@ -258,7 +258,7 @@ DateExtractor6: !nestedRegex
   references: [ MonthNumRegex, DayRegex ]
 DateExtractor7: !nestedRegex
   # 7/23
-  def: \b(?<!\d[.,]){MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+de\s+){DateYearRegex})?\b(?!\s*[/\\\.]\s*\d+)
+  def: \b(?<!\d[.,]){MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b(?!\s*[/\\\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor8: !nestedRegex
   # el 24-12
@@ -266,7 +266,7 @@ DateExtractor8: !nestedRegex
   references: [ MonthNumRegex, DayRegex ]
 DateExtractor9: !nestedRegex
   # 23/7
-  def: \b({WeekDayRegex}\s+)?(?<!\d[.,]){DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+de\s+){DateYearRegex})?\b(?!\s*[/\\\.]\s*\d+)
+  def: \b({WeekDayRegex}\s+)?(?<!\d[.,]){DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b(?!\s*[/\\\.]\s*\d+)
   references: [ WeekDayRegex, DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor10: !nestedRegex
   # 2015-12-23
