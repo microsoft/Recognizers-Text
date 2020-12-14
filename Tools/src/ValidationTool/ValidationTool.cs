@@ -202,6 +202,16 @@ namespace Microsoft.Recognizers.Text.Validation
 
             int start = result["Start"];
             int end = result["End"] != null ? result["End"] : result["Length"] + start - 1;
+            if (end > spec.Input.Length || end < 0)
+            {
+                return "Spec[\"End\"] Value Out of Bounds.";
+            }
+
+            if (start > spec.Input.Length || end < 0)
+            {
+                return "Spec[\"Start\"] Value Out of Bounds.";
+            }
+
             var startEndStr = spec.Input.Substring(start, end - start + 1);
             if (result["Text"] != startEndStr)
             {
