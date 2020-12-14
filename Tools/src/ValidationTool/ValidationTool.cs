@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             var startEndStr = spec.Input.Substring(start, end - start + 1);
-            if (result["Text"] != startEndStr)
+            if (result["Text"].Equals(startEndStr))
             {
                 return "Spec[\"Result\"] Index Error";
             }
