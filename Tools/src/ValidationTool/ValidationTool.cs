@@ -4,86 +4,89 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Microsoft.Recognizers.Text;
-using Microsoft.Recognizers.Text.Choice;
-using Microsoft.Recognizers.Text.DateTime;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.Sequence;
-using Newtonsoft.Json;
+
 using Microsoft.Recognizers.Text.DataDrivenTests;
+
+using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text.Validation
 {
-    class ValidationTool
+    public class ValidationTool
     {
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            // Encoding for 'exotic' characters e.g. '€'
+            // Enabling different encodings (e.g. to support chars like '€' in .NET Core
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            string[] specsPaths = LoadSpecsPaths(args);
+            // Validate parameters
+            if (args == null || args.Length == 0)
+            {
+                Console.WriteLine(@"No arguments passed. Please specify a file path or a directory containing specs.");
+                Console.WriteLine(@"Usages: ValidationTool <specs_path>");
+                return;
+            }
 
-            foreach (string path in specsPaths)
+            string inputPath = args[0];
+
+            string[] specPaths = ListSpecFiles(inputPath);
+
+            foreach (string path in specPaths)
             {
                 int status = RunPipeline(path);
                 if (status == 3)
                 {
-                    Console.WriteLine($"File {path} Pass All Validation Stages.");
+                    Console.WriteLine($"File {path} passes all validation stages.");
                 }
                 else
                 {
-                    Console.WriteLine($"File {path} Exception In Stages {status + 1}.");
+                    Console.WriteLine($"File {path} fails stages {status + 1}.");
                 }
             }
 
             Console.WriteLine();
         }
 
-        private static string[] LoadSpecsPaths(string[] args)
+        private static string[] ListSpecFiles(string specsPath)
         {
-            if (args.Length == 0)
-            {
-                Console.WriteLine("Please enter a string argument.");
-                Console.WriteLine("Usage: SpecsPath <string>");
-                return Array.Empty<string>();
-            }
 
-            string specsPath = args[0];
-            string basicDir;
-            string basicPath;
+            string directory;
+            string filename;
 
             if (Directory.Exists(specsPath))
             {
-                basicDir = specsPath;
-                basicPath = "*";
+                directory = specsPath;
+                filename = "*";
             }
             else
             {
                 var pathSplit = specsPath.Split(Path.DirectorySeparatorChar);
-                basicDir = pathSplit.Length > 1 ? string.Join(Path.DirectorySeparatorChar, pathSplit.Take(pathSplit.Length - 1)) : $".{Path.DirectorySeparatorChar}";
-                basicPath = pathSplit[pathSplit.Length - 1];
+                directory = pathSplit.Length > 1 ? string.Join(Path.DirectorySeparatorChar, pathSplit.Take(pathSplit.Length - 1)) : $".{Path.DirectorySeparatorChar}";
+                filename = pathSplit[pathSplit.Length - 1];
             }
 
-            if (!Directory.Exists(basicDir))
+            if (!Directory.Exists(directory))
             {
-                Console.WriteLine($"Specs Path Dir {basicDir} Not Exist.");
+                Console.WriteLine($"Specs directory {directory} does not exist.");
                 return Array.Empty<string>();
             }
 
-            string[] paths = Directory.GetFiles(basicDir, basicPath);
-            Console.WriteLine($"Loading {paths.Length} Spec Files...");
+            string[] paths = Directory.GetFiles(directory, filename);
+
+            Console.WriteLine($"Loading {paths.Length} spec files...");
             Console.WriteLine();
+
             return paths;
         }
 
         private static int RunPipeline(string filePath)
         {
-            Console.WriteLine("-------------------------");
-            Console.WriteLine($"Begin to check file {filePath}.");
+            Console.WriteLine(@"-------------------------");
+            Console.WriteLine($"Begin to check file: {filePath}");
+
             BasicStageResult data = LoadJsonFile(filePath);
-            if (!data.IsSucceed)
+
+            if (!data.IsSuccess)
             {
                 return 0;
             }
@@ -96,16 +99,20 @@ namespace Microsoft.Recognizers.Text.Validation
 
             bool stage3 = CheckModelResult(data.Specs);
 
-            return Convert.ToInt32(data.IsSucceed) + Convert.ToInt32(stage2) + Convert.ToInt32(stage3);
+            Console.WriteLine($"Check concluded for file: {filePath}");
+            Console.WriteLine(@"-------------------------");
+
+            return Convert.ToInt32(data.IsSuccess) + Convert.ToInt32(stage2) + Convert.ToInt32(stage3);
         }
 
         private static BasicStageResult LoadJsonFile(string filePath)
         {
             List<TestModel> specs = new List<TestModel> { };
             string logStr = string.Empty;
+
             if (!File.Exists(filePath))
             {
-                logStr = $"File {filePath} Dose Not Exist!";
+                logStr = $"File {filePath} does not exist!";
             }
             else
             {
@@ -117,47 +124,49 @@ namespace Microsoft.Recognizers.Text.Validation
                     specs = (List<TestModel>)JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
                     if (!specs.Any())
                     {
-                        logStr = $"JSON File is Empty.";
+                        logStr = $"JSON File is empty.";
                     }
                 }
                 catch (JsonReaderException jre)
                 {
-                    logStr = $"JSON Reader Exception! \nException Type: {jre.GetType()}, \nException Message: {jre.Message}, \nPosition: Line{jre.LineNumber}/{jre.LinePosition}.";
+                    logStr = $"JSON Reader exception! \nException Type: {jre.GetType()}, \nException Message: {jre.Message}, \nPosition: Line{jre.LineNumber}/{jre.LinePosition}.";
                 }
                 catch (JsonSerializationException jse)
                 {
-                    logStr = $"JSON SerialzationException! \nException Type: {jse.GetType()}, \nException Message: {jse.Message}, \nPosition: Line{jse.LineNumber}/{jse.LinePosition}.";
+                    logStr = $"JSON Serialzation Exception! \nException Type: {jse.GetType()}, \nException Message: {jse.Message}, \nPosition: Line{jse.LineNumber}/{jse.LinePosition}.";
                 }
                 catch (Exception e)
                 {
-                    logStr = $"Other File Error! \nException Type: {e.GetType()}, \nException Message: {e.Message}.";
+                    logStr = $"Other error! \nException Type: {e.GetType()}, \nException Message: {e.Message}.";
                 }
             }
 
-            return new BasicStageResult(ConsoleStageResult("JSON Valid", logStr), specs);
+            return new BasicStageResult(ConsoleStageResult("JSON is valid", logStr), specs);
         }
 
         private static bool CheckBasicContent(List<TestModel> data)
         {
             List<string> logStrs = new List<string> { };
             int errorNum = 0;
-            foreach (var item in data.Select((value, i) => new { i, value })) {
+
+            foreach (var item in data.Select((value, i) => new { i, value }))
+            {
                 string logStr = GetSpecBasicContent(item.value);
-                if (!logStr.Equals(string.Empty))
+                if (!string.Empty.Equals(logStr))
                 {
                     if (errorNum == 0)
                     {
                         Console.WriteLine();
                     }
 
-                    Console.WriteLine($"\tNo.{item.i} spec error, \n\tText: {item.value.Input}, \n\tError Message: {logStr}\n");
+                    Console.WriteLine($"\tSpec error in item #{item.i}, \n\tText: {item.value.Input}, \n\tError Message: {logStr}\n");
                     ++errorNum;
                 }
 
                 logStrs.Add(logStr);
             }
 
-            return ConsoleStageResult("Content Valid", CounterLogStrs(logStrs), logStrs.Count - errorNum);
+            return ConsoleStageResult("Content valid", CountLogLines(logStrs), logStrs.Count - errorNum);
         }
 
         private static bool CheckModelResult(List<TestModel> data)
@@ -171,17 +180,18 @@ namespace Microsoft.Recognizers.Text.Validation
         {
             // Check the content in one Spec file
             string logStr = string.Empty;
-            if (spec.Input.Equals(string.Empty))
+
+            if (string.Empty.Equals(spec.Input))
             {
-                logStr = "Json File Empty";
+                logStr = "Json file is empty";
             }
             else
             {
                 var dynamicResults = spec.CastResults<dynamic>();
                 foreach (dynamic result in dynamicResults)
                 {
-                    string resultStr = GetSpecBasicResult(spec, result);
-                    if (!resultStr.Equals(string.Empty))
+                    string resultStr = CheckSpecAttributes(spec, result);
+                    if (!string.Empty.Equals(resultStr))
                     {
                         logStr = resultStr;
                         break;
@@ -192,7 +202,7 @@ namespace Microsoft.Recognizers.Text.Validation
             return logStr;
         }
 
-        private static string GetSpecBasicResult(TestModel spec, dynamic result)
+        private static string CheckSpecAttributes(TestModel spec, dynamic result)
         {
             // Check the content in one Spec["Result"]
             if (result["Text"] == null || result["Start"] == null || (result["End"] == null && result["Length"] == null))
@@ -221,7 +231,7 @@ namespace Microsoft.Recognizers.Text.Validation
             return string.Empty;
         }
 
-        private static string CounterLogStrs(List<string> logStrs)
+        private static string CountLogLines(List<string> logStrs)
         {
             Dictionary<string, int> logStrCounter = new Dictionary<string, int>();
             foreach (string f in logStrs)
@@ -232,7 +242,7 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             string needLogStr = string.Empty;
-            var logStrLogs = logStrCounter.Keys.Where(f => !f.Equals(string.Empty));
+            var logStrLogs = logStrCounter.Keys.Where(f => !string.Empty.Equals(f));
             foreach (string logStrLog in logStrLogs)
             {
                 needLogStr += $"{logStrCounter[logStrLog]} specs {logStrLog}, ";
@@ -244,26 +254,27 @@ namespace Microsoft.Recognizers.Text.Validation
         private static bool ConsoleStageResult(string stage, string logStr, int succeedNum = -1)
         {
             // Log stage result, and return success/error bool flag.
-            bool res = logStr.Equals(string.Empty);
-            string statusLogStr = res ? "Success" : $"Error. {logStr}";
+            bool res = string.Empty.Equals(logStr);
+
+            string statusLogStr = res ? "Success" : $"Error: {logStr}";
             if (succeedNum != -1)
             {
-                statusLogStr += $", {succeedNum} Specs Check Succeed";
+                statusLogStr += $", {succeedNum} specs checked successfully";
             }
 
-            Console.WriteLine($"{stage} Check {statusLogStr}.");
+            Console.WriteLine($"{stage} check {statusLogStr}.");
             return res;
         }
 
         internal class BasicStageResult
         {
-            public bool IsSucceed { get; set; }
+            public bool IsSuccess { get; set; }
 
             public List<TestModel> Specs { get; set; }
 
             public BasicStageResult(bool isSucceed, List<TestModel> specs)
             {
-                IsSucceed = isSucceed;
+                IsSuccess = isSucceed;
                 Specs = specs;
             }
         }
