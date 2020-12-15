@@ -35,6 +35,7 @@ export class Constants {
 
     static readonly DefaultLanguageFallback_MDY: string = 'MDY';
     static readonly DefaultLanguageFallback_DMY: string = 'DMY';
+    static readonly DefaultLanguageFallback_YMD: string = "YMD"; // ZH
 
     static readonly MinYearNum: number = parseInt(BaseDateTime.MinYearNum);
     static readonly MaxYearNum: number = parseInt(BaseDateTime.MaxYearNum);

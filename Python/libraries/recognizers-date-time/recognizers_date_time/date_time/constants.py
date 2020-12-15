@@ -56,6 +56,7 @@ class Constants:
 
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
+    DEFAULT_LANGUAGE_FALLBACK_YMD: str = 'YMD'  # ZH
 
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)

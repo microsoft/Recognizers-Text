@@ -245,20 +245,10 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList2),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList3),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList5)
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6),
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7),
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8)
         ]
-        if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
-            self._date_regex_list.append(
-                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
-            self._date_regex_list.append(
-                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
-        else:
-            self._date_regex_list.append(
-                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
-            self._date_regex_list.append(
-                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
-        self._date_regex_list.append(
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8))
         self._implicit_date_list = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.LunarRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecialDayRegex),

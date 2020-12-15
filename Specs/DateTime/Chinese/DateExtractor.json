@@ -540,5 +540,38 @@
         "Length": 5
       }
     ]
+  },
+  {
+    "Input": "12/1",
+    "Results": [
+      {
+        "Text": "12/1",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "2020/1/2",
+    "Results": [
+      {
+        "Text": "2020/1/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "1/2/2020",
+    "Results": [
+      {
+        "Text": "1/2/2020",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
   }
 ]

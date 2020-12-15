@@ -116,6 +116,7 @@ public class Constants {
 
     public static final String DefaultLanguageFallback_MDY = "MDY";
     public static final String DefaultLanguageFallback_DMY = "DMY";
+    public static final String DefaultLanguageFallback_YMD = "YMD"; // ZH
 
     // Groups' names for named groups in regexes
     public static final String NextGroupName = "next";

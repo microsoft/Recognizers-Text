@@ -121,6 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
+        public const string DefaultLanguageFallback_YMD = "YMD"; // ZH
 
         // Groups' names for named groups in regexes
         public const string NextGroupName = "next";
