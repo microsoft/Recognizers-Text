@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je reviendrai sur Yuandan",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "Yuandan",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je reviendrai sur jour de thanks giving",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "jour de thanks giving",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je reviendrai sur fete de pere",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "fete de pere",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je reviendrai sur noel",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "noel",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je reviendrai sur jour de noël",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "noël",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je reviendrai sur fete des meres",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "fete des meres",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je reviendrai sur le fete du travail",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "fete du travail",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je reviendrai sur halloween d'annee prochain",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "halloween d'annee prochain",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je reviendrai sur thanksgiving",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "thanksgiving",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je reviendrai sur Yuandan cette annee",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "Yuandan cette annee",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je reviendrai sur Yuandan de 2016",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "Yuandan de 2016",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je reviendrai sur Yuandan 2016",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "Yuandan 2016",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je reviendrai sur le Vendredi Saint",
-    "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "Vendredi Saint",
