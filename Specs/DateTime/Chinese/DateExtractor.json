@@ -573,5 +573,27 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "你27-7-3有时间吗",
+    "Results": [
+      {
+        "Text": "27-7-3",
+        "Type": "date",
+        "Start": 1,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "你12-11-10有时间吗",
+    "Results": [
+      {
+        "Text": "12-11-10",
+        "Type": "date",
+        "Start": 1,
+        "Length": 6
+      }
+    ]
   }
 ]

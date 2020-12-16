@@ -75,8 +75,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // (2015年)?(农历)?十月二十(星期三)?
             new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags),
 
-            // 7/23
-            new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags),
+            // 2015-12-23
+            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
+
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
+
+                // 23/7
+                new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags) :
+
+                // 7/23
+                new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags),
+
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
+
+                // 7/23
+                new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags) :
+
+                // 23/7
+                new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_MDY ?
 
@@ -88,14 +104,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_MDY ?
 
-                // 23-3-2017
+                // 23-3-2015
                 new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags) :
 
-                // 3-23-2015
+                // 3-23-2017
                 new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags),
-
-            // 2015-12-23
-            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
         };
 
         public static readonly Regex[] ImplicitDateList =

@@ -1243,5 +1243,51 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "你27-7-3有时间吗",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "27-7-3",
+        "Type": "date",
+        "Value": {
+          "Timex": "2027-07-03",
+          "FutureResolution": {
+            "date": "2027-07-03"
+          },
+          "PastResolution": {
+            "date": "2027-07-03"
+          }
+        },
+        "Start": 1,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "你12-11-10有时间吗",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "12-11-10",
+        "Type": "date",
+        "Value": {
+          "Timex": "2012-11-10",
+          "FutureResolution": {
+            "date": "2012-11-10"
+          },
+          "PastResolution": {
+            "date": "2012-11-10"
+          }
+        },
+        "Start": 1,
+        "Length": 8
+      }
+    ]
   }
 ]

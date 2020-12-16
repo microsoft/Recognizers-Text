@@ -33,6 +33,7 @@ export class Constants {
     static readonly MaxMonth: number = 11;
     static readonly MinMonth: number = 0;
 
+    // specifies the priority interpreting month and day order
     static readonly DefaultLanguageFallback_MDY: string = 'MDY';
     static readonly DefaultLanguageFallback_DMY: string = 'DMY';
     static readonly DefaultLanguageFallback_YMD: string = "YMD"; // ZH

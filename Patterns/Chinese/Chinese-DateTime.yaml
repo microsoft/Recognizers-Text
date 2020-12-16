@@ -101,8 +101,8 @@ DateRegexList7: !nestedRegex
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 2015-12-23
 DateRegexList8: !nestedRegex
-  def: '{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}'
-  references: [YearNumRegex, MonthNumRegex, DayRegex]
+  def: '{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}'
+  references: [SimpleYearRegex, MonthNumRegex, DayRegex]
 # Note that these "Till" connector can be used without any suffix like "之间|之内|期间|中间|间"
 # DatePeriodExtractorChs
 DatePeriodTillRegex: !simpleRegex

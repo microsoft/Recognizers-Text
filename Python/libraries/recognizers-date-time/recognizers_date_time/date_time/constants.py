@@ -54,6 +54,7 @@ class Constants:
     HALF_DAY_HOUR_COUNT = 12
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
 
+    # specifies the priority interpreting month and day order
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
     DEFAULT_LANGUAGE_FALLBACK_YMD: str = 'YMD'  # ZH

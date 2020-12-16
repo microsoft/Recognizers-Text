@@ -29,23 +29,29 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
 
     constructor(dmyDateFormat: boolean) {
 
-        let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY;
+        let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+        let enableMdy = ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY;
 
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
+            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8),
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
 
             enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
+
+            enableMdy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
 
-            enableDmy ?
+            enableMdy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
-
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6)
         ];
         this.implicitDateList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex),

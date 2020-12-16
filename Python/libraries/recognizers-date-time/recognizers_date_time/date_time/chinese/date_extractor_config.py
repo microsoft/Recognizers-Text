@@ -245,6 +245,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList2),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList3),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList4),
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList5),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8)
