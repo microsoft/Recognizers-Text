@@ -437,7 +437,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (endResolution.Success)
                     {
-                        // When start or end is ambiguous it is better to resolve it to the type of the unambiguous extraction
+                        // When start or end is ambiguous it is better to resolve it to the type of the unambiguous extraction.
+                        // In Spanish, for example, 'de lunes a mar' (from Monday to Tuesday) or 'de enero a mar' (from January to March).
+                        // In the first case 'mar' is resolved as Date (weekday), in the second case it is resolved as DatePeriod (month).
                         if (isAmbiguousStart && isSpecificDate)
                         {
                             startResolution = ambiguousRes;
