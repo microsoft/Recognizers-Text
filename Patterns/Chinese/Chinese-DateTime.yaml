@@ -99,7 +99,7 @@ DateRegexList6: !nestedRegex
 DateRegexList7: !nestedRegex
   def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{SimpleYearRegex}'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
-# 2015-12-23
+# 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
 DateRegexList8: !nestedRegex
   def: '{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}'
   references: [SimpleYearRegex, MonthNumRegex, DayRegex]

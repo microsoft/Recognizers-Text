@@ -179,18 +179,20 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList1),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList2),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList3),
+            # 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8)
         ]
 
+        # Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
         if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             order_regex_list = [ChineseDateTime.DateRegexList5, ChineseDateTime.DateRegexList4]
         else:
             order_regex_list = [ChineseDateTime.DateRegexList4, ChineseDateTime.DateRegexList5]
 
-        if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_MDY:
-            order_regex_list.extend([ChineseDateTime.DateRegexList6, ChineseDateTime.DateRegexList7])
-        else:
+        if ChineseDateTime.DefaultLanguageFallback in [Constants.DEFAULT_LANGUAGE_FALLBACK_DMY, Constants.DEFAULT_LANGUAGE_FALLBACK_YMD]:
             order_regex_list.extend([ChineseDateTime.DateRegexList7, ChineseDateTime.DateRegexList6])
+        else:
+            order_regex_list.extend([ChineseDateTime.DateRegexList6, ChineseDateTime.DateRegexList7])
         self._date_regex.extend([RegExpUtility.get_safe_reg_exp(ii) for ii in order_regex_list])
 
         self._month_of_year = ChineseDateTime.ParserConfigurationMonthOfYear
