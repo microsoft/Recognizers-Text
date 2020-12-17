@@ -1483,5 +1483,50 @@
         "End": 35
       }
     ]
+  },
+  {
+    "Input": "Encuentra las ventas clasificadas entre quinta y vigésima.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre quinta y vigésima",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5,20)"
+        },
+        "Start": 34,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "Encuentra las ventas clasificadas entre undécima y sexagésima.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre undécima y sexagésima",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[11,60)"
+        },
+        "Start": 34,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "Encuentra las ventas clasificadas entre duodécima y cuadringentésima.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre duodécima y cuadringentésima",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[12,400)"
+        },
+        "Start": 34,
+        "End": 67
+      }
+    ]
   }
 ]
