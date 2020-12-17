@@ -30,23 +30,35 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     constructor(dmyDateFormat: boolean) {
 
         let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+        let enableYmd= ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_YMD;
 
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
+            // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8),
+
+            // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
+
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
 
             enableDmy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
+                (enableYmd ?
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6)),
 
             enableDmy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
-
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
+                (enableYmd ?
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7)),
         ];
         this.implicitDateList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex),
