@@ -179,23 +179,21 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList1),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList2),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList5)
+            # 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8)
         ]
 
+        # Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
         if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList7))
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList6))
+            order_regex_list = [ChineseDateTime.DateRegexList5, ChineseDateTime.DateRegexList4]
         else:
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList6))
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList7))
+            order_regex_list = [ChineseDateTime.DateRegexList4, ChineseDateTime.DateRegexList5]
 
-        self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DateRegexList8))
+        if ChineseDateTime.DefaultLanguageFallback in [Constants.DEFAULT_LANGUAGE_FALLBACK_DMY, Constants.DEFAULT_LANGUAGE_FALLBACK_YMD]:
+            order_regex_list.extend([ChineseDateTime.DateRegexList7, ChineseDateTime.DateRegexList6])
+        else:
+            order_regex_list.extend([ChineseDateTime.DateRegexList6, ChineseDateTime.DateRegexList7])
+        self._date_regex.extend([RegExpUtility.get_safe_reg_exp(ii) for ii in order_regex_list])
 
         self._month_of_year = ChineseDateTime.ParserConfigurationMonthOfYear
         self._day_of_month = ChineseDateTime.ParserConfigurationDayOfMonth

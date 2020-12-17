@@ -75,6 +75,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // (2015年)?(农历)?十月二十(星期三)?
             RegexCache.Get(DateTimeDefinitions.DateRegexList3, RegexFlags),
 
+            // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
+
+            // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 23/7
@@ -93,22 +97,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
-                // 23-3-2015
+                // 23-3-2017
                 RegexCache.Get(DateTimeDefinitions.DateRegexList7, RegexFlags) :
 
-                // 3-23-2017
-                RegexCache.Get(DateTimeDefinitions.DateRegexList6, RegexFlags),
+                (DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_YMD ?
+
+                    // 23-3-2017
+                    RegexCache.Get(DateTimeDefinitions.DateRegexList7, RegexFlags) :
+
+                    // 3-23-2015
+                    RegexCache.Get(DateTimeDefinitions.DateRegexList6, RegexFlags)),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
-                // 3-23-2017
+                // 3-23-2015
                 RegexCache.Get(DateTimeDefinitions.DateRegexList6, RegexFlags) :
 
-                // 23-3-2015
-                RegexCache.Get(DateTimeDefinitions.DateRegexList7, RegexFlags),
+                (DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_YMD ?
 
-            // 2015-12-23
-            RegexCache.Get(DateTimeDefinitions.DateRegexList8, RegexFlags),
+                    // 3-23-2015
+                    RegexCache.Get(DateTimeDefinitions.DateRegexList6, RegexFlags) :
+
+                    // 23-3-2017
+                    RegexCache.Get(DateTimeDefinitions.DateRegexList7, RegexFlags)),
         };
 
         public static readonly Regex[] ImplicitDateList =
