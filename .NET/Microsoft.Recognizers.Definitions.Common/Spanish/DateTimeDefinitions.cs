@@ -565,9 +565,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string PreviousPrefixRegex = $@"\b({PastPrefixRegex}?pasad[oa](?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]|anterior)\b";
       public const string ThisPrefixRegex = @"(est?[ea]|actual)\b";
       public const string PrefixWeekDayRegex = @"(\s*((,?\s*el)|[-—–]))";
-      public static readonly string ThisRegex = $@"\b((est[ae]\s*)(semana\s+(el\s+)?)?{WeekDayRegex})|({WeekDayRegex}\s*((de\s+)?esta\s+semana))\b";
-      public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}\s+(semana\s+(el\s+)?)?{WeekDayRegex})|(este\s+)?({WeekDayRegex}\s+([uú]ltimo|pasado|anterior))|({WeekDayRegex}(\s+((de\s+)?(esta|la)\s+([uú]ltima\s+)?semana)))\b";
-      public static readonly string NextDateRegex = $@"\b(({NextPrefixRegex}\s+)(semana\s+(el\s+)?)?{WeekDayRegex})|(este\s+)?({WeekDayRegex}\s+(pr[oó]ximo|siguiente|que\s+viene))|({WeekDayRegex}(\s+(de\s+)?(la\s+)?(pr[oó]xima|siguiente)(\s*semana)))\b";
+      public static readonly string ThisRegex = $@"\b((est[ae]\s*)(semana{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}\s*((de\s+)?esta\s+semana))\b";
+      public static readonly string LastDateRegex = $@"\b(({PreviousPrefixRegex}\s+(semana{PrefixWeekDayRegex}?)?|(la\s+)?semana\s+{PreviousPrefixRegex}{PrefixWeekDayRegex})\s*{WeekDayRegex})|(este\s+)?({WeekDayRegex}\s+([uú]ltimo|pasado|anterior))|({WeekDayRegex}(\s+((de\s+)?((esta|la)\s+([uú]ltima\s+)?semana)|(de\s+)?(la\s+)?semana\s+(pasada|anterior))))\b";
       public static readonly string NextDateRegex = $@"\b((({NextPrefixRegex}\s+)(semana{PrefixWeekDayRegex}?)?|(la\s+)?semana\s+{NextPrefixRegex}{PrefixWeekDayRegex})\s*{WeekDayRegex})|(este\s+)?({WeekDayRegex}\s+(pr[oó]ximo|siguiente|que\s+viene))|({WeekDayRegex}(\s+(de\s+)?(la\s+)?((pr[oó]xima|siguiente)\s+semana|semana\s+(pr[oó]xima|siguiente))))\b";
       public const string RelativeDayRegex = @"(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+días)|(días\s+((que\s+viene)|pasado)))\b";
       public const string RestOfDateRegex = @"\bresto\s+((del|de)\s+)?((la|el|est?[ae])\s+)?(?<duration>semana|mes|año|decada)(\s+actual)?\b";
