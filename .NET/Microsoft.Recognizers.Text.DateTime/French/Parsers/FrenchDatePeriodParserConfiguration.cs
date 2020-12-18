@@ -31,6 +31,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
+        public static readonly Regex AmbiguousPointRangeRegex =
+            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -210,6 +213,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => AmbiguousPointRangeRegex;
 
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

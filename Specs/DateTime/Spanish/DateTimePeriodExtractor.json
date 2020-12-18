@@ -161,6 +161,8 @@
   },
   {
     "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+    "Comment": "Java does not correctly handle lookbehinds.",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
