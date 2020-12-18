@@ -14910,10 +14910,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2019-01-01,2019-01-01,P0M)",
+              "timex": "(2019-01-01,2019-04-01,P3M)",
               "type": "daterange",
               "start": "2019-01-01",
-              "end": "2019-01-01"
+              "end": "2019-04-01"
             }
           ]
         }
@@ -19072,6 +19072,44 @@
     "Input": "end of the",
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Show sales all week",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "all week",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the first week",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Show sales in the 1st week",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
     },
     "Results": []
   }
