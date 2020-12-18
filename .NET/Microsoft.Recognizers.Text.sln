@@ -812,6 +812,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{2F41
 		..\Specs\DateTime\Turkish\TimePeriodParser.json = ..\Specs\DateTime\Turkish\TimePeriodParser.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{21E1D26A-635F-4965-A56E-20263D2A09FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationTool", "..\Tools\src\ValidationTool\ValidationTool.csproj", "{28FE2836-58CE-48E6-B657-0A3A836AEC14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -874,6 +878,10 @@ Global
 		{5039FC31-E88A-45EC-811B-3C406162A863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5039FC31-E88A-45EC-811B-3C406162A863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5039FC31-E88A-45EC-811B-3C406162A863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FE2836-58CE-48E6-B657-0A3A836AEC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FE2836-58CE-48E6-B657-0A3A836AEC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FE2836-58CE-48E6-B657-0A3A836AEC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FE2836-58CE-48E6-B657-0A3A836AEC14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -960,6 +968,7 @@ Global
 		{2F41FB40-EA08-469A-A676-138F2E7C627D} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{2F41FB40-EA08-469A-A676-138F2E7C627E} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{2F41FB40-EA08-469A-A676-138F2E7C627F} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{28FE2836-58CE-48E6-B657-0A3A836AEC14} = {21E1D26A-635F-4965-A56E-20263D2A09FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

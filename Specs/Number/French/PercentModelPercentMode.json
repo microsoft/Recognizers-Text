@@ -16,7 +16,7 @@
   },
   {
     "Input": "vingt pour cent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "vingt pour cent",
@@ -25,13 +25,13 @@
           "value": "20%"
         },
         "Start": 0,
-        "End": 13
+        "End": 14
       }
     ]
   },
   {
     "Input": "cent pour cent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "cent pour cent",
@@ -40,7 +40,7 @@
           "value": "100%"
         },
         "Start": 0,
-        "End": 19
+        "End": 13
       }
     ]
   },
@@ -55,28 +55,28 @@
           "value": "20%"
         },
         "Start": 0,
-        "End": 17
+        "End": 14
       }
     ]
   },
   {
     "Input": "un sur trois",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
-        "Text": "un sur tois",
+        "Text": "un sur trois",
         "TypeName": "percentage",
         "Resolution": {
           "value": "33.3333333333333%"
         },
         "Start": 0,
-        "End": 15
+        "End": 11
       }
     ]
   },
   {
     "Input": "un sur deux",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "un sur deux",
@@ -85,13 +85,13 @@
           "value": "50%"
         },
         "Start": 0,
-        "End": 9
+        "End": 10
       }
     ]
   },
   {
     "Input": "1/4 de",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "1/4 de",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "un quart de",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "un quart de",
@@ -115,13 +115,13 @@
           "value": "25%"
         },
         "Start": 0,
-        "End": 12
+        "End": 10
       }
     ]
   },
   {
     "Input": "une moitié de",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "une moitié de",
@@ -130,22 +130,7 @@
           "value": "50%"
         },
         "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "un quart de",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "un quart de",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "25%"
-        },
-        "Start": 0,
-        "End": 13
+        "End": 12
       }
     ]
   },
