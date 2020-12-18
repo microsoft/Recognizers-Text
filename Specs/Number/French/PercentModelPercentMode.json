@@ -135,21 +135,6 @@
     ]
   },
   {
-    "Input": "un quart de",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "un quart de",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "25%"
-        },
-        "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
     "Input": "un tiers",
     "NotSupported": "javascript, python",
     "Results": []
