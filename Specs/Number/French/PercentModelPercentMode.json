@@ -16,7 +16,7 @@
   },
   {
     "Input": "vingt pour cent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "vingt pour cent",
@@ -31,7 +31,7 @@
   },
   {
     "Input": "cent pour cent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "cent pour cent",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "un sur trois",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "un sur trois",
@@ -76,7 +76,7 @@
   },
   {
     "Input": "un sur deux",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "un sur deux",
@@ -91,7 +91,7 @@
   },
   {
     "Input": "1/4 de",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "1/4 de",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "un quart de",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "un quart de",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "une moitié de",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "une moitié de",
