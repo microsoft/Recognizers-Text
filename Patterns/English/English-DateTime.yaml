@@ -247,6 +247,8 @@ RelativeWeekDayRegex: !nestedRegex
 SpecialDate: !nestedRegex
   def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]
+PreciseDateTokens: !simpleRegex
+  def: \b(this|current|last|previous|past|yesterday|tomorrow|tmr|today|now|ago)\b
 DatePreposition: !simpleRegex
   def: \b(on|in)
 DateExtractorYearTermRegex: !nestedRegex

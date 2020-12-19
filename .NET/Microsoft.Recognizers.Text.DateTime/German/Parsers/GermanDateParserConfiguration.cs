@@ -131,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex BeforeAfterRegex { get; }
 
+        Regex IDateParserConfiguration.PreciseDateTokens => null;
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }

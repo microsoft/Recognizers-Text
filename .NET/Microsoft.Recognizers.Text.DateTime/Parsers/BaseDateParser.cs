@@ -38,6 +38,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!innerResult.Success)
                 {
                     innerResult = ParseImplicitDate(er.Text, referenceDate);
+                    if (innerResult.Success && this.config.PreciseDateTokens != null && !this.config.PreciseDateTokens.IsMatch(er.Text))
+                    {
+                        innerResult.Comment = "AmbiguousDate";
+                    }
                 }
 
                 if (!innerResult.Success)
@@ -48,6 +52,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!innerResult.Success)
                 {
                     innerResult = ParseDurationWithAgoAndLater(er.Text, referenceDate);
+                    if (innerResult.Success && this.config.PreciseDateTokens != null && !this.config.PreciseDateTokens.IsMatch(er.Text))
+                    {
+                        innerResult.Comment = "AmbiguousDate";
+                    }
                 }
 
                 if (!innerResult.Success)
@@ -734,9 +742,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Handle cases like "two days ago"
         private DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
+            // Reference time should be ignored
+            DateObject refDate = new DateObject(referenceDate.Year, referenceDate.Month, referenceDate.Day);
             return AgoLaterUtil.ParseDurationWithAgoAndLater(
                 text,
-                referenceDate,
+                refDate,
                 config.DurationExtractor,
                 config.DurationParser,
                 config.NumberParser,
