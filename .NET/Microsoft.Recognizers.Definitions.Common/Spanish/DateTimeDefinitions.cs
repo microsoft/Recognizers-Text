@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string ForTheRegex = $@"\b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+)|{WeekDayRegex}\s+)((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.(?![º°ª])|!|\?|-|$))(?!\d))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+((el\s+(d[ií]a\s+)?){FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+({DayRegex}|{WrittenDayRegex})(?!([-:/]|\.\d|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
-      public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(el\s+)?(?<cardinal>primera?|1era?|segund[ao]|2d[aoo|tercera?|3era?|cuart[ao]|4t[ao]|quint[ao]|5t[ao]|((1|2|3|4|5)(\.)?[ºª])|[uú]ltim[ao])\s+(semana\s+{MonthSuffixRegex}\s+el\s+{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))";
+      public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(el\s+)?(?<cardinal>primera?|1era?|segund[ao]|2d[ao]|tercera?|3era?|cuart[ao]|4t[ao]|quint[ao]|5t[ao]|((1|2|3|4|5)(\.)?[ºª])|[uú]ltim[ao])\s+(semana\s+{MonthSuffixRegex}\s+el\s+{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))";
       public const string RelativeWeekDayRegex = @"^[.]";
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public const string NumberEndingPattern = @"^[.]";

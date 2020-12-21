@@ -198,7 +198,7 @@ WeekDayAndDayRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+({DayRegex}|{WrittenDayRegex})(?!([-:/]|\.\d|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, WrittenDayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>(el\s+)?(?<cardinal>primera?|1era?|segund[ao]|2d[aoo|tercera?|3era?|cuart[ao]|4t[ao]|quint[ao]|5t[ao]|((1|2|3|4|5)(\.)?[ºª])|[uú]ltim[ao])\s+(semana\s+{MonthSuffixRegex}\s+el\s+{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
+  def: (?<wom>(el\s+)?(?<cardinal>primera?|1era?|segund[ao]|2d[ao]|tercera?|3era?|cuart[ao]|4t[ao]|quint[ao]|5t[ao]|((1|2|3|4|5)(\.)?[ºª])|[uú]ltim[ao])\s+(semana\s+{MonthSuffixRegex}\s+el\s+{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
