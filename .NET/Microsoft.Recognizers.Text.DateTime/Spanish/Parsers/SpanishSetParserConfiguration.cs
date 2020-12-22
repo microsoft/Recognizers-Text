@@ -1,12 +1,36 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DoubleMultiplierRegex =
+            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
+
+        private static readonly Regex DayTypeRegex =
+            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekTypeRegex =
+            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+
+        private static readonly Regex BiWeekTypeRegex =
+            new Regex(DateTimeDefinitions.BiWeekTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekendTypeRegex =
+            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+
+        private static readonly Regex MonthTypeRegex =
+            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+
+        private static readonly Regex YearTypeRegex =
+            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+
         public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -81,70 +105,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diariamente", StringComparison.Ordinal) ||
-                trimmedText.EndsWith("diarias", StringComparison.Ordinal))
+            float durationLength = 1; // Default value
+            float multiplier = 1;
+            string durationType;
+
+            if (DoubleMultiplierRegex.IsMatch(trimmedText))
             {
-                timex = "P1D";
+                multiplier = 2;
             }
-            else if (trimmedText.Equals("semanalmente", StringComparison.Ordinal))
+
+            if (DayTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1W";
+                durationType = "D";
             }
-            else if (trimmedText.Equals("quincenalmente", StringComparison.Ordinal))
+            else if (WeekTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P2W";
+                durationType = "W";
             }
-            else if (trimmedText.Equals("mensualmente", StringComparison.Ordinal))
+            else if (BiWeekTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1M";
+                durationType = "W";
+                multiplier = 2;
             }
-            else if (trimmedText.Equals("bimensualmente", StringComparison.Ordinal) || trimmedText.Equals("bimensuales", StringComparison.Ordinal))
+            else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P2M";
+                durationType = "WE";
             }
-            else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
+            else if (MonthTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1Y";
+                durationType = "M";
+            }
+            else if (YearTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = "Y";
             }
             else
             {
                 timex = null;
                 return false;
             }
+
+            timex = TimexUtility.GenerateSetTimex(durationType, durationLength, multiplier);
 
             return true;
         }
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim();
-
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.Equals("día", StringComparison.Ordinal) || trimmedText.Equals("dia", StringComparison.Ordinal) ||
-                trimmedText.Equals("días", StringComparison.Ordinal) || trimmedText.Equals("dias", StringComparison.Ordinal))
-            {
-                timex = "P1D";
-            }
-            else if (trimmedText.Equals("semana", StringComparison.Ordinal) || trimmedText.Equals("semanas", StringComparison.Ordinal))
-            {
-                timex = "P1W";
-            }
-            else if (trimmedText.Equals("mes", StringComparison.Ordinal) || trimmedText.Equals("meses", StringComparison.Ordinal))
-            {
-                timex = "P1M";
-            }
-            else if (trimmedText.Equals("año", StringComparison.Ordinal) || trimmedText.Equals("años", StringComparison.Ordinal))
-            {
-                timex = "P1Y";
-            }
-            else
-            {
-                timex = null;
-                return false;
-            }
-
-            return true;
+            return GetMatchedDailyTimex(text, out timex);
         }
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);

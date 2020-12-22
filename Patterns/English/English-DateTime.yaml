@@ -160,7 +160,7 @@ RelativeQuarterTermRegex: !nestedRegex
   def: \b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b
   references: [ StrictRelativeRegex ]
 QuarterRegex: !nestedRegex
-  def: ((the\s+)?{QuarterTermRegex}(?:(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
+  def: ((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
   references: [ YearRegex, RelativeRegex, QuarterTermRegex, RelativeQuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: (?:{YearRegex}|{RelativeRegex}\s+year)('s)?(?:\s*-\s*|\s+(the\s+)?)?{QuarterTermRegex}
@@ -504,7 +504,7 @@ EachUnitRegex: !nestedRegex
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(each|every)(?<other>\s+other)?\s*)\b
+  def: \b(?<each>(each|every)(?<other>\s+other)?\s*)(?!the|that)\b
 SetLastRegex: !nestedRegex
   def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
   references: [ LastNegPrefix ]

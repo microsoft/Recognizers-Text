@@ -1895,7 +1895,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
                 {
-                    return ret;
+                    swift = 0;
                 }
 
                 year = referenceDate.Year + swift;
