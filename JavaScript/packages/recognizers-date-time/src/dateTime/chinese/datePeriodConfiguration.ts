@@ -46,6 +46,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
             RegExpUtility.getSafeRegExp(ChineseDateTime.WeekOfMonthRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.getSafeRegExp(ChineseDateTime.QuarterRegex),
+            RegExpUtility.getSafeRegExp(ChineseDateTime.DecadeRegex),
         ];
         this.datePointExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.integerExtractor = new ChineseIntegerExtractor();
@@ -301,6 +302,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     readonly dynastyStartYear: string;
     readonly dynastyYearRegex: RegExp;
     readonly dynastyYearMap: ReadonlyMap<string, number>;
+    readonly decadeRegex: RegExp
+    readonly thisRegex: RegExp
+    readonly nextRegex: RegExp
+    readonly lastRegex: RegExp
 
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDatePeriodParserConfiguration(dmyDateFormat);
@@ -319,6 +324,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         this.dynastyStartYear = ChineseDateTime.DynastyStartYear;
         this.dynastyYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DynastyYearRegex);
         this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
+        this.decadeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DecadeRegex);
+        this.thisRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodThisRegex);
+        this.nextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodNextRegex);
+        this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -358,6 +367,9 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             }
             if (!innerResult.success) {
                 innerResult = this.parseQuarter(source, referenceDate);
+            }
+            if (!innerResult.success){
+                innerResult = this.parseDecade(source, referenceDate);
             }
 
             if (innerResult.success) {
@@ -711,6 +723,86 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let numStr = numberValue.toString();
 
         return this.parseCommonDurationWithUnit(beforeStr, sourceUnit, numStr, referenceDate);
+    }
+
+    protected parseDecade(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let century = Math.floor(referenceDate.getFullYear() / 100) + 1;
+        let decadeLastYear = 10;
+        let inputCentury = false;
+        let beginLuisStr;
+        let endLuisStr;
+
+        let match = RegExpUtility.getMatches(this.decadeRegex, source).pop();
+        if (!match) {
+            return result;
+        }
+
+        let decadeStr = match.groups('decade').value;
+        let decade = this.convertChineseToNumber(decadeStr);
+        let centuryStr = match.groups('century').value;
+        if (centuryStr){
+            century = this.convertChineseToNumber(centuryStr);
+            inputCentury = true;
+        }
+        else{
+            centuryStr = match.groups('relcentury').value;
+            if(centuryStr){
+                centuryStr = centuryStr.trim();
+                let thismatch = RegExpUtility.getMatches(this.thisRegex, centuryStr).pop();
+                let nextmatch = RegExpUtility.getMatches(this.nextRegex, centuryStr).pop();
+                let lastmatch = RegExpUtility.getMatches(this.lastRegex, centuryStr).pop();
+
+                if(nextmatch){
+                    century++;
+                }
+                else if(lastmatch){
+                    century--;
+                }
+
+                inputCentury = true;
+            }
+        }
+
+        let beginYear = ((century - 1) * 100) + decade;
+        let endYear = beginYear + decadeLastYear;
+
+        if (inputCentury)
+        {
+            beginLuisStr = DateTimeFormatUtil.luisDate(beginYear, 0, 1);
+            endLuisStr = DateTimeFormatUtil.luisDate(endYear, 0, 1);
+        }
+        else
+        {
+            let beginYearStr = "XX" + decade;
+            beginLuisStr = DateTimeFormatUtil.luisDate(-1, 0, 1);
+            beginLuisStr = beginLuisStr.replace("XXXX", beginYearStr);
+
+            let endYearStr = "XX" + ("0" + endYear % 100).slice(-2);
+            endLuisStr = DateTimeFormatUtil.luisDate(-1, 0, 1);
+            endLuisStr = endLuisStr.replace("XXXX", endYearStr);
+        }
+
+        result.timex = `(${beginLuisStr},${endLuisStr},P10Y)`;
+
+        let futureYear = beginYear
+        let pastYear = beginYear;
+        let startDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), beginYear, 0, 1);
+        if (!inputCentury && startDate < referenceDate)
+        {
+            futureYear += 100;
+        }
+
+        if (!inputCentury && startDate >= referenceDate)
+        {
+            pastYear -= 100;
+        }
+
+        result.futureValue = [DateUtils.safeCreateFromValue(DateUtils.minValue(), futureYear, 0, 1), DateUtils.safeCreateFromValue(DateUtils.minValue(), futureYear + decadeLastYear, 0, 1)];
+        result.pastValue = [DateUtils.safeCreateFromValue(DateUtils.minValue(), pastYear, 0, 1), DateUtils.safeCreateFromValue(DateUtils.minValue(), pastYear + decadeLastYear, 0, 1)];
+        result.success = true;
+
+        return result;
     }
 
     private parseCommonDurationWithUnit(beforeStr: string, sourceUnit: string, numStr: string, referenceDate: Date): DateTimeResolutionResult {
