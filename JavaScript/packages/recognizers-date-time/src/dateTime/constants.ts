@@ -22,6 +22,9 @@ export class Constants {
     static readonly ResolveKey: string = "resolve";
     static readonly ResolveToPastKey: string = "resolveToPast";
     static readonly ResolveToFutureKey: string = "resolveToFuture";
+    static readonly Decade: string = "decade";
+    static readonly Century: string = "century"
+    static readonly RelCentury: string = "relcentury"
     
     static readonly CommentKey: string = "Comment";
     static readonly CommentAmPm: string = "ampm";

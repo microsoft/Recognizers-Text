@@ -738,25 +738,25 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             return result;
         }
 
-        let decadeStr = match.groups('decade').value;
+        let decadeStr = match.groups(Constants.Decade).value;
         let decade = this.convertChineseToNumber(decadeStr);
-        let centuryStr = match.groups('century').value;
-        if (centuryStr){
+        let centuryStr = match.groups(Constants.Century).value;
+        if (centuryStr) {
             century = this.convertChineseToNumber(centuryStr);
             inputCentury = true;
         }
-        else{
-            centuryStr = match.groups('relcentury').value;
-            if(centuryStr){
+        else {
+            centuryStr = match.groups(Constants.RelCentury).value;
+            if (centuryStr) {
                 centuryStr = centuryStr.trim();
                 let thismatch = RegExpUtility.getMatches(this.thisRegex, centuryStr).pop();
                 let nextmatch = RegExpUtility.getMatches(this.nextRegex, centuryStr).pop();
                 let lastmatch = RegExpUtility.getMatches(this.lastRegex, centuryStr).pop();
 
-                if(nextmatch){
+                if (nextmatch) {
                     century++;
                 }
-                else if(lastmatch){
+                else if (lastmatch) {
                     century--;
                 }
 
@@ -767,13 +767,11 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let beginYear = ((century - 1) * 100) + decade;
         let endYear = beginYear + decadeLastYear;
 
-        if (inputCentury)
-        {
+        if (inputCentury) {
             beginLuisStr = DateTimeFormatUtil.luisDate(beginYear, 0, 1);
             endLuisStr = DateTimeFormatUtil.luisDate(endYear, 0, 1);
         }
-        else
-        {
+        else {
             let beginYearStr = "XX" + decade;
             beginLuisStr = DateTimeFormatUtil.luisDate(-1, 0, 1);
             beginLuisStr = beginLuisStr.replace("XXXX", beginYearStr);
@@ -788,13 +786,12 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let futureYear = beginYear
         let pastYear = beginYear;
         let startDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), beginYear, 0, 1);
-        if (!inputCentury && startDate < referenceDate)
-        {
+
+        if (!inputCentury && startDate < referenceDate) {
             futureYear += 100;
         }
 
-        if (!inputCentury && startDate >= referenceDate)
-        {
+        if (!inputCentury && startDate >= referenceDate) {
             pastYear -= 100;
         }
 
