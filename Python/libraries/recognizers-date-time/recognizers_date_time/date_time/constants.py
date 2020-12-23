@@ -152,6 +152,10 @@ class Constants:
 
     CARDINAL = 'cardinal'
 
+    DECADE = 'decade'
+    CENTURY = 'century'
+    REL_CENTURY = 'relcentury'
+
     SEAS = 'seas'
     SEASON = 'season'
 
