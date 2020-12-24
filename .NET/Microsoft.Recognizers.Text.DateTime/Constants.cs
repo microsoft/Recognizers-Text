@@ -119,8 +119,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         // the length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
 
+        // specifies the priority interpreting month and day order
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
+        public const string DefaultLanguageFallback_YMD = "YMD"; // ZH
 
         // Groups' names for named groups in regexes
         public const string NextGroupName = "next";
@@ -140,6 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
+        public const string NegativeGroupName = "neg";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";

@@ -54,8 +54,10 @@ class Constants:
     HALF_DAY_HOUR_COUNT = 12
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
 
+    # specifies the priority interpreting month and day order
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
+    DEFAULT_LANGUAGE_FALLBACK_YMD: str = 'YMD'  # ZH
 
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
@@ -149,6 +151,10 @@ class Constants:
     MID_NIGHT = 'midnight'
 
     CARDINAL = 'cardinal'
+
+    DECADE = 'decade'
+    CENTURY = 'century'
+    REL_CENTURY = 'relcentury'
 
     SEAS = 'seas'
     SEASON = 'season'

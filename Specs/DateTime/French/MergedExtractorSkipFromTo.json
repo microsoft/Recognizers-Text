@@ -77,12 +77,14 @@
     "Results": [
       {
         "Start": 22,
+        "Start": 25,
         "Length": 3,
         "Text": "9am",
         "Type": "time"
       },
       {
         "Start": 29,
+        "Start": 31,
         "Length": 4,
         "Text": "11am",
         "Type": "time"
@@ -96,12 +98,16 @@
       {
         "Start": 22,
         "Length": 6,
+        "Start": 25,
+        "Length": 11,
         "Text": "19 novembre",
         "Type": "date"
       },
       {
         "Start": 32,
         "Length": 6,
+        "Start": 40,
+        "Length": 11,
         "Text": "23 novembre",
         "Type": "date"
       }
