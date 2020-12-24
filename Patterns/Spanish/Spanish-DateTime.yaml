@@ -77,7 +77,7 @@ DateUnitRegex: !simpleRegex
 PastRegex: !simpleRegex
   def: (?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)
 FutureRegex: !simpleRegex
-  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?|dentro\s+de|en)\b
+  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?)\b
 SimpleCasesRegex: !nestedRegex
   def: \b((desde(\s+el)?|entre|del?)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)((en|del?)\s+)?{YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -161,11 +161,6 @@ BeforeAfterRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(en)(?=\s*$)\b
-SinceYearSuffixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-WithinNextPrefixRegex: !simpleRegex
-  def: \b(dentro\s+de)(?=\s*$)\b
 TodayNowRegex: !simpleRegex
   def: \b(hoy|ahora|este entonces)\b
 FromRegex: !simpleRegex
@@ -591,6 +586,9 @@ AmbiguousPointRangeRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: ((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
+SinceYearSuffixRegex: !nestedRegex
+  def: (^\s*{SinceRegex}(\s*(el\s+)?año\s*)?{YearSuffix})
+  references: [ SinceRegex, YearSuffix ]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes|hace)\b
@@ -951,6 +949,9 @@ RelativeDayRegex: !simpleRegex
   def: (?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+días)|(días\s+((que\s+viene)|pasado)))\b
 RestOfDateRegex: !simpleRegex
   def: \bresto\s+((del|de)\s+)?((la|el|est?[ae])\s+)?(?<duration>semana|mes|año|decada)(\s+actual)?\b
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(dentro\s+de((\s+(el|l[ao]s?))?\s+(?<next>{NextPrefixRegex}))?)(?=\s*$)\b
+  references: [ NextPrefixRegex ]
 DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
   references: [ DateUnitRegex ]

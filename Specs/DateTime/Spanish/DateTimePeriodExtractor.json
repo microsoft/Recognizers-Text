@@ -357,28 +357,15 @@
   },
   {
     "Input": "Voy a volver en 3 horas",
-    "Results": [
-      {
-        "Text": "en 3 horas",
-        "Type": "datetimerange",
-        "Start": 13,
-        "Length": 10
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voy a volver en 5 h",
-    "Results": [
-      {
-        "Text": "en 5 h",
-        "Type": "datetimerange",
-        "Start": 13,
-        "Length": 6
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voy a volver dentro de 5 horas",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 5 horas",
@@ -1216,7 +1203,7 @@
   },
   {
     "Input": "Ocurrirá dentro de 2 horas",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 2 horas",
@@ -1379,6 +1366,28 @@
         "Type": "datetimerange",
         "Start": 10,
         "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver las próximas 3 horas",
+    "Results": [
+      {
+        "Text": "próximas 3 horas",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver próximas 5 h",
+    "Results": [
+      {
+        "Text": "próximas 5 h",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 12
       }
     ]
   }

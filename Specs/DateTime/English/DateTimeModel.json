@@ -20429,5 +20429,31 @@
     },
     "NotSupported": "python",
     "Results": []
+  },
+  {
+    "Input": "I'll be back within 5 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "within 5 minutes",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T00:00:00,2016-11-07T00:05:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 00:00:00",
+              "end": "2016-11-07 00:05:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
