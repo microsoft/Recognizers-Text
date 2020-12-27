@@ -132,7 +132,7 @@ class ChineseMergedParser(BaseMergedParser):
             if past_values:
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_PAST_KEY, past)
-            if future_resolution:
+            if future_values:
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 

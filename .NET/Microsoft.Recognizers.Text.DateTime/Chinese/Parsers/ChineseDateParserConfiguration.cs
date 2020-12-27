@@ -550,16 +550,33 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            if (noYear && futureDate < referenceDate)
+            DateObject futureDate, pastDate;
+            if (IsNonleapYearFeb29th(year, month, day))
             {
-                futureDate = futureDate.AddYears(+1);
+                futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
+                pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
+                if (!futureDate.IsDefaultValue() && futureDate.AddYears(-1) >= referenceDate)
+                {
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                }
+                else if (!pastDate.IsDefaultValue() && pastDate.AddYears(+1) < referenceDate)
+                {
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                }
             }
-
-            if (noYear && pastDate >= referenceDate)
+            else
             {
-                pastDate = pastDate.AddYears(-1);
+                futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                if (noYear && futureDate < referenceDate && !futureDate.IsDefaultValue())
+                {
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
+                }
+
+                if (noYear && pastDate >= referenceDate && !pastDate.IsDefaultValue())
+                {
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
+                }
             }
 
             ret.FutureValue = futureDate;
