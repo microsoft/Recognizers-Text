@@ -1,3 +1,4 @@
+    
 [
   {
     "Input": "changer la reunion du 9am au 11am",
@@ -76,14 +77,12 @@
     "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
-        "Start": 22,
         "Start": 25,
         "Length": 3,
         "Text": "9am",
         "Type": "time"
       },
       {
-        "Start": 29,
         "Start": 31,
         "Length": 4,
         "Text": "11am",
@@ -96,18 +95,50 @@
     "NotSupported":"dotnet, javascript, python, java",
     "Results": [
       {
-        "Start": 22,
-        "Length": 6,
         "Start": 25,
         "Length": 11,
         "Text": "19 novembre",
         "Type": "date"
       },
       {
-        "Start": 32,
-        "Length": 6,
         "Start": 40,
         "Length": 11,
+        "Text": "23 novembre",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Changez ma conférence de 9am à 11am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Start": 23,
+        "Length": 3,
+        "Text": "9am",
+        "Type": "time"
+      },
+      {
+        "Start": 30,
+        "Length": 4,
+        "Text": "11am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Changez ma conférence du 19 novembre au 23 novembre.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Start": 23,
+        "Length": 8,
+        "Text": "19 novembre",
+        "Type": "date"
+      },
+      {
+        "Start": 35,
+        "Length": 8,
         "Text": "23 novembre",
         "Type": "date"
       }
