@@ -187,6 +187,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MealtimeLunch = "TMEL";
         public const string MealtimeDinner = "TMED";
 
+        public const string InvalidDateString = "0001-01-01";
+
         // Invalid year
         public const int InvalidYear = int.MinValue;
         public const int InvalidMonth = int.MinValue;

@@ -254,7 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             {
                                 pastDate = pastDate.AddMonths(-1);
                             }
-                            else if (IsNonleapYearFeb29th(year, month - 1, day))
+                            else if (!DateObject.IsLeapYear(year) && IsFeb29th(year, month - 1, day))
                             {
                                 pastDate = pastDate.AddMonths(-2);
                             }
@@ -550,32 +550,49 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            DateObject futureDate, pastDate;
-            if (IsNonleapYearFeb29th(year, month, day))
+            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var futureYear = year;
+            var pastYear = year;
+            if (noYear)
             {
-                futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
-                pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
-                if (!futureDate.IsDefaultValue() && futureDate.AddYears(-1) >= referenceDate)
+                if (IsFeb29th(year, month, day))
                 {
-                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-                }
-                else if (!pastDate.IsDefaultValue() && pastDate.AddYears(+1) < referenceDate)
-                {
-                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-                }
-            }
-            else
-            {
-                futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-                pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-                if (noYear && futureDate < referenceDate && !futureDate.IsDefaultValue())
-                {
-                    futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
-                }
+                    if (DateObject.IsLeapYear(year))
+                    {
+                        if (futureDate < referenceDate)
+                        {
+                            futureDate = DateObject.MinValue.SafeCreateFromValue(futureYear + 4, month, day);
+                        }
+                        else
+                        {
+                            pastDate = DateObject.MinValue.SafeCreateFromValue(pastYear - 4, month, day);
+                        }
+                    }
+                    else
+                    {
+                        while (futureDate.IsDefaultValue() && futureYear - year <= 4)
+                        {
+                            futureDate = DateObject.MinValue.SafeCreateFromValue(++futureYear, month, day);
+                        }
 
-                if (noYear && pastDate >= referenceDate && !pastDate.IsDefaultValue())
+                        while (pastDate.IsDefaultValue() && year - pastYear <= 4)
+                        {
+                            pastDate = DateObject.MinValue.SafeCreateFromValue(--pastYear, month, day);
+                        }
+                    }
+                }
+                else
                 {
-                    pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
+                    if (futureDate < referenceDate && !futureDate.IsDefaultValue())
+                    {
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
+                    }
+
+                    if (pastDate >= referenceDate && !pastDate.IsDefaultValue())
+                    {
+                        pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
+                    }
                 }
             }
 
@@ -642,10 +659,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return DateObjectExtension.IsValidDate(year, month, day);
         }
 
-        // Judge the date is non-leap year Feb 29th
-        private static bool IsNonleapYearFeb29th(int year, int month, int day)
+        // Judge the date is Feb 29th
+        private static bool IsFeb29th(int year, int month, int day)
         {
-            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
+            return month == 2 && day == 29;
         }
 
         // Handle cases like "三天前"

@@ -10,8 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public const string ParserTypeName = "datetimeV2";
 
-        public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
-
         private readonly IFullDateTimeParserConfiguration config;
 
         public FullDateTimeParser(IFullDateTimeParserConfiguration configuration)
@@ -23,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                                          string mod, Dictionary<string, string> res)
         {
             if (resolutionDic.ContainsKey(type) &&
-                !resolutionDic[type].StartsWith(DateMinString, StringComparison.Ordinal))
+                !resolutionDic[type].Equals(Constants.InvalidDateString, StringComparison.Ordinal))
             {
                 if (!string.IsNullOrEmpty(mod))
                 {

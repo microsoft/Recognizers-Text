@@ -386,7 +386,7 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (this.isNonleapYearFeb29th(year, month - 1, day)) {
+                        else if (!DateUtils.isLeapYear(year) && this.isFeb29th(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
@@ -529,25 +529,37 @@ export class ChineseDateParser extends BaseDateParser {
         else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
-        let futureDate, pastDate;
-        if (this.isNonleapYearFeb29th(year, month, day)) {
-            futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
-            pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
-            if (DateUtils.isValidDate(year + 1, month, day) && DateUtils.safeCreateFromMinValue(year, month, day - 1) >= referenceDate) {
-                futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let futureYear = year;
+        let pastYear = year;
+        if (noYear){
+            if (this.isFeb29th(year, month, day)) {
+                if (DateUtils.isLeapYear(year)) {
+                    if (futureDate < referenceDate) {
+                        futureDate = DateUtils.safeCreateFromMinValue(futureYear + 4, month, day);
+                    }
+                    else {
+                        pastDate = DateUtils.safeCreateFromMinValue(pastYear - 4, month, day);
+                    }
+                }
+                else {
+                    while (!DateUtils.isValidDate(futureYear, month, day) && futureYear - year <= 4) {
+                        futureDate = DateUtils.safeCreateFromMinValue(++futureYear, month, day);
+                    }
+
+                    while (!DateUtils.isValidDate(pastYear, month, day) && year - pastYear <= 4) {
+                        pastDate = DateUtils.safeCreateFromMinValue(--pastYear, month, day);
+                    }
+                }
             }
-            else if (DateUtils.isValidDate(year - 1, month, day) && DateUtils.safeCreateFromMinValue(year, month, day - 1) < referenceDate) {
-                pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-            }
-        }
-        else  {
-            futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
-            pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-            if (noYear && futureDate < referenceDate && DateUtils.isValidDate(year, month, day)) {
-                futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
-            }
-            if (noYear && pastDate >= referenceDate && DateUtils.isValidDate(year, month, day)) {
-                pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
+            else {
+                if (futureDate < referenceDate && DateUtils.isValidDate(year, month, day)) {
+                    futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
+                }
+                if (pastDate >= referenceDate && DateUtils.isValidDate(year, month, day)) {
+                    pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
+                }
             }
         }
 
@@ -632,6 +644,10 @@ export class ChineseDateParser extends BaseDateParser {
 
     private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
         return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
+    }
+
+    private isFeb29th(year: number, month: number, day: number): boolean {
+        return month === 1 && day === 29;
     }
     
     // Handle cases like "三天前"
