@@ -9,9 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public int Year { get; set; } = Constants.InvalidYear;
 
-        public static List<DateObject> GetFuturePastDate(bool noYear, DateObject referenceDate, int year, int month, int day)
+        // Generate future/past date for cases without specific year like "Feb 29th"
+        public static (DateObject future, DateObject past) GenerateDates(bool noYear, DateObject referenceDate, int year, int month, int day)
         {
-            // Get future/past date, especially for Feb 29.
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var futureYear = year;
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            return new List<DateObject> { futureDate, pastDate };
+            return (futureDate, pastDate);
         }
 
         // This method is to ensure the begin date is less than the end date.
@@ -118,7 +118,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Year == Constants.InvalidYear;
         }
 
-        // Judge the date is Feb 29th
         private static bool IsFeb29th(int year, int month, int day)
         {
             return month == 2 && day == 29;

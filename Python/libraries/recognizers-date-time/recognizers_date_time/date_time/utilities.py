@@ -374,8 +374,9 @@ class DayOfWeek(IntEnum):
 class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
 
+    # Generate future/past date for cases without specific year like "Feb 29th"
     @staticmethod
-    def get_future_past_date(no_year: bool, reference: datetime, year: int, month: int, day: int) -> list:
+    def generate_dates(no_year: bool, reference: datetime, year: int, month: int, day: int) -> list:
         future_date = DateUtils.safe_create_from_min_value(year, month, day)
         past_date = DateUtils.safe_create_from_min_value(year, month, day)
         future_year = year
@@ -404,7 +405,7 @@ class DateUtils:
 
                 if past_date >= reference and DateUtils.is_valid_date(year, month, day):
                     past_date = DateUtils.safe_create_from_min_value(year - 1, month, day)
-        return [future_date, past_date]
+        return future_date, past_date
 
     @staticmethod
     def int_try_parse(value):

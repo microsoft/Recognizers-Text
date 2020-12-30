@@ -298,7 +298,7 @@ class ChineseDateParser(BaseDateParser):
         else:
             result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
-        future_date, past_date = DateUtils.get_future_past_date(no_year, reference, year, month, day)
+        future_date, past_date = DateUtils.generate_dates(no_year, reference, year, month, day)
 
         result.future_value = future_date
         result.past_value = past_date

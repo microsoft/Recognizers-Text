@@ -387,7 +387,8 @@ export class DateUtils {
     private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
-    static getFuturePastDate(noYear: boolean, referenceDate: Date, year: number, month: number, day: number): Date[] {
+    // Generate future/past date for cases without specific year like "Feb 29th"
+    static generateDates(noYear: boolean, referenceDate: Date, year: number, month: number, day: number): { future: Date, past: Date} {
         let futureDate = this.safeCreateFromMinValue(year, month, day);
         let pastDate = this.safeCreateFromMinValue(year, month, day);
         let futureYear = year;
@@ -427,7 +428,7 @@ export class DateUtils {
             }
         }
 
-        return new Array<Date>().concat(futureDate).concat(pastDate);
+        return { future: futureDate, past: pastDate };
     }
 
     static parseChineseDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {

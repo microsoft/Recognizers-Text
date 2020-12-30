@@ -550,10 +550,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futurePastDateList = DateContext.GetFuturePastDate(noYear, referenceDate, year, month, day);
+            var futurePastDates = DateContext.GenerateDates(noYear, referenceDate, year, month, day);
 
-            ret.FutureValue = futurePastDateList[0];
-            ret.PastValue = futurePastDateList[1];
+            ret.FutureValue = futurePastDates.future;
+            ret.PastValue = futurePastDates.past;
             ret.Success = true;
 
             return ret;
@@ -615,7 +615,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return DateObjectExtension.IsValidDate(year, month, day);
         }
 
-        // Judge the date is Feb 29th
         private static bool IsFeb29th(int year, int month, int day)
         {
             return month == 2 && day == 29;
