@@ -375,6 +375,38 @@ class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
 
     @staticmethod
+    def get_future_past_date(no_year: bool, reference: datetime, year: int, month: int, day: int) -> list:
+        future_date = DateUtils.safe_create_from_min_value(year, month, day)
+        past_date = DateUtils.safe_create_from_min_value(year, month, day)
+        future_year = year
+        past_year = year
+        if no_year:
+            if DateUtils.is_Feb_29th(year, month, day):
+                if DateUtils.is_leap_year(year):
+                    if future_date < reference:
+                        future_date = DateUtils.safe_create_from_min_value(future_year + 4, month, day)
+                    else:
+                        past_date = DateUtils.safe_create_from_min_value(past_year - 4, month, day)
+                else:
+                    past_year = past_year >> 2 << 2
+                    if not DateUtils.is_leap_year(past_year):
+                        past_year -= 4
+
+                    future_year = past_year + 4
+                    if not DateUtils.is_leap_year(future_year):
+                        future_year += 4
+
+                    future_date = DateUtils.safe_create_from_min_value(future_year, month, day)
+                    past_date = DateUtils.safe_create_from_min_value(past_year, month, day)
+            else:
+                if future_date < reference and DateUtils.is_valid_date(year, month, day):
+                    future_date = DateUtils.safe_create_from_min_value(year + 1, month, day)
+
+                if past_date >= reference and DateUtils.is_valid_date(year, month, day):
+                    past_date = DateUtils.safe_create_from_min_value(year - 1, month, day)
+        return [future_date, past_date]
+
+    @staticmethod
     def int_try_parse(value):
         try:
             return int(value), True
@@ -450,6 +482,14 @@ class DateUtils:
     @staticmethod
     def week_of_year(date: datetime) -> int:
         return date.isocalendar()[1]
+
+    @staticmethod
+    def is_leap_year(year) -> bool:
+        return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
+
+    @staticmethod
+    def is_Feb_29th(year, month, day):
+        return month == 2 and day == 29
 
 
 class HolidayFunctions:

@@ -387,6 +387,49 @@ export class DateUtils {
     private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
+    static getFuturePastDate(noYear: boolean, referenceDate: Date, year: number, month: number, day: number): Date[] {
+        let futureDate = this.safeCreateFromMinValue(year, month, day);
+        let pastDate = this.safeCreateFromMinValue(year, month, day);
+        let futureYear = year;
+        let pastYear = year;
+        if (noYear){
+            if (this.isFeb29th(year, month, day)) {
+                if (this.isLeapYear(year)) {
+                    if (futureDate < referenceDate) {
+                        futureDate = this.safeCreateFromMinValue(futureYear + 4, month, day);
+                    }
+                    else {
+                        pastDate = this.safeCreateFromMinValue(pastYear - 4, month, day);
+                    }
+                }
+                else {
+                    pastYear = pastYear >> 2 << 2;
+                    if (!this.isLeapYear(pastYear)) {
+                        pastYear -= 4;
+                    }
+
+                    futureYear = pastYear + 4;
+                    if (!this.isLeapYear(futureYear)) {
+                        futureYear += 4;
+                    }
+
+                    futureDate = this.safeCreateFromMinValue(futureYear, month, day);
+                    pastDate = this.safeCreateFromMinValue(pastYear, month, day);
+                }
+            }
+            else {
+                if (futureDate < referenceDate && this.isValidDate(year, month, day)) {
+                    futureDate = this.safeCreateFromMinValue(year + 1, month, day);
+                }
+                if (pastDate >= referenceDate && this.isValidDate(year, month, day)) {
+                    pastDate = this.safeCreateFromMinValue(year - 1, month, day);
+                }
+            }
+        }
+
+        return new Array<Date>().concat(futureDate).concat(pastDate);
+    }
+
     static parseChineseDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {
         let year = -1;
         let regionTitleMatch = RegExpUtility.getMatches(dynastyYearRegex, yearStr).pop();
@@ -607,14 +650,18 @@ export class DateUtils {
         return Math.floor(diffDays / DateUtils.oneDay);
     }
 
-    private static validDays(year: number) {
-        return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    static isFeb29th(year: number, month: number, day: number): boolean {
+        return month === 1 && day === 29;
     }
 
     static isValidDate(year: number, month: number, day: number): boolean {
         return year > 0 && year <= 9999
             && month >= 0 && month < 12
             && day > 0 && day <= this.validDays(year)[month];
+    }
+
+    private static validDays(year: number) {
+        return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     }
 
     private static isValidTime(hour: number, minute: number, second: number) {

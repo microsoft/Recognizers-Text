@@ -550,54 +550,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var futureYear = year;
-            var pastYear = year;
-            if (noYear)
-            {
-                if (IsFeb29th(year, month, day))
-                {
-                    if (DateObject.IsLeapYear(year))
-                    {
-                        if (futureDate < referenceDate)
-                        {
-                            futureDate = DateObject.MinValue.SafeCreateFromValue(futureYear + 4, month, day);
-                        }
-                        else
-                        {
-                            pastDate = DateObject.MinValue.SafeCreateFromValue(pastYear - 4, month, day);
-                        }
-                    }
-                    else
-                    {
-                        while (futureDate.IsDefaultValue() && futureYear - year <= 4)
-                        {
-                            futureDate = DateObject.MinValue.SafeCreateFromValue(++futureYear, month, day);
-                        }
+            var futurePastDateList = DateContext.GetFuturePastDate(noYear, referenceDate, year, month, day);
 
-                        while (pastDate.IsDefaultValue() && year - pastYear <= 4)
-                        {
-                            pastDate = DateObject.MinValue.SafeCreateFromValue(--pastYear, month, day);
-                        }
-                    }
-                }
-                else
-                {
-                    if (futureDate < referenceDate && !futureDate.IsDefaultValue())
-                    {
-                        futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
-                    }
-
-                    if (pastDate >= referenceDate && !pastDate.IsDefaultValue())
-                    {
-                        pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
-                    }
-                }
-            }
-
-            ret.FutureValue = futureDate;
-            ret.PastValue = pastDate;
+            ret.FutureValue = futurePastDateList[0];
+            ret.PastValue = futurePastDateList[1];
             ret.Success = true;
 
             return ret;

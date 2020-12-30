@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -7,6 +8,63 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class DateContext
     {
         public int Year { get; set; } = Constants.InvalidYear;
+
+        public static List<DateObject> GetFuturePastDate(bool noYear, DateObject referenceDate, int year, int month, int day)
+        {
+            // Get future/past date, especially for Feb 29.
+            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var futureYear = year;
+            var pastYear = year;
+            if (noYear)
+            {
+                if (IsFeb29th(year, month, day))
+                {
+                    if (DateObject.IsLeapYear(year))
+                    {
+                        if (futureDate < referenceDate)
+                        {
+                            futureDate = DateObject.MinValue.SafeCreateFromValue(futureYear + 4, month, day);
+                        }
+                        else
+                        {
+                            pastDate = DateObject.MinValue.SafeCreateFromValue(pastYear - 4, month, day);
+                        }
+                    }
+                    else
+                    {
+                        pastYear = pastYear >> 2 << 2;
+                        if (!DateObject.IsLeapYear(pastYear))
+                        {
+                            pastYear -= 4;
+                        }
+
+                        futureYear = pastYear + 4;
+                        if (!DateObject.IsLeapYear(futureYear))
+                        {
+                            futureYear += 4;
+                        }
+
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(futureYear, month, day);
+                        pastDate = DateObject.MinValue.SafeCreateFromValue(pastYear, month, day);
+                    }
+                }
+                else
+                {
+                    if (futureDate < referenceDate && !futureDate.IsDefaultValue())
+                    {
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(year + 1, month, day);
+                    }
+
+                    if (pastDate >= referenceDate && !pastDate.IsDefaultValue())
+                    {
+                        pastDate = DateObject.MinValue.SafeCreateFromValue(year - 1, month, day);
+                    }
+                }
+            }
+
+            return new List<DateObject> { futureDate, pastDate };
+        }
 
         // This method is to ensure the begin date is less than the end date.
         // As DateContext only supports common Year as context, so it subtracts one year from beginDate. @TODO problematic in other usages.
@@ -58,6 +116,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool IsEmpty()
         {
             return this.Year == Constants.InvalidYear;
+        }
+
+        // Judge the date is Feb 29th
+        private static bool IsFeb29th(int year, int month, int day)
+        {
+            return month == 2 && day == 29;
         }
 
         private DateObject SetDateWithContext(DateObject originalDate)
