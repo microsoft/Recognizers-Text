@@ -19104,14 +19104,86 @@
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
-    "Results": []
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week",
+        "Start": 24,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "Show sales in the 1st week",
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
-    "Results": []
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week",
+        "Start": 22,
+        "End": 25,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the third month and in the fifth day",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "month",
+        "Start": 24,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "duration",
+              "value": "2592000"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "day",
+        "Start": 47,
+        "End": 49,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        }
+      }
   },
   {
     "Input": "Feb 29",

@@ -3903,7 +3903,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "año 247",
+        "Text": "el año 247",
         "Type": "daterange",
         "Value": {
           "Timex": "0247",
@@ -3916,8 +3916,8 @@
             "endDate": "0248-01-01"
           }
         },
-        "Start": 20,
-        "Length": 7
+        "Start": 17,
+        "Length": 10
       }
     ]
   },

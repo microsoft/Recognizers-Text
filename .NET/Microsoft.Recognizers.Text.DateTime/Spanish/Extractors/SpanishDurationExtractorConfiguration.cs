@@ -73,12 +73,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance(numConfig);
 
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

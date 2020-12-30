@@ -334,6 +334,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         };
       public static readonly Dictionary<string, long> UnitValueMap = new Dictionary<string, long>
         {
+            { @"millennium", 31536000000 },
+            { @"eeuw", 3153600000 },
+            { @"centennium", 3153600000 },
             { @"decennium", 315360000 },
             { @"decennia", 315360000 },
             { @"decenniën", 315360000 },

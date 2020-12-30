@@ -69,12 +69,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             CardinalExtractor = Number.Dutch.NumberExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance(numConfig);
 
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

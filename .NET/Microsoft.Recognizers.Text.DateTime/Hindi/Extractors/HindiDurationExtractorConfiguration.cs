@@ -60,11 +60,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             : base(config)
         {
             CardinalExtractor = Number.Hindi.CardinalExtractor.GetInstance();
+            OrdinalExtractor = null;
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

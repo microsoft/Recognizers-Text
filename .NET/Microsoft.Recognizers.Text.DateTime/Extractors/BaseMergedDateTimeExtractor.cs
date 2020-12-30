@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
-                    if (dst[i].IsOverlap(result))
+                    if (dst[i].IsOverlap(result) && !(dst[i].Text == result.Text && this.config.UnspecificDatePeriodRegex.IsMatch(result.Text)))
                     {
                         isFound = true;
                         if (dst[i].IsCover(result))
@@ -267,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers)
         {
-            ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
+            ers.RemoveAll(o => o.Type == "daterange" && this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
             return ers;
         }
 

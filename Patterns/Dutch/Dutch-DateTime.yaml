@@ -758,6 +758,9 @@ UnitMap: !dictionary
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
+    millennium: 31536000000
+    eeuw: 3153600000
+    centennium: 3153600000
     decennium: 315360000
     decennia: 315360000
     decenniën: 315360000
