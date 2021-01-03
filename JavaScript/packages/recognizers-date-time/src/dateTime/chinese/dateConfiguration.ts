@@ -530,10 +530,10 @@ export class ChineseDateParser extends BaseDateParser {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
 
-        let futurePastDateList = DateUtils.getFuturePastDate(noYear, referenceDate, year, month, day);
+        let futurePastDates = DateUtils.generateDates(noYear, referenceDate, year, month, day);
 
-        result.futureValue = futurePastDateList[0];
-        result.pastValue = futurePastDateList[1];
+        result.futureValue = futurePastDates.future;
+        result.pastValue = futurePastDates.past;
         result.success = true;
         return result;
     }
