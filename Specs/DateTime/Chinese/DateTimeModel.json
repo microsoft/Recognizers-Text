@@ -6470,7 +6470,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "2月28日-3月1日",
@@ -6501,7 +6501,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "2月29日-3月1日",
@@ -6511,13 +6511,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-02-28,XXXX-03-01,P1D)",
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
               "type": "daterange",
               "start": "2016-02-29",
               "end": "2016-03-01"
             },
             {
-              "timex": "(XXXX-02-28,XXXX-03-01,P1D)",
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
               "type": "daterange",
               "start": "2020-02-29",
               "end": "2020-03-01"
@@ -6532,7 +6532,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "2019年2月29日-3月1日",
@@ -6542,7 +6542,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2019-02-29,2019-03-01,P1D)",
+              "timex": "(2019-02-29,2019-03-01,P737118D)",
               "type": "daterange",
               "value": "not resolved"
             }

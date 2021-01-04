@@ -78,6 +78,38 @@ namespace Microsoft.Recognizers.Text.DateTime
             return beginDate;
         }
 
+        public (DateTimeParseResult pr1, DateTimeParseResult pr2) SyncDateEntityInFeb29th(DateTimeParseResult pr1, DateTimeParseResult pr2)
+        {
+            if (IsEmpty() && (IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue) || IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue)))
+            {
+                int futureYear;
+                int pastYear;
+                if (IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue))
+                {
+                    futureYear = ((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue).Year;
+                    pastYear = ((DateObject)((DateTimeResolutionResult)pr1.Value).PastValue).Year;
+                }
+                else
+                {
+                    futureYear = ((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue).Year;
+                    pastYear = ((DateObject)((DateTimeResolutionResult)pr2.Value).PastValue).Year;
+                }
+
+                pr1.Value = SyncDateEntityResolutionInFeb29th((DateTimeResolutionResult)pr1.Value, futureYear, pastYear);
+                pr2.Value = SyncDateEntityResolutionInFeb29th((DateTimeResolutionResult)pr2.Value, futureYear, pastYear);
+            }
+
+            return (pr1, pr2);
+        }
+
+        public DateTimeResolutionResult SyncDateEntityResolutionInFeb29th(DateTimeResolutionResult resolutionResult, int futureYear, int pastYear)
+        {
+            resolutionResult.FutureValue = SetDateWithContext((DateObject)resolutionResult.FutureValue, futureYear);
+            resolutionResult.PastValue = SetDateWithContext((DateObject)resolutionResult.PastValue, pastYear);
+
+            return resolutionResult;
+        }
+
         public DateTimeParseResult ProcessDateEntityParsingResult(DateTimeParseResult originalResult)
         {
             if (!IsEmpty())
@@ -123,9 +155,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return month == 2 && day == 29;
         }
 
-        private DateObject SetDateWithContext(DateObject originalDate)
+        private static bool IsFeb29th(DateObject date)
         {
-            return new DateObject(Year, originalDate.Month, originalDate.Day);
+            return date.Month == 2 && date.Day == 29;
+        }
+
+        private DateObject SetDateWithContext(DateObject originalDate, int year = -1)
+        {
+            if (!originalDate.IsDefaultValue())
+            {
+                return new DateObject(year == -1 ? Year : year, originalDate.Month, originalDate.Day);
+            }
+
+            return originalDate;
         }
 
         private Tuple<DateObject, DateObject> SetDateRangeWithContext(Tuple<DateObject, DateObject> originalDateRange)

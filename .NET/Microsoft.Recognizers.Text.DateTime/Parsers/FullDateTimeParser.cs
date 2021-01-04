@@ -51,11 +51,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(startType))
             {
                 start = resolutionDic[startType];
+                if (start.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (resolutionDic.ContainsKey(endType))
             {
                 end = resolutionDic[endType];
+                if (end.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (!string.IsNullOrEmpty(mod))
@@ -409,6 +417,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_ContainFeb29th, StringComparison.Ordinal))
+            {
+                ResolveFeb29th(res, Constants.ResolveToFuture, futureResolutionStr);
+                ResolveFeb29th(res, Constants.ResolveToPast, pastResolutionStr);
+            }
+
             if (isLunar)
             {
                 res.Add(DateTimeResolutionKey.IsLunar, isLunar);
@@ -473,6 +487,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        internal static void ResolveFeb29th(Dictionary<string, object> resolutionDic, string keyName, Dictionary<string, string> resolutionStr)
+        {
+            if (!resolutionDic.ContainsKey(keyName) || !resolutionStr.ContainsKey(DateTimeResolutionKey.Timex))
+            {
+                return;
+            }
+
+            var resolution = (Dictionary<string, string>)resolutionDic[keyName];
+            resolution[DateTimeResolutionKey.Timex] = resolutionStr[DateTimeResolutionKey.Timex];
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)
