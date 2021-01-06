@@ -254,7 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             {
                                 pastDate = pastDate.AddMonths(-1);
                             }
-                            else if (!DateObject.IsLeapYear(year) && IsFeb29th(year, month - 1, day))
+                            else if (DateContext.IsFeb29th(year, month - 1, day))
                             {
                                 pastDate = pastDate.AddMonths(-2);
                             }
@@ -613,11 +613,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return DateObjectExtension.IsValidDate(year, month, day);
-        }
-
-        private static bool IsFeb29th(int year, int month, int day)
-        {
-            return month == 2 && day == 29;
         }
 
         // Handle cases like "三天前"

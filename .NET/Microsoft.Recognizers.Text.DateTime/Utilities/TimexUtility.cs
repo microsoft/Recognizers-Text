@@ -123,6 +123,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({DateTimeFormatUtil.LuisDate(beginYear, beginMonth, beginDay)},{DateTimeFormatUtil.LuisDate(endYear, endMonth, endDay)},{datePeriodTimex})";
         }
 
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, string timex1, string timex2)
+        {
+            var boundaryValid = !begin.IsDefaultValue() && !end.IsDefaultValue();
+            var unitCount = boundaryValid ? GetDatePeriodTimexUnitCount(begin, end, timexType) : "X";
+            var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
+            return $"({timex1},{timex2},{datePeriodTimex})";
+        }
+
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
         {
             if (monday.IsDefaultValue())

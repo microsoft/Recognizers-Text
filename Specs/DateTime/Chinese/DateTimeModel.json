@@ -6542,7 +6542,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2019-02-29,2019-03-01,P737118D)",
+              "timex": "(2019-02-29,2019-03-01,PXD)",
               "type": "daterange",
               "value": "not resolved"
             }

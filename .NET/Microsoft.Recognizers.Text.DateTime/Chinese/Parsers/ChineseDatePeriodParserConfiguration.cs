@@ -115,24 +115,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     if (innerResult.FutureValue != null && innerResult.PastValue != null)
                     {
-                        if (innerResult.FutureResolution == null)
+                        innerResult.FutureResolution = new Dictionary<string, string>
                         {
-                            innerResult.FutureResolution = new Dictionary<string, string> { };
-                        }
+                            {
+                                TimeTypeConstants.START_DATE,
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1)
+                            },
+                            {
+                                TimeTypeConstants.END_DATE,
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2)
+                            },
+                        };
 
-                        if (innerResult.PastResolution == null)
+                        innerResult.PastResolution = new Dictionary<string, string>
                         {
-                            innerResult.PastResolution = new Dictionary<string, string> { };
-                        }
-
-                        innerResult.FutureResolution.Add(TimeTypeConstants.START_DATE,
-                                                         DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1));
-                        innerResult.FutureResolution.Add(TimeTypeConstants.END_DATE,
-                                                         DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2));
-                        innerResult.PastResolution.Add(TimeTypeConstants.START_DATE,
-                                                       DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1));
-                        innerResult.PastResolution.Add(TimeTypeConstants.END_DATE,
-                                                       DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2));
+                            {
+                                TimeTypeConstants.START_DATE,
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1)
+                            },
+                            {
+                                TimeTypeConstants.END_DATE,
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2)
+                            },
+                        };
                     }
                     else
                     {
@@ -946,7 +951,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
                 pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
-                (pr1, pr2) = dateContext.SyncDateEntityInFeb29th(pr1, pr2);
+
+                // When the input is not the special year, we should sync the future/past year due to some invalid date(Feb 29th).
+                if (dateContext.IsEmpty() && (DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue)
+                                              || DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue)))
+                {
+                    (pr1, pr2) = dateContext.SyncYear(pr1, pr2);
+                }
             }
 
             DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
@@ -964,27 +975,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 pastEnd = futureEnd;
             }
 
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+
             if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
                 // due to only solve the noYear cases, we only have to judge the period in one year contains Feb 29th;
-                ret.Comment = Constants.Comment_ContainFeb29th;
-                ret.FutureResolution = new Dictionary<string, string>
-                {
-                    {
-                        DateTimeResolutionKey.Timex,
-                        $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)"
-                    },
-                };
-                ret.PastResolution = new Dictionary<string, string>
-                {
-                    {
-                        DateTimeResolutionKey.Timex,
-                        $"({pr1.TimexStr},{pr2.TimexStr},P{(pastEnd - pastBegin).TotalDays}D)"
-                    },
-                };
+                ret.Comment = Constants.Comment_DoubleTimex;
+                ret.Timex += "|" + TimexUtility.GenerateDatePeriodTimex(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;

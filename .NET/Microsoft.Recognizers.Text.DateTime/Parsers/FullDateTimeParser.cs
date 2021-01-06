@@ -417,10 +417,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_ContainFeb29th, StringComparison.Ordinal))
+            if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal))
             {
-                ResolveFeb29th(res, Constants.ResolveToFuture, futureResolutionStr);
-                ResolveFeb29th(res, Constants.ResolveToPast, pastResolutionStr);
+                UpdateTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
             }
 
             if (isLunar)
@@ -489,15 +488,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        internal static void ResolveFeb29th(Dictionary<string, object> resolutionDic, string keyName, Dictionary<string, string> resolutionStr)
+        internal static void UpdateTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
         {
-            if (!resolutionDic.ContainsKey(keyName) || !resolutionStr.ContainsKey(DateTimeResolutionKey.Timex))
+            string[] timexs = originTimex.Split('|');
+
+            if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexs.Length != 2)
             {
                 return;
             }
 
-            var resolution = (Dictionary<string, string>)resolutionDic[keyName];
-            resolution[DateTimeResolutionKey.Timex] = resolutionStr[DateTimeResolutionKey.Timex];
+            var futureResolution = (Dictionary<string, string>)resolutionDic[futureKey];
+            var pastResolution = (Dictionary<string, string>)resolutionDic[pastKey];
+            futureResolution[DateTimeResolutionKey.Timex] = timexs[0];
+            pastResolution[DateTimeResolutionKey.Timex] = timexs[1];
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)

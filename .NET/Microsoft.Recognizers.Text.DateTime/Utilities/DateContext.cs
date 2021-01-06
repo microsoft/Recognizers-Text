@@ -78,9 +78,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             return beginDate;
         }
 
-        public (DateTimeParseResult pr1, DateTimeParseResult pr2) SyncDateEntityInFeb29th(DateTimeParseResult pr1, DateTimeParseResult pr2)
+        public static bool IsFeb29th(DateObject date)
         {
-            if (IsEmpty() && (IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue) || IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue)))
+            return date.Month == 2 && date.Day == 29;
+        }
+
+        public static bool IsFeb29th(int year, int month, int day)
+        {
+            return month == 2 && day == 29;
+        }
+
+        // This method is to ensure the year of begin date is same with the end date in no year situation.
+        public (DateTimeParseResult pr1, DateTimeParseResult pr2) SyncYear(DateTimeParseResult pr1, DateTimeParseResult pr2)
+        {
+            if (IsEmpty())
             {
                 int futureYear;
                 int pastYear;
@@ -88,15 +99,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     futureYear = ((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue).Year;
                     pastYear = ((DateObject)((DateTimeResolutionResult)pr1.Value).PastValue).Year;
+                    pr2.Value = SyncDateEntityResolutionInFeb29th((DateTimeResolutionResult)pr2.Value, futureYear, pastYear);
                 }
-                else
+                else if (IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue))
                 {
                     futureYear = ((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue).Year;
                     pastYear = ((DateObject)((DateTimeResolutionResult)pr2.Value).PastValue).Year;
+                    pr1.Value = SyncDateEntityResolutionInFeb29th((DateTimeResolutionResult)pr1.Value, futureYear, pastYear);
                 }
-
-                pr1.Value = SyncDateEntityResolutionInFeb29th((DateTimeResolutionResult)pr1.Value, futureYear, pastYear);
-                pr2.Value = SyncDateEntityResolutionInFeb29th((DateTimeResolutionResult)pr2.Value, futureYear, pastYear);
             }
 
             return (pr1, pr2);
@@ -148,16 +158,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool IsEmpty()
         {
             return this.Year == Constants.InvalidYear;
-        }
-
-        private static bool IsFeb29th(int year, int month, int day)
-        {
-            return month == 2 && day == 29;
-        }
-
-        private static bool IsFeb29th(DateObject date)
-        {
-            return date.Month == 2 && date.Day == 29;
         }
 
         private DateObject SetDateWithContext(DateObject originalDate, int year = -1)

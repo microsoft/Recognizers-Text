@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Comment_WeekOf = "WeekOf";
         public const string Comment_MonthOf = "MonthOf";
 
-        public const string Comment_ContainFeb29th = "ContainFeb29th";
+        public const string Comment_DoubleTimex = "DoubleTimex";
 
         // MOD Value
         // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
