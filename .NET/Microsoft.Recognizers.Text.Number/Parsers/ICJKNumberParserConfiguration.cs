@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<char, char> FullToHalfMap { get; }
 
-        ImmutableDictionary<string, string> UnitMap { get; }
+        Dictionary<string, string> UnitMap { get; }
 
         ImmutableDictionary<char, char> TratoSimMap { get; }
 

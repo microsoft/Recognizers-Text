@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.ToDictionary(o => o.Key, p => p.Value);
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         public ImmutableDictionary<char, char> FullToHalfMap { get; private set; }
 
-        public ImmutableDictionary<string, string> UnitMap { get; private set; }
+        public Dictionary<string, string> UnitMap { get; private set; }
 
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 
