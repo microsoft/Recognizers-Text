@@ -17,7 +17,7 @@ class BaseCurrency:
                                     ("__D", "CENT"),
                                     ("RUB", "KOPEK"),
                                     ("AFN", "PUL"),
-                                    ("EUR", "CENT"),
+                                    ("EUR", "CENT|KWARTJE|DUBBELTJE|STUIVER"),
                                     ("ALL", "QINDARKE"),
                                     ("_ALP", "PENNY"),
                                     ("GBP", "PENNY"),
@@ -253,5 +253,15 @@ class BaseCurrency:
                                      ("Kopiyka", 100),
                                      ("Tiyin", 100),
                                      ("Hào", 10),
-                                     ("Ngwee", 100)])
+                                     ("Ngwee", 100),
+                                     ("Kwartje", 4),
+                                     ("Dubbeltje", 10),
+                                     ("Stuiver", 20)])
+    NonStandardFractionalSubunits = dict([("JOD", 1000),
+                                          ("KWD", 1000),
+                                          ("BHD", 1000),
+                                          ("OMR", 1000),
+                                          ("YDD", 1000),
+                                          ("TND", 1000),
+                                          ("MRO", 5)])
 # pylint: enable=line-too-long

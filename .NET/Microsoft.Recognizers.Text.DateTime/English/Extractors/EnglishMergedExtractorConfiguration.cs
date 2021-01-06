@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -14,9 +15,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
-
-        public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
@@ -78,7 +76,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                SinceRegex = SinceRegexExp;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
 
@@ -87,6 +99,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
             }
         }
+
+        // Used in Standard mode
+        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        // used in Experimental mode
+        public static Regex SinceRegexExp { get; } = new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 

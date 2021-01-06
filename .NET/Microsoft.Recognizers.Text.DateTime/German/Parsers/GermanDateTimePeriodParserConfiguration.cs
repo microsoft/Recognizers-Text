@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
@@ -25,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -41,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = GermanDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = GermanDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -63,6 +66,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -91,6 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 
@@ -178,11 +185,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächstes"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.StartsWith("nächster", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächste", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächsten", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("nächstes", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("letzter") || trimmedText.StartsWith("letzte") || trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letztes"))
+            else if (trimmedText.StartsWith("letzter", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letzte", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letzten", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("letztes", StringComparison.Ordinal))
             {
                 swift = -1;
             }

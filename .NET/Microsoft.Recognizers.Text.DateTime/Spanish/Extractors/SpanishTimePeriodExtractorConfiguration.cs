@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -35,9 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex NumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
 
-        // TODO: add this according to corresponding English regex
         public static readonly Regex TimeOfDayRegex =
-            new Regex(string.Empty, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
@@ -50,8 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex FromRegex =
             new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
 
-        private static readonly Regex ConnectorAndRegex =
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags);
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
@@ -62,7 +64,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
         }
 
@@ -84,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
@@ -114,7 +126,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool IsConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return RangeConnectorRegex.IsExactMatch(text, true);
+        }
+
+        // In Spanish "mañana" can mean both "tomorrow" and "morning". This method filters the isolated occurrences of "mañana" from the
+        // TimePeriodExtractor results as it is more likely to mean "tomorrow" in these cases (unless it is preceded by "la").
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
+        {
+            {
+                var tomorrowStr = DateTimeDefinitions.MorningTermList[0];
+                var morningStr = DateTimeDefinitions.MorningTermList[1];
+                List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+                foreach (var timePeriodEr in timePeriodErs)
+                {
+                    if (timePeriodEr.Text.Equals(tomorrowStr, StringComparison.Ordinal))
+                    {
+                        if (text.Substring(0, (int)timePeriodEr.Start + (int)timePeriodEr.Length).EndsWith(morningStr))
+                        {
+                            timePeriodErsResult.Add(timePeriodEr);
+                        }
+                    }
+                    else
+                    {
+                        timePeriodErsResult.Add(timePeriodEr);
+                    }
+                }
+
+                return timePeriodErsResult;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -108,6 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
+
                         ret.Add(new Token(begin, end));
                     }
                     else if (this.config.CheckBothBeforeAfter)
@@ -115,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // Check also afterStr
                         var afterStart = ers[j].Start + ers[j].Length ?? 0;
                         var afterStr = text.Substring(afterStart);
+
                         length = GetValidConnectorIndexForDateAndTimePeriod(afterStr, inPrefix: false);
                         if (length != Constants.INVALID_CONNECTOR_CODE && this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                         {
@@ -375,13 +378,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (midEnd - midBegin > 0)
                 {
                     var midStr = text.Substring(midBegin, midEnd - midBegin);
-                    bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate);
+                    bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) ||
+                                                  (midStr.TrimStart().StartsWith(config.TokenBeforeDate) &&
+                                                   (points[idx + 1].Type == Constants.SYS_DATETIME_DATE || points[idx + 1].Type == Constants.SYS_DATETIME_DATETIME));
+
                     if (this.config.CheckBothBeforeAfter && !string.IsNullOrWhiteSpace(midStr))
                     {
                         List<string> tokenListBeforeDate = config.TokenBeforeDate.Split('|').ToList();
                         foreach (string token in tokenListBeforeDate.Where(n => !string.IsNullOrEmpty(n)))
                         {
-                            if (midStr.Trim().Equals(token))
+                            if (midStr.Trim().Equals(token, StringComparison.OrdinalIgnoreCase))
                             {
                                 isMatchTokenBeforeDate = true;
                                 break;
@@ -393,7 +399,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         // Extend date extraction for cases like "Monday evening next week"
                         var extendedStr = points[idx].Text + text.Substring((int)(points[idx + 1].Start + points[idx + 1].Length));
-                        var extendedDateEr = config.SingleDateExtractor.Extract(extendedStr).FirstOrDefault();
+                        var extendedDateEr = config.SingleDateExtractor.Extract(extendedStr, reference).FirstOrDefault();
                         var offset = 0;
                         if (extendedDateEr != null && extendedDateEr.Start == 0 && !this.config.CheckBothBeforeAfter)
                         {
@@ -420,7 +426,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Date followed by morning, afternoon or morning, afternoon followed by Date
-            if (dateErs.Count == 0)
+            if (dateErs.Count == 0 && ret.Count == 0)
             {
                 return ret;
             }
@@ -518,7 +524,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var beforeStr = text.Substring(0, e.Start);
                     if (!string.IsNullOrEmpty(beforeStr))
                     {
-                        var timeErs = this.config.TimePeriodExtractor.Extract(beforeStr);
+                        var timeErs = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
                         if (timeErs.Count > 0)
                         {
                             foreach (var tp in timeErs)
@@ -539,7 +545,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var afterStr = text.Substring(e.Start + e.Length);
                     if (!string.IsNullOrEmpty(afterStr))
                     {
-                        var timeErs = this.config.TimePeriodExtractor.Extract(afterStr);
+                        var timeErs = this.config.TimePeriodExtractor.Extract(afterStr, reference);
                         if (timeErs.Count > 0)
                         {
                             foreach (var tp in timeErs)
@@ -551,6 +557,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 }
                             }
                         }
+                    }
+                }
+
+                // Try to extract a pure number period in before-string
+                if (e.Start > 0)
+                {
+                    var beforeStr = text.Substring(0, e.Start);
+                    if (!string.IsNullOrEmpty(beforeStr))
+                    {
+                        ret.AddRange(MatchPureNumberCases(beforeStr, e, before: true));
+                    }
+                }
+
+                // Try to extract a pure number period in after-string
+                if (e.End < text.Length)
+                {
+                    var afterStr = text.Substring(e.End);
+                    if (!string.IsNullOrEmpty(afterStr))
+                    {
+                        ret.AddRange(MatchPureNumberCases(afterStr, e, before: false));
                     }
                 }
             }
@@ -730,5 +756,32 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new Token(startOut, endOut);
         }
 
+        // The method matches pure number ranges. It is used inside MatchTimeOfDay, so the condition IsNullOrWhiteSpace(midStr) implies
+        // that the range must be contiguous to a TimeOfDay expression (e.g. "last night from 7 to 9").
+        private List<Token> MatchPureNumberCases(string text, Token tok, bool before)
+        {
+            var ret = new List<Token>();
+            foreach (var regex in this.config.SimpleCasesRegex)
+            {
+                var matches = regex.Matches(text);
+                foreach (Match match in matches)
+                {
+                    var midStr = before ? text.Substring(match.Index + match.Length) : text.Substring(0, match.Index);
+                    if (string.IsNullOrWhiteSpace(midStr))
+                    {
+                        if (before)
+                        {
+                            ret.Add(new Token(match.Index, tok.Start + tok.Length));
+                        }
+                        else
+                        {
+                            ret.Add(new Token(tok.Start, tok.End + match.Index + match.Length));
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
     }
 }

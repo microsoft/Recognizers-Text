@@ -1821,5 +1821,79 @@
         }
       }
     ]
+  },
+  {
+    "Input": "apri un ticket",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "apri due ticket",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "due",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tr",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "ha compiuto settant'anni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "settant",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ha compiuto settant anni",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Elided expressions (e.g. 'settant') should be recognized only in compound numbers or when followed by an apostrophe",
+    "Results": []
+  },
+  {
+    "Input": "il risultato è ⅙ e talvolta ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,166666666666667"
+        },
+        "Start": 15,
+        "End": 15
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        },
+        "Start": 28,
+        "End": 28
+      }
+    ]
   }
 ]

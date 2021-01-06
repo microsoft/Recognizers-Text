@@ -1,7 +1,7 @@
 ---
 # Direct UTC Expression
 DirectUtcRegex: !simpleRegex
-  def: \b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b
+  def: \b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}h?(\s*:\s*[\d]{1,2})?)?\b
 AbbreviationsList: !list
   types: [string]
   entries:
@@ -18,6 +18,8 @@ AbbreviationsList: !list
     - AKST
     - AMST
     - AMT
+    - AOE
+    - AoE
     - ARBST
     - ARST
     - ART
@@ -161,6 +163,7 @@ FullNameList: !list
     - Acre Time
     - Afghanistan Standard Time
     - Alaskan Standard Time
+    - Anywhere on Earth
     - Arab Standard Time
     - Arabian Standard Time
     - Arabic Standard Time
@@ -310,8 +313,14 @@ FullNameList: !list
     - Central
     - Pacific
     - Eastern
-LocationTimeSuffixRegex: !simpleRegex
-  def: ((\s+|-)(timezone|time)\b)
+BaseTimeZoneSuffixRegex: !simpleRegex
+  def: ((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?
+LocationTimeSuffixRegex: !nestedRegex
+  def: ({BaseTimeZoneSuffixRegex})\b
+  references: [BaseTimeZoneSuffixRegex]
+TimeZoneEndRegex: !nestedRegex
+  def: ({BaseTimeZoneSuffixRegex})$
+  references: [BaseTimeZoneSuffixRegex]
 # For filtering ambiguous single timezone words
 AmbiguousTimezoneList: !list
   types: [string]
@@ -358,6 +367,7 @@ AbbrToMinMapping: !dictionary
    #amt: -240
    #amt: 240
    amt: -10000
+   aoe: -720
    arbst: 180
    arst: 180
    art: -180
@@ -555,6 +565,7 @@ FullToMinMapping: !dictionary
    pacific: -480
    afghanistan standard: 270
    alaskan standard: -540
+   anywhere on earth: -720
    arab standard: 180
    arabian standard: 180
    arabic standard: 180
@@ -1435,11 +1446,14 @@ MajorLocations: !list
     - U.S. Virgin Islands
     - US Virgin Islands
     - Uganda
+    - UK
     - Ukraine
     - United Arab Emirates
     - United Kingdom
     - United States
     - Uruguay
+    - US
+    - USA
     - UT
     - Utah
     - Uzbekistan

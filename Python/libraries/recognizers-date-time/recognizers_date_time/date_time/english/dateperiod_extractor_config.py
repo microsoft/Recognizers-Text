@@ -22,7 +22,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._previous_prefix_regex
 
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     @property
@@ -162,6 +162,9 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._century_suffix_regex
 
     def __init__(self):
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PreviousPrefixRegex)
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.SimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.BetweenRegex),
@@ -186,7 +189,11 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 EnglishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(
-                EnglishDateTime.WeekWithWeekDayRangeRegex)
+                EnglishDateTime.WeekWithWeekDayRangeRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.YearPlusNumberRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DecadeWithCenturyRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDecadeRegex),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.ReferenceDatePeriodRegex)
         ]
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
@@ -263,7 +270,6 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PreviousPrefixRegex
         )
-        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._cardinal_extractor = EnglishCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:

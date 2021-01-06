@@ -596,16 +596,27 @@ public class ChineseNumericWithUnit {
         .put("Ton", "公吨|吨|t")
         .put("Pound", "磅")
         .put("Ounce", "盎司")
-        .put("Bit", "比特|位|b")
-        .put("Byte", "字节|byte")
-        .put("Kilobyte", "千字节|kb")
-        .put("Megabyte", "兆字节|mb")
-        .put("Gigabyte", "十亿字节|千兆字节|gb")
-        .put("Terabyte", "万亿字节|兆兆字节|tb")
-        .put("Petabyte", "千兆兆|千万亿字节|pb")
+        .put("Liang", "两")
+        .put("Bit", "比特|位|b|bit")
+        .put("Kilobit", "千比特|千位|kb|Kb")
+        .put("Megabit", "兆比特|兆位|mb|Mb")
+        .put("Gigabit", "十亿比特|千兆比特|十亿位|千兆位|gb|Gb")
+        .put("Terabit", "万亿比特|兆兆比特|万亿位|兆兆位|tb|Tb")
+        .put("Petabit", "千兆兆比特|千万亿比特|千兆兆位|千万亿位|pb|Pb")
+        .put("Byte", "字节|byte|Byte")
+        .put("Kilobyte", "千字节|kB|KB")
+        .put("Megabyte", "兆字节|mB|MB")
+        .put("Gigabyte", "十亿字节|千兆字节|gB|GB")
+        .put("Terabyte", "万亿字节|兆兆字节|tB|TB")
+        .put("Petabyte", "千兆兆字节|千万亿字节|pB|PB")
         .build();
 
     public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("五角", "五角大楼")
+        .put("普尔", "标准普尔")
+        .build();
 
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "华氏温度|华氏度|°f")
@@ -623,4 +634,6 @@ public class ChineseNumericWithUnit {
         .build();
 
     public static final List<String> TemperatureAmbiguousValues = Arrays.asList("度", "k");
+
+    public static final String HalfUnitRegex = "半";
 }

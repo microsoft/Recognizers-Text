@@ -1,8 +1,9 @@
-import { IExtractor, ExtractResult, QueryProcessor, MetaData } from "@microsoft/recognizers-text";
+import { IExtractor, IParser, ExtractResult, QueryProcessor, MetaData, Match, StringUtility } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers";
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
 import { IDateTimeExtractor } from "./baseDateTime";
+import { BaseNumberParser } from "@microsoft/recognizers-text-number";
 
 export class Token {
     constructor(start: number, end: number, metaData: MetaData = null) {
@@ -386,15 +387,37 @@ export class DateUtils {
     private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
+    static parseChineseDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {
+        let year = -1;
+        let regionTitleMatch = RegExpUtility.getMatches(dynastyYearRegex, yearStr).pop();
+        if (regionTitleMatch && regionTitleMatch.index === 0 && regionTitleMatch.length === yearStr.length) {
+            // handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+            let dynastyYearStr = regionTitleMatch.groups('dynasty').value;
+            let biasYearStr = regionTitleMatch.groups('biasYear').value;
+            let basicYear = dynastyYearMap.get(dynastyYearStr);
+            let biasYear = 1;
+            if (biasYearStr != dynastyStartYear) {
+                let er = integerExtractor.extract(biasYearStr).pop();
+                biasYear = Number.parseInt(numberParser.parse(er).value);
+            }
+            year = basicYear + biasYear - 1;
+        }
+
+        return year;
+    }
+
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
+        
         if (start === 0) {
             start = 7;
         }
+        
         if (target === 0) {
             target = 7;
         }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start + 7);
         return result;
@@ -403,12 +426,15 @@ export class DateUtils {
     static this(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
+        
         if (start === 0) {
             start = 7;
         }
+        
         if (target === 0) {
             target = 7;
         }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start);
         return result;
@@ -417,12 +443,15 @@ export class DateUtils {
     static last(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
+        
         if (start === 0) {
             start = 7;
         }
+        
         if (target === 0) {
             target = 7;
         }
+        
         let result = new Date(from);
         result.setDate(from.getDate() + target - start - 7);
         return result;
@@ -595,6 +624,30 @@ export class DateUtils {
     }
 }
 
+export class HolidayFunctions {
+
+    static calculateHolidayByEaster(year: number, days = 0): Date {
+
+        let day = 0;
+        let month = 2; // In JavaScript month is 0 indexed
+
+        let g = year % 19;
+        let c = year / 100;
+        let h = (c - ~~(c / 4) - ~~(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
+        let i = h - (~~(h / 28) * (1 - (~~(h / 28) * (29 / (h + 1)) * ~~((21 - g) / 11))));
+
+        day = i - ((year + ~~(year / 4) + i + 2 - c + ~~(c / 4)) % 7) + 28;
+
+        if (day > 31) {
+            month++;
+            day -= 31;
+        }
+
+        return DateUtils.addDays(DateUtils.safeCreateFromMinValue(year, month, day), days);
+    }
+
+}
+
 export class TimexUtil {
     public static parseTimeOfDay(tod: string): TimeOfDayResolutionResult {
         let result = new TimeOfDayResolutionResult();
@@ -645,5 +698,80 @@ export class TimexUtil {
         }
 
         return result;
+    }
+}
+
+export class AbstractYearExtractor {
+
+    public static getYearFromText(match: Match, numberParser: BaseNumberParser): number {
+
+        let year = -1;
+
+        let yearStr = match.groups('year').value;
+        let writtenYearStr = match.groups('fullyear').value;
+        if (!StringUtility.isNullOrEmpty(yearStr) && !(yearStr == writtenYearStr)) {
+            year = Number.parseInt(yearStr, 10);
+            if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+            {
+                year += 1900;
+            }
+            else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+            {
+                year += 2000;
+            }
+        }
+        else { 
+            let firstTwoYearNumStr = match.groups('firsttwoyearnum').value;
+            if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
+                let er = new ExtractResult();
+                er.text = firstTwoYearNumStr;
+                er.start = match.groups('firsttwoyearnum').index;
+                er.length = match.groups('firsttwoyearnum').length;
+
+                let firstTwoYearNum = Number.parseInt(numberParser.parse(er).value, 10);
+
+                let lastTwoYearNum = 0;
+                let lastTwoYearNumStr = match.groups('lasttwoyearnum').value;
+                if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr)) {
+                    er.text = lastTwoYearNumStr;
+                    er.start = match.groups('lasttwoyearnum').index;
+                    er.length = match.groups('lasttwoyearnum').length;
+
+                    lastTwoYearNum = Number.parseInt(numberParser.parse(er).value, 10);
+                }
+
+                if (firstTwoYearNum < 100 && lastTwoYearNum === 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 === 0 && lastTwoYearNumStr.trim().split(' ').length === 1) {
+                    year = -1;
+                }
+
+                if (firstTwoYearNum >= 100) {
+                    year = (firstTwoYearNum + lastTwoYearNum);
+                }
+                else {
+                    year = (firstTwoYearNum * 100 + lastTwoYearNum);
+                }
+            }
+            else {
+                if (!StringUtility.isNullOrEmpty(writtenYearStr)) {
+                    let er = new ExtractResult();
+                    er.text = writtenYearStr;
+                    er.start = match.groups('fullyear').index;
+                    er.length = match.groups('fullyear').length;
+
+                    let year = Number.parseInt(numberParser.parse(er).value, 10);
+
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+                    {
+                        year += 1900;
+                    }
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+                    {
+                        year += 2000;
+                    }
+                }
+            }
+        }
+
+        return year;
     }
 }

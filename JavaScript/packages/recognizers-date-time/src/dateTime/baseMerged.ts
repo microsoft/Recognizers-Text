@@ -31,10 +31,11 @@ export interface IMergedExtractorConfiguration {
     sinceRegex: RegExp
     fromToRegex: RegExp
     singleAmbiguousMonthRegex: RegExp
-    prepositionSuffixRegex: RegExp
     ambiguousRangeModifierPrefix: RegExp
     potentialAmbiguousRangeRegex: RegExp
+    prepositionSuffixRegex: RegExp
     numberEndingPattern: RegExp
+    unspecificDatePeriodRegex: RegExp
     filterWordRegexList: RegExp[]
 }
 
@@ -66,6 +67,8 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
 
         // this should be at the end since if need the extractor to determine the previous text contains time or not
         this.addTo(result, this.numberEndingRegexMatch(source, result), source);
+
+        result = this.filterUnspecificDatePeriod(result);
 
         this.addMod(result, source);
 
@@ -158,6 +161,11 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
 
     private shouldSkipFromMerge(er: ExtractResult): boolean {
         return RegExpUtility.getMatches(this.config.fromToRegex, er.text).length > 0;
+    }
+
+    private filterUnspecificDatePeriod (ers: ExtractResult[]): ExtractResult[] {
+        ers = ers.filter(er => !RegExpUtility.isMatch(this.config.unspecificDatePeriodRegex, er.text));
+        return ers;
     }
 
     private filterAmbiguousSingleWord(er: ExtractResult, text: string): boolean {
@@ -345,7 +353,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.beforeMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.beforeMod);
             pr.value = val;
         }
 
@@ -354,7 +362,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.afterMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.afterMod);
             pr.value = val;
         }
 
@@ -363,7 +371,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.sinceMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.sinceMod);
             pr.value = val;
         }
 
@@ -418,6 +426,15 @@ export class BaseMergedParser implements IDateTimeParser {
             return this.config.setParser.parse(extractorResult, referenceDate);
         }
         return null;
+    }
+    
+    protected combineMod(originalMod: string, newMod: string): string {
+        let combinedMod = newMod;
+        if (originalMod) {
+            combinedMod = newMod + "-" + originalMod;
+        }
+        
+        return combinedMod;
     }
 
     protected determineDateTimeType(type: string, hasMod: boolean): string {
@@ -653,8 +670,8 @@ export class BaseMergedParser implements IDateTimeParser {
             // For the 'before' mod
             // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
             // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-            if (mod === TimeTypeConstants.beforeMod) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(TimeTypeConstants.beforeMod)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.LATE_MOD)) {
                     result[TimeTypeConstants.END] = start;
                 }
                 else {
@@ -666,8 +683,8 @@ export class BaseMergedParser implements IDateTimeParser {
             // For the 'after' mod
             // 1. Cases like "After January". the end of the period should be the start of the new period, not the end
             // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-            if (mod === TimeTypeConstants.afterMod) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(TimeTypeConstants.afterMod)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.EARLY_MOD)) {
                     result[TimeTypeConstants.START] = end;
                 }
                 else {

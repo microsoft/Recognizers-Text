@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             EqualRegex = PortugueseMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = PortugueseMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));

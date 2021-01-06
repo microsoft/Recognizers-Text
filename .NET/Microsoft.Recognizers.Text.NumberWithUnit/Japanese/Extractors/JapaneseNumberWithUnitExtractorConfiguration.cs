@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
 
@@ -28,6 +30,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }
@@ -57,5 +61,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
+
+        public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
+        {
+        }
     }
 }

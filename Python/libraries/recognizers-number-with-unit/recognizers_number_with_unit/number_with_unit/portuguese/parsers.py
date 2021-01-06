@@ -20,7 +20,7 @@ class PortugueseNumberWithUnitParserConfiguration(NumberWithUnitParserConfigurat
 
     @property
     def connector_token(self) -> str:
-        return self._connector_token
+        return PortugueseNumericWithUnit.ConnectorToken
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -30,7 +30,6 @@ class PortugueseNumberWithUnitParserConfiguration(NumberWithUnitParserConfigurat
             NumberMode.DEFAULT)
         self._internal_number_parser = AgnosticNumberParserFactory.get_parser(
             ParserType.NUMBER, PortugueseNumberParserConfiguration(culture_info))
-        self._connector_token = PortugueseNumericWithUnit.ConnectorToken
 
 
 class PortugueseAgeParserConfiguration(PortugueseNumberWithUnitParserConfiguration):
@@ -49,8 +48,7 @@ class PortugueseCurrencyParserConfiguration(PortugueseNumberWithUnitParserConfig
 class PortugueseDimensionParserConfiguration(PortugueseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self.add_dict_to_unit_map(
-            PortugueseNumericWithUnit.InformationSuffixList)
+        self.add_dict_to_unit_map(PortugueseNumericWithUnit.InformationSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.AreaSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.LengthSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.SpeedSuffixList)
@@ -61,5 +59,4 @@ class PortugueseDimensionParserConfiguration(PortugueseNumberWithUnitParserConfi
 class PortugueseTemperatureParserConfiguration(PortugueseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self.add_dict_to_unit_map(
-            PortugueseNumericWithUnit.TemperatureSuffixList)
+        self.add_dict_to_unit_map(PortugueseNumericWithUnit.TemperatureSuffixList)

@@ -1,0 +1,364 @@
+[
+  {
+    "Input": "मैं हर हफ्ते जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर हफ्ते",
+        "Type": "set",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोज़ जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज़",
+        "Type": "set",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर दिन",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर दिन",
+        "Type": "set",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर महीने जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर महीने",
+        "Type": "set",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं सालाना जाता हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सालाना",
+        "Type": "set",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं साल में एक बार जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साल में एक बार",
+        "Type": "set",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं ऐनुअली एक बार जाता हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ऐनुअली एक बार",
+        "Type": "set",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर दो दिन में जाती हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर दो दिन में",
+        "Type": "set",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं प्रत्येक दूसरे दिन जाती हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रत्येक दूसरे दिन",
+        "Type": "set",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं हरेक तीन हफ़्तों में जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हरेक तीन हफ़्तों में",
+        "Type": "set",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर तीसरे हफ़्ते जाती हूं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर तीसरे हफ़्ते",
+        "Type": "set",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोज़ शाम 3 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज़ शाम 3 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर दिन शाम 3 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर दिन शाम 3 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "हरेक 15/4 को मैं निकल जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हरेक 15/4",
+        "Type": "set",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं हरेक सोमवार को जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हरेक सोमवार",
+        "Type": "set",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर सोमवार को शाम 4 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर सोमवार को शाम 4 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोज सुबह जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज सुबह",
+        "Type": "set",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं प्रतिदिन पूर्वाह्न 9 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "प्रतिदिन पूर्वाह्न 9 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोजाना दोपहर 4 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोजाना दोपहर 4 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर रोज रात 9 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर रोज रात 9 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोज़ रात के 9 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज़ रात के 9 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोज़ सुबह ९ बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज़ सुबह ९ बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं रोज़ सुबह को 9 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रोज़ सुबह को 9 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर इतवार को सुबह 9 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर इतवार को सुबह 9 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर रविवार को सुबह 9 बजे जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर रविवार को सुबह 9 बजे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर मंडे को 9 ओक्लॉक जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर मंडे को 9 ओक्लॉक",
+        "Type": "set",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर सोमवार को जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर सोमवार",
+        "Type": "set",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर संडे को जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर संडे",
+        "Type": "set",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं हर इतवार जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "हर इतवार",
+        "Type": "set",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "क्या मैं 09th मई को 2 रातों के लिए बुकिंग करवा सकता हूँ ",
+    "Comment": "(Can I do a booking for the 09th of May for 2 nights?). Hindi does not use plurals of weekdays such as 'Mondays', 'mornings', 'nights'",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "रातों ",
+        "Type": "set",
+        "Start": 22,
+        "Length": 6
+      }
+    ]
+  }
+]

@@ -198,10 +198,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }
@@ -275,7 +285,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("vom"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("vom", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("vom", StringComparison.Ordinal);
                 return true;
@@ -287,7 +300,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("zwischen"))
+            if (text.EndsWith("zwischen", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("zwischen", StringComparison.Ordinal);
                 return true;

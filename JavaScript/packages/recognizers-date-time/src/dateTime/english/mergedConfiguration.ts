@@ -42,6 +42,7 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly ambiguousRangeModifierPrefix: RegExp
     readonly potentialAmbiguousRangeRegex: RegExp
     readonly numberEndingPattern: RegExp
+    readonly unspecificDatePeriodRegex: RegExp
     readonly filterWordRegexList: RegExp[]
 
     constructor(dmyDateFormat: boolean = false) {
@@ -64,6 +65,7 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         this.ambiguousRangeModifierPrefix = RegExpUtility.getSafeRegExp(EnglishDateTime.AmbiguousRangeModifierPrefix);
         this.potentialAmbiguousRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex);
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberEndingPattern);
+        this.unspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex);
         this.filterWordRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex)
         ];

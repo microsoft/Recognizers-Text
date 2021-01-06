@@ -168,6 +168,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenTokenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             // "3-5 Jan, 2018",
@@ -241,10 +247,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
         }
 
         public IDateExtractor DatePointExtractor { get; }
@@ -318,25 +335,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = BetweenTokenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)

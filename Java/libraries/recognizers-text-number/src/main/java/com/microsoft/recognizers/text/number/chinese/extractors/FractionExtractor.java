@@ -32,7 +32,7 @@ public class FractionExtractor extends BaseNumberExtractor {
         // 8/3
         builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         //四分之六十五
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.AllFractionNumber, Pattern.UNICODE_CHARACTER_CLASS), "FracChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.AllFractionNumber, Pattern.UNICODE_CHARACTER_CLASS), "Frac" + ChineseNumeric.LangMarker);
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

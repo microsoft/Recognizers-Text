@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         {
 
             this.Config = config;
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableSortedDictionary();
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
@@ -62,6 +62,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             this.PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags);
             this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
             this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
+            this.PercentageNumRegex = null;
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -71,6 +72,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         public Regex DozenRegex { get; private set; }
 
         public Regex PercentageRegex { get; private set; }
+
+        public Regex PercentageNumRegex { get; private set; }
 
         public Regex DoubleAndRoundRegex { get; private set; }
 
@@ -94,7 +97,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         public ImmutableDictionary<char, char> FullToHalfMap { get; private set; }
 
-        public ImmutableDictionary<string, string> UnitMap { get; private set; }
+        public ImmutableSortedDictionary<string, string> UnitMap { get; private set; }
 
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 

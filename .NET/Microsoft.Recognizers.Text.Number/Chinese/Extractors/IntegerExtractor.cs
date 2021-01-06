@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public IntegerExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
+        public IntegerExtractor(BaseNumberOptionsConfiguration config, CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var regexes = new Dictionary<Regex, TypeTag>()
             {

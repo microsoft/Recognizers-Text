@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public ChineseNumberParserConfiguration(INumberOptionsConfiguration config)
         {
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
             this.Config = config;
 
@@ -45,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
             this.TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableSortedDictionary(new StringLengthComparer());
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
@@ -63,6 +64,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
             this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
             this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
+            this.PercentageNumRegex = new Regex(NumbersDefinitions.PercentageNumRegex, RegexFlags);
             this.FractionPrepositionRegex = null;
         }
 
@@ -77,6 +79,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public Regex DozenRegex { get; private set; }
 
         public Regex PercentageRegex { get; private set; }
+
+        public Regex PercentageNumRegex { get; private set; }
 
         public Regex DoubleAndRoundRegex { get; private set; }
 
@@ -96,7 +100,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public ImmutableDictionary<char, char> FullToHalfMap { get; private set; }
 
-        public ImmutableDictionary<string, string> UnitMap { get; private set; }
+        public ImmutableSortedDictionary<string, string> UnitMap { get; private set; }
 
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 
@@ -123,6 +127,19 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             }
 
             return string.Empty;
+        }
+
+        private class StringLengthComparer : IComparer<string>
+        {
+            public int Compare(string x, string y)
+            {
+                if (x.Length != y.Length)
+                {
+                    return x.Length - y.Length;
+                }
+
+                return x.CompareTo(y);
+            }
         }
     }
 }

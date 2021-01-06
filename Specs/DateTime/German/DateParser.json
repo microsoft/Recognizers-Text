@@ -670,5 +670,53 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "28. Dezember 2012",
+    "Context": {
+      "ReferenceDateTime": "2020-04-30T18:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "28. Dezember 2012",
+        "Type": "date",
+        "Value": {
+          "Timex": "2012-12-28",
+          "FutureResolution": {
+            "date": "2012-12-28"
+          },
+          "PastResolution": {
+            "date": "2012-12-28"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Übernächste Woche am Freitag ist er wieder da",
+    "Context": {
+      "ReferenceDateTime": "2020-07-27T18:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "Übernächste Woche am Freitag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-08-14",
+          "FutureResolution": {
+            "date": "2020-08-14"
+          },
+          "PastResolution": {
+            "date": "2020-08-14"
+          }
+        },
+        "Start": 0,
+        "Length": 28
+      }
+    ]
   }
 ]

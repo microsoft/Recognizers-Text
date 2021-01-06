@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -32,5 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         Regex AmbiguousUnitNumberMultiplierRegex { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
+        void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers);
     }
 }

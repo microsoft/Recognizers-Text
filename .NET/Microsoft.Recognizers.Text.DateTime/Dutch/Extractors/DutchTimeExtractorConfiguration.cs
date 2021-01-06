@@ -119,6 +119,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             // 3.30pm, "am/pm" suffix is required here
             new Regex(DateTimeDefinitions.TimeRegex11, RegexFlags),
 
+            // 16 from "16 vandaag"
+            new Regex(DateTimeDefinitions.TimeRegex12, RegexFlags),
+
             // 340pm
             ConnectNumRegex,
         };
@@ -143,5 +146,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

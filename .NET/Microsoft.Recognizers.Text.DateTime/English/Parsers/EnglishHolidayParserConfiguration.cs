@@ -1,35 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public EnglishHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
+
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
 
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
             var swift = -10;
 
-            if (trimmedText.StartsWith("next"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("this"))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -77,16 +90,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "earthday", EarthDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
-                { "cincodemayoday", CincoDeMayoday },
+                { "cincodemayoday", CincoDeMayoDay },
                 { "baptisteday", BaptisteDay },
                 { "usindependenceday", UsaIndependenceDay },
                 { "independenceday", UsaIndependenceDay },
                 { "bastilleday", BastilleDay },
                 { "halloweenday", HalloweenDay },
                 { "allhallowday", AllHallowDay },
-                { "allsoulsday", AllSoulsday },
+                { "allsoulsday", AllSoulsDay },
                 { "guyfawkesday", GuyFawkesDay },
-                { "veteransday", Veteransday },
+                { "veteransday", VeteransDay },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
                 { "easterday", EasterDay },
@@ -101,6 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "whitemonday", WhiteMonday },
                 { "trinitysunday", TrinitySunday },
                 { "corpuschristi", CorpusChristi },
+                { "juneteenth", Juneteenth },
             };
         }
 
@@ -146,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
 
-        private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
+        private static DateObject CincoDeMayoDay(int year) => new DateObject(year, 5, 5);
 
         private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
 
@@ -158,13 +172,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
 
-        private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
+        private static DateObject AllSoulsDay(int year) => new DateObject(year, 11, 2);
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject VeteransDay(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => CalculateHolidayByEaster(year);
+        private static DateObject Juneteenth(int year) => new DateObject(year, 6, 19);
+
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -188,26 +204,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
-        // function adopted from German implementation
-        private static DateObject CalculateHolidayByEaster(int year, int days = 0)
-        {
-            int day = 0;
-            int month = 3;
-
-            int g = year % 19;
-            int c = year / 100;
-            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
-
-            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
-
-            if (day > 31)
-            {
-                month++;
-                day -= 31;
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
-        }
     }
 }

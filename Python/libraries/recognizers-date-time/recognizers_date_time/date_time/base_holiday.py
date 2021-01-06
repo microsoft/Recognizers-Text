@@ -97,8 +97,7 @@ class BaseHolidayParser(DateTimeParser):
         value = None
 
         if source.type == self.parser_type_name:
-            inner_result = self._parse_holiday_regex_match(
-                source.text, reference)
+            inner_result = self._parse_holiday_regex_match(source.text, reference)
             if inner_result.success:
                 inner_result.future_resolution = {
                     TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(
@@ -289,6 +288,10 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
     @staticmethod
     def labour_day(year: int) -> datetime:
         return datetime(year, 9, BaseHolidayParserConfiguration.get_day(year, 9, 0, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def international_workers_day(year: int) -> datetime:
+        return datetime(year, 5, 1)
 
     @staticmethod
     def columbus_day(year: int) -> datetime:

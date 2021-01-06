@@ -13,11 +13,19 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FractionHalfRegex =
+            new Regex(NumbersDefinitions.FractionHalfRegex, RegexFlags);
+
+        private static readonly Regex FractionUnitsRegex =
+            new Regex(NumbersDefinitions.FractionUnitsRegex, RegexFlags);
+
+        private static readonly string[] OneHalfTokens = NumbersDefinitions.OneHalfTokens;
+
         public GermanNumberParserConfiguration(INumberOptionsConfiguration config)
         {
 
             this.Config = config;
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
@@ -64,6 +72,34 @@ namespace Microsoft.Recognizers.Text.Number.German
                 else
                 {
                     fracWords.Add(tokenList[i]);
+                }
+            }
+
+            // The following piece of code is needed to compute the fraction pattern number+'einhalb'
+            // e.g. 'zweieinhalb' ('two and a half').
+            fracWords.RemoveAll(item => item == "/");
+            for (int i = fracWords.Count - 1; i >= 0; i--)
+            {
+                if (FractionHalfRegex.IsMatch(fracWords[i]))
+                {
+                    fracWords[i] = fracWords[i].Substring(0, fracWords[i].Length - 7);
+                    fracWords.Insert(i + 1, this.WrittenFractionSeparatorTexts.ElementAt(0));
+                    fracWords.Insert(i + 2, OneHalfTokens[0]);
+                    fracWords.Insert(i + 3, OneHalfTokens[1]);
+                }
+                else if (FractionUnitsRegex.Match(fracWords[i]).Groups["onehalf"].Success)
+                {
+                    fracWords[i] = OneHalfTokens[0];
+                    fracWords.Insert(i + 1, this.WrittenFractionSeparatorTexts.ElementAt(0));
+                    fracWords.Insert(i + 2, OneHalfTokens[0]);
+                    fracWords.Insert(i + 3, OneHalfTokens[1]);
+                }
+                else if (FractionUnitsRegex.Match(fracWords[i]).Groups["quarter"].Success)
+                {
+                    var tempWord = fracWords[i];
+                    fracWords[i] = tempWord.Substring(0, 4);
+                    fracWords.Insert(i + 1, this.WrittenFractionSeparatorTexts.ElementAt(0));
+                    fracWords.Insert(i + 2, tempWord.Substring(4, 5));
                 }
             }
 

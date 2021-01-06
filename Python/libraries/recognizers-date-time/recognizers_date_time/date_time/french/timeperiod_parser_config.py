@@ -10,6 +10,7 @@ from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfigura
 from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
 from ..constants import Constants
 from ..utilities import TimexUtil
+from ..base_timezone import BaseTimeZoneParser
 
 
 class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
@@ -34,6 +35,14 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         return self._pure_number_between_and_regex
 
     @property
+    def specific_time_from_to_regex(self) -> Pattern:
+        return self._specific_time_from_to_regex
+
+    @property
+    def specific_time_between_and_regex(self) -> Pattern:
+        return self._specific_time_between_and_regex
+
+    @property
     def time_of_day_regex(self) -> Pattern:
         return self._time_of_day_regex
 
@@ -49,6 +58,10 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
+    @property
+    def time_zone_parser(self) -> DateTimeParser:
+        return self._time_zone_parser
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._time_extractor = config.time_extractor
         self._time_parser = config.time_parser
@@ -59,10 +72,15 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             FrenchDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PureNumBetweenAnd)
+        self._specific_time_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeFromTo)
+        self._specific_time_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeBetweenAnd)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TillRegex)
+        self._time_zone_parser = config.time_zone_parser
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
         trimmed_text = source.strip().lower()

@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             StrictRelativeRegex = SpanishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = SpanishDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -50,11 +51,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
+
             SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
             PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
             PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
@@ -77,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -125,6 +130,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

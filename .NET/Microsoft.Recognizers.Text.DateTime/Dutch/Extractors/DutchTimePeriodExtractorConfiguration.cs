@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -29,6 +31,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly Regex PureNumFromTo =
             new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
+
+        public static readonly Regex TimeDateFromTo =
+            new Regex(DateTimeDefinitions.TimeDateFromTo, RegexFlags);
 
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
@@ -62,13 +67,32 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
         public DutchTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
         }
 
@@ -103,30 +127,50 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = BetweenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("and");
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
+        }
+
+        // This method is used to disambiguate extractions containing 'morgen' (that can mean both 'tomorrow' and 'morning').
+        // It discards isolated occurrences of 'morgen', keeping as valid extractions only those cases
+        // where it is part of a bigger match (e.g. 'diensdag morgen')
+        public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
+        {
+            {
+                var morgenStr = DateTimeDefinitions.MorningTermList[0];
+                List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+                foreach (var timePeriodEr in timePeriodErs)
+                {
+                    if (!timePeriodEr.Text.Equals(morgenStr, StringComparison.Ordinal))
+                    {
+                        timePeriodErsResult.Add(timePeriodEr);
+                    }
+                }
+
+                return timePeriodErsResult;
+            }
         }
     }
 }

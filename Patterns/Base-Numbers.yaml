@@ -4,14 +4,19 @@ FractionNumberReplaceToken: '@builtin.num.fraction'
 IntegerRegexDefinition: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
   params: [ placeholder, thousandsmark  ]
+FractionNotationRegex: !simpleRegex
+  def: ((((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))|[\u00BC-\u00BE\u2150-\u215E])
 DoubleRegexDefinition: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
   params: [ placeholder, thousandsmark, decimalmark ]
 PlaceHolderDefault: \D|\b
+# Not directly in use in QueryProcessor due to inter-dependency issue with different .NET targets
+CaseSensitiveTerms: !simpleRegex
+  def: (?<=(\s|\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\b
 NumberMultiplierRegex: !simpleRegex
-  def: (K|k|M|G|T|B|b)
+  def: (K|k|MM?|mil|G|T|B|b)
 MultiplierLookupRegex: !simpleRegex
-  def: (k|m|t|g|b)
+  def: (k|m(il|m)?|t|g|b)
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
 CommonCurrencySymbol: !simpleRegex

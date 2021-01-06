@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -25,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -41,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = EnglishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -64,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -92,6 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 
@@ -132,6 +139,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        // @TODO Move time range resolution to common policy
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
@@ -178,12 +187,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim();
 
+            // @TODO Move hardcoded terms to resource file
+
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (trimmedText.StartsWith("next", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("last", StringComparison.Ordinal))
             {
                 swift = -1;
             }

@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public interface INumberParserConfiguration
     {
+        string LanguageMarker { get; }
+
         ImmutableDictionary<string, long> CardinalNumberMap { get; }
 
         ImmutableDictionary<string, long> OrdinalNumberMap { get; }
@@ -28,13 +30,13 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex FractionPrepositionRegex { get; }
 
+        Regex RoundMultiplierRegex { get; }
+
         string FractionMarkerToken { get; }
 
         Regex HalfADozenRegex { get; }
 
         string HalfADozenText { get; }
-
-        string LangMarker { get; }
 
         char NonDecimalSeparatorChar { get; }
 
@@ -70,10 +72,21 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="numberStr">composite number.</param>
         /// <returns>value of the string.</returns>
         long ResolveCompositeNumber(string numberStr);
+
+        /// <summary>
+        /// Used when requiring special processing for number value cases.
+        /// </summary>
+        /// <param name="matchStrs">matches.</param>
+        /// <returns>value of the match.</returns>
+        (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs);
+
     }
 
     public class BaseNumberParserConfiguration : INumberParserConfiguration
     {
+
+        protected static readonly (bool, double) NotApplicable = (false, double.MinValue);
+
         public ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
@@ -94,13 +107,15 @@ namespace Microsoft.Recognizers.Text.Number
 
         public Regex FractionPrepositionRegex { get; set; }
 
+        public Regex RoundMultiplierRegex { get; set; } = null;
+
         public string FractionMarkerToken { get; set; }
 
         public Regex HalfADozenRegex { get; set; }
 
         public string HalfADozenText { get; set; }
 
-        public string LangMarker { get; set; }
+        public string LanguageMarker { get; set; }
 
         public char NonDecimalSeparatorChar { get; set; }
 
@@ -154,6 +169,11 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return 0;
+        }
+
+        public virtual (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            return NotApplicable;
         }
 
         public virtual IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)

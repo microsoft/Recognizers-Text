@@ -239,5 +239,41 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The patient is a 87 yo man with history of hypertension, GERD, and chronic phase CML.",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "87 yo",
+        "Start": 17,
+        "End": 21,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "87"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Yo dude!",
+    "NotSupported": "javascript, java",
+    "Results": []
+  },
+  {
+    "Input": "The patient is a man of age 87 with history of hypertension, GERD, and chronic phase CML.",
+    "Results": [
+      {
+        "Text": "age 87",
+        "Start": 24,
+        "End": 29,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Age",
+          "value": "87"
+        }
+      }
+    ]
   }
 ]

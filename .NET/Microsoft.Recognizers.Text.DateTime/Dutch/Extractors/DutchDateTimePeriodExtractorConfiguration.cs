@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
@@ -39,6 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
 
+        public static readonly Regex HyphenDateRegex =
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
+
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
 
@@ -68,10 +73,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex TimeFollowedUnit =
             new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
 
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenTokenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCases =
-{
+        {
             DutchTimePeriodExtractorConfiguration.PureNumFromTo,
+            DutchTimePeriodExtractorConfiguration.TimeDateFromTo,
             DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+            DutchTimePeriodExtractorConfiguration.SpecificTimeFromTo,
         };
 
         public DutchDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -79,7 +95,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
-            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance(numConfig);
+
             SingleDateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             SingleTimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));
@@ -160,32 +185,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = BetweenTokenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)
         {
-            var rangeConnetorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
-
-            return rangeConnetorRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

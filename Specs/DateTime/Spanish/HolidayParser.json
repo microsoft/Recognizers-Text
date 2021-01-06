@@ -1,31 +1,25 @@
 [
   {
-    "TestType": "BasicTest",
+    "Comment": "Moving holiday timexes must be redefined",
     "Input": "Volveré en pascuas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "TimexStr": "",
+        "Text": "pascuas",
+        "Type": "date",
         "Value": {
-          "Success": true,
-          "Timex": "",
-          "IsLunar": false,
+          "Timex": "XXXX-03-27",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-04-16"
           },
           "PastResolution": {
-            "date": "0001-01-01"
-          },
-          "FutureValue": "0001-01-01T00:00:00",
-          "PastValue": "0001-01-01T00:00:00"
+            "date": "2016-03-27"
+          }
         },
-        "ResolutionStr": "",
         "Start": 11,
-        "Length": 7,
-        "Text": "pascuas",
-        "Type": "date"
+        "Length": 7
       }
     ]
   },

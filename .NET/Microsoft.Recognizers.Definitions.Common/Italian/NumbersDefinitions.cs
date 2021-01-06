@@ -25,14 +25,14 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
-      public const string RoundNumberIntegerRegex = @"(cento?|mille?|mila|milion[ei]?|miliard[oi]?|bilion[ei]?|trilion[ei]?)";
-      public const string ZeroToNineIntegerRegex = @"(un[oa]?|due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?|zero)";
-      public const string TwoToNineIntegerRegex = @"(due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?)";
+      public const string RoundNumberIntegerRegex = @"(cent(o|(?!\b)|(?='))|mill(e|(?!\b)|(?='))|mila|miliard([oi]|(?!\b)|(?='))|(milion|bilion|trilion)([ei]|(?!\b)|(?=')))";
+      public const string ZeroToNineIntegerRegex = @"(un[oa]?|due|tre|quattro|cinque|sei|sette|otto|nove|zero)";
+      public const string TwoToNineIntegerRegex = @"(due|tre|quattro|cinque|sei|sette|otto|nove)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>meno\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(un)(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(diciassette?|tredici?|quattordici?|diciotto?|diciannove?|quindici?|sedici?|undici?|dodici?|dieci?)";
-      public const string TensNumberIntegerRegex = @"(settanta?|venti?|trenta?|ottanta?|novanta?|quaranta?|cinquanta?|sessanta?)";
+      public const string TenToNineteenIntegerRegex = @"(diciott(o|(?!\b)|(?='))|(diciassett|diciannov)(e|(?!\b)|(?='))|(tredic|quattordic|quindic|sedic|undic|dodic|diec)(i|(?!\b)|(?=')))";
+      public const string TensNumberIntegerRegex = @"(vent(i|(?!\b)|(?='))|(settant|trent|ottant|novant|quarant|cinquant|sessant)(a|(?!\b)|(?=')))";
       public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|((({AnIntRegex})?(\s*{RoundNumberIntegerRegex})+))";
       public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})?)(\s*{RoundNumberIntegerRegex})+)\s*(e\s+)?)*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
@@ -46,9 +46,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string RoundNumberOrdinalRegex = @"(centesim[oaie]|millesim[oaie]|milionesim[oaie]|miliardesim[oaie]|bilionesim[oaie]|trilionesim[oaie])";
       public const string OneToNineOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie])";
       public const string NumberOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])";
+      public const string OneToNineOrdinalCompoundRegex = @"(un|du|tre|quattr|cinqu|sei|sett|ott|nov)esim[oaie]";
       public const string RelativeOrdinalRegex = @"(precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])";
       public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))";
-      public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))";
+      public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{OneToNineOrdinalCompoundRegex}|{BasicOrdinalRegex}))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)(\d+(°|(esi)?m[oaie]))";
@@ -56,7 +57,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(un)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalItalianRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+(e\s+)?\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+e\s+mezzo)|(({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
@@ -155,6 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"novanta", 90 },
             { @"novant", 90 },
             { @"cento", 100 },
+            { @"cent", 100 },
             { @"mille", 1000 },
             { @"mila", 1000 },
             { @"milione", 1000000 },

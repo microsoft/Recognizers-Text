@@ -604,7 +604,7 @@
     },
     "Results": [
       {
-        "Text": "segundo de Ago",
+        "Text": "segundo de Ago.",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-08-02",
@@ -616,7 +616,7 @@
           }
         },
         "Start": 11,
-        "Length": 14
+        "Length": 15
       }
     ]
   },
@@ -1376,52 +1376,6 @@
         },
         "Start": 11,
         "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "Volveré el segundo de Ago.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "segundo de Ago",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-08-02",
-          "FutureResolution": {
-            "date": "2017-08-02"
-          },
-          "PastResolution": {
-            "date": "2016-08-02"
-          }
-        },
-        "Start": 11,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "Volveré el vigesimo segundo de Junio",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "vigesimo segundo de Junio",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-06-22",
-          "FutureResolution": {
-            "date": "2017-06-22"
-          },
-          "PastResolution": {
-            "date": "2016-06-22"
-          }
-        },
-        "Start": 11,
-        "Length": 25
       }
     ]
   },

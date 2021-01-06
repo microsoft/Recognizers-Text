@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
         {
 
             this.Config = config;
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
@@ -70,6 +70,8 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                     fracWords.Add(tokenList[i]);
                 }
             }
+
+            // @TODO "mezzo" and "e" should be moved to the Italian YAML file
 
             // The following piece of code is needed in Italian to correctly compute some fraction patterns
             // e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as

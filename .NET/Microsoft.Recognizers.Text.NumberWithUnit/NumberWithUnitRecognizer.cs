@@ -351,7 +351,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
                     },
-               }));
+                }));
 
             RegisterModel<AgeModel>(
                 Culture.Italian,
@@ -510,6 +510,47 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Hindi.CurrencyParserConfiguration())
                     },
                 }));
+
+            RegisterModel<AgeModel>(
+                Culture.Swedish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Swedish,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Swedish,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Swedish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Swedish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Swedish.CurrencyParserConfiguration())
+                    },
+                }));
+
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

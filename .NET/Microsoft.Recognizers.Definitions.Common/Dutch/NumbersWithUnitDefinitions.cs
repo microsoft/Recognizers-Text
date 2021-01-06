@@ -173,6 +173,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Pul", @"pul" },
             { @"Euro", @"euros|euro|€|eur" },
             { @"Cent", @"cents|cent|-cents|-cent" },
+            { @"Kwartje", @"kwartje" },
+            { @"Dubbeltje", @"dubbeltje" },
+            { @"Stuiver", @"stuiver" },
+            { @"Tientje", @"tientje" },
             { @"Albanian lek", @"albanese lek|leks|lek" },
             { @"Qindarkë", @"qindarkë|qindarkës|qindarke|qindarkes" },
             { @"Angolan kwanza", @"angolese kwanza|kz|aoa|kwanza|kwanzas|angolese kwanzas" },
@@ -681,7 +685,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Kopiyka", @"KOPIYKA" },
             { @"Tiyin", @"TIYIN" },
             { @"Hào", @"HAO" },
-            { @"Ngwee", @"NGWEE" }
+            { @"Ngwee", @"NGWEE" },
+            { @"Kwartje", @"KWARTJE" },
+            { @"Dubbeltje", @"DUBBELTJE" },
+            { @"Stuiver", @"STUIVER" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>en)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
@@ -722,7 +729,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Samoan tālā", @"ws$" },
             { @"Chinese yuan", @"￥" },
             { @"Japanese yen", @"¥" },
-            { @"Euro", @"€" },
+            { @"Euro", @"€|eur" },
             { @"Pound", @"£" },
             { @"Costa Rican colón", @"₡" },
             { @"Turkish lira", @"₺" }
@@ -774,6 +781,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             @"try",
             @"yer",
             @"yen"
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

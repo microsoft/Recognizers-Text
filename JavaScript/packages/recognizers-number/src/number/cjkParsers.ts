@@ -19,6 +19,7 @@ export interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
+    readonly percentageNumRegex: RegExp;
     readonly doubleAndRoundRegex: RegExp;
     readonly fracSplitRegex: RegExp;
     readonly pointRegex: RegExp;
@@ -42,6 +43,10 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             ? this.config.cultureInfo.format(value)
             : value.toString();
     }
+
+    private isDigitCode(n: string): boolean {
+        return n >= '0' && n <= '9';
+     }
 
     parse(extResult: ExtractResult): ParseResult | null {
         let extra = '';
@@ -247,9 +252,18 @@ return value;
                     doubleValue += this.getPointValueCJK(splitResult[1]);
                 }
             }
-
             result.value = doubleValue;
         }
+        let perMatch = RegExpUtility.getMatches(this.config.percentageNumRegex, resultText);
+        if (perMatch.length > 0) {
+            let splitResult = perMatch[0].value;
+            let splitResultList = RegExpUtility.split(this.config.fracSplitRegex, splitResult);
+            let demoValue = this.isDigitCJK(splitResultList[0])
+            ? this.getDigitValueCJK(splitResult[0], 1.0)
+            : this.getIntValueCJK(splitResult[0]);
+            result.value /= (demoValue / 100);
+        }
+
 
         result.resolutionStr = this.toString(result.value) + "%";
         return result;
@@ -395,6 +409,7 @@ return value;
         let roundBefore = -1;
         let roundDefault = 1;
         let isNegative = false;
+        let hasPreviousDigits = false;
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
             isNegative = true;
@@ -439,19 +454,33 @@ return value;
                         roundDefault = 1;
                     }
  else {
-                        beforeValue = this.config.zeroToNineMap.get(currentChar);
+                        let currentDigit = this.config.zeroToNineMap.get(currentChar);
+                        if (hasPreviousDigits) {
+                            beforeValue = beforeValue * 10 + currentDigit;
+                        } else {
+                            beforeValue = currentDigit;
+                        }
                         isRoundBefore = false;
                     }
                 }
  else {
-                    if (index === resultStr.length - 1 && this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
+                    // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一
+                    // can be dropped from the beginning. Japanese doesn't have such behaviour.
+                    if (this.config.cultureInfo.code.toLowerCase() === Culture.Japanese || this.isDigit(currentChar)) {
                         roundDefault = 1;
                     }
-                    partValue += this.config.zeroToNineMap.get(currentChar) * roundDefault;
+                    let currentDigit = this.config.zeroToNineMap.get(currentChar);
+                    if (hasPreviousDigits) {
+                        beforeValue = beforeValue * 10 + currentDigit;
+                    } else {
+                        beforeValue = currentDigit;
+                    }
+                    partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
+            hasPreviousDigits = this.isDigit(currentChar);
         }
  
         if (isNegative) {

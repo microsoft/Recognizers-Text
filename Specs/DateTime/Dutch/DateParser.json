@@ -31,7 +31,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 okt",
+        "Text": "2 okt.",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-10-02",
@@ -43,7 +43,7 @@
           }
         },
         "Start": 15,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
@@ -76,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -464,7 +463,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1e van januari",
+        "Text": "de 1e van januari",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-01",
@@ -475,8 +474,8 @@
             "date": "2016-01-01"
           }
         },
-        "Start": 10,
-        "Length": 14
+        "Start": 7,
+        "Length": 17
       }
     ]
   },
@@ -509,7 +508,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -558,7 +556,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -579,15 +576,14 @@
     ]
   },
   {
-    "Input": "Ik ga de tweede dag van Augustus terug.",
+    "Input": "Ik ga de tweede van Augustus terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tweede dag van Augustus",
+        "Text": "tweede van Augustus",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-08-02",
@@ -599,7 +595,7 @@
           }
         },
         "Start": 9,
-        "Length": 23
+        "Length": 19
       }
     ]
   },
@@ -608,7 +604,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1065,7 +1060,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1230,15 +1224,14 @@
     ]
   },
   {
-    "Input": "Wie heb ik een paar maanden geleden een email gestuurd",
+    "Input": "Wie heb ik enkele maanden geleden een email gestuurd",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "paar maanden geleden",
+        "Text": "enkele maanden geleden",
         "Type": "date",
         "Value": {
           "Timex": "2016-08-07",
@@ -1249,21 +1242,20 @@
             "date": "2016-08-07"
           }
         },
-        "Start": 15,
-        "Length": 20
+        "Start": 11,
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "wie heb ik een paar dagen geleden een email gestuurd",
+    "Input": "wie heb ik enkele dagen geleden een email gestuurd",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "een paar dagen geleden",
+        "Text": "enkele dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-04",
@@ -1275,7 +1267,7 @@
           }
         },
         "Start": 11,
-        "Length": 22
+        "Length": 20
       }
     ]
   },
@@ -1284,11 +1276,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op de 27ste",
+        "Text": "de 27ste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1296,11 +1287,11 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
-        "Start": 4,
-        "Length": 11
+        "Start": 7,
+        "Length": 8
       }
     ]
   },
@@ -1309,7 +1300,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1321,7 +1311,7 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
         "Start": 7,
@@ -1334,7 +1324,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1346,7 +1335,7 @@
             "date": "2016-11-21"
           },
           "PastResolution": {
-            "date": "2016-11-21"
+            "date": "2016-10-21"
           }
         },
         "Start": 7,
@@ -1359,11 +1348,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op de 22ste",
+        "Text": "de 22ste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1371,11 +1359,11 @@
             "date": "2016-11-22"
           },
           "PastResolution": {
-            "date": "2016-11-22"
+            "date": "2016-10-22"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -1384,23 +1372,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op de tweede",
+        "Text": "de tweede",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-02",
           "FutureResolution": {
-            "date": "2016-11-02"
+            "date": "2016-12-02"
           },
           "PastResolution": {
             "date": "2016-11-02"
           }
         },
-        "Start": 4,
-        "Length": 12
+        "Start": 7,
+        "Length": 9
       }
     ]
   },
@@ -1409,11 +1396,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op de tweeëntwintigste",
+        "Text": "de tweeëntwintigste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1421,11 +1407,11 @@
             "date": "2016-11-22"
           },
           "PastResolution": {
-            "date": "2016-11-22"
+            "date": "2016-10-22"
           }
         },
-        "Start": 13,
-        "Length": 22
+        "Start": 16,
+        "Length": 19
       }
     ]
   },
@@ -1434,11 +1420,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op de dertigste",
+        "Text": "de dertigste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-30",
@@ -1446,11 +1431,11 @@
             "date": "2016-11-30"
           },
           "PastResolution": {
-            "date": "2016-11-30"
+            "date": "2016-10-30"
           }
         },
-        "Start": 4,
-        "Length": 15
+        "Start": 7,
+        "Length": 12
       }
     ]
   },
@@ -1459,7 +1444,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1484,7 +1468,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1557,7 +1540,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1582,7 +1564,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1631,7 +1612,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1656,7 +1636,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1705,7 +1684,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8225493+08:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1730,7 +1708,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1755,11 +1732,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "31ste van deze maand",
+        "Text": "de 31ste van deze maand",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-31",
@@ -1770,8 +1746,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 9,
-        "Length": 20
+        "Start": 6,
+        "Length": 23
       }
     ]
   },
@@ -1876,7 +1852,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1969,15 +1944,14 @@
     ]
   },
   {
-    "Input": "Ik ben 2 jaar en 21 dagen geleden hier vertrokken.",
+    "Input": "Ik ben 2 jaar, 1 maand en 21 dagen geleden hier vertrokken.",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 jaar en 21 dagen geleden",
+        "Text": "2 jaar, 1 maand en 21 dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2015-10-02",
@@ -1989,7 +1963,7 @@
           }
         },
         "Start": 7,
-        "Length": 26
+        "Length": 35
       }
     ]
   },
@@ -2018,15 +1992,14 @@
     ]
   },
   {
-    "Input": "We hebben volgende maand op de 20ste een vergadering",
+    "Input": "We hebben op de 20ste van volgende maand een vergadering",
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgende maand op de 20ste",
+        "Text": "de 20ste van volgende maand",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-20",
@@ -2037,8 +2010,8 @@
             "date": "2018-01-20"
           }
         },
-        "Start": 10,
-        "Length": 26
+        "Start": 13,
+        "Length": 27
       }
     ]
   },
@@ -2067,15 +2040,14 @@
     ]
   },
   {
-    "Input": "Maandag eenentwintig jan. 2018",
+    "Input": "Maandag tweeëntwintig jan. 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Maandag eenentwintig jan. 2018",
+        "Text": "Maandag tweeëntwintig jan. 2018",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-22",
@@ -2087,7 +2059,7 @@
           }
         },
         "Start": 0,
-        "Length": 30
+        "Length": 31
       }
     ]
   },
@@ -2096,11 +2068,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op zondag eenentwintig januari tweeduizend achttien",
+        "Text": "zondag eenentwintig januari tweeduizend achttien",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-21",
@@ -2111,33 +2082,32 @@
             "date": "2018-01-21"
           }
         },
-        "Start": 0,
-        "Length": 51
+        "Start": 3,
+        "Length": 48
       }
     ]
   },
   {
-    "Input": "op eenentwintig September negentien zeven en tachtig",
+    "Input": "op eenentwintig September negentien zevenentachtig",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op eenentwintig September negentien zeven en tachtig",
+        "Text": "eenentwintig September negentien zevenentachtig",
         "Type": "date",
         "Value": {
-          "Timex": "1978-09-21",
+          "Timex": "1987-09-21",
           "FutureResolution": {
-            "date": "1978-09-21"
+            "date": "1987-09-21"
           },
           "PastResolution": {
-            "date": "1978-09-21"
+            "date": "1987-09-21"
           }
         },
-        "Start": 0,
-        "Length": 52
+        "Start": 3,
+        "Length": 47
       }
     ]
   },
@@ -2146,11 +2116,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op 10 september, negentien en een",
+        "Text": "10 september, negentien en een",
         "Type": "date",
         "Value": {
           "Timex": "1901-09-10",
@@ -2161,8 +2130,8 @@
             "date": "1901-09-10"
           }
         },
-        "Start": 0,
-        "Length": 33
+        "Start": 3,
+        "Length": 30
       }
     ]
   },
@@ -2171,11 +2140,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de tiende van september, tweeduizend",
+        "Text": "tiende van september, tweeduizend",
         "Type": "date",
         "Value": {
           "Timex": "2000-09-10",
@@ -2186,8 +2154,8 @@
             "date": "2000-09-10"
           }
         },
-        "Start": 0,
-        "Length": 36
+        "Start": 3,
+        "Length": 33
       }
     ]
   },
@@ -2336,15 +2304,14 @@
     ]
   },
   {
-    "Input": "Ik ga terug over 4 dagen gerekend vanaf gisteren.",
+    "Input": "Ik ga terug vier dagen gerekend vanaf gisteren.",
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 dagen gerekend vanaf gisteren",
+        "Text": "vier dagen gerekend vanaf gisteren",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-23",
@@ -2355,8 +2322,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 17,
-        "Length": 31
+        "Start": 12,
+        "Length": 34
       }
     ]
   },
@@ -2365,7 +2332,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2626,11 +2592,10 @@
     ]
   },
   {
-    "Input": "Ik ga 15 terug",
+    "Input": "Ik ga op 15 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2645,7 +2610,7 @@
             "date": "2016-10-15"
           }
         },
-        "Start": 6,
+        "Start": 9,
         "Length": 2
       }
     ]
@@ -2658,7 +2623,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 okt",
+        "Text": "2 okt.",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-10-02",
@@ -2670,7 +2635,7 @@
           }
         },
         "Start": 6,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
@@ -2819,15 +2784,14 @@
     ]
   },
   {
-    "Input": "Ik ga 21-04-'16 terug",
+    "Input": "Ik ga 21/04/16 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "21-04-'16",
+        "Text": "21/04/16",
         "Type": "date",
         "Value": {
           "Timex": "2016-04-21",
@@ -2839,7 +2803,7 @@
           }
         },
         "Start": 6,
-        "Length": 9
+        "Length": 8
       }
     ]
   },
@@ -3064,11 +3028,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "woens, 22e van jan ",
+        "Text": "woens, 22e van jan",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-22",
@@ -3080,7 +3043,7 @@
           }
         },
         "Start": 6,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
@@ -3089,11 +3052,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de eerste van jan",
+        "Text": "eerste van jan",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-01",
@@ -3104,8 +3066,8 @@
             "date": "2016-01-01"
           }
         },
-        "Start": 6,
-        "Length": 17
+        "Start": 9,
+        "Length": 14
       }
     ]
   },
@@ -3114,11 +3076,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de eenentwintigste van mei",
+        "Text": "eenentwintigste van mei",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-05-21",
@@ -3129,8 +3090,8 @@
             "date": "2016-05-21"
           }
         },
-        "Start": 6,
-        "Length": 26
+        "Start": 9,
+        "Length": 23
       }
     ]
   },
@@ -3139,11 +3100,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de tweede van aug",
+        "Text": "tweede van aug",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-08-02",
@@ -3154,8 +3114,8 @@
             "date": "2016-08-02"
           }
         },
-        "Start": 6,
-        "Length": 17
+        "Start": 9,
+        "Length": 14
       }
     ]
   },
@@ -3164,11 +3124,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de tweeëntwintigste van juni ",
+        "Text": "tweeëntwintigste van juni",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-06-22",
@@ -3179,8 +3138,8 @@
             "date": "2016-06-22"
           }
         },
-        "Start": 6,
-        "Length": 29
+        "Start": 9,
+        "Length": 25
       }
     ]
   },
@@ -3621,7 +3580,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3742,7 +3700,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3767,7 +3724,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3888,7 +3844,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3913,11 +3868,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "voor de 21e",
+        "Text": "de 21e",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-21",
@@ -3928,8 +3882,8 @@
             "date": "2016-10-21"
           }
         },
-        "Start": 8,
-        "Length": 11
+        "Start": 13,
+        "Length": 6
       }
     ]
   },
@@ -3938,7 +3892,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3963,7 +3916,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3988,7 +3940,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4109,7 +4060,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4134,7 +4084,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4159,7 +4108,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4184,7 +4132,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4209,7 +4156,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4230,11 +4176,10 @@
     ]
   },
   {
-    "Input": "Ik ga derde dinsdagterug",
+    "Input": "Ik ga derde dinsdag terug",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4259,7 +4204,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4284,7 +4228,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4309,7 +4252,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4430,7 +4372,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4455,7 +4396,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4552,7 +4492,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4601,7 +4540,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4626,7 +4564,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4647,15 +4584,14 @@
     ]
   },
   {
-    "Input": "op eenentwintig september negentienachtenzeventig",
+    "Input": "op eenentwintig september negentien achtenzeventig",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "eenentwintig september negentienachtenzeventig",
+        "Text": "eenentwintig september negentien achtenzeventig",
         "Type": "date",
         "Value": {
           "Timex": "1978-09-21",
@@ -4667,7 +4603,7 @@
           }
         },
         "Start": 3,
-        "Length": 46
+        "Length": 47
       }
     ]
   },
@@ -4676,7 +4612,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4845,7 +4780,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5086,7 +5020,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

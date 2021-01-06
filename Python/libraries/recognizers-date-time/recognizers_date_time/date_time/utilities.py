@@ -1,6 +1,6 @@
 from enum import Enum, IntEnum, IntFlag
 from abc import ABC, abstractmethod
-from typing import List, Dict, Pattern, Union
+from typing import List, Dict, Pattern, Union, Match
 from datetime import datetime, timedelta
 import calendar
 
@@ -59,16 +59,15 @@ class TimeZoneUtility:
 
         return has_time_zone_data
 
-    def build_matcher_from_lists(self, collections: []):
-
-        matcher: StringMatcher = StringMatcher(MatchStrategy.TrieTree, NumberWithUnitTokenizer())
+    @staticmethod
+    def build_matcher_from_lists(*collections: List[str]) -> StringMatcher:
+        matcher = StringMatcher(MatchStrategy.TrieTree, NumberWithUnitTokenizer())
 
         matcher_list = []
-
         for collection in collections:
             list(map(lambda x: matcher_list.append(x.strip().lower()), collection))
 
-        matcher_list = self.distinct(matcher_list)
+        matcher_list = TimeZoneUtility.distinct(matcher_list)
 
         matcher.init(matcher_list)
 
@@ -166,6 +165,8 @@ class Token:
 
 
 def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> List[ExtractResult]:
+    result = []
+
     merged_tokens: List[Token] = list()
     tokens_ = sorted(filter(None, tokens), key=lambda x: x.start)
 
@@ -189,8 +190,21 @@ def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> L
         if add:
             merged_tokens.append(token)
 
-    result: List[ExtractResult] = list(
-        map(lambda x: __token_to_result(x, source, extractor_name), merged_tokens))
+    for token in merged_tokens:
+        start = token.start
+        length = token.length
+        sub_str = source[start: start + length]
+
+        extracted_result = ExtractResult()
+        extracted_result.start = start
+        extracted_result.length = length
+        extracted_result.text = sub_str
+        extracted_result.type = extractor_name
+        extracted_result.data = None
+        extracted_result.meta_data = token.metadata
+
+        result.append(extracted_result)
+
     return result
 
 
@@ -208,9 +222,17 @@ def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
 
 
 class ResolutionStartEnd:
-    def __init__(self, start=None, end=None):
-        self.start = start
-        self.end = end
+    def __init__(self, _start=None, _end=None):
+        self.start = _start
+        self.end = _end
+
+    @property
+    def _start(self):
+        return self.start
+
+    @property
+    def _end(self):
+        return self.end
 
 
 class DateTimeResolutionResult:
@@ -219,12 +241,15 @@ class DateTimeResolutionResult:
         self.timex: str = ''
         self.is_lunar: bool = False
         self.mod: str = ''
+        self.has_range_changing_mod: bool = False
         self.comment: str = ''
         self.future_resolution: Dict[str, str] = dict()
         self.past_resolution: Dict[str, str] = dict()
         self.future_value: object = None
         self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
+        self.timezone_resolution: TimeZoneResolutionResult()
+        self.list: List[object] = list()
 
 
 class TimeOfDayResolution:
@@ -266,6 +291,23 @@ class DateTimeFormatUtil:
     @staticmethod
     def luis_date_time(time: datetime) -> str:
         return DateTimeFormatUtil.luis_date_from_datetime(time) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(time)
+
+    @staticmethod
+    def luis_time_span(begin_time: datetime, end_time: datetime) -> str:
+        timex_builder = f'{Constants.GENERAL_PERIOD_PREFIX}{Constants.TIME_TIMEX_PREFIX}'
+
+        total_hours = end_time.hour - begin_time.hour
+        total_minutes = end_time.minute - begin_time.minute
+        total_seconds = end_time.second - begin_time.second
+
+        if total_hours > 0:
+            timex_builder += f'{total_hours}H'
+        if total_minutes > 0:
+            timex_builder += f'{total_minutes}M'
+        if total_seconds > 0:
+            timex_builder += f'{total_seconds}S'
+
+        return str(timex_builder)
 
     @staticmethod
     def format_date(date: datetime) -> str:
@@ -410,6 +452,28 @@ class DateUtils:
         return date.isocalendar()[1]
 
 
+class HolidayFunctions:
+
+    @staticmethod
+    def calculate_holiday_by_easter(year: int, days: int = 0) -> datetime:
+
+        day = 0
+        month = 3
+
+        g = year % 19
+        c = year / 100
+
+        h = (c - int(c / 4) - int(((8 * c) + 13) / 25) + (19 * g) + 15) % 30
+        i = h - (int(h / 28) * (1 - (int(h / 28) * int(29 / (h + 1)) * int((21 - g) / 11))))
+        day = i - ((year + int(year / 4) + i + 2 - c + int(c / 4)) % 7) + 28
+
+        if day > 31:
+            month += 1
+            day -= 31
+
+        return DateUtils.safe_create_from_min_value(year, month, int(day)) + timedelta(days=days)
+
+
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
@@ -523,23 +587,20 @@ class MatchingUtil:
 
     @staticmethod
     def remove_sub_matches(match_results: List[MatchResult]):
-        match_list = list(filter(lambda x: list(
-            filter(lambda m: m.start() < x.start + x.length and m.start() +
-                   len(m.group()) > x.start, match_results)), match_results))
+        match_list = list(match_results)
 
-        if len(match_list) > 0:
-            for item in match_results:
-                for i in match_list:
-                    if item is i:
-                        match_results.remove(item)
+        match_list = (list(filter(lambda item: not any(list(filter(
+            lambda ritem: (ritem.start < item.start and ritem.end >= item.end) or (
+                ritem.start <= item.start and ritem.end > item.end), match_list))), match_list)))
 
-        return match_results
+        return match_list
 
     @staticmethod
     def get_ago_later_index(source: str, regexp: Pattern, in_suffix) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
         trimmed_source = source.strip().lower()
-        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else RegExpUtility.match_end(regexp, trimmed_source, True)
+        match = RegExpUtility.match_begin(regexp, trimmed_source, True) if in_suffix else\
+            RegExpUtility.match_end(regexp, trimmed_source, True)
 
         if match and match.success:
             result.index = source.lower().find(match.group()) + (match.length if in_suffix else 0)
@@ -644,7 +705,8 @@ class AgoLaterUtil:
                     index = MatchingUtil.get_term_index(before_string, regexp[0]).index
                     if index > 0:
                         is_match = True
-                    elif config.check_both_before_after and MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
+                    elif config.check_both_before_after and\
+                            MatchingUtil.get_ago_later_index(after_string, regexp[0], True).matched:
                         is_match = is_match_after = True
 
                     if is_match:
@@ -653,7 +715,8 @@ class AgoLaterUtil:
                             is_unit_match = is_unit_match or unit_regex.match(extract_result.text)
 
                         if not is_unit_match:
-                            if extract_result.start is not None and extract_result.length is not None and extract_result.start >= index or is_match_after:
+                            if extract_result.start is not None and extract_result.length is not None and\
+                                    extract_result.start >= index or is_match_after:
                                 start = extract_result.start - (index if not is_match_after else 0)
                                 end = extract_result.start + extract_result.length + (index if is_match_after else 0)
                                 ret.append(Token(start, end))
@@ -666,8 +729,8 @@ class AgoLaterUtil:
                                           duration_parser: DateTimeParser,
                                           unit_map: Dict[str, str],
                                           unit_regex: Pattern,
-                                          utility_configuration: DateTimeUtilityConfiguration,
-                                          mode: AgoLaterMode) -> DateTimeResolutionResult:
+                                          utility_configuration: DateTimeUtilityConfiguration)\
+            -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
         if duration_extractor:
@@ -696,12 +759,16 @@ class AgoLaterUtil:
             duration_result.timex) - 1].replace(Constants.UNIT_P, '').replace(Constants.UNIT_T, '')
         num = int(num_str)
 
-        if not num:
-            return result
+        mode = AgoLaterMode.DATE
+        if pr.timex_str.__contains__("T"):
+            mode = AgoLaterMode.DATETIME
 
-        return AgoLaterUtil.get_ago_later_result(
-            pr, num, unit_map, src_unit, after_str, before_str, reference,
-            utility_configuration, mode)
+        if pr.value:
+            return AgoLaterUtil.get_ago_later_result(
+                pr, num, unit_map, src_unit, after_str, before_str, reference,
+                utility_configuration, mode)
+
+        return result
 
     @staticmethod
     def __matched_string(regexp, string):
@@ -838,6 +905,14 @@ date_period_timex_type_to_suffix = {
 }
 
 
+class RangeTimexComponents:
+    def __init__(self):
+        self.begin_timex = ''
+        self.end_timex = ''
+        self.duration_timex = ''
+        self.is_valid = False
+
+
 class TimexUtil:
 
     @staticmethod
@@ -887,7 +962,8 @@ class TimexUtil:
 
     @staticmethod
     def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
-        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or datetime.now() == alternative_end == alternative_begin
+        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or\
+            datetime.now() == alternative_end == alternative_begin
         unit_count = 'XX'
 
         if equal_duration_length:
@@ -903,4 +979,54 @@ class TimexUtil:
 
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
-        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
+               f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+
+    @staticmethod
+    def is_range_timex(timex: str) -> bool:
+        return timex and timex.startswith("(")
+
+    @staticmethod
+    def get_range_timex_components(range_timex: str) -> RangeTimexComponents:
+        range_timex = range_timex.replace('(', '').replace(')', '')
+        components = range_timex.split(',')
+        result = RangeTimexComponents()
+        if len(components) == 3:
+            result.begin_timex = components[0]
+            result.end_timex = components[1]
+            result.duration_timex = components[2]
+            result.is_valid = True
+
+        return result
+
+    @staticmethod
+    def combine_date_and_time_timex(date_timex: str, time_timex: str):
+        return f'{date_timex}{time_timex}'
+
+    @staticmethod
+    def generate_date_time_period_timex(begin_timex: str, end_timex: str, duration_timex: str):
+        return f'({begin_timex},{end_timex},{duration_timex})'
+
+
+class TimeZoneResolutionResult:
+    def __init__(self):
+        self.value: str = ''
+        self.utc_offset_mins: int = 0
+        self.time_zone_text: str = ''
+
+
+def parse_chinese_dynasty_year(year_str: str, dynasty_year_regex: Pattern, dynasty_start_year: str, dynasty_year_map: dict, integer_extractor, number_parser):
+    dynasty_year_match = regex.search(dynasty_year_regex, year_str)
+    if dynasty_year_match and dynasty_year_match.start() == 0 and len(dynasty_year_match.group()) == len(year_str):
+        # handle "康熙元年" refer to https://zh.wikipedia.org/wiki/%E5%B9%B4%E5%8F%B7
+        dynasty_str = RegExpUtility.get_group(dynasty_year_match, "dynasty")
+        bias_year_str = RegExpUtility.get_group(dynasty_year_match, "biasYear")
+        basic_year = dynasty_year_map[dynasty_str]
+        if bias_year_str == dynasty_start_year:
+            bias_year = 1
+        else:
+            er = next(iter(integer_extractor.extract(bias_year_str)), None)
+            bias_year = int(number_parser.parse(er).value)
+        year = int(basic_year + bias_year - 1)
+        return year
+    return None

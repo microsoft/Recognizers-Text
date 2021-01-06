@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Utilities;
 
@@ -11,6 +12,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
+
+        public static readonly Regex HyphenDateRegex =
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
@@ -70,6 +74,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
         public GermanDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
@@ -159,7 +166,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("vom"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("vom", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("vom", StringComparison.Ordinal);
                 return true;
@@ -171,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("zwischen"))
+            if (text.EndsWith("zwischen", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("zwischen", StringComparison.Ordinal);
                 return true;
@@ -182,9 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool HasConnectorToken(string text)
         {
-            var rangeConnectorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
-
-            return rangeConnectorRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

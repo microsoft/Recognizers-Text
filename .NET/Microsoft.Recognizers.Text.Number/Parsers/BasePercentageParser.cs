@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -21,7 +23,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     // for case like "2 out of 5".
                     extResult.Text = $"{extendedData1[0].Item1} {Config.FractionMarkerToken} {extendedData1[1].Item1}";
-                    extResult.Data = $"Frac{Config.LangMarker}";
+                    extResult.Data = $"Frac{Config.LanguageMarker}";
 
                     ret = base.Parse(extResult);
                     ret.Value = (double)ret.Value * 100;
@@ -34,15 +36,16 @@ namespace Microsoft.Recognizers.Text.Number
 
                     ret = base.Parse(extResult);
 
-                    if (extResult.Data.ToString().StartsWith("Frac"))
+                    if (extResult.Data.ToString().StartsWith("Frac", StringComparison.Ordinal))
                     {
                         ret.Value = (double)ret.Value * 100;
                     }
                 }
 
-                ret.ResolutionStr = Config.CultureInfo != null
-                    ? ((double)ret.Value).ToString(Config.CultureInfo) + "%"
-                    : ret.Value + "%";
+                // @TODO make this uniform across cultures.
+                ret.ResolutionStr = Config.CultureInfo != null ?
+                    ((double)ret.Value).ToString("G15", Config.CultureInfo) + "%" :
+                    ret.Value + "%";
             }
             else
             {
@@ -54,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (!string.IsNullOrWhiteSpace(ret.ResolutionStr))
                 {
-                    if (!ret.ResolutionStr.Trim().EndsWith("%"))
+                    if (!ret.ResolutionStr.Trim().EndsWith("%", StringComparison.Ordinal))
                     {
                         ret.ResolutionStr = ret.ResolutionStr.Trim() + "%";
                     }

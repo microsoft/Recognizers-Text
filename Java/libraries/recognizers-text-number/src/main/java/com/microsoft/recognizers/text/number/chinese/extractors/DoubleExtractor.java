@@ -35,9 +35,9 @@ public class DoubleExtractor extends BaseNumberExtractor {
         // 1.0 K
         builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.DoubleWithMultiplierRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
         //１５.２万
-        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.DoubleWithThousandsRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.DoubleWithThousandsRegex, Pattern.UNICODE_CHARACTER_CLASS), "Double" + ChineseNumeric.LangMarker);
         //四十五点三三
-        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleChs");
+        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "Double" + ChineseNumeric.LangMarker);
         // 2e6, 21.2e0
         builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.DoubleExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         //2^5

@@ -112,6 +112,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RangeConnectorSymbolRegex =
             new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
@@ -126,11 +129,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance(numConfig);
+
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -228,6 +241,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IEnumerable<Regex> ImplicitDateList { get; }
@@ -275,5 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

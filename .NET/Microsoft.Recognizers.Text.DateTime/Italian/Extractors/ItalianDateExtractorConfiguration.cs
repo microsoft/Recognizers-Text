@@ -130,15 +130,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 
             const RegexOptions dateRegexOption = RegexOptions.Singleline;
@@ -194,6 +208,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -241,5 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

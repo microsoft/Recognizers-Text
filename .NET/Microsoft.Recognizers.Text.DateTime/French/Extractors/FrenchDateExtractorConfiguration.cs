@@ -134,15 +134,29 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex NonDateUnitRegex =
             new Regex(@"(?<unit>heures?|hrs|secondes?|secs?|minutes?|mins?)\b", RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -196,6 +210,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -243,5 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

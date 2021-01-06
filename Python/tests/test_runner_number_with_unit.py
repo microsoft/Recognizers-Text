@@ -15,9 +15,13 @@ MODELFUNCTION = {
                          get_specs(recognizer='NumberWithUnit', entity='Model'))
 def test_number_with_unit_recognizer(
         culture, model, options, context, source, expected_results):
+
     results = get_results(culture, model, source)
 
-    assert len(results) == len(expected_results)
+    spec_info = model + "Model : " + source
+
+    assert_verbose(len(results), len(expected_results), spec_info)
+
     for actual, expected in zip(results, expected_results):
         assert actual.text == expected['Text']
         assert actual.type_name == expected['TypeName']
@@ -37,3 +41,8 @@ def resolution_assert(actual, expected, props):
         for prop in props:
             if prop in expected['Resolution']:
                 assert actual.resolution[prop] == expected['Resolution'][prop]
+
+
+def assert_verbose(actual, expected, spec_info):
+    assert actual == expected, \
+        "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)

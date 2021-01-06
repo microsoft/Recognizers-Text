@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Utilities
@@ -43,31 +44,38 @@ namespace Microsoft.Recognizers.Text.Utilities
             return new ConditionalMatch(match, match.Success && match.Length == length);
         }
 
+        public static bool IsNullOrEmpty(ReadOnlySpan<char> span)
+        {
+            return span == null || span.IsEmpty;
+        }
+
+        // @TODO Inefficient.
         public static ConditionalMatch MatchEnd(this Regex regex, string text, bool trim)
         {
             var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | regex.Options);
-            var strAfter = text.Substring(match.Index + match.Length);
+
+            var strAfter = text.AsSpan(match.Index + match.Length);
 
             if (trim)
             {
                 strAfter = strAfter.Trim();
             }
 
-            return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strAfter));
+            return new ConditionalMatch(match, match.Success && IsNullOrEmpty(strAfter));
         }
 
         // We can't trim before match as we may use the match index later
         public static ConditionalMatch MatchBegin(this Regex regex, string text, bool trim)
         {
             var match = regex.Match(text);
-            var strBefore = text.Substring(0, match.Index);
+            var strBefore = text.AsSpan(0, match.Index);
 
             if (trim)
             {
                 strBefore = strBefore.Trim();
             }
 
-            return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strBefore));
+            return new ConditionalMatch(match, match.Success && IsNullOrEmpty(strBefore));
         }
 
         // MatchBegin can fail if multiple matches are present in text (e.g. regex = "\b(A|B)\b", text = "B ... A ...")
@@ -76,17 +84,17 @@ namespace Microsoft.Recognizers.Text.Utilities
             var matches = regex.Matches(text);
             foreach (Match match in matches)
             {
-                var strBefore = text.Substring(0, match.Index);
+                var strBefore = text.AsSpan(0, match.Index);
 
                 if (trim)
                 {
                     strBefore = strBefore.Trim();
                 }
 
-                bool isMatchBegin = match.Success && string.IsNullOrEmpty(strBefore);
+                bool isMatchBegin = match.Success && IsNullOrEmpty(strBefore);
                 if (isMatchBegin)
                 {
-                    return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strBefore));
+                    return new ConditionalMatch(match, match.Success && IsNullOrEmpty(strBefore));
                 }
             }
 

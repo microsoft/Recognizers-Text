@@ -6,15 +6,18 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
 {
     public class HindiNumberRangeParserConfiguration : INumberRangeParserConfiguration
     {
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public HindiNumberRangeParserConfiguration(INumberOptionsConfiguration config)
         {
             CultureInfo = new CultureInfo(config.Culture);
 
-            NumberExtractor = English.NumberExtractor.GetInstance();
-            OrdinalExtractor = English.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(config));
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
+
+            NumberExtractor = Hindi.NumberExtractor.GetInstance();
+            OrdinalExtractor = Hindi.OrdinalExtractor.GetInstance();
+            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);

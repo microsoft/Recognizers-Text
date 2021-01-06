@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.Turkish;
 using DateObject = System.DateTime;
@@ -19,17 +18,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
-            if (trimmedText.StartsWith("gelecek"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.StartsWith("gelecek", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("geçen"))
+            else if (trimmedText.StartsWith("geçen", StringComparison.Ordinal))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("bu"))
+            else if (trimmedText.StartsWith("bu", StringComparison.Ordinal))
             {
                 swift = 0;
             }
@@ -75,16 +77,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                 { "earthday", EarthDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
-                { "cincodemayoday", CincoDeMayoday },
+                { "cincodemayoday", CincoDeMayoDay },
                 { "baptisteday", BaptisteDay },
                 { "usindependenceday", UsaIndependenceDay },
                 { "independenceday", UsaIndependenceDay },
                 { "bastilleday", BastilleDay },
                 { "halloweenday", HalloweenDay },
-                { "allhallowday", AllHallowDay },
-                { "allsoulsday", AllSoulsday },
+                { "allhallowday", AllHallowsDay },
+                { "allsoulsday", AllSoulsDay },
                 { "guyfawkesday", GuyFawkesDay },
-                { "veteransday", Veteransday },
+                { "veteransday", VeteransDay },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
                 { "easterday", EasterDay },
@@ -151,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
 
-        private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
+        private static DateObject CincoDeMayoDay(int year) => new DateObject(year, 5, 5);
 
         private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
 
@@ -161,15 +163,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
 
-        private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
+        private static DateObject AllHallowsDay(int year) => new DateObject(year, 11, 1);
 
-        private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
+        private static DateObject AllSoulsDay(int year) => new DateObject(year, 11, 2);
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject VeteransDay(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => CalculateHolydaysByEaster(year);
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -193,9 +195,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
-        private static DateObject Ramadan(int year) => IslamicHoliday(year, "ramadan");
+        private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
 
-        private static DateObject Sacrifice(int year) => IslamicHoliday(year, "sacrifice");
+        private static DateObject Sacrifice(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Sacrifice);
 
         private static DateObject Republic(int year) => new DateObject(year, 10, 29);
 
@@ -207,67 +209,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         private static DateObject Democracy(int year) => new DateObject(year, 7, 15);
 
-        // function adopted from German implementation
-        private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
-        {
-            int day = 0;
-            int month = 3;
-
-            int g = year % 19;
-            int c = year / 100;
-            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
-
-            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
-
-            if (day > 31)
-            {
-                month++;
-                day -= 31;
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
-        }
-
-        // Calculates the exact gregorian date for the given holiday using only gregorian year and exact hijri date
-        private static DateObject IslamicHoliday(int year, string holidayType)
-        {
-            int y = 0;
-            int m = 0;
-            int d = 0;
-
-            int hijriDay = 1;
-            int hijriMonth = 1;
-            int hijriYear = 1;
-
-            var gregorian = new GregorianCalendar();
-            var hijri = new HijriCalendar();
-
-            if (holidayType == "ramadan")
-            {
-                hijriDay = 1;
-                hijriMonth = 10;
-            }
-            else if (holidayType == "sacrifice")
-            {
-                hijriDay = 10;
-                hijriMonth = 12;
-            }
-
-            for (hijriYear = 1; hijriYear <= 9999; hijriYear++)
-            {
-                var hijriDate = new DateObject(hijriYear, hijriMonth, hijriDay, hijri);
-                y = gregorian.GetYear(hijriDate);
-                m = gregorian.GetMonth(hijriDate);
-                d = gregorian.GetDayOfMonth(hijriDate);
-
-                if (y == year)
-                {
-                    break;
-                }
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(y, m, d);
-        }
     }
 }

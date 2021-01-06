@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
-        public static readonly Regex TimeZoneEndRegex = new Regex("time$|timezone$", RegexOptions.Singleline);
+        public static readonly Regex TimeZoneEndRegex = new Regex(TimeZoneDefinitions.TimeZoneEndRegex, RegexOptions.Singleline);
 
         // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
         public static int ComputeMinutes(string utcOffset)
@@ -21,12 +22,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return Constants.InvalidOffsetValue;
             }
 
-            utcOffset = utcOffset.Trim();
+            utcOffset = utcOffset.Trim().TrimEnd('h');
 
             int sign = Constants.PositiveSign; // later than utc, default value
-            if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-") || utcOffset.StartsWith("±"))
+            bool hasOffset = utcOffset.StartsWith("+", StringComparison.Ordinal) ||
+                             utcOffset.StartsWith("-", StringComparison.Ordinal) ||
+                             utcOffset.StartsWith("±", StringComparison.Ordinal);
+
+            if (hasOffset)
             {
-                if (utcOffset.StartsWith("-"))
+                if (utcOffset.StartsWith("-", StringComparison.Ordinal))
                 {
                     sign = Constants.NegativeSign; // earlier than utc 0
                 }
@@ -39,15 +44,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (utcOffset.Contains(":"))
             {
                 var tokens = utcOffset.Split(':').ToList();
-                hours = int.Parse(tokens[0]);
-                minutes = int.Parse(tokens[1]);
+                hours = int.Parse(tokens[0], CultureInfo.InvariantCulture);
+                minutes = int.Parse(tokens[1], CultureInfo.InvariantCulture);
             }
             else if (int.TryParse(utcOffset, out hours))
             {
                 minutes = 0;
             }
 
-            if (hours > Constants.HalfDayHourCount)
+            // Timezones go from -12 to +14
+            if (sign < 0 ? hours > Constants.HalfDayHourCount : hours > Constants.HalfDayHourCount + 2)
             {
                 return Constants.InvalidOffsetValue;
             }
@@ -70,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string ConvertMinsToRegularFormat(int offsetMins)
         {
-            return TimeSpan.FromMinutes(offsetMins).ToString(@"hh\:mm");
+            return TimeSpan.FromMinutes(offsetMins).ToString(@"hh\:mm", CultureInfo.InvariantCulture);
         }
 
         public static string NormalizeText(string text)
@@ -127,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                // TODO: Temporary solution for city timezone and ambiguous data
+                // @TODO: Temporary solution for city timezone and ambiguous data
                 result.Value = new DateTimeResolutionResult
                 {
                     Success = true,

@@ -1,0 +1,1685 @@
+[
+  {
+    "Input": "从2016年3月1日开始的平均滚动负荷量",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "从2016年3月1日开始",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-03-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2016-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照从低到高的顺序排列从2015年2月1日开始发货的受方的平均成本",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年2月1日开始",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "从2015年起，哪所大学需要的分数在80到90之间？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年起",
+        "Start": 1,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "第一季日期自2014年6月14日起到2014年9月14日之前，x不超过-83.8232的街道。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2014年6月14日起",
+        "Start": 6,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-06-14",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2014-06-14"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2014年9月14日之前",
+        "Start": 18,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-09-14",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2014-09-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列在2019年8月6日或之后、或在2019年1月1日每个公园的平均年龄",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年8月6日或之后",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-06",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-08-06"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年1月1日",
+        "Start": 22,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "type": "date",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月10日或之前、或在2012年1月1日，网络连接按总单位降序排列。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010年1月10日或之前",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-10",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-10"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2012年1月1日",
+        "Start": 16,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "type": "date",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列在2010年1月4日或之前或2012年1月1日或之后的阶段",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010年1月4日或之前",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2012年1月1日或之后",
+        "Start": 20,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "哪种网络连接的最高单位低于在包括2012-01-01及以前且在2010-01-01之后的最高单位？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2012-01-01及以前",
+        "Start": 16,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2010-01-01之后",
+        "Start": 31,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在包括2010-01-10及以后且在2011-01-07之前，哪种网络连接的单位不超过单位的中间值？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010-01-10及以后",
+        "Start": 3,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-10",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-10"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2011-01-07之前",
+        "Start": 18,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-07",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2011-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "发货日期在包括2015-02-01及以前且在2015-01-01以后将高度和受方按照发货日期降序排列。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015-02-01及以前",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015-01-01以后",
+        "Start": 22,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照升序排列2019年8月1日之后或2019年4月5日或之前每个公园的平均年龄",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年8月1日之后",
+        "Start": 6,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-08-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年4月5日或之前",
+        "Start": 18,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-05",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照单位中位数从多到少的顺序排列在2010年1月4日或之前或2011年1月7日之后的网络连接",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010年1月4日或之前",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2011年1月7日之后",
+        "Start": 30,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2011-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2014-06-04或之后、2009-08-16或之前最后更新的年度财务按最高评估总计降序排列",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2014-06-04或之后",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-06-04",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2014-06-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2009-08-16或之前",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-08-16",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2009-08-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2011-03-22或之前、2009-08-29之后最后更新的年度财务按平均当前运营评估降序排列",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2011-03-22或之前",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-03-22",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2011-03-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2009-08-29之后",
+        "Start": 14,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-08-29",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2009-08-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在包括2015-01-01及以后，哪个受方的量低于量的中间值？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015-01-01及以后",
+        "Start": 3,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照升序排列在2015年1月1日或之后发货每个受方的总价格",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日或之后",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列在2019年4月4日或之前或2019年9月9日之后每年的总销售总量",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年4月4日或之前",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年9月9日之后",
+        "Start": 20,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-09",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-09-09"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "每年",
+        "Start": 31,
+        "End": 32,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列2019年9月9日之后或2019年4月4日或之前每年的总销售总数",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年9月9日之后",
+        "Start": 6,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-09",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-09-09"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年4月4日或之前",
+        "Start": 18,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "每年",
+        "Start": 30,
+        "End": 31,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "自2016年9月1日起或2016年1月1日之前的滚动负荷量按运动自觉量升序排列。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "自2016年9月1日起",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-09-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2016-09-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2016年1月1日之前",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列每个受方在2015年2月1日或之后或2015年1月1日之前发货的平均宽度",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年2月1日或之后",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015年1月1日之前",
+        "Start": 24,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照从高到低的顺序排列每个受方在2015年1月1日之前或2015年2月1日或之后发货的总量",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日之前",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015年2月1日或之后",
+        "Start": 28,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照升序排列在2019年8月1日之后或在2019年4月5日或之前不同公园的平均年龄",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年8月1日之后",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-08-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年4月5日或之前",
+        "Start": 20,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-05",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "发货日期在包括2015-01-01及以前或者在2015-02-01之前，受方按税的中间值降序排列。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015-01-01及以前",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015-02-01之前",
+        "Start": 23,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照平均负荷量从重到轻的顺序排列2016年5月1日或2016年12月1日或之后的运动自觉量",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2016年5月1日",
+        "Start": 16,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-05-01",
+              "type": "date",
+              "value": "2016-05-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2016年12月1日或之后",
+        "Start": 26,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-12-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2016-12-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照平均高度降序排列在2015年1月1日或从2015年2月1日开始发货的受方",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "从2015年2月1日开始",
+        "Start": 21,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照在2019年5月5日或之前或在2019年11月11日的总销售中位数从少到多的顺序显示年份",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年5月5日或之前",
+        "Start": 3,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-05-05",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-05-05"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年11月11日",
+        "Start": 17,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-11",
+              "type": "date",
+              "value": "2019-11-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2019年1月1日或之后平均总销售最少的两个年份是？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年1月1日或之后",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2010年1月4日或之后卖出平板单位大于等于单位中位数的网络连接方式",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010年1月4日或之后",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-04",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "哪个在2009年9月1日或之后最后更新的年度财务的总评估债务服务最高？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2009年9月1日或之后",
+        "Start": 3,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-09-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2009-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2015年1月1日及之后发货的货物受方按平均税值从低到高排列",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日及之后",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "货物年龄等于最大年龄且在2015年1月1日或之后发货的受方",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日或之后",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2019年1月1日或之后的平均总销售最少的两个年份是？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年1月1日或之后",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2010年1月1日或之后卖出的平均单位以及相应的网络连接",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010年1月1日或之后",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照升序排列在2015年1月1日或之后发货的平均量并列出相应受方",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日或之后",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2012年1月7日或之前，单位少于单位中位数的网络连接",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2012年1月7日或之前",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-07",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2012-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "哪种网络连接的最高单位不超过在包括2013年及以前的最高单位？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2013年及以前",
+        "Start": 17,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2013",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2013-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列2018年7月9日或之前的出版日期",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2018年7月9日或之前",
+        "Start": 6,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-09",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2018-07-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2015年2月1日或之前发货的不同货物受方按平均税值降序排列",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年2月1日或之前",
+        "Start": 1,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "显示表中在2019年9月14日或之前且年龄不少于年龄中位数的公园",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年9月14日或之前",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-14",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-09-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "哪些公园的年龄低于在2019年11月9日或之前的平均年龄？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年11月9日或之前",
+        "Start": 10,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-09",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-11-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在2011年1月10日或之前卖出且最小单位超过45的网络连接",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2011年1月10日或之前",
+        "Start": 1,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-10",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2011-01-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照从低到高的顺序排列2019年11月11日或之前每年的平均总销售",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2019年11月11日或之前",
+        "Start": 11,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-11",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-11-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "每年",
+        "Start": 25,
+        "End": 26,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照升序排列2007年1月10日或之前的日期",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2007年1月10日或之前",
+        "Start": 6,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007-01-10",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2007-01-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月1日或之后、2011年1月8日之前的网络连接的平均单位。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010年1月1日或之后",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2011年1月8日之前",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-08",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2011-01-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "那些最高离散数学成绩小于等于89且出生在2001年10月1日及之前的学院",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2001年10月1日及之前",
+        "Start": 20,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2001-10-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2001-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列在2018年7月9日或之前的出版日期",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2018年7月9日或之前",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-09",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2018-07-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照成本升序显示在2015年2月1日或之前的受方",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年2月1日或之前",
+        "Start": 9,
+        "End": 20,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列每个受方在2015年1月1日或之前发货的总价格",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年1月1日或之前",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "按照降序排列不同受方在2015年2月1日或之前发货的平均量",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015年2月1日或之前",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

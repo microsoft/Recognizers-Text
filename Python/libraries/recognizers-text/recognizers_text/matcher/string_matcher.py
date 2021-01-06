@@ -41,34 +41,28 @@ class StringMatcher:
     def matcher(self, matcher) -> None:
         self.__matcher = matcher
 
-    @dispatch(list)
-    def init(self, values: []) -> None:
-        self.init(values, list(map(lambda v: str(v), values)))
+    def init(self, values, ids=None) -> None:
+        if isinstance(values, dict):
+            values_t = []
+            ids_t = []
+            for item in values:
+                id = item
+                for value in values[item]:
+                    values_t.append(value)
+                    ids_t.append(id)
+            self.init(values_t, ids_t)
+        elif isinstance(values, list) and ids is None:
+            self.init(values, list(map(lambda v: str(v), values)))
+        elif isinstance(values, list) and isinstance(ids, list):
+            tokenized_values = self.get_tokenized_text(values)
+            self.matcher.init(tokenized_values, ids)
+        else:
+            raise NotImplementedError
 
-    @dispatch(dict)
-    def init(self, values_dictionary: {}) -> None:
-        values = []
-        ids = []
-        for item in values_dictionary:
-            id = item
-            for value in values_dictionary[item]:
-                values.append(value)
-                ids.append(id)
-
-        self.init(values, ids)
-
-    @dispatch(list, list)
-    def init(self, values, ids: [] = []) -> None:
-        tokenized_values = self.get_tokenized_text(values)
-        self.matcher.init(tokenized_values, ids)
-
-    @dispatch(list)
-    def find(self, tokenized_query: []) -> []:
-        return self.matcher.find(tokenized_query)
-
-    @dispatch(str)
-    def find(self, query_text: str = "") -> []:
-        query_tokens = self.__tokenizer.tokenize(query_text)
+    def find(self, tokenized_query) -> []:
+        if isinstance(tokenized_query, list):
+            return self.matcher.find(tokenized_query)
+        query_tokens = self.__tokenizer.tokenize(tokenized_query)
         tokenized_query_text = list(map(lambda t: t.text, query_tokens))
         result = []
         for r in self.find(tokenized_query_text):
@@ -76,7 +70,7 @@ class StringMatcher:
             end_token = query_tokens[r.start + r.length - 1]
             start = start_token.start
             length = end_token.end - start_token.start
-            r_text = query_text[start: start + length]
+            r_text = tokenized_query[start: start + length]
 
             match_result = MatchResult()
             match_result.start = start

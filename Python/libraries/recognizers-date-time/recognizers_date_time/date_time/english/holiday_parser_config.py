@@ -38,9 +38,7 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     def __init__(self, config):
         super().__init__()
         self._holiday_regexes = [
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.HolidayRegex1),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.HolidayRegex2),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.HolidayRegex3)
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.HolidayRegex)
         ]
         self._holiday_names = EnglishDateTime.HolidayNames
 
@@ -83,7 +81,8 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
             ('veteransday', EnglishHolidayParserConfiguration.veterans_day),
             ('christmaseve', EnglishHolidayParserConfiguration.christmas_eve),
             ('newyeareve', EnglishHolidayParserConfiguration.new_year_eve),
-            ('easterday', EnglishHolidayParserConfiguration.easter_day)
+            ('easterday', EnglishHolidayParserConfiguration.easter_day),
+            ('juneteenth', EnglishHolidayParserConfiguration.juneteenth),
         ])
 
         return {**super()._init_holiday_funcs(), **local}
@@ -207,3 +206,7 @@ class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @staticmethod
     def easter_day(year: int) -> datetime:
         return DateUtils.min_value
+
+    @staticmethod
+    def juneteenth(year: int) -> datetime:
+        return datetime(year, 6, 19)

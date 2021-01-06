@@ -27,11 +27,11 @@ public class PortugueseNumeric {
 
     public static final String HundredsNumberIntegerRegex = "(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))";
 
-    public static final String RoundNumberIntegerRegex = "(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)";
+    public static final String RoundNumberIntegerRegex = "(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))";
 
-    public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)";
+    public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)";
 
-    public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)";
+    public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)";
 
     public static final String TensNumberIntegerRegex = "(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)";
 
@@ -137,12 +137,13 @@ public class PortugueseNumeric {
             .replace("{SimpleRoundOrdinalRegex}", SimpleRoundOrdinalRegex)
             .replace("{ComplexRoundOrdinalRegex}", ComplexRoundOrdinalRegex);
 
-    public static final String OrdinalSuffixRegex = "(?<=\\b)(\\d*(1[oaº]|2[oaº]|3[oaº]|4[oaº]|5[oaº]|6[oaº]|7[oaº]|8[oaº]|9[oaº]|0[oaº]|1.º|2.º|3.º|4.º|5.º|6.º|7.º|8.º|9.º))(?=\\b)";
+    public static final String OrdinalSuffixRegex = "(?<=\\b)(\\d*((1|2|3|4|5|6|7|8|9|0)[oaºª]|(1|2|3|4|5|6|7|8|9)(\\.[ºª])))(?=\\b)";
 
     public static final String OrdinalEnglishRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
             .replace("{AllOrdinalRegex}", AllOrdinalRegex);
 
-    public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
+    public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
+            .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
@@ -436,6 +437,7 @@ public class PortugueseNumeric {
 
     public static final ImmutableMap<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("hum", 1L)
+        .put("um", 1L)
         .put("dois", 2L)
         .put("tres", 3L)
         .put("três", 3L)

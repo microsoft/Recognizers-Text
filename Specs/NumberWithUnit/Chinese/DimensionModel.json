@@ -113,5 +113,368 @@
     "Input": "今天2:00 pm, 你将会收到一个惊喜！",
     "NotSupported": "java",
     "Results": []
+  },
+  {
+    "Input": "一位名叫杰克的男生",
+    "NotSupported": "javascript, python, java, dotnet",
+    "Comment": "Ambiguous with other uses of 位 as measure word, especially 一位",
+    "Results": []
+  },
+  {
+    "Input": "一位是最小的存储单位",
+    "NotSupported": "javascript, python, java, dotnet",
+    "Results": [
+      {
+        "Text": "一位",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Bit",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一吨半",
+    "Results": [
+      {
+        "Text": "一吨半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.5",
+          "unit": "Ton"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "两米半",
+    "Results": [
+      {
+        "Text": "两米半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Meter"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三斤半",
+    "Results": [
+      {
+        "Text": "三斤半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3.5",
+          "unit": "Jin"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "十五斤半",
+    "Results": [
+      {
+        "Text": "十五斤半",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "15.5",
+          "unit": "Jin"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "12千米",
+    "Results": [
+      {
+        "Text": "12千米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Kilometer"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2.3千克",
+    "Results": [
+      {
+        "Text": "2.3千克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.3",
+          "unit": "Kilogram"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1千克",
+    "Results": [
+      {
+        "Text": "1千克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Kilogram"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三百米",
+    "Results": [
+      {
+        "Text": "三百米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Meter"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "四十克",
+    "Results": [
+      {
+        "Text": "四十克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "40",
+          "unit": "Gram"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三千比特",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "三千比特",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Kilobit"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "五十兆字节",
+    "Results": [
+      {
+        "Text": "五十兆字节",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "50",
+          "unit": "Megabyte"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "六千字节",
+    "Results": [
+      {
+        "Text": "六千字节",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Kilobyte"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "一千比特",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "一千比特",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Kilobit"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1兆赫兹",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1兆赫兹",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Megahertz"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "100赫兹",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100赫兹",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Hertz"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "一百千瓦",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一百千瓦",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Kilowatt"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "323千卡",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "323千卡",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "323",
+          "unit": "Kilocalorie"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "两万两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "两万两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "20000",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "二两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "二两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "三十两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "三十两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "30",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "三千两百两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "三千两百两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3200",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1234两",
+    "NotSupported":"java",
+    "Results": [
+      {
+        "Text": "1234两",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1234",
+          "unit": "Liang"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
   }
 ]

@@ -5,17 +5,20 @@ using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
+
     public class CardinalExtractor : BaseNumberExtractor
     {
+
         // CardinalExtractor = Int + Double
-        public CardinalExtractor(CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
+        public CardinalExtractor(BaseNumberOptionsConfiguration config, CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
-            var intExtractChs = new IntegerExtractor(mode);
+            var intExtractChs = new IntegerExtractor(config, mode);
             builder.AddRange(intExtractChs.Regexes);
 
-            var douExtractorChs = new DoubleExtractor();
+            var douExtractorChs = new DoubleExtractor(config);
             builder.AddRange(douExtractorChs.Regexes);
 
             Regexes = builder.ToImmutable();

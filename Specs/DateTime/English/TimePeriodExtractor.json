@@ -670,5 +670,41 @@
         "Length": 21
       }
     ]
+  },
+  {
+    "Input": "I'll be out lunch time",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "lunch time",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "He is at lunch",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "at lunch",
+        "Type": "timerange",
+        "Start": 6,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "This popular family friendly concert returns to the Hall for another lunchtime filled with traditional carols and festive favourites",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "lunchtime",
+        "Type": "timerange",
+        "Start": 69,
+        "Length": 9
+      }
+    ]
   }
 ]

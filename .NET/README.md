@@ -169,7 +169,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
     This model will find any Ipv4/Ipv6 presented. 
     E.g. "My Ip is 8.8.8.8".
 
-    `SequenceRecognizer.RecognizeIpAddress"My Ip is 8.8.8.8", Culture.English)`
+    `SequenceRecognizer.RecognizeIpAddress("My Ip is 8.8.8.8", Culture.English)`
 
     Or you can obtain a model instance using:
 

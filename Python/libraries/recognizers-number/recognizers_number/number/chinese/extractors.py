@@ -1,10 +1,11 @@
 from typing import List
 from enum import Enum
 
-from recognizers_number.number.extractors import ReVal, BaseNumberExtractor
+from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.constants import Constants
 from recognizers_number.resources.chinese_numeric import ChineseNumeric
+from recognizers_number.number.models import NumberMode
 
 
 class ChineseNumberExtractorMode(Enum):
@@ -21,6 +22,10 @@ class ChineseNumberExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM
 
+    @property
+    def ambiguity_filters_dict(self) -> List[ReRe]:
+        return self.__ambiguity_filters_dict
+
     def __init__(self, mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.DEFAULT):
         self.__regexes: List[ReVal] = list()
 
@@ -29,6 +34,14 @@ class ChineseNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = ChineseFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
+
+        ambiguity_filters_dict: List[ReRe] = list()
+
+        if mode != NumberMode.Unit:
+            for key, value in ChineseNumeric.AmbiguityFiltersDict.items():
+                ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
+                                                   reVal=RegExpUtility.get_safe_reg_exp(value)))
+        self.__ambiguity_filters_dict = ambiguity_filters_dict
 
 
 class ChineseCardinalExtractor(BaseNumberExtractor):
@@ -76,22 +89,22 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.NumbersWithHalfDozen),
-                val='IntegerChs'),
+                val=f'Integer{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.NumbersWithDozen),
-                val='IntegerChs'),
+                val=f'Integer{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.HalfUnitRegex),
-                val='IntegerChs')
+                val=f'Integer{ChineseNumeric.LangMarker}')
         ]
         if mode == ChineseNumberExtractorMode.DEFAULT:
             self.__regexes.append(
                 ReVal(
                     re=RegExpUtility.get_safe_reg_exp(
                         ChineseNumeric.NumbersWithAllowListRegex),
-                    val='IntegerChs'
+                    val=f'Integer{ChineseNumeric.LangMarker}'
                 )
             )
         elif mode == ChineseNumberExtractorMode.EXTRACT_ALL:
@@ -99,7 +112,7 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
                 ReVal(
                     re=RegExpUtility.get_safe_reg_exp(
                         ChineseNumeric.NumbersAggressiveRegex),
-                    val='IntegerChs'
+                    val=f'Integer{ChineseNumeric.LangMarker}'
                 )
             )
 
@@ -134,11 +147,11 @@ class ChineseDoubleExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.DoubleWithThousandsRegex),
-                val='DoubleChs'),
+                val=f'Double{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.DoubleAllFloatRegex),
-                val='DoubleChs'),
+                val=f'Double{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.DoubleExponentialNotationRegex),
@@ -172,7 +185,7 @@ class ChineseFractionExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.AllFractionNumber),
-                val='FracChs')
+                val=f'Frac{ChineseNumeric.LangMarker}')
         ]
 
 
@@ -189,11 +202,11 @@ class ChineseOrdinalExtractor(BaseNumberExtractor):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.OrdinalRegex),
-                val='OrdinalChs'),
+                val=f'Ordinal{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.OrdinalNumbersRegex),
-                val='OrdinalChs')
+                val=f'Ordinal{ChineseNumeric.LangMarker}')
         ]
 
 
@@ -211,11 +224,11 @@ class ChinesePercentageExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.PercentagePointRegex),
-                val='PerChs'),
+                val=f'Per{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.SimplePercentageRegex),
-                val='PerChs'),
+                val=f'Per{ChineseNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ChineseNumeric.NumbersPercentagePointRegex),

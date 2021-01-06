@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -37,6 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        public static readonly Regex AmbiguousPointRangeRegex =
+            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -91,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             MoreThanRegex = ItalianDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = ItalianDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = ItalianDatePeriodExtractorConfiguration.NowRegex;
+            SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -201,6 +207,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex NowRegex { get; }
 
+        public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
+
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
@@ -210,6 +220,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => AmbiguousPointRangeRegex;
 
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
@@ -284,20 +296,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o)) ||
-                   DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)) ||
+                   DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.MonthTerms.Any(o => trimmedText.Contains(o)) && (AfterNextSuffixRegex.IsMatch(trimmedText) ||
                    ThisPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)));
         }
@@ -305,13 +317,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o)) && (AfterNextSuffixRegex.IsMatch(trimmedText) ||
                    ThisPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)));
         }
@@ -319,7 +331,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && (AfterNextSuffixRegex.IsMatch(trimmedText) ||
                    ThisPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)));
         }
@@ -327,7 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && (AfterNextSuffixRegex.IsMatch(trimmedText) ||
                    ThisPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)));
         }
@@ -335,7 +347,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
     }
 }

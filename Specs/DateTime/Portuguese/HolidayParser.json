@@ -1,6 +1,6 @@
 [
   {
-    "TestType": "BasicTest",
+    "Comment": "Moving holiday timexes must be redefined",
     "Input": "Vou voltar na pascoa",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -8,25 +8,19 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "TimexStr": "",
+        "Text": "pascoa",
+        "Type": "date",
         "Value": {
-          "Success": true,
-          "Timex": "",
-          "IsLunar": false,
+          "Timex": "XXXX-03-27",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-04-16"
           },
           "PastResolution": {
-            "date": "0001-01-01"
-          },
-          "FutureValue": "0001-01-01T00:00:00",
-          "PastValue": "0001-01-01T00:00:00"
+            "date": "2016-03-27"
+          }
         },
-        "ResolutionStr": "",
         "Start": 14,
-        "Length": 6,
-        "Text": "pascoa",
-        "Type": "date"
+        "Length": 6
       }
     ]
   },

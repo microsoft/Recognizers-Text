@@ -14,10 +14,11 @@ from .base_numbers import BaseNumbers
 
 
 class EnglishNumericWithUnit:
-    AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age"),
-                          ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age"),
+    AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo"),
+                          ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo"),
                           ("Week", "weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age"),
                           ("Day", "days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age")])
+    AmbiguousAgeUnitList = [r'yo', r'mo']
     AreaSuffixList = dict([("Square kilometer", "sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²"),
                            ("Square hectometer", "sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares"),
                            ("Square decameter", "sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²"),
@@ -127,7 +128,7 @@ class EnglishNumericWithUnit:
                                ("Halala", "halalas|halala"),
                                ("Samoan tālā", "samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala"),
                                ("Sene", "sene"),
-                               ("São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra|std"),
+                               ("São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra"),
                                ("Sierra Leonean leone", "sierra leonean leone|sll|leone|le"),
                                ("Peseta", "pesetas|peseta"),
                                ("Netherlands guilder", "florin|netherlands antillean guilder|ang|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl"),
@@ -338,7 +339,7 @@ class EnglishNumericWithUnit:
                                      ("Qatari riyal", "QAR"),
                                      ("Saudi riyal", "SAR"),
                                      ("Samoan tālā", "WST"),
-                                     ("São Tomé and Príncipe dobra", "STD"),
+                                     ("São Tomé and Príncipe dobra", "STN"),
                                      ("Sierra Leonean leone", "SLL"),
                                      ("Swazi lilangeni", "SZL"),
                                      ("Tajikistani somoni", "TJS"),
@@ -380,7 +381,7 @@ class EnglishNumericWithUnit:
                                      ("Rwandan franc", "RWF"),
                                      ("Russian ruble", "RUB"),
                                      ("Transnistrian ruble", "PRB"),
-                                     ("Belarusian ruble", "BYN"),
+                                     ("New Belarusian ruble", "BYN"),
                                      ("Algerian dinar", "DZD"),
                                      ("Bahraini dinar", "BHD"),
                                      ("Iraqi dinar", "IQD"),
@@ -537,7 +538,9 @@ class EnglishNumericWithUnit:
                                         ("Hào", "HAO"),
                                         ("Ngwee", "NGWEE")])
     CompoundUnitConnectorRegex = f'(?<spacer>and)'
-    CurrencyPrefixList = dict([("Dollar", "$"),
+    CurrencyPrefixList = dict([("Dobra", "db|std"),
+                               ("Dollar", "$"),
+                               ("Brazilian Real", "R$"),
                                ("United States dollar", "united states $|us$|us $|u.s. $|u.s $"),
                                ("East Caribbean dollar", "east caribbean $"),
                                ("Australian dollar", "australian $|australia $"),
@@ -578,7 +581,7 @@ class EnglishNumericWithUnit:
                                ("Pound", "£"),
                                ("Costa Rican colón", "₡"),
                                ("Turkish lira", "₺")])
-    AmbiguousCurrencyUnitList = [r'din.', r'kiwi', r'kina', r'kobo', r'lari', r'lipa', r'napa', r'para', r'sfr.', r'taka', r'tala', r'toea', r'vatu', r'yuan', r'ang', r'ban', r'bob', r'btn', r'byr', r'cad', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'lei', r'mga', r'mop', r'nad', r'omr', r'pul', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sen', r'sol', r'sos', r'std', r'try', r'yer', r'yen']
+    AmbiguousCurrencyUnitList = [r'din.', r'kiwi', r'kina', r'kobo', r'lari', r'lipa', r'napa', r'para', r'sfr.', r'taka', r'tala', r'toea', r'vatu', r'yuan', r'all', r'ang', r'ban', r'bob', r'btn', r'byr', r'cad', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'lei', r'mga', r'mop', r'nad', r'omr', r'pul', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sen', r'sol', r'sos', r'std', r'try', r'yer', r'yen', r'db']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
                                   ("Kilobit", "kilobit|kilobits|kb|Kb|kbit"),
                                   ("Megabit", "megabit|megabits|mb|Mb|mbit"),

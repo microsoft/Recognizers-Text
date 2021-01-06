@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Definitions
       public const string DeltaMinuteRegex = @"(?<deltamin>[0-5]?\d)";
       public const string SecondRegex = @"(?<sec>[0-5]?\d)";
       public const string FourDigitYearRegex = @"\b(?<![$])(?<year>((1\d|20)\d{2})|2100)(?!\.0\b)\b";
+      public const string HyphenDateRegex = @"((?<year1>[0-9]{4})-?(?<month1>1[0-2]|0[1-9])-?(?<day1>3[01]|0[1-9]|[12][0-9]))|((?<month2>1[0-2]|0[1-9])-?(?<day2>3[01]|0[1-9]|[12][0-9])-?(?<year2>[0-9]{4}))|((?<day3>3[01]|0[1-9]|[12][0-9])-?(?<month3>1[0-2]|0[1-9])-?(?<year3>[0-9]{4}))";
       public static readonly string IllegalYearRegex = $@"([-])({FourDigitYearRegex})([-])";
       public const string RangeConnectorSymbolRegex = @"(--|-|—|——|~|–)";
       public const string BaseAmDescRegex = @"(am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)";
@@ -37,7 +38,7 @@ namespace Microsoft.Recognizers.Definitions
       public const string MinYearNum = @"1500";
       public const string MaxYearNum = @"2100";
       public const string MaxTwoDigitYearFutureNum = @"30";
-      public const string MinTwoDigitYearPastNum = @"70";
+      public const string MinTwoDigitYearPastNum = @"40";
       public static readonly Dictionary<string, int> DayOfMonthDictionary = new Dictionary<string, int>
         {
             { @"01", 1 },

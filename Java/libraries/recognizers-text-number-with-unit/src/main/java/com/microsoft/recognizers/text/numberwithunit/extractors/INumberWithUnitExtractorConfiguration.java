@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.numberwithunit.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
+import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public interface INumberWithUnitExtractorConfiguration {
+
     Map<String, String> getSuffixList();
     
     Map<String, String> getPrefixList();
@@ -29,4 +31,8 @@ public interface INumberWithUnitExtractorConfiguration {
     Pattern getCompoundUnitConnectorRegex();
     
     Pattern getAmbiguousUnitNumberMultiplierRegex();
+
+    Map<Pattern, Pattern> getAmbiguityFiltersDict();
+
+    List<ExtractResult> expandHalfSuffix(String source, List<ExtractResult> result, List<ExtractResult> numbers);
 }

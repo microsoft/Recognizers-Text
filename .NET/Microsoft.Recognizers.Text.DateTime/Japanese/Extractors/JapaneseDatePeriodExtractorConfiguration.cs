@@ -174,9 +174,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var periodBegin = er[idx].Start ?? 0;
                     var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
 
+                    // @TODO move hardcoded values to resources file
+
                     // handle "从"
                     var beforeStr = text.Substring(0, periodBegin);
-                    if (beforeStr.Trim().EndsWith("从"))
+                    if (beforeStr.Trim().EndsWith("从", StringComparison.Ordinal))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
                     }

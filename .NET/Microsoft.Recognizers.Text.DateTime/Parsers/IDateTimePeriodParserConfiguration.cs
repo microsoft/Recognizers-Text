@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         string TokenBeforeDate { get; }
 
+        string TokenBeforeTime { get; }
+
         IDateExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
@@ -34,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimeZoneParser { get; }
 
         Regex PureNumberFromToRegex { get; }
+
+        Regex HyphenDateRegex { get; }
 
         Regex PureNumberBetweenAndRegex { get; }
 

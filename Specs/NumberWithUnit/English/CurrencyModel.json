@@ -2201,5 +2201,190 @@
         }
       }
     ]
+  },
+  {
+    "Input": "10 turkish lira 11a",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 turkish lira",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TRY",
+          "unit": "Turkish lira",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deposits: 10 turkish lira 1111-22223333-4444",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 turkish lira",
+        "Start": 10,
+        "End": 24,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "TRY",
+          "unit": "Turkish lira",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am I eligible for a lone of 35 lakh rupees",
+    "Results": [
+      {
+        "Text": "35 lakh rupees",
+        "Start": 28,
+        "End": 41,
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3500000",
+          "unit": "Rupee"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am I eligible for a lone of 12,34,567.89 rupees",
+    "Comment": "Example of Indian numbering system, the format may not need to be supported in other languages.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12,34,567.89 rupees",
+        "Start": 28,
+        "End": 46,
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1234567.89",
+          "unit": "Rupee"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I would like to buy this item for USD 200.",
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "usd 200",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "200",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "I would like to buy this item for EUR 125.",
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "eur 125",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "I would like to buy this item for GBP 350.",
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "gbp 350",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "350",
+          "unit": "British pound",
+          "isoCurrency": "GBP"
+        },
+        "Start": 34,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "It costs half million usd.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "half million usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "500000"
+        },
+        "Start": 9,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "It costs quarter million us dollars.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "quarter million us dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "250000"
+        },
+        "Start": 9,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "It costs a quarter million us dollars.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "a quarter million us dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "250000"
+        },
+        "Start": 9,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "It costs three quarters billion us dollars.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "three quarters billion us dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "750000000"
+        },
+        "Start": 9,
+        "End": 41
+      }
+    ]
   }
 ]

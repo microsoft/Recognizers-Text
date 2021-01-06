@@ -8,7 +8,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new ChineseNumberParserConfiguration(config)), config)
+            : base(new NumberExtractor(new BaseNumberOptionsConfiguration(config)),
+                   new OrdinalExtractor(new BaseNumberOptionsConfiguration(config)),
+                   new BaseCJKNumberParser(new ChineseNumberParserConfiguration(config)),
+                   config)
         {
             var regexes = new Dictionary<Regex, string>()
             {

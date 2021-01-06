@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         string ConnectorToken { get; }
 
+        IDictionary<string, string> TypeList { get; }
+
         void BindDictionary(IDictionary<string, string> dictionary);
     }
 
@@ -32,8 +34,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             this.UnitMap = new Dictionary<string, string>();
             this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableDictionary();
             this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
+            this.NonStandardFractionalSubunits = BaseCurrency.NonStandardFractionalSubunits.ToImmutableDictionary();
             this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
             this.CurrencyFractionCodeList = new Dictionary<string, string>();
+            this.TypeList = new Dictionary<string, string>();
         }
 
         public IDictionary<string, string> UnitMap { get; }
@@ -41,6 +45,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public IDictionary<string, long> CurrencyFractionNumMap { get; }
 
         public IDictionary<string, string> CurrencyFractionMapping { get; }
+
+        public IDictionary<string, long> NonStandardFractionalSubunits { get; }
 
         public CultureInfo CultureInfo { get; }
 
@@ -53,6 +59,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public IDictionary<string, string> CurrencyNameToIsoCodeMap { get; set; }
 
         public IDictionary<string, string> CurrencyFractionCodeList { get; set; }
+
+        public abstract IDictionary<string, string> TypeList { get; set; }
 
         public void BindDictionary(IDictionary<string, string> dictionary)
         {

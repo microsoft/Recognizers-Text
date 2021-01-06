@@ -1,0 +1,740 @@
+[
+  {
+    "Input": "मैं 3h के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं ३ दिन के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "३ दिन",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3.5साल के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3.5साल",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3.5 साल के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3.5 साल",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 घंटे के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 घंटों के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 घंटों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं ३ घंटे बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "३ घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं ३ घंटों के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "३ घंटों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 दिन के लिए बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 दिन",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 महीने के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 महीने",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 मिनट के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 मिनट",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 min. के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 min.",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं साढ़े 3 सेकंड के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साढ़े 3 सेकंड",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं 123.45 सेकंड के लिए बाहर जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "123.45 सेकंड",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो सप्ताह के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो सप्ताह",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं बीस मिन. के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बीस मिन.",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं चौबीस घंटे के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "चौबीस घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरा दिन बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरा दिन",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे सप्ताह के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे सप्ताह",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे महीने बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे महीने",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे वर्ष के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे वर्ष",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे दिन के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे दिन",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं सप्ताह भर के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह भर",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं महीने भर के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "महीने भर",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं साल भर बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साल भर",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिन भर बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिन भर",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे हफ़्ते के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे हफ़्ते",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे महीने के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे महीने",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे साल बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे साल",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "वो सारा दिन बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सारा दिन",
+        "Type": "duration",
+        "Start": 3,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे हफ्ते के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे हफ्ते",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे माह बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे माह",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं पूरे साल के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पूरे साल",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक घंटे के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक साल के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक साल",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "आधा साल",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधा साल",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "आधे वर्ष",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधे वर्ष",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3-मिनट के लिए निकल जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3-मिनट",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं 30-मिनट के लिए बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30-मिनट",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं आधे घंटे के लिए बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधे घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं आधा घंटा बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधा घंटा",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं डेढ़ घंटे के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ़ घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं डेढ़ घंटे के लिए निकलूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "डेढ़ घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो घंटे के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं ढाई घंटे के लिए बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ढाई घंटे",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "एक हफ्ते में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक हफ्ते",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "एक दिन में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक दिन",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "एक घंटे के लिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक घंटे",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "एक महीने के लिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक महीने",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं कुछ घंटों के लिए बाहर रहुंगी",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कुछ घंटों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं कुछ मिनटों के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कुछ मिनटों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "कुछ दिनों के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कुछ दिनों",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं कई दिनों के लिए बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कई दिनों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 साल 1 महीने 21 दिनों के लिए बाहर रहुंगा",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 साल 1 महीने 21 दिनों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 महीना 2 दिन के लिए बाहर रहुंगा",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 महीना 2 दिन",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मुझे एहसास हुआ कि आप एक और हफ्ते के लिए बाहर हैं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और हफ्ते",
+        "Type": "duration",
+        "Start": 21,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक और महीना इंतजार कर सकते हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और महीना",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "क्या हम एक और व्यावसायिक दिवस की प्रतीक्षा कर सकते हैं?",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक और व्यावसायिक दिवस",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं आधे कार्यदिवस के लिए जाऊंगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आधे कार्यदिवस",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो दशकों के लिए बाहर रहुंगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो दशकों",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं एक पखवाड़े के लिए बाहर रहुंगा।",
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "एक पखवाड़े",
+        "Type": "duration",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  }
+]

@@ -66,8 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "youthday", YouthDay },
                 { "childrenday", ChildrenDay },
                 { "femaleday", FemaleDay },
-                { "treeplantingday", TreePlantDay },
-                { "arborday", TreePlantDay },
+                { "treeplantingday", DutchTreePlantDay },
                 { "girlsday", GirlsDay },
                 { "whiteloverday", WhiteLoverDay },
                 { "loverday", ValentinesDay },
@@ -97,6 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "newyeareve", NewYearEve },
                 { "oudejaarsavond", NewYearEve },
                 { "easterday", EasterDay },
+                { "goodfriday", GoodFriday },
                 { "kingsday", KingsDay },
                 { "queensday", QueensDay },
                 { "prinsjesdag", Prinsjesdag },
@@ -105,6 +105,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "bevrijdingsdag", Bevrijdingsdag },
                 { "dodenherdenking", Dodenherdenking },
                 { "dagvandearbeid", Dagvandearbeid },
+                { "ascensionday", AscensionDay },
+                { "whitesunday", WhiteSunday },
+                { "sinterklaas", Sinterklaas },
+                { "stmartinsday", StMartinsDay },
+                { "driekoningen", Driekoningen },
+                { "ketikoti", KetiKoti },
+                { "ramadan", Ramadan },
+                { "sacrifice", Sacrifice },
             };
         }
 
@@ -116,6 +124,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject SecondChristmasDay(int year) => new DateObject(year, 12, 26);
 
+        private static DateObject StMartinsDay(int year) => new DateObject(year, 11, 11);
+
         private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
 
         private static DateObject ValentinesDay(int year) => new DateObject(year, 2, 14);
@@ -126,7 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
 
-        private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
+        private static DateObject DutchTreePlantDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 3, GetDay(year, 3, 2, DayOfWeek.Wednesday));
 
         private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
 
@@ -166,9 +176,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject GoodFriday(int year) => EasterDay(year).AddDays(-2);
 
-        private static DateObject EasterDay(int year) => DateObject.MinValue;
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject KingsDay(int year) => new DateObject(year, 4, 27);
 
@@ -180,10 +190,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static DateObject Bevrijdingsdag(int year) => new DateObject(year, 5, 5);
 
+        private static DateObject Sinterklaas(int year) => new DateObject(year, 12, 5);
+
         private static DateObject DutchTeachersDay(int year) => new DateObject(year, 10, 5);
 
         private static DateObject DutchVeteransday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetLastDay(year, 6, DayOfWeek.Saturday));
 
         private static DateObject Dagvandearbeid(int year) => new DateObject(year, 5, 1);
+
+        private static DateObject AscensionDay(int year) => EasterDay(year).AddDays(39);
+
+        private static DateObject WhiteSunday(int year) => EasterDay(year).AddDays(49);
+
+        private static DateObject Driekoningen(int year) => new DateObject(year, 1, 6);
+
+        private static DateObject KetiKoti(int year) => new DateObject(year, 7, 1);
+
+        private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
+
+        private static DateObject Sacrifice(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Sacrifice);
     }
 }

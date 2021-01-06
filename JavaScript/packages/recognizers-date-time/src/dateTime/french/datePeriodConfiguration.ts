@@ -137,7 +137,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly weekWithWeekDayRangeRegex: RegExp;
 
     readonly cardinalExtractor: IExtractor;
-    readonly numberParser: IParser;
+    readonly numberParser: BaseNumberParser;
     readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {

@@ -130,7 +130,7 @@ public class SpanishNumeric {
             .replace("{SimpleRoundOrdinalRegex}", SimpleRoundOrdinalRegex)
             .replace("{ComplexRoundOrdinalRegex}", ComplexRoundOrdinalRegex);
 
-    public static final String OrdinalSuffixRegex = "(?<=\\b)(\\d*(1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa]))(?=\\b)";
+    public static final String OrdinalSuffixRegex = "(?<=\\b)(\\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|(1|2|3|4|5|6|7|8|9|0)[ºª]))(?=\\b)";
 
     public static final String OrdinalNounRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
             .replace("{AllOrdinalRegex}", AllOrdinalRegex);
@@ -139,7 +139,8 @@ public class SpanishNumeric {
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
+    public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
+            .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
@@ -189,16 +190,16 @@ public class SpanishNumeric {
 
     public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
 
-    public static final String NumberWithPrefixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\\b)"
+    public static final String NumberWithPrefixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|por\\s+cien(to)?\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String TillRegex = "(\\ba\\b|hasta|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(más\\s+alt[oa]\\s+que|(m[áa]s|mayor(es)?|por\\s+encima)(\\s+(que|de|del))?|(?<!<|=)>)";
+    public static final String MoreRegex = "(más\\s+(alt[oa]s?|grandes)\\s+que|(m[áa]s|mayor(es)?|superior(es)?|por\\s+encima)((\\s+(que|del?|al?))|(?=\\s+o\\b))|(?<!<|=)>)";
 
-    public static final String LessRegex = "((menos|menor|menores|por\\s+debajo)(\\s+(que|de|del))?|más\\s+baj[oa]\\s+que|(?<!>|=)<)";
+    public static final String LessRegex = "((meno(s|r(es)?)|inferior(es)?|por\\s+debajo)((\\s+(que|del?|al?)|(?=\\s+o\\b)))|más\\s+baj[oa]\\s+que|(?<!>|=)<)";
 
-    public static final String EqualRegex = "((igual(es)?|equivalente(s)?|equivale|equivalen|son)(\\s+(a|que|de|al|del))?|(?<!<|>)=)";
+    public static final String EqualRegex = "((igual(es)?|equivalente(s)?|equivalen?)(\\s+(al?|que|del?))?|(?<!<|>)=)";
 
     public static final String MoreOrEqualPrefix = "((no\\s+{LessRegex})|(por\\s+lo\\s+menos|como\\s+m[íi]nimo|al\\s+menos))"
             .replace("{LessRegex}", LessRegex);
@@ -209,9 +210,9 @@ public class SpanishNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
 
-    public static final String MoreOrEqualSuffix = "((\\b(y|o)\\b\\s+(m[áa]s|mayor|mayores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo|por\\s+lo\\s+menos|al\\s+menos)";
+    public static final String MoreOrEqualSuffix = "((\\b(y|o)\\b\\s+(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(alt[oa]|baj[oa]|que|del?))|(\\s+(que|del?|al?)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo|por\\s+lo\\s+menos|al\\s+menos)";
 
-    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(como\\s+máximo|como\\s+maximo|como\\s+mucho))"
+    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(como\\s+(m[aá]ximo|mucho)))"
             .replace("{MoreRegex}", MoreRegex);
 
     public static final String LessOrEqual = "(({LessRegex}\\s+(o)?\\s+{EqualRegex})|({EqualRegex}\\s+(o)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(o)?\\s+{EqualRegex})?|({EqualRegex}\\s+(o)?\\s+)?{LessOrEqualPrefix}|<\\s*=)"
@@ -220,20 +221,23 @@ public class SpanishNumeric {
             .replace("{MoreRegex}", MoreRegex)
             .replace("{LessOrEqualPrefix}", LessOrEqualPrefix);
 
-    public static final String LessOrEqualSuffix = "((\\b(y|o)\\b\\s+(menos|menor|menores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo)";
+    public static final String LessOrEqualSuffix = "((\\b(y|o)\\b\\s+(meno(s|r(es)?|inferior(es)?))((?!\\s+(alt[oa]|baj[oa]|que|del?|al?))|(\\s+(que|del?|al?)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo)";
 
     public static final String NumberSplitMark = "(?![,.](?!\\d+))";
 
-    public static final String MoreRegexNoNumberSucceed = "((m[áa]s|mayor|mayores)((?!\\s+(que|de|del))|\\s+((que|de|del)(?!(\\s*\\d+))))|(por encima)(?!(\\s*\\d+)))";
+    public static final String MoreRegexNoNumberSucceed = "(\\b(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(que|del?|al?))|\\s+((que|del?)(?!(\\s*\\d+))))|(por encima)(?!(\\s*\\d+)))";
 
-    public static final String LessRegexNoNumberSucceed = "((menos|menor|menores)((?!\\s+(que|de|del))|\\s+((que|de|del)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))";
+    public static final String LessRegexNoNumberSucceed = "(\\b(meno(s|r(es)?)|inferior(es)?)((?!\\s+(que|del?|al?))|\\s+((que|del?)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))";
 
-    public static final String EqualRegexNoNumberSucceed = "((igual|iguales|equivalente|equivalentes|equivale|equivalen)((?!\\s+(a|que|de|al|del))|(\\s+(a|que|de|al|del)(?!(\\s*\\d+)))))";
+    public static final String EqualRegexNoNumberSucceed = "(\\b(igual(es)?|equivalentes?|equivalen?)((?!\\s+(al?|que|del?))|(\\s+(al?|que|del?)(?!(\\s*\\d+)))))";
 
-    public static final String OneNumberRangeMoreRegex1 = "({MoreOrEqual}|{MoreRegex})\\s*((el|la|los|las)\\s+)?(?<number1>({NumberSplitMark}.)+)"
+    public static final String OneNumberRangeMoreRegex1 = "({MoreOrEqual}|{MoreRegex})\\s*((el|las?|los)\\s+)?(?<number1>({NumberSplitMark}.)+)"
             .replace("{MoreOrEqual}", MoreOrEqual)
             .replace("{MoreRegex}", MoreRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeMoreRegex1LB = "(?<!no\\s+){OneNumberRangeMoreRegex1}"
+            .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1);
 
     public static final String OneNumberRangeMoreRegex2 = "(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}"
             .replace("{MoreOrEqualSuffix}", MoreOrEqualSuffix)
@@ -246,10 +250,13 @@ public class SpanishNumeric {
             .replace("{MoreRegexNoNumberSucceed}", MoreRegexNoNumberSucceed)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
-    public static final String OneNumberRangeLessRegex1 = "({LessOrEqual}|{LessRegex})\\s*((el|la|los|las)\\s+)?(?<number2>({NumberSplitMark}.)+)"
+    public static final String OneNumberRangeLessRegex1 = "({LessOrEqual}|{LessRegex})\\s*((el|las?|los)\\s+)?(?<number2>({NumberSplitMark}.)+)"
             .replace("{LessOrEqual}", LessOrEqual)
             .replace("{LessRegex}", LessRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeLessRegex1LB = "(?<!no\\s+){OneNumberRangeLessRegex1}"
+            .replace("{OneNumberRangeLessRegex1}", OneNumberRangeLessRegex1);
 
     public static final String OneNumberRangeLessRegex2 = "(?<number2>({NumberSplitMark}.)+)\\s*{LessOrEqualSuffix}"
             .replace("{LessOrEqualSuffix}", LessOrEqualSuffix)
@@ -262,11 +269,11 @@ public class SpanishNumeric {
             .replace("{LessRegexNoNumberSucceed}", LessRegexNoNumberSucceed)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
-    public static final String OneNumberRangeEqualRegex = "{EqualRegex}\\s*((el|la|los|las)\\s+)?(?<number1>({NumberSplitMark}.)+)"
+    public static final String OneNumberRangeEqualRegex = "{EqualRegex}\\s*((el|las?|los)\\s+)?(?<number1>({NumberSplitMark}.)+)"
             .replace("{EqualRegex}", EqualRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
-    public static final String TwoNumberRangeRegex1 = "entre\\s*((el|la|los|las)\\s+)?(?<number1>({NumberSplitMark}.)+)\\s*y\\s*((el|la|los|las)\\s+)?(?<number2>({NumberSplitMark}.)+)"
+    public static final String TwoNumberRangeRegex1 = "\\bentre\\s*((el|las?|los)\\s+)?(?<number1>({NumberSplitMark}.)+)\\s*y\\s*((el|las?|los)\\s+)?(?<number2>({NumberSplitMark}.)+)"
             .replace("{NumberSplitMark}", NumberSplitMark);
 
     public static final String TwoNumberRangeRegex2 = "({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(\\by\\b|\\be\\b|pero|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})"
@@ -281,7 +288,7 @@ public class SpanishNumeric {
             .replace("{OneNumberRangeLessRegex1}", OneNumberRangeLessRegex1)
             .replace("{OneNumberRangeLessRegex2}", OneNumberRangeLessRegex2);
 
-    public static final String TwoNumberRangeRegex4 = "((de|desde)\\s+)?((el|la|los|las)\\s+)?(?<number1>({NumberSplitMark}(?!\\b(entre|de|desde|es)\\b).)+)\\s*{TillRegex}\\s*((el|la|los|las)\\s+)?(?<number2>({NumberSplitMark}.)+)"
+    public static final String TwoNumberRangeRegex4 = "(\\bde(sde)?\\s+)?(\\b(el|las?|los)\\s+)?(?<number1>({NumberSplitMark}(?!\\b(entre|de(sde)?|es)\\b).)+)\\s*{TillRegex}\\s*((el|las?|los)\\s+)?(?<number2>({NumberSplitMark}.)+)"
             .replace("{TillRegex}", TillRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
@@ -307,7 +314,7 @@ public class SpanishNumeric {
 
     public static final String HalfADozenRegex = "media\\s+docena";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(mil(l[oó]n(es)?)?|bill[oó]n(es)?|trill[oó]n(es)?|docenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()

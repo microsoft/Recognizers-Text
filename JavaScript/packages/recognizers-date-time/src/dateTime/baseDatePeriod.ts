@@ -1,7 +1,7 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
-import { Token, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, StringMap } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, StringMap, AbstractYearExtractor } from "./utilities";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { BaseDateExtractor, BaseDateParser } from "./baseDate";
@@ -63,7 +63,7 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 if (matchYear && matchYear.length === match.value.length) {
                     let yearStr = matchYear.groups('year').value;
                     if (StringUtility.isNullOrEmpty(yearStr)) {
-                        let year = this.getYearFromText(matchYear);
+                        let year = AbstractYearExtractor.getYearFromText(matchYear, this.config.numberParser);
                         if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
                             addToken = false;
                         }
@@ -83,42 +83,6 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
             });
         });
         return tokens;
-    }
-
-    private getYearFromText(match: Match): number {
-        let firstTwoYearNumStr = match.groups('firsttwoyearnum').value;
-        if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
-            let er = new ExtractResult();
-            er.text = firstTwoYearNumStr;
-            er.start = match.groups('firsttwoyearnum').index;
-            er.length = match.groups('firsttwoyearnum').length;
-
-            let firstTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
-
-            let lastTwoYearNum = 0;
-            let lastTwoYearNumStr = match.groups('lasttwoyearnum').value;
-            if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr)) {
-                er.text = lastTwoYearNumStr;
-                er.start = match.groups('lasttwoyearnum').index;
-                er.length = match.groups('lasttwoyearnum').length;
-
-                lastTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
-            }
-
-            if (firstTwoYearNum < 100 && lastTwoYearNum === 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 === 0 && lastTwoYearNumStr.trim().split(' ').length === 1) {
-                return -1;
-            }
-
-            if (firstTwoYearNum >= 100) {
-                return (firstTwoYearNum + lastTwoYearNum);
-            }
-            else {
-                return (firstTwoYearNum * 100 + lastTwoYearNum);
-            }
-        }
-        else {
-            return -1;
-        }
     }
 
     protected mergeTwoTimePoints(source: string, refDate: Date): Token[] {
@@ -267,6 +231,7 @@ export interface IDatePeriodParserConfiguration {
     dateParser: BaseDateParser
     durationExtractor: IDateTimeExtractor
     durationParser: BaseDurationParser
+    numberParser: BaseNumberParser
     monthFrontBetweenRegex: RegExp
     betweenRegex: RegExp
     monthFrontSimpleCasesRegex: RegExp
@@ -859,7 +824,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             return result;
         }
 
-        let year = Number.parseInt(match.value, 10);
+        let year = AbstractYearExtractor.getYearFromText(match, this.config.numberParser);
         let beginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
         let endDate = DateUtils.addDays(DateUtils.safeCreateFromValue(DateUtils.minValue(), year + 1, 0, 1), this.inclusiveEndPeriod ? -1 : 0);
         result.timex = DateTimeFormatUtil.toString(year, 4);
@@ -883,6 +848,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 return result;
             }
 
+            let isMatch = false;
             let beforeStr = source.substr(0, pr.start).trim();
             let mod: string;
             let durationResult: DateTimeResolutionResult = pr.value;
@@ -901,9 +867,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 // for future the beginDate should add 1 first
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
+                isMatch = true;
             }
             prefixMatch = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
-            if (prefixMatch && prefixMatch.length === beforeStr.length) {
+            if (prefixMatch && prefixMatch.length === beforeStr.length && !isMatch) {
                 mod = TimeTypeConstants.afterMod;
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
@@ -1207,13 +1174,15 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 result.futureValue = [beginDate, endDate];
                 result.pastValue = [beginDate, endDate];
             }
+
+            result.timex = `(${DateTimeFormatUtil.luisDate(-1, beginDate.getMonth(), 1)},${DateTimeFormatUtil.luisDate(-1, endDate.getMonth(), 1)},P3M)`;
         }
         else {
             result.futureValue = [beginDate, endDate];
             result.pastValue = [beginDate, endDate];
+            result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P3M)`;
         }
 
-        result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P3M)`;
         result.success = true;
         return result;
     }

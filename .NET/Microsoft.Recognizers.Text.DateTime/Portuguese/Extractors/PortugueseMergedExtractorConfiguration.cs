@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -47,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public static readonly Regex[] TermFilterRegexes = { };
+        public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -64,8 +67,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration(this));
             HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new PortugueseDateTimeAltExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance(numConfig);
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
 
         public IDateExtractor DateExtractor { get; }
@@ -92,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
 

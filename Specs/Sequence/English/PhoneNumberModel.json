@@ -4776,5 +4776,89 @@
   {
     "Input": "My card number is 12345678",
     "Results": []
+  },
+  {
+    "Input": "OFFICE-1(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "1(516)733-3989",
+        "Start": 7,
+        "End": 20,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Purchasing Phone (914)349-8600 04/21/2020 12:37:30",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "(914)349-8600",
+        "Start": 17,
+        "End": 29,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(914)349-8600"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E-151673398",
+    "NotSupported": "java,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "OFFICE - 1(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "1(516)733-3989",
+        "Start": 9,
+        "End": 22,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "1(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Office:(516)733-3989",
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "(516)733-3989",
+        "Start": 7,
+        "End": 19,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "(516)733-3989"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Her credit card is: Visa 5111 1111 1111 1111",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Her credit card is: American Express 3600 0000 0000 009",
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Her credit card is: Discover 6011-0000-0000-0004",
+    "NotSupported": "java",
+    "Results": []
   }
 ]

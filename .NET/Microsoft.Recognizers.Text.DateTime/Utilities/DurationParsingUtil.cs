@@ -116,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var unitStr = pair.Key;
                 var number = pair.Value;
+
                 switch (unitStr)
                 {
                     case "H":
@@ -160,7 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var isTime = false;
 
             // Resolve business days
-            if (durationStr.EndsWith(Constants.TimexBusinessDay))
+            if (durationStr.EndsWith(Constants.TimexBusinessDay, StringComparison.Ordinal))
             {
                 if (double.TryParse(durationStr.Substring(0, durationStr.Length - 2), out var numVal))
                 {

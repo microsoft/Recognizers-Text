@@ -8,9 +8,7 @@ export class EnglishHolidayExtractorConfiguration implements IHolidayExtractorCo
 
     constructor() {
         this.holidayRegexes = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex, "gis")
         ];
     }
 }
@@ -19,9 +17,7 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     constructor() {
         super();
         this.holidayRegexList = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex, "gis")
         ];
         this.holidayNames = EnglishDateTime.HolidayNames;
         this.holidayFuncDictionary = this.initHolidayFuncs();
@@ -68,7 +64,8 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
                 ["veteransday", EnglishHolidayParserConfiguration.Veteransday],
                 ["christmaseve", EnglishHolidayParserConfiguration.ChristmasEve],
                 ["newyeareve", EnglishHolidayParserConfiguration.NewYearEve],
-                ["easterday", EnglishHolidayParserConfiguration.EasterDay]
+                ["easterday", EnglishHolidayParserConfiguration.EasterDay],
+                ["juneteenth", EnglishHolidayParserConfiguration.Juneteenth]
             ]);
     }
 
@@ -159,6 +156,9 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
     private static Veteransday(year: number): Date {
         return new Date(year, 11 - 1, 11);
+    }
+    private static Juneteenth(year: number): Date {
+        return new Date(year, 6 - 1, 19);
     }
     private static EasterDay(year: number): Date {
         return DateUtils.minValue();

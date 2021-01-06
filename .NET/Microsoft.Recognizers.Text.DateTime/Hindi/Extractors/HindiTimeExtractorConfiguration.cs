@@ -107,6 +107,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             // (in the night) at? (five thirty|seven|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex7, RegexFlags),
 
+            // (?<=to) 4
+            new Regex(DateTimeDefinitions.TimeRegex8, RegexFlags),
+
             new Regex(DateTimeDefinitions.TimeRegex9, RegexFlags),
 
             // (three min past)? 3h00 (pm)?
@@ -139,5 +142,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

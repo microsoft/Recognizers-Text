@@ -599,17 +599,17 @@
     ]
   },
   {
-    "Input": "Son 20 los estudiantes de nuestro grupo y no es una cifra significativa.",
+    "Input": "Siendo igual a 20 los estudiantes de nuestro grupo y no es una cifra significativa.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "son 20",
+        "Text": "igual a 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
         },
-        "Start": 0,
-        "End": 5
+        "Start": 7,
+        "End": 16
       }
     ]
   },
@@ -1197,6 +1197,335 @@
         "Resolution": {
           "value": "[200,3000000)"
         }
+      }
+    ]
+  },
+  {
+    "Input": "Año en que las ventas de bmw son superiores a 300000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "superiores a 300000",
+        "Start": 33,
+        "End": 51,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(300000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Qué categorías tuvieron ventas de más de 700000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "más de 700000",
+        "Start": 35,
+        "End": 47,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Qué categorías tuvieron ventas de más de 700.000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Comments": "Spanish doesn't traditionally use comma as thousand-separator",
+    "Results": [
+      {
+        "Text": "más de 700.000",
+        "Start": 35,
+        "End": 48,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Encuentre 2 años fiscales con los menores recuentos de sesiones en enero cuando las recuperaciones son menores a 10",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "menores a 10",
+        "Start": 103,
+        "End": 114,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Marcas cuyos teléfonos celulares más ligeros pesan menos de 174.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "menos de 174",
+        "Start": 51,
+        "End": 62,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,174)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Poner en orden descendente los recuentos de sesiones más grandes no menos de 194 y menos de 12 en cada mes y año fiscal.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no menos de 194",
+        "Start": 65,
+        "End": 79,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[194,)"
+        }
+      },
+      {
+        "Text": "menos de 12",
+        "Start": 83,
+        "End": 93,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x es no menos de 194 y menos de 12.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no menos de 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[194,)"
+        },
+        "Start": 5,
+        "End": 19
+      },
+      {
+        "Text": "menos de 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        },
+        "Start": 23,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "x es no más de 12 y más de 194.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "no más de 12",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12]"
+        },
+        "Start": 5,
+        "End": 16
+      },
+      {
+        "Text": "más de 194",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(194,)"
+        },
+        "Start": 20,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "encuentre ventas que no sean mayores a 30 o menores a 20",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mayores a 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        },
+        "Start": 29,
+        "End": 40
+      },
+      {
+        "Text": "menores a 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        },
+        "Start": 44,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "busque registros que las ventas sean 12, 15 o mayores que 20",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mayores que 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)"
+        },
+        "Start": 46,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "encuentre ventas menores o iguales a 30 o mayores a 50 y no de 60",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "menores o iguales a 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        },
+        "Start": 17,
+        "End": 38
+      },
+      {
+        "Text": "mayores a 50",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        },
+        "Start": 42,
+        "End": 53
+      }
+    ]
+  },
+  {
+    "Input": "encuentre ventas superiores a 30 e inferiores o iguales a 40 o inferiores a 10",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "superiores a 30 e inferiores o iguales a 40",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,40]"
+        },
+        "Start": 17,
+        "End": 59
+      },
+      {
+        "Text": "inferiores a 10",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,10)"
+        },
+        "Start": 63,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "ventas de 0 a 2 y mayores de 4",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de 0 a 2",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[0,2)"
+        },
+        "Start": 7,
+        "End": 14
+      },
+      {
+        "Text": "mayores de 4",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4,)"
+        },
+        "Start": 18,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "ventas mayores que 3 y menores que 1",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mayores que 3",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(3,)"
+        },
+        "Start": 7,
+        "End": 19
+      },
+      {
+        "Text": "menores que 1",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,1)"
+        },
+        "Start": 23,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "Encuentra las ventas clasificadas entre quinta y vigésima.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre quinta y vigésima",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5,20)"
+        },
+        "Start": 34,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "Encuentra las ventas clasificadas entre undécima y sexagésima.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre undécima y sexagésima",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[11,60)"
+        },
+        "Start": 34,
+        "End": 60
+      }
+    ]
+  },
+  {
+    "Input": "Encuentra las ventas clasificadas entre duodécima y cuadringentésima.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre duodécima y cuadringentésima",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[12,400)"
+        },
+        "Start": 34,
+        "End": 67
       }
     ]
   }

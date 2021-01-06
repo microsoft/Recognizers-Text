@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.Number;
@@ -11,10 +12,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         public ItalianNumberWithUnitParserConfiguration(CultureInfo ci)
             : base(ci)
         {
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Italian, NumberOptions.None);
+
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new ItalianNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -22,5 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

@@ -169,6 +169,10 @@ CurrencySuffixList: !dictionary
 #Euro
     Euro: euros|euro|€|eur
     Cent: cents|cent|-cents|-cent
+    Kwartje: kwartje
+    Dubbeltje: dubbeltje
+    Stuiver: stuiver
+    Tientje: tientje
 #Albanian lek
 #No use of "ALL" "L"
     Albanian lek: albanese lek|leks|lek
@@ -770,6 +774,9 @@ FractionalUnitNameToCodeMap: !dictionary
     Tiyin: TIYIN
     Hào: HAO
     Ngwee: NGWEE
+    Kwartje: KWARTJE
+    Dubbeltje: DUBBELTJE
+    Stuiver: STUIVER
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>en)
 CurrencyPrefixList: !dictionary
@@ -812,7 +819,7 @@ CurrencyPrefixList: !dictionary
     Samoan tālā: ws$
     Chinese yuan: ￥
     Japanese yen: ¥
-    Euro: €
+    Euro: €|eur
     Pound: £
     Costa Rican colón: ₡
     Turkish lira: ₺
@@ -864,4 +871,8 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - yen
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'null': 'null'
 ...

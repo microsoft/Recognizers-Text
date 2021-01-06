@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Chs";
+      public const string LangMarker = @"Chi";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = false;
       public const char DecimalSeparatorChar = '.';
@@ -162,21 +162,27 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";
       public static readonly string DigitNumRegex = $@"{ZeroToNineFullHalfRegex}+";
       public const string DozenRegex = @".*打$";
-      public const string PercentageRegex = @"(?<=百\s*分\s*之).+|.+(?=个\s*百\s*分\s*点)|.*(?=[％%])";
+      public const string PercentageRegex = @"(?<=(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\s*分\s*之).+|.+(?=个\s*(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\s*分\s*点)|.*(?=[％%])";
       public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[多几余]?[万亿萬億]{{1,2}}";
-      public const string FracSplitRegex = @"又|分\s*之";
+      public const string FracSplitRegex = @"又|分\s*之|分\s*点";
       public const string ZeroToNineIntegerRegex = @"[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]";
+      public static readonly string DigitNumPlusRegex = $@"{ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}";
       public const string HalfUnitRegex = @"半";
       public const string NegativeNumberTermsRegex = @"[负負]";
-      public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
+      public static readonly string NegativeNumberTermsRegexNum = $@"((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-－])[-－])";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
       public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[十拾半对對]";
       public const string PairRegex = @".*[双对雙對]$";
-      public const string RoundNumberIntegerRegex = @"(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))";
+      public const string KiloUnitNames = @"[米克位焦卡赫瓦]|比特|字节|大卡";
+      public const string MegaUnitNames = @"[位赫瓦]|比特|字节";
+      public static readonly string RoundNumberIntegerRegex = $@"(((?<![十百拾佰千仟])[十百拾佰])([万亿萬億]{{0,2}})|([万亿萬億]{{1,2}})|(?<![十百拾佰千仟])[千仟]([万亿萬億]{{1,2}})|(?<![十百拾佰千仟])[千仟](?!{KiloUnitNames})|(兆{{1,2}})(?!{MegaUnitNames}))";
+      public const string PercentageNumRegex = @"(([十百千拾佰仟])|([万亿兆萬億])){1,3}\s*分(\s*之|\s*点)";
       public const string AllowListRegex = @"([。，、（）“”]|[这那不也还而却更但這還卻]?是|[到以至]|[国國]|周|夜|[点點]|[个個]|倍|票|[项項]|[亩畝]|分|元|角|天|[双雙]|[对對]|加|[减減]|乘|除|[對对]|打|公[里裏]|公[顷頃]|公分|平方|方|米|厘|毫|[条條]|船|[车車]|[辆輛]|群|[页頁]|杯|人|[张張]|次|位|份|批|[届屆]|[级級]|[种種]|套|[笔筆]|根|[块塊]|件|座|步|[颗顆]|棵|[节節]|支|只|名|年|月|日|[号號]|朵|克|[吨噸]|磅|[码碼]|英尺|英寸|升|加[仑侖]|立方|[台臺]|套|[罗羅]|令|卷|[头頭]|箱|包|桶|袋|[块塊]|家|行|期|[层層]|度|面|所|架|把|片|[阵陣]|[间間]|等|[叠疊]|碟|下|起|手|季|部|人|小[时時]|[时時]|秒|[样樣]|章|段|星|州|款|代|维|重|[户戸]|楼|路|篇|句|键|本|生|者|字|郎|道|边|场|口|线|世|岸|金|类|番|组|卦|眼|系|声|更|带|色|战|成|轮|食|首|幡|站|股|井|流|开|刻|洲|回|宮|集|练|週|和|环|甲|处|省|里|海|遍|品|体|王|尾|新|隻|版|阶|板|侧|波|身|则|扫|房|彩|木|军|居|晚|岛|课|式|通|相|区|文|端|味|田|心|胎|班|出|连|单|事|丝|副|岁|旁|幕|些|枚|招|卡|幅|言|街|指|辈|室|堆|作|封|厢|声|城|族|圈|脸|目|排|模|夕|网|市|向|极|驱|科|提|核|村|审|刀|册|例|关|粒|局|山|寸|碗|瞬|联|游|脚|宅|线|格|入|趟|貫|界|社|肢|技|滴|问|笑|院|堂|尺|寨|档|举|盘|门|客|餐|艘|毛|丈|剑|曲|任|叶|团|派|嘴|桥|抹|枝|贯|伏|拳|列|机|盒|队|进制|栋|席|斤|词|击|题|型|宗|柱|钱|拍|剧|旬|命|扇|匹|湖|壶|觉|叉|校|泉|具|串|射|证|大批|球|横|竖|尊|轴|观|审|石|束|弹|株|领|委|栏|炮|鼎|町|帆|斗|缕|桌|针|帧|转|落|足|梯|县|投|试|帮|掌|箭|盏|锅|计|大片|学期|截|顶|屋|介|剑|桂|旗|巷|挥|晃|员|翼|池|围|勺|宿|库|棒|冠|树|缸|伙|签|揽|坨|匙|桩|顿|纸|隅|诺|案|刊|厂|杆|袭|仓|床|担|帖|屏|盏|腔|贴|窍|洞|円|坪|泡|园|馆|湾|拨|枪|职|亭|背|維|[護护戸]|樓|鍵|邊|場|線|類|組|聲|帶|戰|輪|開|練|環|處|裏|體|隻|階|側|則|掃|軍|居|島|課|式|區|連|單|絲|歲|廂|聲|臉|網|極|驅|審|冊|關|聯|遊|腳|線|貫|問|檔|舉|盤|門|劍|曲|任|葉|團|派|嘴|橋|抹|枝|貫|伏|拳|列|機|盒|隊|進制|棟|詞|擊|題|錢|壺|覺|證|大批|球|橫|豎|尊|軸|觀|審|彈|領|委|欄|釘|鬥|縷|針|幀|轉|縣|試|幫|盞|鍋|計|學期|截|頂|介|劍|桂|旗|巷|揮|晃|員|圍|勺|宿|庫|棒|冠|樹|缸|夥|簽|攬|樁|頓|紙|隅|諾|廠|桿|襲|倉|擔|盞|貼|竅|洞|坪|泡|員|館|灣|撥|槍|職|的|\s|$)";
-      public static readonly string NotSingleRegex = $@"(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)*{ZeroToNineIntegerRegex}?";
-      public static readonly string SingleRegex = $@"(?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?={AllowListRegex})";
-      public static readonly string AllIntRegex = $@"((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})";
+      public static readonly string ContinuouslyNumberRegex = $@"({DigitNumPlusRegex}|{RoundNumberIntegerRegex})";
+      public static readonly string SingleLiangRegex = $@"(?<!{ContinuouslyNumberRegex})两(?!{ContinuouslyNumberRegex})";
+      public static readonly string NotSingleRegex = $@"((({DigitNumPlusRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*{ZeroToNineIntegerRegex})\s*|{ZeroToNineFullHalfRegex})(((({DigitNumPlusRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?(?<!两)";
+      public static readonly string SingleRegex = $@"((?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?<!两)|{SingleLiangRegex})(?={AllowListRegex})";
+      public static readonly string AllIntRegex = $@"((((({DigitNumPlusRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾])\s*)(((({DigitNumPlusRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)|({ZeroToNineFullHalfRegex}))*({DigitNumPlusRegex})?|({DigitNumPlusRegex}))(?<!两)|{SingleLiangRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly string NumbersSpecialsChars = $@"(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+";
@@ -193,29 +199,29 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string DoubleSpecialsCharsWithNegatives = $@"(?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))";
       public static readonly string SimpleDoubleSpecialsChars = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
       public static readonly string DoubleWithMultiplierRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
-      public static readonly string DoubleWithThousandsRegex = $@"{NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*[多几幾余]?[万亿萬億]{{1,2}}";
+      public static readonly string DoubleWithThousandsRegex = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+)|({ZeroToNineFullHalfRegex}{{1,3}}(,{ZeroToNineFullHalfRegex}{{3}})+))([\.．]{ZeroToNineFullHalfRegex}+)?\s*[多几幾余]?[万亿萬億]{{1,2}}";
       public static readonly string DoubleAllFloatRegex = $@"(?<![百佰]\s*分\s*之\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*[个個]\s*[百佰]\s*分\s*[点點])";
       public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))";
       public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)";
       public static readonly string OrdinalRegex = $@"第{AllIntRegex}";
       public static readonly string OrdinalNumbersRegex = $@"第{ZeroToNineFullHalfRegex}+";
-      public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*又\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*之\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})";
+      public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*又\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*之\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})({PointRegexStr}{AllIntRegex}*)?";
       public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
       public static readonly string FractionNotationRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
-      public static readonly string PercentagePointRegex = $@"(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*[个個]\s*[百佰]\s*分\s*[点點]";
-      public static readonly string SimplePercentageRegex = $@"(?<!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*({AllFloatRegex}|{AllIntRegex}|[百佰])(?!{AllIntRegex})";
-      public static readonly string NumbersPercentagePointRegex = $@"(?<!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))";
-      public static readonly string NumbersPercentageWithSeparatorRegex = $@"(?<!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
-      public static readonly string NumbersPercentageWithMultiplierRegex = $@"(?<!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
+      public static readonly string PercentagePointRegex = $@"(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*[个個]\s*{RoundNumberIntegerRegex}\s*分\s*[点點]";
+      public static readonly string SimplePercentageRegex = $@"(?<!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*({AllFloatRegex}|{AllIntRegex}|{RoundNumberIntegerRegex})(?!{AllIntRegex})";
+      public static readonly string NumbersPercentagePointRegex = $@"(?<!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))";
+      public static readonly string NumbersPercentageWithSeparatorRegex = $@"(?<!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
+      public static readonly string NumbersPercentageWithMultiplierRegex = $@"(?<!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
       public static readonly string FractionPercentagePointRegex = $@"(?<!({ZeroToNineFullHalfRegex}+[\.．])){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))\s*[个個]\s*[百佰]\s*分\s*[点點]";
-      public static readonly string FractionPercentageWithSeparatorRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+\s*[个個]\s*[百佰]\s*分\s*[点點]";
-      public static readonly string FractionPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*[个個]\s*[百佰]\s*分\s*[点點]";
-      public static readonly string SimpleNumbersPercentageRegex = $@"(?<!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))";
-      public static readonly string SimpleNumbersPercentageWithMultiplierRegex = $@"(?<!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
-      public static readonly string SimpleNumbersPercentagePointRegex = $@"(?!{ZeroToNineIntegerRegex})[百佰]\s*分\s*之\s*{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+";
-      public static readonly string IntegerPercentageRegex = $@"{ZeroToNineFullHalfRegex}+\s*[个個]\s*[百佰]\s*分\s*[点點]";
-      public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*[个個]\s*[百佰]\s*分\s*[点點]";
-      public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*[个個]\s*[百佰]\s*分\s*[点點]";
+      public static readonly string FractionPercentageWithSeparatorRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
+      public static readonly string FractionPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
+      public static readonly string SimpleNumbersPercentageRegex = $@"(?<!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))";
+      public static readonly string SimpleNumbersPercentageWithMultiplierRegex = $@"(?<!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
+      public static readonly string SimpleNumbersPercentagePointRegex = $@"(?!{ZeroToNineIntegerRegex}){RoundNumberIntegerRegex}{{1,3}}\s*分\s*之\s*{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+";
+      public static readonly string IntegerPercentageRegex = $@"{ZeroToNineFullHalfRegex}+\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
+      public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
+      public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
       public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)";
       public static readonly string NumbersFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}(([\.．]?|\s*){ZeroToNineFullHalfRegex})?\s*折";
       public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegex}(\s*[点點]?\s*{ZeroToNineIntegerRegex})?\s*折";
@@ -224,17 +230,18 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string NumbersSpecialsPercentageRegex = $@"({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*成";
       public static readonly string SimpleSpecialsPercentageRegex = $@"{ZeroToNineIntegerRegex}\s*[点點]\s*{ZeroToNineIntegerRegex}\s*成";
       public const string SpecialsFoldsPercentageRegex = @"半\s*成|(?<=打)[对對]\s*折|半\s*折";
+      public const string SpeicalCharBeforeNumber = @"(有|是|为)";
       public const string TillRegex = @"(到|至|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(大于|多于|高于|超过|大於|多於|高於|超過|>)";
+      public const string MoreRegex = @"((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)";
       public const string LessRegex = @"(小于|少于|低于|小於|少於|低於|不到|不足|<)";
       public const string EqualRegex = @"(等于|等於|=)";
-      public static readonly string MoreOrEqual = $@"(({MoreRegex}\s*(或|或者)?\s*{EqualRegex})|至少|最少|不{LessRegex})";
+      public static readonly string MoreOrEqual = $@"(({MoreRegex}\s*(或|或者)?\s*{EqualRegex})|(至少|最少){SpeicalCharBeforeNumber}?|不{LessRegex}|≥)";
       public const string MoreOrEqualSuffix = @"(或|或者)\s*(以上|之上|更[大多高])";
-      public static readonly string LessOrEqual = $@"(({LessRegex}\s*(或|或者)?\s*{EqualRegex})|至多|最多|不{MoreRegex})";
+      public static readonly string LessOrEqual = $@"(({LessRegex}\s*(或|或者)?\s*{EqualRegex})|(至多|最多){SpeicalCharBeforeNumber}?|不{MoreRegex}|≤)";
       public const string LessOrEqualSuffix = @"(或|或者)\s*(以下|之下|更[小少低])";
       public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)";
       public const string OneNumberRangeMoreRegex2 = @"比\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*更?[大多高]";
-      public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|以上|之上|更[大多高])(?![万亿萬億]{1,2})";
+      public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})";
       public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)";
       public const string OneNumberRangeLessRegex2 = @"比\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)\s*更?[小少低]";
       public const string OneNumberRangeLessRegex3 = @"(?<number2>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*(以下|之下|更[小少低])";
@@ -242,9 +249,17 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string OneNumberRangeLessSeparateRegex = @"^[.]";
       public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)";
       public static readonly string TwoNumberRangeRegex1 = $@"((位于|在|位於)|(?=(\d|\+|\-)))\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*(和|与|與|{TillRegex})\s*(?<number2>((?!(([,，](?!\d+))|。))[^之])+)\s*(之)?(间|間)";
-      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})";
-      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})";
+      public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})";
+      public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})";
       public static readonly string TwoNumberRangeRegex4 = $@"(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)";
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"十", @"十足" },
+            { @"伍", @"队伍" },
+            { @"肆", @"放肆|肆意|肆无忌惮" },
+            { @"陆", @"大陆|陆地|登陆|海陆" },
+            { @"拾", @"拾取|拾起|收拾|拾到|朝花夕拾" }
+        };
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

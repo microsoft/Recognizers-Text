@@ -9,3 +9,7 @@ Python/.cache/v/cache/lastfailed
 /.vscode
 /JavaScript/*.lerna_backup
 .DS_Store
+/JavaScript/packages/**/*.tgz
+.history
+/Tools/src/ValidationTool/bin
+/Tools/src/ValidationTool/obj

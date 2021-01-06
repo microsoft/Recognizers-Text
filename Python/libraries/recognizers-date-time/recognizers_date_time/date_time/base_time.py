@@ -8,7 +8,7 @@ from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import DateTimeOptionsConfiguration, DateTimeOptions, merge_all_tokens, TimeZoneUtility
+from .utilities import DateTimeOptionsConfiguration, DateTimeOptions, merge_all_tokens, TimeZoneUtility, RegExpUtility
 
 
 class TimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -84,12 +84,27 @@ class BaseTimeExtractor(DateTimeExtractor):
 
         return result
 
+    @staticmethod
+    def lth_check(match: Match) -> bool:
+
+        match_val = match.group()
+
+        lth = None
+        if match.re.groupindex.keys().__contains__('lth'):
+            lth = match.group('lth')
+
+        return (lth is None) or (len(lth) != len(match_val) and not (len(match_val) == len(lth) + 1 and match_val.endswith(' ')))
+
     def basic_regex_match(self, source: str) -> []:
         from .utilities import Token
         result: List[Token] = list()
 
         for pattern in self.config.time_regex_list:
             matches = list(regex.finditer(pattern, source))
+
+            # @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
+            matches = list(filter(lambda match: self.lth_check(match), matches))
+
             result.extend(map(lambda x: Token(x.start(), x.end()), matches))
 
         return result
@@ -151,6 +166,11 @@ class TimeParserConfiguration:
     @property
     @abstractmethod
     def utility_configuration(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @abstractmethod
@@ -226,8 +246,8 @@ class BaseTimeParser(DateTimeParser):
 
         for pattern in self.config.time_regexes:
             offset = 0
-            match = regex.search(pattern, source)
-            if match is not None and match.start() == offset and match.group() == source:
+            match = RegExpUtility.exact_match(pattern, source, True)
+            if match and match.success:
                 return self.match_to_time(match, reference)
 
         return DateTimeResolutionResult()
@@ -235,7 +255,7 @@ class BaseTimeParser(DateTimeParser):
     def match_to_time(self, match: Match, reference: datetime):
         from .utilities import DateTimeResolutionResult
 
-        result: DateTimeResolutionResult = DateTimeResolutionResult()
+        result = DateTimeResolutionResult()
         hour = 0
         minute = 0
         second = 0
@@ -248,8 +268,8 @@ class BaseTimeParser(DateTimeParser):
         has_pm = False
         has_mid = False
 
-        eng_time_str = RegExpUtility.get_group(match, Constants.ENGLISH_TIME)
-        if eng_time_str.strip():
+        written_time_str = RegExpUtility.get_group(match, Constants.WRITTEN_TIME)
+        if written_time_str.strip():
             # get hour
             hour_str = RegExpUtility.get_group(match, Constants.HOUR_NUM_GROUP_NAME)
             hour_str = hour_str.lower()

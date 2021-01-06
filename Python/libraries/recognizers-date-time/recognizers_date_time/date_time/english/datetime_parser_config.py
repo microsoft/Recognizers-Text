@@ -163,7 +163,7 @@ class EnglishDateTimeParserConfiguration(DateTimeParserConfiguration):
 
         if source.endswith('morning') and hour >= 12:
             return hour - 12
-        elif not source.endswith('morning') and hour < 12:
+        elif not source.endswith('morning') and hour < 12 and not (source.endswith('night') and hour < 6):
             return hour + 12
 
         return hour

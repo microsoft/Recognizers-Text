@@ -107,11 +107,11 @@ export class FrenchIntegerExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.AllIntRegexWithLocks),
-                value: "IntegerFr"
+                value: "Integer" + FrenchNumeric.LangMarker
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.AllIntRegexWithDozenSuffixLocks),
-                value: "IntegerFr"
+                value: "Integer" + FrenchNumeric.LangMarker
             }
         );
 
@@ -144,7 +144,7 @@ export class FrenchDoubleExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.DoubleAllFloatRegex),
-                value: "DoubleFr"
+                value: "Double" + FrenchNumeric.LangMarker
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.DoubleExponentialNotationRegex),
@@ -186,11 +186,11 @@ export class FrenchFractionExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.FractionNounRegex),
-                value: "FracFr"
+                value: "Frac" + FrenchNumeric.LangMarker
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.FractionNounWithArticleRegex),
-                value: "FracFr"
+                value: "Frac" + FrenchNumeric.LangMarker
             }
         );
 
@@ -198,7 +198,7 @@ export class FrenchFractionExtractor extends BaseNumberExtractor {
         if (mode != NumberMode.Unit) {
             regexes.push({
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.FractionPrepositionRegex),
-                value: "FracFr"
+                value: "Frac" + FrenchNumeric.LangMarker
                 });
         };
 
@@ -218,7 +218,7 @@ export class FrenchOrdinalExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.OrdinalFrenchRegex),
-                value: "OrdFr"
+                value: "Ord" + FrenchNumeric.LangMarker
             }
         );
 

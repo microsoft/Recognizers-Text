@@ -14,8 +14,6 @@
     <tags>nlp entity-extraction parser-library recognizer timex datatime netstandard2.0</tags>
   </metadata>
   <files>
-    <file src="..\build\package\net45\Microsoft.Recognizers.Text.DataTypes.TimexExpression.dll" target="lib\net45"/>
-    <file src="..\build\package\net452\Microsoft.Recognizers.Text.DataTypes.TimexExpression.dll" target="lib\net452"/>
     <file src="..\build\package\net462\Microsoft.Recognizers.Text.DataTypes.TimexExpression.dll" target="lib\net462"/>
     <file src="..\build\package\netstandard2.0\Microsoft.Recognizers.Text.DataTypes.TimexExpression.dll" target="lib\netstandard2.0"/>
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />

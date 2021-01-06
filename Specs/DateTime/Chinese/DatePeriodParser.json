@@ -598,7 +598,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "上世纪90年代",
@@ -624,7 +623,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "本世纪20年代",
@@ -650,7 +648,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20世纪80年代",
@@ -676,7 +673,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "50年代",
@@ -702,7 +698,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19世纪70年代",
@@ -728,7 +723,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "十九世纪七十年代",
@@ -754,7 +748,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "九十年代",
@@ -1008,7 +1001,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "零八年",
@@ -1456,6 +1449,233 @@
         },
         "Start": 2,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "神龙元年十一月，武则天去世",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙元年十一月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0705-11",
+          "FutureResolution": {
+            "startDate": "0705-11-01",
+            "endDate": "0705-12-01"
+          },
+          "PastResolution": {
+            "startDate": "0705-11-01",
+            "endDate": "0705-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "康熙三年五月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙三年五月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1664-05",
+          "FutureResolution": {
+            "startDate": "1664-05-01",
+            "endDate": "1664-06-01"
+          },
+          "PastResolution": {
+            "startDate": "1664-05-01",
+            "endDate": "1664-06-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "康熙二十年9月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙二十年9月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1681-09",
+          "FutureResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          },
+          "PastResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "康熙20年9月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "康熙20年9月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1681-09",
+          "FutureResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          },
+          "PastResolution": {
+            "startDate": "1681-09-01",
+            "endDate": "1681-10-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "民国三年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "民国三年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1914",
+          "FutureResolution": {
+            "startDate": "1914-01-01",
+            "endDate": "1915-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1914-01-01",
+            "endDate": "1915-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "雍正十六年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正十六年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1738",
+          "FutureResolution": {
+            "startDate": "1738-01-01",
+            "endDate": "1739-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1738-01-01",
+            "endDate": "1739-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "雍正二十三年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正二十三年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1745-12",
+          "FutureResolution": {
+            "startDate": "1745-12-01",
+            "endDate": "1746-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1745-12-01",
+            "endDate": "1746-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "10/1/2018-10/7/2018",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1/2018-10/7/2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-01-10,2018-07-10,P181D)",
+          "FutureResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "2018/1/10-2018/7/10",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018/1/10-2018/7/10",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-01-10,2018-07-10,P181D)",
+          "FutureResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          }
+        },
+        "Start": 0,
+        "Length": 19
       }
     ]
   }

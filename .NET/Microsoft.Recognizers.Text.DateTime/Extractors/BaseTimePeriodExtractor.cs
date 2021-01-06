@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Text.InternalCache;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -10,11 +12,16 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
+        private static readonly ResultsCache<ExtractResult> ResultsCache = new ResultsCache<ExtractResult>();
+
         private readonly ITimePeriodExtractorConfiguration config;
+
+        private readonly string keyPrefix;
 
         public BaseTimePeriodExtractor(ITimePeriodExtractorConfiguration config)
         {
             this.config = config;
+            keyPrefix = string.Intern(config.Options + "_" + config.LanguageMarker);
         }
 
         public List<ExtractResult> Extract(string text)
@@ -23,6 +30,24 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public List<ExtractResult> Extract(string text, DateObject reference)
+        {
+            List<ExtractResult> results;
+
+            if ((this.config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                results = ExtractImpl(text, reference);
+            }
+            else
+            {
+                var key = (keyPrefix, text, reference);
+
+                results = ResultsCache.GetOrCreate(key, () => ExtractImpl(text, reference));
+            }
+
+            return results;
+        }
+
+        private List<ExtractResult> ExtractImpl(string text, DateObject reference)
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
@@ -42,23 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timePeriodErs = TimeZoneUtility.MergeTimeZones(timePeriodErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
 
-            // TODO: Fix to solve german morgen (morning) / morgen (tomorrow) ambiguity. To be removed after the first version of DateTimeV2 in German is in production.
-            timePeriodErs = GermanMorgenWorkaround(text, timePeriodErs);
-
-            return timePeriodErs;
-        }
-
-        // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning".
-        // When the extractor extracts "Abend" in this example it will take the string before that to look for a relative shift to another day like "yesterday", "tomorrow" etc.
-        // When trying to do this on the string "morgen" it will be extracted as a time period ("morning") by the TimePeriodExtractor, and not as "tomorrow".
-        // Filtering out the string "morgen" from the TimePeriodExtractor will fix the problem as only in the case where "morgen" is NOT a time period the string "morgen" will be passed to this extractor.
-        // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
-        private List<ExtractResult> GermanMorgenWorkaround(string text, List<ExtractResult> timePeriodErs)
-        {
-            if (text.Equals("morgen"))
-            {
-                timePeriodErs.Clear();
-            }
+            // Filter ambiguous extractions e.g. 'morgen' in German and Dutch
+            timePeriodErs = this.config.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);
 
             return timePeriodErs;
         }

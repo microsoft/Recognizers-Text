@@ -9,5 +9,15 @@
             Represents None
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.EnablePreview">
+            <summary>
+            EnablePreview
+            </summary>
+        </member>
     </members>
 </doc>

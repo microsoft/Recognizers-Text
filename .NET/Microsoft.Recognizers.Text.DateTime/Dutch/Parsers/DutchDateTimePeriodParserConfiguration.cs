@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -41,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = DutchTimePeriodExtractorConfiguration.PureNumFromTo;
+            HyphenDateRegex = DutchDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = DutchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = DutchDateTimeExtractorConfiguration.TimeOfDayRegex;
@@ -63,6 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -91,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
+
+        public Regex HyphenDateRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 
@@ -134,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;
@@ -175,14 +181,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("volgende"))
+            if (FutureRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("vorige") || trimmedText.StartsWith("laatste"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

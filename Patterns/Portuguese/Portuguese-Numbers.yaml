@@ -1,4 +1,5 @@
 ---
+#ISO 639-2 Code
 LangMarker: Por
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool false
@@ -8,11 +9,11 @@ MultiDecimalSeparatorCulture: !bool false
 HundredsNumberIntegerRegex: !simpleRegex
   def: (quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\s+)(cento))
 RoundNumberIntegerRegex: !simpleRegex
-  def: (mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)
+  def: (mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)
+  def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)
+  def: (dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)
 TensNumberIntegerRegex: !simpleRegex
   def: (cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)
 DigitsNumberRegex: !simpleRegex
@@ -100,13 +101,14 @@ AllOrdinalRegex: !nestedRegex
   def: '{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
   references: [ ComplexOrdinalRegex, SimpleRoundOrdinalRegex, ComplexRoundOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)(\d*(1[oaº]|2[oaº]|3[oaº]|4[oaº]|5[oaº]|6[oaº]|7[oaº]|8[oaº]|9[oaº]|0[oaº]|1.º|2.º|3.º|4.º|5.º|6.º|7.º|8.º|9.º))(?=\b)
+  def: (?<=\b)(\d*((1|2|3|4|5|6|7|8|9|0)[oaºª]|(1|2|3|4|5|6|7|8|9)(\.[ºª])))(?=\b)
 OrdinalEnglishRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
@@ -382,7 +384,8 @@ OrdinalNumberMap: !dictionary
 PrefixCardinalMap: !dictionary
   types: [ string, long ]
   entries:
-    hum: 1 
+    hum: 1
+    um: 1
     dois: 2 
     tres: 3 
     três: 3 

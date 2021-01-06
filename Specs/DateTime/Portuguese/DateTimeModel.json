@@ -377,7 +377,7 @@
           ]
         }
       },
-	  {
+      {
         "Text": "qua",
         "Start": 30,
         "End": 32,
@@ -433,6 +433,651 @@
               "timex": "XXXX-WXX-5",
               "type": "date",
               "value": "2019-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "entre 1 de dezembro e 4 de fevereiro",
+    "Context": {
+      "ReferenceDateTime": "2019-12-19T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "entre 1 de dezembro e 4 de fevereiro",
+        "Start": 0,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-01,XXXX-02-04,P65D)",
+              "type": "daterange",
+              "start": "2019-12-01",
+              "end": "2020-02-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O movimento de maio de 68, em França, foi marcante!",
+    "Context": {
+      "ReferenceDateTime": "2019-12-19T01:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "maio de 68",
+        "Start": 15,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1968-05",
+              "type": "daterange",
+              "start": "1968-05-01",
+              "end": "1968-06-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "me manda um boleto pra sexta-feira.",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "sexta-feira",
+        "Start": 23,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2020-05-01"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2020-05-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O prazo não era de 22/jan/2019 ate amanha?",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 22/jan/2019 ate amanha",
+        "Start": 16,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-22,2020-05-07,P471D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O evento foi de ontem ate hoje",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de ontem ate hoje",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-05,2020-05-06,P1D)",
+              "type": "daterange",
+              "start": "2020-05-05",
+              "end": "2020-05-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O evento foi de ontem até hoje",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de ontem até hoje",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-05,2020-05-06,P1D)",
+              "type": "daterange",
+              "start": "2020-05-05",
+              "end": "2020-05-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-10,2017-02-11,P32D)",
+              "type": "daterange",
+              "start": "2017-01-10",
+              "end": "2017-02-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos celebrar o dia do trabalho!",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dia do trabalho",
+        "Start": 17,
+        "End": 31,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-01",
+              "type": "date",
+              "value": "2020-05-01"
+            },
+            {
+              "timex": "XXXX-05-01",
+              "type": "date",
+              "value": "2021-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O trabalho na Carolina do Norte está aberto novamente",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Que horas? São 3 horas",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 horas",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03",
+              "type": "time",
+              "value": "03:00:00"
+            },
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 12 h",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12 h",
+        "Start": 21,
+        "End": 24,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            },
+            {
+              "timex": "T00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O evento ocorreu dois meses atras",
+    "Context": {
+      "ReferenceDateTime": "2020-05-25T12:00:00"
+    },
+	"Comment": "The current resolution policy design will always result in a date for such entities. Policy change mechanism is in the backlog.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dois meses atras",
+        "Start": 17,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-03-25",
+              "type": "date",
+              "value": "2020-03-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "necesitaremos de 30 minutos ou mais",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutos",
+        "Start": 17,
+        "End": 26,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "marque uma reuniao pra mim",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "uma e trinta",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "uma e trinta",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T01:30",
+              "type": "time",
+              "value": "01:30:00"
+            },
+            {
+              "timex": "T13:30",
+              "type": "time",
+              "value": "13:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vamos marcar uma reunião no 27/11 às 23",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "27/11 às 23",
+        "Start": 28,
+        "End": 38,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-27T23",
+              "type": "datetime",
+              "value": "2019-11-27 23:00:00"
+            },
+            {
+              "timex": "XXXX-11-27T23",
+              "type": "datetime",
+              "value": "2020-11-27 23:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tenho uma reunião na sexta-feira em Londres às 5",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira em londres às 5",
+        "Start": 21,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T05",
+              "type": "datetime",
+              "value": "2020-05-29 05:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T05",
+              "type": "datetime",
+              "value": "2020-06-05 05:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-05-29 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-06-05 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tenho uma reunião na sexta-feira em Londres às 5 da tarde",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira em londres às 5 da tarde",
+        "Start": 21,
+        "End": 56,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-05-29 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T17",
+              "type": "datetime",
+              "value": "2020-06-05 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A ligação durará 30 minutos, não mais.",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutos",
+        "Start": 17,
+        "End": 26,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "às sete do dia 15",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sete do dia 15",
+        "Start": 3,
+        "End": 16,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-15T07",
+              "type": "datetime",
+              "value": "2020-05-15 07:00:00"
+            },
+            {
+              "timex": "XXXX-XX-15T07",
+              "type": "datetime",
+              "value": "2020-06-15 07:00:00"
+            },
+            {
+              "timex": "XXXX-XX-15T19",
+              "type": "datetime",
+              "value": "2020-05-15 19:00:00"
+            },
+            {
+              "timex": "XXXX-XX-15T19",
+              "type": "datetime",
+              "value": "2020-06-15 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "às sete da tarde do dia 15",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sete da tarde do dia 15",
+        "Start": 3,
+        "End": 25,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-15T19",
+              "type": "datetime",
+              "value": "2020-05-15 19:00:00"
+            },
+            {
+              "timex": "XXXX-XX-15T19",
+              "type": "datetime",
+              "value": "2020-06-15 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O Massacre do Carandiru ocorreu em 2 de outubro de 1992.",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 de outubro de 1992",
+        "Start": 35,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-10-02",
+              "type": "date",
+              "value": "1992-10-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O congresso ocorrerá em 2 de outubro de dois mil e vinte.",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 de outubro de dois mil e vinte",
+        "Start": 24,
+        "End": 55,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-10-02",
+              "type": "date",
+              "value": "2020-10-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O Massacre do Carandiru ocorreu em 2 de outubro de 92.",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 de outubro de 92",
+        "Start": 35,
+        "End": 52,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-10-02",
+              "type": "date",
+              "value": "1992-10-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 min eh uma medida de tempo, uma duracao",
+    "Context": {
+      "ReferenceDateTime": "2020-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "10 min",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT10M",
+              "type": "duration",
+              "value": "600"
             }
           ]
         }

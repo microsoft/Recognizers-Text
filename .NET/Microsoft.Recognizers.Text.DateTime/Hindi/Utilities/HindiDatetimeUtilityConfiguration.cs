@@ -73,6 +73,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi.Utilities
 
         Regex IDateTimeUtilityConfiguration.RangePrefixRegex => RangePrefixRegex;
 
-        bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => true;
+        bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
     }
 }

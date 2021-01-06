@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -14,6 +15,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex PreviousPrefixRegex =
             new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
+        public static readonly Regex PenultimatePrefixRegex =
+            new Regex(DateTimeDefinitions.PenultimatePrefixRegex, RegexFlags);
+
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
@@ -22,6 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        public static readonly Regex AfterNextPrefixRegex =
+            new Regex(DateTimeDefinitions.AfterNextPrefixRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -37,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+
             MonthFrontBetweenRegex = GermanDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = GermanDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = GermanDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -75,6 +83,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             MoreThanRegex = GermanDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = GermanDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = GermanDatePeriodExtractorConfiguration.NowRegex;
+            SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
+            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
+
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -184,6 +195,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex NowRegex { get; }
 
+        public Regex SpecialDayRegex { get; }
+
+        public Regex TodayNowRegex { get; }
+
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
@@ -193,6 +208,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => null;
 
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
@@ -220,13 +237,24 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimmedText))
+
+            var afterNextMatch = AfterNextPrefixRegex.Match(text);
+
+            if (afterNextMatch.Success)
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
             else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
+            }
+            else if (PenultimatePrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -2;
             }
 
             return swift;
@@ -244,6 +272,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 swift = -1;
             }
+            else if (PenultimatePrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -2;
+            }
             else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
@@ -255,49 +287,49 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o));
+            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
     }
 }

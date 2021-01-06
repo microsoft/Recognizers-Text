@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -133,27 +134,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Today: 今天, 今日, 最近, きょう, この日
             var value = 0;
 
-            if (text.StartsWith("来") || text.Equals("あす") || text.Equals("あした") || text.Equals("明日"))
+            // @TODO move hardcoded values to resources file
+
+            if (text.StartsWith("来", StringComparison.Ordinal) ||
+                text.Equals("あす", StringComparison.Ordinal) ||
+                text.Equals("あした", StringComparison.Ordinal) ||
+                text.Equals("明日", StringComparison.Ordinal))
             {
                 value = 1;
             }
-            else if (text.StartsWith("昨") || text.Equals("きのう") || text.Equals("前日"))
+            else if (text.StartsWith("昨", StringComparison.Ordinal) ||
+                     text.Equals("きのう", StringComparison.Ordinal) ||
+                     text.Equals("前日", StringComparison.Ordinal))
             {
                 value = -1;
             }
-            else if (text.Equals("大后天") || text.Equals("大後天"))
+            else if (text.Equals("大后天", StringComparison.Ordinal) ||
+                     text.Equals("大後天", StringComparison.Ordinal))
             {
                 value = 3;
             }
-            else if (text.Equals("大前天"))
+            else if (text.Equals("大前天", StringComparison.Ordinal))
             {
                 value = -3;
             }
-            else if (text.Equals("后天") || text.Equals("後天") || text.Equals("明後日") || text.Equals("あさって"))
+            else if (text.Equals("后天", StringComparison.Ordinal) ||
+                     text.Equals("後天", StringComparison.Ordinal) ||
+                     text.Equals("明後日", StringComparison.Ordinal) ||
+                     text.Equals("あさって", StringComparison.Ordinal))
             {
                 value = 2;
             }
-            else if (text.Equals("前天") || text.Equals("一昨日") || text.Equals("二日前") || text.Equals("おととい"))
+            else if (text.Equals("前天", StringComparison.Ordinal) ||
+                     text.Equals("一昨日", StringComparison.Ordinal) ||
+                     text.Equals("二日前", StringComparison.Ordinal) ||
+                     text.Equals("おととい", StringComparison.Ordinal))
             {
                 value = -2;
             }
@@ -166,15 +181,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Current month: 今月
             var value = 0;
 
-            if (text.Equals("来月"))
+            // @TODO move hardcoded values to resources file
+
+            if (text.Equals("来月", StringComparison.Ordinal))
             {
                 value = 1;
             }
-            else if (text.Equals("前月") || text.Equals("先月") || text.Equals("昨月") || text.Equals("先々月"))
+            else if (text.Equals("前月", StringComparison.Ordinal) ||
+                     text.Equals("先月", StringComparison.Ordinal) ||
+                     text.Equals("昨月", StringComparison.Ordinal) ||
+                     text.Equals("先々月", StringComparison.Ordinal))
             {
                 value = -1;
             }
-            else if (text.Equals("再来月"))
+            else if (text.Equals("再来月", StringComparison.Ordinal))
             {
                 value = 2;
             }
@@ -187,11 +207,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Current year: 今年
             var value = 0;
 
-            if (text.Equals("来年") || text.Equals("らいねん"))
+            // @TODO move hardcoded values to resources file
+
+            if (text.Equals("来年", StringComparison.Ordinal) ||
+                text.Equals("らいねん", StringComparison.Ordinal))
             {
                 value = 1;
             }
-            else if (text.Equals("昨年") || text.Equals("前年"))
+            else if (text.Equals("昨年", StringComparison.Ordinal) ||
+                     text.Equals("前年", StringComparison.Ordinal))
             {
                 value = -1;
             }

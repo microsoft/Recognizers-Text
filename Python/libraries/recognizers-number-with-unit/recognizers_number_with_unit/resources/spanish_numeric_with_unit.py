@@ -271,7 +271,7 @@ class SpanishNumericWithUnit:
                                ("Sene", "sene"),
                                ("Libra de Santa Helena", "libra de santa helena|libras de santa helena|shp"),
                                ("Penique de Santa Helena", "penique de santa helena|peniques de santa helena"),
-                               ("Dobra", "dobra|db|std"),
+                               ("Dobra", "dobra"),
                                ("Dinar serbio", "dinar serbio|dinares serbios|rsd"),
                                ("Para serbio", "para serbio|para serbios"),
                                ("Rupia de Seychelles", "rupia de seychelles|rupias de seychelles|scr"),
@@ -340,7 +340,8 @@ class SpanishNumericWithUnit:
                                ("Kwacha zambiano", "kwacha zambiano|kwacha zambianos|zmw"),
                                ("Ngwee zambiano", "ngwee zambiano|ngwee zambianos")])
     CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
-    CurrencyPrefixList = dict([("Dólar", "$"),
+    CurrencyPrefixList = dict([("Dobra", "db|std"),
+                               ("Dólar", "$"),
                                ("Dólar estadounidense", "us$|u$d|usd"),
                                ("Dólar del Caribe Oriental", "ec$|xcd"),
                                ("Dólar australiano", "a$|aud"),
@@ -371,7 +372,7 @@ class SpanishNumericWithUnit:
                                ("Libra", "£"),
                                ("Colón costarricense", "₡"),
                                ("Lira turca", "₺")])
-    AmbiguousCurrencyUnitList = [r'le']
+    AmbiguousCurrencyUnitList = [r'le', r'db', r'std']
     InformationSuffixList = dict([("bit", "bit|bits"),
                                   ("kilobit", "kilobit|kilobits|kb|kbit"),
                                   ("megabit", "megabit|megabits|Mb|Mbit"),
@@ -394,7 +395,7 @@ class SpanishNumericWithUnit:
                                   ("gibibyte", "gibibyte|gibibytes|GiB|GiByte"),
                                   ("tebibyte", "tebibyte|tebibytes|TiB|TiByte"),
                                   ("pebibyte", "pebibyte|pebibytes|PiB|PiByte")])
-    AmbiguousDimensionUnitList = [r'al', r'mi', r'área', r'áreas', r'pie', r'pies']
+    AmbiguousDimensionUnitList = [r'al', r'mi', r'área', r'áreas', r'pie', r'pies', r'"']
     LengthSuffixList = dict([("Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros"),
                              ("Hectómetro", "hm|hectometro|hectómetro|hectometros|hectómetros"),
                              ("Decámetro", "decametro|decámetro|decametros|decámetros|dam"),
@@ -410,7 +411,7 @@ class SpanishNumericWithUnit:
                              ("Pulgada", "pulgada|pulgadas|\""),
                              ("Pie", "pie|pies|ft"),
                              ("Año luz", "año luz|años luz|al")])
-    AmbiguousLengthUnitList = [r'mi', r'área', r'áreas']
+    AmbiguousLengthUnitList = [r'mi', r'área', r'áreas', r'"']
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
@@ -465,4 +466,5 @@ class SpanishNumericWithUnit:
                              ("Onza", "oz|onza|onzas"),
                              ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
+    AmbiguityFiltersDict = dict([("null", "null")])
 # pylint: enable=line-too-long

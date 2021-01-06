@@ -26,12 +26,24 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         return self._integer_extractor
 
     @property
+    def time_zone_parser(self) -> DateTimeParser:
+        return self._time_zone_parser
+
+    @property
     def pure_number_from_to_regex(self) -> Pattern:
         return self._pure_number_from_to_regex
 
     @property
     def pure_number_between_and_regex(self) -> Pattern:
         return self._pure_number_between_and_regex
+
+    @property
+    def specific_time_from_to_regex(self) -> Pattern:
+        return self._specific_time_from_to_regex
+
+    @property
+    def specific_time_between_and_regex(self) -> Pattern:
+        return self._specific_time_between_and_regex
 
     @property
     def time_of_day_regex(self) -> Pattern:
@@ -52,11 +64,16 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     def __init__(self, config: BaseDateParserConfiguration):
         self._time_extractor = config.time_extractor
         self._time_parser = config.time_parser
+        self._time_zone_parser = config.time_zone_parser
         self._integer_extractor = EnglishIntegerExtractor()
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PureNumBetweenAnd)
+        self._specific_time_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeFromTo)
+        self._specific_time_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeBetweenAnd)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(

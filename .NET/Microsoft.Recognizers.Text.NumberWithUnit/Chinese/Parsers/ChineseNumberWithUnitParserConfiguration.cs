@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
@@ -9,9 +10,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public ChineseNumberWithUnitParserConfiguration(CultureInfo ci)
             : base(ci)
         {
-            this.InternalNumberExtractor = new NumberExtractor();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(Culture.Chinese)));
+
+            var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
+
+            this.InternalNumberExtractor = new NumberExtractor(numConfig);
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new ChineseNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
         }
 
@@ -20,5 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; } = null;
     }
 }

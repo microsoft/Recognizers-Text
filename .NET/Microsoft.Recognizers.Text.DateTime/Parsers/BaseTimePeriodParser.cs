@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+
 using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -26,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 DateTimeResolutionResult innerResult;
 
@@ -170,22 +173,22 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (!this.config.Numbers.TryGetValue(startHourStr, out int beginHour))
                         {
-                            beginHour = int.Parse(startHourStr);
+                            beginHour = int.Parse(startHourStr, CultureInfo.InvariantCulture);
                         }
 
                         if (!this.config.Numbers.TryGetValue(startMinuteStr, out int beginMinute))
                         {
-                            beginMinute = int.Parse(startMinuteStr);
+                            beginMinute = int.Parse(startMinuteStr, CultureInfo.InvariantCulture);
                         }
 
                         if (!this.config.Numbers.TryGetValue(endHourStr, out int endHour))
                         {
-                            endHour = int.Parse(endHourStr);
+                            endHour = int.Parse(endHourStr, CultureInfo.InvariantCulture);
                         }
 
                         if (!this.config.Numbers.TryGetValue(endMinuteStr, out int endMinute))
                         {
-                            endMinute = int.Parse(endMinuteStr);
+                            endMinute = int.Parse(endMinuteStr, CultureInfo.InvariantCulture);
                         }
 
                         var beginDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, beginMinute, 0);
@@ -259,7 +262,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (!this.config.Numbers.TryGetValue(hourStr, out int beginHour))
                     {
-                        beginHour = int.Parse(hourStr);
+                        beginHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                     }
 
                     hourStr = hourGroup.Captures[1].Value;
@@ -269,7 +272,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         if (!this.config.Numbers.TryGetValue(hourStr, out int endHour))
                         {
-                            endHour = int.Parse(hourStr);
+                            endHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                         }
 
                         // parse "pm"
@@ -326,8 +329,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (isValid)
                         {
-                            var beginStr = "T" + beginHour.ToString("D2");
-                            var endStr = "T" + endHour.ToString("D2");
+                            var beginStr = "T" + beginHour.ToString("D2", CultureInfo.InvariantCulture);
+                            var endStr = "T" + endHour.ToString("D2", CultureInfo.InvariantCulture);
 
                             if (endHour >= beginHour)
                             {
@@ -339,7 +342,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
 
                             // Try to get the timezone resolution
-                            var timeErs = config.TimeExtractor.Extract(trimmedText);
+                            var timeErs = config.TimeExtractor.Extract(trimmedText, referenceTime);
                             foreach (var er in timeErs)
                             {
                                 var pr = config.TimeParser.Parse(er, referenceTime);
@@ -405,7 +408,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    beginHour = int.Parse(hourStr);
+                    beginHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                 }
 
                 hourStr = hourGroup.Captures[1].Value;
@@ -416,7 +419,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    endHour = int.Parse(hourStr);
+                    endHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
                 }
 
                 var time1StartIndex = match.Groups["time1"].Index;
@@ -430,11 +433,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var minuteCapture = match.Groups[Constants.MinuteGroupName].Captures[i];
                     if (minuteCapture.Index >= time1StartIndex && minuteCapture.Index + minuteCapture.Length <= time1EndIndex)
                     {
-                        beginMinute = int.Parse(minuteCapture.Value);
+                        beginMinute = int.Parse(minuteCapture.Value, CultureInfo.InvariantCulture);
                     }
                     else if (minuteCapture.Index >= time2StartIndex && minuteCapture.Index + minuteCapture.Length <= time2EndIndex)
                     {
-                        endMinute = int.Parse(minuteCapture.Value);
+                        endMinute = int.Parse(minuteCapture.Value, CultureInfo.InvariantCulture);
                     }
                 }
 
@@ -444,7 +447,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var secondCapture = match.Groups[Constants.SecondGroupName].Captures[i];
                     if (secondCapture.Index >= time1StartIndex && secondCapture.Index + secondCapture.Length <= time1EndIndex)
                     {
-                        beginSecond = int.Parse(secondCapture.Value);
+                        beginSecond = int.Parse(secondCapture.Value, CultureInfo.InvariantCulture);
                     }
                     else if (secondCapture.Index >= time2StartIndex && secondCapture.Index + secondCapture.Length <= time2EndIndex)
                     {
@@ -717,7 +720,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
             pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
 
-            if (pr1.Value == null || pr2.Value == null)
+            // cases with time1 = time2 are excluded to avoid parsing here expressions like
+            // "morning-morning" (which in Hindi means "early-morning")
+            if (pr1.Value == null || pr2.Value == null || pr1.Text == pr2.Text)
             {
                 return ret;
             }
@@ -728,7 +733,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginTime = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
             var endTime = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
-            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && endTime <= beginTime && endTime.AddHours(Constants.HalfDayHourCount) > beginTime)
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal) && endTime <= beginTime && endTime.AddHours(Constants.HalfDayHourCount) > beginTime)
             {
                 endTime = endTime.AddHours(Constants.HalfDayHourCount);
                 ((DateTimeResolutionResult)pr2.Value).FutureValue = endTime;
@@ -739,7 +744,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && endTime > beginTime.AddHours(Constants.HalfDayHourCount))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal) && endTime > beginTime.AddHours(Constants.HalfDayHourCount))
             {
                 beginTime = beginTime.AddHours(Constants.HalfDayHourCount);
                 ((DateTimeResolutionResult)pr1.Value).FutureValue = beginTime;
@@ -762,8 +767,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
 
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) &&
-                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal) &&
+                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

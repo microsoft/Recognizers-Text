@@ -12,11 +12,12 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(
-                  NumberExtractor.GetInstance(),
-                  OrdinalExtractor.GetInstance(),
-                  new BaseNumberParser(new EnglishNumberParserConfiguration(config)),
-                  config)
+                   NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
+                   new BaseNumberParser(new EnglishNumberParserConfiguration(config)),
+                   config)
         {
+
             var regexes = new Dictionary<Regex, string>()
             {
                 {
@@ -41,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                 },
                 {
                     // more/greater/higher than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1LB, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
@@ -51,7 +52,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1LB, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {

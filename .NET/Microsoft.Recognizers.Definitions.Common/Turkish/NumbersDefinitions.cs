@@ -21,9 +21,10 @@ namespace Microsoft.Recognizers.Definitions.Turkish
 
     public static class NumbersDefinitions
     {
-      public const string LangMarker = @"Tr";
+      public const string LangMarker = @"Tur";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = true;
+      public const string NumberMultiplierRegex = @"(K|k|M|G|T|B|b)";
       public const string DigitsNumberRegex = @"\d+|\d{1,3}(\.\d{3})";
       public const string RoundNumberIntegerRegex = @"(yüz|bin|milyon|milyar|trilyon)";
       public const string ZeroToNineIntegerRegex = @"(sıfır|bir|[iİ]ki|üç|dört|beş|altı|yedi|sekiz|dokuz)";
@@ -48,7 +49,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string PlaceHolderPureNumber = @"(?!'(i|ı|u|ü|n))\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
-      public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
+      public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+düzine(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=(t[ae]n|d[[ae]n|y?[ae])?\b))";
@@ -75,14 +76,14 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*('inci|'ıncı|'uncu|'üncü|'nci|'ncı))(?=\b)";
       public static readonly string OrdinalTurkishRegex = $@"(?<=\b)({AllOrdinalRegex}(?=\b)|{AllOrdinalSuffix})";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+)?(buçuk|çeyrek|yarım))(?=(t[ae]n|d[[ae]n|y?[ae])?\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s+)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))";
       public static readonly string FloatRegex1 = $@"(({NegativeAllIntRegex}|{AllIntRegex})(\s(nokta)){AllPointRegex})";
       public static readonly string FloatRegex2 = $@"{AllIntRegex}(\s+(tam)\s+)((onda)\s+{OneToNineIntegerRegex}|(yüzde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex})|(binde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}))";
       public static readonly string AllFloatRegex = $@"({FloatRegex1}|{FloatRegex2})";
-      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
+      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
       public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})";

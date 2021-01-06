@@ -36,10 +36,10 @@
     "Input": "今天大约十点以后,微软大厦门口见",
     "Results": [
       {
-        "Text": "大约十点以后",
+        "Text": "大约十点",
         "Type": "time",
         "Start": 2,
-        "Length": 6
+        "Length": 4
       }
     ]
   },
@@ -58,10 +58,10 @@
     "Input": "今天大约晚上十点以后,微软大厦门口见",
     "Results": [
       {
-        "Text": "大约晚上十点以后",
+        "Text": "大约晚上十点",
         "Type": "time",
         "Start": 2,
-        "Length": 8
+        "Length": 6
       }
     ]
   },

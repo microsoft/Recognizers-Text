@@ -1,14 +1,15 @@
 ---
-LangMarker: Fr
+#ISO 639-2 Code
+LangMarker: Fre
 #Does this language use non-whitespace-separated numbers?
 CompoundNumberLanguage: !bool false
 #Does this culture uses period and comma intercheangeably as decimal separator?
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (cent|mille|millions|million|milliard|milliards|billion|billions)
+  def: (cent|mille|millions?|milliards?|billions?)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)
+  def: (une?|deux|trois|quatre|cinq|six|sept|huit|neuf)
 TenToNineteenIntegerRegex: !simpleRegex
   def: ((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)
 TensNumberIntegerRegex: !simpleRegex
@@ -26,7 +27,7 @@ HundredsNumberIntegerRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))
   references: [ ZeroToNineIntegerRegex, TensNumberIntegerRegex ]
 BelowHundredsRegex: !nestedRegex
-  def: (({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}([-\s]+({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})
+  def: (({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}((-|(\s+et)?\s+)({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex ]
 BelowThousandsRegex: !nestedRegex
   def: (({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})
@@ -59,25 +60,25 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   references: [ AllIntRegex ]
 #Ordinal Regex
 SimpleRoundOrdinalRegex: !simpleRegex
-  def: (centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)
+  def: (centi|[bm]illioni|milli(ardi)?)[eè]me
 OneToNineOrdinalRegex: !simpleRegex
-  def: (premier|premi[eè]re|deuxi[eè]me|second[e]|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)
+  def: (premi[eè]re?|second[e]|tier(s|ce)|(deuxi|troisi|quatri|cinqui|sixi|septi|hui[tr]i|neuvi)[eè]me)
 SpecialUnderHundredOrdinalRegex: !simpleRegex
-  def: (onzi[eè]me|douzi[eè]me)
+  def: (di[xz]i|onzi|douzi|treizi|quatorzi|quinzi|seizi|dix[\s-](septi|huiri|neuvi))[eè]me
 TensOrdinalRegex: !simpleRegex
-  def: (quatre-vingt-dixi[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)
+  def: (quatre-vingt-di[xz]i[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)
 HundredOrdinalRegex: !nestedRegex
   # un centieme, deux centieme, trois centieme, etc
-  def: ({AllIntRegex}(\s+(centi[eè]me\s)))
+  def: ({AllIntRegex}(\s+(centi[eè]me)))
   references: [ AllIntRegex ]
 UnderHundredOrdinalRegex: !nestedRegex
-  def: ((({AllIntRegex}(\W)?)?{OneToNineOrdinalRegex})|({TensNumberIntegerRegex}(\W)?)?{OneToNineOrdinalRegex}|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})
+  def: (((({AllIntRegex}|{TensNumberIntegerRegex})(\W)?)?({OneToNineOrdinalRegex}|\s+et\s+uni[eè]me))|{SpecialUnderHundredOrdinalRegex}|{TensOrdinalRegex})
   references: [ AllIntRegex, OneToNineOrdinalRegex, TensNumberIntegerRegex, TensOrdinalRegex, SpecialUnderHundredOrdinalRegex ]
 UnderThousandOrdinalRegex: !nestedRegex
-  def: ((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})
+  def: ((({HundredOrdinalRegex}(\s|-)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})
   references: [ HundredOrdinalRegex, UnderHundredOrdinalRegex, AllIntRegex, SimpleRoundOrdinalRegex ]
 OverThousandOrdinalRegex: !nestedRegex
-  def: (({AllIntRegex})(i[eè]me))
+  def: (({AllIntRegex})(-i[eè]me))
   references: [ AllIntRegex ]
 ComplexOrdinalRegex: !nestedRegex
   def: (({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})
@@ -96,20 +97,21 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)((\d*(1er|2e|2eme|3e|3eme|4e|4eme|5e|5eme|6e|6eme|7e|7eme|8e|8eme|9e|9eme|0e|0eme))|(11e|11eme|12e|12eme))(?=\b)
+  def: (?<=\b)((\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\b)
 OrdinalFrenchRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex})(\s+((et)\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex})(\s+((et)\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(et\s+)?)?(un|une)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demis?)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(et\s+)?)?(une?)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demi[es]?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sur\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
@@ -158,9 +160,9 @@ WrittenGroupSeparatorTexts: [point, points]
 WrittenIntegerSeparatorTexts: [et, '-']
 WrittenFractionSeparatorTexts: [et, sur]
 HalfADozenRegex: !simpleRegex
-  def: (?<=\b)demi\s+douzaine
+  def: (?<=\b)demie?\s+douzaine
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
@@ -183,12 +185,15 @@ CardinalNumberMap: !dictionary
     dix: 10
     onze: 11
     douze: 12
+    douzaine: 12
+    douzaines: 12
     treize: 13
     quatorze: 14
     quinze: 15
     seize: 16
     dix-sept: 17
     dix-huit: 18
+    dix-huir: 18
     dix-neuf: 19
     vingt: 20
     trente: 30
@@ -236,12 +241,15 @@ OrdinalNumberMap: !dictionary
     premier: 1
     première: 1
     premiere: 1
+    unième: 1
+    unieme: 1
     deuxième: 2
     deuxieme: 2
     second: 2
     seconde: 2
     troisième: 3
     demi: 2
+    demie: 2
     tiers: 3
     tierce: 3
     quart: 4
@@ -257,10 +265,14 @@ OrdinalNumberMap: !dictionary
     septieme: 7
     huitième: 8
     huitieme: 8
+    huirième: 8
+    huirieme: 8
     neuvième: 9
     neuvieme: 9
     dixième: 10
     dixieme: 10
+    dizième: 10
+    dizieme: 10
     onzième: 11
     onzieme: 11
     douzième: 12
@@ -268,7 +280,7 @@ OrdinalNumberMap: !dictionary
     treizième: 13
     treizieme: 13
     quatorzième: 14
-    quatorizieme: 14
+    quatorzieme: 14
     quinzième: 15
     quinzieme: 15
     seizième: 16
@@ -277,6 +289,8 @@ OrdinalNumberMap: !dictionary
     dix-septieme: 17
     dix-huitième: 18
     dix-huitieme: 18
+    dix-huirième: 18
+    dix-huirieme: 18
     dix-neuvième: 19
     dix-neuvieme: 19
     vingtième: 20

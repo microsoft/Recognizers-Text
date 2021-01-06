@@ -2,7 +2,7 @@ from typing import Dict, List, Pattern
 
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
-from recognizers_text.utilities import RegExpUtility
+from recognizers_text.utilities import RegExpUtility, DefinitionLoader
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.models import NumberMode
 from recognizers_number.number.english.extractors import EnglishNumberExtractor
@@ -16,7 +16,7 @@ from recognizers_number_with_unit.resources.base_units import BaseUnits
 class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return EnglishNumericWithUnit.AmbiguityFiltersDict
+        return DefinitionLoader.load_ambiguity_filters(EnglishNumericWithUnit.AmbiguityFiltersDict)
 
     @property
     def unit_num_extractor(self) -> Extractor:
@@ -45,6 +45,9 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     @property
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         return None
+
+    def expand_half_suffix(self, source, result, numbers):
+        pass
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -85,8 +88,8 @@ class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfigurati
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self._suffix_list = EnglishNumericWithUnit.AgeSuffixList
-        self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._prefix_list = EnglishNumericWithUnit.AgePrefixList
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousAgeUnitList
 
 
 class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):

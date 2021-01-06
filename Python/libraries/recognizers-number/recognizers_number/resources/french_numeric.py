@@ -14,18 +14,18 @@ from .base_numbers import BaseNumbers
 
 
 class FrenchNumeric:
-    LangMarker = 'Fr'
+    LangMarker = 'Fre'
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
-    RoundNumberIntegerRegex = f'(cent|mille|millions|million|milliard|milliards|billion|billions)'
-    ZeroToNineIntegerRegex = f'(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)'
+    RoundNumberIntegerRegex = f'(cent|mille|millions?|milliards?|billions?)'
+    ZeroToNineIntegerRegex = f'(une?|deux|trois|quatre|cinq|six|sept|huit|neuf)'
     TenToNineteenIntegerRegex = f'((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)'
     TensNumberIntegerRegex = f'(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
     NegativeNumberTermsRegex = f'^[.]'
     NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'
     HundredsNumberIntegerRegex = f'(({ZeroToNineIntegerRegex}(\\s+cent))|cent|((\\s+cent\\s)+{TensNumberIntegerRegex}))'
-    BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}([-\\s]+({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})'
+    BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}((-|(\\s+et)?\\s+)({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})'
     BelowThousandsRegex = f'(({HundredsNumberIntegerRegex}(\\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\\s+{TenToNineteenIntegerRegex})'
     SupportThousandsRegex = f'(({BelowThousandsRegex}|{BelowHundredsRegex})\\s+{RoundNumberIntegerRegex}(\\s+{RoundNumberIntegerRegex})?)'
     SeparaIntRegex = f'({SupportThousandsRegex}(\\s+{SupportThousandsRegex})*(\\s+{BelowThousandsRegex})?|{BelowThousandsRegex})'
@@ -38,26 +38,26 @@ class FrenchNumeric:
     NumbersWithDozenSuffix = f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+douzaine(s)?(?=\\b)'
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((demi\\s+)?\\s+douzaine)|({AllIntRegex}\\s+douzaines?))(?=\\b)'
-    SimpleRoundOrdinalRegex = f'(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)'
-    OneToNineOrdinalRegex = f'(premier|premi[eè]re|deuxi[eè]me|second[e]|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)'
-    SpecialUnderHundredOrdinalRegex = f'(onzi[eè]me|douzi[eè]me)'
-    TensOrdinalRegex = f'(quatre-vingt-dixi[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)'
-    HundredOrdinalRegex = f'({AllIntRegex}(\\s+(centi[eè]me\\s)))'
-    UnderHundredOrdinalRegex = f'((({AllIntRegex}(\\W)?)?{OneToNineOrdinalRegex})|({TensNumberIntegerRegex}(\\W)?)?{OneToNineOrdinalRegex}|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})'
-    UnderThousandOrdinalRegex = f'((({HundredOrdinalRegex}(\\s)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})'
-    OverThousandOrdinalRegex = f'(({AllIntRegex})(i[eè]me))'
+    SimpleRoundOrdinalRegex = f'(centi|[bm]illioni|milli(ardi)?)[eè]me'
+    OneToNineOrdinalRegex = f'(premi[eè]re?|second[e]|tier(s|ce)|(deuxi|troisi|quatri|cinqui|sixi|septi|hui[tr]i|neuvi)[eè]me)'
+    SpecialUnderHundredOrdinalRegex = f'(di[xz]i|onzi|douzi|treizi|quatorzi|quinzi|seizi|dix[\\s-](septi|huiri|neuvi))[eè]me'
+    TensOrdinalRegex = f'(quatre-vingt-di[xz]i[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)'
+    HundredOrdinalRegex = f'({AllIntRegex}(\\s+(centi[eè]me)))'
+    UnderHundredOrdinalRegex = f'(((({AllIntRegex}|{TensNumberIntegerRegex})(\\W)?)?({OneToNineOrdinalRegex}|\\s+et\\s+uni[eè]me))|{SpecialUnderHundredOrdinalRegex}|{TensOrdinalRegex})'
+    UnderThousandOrdinalRegex = f'((({HundredOrdinalRegex}(\\s|-)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})'
+    OverThousandOrdinalRegex = f'(({AllIntRegex})(-i[eè]me))'
     ComplexOrdinalRegex = f'(({OverThousandOrdinalRegex}(\\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})'
     SuffixOrdinalRegex = f'(({AllIntRegex})({SimpleRoundOrdinalRegex}))'
     ComplexRoundOrdinalRegex = f'((({SuffixOrdinalRegex}(\\s)?)?{ComplexOrdinalRegex})|{SuffixOrdinalRegex})'
     AllOrdinalRegex = f'({ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex})'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
-    OrdinalSuffixRegex = f'(?<=\\b)((\\d*(1er|2e|2eme|3e|3eme|4e|4eme|5e|5eme|6e|6eme|7e|7eme|8e|8eme|9e|9eme|0e|0eme))|(11e|11eme|12e|12eme))(?=\\b)'
+    OrdinalSuffixRegex = f'(?<=\\b)((\\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\\b)'
     OrdinalFrenchRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
-    FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(un|une)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demis?)(?=\\b)'
+    FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s+(virgule|point)){AllPointRegex})'
@@ -83,8 +83,8 @@ class FrenchNumeric:
     WrittenGroupSeparatorTexts = [r'point', r'points']
     WrittenIntegerSeparatorTexts = [r'et', r'-']
     WrittenFractionSeparatorTexts = [r'et', r'sur']
-    HalfADozenRegex = f'(?<=\\b)demi\\s+douzaine'
-    DigitalNumberRegex = f'((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    HalfADozenRegex = f'(?<=\\b)demie?\\s+douzaine'
+    DigitalNumberRegex = f'((?<=\\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     AmbiguousFractionConnectorsRegex = f'^[.]'
     CardinalNumberMap = dict([("zéro", 0),
                               ("zero", 0),
@@ -101,12 +101,15 @@ class FrenchNumeric:
                               ("dix", 10),
                               ("onze", 11),
                               ("douze", 12),
+                              ("douzaine", 12),
+                              ("douzaines", 12),
                               ("treize", 13),
                               ("quatorze", 14),
                               ("quinze", 15),
                               ("seize", 16),
                               ("dix-sept", 17),
                               ("dix-huit", 18),
+                              ("dix-huir", 18),
                               ("dix-neuf", 19),
                               ("vingt", 20),
                               ("trente", 30),
@@ -151,12 +154,15 @@ class FrenchNumeric:
     OrdinalNumberMap = dict([("premier", 1),
                              ("première", 1),
                              ("premiere", 1),
+                             ("unième", 1),
+                             ("unieme", 1),
                              ("deuxième", 2),
                              ("deuxieme", 2),
                              ("second", 2),
                              ("seconde", 2),
                              ("troisième", 3),
                              ("demi", 2),
+                             ("demie", 2),
                              ("tiers", 3),
                              ("tierce", 3),
                              ("quart", 4),
@@ -172,10 +178,14 @@ class FrenchNumeric:
                              ("septieme", 7),
                              ("huitième", 8),
                              ("huitieme", 8),
+                             ("huirième", 8),
+                             ("huirieme", 8),
                              ("neuvième", 9),
                              ("neuvieme", 9),
                              ("dixième", 10),
                              ("dixieme", 10),
+                             ("dizième", 10),
+                             ("dizieme", 10),
                              ("onzième", 11),
                              ("onzieme", 11),
                              ("douzième", 12),
@@ -183,7 +193,7 @@ class FrenchNumeric:
                              ("treizième", 13),
                              ("treizieme", 13),
                              ("quatorzième", 14),
-                             ("quatorizieme", 14),
+                             ("quatorzieme", 14),
                              ("quinzième", 15),
                              ("quinzieme", 15),
                              ("seizième", 16),
@@ -192,6 +202,8 @@ class FrenchNumeric:
                              ("dix-septieme", 17),
                              ("dix-huitième", 18),
                              ("dix-huitieme", 18),
+                             ("dix-huirième", 18),
+                             ("dix-huirieme", 18),
                              ("dix-neuvième", 19),
                              ("dix-neuvieme", 19),
                              ("vingtième", 20),

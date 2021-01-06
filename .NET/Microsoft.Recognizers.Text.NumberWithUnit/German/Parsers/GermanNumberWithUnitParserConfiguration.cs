@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.German;
 
@@ -9,10 +10,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         public GermanNumberWithUnitParserConfiguration(CultureInfo ci)
             : base(ci)
         {
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.German, NumberOptions.None);
+
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new GermanNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -20,5 +26,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

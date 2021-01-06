@@ -694,7 +694,7 @@
   },
   {
     "Input": "next meeting will be held on March 16th, 2017, how about we have a discussion at 2pm this afternoon?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "March 16th, 2017",
@@ -712,7 +712,7 @@
   },
   {
     "Input": "April 1st, 2018, we can plan it 2pm this afternoon",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "April 1st, 2018",
@@ -1106,7 +1106,7 @@
   },
   {
     "Input": "What the sale by year?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -1123,7 +1123,7 @@
   },
   {
     "Input": "I will come back within 2 weeks from today",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "within 2 weeks from today",
@@ -1171,7 +1171,7 @@
   },
   {
     "Input": "Let's start 3 minutes from now",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 minutes from now",
@@ -1183,7 +1183,7 @@
   },
   {
     "Input": "Let's start 3 minutes from today",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -1192,10 +1192,10 @@
         "Length": 9
       },
       {
-        "Text": "from today",
+        "Text": "today",
         "Type": "date",
-        "Start": 22,
-        "Length": 10
+        "Start": 27,
+        "Length": 5
       }
     ]
   }

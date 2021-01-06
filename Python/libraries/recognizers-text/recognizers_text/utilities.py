@@ -1,5 +1,6 @@
 import re
-from typing import Pattern, Union, List, Match
+import unicodedata
+from typing import Pattern, Union, List, Match, Dict
 import regex
 from emoji import UNICODE_EMOJI
 from multipledispatch import dispatch
@@ -82,10 +83,13 @@ class RegExpUtility:
         return regex.compile(source, flags=flags)
 
     @staticmethod
-    def get_group(match: Match, group: str, default_val: str = '') -> str:
+    def get_group(match, group: str, default_val: str = '') -> str:
         if match is None:
             return None
-        return match.groupdict().get(group, default_val) or default_val
+        try:
+            return match.groupdict().get(group, default_val) or default_val
+        except:
+            return match.match[0].groupdict().get(group, default_val) or default_val
 
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:
@@ -183,7 +187,7 @@ class QueryProcessor:
 
         return result
 
-    tokens = '(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)'
+    tokens = '(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)'
     expression = f'(?<=(\\s|\\d))' + tokens + '\\b'
     special_tokens_regex = RegExpUtility.get_safe_reg_exp(expression, regex.S)
 
@@ -207,6 +211,33 @@ class QueryProcessor:
     @staticmethod
     def float_or_int(source: Union[float, int]) -> Union[float, int]:
         return float(source) if source % 1 else int(source)
+
+    @staticmethod
+    def remove_diacritics(query: str) -> str:
+        if not query:
+            return None
+
+        # NFD indicates that a Unicode string is normalized using full canonical decomposition.
+        chars = ''.join((c for c in unicodedata.normalize('NFD', query) if unicodedata.category(c) != 'Mn'))
+
+        # NFC indicates that a Unicode string is normalized using full canonical decomposition,
+        # followed by the replacement of sequences with their primary composites, if possible.
+        return str(unicodedata.normalize('NFC', chars)).lower()
+
+
+class DefinitionLoader:
+
+    @staticmethod
+    def load_ambiguity_filters(filters: Dict[str, str]) -> Dict[Pattern, Pattern]:
+
+        ambiguity_filters_dict = dict()
+
+        for k, v in filters.items():
+
+            if not "null" == k:
+                ambiguity_filters_dict[RegExpUtility.get_safe_reg_exp(k)] = RegExpUtility.get_safe_reg_exp(v)
+
+        return ambiguity_filters_dict
 
 
 def flatten(result):

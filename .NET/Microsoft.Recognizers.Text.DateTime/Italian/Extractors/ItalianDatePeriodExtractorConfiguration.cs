@@ -235,10 +235,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }

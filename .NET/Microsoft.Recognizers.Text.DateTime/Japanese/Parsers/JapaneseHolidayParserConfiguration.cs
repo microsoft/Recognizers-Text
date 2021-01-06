@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -7,6 +8,7 @@ using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -60,13 +62,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
 
-        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Japanese)));
+        private readonly IParser integerParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public JapaneseHolidayParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            integerParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -118,115 +130,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
-        }
-
-        private static DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
-        {
-            foreach (var regex in JapaneseHolidayExtractorConfiguration.HolidayRegexList)
-            {
-                var match = regex.MatchExact(text, trim: true);
-
-                if (match.Success)
-                {
-                    // Value string will be set in Match2Date method
-                    var ret = Match2Date(match.Match, referenceDate);
-                    return ret;
-                }
-            }
-
-            return new DateTimeResolutionResult();
-        }
-
-        private static DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var holidayStr = match.Groups["holiday"].Value;
-
-            var year = referenceDate.Year;
-            var hasYear = false;
-            var yearNum = match.Groups["year"].Value;
-            var yearJap = match.Groups["yearJap"].Value;
-            var yearRel = match.Groups["yearrel"].Value;
-            if (!string.IsNullOrEmpty(yearNum))
-            {
-                hasYear = true;
-                if (yearNum.EndsWith("年"))
-                {
-                    yearNum = yearNum.Substring(0, yearNum.Length - 1);
-                }
-
-                year = int.Parse(yearNum);
-            }
-            else if (!string.IsNullOrEmpty(yearJap))
-            {
-                hasYear = true;
-                if (yearJap.EndsWith("年"))
-                {
-                    yearJap = yearJap.Substring(0, yearJap.Length - 1);
-                }
-
-                year = ConvertJapaneseToInteger(yearJap);
-            }
-            else if (!string.IsNullOrEmpty(yearRel))
-            {
-                hasYear = true;
-                if (yearRel.EndsWith("前年") || yearRel.EndsWith("先年"))
-                {
-                    year--;
-                }
-                else if (yearRel.EndsWith("来年"))
-                {
-                    year++;
-                }
-            }
-
-            if (year < 100 && year >= 90)
-            {
-                year += 1900;
-            }
-            else if (year < 20)
-            {
-                year += 2000;
-            }
-
-            if (!string.IsNullOrEmpty(holidayStr))
-            {
-                DateObject value;
-                string timexStr;
-                if (FixedHolidaysDict.ContainsKey(holidayStr))
-                {
-                    value = FixedHolidaysDict[holidayStr](year);
-                    timexStr = $"-{value.Month:D2}-{value.Day:D2}";
-                }
-                else
-                {
-                    if (HolidayFuncDict.ContainsKey(holidayStr))
-                    {
-                        value = HolidayFuncDict[holidayStr](year);
-                        timexStr = NoFixedTimex[holidayStr];
-                    }
-                    else
-                    {
-                        return ret;
-                    }
-                }
-
-                if (hasYear)
-                {
-                    ret.Timex = year.ToString("D4") + timexStr;
-                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
-                    ret.Success = true;
-                    return ret;
-                }
-
-                ret.Timex = "XXXX" + timexStr;
-                ret.FutureValue = GetFutureValue(value, referenceDate, holidayStr);
-                ret.PastValue = GetPastValue(value, referenceDate, holidayStr);
-                ret.Success = true;
-                return ret;
-            }
-
-            return ret;
         }
 
         private static DateObject GetFutureValue(DateObject value, DateObject referenceDate, string holiday)
@@ -372,7 +275,120 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 select day).ElementAt(3));
         }
 
-        private static int ConvertJapaneseToInteger(string yearJapStr)
+        private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
+        {
+            foreach (var regex in JapaneseHolidayExtractorConfiguration.HolidayRegexList)
+            {
+                var match = regex.MatchExact(text, trim: true);
+
+                if (match.Success)
+                {
+                    // Value string will be set in Match2Date method
+                    var ret = Match2Date(match.Match, referenceDate);
+                    return ret;
+                }
+            }
+
+            return new DateTimeResolutionResult();
+        }
+
+        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var holidayStr = match.Groups["holiday"].Value;
+
+            var year = referenceDate.Year;
+            var hasYear = false;
+            var yearNum = match.Groups["year"].Value;
+            var yearJap = match.Groups["yearJap"].Value;
+            var yearRel = match.Groups["yearrel"].Value;
+
+            // @TODO move hardcoded values to resources file
+
+            if (!string.IsNullOrEmpty(yearNum))
+            {
+                hasYear = true;
+                if (yearNum.EndsWith("年", StringComparison.Ordinal))
+                {
+                    yearNum = yearNum.Substring(0, yearNum.Length - 1);
+                }
+
+                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
+            }
+            else if (!string.IsNullOrEmpty(yearJap))
+            {
+                hasYear = true;
+                if (yearJap.EndsWith("年", StringComparison.Ordinal))
+                {
+                    yearJap = yearJap.Substring(0, yearJap.Length - 1);
+                }
+
+                year = ConvertJapaneseToInteger(yearJap);
+            }
+            else if (!string.IsNullOrEmpty(yearRel))
+            {
+                hasYear = true;
+                if (yearRel.EndsWith("前年", StringComparison.Ordinal) ||
+                    yearRel.EndsWith("先年", StringComparison.Ordinal))
+                {
+                    year--;
+                }
+                else if (yearRel.EndsWith("来年", StringComparison.Ordinal))
+                {
+                    year++;
+                }
+            }
+
+            if (year < 100 && year >= 90)
+            {
+                year += 1900;
+            }
+            else if (year < 20)
+            {
+                year += 2000;
+            }
+
+            if (!string.IsNullOrEmpty(holidayStr))
+            {
+                DateObject value;
+                string timexStr;
+                if (FixedHolidaysDict.ContainsKey(holidayStr))
+                {
+                    value = FixedHolidaysDict[holidayStr](year);
+                    timexStr = $"-{value.Month:D2}-{value.Day:D2}";
+                }
+                else
+                {
+                    if (HolidayFuncDict.ContainsKey(holidayStr))
+                    {
+                        value = HolidayFuncDict[holidayStr](year);
+                        timexStr = NoFixedTimex[holidayStr];
+                    }
+                    else
+                    {
+                        return ret;
+                    }
+                }
+
+                if (hasYear)
+                {
+                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + timexStr;
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
+                    ret.Success = true;
+                    return ret;
+                }
+
+                ret.Timex = "XXXX" + timexStr;
+                ret.FutureValue = GetFutureValue(value, referenceDate, holidayStr);
+                ret.PastValue = GetPastValue(value, referenceDate, holidayStr);
+                ret.Success = true;
+                return ret;
+            }
+
+            return ret;
+        }
+
+        private int ConvertJapaneseToInteger(string yearJapStr)
         {
             var year = 0;
             var num = 0;
@@ -382,7 +398,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
-                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
+                    num = Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
                 }
             }
 
@@ -392,12 +408,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 foreach (var ch in yearJapStr)
                 {
                     num *= 10;
-                    er = IntegerExtractor.Extract(ch.ToString());
+                    er = IntegerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                         {
-                            num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
+                            num += Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
                         }
                     }
                 }

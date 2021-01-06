@@ -1,12 +1,25 @@
 [
   {
     "Input": "Ik ben deze maand van 4 tot 22 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze maand van 4 tot 22",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
         "Start": 7,
         "Length": 23
       }
@@ -14,38 +27,77 @@
   },
   {
     "Input": "Ik ben volgende maand van 4-23 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgende maand van 4-23 ",
+        "Text": "volgende maand van 4-23",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
         "Start": 7,
-        "Length": 24
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ik ben van 3 tot 12 van sept weg hahaha",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van 3 tot 12 van sept ",
+        "Text": "van 3 tot 12 van sept",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
         "Start": 7,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Ik ben van vrijdag de 11e tot dinsdag de 15e weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van vrijdag de 11e tot dinsdag de 15e",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-11,2016-11-15,P4D)",
+          "FutureResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          }
+        },
         "Start": 7,
         "Length": 37
       }
@@ -53,12 +105,25 @@
   },
   {
     "Input": "Ik ben volgende maand 4 tot 23 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende maand 4 tot 23",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
         "Start": 7,
         "Length": 23
       }
@@ -66,25 +131,51 @@
   },
   {
     "Input": "Ik ben deze maand 4 tot 23 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "deze maand 4 tot 23 ",
+        "Text": "deze maand 4 tot 23",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
+        },
         "Start": 7,
-        "Length": 20
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ik ben deze maand tussen 4 en 22 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze maand tussen 4 en 22",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
         "Start": 7,
         "Length": 25
       }
@@ -92,12 +183,25 @@
   },
   {
     "Input": "Ik ben tussen 3 en 12 van sept weg hahaha",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 3 en 12 van sept",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
         "Start": 7,
         "Length": 23
       }
@@ -105,12 +209,25 @@
   },
   {
     "Input": "Ik ben van 4 tot 22 januari 1995 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 4 tot 22 januari 1995",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
         "Start": 7,
         "Length": 25
       }
@@ -118,12 +235,25 @@
   },
   {
     "Input": "Ik ben tussen 4-22 januari 1995 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 4-22 januari 1995",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
         "Start": 7,
         "Length": 24
       }
@@ -131,25 +261,51 @@
   },
   {
     "Input": "Ik ben tussen de 4e van september tot en met de 8e van september weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de 4e van september tot en met de 8e van september",
+        "Text": "tussen de 4e van september tot en met de 8e van september",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 50
+        "Value": {
+          "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
+          "FutureResolution": {
+            "startDate": "2017-09-04",
+            "endDate": "2017-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-04",
+            "endDate": "2016-09-08"
+          }
+        },
+        "Start": 7,
+        "Length": 57
       }
     ]
   },
   {
     "Input": "Ik ben op deze week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 10,
         "Length": 9
       }
@@ -157,12 +313,25 @@
   },
   {
     "Input": "Ik ben op de komende week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "komende week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W46",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
         "Start": 13,
         "Length": 12
       }
@@ -170,12 +339,25 @@
   },
   {
     "Input": "Ik ben op de huidige week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "huidige week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 13,
         "Length": 12
       }
@@ -183,12 +365,25 @@
   },
   {
     "Input": "Ik ben februari weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "februari",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
+        },
         "Start": 7,
         "Length": 8
       }
@@ -196,12 +391,25 @@
   },
   {
     "Input": "Ik ben deze september weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze september",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 7,
         "Length": 14
       }
@@ -209,12 +417,25 @@
   },
   {
     "Input": "Ik ben afgelopen september weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "afgelopen september",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-09",
+          "FutureResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          }
+        },
         "Start": 7,
         "Length": 19
       }
@@ -222,12 +443,25 @@
   },
   {
     "Input": "Ik ben volgende juni weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende juni",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
         "Start": 7,
         "Length": 13
       }
@@ -235,25 +469,51 @@
   },
   {
     "Input": "Ik ben de derde week van deze maand weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de derde week van deze maand ",
+        "Text": "de derde week van deze maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11-W03",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
         "Start": 7,
-        "Length": 29
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Ik ben de laatste week van juli weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de laatste week van juli",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07-W05",
+          "FutureResolution": {
+            "startDate": "2017-07-24",
+            "endDate": "2017-07-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-25",
+            "endDate": "2016-08-01"
+          }
+        },
         "Start": 7,
         "Length": 24
       }
@@ -261,12 +521,25 @@
   },
   {
     "Input": "week van september de 16e",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "week van september de 16e",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-11",
+            "endDate": "2017-09-18"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-12",
+            "endDate": "2016-09-19"
+          }
+        },
         "Start": 0,
         "Length": 25
       }
@@ -274,12 +547,25 @@
   },
   {
     "Input": "maand van september de 16e",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "maand van september de 16e",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 0,
         "Length": 26
       }
@@ -287,12 +573,25 @@
   },
   {
     "Input": "Ik ben 2015.3 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015.3",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
         "Start": 7,
         "Length": 6
       }
@@ -300,12 +599,25 @@
   },
   {
     "Input": "Ik ben 2015-3 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015-3",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
         "Start": 7,
         "Length": 6
       }
@@ -313,12 +625,25 @@
   },
   {
     "Input": "Ik ben 3-2015 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3-2015",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
         "Start": 7,
         "Length": 6
       }
@@ -326,18 +651,33 @@
   },
   {
     "Input": "plan een meeting over twee weken in",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "komende 2 dagen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "komende 2 dagen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
         "Start": 0,
         "Length": 15
       }
@@ -345,25 +685,77 @@
   },
   {
     "Input": "afgelopen paar dagen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "afgelopen paar dagen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-05,2016-11-07,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-05",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-05",
+            "endDate": "2016-11-07"
+          }
+        },
         "Start": 0,
         "Length": 20
       }
     ]
   },
+   {
+    "Input": "afgelopen enkele dagen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "afgelopen enkele dagen",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-07,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
   {
     "Input": "de week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 0,
         "Length": 7
       }
@@ -371,12 +763,25 @@
   },
   {
     "Input": "deze week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2026-01-01T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2026-W01",
+          "FutureResolution": {
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
+          }
+        },
         "Start": 0,
         "Length": 9
       }
@@ -384,12 +789,25 @@
   },
   {
     "Input": "mijn week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "mijn week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 0,
         "Length": 9
       }
@@ -397,12 +815,25 @@
   },
   {
     "Input": "het weekend",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het weekend",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 0,
         "Length": 11
       }
@@ -410,12 +841,25 @@
   },
   {
     "Input": "dit weekend",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dit weekend",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 0,
         "Length": 11
       }
@@ -423,12 +867,25 @@
   },
   {
     "Input": "mijn weekend",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "mijn weekend",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 0,
         "Length": 12
       }
@@ -436,51 +893,103 @@
   },
   {
     "Input": "Ik ben 2 okt. tot 22 oktober weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 2 okt. tot 22 oktober",
+        "Text": "2 okt. tot 22 oktober",
         "Type": "daterange",
-        "Start": 6,
-        "Length": 22
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 7,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Ik ben 12 januari 2016 - 22-01-2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 januari 2016 - 22-01-2016 ",
+        "Text": "12 januari 2016 - 22-01-2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-12,2016-01-22,P10D)",
+          "FutureResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          }
+        },
         "Start": 7,
-        "Length": 29
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Ik ben de 1e van jan tot woens, de 22e jan weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de 1e van jan tot woens, de 22e jan ",
+        "Text": "de 1e van jan tot woens, de 22e jan",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
+        },
         "Start": 7,
-        "Length": 36
+        "Length": 35
       }
     ]
   },
   {
     "Input": "Ik ben vandaag tot morgen weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vandaag tot morgen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
+        },
         "Start": 7,
         "Length": 18
       }
@@ -488,25 +997,51 @@
   },
   {
     "Input": "Ik ben van 2 okt. tot 22 oktober weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "van 2 okt. tot 22 oktober ",
+        "Text": "van 2 okt. tot 22 oktober",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
         "Start": 7,
-        "Length": 26
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Ik ben tussen 2 okt. en 22 oktober weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 2 okt. en 22 oktober",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
         "Start": 7,
         "Length": 27
       }
@@ -514,25 +1049,51 @@
   },
   {
     "Input": "Ik ben 19-20 november weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "19-20 november ",
+        "Text": "19-20 november",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
         "Start": 7,
-        "Length": 15
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Ik ben 19 tot 20 november weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "19 tot 20 november",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
         "Start": 7,
         "Length": 18
       }
@@ -540,12 +1101,25 @@
   },
   {
     "Input": "Ik ben tussen 19 en 20 november weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 19 en 20 november",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
         "Start": 7,
         "Length": 24
       }
@@ -553,25 +1127,51 @@
   },
   {
     "Input": "Ik ben rest van de week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "rest van de week ",
+        "Text": "rest van de week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
         "Start": 7,
-        "Length": 17
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Ik ben rest van week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest van week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
         "Start": 7,
         "Length": 13
       }
@@ -579,12 +1179,25 @@
   },
   {
     "Input": "Ik ben rest deze week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest deze week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
         "Start": 7,
         "Length": 14
       }
@@ -592,25 +1205,51 @@
   },
   {
     "Input": "Ik ben rest van mijn week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "rest van mijn week ",
+        "Text": "rest van mijn week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
         "Start": 7,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ik ben rest van huidige week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "rest van huidige week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
         "Start": 7,
         "Length": 21
       }
@@ -618,51 +1257,103 @@
   },
   {
     "Input": "Ik ben rest van de maand weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "rest van de maand ",
+        "Text": "rest van de maand",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben rest van het jaar weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "rest van het jaar",
-        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-30,P24D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          }
+        },
         "Start": 7,
         "Length": 17
       }
     ]
   },
   {
-    "Input": "Ik ben op weekend weg",
-    "NotSupported": "dotnet",
+    "Input": "Ik ben rest van het jaar weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "weekend",
+        "Text": "rest van het jaar",
         "Type": "daterange",
-        "Start": 10,
-        "Length": 7
+        "Value": {
+          "Timex": "(2016-11-07,2016-12-31,P55D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          }
+        },
+        "Start": 7,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Ik ben op dit weekend weg",
-    "NotSupported": "dotnet",
+    "Input": "Ik ben dit weekend weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dit weekend",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben op dit weekend weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dit weekend",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 10,
         "Length": 11
       }
@@ -670,12 +1361,25 @@
   },
   {
     "Input": "Ik ben juni 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "juni 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        },
         "Start": 7,
         "Length": 9
       }
@@ -683,12 +1387,25 @@
   },
   {
     "Input": "Ik ben volgend jaar juni weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgend jaar juni",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
         "Start": 7,
         "Length": 17
       }
@@ -696,25 +1413,51 @@
   },
   {
     "Input": "Ik ben volgend jaar weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgend jaar ",
+        "Text": "volgend jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 7,
-        "Length": 13
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Ik ben komende 3 dagen weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "komende 3 dagen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-11,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          }
+        },
         "Start": 7,
         "Length": 15
       }
@@ -722,12 +1465,25 @@
   },
   {
     "Input": "Ik ben komende 3 maanden weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "komende 3 maanden",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2017-02-08,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          }
+        },
         "Start": 7,
         "Length": 17
       }
@@ -735,31 +1491,59 @@
   },
   {
     "Input": "Ik ben over 3 jaar weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "Results": []
   },
   {
     "Input": "de eerste week van okt",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de eerste week van okt",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10-W01",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-03",
+            "endDate": "2016-10-10"
+          }
+        },
         "Start": 0,
         "Length": 22
       }
     ]
   },
   {
-    "Input": "Ik ben de derde week van 2017 weg",
-    "NotSupported": "dotnet",
+    "Input": "Ik ben de derde week van 2027 weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de derde week van 2017",
+        "Text": "de derde week van 2027",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
         "Start": 7,
         "Length": 22
       }
@@ -767,12 +1551,25 @@
   },
   {
     "Input": "Ik ben volgend jaar de derde week weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgend jaar de derde week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W03",
+          "FutureResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          }
+        },
         "Start": 7,
         "Length": 26
       }
@@ -780,12 +1577,25 @@
   },
   {
     "Input": "Ik ben het derde kwartaal van 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het derde kwartaal van 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 7,
         "Length": 27
       }
@@ -793,12 +1603,25 @@
   },
   {
     "Input": "Ik ben dit jaar het derde kwartaal weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dit jaar het derde kwartaal",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 7,
         "Length": 27
       }
@@ -806,38 +1629,77 @@
   },
   {
     "Input": "Ik ben 2016 het derde kwartaal weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2016 het derde kwartaal ",
+        "Text": "2016 het derde kwartaal",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 7,
-        "Length": 24
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ik ben weg tijdens K3 dit jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tijdens K3 dit jaar",
+        "Text": "K3 dit jaar",
         "Type": "daterange",
-        "Start": 11,
-        "Length": 19
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 19,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Ik ben 2016 K3 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016 K3",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 7,
         "Length": 7
       }
@@ -845,12 +1707,25 @@
   },
   {
     "Input": "Ik ben tijdens K3 terug",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "K3",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-07-01,XXXX-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
         "Start": 15,
         "Length": 2
       }
@@ -858,12 +1733,25 @@
   },
   {
     "Input": "Ik ben tijdens K2 terug",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "K2",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-04-01",
+            "endDate": "2016-07-01"
+          }
+        },
         "Start": 15,
         "Length": 2
       }
@@ -871,12 +1759,25 @@
   },
   {
     "Input": "Ik ben K1 2016 terug",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "K1 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2016-04-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          }
+        },
         "Start": 7,
         "Length": 7
       }
@@ -884,25 +1785,45 @@
   },
   {
     "Input": "Ik ben tijdens K4 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "K4 2016 ",
+        "Text": "K4 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-01,2017-01-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          }
+        },
         "Start": 15,
-        "Length": 8
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Ik vertrek deze zomer",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze zomer",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 11,
         "Length": 10
       }
@@ -910,12 +1831,19 @@
   },
   {
     "Input": "Ik vertrek volgende lente",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende lente",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 11,
         "Length": 14
       }
@@ -923,12 +1851,19 @@
   },
   {
     "Input": "Ik vertrek de zomer",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de zomer",
         "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 11,
         "Length": 8
       }
@@ -936,12 +1871,19 @@
   },
   {
     "Input": "Ik vertrek zomer",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zomer",
         "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 11,
         "Length": 5
       }
@@ -949,12 +1891,19 @@
   },
   {
     "Input": "Ik vertrek zomer 2016",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zomer 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 11,
         "Length": 10
       }
@@ -962,12 +1911,19 @@
   },
   {
     "Input": "Ik vertrek zomer van 2016",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zomer van 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 11,
         "Length": 14
       }
@@ -975,12 +1931,25 @@
   },
   {
     "Input": "vakanties aankomende maand ",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "aankomende maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
         "Start": 10,
         "Length": 16
       }
@@ -988,12 +1957,25 @@
   },
   {
     "Input": "vakanties volgende maand ",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
         "Start": 10,
         "Length": 14
       }
@@ -1001,12 +1983,26 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip om elkaar te ontmoeten eind deze maand",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind deze maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-11",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          }
+        },
         "Start": 53,
         "Length": 15
       }
@@ -1014,12 +2010,26 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip om elkaar te ontmoeten eind deze week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind deze week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          }
+        },
         "Start": 53,
         "Length": 14
       }
@@ -1027,12 +2037,26 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip om elkaar te ontmoeten eind dit jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind dit jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 53,
         "Length": 13
       }
@@ -1040,12 +2064,26 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip om elkaar te ontmoeten begin volgend jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "begin volgend jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          }
+        },
         "Start": 53,
         "Length": 18
       }
@@ -1053,12 +2091,26 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip om elkaar te ontmoeten begin volgende week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "begin volgende week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
         "Start": 53,
         "Length": 19
       }
@@ -1066,12 +2118,26 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip om elkaar te ontmoeten begin volgende maand",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "begin volgende maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-12",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          }
+        },
         "Start": 53,
         "Length": 20
       }
@@ -1079,12 +2145,26 @@
   },
   {
     "Input": "We hadden een ontmoeting eind vorig jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind vorig jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
         "Start": 25,
         "Length": 15
       }
@@ -1092,12 +2172,26 @@
   },
   {
     "Input": "We hadden een ontmoeting eind vorige week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind vorige week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W44",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          }
+        },
         "Start": 25,
         "Length": 16
       }
@@ -1105,12 +2199,26 @@
   },
   {
     "Input": "We hadden een ontmoeting eind vorige maand",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind vorige maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-10",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          }
+        },
         "Start": 25,
         "Length": 17
       }
@@ -1118,12 +2226,25 @@
   },
   {
     "Input": "Cortana, regel alsjeblieft een meeting van 25 minuten met antonio volgende week tussen woensdag en vrijdag",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende week tussen woensdag en vrijdag",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-22,2017-11-24,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          }
+        },
         "Start": 66,
         "Length": 40
       }
@@ -1131,12 +2252,25 @@
   },
   {
     "Input": "We hadden een ontmoeting deze week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "deze week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
         "Start": 25,
         "Length": 9
       }
@@ -1144,25 +2278,51 @@
   },
   {
     "Input": "We hadden een ontmoeting de eerste week van dit jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "eerste week van dit jaar",
+        "Text": "de eerste week van dit jaar",
         "Type": "daterange",
-        "Start": 28,
-        "Length": 24
+        "Value": {
+          "Timex": "2017-W01",
+          "FutureResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          }
+        },
+        "Start": 25,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "eerste week van 2015",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerste week van 2015",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W01",
+          "FutureResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          }
+        },
         "Start": 0,
         "Length": 20
       }
@@ -1170,12 +2330,25 @@
   },
   {
     "Input": "tweede week van 2015",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tweede week van 2015",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W02",
+          "FutureResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          }
+        },
         "Start": 0,
         "Length": 20
       }
@@ -1183,12 +2356,25 @@
   },
   {
     "Input": "laatste week van 2015",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "laatste week van 2015",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        },
         "Start": 0,
         "Length": 21
       }
@@ -1196,12 +2382,25 @@
   },
   {
     "Input": "Ik ben jaar 247 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "jaar 247",
         "Type": "daterange",
+        "Value": {
+          "Timex": "0247",
+          "FutureResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          }
+        },
         "Start": 7,
         "Length": 8
       }
@@ -1209,12 +2408,25 @@
   },
   {
     "Input": "In de jaren 1970",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren 1970",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
         "Start": 3,
         "Length": 13
       }
@@ -1222,12 +2434,25 @@
   },
   {
     "Input": "In de jaren 2000 werd hij geboren",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren 2000",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
         "Start": 3,
         "Length": 13
       }
@@ -1235,12 +2460,25 @@
   },
   {
     "Input": "In de jaren '70",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren '70",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
         "Start": 3,
         "Length": 12
       }
@@ -1248,12 +2486,25 @@
   },
   {
     "Input": "In jaren '70",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "jaren '70",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
         "Start": 3,
         "Length": 9
       }
@@ -1261,12 +2512,25 @@
   },
   {
     "Input": "In de jaren '40",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren '40",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2040-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1940-01-01",
+            "endDate": "1950-01-01"
+          }
+        },
         "Start": 3,
         "Length": 12
       }
@@ -1274,38 +2538,77 @@
   },
   {
     "Input": "In de jaren zeventig",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren zeventig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
         "Start": 3,
         "Length": 17
       }
     ]
   },
   {
-    "Input": "In de jaren negentien zeventien",
-    "NotSupported": "dotnet",
+    "Input": "In de jaren negentien zeventig",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de jaren negentienzeventien",
+        "Text": "de jaren negentien zeventig",
         "Type": "daterange",
-        "Start": -1,
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 3,
         "Length": 27
       }
     ]
   },
   {
     "Input": "In de jaren tweeduizend tien",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren tweeduizend tien",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
         "Start": 3,
         "Length": 25
       }
@@ -1313,12 +2616,25 @@
   },
   {
     "Input": "In de jaren tweeduizend",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren tweeduizend",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
         "Start": 3,
         "Length": 20
       }
@@ -1326,12 +2642,25 @@
   },
   {
     "Input": "In de jaren nul",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de jaren nul",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XX0-01-01,XX10-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2100-01-01",
+            "endDate": "2110-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
         "Start": 3,
         "Length": 12
       }
@@ -1339,12 +2668,25 @@
   },
   {
     "Input": "Ik ben van 2 tot 7 feb, tweeduizend achttien weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 2 tot 7 feb, tweeduizend achttien",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
         "Start": 7,
         "Length": 37
       }
@@ -1352,12 +2694,25 @@
   },
   {
     "Input": "Ik ben tussen 2 en 7 feb tweeduizend achttien weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 2 en 7 feb tweeduizend achttien",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
         "Start": 7,
         "Length": 38
       }
@@ -1365,25 +2720,51 @@
   },
   {
     "Input": "Ik ben in feb tussen 2-7 tweeduizend achttien weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "feb tussen 2-7 tweeduizend achttien",
+        "Text": "in feb tussen 2-7 tweeduizend achttien",
         "Type": "daterange",
-        "Start": 10,
-        "Length": 35
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 7,
+        "Length": 38
       }
     ]
   },
   {
     "Input": "Het gebeurde in juni negentiennegenennegentig",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "juni negentiennegenennegentig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "1999-06",
+          "FutureResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          },
+          "PastResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          }
+        },
         "Start": 16,
         "Length": 29
       }
@@ -1391,12 +2772,25 @@
   },
   {
     "Input": "In negentienachtentwintig",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "negentienachtentwintig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "1928",
+          "FutureResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          }
+        },
         "Start": 3,
         "Length": 22
       }
@@ -1404,12 +2798,25 @@
   },
   {
     "Input": "In zeventienhonderdnegenentachtig",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zeventienhonderdnegenentachtig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "1789",
+          "FutureResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          }
+        },
         "Start": 3,
         "Length": 30
       }
@@ -1417,38 +2824,71 @@
   },
   {
     "Input": "Ik ben de derde week van tweeduizend zevenentwintig weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de derde week van tweeduizend zevenentwintig ",
+        "Text": "de derde week van tweeduizend zevenentwintig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
         "Start": 7,
-        "Length": 45
+        "Length": 44
       }
     ]
   },
   {
     "Input": "Ik ben het derde kwartaal van tweeduizend twintig weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "het derde kwartaal van tweeduizend twintig weg",
+        "Text": "het derde kwartaal van tweeduizend twintig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-07-01,2020-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          }
+        },
         "Start": 7,
-        "Length": 46
+        "Length": 42
       }
     ]
   },
   {
     "Input": "In de lente van negentienachtenzeventig",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de lente van negentienachtenzeventig",
         "Type": "daterange",
+        "Value": {
+          "Timex": "1978-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 3,
         "Length": 36
       }
@@ -1456,25 +2896,51 @@
   },
   {
     "Input": "Jaar tweehonderdzevenenzestig",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tweehonderdzevenenzestig",
+        "Text": "jaar tweehonderdzevenenzestig",
         "Type": "daterange",
-        "Start": 5,
-        "Length": 24
+        "Value": {
+          "Timex": "0267",
+          "FutureResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Ik ben de week na de volgende weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de week na de volgende",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        },
         "Start": 7,
         "Length": 22
       }
@@ -1482,12 +2948,25 @@
   },
   {
     "Input": "Ik ben de maand na de volgende weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de maand na de volgende",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          }
+        },
         "Start": 7,
         "Length": 23
       }
@@ -1495,12 +2974,25 @@
   },
   {
     "Input": "Ik ben het jaar na het volgende weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het jaar na het volgende",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        },
         "Start": 7,
         "Length": 24
       }
@@ -1508,12 +3000,25 @@
   },
   {
     "Input": "Ik ben het weekend na het volgende weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het weekend na het volgende",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          }
+        },
         "Start": 7,
         "Length": 27
       }
@@ -1521,12 +3026,25 @@
   },
   {
     "Input": "Het bereik is 2014-2018",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2014-2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 14,
         "Length": 9
       }
@@ -1534,12 +3052,25 @@
   },
   {
     "Input": "Het bereik is tussen 2014-2018",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 2014-2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 14,
         "Length": 16
       }
@@ -1547,12 +3078,25 @@
   },
   {
     "Input": "Het bereik is van 2014 tot 2018",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 2014 tot 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 14,
         "Length": 17
       }
@@ -1560,25 +3104,51 @@
   },
   {
     "Input": "Het bereik is in 2014 tot en met 2018",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " in 2014 tot en met 2018",
+        "Text": "in 2014 tot en met 2018",
         "Type": "daterange",
-        "Start": 13,
-        "Length": 24
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 14,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Het bereik is van tweeduizend tot tweeduizend veertien",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van tweeduizend tot tweeduizend veertien",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2014-01-01,P14Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          }
+        },
         "Start": 14,
         "Length": 40
       }
@@ -1586,12 +3156,25 @@
   },
   {
     "Input": "Het gebeurde in de afgelopen 2 decennia",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de afgelopen 2 decennia",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
         "Start": 16,
         "Length": 23
       }
@@ -1599,12 +3182,25 @@
   },
   {
     "Input": "Het gebeurde in de laatste 2 decennia",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de laatste 2 decennia",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
         "Start": 16,
         "Length": 21
       }
@@ -1612,12 +3208,25 @@
   },
   {
     "Input": "Het gebeurde in het volgende decennium",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "het volgende decennium",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          }
+        },
         "Start": 16,
         "Length": 22
       }
@@ -1625,12 +3234,25 @@
   },
   {
     "Input": "Het gebeurde in de volgende 3 decennia",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "de volgende 3 decennia",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2050-01-01,P30Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          }
+        },
         "Start": 16,
         "Length": 22
       }
@@ -1638,25 +3260,51 @@
   },
   {
     "Input": "Het zal 4 weken in de toekomst gebeuren",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 weken in de toekomst ",
+        "Text": "4 weken in de toekomst",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-12-06,P4W)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          }
+        },
         "Start": 8,
-        "Length": 23
+        "Length": 22
       }
     ]
   },
   {
     "Input": "Het zal 2 dagen vanaf nu gebeuren",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2 dagen vanaf nu",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
         "Start": 8,
         "Length": 16
       }
@@ -1664,12 +3312,26 @@
   },
   {
     "Input": "Cortana kan een tijdstip voor ons vinden begin van volgende week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "begin van volgende week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
         "Start": 41,
         "Length": 23
       }
@@ -1677,12 +3339,26 @@
   },
   {
     "Input": "Natuurlijk, laten we eind van volgende week Skypen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eind van volgende week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          }
+        },
         "Start": 21,
         "Length": 22
       }
@@ -1690,12 +3366,26 @@
   },
   {
     "Input": "Ik kan een tijdstip voor ons vastleggen begin van volgende week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "begin van volgende week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
         "Start": 40,
         "Length": 23
       }
@@ -1703,12 +3393,20 @@
   },
   {
     "Input": "is midzomer wat?",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "midzomer",
         "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "Mod": "mid",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
         "Start": 3,
         "Length": 8
       }
@@ -1716,12 +3414,25 @@
   },
   {
     "Input": "Ik zal binnen 5 dagen terug zijn",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 5 dagen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2017-11-13,P5D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2017-11-13"
+          }
+        },
         "Start": 7,
         "Length": 14
       }
@@ -1729,12 +3440,25 @@
   },
   {
     "Input": "Ik zal binnen 10 maanden terug zijn",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 10 maanden",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2018-09-08,P10M)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-09-08"
+          }
+        },
         "Start": 7,
         "Length": 17
       }
@@ -1742,12 +3466,25 @@
   },
   {
     "Input": "Ik zal binnen 3 jaar terug zijn",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 3 jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2020-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          }
+        },
         "Start": 7,
         "Length": 13
       }
@@ -1755,12 +3492,25 @@
   },
   {
     "Input": "Ik zal binnen 5 jaar 1 maand en 12 dagen terug zijn",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 5 jaar 1 maand en 12 dagen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          }
+        },
         "Start": 7,
         "Length": 33
       }
@@ -1768,25 +3518,51 @@
   },
   {
     "Input": "Ik zal binnen de volgende 3 jaar terug zijn",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "binnen de volgende 3 jaar ",
+        "Text": "binnen de volgende 3 jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2020-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          }
+        },
         "Start": 7,
-        "Length": 26
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Ik zal binnen de aankomende 5 jaar 1 maand en 12 dagen terug zijn",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen de aankomende 5 jaar 1 maand en 12 dagen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          }
+        },
         "Start": 7,
         "Length": 47
       }
@@ -1794,11 +3570,24 @@
   },
   {
     "Input": "Ik wil een kamer van 02 tot 07 april",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-04-02T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 02 tot 07 april",
+        "Value": {
+          "Timex": "(XXXX-04-02,XXXX-04-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-04-02",
+            "endDate": "2018-04-07"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-02",
+            "endDate": "2017-04-07"
+          }
+        },
         "Type": "daterange",
         "Start": 17,
         "Length": 19
@@ -1807,18 +3596,30 @@
   },
   {
     "Input": "leg een meeting vast in aantal weken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "Ik ben 2016 juni weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016 juni",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        },
         "Start": 7,
         "Length": 9
       }
@@ -1826,12 +3627,25 @@
   },
   {
     "Input": "Ik ben 2016, nov weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016, nov",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 9
       }
@@ -1839,12 +3653,25 @@
   },
   {
     "Input": "Ik ben november, 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "november, 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 14
       }
@@ -1852,25 +3679,51 @@
   },
   {
     "Input": "Ik ben november 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "11/1/2016 12:00:00 AM",
+        "Text": "november 2016",
         "Type": "daterange",
-        "Start": -1,
-        "Length": 21
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 7,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016-11",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 7
       }
@@ -1878,12 +3731,25 @@
   },
   {
     "Input": "Ik ben 2016 - 11 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016 - 11",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 9
       }
@@ -1891,12 +3757,25 @@
   },
   {
     "Input": "Ik ben 2016/11 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016/11",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 7
       }
@@ -1904,11 +3783,24 @@
   },
   {
     "Input": "Ik ben 2016 / 11 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016 / 11",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Type": "daterange",
         "Start": 7,
         "Length": 9
@@ -1917,12 +3809,25 @@
   },
   {
     "Input": "Ik ben 11-2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11-2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 7
       }
@@ -1930,12 +3835,25 @@
   },
   {
     "Input": "Ik ben 11 - 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11 - 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 9
       }
@@ -1943,12 +3861,25 @@
   },
   {
     "Input": "Ik ben 11/2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11/2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 7
       }
@@ -1956,12 +3887,25 @@
   },
   {
     "Input": "Ik ben 11 / 2016 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "11 / 2016",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
         "Start": 7,
         "Length": 9
       }
@@ -1969,12 +3913,25 @@
   },
   {
     "Input": "Ik ben tussen 1 januari en 5 april weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 1 januari en 5 april",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-04-05"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-05"
+          }
+        },
         "Start": 7,
         "Length": 27
       }
@@ -1982,12 +3939,25 @@
   },
   {
     "Input": "Ik ben tussen 1 januari 2015 en 5 februari 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 1 januari 2015 en 5 februari 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-05,P1131D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-05"
+          }
+        },
         "Start": 7,
         "Length": 40
       }
@@ -1995,12 +3965,25 @@
   },
   {
     "Input": "Ik ben tussen 1 januari 2015 en feb 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 1 januari 2015 en feb 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-01,P1127D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          }
+        },
         "Start": 7,
         "Length": 33
       }
@@ -2008,38 +3991,77 @@
   },
   {
     "Input": "Ik ben tussen 2015 en feb 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tussen 2015 en feb 2018 ",
+        "Text": "tussen 2015 en feb 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-01,P37M)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          }
+        },
+        "Start": 7,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben van 1 feb tot maart 2019 weg",
+    "Context": {
+      "ReferenceDateTime": "2018-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 1 feb tot maart 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
+          "FutureResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
         "Start": 7,
         "Length": 24
       }
     ]
   },
   {
-    "Input": "Ik ben van 1 feb tot maart 2019 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "van 1 feb tot maart 2019 ",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 25
-      }
-    ]
-  },
-  {
     "Input": "Ik ben tussen 1 feb en maart 2019 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 1 feb en maart 2019",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
+          "FutureResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
         "Start": 7,
         "Length": 26
       }
@@ -2047,12 +4069,25 @@
   },
   {
     "Input": "Ik ben tussen juni 2015 en mei 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen juni 2015 en mei 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-06-01,2018-05-01,P35M)",
+          "FutureResolution": {
+            "startDate": "2015-06-01",
+            "endDate": "2018-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-06-01",
+            "endDate": "2018-05-01"
+          }
+        },
         "Start": 7,
         "Length": 28
       }
@@ -2060,12 +4095,25 @@
   },
   {
     "Input": "Ik ben tussen mei 2015 en 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen mei 2015 en 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-01-01,P32M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 7,
         "Length": 23
       }
@@ -2073,12 +4121,25 @@
   },
   {
     "Input": "Ik ben tussen mei 2015 en juni 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen mei 2015 en juni 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-06-01,P37M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-06-01"
+          }
+        },
         "Start": 7,
         "Length": 28
       }
@@ -2086,12 +4147,25 @@
   },
   {
     "Input": "Ik ben tussen 2015 en 5 januari 2018 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen 2015 en 5 januari 2018",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-01-05,P1100D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-01-05"
+          }
+        },
         "Start": 7,
         "Length": 29
       }
@@ -2099,25 +4173,51 @@
   },
   {
     "Input": "Ik ben van 2015 tot 5 mei 2017 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " van 2015 tot 5 mei 2017",
+        "Text": "van 2015 tot 5 mei 2017",
         "Type": "daterange",
-        "Start": 6,
-        "Length": 24
+        "Value": {
+          "Timex": "(2015-01-01,2017-05-05,P855D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2017-05-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2017-05-05"
+          }
+        },
+        "Start": 7,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ik ben van de laatste maandag in april tot 2019 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van de laatste maandag in april tot 2019",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-04-30,2019-01-01,P246D)",
+          "FutureResolution": {
+            "startDate": "2018-04-30",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-04-30",
+            "endDate": "2019-01-01"
+          }
+        },
         "Start": 7,
         "Length": 40
       }
@@ -2125,12 +4225,25 @@
   },
   {
     "Input": "Ik ben van week 31 tot week 35 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van week 31 tot week 35",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
+          "FutureResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          }
+        },
         "Start": 7,
         "Length": 23
       }
@@ -2138,12 +4251,25 @@
   },
   {
     "Input": "Ik ben tussen week 31 en week 35 weg",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "tussen week 31 en week 35",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
+          "FutureResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          }
+        },
         "Start": 7,
         "Length": 25
       }
@@ -2151,12 +4277,25 @@
   },
   {
     "Input": "Ik blijf hier van vandaag tot tweeënhalve dag later",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-04T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van vandaag tot tweeënhalve dag later",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-04,2018-05-06,P2.5D)",
+          "FutureResolution": {
+            "startDate": "2018-05-04",
+            "endDate": "2018-05-06"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-04",
+            "endDate": "2018-05-06"
+          }
+        },
         "Start": 14,
         "Length": 37
       }
@@ -2164,12 +4303,26 @@
   },
   {
     "Input": "Ik was er niet dezelfde week dat het gebeurde",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dezelfde week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-WXX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
         "Start": 15,
         "Length": 13
       }
@@ -2177,12 +4330,26 @@
   },
   {
     "Input": "Ik was er niet dezelfde maand dat het gebeurde",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dezelfde maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-11-01",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-01",
+            "endDate": "2017-12-01"
+          }
+        },
         "Start": 15,
         "Length": 14
       }
@@ -2190,12 +4357,26 @@
   },
   {
     "Input": "Ik was er dat weekend niet",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dat weekend",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-WXX-WE",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
         "Start": 10,
         "Length": 11
       }
@@ -2203,12 +4384,26 @@
   },
   {
     "Input": "Ik was er niet datzelfde jaar dat het gebeurde",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "datzelfde jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 15,
         "Length": 14
       }
@@ -2216,12 +4411,25 @@
   },
   {
     "Input": "We hadden een tijdstip om elkaar te ontmoeten kunnen vastleggen eerder in de week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerder in de week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018-W22",
+          "FutureResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-05-31"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-05-31"
+          }
+        },
         "Start": 64,
         "Length": 17
       }
@@ -2229,12 +4437,25 @@
   },
   {
     "Input": "We hadden een tijdstip om elkaar te ontmoeten kunnen vastleggen eerder deze maand.",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-13T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerder deze maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          }
+        },
         "Start": 64,
         "Length": 17
       }
@@ -2242,12 +4463,25 @@
   },
   {
     "Input": "We hadden een tijdstip om elkaar te ontmoeten kunnen vastleggen eerder dit jaar.",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "eerder dit jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-05-28"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-05-28"
+          }
+        },
         "Start": 64,
         "Length": 15
       }
@@ -2255,12 +4489,25 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip voor ons om elkaar te ontmoeten later deze week",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-10T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "later deze week",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "FutureResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-13"
+          }
+        },
         "Start": 62,
         "Length": 15
       }
@@ -2268,12 +4515,25 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip voor ons om elkaar te ontmoeten later deze maand",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "later deze maand",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-06-01"
+          }
+        },
         "Start": 62,
         "Length": 16
       }
@@ -2281,12 +4541,25 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip voor ons om elkaar te ontmoeten later dit jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "later dit jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 62,
         "Length": 14
       }
@@ -2294,12 +4567,25 @@
   },
   {
     "Input": "Zoek alsjeblieft een tijdstip voor ons om elkaar te ontmoeten later in het jaar",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "later in het jaar",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          }
+        },
         "Start": 62,
         "Length": 17
       }
@@ -2307,12 +4593,24 @@
   },
   {
     "Input": "De taak zal meer dan 2 weken na vandaag beginnen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "meer dan 2 weken na vandaag",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018-06-12",
+          "Mod": "after",
+          "FutureResolution": {
+            "startDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-06-12"
+          }
+        },
         "Start": 12,
         "Length": 27
       }
@@ -2320,12 +4618,25 @@
   },
   {
     "Input": "Ik zal over minder dan 2 weken vanaf vandaag terugkomen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "minder dan 2 weken vanaf vandaag",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
         "Start": 12,
         "Length": 32
       }
@@ -2333,38 +4644,75 @@
   },
   {
     "Input": "Binnen 2 weken vanaf vandaag zal ik terug zijn gekomen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "binnen 2 weken vanaf vandaag",
         "Type": "daterange",
-        "Start": -1,
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
+        "Start": 0,
         "Length": 28
       }
     ]
   },
   {
     "Input": "Ik heb al mijn werk al afgerond meer dan 2 weken voor vandaag",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "meer dan weken voor vandaag",
+        "Text": "meer dan 2 weken voor vandaag",
         "Type": "daterange",
-        "Start": -1,
-        "Length": 27
+        "Value": {
+          "Timex": "2018-05-15",
+          "Mod": "before",
+          "FutureResolution": {
+            "endDate": "2018-05-15"
+          },
+          "PastResolution": {
+            "endDate": "2018-05-15"
+          }
+        },
+        "Start": 32,
+        "Length": 29
       }
     ]
   },
   {
     "Input": "Deze taak zou afgerond moeten zijn geweest meer dan 2 dagen voor gisteren",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "meer dan 2 dagen voor gisteren",
         "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05-26",
+          "Mod": "before",
+          "FutureResolution": {
+            "endDate": "2018-05-26"
+          },
+          "PastResolution": {
+            "endDate": "2018-05-26"
+          }
+        },
         "Start": 43,
         "Length": 30
       }
@@ -2372,12 +4720,25 @@
   },
   {
     "Input": "Deze taak zal afgerond zijn minder dan 3 dagen na morgen",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "minder dan 3 dagen na morgen",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-30,2018-06-02,P3D)",
+          "FutureResolution": {
+            "startDate": "2018-05-30",
+            "endDate": "2018-06-02"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-30",
+            "endDate": "2018-06-02"
+          }
+        },
         "Start": 28,
         "Length": 28
       }
@@ -2385,38 +4746,77 @@
   },
   {
     "Input": "Het gebeurt in de 15e eeuw",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de 15e eeuw",
+        "Text": "15e eeuw",
         "Type": "daterange",
-        "Start": 15,
-        "Length": 11
+        "Value": {
+          "Timex": "(1400-01-01,1500-01-01,P100Y)",
+          "FutureResolution": {
+            "startDate": "1400-01-01",
+            "endDate": "1500-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1400-01-01",
+            "endDate": "1500-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Toon me de gegevens in de 21e eeuw",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de 21e eeuw",
+        "Text": "21e eeuw",
         "Type": "daterange",
-        "Start": 23,
-        "Length": 11
+        "Value": {
+          "Timex": "(2000-01-01,2100-01-01,P100Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2100-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2100-01-01"
+          }
+        },
+        "Start": 26,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "verkoop waarvan de datum dit decennium is",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "dit decennium",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
         "Start": 25,
         "Length": 13
       }
@@ -2424,12 +4824,25 @@
   },
   {
     "Input": "van 1-10 tot 7-11",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 1-10 tot 7-11",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          }
+        },
         "Start": 0,
         "Length": 17
       }
@@ -2437,12 +4850,25 @@
   },
   {
     "Input": "van 25-10 tot 25-01",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "van 25-10 tot 25-01",
         "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+          "FutureResolution": {
+            "startDate": "2018-10-25",
+            "endDate": "2019-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-25",
+            "endDate": "2018-01-25"
+          }
+        },
         "Start": 0,
         "Length": 19
       }

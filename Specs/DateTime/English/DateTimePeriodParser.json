@@ -230,6 +230,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Java does not correctly handle lookbehinds.",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
@@ -1547,31 +1549,6 @@
     ]
   },
   {
-    "Input": "I'll be out I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
-          "FutureResolution": {
-            "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
-          }
-        },
-        "Start": 24,
-        "Length": 42
-      }
-    ]
-  },
-  {
     "Input": "let's meet in the late night on Tuesday",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -2418,6 +2395,32 @@
         },
         "Start": 20,
         "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Make me unavailable from 12-04-2019 6:00am until 12-05-2019 8:00pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 12-04-2019 6:00am until 12-05-2019 8:00pm",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2019-12-04T06:00,2019-12-05T20:00,PT38H)",
+          "FutureResolution": {
+            "startDateTime": "2019-12-04 06:00:00",
+            "endDateTime": "2019-12-05 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-12-04 06:00:00",
+            "endDateTime": "2019-12-05 20:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 46
       }
     ]
   },

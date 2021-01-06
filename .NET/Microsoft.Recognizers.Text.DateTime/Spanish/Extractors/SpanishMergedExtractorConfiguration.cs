@@ -2,7 +2,9 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -14,11 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
-
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
             new Regex(BaseDateTime.EqualRegex, RegexFlags);
@@ -45,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
-        public static readonly Regex[] TermFilterRegexes = { };
+        public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
@@ -65,8 +64,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration(this));
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                SinceRegex = SinceRegexExp;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
+
+        // Used in Standard mode
+        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        // used in Experimental mode
+        public static Regex SinceRegexExp { get; } = new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 
@@ -92,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor IntegerExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
 

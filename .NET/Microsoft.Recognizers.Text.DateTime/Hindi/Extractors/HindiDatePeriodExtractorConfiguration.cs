@@ -64,6 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex SimpleCasesRegex =
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
 
+        public static readonly Regex NumberBeforeWeekRegex =
+            new Regex(DateTimeDefinitions.NumberBeforeWeekRegex, RegexFlags);
+
         public static readonly Regex MonthFrontSimpleCasesRegex =
             new Regex(DateTimeDefinitions.MonthFrontSimpleCasesRegex, RegexFlags);
 
@@ -168,10 +171,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromTokenRegex, RegexFlags);
+
+        private static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             // "3-5 Jan, 2018",
             SimpleCasesRegex,
+
+            // "18 तारीख वाली सप्ताह"
+            NumberBeforeWeekRegex,
 
             // "between 3 and 5 Jan, 2018"
             BetweenRegex,
@@ -241,10 +253,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new HindiDateExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             CardinalExtractor = Number.Hindi.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.Hindi.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
-            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            NumberParser = new BaseNumberParser(new HindiNumberParserConfiguration(numConfig));
         }
 
         public IDateExtractor DatePointExtractor { get; }
@@ -318,25 +340,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = RangePrefixRegex.MatchBegin(text, trim: true);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index + betweenMatch.Length;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)

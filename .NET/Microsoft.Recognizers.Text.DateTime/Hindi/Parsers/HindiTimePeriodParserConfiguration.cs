@@ -1,13 +1,20 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
     public class HindiTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex PluralTokenRegex =
+            new Regex(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
+
         public HindiTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -57,9 +64,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.EndsWith("s"))
+            var pluralMatch = PluralTokenRegex.MatchBegin(trimmedText, trim: true);
+            if (pluralMatch.Success)
             {
-                trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);
+                trimmedText = trimmedText.Substring(pluralMatch.Length).Trim();
             }
 
             beginHour = 0;
@@ -67,27 +75,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             endMin = 0;
 
             var timeOfDay = string.Empty;
-            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Night;
             }
-            else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimmedText.Contains(o)))
+            else if (DateTimeDefinitions.BusinessHourSplitStrings.Any(o => trimmedText.Contains(o)))
             {
                 timeOfDay = Constants.BusinessHour;
             }

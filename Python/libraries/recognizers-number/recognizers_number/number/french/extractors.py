@@ -119,11 +119,11 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.AllIntRegexWithLocks),
-                val='IntegerFr'),
+                val=f'Integer{FrenchNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.AllIntRegexWithDozenSuffixLocks),
-                val='IntegerFr')
+                val=f'Integer{FrenchNumeric.LangMarker}')
         ]
 
 
@@ -155,8 +155,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
                     LongFormatMode.DOUBLE_NO_BREAK_SPACE_COMMA, placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(
-                    FrenchNumeric.DoubleWithMultiplierRegex),
+                re=FrenchNumeric.DoubleWithMultiplierRegex,
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -165,7 +164,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.DoubleAllFloatRegex),
-                val='DoubleFr'),
+                val=f'Double{FrenchNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.DoubleExponentialNotationRegex),
@@ -199,11 +198,11 @@ class FrenchFractionExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.FractionNounRegex),
-                val='FracFr'),
+                val=f'Frac{FrenchNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.FractionNounWithArticleRegex),
-                val='FracFr')
+                val=f'Frac{FrenchNumeric.LangMarker}')
         ]
 
         if mode != NumberMode.Unit:
@@ -211,7 +210,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
                 ReVal(
                     re=RegExpUtility.get_safe_reg_exp(
                         FrenchNumeric.FractionPrepositionRegex),
-                    val='FracFr'))
+                    val=f'Frac{FrenchNumeric.LangMarker}'))
 
 
 class FrenchOrdinalExtractor(BaseNumberExtractor):
@@ -232,7 +231,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     FrenchNumeric.OrdinalFrenchRegex),
-                val='OrdFr')
+                val=f'Ord{FrenchNumeric.LangMarker}')
         ]
 
 

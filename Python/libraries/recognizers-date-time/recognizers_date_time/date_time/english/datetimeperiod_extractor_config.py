@@ -11,11 +11,13 @@ from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor
 from ..base_timeperiod import BaseTimePeriodExtractor
 from ..base_datetime import BaseDateTimeExtractor
+from ..base_timezone import BaseTimeZoneExtractor
 from .date_extractor_config import EnglishDateExtractorConfiguration
 from .time_extractor_config import EnglishTimeExtractorConfiguration
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
 from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
+from .timezone_extractor_config import EnglishTimeZoneExtractorConfiguration
 from ..utilities import DateTimeOptions
 
 
@@ -48,6 +50,10 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     @property
     def time_period_extractor(self) -> DateTimeExtractor:
         return self._time_period_extractor
+
+    @property
+    def time_zone_extractor(self) -> DateTimeExtractor:
+        return self._time_zone_extractor
 
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
@@ -149,8 +155,16 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def suffix_regex(self) -> Pattern:
         return self._suffix_regex
 
+    @property
+    def week_day_regex(self) -> Pattern:
+        return self._week_day_regex
+
     def __init__(self):
         super().__init__()
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayRegex
+        )
+        self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._cardinal_extractor = EnglishCardinalExtractor()
         self._single_date_extractor = BaseDateExtractor(
             EnglishDateExtractorConfiguration())
@@ -162,6 +176,8 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
             EnglishDurationExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
             EnglishTimePeriodExtractorConfiguration())
+        self._time_zone_extractor = BaseTimeZoneExtractor(
+            EnglishTimeZoneExtractorConfiguration())
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)

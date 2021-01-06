@@ -12,12 +12,14 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor> Instances =
-            new ConcurrentDictionary<(NumberMode, NumberOptions, string), FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor>();
 
-        private FractionExtractor(NumberMode mode, NumberOptions options)
+        private FractionExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
-            Options = options;
+
+            Options = config.Options;
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -40,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             };
 
             // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
-            if (mode != NumberMode.Unit)
+            if (config.Mode != NumberMode.Unit)
             {
                 regexes.Add(
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
@@ -50,23 +52,24 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             Regexes = regexes.ToImmutableDictionary();
         }
 
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+        public sealed override NumberOptions Options { get; }
 
-        protected sealed override NumberOptions Options { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         // "Fraction";
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
 
-        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None, string placeholder = "")
+        public static FractionExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (mode, options, placeholder);
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = (config.Mode, config.Options);
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new FractionExtractor(mode, options);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new FractionExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }

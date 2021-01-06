@@ -111,6 +111,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex RangeConnectorSymbolRegex =
             new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
@@ -125,11 +128,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public HindiDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
            : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.Hindi.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Hindi.OrdinalExtractor.GetInstance();
 
-            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
             UtilityConfiguration = new HindiDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -227,6 +241,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IEnumerable<Regex> ImplicitDateList { get; }
@@ -274,5 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

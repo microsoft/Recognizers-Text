@@ -239,10 +239,10 @@ export class ChineseHolidayParser extends BaseHolidayParser {
             year += this.config.getSwiftYear(yearRelative);
         }
 
-        if (year < 100 && year >= 90) {
+        if (year < 100 && year >= Constants.MaxTwoDigitYearFutureNum) {
             year += 1900;
         }
-        else if (year < 100 && year < 20) {
+        else if (year < 100 && year < Constants.MinTwoDigitYearPastNum) {
             year += 2000;
         }
 

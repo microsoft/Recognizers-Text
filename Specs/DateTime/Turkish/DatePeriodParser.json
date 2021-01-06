@@ -1518,7 +1518,7 @@
         "Text": "üçüncü çeyrek",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "Timex": "(XXXX-07-01,XXXX-10-01,P3M)",
           "FutureResolution": {
             "startDate": "2017-07-01",
             "endDate": "2017-10-01"
@@ -1544,7 +1544,7 @@
         "Text": "ikinci çeyrek",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-04-01,2016-07-01,P3M)",
+          "Timex": "(XXXX-04-01,XXXX-07-01,P3M)",
           "FutureResolution": {
             "startDate": "2017-04-01",
             "endDate": "2017-07-01"

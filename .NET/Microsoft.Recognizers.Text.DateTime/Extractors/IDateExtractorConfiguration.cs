@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RangeConnectorSymbolRegex { get; }
 
+        Regex BeforeAfterRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }
@@ -58,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IParser NumberParser { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
+
+        IDateTimeExtractor HolidayExtractor { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

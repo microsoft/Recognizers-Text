@@ -12,8 +12,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(NumberExtractor.GetInstance(),
-                   OrdinalExtractor.GetInstance(),
+            : base(NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
                    new BaseNumberParser(new SpanishNumberParserConfiguration(config)),
                    config)
         {
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 },
                 {
                     // más/mayor que ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1LB, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1LB, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {

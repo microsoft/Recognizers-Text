@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -11,6 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
+
+        public static readonly Regex HyphenDateRegex =
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
@@ -74,12 +79,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
 
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
         public EnglishDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance(numConfig);
+
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
@@ -160,7 +177,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("from", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
@@ -172,7 +192,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.EndsWith("between", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
@@ -183,9 +206,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            var rangeConnetorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
-
-            return rangeConnetorRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

@@ -21,6 +21,11 @@
             Extract all number-related terms aggressively.
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Constants.JAPANESE_SUBS">
+            <summary>
+            Substitute for language markers for Japanese.
+            </summary>
+        </member>
         <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.Extract(System.String)">
             <summary>
             extractor the percentage entities from the sentence.
@@ -32,7 +37,7 @@
             <summary>
             read the rules.
             </summary>
-            <param name="regexStrs">rule list.</param>
+            <param name="regexStrings">rule list.</param>
             <param name="ignoreCase">.</param>
             <returns>Immutable HashSet of regex.</returns>
         </member>
@@ -98,6 +103,11 @@
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.PercentageMode">
             <summary>
             PercentageMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.NoProtoCache">
+            <summary>
+            NoProtoCache
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.SuppressExtendedTypes">
@@ -171,6 +181,13 @@
             </summary>
             <param name="numberStr">composite number.</param>
             <returns>value of the string.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.INumberParserConfiguration.GetLangSpecificIntValue(System.Collections.Generic.List{System.String})">
+            <summary>
+            Used when requiring special processing for number value cases.
+            </summary>
+            <param name="matchStrs">matches.</param>
+            <returns>value of the match.</returns>
         </member>
     </members>
 </doc>

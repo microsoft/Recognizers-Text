@@ -6,9 +6,11 @@ from recognizers_number import CJKNumberParser, ChineseIntegerExtractor, Chinese
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..base_date import DateParserConfiguration
+from ..extractors import DateTimeExtractor
 
 
 class ChineseDateParserConfiguration(DateParserConfiguration):
+
     @property
     def check_both_before_after(self) -> bool:
         pass
@@ -24,6 +26,10 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
     def cardinal_extractor(self) -> any:
         return None
+
+    @property
+    def date_extractor(self) -> DateTimeExtractor:
+        return self._date_extractor
 
     @property
     def duration_extractor(self) -> any:
@@ -125,6 +131,18 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
     def date_token_prefix(self) -> any:
         return None
 
+    @property
+    def dynasty_year_regex(self) -> Pattern:
+        return self._dynasty_year_regex
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return self._dynasty_year_map
+
+    @property
+    def dynasty_start_year(self) -> str:
+        return self._dynasty_start_year
+
     def get_swift_day(self, source: str) -> int:
         source = source.strip().lower()
         swift = 0
@@ -161,23 +179,21 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList1),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList2),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList5)
+            # 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8)
         ]
 
+        # Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
         if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList7))
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList6))
+            order_regex_list = [ChineseDateTime.DateRegexList5, ChineseDateTime.DateRegexList4]
         else:
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList6))
-            self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DateRegexList7))
+            order_regex_list = [ChineseDateTime.DateRegexList4, ChineseDateTime.DateRegexList5]
 
-        self._date_regex.append(RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DateRegexList8))
+        if ChineseDateTime.DefaultLanguageFallback in [Constants.DEFAULT_LANGUAGE_FALLBACK_DMY, Constants.DEFAULT_LANGUAGE_FALLBACK_YMD]:
+            order_regex_list.extend([ChineseDateTime.DateRegexList7, ChineseDateTime.DateRegexList6])
+        else:
+            order_regex_list.extend([ChineseDateTime.DateRegexList6, ChineseDateTime.DateRegexList7])
+        self._date_regex.extend([RegExpUtility.get_safe_reg_exp(ii) for ii in order_regex_list])
 
         self._month_of_year = ChineseDateTime.ParserConfigurationMonthOfYear
         self._day_of_month = ChineseDateTime.ParserConfigurationDayOfMonth
@@ -199,6 +215,10 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             ChineseDateTime.WeekDayOfMonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayRegex)
+        self._dynasty_year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DynastyYearRegex)
+        self._dynasty_year_map = ChineseDateTime.DynastyYearMap
         self._integer_extractor = ChineseIntegerExtractor()
-        self._number_parser = CJKNumberParser(
-            ChineseNumberParserConfiguration())
+        self._number_parser = CJKNumberParser(ChineseNumberParserConfiguration())
+        self._date_extractor = None
+        self._dynasty_start_year = ChineseDateTime.DynastyStartYear

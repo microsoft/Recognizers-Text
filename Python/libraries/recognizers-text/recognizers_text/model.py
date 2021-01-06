@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from enum import Flag
-from typing import List, Dict, Generic, TypeVar, Callable, Optional
+from typing import List, Dict, Generic, TypeVar, Callable, Optional, Union, Any
 from collections import namedtuple
 
 from .culture import Culture
@@ -8,13 +8,44 @@ from .culture import Culture
 T_MODEL_OPTIONS = TypeVar('T_MODEL_OPTIONS', bound=Flag)
 
 
-class ModelResult():
-    def __init__(self):
-        self.text: str
-        self.start: int
-        self.end: int
-        self.type_name: str
-        self.resolution: Dict[str, object]
+class ModelResult(object):
+
+    # Raw text extracted (lowered)
+    text: str
+    # Start character index
+    start: int
+    # End character index (include)
+    end: int
+    # Value type
+    type_name: str
+    # More detail extracted result (e.g. value in int)
+    resolution: Union[Dict[str, object], List[Dict[str, object]]]
+
+    def __repr__(self) -> str:
+        value = self.resolution.get('value', None)
+
+        if value:
+            return '{} ({})'.format(self.text, value)
+
+        return self.text
+
+    def __str__(self) -> str:
+        return '{}: {} [{}, {}]'.format(
+            self.type_name, self.text, self.start, self.end
+        )
+
+    def get_dict(self) -> Dict[str, Any]:
+        """
+        Note: Key value naming follows .NET version
+        Reminder: self.__dict__, deep copy on self.resolution
+        """
+        return {
+            'Text': self.text,
+            'Start': self.start,
+            'End': self.end,
+            'TypeName': self.type_name,
+            'Resolution': self.resolution.copy()
+        }
 
 
 class Model(ABC):

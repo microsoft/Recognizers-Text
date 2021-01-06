@@ -40,13 +40,15 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public Regex FractionPrepositionRegex { get; }
 
+        public Regex RoundMultiplierRegex { get; }
+
         public string FractionMarkerToken { get; }
 
         public Regex HalfADozenRegex { get; }
 
         public string HalfADozenText { get; }
 
-        public string LangMarker { get; } = "SelfDefined";
+        public string LanguageMarker { get; } = "SelfDefined";
 
         public char NonDecimalSeparatorChar { get; }
 
@@ -78,5 +80,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             throw new NotImplementedException();
         }
+
+        public (bool isRelevant, double value) GetLangSpecificIntValue(List<string> matchStrs)
+        {
+            return (false, double.MinValue);
+        }
+
     }
 }

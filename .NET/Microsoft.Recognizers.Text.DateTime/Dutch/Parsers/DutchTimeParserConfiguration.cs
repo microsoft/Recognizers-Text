@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Dutch;
@@ -21,6 +22,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
+        private static readonly Regex ToHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ToHalfTokenRegex, RegexFlags);
+
+        private static readonly Regex ForHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ForHalfTokenRegex, RegexFlags);
 
         public DutchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -51,27 +70,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             int deltaMin;
 
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimmedPrefix = prefix.Trim();
 
-            if (trimedPrefix.StartsWith("half"))
+            if (HalfTokenRegex.IsMatch(trimmedPrefix))
             {
-                deltaMin = 30;
+                deltaMin = -30;
             }
-            else if (trimedPrefix.StartsWith("a quarter") || trimedPrefix.StartsWith("quarter"))
+            else if (QuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("three quarter"))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 45;
             }
             else
             {
-                var match = DutchTimeExtractorConfiguration.LessThanOneHour.Match(trimedPrefix);
+                var match = DutchTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
-                    deltaMin = int.Parse(minStr);
+                    deltaMin = int.Parse(minStr, CultureInfo.InvariantCulture);
                 }
                 else
                 {
@@ -80,7 +99,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (ToHalfTokenRegex.IsMatch(trimmedPrefix))
+            {
+                deltaMin = deltaMin - 30;
+            }
+            else if (ForHalfTokenRegex.IsMatch(trimmedPrefix))
+            {
+                deltaMin = -deltaMin - 30;
+            }
+            else if (ToTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = -deltaMin;
             }
@@ -97,13 +124,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var lowerSuffix = suffix.ToLowerInvariant();
+
             var deltaHour = 0;
-            var match = TimeSuffixFull.MatchExact(lowerSuffix, trim: true);
+            var match = TimeSuffixFull.MatchExact(suffix, trim: true);
 
             if (match.Success)
             {
                 var oclockStr = match.Groups["oclock"].Value;
+
                 if (string.IsNullOrEmpty(oclockStr))
                 {
                     var stringAm = match.Groups[Constants.AmGroupName].Value;

@@ -60,8 +60,14 @@ export class NumberWithUnitParser implements IParser {
     parse(extResult: ExtractResult): ParseResult {
         let ret = new ParseResult(extResult);
         let numberResult: ExtractResult;
-        if (extResult.data && typeof extResult.data === "object") {
+        let halfResult: ExtractResult;
+        if (extResult.data && extResult.data instanceof Array && extResult.data.length === 2) {
+            numberResult = extResult.data[0];
+            halfResult = extResult.data[1];
+        }
+        else if (extResult.data && typeof extResult.data === "object") {
             numberResult = extResult.data as ExtractResult;
+            halfResult = null;
         }
         else if (extResult.type === Constants.SYS_NUM) {
             ret.value = this.config.internalNumberParser.parse(extResult).value;
@@ -70,6 +76,7 @@ export class NumberWithUnitParser implements IParser {
         else {
             // if there is no unitResult, means there is just unit
             numberResult = { start: -1, length: 0, text: null, type: null };
+            halfResult = null;
         }
 
         // key contains units
@@ -102,6 +109,9 @@ export class NumberWithUnitParser implements IParser {
 
         /* Unit type depends on last unit in suffix.*/
         let lastUnit = last(unitKeys);
+        if (halfResult != null) {
+            lastUnit = lastUnit.substring(0, lastUnit.length - halfResult.text.length);
+        }
         let normalizedLastUnit = lastUnit.toLowerCase();
         if (this.config.connectorToken && this.config.connectorToken.length && normalizedLastUnit.indexOf(this.config.connectorToken) === 0) {
             normalizedLastUnit = normalizedLastUnit.substring(this.config.connectorToken.length).trim();
@@ -120,6 +130,10 @@ export class NumberWithUnitParser implements IParser {
             if (unitValue) {
                 let numValue = numberResult.text && numberResult.text.length ? this.config.internalNumberParser.parse(numberResult) : null;
                 let resolutionStr = numValue ? numValue.resolutionStr : null;
+                if (halfResult != null) {
+                    let halfValue = this.config.internalNumberParser.parse(halfResult);
+                    resolutionStr += halfValue.resolutionStr.substring(1);
+                }
                 ret.value = { number: resolutionStr, unit: unitValue } as UnitValue;
                 ret.resolutionStr = (`${resolutionStr} ${unitValue}`).trim();
             }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -9,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
     public class HindiDateParserConfiguration : BaseDateTimeOptionsConfiguration, IDateParserConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private IImmutableList<string> lastCardinalTerms = DateTimeDefinitions.LastCardinalTerms.ToImmutableList();
 
         public HindiDateParserConfiguration(ICommonDateTimeParserConfiguration config)
              : base(config)
@@ -21,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new HindiHolidayParserConfiguration(this));
             DateRegexes = new HindiDateExtractorConfiguration(this).DateRegexList;
             OnRegex = HindiDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = HindiDateExtractorConfiguration.SpecialDayRegex;
@@ -39,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             StrictRelativeRegex = HindiDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = HindiDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = HindiDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = HindiDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -75,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 
@@ -124,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public Regex PastPrefixRegex { get; }
 
+        public Regex BeforeAfterRegex { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -167,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("last");
+            return lastCardinalTerms.Contains(trimmedText);
         }
 
         public string Normalize(string text)

@@ -285,7 +285,7 @@ public class SpanishNumericWithUnit {
         .put("Sene", "sene")
         .put("Libra de Santa Helena", "libra de santa helena|libras de santa helena|shp")
         .put("Penique de Santa Helena", "penique de santa helena|peniques de santa helena")
-        .put("Dobra", "dobra|db|std")
+        .put("Dobra", "dobra")
         .put("Dinar serbio", "dinar serbio|dinares serbios|rsd")
         .put("Para serbio", "para serbio|para serbios")
         .put("Rupia de Seychelles", "rupia de seychelles|rupias de seychelles|scr")
@@ -358,6 +358,7 @@ public class SpanishNumericWithUnit {
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+        .put("Dobra", "db|std")
         .put("Dólar", "$")
         .put("Dólar estadounidense", "us$|u$d|usd")
         .put("Dólar del Caribe Oriental", "ec$|xcd")
@@ -391,7 +392,7 @@ public class SpanishNumericWithUnit {
         .put("Lira turca", "₺")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le", "db", "std");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("bit", "bit|bits")
@@ -418,7 +419,7 @@ public class SpanishNumericWithUnit {
         .put("pebibyte", "pebibyte|pebibytes|PiB|PiByte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("al", "mi", "área", "áreas", "pie", "pies");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("al", "mi", "área", "áreas", "pie", "pies", "\"");
 
     public static final ImmutableMap<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros")
@@ -438,7 +439,7 @@ public class SpanishNumericWithUnit {
         .put("Año luz", "año luz|años luz|al")
         .build();
 
-    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "área", "áreas");
+    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "área", "áreas", "\"");
 
     public static final String BuildPrefix = "(?<=(\\s|^|\\P{L}))";
 
@@ -508,5 +509,9 @@ public class SpanishNumericWithUnit {
         .put("Onza", "oz|onza|onzas")
         .put("Grano", "grano|granos")
         .put("Quilate", "ct|quilate|quilates")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("null", "null")
         .build();
 }

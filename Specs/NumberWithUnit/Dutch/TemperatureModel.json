@@ -8,7 +8,9 @@
         "Resolution": {
           "value": "40",
           "unit": "C"
-        }
+        },
+        "Start": 25,
+        "End": 41
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -22,7 +24,9 @@
         "Resolution": {
           "value": "90",
           "unit": "F"
-        }
+        },
+        "Start": 7,
+        "End": 19
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -36,7 +40,9 @@
         "Resolution": {
           "value": "-5",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -50,7 +56,9 @@
         "Resolution": {
           "value": "6",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -64,7 +72,9 @@
         "Resolution": {
           "value": "98,6",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -78,7 +88,9 @@
         "Resolution": {
           "value": "30",
           "unit": "C"
-        }
+        },
+        "Start": 22,
+        "End": 38
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -92,7 +104,9 @@
         "Resolution": {
           "value": "98,6",
           "unit": "F"
-        }
+        },
+        "Start": 23,
+        "End": 44
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -106,7 +120,9 @@
         "Resolution": {
           "value": "100",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -120,7 +136,9 @@
         "Resolution": {
           "value": "20",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -134,7 +152,9 @@
         "Resolution": {
           "value": "100,2",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 22
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -148,7 +168,9 @@
         "Resolution": {
           "value": "10,5",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -162,7 +184,9 @@
         "Resolution": {
           "value": "20",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -176,7 +200,9 @@
         "Resolution": {
           "value": "20,3",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -190,7 +216,9 @@
         "Resolution": {
           "value": "34,5",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -204,7 +232,9 @@
         "Resolution": {
           "value": "30",
           "unit": "Degree"
-        }
+        },
+        "Start": 25,
+        "End": 33
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -218,7 +248,9 @@
         "Resolution": {
           "value": "85",
           "unit": "Degree"
-        }
+        },
+        "Start": 22,
+        "End": 24
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -232,7 +264,9 @@
         "Resolution": {
           "value": "5",
           "unit": "Degree"
-        }
+        },
+        "Start": 27,
+        "End": 34
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -246,7 +280,9 @@
         "Resolution": {
           "value": "70",
           "unit": "F"
-        }
+        },
+        "Start": 22,
+        "End": 32
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -260,7 +296,9 @@
         "Resolution": {
           "value": "20",
           "unit": "Degree"
-        }
+        },
+        "Start": 27,
+        "End": 35
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -274,7 +312,9 @@
         "Resolution": {
           "value": "100",
           "unit": "Degree"
-        }
+        },
+        "Start": 22,
+        "End": 31
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -288,7 +328,9 @@
         "Resolution": {
           "value": "75",
           "unit": "F"
-        }
+        },
+        "Start": 22,
+        "End": 32
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -302,7 +344,9 @@
         "Resolution": {
           "value": "40",
           "unit": "C"
-        }
+        },
+        "Start": 20,
+        "End": 29
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -316,7 +360,9 @@
         "Resolution": {
           "value": "50",
           "unit": "Degree"
-        }
+        },
+        "Start": 20,
+        "End": 28
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -330,7 +376,9 @@
         "Resolution": {
           "value": "10",
           "unit": "C"
-        }
+        },
+        "Start": 11,
+        "End": 27
       },
       {
         "Text": "fahrenheit",
@@ -338,7 +386,9 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 32,
+        "End": 41
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -352,7 +402,9 @@
         "Resolution": {
           "value": "34,9",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 18
       },
       {
         "Text": "fahrenheit",
@@ -360,7 +412,9 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 25,
+        "End": 34
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -374,15 +428,9 @@
         "Resolution": {
           "value": "200",
           "unit": "C"
-        }
-      },
-      {
-        "Text": "celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        }
+        },
+        "Start": 11,
+        "End": 28
       },
       {
         "Text": "fahrenheit",
@@ -390,10 +438,11 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 35,
+        "End": 44
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -405,7 +454,9 @@
         "Resolution": {
           "value": "101",
           "unit": "F"
-        }
+        },
+        "Start": 25,
+        "End": 38
       },
       {
         "Text": "fahrenheit",
@@ -413,7 +464,19 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 16,
+        "End": 22
       },
       {
         "Text": "graden celsius",
@@ -421,18 +484,11 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
-      },
-      {
-        "Text": "graden celsius",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        }
+        },
+        "Start": 51,
+        "End": 64
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -444,7 +500,9 @@
         "Resolution": {
           "value": "50",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 16
       },
       {
         "Text": "fahrenheit",
@@ -452,7 +510,9 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 23,
+        "End": 32
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -466,7 +526,9 @@
         "Resolution": {
           "value": "51",
           "unit": "F"
-        }
+        },
+        "Start": 7,
+        "End": 19
       },
       {
         "Text": "graden celsius",
@@ -474,7 +536,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 26,
+        "End": 39
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -488,7 +552,9 @@
         "Resolution": {
           "value": "106",
           "unit": "F"
-        }
+        },
+        "Start": 11,
+        "End": 31
       },
       {
         "Text": "graden celsius",
@@ -496,7 +562,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 38,
+        "End": 51
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -510,7 +578,9 @@
         "Resolution": {
           "value": "45",
           "unit": "F"
-        }
+        },
+        "Start": 11,
+        "End": 30
       },
       {
         "Text": "celsius",
@@ -518,7 +588,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 37,
+        "End": 43
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -532,7 +604,9 @@
         "Resolution": {
           "value": "-20",
           "unit": "F"
-        }
+        },
+        "Start": 18,
+        "End": 39
       },
       {
         "Text": "celsius",
@@ -540,7 +614,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 46,
+        "End": 52
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"

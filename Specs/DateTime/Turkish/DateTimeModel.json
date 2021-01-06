@@ -426,9 +426,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 ocak 2016 - 22/01/2016",
+        "Text": "12 ocak 2016 - 22/01/2016 arası",
         "Start": 0,
-        "End": 24,
+        "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -8690,6 +8690,31 @@
               "type": "datetimerange",
               "start": "2019-03-07 19:00:00",
               "end": "2019-03-07 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10/1-11/2/2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1-11/2/2017",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-10,2017-02-11,P32D)",
+              "type": "daterange",
+              "start": "2017-01-10",
+              "end": "2017-02-11"
             }
           ]
         }

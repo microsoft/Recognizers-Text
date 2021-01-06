@@ -118,6 +118,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
@@ -127,10 +130,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance(numConfig);
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(numConfig));
+
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -187,6 +201,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -234,5 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

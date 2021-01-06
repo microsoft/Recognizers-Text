@@ -1,0 +1,3800 @@
+[
+  {
+    "Input": "मैं जन. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जन.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जन. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जन.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं जन. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जन. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जन. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जन. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं जन. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जन. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जन., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जन., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं फर. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फर.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस फर. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस फर.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं फर. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फर. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस फर. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस फर. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं फर. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फर. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं फर., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फर., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं मा. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मा.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस मा. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मा.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं मा. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मा. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस मा. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मा. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं मा. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मा. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं मा., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मा., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्र. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्र.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अप्र. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अप्र.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्र. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्र. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अप्र. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अप्र. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्र. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्र. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्र., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्र., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस मई में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मई",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस मई के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मई के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जू. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जू.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जू. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जू.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं जू. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जू. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जू. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जू. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं जू. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जू. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जू., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जू., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं जु. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जु.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जु. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जु.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं जु. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जु. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जु. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जु. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं जु. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जु. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जु., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जु., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अग. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अग.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अग. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अग.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं अग. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अग. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अग. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अग. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं अग. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अग. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अग., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अग., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं सित. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सित.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सित. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सित.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं सित. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सित. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सित. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सित. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं सित. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सित. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं सित., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सित., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितं. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितं.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सितं. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सितं.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितं. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितं. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सितं. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सितं. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितं. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितं. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितं., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितं., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अक्टू. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अक्टू.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अक्टू. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अक्टू. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवं. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवं.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस नवं. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस नवं.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवं. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवं. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस नवं. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस नवं. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवं. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवं. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवं., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवं., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिस. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिस.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस दिस. में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दिस.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिस. के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिस. के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस दिस. के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दिस. के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिस. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिस. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिस., 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिस., 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं जनवरी में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जनवरी",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जनवरी में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जनवरी",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जनवरी के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जनवरी के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जनवरी के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जनवरी के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं जनवरी 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जनवरी 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं जनवरी, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जनवरी, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं फरवरी में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फरवरी",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस फ़रवरी में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस फ़रवरी",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं फरवरी के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फरवरी के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस फरवरी के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस फरवरी के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं फरवरी 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फरवरी 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं फरवरी, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "फरवरी, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं मार्च में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस मार्च में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मार्च",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं मार्च के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस मार्च के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस मार्च के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं मार्च 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं मार्च, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्रील में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रील",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अप्रील में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अप्रील",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्रील के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रील के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अप्रील के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अप्रील के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्रील 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रील 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्रील, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रील, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जून में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जून",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जून के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जून के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं जुलाई में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जुलाई में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जुलाई",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जुलाई के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस जुलाई के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस जुलाई के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं जुलाई 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं जुलाई, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगस्त में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगस्त",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अगस्त में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अगस्त",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगस्त के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगस्त के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अगस्त के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अगस्त के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगस्त 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगस्त 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगस्त, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगस्त, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितंबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सितंबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सितंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितंबर के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सितंबर के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सितंबर के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितंबर 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितंबर, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टूबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टूबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अक्टूबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अक्टूबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टूबर के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टूबर के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस अक्टूबर के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस अक्टूबर के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टूबर 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टूबर 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टूबर, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टूबर, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस नवंबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस नवंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस नवंबर के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस नवंबर के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिसंबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिसंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस दिसंबर में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दिसंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिसंबर के महीने में बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिसंबर के महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस दिसंबर के माह में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दिसंबर के माह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिसंबर 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिसंबर 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं दिसंबर, 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दिसंबर, 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "सितंबर के महीने के लिए कैलेंडर।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर के महीने",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस महीने 4 से 22 तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने 4 से 22 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले महीने 4 से 23 बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने 4 से 23",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 से 12 सितंबर तक बाहर रहूँगा हाहाहा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 से 12 सितंबर तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले महीने 4 से 23 तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने 4 से 23 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस महीने 4 से लेकर 23 तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने 4 से लेकर 23 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस महीने 4 से 22 के बीच बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने 4 से 22 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 और 12 सितं. के बीच बाहर रहुंगा हाहाहा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 और 12 सितं. के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितम्बर 8 से लेकर सितंबर 4 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितम्बर 8 से लेकर सितंबर 4 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर 15वें से 19वें के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर 15वें से 19वें के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर 15 से लेकर 19 के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर 15 से लेकर 19 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मैं 15 से 19 नवंबर के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 से 19 नवंबर के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 4 से 22 जनवरी, 2017 के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 से 22 जनवरी, 2017",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं 4-22 जनवरी, 2017 के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4-22 जनवरी, 2017 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सप्ताह बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं आने वाले सप्ताह को बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आने वाले सप्ताह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितंबर से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सितंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "पिछले सितं. मैं बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले सितं.",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले जून में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले जून",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं जून 2016 में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जून 2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल जून में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल जून",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सप्ताहांत बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताहांत",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "इस महीने के तीसरे हफ्ते मैं निकल जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने के तीसरे हफ्ते",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "जुलाई के आखिरी हफ्ते में मैं बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "जुलाई के आखिरी हफ्ते में",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "शुक्रवार से रविवार तक के लिए कैंपिंग का समय निर्धारित करें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार से रविवार तक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 3 दिन बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 3 दिन",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 3 महीने बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 3 महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं 3 साल में बाहर हो जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं 3 सप्ताह में बाहर हो जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं 3 महीने में बाहर हो जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मैं पिछले 3 सप्ताह से बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 सप्ताह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 वर्ष से बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 वर्ष",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले साल बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले साल",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले महीने बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 हफ़्ते से बाहर था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 हफ़्ते",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "पिछले कुछ सप्ताह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले कुछ सप्ताह",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "पिछले कई दिनों से",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले कई दिनों",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2 से अक्टू. 22 तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2 से अक्टू. 22 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली जनवरी से लेकर बुधवार, 22 जन. तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली जनवरी से लेकर बुधवार, 22 जन. तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से कल तक बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से कल तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से 22 अक्टूबर तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से 22 अक्टूबर तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2 अक्टूबर से परसों तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 अक्टूबर से परसों तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से अगले रविवार तक बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से अगले रविवार तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस शुक्रवार से अगले रविवार तक बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार से अगले रविवार तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2 से अक्टूबर 22 तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2 से अक्टूबर 22 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015/08/12 से 22 अक्टूबर तक बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015/08/12 से 22 अक्टूबर तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं शुक्रवार 2 से मंगलवार 6 तारीख तक बाहर रहूँगा",
+    "Context": {
+      "ReferenceDateTime": "2018-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार 2 से मंगलवार 6",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2 से अक्टूबर 22 के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2 से अक्टूबर 22 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19-20 नवंबर तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19-20 नवंबर तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19 से 20 नवंबर तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19 से 20 नवंबर तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं 19 और 20 नवंबर के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "19 और 20 नवंबर के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 की तीसरी तिमाही से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 की तीसरी तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस साल तीसरी तिमाही से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस साल तीसरी तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2027 के तीसरे सप्ताह से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2027 के तीसरे सप्ताह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल तीसरे सप्ताह से बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल तीसरे सप्ताह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस गर्मी में चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस गर्मी",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले वसंत में चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले वसंत",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं गर्मी में चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गर्मी",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 की गर्मियों में चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 की गर्मियों",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "आगामी माह की छुट्टियां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आगामी माह",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "अगले महीने की छुट्टियां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले महीने",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मेरे पास 30 नवंबर के सप्ताह के लिए क्या है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30 नवंबर के सप्ताह",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "15 सितम्बर का सप्ताह",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 सितम्बर का सप्ताह",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस सप्ताहांत में चला जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताहांत",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं सप्ताह के बाकी दिन को छोड़ दुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह के बाकी दिन",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं अपने सप्ताह के बाकी के दिन को छोड़ दुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अपने सप्ताह के बाकी के दिन",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "सप्ताह के बाकी के दिन मैं आराम करूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह के बाकी के दिन",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "इस सप्ताह के बाकी के दिन मैं आराम करूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह के बाकी के दिन",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "महीने के बाकी दिन मैं छोड़ दुंगा.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "महीने के बाकी दिन",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "साल के बाकी दिन मैं छोड़ दुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साल के बाकी दिन",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस महीने के बाद में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने के बाद",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस सप्ताह के बाद में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह के बाद",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले सप्ताह बाद में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह बाद",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले साल बाद में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल बाद",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "हम पिछले हफ्ते के अंत में मिले",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले हफ्ते के अंत",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस महीने की शुरुआत में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस महीने की शुरुआत",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें इस सप्ताह की शुरुआत में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले सप्ताह की शुरुआत में मिलने का समय दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "कृपया हमें अगले साल की शुरुआत में मिलने का समय दीजिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल की शुरुआत",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया अगले सप्ताह बुधवार और शुक्रवार के बीच एंटोनियो के साथ 25 मिनट की बैठक सेट करें।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह बुधवार और शुक्रवार के बीच",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया बुधवार से शुक्रवार तक अगले सप्ताह एंटोनियो के साथ 25 मिनट की बैठक सेट करें।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बुधवार से शुक्रवार तक अगले सप्ताह",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, क्या पिछले हफ्ते बुधवार से शुक्रवार तक एंटोनियो के साथ कोई 25 मिनट की बैठक सेट थी।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले हफ्ते बुधवार से शुक्रवार तक",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया इस सप्ताह बुधवार और शुक्रवार के बीच एंटोनियो के साथ 25 मिनट की बैठक का समन्वय करें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह बुधवार और शुक्रवार के बीच",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "1970 के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1970 के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "2000 के दशक में उनका जन्म हुआ था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2000 के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "70 के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "70 के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "40 के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40 के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "सत्तर के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सत्तर के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "उन्नीस सौ सत्तर के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस सौ सत्तर के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "दो हजार दस के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार दस के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "दो हजार के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "नब्बे के दशक में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नब्बे के दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हजार अठारह में 2 से 7 फरवरी तक बाहर हूँ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार अठारह में 2 से 7 फरवरी तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हजार अठारह में 2 से लेकर 7 फरवरी के बीच तक बाहर हूँ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार अठारह में 2 से लेकर 7 फरवरी के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हजार अठारह के फरवरी में 2 से 7 तक बाहर हूँ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हजार अठारह के फरवरी में 2 से 7 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "यह उन्नीस निन्यानवे के जून में हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस निन्यानवे के जून",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "उन्नीस सौ अट्ठाईस में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस सौ अट्ठाईस",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हज़ार सत्ताईस के पहले हफ्ते में निकल जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हज़ार सत्ताईस के पहले हफ्ते",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "मैं दो हज़ार बीस की पहली तिमाही से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दो हज़ार बीस की पहली तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "उन्नीस सौ अठत्तर के वसंत में",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उन्नीस सौ अठत्तर के वसंत",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "साल दो सौ सड़सठ,",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "साल दो सौ सड़सठ",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले सप्ताह के बाद बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह के बाद",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "यह पिछले 2 दशकों में हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 2 दशकों",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "यह पिछले दो दशकों में हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले दो दशकों",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले दशक में हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "यह अगले दशक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "यह भविष्य में 4 सप्ताह का होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "भविष्य में 4 सप्ताह",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "ऐसा 2 दिन बाद होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 दिन बाद",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना हमारे लिए अगले सप्ताह की शुरुआत का समय ढूंढ़ सकती है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "ज़रूर, चलिए अगले हफ्ते के अंत में एक स्काइप रखते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले हफ्ते के अंत",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "ज़रूर, चलो अगले सप्ताह के शुरुआत में एक स्काइप रखते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह के शुरुआत",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, हमारे लिए मार्च के अंत का एक समय ढूढ़ो",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के अंत",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, हमारे लिए मार्च के बीच का एक समय ढूढ़ो",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के बीच",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, हमारे लिए मार्च के अंत में एक समय ढूंढ़ो।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मार्च के अंत",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "गर्मियों के बीच के बारे में क्या?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "गर्मियों के बीच",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "हमें अगले सप्ताह की शुरुआत का समय मिल सकता है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सप्ताह की शुरुआत",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11 -2016 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 -2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11- 2016 बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11- 2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11/2016 बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11/2016 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11 - 2016 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11 - 2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं 11-2016 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 /11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 /11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016/ 11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016/ 11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 / 11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 / 11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016/11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 -11 बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 -11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016- 11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016- 11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 - 11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 - 11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016-11 से बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 नवंबर से बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 नवंबर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं नवंबर, 2016 को बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "नवंबर, 2016",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016, नव. से बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016, नव.",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली जनवरी और 5 अप्रैल के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली जनवरी और 5 अप्रैल के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली जनवरी 2015 और 5 फरवरी 2018 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली जनवरी 2015 और 5 फरवरी 2018 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली जनवरी 2015 और फरवरी 2018 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली जनवरी 2015 और फरवरी 2018 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015 और फरवरी 2018 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 और फरवरी 2018 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली फरवरी से मार्च 2019 तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली फरवरी से मार्च 2019 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1ली फरवरी और मार्च 2019 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1ली फरवरी और मार्च 2019 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015 जून और 2018 मई के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 जून और 2018 मई के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015 मई और 2018 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 मई और 2018 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई 2015 और 2018 के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई 2015 और 2018 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं मई 2015 और 2018 जून के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मई 2015 और 2018 जून के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015 से 5 जनवरी 2018 के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 से 5 जनवरी 2018 के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2015 से 5 मई, 2017 तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 से 5 मई, 2017 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं अप्रैल के अंतिम सोमवार से 2019 तक बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रैल के अंतिम सोमवार से 2019 तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "मैं 31वें हफ्ते से 35वें हफ्ते तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "31वें हफ्ते से 35वें हफ्ते तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "मैं 31वें हफ्ते से 35वें हफ्ते के बीच बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "31वें हफ्ते से 35वें हफ्ते के बीच",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से लेकर ढाई दिन बाद तक यहां रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से लेकर ढाई दिन बाद तक",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "मेरा अप्रैल 2017 का बोनस क्या है?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अप्रैल 2017",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं उसी महीने वहां नहीं था जब ऐसा हुआ था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उसी महीने",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं उसी सप्ताह वहां नहीं था जब ऐसा हुआ था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उसी सप्ताह",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं उसी साल वहां नहीं था।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "उसी साल",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैंने आज से 2 हफ्ते से ज्यादा पहले ही अपना सारा काम खत्म कर दिया है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से 2 हफ्ते से ज्यादा पहले",
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से 2 सप्ताह के भीतर वापस आऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से 2 सप्ताह के भीतर",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज से 2 सप्ताह से कम समय में वापस आ जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज से 2 सप्ताह से कम समय",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "यह काम कल से 2 दिन से ज्यादा पहले पूरा हो जाना चाहिए था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल से 2 दिन से ज्यादा पहले",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "यह काम कल से 3 दिन से कम कम समय में पूरा हो जाएगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल से 3 दिन से कम",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू. 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू. 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं अक्टू 2001 मिस कर रहा था",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अक्टू 2001",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, क्या आप 18 तारीख वाली सप्ताह के लिए कुछ सेट कर सकती हो।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "18 तारीख वाली सप्ताह",
+        "Type": "daterange",
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "बिक्री जहां तारीख इस दशक की है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस दशक",
+        "Type": "daterange",
+        "Start": 18,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2016 की तीसरी तिमाही में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 की तीसरी तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं तीसरी तिमाही में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "तीसरी तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल तीसरी तिमाही में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल तीसरी तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले साल की चौथी तिमाही में बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले साल की चौथी तिमाही",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "यह बैंक स्टॉक इस साल आज तक 20% नीचे है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस साल आज तक",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "10/1 से 11/7 तक",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1 से 11/7 तक",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं अपना काम अभी से 15 नवंबर के बीच करूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अभी से 15 नवंबर के बीच",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "मैंने अपना काम 22 जनवरी से अभी तक के बीच पूरा किया है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 जनवरी से अभी तक के बीच",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "अपराह्न 3 बजे: मैं इस सप्ताह बाहर रहूँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह",
+        "Type": "daterange",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "इस सप्ताह सुबह 8 बजे एक तिथि और एक समय है.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस सप्ताह",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "इस हफ्ते 8 पी.एम. एक तिथि और एक समय है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस हफ्ते",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "सप्ताह 10 8 बजे एक तिथि और एक समय है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "सप्ताह 10 8 पीएम एक तिथि और एक समय है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "सप्ताह 10 10:20 एक तिथि और एक समय है।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "सप्ताह 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  }
+]

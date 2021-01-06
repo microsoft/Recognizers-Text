@@ -10,7 +10,7 @@ from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTim
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult,\
+from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, \
     DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
@@ -55,10 +55,6 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     def get_between_token_index(self, source: str) -> MatchedIndex:
         raise NotImplementedError
 
-    @abstractmethod
-    def has_connector_token(self, source: str) -> bool:
-        raise NotImplementedError
-
     @property
     @abstractmethod
     def token_before_date(self) -> str:
@@ -67,6 +63,21 @@ class TimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def pure_number_regex(self) -> List[Pattern]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def check_both_before_after(self) -> bool:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def is_connector_token(self, middle):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_zone_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
 
@@ -82,7 +93,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
-        tokens = self.match_simple_cases(self.config.simple_cases_regex, source)
+        tokens = self.match_simple_cases(source)
         tokens.extend(self.merge_two_time_points(source, reference))
         tokens.extend(self.match_night(source))
 
@@ -114,24 +125,30 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                                      text.index(match.group()) + (match.end() - match.start())))
         return ret
 
-    def match_simple_cases(self, regexp: Pattern, source: str) -> List[Token]:
-        result: List[Token] = list()
+    def match_simple_cases(self, source: str) -> List[Token]:
+        result = []
 
         for regexp in self.config.simple_cases_regex:
-            matches: [Match] = regex.finditer(regexp, source)
+            matches = regex.finditer(regexp, source)
 
             if matches:
                 for match in matches:
 
+                    # Cases like "from 10:30 to 11", don't necessarily need "am/pm"
                     if RegExpUtility.get_group(match, Constants.MINUTE_GROUP_NAME) or\
                             RegExpUtility.get_group(match, Constants.SECOND_GROUP_NAME):
 
-                        end_with_valid_token = True
+                        # Cases like "from 3:30 to 4" should be supported
+                        # Cases like "from 3:30 to 5 on 1/1/2015" should be supported
+                        # Cases like "from 3:30 to 4 people" is considered not valid
+                        end_with_valid_token = False
+
+                        # "No extra tokens after the time period"
                         if (source.index(match.group()) + (match.end() - match.start())) == len(source):
                             end_with_valid_token = True
 
                         else:
-                            after_str = source[source.index(match.group()) + (match.end() - match.start())]
+                            after_str = source[source.index(match.group()) + (match.end() - match.start()):]
 
                             end_with_general_endings = self.config.general_ending_regex.match(after_str)
                             end_with_am_pm = RegExpUtility.get_group(match, Constants.RIGHT_AM_PM_GROUP_NAME)
@@ -147,10 +164,12 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                             result.append(Token(source.index(match.group()), source.index(match.group()) +
                                                 (match.end() - match.start())))
                     else:
+                        # Is there "pm" or "am"?
                         match_pm_str = RegExpUtility.get_group(match, Constants.PM_GROUP_NAME)
                         match_am_str = RegExpUtility.get_group(match, Constants.AM_GROUP_NAME)
                         desc_str = RegExpUtility.get_group(match, Constants.DESC_GROUP_NAME)
 
+                        # Check "pm", "am"
                         if match_pm_str or match_am_str or desc_str:
                             result.append(Token(source.index(match.group()), source.index(match.group()) +
                                                 (match.end() - match.start())))
@@ -205,8 +224,8 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     break
                 # check connector string
                 middle = source[num_end:time_extract_results[j].start]
-                match = regex.search(self.config.till_regex, middle)
-                if match is not None and match.group() == middle.strip():
+                if RegExpUtility.exact_match(self.config.till_regex, middle, True).success or\
+                        self.config.is_connector_token(middle.strip()):
                     time_numbers.append(num_extract_results[i])
                 i += 1
 
@@ -234,6 +253,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
                 # handle "from"
                 before = source[0:period_begin].strip().lower()
+                after = source[period_end: len(source) - period_end].strip().lower()
                 from_index: MatchedIndex = self.config.get_from_token_index(
                     before)
                 if from_index.matched:
@@ -245,12 +265,18 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 if between_index.matched:
                     period_begin = between_index.index
 
+                # handle "between" in afterStr
+                after_index: MatchedIndex = self.config.get_between_token_index(
+                    after)
+                if after_index.matched:
+                    period_end = after_index.index
+
                 result.append(Token(period_begin, period_end))
                 i += 2
                 continue
 
             # handle "between {TimePoint} and {TimePoint}"
-            if self.config.has_connector_token(middle):
+            if self.config.is_connector_token(middle):
                 period_begin = time_extract_results[i].start
                 period_end = time_extract_results[i + 1].start + time_extract_results[i + 1].length
 
@@ -261,6 +287,17 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 if between_index.matched:
                     period_begin = between_index.index
                     result.append(Token(period_begin, period_end))
+                    i += 2
+                    continue
+
+                # handle "between...and..." case when "between" follows the datepoints
+                after_str = source[period_end: + len(source) - period_end]
+                after_index = self.config.get_between_token_index(after_str)
+                if self.config.check_both_before_after and after_index.matched:
+                    period_end += after_index.index
+                    result.append(Token(period_begin, period_end))
+
+                    # merge two tokens here, increase the index by two
                     i += 2
                     continue
 
@@ -294,12 +331,27 @@ class TimePeriodParserConfiguration:
 
     @property
     @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def pure_number_from_to_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
     def pure_number_between_and_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def specific_time_from_to_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def specific_time_between_and_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -372,6 +424,15 @@ class BaseTimePeriodParser(DateTimeParser):
 
     def parse_simple_cases(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
+
+        result = self.parse_pure_numbers(source, reference)
+        if not result.success:
+            result = self.parse_specific_time(source, reference)
+
+        return result
+
+    def parse_pure_numbers(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
         year = reference.year
         month = reference.month
         day = reference.day
@@ -406,7 +467,7 @@ class BaseTimePeriodParser(DateTimeParser):
         left_desc: str = RegExpUtility.get_group(match, Constants.LEFT_DESC_GROUP_NAME)
         right_desc: str = RegExpUtility.get_group(match, Constants.RIGHT_DESC_GROUP_NAME)
         pm_str: str = RegExpUtility.get_group(match, Constants.PM_GROUP_NAME)
-        am_str: str = RegExpUtility.get_group(match, Constants.AM_PM_GROUP_NAME)
+        am_str: str = RegExpUtility.get_group(match, Constants.AM_GROUP_NAME)
 
         # The "am_pm" only occurs in time, don't have to consider it here
 
@@ -457,6 +518,193 @@ class BaseTimePeriodParser(DateTimeParser):
         result.past_value.start = result.future_value.start
         result.past_value.end = result.future_value.end
         result.success = True
+
+        return result
+
+    def parse_specific_time(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        year = reference.year
+        month = reference.month
+        day = reference.day
+
+        source = source.strip().lower()
+
+        match = regex.search(self.config.specific_time_from_to_regex, source)
+        if not match:
+            match = regex.search(
+                self.config.specific_time_between_and_regex, source)
+
+        if not match or match.start() != 0:
+            return result
+
+        # this "from .. to .." pattern is valid if followed by a Date OR "pm"
+        valid = False
+
+        time1 = RegExpUtility.get_group(match, "time1")
+        time2 = RegExpUtility.get_group(match, "time2")
+
+        # get hours
+        hour_group_list = RegExpUtility.get_group_list(match, Constants.HOUR_GROUP_NAME)
+
+        hour_str = hour_group_list[0]
+        begin_hour = self.config.numbers.get(hour_str, None)
+        if not begin_hour:
+            begin_hour = int(hour_str)
+
+        hour_str = hour_group_list[1]
+        end_hour = self.config.numbers.get(hour_str, None)
+        if not end_hour:
+            end_hour = int(hour_str)
+
+        # get minutes
+        minute_group_list = RegExpUtility.get_group_list(match, Constants.MINUTE_GROUP_NAME)
+
+        begin_minute = end_minute = -1
+        if len(minute_group_list) > 1:
+            minute_str = minute_group_list[0]
+            begin_minute = self.config.numbers.get(minute_str, None)
+            if not begin_minute:
+                begin_minute = int(minute_str)
+            minute_str = minute_group_list[1]
+            end_minute = self.config.numbers.get(minute_str, None)
+            if not end_minute:
+                end_minute = int(minute_str)
+        elif len(minute_group_list) == 1:
+            minute_str = minute_group_list[0]
+            if minute_str in time1:
+                begin_minute = self.config.numbers.get(minute_str, None)
+                if not begin_minute:
+                    begin_minute = int(minute_str)
+            elif minute_str in time2:
+                end_minute = self.config.numbers.get(minute_str, None)
+                if not end_minute:
+                    end_minute = int(minute_str)
+
+        # parse AM/PM
+        left_desc: str = RegExpUtility.get_group(match, Constants.LEFT_DESC_GROUP_NAME)
+        right_desc: str = RegExpUtility.get_group(match, Constants.RIGHT_DESC_GROUP_NAME)
+
+        desc_capture_list = RegExpUtility.get_group_list(match, Constants.DESC_GROUP_NAME)
+        for desc_capture in desc_capture_list:
+            if desc_capture in time1 and not left_desc:
+                left_desc: str = desc_capture
+            elif desc_capture in time2 and not right_desc:
+                right_desc: str = desc_capture
+
+        begin_date_time = datetime(year, month, day, hour=begin_hour, minute=begin_minute if begin_minute > 0 else 0)
+        end_date_time = datetime(year, month, day, hour=end_hour, minute=end_minute if end_minute > 0 else 0)
+
+        has_left_am = left_desc != '' and left_desc.startswith('a')
+        has_left_pm = left_desc != '' and left_desc.startswith('p')
+        has_right_am = right_desc != '' and right_desc.startswith('a')
+        has_right_pm = right_desc != '' and right_desc.startswith('p')
+        has_left = has_left_am or has_left_pm
+        has_right = has_right_am or has_right_pm
+
+        # both time point has description like 'am' or 'pm'
+        if has_left and has_right:
+            if has_left_am:
+                if begin_hour >= 12:
+                    begin_date_time -= timedelta(hours=12)
+            else:
+                if begin_hour < 12:
+                    begin_date_time += timedelta(hours=12)
+            if has_right_am:
+                if end_hour > 12:
+                    end_date_time -= timedelta(hours=12)
+            else:
+                if end_hour < 12:
+                    end_date_time += timedelta(hours=12)
+        # one of the time point has description like 'am' or 'pm'
+        elif has_left or has_right:
+            if has_left_am:
+                if begin_hour >= 12:
+                    begin_date_time -= timedelta(hours=12)
+                if end_hour < 12:
+                    if end_date_time < begin_date_time:
+                        end_date_time += timedelta(hours=12)
+            elif has_left_pm:
+                if begin_hour < 12:
+                    begin_date_time += timedelta(hours=12)
+                if end_hour < 12:
+                    if end_date_time < begin_date_time:
+                        span: datetime = begin_date_time - end_date_time
+                        end_date_time += timedelta(hours=24) if span >= timedelta(hours=12) else timedelta(hours=12)
+            if has_right_am:
+                if end_hour >= 12:
+                    end_date_time -= timedelta(hours=12)
+                if begin_hour < 12:
+                    if end_date_time < begin_date_time:
+                        begin_date_time -= timedelta(hours=12)
+            elif has_right_pm:
+                if end_hour < 12:
+                    end_date_time += timedelta(hours=12)
+                if begin_hour < 12:
+                    if end_date_time < begin_date_time:
+                        begin_date_time -= timedelta(hours=12)
+                    else:
+                        span = end_date_time - begin_date_time
+                        if span >= timedelta(hours=12):
+                            begin_date_time += timedelta(hours=12)
+        # no 'am' or 'pm' indicator
+        elif begin_hour <= 12 and end_hour <= 12:
+            if begin_date_time > end_date_time:
+                if begin_hour == 12:
+                    begin_date_time -= timedelta(hours=12)
+                else:
+                    end_date_time += timedelta(hours=12)
+            result.comment = Constants.AM_PM_GROUP_NAME
+
+        if end_date_time < begin_date_time:
+            end_date_time += timedelta(hours=24)
+
+        if begin_minute >= 0:
+            begin = f'T{begin_date_time.hour:02d}:{begin_date_time.minute:02d}'
+        else:
+            begin = f'T{begin_date_time.hour:02d}'
+        if end_minute >= 0:
+            end = f'T{end_date_time.hour:02d}:{end_date_time.minute:02d}'
+        else:
+            end = f'T{end_date_time.hour:02d}'
+
+        difference = datetime(year, month, day) + (end_date_time - begin_date_time)
+        if difference.minute != 0 and difference.hour != 0:
+            result.timex = f'({begin},{end},PT{difference.hour}H{difference.minute}M)'
+        elif difference.minute != 0 and difference.hour == 0:
+            result.timex = f'({begin},{end},PT{difference.minute}M)'
+        else:
+            result.timex = f'({begin},{end},PT{difference.hour}H)'
+
+        result.future_value = ResolutionStartEnd()
+        result.past_value = ResolutionStartEnd()
+        result.future_value.start = begin_date_time
+        result.future_value.end = end_date_time
+        result.past_value.start = result.future_value.start
+        result.past_value.end = result.future_value.end
+        result.success = True
+
+        result.sub_date_time_entities = []
+
+        # in SplitDateAndTime mode, time points will be get from these sub_date_time_entities
+        # cases like "from 4 to 5pm", "4" should not be trated as sub_date_time_entities
+        if has_left or begin_minute >= 0:
+            er = ExtractResult()
+            er.start = match.start("time1")
+            er.length = match.end("time1") - match.start("time1")
+            er.text = time1
+            er.type = Constants.SYS_DATETIME_TIME
+            pr = self.config.time_parser.parse(er, reference)
+            result.sub_date_time_entities.append(pr)
+
+        # cases like "from 4am to 5" "5" should not treated as sub_date_time_entities
+        if has_right or end_minute >= 0:
+            er = ExtractResult()
+            er.start = match.start("time2")
+            er.length = match.end("time2") - match.start("time2")
+            er.text = time2
+            er.type = Constants.SYS_DATETIME_TIME
+            pr = self.config.time_parser.parse(er, reference)
+            result.sub_date_time_entities.append(pr)
 
         return result
 
@@ -558,17 +806,17 @@ class BaseTimePeriodParser(DateTimeParser):
         has_late = False
         match = regex.search(self.config.time_of_day_regex, source)
         if match is not None:
-            early = RegExpUtility.get_group(match, Constants.EARLY)
+            early = RegExpUtility.get_group(match, Constants.COMMENT_EARLY)
             if early:
                 has_early = True
                 source = source.replace(early, '')
-                result.comment = Constants.EARLY
+                result.comment = Constants.COMMENT_EARLY
                 result.mod = TimeTypeConstants.EARLY_MOD
-            late = RegExpUtility.get_group(match, Constants.LATE)
+            late = RegExpUtility.get_group(match, Constants.COMMENT_LATE)
             if late:
                 has_late = True
                 source = source.replace(late, '')
-                result.comment = Constants.LATE
+                result.comment = Constants.COMMENT_LATE
                 result.mod = TimeTypeConstants.LATE_MOD
 
         timex_range = self.config.get_matched_timex_range(source)

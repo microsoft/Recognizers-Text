@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.English
         {
 
             this.Config = config;
-            this.LangMarker = NumbersDefinitions.LangMarker;
+            this.LanguageMarker = NumbersDefinitions.LangMarker;
 
             // @TODO Temporary workaround
             var culture = config.Culture;
@@ -50,6 +50,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

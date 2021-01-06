@@ -1,35 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Definitions.English;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Hindi;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
    public class HindiHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public HindiHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = HindiHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
+
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
 
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
             var swift = -10;
 
-            if (trimmedText.StartsWith("next"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("this"))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -101,8 +112,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                 { "whitemonday", WhiteMonday },
                 { "trinitysunday", TrinitySunday },
                 { "corpuschristi", CorpusChristi },
+                { "indianindependence", IndianIndependence },
+                { "republicday", RepublicDay },
+                { "yogaday", YogaDay },
+                { "holi", HoliDay },
+                { "diwali", DiwaliDay },
+                { "gandhijayanti", GandhiJayanti },
+                { "rakshabandhan", RakshaBandhanDay },
+                { "vaishakhi", VaishakhiDay },
             };
         }
+
+        private static DateObject IndianIndependence(int year) => new DateObject(year, 8, 15);
+
+        private static DateObject RepublicDay(int year) => new DateObject(year, 1, 26);
+
+        private static DateObject YogaDay(int year) => new DateObject(year, 6, 21);
+
+        private static DateObject HoliDay(int year) => HolidayFunctions.CalculateHoliDiwaliDate(year, isHoli: true);
+
+        private static DateObject DiwaliDay(int year) => HolidayFunctions.CalculateHoliDiwaliDate(year, isHoli: false);
+
+        private static DateObject GandhiJayanti(int year) => new DateObject(year, 10, 2);
 
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
 
@@ -164,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => CalculateHolidayByEaster(year);
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -188,26 +219,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
-        // function adopted from German implementation
-        private static DateObject CalculateHolidayByEaster(int year, int days = 0)
-        {
-            int day = 0;
-            int month = 3;
+        private static DateObject RakshaBandhanDay(int year) => HolidayFunctions.CalculateRakshaBandhanVaishakhiDate(year, isRakshabandhan: true);
 
-            int g = year % 19;
-            int c = year / 100;
-            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
-            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
-
-            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
-
-            if (day > 31)
-            {
-                month++;
-                day -= 31;
-            }
-
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
-        }
+        private static DateObject VaishakhiDay(int year) => HolidayFunctions.CalculateRakshaBandhanVaishakhiDate(year, isRakshabandhan: false);
     }
 }

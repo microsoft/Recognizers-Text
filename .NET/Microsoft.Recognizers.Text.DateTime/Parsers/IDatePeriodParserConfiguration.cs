@@ -101,7 +101,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnspecificEndOfRangeRegex { get; }
 
+        Regex AmbiguousPointRangeRegex { get; }
+
         Regex NowRegex { get; }
+
+        Regex SpecialDayRegex { get; }
+
+        Regex TodayNowRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Dutch;
 
 using Microsoft.Recognizers.Text.Number;
 
@@ -10,7 +11,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public DutchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            CardinalExtractor = config.CardinalExtractor;
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.Dutch.NumberExtractor.GetInstance(numConfig);
             NumberParser = config.NumberParser;
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = DutchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
@@ -34,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -61,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex DurationUnitRegex { get; }
 
         public Regex SpecialNumberUnitRegex { get; }
+
+        bool IDurationParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

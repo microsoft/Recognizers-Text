@@ -18,9 +18,9 @@ class PortugueseNumeric:
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = False
     HundredsNumberIntegerRegex = f'(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))'
-    RoundNumberIntegerRegex = f'(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)'
-    ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)'
-    TenToNineteenIntegerRegex = f'(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|quatorze|catorze|quinze|treze|d[ée]z|onze|doze)'
+    RoundNumberIntegerRegex = f'(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))'
+    ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)'
+    TenToNineteenIntegerRegex = f'(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)'
     TensNumberIntegerRegex = f'(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
     BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+e\\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})'
@@ -55,9 +55,9 @@ class PortugueseNumeric:
     SuffixRoundOrdinalRegex = f'(({AllIntRegex})({SimpleRoundOrdinalRegex}))'
     ComplexRoundOrdinalRegex = f'((({SuffixRoundOrdinalRegex}(\\s)?)?{ComplexOrdinalRegex})|{SuffixRoundOrdinalRegex})'
     AllOrdinalRegex = f'{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
-    OrdinalSuffixRegex = f'(?<=\\b)(\\d*(1[oaº]|2[oaº]|3[oaº]|4[oaº]|5[oaº]|6[oaº]|7[oaº]|8[oaº]|9[oaº]|0[oaº]|1.º|2.º|3.º|4.º|5.º|6.º|7.º|8.º|9.º))(?=\\b)'
+    OrdinalSuffixRegex = f'(?<=\\b)(\\d*((1|2|3|4|5|6|7|8|9|0)[oaºª]|(1|2|3|4|5|6|7|8|9)(\\.[ºª])))(?=\\b)'
     OrdinalEnglishRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
-    FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
+    FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\\b)'
     FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(e\\s+)?)?(um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)(?=\\b)'
@@ -298,6 +298,7 @@ class PortugueseNumeric:
                              ("bilionésima", 1000000000),
                              ("bilionesima", 1000000000)])
     PrefixCardinalMap = dict([("hum", 1),
+                              ("um", 1),
                               ("dois", 2),
                               ("tres", 3),
                               ("três", 3),

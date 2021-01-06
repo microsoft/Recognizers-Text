@@ -126,15 +126,29 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public GermanDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
-            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(config.Culture)));
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
+
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -191,6 +205,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
@@ -238,5 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

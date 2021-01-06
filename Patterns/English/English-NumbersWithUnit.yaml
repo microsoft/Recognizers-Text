@@ -1,12 +1,21 @@
 ---
 #AgeExtractorConfiguration
+AgePrefixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Age: Age|age
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age
-    Month: months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age
+    Year: years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo
+    Month: months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo
     Week: weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age
     Day: days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age
+AmbiguousAgeUnitList: !list
+  types: [ string ]
+  entries:
+    - yo
+    - mo
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
@@ -191,7 +200,7 @@ CurrencySuffixList: !dictionary
     Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala
     Sene: sene
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
+    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra
 #Sierra Leonean leone
     Sierra Leonean leone: sierra leonean leone|sll|leone|le
 #Spain
@@ -431,7 +440,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Qatari riyal: QAR
     Saudi riyal: SAR
     Samoan tālā: WST
-    São Tomé and Príncipe dobra: STD
+    São Tomé and Príncipe dobra: STN
     Sierra Leonean leone: SLL
     Swazi lilangeni: SZL
     Tajikistani somoni: TJS
@@ -473,7 +482,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Rwandan franc: RWF
     Russian ruble: RUB
     Transnistrian ruble: PRB
-    Belarusian ruble: BYN
+    New Belarusian ruble: BYN
     Algerian dinar: DZD
     Bahraini dinar: BHD
     Iraqi dinar: IQD
@@ -641,7 +650,9 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 # Currency Prefix Symbols/Terms
+    Dobra: db|std
     Dollar: $
+    Brazilian Real: R$
     United States dollar: united states $|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: australian $|australia $
@@ -699,6 +710,7 @@ AmbiguousCurrencyUnitList: !list
     - toea
     - vatu
     - yuan
+    - all
     - ang
     - ban
     - bob
@@ -730,6 +742,7 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - yen
+    - db
 # DimensionExtractorConfiguration
 # Values in those list are usually lowercase, unless they must be matched by the letter case exactly.
 InformationSuffixList: !dictionary

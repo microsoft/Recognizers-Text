@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -51,9 +52,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly ChineseDateExtractorConfiguration SingleDateExtractor = new ChineseDateExtractorConfiguration();
 
-        private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
-
         private static readonly ChineseTimePeriodExtractorChsConfiguration TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
+
+        private readonly CardinalExtractor cardinalExtractor;
+
+        public ChineseDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
+        {
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            cardinalExtractor = new CardinalExtractor(numConfig);
+        }
 
         public List<ExtractResult> Extract(string text)
         {
@@ -180,6 +194,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
+                // @TODO move hardcoded values to resources file
+
                 // handle "{TimePoint} to {TimePoint}"
                 if (TillRegex.IsExactMatch(middleStr, trim: true))
                 {
@@ -188,7 +204,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     // handle "from"
                     var beforeStr = text.Substring(0, periodBegin);
-                    if (beforeStr.Trim().EndsWith("从"))
+                    if (beforeStr.Trim().EndsWith("从", StringComparison.Ordinal))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
                     }
@@ -199,7 +215,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
 
                 // handle "between {TimePoint} and {TimePoint}"
-                if (middleStr.Equals("和") || middleStr.Equals("与") || middleStr.Equals("到"))
+                if (middleStr.Equals("和", StringComparison.Ordinal) ||
+                    middleStr.Equals("与", StringComparison.Ordinal) ||
+                    middleStr.Equals("到", StringComparison.Ordinal))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -259,7 +277,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var ers = CardinalExtractor.Extract(text);
+            var ers = cardinalExtractor.Extract(text);
 
             foreach (var er in ers)
             {

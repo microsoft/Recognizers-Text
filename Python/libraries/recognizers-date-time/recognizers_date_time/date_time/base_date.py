@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
+
 from recognizers_date_time.date_time.abstract_year_extractor import AbstractYearExtractor
 from datedelta import datedelta
 from recognizers_text.extractor import ExtractResult
@@ -9,6 +10,7 @@ from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
+from .utilities import Token
 import regex
 import calendar
 
@@ -229,7 +231,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         tokens.extend(self.basic_regex_match(source))
         tokens.extend(self.implicit_date(source))
         tokens.extend(self.number_with_month(source, reference))
-        tokens.extend(self.duration_with_before_and_after(source, reference))
+        tokens.extend(self.relative_duration_date(source, reference))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
@@ -242,7 +244,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         for regexp in self.config.date_regex_list:
 
             matches = list(regexp.finditer(source))
-            if matches is not None:
+            if matches:
                 for match in matches:
 
                     # some match might be part of the date range entity, and might be split in a wrong way
@@ -255,7 +257,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
                         if relative_regex:
                             if relative_regex.success:
-                                ret.append(Token(relative_regex.index, source.index(match.group()) + match.end() - match.start()))
+                                ret.append(Token(relative_regex.index, source.index(match.group())
+                                                 + match.end() - match.start()))
                             else:
                                 ret.append(Token(source.index(match.group()),
                                                  source.index(match.group()) + match.end() - match.start()))
@@ -278,7 +281,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
             year_group = RegExpUtility.get_group(
                 match, Constants.YEAR_GROUP_NAME)
             # If the "year" part is not at the end of the match, it's a valid match
-            if not text.index(year_group) + len(year_group) == text.index(match.group()) + (match.end() - match.start()):
+            if not text.index(year_group) + len(year_group) == text.index(match.group())\
+                    + (match.end() - match.start()):
                 is_valid_match = True
             else:
                 sub_text = text[text.index(year_group):]
@@ -330,7 +334,6 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return False
 
     def implicit_date(self, source: str) -> []:
-        from .utilities import Token
         from .utilities import get_tokens_from_regex
         ret: List[Token] = list()
 
@@ -340,7 +343,6 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return ret
 
     def number_with_month(self, source: str, reference: datetime) -> []:
-        from .utilities import Token
         from .utilities import DateUtils
         ret: List[Token] = list()
         extract_results = self.config.ordinal_extractor.extract(source)
@@ -552,7 +554,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         return start_index, end_index
 
     # "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
-    def extract_relative_duration_date_with_in_prefix(self, text: str, duration_er: [ExtractResult],
+    def extract_relative_duration_date_with_in_prefix(self, source: str, duration_er: [ExtractResult],
                                                       reference: datetime):
         from .utilities import Token
         result: [Token] = []
@@ -567,66 +569,60 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                                        + duration_extraction.length or 0))
 
         for duration in durations:
-            before_str = text[0:duration.start]
-            after_str = text[duration.start + duration.length:]
+            before_str = source[0:duration.start]
+            after_str = source[duration.start + duration.length:]
 
             if (str.isspace(before_str) or before_str is None) and (str.isspace(after_str) or after_str is None):
                 continue
 
-            ers, success = self.extract_in_connector(text, after_str, before_str, duration, True)
+            ers, success = self.extract_in_connector(source, after_str, before_str, duration, True)
             result.append(ers)
             if not success and self.config.check_both_before_after:
-                ers, success = self.extract_in_connector(text, after_str, before_str, duration, True)
+                ers, success = self.extract_in_connector(source, after_str, before_str, duration, True)
                 result.append(ers)
 
         return flatten(result)
 
-    def duration_with_before_and_after(self, source: str, reference: datetime) -> []:
-        from .utilities import Token
+    def relative_duration_date(self, source: str, reference: datetime) -> []:
         from .utilities import AgoLaterUtil
-        ret: List[Token] = list()
-        duration_results = self.config.duration_extractor.extract(
-            source, reference)
+        tokens = []
+        duration_extracted_results = self.config.duration_extractor.extract(source, reference)
 
-        for result in duration_results:
+        for extracted_result in duration_extracted_results:
 
             # if it is a multiple duration but its type is not equal to Date, skip it here
-            if self.is_multiple_duration(result) and not self.is_multiple_duration_date(result):
-                continue
+            if self.is_multiple_duration(extracted_result) and not self.is_multiple_duration_date(extracted_result):
+                break
 
-            #  Some types of duration can be compounded with "before", "after" or "from" suffix to create a "date"
-
+            # Some types of duration can be compounded with "before", "after" or "from" suffix to create a "date"
             # While some other types of durations, when compounded with such suffix, it will not create a "date",
             # but create a "dateperiod"
-
             # For example, durations like "3 days", "2 weeks", "1 week and 2 days",
             # can be compounded with such suffix to create a "date"
-
             # But "more than 3 days", "less than 2 weeks", when compounded with such
             # suffix, it will become cases like "more than 3 days from today" which is a "dateperiod", not a "date"
-
             # As this parent method is aimed to extract RelativeDurationDate, so for
             # cases with "more than" or "less than", we remove the prefix so as
             # to extract the expected RelativeDurationDate
+            if self.is_inequality_duration(extracted_result):
+                self.strip_inequality_duration(extracted_result)
 
-            if self.is_inequality_duration(result):
-                self.strip_inequality_duration(result)
-
-            match = self.config.date_unit_regex.search(result.text)
+            match = self.config.date_unit_regex.search(extracted_result.text)
 
             if match:
-                ret.extend(AgoLaterUtil.extractor_duration_with_before_and_after(source, result, ret,
-                                                                                 self.config.utility_configuration))
+                tokens.extend(
+                    AgoLaterUtil.extractor_duration_with_before_and_after(source, extracted_result, tokens,
+                                                                          self.config.utility_configuration))
 
-        relative_duration_date_with_in_prefix = self.extract_relative_duration_date_with_in_prefix(source,
-                                                                                                   duration_results,
-                                                                                                   reference)
+        # Extract cases like "in 3 weeks", which equals to "3 weeks from today"
+        relative_duration_date_with_in_prefix =\
+            self.extract_relative_duration_date_with_in_prefix(source, duration_extracted_results, reference)
 
         for extract_result_with_in_prefix in relative_duration_date_with_in_prefix:
-            if not self.is_overlap_with_exist_extractions(extract_result_with_in_prefix, ret):
-                ret.append(extract_result_with_in_prefix)
+            if not self.is_overlap_with_exist_extractions(extract_result_with_in_prefix, tokens):
+                tokens.append(extract_result_with_in_prefix)
 
-        return ret
+        return tokens
 
     @staticmethod
     def is_overlap_with_exist_extractions(extract_result, exist_extract_results):
@@ -693,6 +689,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
 
 class DateParserConfiguration(ABC):
+
     @property
     @abstractmethod
     def ordinal_extractor(self):
@@ -706,6 +703,11 @@ class DateParserConfiguration(ABC):
     @property
     @abstractmethod
     def cardinal_extractor(self):
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
@@ -842,6 +844,7 @@ class DateParserConfiguration(ABC):
 
 
 class BaseDateParser(DateTimeParser):
+
     @property
     def parser_type_name(self) -> str:
         return Constants.SYS_DATETIME_DATE
@@ -918,19 +921,25 @@ class BaseDateParser(DateTimeParser):
         from .utilities import DateTimeResolutionResult
         from .utilities import DateUtils
         from .utilities import DateTimeFormatUtil
+
         result = DateTimeResolutionResult()
-        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
-        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
-        day_str = RegExpUtility.get_group(match, Constants.DAY_GROUP_NAME)
         month = 0
         day = 0
         year = 0
 
+        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
+        written_year_str = RegExpUtility.get_group(match, Constants.FULL_YEAR_GROUP_NAME)
+        month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
+        day_str = RegExpUtility.get_group(match, Constants.DAY_GROUP_NAME)
+
         if month_str in self.config.month_of_year and day_str in self.config.day_of_month:
+
             month = self.config.month_of_year.get(month_str)
             day = self.config.day_of_month.get(day_str)
 
-            if year_str:
+            if written_year_str:
+                year = self.config.date_extractor.get_year_from_text(match)
+            elif year_str:
                 year = int(year_str) if year_str.isnumeric() else 0
 
                 if 100 > year >= Constants.MIN_TWO_DIGIT_YEAR_PAST_NUM:
@@ -1085,8 +1094,8 @@ class BaseDateParser(DateTimeParser):
             if past_date >= reference:
                 past_date -= timedelta(weeks=1)
 
-            result.future_value = future_date
-            result.past_value = past_date
+            result.future_value = DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day)
+            result.past_value = DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day)
             result.success = True
             return result
 
@@ -1212,8 +1221,7 @@ class BaseDateParser(DateTimeParser):
             self.config.duration_parser,
             self.config.unit_map,
             self.config.unit_regex,
-            self.config.utility_configuration,
-            AgoLaterMode.DATE)
+            self.config.utility_configuration)
 
     def parse_number_with_month(self, source: str, reference: datetime) -> DateTimeParseResult:
         from .utilities import DateUtils
@@ -1322,7 +1330,10 @@ class BaseDateParser(DateTimeParser):
             future_date = future_date.replace(month=future_date.month + 1)
 
         if past_date != DateUtils.min_value and past_date >= reference:
-            past_date = past_date.replace(month=past_date.month - 1)
+            if past_date.month - 1 == 0:
+                past_date = past_date.replace(month=12, year=past_date.year - 1)
+            else:
+                past_date = past_date.replace(month=past_date.month - 1)
 
         result.future_value = future_date
         result.past_value = past_date

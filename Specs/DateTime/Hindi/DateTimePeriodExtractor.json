@@ -1,0 +1,1003 @@
+[
+  {
+    "Input": "मैं आज पाँच से सात तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज पाँच से सात तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल पांच से सात तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल पांच से सात तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले रविवार को 5 से 6 बजे तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले रविवार को 5 से 6 बजे तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले रविवार शाम 5 से 6 बजे तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले रविवार शाम 5 से 6 बजे तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज 4 बजे से 5 बजे तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज 4 बजे से 5 बजे तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज 4 PM से कल 5 PM तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज 4 PM से कल 5 PM",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल 4 PM से 5 PM तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल 4 PM से 5 PM तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2017-6-6 के शाम 4 बजे से 5 बजे तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2017-6-6 के शाम 4 बजे से 5 बजे",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "मैं 5 मई, 2018 को 4PM से 5PM तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मई, 2018 को 4PM से 5PM तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "मैं 5 मई, 2018 को 4:00 बजे से शाम 5 बजे तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मई, 2018 को 4:00 बजे से शाम 5 बजे तक",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 जन 2016 को शाम 4 बजे से आज शाम 5 बजे तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 जन 2016 को शाम 4 बजे से आज शाम 5 बजे",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2:00 PM, 2016-2-21 से 3:32, 04/23/2016 तक बाहर रहूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2:00 PM, 2016-2-21 से 3:32, 04/23/2016",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज 4 बजे से अगले बुधवार 5 बजे तक बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज 4 बजे से अगले बुधवार 5 बजे",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज 4PM से 5PM के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज 4PM से 5PM के बीच",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "मैं 1 जन 2016 को शाम 4 बजे से आज सायं 5 बजे के बीच बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 जन 2016 को शाम 4 बजे से आज सायं 5 बजे",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज रात वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज रात",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं इस रात को वापस जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस रात",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज शाम को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज शाम को",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज सुबह वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज सुबह",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "मैं आज दोपहर वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज दोपहर",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगली रात वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगली रात",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी रात वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी रात",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं कल रात को वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल रात को",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले सोमवार दोपहर वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले सोमवार दोपहर",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं 5 मई की रात वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 मई की रात",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी 3 मिनट में वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी 3 मिनट",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं अंतिम 3 मिनट में वापस जाउंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अंतिम 3 मिनट",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 मिनट वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 मिनट",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले 3 मिनटों वापस जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले 3 मिनटों",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले 5 घंटों वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले 5 घंटों",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी मिनट में वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी मिनट",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "मैं अगले घंटे वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले घंटे",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "मैं आखिरी कुछ मिनटों में वापस जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आखिरी कुछ मिनटों",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं पिछले कई मिनटों पीछे जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले कई मिनटों",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार सुबह में वापस लौट जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार सुबह में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार दोपहर में वापस जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार दोपहर में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार शाम में वापस लौट जाऊंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार शाम में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की सुबह जल्दी मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की सुबह जल्दी",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की सुबह देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की सुबह देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की दोपहर जल्दी मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की दोपहर जल्दी",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की दोपहर देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की दोपहर देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की शाम जल्दी मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की शाम जल्दी",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की शाम देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की शाम देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की रात जल्दी से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की रात जल्दी से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार की देर रात में मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार की देर रात में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को सुबह जल्दी से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को सुबह जल्दी से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को सुबह देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को सुबह देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को दोपहर जल्दी से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को दोपहर जल्दी से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को देर दोपहर में मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को देर दोपहर में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को शाम जल्दी मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को शाम जल्दी",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को देर शाम में मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को देर शाम में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को रात जल्दी से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को रात जल्दी से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को रात देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को रात देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को रात जल्दी मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को रात जल्दी",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को दोपहर देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को दोपहर देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को शाम जल्दी से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को शाम जल्दी से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को शाम देर से मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को शाम देर से",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "चलो मंगलवार को देर रात में मिलते हैं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार को देर रात में",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "बाकी के दिन मैं बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाकी के दिन",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "आज बाकी के दिन मैं बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज बाकी के दिन",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "बाकी के दिन आज मैं बाहर रहुंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "बाकी के दिन आज",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना,  वेन के साथ बिज़नेस बैठक के लिए शुक्रवार दोपहर 1 PM और 4 PM के बीच,  कृपया एक स्काइप कॉल शेड्यूल करें।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार दोपहर 1 PM और 4 PM के बीच",
+        "Type": "datetimerange",
+        "Start": 41,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप हमें कल सुबह 8 बजे से दोपहर 2 बजे के बीच शेड्यूल कर सकते हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "कल सुबह 8 बजे से दोपहर 2 बजे के बीच",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप हमें 9 दिसंबर को 8 AM और 2 PM के बीच शेड्यूल कर सकते हैं?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9 दिसंबर को 8 AM और 2 PM के बीच",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "नमस्ते कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे 30 मिनट की बैठक की जरूरत है इस शुक्रवार, दोपहर को!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार, दोपहर को",
+        "Type": "datetimerange",
+        "Start": 105,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "हाय कोर्टाना- कृपया जेनिफर के साथ एक स्काइप मीटिंग का समय नियत करें। मुझे इस शुक्रवार दोपहर को 30 मिनट की बैठक की आवश्यकता है!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "इस शुक्रवार दोपहर को",
+        "Type": "datetimerange",
+        "Start": 74,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, विशाल के साथ बिज़नेस बैठक के लिए शुक्रवार को दोपहर 1 PM और 4 PM के बीच कृपया एक स्काइप कॉल शेड्यूल करें।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को दोपहर 1 PM और 4 PM के बीच",
+        "Type": "datetimerange",
+        "Start": 42,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "कोर्टाना, कृपया वेन के साथ बिज़नेस बैठक के लिए शुक्रवार को दोपहर में 1 PM और 4 PM के बीच एक स्काइप कॉल शेड्यूल करें।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "शुक्रवार को दोपहर में 1 PM और 4 PM के बीच",
+        "Type": "datetimerange",
+        "Start": 46,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "क्या आप हमें 2015-09-23  1p.m. से 4 तक शेड्यूल कर सकते हैं। ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015-09-23  1p.m. से 4 तक",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "क्याआप हमें 2015-09-23  1:30p.m. से 4 तक नियत कर सकते हैं। ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015-09-23  1:30p.m. से 4 तक",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार सुबह वापस जाऊँगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार सुबह",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "मैं मंगलवार शाम को वापस भेजूंगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "मंगलवार शाम को",
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "यह भविष्य में 2 घंटे होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "भविष्य में 2 घंटे",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 10 और 11:30 के बीच होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 10 और 11:30 के बीच",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "यह 10 और 11:30 के बीच 1/1/2015 को होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10 और 11:30 के बीच 1/1/2015",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 10:30 से 3 बजे तक होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 10:30 से 3 बजे तक",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 3 और 5 के बीच होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 3 और 5 के बीच",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 3:30 से 5:55 तक होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 3:30 से 5:55 तक",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "यह 1/1/2015 को 2:00 के बाद होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 को 2:00 के बाद",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "यह आज शाम 4 बजे से पहले होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "आज शाम 4 बजे से पहले",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले बुधवार को सुबह 10 बजे के बाद होगा",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "अगले बुधवार को सुबह 10 बजे के बाद",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "यह पिछले मंगलवार को दोपहर 2 बजे तक हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पिछले मंगलवार को दोपहर 2 बजे तक",
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "चलो चलते हैं 1 फरवरी को 6:00 बजे से पहले नहीं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 फरवरी को 6:00 बजे से पहले नहीं",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "यह अगले सप्ताह 2:00 के बाद हुआ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  }
+]

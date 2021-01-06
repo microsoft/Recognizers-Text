@@ -13,6 +13,7 @@ from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils,
 from ..parsers import DateTimeParseResult
 from ..base_dateperiod import BaseDatePeriodParser
 from .dateperiod_parser_config import ChineseDatePeriodParserConfiguration
+from ..utilities import parse_chinese_dynasty_year
 
 
 class ChineseDatePeriodParser(BaseDatePeriodParser):
@@ -39,8 +40,17 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             ChineseDateTime.DatePeriodYearInChineseRegex)
         self.season_with_year_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.SeasonWithYear)
+        self.decade_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DecadeRegex)
+        self.date_this_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodThisRegex)
+        self.date_last_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodLastRegex)
+        self.date_next_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodNextRegex)
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
+        result_value = None
         if not reference:
             reference = datetime.now()
 
@@ -82,6 +92,9 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
             if not inner_result.success:
                 inner_result = self._parse_quarter(source_text, reference)
+
+            if not inner_result.success:
+                inner_result = self._parse_decade(source_text, reference)
 
             if inner_result.success:
                 if inner_result.future_value and inner_result.past_value:
@@ -431,6 +444,10 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
     def _convert_year(self, year_str: str, is_chinese: bool) -> int:
         year = -1
         if is_chinese:
+            dynasty_year = parse_chinese_dynasty_year(year_str, self.config.dynasty_year_regex, self.config.dynasty_start_year, self.config.dynasty_year_map, self.integer_extractor, self.number_parser)
+            if dynasty_year is not None:
+                return dynasty_year
+
             year_num = 0
             er = next(iter(self.integer_extractor.extract(year_str)), None)
             if er and er.type == NumberConstants.SYS_NUM_INTEGER:
@@ -589,4 +606,68 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.timex = f'({begin_luis},{end_luis},P3M)'
 
         result.success = True
+        return result
+
+    def _parse_decade(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+
+        century = int(reference.year / 100) + 1
+        decade_last_year = 10
+        input_century = False
+
+        match = regex.search(self.decade_regex, source)
+
+        if not match or len(match.group()) != len(source):
+            return result
+
+        decade_str = RegExpUtility.get_group(match, Constants.DECADE)
+        decade = self.__convert_chinese_to_number(decade_str)
+        century_str = RegExpUtility.get_group(match, Constants.CENTURY)
+        if century_str != "":
+            century = self.__convert_chinese_to_number(century_str)
+            input_century = True
+        else:
+            century_str = RegExpUtility.get_group(match, Constants.REL_CENTURY)
+            if century_str != "":
+                century_str = century_str.strip().lower()
+
+                this_match = regex.search(self.date_this_regex, century_str)
+                next_match = regex.search(self.date_next_regex, century_str)
+                last_match = regex.search(self.date_last_regex, century_str)
+
+                if next_match:
+                    century += 1
+                elif last_match:
+                    century -= 1
+
+                input_century = True
+
+        begin_year = ((century - 1) * 100) + decade
+        end_year = begin_year + decade_last_year
+
+        if input_century:
+            begin_luis_str = DateTimeFormatUtil.luis_date(begin_year, 1, 1)
+            end_luis_str = DateTimeFormatUtil.luis_date(end_year, 1, 1)
+        else:
+            begin_year_str = "XX{:02d}".format(decade)
+            begin_luis_str = DateTimeFormatUtil.luis_date(-1, 1, 1)
+            begin_luis_str = begin_luis_str.replace("XXXX", begin_year_str)
+
+            end_year_str = "XX{:02d}".format(end_year % 100)
+            end_luis_str = DateTimeFormatUtil.luis_date(-1, 1, 1)
+            end_luis_str = end_luis_str.replace("XXXX", end_year_str)
+
+        result.timex = f"({begin_luis_str},{end_luis_str},P10Y)"
+
+        future_year, past_year = begin_year, begin_year
+        start_date = DateUtils.safe_create_from_min_value(begin_year, 1, 1)
+        if not input_century and start_date < reference:
+            future_year += 100
+        if not input_century and start_date >= reference:
+            past_year -= 100
+
+        result.future_value = [DateUtils.safe_create_from_min_value(future_year, 1, 1), DateUtils.safe_create_from_min_value(future_year + decade_last_year, 1, 1)]
+        result.past_value = [DateUtils.safe_create_from_min_value(past_year, 1, 1), DateUtils.safe_create_from_min_value(past_year + decade_last_year, 1, 1)]
+        result.success = True
+
         return result

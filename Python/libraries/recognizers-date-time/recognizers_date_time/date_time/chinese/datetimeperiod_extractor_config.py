@@ -13,6 +13,10 @@ from .datetime_extractor import ChineseDateTimeExtractor
 
 class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def token_before_date(self) -> str:
         return self._token_before_date
 
@@ -93,11 +97,43 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._time_unit_regex
 
     @property
-    def period_time_of_day_with_date_regex(self) -> Pattern:
-        return None
+    def hour_regex(self):
+        return self._hour_regex
+
+    @property
+    def hour_num_regex(self):
+        return self._hour_num_regex
+
+    @property
+    def zhijian_regex(self):
+        return self._zhijian_regex
+
+    @property
+    def this_regex(self) -> Pattern:
+        return self._this_regex
+
+    @property
+    def last_regex(self) -> Pattern:
+        return self._last_regex
+
+    @property
+    def next_regex(self) -> Pattern:
+        return self._next_regex
 
     @property
     def number_combined_with_unit(self) -> Pattern:
+        return self._number_combined_with_unit
+
+    @property
+    def past_regex(self):
+        return self._past_regex
+
+    @property
+    def future_regex(self):
+        return self._future_regex
+
+    @property
+    def period_time_of_day_with_date_regex(self) -> Pattern:
         return None
 
     @property
@@ -142,6 +178,33 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
 
     def __init__(self):
         super().__init__()
+        self._past_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PastRegex
+        )
+        self._future_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.FutureRegex
+        )
+        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NumberCombinedWithUnit
+        )
+        self._this_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateThisRegex
+        )
+        self._last_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateLastRegex
+        )
+        self._next_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateNextRegex
+        )
+        self._zhijian_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.ZhijianRegex
+        )
+        self._hour_num_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.HourNumRegex
+        )
+        self._hour_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.HourRegex
+        )
         self._cardinal_extractor = ChineseCardinalExtractor()
         self._single_date_extractor = ChineseDateExtractor()
         self._single_time_extractor = ChineseTimeExtractor()
@@ -159,6 +222,7 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimePeriodUnitRegex)
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+        self._check_both_before_after = None
         self._suffix_regex = None
         self._after_regex = None
         self._before_regex = None

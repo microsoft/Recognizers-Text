@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Number;
@@ -11,10 +12,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public SpanishNumberWithUnitParserConfiguration(CultureInfo ci)
                : base(ci)
         {
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
-            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration(
-                                                                                  new BaseNumberOptionsConfiguration(ci.Name)));
+
+            var numConfig = new BaseNumberOptionsConfiguration(Culture.Spanish, NumberOptions.None);
+
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
+            this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                                                              new SpanishNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+
+            this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }
 
         public override IParser InternalNumberParser { get; }
@@ -22,5 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; }
     }
 }

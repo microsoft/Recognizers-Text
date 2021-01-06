@@ -25,21 +25,27 @@ namespace Microsoft.Recognizers.Text.Number
         // NARROW NO-BREAK SPACE
         public const char NO_BREAK_SPACE = '\u202f';
 
-        // Language Markers
+        // Language Markers - ISO 639-2 B
         public const string ENGLISH = "Eng";
-        public const string CHINESE = "Chs";
-        public const string FRENCH = "Fr";
+        public const string CHINESE = "Chi";
+        public const string FRENCH = "Fre";
         public const string GERMAN = "Ger";
         public const string JAPANESE = "Jpn";
         public const string PORTUGUESE = "Por";
         public const string SPANISH = "Spa";
-        public const string DUTCH = "Nl";
+        public const string DUTCH = "Dut";
         public const string KOREAN = "Kor";
         public const string ITALIAN = "Ita";
         public const string SWEDISH = "Swe";
         public const string BULGARIAN = "Bul";
-        public const string TURKISH = "Tr";
+        public const string TURKISH = "Tur";
         public const string HINDI = "Hin";
+        public const string ARABIC = "Ara";
+
+        /// <summary>
+        /// Substitute for language markers for Japanese.
+        /// </summary>
+        public const string JAPANESE_SUBS = "Jap";
 
         // Regex Prefixes / Suffixes
         public const string FRACTION_PREFIX = "Frac";
@@ -64,6 +70,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string DECIMAL = "decimal";
         public const string FRACTION = "fraction";
         public const string POWER = "power";
+
         public static readonly HashSet<string> ValidSubTypes = new HashSet<string>()
         {
             INTEGER,

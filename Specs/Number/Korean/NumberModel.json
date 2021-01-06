@@ -1,6 +1,7 @@
 [
   {
     "Input": "마이너스일만",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,6 +15,7 @@
   },
   {
     "Input": "192.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,6 +29,7 @@
   },
   {
     "Input": "192.168.1.2",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -61,7 +64,9 @@
   },
   {
     "Input": "180.25ml의 액체",
+    "Comment": "PendingValidation, incorrect result set",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "180.25",
@@ -74,7 +79,9 @@
   },
   {
     "Input": "180ml의 액체",
+    "Comment": "PendingValidation, incorrect result set",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "180",
@@ -86,8 +93,10 @@
     ]
   },
   {
-    "Input": " 29km의 길 ",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Input": "29km의 길",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29",
@@ -99,8 +108,10 @@
     ]
   },
   {
-    "Input": " 5월 4일 ",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Input": "5월 4일",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "5",
@@ -120,7 +131,9 @@
   },
   {
     "Input": ".25ml의 액체",
+    "Comment": "PendingValidation, incorrect result set",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": ".25",
@@ -133,6 +146,7 @@
   },
   {
     "Input": ".08",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -146,6 +160,7 @@
   },
   {
     "Input": ".23456000",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -159,6 +174,7 @@
   },
   {
     "Input": "4.800",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -172,6 +188,7 @@
   },
   {
     "Input": "일백삼과 삼분의 이",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -185,6 +202,7 @@
   },
   {
     "Input": "십육",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -198,6 +216,7 @@
   },
   {
     "Input": "삼분의 이",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -211,6 +230,7 @@
   },
   {
     "Input": "일백십육",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -224,6 +244,7 @@
   },
   {
     "Input": "일백육",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -237,6 +258,7 @@
   },
   {
     "Input": "일백육십일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -250,7 +272,9 @@
   },
   {
     "Input": "조 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "조 번째",
@@ -263,7 +287,9 @@
   },
   {
     "Input": "일백조 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "일백조 번째",
@@ -276,6 +302,7 @@
   },
   {
     "Input": "1,234,567",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -289,6 +316,7 @@
   },
   {
     "Input": "1, 234, 567",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -316,6 +344,7 @@
   },
   {
     "Input": "9.2321312",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -328,7 +357,8 @@
     ]
   },
   {
-    "Input": " -9.2321312",
+    "Input": "-9.2321312",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -341,7 +371,8 @@
     ]
   },
   {
-    "Input": " -1",
+    "Input": "-1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -355,6 +386,7 @@
   },
   {
     "Input": "-4/5",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -368,6 +400,7 @@
   },
   {
     "Input": "- 1 4/5",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -381,6 +414,7 @@
   },
   {
     "Input": "삼",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -394,6 +428,7 @@
   },
   {
     "Input": " 123456789101231",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -407,6 +442,7 @@
   },
   {
     "Input": "-123456789101231",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -420,6 +456,7 @@
   },
   {
     "Input": " -123456789101231",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -433,6 +470,7 @@
   },
   {
     "Input": "1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -446,6 +484,7 @@
   },
   {
     "Input": "일만",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -459,6 +498,7 @@
   },
   {
     "Input": "일백억",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -472,6 +512,7 @@
   },
   {
     "Input": "이백만",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -485,6 +526,7 @@
   },
   {
     "Input": "1조",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -498,6 +540,7 @@
   },
   {
     "Input": " 삼 ",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -511,6 +554,7 @@
   },
   {
     "Input": "일조",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -524,6 +568,7 @@
   },
   {
     "Input": "이십일조",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -537,6 +582,7 @@
   },
   {
     "Input": "이십일조 삼백",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -550,6 +596,7 @@
   },
   {
     "Input": "오십 이",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -563,6 +610,7 @@
   },
   {
     "Input": "오십  이",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -576,6 +624,7 @@
   },
   {
     "Input": "삼백  삼십  일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -589,6 +638,7 @@
   },
   {
     "Input": "이십만 이천",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -602,6 +652,7 @@
   },
   {
     "Input": "이천  이백",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -615,6 +666,7 @@
   },
   {
     "Input": "1e10",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -628,6 +680,7 @@
   },
   {
     "Input": "1.1^23",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -641,6 +694,7 @@
   },
   {
     "Input": "칠십",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -654,6 +708,7 @@
   },
   {
     "Input": "2  1/4",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -667,6 +722,7 @@
   },
   {
     "Input": "3/4",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -680,6 +736,7 @@
   },
   {
     "Input": "팔분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -693,6 +750,7 @@
   },
   {
     "Input": "팔분의 오",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -706,7 +764,9 @@
   },
   {
     "Input": "반",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "반",
@@ -719,6 +779,7 @@
   },
   {
     "Input": "이십삼과 오분의 삼",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -732,6 +793,7 @@
   },
   {
     "Input": "일과 이분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -745,6 +807,7 @@
   },
   {
     "Input": "일과 사분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -758,6 +821,7 @@
   },
   {
     "Input": "오와 사분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -771,6 +835,7 @@
   },
   {
     "Input": "일백과 사분의 삼",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -784,7 +849,8 @@
   },
   {
     "Input": "백분의 일",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "백분의 일",
@@ -797,6 +863,7 @@
   },
   {
     "Input": "1.1^+23",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -810,6 +877,7 @@
   },
   {
     "Input": "2.5^-1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -823,6 +891,7 @@
   },
   {
     "Input": "-2500^-1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -836,6 +905,7 @@
   },
   {
     "Input": "-1.1^+23",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -849,6 +919,7 @@
   },
   {
     "Input": "-2.5^-1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -862,6 +933,7 @@
   },
   {
     "Input": "-1.1^--23",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -875,6 +947,7 @@
   },
   {
     "Input": "-127.32e13",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -888,6 +961,7 @@
   },
   {
     "Input": "12.32e+14",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -901,6 +975,7 @@
   },
   {
     "Input": "-12e-1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -914,6 +989,7 @@
   },
   {
     "Input": "십이억",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -927,6 +1003,7 @@
   },
   {
     "Input": "오분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -940,6 +1017,7 @@
   },
   {
     "Input": "삼과 오분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -953,6 +1031,7 @@
   },
   {
     "Input": "이십일분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -966,6 +1045,7 @@
   },
   {
     "Input": "이십오분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -979,6 +1059,7 @@
   },
   {
     "Input": "이십일분의 삼",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -992,6 +1073,7 @@
   },
   {
     "Input": "이십일 분의 삼",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1005,6 +1087,7 @@
   },
   {
     "Input": "이십오분의 이십",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1018,6 +1101,7 @@
   },
   {
     "Input": "일백과 오분의 삼십",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1031,6 +1115,7 @@
   },
   {
     "Input": "삼십오분의 일백",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1044,6 +1129,7 @@
   },
   {
     "Input": "오분의 일백삼십이",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1057,6 +1143,7 @@
   },
   {
     "Input": "일백삼십과 오분의 이",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1070,6 +1157,7 @@
   },
   {
     "Input": "일백오분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1083,6 +1171,7 @@
   },
   {
     "Input": "백오분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1096,6 +1185,7 @@
   },
   {
     "Input": "일천오분의 일백",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1109,6 +1199,7 @@
   },
   {
     "Input": "삼분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1122,6 +1213,7 @@
   },
   {
     "Input": "일백이십일분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1135,6 +1227,7 @@
   },
   {
     "Input": "삼 분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1148,6 +1241,7 @@
   },
   {
     "Input": "3분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1161,6 +1255,7 @@
   },
   {
     "Input": "삼분의 1",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1174,6 +1269,7 @@
   },
   {
     "Input": "20분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1187,6 +1283,7 @@
   },
   {
     "Input": "이십분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1200,6 +1297,7 @@
   },
   {
     "Input": "일백분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1213,6 +1311,7 @@
   },
   {
     "Input": "일백이십팔분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1226,6 +1325,7 @@
   },
   {
     "Input": "정답은 음수 일천구백입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1239,6 +1339,7 @@
   },
   {
     "Input": "정답은 마이너스 일천구백입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1252,6 +1353,7 @@
   },
   {
     "Input": "정답은 마이너스 일입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1264,7 +1366,8 @@
     ]
   },
   {
-    "Input": "정답은 마이너스 삼십오분의 일백입니다. ",
+    "Input": "정답은 마이너스 삼십오분의 일백입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1278,6 +1381,7 @@
   },
   {
     "Input": "정답은 음수 이십분의 일입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1291,7 +1395,9 @@
   },
   {
     "Input": "정답은 마이너스 오 점 오입니다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "마이너스 오 점 오",
@@ -1304,6 +1410,7 @@
   },
   {
     "Input": "정답은 마이너스 오입니다.",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1317,6 +1424,7 @@
   },
   {
     "Input": "사분의 일",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1330,6 +1438,7 @@
   },
   {
     "Input": "오분의 구천오백",
+    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1343,7 +1452,9 @@
   },
   {
     "Input": "1 234 567",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 234 567",
@@ -1356,7 +1467,9 @@
   },
   {
     "Input": "40 000 은 40 000과 같다",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "40 000",
@@ -1376,7 +1489,9 @@
   },
   {
     "Input": "현재 중국의 인구수는 1 414 021 100이다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -1389,7 +1504,9 @@
   },
   {
     "Input": "423 0000는 두 개의 숫자이다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "423",
@@ -1416,7 +1533,9 @@
   },
   {
     "Input": "1 234 567.89는 유효한 숫자 형식이다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 234 567.89",
@@ -1429,7 +1548,8 @@
   },
   {
     "Input": "0은 영이다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "0",
@@ -1449,7 +1569,8 @@
   },
   {
     "Input": "5/17/2018에 만날까요?",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5",
@@ -1476,7 +1597,8 @@
   },
   {
     "Input": "내 전화번호는 +1-222-2222/2222입니다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Comment": "PendingValidation",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1",
@@ -1505,6 +1627,2483 @@
         "Resolution": {
           "value": "2222"
         }
+      }
+    ]
+  },
+  {
+    "Input": "그 나무는 192살입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 6,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "내 IP 주소는 192.168.1.2입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 9,
+        "End": 11
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "168"
+        },
+        "Start": 13,
+        "End": 15
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 17,
+        "End": 17
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 19,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "내 학생번호는 십육입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "십육",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 8,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "백십육 자루의 연필이 있다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백십육",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "백육은 나에게 특별한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백육",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "내가 사는 곳은 백육십일 호입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백육십일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 9,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "십만 달러",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "십만",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567은 큰 숫자인가?",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "이 가방의 가격은 1, 234, 567원이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 10,
+        "End": 10
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "234"
+        },
+        "Start": 13,
+        "End": 15
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "567"
+        },
+        "Start": 18,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "-1은 음수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "삼은 자연수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "숫자 1",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 3,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "나의 월급은 2백만원입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2백만",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1조원이 넘는 정부의 예산이 사라졌다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1조",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "삼은 소수입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "일조원의 정부 예산이 사라졌다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "일조",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "이십일조원은 큰 돈이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일조",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "삼성의 연 매출은 이십일조 삼백에 달한다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일조 삼백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 10,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "이십일조와 삼백은 다른 수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일조와 삼백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "오십이명의 사람들이 참석했다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오십이",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "삼백삼십일일이 지났다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼백삼십일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "이백과 이천은 다른 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이백과 이천",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "이천이백년이 지났다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이천이백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "322백은 유효하지 않은 수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "322백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "칠십척의 배가 있다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "칠십",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "답은 마이너스 일입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "마이너스 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 3,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "답은 마이너스 5이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "마이너스 5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-5"
+        },
+        "Start": 3,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567 은 자연수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "40,000은 40,000이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "40,000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "40,000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "현재 중국의 인구는 1,414,021,100 명이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1,414,021,100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1414021100"
+        },
+        "Start": 11,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "423 0000은 두개의 수로 인식될 것이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "423"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 7
+      },
+      {
+        "Text": "두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "영은 0이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "영",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 3,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2018/5/17에 시간 있어?",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 5,
+        "End": 5
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 7,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "내 전화번호는 국가번호 +1-222-2222/2222입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 14,
+        "End": 14
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "222"
+        },
+        "Start": 16,
+        "End": 18
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 20,
+        "End": 23
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 25,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "나는 너에게 3백21 위안을 줄 수 있어",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3백21",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "321"
+        },
+        "Start": 7,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "4천3백21은 유효한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4천3백21",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "4천 3백과 0은 두개의 유효한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4천 3백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 4
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 7,
+        "End": 7
+      },
+      {
+        "Text": "두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "4000 3백21은 두개의 유효한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4000"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "3백21",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 8
+      },
+      {
+        "Text": "두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 11,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "3백과 2백은 두개의 유효한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "2백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "200"
+        },
+        "Start": 4,
+        "End": 5
+      },
+      {
+        "Text": "두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 8,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "3백일은 유효한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3백일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "테키만에서 일어난 사고에서 스물여섯명이 죽다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "스물여섯",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        },
+        "Start": 15,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "나는 3년 안에 10000$를 벌고 싶다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 3,
+        "End": 3
+      },
+      {
+        "Text": "10000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        },
+        "Start": 9,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "나는 3년 동안 2000$를 벌고싶다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 3,
+        "End": 3
+      },
+      {
+        "Text": "2000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000"
+        },
+        "Start": 9,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "내 한달 용돈은 20$이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "20"
+        },
+        "Start": 9,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "계란 한 다스만 사주시겠어요?",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "다스",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "3백과 마이너스 일은 두개의 유효한 숫자입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "마이너스 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 4,
+        "End": 9
+      },
+      {
+        "Text": "두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 12,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "3백과 2.12백은 두개의 유효한 숫자이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Comment": "Point value parser need to be refactored",
+    "Results": [
+      {
+        "Text": "3백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 1
+      },
+      {
+        "Text": "2.12백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "212"
+        },
+        "Start": 4,
+        "End": 8
+      },
+      {
+        "Text": "두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 11,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "0.08 밀리그램을 더 넣어주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "0.23456000은 경미한 수치이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "4.800점의 부분점수를 받았다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "9.2321312은 짝수인가?",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9.2321312"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": " -9.2321312은 홀수인가?",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9.2321312"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "이백점 영삼점을 획득했습니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이백점 영삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "그녀의 프리스케이팅 점수는 이백점 칠일이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이백점 칠일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.71"
+        },
+        "Start": 15,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "답은 마이너스 오점 오이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "마이너스 오점 오",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-5.5"
+        },
+        "Start": 3,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567.89 는 유효한 숫자 형식이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1,234,567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1234567.89"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23을 해보세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1을 계산하여 소수로 나타내시오",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "모든 값을 더하면 백삼과 삼분의 이가 나온다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백삼과 삼분의 이",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 10,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "케이크의 삼분의 이를 먹어치웠다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼분의 이",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 5,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "일조분의 일만큼만 사랑해",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "일조분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "백억분의 일만 주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백억분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-10"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-4/5 를 좌표에 표시하세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "-1 4/5는 이 함수에서 상수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "-1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4 조각을 동생에게 주어라",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "동생은 피자의 3/4를 먹어치웠다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 8,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "팔분의 일조각을 남겨주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "팔분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "반을 떼어주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Comment": "Extraction done. Parser does not support half (반).",
+    "Results": [
+      {
+        "Text": "반",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "이 케이크의 사분의 삼은 내 것이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "사분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "이십과 오분의 삼은 대분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십과 오분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "오분의 이십삼은 가분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 이십삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "이십과 삼과 오분의 삼은 각각 자연수와 분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십과 삼과 오분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "23.6"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "오분의 백만이천이백삼은 가분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 백만이천이백삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "일과 이분의 일은 대분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "일과 이분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.5"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "일과 사분의 일만큼 더 가져가세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "일과 사분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "오와 사분의 일을 소수로 표현하시오",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오와 사분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "계산했더니 답이 백과 사분의 삼으로 나왔다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백과 사분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "100.75"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "당첨될 확률은 백분의 일이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 8,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "천만분의 일 확률이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "천만분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-07"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "투자 금액의 오분의 일만을 돌려받았다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "호두파이의 오분의 삼조각만 먹었다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.6"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "오분의 이십을 계산하면 자연수가 나온다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 이십",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "삼과 오분의 일은 대분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼과 오분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "오분의 이십일은 나누어 떨어지지 않는다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 이십일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.2"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "이십오분의 일의 확률로 이 병에 걸린다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십오분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "재산의 이십일분의 삼은 기부할 것이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 4,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "이 학교에 입학할 확률은 이십일분의 삼이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일분의 삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 14,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "출산율이 이십오분의 이십으로 떨어졌다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십오분의 이십",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.8"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "오분의 백삼십은 나누어 떨어진다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 백삼십",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "삼십오분의 백은 나누어 떨어지지 않는다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼십오분의 백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "오분의 백삼십이를 계산하면 나머지가 존재한다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 백삼십이",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "백삼십과 오분의 이는 오답이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백삼십과 오분의 이",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "130.4"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "현재의 값에서 백오분의 일 을 빼세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백오분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "백오분의 일을 추가로 빼세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백오분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "천오분의 백을 소수로 표현하시오",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "천오분의 백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "삼분의 일조각을 잘라줘",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "백이십일분의 1은 분수이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백이십일분의 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "삼분의 1조각을 잘라줘",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼분의 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "3분의 1조각만 잘라줘",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3분의 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "3분의 일만 줘",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "20분의 일은 내 몫이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "이십분의 일은 네 몫이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "한국 사람의 백분의 일",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "이 생물이 생존할 확률은 백이십오분의 일이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "백이십오분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 14,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "오분의 구천오백은 얼마입니까?",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 구천오백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "답은 오분의 마이너스 구천오백이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "오분의 마이너스 구천오백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        },
+        "Start": 3,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "답은 삼십오분의 마이너스 백입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "삼십오분의 마이너스 백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-2.85714285714286"
+        },
+        "Start": 3,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "답은 20분의 마이너스 일이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20분의 마이너스 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.05"
+        },
+        "Start": 3,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "사분의 일 조각만 남겨줘",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "사분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "팔분의 일은 네 몫이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "팔분의 일",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "서울 시민의 팔분의 오는 여당을 지지한다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "팔분의 오",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "셋 중 하나는 진짜 샤넬이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "셋 중 하나",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "이십일 분의 1의 확률이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십일 분의 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "케이크의 팔분의 오",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "팔분의 오",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 5,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "반이 넘는 사람들이 이곳에 왔다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Comment": "Extraction done. Parser does not support half (반).",
+    "Results": [
+      {
+        "Text": "반",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "3분의 2000을 계산하시오",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3분의 2000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "666.666666666667"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "180.25ml  액체",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "180ml 액체",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "29km 길",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "내 생일은 오월 4일이다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": ".25ml 짜리 액체",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "시애틀로 가는 일등석을 예매하세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "1미터는 숫자가 아닙니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Comment": "Need more research by language expert",
+    "Results": []
+  },
+  {
+    "Input": "당신이 언급한 것은 유효하지 않습니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "당신은 어떤 것이 더 좋습니까?",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "저것은 정말 좋다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "그녀는 열여섯 살입니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "열여섯",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "셋에 출발하시면 됩니다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "셋",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "하나만 주세요",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "하나",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "쉰둘이 넘는 사람들이 모였다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "쉰둘",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "일흔 살",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "일흔",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "내가 가장 좋아하는 숫자는 이십육이다",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "이십육",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        },
+        "Start": 15,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "사과 세개",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "세",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 3,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "사과 한 개",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "한",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 3,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "쉰두살",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "쉰두",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "천삼백",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "천삼백",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "천삼",
+    "IgnoreResolution": true,
+    "NotSupportedByDesign": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "천삼",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   }

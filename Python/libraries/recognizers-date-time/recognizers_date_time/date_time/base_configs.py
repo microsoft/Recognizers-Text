@@ -81,6 +81,11 @@ class BaseDateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def duration_parser(self) -> DateTimeParser:
         raise NotImplementedError
 

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -27,13 +30,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IExtractor integerExtractor = new IntegerExtractor();
 
-        private readonly IParser numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(new BaseNumberOptionsConfiguration(Culture.Japanese)));
+        private readonly IParser numberParser;
 
         private readonly IFullDateTimeParserConfiguration config;
 
         public JapaneseDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -109,17 +122,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // handle "现在"
             var match = JapaneseDateTimeExtractorConfiguration.NowRegex.MatchExact(trimmedText, trim: true);
 
+            // @TODO move hardcoded values to resources file
+
             if (match.Success)
             {
-                if (trimmedText.EndsWith("现在"))
+                if (trimmedText.EndsWith("现在", StringComparison.Ordinal))
                 {
                     ret.Timex = "PRESENT_REF";
                 }
-                else if (trimmedText.Equals("刚刚才") || trimmedText.Equals("刚刚") || trimmedText.Equals("刚才"))
+                else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
+                         trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
+                         trimmedText.Equals("刚才", StringComparison.Ordinal))
                 {
                     ret.Timex = "PAST_REF";
                 }
-                else if (trimmedText.Equals("立刻") || trimmedText.Equals("马上"))
+                else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
+                         trimmedText.Equals("马上", StringComparison.Ordinal))
                 {
                     ret.Timex = "FUTURE_REF";
                 }
@@ -145,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return JapaneseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
         }
 
-        // merge a Date entity and a Time entity
+        // Merge a Date entity and a Time entity
         private DateTimeResolutionResult MergeDateAndTime(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -195,7 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
 
-            timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+            timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult)pr2.Value;
@@ -242,6 +260,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 var matchStr = match.Value;
                 var swift = 0;
+
+                // @TODO move hardcoded values to resources file
+
                 switch (matchStr)
                 {
                     case "今晚":
@@ -297,7 +318,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
 
-                timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
+                timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);
@@ -330,7 +351,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         unitStr = this.config.UnitMap[srcUnit];
 
                         var beforeMatch = JapaneseDateTimeExtractorConfiguration.BeforeRegex.Match(suffix);
-                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -355,7 +376,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         }
 
                         var afterMatch = JapaneseDateTimeExtractorConfiguration.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)

@@ -9,7 +9,18 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class AbstractNumberModel : IModel
     {
         // Languages supporting subtypes in the resolution to be added here
-        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH };
+        private static readonly List<string> ExtractorsSupportingSubtype = new List<string>
+        {
+            Constants.ARABIC,
+            Constants.ENGLISH,
+            Constants.PORTUGUESE,
+            Constants.SPANISH,
+            Constants.SWEDISH,
+
+            // TODO: Temporarily disabled as existing TestSpec not supporting
+            // Constants.JAPANESE_SUBS,
+            // Constants.KOREAN,
+        };
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
@@ -47,7 +58,9 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
 
-                return parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
+                var modelResults = parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
+
+                return modelResults;
             }
             catch (Exception)
             {

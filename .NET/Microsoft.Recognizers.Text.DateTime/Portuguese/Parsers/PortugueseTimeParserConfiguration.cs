@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -40,16 +42,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
-            if (trimmedPrefix.StartsWith("quarto") || trimmedPrefix.StartsWith("e um quarto") ||
-                trimmedPrefix.StartsWith("quinze") || trimmedPrefix.StartsWith("e quinze"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedPrefix.StartsWith("quarto", StringComparison.Ordinal) || trimmedPrefix.StartsWith("e um quarto", StringComparison.Ordinal) ||
+                trimmedPrefix.StartsWith("quinze", StringComparison.Ordinal) || trimmedPrefix.StartsWith("e quinze", StringComparison.Ordinal))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.StartsWith("menos um quarto"))
+            else if (trimmedPrefix.StartsWith("menos um quarto", StringComparison.Ordinal))
             {
                 deltaMin = -15;
             }
-            else if (trimmedPrefix.StartsWith("meia") || trimmedPrefix.StartsWith("e meia"))
+            else if (trimmedPrefix.StartsWith("meia", StringComparison.Ordinal) || trimmedPrefix.StartsWith("e meia", StringComparison.Ordinal))
             {
                 deltaMin = 30;
             }
@@ -59,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
-                    deltaMin = int.Parse(minStr);
+                    deltaMin = int.Parse(minStr, CultureInfo.InvariantCulture);
                 }
                 else
                 {
@@ -68,15 +71,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 }
             }
 
-            if (trimmedPrefix.EndsWith("passadas") || trimmedPrefix.EndsWith("pasados") ||
-                trimmedPrefix.EndsWith("depois das") || trimmedPrefix.EndsWith("depois da") || trimmedPrefix.EndsWith("depois do") ||
-                trimmedPrefix.EndsWith("passadas as") || trimmedPrefix.EndsWith("passadas das"))
+            if (trimmedPrefix.EndsWith("passadas", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados", StringComparison.Ordinal) ||
+                trimmedPrefix.EndsWith("depois das", StringComparison.Ordinal) || trimmedPrefix.EndsWith("depois da", StringComparison.Ordinal) || trimmedPrefix.EndsWith("depois do", StringComparison.Ordinal) ||
+                trimmedPrefix.EndsWith("passadas as", StringComparison.Ordinal) || trimmedPrefix.EndsWith("passadas das", StringComparison.Ordinal))
             {
                 // deltaMin it's positive
             }
-            else if (trimmedPrefix.EndsWith("para a") || trimmedPrefix.EndsWith("para as") ||
-                     trimmedPrefix.EndsWith("pra") || trimmedPrefix.EndsWith("pras") ||
-                     trimmedPrefix.EndsWith("antes da") || trimmedPrefix.EndsWith("antes das"))
+            else if (trimmedPrefix.EndsWith("para a", StringComparison.Ordinal) || trimmedPrefix.EndsWith("para as", StringComparison.Ordinal) ||
+                     trimmedPrefix.EndsWith("pra", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pras", StringComparison.Ordinal) ||
+                     trimmedPrefix.EndsWith("antes da", StringComparison.Ordinal) || trimmedPrefix.EndsWith("antes das", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }
@@ -93,11 +96,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var trimedSuffix = suffix.Trim();
-            AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
+            var trimmedSuffix = suffix.Trim();
+            AdjustByPrefix(trimmedSuffix, ref hour, ref min, ref hasMin);
 
             var deltaHour = 0;
-            var match = PortugueseTimeExtractorConfiguration.TimeSuffix.MatchExact(trimedSuffix, trim: true);
+            var match = PortugueseTimeExtractorConfiguration.TimeSuffix.MatchExact(trimmedSuffix, trim: true);
 
             if (match.Success)
             {

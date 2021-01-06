@@ -3607,7 +3607,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -3625,18 +3625,16 @@
         }
       },
       {
-        "Text": "from today",
-        "Start": 22,
+        "Text": "today",
+        "Start": 27,
         "End": 31,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
               "timex": "2018-05-29",
-              "Mod": "since",
-              "type": "daterange",
-              "sourceEntity": "datetimepoint",
-              "start": "2018-05-29"
+              "type": "date",
+              "value": "2018-05-29"
             }
           ]
         }
@@ -11553,7 +11551,7 @@
             }
           ]
         }
-      }      
+      }
     ]
   },
   {
@@ -12334,27 +12332,26 @@
     "Context": {
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "from october",
-        "Start": 23,
+        "Text": "october",
+        "Start": 28,
         "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "XXXX-10",
-              "Mod": "since",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2018-10-01"
+              "start": "2018-10-01",
+              "end": "2018-11-01"
             },
             {
               "timex": "XXXX-10",
-              "Mod": "since",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2019-10-01"
+              "start": "2019-10-01",
+              "end": "2019-11-01"
             }
           ]
         }
@@ -12363,7 +12360,7 @@
   },
   {
     "Input": "I'm at Eastern Daylight Time",
-    "NotSupported":"javascript,python",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "eastern daylight time",
@@ -12384,7 +12381,7 @@
   },
   {
     "Input": "I'm at Central Daylight Time",
-    "NotSupported":"javascript,python",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "central daylight time",
@@ -12405,7 +12402,7 @@
   },
   {
     "Input": "It's about 1pm ACDT",
-    "NotSupported":"javascript,python",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "1pm acdt",
@@ -12505,7 +12502,7 @@
   },
   {
     "Input": "We will have lunch together with Jim",
-    "Comment":"Disable this for now because of new features in .NET",
+    "Comment": "Disable this for now because of new features in .NET",
     "NotSupported": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
@@ -12580,6 +12577,726 @@
           "values": [
             {
               "timex": "P3M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "what about 30 min later?",
+    "Context": {
+      "ReferenceDateTime": "2019-11-01T15:16:00"
+    },
+    "Results": [
+      {
+        "Text": "30 min later",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-01T15:46:00",
+              "type": "datetime",
+              "value": "2019-11-01 15:46:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "All deadlines are 11.59 pm UTC -12h (\"anywhere on Earth / AoE\")",
+    "Context": {
+      "ReferenceDateTime": "2019-09-09T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "11.59 pm utc -12h",
+        "Start": 18,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T23:59",
+              "type": "time",
+              "timezone": "UTC-12:00",
+              "timezoneText": "utc -12h",
+              "utcOffsetMins": "-720",
+              "value": "23:59:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "anywhere on earth",
+        "Start": 38,
+        "End": 54,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC-12:00",
+              "utcOffsetMins": "-720"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "aoe",
+        "Start": 58,
+        "End": 60,
+        "TypeName": "datetimeV2.timezone",
+        "Resolution": {
+          "values": [
+            {
+              "type": "timezone",
+              "value": "UTC-12:00",
+              "utcOffsetMins": "-720"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the end of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "end of 2000",
+        "Start": 36,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2000-09-01",
+              "end": "2001-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the middle of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "middle of 2000",
+        "Start": 36,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "mid",
+              "type": "daterange",
+              "start": "2000-05-01",
+              "end": "2000-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This company was established at the beginning of 2000",
+    "Context": {
+      "ReferenceDateTime": "2020-04-24T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beginning of 2000",
+        "Start": 36,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2000-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here since the end of 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "since the end of 1989",
+        "Start": 19,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "since-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "1989-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here from the end of 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "end of 1989",
+        "Start": 28,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "1989-09-01",
+              "end": "1990-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We have lived here from mid 1989",
+    "Context": {
+      "ReferenceDateTime": "2020-04-27T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mid 1989",
+        "Start": 24,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "Mod": "mid",
+              "type": "daterange",
+              "start": "1989-05-01",
+              "end": "1989-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and today",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and today",
+        "Start": 25,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-26,P481D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and tomorrow",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-27,P482D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many clusters docked between Jan 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-04-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between jan 2019 and now",
+        "Start": 25,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2020-04-26,P481D)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-04-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be carried out between today and tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between today and tomorrow",
+        "Start": 32,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-06,2020-05-07,P1D)",
+              "type": "daterange",
+              "start": "2020-05-06",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The allotted time was between 22/Jan/2019 and yesterday",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 22/jan/2019 and yesterday",
+        "Start": 22,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-22,2020-05-05,P469D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2020-05-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It should have been completed between Aug 2019 and now",
+    "Context": {
+      "ReferenceDateTime": "2020-05-06T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between aug 2019 and now",
+        "Start": 30,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-08-01,2020-05-06,P279D)",
+              "type": "daterange",
+              "start": "2019-08-01",
+              "end": "2020-05-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The ssn is 123-12-1234",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The COVID-19 was very serious at 02-02-2020 - 03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "02-02-2020 - 03-03-2020",
+        "Start": 33,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-02-02,2020-03-03,P30D)",
+              "type": "daterange",
+              "start": "2020-02-02",
+              "end": "2020-03-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The code of this object is 133-03-03-2020",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The file's name is sales_report-2002-10-09.xlsx",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "2015-1-32 is a wrong date",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Call me al (206) 555-1212",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "tomorrow on skype for business between 3:00 pm and 5:00 pm eastern",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tomorrow",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-13",
+              "type": "date",
+              "value": "2020-06-13"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "between 3:00 pm and 5:00 pm eastern",
+        "Start": 31,
+        "End": 65,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T15:00,T17:00,PT2H)",
+              "type": "timerange",
+              "timezone": "UTC-04:00",
+              "timezoneText": "eastern",
+              "utcOffsetMins": "-240",
+              "start": "15:00:00",
+              "end": "17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Thursdays at 17.30 Beijing time",
+    "Context": {
+      "ReferenceDateTime": "2020-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "thursdays at 17.30 beijing time",
+        "Start": 0,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T17:30",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Race - 3pm - this week",
+    "Context": {
+      "ReferenceDateTime": "2020-06-16T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3pm",
+        "Start": 7,
+        "End": 9,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-W25",
+              "type": "daterange",
+              "start": "2020-06-15",
+              "end": "2020-06-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Stuck in Traffic today - let colleagues know will need to change meeting to 8:30 instead of 8am",
+    "Context": {
+      "ReferenceDateTime": "2020-06-16T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "today",
+        "Start": 17,
+        "End": 21,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-16",
+              "type": "date",
+              "value": "2020-06-16"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8:30",
+        "Start": 76,
+        "End": 79,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:30",
+              "type": "time",
+              "value": "08:30:00"
+            },
+            {
+              "timex": "T20:30",
+              "type": "time",
+              "value": "20:30:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8am",
+        "Start": 92,
+        "End": 94,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Jane Johnson - May 25th - Coffee date - Starbucks on 29th - meet at 2pm for 1 hr",
+    "Context": {
+      "ReferenceDateTime": "2020-06-16T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "may 25th",
+        "Start": 15,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-25",
+              "type": "date",
+              "value": "2020-05-25"
+            },
+            {
+              "timex": "XXXX-05-25",
+              "type": "date",
+              "value": "2021-05-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "29th",
+        "Start": 53,
+        "End": 56,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2020-05-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2020-06-29"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2pm",
+        "Start": 68,
+        "End": 70,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "type": "time",
+              "value": "14:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "1 hr",
+        "Start": 76,
+        "End": 79,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Add meeting with boss to my calendar - Tuesdays at 9am",
+    "Context": {
+      "ReferenceDateTime": "2020-06-16T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tuesdays at 9am",
+        "Start": 39,
+        "End": 53,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T09",
               "type": "set",
               "value": "not resolved"
             }

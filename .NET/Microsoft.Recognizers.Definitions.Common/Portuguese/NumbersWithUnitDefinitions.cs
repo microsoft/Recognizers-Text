@@ -208,7 +208,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Coroa feroesa", @"coroa feroesa|coroas feroesas|fkr" },
             { @"Libra das Malvinas", @"libra das malvinas|libras das malvinas|fk£|fkp" },
             { @"Dólar das Ilhas Salomão", @"dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd" },
-            { @"Novo shekel israelense", @"novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils" },
+            { @"Novo shekel israelense", @"novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils|₪" },
             { @"Agora", @"agora|agorot" },
             { @"Dólar jamaicano", @"dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd" },
             { @"Yen", @"yen|iene|yenes|ienes|jpy" },
@@ -400,7 +400,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {
-            @"le"
+            @"le",
+            @"agora"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
@@ -436,7 +437,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             @"áreas",
             @"areas",
             @"milha",
-            @"milhas"
+            @"milhas",
+            @""""
         };
       public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
       public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
@@ -463,7 +465,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         {
             @"mi",
             @"milha",
-            @"milhas"
+            @"milhas",
+            @""""
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
@@ -531,6 +534,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Onça", @"oz|onça|onca|onças|oncas" },
             { @"Grão", @"grão|grao|grãos|graos|gr" },
             { @"Quilate", @"ct|quilate|quilates" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"null", @"null" }
         };
     }
 }

@@ -20,6 +20,7 @@ class BaseDateTime:
     DeltaMinuteRegex = f'(?<deltamin>[0-5]?\\d)'
     SecondRegex = f'(?<sec>[0-5]?\\d)'
     FourDigitYearRegex = f'\\b(?<![$])(?<year>((1\\d|20)\\d{{2}})|2100)(?!\\.0\\b)\\b'
+    HyphenDateRegex = f'((?<year1>[0-9]{{4}})-?(?<month1>1[0-2]|0[1-9])-?(?<day1>3[01]|0[1-9]|[12][0-9]))|((?<month2>1[0-2]|0[1-9])-?(?<day2>3[01]|0[1-9]|[12][0-9])-?(?<year2>[0-9]{{4}}))|((?<day3>3[01]|0[1-9]|[12][0-9])-?(?<month3>1[0-2]|0[1-9])-?(?<year3>[0-9]{{4}}))'
     IllegalYearRegex = f'([-])({FourDigitYearRegex})([-])'
     RangeConnectorSymbolRegex = f'(--|-|—|——|~|–)'
     BaseAmDescRegex = f'(am\\b|a\\s*\\.\\s*m\\s*\\.|a[\\.]?\\s*m\\b)'
@@ -29,7 +30,7 @@ class BaseDateTime:
     MinYearNum = '1500'
     MaxYearNum = '2100'
     MaxTwoDigitYearFutureNum = '30'
-    MinTwoDigitYearPastNum = '70'
+    MinTwoDigitYearPastNum = '40'
     DayOfMonthDictionary = dict([("01", 1),
                                  ("02", 2),
                                  ("03", 3),

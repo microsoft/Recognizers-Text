@@ -1110,6 +1110,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
                 // Handle the "within two weeks" case which means from today to the end of next two weeks
                 // Cases like "within 3 days before/after today" is not handled here (4th condition)
+                boolean isMatch = false;
                 if (RegexExtension.isExactMatch(config.getWithinNextPrefixRegex(), beforeStr, true)) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
@@ -1118,19 +1119,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate, but for the "within" case it should start from the current day.
                     beginDate = beginDate.minusDays(1);
                     endDate = endDate.minusDays(1);
+                    isMatch = true;
                 }
 
                 if (RegexExtension.isExactMatch(config.getFutureRegex(), beforeStr, true)) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;
-                } else {
-                    suffixMatch = Arrays.stream(RegExpUtility.getMatches(config.getFutureRegex(), afterStr)).findFirst();
-                    if (suffixMatch.isPresent()) {
-                        getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
-                        beginDate = getModAndDateResult.beginDate;
-                        endDate = getModAndDateResult.endDate;
-                    }
+                    isMatch = true;
                 }
 
                 Optional<Match> futureSuffixMatch = Arrays.stream(RegExpUtility.getMatches(config.getFutureSuffixRegex(), afterStr)).findFirst();
@@ -1142,7 +1138,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
                 // Handle the "in two weeks" case which means the second week
                 if (RegexExtension.isExactMatch(config.getInConnectorRegex(), beforeStr, true) &&
-                        !DurationParsingUtil.isMultipleDuration(durationResult.getTimex())) {
+                        !DurationParsingUtil.isMultipleDuration(durationResult.getTimex()) && !isMatch) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;
@@ -1449,12 +1445,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 ret.setFutureValue(new Pair<>(beginDate, endDate));
                 ret.setPastValue(new Pair<>(beginDate, endDate));
             }
+
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(-1, beginDate.getMonthValue(), 1), DateTimeFormatUtil.luisDate(-1, endDate.getMonthValue(), 1)));
         } else {
             ret.setFutureValue(new Pair<>(beginDate, endDate));
             ret.setPastValue(new Pair<>(beginDate, endDate));
+            ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         }
 
-        ret.setTimex(String.format("(%s,%s,P3M)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate)));
         ret.setSuccess(true);
 
         return ret;
