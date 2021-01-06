@@ -952,7 +952,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
                 pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
 
-                // When the input is not the special year, we should sync the future/past year due to some invalid date(Feb 29th).
+                // When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
                 if (dateContext.IsEmpty() && (DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue)
                                               || DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue)))
                 {
