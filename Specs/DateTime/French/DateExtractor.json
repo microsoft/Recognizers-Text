@@ -1122,18 +1122,6 @@
     ]
   },
   {
-    "Input": "je vais rentrer le 22 avril",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22 avril",
-        "Type": "date",
-        "Start": 16,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "je vais rentrer le 22-avril",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -1182,30 +1170,6 @@
         "Text": "22 avr.",
         "Type": "date",
         "Start": 16,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "je vais rentrer le 22 avril",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22 avril",
-        "Type": "date",
-        "Start": 19,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "je vais rentrer le 22/04",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date",
-        "Start": 13,
         "Length": 5
       }
     ]
@@ -1410,18 +1374,6 @@
         "Text": "vendredi",
         "Type": "date",
         "Start": 16,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "je vais rentrer vendredi",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "vendredi",
-        "Type": "date",
-        "Start": 13,
         "Length": 6
       }
     ]
