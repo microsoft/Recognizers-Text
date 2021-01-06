@@ -526,5 +526,32 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(resolution.Values[1].Start);
             Assert.IsNull(resolution.Values[1].End);
         }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTime_2021W02() // first day of the year is a Friday
+        {
+            var today = new System.DateTime(2021, 01, 05);
+            var resolution = TimexResolver.Resolve(new[] { "2021-W02" }, today.ToUniversalTime());
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2021-W02", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2021-01-11", resolution.Values[0].Start);
+            Assert.AreEqual("2021-01-18", resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTime_2024W01() // first day of the year is a Monday
+        {
+            var today = new System.DateTime(2024, 01, 01);
+            var resolution = TimexResolver.Resolve(new[] { "2024-W01" }, today.ToUniversalTime());
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2024-W01", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2024-01-01", resolution.Values[0].Start);
+            Assert.AreEqual("2024-01-08", resolution.Values[0].End);
+        }
+
     }
 }
