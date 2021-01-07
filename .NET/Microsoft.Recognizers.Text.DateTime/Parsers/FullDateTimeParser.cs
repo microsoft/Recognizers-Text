@@ -490,7 +490,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         internal static void ProcessDoubleTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
         {
-            string[] timexes = originTimex.Split(Constants.TimexDelimiter);
+            string[] timexes = originTimex.Split(Constants.CompositeTimexDelimiter);
 
             if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexes.Length != 2)
             {

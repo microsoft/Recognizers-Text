@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string InvalidDateString = "0001-01-01";
 
-        public const char TimexDelimiter = '|';
+        public const char CompositeTimexDelimiter = '|';
 
         // Invalid year
         public const int InvalidYear = int.MinValue;

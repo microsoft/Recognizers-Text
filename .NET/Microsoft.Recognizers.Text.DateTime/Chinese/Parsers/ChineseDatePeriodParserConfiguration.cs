@@ -983,7 +983,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
                 ret.Comment = Constants.Comment_DoubleTimex;
                 var pastTimex = TimexUtility.GenerateDatePeriodTimex(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
-                ret.Timex = TimexUtility.MergeTimeAlternatives(ret.Timex, pastTimex);
+                ret.Timex = TimexUtility.MergeTimexAlternatives(ret.Timex, pastTimex);
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
