@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-
+using System.Text.Json;
 using Microsoft.Recognizers.Text.DataDrivenTests;
 
 using Newtonsoft.Json;
@@ -41,6 +41,10 @@ namespace Microsoft.Recognizers.Text.Validation
             {
                 List<BasicStageResult> stageResults = RunPipeline(path);
                 ShowLogs(stageResults);
+                if (args.Length > 1 && args[1].Equals("save", StringComparison.OrdinalIgnoreCase))
+                {
+                    SaveMatchResults(stageResults, path);
+                }
             }
 
             Console.WriteLine();
@@ -85,6 +89,35 @@ namespace Microsoft.Recognizers.Text.Validation
             Console.WriteLine();
 
             return paths;
+        }
+
+        private static void SaveMatchResults(List<BasicStageResult> stageResults, string path)
+        {
+            if (stageResults.Count <= 1)
+            {
+                return;
+            }
+
+            string directory = Path.GetDirectoryName(path);
+            string filename = Path.GetFileNameWithoutExtension(path);
+            string extension = Path.GetExtension(path);
+            string newPath = Path.Combine(directory, $"{filename}_ValidationResult{extension}");
+
+            // Convert match results and original specs to same data type Newtonsoft.Json.Linq.JArray.
+            var rawSpecs = JsonConvert.SerializeObject(stageResults[stageResults.Count - 1].Specs);
+            List<dynamic> jsonSpecs = (List<dynamic>)JsonConvert.DeserializeObject<IList<dynamic>>(rawSpecs);
+            var rawData = File.ReadAllText(path);
+            List<dynamic> originalSpecs = (List<dynamic>)JsonConvert.DeserializeObject<IList<dynamic>>(rawData);
+
+            // Replace matching results.
+            for (int i = 0; i < jsonSpecs.Count; ++i)
+            {
+                originalSpecs[i]["Results"] = jsonSpecs[i]["Results"];
+            }
+
+            string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented);
+            System.IO.File.WriteAllText(newPath, rawResults);
+            Console.WriteLine($"Success save match results to path: {newPath}");
         }
 
         private static void ShowLogs(List<BasicStageResult> stageResults)
@@ -193,6 +226,7 @@ namespace Microsoft.Recognizers.Text.Validation
         private static BasicStageResult CheckBasicContent(BasicStageResult stage)
         {
             List<TestModel> data = stage.Specs;
+            List<TestModel> matchData = new List<TestModel> { };
             List<string> logStrs = new List<string> { };
             List<string> counterStrs = new List<string> { };
             int errorNum = 0;
@@ -211,11 +245,13 @@ namespace Microsoft.Recognizers.Text.Validation
                     counterStrs.Add(RemoveLogStrDetailInformation(specResult.logStr));
                     ++errorNum;
                 }
+
+                matchData.Add(item.value);
             }
 
             logStrs.Add(CountLogLines(counterStrs));
 
-            return new BasicStageResult(stage.FilePath, "Content valid", logStrs, data, errorNum == 0, logStrs.Count - errorNum);
+            return new BasicStageResult(stage.FilePath, "Content valid", logStrs, matchData, errorNum == 0, logStrs.Count - errorNum);
         }
 
         private static BasicStageResult CheckModelResult(BasicStageResult stage)
@@ -243,6 +279,7 @@ namespace Microsoft.Recognizers.Text.Validation
             else
             {
                 var dynamicResults = spec.CastResults<dynamic>();
+                var matchResults = new List<dynamic> { };
                 foreach (dynamic result in dynamicResults)
                 {
                     string resultStr = CheckSpecAttributes(spec, result);
@@ -250,8 +287,16 @@ namespace Microsoft.Recognizers.Text.Validation
                     {
                         logStr = resultStr;
                         isSuccess = false;
-                        break;
+                        MatchIndex(spec, result);
                     }
+
+                    matchResults.Add(result);
+                }
+
+                if (!isSuccess)
+                {
+                    var resultsStr = JsonConvert.SerializeObject(matchResults);
+                    spec.Results = JsonConvert.DeserializeObject<IEnumerable<object>>(resultsStr);
                 }
             }
 
@@ -345,6 +390,28 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             return logStr;
+        }
+
+        private static void MatchIndex(TestModel spec, dynamic result) {
+            if (spec.Input == null || result["Text"] == null || result["Text"].Equals(string.Empty))
+            {
+                return;
+            }
+
+            string input = spec.Input;
+            string text = result["Text"];
+            if (input.Contains(text, StringComparison.Ordinal))
+            {
+                result["Start"] = input.IndexOf(text, StringComparison.Ordinal);
+                if (result["End"] == null)
+                {
+                    result["Length"] = text.Length;
+                }
+                else
+                {
+                    result["End"] = result["Start"] + text.Length;
+                }
+            }
         }
 
         internal class BasicStageResult
