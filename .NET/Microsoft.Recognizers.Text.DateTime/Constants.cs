@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Comment_WeekOf = "WeekOf";
         public const string Comment_MonthOf = "MonthOf";
 
+        // Tag to mark cases where the specifc resolution timex depends on future or past values.
         public const string Comment_DoubleTimex = "DoubleTimex";
 
         // MOD Value
@@ -190,6 +191,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MealtimeDinner = "TMED";
 
         public const string InvalidDateString = "0001-01-01";
+
+        public const char TimexDelimiter = '|';
 
         // Invalid year
         public const int InvalidYear = int.MinValue;

@@ -258,6 +258,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return result;
         }
 
+        public static string MergeTimeAlternatives(string timex1, string timex2)
+        {
+            return $"{timex1}{Constants.TimexDelimiter}{timex2}";
+        }
+
         public static TimeOfDayResolutionResult ParseTimeOfDay(string tod)
         {
             var result = new TimeOfDayResolutionResult();

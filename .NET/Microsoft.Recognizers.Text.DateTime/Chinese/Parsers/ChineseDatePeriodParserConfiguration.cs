@@ -979,9 +979,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
-                // due to only solve the noYear cases, we only have to judge the period in one year contains Feb 29th;
+                // Handle cases like "2月28日到3月1日".
+                // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
                 ret.Comment = Constants.Comment_DoubleTimex;
-                ret.Timex += "|" + TimexUtility.GenerateDatePeriodTimex(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+                var pastTimex = TimexUtility.GenerateDatePeriodTimex(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+                ret.Timex = TimexUtility.MergeTimeAlternatives(ret.Timex, pastTimex);
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);

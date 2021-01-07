@@ -417,9 +417,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal))
+            if (!string.IsNullOrEmpty(comment) && HasDoubleTimex(comment))
             {
-                UpdateTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
+                ProcessDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
             }
 
             if (isLunar)
@@ -488,19 +488,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        internal static void UpdateTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
+        internal static void ProcessDoubleTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
         {
-            string[] timexs = originTimex.Split('|');
+            string[] timexes = originTimex.Split(Constants.TimexDelimiter);
 
-            if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexs.Length != 2)
+            if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexes.Length != 2)
             {
                 return;
             }
 
             var futureResolution = (Dictionary<string, string>)resolutionDic[futureKey];
             var pastResolution = (Dictionary<string, string>)resolutionDic[pastKey];
-            futureResolution[DateTimeResolutionKey.Timex] = timexs[0];
-            pastResolution[DateTimeResolutionKey.Timex] = timexs[1];
+            futureResolution[DateTimeResolutionKey.Timex] = timexes[0];
+            pastResolution[DateTimeResolutionKey.Timex] = timexes[1];
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)
@@ -618,6 +618,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private bool IsDurationWithAgoAndLater(ExtractResult er)
         {
             return er.Metadata != null && er.Metadata.IsDurationWithAgoAndLater;
+        }
+
+        private bool HasDoubleTimex(string comment)
+        {
+            return comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal);
         }
     }
 }
