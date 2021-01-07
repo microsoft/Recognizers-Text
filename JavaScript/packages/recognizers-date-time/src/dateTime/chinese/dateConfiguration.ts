@@ -386,7 +386,7 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (this.isNonleapYearFeb29th(year, month - 1, day)) {
+                        else if (!DateUtils.isLeapYear(year) && DateUtils.isFeb29th(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
@@ -529,16 +529,11 @@ export class ChineseDateParser extends BaseDateParser {
         else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
-        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        if (noYear && futureDate < referenceDate) {
-            futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
-        }
-        if (noYear && pastDate >= referenceDate) {
-            pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
-        }
-        result.futureValue = futureDate;
-        result.pastValue = pastDate;
+
+        let futurePastDates = DateUtils.generateDates(noYear, referenceDate, year, month, day);
+
+        result.futureValue = futurePastDates.future;
+        result.pastValue = futurePastDates.past;
         result.success = true;
         return result;
     }

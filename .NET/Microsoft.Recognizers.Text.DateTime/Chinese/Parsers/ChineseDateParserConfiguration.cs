@@ -254,7 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             {
                                 pastDate = pastDate.AddMonths(-1);
                             }
-                            else if (IsNonleapYearFeb29th(year, month - 1, day))
+                            else if (DateContext.IsFeb29th(year, month - 1, day))
                             {
                                 pastDate = pastDate.AddMonths(-2);
                             }
@@ -550,20 +550,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            if (noYear && futureDate < referenceDate)
-            {
-                futureDate = futureDate.AddYears(+1);
-            }
+            var futurePastDates = DateContext.GenerateDates(noYear, referenceDate, year, month, day);
 
-            if (noYear && pastDate >= referenceDate)
-            {
-                pastDate = pastDate.AddYears(-1);
-            }
-
-            ret.FutureValue = futureDate;
-            ret.PastValue = pastDate;
+            ret.FutureValue = futurePastDates.future;
+            ret.PastValue = futurePastDates.past;
             ret.Success = true;
 
             return ret;
@@ -623,12 +613,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return DateObjectExtension.IsValidDate(year, month, day);
-        }
-
-        // Judge the date is non-leap year Feb 29th
-        private static bool IsNonleapYearFeb29th(int year, int month, int day)
-        {
-            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
         }
 
         // Handle cases like "三天前"
