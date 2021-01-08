@@ -2946,7 +2946,7 @@
         "Length": 31,
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(PRESENT_REF,2019-07-30T00:03:00,PT0H)",
+          "Timex": "(PRESENT_REF,2019-07-30T00:03:00,PT3M)",
           "FutureResolution": {
             "startDateTime": "2019-07-30 00:00:00",
             "endDateTime": "2019-07-30 00:03:00"

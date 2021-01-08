@@ -20543,7 +20543,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(PRESENT_REF,2019-07-30T00:03:00,PT0H)",
+              "timex": "(PRESENT_REF,2019-07-30T00:03:00,PT3M)",
               "type": "datetimerange",
               "start": "2019-07-30 00:00:00",
               "end": "2019-07-30 00:03:00"
