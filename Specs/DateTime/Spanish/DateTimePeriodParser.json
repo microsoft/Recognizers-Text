@@ -2906,5 +2906,57 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "Voy a volver dentro de 3 minutos",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dentro de 3 minutos",
+        "Start": 13,
+        "Length": 19,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2019-07-30T00:00:00,2019-07-30T00:03:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver desde ahora hasta 3 min después",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde ahora hasta 3 min después",
+        "Start": 13,
+        "Length": 31,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(PRESENT_REF,2019-07-30T00:03:00,PT0H)",
+          "FutureResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          }
+        }
+      }
+    ]
   }
 ]

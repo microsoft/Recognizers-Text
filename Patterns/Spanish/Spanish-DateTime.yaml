@@ -593,7 +593,7 @@ SinceYearSuffixRegex: !nestedRegex
 AgoRegex: !simpleRegex
   def: \b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes|hace)\b
 LaterRegex: !simpleRegex
-  def: \b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(?<day>hoy|ayer|mañana))\b
+  def: \b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(ahora|(?<day>hoy|ayer|mañana)))\b
 # DateTimePeriodParser
 Tomorrow: mañana
 # SpanishCommonDateTimeParserConfiguration
@@ -991,7 +991,7 @@ YearPeriodRegex: !nestedRegex
   def: ((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
-  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro|a\s+partir\s+de\s+ahora)\b
+  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro)\b
 WrittenDecades: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary according to the counterpart in English

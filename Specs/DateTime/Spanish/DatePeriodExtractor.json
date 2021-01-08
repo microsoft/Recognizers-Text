@@ -4641,14 +4641,7 @@
     "Input": "Ocurrirá 2 días a partir de ahora",
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
-    "Results": [
-      {
-        "Text": "2 días a partir de ahora",
-        "Type": "daterange",
-        "Start": 9,
-        "Length": 24
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Estare afuera próximos 3 años",
@@ -4683,6 +4676,19 @@
         "Type": "daterange",
         "Start": 9,
         "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ocurrirá 2 días en el futuro",
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "2 días en el futuro",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 19
       }
     ]
   }

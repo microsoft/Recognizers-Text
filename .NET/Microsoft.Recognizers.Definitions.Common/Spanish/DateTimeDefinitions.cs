@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(el\s+)?año\s*)?{YearSuffix})";
       public const string AgoRegex = @"\b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes)\b";
-      public const string LaterRegex = @"\b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(?<day>hoy|ayer|mañana))\b";
+      public const string LaterRegex = @"\b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(ahora|(?<day>hoy|ayer|mañana)))\b";
       public const string Tomorrow = @"mañana";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
@@ -590,7 +590,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string CommonDatePrefixRegex = @"^[\.]";
       public const string SuffixAfterRegex = @"\b((a\s+)?(o|y)\s+(arriba|despu[eé]s|posterior|mayor|m[aá]s\s+tarde)(?!\s+(que|de)))\b";
       public static readonly string YearPeriodRegex = $@"((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
-      public const string FutureSuffixRegex = @"\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro|a\s+partir\s+de\s+ahora)\b";
+      public const string FutureSuffixRegex = @"\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro)\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
             { @"", 0 }
