@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.CommandLine;
+using System.CommandLine.Invocation;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using Microsoft.Recognizers.Text.DataDrivenTests;
-
 using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text.Validation
@@ -20,34 +21,55 @@ namespace Microsoft.Recognizers.Text.Validation
             "model result",
         };
 
+        private static readonly string AutoUpdatedSplit = "\n\t";
+
+        private static ToolOptions options;
+
         public static void Main(string[] args)
         {
             // Enabling different encodings (e.g. to support chars like '€' in .NET Core
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            // Validate parameters
-            if (args == null || args.Length == 0)
+            if (!ParserArgs(args))
             {
-                Console.WriteLine(@"No arguments passed. Please specify a file path or a directory containing specs.");
-                Console.WriteLine(@"Usages: ValidationTool <specs_path>");
                 return;
             }
 
-            string inputPath = args[0];
+            string[] specsPaths = ListSpecFiles(options.SpecsPath);
 
-            string[] specPaths = ListSpecFiles(inputPath);
-
-            foreach (string path in specPaths)
+            foreach (string path in specsPaths)
             {
                 List<BasicStageResult> stageResults = RunPipeline(path);
                 ShowLogs(stageResults);
-                if (args.Length > 1 && args[1].Equals("save", StringComparison.OrdinalIgnoreCase))
+                if (options.Save)
                 {
                     SaveMatchResults(stageResults, path);
                 }
             }
 
             Console.WriteLine();
+        }
+
+        // Parser args parameters
+        private static bool ParserArgs(string[] args)
+        {
+            var command = new RootCommand(description: "Specs file validtion tool")
+            {
+                new Option<bool>(aliases: new string[] {"--save", "-s"}, () => false) {
+                    Description = "Save match result in original file.",
+                },
+                new Argument<string>("specs-path") {
+                    Description = "The specs file path, could be file path or a directory containing specs."
+                },
+            };
+
+            command.Handler = CommandHandler.Create(
+                (string specsPath, bool save) =>
+                {
+                    options = new ToolOptions(specsPath, save);
+                });
+
+            return command.InvokeAsync(args).Result == 0;
         }
 
         private static string[] ListSpecFiles(string specsPath)
@@ -98,10 +120,8 @@ namespace Microsoft.Recognizers.Text.Validation
                 return;
             }
 
-            string directory = Path.GetDirectoryName(path);
-            string filename = Path.GetFileNameWithoutExtension(path);
-            string extension = Path.GetExtension(path);
-            string newPath = Path.Combine(directory, $"{filename}_ValidationResult{extension}");
+            string newPath = path + ".bak";
+            File.Copy(path, newPath);
 
             // Convert match results and original specs to same data type Newtonsoft.Json.Linq.JArray.
             var rawSpecs = JsonConvert.SerializeObject(stageResults[stageResults.Count - 1].Specs);
@@ -116,8 +136,8 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented);
-            System.IO.File.WriteAllText(newPath, rawResults);
-            Console.WriteLine($"Success save match results to path: {newPath}");
+            File.WriteAllText(path, rawResults);
+            Console.WriteLine($"Success save match results to path: {path}");
         }
 
         private static void ShowLogs(List<BasicStageResult> stageResults)
@@ -229,6 +249,7 @@ namespace Microsoft.Recognizers.Text.Validation
             List<TestModel> matchData = new List<TestModel> { };
             List<string> logStrs = new List<string> { };
             List<string> counterStrs = new List<string> { };
+            List<string> autoUpdatedStrs = new List<string> { };
             int errorNum = 0;
 
             foreach (var item in data.Select((value, i) => new { i, value }))
@@ -241,12 +262,21 @@ namespace Microsoft.Recognizers.Text.Validation
                         logStrs.Add(string.Empty);
                     }
 
+                    ++errorNum;
                     logStrs.Add($"\tSpec error in item #{item.i + 1}, \n\tText: {item.value.Input}, \n\tContext: {JsonConvert.SerializeObject(item.value.Context)},\n\tError Message: {specResult.logStr}\n");
                     counterStrs.Add(RemoveLogStrDetailInformation(specResult.logStr));
-                    ++errorNum;
+                    if (options.Save && specResult.logStr.Contains(AutoUpdatedSplit))
+                    {
+                        autoUpdatedStrs.Add(specResult.logStr.Split(AutoUpdatedSplit)[1]);
+                    }
                 }
 
                 matchData.Add(item.value);
+            }
+
+            if (options.Save)
+            {
+                logStrs.Add(CountLogLines(autoUpdatedStrs));
             }
 
             logStrs.Add(CountLogLines(counterStrs));
@@ -287,7 +317,10 @@ namespace Microsoft.Recognizers.Text.Validation
                     {
                         logStr = resultStr;
                         isSuccess = false;
-                        MatchIndex(spec, result);
+                        if (options.Save)
+                        {
+                            logStr += MatchIndex(spec, result);
+                        }
                     }
 
                     matchResults.Add(result);
@@ -337,7 +370,7 @@ namespace Microsoft.Recognizers.Text.Validation
             var textStr = result["Text"].Value.ToString();
             if (!textStr.Equals(startEndStr, StringComparison.OrdinalIgnoreCase))
             {
-                return $"Spec[\"Result\"] index error, \"Start\": {result["Start"]}, \"End\": {result["End"]}, the text \"{textStr}\" mismatched input text \"{startEndStr}\".";
+                return $"Spec[\"Result\"] index error, \"Start\": {start}, \"End\": {end}, the text \"{textStr}\" mismatched input text \"{startEndStr}\".";
             }
 
             return string.Empty;
@@ -388,30 +421,47 @@ namespace Microsoft.Recognizers.Text.Validation
             {
                 logStr = "Spec[\"Result\"] content mismatched input text";
             }
+            else if (logStr.Contains(AutoUpdatedSplit))
+            {
+                logStr = logStr.Split(AutoUpdatedSplit)[0];
+            }
 
             return logStr;
         }
 
-        private static void MatchIndex(TestModel spec, dynamic result) {
+        private static string MatchIndex(TestModel spec, dynamic result) {
+            string logStr = string.Empty;
             if (spec.Input == null || result["Text"] == null || result["Text"].Equals(string.Empty))
             {
-                return;
+                return logStr;
             }
 
             string input = spec.Input;
             string text = result["Text"];
+            int index;
             if (input.Contains(text, StringComparison.Ordinal))
             {
-                result["Start"] = input.IndexOf(text, StringComparison.Ordinal);
-                if (result["End"] == null)
+                index = input.IndexOf(text, StringComparison.Ordinal);
+                if (input.Substring(index + 1).Contains(text, StringComparison.Ordinal))
                 {
-                    result["Length"] = text.Length;
+                    logStr = $"{AutoUpdatedSplit}Failed to auto update , text match is potentially ambiguous.";
                 }
                 else
                 {
-                    result["End"] = result["Start"] + text.Length;
+                    logStr = $"{AutoUpdatedSplit}Auto update success.";
+                    result["Start"] = index;
+                    if (result["End"] == null)
+                    {
+                        result["Length"] = text.Length;
+                    }
+                    else
+                    {
+                        result["End"] = result["Start"] + text.Length;
+                    }
                 }
             }
+
+            return logStr;
         }
 
         internal class BasicStageResult
@@ -436,6 +486,19 @@ namespace Microsoft.Recognizers.Text.Validation
                 this.Logs = logStrs;
                 this.Specs = specs;
                 this.SucceedNum = succeedNum;
+            }
+        }
+
+        internal class ToolOptions
+        {
+            public string SpecsPath { get; set; }
+
+            public bool Save { get; set; }
+
+            public ToolOptions(string specsPath, bool save)
+            {
+                this.SpecsPath = specsPath;
+                this.Save = save;
             }
         }
     }
