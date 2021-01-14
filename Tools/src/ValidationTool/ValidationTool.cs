@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.Validation
                     options = new ToolOptions(specsPath, save);
                 });
 
-            return command.InvokeAsync(args).Result == 0;
+            return command.InvokeAsync(args).Result == 0 && options != null;
         }
 
         private static string[] ListSpecFiles(string specsPath)
@@ -284,7 +284,7 @@ namespace Microsoft.Recognizers.Text.Validation
 
             logStrs.Add(CountLogLines(counterStrs));
 
-            return new BasicStageResult(stage.FilePath, "Content valid", logStrs, matchData, errorNum == 0, logStrs.Count - errorNum);
+            return new BasicStageResult(stage.FilePath, "Content valid", logStrs, matchData, errorNum == 0, matchData.Count - errorNum);
         }
 
         private static BasicStageResult CheckModelResult(BasicStageResult stage)
@@ -361,19 +361,24 @@ namespace Microsoft.Recognizers.Text.Validation
             int end = result["End"] != null ? result["End"] : result["Length"] + start - 1;
             if (start > spec.Input.Length || start < 0)
             {
-                return $"Spec[\"Start\"] value {result["Start"]} out of bounds.";
+                return $"Spec[\"Result\"] \"Start\" value {result["Start"]} out of bounds.";
             }
 
             if (end >= spec.Input.Length || end < start)
             {
-                return result["End"] != null ? $"Spec[\"End\"] value {result["End"]} out of bounds." : $"Spec[\"Length\"] value {result["Length"]} out of bounds.";
+                return result["End"] != null ? $"Spec[\"Result\"] \"End\" value {result["End"]} out of bounds." : $"Spec[\"Result\"] \"Length\" value {result["Length"]} out of bounds.";
             }
 
             var startEndStr = spec.Input.Substring(start, end - start + 1);
             var textStr = result["Text"].Value.ToString();
+            if (!spec.Input.Contains(textStr, StringComparison.OrdinalIgnoreCase))
+            {
+                return $"Spec[\"Result\"] \"Text\" error, the text \"{textStr}\" is not in \"Input\".";
+            }
+
             if (!textStr.Equals(startEndStr, StringComparison.OrdinalIgnoreCase))
             {
-                return $"Spec[\"Result\"] index error, \"Start\": {start}, \"End\": {end}, the text \"{textStr}\" mismatched input text \"{startEndStr}\".";
+                return $"Spec[\"Result\"] index error, \"Start\": {start}, \"End\": {end}, \"Text\": \"{textStr}\".";
             }
 
             return string.Empty;
@@ -418,11 +423,11 @@ namespace Microsoft.Recognizers.Text.Validation
             if (logStr.Contains("out of bounds."))
             {
                 int valueStart = logStr.IndexOf("value");
-                logStr = $"{logStr.Substring(0, valueStart)} value out of bounds.";
+                logStr = $"{logStr.Substring(0, valueStart)}value out of bounds.";
             }
-            else if (logStr.Contains("mismatched input text"))
+            else if (logStr.Contains(","))
             {
-                logStr = "Spec[\"Result\"] content mismatched input text";
+                logStr = logStr.Split(",")[0];
             }
             else if (logStr.Contains(AutoUpdatedSplit))
             {
