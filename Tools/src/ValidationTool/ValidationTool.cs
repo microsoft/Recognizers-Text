@@ -121,7 +121,10 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             string newPath = path + ".bak";
-            File.Copy(path, newPath);
+            if (!File.Exists(newPath))
+            {
+                File.Copy(path, newPath);
+            }
 
             // Convert match results and original specs to same data type Newtonsoft.Json.Linq.JArray.
             var rawSpecs = JsonConvert.SerializeObject(stageResults[stageResults.Count - 1].Specs);
@@ -136,7 +139,7 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented);
-            File.WriteAllText(path, rawResults);
+            File.WriteAllText(path, rawResults, Encoding.UTF8);
             Console.WriteLine($"Success save match results to path: {path}");
         }
 
