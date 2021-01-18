@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.utilities;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,6 +12,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.maven.artifact.versioning.ComparableVersion;
 import org.javatuples.Pair;
 
 public abstract class RegExpUtility {
@@ -392,17 +393,16 @@ public abstract class RegExpUtility {
     private static boolean isRestrictedJavaVersion() {
 
         boolean result = false;
-        BigDecimal targetVersion = new BigDecimal("1.8");
-
+        ComparableVersion targetVersion = new ComparableVersion("8");
         try {
-            String specVersion = System.getProperty("java.specification.version");
-            result = new BigDecimal(specVersion).compareTo(targetVersion) >= 0;
+            ComparableVersion specVersion = new ComparableVersion(System.getProperty("java.specification.version"));
+            result = specVersion.compareTo(targetVersion) <= 0;
         } catch (Exception e1) {
 
             try {
                 // Could also be "java.runtime.version".
-                String runtimeVersion = System.getProperty("java.version");
-                result = new BigDecimal(runtimeVersion).compareTo(targetVersion) >= 0;
+                ComparableVersion runtimeVersion = new ComparableVersion(System.getProperty("java.version"));
+                result = runtimeVersion.compareTo(targetVersion) <= 0;
 
             } catch (Exception e2) {
                 // Nothing to do, ignore.
@@ -411,7 +411,7 @@ public abstract class RegExpUtility {
         }
 
         if (result) {
-            System.out.println("WARN: Look-behind groups with no maximum length not supported. Java version <= 8.");
+            System.out.println("WARN: Look-behind groups with no maximum length not supported. Try using a Java version >= 9.");
         }
 
         return result;
