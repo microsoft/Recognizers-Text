@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (!originalDate.IsDefaultValue())
             {
-                return new DateObject(year == -1 ? Year : year, originalDate.Month, originalDate.Day);
+                return DateObject.MinValue.SafeCreateFromValue(year == -1 ? Year : year, originalDate.Month, originalDate.Day);
             }
 
             return originalDate;
