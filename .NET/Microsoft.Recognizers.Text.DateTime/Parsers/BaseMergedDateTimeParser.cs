@@ -87,11 +87,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(startType))
             {
                 start = resolutionDic[startType];
+                if (start.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (resolutionDic.ContainsKey(endType))
             {
                 end = resolutionDic[endType];
+                if (end.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (!string.IsNullOrEmpty(mod))
@@ -770,6 +778,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf, StringComparison.Ordinal))
             {
                 ResolveWeekOf(res, Constants.ResolveToPast);
+            }
+
+            if (!string.IsNullOrEmpty(comment) && TimexUtility.HasDoubleTimex(comment))
+            {
+                TimexUtility.ProcessDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
             }
 
             foreach (var p in res)
