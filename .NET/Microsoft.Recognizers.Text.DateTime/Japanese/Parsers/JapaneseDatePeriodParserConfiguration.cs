@@ -905,6 +905,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
+        // @todo: Refactor to share common code with Chinese
         // parse entities that made up by two time points
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceDate)
         {

@@ -260,7 +260,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string MergeTimexAlternatives(string timex1, string timex2)
         {
-            if (timex1.Equals(timex2))
+            if (timex1.Equals(timex2, StringComparison.Ordinal))
             {
                 return timex1;
             }
