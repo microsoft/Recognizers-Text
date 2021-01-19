@@ -19118,6 +19118,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "feb 29",
@@ -19146,6 +19147,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2/29",
@@ -19174,6 +19176,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "feb 29th",

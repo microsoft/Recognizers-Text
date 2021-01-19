@@ -4489,7 +4489,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "Compound timex represent value dependency and will be split at the model level",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between January 1st and April 5th",
