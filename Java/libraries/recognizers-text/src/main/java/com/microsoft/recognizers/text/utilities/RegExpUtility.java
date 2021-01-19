@@ -411,7 +411,7 @@ public abstract class RegExpUtility {
         }
 
         if (result) {
-            System.out.println("WARN: Look-behind groups with no maximum length not supported. Try using a Java version >= 9.");
+            System.out.println("WARN: Look-behind groups with no maximum length not supported in Java version <= 8.");
         }
 
         return result;
