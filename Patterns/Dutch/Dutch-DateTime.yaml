@@ -268,6 +268,10 @@ DateExtractorYearTermRegex: !nestedRegex
 DateExtractor1: !nestedRegex
   def: \b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateExtractorYearTermRegex ]
+DateExtractor2: !nestedRegex
+  # (Sunday,)? (2015-Sep-23|Sep-2015-23|2015-23-Sep|...)
+  def: \b({WeekDayRegex}\s*[,-]?\s*)?(?<!\d[.,])(({MonthRegex}[\.]?\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{DayRegex})|({DayRegex}\s*[/\\.,-]?)\s*({MonthRegex}[\.]?\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?)|({BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?|{MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}))\b
+  references: [WeekDayRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex]
 # Maandag 2 Mei
 # TODO: add ... van 2019?
 DateExtractor3: !nestedRegex

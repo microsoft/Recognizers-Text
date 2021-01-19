@@ -211,6 +211,9 @@ DateExtractor10: !nestedRegex
   def: ^[.]
   #def: \b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, RelativeRegex ]
+DateExtractor11: !nestedRegex
+  def: \b({WeekDayRegex}\s*[,-]?\s*)?(?<!\d[.,])(({MonthRegex}[\.]?\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{DayRegex})|({DayRegex}\s*[/\\.,-]?)\s*({MonthRegex}[\.]?\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?)|({BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?|{MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}))\b
+  references: [WeekDayRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex]
 DateExtractorA: !nestedRegex
   def: ({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})(?!\s*[/\\\-\.]\s*\d+)
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]

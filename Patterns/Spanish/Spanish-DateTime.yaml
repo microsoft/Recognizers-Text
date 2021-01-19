@@ -279,6 +279,10 @@ DateExtractor10: !nestedRegex
   # 2015-12-23
   def: \b(?<!\d[.,]){YearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ YearRegex, MonthNumRegex, DayRegex ]
+DateExtractor11: !nestedRegex
+  # (Sunday,)? (2015-Sep-23|Sep-2015-23|2015-23-Sep|...)
+  def: \b({WeekDayRegex}\s*[,-]?\s*)?(?<!\d[.,])(({MonthRegex}[\.]?\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{DayRegex})|({DayRegex}\s*[/\\.,-]?)\s*({MonthRegex}[\.]?\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?)|({BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?|{MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}))\b
+  references: [WeekDayRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex]
 # SpanishTimeExtractorConfiguration
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\b

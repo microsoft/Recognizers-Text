@@ -240,6 +240,10 @@ DateExtractor11: !nestedRegex
   # dia 24
   def: (?<=\b(dia)\s+){DayRegex}
   references: [ DayRegex ]
+DateExtractor12: !nestedRegex
+  # (Sunday,)? (2015-Sep-23|Sep-2015-23|2015-23-Sep|...)
+  def: \b({WeekDayRegex}\s*[,-]?\s*)?(?<!\d[.,])(({MonthRegex}[\.]?\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{DayRegex})|({DayRegex}\s*[/\\.,-]?)\s*({MonthRegex}[\.]?\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?)|({BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?|{MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}))\b
+  references: [WeekDayRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex]
 # PortugueseTimeExtractorConfiguration
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|uma|duas|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze)\b
