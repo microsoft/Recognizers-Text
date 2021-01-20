@@ -11,3 +11,5 @@ Python/.cache/v/cache/lastfailed
 .DS_Store
 /JavaScript/packages/**/*.tgz
 .history
+/Tools/src/ValidationTool/bin
+/Tools/src/ValidationTool/obj

@@ -37,6 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
+        public static readonly Regex AmbiguousPointRangeRegex =
+            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -215,6 +218,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => AmbiguousPointRangeRegex;
 
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

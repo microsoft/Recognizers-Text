@@ -287,6 +287,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var result in er)
             {
+                // Check that the extracted number is not part of a decimal number (e.g. 123.24)
+                if (result.Start > 1 && (text[(int)result.Start - 1].Equals(',') || text[(int)result.Start - 1].Equals('.')) &&
+                    char.IsDigit(text[(int)result.Start - 2]))
+                {
+                    continue;
+                }
+
                 var parsed = int.TryParse((this.Config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (!parsed || (num < 1 || num > 31))

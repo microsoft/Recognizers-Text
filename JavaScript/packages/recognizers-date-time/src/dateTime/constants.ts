@@ -22,6 +22,9 @@ export class Constants {
     static readonly ResolveKey: string = "resolve";
     static readonly ResolveToPastKey: string = "resolveToPast";
     static readonly ResolveToFutureKey: string = "resolveToFuture";
+    static readonly Decade: string = "decade";
+    static readonly Century: string = "century"
+    static readonly RelCentury: string = "relcentury"
     
     static readonly CommentKey: string = "Comment";
     static readonly CommentAmPm: string = "ampm";
@@ -33,8 +36,10 @@ export class Constants {
     static readonly MaxMonth: number = 11;
     static readonly MinMonth: number = 0;
 
+    // specifies the priority interpreting month and day order
     static readonly DefaultLanguageFallback_MDY: string = 'MDY';
     static readonly DefaultLanguageFallback_DMY: string = 'DMY';
+    static readonly DefaultLanguageFallback_YMD: string = "YMD"; // ZH
 
     static readonly MinYearNum: number = parseInt(BaseDateTime.MinYearNum);
     static readonly MaxYearNum: number = parseInt(BaseDateTime.MaxYearNum);

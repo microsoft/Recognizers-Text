@@ -276,6 +276,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string YearPeriodRegex = $@"(((dal|durante|nel|[tf]ra)\s+(il\s+)?)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
       public const string FutureSuffixRegex = @"\b(((in|nel)\s+)?(futuro|seguito))|(da\s+questo\s+momento)\b";
       public static readonly string ComplexDatePeriodRegex = $@"(((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
+      public const string AmbiguousPointRangeRegex = @"^(mar)$";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
             { @"decenni", @"10Y" },

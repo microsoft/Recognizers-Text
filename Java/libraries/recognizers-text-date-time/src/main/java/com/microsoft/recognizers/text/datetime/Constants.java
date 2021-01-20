@@ -114,8 +114,10 @@ public class Constants {
     // the length of four digits year, e.g., 2018
     public static final int FourDigitsYearLength = 4;
 
+    // specifies the priority interpreting month and day order
     public static final String DefaultLanguageFallback_MDY = "MDY";
     public static final String DefaultLanguageFallback_DMY = "DMY";
+    public static final String DefaultLanguageFallback_YMD = "YMD"; // ZH
 
     // Groups' names for named groups in regexes
     public static final String NextGroupName = "next";

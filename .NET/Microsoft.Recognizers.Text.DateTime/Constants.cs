@@ -59,6 +59,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Comment_WeekOf = "WeekOf";
         public const string Comment_MonthOf = "MonthOf";
 
+        // Tag to mark cases where the specifc resolution timex depends on future or past values.
+        public const string Comment_DoubleTimex = "DoubleTimex";
+
         // MOD Value
         // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
         public const string BEFORE_MOD = "before";
@@ -119,8 +122,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         // the length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
 
+        // specifies the priority interpreting month and day order
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
+        public const string DefaultLanguageFallback_YMD = "YMD"; // ZH
 
         // Groups' names for named groups in regexes
         public const string NextGroupName = "next";
@@ -140,6 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
+        public const string NegativeGroupName = "neg";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";
@@ -183,6 +189,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MealtimeBrunch = "TMER";
         public const string MealtimeLunch = "TMEL";
         public const string MealtimeDinner = "TMED";
+
+        public const string InvalidDateString = "0001-01-01";
+
+        public const char CompositeTimexDelimiter = '|';
 
         // Invalid year
         public const int InvalidYear = int.MinValue;

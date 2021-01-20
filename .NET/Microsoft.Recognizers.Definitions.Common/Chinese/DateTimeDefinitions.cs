@@ -55,11 +55,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
-      public static readonly string DateRegexList4 = $@"{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){SimpleYearRegex})?";
-      public static readonly string DateRegexList5 = $@"{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){SimpleYearRegex})?";
-      public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
-      public static readonly string DateRegexList7 = $@"{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}(?!\s*[/\\\-\.]\s*\d+)";
-      public static readonly string DateRegexList8 = $@"{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateRegexList4 = $@"{MonthNumRegex}\s*/\s*{DayRegex}";
+      public static readonly string DateRegexList5 = $@"{DayRegex}\s*/\s*{MonthNumRegex}";
+      public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}";
+      public static readonly string DateRegexList7 = $@"{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{SimpleYearRegex}";
+      public static readonly string DateRegexList8 = $@"{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}";
       public const string DatePeriodTillRegex = @"(?<till>到|至|--|-|—|——|~|–)";
       public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>与|和)";
       public const string DatePeriodDayRegexInChinese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         {
             { @"M", @"分钟" },
             { @"S", @"秒钟|秒" },
-            { @"H", @"个小时|小时|个钟头|钟头" },
+            { @"H", @"个小时|小时|个钟头|钟头|时" },
             { @"D", @"天" },
             { @"W", @"星期|个星期|周" },
             { @"Mon", @"个月" },
@@ -138,8 +138,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"个星期",
             @"周",
             @"个月",
-            @"年"
+            @"年",
+            @"时"
         };
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)";
+      public const string DurationConnectorRegex = @"^\s*(?<connector>[多又余零]?)\s*$";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
       public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)";
@@ -200,12 +203,14 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"周", @"W" },
             { @"天", @"D" },
             { @"小时", @"H" },
+            { @"个小时", @"H" },
             { @"时", @"H" },
             { @"分钟", @"M" },
             { @"分", @"M" },
             { @"秒钟", @"S" },
             { @"秒", @"S" },
-            { @"星期", @"W" }
+            { @"星期", @"W" },
+            { @"个星期", @"W" }
         };
       public static readonly Dictionary<string, long> ParserConfigurationUnitValueMap = new Dictionary<string, long>
         {
@@ -620,9 +625,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"^\d{1,2}号", @"^\d{1,2}号" },
             { @"周", @"周岁" },
             { @"今日", @"今日头条" },
-            { @"明日", @"《明日之后》" }
+            { @"明日", @"《明日之后》" },
+            { @"时", @"时间" }
         };
-      public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
+      public static readonly Dictionary<string, long> DurationUnitValueMap = new Dictionary<string, long>
         {
             { @"Y", 31536000 },
             { @"Mon", 2592000 },
@@ -670,7 +676,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"晚", 18 },
             { @"pm", 12 }
         };
-      public const string DefaultLanguageFallback = @"DMY";
+      public const string DefaultLanguageFallback = @"YMD";
       public static readonly IList<string> MorningTermList = new List<string>
         {
             @"早",

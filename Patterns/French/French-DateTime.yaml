@@ -585,6 +585,8 @@ FutureSuffixRegex: !simpleRegex
 ComplexDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+AmbiguousPointRangeRegex: !simpleRegex
+  def: ^(mar\.?)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

@@ -15,6 +15,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex PreviousPrefixRegex =
             new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
+        public static readonly Regex PenultimatePrefixRegex =
+            new Regex(DateTimeDefinitions.PenultimatePrefixRegex, RegexFlags);
+
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
@@ -206,6 +209,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => null;
+
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -247,6 +252,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 swift = -1;
             }
+            else if (PenultimatePrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -2;
+            }
 
             return swift;
         }
@@ -262,6 +271,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
+            }
+            else if (PenultimatePrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -2;
             }
             else if (ThisPrefixRegex.IsMatch(trimmedText))
             {

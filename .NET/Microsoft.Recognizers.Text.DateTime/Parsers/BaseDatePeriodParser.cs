@@ -359,17 +359,29 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var isSpecificDate = false;
                 var isStartByWeek = false;
                 var isEndByWeek = false;
+                bool isAmbiguousStart = false, isAmbiguousEnd = false;
+                var ambiguousRes = new DateTimeResolutionResult();
                 var dateContext = GetYearContext(this.config, match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
 
                 var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
                 if (startResolution.Success)
                 {
-                    futureBegin = (DateObject)startResolution.FutureValue;
-                    pastBegin = (DateObject)startResolution.PastValue;
-                    isSpecificDate = true;
+                    // Check if the extraction is ambiguous (e.g. "mar" can be resolved to both "March" and "Tuesday" in FR, IT and ES)
+                    if (this.config.AmbiguousPointRangeRegex != null && this.config.AmbiguousPointRangeRegex.IsMatch(match.Groups["start"].Value.Trim()))
+                    {
+                        ambiguousRes = startResolution;
+                        isAmbiguousStart = true;
+                    }
+                    else
+                    {
+                        futureBegin = (DateObject)startResolution.FutureValue;
+                        pastBegin = (DateObject)startResolution.PastValue;
+                        isSpecificDate = true;
+                    }
                 }
-                else
+
+                if (!startResolution.Success || isAmbiguousStart)
                 {
                     startResolution = ParseBaseDatePeriod(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
@@ -392,11 +404,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (endResolution.Success)
                     {
-                        futureEnd = (DateObject)endResolution.FutureValue;
-                        pastEnd = (DateObject)endResolution.PastValue;
-                        isSpecificDate = true;
+                        // Check if the extraction is ambiguous
+                        if (this.config.AmbiguousPointRangeRegex != null && this.config.AmbiguousPointRangeRegex.IsMatch(match.Groups["end"].Value.Trim()))
+                        {
+                            ambiguousRes = endResolution;
+                            isAmbiguousEnd = true;
+                        }
+                        else
+                        {
+                            futureEnd = (DateObject)endResolution.FutureValue;
+                            pastEnd = (DateObject)endResolution.PastValue;
+                            isSpecificDate = true;
+                        }
                     }
-                    else
+
+                    if (!endResolution.Success || isAmbiguousEnd)
                     {
                         endResolution = ParseBaseDatePeriod(match.Groups["end"].Value.Trim(), referenceDate, dateContext);
 
@@ -415,6 +437,22 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (endResolution.Success)
                     {
+                        // When start or end is ambiguous it is better to resolve it to the type of the unambiguous extraction.
+                        // In Spanish, for example, 'de lunes a mar' (from Monday to Tuesday) or 'de enero a mar' (from January to March).
+                        // In the first case 'mar' is resolved as Date (weekday), in the second case it is resolved as DatePeriod (month).
+                        if (isAmbiguousStart && isSpecificDate)
+                        {
+                            startResolution = ambiguousRes;
+                            futureBegin = (DateObject)startResolution.FutureValue;
+                            pastBegin = (DateObject)startResolution.PastValue;
+                        }
+                        else if (isAmbiguousEnd && isSpecificDate)
+                        {
+                            endResolution = ambiguousRes;
+                            futureEnd = (DateObject)endResolution.FutureValue;
+                            pastEnd = (DateObject)endResolution.PastValue;
+                        }
+
                         if (futureBegin > futureEnd)
                         {
                             if (dateContext == null || dateContext.IsEmpty())
@@ -841,26 +879,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endLuisStr = DateTimeFormatUtil.LuisDate(year, month, endDay);
             }
 
-            int futureYear = year, pastYear = year;
-            var startDate = DateObject.MinValue.SafeCreateFromValue(year, month, beginDay);
-
-            if (noYear && startDate < referenceDate)
-            {
-                futureYear++;
-            }
-
-            if (noYear && startDate >= referenceDate)
-            {
-                pastYear--;
-            }
+            var futurePastBeginDates = DateContext.GenerateDates(noYear, referenceDate, year, month, beginDay);
+            var futurePastEndDates = DateContext.GenerateDates(noYear, referenceDate, year, month, endDay);
 
             ret.Timex = $"({beginLuisStr},{endLuisStr},P{endDay - beginDay}D)";
-            ret.FutureValue = new Tuple<DateObject, DateObject>(
-                DateObject.MinValue.SafeCreateFromValue(futureYear, month, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(futureYear, month, endDay));
-            ret.PastValue = new Tuple<DateObject, DateObject>(
-                DateObject.MinValue.SafeCreateFromValue(pastYear, month, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(pastYear, month, endDay));
+            ret.FutureValue = new Tuple<DateObject, DateObject>(futurePastBeginDates.future, futurePastEndDates.future);
+            ret.PastValue = new Tuple<DateObject, DateObject>(futurePastBeginDates.past, futurePastEndDates.past);
             ret.Success = true;
 
             return ret;
@@ -1483,6 +1507,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
+                // When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
+                if (dateContext.IsEmpty() && (DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue)
+                                              || DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue)))
+                {
+                    (pr1, pr2) = dateContext.SyncYear(pr1, pr2);
+                }
+
                 // Expressions like "today", "tomorrow",... should keep their original year
                 if (!this.config.SpecialDayRegex.IsMatch(pr1.Text))
                 {
@@ -1513,13 +1544,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = futureEnd;
             }
 
-            if (!futureEnd.IsDefaultValue() && !futureBegin.IsDefaultValue())
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
-            }
-            else
-            {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr})";
+                // Handle cases like "Feb 28th - March 1st".
+                // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
+                ret.Comment = Constants.Comment_DoubleTimex;
+                var pastTimex = TimexUtility.GenerateDatePeriodTimex(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+                ret.Timex = TimexUtility.MergeTimexAlternatives(ret.Timex, pastTimex);
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
@@ -1857,7 +1890,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
                 {
-                    return ret;
+                    swift = 0;
                 }
 
                 year = referenceDate.Year + swift;

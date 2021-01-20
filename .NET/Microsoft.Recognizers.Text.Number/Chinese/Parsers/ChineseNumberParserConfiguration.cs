@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
             this.TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.OrderBy(o => o.Key.Length).ToImmutableDictionary(o => o.Key, p => p.Value);
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableSortedDictionary(new StringLengthComparer());
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
@@ -99,7 +100,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public ImmutableDictionary<char, char> FullToHalfMap { get; private set; }
 
-        public ImmutableDictionary<string, string> UnitMap { get; private set; }
+        public ImmutableSortedDictionary<string, string> UnitMap { get; private set; }
 
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 
@@ -126,6 +127,19 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             }
 
             return string.Empty;
+        }
+
+        private class StringLengthComparer : IComparer<string>
+        {
+            public int Compare(string x, string y)
+            {
+                if (x.Length != y.Length)
+                {
+                    return x.Length - y.Length;
+                }
+
+                return x.CompareTo(y);
+            }
         }
     }
 }

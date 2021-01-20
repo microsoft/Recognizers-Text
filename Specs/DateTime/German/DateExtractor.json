@@ -154,18 +154,6 @@
     ]
   },
   {
-    "Input": "Ich komme nächstes Jahr wieder.",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "nächstes Jahr",
-        "Type": "date",
-        "Start": 10,
-        "Length": 13
-      }
-    ]
-  },
-  {
     "Input": "Ich bin am 15. wieder hier.",
     "NotSupported": "javascript, python",
     "Results": [

@@ -5,7 +5,7 @@ CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
   def: (?<till>\b(to|(un)?till?|thru|through)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
-RangeConnectorRegex : !nestedRegex
+RangeConnectorRegex: !nestedRegex
   def: (?<and>\b(and|through|to)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 # Filter regex, no need to localize
@@ -160,7 +160,7 @@ RelativeQuarterTermRegex: !nestedRegex
   def: \b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b
   references: [ StrictRelativeRegex ]
 QuarterRegex: !nestedRegex
-  def: ((the\s+)?{QuarterTermRegex}(?:(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
+  def: ((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
   references: [ YearRegex, RelativeRegex, QuarterTermRegex, RelativeQuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: (?:{YearRegex}|{RelativeRegex}\s+year)('s)?(?:\s*-\s*|\s+(the\s+)?)?{QuarterTermRegex}
@@ -206,7 +206,7 @@ MonthRegex: !simpleRegex
 # This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 # The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
+  def: (?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
   def: ((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))
@@ -504,7 +504,7 @@ EachUnitRegex: !nestedRegex
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(each|every)(?<other>\s+other)?\s*)\b
+  def: \b(?<each>(each|every)(?<other>\s+other)?\s*)(?!the|that)\b
 SetLastRegex: !nestedRegex
   def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
   references: [ LastNegPrefix ]
