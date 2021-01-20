@@ -44,6 +44,7 @@ class Constants:
 
     COMMENT_KEY: str = 'Comment'
     COMMENT_AMPM = 'ampm'
+    COMMENT_DOUBLETIMEX = "doubleTimex"
 
     # Failed connector extraction
     INVALID_CONNECTOR_CODE = -1
@@ -91,6 +92,9 @@ class Constants:
     DAYTIME: str = "TDT"
     NIGHT: str = "TNI"
     BUSINESS_HOUR = "TBH"
+
+    INVALID_DATE_STRING = "0001-01-01"
+    COMPOSTIE_TIMEX_DELIMITER = "|"
 
     # Groups' names for named groups in regexes
     NEXT_GROUP_NAME = "next"

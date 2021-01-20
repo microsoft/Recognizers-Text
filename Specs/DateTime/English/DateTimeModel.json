@@ -19118,7 +19118,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "feb 29",
@@ -19147,7 +19147,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "2/29",
@@ -19176,7 +19176,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "feb 29th",
@@ -19274,7 +19274,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "feb 28th to march 1st",
@@ -19305,7 +19305,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "2/29-3/1",
@@ -19336,7 +19336,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "2/29-3/1/2019",
