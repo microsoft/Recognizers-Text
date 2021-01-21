@@ -305,7 +305,7 @@ public class TimexUtility {
             return resolutionDic;
         }
 
-        Map<String, String> futureResolution = (HashMap<String, String>)resolutionDic.get(futureKey);
+        HashMap<String, String> futureResolution = (HashMap<String, String>)resolutionDic.get(futureKey);
         HashMap<String, String> pastResolution = (HashMap<String, String>)resolutionDic.get(pastKey);
         futureResolution.put(DateTimeResolutionKey.Timex, timexes[0]);
         pastResolution.put(DateTimeResolutionKey.Timex, timexes[1]);

@@ -1010,8 +1010,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             if (dateContext.isEmpty() && (DateContext.isFeb29th((LocalDateTime)((DateTimeResolutionResult)pr1.getValue()).getFutureValue()) ||
                     DateContext.isFeb29th((LocalDateTime)((DateTimeResolutionResult)pr2.getValue()).getFutureValue()))) {
                 HashMap<String, DateTimeParseResult> parseResultHashMap = dateContext.syncYear(pr1, pr2);
-                pr1 = parseResultHashMap.get(Constants.ParsePr1);
-                pr2 = parseResultHashMap.get(Constants.ParsePr2);
+                pr1 = parseResultHashMap.get(Constants.ParseResult1);
+                pr2 = parseResultHashMap.get(Constants.ParseResult2);
             }
         }
 

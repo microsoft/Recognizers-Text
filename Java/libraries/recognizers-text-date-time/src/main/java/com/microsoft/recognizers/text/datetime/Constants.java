@@ -34,8 +34,8 @@ public class Constants {
     public static final String ResolveToFuture = "resolveToFuture";
     public static final String FutureDate = "futureDate";
     public static final String PastDate = "pastDate";
-    public static final String ParsePr1 = "parsePr1";
-    public static final String ParsePr2 = "parsePr2";
+    public static final String ParseResult1 = "parseResult1";
+    public static final String ParseResult2 = "parseResult2";
 
     // In the ExtractResult data
     public static final String Context = "context";

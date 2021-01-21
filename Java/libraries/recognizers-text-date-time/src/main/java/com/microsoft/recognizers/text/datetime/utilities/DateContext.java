@@ -4,7 +4,6 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import java.time.LocalDateTime;
 import java.util.HashMap;
-import java.util.Map;
 
 import org.javatuples.Pair;
 
@@ -121,8 +120,8 @@ public class DateContext {
         }
 
         HashMap<String, DateTimeParseResult> result = new HashMap<>();
-        result.put(Constants.ParsePr1, pr1);
-        result.put(Constants.ParsePr2, pr2);
+        result.put(Constants.ParseResult1, pr1);
+        result.put(Constants.ParseResult2, pr2);
         return result;
     }
 
@@ -147,12 +146,12 @@ public class DateContext {
     }
 
     private LocalDateTime setDateWithContext(LocalDateTime originalDate) {
-        return setDateWithContext(originalDate, -1);
+        return setDateWithContext(originalDate, this.year);
     }
 
     private LocalDateTime setDateWithContext(LocalDateTime originalDate, int year) {
         if (!DateUtil.isDefaultValue(originalDate)) {
-            return DateUtil.safeCreateFromMinValue(year == -1 ? this.year : year, originalDate.getMonthValue(), originalDate.getDayOfMonth());
+            return DateUtil.safeCreateFromMinValue(year, originalDate.getMonthValue(), originalDate.getDayOfMonth());
         }
         return originalDate;
     }
