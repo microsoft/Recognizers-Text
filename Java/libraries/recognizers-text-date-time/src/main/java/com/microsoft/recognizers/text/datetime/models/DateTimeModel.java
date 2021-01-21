@@ -42,27 +42,20 @@ public class DateTimeModel implements IModel {
 
         List<DateTimeParseResult> parsedDateTimes = new ArrayList<>();
 
-        try {
-            List<ExtractResult> extractResults = extractor.extract(query, reference);
+        List<ExtractResult> extractResults = extractor.extract(query, reference);
 
-            for (ExtractResult result : extractResults) {
-                DateTimeParseResult parseResult = parser.parse(result, reference);
+        for (ExtractResult result : extractResults) {
+            DateTimeParseResult parseResult = parser.parse(result, reference);
 
-                if (parseResult.getValue() instanceof List) {
-                    parsedDateTimes.addAll((List<DateTimeParseResult>)parseResult.getValue());
-                } else {
-                    parsedDateTimes.add(parseResult);
-                }
+            if (parseResult.getValue() instanceof List) {
+                parsedDateTimes.addAll((List<DateTimeParseResult>)parseResult.getValue());
+            } else {
+                parsedDateTimes.add(parseResult);
             }
-
-            // Filter out ambiguous cases. Naïve approach.
-            parsedDateTimes = parser.filterResults(query, parsedDateTimes);
-
-        } catch (Exception e) {
-            // Nothing to do. Exceptions in parse should not break users of recognizers.
-            // No result.
-            e.getMessage();
         }
+
+        // Filter out ambiguous cases. Naïve approach.
+        parsedDateTimes = parser.filterResults(query, parsedDateTimes);
 
         return parsedDateTimes.stream().map(this::getModelResult).collect(Collectors.toList());
     }
