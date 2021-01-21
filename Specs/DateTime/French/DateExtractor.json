@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "Je reviendrai le 2 décembre",
     "Results": [
@@ -951,7 +951,9 @@
     "Results": [
       {
         "Text": "un mois il y a",
-        "Type": "date"
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
       }
     ]
   },
@@ -984,7 +986,7 @@
       {
         "Text": "15",
         "Type": "date",
-        "Start": 16,
+        "Start": 19,
         "Length": 2
       }
     ]
@@ -996,7 +998,7 @@
       {
         "Text": "22 avril",
         "Type": "date",
-        "Start": 13,
+        "Start": 19,
         "Length": 8
       }
     ]
@@ -1008,7 +1010,7 @@
       {
         "Text": "1-jan",
         "Type": "date",
-        "Start": 13,
+        "Start": 19,
         "Length": 5
       }
     ]
@@ -1020,8 +1022,8 @@
       {
         "Text": "01 jan",
         "Type": "date",
-        "Start": 13,
-        "Length": 5
+        "Start": 19,
+        "Length": 6
       }
     ]
   },
@@ -1032,8 +1034,8 @@
       {
         "Text": "2 octobre",
         "Type": "date",
-        "Start": 13,
-        "Length": 10
+        "Start": 19,
+        "Length": 9
       }
     ]
   },
@@ -1044,8 +1046,8 @@
       {
         "Text": "12/01/2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 16
+        "Start": 19,
+        "Length": 10
       }
     ]
   },
@@ -1056,8 +1058,8 @@
       {
         "Text": "12 janvier 2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 18
+        "Start": 19,
+        "Length": 15
       }
     ]
   },
@@ -1068,8 +1070,8 @@
       {
         "Text": "lundi 12 janvier 2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 25
+        "Start": 16,
+        "Length": 21
       }
     ]
   },
@@ -1080,8 +1082,8 @@
       {
         "Text": "22 février 2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 10
+        "Start": 19,
+        "Length": 15
       }
     ]
   },
@@ -1092,8 +1094,8 @@
       {
         "Text": "21 avril 2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 10
+        "Start": 19,
+        "Length": 13
       }
     ]
   },
@@ -1104,8 +1106,8 @@
       {
         "Text": "16 avril 2021",
         "Type": "date",
-        "Start": 13,
-        "Length": 8
+        "Start": 19,
+        "Length": 13
       }
     ]
   },
@@ -1116,7 +1118,7 @@
       {
         "Text": "18/9/15",
         "Type": "date",
-        "Start": 13,
+        "Start": 19,
         "Length": 7
       }
     ]
@@ -1128,15 +1130,22 @@
       {
         "Text": "22-avril",
         "Type": "date",
-        "Start": 16,
-        "Length": 4
+        "Start": 19,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "je vais rentrer le 22/04",
     "NotSupported": "dotnet, javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 19,
+        "Length": 5
+      }
+    ]
   },
   {
     "Input": "je vais rentrer le 4.22",
@@ -1145,7 +1154,7 @@
       {
         "Text": "4.22",
         "Type": "date",
-        "Start": 16,
+        "Start": 19,
         "Length": 4
       }
     ]
@@ -1169,8 +1178,8 @@
       {
         "Text": "22 avr.",
         "Type": "date",
-        "Start": 16,
-        "Length": 5
+        "Start": 19,
+        "Length": 7
       }
     ]
   },
@@ -1181,8 +1190,8 @@
       {
         "Text": "12 août 2015",
         "Type": "date",
-        "Start": 13,
-        "Length": 10
+        "Start": 19,
+        "Length": 12
       }
     ]
   },
@@ -1193,8 +1202,8 @@
       {
         "Text": "11 decembre 2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 10
+        "Start": 19,
+        "Length": 16
       }
     ]
   },
@@ -1205,8 +1214,8 @@
       {
         "Text": "11/12/2016",
         "Type": "date",
-        "Start": 13,
-        "Length": 8
+        "Start": 19,
+        "Length": 10
       }
     ]
   },
@@ -1217,8 +1226,8 @@
       {
         "Text": "premier jan.",
         "Type": "date",
-        "Start": 13,
-        "Length": 7
+        "Start": 19,
+        "Length": 12
       }
     ]
   },
@@ -1229,8 +1238,8 @@
       {
         "Text": "1-Jan.",
         "Type": "date",
-        "Start": 13,
-        "Length": 5
+        "Start": 19,
+        "Length": 6
       }
     ]
   },
@@ -1241,8 +1250,8 @@
       {
         "Text": "28-Nov.",
         "Type": "date",
-        "Start": 13,
-        "Length": 6
+        "Start": 19,
+        "Length": 7
       }
     ]
   },
@@ -1253,8 +1262,8 @@
       {
         "Text": "mercredi, le 22 jan",
         "Type": "date",
-        "Start": 13,
-        "Length": 14
+        "Start": 16,
+        "Length": 19
       }
     ]
   },
@@ -1265,8 +1274,8 @@
       {
         "Text": "premier vendredi de juillet",
         "Type": "date",
-        "Start": 13,
-        "Length": 24
+        "Start": 19,
+        "Length": 27
       }
     ]
   },
@@ -1277,8 +1286,8 @@
       {
         "Text": "premier vendredi de ce mois",
         "Type": "date",
-        "Start": 13,
-        "Length": 30
+        "Start": 19,
+        "Length": 27
       }
     ]
   },
@@ -1289,7 +1298,7 @@
       {
         "Text": "dans deux semaines",
         "Type": "date",
-        "Start": 13,
+        "Start": 16,
         "Length": 18
       }
     ]
@@ -1301,8 +1310,8 @@
       {
         "Text": "vendredi prochain",
         "Type": "date",
-        "Start": 13,
-        "Length": 19
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -1313,8 +1322,8 @@
       {
         "Text": "vendredi de la semaine prochaine",
         "Type": "date",
-        "Start": 13,
-        "Length": 19
+        "Start": 16,
+        "Length": 32
       }
     ]
   },
@@ -1338,7 +1347,7 @@
         "Text": "mardi",
         "Type": "date",
         "Start": 16,
-        "Length": 4
+        "Length": 5
       }
     ]
   },
@@ -1350,7 +1359,7 @@
         "Text": "mardi",
         "Type": "date",
         "Start": 16,
-        "Length": 4
+        "Length": 5
       }
     ]
   },
@@ -1362,7 +1371,7 @@
         "Text": "mardi",
         "Type": "date",
         "Start": 16,
-        "Length": 4
+        "Length": 5
       }
     ]
   },
@@ -1374,7 +1383,7 @@
         "Text": "vendredi",
         "Type": "date",
         "Start": 16,
-        "Length": 6
+        "Length": 8
       }
     ]
   },
@@ -1385,8 +1394,8 @@
       {
         "Text": "aujourd'hui",
         "Type": "date",
-        "Start": 13,
-        "Length": 5
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
@@ -1397,8 +1406,8 @@
       {
         "Text": "demain",
         "Type": "date",
-        "Start": 13,
-        "Length": 8
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -1409,8 +1418,8 @@
       {
         "Text": "hier",
         "Type": "date",
-        "Start": 13,
-        "Length": 9
+        "Start": 16,
+        "Length": 4
       }
     ]
   },
@@ -1421,8 +1430,8 @@
       {
         "Text": "avant-hier",
         "Type": "date",
-        "Start": 13,
-        "Length": 24
+        "Start": 16,
+        "Length": 10
       }
     ]
   },
@@ -1433,8 +1442,8 @@
       {
         "Text": "après-demain",
         "Type": "date",
-        "Start": 13,
-        "Length": 22
+        "Start": 16,
+        "Length": 12
       }
     ]
   },
@@ -1445,8 +1454,8 @@
       {
         "Text": "lendemain",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 19,
+        "Length": 9
       }
     ]
   },
@@ -1457,8 +1466,8 @@
       {
         "Text": "jour suivant",
         "Type": "date",
-        "Start": 13,
-        "Length": 8
+        "Start": 19,
+        "Length": 12
       }
     ]
   },
@@ -1469,7 +1478,7 @@
       {
         "Text": "ce vendredi",
         "Type": "date",
-        "Start": 13,
+        "Start": 16,
         "Length": 11
       }
     ]
@@ -1481,8 +1490,8 @@
       {
         "Text": "dimanche prochain",
         "Type": "date",
-        "Start": 13,
-        "Length": 11
+        "Start": 19,
+        "Length": 17
       }
     ]
   },
@@ -1493,8 +1502,8 @@
       {
         "Text": "dimanche dernier",
         "Type": "date",
-        "Start": 13,
-        "Length": 11
+        "Start": 19,
+        "Length": 16
       }
     ]
   },
@@ -1505,8 +1514,8 @@
       {
         "Text": "dernier jour",
         "Type": "date",
-        "Start": 13,
-        "Length": 8
+        "Start": 19,
+        "Length": 12
       }
     ]
   },
@@ -1517,8 +1526,8 @@
       {
         "Text": "ce dernier jour",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
@@ -1529,7 +1538,7 @@
       {
         "Text": "ce jour",
         "Type": "date",
-        "Start": 13,
+        "Start": 16,
         "Length": 7
       }
     ]
@@ -1541,8 +1550,8 @@
       {
         "Text": "vendredi de cette semaine",
         "Type": "date",
-        "Start": 13,
-        "Length": 16
+        "Start": 16,
+        "Length": 25
       }
     ]
   },
@@ -1553,8 +1562,8 @@
       {
         "Text": "dimanche prochain",
         "Type": "date",
-        "Start": 13,
-        "Length": 16
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -1565,8 +1574,8 @@
       {
         "Text": "dimanche de la semaine dernière",
         "Type": "date",
-        "Start": 13,
-        "Length": 16
+        "Start": 16,
+        "Length": 31
       }
     ]
   },
@@ -1577,7 +1586,7 @@
       {
         "Text": "15 juin 2016",
         "Type": "date",
-        "Start": 13,
+        "Start": 19,
         "Length": 12
       }
     ]
@@ -1589,8 +1598,8 @@
       {
         "Text": "11 mai",
         "Type": "date",
-        "Start": 14,
-        "Length": 16
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -1601,8 +1610,8 @@
       {
         "Text": "4 mai",
         "Type": "date",
-        "Start": 13,
-        "Length": 13
+        "Start": 19,
+        "Length": 5
       }
     ]
   },
@@ -1613,8 +1622,8 @@
       {
         "Text": "4 mars",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 19,
+        "Length": 6
       }
     ]
   },
@@ -1625,8 +1634,8 @@
       {
         "Text": "premier janvier",
         "Type": "date",
-        "Start": 13,
-        "Length": 9
+        "Start": 19,
+        "Length": 15
       }
     ]
   },
@@ -1637,8 +1646,8 @@
       {
         "Text": "21 mai",
         "Type": "date",
-        "Start": 13,
-        "Length": 16
+        "Start": 19,
+        "Length": 6
       }
     ]
   },
@@ -1649,8 +1658,8 @@
       {
         "Text": "21/05",
         "Type": "date",
-        "Start": 13,
-        "Length": 14
+        "Start": 19,
+        "Length": 5
       }
     ]
   },
@@ -1661,8 +1670,8 @@
       {
         "Text": "02/08",
         "Type": "date",
-        "Start": 13,
-        "Length": 13
+        "Start": 19,
+        "Length": 5
       }
     ]
   },
@@ -1673,8 +1682,8 @@
       {
         "Text": "22 juin",
         "Type": "date",
-        "Start": 13,
-        "Length": 21
+        "Start": 19,
+        "Length": 7
       }
     ]
   },
@@ -1685,8 +1694,8 @@
       {
         "Text": "deux mois auparavant",
         "Type": "date",
-        "Start": 12,
-        "Length": 14
+        "Start": 15,
+        "Length": 20
       }
     ]
   },
@@ -1697,8 +1706,8 @@
       {
         "Text": "deux jours plus tard",
         "Type": "date",
-        "Start": 13,
-        "Length": 14
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
@@ -1709,8 +1718,8 @@
       {
         "Text": "il y a un mois",
         "Type": "date",
-        "Start": 16,
-        "Length": 11
+        "Start": 29,
+        "Length": 14
       }
     ]
   },
@@ -1721,8 +1730,8 @@
       {
         "Text": "le 27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 20,
+        "Length": 5
       }
     ]
   },
@@ -1733,8 +1742,8 @@
       {
         "Text": "le vingt-sept",
         "Type": "date",
-        "Start": 16,
-        "Length": 8
+        "Start": 20,
+        "Length": 13
       }
     ]
   },
@@ -1745,8 +1754,8 @@
       {
         "Text": "le 27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 20,
+        "Length": 5
       }
     ]
   },
@@ -1757,8 +1766,8 @@
       {
         "Text": "le 27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 20,
+        "Length": 5
       }
     ]
   },
@@ -1769,8 +1778,8 @@
       {
         "Text": "le 27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 20,
+        "Length": 5
       }
     ]
   },
@@ -1781,8 +1790,8 @@
       {
         "Text": "le 21er",
         "Type": "date",
-        "Start": 16,
-        "Length": 8
+        "Start": 20,
+        "Length": 7
       }
     ]
   },
@@ -1793,7 +1802,7 @@
       {
         "Text": "le 22ème",
         "Type": "date",
-        "Start": 16,
+        "Start": 20,
         "Length": 8
       }
     ]
@@ -1805,8 +1814,8 @@
       {
         "Text": "le deux",
         "Type": "date",
-        "Start": 16,
-        "Length": 10
+        "Start": 20,
+        "Length": 7
       }
     ]
   },
@@ -1817,8 +1826,8 @@
       {
         "Text": "le vingt-deux",
         "Type": "date",
-        "Start": 16,
-        "Length": 17
+        "Start": 20,
+        "Length": 13
       }
     ]
   },
@@ -1829,8 +1838,8 @@
       {
         "Text": "le trente et un",
         "Type": "date",
-        "Start": 16,
-        "Length": 16
+        "Start": 20,
+        "Length": 15
       }
     ]
   },
@@ -1842,7 +1851,7 @@
         "Text": "le 27",
         "Type": "date",
         "Start": 15,
-        "Length": 8
+        "Length": 5
       }
     ]
   },
@@ -1854,7 +1863,7 @@
         "Text": "le 21er",
         "Type": "date",
         "Start": 15,
-        "Length": 8
+        "Length": 7
       }
     ]
   },
@@ -1865,8 +1874,8 @@
       {
         "Text": "22ème",
         "Type": "date",
-        "Start": 15,
-        "Length": 4
+        "Start": 18,
+        "Length": 5
       }
     ]
   },
@@ -1878,7 +1887,7 @@
         "Text": "le deuxième",
         "Type": "date",
         "Start": 15,
-        "Length": 10
+        "Length": 11
       }
     ]
   },
@@ -1889,8 +1898,8 @@
       {
         "Text": "vingt-deux",
         "Type": "date",
-        "Start": 15,
-        "Length": 13
+        "Start": 18,
+        "Length": 10
       }
     ]
   },
@@ -1921,8 +1930,8 @@
       {
         "Text": "samedi le 2",
         "Type": "date",
-        "Start": 18,
-        "Length": 19
+        "Start": 28,
+        "Length": 11
       }
     ]
   },
@@ -1933,8 +1942,8 @@
       {
         "Text": "mercredi le 27",
         "Type": "date",
-        "Start": 14,
-        "Length": 18
+        "Start": 17,
+        "Length": 14
       }
     ]
   },
@@ -1945,8 +1954,8 @@
       {
         "Text": "jeudi le 21",
         "Type": "date",
-        "Start": 13,
-        "Length": 17
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
@@ -1957,8 +1966,8 @@
       {
         "Text": "vendredi le 22",
         "Type": "date",
-        "Start": 13,
-        "Length": 15
+        "Start": 16,
+        "Length": 14
       }
     ]
   },
@@ -1969,8 +1978,8 @@
       {
         "Text": "samedi le 23",
         "Type": "date",
-        "Start": 13,
-        "Length": 17
+        "Start": 16,
+        "Length": 12
       }
     ]
   },
@@ -1981,8 +1990,8 @@
       {
         "Text": "vendredi le 15",
         "Type": "date",
-        "Start": 13,
-        "Length": 15
+        "Start": 16,
+        "Length": 14
       }
     ]
   },
@@ -1993,8 +2002,8 @@
       {
         "Text": "jeudi le vingt et un",
         "Type": "date",
-        "Start": 13,
-        "Length": 25
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
@@ -2005,8 +2014,8 @@
       {
         "Text": "vendredi le vingt-deux",
         "Type": "date",
-        "Start": 13,
-        "Length": 24
+        "Start": 16,
+        "Length": 22
       }
     ]
   },
@@ -2017,7 +2026,7 @@
       {
         "Text": "vendredi le quinze",
         "Type": "date",
-        "Start": 13,
+        "Start": 16,
         "Length": 18
       }
     ]
@@ -2029,8 +2038,8 @@
       {
         "Text": "jeudi le 17",
         "Type": "date",
-        "Start": 13,
-        "Length": 20
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
@@ -2041,8 +2050,8 @@
       {
         "Text": "deuxième dimanche",
         "Type": "date",
-        "Start": 13,
-        "Length": 13
+        "Start": 19,
+        "Length": 17
       }
     ]
   },
@@ -2053,8 +2062,8 @@
       {
         "Text": "premier dimanche",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 19,
+        "Length": 16
       }
     ]
   },
@@ -2065,8 +2074,8 @@
       {
         "Text": "troisième mardi",
         "Type": "date",
-        "Start": 13,
-        "Length": 13
+        "Start": 19,
+        "Length": 15
       }
     ]
   },
@@ -2077,8 +2086,8 @@
       {
         "Text": "cinquième dimanche",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 19,
+        "Length": 18
       }
     ]
   },
@@ -2090,7 +2099,7 @@
         "Text": "sixième dimanche",
         "Type": "date",
         "Start": 19,
-        "Length": 6
+        "Length": 16
       }
     ]
   },
@@ -2102,7 +2111,7 @@
         "Text": "dixième dimanche",
         "Type": "date",
         "Start": 19,
-        "Length": 6
+        "Length": 16
       }
     ]
   },
@@ -2113,8 +2122,8 @@
       {
         "Text": "20 du mois prochain",
         "Type": "date",
-        "Start": 13,
-        "Length": 18
+        "Start": 19,
+        "Length": 19
       }
     ]
   },
@@ -2125,8 +2134,8 @@
       {
         "Text": "31 de ce mois",
         "Type": "date",
-        "Start": 13,
-        "Length": 18
+        "Start": 19,
+        "Length": 13
       }
     ]
   },
@@ -2137,14 +2146,14 @@
       {
         "Text": "vendredi cette semaine",
         "Type": "date",
-        "Start": 49,
-        "Length": 16
+        "Start": 55,
+        "Length": 22
       },
       {
         "Text": "mardi de la semaine prochaine",
         "Type": "date",
-        "Start": 69,
-        "Length": 20
+        "Start": 81,
+        "Length": 29
       }
     ]
   },
@@ -2155,14 +2164,14 @@
       {
         "Text": "vendredi de cette semaine",
         "Type": "date",
-        "Start": 49,
-        "Length": 19
+        "Start": 60,
+        "Length": 25
       },
       {
         "Text": "samedi cette semaine",
         "Type": "date",
-        "Start": 72,
-        "Length": 21
+        "Start": 92,
+        "Length": 20
       }
     ]
   },
@@ -2174,7 +2183,7 @@
         "Text": "16/11/2016",
         "Type": "date",
         "Start": 0,
-        "Length": 13
+        "Length": 10
       }
     ]
   },
@@ -2185,8 +2194,8 @@
       {
         "Text": "il y a un mois et vingt-et-un jours",
         "Type": "date",
-        "Start": 17,
-        "Length": 19
+        "Start": 20,
+        "Length": 35
       }
     ]
   },
@@ -2197,8 +2206,8 @@
       {
         "Text": "il y a deux ans, un mois et vingt-et-un jours",
         "Type": "date",
-        "Start": 12,
-        "Length": 27
+        "Start": 20,
+        "Length": 45
       }
     ]
   },
@@ -2209,8 +2218,8 @@
       {
         "Text": "2 ans et 21 jours plus tard",
         "Type": "date",
-        "Start": 17,
-        "Length": 21
+        "Start": 21,
+        "Length": 27
       }
     ]
   },
@@ -2221,8 +2230,8 @@
       {
         "Text": "il y a 25 mois et 21 jours",
         "Type": "date",
-        "Start": 12,
-        "Length": 27
+        "Start": 20,
+        "Length": 26
       }
     ]
   },
@@ -2233,8 +2242,8 @@
       {
         "Text": "le 20 du mois prochain",
         "Type": "date",
-        "Start": 12,
-        "Length": 19
+        "Start": 20,
+        "Length": 22
       }
     ]
   },
@@ -2245,7 +2254,7 @@
       {
         "Text": "5 décembre 1391",
         "Type": "date",
-        "Start": 12,
+        "Start": 23,
         "Length": 15
       }
     ]
@@ -2258,7 +2267,7 @@
         "Text": "lundi, 22 janvier 2018",
         "Type": "date",
         "Start": 0,
-        "Length": 28
+        "Length": 22
       }
     ]
   },
@@ -2270,7 +2279,7 @@
         "Text": "dimanche 21/01/2018",
         "Type": "date",
         "Start": 3,
-        "Length": 47
+        "Length": 19
       }
     ]
   },
@@ -2282,7 +2291,7 @@
         "Text": "21 septembre 1978",
         "Type": "date",
         "Start": 3,
-        "Length": 49
+        "Length": 17
       }
     ]
   },
@@ -2294,7 +2303,7 @@
         "Text": "10 septembre 1901",
         "Type": "date",
         "Start": 3,
-        "Length": 31
+        "Length": 17
       }
     ]
   },
@@ -2305,8 +2314,8 @@
       {
         "Text": "10/09/2000",
         "Type": "date",
-        "Start": 7,
-        "Length": 32
+        "Start": 3,
+        "Length": 10
       }
     ]
   },
@@ -2317,8 +2326,8 @@
       {
         "Text": "13/05/2015",
         "Type": "date",
-        "Start": 16,
-        "Length": 9
+        "Start": 19,
+        "Length": 10
       }
     ]
   },
@@ -2329,8 +2338,8 @@
       {
         "Text": "13 mai 2015",
         "Type": "date",
-        "Start": 21,
-        "Length": 9
+        "Start": 24,
+        "Length": 11
       }
     ]
   },
@@ -2341,8 +2350,8 @@
       {
         "Text": "deux dimanches à partir de maintenant",
         "Type": "date",
-        "Start": 18,
-        "Length": 20
+        "Start": 16,
+        "Length": 37
       }
     ]
   },
@@ -2353,8 +2362,8 @@
       {
         "Text": "deux lundi plus tard",
         "Type": "date",
-        "Start": 18,
-        "Length": 16
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
@@ -2365,8 +2374,8 @@
       {
         "Text": "deux jours après aujourd’hui",
         "Type": "date",
-        "Start": 18,
-        "Length": 20
+        "Start": 16,
+        "Length": 28
       }
     ]
   },
@@ -2377,8 +2386,8 @@
       {
         "Text": "trois semaines à partir de demain",
         "Type": "date",
-        "Start": 18,
-        "Length": 25
+        "Start": 16,
+        "Length": 33
       }
     ]
   },
@@ -2389,8 +2398,8 @@
       {
         "Text": "il y a trois jours",
         "Type": "date",
-        "Start": 15,
-        "Length": 25
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -2401,8 +2410,8 @@
       {
         "Text": "ce vendredi 15 juin",
         "Type": "date",
-        "Start": 45,
-        "Length": 18
+        "Start": 37,
+        "Length": 19
       }
     ]
   },
@@ -2413,7 +2422,7 @@
       {
         "Text": "ce vendredi (15/06)",
         "Type": "date",
-        "Start": 45,
+        "Start": 37,
         "Length": 19
       }
     ]
@@ -2425,8 +2434,8 @@
       {
         "Text": "ce vendredi (15-juin)",
         "Type": "date",
-        "Start": 45,
-        "Length": 20
+        "Start": 37,
+        "Length": 21
       }
     ]
   },
@@ -2437,8 +2446,8 @@
       {
         "Text": "ce vendredi 22 juin",
         "Type": "date",
-        "Start": 45,
-        "Length": 27
+        "Start": 37,
+        "Length": 19
       }
     ]
   },
@@ -2449,14 +2458,14 @@
       {
         "Text": "ce vendredi",
         "Type": "date",
-        "Start": 45,
+        "Start": 37,
         "Length": 11
       },
       {
         "Text": "23-juin ",
         "Type": "date",
-        "Start": 57,
-        "Length": 17
+        "Start": 49,
+        "Length": 8
       }
     ]
   },
@@ -2467,8 +2476,8 @@
       {
         "Text": "dans trois semaines",
         "Type": "date",
-        "Start": 13,
-        "Length": 10
+        "Start": 8,
+        "Length": 19
       }
     ]
   },
@@ -2479,8 +2488,8 @@
       {
         "Text": "vendredi 06 juillet",
         "Type": "date",
-        "Start": 48,
-        "Length": 10
+        "Start": 37,
+        "Length": 19
       }
     ]
   },
@@ -2491,8 +2500,8 @@
       {
         "Text": "vendredi 06/07",
         "Type": "date",
-        "Start": 45,
-        "Length": 10
+        "Start": 37,
+        "Length": 14
       }
     ]
   },
@@ -2503,8 +2512,8 @@
       {
         "Text": "vendredi 06-juillet",
         "Type": "date",
-        "Start": 48,
-        "Length": 10
+        "Start": 37,
+        "Length": 19
       }
     ]
   },
@@ -2515,8 +2524,8 @@
       {
         "Text": "vendredi 06/07/2018",
         "Type": "date",
-        "Start": 45,
-        "Length": 15
+        "Start": 37,
+        "Length": 19
       }
     ]
   },
@@ -2527,8 +2536,8 @@
       {
         "Text": "dans deux jours ouvrés",
         "Type": "date",
-        "Start": 45,
-        "Length": 20
+        "Start": 37,
+        "Length": 22
       }
     ]
   },
@@ -2539,8 +2548,8 @@
       {
         "Text": "1er octobre",
         "Type": "date",
-        "Start": 45,
-        "Length": 12
+        "Start": 48,
+        "Length": 11
       }
     ]
   },
@@ -2556,8 +2565,8 @@
       {
         "Text": "22 juin 2017",
         "Type": "date",
-        "Start": 13,
-        "Length": 26
+        "Start": 19,
+        "Length": 12
       }
     ]
   },
@@ -2568,8 +2577,8 @@
       {
         "Text": "22/06/2017",
         "Type": "date",
-        "Start": 13,
-        "Length": 26
+        "Start": 19,
+        "Length": 10
       }
     ]
   },
@@ -2585,7 +2594,7 @@
       {
         "Text": "01/09/2019",
         "Type": "date",
-        "Start": 13,
+        "Start": 19,
         "Length": 10
       }
     ]
@@ -2597,8 +2606,8 @@
       {
         "Text": "01 septembre 2019",
         "Type": "date",
-        "Start": 13,
-        "Length": 11
+        "Start": 19,
+        "Length": 17
       }
     ]
   },
@@ -2609,8 +2618,8 @@
       {
         "Text": "26 juin 2020",
         "Type": "date",
-        "Start": 18,
-        "Length": 17
+        "Start": 30,
+        "Length": 12
       }
     ]
   }
