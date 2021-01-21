@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
 
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
         }

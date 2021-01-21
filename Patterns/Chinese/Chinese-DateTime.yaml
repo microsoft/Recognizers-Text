@@ -85,25 +85,24 @@ DateRegexList3: !nestedRegex
   references: [MonthRegex, DayRegexNumInChinese, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInChineseRegex, DayRegex]
 # 7/23
 DateRegexList4: !nestedRegex
-  def: '{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){SimpleYearRegex})?'
-  references: [MonthNumRegex, DayRegex, SimpleYearRegex]
+  def: '{MonthNumRegex}\s*/\s*{DayRegex}'
+  references: [MonthNumRegex, DayRegex]
 # 23/7
 DateRegexList5: !nestedRegex
-  def: '{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){SimpleYearRegex})?'
-  references: [DayRegex, MonthNumRegex, SimpleYearRegex]
+  def: '{DayRegex}\s*/\s*{MonthNumRegex}'
+  references: [DayRegex, MonthNumRegex]
 # 3-23-2017
-# The final lookahead in DateExtractor6|7|8 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateRegexList6: !nestedRegex
-  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}(?!\s*[/\\\-\.]\s*\d+)'
+  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 23-3-2015
 DateRegexList7: !nestedRegex
-  def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}(?!\s*[/\\\-\.]\s*\d+)'
-  references: [DayRegex, MonthNumRegex, YearNumRegex]
-# 2015-12-23
+  def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{SimpleYearRegex}'
+  references: [DayRegex, MonthNumRegex, SimpleYearRegex]
+# 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
 DateRegexList8: !nestedRegex
-  def: '{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)'
-  references: [YearNumRegex, MonthNumRegex, DayRegex]
+  def: '{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}'
+  references: [SimpleYearRegex, MonthNumRegex, DayRegex]
 # Note that these "Till" connector can be used without any suffix like "之间|之内|期间|中间|间"
 # DatePeriodExtractorChs
 DatePeriodTillRegex: !simpleRegex
@@ -895,7 +894,7 @@ TimeLowBoundDesc: !dictionary
     傍晚: 18
     晚: 18
     pm: 12
-DefaultLanguageFallback: DMY
+DefaultLanguageFallback: YMD
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

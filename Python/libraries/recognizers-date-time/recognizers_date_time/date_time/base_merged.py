@@ -19,7 +19,7 @@ from .base_datetimeperiod import BaseDateTimePeriodParser
 from .base_duration import BaseDurationParser
 from .base_set import BaseSetParser
 from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, DateTimeFormatUtil, DateUtils,\
-    MatchingUtil, RegExpUtility
+    MatchingUtil, RegExpUtility, TimexUtil
 from .datetime_zone_extractor import DateTimeZoneExtractor
 from .datetime_list_extractor import DateTimeListExtractor
 
@@ -924,7 +924,7 @@ class BaseMergedParser(DateTimeParser):
             if past_values:
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_PAST_KEY, past)
-            if future_resolution:
+            if future_values:
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 
@@ -934,6 +934,9 @@ class BaseMergedParser(DateTimeParser):
             else:
                 self._resolve_ampm(result, Constants.RESOLVE_TO_PAST_KEY)
                 self._resolve_ampm(result, Constants.RESOLVE_TO_FUTURE_KEY)
+
+        if TimexUtil._has_double_timex(comment):
+            TimexUtil._process_double_timex(result, Constants.RESOLVE_TO_FUTURE_KEY, Constants.RESOLVE_TO_PAST_KEY, timex)
 
         for value in result.values():
             if isinstance(value, dict):
@@ -1043,6 +1046,9 @@ class BaseMergedParser(DateTimeParser):
                 return
 
         if not (start and end):
+            return
+
+        if start.startswith(Constants.INVALID_DATE_STRING) or end.startswith(Constants.INVALID_DATE_STRING):
             return
 
         result[TimeTypeConstants.START] = start

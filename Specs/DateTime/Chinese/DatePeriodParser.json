@@ -598,7 +598,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "上世纪90年代",
@@ -624,7 +623,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "本世纪20年代",
@@ -650,7 +648,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20世纪80年代",
@@ -676,7 +673,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "50年代",
@@ -702,7 +698,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19世纪70年代",
@@ -728,7 +723,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "十九世纪七十年代",
@@ -754,7 +748,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "九十年代",
@@ -1631,6 +1624,58 @@
         },
         "Start": 0,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "10/1/2018-10/7/2018",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10/1/2018-10/7/2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-01-10,2018-07-10,P181D)",
+          "FutureResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "2018/1/10-2018/7/10",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2018/1/10-2018/7/10",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-01-10,2018-07-10,P181D)",
+          "FutureResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-10",
+            "endDate": "2018-07-10"
+          }
+        },
+        "Start": 0,
+        "Length": 19
       }
     ]
   }

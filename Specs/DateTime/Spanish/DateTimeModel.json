@@ -613,7 +613,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-02-02,XXXX-03-05,P32D)",
+              "timex": "(XXXX-02-02,XXXX-03-05,P31D)",
               "type": "daterange",
               "start": "2019-02-02",
               "end": "2019-03-05"
@@ -1948,8 +1948,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "desde 12 ene. 2016 hasta 22-ene-2016",
@@ -2752,8 +2751,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "un mes entero",
@@ -2801,8 +2799,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "unas horas",
@@ -2850,8 +2847,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "unos días",
@@ -3604,8 +3600,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "próxima semana lun 9 a.m.",
@@ -3623,9 +3618,9 @@
         }
       },
       {
-        "Text": "1 p.m",
+        "Text": "1 p.m.",
         "Start": 54,
-        "End": 58,
+        "End": 59,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -4274,8 +4269,7 @@
     "Context": {
       "ReferenceDateTime": "2018-04-07T00:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.º de julio",
@@ -4754,12 +4748,11 @@
     "Context": {
       "ReferenceDateTime": "2018-05-22T16:12:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el mes",
-        "Start": 16,
+        "Text": "mes",
+        "Start": 19,
         "End": 21,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4856,12 +4849,11 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "del año",
-        "Start": 31,
+        "Text": "año",
+        "Start": 35,
         "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4882,12 +4874,11 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "del mes",
-        "Start": 22,
+        "Text": "mes",
+        "Start": 26,
         "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4908,12 +4899,11 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "la semana",
-        "Start": 25,
+        "Text": "semana",
+        "Start": 28,
         "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -5427,8 +5417,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Comment": "FORMAT not properly handled. *",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre las 10 y las 11:30 el primer día de enero de 2015",
@@ -5546,8 +5535,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Comment": "FORMAT not properly handled. Issues parsing 5 to 6",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de tres y media a seis menos cinco el 1/1/2015",
@@ -5785,7 +5773,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -5827,7 +5815,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -5853,7 +5841,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -5879,7 +5867,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -5905,7 +5893,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -5931,7 +5919,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -6023,12 +6011,11 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el 9º de mayo",
-        "Start": 30,
+        "Text": "9º de mayo",
+        "Start": 33,
         "End": 42,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -6068,11 +6055,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el día 9 Mayo",
+        "Text": "el día 9 mayo",
         "Start": 25,
         "End": 37,
         "TypeName": "datetimeV2.date",
@@ -6220,9 +6206,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "después de feb",
+        "Text": "después de feb.",
         "Start": 22,
-        "End": 35,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -6540,17 +6526,16 @@
     ]
   },
   {
-    "Input": "Reserve la llamada de Skype hoy a las 9 a.",
+    "Input": "Reserve la llamada de Skype hoy a las 9 a.m.",
     "Context": {
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
-    "Comment": "AMPN Format",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "hoy a las 9 a",
+        "Text": "hoy a las 9 a.m.",
         "Start": 28,
-        "End": 41,
+        "End": 43,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -6565,17 +6550,16 @@
     ]
   },
   {
-    "Input": "Reserve la llamada de Skype hoy a las 9 p.",
+    "Input": "Reserve la llamada de Skype hoy a las 9 p.m.",
     "Context": {
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
-    "Comment": "AMPN Format",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "hoy a las 9 p",
+        "Text": "hoy a las 9 p.m.",
         "Start": 28,
-        "End": 41,
+        "End": 43,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -6619,12 +6603,11 @@
     "Context": {
       "ReferenceDateTime": "2018-06-28T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año",
-        "Start": 18,
+        "Text": "año",
+        "Start": 21,
         "End": 23,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -6645,21 +6628,19 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "toda la semana",
         "Start": 15,
         "End": 28,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "2018-W27",
-              "type": "daterange",
-              "start": "2018-07-02",
-              "end": "2018-07-09"
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
             }
           ]
         }
@@ -6721,52 +6702,18 @@
     "Context": {
       "ReferenceDateTime": "2019-03-02T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "primera semana",
-        "Start": 21,
-        "End": 34,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019-W01",
-              "type": "daterange",
-              "start": "2018-12-31",
-              "end": "2019-01-07"
-            }
-          ]
-        }
-      }
-    ]
+    "Comment": "Also in English, 'first week' is not extracted ('4th week of month/year' and 'week 3' are the supported patterns).",
+    "NotSupported": "javascript, python, java",
+    "Results": []
   },
   {
     "Input": "Mostrar ventas en 1ª semana",
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "1ª semana",
-        "Start": 18,
-        "End": 26,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2011-W01",
-              "type": "daterange",
-              "start": "2011-01-03",
-              "end": "2011-01-10"
-            }
-          ]
-        }
-      }
-    ]
+    "Comment": "Also in English, '1st week' is not extracted ('4th week of month/year' and 'week 3' are the supported patterns).",
+    "NotSupported": "javascript, python, java",
+    "Results": []
   },
   {
     "Input": "No hay semana 00, ni W00",
@@ -7345,8 +7292,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-06T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "viernes 6-jul-2018",
@@ -7370,7 +7316,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-09T22:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -7456,9 +7402,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "una y media de la tarde, 24 ene",
+        "Text": "una y media de la tarde, 24 ene.",
         "Start": 18,
-        "End": 48,
+        "End": 49,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -7515,8 +7461,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-13T00:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "sáb. a las 5",
@@ -7828,8 +7773,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "lunes de la semana siguiente",
@@ -8001,8 +7945,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la semana del 18.º",
@@ -8033,8 +7976,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "el día 18",
@@ -8063,8 +8005,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "4.º",
@@ -8127,19 +8068,23 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el dia 21",
+        "Text": "el día 21",
         "Start": 36,
         "End": 44,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "2018-08-21",
-              "type": "daterange",
+              "timex": "XXXX-XX-21",
+              "type": "date",
+              "value": "2018-07-21"
+            },
+            {
+              "timex": "XXXX-XX-21",
+              "type": "date",
               "value": "2018-08-21"
             }
           ]
@@ -8404,8 +8349,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T10:00:00"
     },
-    "Comment": "FORMAT not properly handled. *",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1er de octubre",
@@ -9131,8 +9075,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-21T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "lunes a las 2.30",
@@ -9171,8 +9114,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "AMPN Format",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "antes de las dos y media p.m.",
@@ -9340,8 +9282,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de sept. a nov.",
@@ -9397,8 +9338,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de nov. a mar.",
@@ -9610,8 +9550,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "Comment": "FORMAT not properly handled. Works with spaces around middle -",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "de 1-10-2018-7-10-2018",
@@ -10418,8 +10357,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dic. 2018",
@@ -10687,12 +10625,11 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana anterior - lunes",
-        "Start": 16,
+        "Text": "la semana anterior - lunes",
+        "Start": 13,
         "End": 38,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -11021,8 +10958,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "final de la semana",
@@ -11213,12 +11149,11 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "primera semana de enero de 2015",
-        "Start": 12,
+        "Text": "la primera semana de enero de 2015",
+        "Start": 9,
         "End": 42,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -11264,12 +11199,11 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "última semana de diciembre de 2016",
-        "Start": 12,
+        "Text": "la última semana de diciembre de 2016",
+        "Start": 9,
         "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -11340,13 +11274,12 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "3ª semana",
-        "Start": 12,
-        "End": 20,
+        "Text": "la 3ª semana de 2018",
+        "Start": 9,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -11659,8 +11592,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "lunes 21",
@@ -11689,8 +11621,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-21T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "lunes 21",
@@ -11714,8 +11645,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "domingo 31",
@@ -11744,8 +11674,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "Comment": "FORMAT not properly handled.",	
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "viernes 31",
@@ -11807,7 +11736,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "Comment": "RES_MOD incorrectly, not as range",	
+    "Comment": "RES_MOD incorrectly, not as range",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -11841,7 +11770,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "Comment": "RES_MOD incorrectly, not as range",	
+    "Comment": "RES_MOD incorrectly, not as range",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -12076,39 +12005,38 @@
     "Context": {
       "ReferenceDateTime": "2020-09-21T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el día 12 07:30-09:30",
+        "Text": "el día 21 07:30-09:30",
         "Start": 15,
         "End": 35,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-01-12T07:30,XXXX-01-12T09:30,PT2H)",
+              "timex": "(XXXX-XX-21T07:30,XXXX-XX-21T09:30,PT2H)",
               "type": "datetimerange",
-              "start": "2020-01-12 07:30:00",
-              "end": "2020-01-12 09:30:00"
+              "start": "2020-08-21 07:30:00",
+              "end": "2020-08-21 09:30:00"
             },
             {
-              "timex": "(XXXX-01-12T07:30,XXXX-01-12T09:30,PT2H)",
+              "timex": "(XXXX-XX-21T07:30,XXXX-XX-21T09:30,PT2H)",
               "type": "datetimerange",
-              "start": "2021-01-12 07:30:00",
-              "end": "2021-01-12 09:30:00"
+              "start": "2020-09-21 07:30:00",
+              "end": "2020-09-21 09:30:00"
             },
             {
-              "timex": "(XXXX-01-12T19:30,XXXX-01-12T21:30,PT2H)",
+              "timex": "(XXXX-XX-21T19:30,XXXX-XX-21T21:30,PT2H)",
               "type": "datetimerange",
-              "start": "2020-01-12 19:30:00",
-              "end": "2020-01-12 21:30:00"
+              "start": "2020-08-21 19:30:00",
+              "end": "2020-08-21 21:30:00"
             },
             {
-              "timex": "(XXXX-01-12T19:30,XXXX-01-12T21:30,PT2H)",
+              "timex": "(XXXX-XX-21T19:30,XXXX-XX-21T21:30,PT2H)",
               "type": "datetimerange",
-              "start": "2021-01-12 19:30:00",
-              "end": "2021-01-12 21:30:00"
+              "start": "2020-09-21 19:30:00",
+              "end": "2020-09-21 21:30:00"
             }
           ]
         }
@@ -12145,27 +12073,26 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre 30 Jul. y 30 Sept.",
+        "Text": "entre 30 jul. y 30 sept.",
         "Start": 15,
         "End": 38,
-        "TypeName": "datetimeV2.timerange",
+        "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "(T09:30,T19:30,PT10H)",
-              "type": "timerange",
-              "start": "09:30:00",
-              "end": "19:30:00"
+              "timex": "(XXXX-07-30,XXXX-09-30,P62D)",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-09-30"
             },
             {
-              "timex": "(T21:30,T07:30,PT10H)",
-              "type": "timerange",
-              "start": "21:30:00",
-              "end": "07:30:00"
+              "timex": "(XXXX-07-30,XXXX-09-30,P62D)",
+              "type": "daterange",
+              "start": "2019-07-30",
+              "end": "2019-09-30"
             }
           ]
         }
@@ -12177,27 +12104,26 @@
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre 30-jul y 30-sept",
         "Start": 15,
         "End": 36,
-        "TypeName": "datetimeV2.timerange",
+        "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "(T09:30,T19:30,PT10H)",
-              "type": "timerange",
-              "start": "09:30:00",
-              "end": "19:30:00"
+              "timex": "(XXXX-07-30,XXXX-09-30,P62D)",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-09-30"
             },
             {
-              "timex": "(T21:30,T07:30,PT10H)",
-              "type": "timerange",
-              "start": "21:30:00",
-              "end": "07:30:00"
+              "timex": "(XXXX-07-30,XXXX-09-30,P62D)",
+              "type": "daterange",
+              "start": "2019-07-30",
+              "end": "2019-09-30"
             }
           ]
         }
@@ -12610,7 +12536,7 @@
     "Context": {
       "ReferenceDateTime": "2019-04-22T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -12637,7 +12563,7 @@
     "Context": {
       "ReferenceDateTime": "2019-04-22T00:00:00"
     },
-    "Comment": "RANGE more/less not recognized and merge issues.",	
+    "Comment": "RANGE more/less not recognized and merge issues.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -12900,8 +12826,7 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "22 do febrero a las 3:30",
@@ -13035,8 +12960,7 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.º de enero de dos mil treinta y dos",
@@ -13165,8 +13089,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-09T12:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "entre ahora y 21º may",
@@ -13950,8 +13873,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "segundo semestre de 2019",
@@ -13976,8 +13898,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2º semestre",
@@ -14002,8 +13923,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2017-t1 a 2018-t1",
@@ -14659,8 +14579,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "este trimestre",
@@ -14685,8 +14604,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "trimestre actual",
@@ -14711,8 +14629,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "último trimestre",
@@ -14737,8 +14654,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-28T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "último trimestre",
@@ -14763,8 +14679,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "próximo trimestre",
@@ -14789,8 +14704,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-28T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "trimestre siguiente",
@@ -14815,8 +14729,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "siguiente trimestre",
@@ -14841,8 +14754,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "trimestre anterior",
@@ -14867,8 +14779,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "trimestre pasado",
@@ -15581,20 +15492,44 @@
     "Context": {
       "ReferenceDateTime": "2019-06-17T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "martes a las siete de la tarde el día 4",
+        "Text": "martes a las siete de la tarde",
         "Start": 16,
-        "End": 54,
+        "End": 45,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
             {
-              "timex": "2019-06-04T19",
+              "timex": "XXXX-WXX-2T19",
               "type": "datetime",
-              "value": "2019-06-04 19:00:00"
+              "value": "2019-06-11 19:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T19",
+              "type": "datetime",
+              "value": "2019-06-18 19:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "el día 4",
+        "Start": 47,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-04",
+              "type": "date",
+              "value": "2019-06-04"
+            },
+            {
+              "timex": "XXXX-XX-04",
+              "type": "date",
+              "value": "2019-07-04"
             }
           ]
         }
@@ -15606,8 +15541,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-10T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "martes el día once",
@@ -15631,8 +15565,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-19T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "miércoles el día treinta y uno",
@@ -15755,8 +15688,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "martes de semana pasada",
@@ -15883,12 +15815,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana próxima",
-        "Start": 68,
+        "Text": "la semana próxima",
+        "Start": 65,
         "End": 81,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -16157,8 +16088,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "Comment": "DOT not matching",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "30 feb.",
@@ -16342,12 +16272,11 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana anterior",
-        "Start": 8,
+        "Text": "la semana anterior",
+        "Start": 5,
         "End": 22,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -16869,8 +16798,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2019-t1",
@@ -16920,8 +16848,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1º trimestre-2019",
@@ -16931,10 +16858,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2019-01-01,2019-01-01,P0M)",
+              "timex": "(2019-01-01,2019-04-01,P3M)",
               "type": "daterange",
               "start": "2019-01-01",
-              "end": "2019-01-01"
+              "end": "2019-04-01"
             }
           ]
         }
@@ -16987,8 +16914,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la semana que inicia el 4 de febrero",
@@ -17019,8 +16945,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la semana que comienza el 4 de febrero",
@@ -17051,8 +16976,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la semana que va del 4 de febrero",
@@ -17083,8 +17007,7 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "la semana a partir del 4 de febrero",
@@ -17230,8 +17153,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "hoy a las 20.30",
@@ -17255,12 +17177,11 @@
     "Context": {
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
-	"Comment": "FORMAT not properly handled.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "8.30 de la noche hoy",
-        "Start": 15,
+        "Text": "las 8.30 de la noche hoy",
+        "Start": 12,
         "End": 35,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -17776,11 +17697,10 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "Primera semana de octubre el viernes",
+        "Text": "primera semana de octubre el viernes",
         "Start": 0,
         "End": 35,
         "TypeName": "datetimeV2.date",
@@ -17860,8 +17780,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dos noches",
@@ -17885,8 +17804,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "una noche",
@@ -18382,12 +18300,11 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "próxima semana",
-        "Start": 44,
+        "Text": "la próxima semana",
+        "Start": 41,
         "End": 57,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -18576,8 +18493,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "cada finde",
@@ -18587,7 +18503,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-WE",
+              "timex": "P1WE",
               "type": "set",
               "value": "not resolved"
             }
@@ -18601,8 +18517,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "cada dos fines de semana",
@@ -18626,8 +18541,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "tres fines de semana",
@@ -18651,8 +18565,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "el primer trimestre del año",
@@ -18683,12 +18596,11 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "invierno",
-        "Start": 3,
+        "Text": "el invierno",
+        "Start": 0,
         "End": 10,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -18724,8 +18636,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-15T00:00:00"
     },
-    "Comment": "PERIODREF. Refine support for quarter, half, week, weekend, etc. Including relatives.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "tres fines de semana",
@@ -20034,6 +19945,626 @@
               "type": "datetimerange",
               "start": "2019-07-30 12:00:00",
               "end": "2019-07-30 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Volveré el 1.º de julio, 17.° veces.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.º de julio",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-01",
+              "type": "date",
+              "value": "2017-07-01"
+            },
+            {
+              "timex": "XXXX-07-01",
+              "type": "date",
+              "value": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Volveré el 1.º de julio, 17.",
+    "Context": {
+      "ReferenceDateTime": "2018-04-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.º de julio, 17",
+        "Start": 11,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-07-01",
+              "type": "date",
+              "value": "2017-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, ¿puedes preparar algo para el día 21 de este mes?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "el día 21 de este mes",
+        "Start": 36,
+        "End": 56,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-21",
+              "type": "date",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Dónde estabas entre 0930-0730?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "entre 0930-0730",
+        "Start": 15,
+        "End": 29,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09:30,T19:30,PT10H)",
+              "type": "timerange",
+              "start": "09:30:00",
+              "end": "19:30:00"
+            },
+            {
+              "timex": "(T21:30,T07:30,PT10H)",
+              "type": "timerange",
+              "start": "21:30:00",
+              "end": "07:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Donde estabas el 12 entre 0730-0930",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12 entre 0730-0930",
+        "Start": 17,
+        "End": 34,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-12T07:30,XXXX-XX-12T09:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-01-12 07:30:00",
+              "end": "2019-01-12 09:30:00"
+            },
+            {
+              "timex": "(XXXX-XX-12T07:30,XXXX-XX-12T09:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-02-12 07:30:00",
+              "end": "2019-02-12 09:30:00"
+            },
+            {
+              "timex": "(XXXX-XX-12T19:30,XXXX-XX-12T21:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-01-12 19:30:00",
+              "end": "2019-01-12 21:30:00"
+            },
+            {
+              "timex": "(XXXX-XX-12T19:30,XXXX-XX-12T21:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-02-12 19:30:00",
+              "end": "2019-02-12 21:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tomé un café el martes 4 a las siete de la tarde.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes 4 a las siete de la tarde",
+        "Start": 16,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T19",
+              "type": "datetime",
+              "value": "2019-06-04 19:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T19",
+              "type": "datetime",
+              "value": "2020-02-04 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos a tomar un café el martes once.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-10T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes once",
+        "Start": 25,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-12-11"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2019-06-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Programáme una reunión mar",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "Comment": "The abbreviation 'mar' is ambiguous, it can refer to both 'marzo' (March) and 'martes' (Tuesday). Isolated occurrences of the term are parsed as weekday.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mar",
+        "Start": 23,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2017-11-28"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2017-12-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Programáme una reunión de lunes a mar",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "Comment": "The abbreviation 'mar' is ambiguous, it can refer to both 'marzo' (March) and 'martes' (Tuesday).",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de lunes a mar",
+        "Start": 23,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1,XXXX-WXX-2,P1D)",
+              "type": "daterange",
+              "start": "2017-11-27",
+              "end": "2017-11-28"
+            },
+            {
+              "timex": "(XXXX-WXX-1,XXXX-WXX-2,P1D)",
+              "type": "daterange",
+              "start": "2017-12-04",
+              "end": "2017-12-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Programáme una reunión de enero a mar",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "Comment": "The abbreviation 'mar' is ambiguous, it can refer to both 'marzo' (March) and 'martes' (Tuesday).",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de enero a mar",
+        "Start": 23,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01,XXXX-03-01,P2M)",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-03-01"
+            },
+            {
+              "timex": "(XXXX-01-01,XXXX-03-01,P2M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar las ventas de la semana",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "semana",
+        "Start": 25,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar ventas en la semana 1",
+    "Context": {
+      "ReferenceDateTime": "2019-03-02T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "semana 1",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W01",
+              "type": "daterange",
+              "start": "2018-12-31",
+              "end": "2019-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar ventas en semana 1",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "semana 1",
+        "Start": 18,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-W01",
+              "type": "daterange",
+              "start": "2011-01-03",
+              "end": "2011-01-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "29/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "29/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "29/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2024-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "30/2",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "30/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "29/2/2019",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29/2/2019",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-29",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "29/2/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29/2/2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "28/2-1/3",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "28/2-1/3",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2019-02-28",
+              "end": "2019-03-01"
+            },
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P2D)",
+              "type": "daterange",
+              "start": "2020-02-28",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "29/2-1/3",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "29/2-1/3",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2016-02-29",
+              "end": "2016-03-01"
+            },
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2020-02-29",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "29/2-1/3/2019",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "29/2-1/3/2019",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-02-29,2019-03-01,PXD)",
+              "type": "daterange",
+              "value": "not resolved"
             }
           ]
         }

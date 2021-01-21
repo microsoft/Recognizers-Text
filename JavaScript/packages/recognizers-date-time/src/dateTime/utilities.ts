@@ -387,6 +387,50 @@ export class DateUtils {
     private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
+    // Generate future/past date for cases without specific year like "Feb 29th"
+    static generateDates(noYear: boolean, referenceDate: Date, year: number, month: number, day: number): { future: Date, past: Date} {
+        let futureDate = this.safeCreateFromMinValue(year, month, day);
+        let pastDate = this.safeCreateFromMinValue(year, month, day);
+        let futureYear = year;
+        let pastYear = year;
+        if (noYear){
+            if (this.isFeb29th(year, month, day)) {
+                if (this.isLeapYear(year)) {
+                    if (futureDate < referenceDate) {
+                        futureDate = this.safeCreateFromMinValue(futureYear + 4, month, day);
+                    }
+                    else {
+                        pastDate = this.safeCreateFromMinValue(pastYear - 4, month, day);
+                    }
+                }
+                else {
+                    pastYear = pastYear >> 2 << 2;
+                    if (!this.isLeapYear(pastYear)) {
+                        pastYear -= 4;
+                    }
+
+                    futureYear = pastYear + 4;
+                    if (!this.isLeapYear(futureYear)) {
+                        futureYear += 4;
+                    }
+
+                    futureDate = this.safeCreateFromMinValue(futureYear, month, day);
+                    pastDate = this.safeCreateFromMinValue(pastYear, month, day);
+                }
+            }
+            else {
+                if (futureDate < referenceDate && this.isValidDate(year, month, day)) {
+                    futureDate = this.safeCreateFromMinValue(year + 1, month, day);
+                }
+                if (pastDate >= referenceDate && this.isValidDate(year, month, day)) {
+                    pastDate = this.safeCreateFromMinValue(year - 1, month, day);
+                }
+            }
+        }
+
+        return { future: futureDate, past: pastDate };
+    }
+
     static parseChineseDynastyYear(yearStr: string, dynastyYearRegex: RegExp, dynastyYearMap: ReadonlyMap<string, number>, dynastyStartYear: string, integerExtractor: IExtractor, numberParser: IParser): number {
         let year = -1;
         let regionTitleMatch = RegExpUtility.getMatches(dynastyYearRegex, yearStr).pop();
@@ -607,14 +651,113 @@ export class DateUtils {
         return Math.floor(diffDays / DateUtils.oneDay);
     }
 
-    private static validDays(year: number) {
-        return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    static isDafaultValue(date: Date): boolean {
+        return date.getTime() === this.minValue().getTime();
+    }
+
+    static isFeb29th(year: number, month: number, day: number): boolean {
+        return month === 1 && day === 29;
+    }
+
+    static isFeb29thDate(date: Date): boolean {
+        return date.getMonth() === 1 && date.getDate() === 29;
     }
 
     static isValidDate(year: number, month: number, day: number): boolean {
         return year > 0 && year <= 9999
             && month >= 0 && month < 12
             && day > 0 && day <= this.validDays(year)[month];
+    }
+
+    static isValidDateType(date: Date): boolean {
+        return DateUtils.isValidDate(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+
+    static isEmpty(date: Date) {
+        return date.getFullYear() == Constants.InvalidYear;
+    }
+
+    static setDateWithContext(originDate: Date, year: number) {
+        if (!DateUtils.isDafaultValue(originDate)) {
+            return DateUtils.safeCreateFromMinValue(year, originDate.getMonth(), originDate.getDate());
+        }
+
+        return originDate;
+    }
+
+    static getYear(config, startText: string, endText: string, text: string): number {
+        let contextYear = -1;
+        let isEndDatePureYear = false;
+        let isDateRelative = false;
+
+        let yearMatchForEndDate = RegExpUtility.getMatches(config.yearRegex, endText);
+
+        if (yearMatchForEndDate && yearMatchForEndDate.length == 1 && yearMatchForEndDate[0].length == endText.length)
+        {
+            isEndDatePureYear = true;
+        }
+
+        let relativeMatchForStartDate = RegExpUtility.getMatches(config.relativeRegex, startText);
+        let relativeMatchForEndDate = RegExpUtility.getMatches(config.relativeRegex, endText);
+        isDateRelative = (relativeMatchForStartDate && relativeMatchForStartDate.length > 0) || (relativeMatchForEndDate && relativeMatchForEndDate.length > 0);
+
+        if (!isEndDatePureYear && !isDateRelative) {
+            let matchYear = RegExpUtility.getMatches(config.yearRegex, text);
+            for (let match of matchYear) {
+                let year = AbstractYearExtractor.getYearFromText(match, config.numberParser);
+                if (year != -1) {
+                    if (contextYear == -1) {
+                        contextYear = year;
+                    }
+                    else {
+                        if (contextYear != year) {
+                            contextYear = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return contextYear;
+    }
+
+    static processDateEntityParsingResult(pr: DateTimeParseResult, year: number) {
+        if (year != -1){
+            pr.timexStr = TimexUtil.setTimexWithContext(pr.timexStr, year);
+            pr.value = DateUtils.syncYearResolution(pr.value, year, year);
+        }
+
+        return pr;
+    }
+
+    // This method is to ensure the year of begin date is same with the end date in no year situation.
+    static syncYear(pr1: DateTimeParseResult, pr2: DateTimeParseResult): { pr1: DateTimeParseResult, pr2: DateTimeParseResult } {
+        let futureYear;
+        let pastYear;
+        if (DateUtils.isFeb29thDate(pr1.value.futureValue)) {
+            futureYear = pr1.value.futureValue.getFullYear();
+            pastYear = pr1.value.pastValue.getFullYear();
+            pr2.value = DateUtils.syncYearResolution(pr2.value, futureYear, pastYear);
+        }
+        else if (DateUtils.isFeb29thDate(pr2.value.futureValue)) {
+            futureYear = pr2.value.FftureValue.getFullYear();
+            pastYear = pr2.value.pastValue.getFullYear();
+            pr1.value = DateUtils.syncYearResolution(pr1.value, futureYear, pastYear);
+        }
+
+        return {pr1, pr2};
+    }
+
+    static syncYearResolution(resolutionResult: DateTimeResolutionResult , futureYear: number, pastYear: number): DateTimeResolutionResult {
+        resolutionResult.futureValue = DateUtils.setDateWithContext(resolutionResult.futureValue, futureYear);
+        resolutionResult.pastValue = DateUtils.setDateWithContext(resolutionResult.pastValue, pastYear);
+
+        return resolutionResult;
+    }
+
+    private static validDays(year: number) {
+        return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     }
 
     private static isValidTime(hour: number, minute: number, second: number) {
@@ -698,6 +841,41 @@ export class TimexUtil {
         }
 
         return result;
+    }
+
+    static setTimexWithContext(timex: string, year: number) {
+        return timex.replace(Constants.TimexFuzzyYear, DateTimeFormatUtil.toString(year, 4));
+    }
+
+    static getDatePeriodTimexUnitCount(begin: Date, end: Date, timeType: string): number {
+        let unitCount;
+        switch (timeType) {
+            case Constants.ByDay:
+                unitCount = DateUtils.diffDays(end, begin);
+                break;
+            case Constants.ByWeek:
+                unitCount = DateUtils.diffDays(end, begin) / 7;
+                break;
+            case Constants.ByMonth:
+                unitCount = (end.getFullYear() - begin.getFullYear())  * 12 + (end.getMonth() - begin.getMonth());
+                break;
+            default:
+                unitCount = (end.getFullYear() - begin.getFullYear()) + (end.getMonth() - begin.getMonth()) / 12.0;
+                break;
+        }
+
+        return unitCount;
+    }
+
+    public static generateDatePeriodTimex(begin: Date, end: Date, timexType: string, timex1: string, timex2: string) {
+        let boundaryValid = !DateUtils.isDafaultValue(begin) && !DateUtils.isDafaultValue(end);
+        var unitCount = boundaryValid ? TimexUtil.getDatePeriodTimexUnitCount(begin, end, timexType) : "X";
+        var datePeriodTimex = `P${unitCount}${Constants.DatePeriodTimexTypeToTimexSuffix.get(timexType)}`;
+        return `(${timex1},${timex2},${datePeriodTimex})`;
+    }
+
+    public static mergeTimexAlternatives(timex1: string, timex2: string): string {
+        return timex1 === timex2 ? timex1 : `${timex1}${Constants.CompositeTimexDelimiter}${timex2}`;
     }
 }
 

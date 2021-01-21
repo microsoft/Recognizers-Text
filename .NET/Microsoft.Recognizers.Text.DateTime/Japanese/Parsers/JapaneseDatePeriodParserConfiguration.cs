@@ -905,6 +905,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
+        // @todo: Refactor to share common code with Chinese
         // parse entities that made up by two time points
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceDate)
         {
@@ -922,11 +923,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 er[1].Start -= 3;
             }
 
+            var dateContext = BaseDatePeriodParser.GetYearContext(this.config, er[0].Text, er[1].Text, text);
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
             var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
             if (pr1.Value == null || pr2.Value == null)
             {
                 return ret;
+            }
+
+            // When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
+            if (dateContext.IsEmpty() && (DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue)
+                                            || DateContext.IsFeb29th((DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue)))
+            {
+                (pr1, pr2) = dateContext.SyncYear(pr1, pr2);
             }
 
             DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
@@ -942,6 +951,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (pastEnd < pastBegin)
             {
                 pastEnd = futureEnd;
+            }
+
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
+            {
+                // Handle cases like "Feb 28th - March 1st".
+                // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
+                ret.Comment = Constants.Comment_DoubleTimex;
+                var pastTimex = TimexUtility.GenerateDatePeriodTimex(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
+                ret.Timex = TimexUtility.MergeTimexAlternatives(ret.Timex, pastTimex);
             }
 
             if ((JapaneseDatePeriodExtractorConfiguration.YearAndMonth.IsMatch(pr1.Text) &&

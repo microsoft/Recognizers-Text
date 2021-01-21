@@ -230,6 +230,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Java does not correctly handle lookbehinds.",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
@@ -1543,31 +1545,6 @@
         },
         "Start": 11,
         "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "I'll be out I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
-          "FutureResolution": {
-            "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
-          }
-        },
-        "Start": 24,
-        "Length": 42
       }
     ]
   },

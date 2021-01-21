@@ -521,20 +521,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            if (noYear && futureDate < referenceDate)
-            {
-                futureDate = futureDate.AddYears(+1);
-            }
-
-            if (noYear && pastDate >= referenceDate)
-            {
-                pastDate = pastDate.AddYears(-1);
-            }
-
-            ret.FutureValue = futureDate;
-            ret.PastValue = pastDate;
+            var futurePastDates = DateContext.GenerateDates(noYear, referenceDate, year, month, day);
+            ret.FutureValue = futurePastDates.future;
+            ret.PastValue = futurePastDates.past;
             ret.Success = true;
 
             return ret;

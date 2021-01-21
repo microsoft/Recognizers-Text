@@ -30,23 +30,35 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     constructor(dmyDateFormat: boolean) {
 
         let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+        let enableYmd= ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_YMD;
 
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
+            // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8),
+
+            // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
+
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
 
             enableDmy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
+                (enableYmd ?
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6)),
 
             enableDmy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
-
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
+                (enableYmd ?
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7)),
         ];
         this.implicitDateList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex),
@@ -374,7 +386,7 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (this.isNonleapYearFeb29th(year, month - 1, day)) {
+                        else if (DateUtils.isFeb29th(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
@@ -517,16 +529,11 @@ export class ChineseDateParser extends BaseDateParser {
         else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
-        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        if (noYear && futureDate < referenceDate) {
-            futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
-        }
-        if (noYear && pastDate >= referenceDate) {
-            pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
-        }
-        result.futureValue = futureDate;
-        result.pastValue = pastDate;
+
+        let futurePastDates = DateUtils.generateDates(noYear, referenceDate, year, month, day);
+
+        result.futureValue = futurePastDates.future;
+        result.pastValue = futurePastDates.past;
         result.success = true;
         return result;
     }
@@ -604,10 +611,6 @@ export class ChineseDateParser extends BaseDateParser {
         return DateUtils.isValidDate(year, month, day);
     }
 
-    private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
-        return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
-    }
-    
     // Handle cases like "三天前"
     protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();

@@ -374,6 +374,39 @@ class DayOfWeek(IntEnum):
 class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
 
+    # Generate future/past date for cases without specific year like "Feb 29th"
+    @staticmethod
+    def generate_dates(no_year: bool, reference: datetime, year: int, month: int, day: int) -> list:
+        future_date = DateUtils.safe_create_from_min_value(year, month, day)
+        past_date = DateUtils.safe_create_from_min_value(year, month, day)
+        future_year = year
+        past_year = year
+        if no_year:
+            if DateUtils.is_Feb_29th(year, month, day):
+                if DateUtils.is_leap_year(year):
+                    if future_date < reference:
+                        future_date = DateUtils.safe_create_from_min_value(future_year + 4, month, day)
+                    else:
+                        past_date = DateUtils.safe_create_from_min_value(past_year - 4, month, day)
+                else:
+                    past_year = past_year >> 2 << 2
+                    if not DateUtils.is_leap_year(past_year):
+                        past_year -= 4
+
+                    future_year = past_year + 4
+                    if not DateUtils.is_leap_year(future_year):
+                        future_year += 4
+
+                    future_date = DateUtils.safe_create_from_min_value(future_year, month, day)
+                    past_date = DateUtils.safe_create_from_min_value(past_year, month, day)
+            else:
+                if future_date < reference and DateUtils.is_valid_date(year, month, day):
+                    future_date = DateUtils.safe_create_from_min_value(year + 1, month, day)
+
+                if past_date >= reference and DateUtils.is_valid_date(year, month, day):
+                    past_date = DateUtils.safe_create_from_min_value(year - 1, month, day)
+        return future_date, past_date
+
     @staticmethod
     def int_try_parse(value):
         try:
@@ -407,6 +440,10 @@ class DateUtils:
             return True
         except ValueError:
             return False
+
+    @staticmethod
+    def is_valid_datetime(date: datetime) -> bool:
+        return date != DateUtils.min_value
 
     @staticmethod
     def is_valid_time(hour: int, minute: int, second: int) -> bool:
@@ -450,6 +487,18 @@ class DateUtils:
     @staticmethod
     def week_of_year(date: datetime) -> int:
         return date.isocalendar()[1]
+
+    @staticmethod
+    def is_leap_year(year) -> bool:
+        return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
+
+    @staticmethod
+    def is_Feb_29th(year, month, day):
+        return month == 2 and day == 29
+
+    @staticmethod
+    def is_Feb_29th_datetime(date: datetime):
+        return date.month == 2 and date.day == 29
 
 
 class HolidayFunctions:
@@ -882,8 +931,10 @@ class DateContext:
     def is_empty(self) -> bool:
         return self.year == Constants.INVALID_YEAR
 
-    def __set_date_with_context(self, original_date) -> datetime:
-        value = datetime(year=self.year, month=original_date.month, day=original_date.day)
+    def __set_date_with_context(self, original_date, year=-1) -> datetime:
+        if not DateUtils.is_valid_datetime(original_date):
+            return original_date
+        value = DateUtils.safe_create_from_min_value(year=self.year if year == -1 else year, month=original_date.month, day=original_date.day)
         return value
 
     def __set_date_range_with_context(self, original_date_range):
@@ -895,6 +946,24 @@ class DateContext:
         }
 
         return result
+
+    # This method is to ensure the year of begin date is same with the end date in no year situation.
+    def sync_year(self, pr1, pr2):
+        if self.is_empty():
+            if DateUtils.is_Feb_29th_datetime(pr1.value.future_value):
+                future_year = pr1.value.future_value.year
+                past_year = pr1.value.past_value.year
+                pr2.value = self.sync_year_resolution(pr2.value, future_year, past_year)
+            elif DateUtils.is_Feb_29th_datetime(pr2.value.future_value):
+                future_year = pr2.value.future_value.year
+                past_year = pr2.value.past_value.year
+                pr1.value = self.sync_year_resolution(pr1.value, future_year, past_year)
+        return pr1, pr2
+
+    def sync_year_resolution(self, resolution_result, future_year, past_year):
+        resolution_result.future_value = self.__set_date_with_context(resolution_result.future_value, future_year)
+        resolution_result.past_value = self.__set_date_with_context(resolution_result.past_value, past_year)
+        return resolution_result
 
 
 date_period_timex_type_to_suffix = {
@@ -914,6 +983,12 @@ class RangeTimexComponents:
 
 
 class TimexUtil:
+
+    @staticmethod
+    def merge_timex_alternatives(timex1: str, timex2: str) -> str:
+        if timex1 == timex2:
+            return timex1
+        return f"{timex1}{Constants.COMPOSTIE_TIMEX_DELIMITER}{timex2}"
 
     @staticmethod
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
@@ -961,9 +1036,7 @@ class TimexUtil:
         return result
 
     @staticmethod
-    def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
-        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or\
-            datetime.now() == alternative_end == alternative_begin
+    def generate_date_period_timex_unit_count(begin, end, timex_type, equal_duration_length=True):
         unit_count = 'XX'
 
         if equal_duration_length:
@@ -976,11 +1049,36 @@ class TimexUtil:
                 unit_count = ((end.year - begin.year) * 12) + (end.month - begin.month)
             if timex_type == 3:
                 unit_count = (end.year - begin.year) + ((end.mont - begin.month) / 12.0)
+        return unit_count
 
+    @staticmethod
+    def generate_date_period_timex_str(begin, end, timex_type, timex1, timex2):
+        boundary_valid = DateUtils.is_valid_datetime(begin) and DateUtils.is_valid_datetime(end)
+        unit_count = TimexUtil.generate_date_period_timex_unit_count(begin, end, timex_type) if boundary_valid else "X"
+        return f"({timex1},{timex2},P{unit_count}{date_period_timex_type_to_suffix[timex_type]})"
+
+    @staticmethod
+    def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
+        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or datetime.now() == alternative_end == alternative_begin
+        unit_count = TimexUtil.generate_date_period_timex_unit_count(begin, end, timex_type, equal_duration_length)
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
         return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
                f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+
+    @staticmethod
+    def _process_double_timex(resolution_dic: Dict[str, object], future_key: str, past_key: str, origin_timex: str):
+        timexes = origin_timex.split(Constants.COMPOSTIE_TIMEX_DELIMITER)
+        if not future_key in resolution_dic or not past_key in resolution_dic or len(timexes) != 2:
+            return
+        future_resolution = resolution_dic[future_key]
+        past_resolution = resolution_dic[past_key]
+        future_resolution[Constants.TIMEX_KEY] = timexes[0]
+        past_resolution[Constants.TIMEX_KEY] = timexes[1]
+
+    @staticmethod
+    def _has_double_timex(comment: str):
+        return comment == Constants.COMMENT_DOUBLETIMEX
 
     @staticmethod
     def is_range_timex(timex: str) -> bool:
