@@ -1,7 +1,7 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
-import { Token, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, StringMap, AbstractYearExtractor } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, StringMap, AbstractYearExtractor, TimexUtil } from "./utilities";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { BaseDateExtractor, BaseDateParser } from "./baseDate";
@@ -240,6 +240,7 @@ export interface IDatePeriodParserConfiguration {
     monthWithYear: RegExp
     monthNumWithYear: RegExp
     yearRegex: RegExp
+    relativeRegex: RegExp
     pastRegex: RegExp
     futureRegex: RegExp
     inConnectorRegex: RegExp
@@ -777,6 +778,22 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
         let prBegin = prs[0];
         let prEnd = prs[1];
+        
+        if (ers.length >= 2) {
+            let matchYear = DateUtils.getYear(this.config, ers[0].text, ers[1].text, source);
+            if (matchYear != -1) {
+                prBegin = DateUtils.processDateEntityParsingResult(prBegin, matchYear);
+                prEnd = DateUtils.processDateEntityParsingResult(prEnd, matchYear);
+            }
+
+            // When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
+            if (matchYear == -1 && (DateUtils.isFeb29thDate(prBegin.value.futureValue) || DateUtils.isFeb29thDate(prEnd.value.futureValue))) {
+                let pastFuture = DateUtils.syncYear(prBegin, prEnd);
+                prBegin = pastFuture.pr1;
+                prEnd = pastFuture.pr2;
+            }
+        }
+
         let futureBegin = prBegin.value.futureValue;
         let futureEnd = prEnd.value.futureValue;
         let pastBegin = prBegin.value.pastValue;
@@ -791,7 +808,15 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         result.subDateTimeEntities = prs;
-        result.timex = `(${prBegin.timexStr},${prEnd.timexStr},P${DateUtils.diffDays(futureEnd, futureBegin)}D)`;
+        result.timex = TimexUtil.generateDatePeriodTimex(futureBegin, futureEnd, Constants.ByDay, prBegin.timexStr, prEnd.timexStr);
+        if (prBegin.timexStr.startsWith(Constants.TimexFuzzyYear) && futureBegin <= DateUtils.safeCreateFromMinValue(futureBegin.getFullYear(), 1, 28) && futureEnd >= DateUtils.safeCreateFromMinValue(futureBegin.getFullYear(), 2, 1)) {
+            // Handle cases like "2月28日到3月1日".
+            // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
+            result.comment = Constants.Comment_DoubleTimex;
+            let pastTimex = TimexUtil.generateDatePeriodTimex(pastBegin, pastEnd, Constants.ByDay, prBegin.timexStr, prEnd.timexStr);
+            result.timex = TimexUtil.mergeTimexAlternatives(result.timex, pastTimex);
+        }
+
         result.futureValue = [futureBegin, futureEnd];
         result.pastValue = [pastBegin, pastEnd];
         result.success = true;

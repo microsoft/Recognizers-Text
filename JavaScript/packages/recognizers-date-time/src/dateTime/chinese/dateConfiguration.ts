@@ -386,7 +386,7 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (!DateUtils.isLeapYear(year) && DateUtils.isFeb29th(year, month - 1, day)) {
+                        else if (DateUtils.isFeb29th(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
@@ -611,10 +611,6 @@ export class ChineseDateParser extends BaseDateParser {
         return DateUtils.isValidDate(year, month, day);
     }
 
-    private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
-        return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
-    }
-    
     // Handle cases like "三天前"
     protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();

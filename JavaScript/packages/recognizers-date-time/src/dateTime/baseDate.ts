@@ -724,16 +724,11 @@ export class BaseDateParser implements IDateTimeParser {
         else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
-        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        if (noYear && futureDate < referenceDate) {
-            futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
-        }
-        if (noYear && pastDate >= referenceDate) {
-            pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
-        }
-        result.futureValue = futureDate;
-        result.pastValue = pastDate;
+
+        let futurePastDates = DateUtils.generateDates(noYear, referenceDate, year, month, day);
+
+        result.futureValue = futurePastDates.future;
+        result.pastValue = futurePastDates.past;
         result.success = true;
         return result;
     }
