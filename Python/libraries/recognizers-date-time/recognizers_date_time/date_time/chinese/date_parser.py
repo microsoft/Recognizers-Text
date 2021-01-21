@@ -169,7 +169,7 @@ class ChineseDateParser(BaseDateParser):
                     if past_date >= reference:
                         if self.is_valid_date(year, month - 1, day):
                             past_date += datedelta(months=-1)
-                        elif not DateUtils.is_leap_year(year) and DateUtils.is_Feb_29th(year, month - 1, day):
+                        elif DateUtils.is_Feb_29th(year, month - 1, day):
                             past_date += datedelta(months=-2)
                 elif not has_year:
                     if future_date < reference:

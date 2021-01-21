@@ -956,16 +956,9 @@ class BaseDateParser(DateTimeParser):
         else:
             result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
-        future_date = DateUtils.safe_create_from_min_value(year, month, day)
-        past_date = DateUtils.safe_create_from_min_value(year, month, day)
-
-        if no_year and future_date < reference:
-            future_date = DateUtils.safe_create_from_min_value(
-                year + 1, month, day)
-
-        if no_year and past_date >= reference:
-            past_date = DateUtils.safe_create_from_min_value(
-                year - 1, month, day)
+        future_date, past_date = DateUtils.generate_dates(no_year, reference, year, month, day)
+        #future_date = DateUtils.safe_create_from_min_value(no_year, reference, year, month, day)
+        #past_date = DateUtils.safe_create_from_min_value(no_year, reference, year, month, day)
 
         result.future_value = future_date
         result.past_value = past_date
