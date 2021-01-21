@@ -6,7 +6,7 @@ import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { ChineseDurationExtractor } from "./durationConfiguration";
-import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, DateTimeFormatUtil, StringMap } from "../utilities";
+import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, DateTimeFormatUtil, StringMap, TimexUtil } from "../utilities";
 import { BaseDateTime } from "../../resources/baseDateTime";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
@@ -149,6 +149,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly monthWithYear: RegExp
     readonly monthNumWithYear: RegExp
     readonly yearRegex: RegExp
+    readonly relativeRegex: RegExp
     readonly pastRegex: RegExp
     readonly futureRegex: RegExp
     readonly inConnectorRegex: RegExp
@@ -179,6 +180,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex);
         this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearRegex);
+        this.relativeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.RelativeRegex);
         this.seasonRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonRegex);
         this.seasonMap = ChineseDateTime.ParserConfigurationSeasonMap;
         this.quarterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.QuarterRegex);
@@ -454,15 +456,12 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             pastYear--;
         }
 
-        result.timex = `(${beginDateLuis},${endDateLuis},P${endDay - beginDay}D)`;
-        result.futureValue = [
-            DateUtils.safeCreateFromValue(DateUtils.minValue(), futureYear, month, beginDay),
-            DateUtils.safeCreateFromValue(DateUtils.minValue(), futureYear, month, endDay),
-        ];
-        result.pastValue = [
-            DateUtils.safeCreateFromValue(DateUtils.minValue(), pastYear, month, beginDay),
-            DateUtils.safeCreateFromValue(DateUtils.minValue(), pastYear, month, endDay),
-        ];
+        let futurePastBeginDates = DateUtils.generateDates(noYear, referenceDate, year, month, beginDay);
+        let futurePastEndDates = DateUtils.generateDates(noYear, referenceDate, year, month, endDay);
+
+        result.timex = TimexUtil.generateDatePeriodTimex(futurePastBeginDates.future, futurePastEndDates.future, Constants.ByDay, beginDateLuis, endDateLuis);
+        result.futureValue = [futurePastBeginDates.future, futurePastEndDates.future];
+        result.pastValue = [futurePastBeginDates.past, futurePastEndDates.past];
         result.success = true;
         return result;
     }
