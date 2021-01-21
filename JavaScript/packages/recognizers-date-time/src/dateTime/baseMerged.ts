@@ -552,6 +552,10 @@ export class BaseMergedParser implements IDateTimeParser {
             }
         }
 
+        if (comment && this.HasDoubleTimex(comment)) {
+            this.processDoubleTimex(result, Constants.ResolveToFutureKey, Constants.ResolveToPastKey, timex);
+        }
+
         result.forEach((value, key) => {
             if (this.isObject(value)) {
                 // is "StringMap"
@@ -666,6 +670,10 @@ export class BaseMergedParser implements IDateTimeParser {
     private addPeriodToResolution(resolutions: StringMap, startType: string, endType: string, mod: string, result: StringMap) {
         let start = resolutions[startType];
         let end = resolutions[endType];
+        if (start === Constants.InvalidDateString || end === Constants.InvalidDateString) {
+            return;
+        }
+
         if (!StringUtility.isNullOrEmpty(mod)) {
             // For the 'before' mod
             // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
@@ -708,6 +716,24 @@ export class BaseMergedParser implements IDateTimeParser {
 
     protected getValues(obj: any): any[] {
         return Object.keys(obj).map(key => obj[key]);
+    }
+
+    protected processDoubleTimex(resolutionDic: Map<string, any>, futureKey: string, pastKey: string, originTimex: string) {
+        let timexes = originTimex.split(Constants.CompositeTimexDelimiter);
+
+        if (!resolutionDic.has(futureKey) || !resolutionDic.has(pastKey) || timexes.length != 2)
+        {
+            return;
+        }
+
+        let futureResolution: StringMap = resolutionDic.get(futureKey);
+        let pastResolution: StringMap = resolutionDic.get(pastKey);
+        futureResolution[Constants.TimexKey] = timexes[0];
+        pastResolution[Constants.TimexKey] = timexes[1];
+    }
+    
+    private HasDoubleTimex(comment: string): boolean {
+        return comment === Constants.Comment_DoubleTimex;
     }
 
     protected resolveAMPM(valuesMap: Map<string, any>, keyName: string) {
