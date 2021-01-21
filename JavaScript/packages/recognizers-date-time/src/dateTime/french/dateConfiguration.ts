@@ -45,8 +45,14 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis") :
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
 
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis") :
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
+
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis") :
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
+
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor8, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor9, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractorA, "gis"),
