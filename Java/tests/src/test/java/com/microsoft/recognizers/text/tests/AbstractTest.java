@@ -180,30 +180,30 @@ public abstract class AbstractTest {
     }
 
     public static TestCase[] parseSpecFile(File f, ObjectMapper mapper) {
-		
+
         List<String> paths = Arrays.asList(f.toPath().toString().split(Pattern.quote(File.separator)));
         List<String> testInfo = paths.subList(paths.size() - 3, paths.size());
 
         try {
-			
-			// Workaround to consume a possible UTF-8 BOM byte
-			// https://stackoverflow.com/questions/4897876/reading-utf-8-bom-marker
-			String json = new String(Files.readAllBytes(f.toPath())).replace("\uFEFF", "");
-            
-			TestCase[] tests = mapper.readValue(json, TestCase[].class);
+
+            // Workaround to consume a possible UTF-8 BOM byte
+            // https://stackoverflow.com/questions/4897876/reading-utf-8-bom-marker
+            String json = new String(Files.readAllBytes(f.toPath())).replace("\uFEFF", "");
+
+            TestCase[] tests = mapper.readValue(json, TestCase[].class);
             Arrays.stream(tests).forEach(t -> {
                 t.recognizerName = testInfo.get(0);
                 t.language = testInfo.get(1);
                 t.modelName = testInfo.get(2).split(Pattern.quote("."))[0];
             });
-			
+
             return tests;
-			
+
         } catch (IOException ex) {
-            
-			System.out.println("Error reading Spec file: " + f.toString() + " | " + ex.getMessage());
-			
-			// @TODO: This should cause a test run failure.
+
+            System.out.println("Error reading Spec file: " + f.toString() + " | " + ex.getMessage());
+
+            // @TODO: This should cause a test run failure.
             return new TestCase[0];
         }
     }
