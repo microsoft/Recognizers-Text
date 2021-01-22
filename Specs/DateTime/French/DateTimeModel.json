@@ -2967,7 +2967,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2",
@@ -2996,7 +2995,6 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2",
@@ -3025,7 +3023,6 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2",
@@ -3123,7 +3120,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "28/2-1/3",
@@ -3154,7 +3150,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2-1/3",
@@ -3185,7 +3180,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2-1/3/2019",

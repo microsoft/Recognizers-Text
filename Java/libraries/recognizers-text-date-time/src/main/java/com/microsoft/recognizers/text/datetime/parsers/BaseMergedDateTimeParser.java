@@ -537,6 +537,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             resolveWeekOf(res, Constants.ResolveToPast);
         }
 
+        if (comment != null && !comment.isEmpty() && TimexUtility.hasDoubleTimex(comment)) {
+            res = TimexUtility.processDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
+        }
+
         for (Map.Entry<String,Object> p : res.entrySet()) {
             if (p.getValue() instanceof Map) {
                 Map<String, String> value = new LinkedHashMap<>();
@@ -769,10 +773,16 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         String end = "";
 
         if (resolutionDic.containsKey(startType)) {
+            if (resolutionDic.get(startType).startsWith(dateMinString)) {
+                return;
+            }
             start = resolutionDic.get(startType);
         }
 
         if (resolutionDic.containsKey(endType)) {
+            if (resolutionDic.get(endType).startsWith(dateMinString)) {
+                return;
+            }
             end = resolutionDic.get(endType);
         }
 
