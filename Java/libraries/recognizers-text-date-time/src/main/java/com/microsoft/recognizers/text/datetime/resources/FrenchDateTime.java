@@ -717,6 +717,8 @@ public class FrenchDateTime {
 
     public static final String ComplexDatePeriodRegex = "^[.]";
 
+    public static final String AmbiguousPointRangeRegex = "^(mar\\.?)$";
+
     public static final ImmutableMap<String, String> UnitMap = ImmutableMap.<String, String>builder()
         .put("annees", "Y")
         .put("annee", "Y")

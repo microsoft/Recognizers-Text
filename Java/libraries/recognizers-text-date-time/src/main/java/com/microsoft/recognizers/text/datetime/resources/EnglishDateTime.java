@@ -218,7 +218,7 @@ public class EnglishDateTime {
     public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{StrictRelativeRegex})\\s+quarter\\b"
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
 
-    public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
+    public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:((\\s+of)?\\s+|\\s*[,-]\\s*)({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{QuarterTermRegex}", QuarterTermRegex)
@@ -276,7 +276,7 @@ public class EnglishDateTime {
 
     public static final String MonthRegex = "(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)";
 
-    public static final String DateYearRegex = "(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})"
+    public static final String DateYearRegex = "(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
@@ -702,7 +702,7 @@ public class EnglishDateTime {
 
     public static final String EachPrefixRegex = "\\b(?<each>(each|every|once an?)\\s*$)";
 
-    public static final String SetEachRegex = "\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)\\b";
+    public static final String SetEachRegex = "\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)(?!the|that)\\b";
 
     public static final String SetLastRegex = "(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)"
             .replace("{LastNegPrefix}", LastNegPrefix);

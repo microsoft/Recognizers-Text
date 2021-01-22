@@ -30,6 +30,9 @@ public abstract class AbstractTest {
 
     private static final List<String> SupportedCultures = Arrays.asList("English", "Spanish", "Portuguese", "French", "German", "Chinese");
 
+    // FEFF - UTF-8 byte order mark (EF BB BF) as Unicode char representation.
+    private static final String UTF8_BOM = "\uFEFF";
+
     protected final TestCase currentCase;
 
     public AbstractTest(TestCase currentCase) {
@@ -42,7 +45,7 @@ public abstract class AbstractTest {
     private static Map<String, Integer> skipCounter;
 
     @BeforeClass
-    public static void before(){
+    public static void before() {
         testCounter = new LinkedHashMap<>();
         passCounter = new LinkedHashMap<>();
         failCounter = new LinkedHashMap<>();
@@ -50,20 +53,24 @@ public abstract class AbstractTest {
     }
 
     @AfterClass
-    public static void after(){
+    public static void after() {
+
         Map<String, String> counter = new LinkedHashMap<>();
+
         for (Map.Entry<String, Integer> entry : testCounter.entrySet()) {
             int skipped = skipCounter.getOrDefault(entry.getKey(), 0);
             if (entry.getValue() > skipped) {
                 counter.put(entry.getKey(), String.format("%7d", entry.getValue()));
             }
         }
+
         for (Map.Entry<String, String> entry : counter.entrySet()) {
             Integer passValue = passCounter.getOrDefault(entry.getKey(), 0);
             Integer failValue = failCounter.getOrDefault(entry.getKey(), 0);
             Integer skipValue = skipCounter.getOrDefault(entry.getKey(), 0);
             counter.put(entry.getKey(), String.format("|%s  |%7d  |%7d  |%7d  ", entry.getValue(), passValue, skipValue, failValue));
         }
+
         print(counter);
     }
 
@@ -108,7 +115,7 @@ public abstract class AbstractTest {
 
         if (this.currentCase.debug) {
             // Add breakpoint here to stop on those TestCases marked with "Debug": true
-            System.out.println("Debug Brk!");
+            System.out.println("Debug Break!");
         }
 
         try {
@@ -136,6 +143,7 @@ public abstract class AbstractTest {
     }
 
     public static void assertResultsWithKeys(TestCase currentCase, List<ModelResult> results, List<String> testResolutionKeys) {
+
         List<ModelResult> expectedResults = readExpectedResults(ModelResult.class, currentCase.results);
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
 
@@ -149,7 +157,8 @@ public abstract class AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
 
                     if (expected.resolution.containsKey(ResolutionKey.Value)) {
-                        Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+                        Assert.assertEquals(getMessage(currentCase, "resolution.value"),
+                                            expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
                     }
 
                     for (String key : testResolutionKeys) {
@@ -188,7 +197,8 @@ public abstract class AbstractTest {
 
             // Workaround to consume a possible UTF-8 BOM byte
             // https://stackoverflow.com/questions/4897876/reading-utf-8-bom-marker
-            String json = new String(Files.readAllBytes(f.toPath())).replace("\uFEFF", "");
+            String contents = new String(Files.readAllBytes(f.toPath()));
+            String json = StringUtf8Bom(contents);
 
             TestCase[] tests = mapper.readValue(json, TestCase[].class);
             Arrays.stream(tests).forEach(t -> {
@@ -299,6 +309,15 @@ public abstract class AbstractTest {
 
     public static String getMessage(TestCase testCase, String propName) {
         return "Does not match " + propName + " on Input: \"" + testCase.input + "\"";
+    }
+
+    private static String StringUtf8Bom(String input) {
+
+        if (input.startsWith(UTF8_BOM)) {
+            input = input.substring(1);
+        }
+
+        return input;
     }
 
 }
