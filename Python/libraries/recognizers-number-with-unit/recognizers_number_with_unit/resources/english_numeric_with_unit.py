@@ -14,6 +14,7 @@ from .base_numbers import BaseNumbers
 
 
 class EnglishNumericWithUnit:
+    AgePrefixList = dict([("Age", "Age|age")])
     AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age|yo"),
                           ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age|mo"),
                           ("Week", "weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age"),

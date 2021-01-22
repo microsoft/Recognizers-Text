@@ -228,7 +228,7 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b
+  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b
@@ -446,7 +446,7 @@ TimeNumberCombinedWithUnit: !nestedRegex
   references: [ TimeUnitRegex ]
 BusinessHourSplitStrings: ['business', 'hour']
 NowRegex: !simpleRegex
-  def: \b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b
+  def: \b(?<now>(right\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\b
 #Used in DatePeriodParser to parse patterns like "from March to date" ("^date$" is English specific and does not need to be translated).
 NowParseRegex: !nestedRegex
   def: \b({NowRegex}|^(date)$)\b
@@ -547,7 +547,7 @@ PMTimeRegex: !simpleRegex
 NightTimeRegex: !simpleRegex
   def: (night)
 NowTimeRegex: !simpleRegex
-  def: (now)
+  def: (now|at th(e|is) minute)
 RecentlyTimeRegex: !simpleRegex
   def: (recently|previously)
 AsapTimeRegex: !simpleRegex
@@ -1188,6 +1188,7 @@ SameDayTerms: !list
   types: [ string ]
   entries: 
     - today
+    - otd
 PlusOneDayTerms: !list
   types: [ string ]
   entries: 
