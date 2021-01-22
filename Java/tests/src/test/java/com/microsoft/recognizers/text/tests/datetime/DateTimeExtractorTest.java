@@ -127,10 +127,10 @@ public class DateTimeExtractorTest extends AbstractTest {
                 case Culture.French:
                     return getFrenchExtractor(modelName);
                 default:
-                    throw new AssumptionViolatedException("Extractor Type/Name not supported in: " + culture);
+                    throw new NotSupportedException("Extractor Type/Name not supported in: " + culture);
             }
         } catch (NotSupportedException ex) {
-            throw new IllegalArgumentException(ex.getMessage(), ex);
+            throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 

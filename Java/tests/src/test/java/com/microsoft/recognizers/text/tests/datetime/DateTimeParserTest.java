@@ -195,10 +195,10 @@ public class DateTimeParserTest extends AbstractTest {
                 case Culture.French:
                     return getFrenchParser(name);
                 default:
-                    throw new AssumptionViolatedException("Parser Type/Name not supported for culture: " + culture);
+                    throw new NotSupportedException("Parser Type/Name not supported for culture: " + culture);
             }
         } catch (NotSupportedException ex) {
-            throw new IllegalArgumentException(ex.getMessage(), ex);
+            throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 

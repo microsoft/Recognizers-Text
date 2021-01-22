@@ -27,6 +27,7 @@ public class NumberTest extends AbstractTest {
 
     @Override
     public List<ModelResult> recognize(TestCase currentCase) {
+
         try {
             String culture = getCultureCode(currentCase.language);
             switch (currentCase.modelName) {
