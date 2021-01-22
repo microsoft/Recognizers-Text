@@ -4090,13 +4090,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Compound timex represent value dependency and will be split at the model level",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1ली जनवरी और 5 अप्रैल के बीच",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)|(XXXX-01-01,XXXX-04-05,P95D)",
           "FutureResolution": {
             "startDate": "2017-01-01",
             "endDate": "2017-04-05"

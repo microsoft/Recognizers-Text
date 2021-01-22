@@ -417,7 +417,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(comment) && HasDoubleTimex(comment))
+            if (!string.IsNullOrEmpty(comment) && TimexUtility.HasDoubleTimex(comment))
             {
                 ProcessDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
             }
@@ -618,11 +618,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         private bool IsDurationWithAgoAndLater(ExtractResult er)
         {
             return er.Metadata != null && er.Metadata.IsDurationWithAgoAndLater;
-        }
-
-        private bool HasDoubleTimex(string comment)
-        {
-            return comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal);
         }
     }
 }

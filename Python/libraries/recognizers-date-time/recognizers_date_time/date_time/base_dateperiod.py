@@ -1713,6 +1713,10 @@ class BaseDatePeriodParser(DateTimeParser):
             parse_result1 = date_context.process_date_entity_parsing_result(parse_result1)
             parse_result2 = date_context.process_date_entity_parsing_result(parse_result2)
 
+            # When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
+            if date_context.is_empty() and (DateUtils.is_Feb_29th_datetime(parse_result1.value.future_value) or DateUtils.is_Feb_29th_datetime(parse_result2.value.future_value)):
+                parse_result1, parse_result2 = date_context.sync_year(parse_result1, parse_result2)
+
         result.sub_date_time_entities = [parse_result1, parse_result2]
 
         future_begin = parse_result1.value.future_value
@@ -1726,7 +1730,14 @@ class BaseDatePeriodParser(DateTimeParser):
         if past_end < past_begin:
             past_end = future_end
 
-        result.timex = f'({parse_result1.timex_str},{parse_result2.timex_str},P{(future_end - future_begin).days}D)'
+        result.timex = TimexUtil.generate_date_period_timex_str(future_begin, future_end, 0, parse_result1.timex_str, parse_result2.timex_str)
+
+        if parse_result1.timex_str.startswith(Constants.TIMEX_FUZZY_YEAR) and future_begin <= DateUtils.safe_create_from_value(DateUtils.min_value, future_begin.year, 2, 28) and future_end >= DateUtils.safe_create_from_value(DateUtils.min_value, future_begin.year, 3, 1):
+            # Handle cases like "2/28 - 3/1".
+            # There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
+            result.comment = Constants.COMMENT_DOUBLETIMEX
+            past_timex = TimexUtil.generate_date_period_timex_str(past_begin, past_end, 0, parse_result1.timex_str, parse_result2.timex_str)
+            result.timex = TimexUtil.merge_timex_alternatives(result.timex, past_timex)
         result.future_value = [future_begin, future_end]
         result.past_value = [past_begin, past_end]
         result.success = True

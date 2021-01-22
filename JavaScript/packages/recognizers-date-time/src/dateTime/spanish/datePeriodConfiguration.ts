@@ -107,6 +107,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly monthNumWithYear: RegExp;
     readonly yearRegex: RegExp;
     readonly pastRegex: RegExp;
+    readonly relativeRegex: RegExp;
     readonly futureRegex: RegExp;
     readonly inConnectorRegex: RegExp;
     readonly weekOfMonthRegex: RegExp;
@@ -155,6 +156,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.monthWithYear = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthWithYearRegex);
         this.monthNumWithYear = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthNumWithYearRegex);
         this.yearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
+        this.relativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeRegex);
         this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DurationNumberCombinedWithUnit);
