@@ -1009,6 +1009,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             // When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
             if (dateContext.isEmpty() && (DateContext.isFeb29th((LocalDateTime)((DateTimeResolutionResult)pr1.getValue()).getFutureValue()) ||
                     DateContext.isFeb29th((LocalDateTime)((DateTimeResolutionResult)pr2.getValue()).getFutureValue()))) {
+
                 HashMap<String, DateTimeParseResult> parseResultHashMap = dateContext.syncYear(pr1, pr2);
                 pr1 = parseResultHashMap.get(Constants.ParseResult1);
                 pr2 = parseResultHashMap.get(Constants.ParseResult2);
@@ -1038,6 +1039,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
         if (pr1.getTimexStr().startsWith(Constants.TimexFuzzyYear) && futureBegin.compareTo(DateUtil.safeCreateFromMinValue(futureBegin.getYear(), 2, 28)) <= 0 &&
                 futureEnd.compareTo(DateUtil.safeCreateFromMinValue(futureBegin.getYear(), 3, 1)) >= 0) {
+
             // Handle cases like "Feb 29th to March 1st".
             // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
             ret.setComment(Constants.Comment_DoubleTimex);
