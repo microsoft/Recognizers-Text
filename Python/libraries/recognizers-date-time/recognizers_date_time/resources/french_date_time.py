@@ -242,6 +242,7 @@ class FrenchDateTime:
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     ComplexDatePeriodRegex = f'^[.]'
+    AmbiguousPointRangeRegex = f'^(mar\\.?)$'
     UnitMap = dict([("annees", "Y"),
                     ("annee", "Y"),
                     ("an", "Y"),

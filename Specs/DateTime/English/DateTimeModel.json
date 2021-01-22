@@ -19348,5 +19348,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Pierre de Fermat died otd.",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "otd",
+        "Start": 22,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-01-15",
+              "type": "date",
+              "value": "2021-01-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I have a secure enough supply line, at the minute I'm ok.",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "at the minute",
+        "Start": 36,
+        "End": 48,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2021-01-15 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
