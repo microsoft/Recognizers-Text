@@ -2,3 +2,4 @@ datedelta
 pre-commit==1.16.1
 autopep8
 flake8
+emoji==1.1.0
