@@ -218,7 +218,7 @@ public class EnglishDateTime {
     public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{StrictRelativeRegex})\\s+quarter\\b"
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
 
-    public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
+    public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:((\\s+of)?\\s+|\\s*[,-]\\s*)({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{QuarterTermRegex}", QuarterTermRegex)
@@ -276,7 +276,7 @@ public class EnglishDateTime {
 
     public static final String MonthRegex = "(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)";
 
-    public static final String DateYearRegex = "(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})"
+    public static final String DateYearRegex = "(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
@@ -305,7 +305,7 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
 
-    public static final String SpecialDayRegex = "\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b"
+    public static final String SpecialDayRegex = "\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd)\\b"
             .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String SpecialDayWithNumRegex = "\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b"
@@ -634,7 +634,7 @@ public class EnglishDateTime {
 
     public static final List<String> BusinessHourSplitStrings = Arrays.asList("business", "hour");
 
-    public static final String NowRegex = "\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b";
+    public static final String NowRegex = "\\b(?<now>(right\\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\\b";
 
     public static final String NowParseRegex = "\\b({NowRegex}|^(date)$)\\b"
             .replace("{NowRegex}", NowRegex);
@@ -702,7 +702,7 @@ public class EnglishDateTime {
 
     public static final String EachPrefixRegex = "\\b(?<each>(each|every|once an?)\\s*$)";
 
-    public static final String SetEachRegex = "\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)\\b";
+    public static final String SetEachRegex = "\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)(?!the|that)\\b";
 
     public static final String SetLastRegex = "(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)"
             .replace("{LastNegPrefix}", LastNegPrefix);
@@ -747,7 +747,7 @@ public class EnglishDateTime {
 
     public static final String NightTimeRegex = "(night)";
 
-    public static final String NowTimeRegex = "(now)";
+    public static final String NowTimeRegex = "(now|at th(e|is) minute)";
 
     public static final String RecentlyTimeRegex = "(recently|previously)";
 
@@ -1400,7 +1400,7 @@ public class EnglishDateTime {
 
     public static final List<String> NightTermList = Arrays.asList("night");
 
-    public static final List<String> SameDayTerms = Arrays.asList("today");
+    public static final List<String> SameDayTerms = Arrays.asList("today", "otd");
 
     public static final List<String> PlusOneDayTerms = Arrays.asList("tomorrow", "tmr", "day after");
 

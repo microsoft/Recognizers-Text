@@ -260,7 +260,32 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string MergeTimexAlternatives(string timex1, string timex2)
         {
+            if (timex1.Equals(timex2, StringComparison.Ordinal))
+            {
+                return timex1;
+            }
+
             return $"{timex1}{Constants.CompositeTimexDelimiter}{timex2}";
+        }
+
+        public static void ProcessDoubleTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
+        {
+            string[] timexes = originTimex.Split(Constants.CompositeTimexDelimiter);
+
+            if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexes.Length != 2)
+            {
+                return;
+            }
+
+            var futureResolution = (Dictionary<string, string>)resolutionDic[futureKey];
+            var pastResolution = (Dictionary<string, string>)resolutionDic[pastKey];
+            futureResolution[DateTimeResolutionKey.Timex] = timexes[0];
+            pastResolution[DateTimeResolutionKey.Timex] = timexes[1];
+        }
+
+        public static bool HasDoubleTimex(string comment)
+        {
+            return comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal);
         }
 
         public static TimeOfDayResolutionResult ParseTimeOfDay(string tod)

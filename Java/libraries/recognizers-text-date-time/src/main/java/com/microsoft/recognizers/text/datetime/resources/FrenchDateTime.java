@@ -637,7 +637,8 @@ public class FrenchDateTime {
 
     public static final String PreviousPrefixRegex = ".^";
 
-    public static final String RelativeDayRegex = "\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b";
+    public static final String RelativeDayRegex = "\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b"
+            .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String ConnectorRegex = "^(,|pour|t|vers)$";
 
@@ -716,6 +717,8 @@ public class FrenchDateTime {
     public static final String FutureSuffixRegex = "^[.]";
 
     public static final String ComplexDatePeriodRegex = "^[.]";
+
+    public static final String AmbiguousPointRangeRegex = "^(mar\\.?)$";
 
     public static final ImmutableMap<String, String> UnitMap = ImmutableMap.<String, String>builder()
         .put("annees", "Y")

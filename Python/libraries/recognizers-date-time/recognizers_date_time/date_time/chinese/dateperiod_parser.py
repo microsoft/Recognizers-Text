@@ -163,30 +163,19 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         end_date_luis = DateTimeFormatUtil.luis_date(
             year if input_year or self.config.is_future(month_str) else -1, month, end_day)
 
-        future_year = year
-        past_year = year
-
-        start_date = DateUtils.safe_create_from_min_value(
-            year, month, begin_day)
-
-        if no_year and start_date < reference:
-            future_year += 1
-
-        if no_year and start_date >= reference:
-            past_year -= 1
+        future_past_begin_date = DateUtils.generate_dates(no_year, reference, year, month, begin_day)
+        future_past_end_date = DateUtils.generate_dates(no_year, reference, year, month, end_day)
 
         result.timex = f'({begin_date_luis},{end_date_luis},P{end_day - begin_day}D)'
 
         result.future_value = [
-            DateUtils.safe_create_from_min_value(
-                future_year, month, begin_day),
-            DateUtils.safe_create_from_min_value(future_year, month, end_day)
+            future_past_begin_date[0],
+            future_past_end_date[0]
         ]
         result.past_value = [
-            DateUtils.safe_create_from_min_value(past_year, month, begin_day),
-            DateUtils.safe_create_from_min_value(past_year, month, end_day)
+            future_past_begin_date[1],
+            future_past_end_date[1]
         ]
-
         result.success = True
         return result
 

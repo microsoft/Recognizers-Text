@@ -491,8 +491,9 @@ PastPrefixRegex: !simpleRegex
 PreviousPrefixRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
   def: .^
-RelativeDayRegex: !simpleRegex
+RelativeDayRegex: !nestedRegex
   def: \b(((la\s+)?{RelativeRegex}\s+journ[ée]e))\b
+  references: [RelativeRegex]
 ConnectorRegex: !simpleRegex
   def: ^(,|pour|t|vers)$
 ConnectorAndRegex: !simpleRegex

@@ -20,7 +20,7 @@ namespace SimpleConsole
 
         public static void Main(string[] args)
         {
-            // Encoding for 'exotic' characters e.g. '€'
+            // Enable support for multiple encodings, especially in .NET Core
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             ShowIntro();

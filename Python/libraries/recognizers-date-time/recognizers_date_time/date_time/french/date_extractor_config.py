@@ -137,9 +137,13 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
         if FrenchDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = FrenchDateTime.DateExtractor5
             date_extractor_5 = FrenchDateTime.DateExtractor4
+            date_extractor_6 = FrenchDateTime.DateExtractor7
+            date_extractor_7 = FrenchDateTime.DateExtractor6
         else:
             date_extractor_4 = FrenchDateTime.DateExtractor4
             date_extractor_5 = FrenchDateTime.DateExtractor5
+            date_extractor_6 = FrenchDateTime.DateExtractor6
+            date_extractor_7 = FrenchDateTime.DateExtractor7
 
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractor1),
@@ -147,8 +151,8 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractor3),
             RegExpUtility.get_safe_reg_exp(date_extractor_4),
             RegExpUtility.get_safe_reg_exp(date_extractor_5),
-            RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractor7),
+            RegExpUtility.get_safe_reg_exp(date_extractor_6),
+            RegExpUtility.get_safe_reg_exp(date_extractor_7),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractor8),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractor9),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateExtractorA),
