@@ -278,9 +278,6 @@ DateExtractorYearTermRegex: !nestedRegex
 DateExtractor1: !nestedRegex
   def: \b(({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\s+{DateYearRegex})?)((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?)
   references: [ SingleWeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
-DateExtractor2: !nestedRegex
-  def: \b({WeekDayRegex}\s*[,-]?\s*)?(?<!\d[.,])(({MonthRegex}[\.]?\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{DayRegex})|({DayRegex}\s*[/\\.,-]?)\s*({MonthRegex}[\.]?\s*[/\\.,-]?\s*{BaseDateTime.FourDigitYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?)|({BaseDateTime.FourDigitYearRegex}\s*[/\\.,-]?)\s*({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}[\.]?|{MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}))\b
-  references: [WeekDayRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex]
 DateExtractor3: !nestedRegex
   def: \b(({RelativeRegex}\s+ayın\s+)?({OnRegex})(\s*\(\s*{SingleWeekDayRegex}\s*\))?)\b
   references: [ RelativeRegex, OnRegex, SingleWeekDayRegex ]

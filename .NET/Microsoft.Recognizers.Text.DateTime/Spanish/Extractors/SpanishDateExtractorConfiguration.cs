@@ -168,9 +168,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             // 2015-12-23
             var dateRegex10 = new Regex(DateTimeDefinitions.DateExtractor10, RegexFlags);
 
-            // (Sunday,)? (2015-Sep-23|Sep-2015-23|2015-23-Sep|...)
-            var dateRegex11 = new Regex(DateTimeDefinitions.DateExtractor11, RegexFlags);
-
             DateRegexList = new List<Regex>
             {
                 // (domingo,)? 5 de Abril
@@ -187,8 +184,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
             DateRegexList = DateRegexList.Concat(enableDmy
-                ? new[] { dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegex10, dateRegex11 }
-                : new[] { dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegex10, dateRegex11 });
+                ? new[] { dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegex10 }
+                : new[] { dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegex10 });
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
