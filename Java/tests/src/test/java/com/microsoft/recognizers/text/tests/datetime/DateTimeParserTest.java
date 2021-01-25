@@ -61,6 +61,7 @@ import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriod
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeResolutionResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.TimeZoneResolutionResultMixIn;
@@ -194,14 +195,14 @@ public class DateTimeParserTest extends AbstractTest {
                 case Culture.French:
                     return getFrenchParser(name);
                 default:
-                    throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                    throw new NotSupportedException("Parser Type/Name not supported for culture: " + culture);
             }
-        } catch (IllegalArgumentException ex) {
+        } catch (NotSupportedException ex) {
             throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 
-    private static IDateTimeParser getEnglishParser(String name) {
+    private static IDateTimeParser getEnglishParser(String name) throws NotSupportedException {
 
         switch (name) {
             case "DateParser":
@@ -229,11 +230,11 @@ public class DateTimeParserTest extends AbstractTest {
             case "MergedParser":
                 return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
             default:
-                throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                throw new NotSupportedException("English parser Type/Name not supported for type: " + name);
         }
     }
 
-    private static IDateTimeParser getSpanishParser(String name) {
+    private static IDateTimeParser getSpanishParser(String name) throws NotSupportedException {
 
         switch (name) {
             case "DateParser":
@@ -259,10 +260,10 @@ public class DateTimeParserTest extends AbstractTest {
             case "TimePeriodParser":
                 return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
-                throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                throw new NotSupportedException("Spanish parser Type/Name not supported for type: " + name);
         }
     }
-    private static IDateTimeParser getFrenchParser(String name) {
+    private static IDateTimeParser getFrenchParser(String name) throws NotSupportedException {
 
         switch (name) {
             case "DateParser":
@@ -288,7 +289,7 @@ public class DateTimeParserTest extends AbstractTest {
             case "TimePeriodParser":
                 return new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
-                throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                throw new NotSupportedException("French parser Type/Name not supported for type: " + name);
         }
     }
 

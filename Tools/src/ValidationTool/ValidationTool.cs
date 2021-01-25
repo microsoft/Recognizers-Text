@@ -141,8 +141,12 @@ namespace Microsoft.Recognizers.Text.Validation
                 originalSpecs[i]["Results"] = jsonSpecs[i]["Results"];
             }
 
-            string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented);
-            File.WriteAllText(path, rawResults, Encoding.UTF8);
+            string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented) + "\n";
+
+            // Write file in UTF-8, but omit BOM.
+            var encoding = new UTF8Encoding(false);
+            File.WriteAllText(path, rawResults, encoding);
+
             Console.WriteLine($"Success save match results to path: {path}");
         }
 
