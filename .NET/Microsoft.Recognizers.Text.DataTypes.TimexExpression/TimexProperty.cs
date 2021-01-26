@@ -264,19 +264,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             switch (source["dateUnit"])
             {
                 case "Y":
-                    Years = decimal.Parse(source["amount"]);
+                    Years = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
 
                 case "M":
-                    Months = decimal.Parse(source["amount"]);
+                    Months = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
 
                 case "W":
-                    Weeks = decimal.Parse(source["amount"]);
+                    Weeks = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
 
                 case "D":
-                    Days = decimal.Parse(source["amount"]);
+                    Days = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
             }
         }
