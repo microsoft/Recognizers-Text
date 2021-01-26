@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
@@ -303,6 +304,38 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("daterange", resolution.Values[0].Type);
             Assert.AreEqual("2019-04-10", resolution.Values[0].Start);
             Assert.AreEqual("2019-05-01", resolution.Values[0].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_Demaical_Period_PT()
+        {
+            var sourceLanguage = CultureInfo.CurrentCulture;
+            var testLanguage = new CultureInfo("pt-PT", false);
+            CultureInfo.CurrentCulture = testLanguage;
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "(2019-04-05,XXXX-04-11,P5.54701493625231D)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+            Assert.AreEqual("(2019-04-05,2019-04-10,P5,54701493625231D)", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-05", resolution.Values[0].Start);
+            Assert.AreEqual("2019-04-10", resolution.Values[0].End);
+            CultureInfo.CurrentCulture = sourceLanguage;
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_Demaical_Period_EN()
+        {
+            var sourceLanguage = CultureInfo.CurrentCulture;
+            var testLanguage = new CultureInfo("en-En", false);
+            CultureInfo.CurrentCulture = testLanguage;
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "(2019-04-05,XXXX-04-11,P5.54701493625231D)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+            Assert.AreEqual("(2019-04-05,2019-04-10,P5.54701493625231D)", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-05", resolution.Values[0].Start);
+            Assert.AreEqual("2019-04-10", resolution.Values[0].End);
+            CultureInfo.CurrentCulture = sourceLanguage;
         }
 
         [TestMethod]
@@ -612,6 +645,5 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("2021-01-01", resolution.Values[1].End);
             Assert.IsNull(resolution.Values[1].Value);
         }
-
     }
 }
