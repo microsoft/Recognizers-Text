@@ -49,21 +49,21 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         # endregion
 
         # region German
-        self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
-            AgnosticNumberParserFactory.get_parser(
-                ParserType.NUMBER, GermanNumberParserConfiguration()),
-            GermanNumberExtractor(NumberMode.PURE_NUMBER)
-        ))
-        self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
-            AgnosticNumberParserFactory.get_parser(
-                ParserType.ORDINAL, GermanNumberParserConfiguration()),
-            GermanOrdinalExtractor()
-        ))
-        self.register_model('PercentModel', Culture.German, lambda options: PercentModel(
-            AgnosticNumberParserFactory.get_parser(
-                ParserType.PERCENTAGE, GermanNumberParserConfiguration()),
-            GermanPercentageExtractor()
-        ))
+        # self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
+        #    AgnosticNumberParserFactory.get_parser(
+        #        ParserType.NUMBER, GermanNumberParserConfiguration()),
+        #    GermanNumberExtractor(NumberMode.PURE_NUMBER)
+        # ))
+        # self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
+        #    AgnosticNumberParserFactory.get_parser(
+        #        ParserType.ORDINAL, GermanNumberParserConfiguration()),
+        #    GermanOrdinalExtractor()
+        # ))
+        # self.register_model('PercentModel', Culture.German, lambda options: PercentModel(
+        #    AgnosticNumberParserFactory.get_parser(
+        #        ParserType.PERCENTAGE, GermanNumberParserConfiguration()),
+        #    GermanPercentageExtractor()
+        # ))
         # endregion
 
         # region Chinese
