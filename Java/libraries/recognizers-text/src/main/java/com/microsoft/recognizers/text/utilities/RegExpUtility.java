@@ -13,7 +13,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.maven.artifact.versioning.ComparableVersion;
 import org.javatuples.Pair;
 
 public abstract class RegExpUtility {
@@ -24,9 +23,6 @@ public abstract class RegExpUtility {
     private static final Pattern matchNegativeLookbehind = Pattern.compile("\\(\\?<!", Pattern.CASE_INSENSITIVE);
     private static final String groupNameIndexSep = "iii";
     private static final String groupNameIndexSepRegex = Pattern.quote(groupNameIndexSep);
-
-    private static final boolean unboundedLookBehindNotSupported = isRestrictedJavaVersion();
-
     private static final Pattern lookBehindCheckRegex = Pattern.compile("(\\\\?<[!=])");
     private static final Map<Character, String> bindings = new HashMap<Character, String>() {
         {
@@ -178,14 +174,8 @@ public abstract class RegExpUtility {
     }
 
     public static Pattern getSafeLookbehindRegExp(String source, int flags) {
-
         String result = source;
-
-        // Java pre 1.9 doesn't support unbounded lookbehind lengths
-        if (unboundedLookBehindNotSupported) {
-            result = bindLookbehinds(result);
-        }
-
+        result = bindLookbehinds(result);
         return Pattern.compile(result, flags);
     }
 
@@ -387,33 +377,5 @@ public abstract class RegExpUtility {
         regexMatcher.appendTail(resultString);
 
         return resultString.toString();
-    }
-
-    // Checks if Java version is <= 8, as they don't support look-behind groups with no maximum length.
-    private static boolean isRestrictedJavaVersion() {
-
-        boolean result = false;
-        ComparableVersion targetVersion = new ComparableVersion("8");
-        try {
-            ComparableVersion specVersion = new ComparableVersion(System.getProperty("java.specification.version"));
-            result = specVersion.compareTo(targetVersion) <= 0;
-        } catch (Exception e1) {
-
-            try {
-                // Could also be "java.runtime.version".
-                ComparableVersion runtimeVersion = new ComparableVersion(System.getProperty("java.version"));
-                result = runtimeVersion.compareTo(targetVersion) <= 0;
-
-            } catch (Exception e2) {
-                // Nothing to do, ignore.
-            }
-
-        }
-
-        if (result) {
-            System.out.println("WARN: Look-behind groups with no maximum length not supported in Java version <= 8.");
-        }
-
-        return result;
     }
 }

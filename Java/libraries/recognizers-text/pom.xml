@@ -57,11 +57,6 @@
             <artifactId>javatuples</artifactId>
             <version>1.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-artifact</artifactId>
-            <version>3.6.3</version>
-        </dependency>
     </dependencies>
 
     <build>
