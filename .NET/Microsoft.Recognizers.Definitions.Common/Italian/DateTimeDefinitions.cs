@@ -133,6 +133,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string OclockRegex = @"(?<oclock>in punto)";
       public const string OclockPrefix = @"(?<oclock>ore)";
       public const string PmRegex = @"\b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|ora di pranzo))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera|mezzanotte)))\b";
+      public const string RangePmRegex = @"\b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera)))\b";
       public const string AmRegex = @"\b(?<am>((((la|alla|verso|per|della|di|in)\s+(la\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\s+(il\s+)?)?(mattino))))\b";
       public const string LunchRegex = @"\b(ora di pranzo)\b";
       public const string NightRegex = @"\b(mezzanotte|notte)\b";
@@ -229,6 +230,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string AgoPrefixRegex = @"\b(di)\b";
       public const string LaterRegex = @"\b(dopo|da\s+adesso|da\s+questo\s+momento)\b";
       public const string AgoRegex = @"\b(fa|prima|addietro)\b";
+      public const string BeforeAfterRegex = @"^[.]";
       public const string InConnectorRegex = @"\b(in|tra|fra|a)\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}\s*(ann[oi]\s*)?({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string WithinNextPrefixRegex = $@"\b(entro(\s+(?<next>{NextPrefixRegex}))?)\b";
@@ -274,6 +276,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string YearPeriodRegex = $@"(((dal|durante|nel|[tf]ra)\s+(il\s+)?)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
       public const string FutureSuffixRegex = @"\b(((in|nel)\s+)?(futuro|seguito))|(da\s+questo\s+momento)\b";
       public static readonly string ComplexDatePeriodRegex = $@"(((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
+      public const string AmbiguousPointRangeRegex = @"^(mar)$";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
             { @"decenni", @"10Y" },

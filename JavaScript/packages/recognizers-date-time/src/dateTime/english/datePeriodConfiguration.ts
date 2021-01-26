@@ -101,6 +101,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly dateParser: BaseDateParser
     readonly durationExtractor: IDateTimeExtractor
     readonly durationParser: BaseDurationParser
+    readonly numberParser: BaseNumberParser
     readonly monthFrontBetweenRegex: RegExp
     readonly betweenRegex: RegExp
     readonly monthFrontSimpleCasesRegex: RegExp
@@ -109,6 +110,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly monthWithYear: RegExp
     readonly monthNumWithYear: RegExp
     readonly yearRegex: RegExp
+    readonly relativeRegex: RegExp
     readonly pastRegex: RegExp
     readonly futureRegex: RegExp
     readonly inConnectorRegex: RegExp
@@ -141,6 +143,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.dateParser = config.dateParser;
         this.durationExtractor = config.durationExtractor;
         this.durationParser = config.durationParser;
+        this.numberParser = config.numberParser;
         this.monthFrontBetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex);
         this.monthFrontSimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex);
@@ -150,6 +153,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.monthNumWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear);
         this.yearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
         this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
+        this.relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.inConnectorRegex = config.utilityConfiguration.inConnectorRegex;
         this.weekOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex);

@@ -29,6 +29,17 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDatePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDateTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchSetExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.french.extractors.FrenchTimeZoneExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTimeExtractorConfiguration;
@@ -40,6 +51,7 @@ import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishSetExtr
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.util.Collection;
@@ -112,15 +124,17 @@ public class DateTimeExtractorTest extends AbstractTest {
                     return getEnglishExtractor(modelName);
                 case Culture.Spanish:
                     return getSpanishExtractor(modelName);
+                case Culture.French:
+                    return getFrenchExtractor(modelName);
                 default:
-                    throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                    throw new NotSupportedException("Extractor Type/Name not supported in: " + culture);
             }
-        } catch (IllegalArgumentException ex) {
+        } catch (NotSupportedException ex) {
             throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 
-    private static IDateTimeExtractor getEnglishExtractor(String name) {
+    private static IDateTimeExtractor getEnglishExtractor(String name) throws NotSupportedException {
 
         IOptionsConfiguration config = new BaseOptionsConfiguration();
         switch (name) {
@@ -152,11 +166,11 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
 
             default:
-                throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                throw new NotSupportedException("English extractor Type/Name not supported for type: " + name);
         }
     }
 
-    private static IDateTimeExtractor getSpanishExtractor(String name) {
+    private static IDateTimeExtractor getSpanishExtractor(String name) throws NotSupportedException {
 
         IOptionsConfiguration config = new BaseOptionsConfiguration();
         switch (name) {
@@ -188,7 +202,43 @@ public class DateTimeExtractorTest extends AbstractTest {
             //    return new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
 
             default:
-                throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                throw new NotSupportedException("Spanish extractor Type/Name not supported for type: " + name);
+        }
+    }
+
+    private static IDateTimeExtractor getFrenchExtractor(String name) throws NotSupportedException {
+
+        IOptionsConfiguration config = new BaseOptionsConfiguration();
+        switch (name) {
+            case "DateExtractor":
+                return new BaseDateExtractor(new FrenchDateExtractorConfiguration(config));
+            case "DatePeriodExtractor":
+                return new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(config));
+//            case "DateTimeAltExtractor":
+//                return new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(config));
+            case "DateTimeExtractor":
+                return new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
+            case "DateTimePeriodExtractor":
+                return new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
+            case "DurationExtractor":
+                return new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+            case "HolidayExtractor":
+                return new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
+            case "MergedExtractor":
+                return new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.None));
+            case "MergedExtractorSkipFromTo":
+                return new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+            case "SetExtractor":
+                return new BaseSetExtractor(new FrenchSetExtractorConfiguration());
+            case "TimeExtractor":
+                return new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
+            case "TimePeriodExtractor":
+                return new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
+            case "TimeZoneExtractor":
+                return new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
+
+            default:
+                throw new NotSupportedException("French extractor Type/Name not supported for type: " + name);
         }
     }
 }

@@ -61,13 +61,13 @@ namespace Microsoft.Recognizers.Text.Number
                     ret.Value = -(double)ret.Value;
                 }
 
-                ret.ResolutionStr = ret.Value.ToString();
+                ret.ResolutionStr = ((double)ret.Value).ToString("G15", CultureInfo.InvariantCulture);
             }
             else if (extra.Contains("Pow"))
             {
                 getExtResult.Text = NormalizeCharWidth(getExtResult.Text);
                 ret = PowerNumberParse(getExtResult);
-                ret.ResolutionStr = ret.Value.ToString();
+                ret.ResolutionStr = ((double)ret.Value).ToString("G15", CultureInfo.InvariantCulture);
             }
             else if (extra.Contains("Frac"))
             {
@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
-            // TODO: Refacoring this check to determine the subtype for JA and KO
+            // TODO: @Refactor this check to determine the subtype for JA and KO
             if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
             {
                 ret.Type = DetermineType(extResult);
@@ -157,7 +157,9 @@ namespace Microsoft.Recognizers.Text.Number
 
             var numValue = Config.DigitNumRegex.IsMatch(numPart)
                 ? GetDigitValue(numPart, 1.0)
-                : GetIntValue(numPart);
+                : (Config.PointRegex.IsMatch(numPart)
+                ? GetIntValue(Config.PointRegex.Split(numPart)[0]) + GetPointValue(Config.PointRegex.Split(numPart)[1])
+                : GetIntValue(numPart));
 
             var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
                 ? GetDigitValue(demoPart, 1.0)
@@ -172,7 +174,7 @@ namespace Microsoft.Recognizers.Text.Number
                 result.Value = intValue + (numValue / demoValue);
             }
 
-            result.ResolutionStr = result.Value.ToString();
+            result.ResolutionStr = ((double)result.Value).ToString("G15", CultureInfo.InvariantCulture);
 
             return result;
         }
@@ -198,11 +200,11 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (resultText == "半額" || resultText == "半値" || resultText == "半折")
                 {
-                    result.Value = 50;
+                    result.Value = 50d;
                 }
                 else if (resultText == "10成" || resultText == "10割" || resultText == "十割")
                 {
-                    result.Value = 100;
+                    result.Value = 100d;
                 }
                 else
                 {
@@ -307,7 +309,7 @@ namespace Microsoft.Recognizers.Text.Number
                 doubleText = ReplaceUnit(doubleText);
 
                 var splitResult = Config.PointRegex.Split(doubleText);
-                if (splitResult[0] == string.Empty)
+                if (string.IsNullOrEmpty(splitResult[0]))
                 {
                     splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
@@ -328,7 +330,30 @@ namespace Microsoft.Recognizers.Text.Number
                 result.Value = doubleValue;
             }
 
-            result.ResolutionStr = result.Value + @"%";
+            if (Config.PercentageNumRegex != null)
+            {
+                var percentageNumSearch = Config.PercentageNumRegex.Match(resultText);
+                if (percentageNumSearch.Length != 0)
+                {
+                    string demoPart = percentageNumSearch.Value;
+                    var splitResult = Config.FracSplitRegex.Split(demoPart);
+                    demoPart = splitResult[0];
+                    var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
+                        ? GetDigitValue(demoPart, 1.0)
+                        : GetIntValue(demoPart);
+
+                    if (demoValue < 100 && demoValue > 0)
+                    {
+                        result.Value = (double)result.Value * (100 / demoValue);
+                    }
+                    else if (demoValue > 100)
+                    {
+                        result.Value = (double)result.Value / (demoValue / 100);
+                    }
+                }
+            }
+
+            result.ResolutionStr = ((double)result.Value).ToString("G15", CultureInfo.InvariantCulture) + @"%";
             return result;
         }
 
@@ -350,7 +375,8 @@ namespace Microsoft.Recognizers.Text.Number
             result.Value = (Config.DigitNumRegex.IsMatch(resultText) && !Config.RoundNumberIntegerRegex.IsMatch(resultText))
                 ? GetDigitValue(resultText, 1)
                 : GetIntValue(resultText);
-            result.ResolutionStr = result.Value.ToString();
+
+            result.ResolutionStr = ((double)result.Value).ToString("G15", CultureInfo.InvariantCulture);
 
             return result;
         }
@@ -380,7 +406,7 @@ namespace Microsoft.Recognizers.Text.Number
                 resultText = ReplaceUnit(resultText);
                 var splitResult = Config.PointRegex.Split(resultText);
 
-                if (splitResult[0] == string.Empty)
+                if (string.IsNullOrEmpty(splitResult[0]))
                 {
                     splitResult[0] = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
                 }
@@ -395,7 +421,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
-            result.ResolutionStr = result.Value.ToString();
+            result.ResolutionStr = ((double)result.Value).ToString("G15", CultureInfo.InvariantCulture);
             return result;
         }
 
@@ -487,6 +513,7 @@ namespace Microsoft.Recognizers.Text.Number
             var isRoundBefore = false;
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
+            var hasPreviousDigits = false;
 
             var isDozen = false;
             var isPair = false;
@@ -570,22 +597,45 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else
                         {
-                            beforeValue = Config.ZeroToNineMap[intStr[i]];
+                            double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                            if (hasPreviousDigits)
+                            {
+                                beforeValue = (beforeValue * 10) + currentDigit;
+                            }
+                            else
+                            {
+                                beforeValue = currentDigit;
+                            }
+
                             isRoundBefore = false;
                         }
                     }
                     else
                     {
-                        if (i == intStr.Length - 1 && (Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR"))
+                        // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一 can be dropped
+                        // from the beginning. Japanese doesn't have such behaviour.
+                        if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") || char.IsDigit(intStr[i]))
                         {
                             roundDefault = 1;
                         }
 
-                        partValue += Config.ZeroToNineMap[intStr[i]] * roundDefault;
+                        double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                        if (hasPreviousDigits)
+                        {
+                            beforeValue = (beforeValue * 10) + currentDigit;
+                        }
+                        else
+                        {
+                            beforeValue = currentDigit;
+                        }
+
+                        partValue += beforeValue * roundDefault;
                         intValue += partValue;
                         partValue = 0;
                     }
                 }
+
+                hasPreviousDigits = char.IsDigit(intStr[i]);
             }
 
             if (isNegative)

@@ -389,24 +389,24 @@
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de 2016",
+    "Input": "Estare afuera el tercer trimestre de 2016",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de 2016",
+        "Text": "el tercer trimestre de 2016",
         "Type": "daterange",
         "Start": 14,
-        "Length": 30
+        "Length": 27
       }
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de este año",
+    "Input": "Estare afuera el tercer trimestre de este año",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de este año",
+        "Text": "el tercer trimestre de este año",
         "Type": "daterange",
         "Start": 14,
-        "Length": 34
+        "Length": 31
       }
     ]
   },
@@ -3825,14 +3825,8 @@
     "Input": "Ocurrirá 2 días después",
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
-    "Results": [
-      {
-        "Text": "2 días después",
-        "Type": "daterange",
-        "Start": 9,
-        "Length": 14
-      }
-    ]
+    "Comment": "'2 días después' seems to mean '2 days later' more than '2 days hence'.",
+    "Results": []
   },
   {
     "Input": "Cortana puede buscarnos un tiempo para inicios de la próxima semana",
@@ -4663,5 +4657,18 @@
     "Input": "Llámame al (206)555-1212",
     "NotSupportedByDesign": "javascript",
     "Results": []
+  },
+  {
+    "Input": "Ocurrirá 2 días a partir de ahora",
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "2 días a partir de ahora",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 24
+      }
+    ]
   }
 ]

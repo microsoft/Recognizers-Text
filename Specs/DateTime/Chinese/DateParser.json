@@ -886,12 +886,12 @@
         "Text": "3-7-07",
         "Type": "date",
         "Value": {
-          "Timex": "2007-03-07",
+          "Timex": "2007-07-03",
           "FutureResolution": {
-            "date": "2007-03-07"
+            "date": "2007-07-03"
           },
           "PastResolution": {
-            "date": "2007-03-07"
+            "date": "2007-07-03"
           }
         },
         "Start": 1,
@@ -909,12 +909,12 @@
         "Text": "3-7-27",
         "Type": "date",
         "Value": {
-          "Timex": "2027-03-07",
+          "Timex": "2027-07-03",
           "FutureResolution": {
-            "date": "2027-03-07"
+            "date": "2027-07-03"
           },
           "PastResolution": {
-            "date": "2027-03-07"
+            "date": "2027-07-03"
           }
         },
         "Start": 1,
@@ -1057,6 +1057,374 @@
         },
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "神龙二年正月初一",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "神龙二年正月初一",
+        "Type": "date",
+        "Value": {
+          "Timex": "0706-01-01",
+          "FutureResolution": {
+            "date": "0706-01-01"
+          },
+          "PastResolution": {
+            "date": "0706-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "雍正四年大年三十",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "雍正四年大年三十",
+        "Type": "date",
+        "Value": {
+          "Timex": "1726-01-30",
+          "FutureResolution": {
+            "date": "1726-01-30"
+          },
+          "PastResolution": {
+            "date": "1726-01-30"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "五月三十日",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "五月三十日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-30",
+          "FutureResolution": {
+            "date": "2021-05-30"
+          },
+          "PastResolution": {
+            "date": "2020-05-30"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "五月三十一日",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "五月三十一日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-31",
+          "FutureResolution": {
+            "date": "2021-05-31"
+          },
+          "PastResolution": {
+            "date": "2020-05-31"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "一月二十三",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "一月二十三",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-23",
+          "FutureResolution": {
+            "date": "2021-01-23"
+          },
+          "PastResolution": {
+            "date": "2020-01-23"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "12/1",
+    "Context": {
+      "ReferenceDateTime": "2020-12-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "12/1",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-01",
+          "FutureResolution": {
+            "date": "2021-12-01"
+          },
+          "PastResolution": {
+            "date": "2020-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "2020/1/2",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2020/1/2",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-01-02",
+          "FutureResolution": {
+            "date": "2020-01-02"
+          },
+          "PastResolution": {
+            "date": "2020-01-02"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "1/2/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-11-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "1/2/2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-02-01",
+          "FutureResolution": {
+            "date": "2020-02-01"
+          },
+          "PastResolution": {
+            "date": "2020-02-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "你27-7-3有时间吗",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "27-7-3",
+        "Type": "date",
+        "Value": {
+          "Timex": "2027-07-03",
+          "FutureResolution": {
+            "date": "2027-07-03"
+          },
+          "PastResolution": {
+            "date": "2027-07-03"
+          }
+        },
+        "Start": 1,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "你12-11-10有时间吗",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "12-11-10",
+        "Type": "date",
+        "Value": {
+          "Timex": "2012-11-10",
+          "FutureResolution": {
+            "date": "2012-11-10"
+          },
+          "PastResolution": {
+            "date": "2012-11-10"
+          }
+        },
+        "Start": 1,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2月29日",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2月29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2月29日",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2月29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2月29日",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2月29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2024-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2月30日",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2月30日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-30",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "2019年2月29日",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019年2月29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-02-29",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2020年2月29日",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2020年2月29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   }

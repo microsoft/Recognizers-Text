@@ -781,5 +781,104 @@
   {
     "Input": "\\t0\\t0",
     "Results": []
+  },
+  {
+    "Input": "Es gibt anderthalb Stücke",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "anderthalb",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Es gibt einundhalb Stücke",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "einundhalb",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        },
+        "Start": 8,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Es gibt dreiviertel Stücke",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dreiviertel",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Es gibt zweieinhalb Stücke",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "zweieinhalb",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "Es gibt dreieinhalb Stücke",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dreieinhalb",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3,5"
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "das Ergebnis ist ⅙ und manchmal ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,166666666666667"
+        },
+        "Start": 17,
+        "End": 17
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        },
+        "Start": 32,
+        "End": 32
+      }
+    ]
   }
 ]

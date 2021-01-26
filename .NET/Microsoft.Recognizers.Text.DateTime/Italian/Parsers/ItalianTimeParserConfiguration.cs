@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Italian;
@@ -43,16 +44,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
+            // @TODO move hardcoded values to resources file
+
             // "it's half past 8"
-            if (trimmedPrefix.EndsWith("mezza") || trimmedPrefix.EndsWith("mezzo"))
+            if (trimmedPrefix.EndsWith("mezza", StringComparison.Ordinal) ||
+                trimmedPrefix.EndsWith("mezzo", StringComparison.Ordinal))
             {
                 deltaMin = 30;
             }
-            else if (trimmedPrefix.EndsWith("un quarto") || trimmedPrefix.EndsWith("quarto"))
+            else if (trimmedPrefix.EndsWith("un quarto", StringComparison.Ordinal) ||
+                     trimmedPrefix.EndsWith("quarto", StringComparison.Ordinal))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.EndsWith("tre quarti"))
+            else if (trimmedPrefix.EndsWith("tre quarti", StringComparison.Ordinal))
             {
                 deltaMin = 45;
             }
@@ -72,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             }
 
             // 'to' i.e 'one to five'
-            if (trimmedPrefix.StartsWith("meno"))
+            if (trimmedPrefix.StartsWith("meno", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }

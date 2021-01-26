@@ -16,9 +16,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
-
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
@@ -47,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
-        public static readonly Regex[] TermFilterRegexes = { };
+        public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
@@ -74,12 +71,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 numOptions = NumberOptions.NoProtoCache;
             }
 
+            if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                SinceRegex = SinceRegexExp;
+            }
+
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
+
+        // Used in Standard mode
+        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+
+        // used in Experimental mode
+        public static Regex SinceRegexExp { get; } = new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 

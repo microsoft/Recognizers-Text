@@ -273,13 +273,6 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 continue;
             }
 
-            match = RegexExtension.matchBegin(config.getFutureRegex(), afterStr, true);
-            if (match.getSuccess()) {
-                int matchLength = match.getMatch().get().index + match.getMatch().get().length;
-                results.add(new Token(duration.getStart(), duration.getEnd() + matchLength));
-                continue;
-            }
-
             match = RegexExtension.matchBegin(config.getFutureSuffixRegex(), afterStr, true);
             if (match.getSuccess()) {
                 int matchLength = match.getMatch().get().index + match.getMatch().get().length;

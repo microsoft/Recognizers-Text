@@ -128,10 +128,16 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Sonntag in 2 Wochen",
+        "Text": "Sonntag",
         "Type": "date",
         "Start": 11,
-        "Length": 19
+        "Length": 7
+      },
+      {
+        "Text": "in 2 Wochen",
+        "Type": "date",
+        "Start": 19,
+        "Length": 11
       }
     ]
   },
@@ -144,18 +150,6 @@
         "Type": "date",
         "Start": 10,
         "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "Ich komme nächstes Jahr wieder.",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "nächstes Jahr",
-        "Type": "date",
-        "Start": 10,
-        "Length": 13
       }
     ]
   },
@@ -192,6 +186,18 @@
         "Type": "date",
         "Start": 11,
         "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme übernächste Woche Freitag zurück.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächste Woche Freitag",
+        "Type": "date",
+        "Start": 10,
+        "Length": 25
       }
     ]
   },

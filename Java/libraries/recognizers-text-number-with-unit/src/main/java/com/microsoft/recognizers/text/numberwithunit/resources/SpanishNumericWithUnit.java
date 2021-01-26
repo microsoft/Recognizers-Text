@@ -285,7 +285,7 @@ public class SpanishNumericWithUnit {
         .put("Sene", "sene")
         .put("Libra de Santa Helena", "libra de santa helena|libras de santa helena|shp")
         .put("Penique de Santa Helena", "penique de santa helena|peniques de santa helena")
-        .put("Dobra", "dobra|db|std")
+        .put("Dobra", "dobra")
         .put("Dinar serbio", "dinar serbio|dinares serbios|rsd")
         .put("Para serbio", "para serbio|para serbios")
         .put("Rupia de Seychelles", "rupia de seychelles|rupias de seychelles|scr")
@@ -358,6 +358,7 @@ public class SpanishNumericWithUnit {
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+        .put("Dobra", "db|std")
         .put("Dólar", "$")
         .put("Dólar estadounidense", "us$|u$d|usd")
         .put("Dólar del Caribe Oriental", "ec$|xcd")
@@ -391,7 +392,7 @@ public class SpanishNumericWithUnit {
         .put("Lira turca", "₺")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le", "db", "std");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("bit", "bit|bits")

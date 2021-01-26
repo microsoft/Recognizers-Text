@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -29,6 +30,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        public static readonly Regex AmbiguousPointRangeRegex =
+            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -210,6 +214,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => AmbiguousPointRangeRegex;
+
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -236,22 +242,23 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var swift = 0;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            // TODO: Replace with a regex
-            // TODO: Add 'upcoming' key word
+            // @TODO move hardcoded values to resources file
+            // @TODO Add 'upcoming' key word
 
             // example: "nous serons ensemble cette fois la semaine prochaine" - "We'll be together this time next week"
-            if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
+            if (trimmedText.EndsWith("prochain", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochaine", StringComparison.Ordinal))
             {
                 swift = 1;
             }
 
-            // TODO: Replace with a regex
-
             // example: Je l'ai vue pas plus tard que la semaine derniere - "I saw her only last week"
-            if (trimmedText.EndsWith("dernière") || trimmedText.EndsWith("dernières") ||
-                trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernieres"))
+            if (trimmedText.EndsWith("dernière", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("dernières", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("derniere", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("dernieres", StringComparison.Ordinal))
             {
                 swift = -1;
             }
@@ -263,19 +270,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var swift = -10;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("prochain", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochaine", StringComparison.Ordinal))
             {
                 swift = 1;
             }
 
-            if (trimmedText.EndsWith("dernières") || trimmedText.EndsWith("dernière") ||
-                trimmedText.EndsWith("dernieres") || trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
+            if (trimmedText.EndsWith("dernières", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("dernière", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("dernieres", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("derniere", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("dernier", StringComparison.Ordinal))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("cette"))
+            else if (trimmedText.StartsWith("cette", StringComparison.Ordinal))
             {
                 swift = 0;
             }
@@ -285,53 +298,58 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsFuture(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o)) ||
-                   DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o));
+            var trimmedText = text.Trim();
+
+            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)) ||
+                   DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsLastCardinal(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthOnly(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthToDate(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekend(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekOnly(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
-                (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && (NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)))) &&
-                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            var trimmedText = text.Trim();
+
+            return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
+                   (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) &&
+                   (NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)))) &&
+                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearOnly(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
+            var trimmedText = text.Trim();
+
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearToDate(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
+            var trimmedText = text.Trim();
+
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
     }
 }

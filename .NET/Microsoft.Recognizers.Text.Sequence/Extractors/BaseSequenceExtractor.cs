@@ -75,12 +75,17 @@ namespace Microsoft.Recognizers.Text.Sequence
                 }
             }
 
-            return result;
+            return PostFilter(result);
         }
 
         public virtual bool IsValidMatch(Match match)
         {
             return true;
+        }
+
+        protected virtual List<ExtractResult> PostFilter(List<ExtractResult> results)
+        {
+            return results;
         }
     }
 }

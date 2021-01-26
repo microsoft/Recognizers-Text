@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumberWithUnit(TestModel testSpec)
         {
             TestPreValidation(testSpec);
-            ValidateResults(testSpec, new[] { ResolutionKey.Unit });
+            ValidateResults(testSpec, new[] { ResolutionKey.Unit, ResolutionKey.SubType });
         }
 
         public void TestCurrency(TestModel testSpec)
@@ -77,45 +77,54 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(testSpec));
 
-            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            try
             {
-                var expected = tuple.Item1;
-                var actual = tuple.Item2;
 
-                Assert.AreEqual(expected.Text, actual.Text, GetMessage(testSpec));
-                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(testSpec));
-                Assert.AreEqual(expected.Start, actual.Start, GetMessage(testSpec));
-                Assert.AreEqual(expected.End, actual.End, GetMessage(testSpec));
-
-                var values = actual.Resolution as IDictionary<string, object>;
-
-                // Actual ValueSet types should not be modified as that's considered a breaking API change
-                var actualValues = ((List<Dictionary<string, string>>)values[ResolutionKey.ValueSet]).ToList();
-                var expectedValues =
-                    JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected
-                        .Resolution[ResolutionKey.ValueSet].ToString());
-
-                Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(testSpec));
-
-                foreach (var resolutionValues in expectedValues.Zip(actualValues, Tuple.Create))
+                foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
                 {
-                    Assert.AreEqual(resolutionValues.Item1.Count, resolutionValues.Item2.Count, GetMessage(testSpec));
+                    var expected = tuple.Item1;
+                    var actual = tuple.Item2;
 
-                    var expectedResolution = resolutionValues.Item1.OrderBy(o => o.Key).ToImmutableDictionary();
-                    var actualResolution = resolutionValues.Item2.OrderBy(o => o.Key).ToImmutableDictionary();
+                    Assert.AreEqual(expected.Text, actual.Text, GetMessage(testSpec));
+                    Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(testSpec));
+                    Assert.AreEqual(expected.Start, actual.Start, GetMessage(testSpec));
+                    Assert.AreEqual(expected.End, actual.End, GetMessage(testSpec));
 
-                    for (int i = 0; i < expectedResolution.Count; i++)
+                    var values = actual.Resolution as IDictionary<string, object>;
+
+                    // Actual ValueSet types should not be modified as that's considered a breaking API change
+                    var actualValues = ((List<Dictionary<string, string>>)values[ResolutionKey.ValueSet]).ToList();
+                    var expectedValues =
+                        JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
+
+                    Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(testSpec));
+
+                    foreach (var resolutionValues in expectedValues.Zip(actualValues, Tuple.Create))
                     {
-                        var expectedKey = expectedResolution.ElementAt(i).Key;
-                        Assert.AreEqual(expectedKey, actualResolution.ElementAt(i).Key, GetMessage(testSpec));
+                        Assert.AreEqual(resolutionValues.Item1.Count, resolutionValues.Item2.Count,
+                                        GetMessage(testSpec));
 
-                        var expectedValue = expectedResolution[expectedKey];
-                        var actualValue = actualResolution[expectedKey];
+                        var expectedResolution = resolutionValues.Item1.OrderBy(o => o.Key).ToImmutableDictionary();
+                        var actualResolution = resolutionValues.Item2.OrderBy(o => o.Key).ToImmutableDictionary();
 
-                        Assert.AreEqual(expectedValue, actualValue, GetMessage(testSpec));
+                        for (int i = 0; i < expectedResolution.Count; i++)
+                        {
+                            var expectedKey = expectedResolution.ElementAt(i).Key;
+                            Assert.AreEqual(expectedKey, actualResolution.ElementAt(i).Key, GetMessage(testSpec));
+
+                            var expectedValue = expectedResolution[expectedKey];
+                            var actualValue = actualResolution[expectedKey];
+
+                            Assert.AreEqual(expectedValue, actualValue, GetMessage(testSpec));
+                        }
+
                     }
-
                 }
+
+            }
+            catch (NullReferenceException nre)
+            {
+                throw new ApplicationException(GetMessage(testSpec), nre);
             }
         }
 
@@ -265,10 +274,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     // Actual ValueSet types should not be modified as that's considered a breaking API change
                     var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
 
-                    var expectedObj =
-                        JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(
-                            expected.Value.ToString());
+                    var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
                     var expectedValues = expectedObj[ResolutionKey.ValueSet];
+
+                    Assert.AreEqual(expectedValues.Count, actualValues?.Count, GetMessage(testSpec));
 
                     foreach (var (item1, item2) in expectedValues.Zip(actualValues, Tuple.Create))
                     {

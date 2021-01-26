@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
@@ -57,6 +58,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(
                                                                                   new BaseNumberOptionsConfiguration(Culture.Chinese, NumberOptions.None)));
 
+        public static readonly ImmutableDictionary<string, int> DynastyYearMap = DateTimeDefinitions.DynastyYearMap.ToImmutableDictionary();
+
+        public static readonly Regex DynastyYearRegex = new Regex(DateTimeDefinitions.DynastyYearRegex, RegexFlags);
+
+        public static readonly string DynastyStartYear = DateTimeDefinitions.DynastyStartYear;
+
         public static readonly Regex[] DateRegexList =
         {
             // (农历)?(2016年)?一月三日(星期三)?
@@ -68,6 +75,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // (2015年)?(农历)?十月二十(星期三)?
             new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags),
 
+            // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
+
+            // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 23/7
@@ -86,22 +97,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
-                // 23-3-2015
+                // 23-3-2017
                 new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags) :
 
-                // 3-23-2017
-                new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags),
+                (DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_YMD ?
+
+                    // 23-3-2017
+                    new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags) :
+
+                    // 3-23-2015
+                    new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags)),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
-                // 3-23-2017
+                // 3-23-2015
                 new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags) :
 
-                // 23-3-2015
-                new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags),
+                (DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_YMD ?
 
-            // 2015-12-23
-            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
+                    // 3-23-2015
+                    new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags) :
+
+                    // 23-3-2017
+                    new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags)),
         };
 
         public static readonly Regex[] ImplicitDateList =
@@ -176,7 +194,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static List<Token> DurationWithAgoAndLater(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
+
             var durationEr = DurationExtractor.Extract(text, referenceTime);
+
             foreach (var er in durationEr)
             {
                 // Only handles date durations here
@@ -187,13 +207,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
 
                 var pos = (int)er.Start + (int)er.Length;
+
                 if (pos < text.Length)
                 {
                     var suffix = text.Substring(pos);
                     var beforeMatch = BeforeRegex.Match(suffix);
                     var afterMatch = AfterRegex.Match(suffix);
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) || (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
+                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
                     {
                         var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));

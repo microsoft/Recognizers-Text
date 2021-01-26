@@ -1,11 +1,36 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DoubleMultiplierRegex =
+            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
+
+        private static readonly Regex DayTypeRegex =
+            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekTypeRegex =
+            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+
+        private static readonly Regex BiWeekTypeRegex =
+            new Regex(DateTimeDefinitions.BiWeekTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekendTypeRegex =
+            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+
+        private static readonly Regex MonthTypeRegex =
+            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+
+        private static readonly Regex YearTypeRegex =
+            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+
         public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -80,63 +105,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diariamente"))
+            float durationLength = 1; // Default value
+            float multiplier = 1;
+            string durationType;
+
+            if (DoubleMultiplierRegex.IsMatch(trimmedText))
             {
-                timex = "P1D";
+                multiplier = 2;
             }
-            else if (trimmedText.Equals("semanalmente"))
+
+            if (DayTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1W";
+                durationType = "D";
             }
-            else if (trimmedText.Equals("quincenalmente"))
+            else if (WeekTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P2W";
+                durationType = "W";
             }
-            else if (trimmedText.Equals("mensualmente"))
+            else if (BiWeekTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1M";
+                durationType = "W";
+                multiplier = 2;
             }
-            else if (trimmedText.Equals("anualmente"))
+            else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1Y";
+                durationType = "WE";
+            }
+            else if (MonthTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = "M";
+            }
+            else if (YearTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = "Y";
             }
             else
             {
                 timex = null;
                 return false;
             }
+
+            timex = TimexUtility.GenerateSetTimex(durationType, durationLength, multiplier);
 
             return true;
         }
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim();
-
-            if (trimmedText.Equals("día") || trimmedText.Equals("dia") ||
-                trimmedText.Equals("días") || trimmedText.Equals("dias"))
-            {
-                timex = "P1D";
-            }
-            else if (trimmedText.Equals("semana") || trimmedText.Equals("semanas"))
-            {
-                timex = "P1W";
-            }
-            else if (trimmedText.Equals("mes") || trimmedText.Equals("meses"))
-            {
-                timex = "P1M";
-            }
-            else if (trimmedText.Equals("año") || trimmedText.Equals("años"))
-            {
-                timex = "P1Y";
-            }
-            else
-            {
-                timex = null;
-                return false;
-            }
-
-            return true;
+            return GetMatchedDailyTimex(text, out timex);
         }
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);

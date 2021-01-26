@@ -223,10 +223,11 @@ public class FrenchDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractor3 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*){MonthRegex}((\\s+|\\s*,\\s*){DateYearRegex})?\\b"
+    public static final String DateExtractor3 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?(?<!\\d\\s)(?<!\\d){DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)({MonthRegex}((\\s+|\\s*,\\s*){DateYearRegex}(?!\\s*\\d))?|{MonthNumRegex}(\\s+|\\s*,\\s*){DateYearRegex}(?!\\s*\\d))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex)
+            .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
     public static final String DateExtractor4 = "\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
@@ -588,11 +589,15 @@ public class FrenchDateTime {
 
     public static final String AgoRegex = "^[.]";
 
+    public static final String BeforeAfterRegex = "^[.]";
+
     public static final String InConnectorRegex = "\\b(dans|en|sur)\\b";
 
     public static final String SinceYearSuffixRegex = "^[.]";
 
     public static final String WithinNextPrefixRegex = "^[.]";
+
+    public static final String TodayNowRegex = "\\b(aujourd'hui|maintenant)\\b";
 
     public static final String MorningStartEndRegex = "(^(matin))|((matin)$)";
 
@@ -632,7 +637,8 @@ public class FrenchDateTime {
 
     public static final String PreviousPrefixRegex = ".^";
 
-    public static final String RelativeDayRegex = "\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b";
+    public static final String RelativeDayRegex = "\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b"
+            .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String ConnectorRegex = "^(,|pour|t|vers)$";
 
@@ -711,6 +717,8 @@ public class FrenchDateTime {
     public static final String FutureSuffixRegex = "^[.]";
 
     public static final String ComplexDatePeriodRegex = "^[.]";
+
+    public static final String AmbiguousPointRangeRegex = "^(mar\\.?)$";
 
     public static final ImmutableMap<String, String> UnitMap = ImmutableMap.<String, String>builder()
         .put("annees", "Y")
@@ -1180,6 +1188,10 @@ public class FrenchDateTime {
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b")
         .put("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityTimeFiltersDict = ImmutableMap.<String, String>builder()
+        .put("heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("matinee", "matin", "matinée");

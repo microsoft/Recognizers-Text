@@ -10,6 +10,6 @@
 // ------------------------------------------------------------------------------
 
 export namespace PortuguesePhoneNumbers {
-    export const NumberReplaceToken = '@builtin.phonenumber';
+    export const NumberReplaceToken = `@builtin.phonenumber`;
     export const FalsePositivePrefixRegex = `conta(\\s+(número|bancária(\\s+número)?))?(\\s+é)?:?\\s*$`;
 }

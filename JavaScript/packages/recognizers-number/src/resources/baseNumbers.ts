@@ -10,11 +10,12 @@
 // ------------------------------------------------------------------------------
 
 export namespace BaseNumbers {
-    export const NumberReplaceToken = '@builtin.num';
-    export const FractionNumberReplaceToken = '@builtin.num.fraction';
+    export const NumberReplaceToken = `@builtin.num`;
+    export const FractionNumberReplaceToken = `@builtin.num.fraction`;
     export const IntegerRegexDefinition = (placeholder: string, thousandsmark: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{1,3}(${thousandsmark}\\d{3})+(?=${placeholder})`; }
+    export const FractionNotationRegex = `((((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))|[\\u00BC-\\u00BE\\u2150-\\u215E])`;
     export const DoubleRegexDefinition = (placeholder: string, thousandsmark: string, decimalmark: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{1,3}(${thousandsmark}\\d{3})+${decimalmark}\\d+(?=${placeholder})`; }
-    export const PlaceHolderDefault = '\\D|\\b';
+    export const PlaceHolderDefault = `\\D|\\b`;
     export const CaseSensitiveTerms = `(?<=(\\s|\\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\\b`;
     export const NumberMultiplierRegex = `(K|k|MM?|mil|G|T|B|b)`;
     export const MultiplierLookupRegex = `(k|m(il|m)?|t|g|b)`;

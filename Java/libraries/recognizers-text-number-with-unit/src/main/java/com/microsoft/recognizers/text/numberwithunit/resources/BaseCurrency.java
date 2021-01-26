@@ -24,7 +24,7 @@ public class BaseCurrency {
         .put("__D", "CENT")
         .put("RUB", "KOPEK")
         .put("AFN", "PUL")
-        .put("EUR", "CENT")
+        .put("EUR", "CENT|KWARTJE|DUBBELTJE|STUIVER")
         .put("ALL", "QINDARKE")
         .put("_ALP", "PENNY")
         .put("GBP", "PENNY")
@@ -264,6 +264,9 @@ public class BaseCurrency {
         .put("Tiyin", 100L)
         .put("Hào", 10L)
         .put("Ngwee", 100L)
+        .put("Kwartje", 4L)
+        .put("Dubbeltje", 10L)
+        .put("Stuiver", 20L)
         .build();
 
     public static final ImmutableMap<String, Long> NonStandardFractionalSubunits = ImmutableMap.<String, Long>builder()

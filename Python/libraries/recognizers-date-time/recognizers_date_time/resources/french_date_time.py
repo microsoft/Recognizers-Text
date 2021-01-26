@@ -78,7 +78,7 @@ class FrenchDateTime:
     DateYearRegex = f'(?<year>{YearRegex}|{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*[\\.\\-]?\\s*{DateYearRegex}\\b'
-    DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*){MonthRegex}((\\s+|\\s*,\\s*){DateYearRegex})?\\b'
+    DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?(?<!\\d\\s)(?<!\\d){DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)({MonthRegex}((\\s+|\\s*,\\s*){DateYearRegex}(?!\\s*\\d))?|{MonthNumRegex}(\\s+|\\s*,\\s*){DateYearRegex}(?!\\s*\\d))\\b'
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<=\\b(le|sur(\\sl[ae])?)\\s+){MonthNumRegex}[\\-\\.\\/]{DayRegex}\\b'
@@ -189,6 +189,7 @@ class FrenchDateTime:
     AgoPrefixRegex = f'\\b(y a)\\b'
     LaterRegex = f'\\b(plus tard)\\b'
     AgoRegex = f'^[.]'
+    BeforeAfterRegex = f'^[.]'
     InConnectorRegex = f'\\b(dans|en|sur)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
@@ -206,7 +207,7 @@ class FrenchDateTime:
     NextPrefixRegex = f'.^'
     PastPrefixRegex = f'.^'
     PreviousPrefixRegex = f'.^'
-    RelativeDayRegex = f'\\b(((la\\s+)?{{RelativeRegex}}\\s+journ[ée]e))\\b'
+    RelativeDayRegex = f'\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b'
     ConnectorRegex = f'^(,|pour|t|vers)$'
     ConnectorAndRegex = f'\\b(et\\s*(le|las?)?)\\b.+'
     FromRegex = f'((de|du)?)$'
@@ -241,6 +242,7 @@ class FrenchDateTime:
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     ComplexDatePeriodRegex = f'^[.]'
+    AmbiguousPointRangeRegex = f'^(mar\\.?)$'
     UnitMap = dict([("annees", "Y"),
                     ("annee", "Y"),
                     ("an", "Y"),
@@ -663,6 +665,7 @@ class FrenchDateTime:
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
                                  ("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")])
+    AmbiguityTimeFiltersDict = dict([("heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b")])
     MorningTermList = [r'matinee', r'matin', r'matinée']
     AfternoonTermList = [r'apres-midi', r'apres midi', r'après midi', r'après-midi']
     EveningTermList = [r'soir', r'soiree', r'soirée']

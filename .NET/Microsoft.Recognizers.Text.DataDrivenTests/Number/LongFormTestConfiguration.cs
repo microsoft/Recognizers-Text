@@ -40,6 +40,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public Regex FractionPrepositionRegex { get; }
 
+        public Regex RoundMultiplierRegex { get; }
+
         public string FractionMarkerToken { get; }
 
         public Regex HalfADozenRegex { get; }

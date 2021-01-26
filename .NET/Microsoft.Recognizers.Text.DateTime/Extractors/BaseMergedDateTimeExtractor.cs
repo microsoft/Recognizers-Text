@@ -110,12 +110,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var originText = text;
             List<MatchResult<string>> superfluousWordMatches = null;
+
+            // Push
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(
-                    text,
-                    this.config.SuperfluousWordMatcher,
-                    out superfluousWordMatches);
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
             }
 
             // The order is important, since there can be conflicts in merging
@@ -159,6 +158,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
+            // Merge overlapping results
+            ret = ExtractResultExtension.MergeAllResults(ret);
+
+            // Pop
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 ret = MatchingUtil.PostProcessRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
@@ -327,6 +330,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var er in ers)
             {
+                // AroundRegex is matched non-exclusively before the other relative regexes in order to catch also combined modifiers e.g. "before around 1pm"
+                TryMergeModifierToken(er, config.AroundRegex, text);
                 var success = TryMergeModifierToken(er, config.BeforeRegex, text);
 
                 if (!success)
@@ -338,11 +343,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
                     success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
-                }
-
-                if (!success)
-                {
-                    success = TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
                 if (!success)

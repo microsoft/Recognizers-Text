@@ -265,7 +265,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             result.Value = ret;
-            result.ResolutionStr = ret.ToString(CultureInfo.InvariantCulture);
+            result.ResolutionStr = ret.ToString("G15", CultureInfo.InvariantCulture);
 
             return result;
         }
@@ -363,6 +363,17 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
+                long multiplier = 1;
+                if (Config.RoundMultiplierRegex != null)
+                {
+                    var match = Config.RoundMultiplierRegex.Match(resultText);
+                    if (match.Success)
+                    {
+                        resultText = resultText.Replace(match.Value, string.Empty);
+                        multiplier = Config.RoundNumberMap[match.Groups["multiplier"].Value];
+                    }
+                }
+
                 var fracWords = Config.NormalizeTokenSet(resultText.Split(null), result).ToList();
 
                 // Split fraction with integer
@@ -373,7 +384,7 @@ namespace Microsoft.Recognizers.Text.Number
                 // For case like "half"
                 if (fracWords.Count == 1)
                 {
-                   result.Value = 1 / GetIntValue(fracWords);
+                   result.Value = (1 / GetIntValue(fracWords)) * multiplier;
                    return result;
                 }
 
@@ -481,11 +492,11 @@ namespace Microsoft.Recognizers.Text.Number
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denominator)
                 {
-                    result.Value = intValue + (numerValue / denominator);
+                    result.Value = intValue + (multiplier * numerValue / denominator);
                 }
                 else
                 {
-                    result.Value = (intValue + numerValue) / denominator;
+                    result.Value = multiplier * (intValue + numerValue) / denominator;
                 }
             }
 
@@ -553,6 +564,17 @@ namespace Microsoft.Recognizers.Text.Number
             var strLength = digitsStr.Length;
             var isNegative = false;
             var isFrac = digitsStr.Contains('/');
+
+            // Try to parse vulgar fraction chars
+            if (digitsStr.Length == 1 && !char.IsDigit(digitsStr.ToCharArray()[0]))
+            {
+                double fracResult = char.GetNumericValue(digitsStr.ToCharArray()[0]);
+
+                if (fracResult != -1.0)
+                {
+                    return fracResult;
+                }
+            }
 
             var calStack = new Stack<double>();
 
@@ -821,7 +843,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             // The former number is an order of magnitude larger than the later number, and they must be integers
             return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
+                   former > later && former.ToString("G15", CultureInfo.InvariantCulture).Length > later.ToString("G15", CultureInfo.InvariantCulture).Length && later > 0;
         }
 
         // Test if big and combine with small.
@@ -839,7 +861,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (Config.CultureInfo != null && value is double)
             {
-                resolutionStr = ((double)value).ToString(Config.CultureInfo);
+                resolutionStr = ((double)value).ToString("G15", Config.CultureInfo);
             }
 
             return resolutionStr;

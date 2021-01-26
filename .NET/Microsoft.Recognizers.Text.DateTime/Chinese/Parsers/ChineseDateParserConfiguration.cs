@@ -254,7 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             {
                                 pastDate = pastDate.AddMonths(-1);
                             }
-                            else if (IsNonleapYearFeb29th(year, month - 1, day))
+                            else if (DateContext.IsFeb29th(year, month - 1, day))
                             {
                                 pastDate = pastDate.AddMonths(-2);
                             }
@@ -550,20 +550,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            if (noYear && futureDate < referenceDate)
-            {
-                futureDate = futureDate.AddYears(+1);
-            }
+            var futurePastDates = DateContext.GenerateDates(noYear, referenceDate, year, month, day);
 
-            if (noYear && pastDate >= referenceDate)
-            {
-                pastDate = pastDate.AddYears(-1);
-            }
-
-            ret.FutureValue = futureDate;
-            ret.PastValue = pastDate;
+            ret.FutureValue = futurePastDates.future;
+            ret.PastValue = futurePastDates.past;
             ret.Success = true;
 
             return ret;
@@ -625,19 +615,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return DateObjectExtension.IsValidDate(year, month, day);
         }
 
-        // Judge the date is non-leap year Feb 29th
-        private static bool IsNonleapYearFeb29th(int year, int month, int day)
-        {
-            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
-        }
-
         // Handle cases like "三天前"
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var durationRes = durationExtractor.Extract(text, referenceDate);
             var numStr = string.Empty;
             var unitStr = string.Empty;
+
+            var durationRes = durationExtractor.Extract(text, referenceDate);
+
             if (durationRes.Count > 0)
             {
                 var match = ChineseDateExtractorConfiguration.UnitRegex.Match(text);
@@ -654,7 +640,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         unitStr = this.config.UnitMap[srcUnit];
 
                         var beforeMatch = ChineseDateExtractorConfiguration.BeforeRegex.Match(suffix);
-                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -682,7 +668,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         }
 
                         var afterMatch = ChineseDateExtractorConfiguration.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -736,6 +722,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var year = 0;
             var num = 0;
+            int dynastyYear = DateTimeFormatUtil.ParseChineseDynastyYear(yearChsStr,
+                                                                         ChineseDateExtractorConfiguration.DynastyYearRegex,
+                                                                         ChineseDateExtractorConfiguration.DynastyStartYear,
+                                                                         ChineseDateExtractorConfiguration.DynastyYearMap,
+                                                                         integerExtractor,
+                                                                         numberParser);
+            if (dynastyYear > 0)
+            {
+                return dynastyYear;
+            }
 
             var er = integerExtractor.Extract(yearChsStr);
             if (er.Count != 0)
@@ -752,7 +748,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 foreach (var ch in yearChsStr)
                 {
                     num *= 10;
-                    er = integerExtractor.Extract(ch.ToString());
+
+                    er = integerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
+
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))

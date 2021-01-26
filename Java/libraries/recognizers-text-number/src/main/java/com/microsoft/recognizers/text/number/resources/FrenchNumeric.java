@@ -143,7 +143,8 @@ public class FrenchNumeric {
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
+    public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
+            .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
     public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -237,6 +238,8 @@ public class FrenchNumeric {
         .put("dix", 10L)
         .put("onze", 11L)
         .put("douze", 12L)
+        .put("douzaine", 12L)
+        .put("douzaines", 12L)
         .put("treize", 13L)
         .put("quatorze", 14L)
         .put("quinze", 15L)

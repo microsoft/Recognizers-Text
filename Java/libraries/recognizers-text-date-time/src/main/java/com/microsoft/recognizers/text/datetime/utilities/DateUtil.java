@@ -83,6 +83,10 @@ public class DateUtil {
                 0 <= second && second <= 59;
     }
 
+    public static boolean isDefaultValue(LocalDateTime date) {
+        return date.equals(DateUtil.minValue());
+    }
+
     private static final DateTimeFormatter DATE_TIME_FORMATTER = new DateTimeFormatterBuilder()
             .append(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
             .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)

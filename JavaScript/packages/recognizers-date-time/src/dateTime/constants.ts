@@ -22,9 +22,15 @@ export class Constants {
     static readonly ResolveKey: string = "resolve";
     static readonly ResolveToPastKey: string = "resolveToPast";
     static readonly ResolveToFutureKey: string = "resolveToFuture";
+    static readonly Decade: string = "decade";
+    static readonly Century: string = "century"
+    static readonly RelCentury: string = "relcentury"
     
     static readonly CommentKey: string = "Comment";
     static readonly CommentAmPm: string = "ampm";
+
+    // Tag to mark cases where the specifc resolution timex depends on future or past values.
+    static readonly Comment_DoubleTimex: string = "DoubleTimex";
 
     static readonly SemesterMonthCount: number = 6;
     static readonly TrimesterMonthCount: number = 3;
@@ -33,8 +39,10 @@ export class Constants {
     static readonly MaxMonth: number = 11;
     static readonly MinMonth: number = 0;
 
+    // specifies the priority interpreting month and day order
     static readonly DefaultLanguageFallback_MDY: string = 'MDY';
     static readonly DefaultLanguageFallback_DMY: string = 'DMY';
+    static readonly DefaultLanguageFallback_YMD: string = "YMD"; // ZH
 
     static readonly MinYearNum: number = parseInt(BaseDateTime.MinYearNum);
     static readonly MaxYearNum: number = parseInt(BaseDateTime.MaxYearNum);
@@ -84,6 +92,12 @@ export class Constants {
     static readonly TimeTimexConnector: string = ":";
     static readonly GeneralPeriodPrefix: string = "P";
     static readonly TimeTimexPrefix: string = "T";
+    static readonly ByDay: string = "ByDay";
+    static readonly ByWeek: string = "ByWeek";
+    static readonly ByMonth: string = "ByMonth";
+    static readonly ByYear: string = "ByYear";
+
+    static readonly DatePeriodTimexTypeToTimexSuffix: ReadonlyMap<string, string> = new Map<string, string>([[Constants.ByDay, Constants.TimexDay], [Constants.ByWeek, Constants.TimexWeek], [Constants.ByMonth, Constants.TimexMonth], [Constants.ByYear, Constants.TimexYear]]);
 
     // Timex of TimeOfDay
     static readonly EarlyMorning: string = "TDA";
@@ -95,8 +109,12 @@ export class Constants {
     static readonly Night: string = "TNI";
     static readonly BusinessHour: string = "TBH";
 
+    static readonly InvalidDateString: string = "0001-01-01";
+
+    static readonly CompositeTimexDelimiter: string = "|";
+
     // Invalid year
-    public readonly InvalidYear: number = Number.MIN_VALUE;
+    static readonly InvalidYear: number = Number.MIN_VALUE;
     public readonly InvalidMonth: number = Number.MIN_VALUE;
     public readonly InvalidDay: number = Number.MIN_VALUE;
     public readonly InvalidHour: number = Number.MIN_VALUE;

@@ -208,14 +208,15 @@ AllOrdinalRegex: !nestedRegex
   def: (?:{CompoundNumberOrdinals}|{SuffixRoundNumberOrdinalRegex})
   references: [ CompoundNumberOrdinals, SuffixRoundNumberOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)(?:(\d*(1ला|[2-3]रा|4था|[0-9]वां))|([०-९]*(१ला|[२-३]रा|४था|[०-९]वां)))
+  def: (?<=\b)(?:(\d*(1(ला|ली)|[2-3]रा|4था|[0-9](वां|वीं|वें|वाँ|वा)))|([०-९]*(१(ला|ली)|[२-३]रा|४था|[०-९](वां|वीं|वें|वाँ|वा))))
 #Fraction Regex
 #Fraction cases are used to catch half/quarter with any prefix number in hindi
 #FractionPrepositionRegex s used to catch all fraction cases which includes cardina/cardinal or cardinal/ordinal
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)(((({AllNumericalIntRegex})(\s?)((({RoundNumberIntegerRegex})|({RoundNumberOrdinalRegex}))\s?)?)((और\s)?))+((आधा|आधे|चौथाई|तिहाई)))(?=\b)
   references: [AllNumericalIntRegex, RoundNumberIntegerRegex,RoundNumberOrdinalRegex ]

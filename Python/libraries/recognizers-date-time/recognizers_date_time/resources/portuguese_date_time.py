@@ -16,7 +16,7 @@ from .base_date_time import BaseDateTime
 class PortugueseDateTime:
     LangMarker = 'Por'
     CheckBothBeforeAfter = False
-    TillRegex = f'(?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\\s+(o|[aà](s)?))?'
+    TillRegex = f'(?<till>\\b(at[eé]h?|[aà]s|ao?)\\b|--|-|—|——)(\\s+\\b(o|[aà](s)?)\\b)?'
     RangeConnectorRegex = f'(?<and>(e\\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)'
     MonthNumRegex = f'(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b'
@@ -61,6 +61,7 @@ class PortugueseDateTime:
     WeekOfRegex = f'(semana)(\\s*)((do|da|de))'
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
     RangeUnitRegex = f'\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b'
+    BeforeAfterRegex = f'^[.]'
     InConnectorRegex = f'\\b(em)\\b'
     SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'

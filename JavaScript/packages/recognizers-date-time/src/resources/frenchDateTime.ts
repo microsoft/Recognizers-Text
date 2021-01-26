@@ -11,7 +11,7 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace FrenchDateTime {
-    export const LangMarker = 'Fre';
+    export const LangMarker = `Fre`;
     export const CheckBothBeforeAfter = false;
     export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
     export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
@@ -75,7 +75,7 @@ export namespace FrenchDateTime {
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*[\\.\\-]?\\s*${DateYearRegex}\\b`;
-    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)${MonthRegex}((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
+    export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?(?<!\\d\\s)(?<!\\d)${DayRegex}(\\s+|\\s*,\\s*|\\s*-\\s*)(${MonthRegex}((\\s+|\\s*,\\s*)${DateYearRegex}(?!\\s*\\d))?|${MonthNumRegex}(\\s+|\\s*,\\s*)${DateYearRegex}(?!\\s*\\d))\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor6 = `(?<=\\b(le|sur(\\sl[ae])?)\\s+)${MonthNumRegex}[\\-\\.\\/]${DayRegex}\\b`;
@@ -172,10 +172,10 @@ export namespace FrenchDateTime {
     export const HolidayRegex2 = `\\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance(\\s+am[eé]ricaine)?|guy fawkes)(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
     export const HolidayRegex3 = `(?<holiday>(jour\\s*(d[eu]|des)\\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|thanks\\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?`;
     export const HolidayRegex4 = `(?<holiday>(f[eê]te\\s*(d[eu]|des)\\s*)(travail|m[eè]res?|p[eè]res?))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
-    export const DateTokenPrefix = 'le ';
-    export const TimeTokenPrefix = 'à ';
-    export const TokenBeforeDate = 'le ';
-    export const TokenBeforeTime = 'à ';
+    export const DateTokenPrefix = `le `;
+    export const TimeTokenPrefix = `à `;
+    export const TokenBeforeDate = `le `;
+    export const TokenBeforeTime = `à `;
     export const AMTimeRegex = `(?<am>matin([ée]e)?)`;
     export const PMTimeRegex = `\\b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\\s*ce|du)\\s+)?soir)\\b`;
     export const BeforeRegex = `\\b(avant)\\b`;
@@ -186,9 +186,11 @@ export namespace FrenchDateTime {
     export const AgoPrefixRegex = `\\b(y a)\\b`;
     export const LaterRegex = `\\b(plus tard)\\b`;
     export const AgoRegex = `^[.]`;
+    export const BeforeAfterRegex = `^[.]`;
     export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
     export const SinceYearSuffixRegex = `^[.]`;
     export const WithinNextPrefixRegex = `^[.]`;
+    export const TodayNowRegex = `\\b(aujourd'hui|maintenant)\\b`;
     export const MorningStartEndRegex = `(^(matin))|((matin)$)`;
     export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
     export const EveningStartEndRegex = `(^(soir[ée]e|soir))|((soir[ée]e|soir)$)`;
@@ -237,6 +239,7 @@ export namespace FrenchDateTime {
     export const YearPeriodRegex = `^[.]`;
     export const FutureSuffixRegex = `^[.]`;
     export const ComplexDatePeriodRegex = `^[.]`;
+    export const AmbiguousPointRangeRegex = `^(mar\\.?)$`;
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["annees", "Y"],["annee", "Y"],["an", "Y"],["ans", "Y"],["mois", "MON"],["semaines", "W"],["semaine", "W"],["journees", "D"],["journee", "D"],["jour", "D"],["jours", "D"],["heures", "H"],["heure", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["secondes", "S"],["seconde", "S"],["secs", "S"],["sec", "S"]]);
     export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["annees", 31536000],["annee", 31536000],["l'annees", 31536000],["l'annee", 31536000],["an", 31536000],["ans", 31536000],["mois", 2592000],["semaines", 604800],["semaine", 604800],["journees", 86400],["journee", 86400],["jour", 86400],["jours", 86400],["heures", 3600],["heure", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["secondes", 1],["seconde", 1],["secs", 1],["sec", 1]]);
     export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
@@ -252,9 +255,10 @@ export namespace FrenchDateTime {
     export const NightRegex = `\\b(minuit|nuit)\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
-    export const DefaultLanguageFallback = 'DMY';
+    export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"]]);
+    export const AmbiguityTimeFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b"]]);
     export const MorningTermList = [ "matinee","matin","matinée" ];
     export const AfternoonTermList = [ "apres-midi","apres midi","après midi","après-midi" ];
     export const EveningTermList = [ "soir","soiree","soirée" ];

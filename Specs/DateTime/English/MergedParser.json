@@ -167,9 +167,9 @@
         "Value": {
           "values": [
             {
-              "timex": "2016-11-07T12",
+              "timex": "2016-11-07T00",
               "type": "datetime",
-              "value": "2016-11-07 12:00:00"
+              "value": "2016-11-07 00:00:00"
             }
           ]
         },
@@ -3349,7 +3349,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -3367,21 +3367,19 @@
         "Length": 9
       },
       {
-        "Text": "from today",
-        "Type": "datetimeV2.daterange",
+        "Text": "today",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
               "timex": "2018-05-29",
-              "Mod": "since",
-              "type": "daterange",
-              "sourceEntity": "datetimepoint",
-              "start": "2018-05-29"
+              "type": "date",
+              "value": "2018-05-29"
             }
           ]
         },
-        "Start": 22,
-        "Length": 10
+        "Start": 27,
+        "Length": 5
       }
     ]
   },

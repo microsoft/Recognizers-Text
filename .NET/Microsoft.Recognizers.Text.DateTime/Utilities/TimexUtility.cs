@@ -123,6 +123,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({DateTimeFormatUtil.LuisDate(beginYear, beginMonth, beginDay)},{DateTimeFormatUtil.LuisDate(endYear, endMonth, endDay)},{datePeriodTimex})";
         }
 
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, string timex1, string timex2)
+        {
+            var boundaryValid = !begin.IsDefaultValue() && !end.IsDefaultValue();
+            var unitCount = boundaryValid ? GetDatePeriodTimexUnitCount(begin, end, timexType) : "X";
+            var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
+            return $"({timex1},{timex2},{datePeriodTimex})";
+        }
+
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
         {
             if (monday.IsDefaultValue())
@@ -248,6 +256,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return result;
+        }
+
+        public static string MergeTimexAlternatives(string timex1, string timex2)
+        {
+            if (timex1.Equals(timex2, StringComparison.Ordinal))
+            {
+                return timex1;
+            }
+
+            return $"{timex1}{Constants.CompositeTimexDelimiter}{timex2}";
+        }
+
+        public static void ProcessDoubleTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
+        {
+            string[] timexes = originTimex.Split(Constants.CompositeTimexDelimiter);
+
+            if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexes.Length != 2)
+            {
+                return;
+            }
+
+            var futureResolution = (Dictionary<string, string>)resolutionDic[futureKey];
+            var pastResolution = (Dictionary<string, string>)resolutionDic[pastKey];
+            futureResolution[DateTimeResolutionKey.Timex] = timexes[0];
+            pastResolution[DateTimeResolutionKey.Timex] = timexes[1];
+        }
+
+        public static bool HasDoubleTimex(string comment)
+        {
+            return comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal);
         }
 
         public static TimeOfDayResolutionResult ParseTimeOfDay(string tod)

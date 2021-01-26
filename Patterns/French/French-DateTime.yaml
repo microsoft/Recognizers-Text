@@ -165,8 +165,8 @@ DateExtractor2: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
 DateExtractor3: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s*-\s*){MonthRegex}((\s+|\s*,\s*){DateYearRegex})?\b
-  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d\s)(?<!\d){DayRegex}(\s+|\s*,\s*|\s*-\s*)({MonthRegex}((\s+|\s*,\s*){DateYearRegex}(?!\s*\d))?|{MonthNumRegex}(\s+|\s*,\s*){DateYearRegex}(?!\s*\d))\b
+  references: [ WeekDayRegex, DayRegex, MonthRegex, MonthNumRegex, DateYearRegex ]
 # The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
@@ -445,6 +445,8 @@ LaterRegex: !simpleRegex
 AgoRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(dans|en|sur)\b
 SinceYearSuffixRegex: !simpleRegex
@@ -489,8 +491,9 @@ PastPrefixRegex: !simpleRegex
 PreviousPrefixRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
   def: .^
-RelativeDayRegex: !simpleRegex
+RelativeDayRegex: !nestedRegex
   def: \b(((la\s+)?{RelativeRegex}\s+journ[ée]e))\b
+  references: [RelativeRegex]
 ConnectorRegex: !simpleRegex
   def: ^(,|pour|t|vers)$
 ConnectorAndRegex: !simpleRegex
@@ -583,6 +586,8 @@ FutureSuffixRegex: !simpleRegex
 ComplexDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+AmbiguousPointRangeRegex: !simpleRegex
+  def: ^(mar\.?)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -1055,6 +1060,11 @@ AmbiguityFiltersDict: !dictionary
   entries:
     '^([eé]t[eé])$': '(?<!((l\s*[''`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b'
     '^(mer)$': '(?<!((le|ce)\s+))mer\b'
+# Used to exclude duration matches (e.g. "pour 3 heures") from time extractions
+AmbiguityTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'heures?$': '\b(pour|durée\s+de|pendant)\s+(\S+\s+){1,2}heures?\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

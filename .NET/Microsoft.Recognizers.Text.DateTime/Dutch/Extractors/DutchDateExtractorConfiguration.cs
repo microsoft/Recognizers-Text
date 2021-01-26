@@ -117,6 +117,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DayRegex =
@@ -140,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -237,6 +241,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IEnumerable<Regex> ImplicitDateList { get; }
@@ -284,5 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

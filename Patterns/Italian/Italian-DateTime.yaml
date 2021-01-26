@@ -287,6 +287,8 @@ OclockPrefix: !simpleRegex
   def: (?<oclock>ore)
 PmRegex: !simpleRegex
   def: \b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|ora di pranzo))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera|mezzanotte)))\b
+RangePmRegex: !simpleRegex
+  def: \b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera)))\b
 AmRegex: !simpleRegex
   def: \b(?<am>((((la|alla|verso|per|della|di|in)\s+(la\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\s+(il\s+)?)?(mattino))))\b
 LunchRegex: !simpleRegex
@@ -525,6 +527,8 @@ LaterRegex: !simpleRegex
   def: \b(dopo|da\s+adesso|da\s+questo\s+momento)\b
 AgoRegex: !simpleRegex
   def: \b(fa|prima|addietro)\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(in|tra|fra|a)\b
 SinceYearSuffixRegex: !nestedRegex
@@ -636,6 +640,8 @@ FutureSuffixRegex: !simpleRegex
 ComplexDatePeriodRegex: !nestedRegex
   def: (((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
+AmbiguousPointRangeRegex: !simpleRegex
+  def: ^(mar)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

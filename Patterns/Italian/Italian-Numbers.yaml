@@ -9,11 +9,11 @@ MultiDecimalSeparatorCulture: !bool false
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 RoundNumberIntegerRegex: !simpleRegex
-  def: (cento?|mille?|mila|milion[ei]?|miliard[oi]?|bilion[ei]?|trilion[ei]?)
+  def: (cent(o|(?!\b)|(?='))|mill(e|(?!\b)|(?='))|mila|miliard([oi]|(?!\b)|(?='))|(milion|bilion|trilion)([ei]|(?!\b)|(?=')))
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (un[oa]?|due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?|zero)
+  def: (un[oa]?|due|tre|quattro|cinque|sei|sette|otto|nove|zero)
 TwoToNineIntegerRegex: !simpleRegex
-  def: (due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?)
+  def: (due|tre|quattro|cinque|sei|sette|otto|nove)
 NegativeNumberTermsRegex: !simpleRegex
   def: (?<negTerm>meno\s+)
 NegativeNumberSignRegex: !nestedRegex
@@ -22,9 +22,9 @@ NegativeNumberSignRegex: !nestedRegex
 AnIntRegex: !simpleRegex
   def: (un)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (diciassette?|tredici?|quattordici?|diciotto?|diciannove?|quindici?|sedici?|undici?|dodici?|dieci?)
+  def: (diciott(o|(?!\b)|(?='))|(diciassett|diciannov)(e|(?!\b)|(?='))|(tredic|quattordic|quindic|sedic|undic|dodic|diec)(i|(?!\b)|(?=')))
 TensNumberIntegerRegex: !simpleRegex
-  def: (settanta?|venti?|trenta?|ottanta?|novanta?|quaranta?|cinquanta?|sessanta?)
+  def: (vent(i|(?!\b)|(?='))|(settant|trent|ottant|novant|quarant|cinquant|sessant)(a|(?!\b)|(?=')))
 SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|((({AnIntRegex})?(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
@@ -59,14 +59,16 @@ OneToNineOrdinalRegex: !simpleRegex
   def: (prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie])
 NumberOrdinalRegex: !simpleRegex
   def: (prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])
+OneToNineOrdinalCompoundRegex: !simpleRegex
+  def: (un|du|tre|quattr|cinqu|sei|sett|ott|nov)esim[oaie]
 RelativeOrdinalRegex: !simpleRegex
   def: (precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])
 BasicOrdinalRegex: !nestedRegex
   def: (({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))
   references: [ NumberOrdinalRegex, RelativeOrdinalRegex, TwoToNineIntegerRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: ((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))
-  references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
+  def: ((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{OneToNineOrdinalCompoundRegex}|{BasicOrdinalRegex}))
+  references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex, OneToNineOrdinalCompoundRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
@@ -86,8 +88,9 @@ OrdinalItalianRegex: !nestedRegex
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+(e\s+)?\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
@@ -262,6 +265,7 @@ CardinalNumberMap: !dictionary
     novanta: 90
     novant: 90
     cento: 100
+    cent: 100
     mille: 1000
     mila: 1000
     milione: 1000000

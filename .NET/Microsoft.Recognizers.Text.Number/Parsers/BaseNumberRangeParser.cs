@@ -70,8 +70,8 @@ namespace Microsoft.Recognizers.Text.Number
                 endValue = nums[0];
             }
 
-            var startValueStr = startValue.ToString(CultureInfo.InvariantCulture);
-            var endValueStr = endValue.ToString(CultureInfo.InvariantCulture);
+            var startValueStr = startValue.ToString("G15", CultureInfo.InvariantCulture);
+            var endValueStr = endValue.ToString("G15", CultureInfo.InvariantCulture);
 
             char leftBracket, rightBracket;
             var type = extResult.Data as string;
@@ -163,6 +163,7 @@ namespace Microsoft.Recognizers.Text.Number
             char leftBracket, rightBracket;
             string startValueStr = string.Empty, endValueStr = string.Empty;
             var type = extResult.Data as string;
+
             if (type.Contains(NumberRangeConstants.MORE))
             {
                 rightBracket = NumberRangeConstants.RIGHT_OPEN;
@@ -188,7 +189,7 @@ namespace Microsoft.Recognizers.Text.Number
                     leftBracket = NumberRangeConstants.LEFT_OPEN;
                 }
 
-                startValueStr = num[0].ToString(CultureInfo.InvariantCulture);
+                startValueStr = num[0].ToString("G15", CultureInfo.InvariantCulture);
 
                 result.Value = new Dictionary<string, double>()
                 {
@@ -220,7 +221,7 @@ namespace Microsoft.Recognizers.Text.Number
                     rightBracket = NumberRangeConstants.RIGHT_OPEN;
                 }
 
-                endValueStr = num[0].ToString(CultureInfo.InvariantCulture);
+                endValueStr = num[0].ToString("G15", CultureInfo.InvariantCulture);
 
                 result.Value = new Dictionary<string, double>()
                 {
@@ -232,7 +233,7 @@ namespace Microsoft.Recognizers.Text.Number
                 leftBracket = NumberRangeConstants.LEFT_CLOSED;
                 rightBracket = NumberRangeConstants.RIGHT_CLOSED;
 
-                startValueStr = num[0].ToString(CultureInfo.InvariantCulture);
+                startValueStr = num[0].ToString("G15", CultureInfo.InvariantCulture);
                 endValueStr = startValueStr;
 
                 result.Value = new Dictionary<string, double>()

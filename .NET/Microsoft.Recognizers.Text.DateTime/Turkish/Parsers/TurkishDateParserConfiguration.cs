@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new TurkishHolidayParserConfiguration(this));
             DateRegexes = new TurkishDateExtractorConfiguration(this).DateRegexList;
             OnRegex = TurkishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = TurkishDateExtractorConfiguration.SpecialDayRegex;
@@ -43,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             StrictRelativeRegex = TurkishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = TurkishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = TurkishDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = TurkishDateExtractorConfiguration.BeforeAfterRegex;
 
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
@@ -79,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 
@@ -127,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

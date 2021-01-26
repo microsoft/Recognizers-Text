@@ -80,6 +80,16 @@
               "timex": "XXXX-WXX-1T12",
               "type": "datetime",
               "value": "2016-11-07 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T00",
+              "type": "datetime",
+              "value": "2016-10-31 00:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T00",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
             }
           ]
         },

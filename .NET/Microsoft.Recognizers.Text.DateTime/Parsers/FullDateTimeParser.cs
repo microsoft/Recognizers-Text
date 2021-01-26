@@ -20,7 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type,
                                                          string mod, Dictionary<string, string> res)
         {
-            if (resolutionDic.ContainsKey(type))
+            if (resolutionDic.ContainsKey(type) &&
+                !resolutionDic[type].Equals(Constants.InvalidDateString, StringComparison.Ordinal))
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
@@ -50,11 +51,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(startType))
             {
                 start = resolutionDic[startType];
+                if (start.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (resolutionDic.ContainsKey(endType))
             {
                 end = resolutionDic[endType];
+                if (end.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (!string.IsNullOrEmpty(mod))
@@ -408,6 +417,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            if (!string.IsNullOrEmpty(comment) && TimexUtility.HasDoubleTimex(comment))
+            {
+                ProcessDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
+            }
+
             if (isLunar)
             {
                 res.Add(DateTimeResolutionKey.IsLunar, isLunar);
@@ -472,6 +486,21 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        internal static void ProcessDoubleTimex(Dictionary<string, object> resolutionDic, string futureKey, string pastKey, string originTimex)
+        {
+            string[] timexes = originTimex.Split(Constants.CompositeTimexDelimiter);
+
+            if (!resolutionDic.ContainsKey(futureKey) || !resolutionDic.ContainsKey(pastKey) || timexes.Length != 2)
+            {
+                return;
+            }
+
+            var futureResolution = (Dictionary<string, string>)resolutionDic[futureKey];
+            var pastResolution = (Dictionary<string, string>)resolutionDic[pastKey];
+            futureResolution[DateTimeResolutionKey.Timex] = timexes[0];
+            pastResolution[DateTimeResolutionKey.Timex] = timexes[1];
         }
 
         internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)

@@ -25,9 +25,13 @@ public class ChineseDateTime {
 
     public static final String DayRegex = "(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)";
 
-    public static final String DateDayRegexInChinese = "(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)";
+    public static final String OneToNineIntegerRegex = "[一二三四五六七八九壹贰叁肆伍陆柒捌玖]";
 
-    public static final String DayRegexNumInChinese = "(?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)";
+    public static final String DateDayRegexInChinese = "(?<day>(([12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})[日号]|初一|三十))"
+            .replace("{OneToNineIntegerRegex}", OneToNineIntegerRegex);
+
+    public static final String DayRegexNumInChinese = "(?<day>[12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex}|廿|卅)"
+            .replace("{OneToNineIntegerRegex}", OneToNineIntegerRegex);
 
     public static final String MonthNumRegex = "(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)";
 
@@ -39,8 +43,18 @@ public class ChineseDateTime {
 
     public static final String ZeroToNineIntegerRegexChs = "[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
 
-    public static final String DateYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))"
+    public static final String DynastyStartYear = "元";
+
+    public static final String RegionTitleRegex = "(贞观|开元|神龙|洪武|建文|永乐|景泰|天顺|成化|嘉靖|万历|崇祯|顺治|康熙|雍正|乾隆|嘉庆|道光|咸丰|同治|光绪|宣统|民国)";
+
+    public static final String DynastyYearRegex = "(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\\d{1,3}|[十拾]?({ZeroToNineIntegerRegexChs}[十百拾佰]?){0,3}))"
+            .replace("{RegionTitleRegex}", RegionTitleRegex)
+            .replace("{DynastyStartYear}", DynastyStartYear)
             .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs);
+
+    public static final String DateYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{DynastyYearRegex}))"
+            .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs)
+            .replace("{DynastyYearRegex}", DynastyYearRegex);
 
     public static final String WeekDayRegex = "(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)";
 
@@ -112,28 +126,26 @@ public class ChineseDateTime {
             .replace("{DateYearInChineseRegex}", DateYearInChineseRegex)
             .replace("{DayRegex}", DayRegex);
 
-    public static final String DateRegexList4 = "{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*){SimpleYearRegex})?"
+    public static final String DateRegexList4 = "{MonthNumRegex}\\s*/\\s*{DayRegex}"
             .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{DayRegex}", DayRegex)
-            .replace("{SimpleYearRegex}", SimpleYearRegex);
+            .replace("{DayRegex}", DayRegex);
 
-    public static final String DateRegexList5 = "{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*){SimpleYearRegex})?"
+    public static final String DateRegexList5 = "{DayRegex}\\s*/\\s*{MonthNumRegex}"
             .replace("{DayRegex}", DayRegex)
-            .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{SimpleYearRegex}", SimpleYearRegex);
+            .replace("{MonthNumRegex}", MonthNumRegex);
 
-    public static final String DateRegexList6 = "{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{SimpleYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
+    public static final String DateRegexList6 = "{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{SimpleYearRegex}"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{SimpleYearRegex}", SimpleYearRegex);
 
-    public static final String DateRegexList7 = "{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{YearNumRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
+    public static final String DateRegexList7 = "{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{SimpleYearRegex}"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{YearNumRegex}", YearNumRegex);
+            .replace("{SimpleYearRegex}", SimpleYearRegex);
 
-    public static final String DateRegexList8 = "{YearNumRegex}\\s*[/\\\\\\-\\. ]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
-            .replace("{YearNumRegex}", YearNumRegex)
+    public static final String DateRegexList8 = "{SimpleYearRegex}\\s*[/\\\\\\-\\. ]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*{DayRegex}"
+            .replace("{SimpleYearRegex}", SimpleYearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex);
 
@@ -166,8 +178,8 @@ public class ChineseDateTime {
 
     public static final String YearRegexInNumber = "(?<year>(\\d{4}))";
 
-    public static final String DatePeriodYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?"
-            .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs)
+    public static final String DatePeriodYearInChineseRegex = "{DateYearInChineseRegex}年{HalfYearRegex}?"
+            .replace("{DateYearInChineseRegex}", DateYearInChineseRegex)
             .replace("{HalfYearRegex}", HalfYearRegex);
 
     public static final String MonthSuffixRegex = "(?<msuf>({RelativeMonthRegex}|{MonthRegex}))"
@@ -315,14 +327,19 @@ public class ChineseDateTime {
     public static final ImmutableMap<String, String> DurationSuffixList = ImmutableMap.<String, String>builder()
         .put("M", "分钟")
         .put("S", "秒钟|秒")
-        .put("H", "个小时|小时|个钟头|钟头")
+        .put("H", "个小时|小时|个钟头|钟头|时")
         .put("D", "天")
         .put("W", "星期|个星期|周")
         .put("Mon", "个月")
         .put("Y", "年")
         .build();
 
-    public static final List<String> DurationAmbiguousUnits = Arrays.asList("分钟", "秒钟", "秒", "个小时", "小时", "天", "星期", "个星期", "周", "个月", "年");
+    public static final List<String> DurationAmbiguousUnits = Arrays.asList("分钟", "秒钟", "秒", "个小时", "小时", "天", "星期", "个星期", "周", "个月", "年", "时");
+
+    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)"
+            .replace("{DateUnitRegex}", DateUnitRegex);
+
+    public static final String DurationConnectorRegex = "^\\s*(?<connector>[多又余零]?)\\s*$";
 
     public static final String LunarHolidayRegex = "(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)"
             .replace("{YearRegex}", YearRegex)
@@ -493,12 +510,14 @@ public class ChineseDateTime {
         .put("周", "W")
         .put("天", "D")
         .put("小时", "H")
+        .put("个小时", "H")
         .put("时", "H")
         .put("分钟", "M")
         .put("分", "M")
         .put("秒钟", "S")
         .put("秒", "S")
         .put("星期", "W")
+        .put("个星期", "W")
         .build();
 
     public static final ImmutableMap<String, Long> ParserConfigurationUnitValueMap = ImmutableMap.<String, Long>builder()
@@ -902,16 +921,17 @@ public class ChineseDateTime {
         .put("周", "周岁")
         .put("今日", "今日头条")
         .put("明日", "《明日之后》")
+        .put("时", "时间")
         .build();
 
-    public static final ImmutableMap<String, Integer> DurationUnitValueMap = ImmutableMap.<String, Integer>builder()
-        .put("Y", 31536000)
-        .put("Mon", 2592000)
-        .put("W", 604800)
-        .put("D", 86400)
-        .put("H", 3600)
-        .put("M", 60)
-        .put("S", 1)
+    public static final ImmutableMap<String, Long> DurationUnitValueMap = ImmutableMap.<String, Long>builder()
+        .put("Y", 31536000L)
+        .put("Mon", 2592000L)
+        .put("W", 604800L)
+        .put("D", 86400L)
+        .put("H", 3600L)
+        .put("M", 60L)
+        .put("S", 1L)
         .build();
 
     public static final ImmutableMap<String, String> HolidayNoFixedTimex = ImmutableMap.<String, String>builder()
@@ -954,7 +974,7 @@ public class ChineseDateTime {
         .put("pm", 12)
         .build();
 
-    public static final String DefaultLanguageFallback = "DMY";
+    public static final String DefaultLanguageFallback = "YMD";
 
     public static final List<String> MorningTermList = Arrays.asList("早", "上午", "早间", "早上", "清晨");
 
@@ -967,4 +987,30 @@ public class ChineseDateTime {
     public static final List<String> DaytimeTermList = Arrays.asList("白天", "日间");
 
     public static final List<String> NightTermList = Arrays.asList("深夜");
+
+    public static final ImmutableMap<String, Integer> DynastyYearMap = ImmutableMap.<String, Integer>builder()
+        .put("贞观", 627)
+        .put("开元", 713)
+        .put("神龙", 705)
+        .put("洪武", 1368)
+        .put("建文", 1399)
+        .put("永乐", 1403)
+        .put("景泰", 1450)
+        .put("天顺", 1457)
+        .put("成化", 1465)
+        .put("嘉靖", 1522)
+        .put("万历", 1573)
+        .put("崇祯", 1628)
+        .put("顺治", 1644)
+        .put("康熙", 1662)
+        .put("雍正", 1723)
+        .put("乾隆", 1736)
+        .put("嘉庆", 1796)
+        .put("道光", 1821)
+        .put("咸丰", 1851)
+        .put("同治", 1862)
+        .put("光绪", 1875)
+        .put("宣统", 1909)
+        .put("民国", 1912)
+        .build();
 }

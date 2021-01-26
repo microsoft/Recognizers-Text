@@ -480,7 +480,7 @@ CurrencySuffixList: !dictionary
     Penique de Santa Helena: penique de santa helena|peniques de santa helena
     #Santa Lucía -> Dólar del Caribe Oriental
     #Santo Tomé y Príncipe
-    Dobra: dobra|db|std
+    Dobra: dobra
     #San Vicente y las Granadinas -> Dólar del Caribe Oriental
     #Senegal -> Franco CFA de África Occidental
     #Serbia
@@ -599,6 +599,7 @@ CompoundUnitConnectorRegex: !simpleRegex
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
+    Dobra: db|std
     Dólar: $
     Dólar estadounidense: us$|u$d|usd
     Dólar del Caribe Oriental: ec$|xcd
@@ -634,6 +635,8 @@ AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:
     - le
+    - db
+    - std
 #DimensionExtractorConfiguration
 InformationSuffixList: !dictionary
   types: [ string, string ]

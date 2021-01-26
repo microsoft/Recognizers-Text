@@ -87,21 +87,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(startType))
             {
                 start = resolutionDic[startType];
+                if (start.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (resolutionDic.ContainsKey(endType))
             {
                 end = resolutionDic[endType];
+                if (end.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                {
+                    return;
+                }
             }
 
             if (!string.IsNullOrEmpty(mod))
             {
                 // For the 'before' mod
                 // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
+                // (but not for cases like "Before the end of December")
                 // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
                 if (mod.StartsWith(Constants.BEFORE_MOD, StringComparison.Ordinal))
                 {
-                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end) && !mod.EndsWith(Constants.LATE_MOD, StringComparison.Ordinal))
                     {
                         res.Add(DateTimeResolutionKey.End, start);
                     }
@@ -115,10 +124,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // For the 'after' mod
                 // 1. Cases like "After January", the end of the period should be the start of the new period, not the end
+                // (but not for cases like "After the beginning of January")
                 // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
                 if (mod.StartsWith(Constants.AFTER_MOD, StringComparison.Ordinal))
                 {
-                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end) && !mod.EndsWith(Constants.EARLY_MOD, StringComparison.Ordinal))
                     {
                         res.Add(DateTimeResolutionKey.Start, end);
                     }
@@ -306,7 +316,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
                 var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
                 var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
-                var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
+                var preLength = 0;
+                if (beforeMatch.Success)
+                {
+                    preLength = beforeMatch.Index + beforeMatch.Length;
+                }
+                else if (afterMatch.Success)
+                {
+                    preLength = afterMatch.Index + afterMatch.Length;
+                }
+                else if (sinceMatch.Success)
+                {
+                    preLength = sinceMatch.Index + sinceMatch.Length;
+                }
+
+                var aroundText = er.Text.Substring(preLength);
+                var aroundMatch = Config.AroundRegex.MatchBegin(aroundText, trim: true);
                 var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
 
                 // check also after match
@@ -343,13 +368,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
+                if (aroundMatch.Success)
+                {
+                    hasAround = true;
+                    er.Start += matchIsAfter ? 0 : preLength + aroundMatch.Index + aroundMatch.Length;
+                    er.Length -= matchIsAfter ? aroundMatch.Length : preLength + aroundMatch.Index + aroundMatch.Length;
+                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(preLength + aroundMatch.Index + aroundMatch.Length);
+                    modStr = matchIsAfter ? aroundMatch.Value : aroundText.Substring(0, aroundMatch.Index + aroundMatch.Length);
+                }
+
                 if (beforeMatch.Success)
                 {
                     hasBefore = true;
-                    er.Start += matchIsAfter ? 0 : beforeMatch.Length;
-                    er.Length -= beforeMatch.Length;
-                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(beforeMatch.Length);
-                    modStr = beforeMatch.Value;
+                    if (!hasAround)
+                    {
+                        er.Start += matchIsAfter ? 0 : beforeMatch.Length;
+                        er.Length -= beforeMatch.Length;
+                        er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(beforeMatch.Length);
+                    }
+
+                    modStr = beforeMatch.Value + modStr;
 
                     if (!string.IsNullOrEmpty(beforeMatch.Groups[Constants.IncludeGroupName].Value))
                     {
@@ -359,10 +397,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (afterMatch.Success)
                 {
                     hasAfter = true;
-                    er.Start += matchIsAfter ? 0 : afterMatch.Length;
-                    er.Length -= afterMatch.Length;
-                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(afterMatch.Length);
-                    modStr = afterMatch.Value;
+                    if (!hasAround)
+                    {
+                        er.Start += matchIsAfter ? 0 : afterMatch.Length;
+                        er.Length -= afterMatch.Length;
+                        er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(afterMatch.Length);
+                    }
+
+                    modStr = afterMatch.Value + modStr;
 
                     if (!string.IsNullOrEmpty(afterMatch.Groups[Constants.IncludeGroupName].Value))
                     {
@@ -372,18 +414,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else if (sinceMatch.Success)
                 {
                     hasSince = true;
-                    er.Start += matchIsAfter ? 0 : sinceMatch.Length;
-                    er.Length -= sinceMatch.Length;
-                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(sinceMatch.Length);
-                    modStr = sinceMatch.Value;
-                }
-                else if (aroundMatch.Success)
-                {
-                    hasAround = true;
-                    er.Start += matchIsAfter ? 0 : aroundMatch.Length;
-                    er.Length -= aroundMatch.Length;
-                    er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(aroundMatch.Length);
-                    modStr = aroundMatch.Value;
+                    if (!hasAround)
+                    {
+                        er.Start += matchIsAfter ? 0 : sinceMatch.Length;
+                        er.Length -= sinceMatch.Length;
+                        er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(sinceMatch.Length);
+                    }
+
+                    modStr = sinceMatch.Value + modStr;
                 }
                 else if (equalMatch.Success)
                 {
@@ -430,6 +468,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.BEFORE_MOD : Constants.UNTIL_MOD);
 
+                if (hasAround)
+                {
+                    val.Mod = CombineMod(Constants.APPROX_MOD, val.Mod);
+                    hasAround = false;
+                }
+
                 pr.Value = val;
             }
 
@@ -440,13 +484,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
 
-                if (!hasInclusiveModifier)
+                val.Mod = CombineMod(val.Mod, !hasInclusiveModifier ? Constants.AFTER_MOD : Constants.SINCE_MOD);
+
+                if (hasAround)
                 {
-                    val.Mod = CombineMod(val.Mod, Constants.AFTER_MOD);
-                }
-                else
-                {
-                    val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
+                    val.Mod = CombineMod(Constants.APPROX_MOD, val.Mod);
+                    hasAround = false;
                 }
 
                 pr.Value = val;
@@ -459,6 +502,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = matchIsAfter ? pr.Text + modStr : modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
+
+                if (hasAround)
+                {
+                    val.Mod = CombineMod(Constants.APPROX_MOD, val.Mod);
+                    hasAround = false;
+                }
+
                 pr.Value = val;
             }
 
@@ -730,6 +780,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ResolveWeekOf(res, Constants.ResolveToPast);
             }
 
+            if (!string.IsNullOrEmpty(comment) && TimexUtility.HasDoubleTimex(comment))
+            {
+                TimexUtility.ProcessDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
+            }
+
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string> dictionary)
@@ -837,6 +892,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (resolution.ContainsKey(DateTimeResolutionKey.End))
                         {
                             resolutionPm[DateTimeResolutionKey.End] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.End]);
+                        }
+
+                        if (resolution.ContainsKey(DateTimeResolutionKey.Value))
+                        {
+                            resolutionPm[ResolutionKey.Value] = DateTimeFormatUtil.ToPm(resolution[ResolutionKey.Value]);
                         }
 
                         resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);

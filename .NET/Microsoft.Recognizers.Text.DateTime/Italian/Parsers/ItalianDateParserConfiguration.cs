@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new ItalianHolidayParserConfiguration(this));
             DateRegexes = new ItalianDateExtractorConfiguration(this).DateRegexList;
             OnRegex = ItalianDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
@@ -41,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             StrictRelativeRegex = ItalianDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
+            BeforeAfterRegex = ItalianDateExtractorConfiguration.BeforeAfterRegex;
 
             // @TODO move to config
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
@@ -79,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -129,6 +133,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
+
+        public Regex BeforeAfterRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

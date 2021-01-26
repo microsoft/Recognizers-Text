@@ -300,6 +300,84 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var ers = this.Config.DateExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime);
 
+                // Consider cases with specific time of day e.g. "between 7 and 9:30 last night"
+                if (ers.Count == 0)
+                {
+                    match = Config.SpecificTimeOfDayRegex.Match(trimmedText);
+                    if (match.Success)
+                    {
+                        var matchStr = match.Value;
+
+                        // Handle "last", "next"
+                        var swift = this.Config.GetSwiftPrefix(matchStr);
+                        var timeOfDayDate = referenceTime.AddDays(swift).Date;
+
+                        var dateTimexStr = DateTimeFormatUtil.FormatDate(timeOfDayDate);
+
+                        var futDate = DateObject.MinValue.SafeCreateFromValue(timeOfDayDate.Year, timeOfDayDate.Month, timeOfDayDate.Day, 0, 0, 0);
+                        var pasDate = futDate;
+
+                        var timePeriodParseResult = timePeriodErs.Count > 0 ? Config.TimePeriodParser.Parse(timePeriodErs[0]) : null;
+                        var timePeriodResolutionResult = timePeriodErs.Count > 0 ? (DateTimeResolutionResult)timePeriodParseResult.Value : null;
+
+                        if (timePeriodResolutionResult == null)
+                        {
+                            return ParsePureNumberCases(text, referenceTime);
+                        }
+
+                        var periodTimex = timePeriodResolutionResult.Timex;
+
+                        var rangeTimexComponents = TimexUtility.GetRangeTimexComponents(periodTimex);
+
+                        if (rangeTimexComponents.IsValid)
+                        {
+                            var beginTimex = TimexUtility.CombineDateAndTimeTimex(dateTimexStr, rangeTimexComponents.BeginTimex);
+                            var endTimex = TimexUtility.CombineDateAndTimeTimex(dateTimexStr, rangeTimexComponents.EndTimex);
+
+                            var timePeriodFutureValue = (Tuple<DateObject, DateObject>)timePeriodResolutionResult.FutureValue;
+                            var beginTime = timePeriodFutureValue.Item1;
+                            var endTime = timePeriodFutureValue.Item2;
+                            var hour1 = beginTime.Hour;
+                            var hour2 = endTime.Hour;
+
+                            if (match.Groups["pm"].Success)
+                            {
+                                if (hour1 <= Constants.HalfDayHourCount)
+                                {
+                                    hour1 += Constants.HalfDayHourCount;
+                                    List<string> timexList = new List<string>(beginTimex.Split('T'));
+                                    beginTimex = timexList[0] + 'T' + hour1 + timexList[1].Substring(2);
+                                }
+
+                                if (hour2 <= Constants.HalfDayHourCount)
+                                {
+                                    hour2 += Constants.HalfDayHourCount;
+                                    List<string> timexList = new List<string>(endTimex.Split('T'));
+                                    endTimex = timexList[0] + 'T' + hour2 + timexList[1].Substring(2);
+                                }
+                            }
+
+                            ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(beginTimex, endTimex, rangeTimexComponents.DurationTimex);
+
+                            ret.FutureValue = new Tuple<DateObject, DateObject>(
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    futDate.Year, futDate.Month, futDate.Day, hour1, beginTime.Minute, beginTime.Second),
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    futDate.Year, futDate.Month, futDate.Day, hour2, endTime.Minute, endTime.Second));
+
+                            ret.PastValue = new Tuple<DateObject, DateObject>(
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    pasDate.Year, pasDate.Month, pasDate.Day, hour1, beginTime.Minute, beginTime.Second),
+                                DateObject.MinValue.SafeCreateFromValue(
+                                    pasDate.Year, pasDate.Month, pasDate.Day, hour2, endTime.Minute, endTime.Second));
+
+                            ret.Success = true;
+
+                            return ret;
+                        }
+                    }
+                }
+
                 if (ers.Count == 0 || ers[0].Length < beforeStr.Length)
                 {
                     var valid = false;
@@ -597,8 +675,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime);
 
-                    // check if TokenBeforeDate is null
-                    var dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim() : trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    // Try to add TokenBeforeDate if no result is found because it is not always included in the DateTimePeriod extraction
+                    // (e.g. "I'll leave on the 17 from 2 to 4 pm" -> "the 17 from 2 to 4 pm")
+                    if (dateResult.Count == 0)
+                    {
+                        dateResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime);
+                    }
+
+                    // check if TokenBeforeDate and TokenBeforeTime are null
+                    var dateText = trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeTime) ? dateText.Replace(Config.TokenBeforeTime.Trim(), string.Empty).Trim() : dateText;
                     if (this.Config.CheckBothBeforeAfter)
                     {
                         List<string> tokenListBeforeDate = Config.TokenBeforeDate.Split('|').ToList();
@@ -711,6 +798,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Parse following date
                 var dateExtractResult = this.Config.DateExtractor.Extract(trimmedText.Replace(match.Value, string.Empty), referenceTime);
 
+                // Try to add TokenBeforeDate if no result is found because it is not always included in the DateTimePeriod extraction
+                // (e.g. "I'll leave on the 17 from 2 to 4 pm" -> "the 17 from 2 to 4 pm")
+                if (dateExtractResult.Count == 0)
+                {
+                    dateExtractResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, match.Index), referenceTime);
+                }
+
                 DateObject futureDate, pastDate;
                 if (dateExtractResult.Count > 0)
                 {
@@ -730,7 +824,39 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    return ret;
+                    // Consider cases with specific time of day e.g. "between 7 and 9 last night"
+                    match = Config.SpecificTimeOfDayRegex.Match(trimmedText);
+                    if (match.Success)
+                    {
+                        var matchStr = match.Value;
+                        ret.Comment = null;
+
+                        // Handle "last", "next"
+                        var swift = this.Config.GetSwiftPrefix(matchStr);
+                        var timeOfDayDate = referenceTime.AddDays(swift).Date;
+
+                        dateStr = DateTimeFormatUtil.FormatDate(timeOfDayDate);
+
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(timeOfDayDate.Year, timeOfDayDate.Month, timeOfDayDate.Day, 0, 0, 0);
+                        pastDate = futureDate;
+
+                        if (match.Groups["pm"].Success)
+                        {
+                            if (beginHour <= Constants.HalfDayHourCount)
+                            {
+                                beginHour += Constants.HalfDayHourCount;
+                            }
+
+                            if (endHour <= Constants.HalfDayHourCount)
+                            {
+                                endHour += Constants.HalfDayHourCount;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return ret;
+                    }
                 }
 
                 var pastHours = endHour - beginHour;

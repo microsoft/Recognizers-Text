@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Parse(query, DateObject.Now);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "By design")]
         public List<ModelResult> Parse(string query, DateObject refTime)
         {
             var parsedDateTimes = new List<DateTimeParseResult>();

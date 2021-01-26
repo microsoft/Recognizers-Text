@@ -66,10 +66,10 @@ The table below summarizes the currently supported entities. Support for English
 | Ordinal              | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
 | Percentage           | ✓    | :x:     | ✓    | ✓      | PA/EO |         |        |        |        |         |
 | Number Range         | :x:  | :x:     | ✓     | ✓     | PA/EO |         |        |        |        |         |
-| Unit - Age           | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
-| Unit - Currency      | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
-| Unit - Dimensions    | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
-| Unit - Temperature   | :x:  | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
+| Unit - Age           | ✓    | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
+| Unit - Currency      | ✓    | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         |
+| Unit - Dimensions    | ✓    | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
+| Unit - Temperature   | ✓    | :x:     | ✓     | ✓     | :x:   |         |        |        |        |         | 
 | Choice - Boolean     | ✓    | ✓      | ✓     | ✓      | ✓    |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     | G      | G     |         |        |        |        |         |
 | Seq. - GUID          | G    | G       | G     | G      | G     |         |        |        |        |         |

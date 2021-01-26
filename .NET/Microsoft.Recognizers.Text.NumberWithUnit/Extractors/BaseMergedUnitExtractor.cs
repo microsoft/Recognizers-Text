@@ -177,7 +177,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                 var middleEnd = numErs[i].Start ?? 0;
 
-                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
+                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                 // Separated by whitespace
                 if (string.IsNullOrEmpty(middleStr))

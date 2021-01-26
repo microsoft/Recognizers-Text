@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -38,16 +39,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
+            // @TODO move hardcoded values to resources file
+
             // c'este 8 heures et demie, - "it's half past 8"
-            if (trimmedPrefix.EndsWith("demie"))
+            if (trimmedPrefix.EndsWith("demie", StringComparison.Ordinal))
             {
                 deltaMin = 30;
             }
-            else if (trimmedPrefix.EndsWith("un quart") || trimmedPrefix.EndsWith("quart"))
+            else if (trimmedPrefix.EndsWith("un quart", StringComparison.Ordinal) || trimmedPrefix.EndsWith("quart", StringComparison.Ordinal))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.EndsWith("trois quarts"))
+            else if (trimmedPrefix.EndsWith("trois quarts", StringComparison.Ordinal))
             {
                 deltaMin = 45;
             }
@@ -61,13 +64,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
             }
 
             // 'to' i.e 'one to five' = 'un à cinq'
-            if (trimmedPrefix.EndsWith("à"))
+            if (trimmedPrefix.EndsWith("à", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }

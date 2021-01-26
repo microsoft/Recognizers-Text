@@ -9740,5 +9740,290 @@
         }
       }
     ]
+  },
+  {
+    "Input": "ik ben vandaag weg tussen vijf en zeven",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vandaag weg tussen vijf en zeven",
+        "Start": 7,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+              "type": "daterange",
+              "start": "2016-11-07 05:00:00",
+              "end": "2016-11-07 07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ik ben op 1 januari weg van 5 tot 6",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op 1 januari weg van 5 tot 6",
+        "Start": 7,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+              "type": "daterange",
+              "start": "2017-01-01 05:00:00",
+              "end": "2017-01-01 06:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Morgen ben ik weg tussen 3 en 4 uur ’s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 3 en 4 uur ’s middags",
+        "Start": 18,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+              "type": "daterange",
+              "start": "2016-11-08 15:00:00",
+              "end": "2016-11-08 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Morgen ben ik weg van half acht tot 4 uur ‘s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+     "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van half acht tot 4 uur ‘s middags",
+        "Start": 18,
+        "End": 51,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+              "type": "daterange",
+              "start": "2016-11-08 07:30:00",
+              "end": "2016-11-08 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vandaag ben ik tussen 4 en 5 uur in de middag weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 4 en 5 uur in de middag",
+        "Start": 15,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+              "type": "daterange",
+              "start": "2016-11-07 16:00:00",
+              "end": "2016-11-07 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga deze middag terugI'll go back this afternoon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze middag",
+        "Start": 6,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07TAF",
+              "type": "daterange",
+              "start": "2016-11-07 12:00:00",
+              "end": "2016-11-07 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ik ga een minuut terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een minuut terug",
+        "Start": 6,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+              "type": "daterange",
+              "start": "2016-11-07 16:11:00",
+              "end": "2016-11-07 16:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga over een uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over een uur",
+        "Start": 6,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+              "type": "daterange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 17:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het zal over 2 uur in de toekomst gebeuren ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 uur in de toekomst",
+        "Start": 13,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+              "type": "daterange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 18:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik heb op de vorige koningsdag veel leuke activiteiten gedaan!",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "Comment": "Last Kingsday should be 2020, not 2019. Relative date should first look for a date in the same year.",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vorige koningsdag",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-04-27",
+              "type": "date",
+              "value": "2020-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hopelijk gaat de volgende koningsdag weer wel gewoon door.",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende koningsdag",
+        "Start": 17,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-27",
+              "type": "date",
+              "value": "2021-04-27"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

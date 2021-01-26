@@ -87,21 +87,13 @@ class BaseTimeExtractor(DateTimeExtractor):
     @staticmethod
     def lth_check(match: Match) -> bool:
 
-        result = False
-
         match_val = match.group()
 
         lth = None
         if match.re.groupindex.keys().__contains__('lth'):
             lth = match.group('lth')
 
-        if (lth is None) or (len(lth) != len(match_val) and not (len(match_val) == len(lth) + 1 and match_val.endswith(' '))):
-            result = True
-
-        if result is False:
-            print()
-
-        return result
+        return (lth is None) or (len(lth) != len(match_val) and not (len(match_val) == len(lth) + 1 and match_val.endswith(' ')))
 
     def basic_regex_match(self, source: str) -> []:
         from .utilities import Token

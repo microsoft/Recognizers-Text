@@ -5,6 +5,7 @@
         public const string Timex = "timex";
         public const string Mod = "Mod";
         public const string IsLunar = "isLunar";
+        public const string Value = "value";
         public const string Start = "start";
         public const string End = "end";
         public const string List = "list";

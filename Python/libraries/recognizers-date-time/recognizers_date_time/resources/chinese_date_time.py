@@ -17,14 +17,18 @@ class ChineseDateTime:
     LangMarker = 'Chi'
     MonthRegex = f'(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|01月|02月|03月|04月|05月|06月|07月|08月|09月|10月|11月|12月|1月|2月|3月|4月|5月|6月|7月|8月|9月|大年(?!龄|纪|级))'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)'
-    DateDayRegexInChinese = f'(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)'
-    DayRegexNumInChinese = f'(?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)'
+    OneToNineIntegerRegex = f'[一二三四五六七八九壹贰叁肆伍陆柒捌玖]'
+    DateDayRegexInChinese = f'(?<day>(([12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})[日号]|初一|三十))'
+    DayRegexNumInChinese = f'(?<day>[12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex}|廿|卅)'
     MonthNumRegex = f'(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)'
     TwoNumYear = '50'
     YearNumRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)'
     SimpleYearRegex = f'(?<year>(\\d{{2,4}}))'
     ZeroToNineIntegerRegexChs = f'[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
-    DateYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))'
+    DynastyStartYear = '元'
+    RegionTitleRegex = f'(贞观|开元|神龙|洪武|建文|永乐|景泰|天顺|成化|嘉靖|万历|崇祯|顺治|康熙|雍正|乾隆|嘉庆|道光|咸丰|同治|光绪|宣统|民国)'
+    DynastyYearRegex = f'(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\\d{{1,3}}|[十拾]?({ZeroToNineIntegerRegexChs}[十百拾佰]?){{0,3}}))'
+    DateYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{DynastyYearRegex}))'
     WeekDayRegex = f'(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)'
     LunarRegex = f'(农历|初一|正月|大年(?!龄|纪|级))'
     DateThisRegex = f'(这个|这一个|这|这一|本){WeekDayRegex}'
@@ -44,11 +48,11 @@ class ChineseDateTime:
     DateRegexList1 = f'({LunarRegex}(\\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInChinese}((\\s*|,|，){WeekDayRegex})?'
     DateRegexList2 = f'((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*){DateDayRegexInChinese}((\\s*|,|，){WeekDayRegex})?'
     DateRegexList3 = f'((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*)({DayRegexNumInChinese}|{DayRegex})((\\s*|,|，){WeekDayRegex})?'
-    DateRegexList4 = f'{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*){SimpleYearRegex})?'
-    DateRegexList5 = f'{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*){SimpleYearRegex})?'
-    DateRegexList6 = f'{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{SimpleYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
-    DateRegexList7 = f'{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{YearNumRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
-    DateRegexList8 = f'{YearNumRegex}\\s*[/\\\\\\-\\. ]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
+    DateRegexList4 = f'{MonthNumRegex}\\s*/\\s*{DayRegex}'
+    DateRegexList5 = f'{DayRegex}\\s*/\\s*{MonthNumRegex}'
+    DateRegexList6 = f'{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{SimpleYearRegex}'
+    DateRegexList7 = f'{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{SimpleYearRegex}'
+    DateRegexList8 = f'{SimpleYearRegex}\\s*[/\\\\\\-\\. ]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*{DayRegex}'
     DatePeriodTillRegex = f'(?<till>到|至|--|-|—|——|~|–)'
     DatePeriodTillSuffixRequiredRegex = f'(?<till>与|和)'
     DatePeriodDayRegexInChinese = f'(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)'
@@ -60,7 +64,7 @@ class ChineseDateTime:
     YearRegex = f'(({YearNumRegex})(\\s*年)?|({SimpleYearRegex})\\s*年){HalfYearRegex}?'
     StrictYearRegex = f'({YearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))'
     YearRegexInNumber = f'(?<year>(\\d{{4}}))'
-    DatePeriodYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年{HalfYearRegex}?'
+    DatePeriodYearInChineseRegex = f'{DateYearInChineseRegex}年{HalfYearRegex}?'
     MonthSuffixRegex = f'(?<msuf>({RelativeMonthRegex}|{MonthRegex}))'
     SimpleCasesRegex = f'((从)\\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?'
     YearAndMonth = f'({DatePeriodYearInChineseRegex}|{YearRegex})\\s*{MonthRegex}'
@@ -107,12 +111,14 @@ class ChineseDateTime:
     DurationHalfSuffixRegex = f'半'
     DurationSuffixList = dict([("M", "分钟"),
                                ("S", "秒钟|秒"),
-                               ("H", "个小时|小时|个钟头|钟头"),
+                               ("H", "个小时|小时|个钟头|钟头|时"),
                                ("D", "天"),
                                ("W", "星期|个星期|周"),
                                ("Mon", "个月"),
                                ("Y", "年")])
-    DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'个月', r'年']
+    DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'个月', r'年', r'时']
+    DurationUnitRegex = f'(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)'
+    DurationConnectorRegex = f'^\\s*(?<connector>[多又余零]?)\\s*$'
     LunarHolidayRegex = f'(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)'
     HolidayRegexList1 = f'(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)'
     HolidayRegexList2 = f'(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)'
@@ -171,12 +177,14 @@ class ChineseDateTime:
                                        ("周", "W"),
                                        ("天", "D"),
                                        ("小时", "H"),
+                                       ("个小时", "H"),
                                        ("时", "H"),
                                        ("分钟", "M"),
                                        ("分", "M"),
                                        ("秒钟", "S"),
                                        ("秒", "S"),
-                                       ("星期", "W")])
+                                       ("星期", "W"),
+                                       ("个星期", "W")])
     ParserConfigurationUnitValueMap = dict([("years", 31536000),
                                             ("year", 31536000),
                                             ("months", 2592000),
@@ -539,7 +547,8 @@ class ChineseDateTime:
                                  ("^\\d{1,2}号", "^\\d{1,2}号"),
                                  ("周", "周岁"),
                                  ("今日", "今日头条"),
-                                 ("明日", "《明日之后》")])
+                                 ("明日", "《明日之后》"),
+                                 ("时", "时间")])
     DurationUnitValueMap = dict([("Y", 31536000),
                                  ("Mon", 2592000),
                                  ("W", 604800),
@@ -576,11 +585,34 @@ class ChineseDateTime:
                              ("傍晚", 18),
                              ("晚", 18),
                              ("pm", 12)])
-    DefaultLanguageFallback = 'DMY'
+    DefaultLanguageFallback = 'YMD'
     MorningTermList = [r'早', r'上午', r'早间', r'早上', r'清晨']
     MidDayTermList = [r'中午', r'正午']
     AfternoonTermList = [r'下午', r'午后']
     EveningTermList = [r'晚', r'晚上', r'夜里', r'傍晚', r'夜晚']
     DaytimeTermList = [r'白天', r'日间']
     NightTermList = [r'深夜']
+    DynastyYearMap = dict([("贞观", 627),
+                           ("开元", 713),
+                           ("神龙", 705),
+                           ("洪武", 1368),
+                           ("建文", 1399),
+                           ("永乐", 1403),
+                           ("景泰", 1450),
+                           ("天顺", 1457),
+                           ("成化", 1465),
+                           ("嘉靖", 1522),
+                           ("万历", 1573),
+                           ("崇祯", 1628),
+                           ("顺治", 1644),
+                           ("康熙", 1662),
+                           ("雍正", 1723),
+                           ("乾隆", 1736),
+                           ("嘉庆", 1796),
+                           ("道光", 1821),
+                           ("咸丰", 1851),
+                           ("同治", 1862),
+                           ("光绪", 1875),
+                           ("宣统", 1909),
+                           ("民国", 1912)])
 # pylint: enable=line-too-long

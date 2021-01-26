@@ -38,8 +38,9 @@ CenturySuffixRegex: !simpleRegex
   def: (^yüzyıl)
 ReferencePrefixRegex: !simpleRegex
   def: (o|şu|aynı)\b
-FutureSuffixRegex: !simpleRegex
-  def: \b(ileride|gelecekte)\b
+FutureSuffixRegex: !nestedRegex
+  def: \b({NextPrefixRegex}|ileride|gelecekte)\b
+  references: [ NextPrefixRegex ]
 DayRegex: !simpleRegex
   def: ((?<day>10|20|30|31|(1|2)[1-9]|0?[1-9])('i|'si|'sı|'ü|'u)?)
 ImplicitDayRegex: !simpleRegex
@@ -661,6 +662,8 @@ AgoRegex: !simpleRegex
   def: \b((?<day>bugünden|gün|dünden|dün)\s+)?(önce(ki)?|evvel)\b
 LaterRegex: !simpleRegex
   def: \b((?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra(ki)?)|sonra|şu\s+andan\s+itibaren)(\s+gelecek)?
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(içinde)\b
 SinceNumSuffixRegex: !simpleRegex

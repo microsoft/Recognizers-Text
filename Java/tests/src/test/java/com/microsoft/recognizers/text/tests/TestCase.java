@@ -1,10 +1,9 @@
 package com.microsoft.recognizers.text.tests;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
@@ -51,24 +50,50 @@ public class TestCase {
     private String getDateTimePattern(String datetime) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("yyyy-MM-dd'T'HH:mm:ss");
-        stringBuilder.append(getMillisecondsPatten(datetime, ".", "+"));
+        stringBuilder.append(getMillisecondsPatten(datetime, "."));
         stringBuilder.append(getTimeZonePattern(datetime));
 
         return stringBuilder.toString();
     }
 
-    private String getMillisecondsPatten(String text, String leftBound, String rightBound) {
+    private String getMillisecondsPatten(String text, String leftBound) {
         if (text.contains(leftBound)) {
-            String milliseconds = text.substring(text.indexOf(leftBound) + 1 , text.contains(rightBound) ? text.indexOf(rightBound) : text.length());
+            final int leftIndex = text.indexOf(leftBound);
+            final int endIndex = getEndIndex(text, leftIndex);
+            String milliseconds = text.substring(leftIndex + 1, endIndex);
             return leftBound + IntStream.range(0, milliseconds.length()).mapToObj(i -> "S").collect(Collectors.joining(""));
         }
 
         return "";
     }
 
-    private String getTimeZonePattern(String text) {
+    private int getEndIndex(final String text, final int leftIndex) {
         if (text.contains("+")) {
-            String timezone = text.substring(text.indexOf("+") + 1);
+            return text.indexOf('+');
+        } else if (text.contains("-") && text.lastIndexOf('-') > leftIndex) {
+            return text.lastIndexOf('-');
+        } else {
+            return text.length();
+        }
+    }
+
+    private String getTimeZonePattern(String text) {
+        final String result = getTimeZonePattern(text, "+");
+        if (result != null) {
+            return result;
+        }
+
+        final String nextResult = getTimeZonePattern(text, "-");
+        if (nextResult != null) {
+            return nextResult;
+        }
+
+        return "";
+    }
+
+    private String getTimeZonePattern(String text, final String timeZoneBound) {
+        if (text.contains(timeZoneBound)) {
+            String timezone = text.substring(text.lastIndexOf(timeZoneBound) + 1);
             switch (timezone.length()) {
                 case 2:
                     return "X";
@@ -81,10 +106,10 @@ public class TestCase {
                 case 8:
                     return "XXXXX";
                 default:
-                    throw new Error("Time Zone format not supported.");
+                    return null;
             }
         }
 
-        return "";
+        return null;
     }
 }

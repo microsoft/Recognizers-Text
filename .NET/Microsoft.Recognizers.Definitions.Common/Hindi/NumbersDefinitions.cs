@@ -104,9 +104,9 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string SuffixBasicOrdinalRegex = $@"(?:((({AllNumericalIntRegex}|{TensNumberIntegerRegex})(\s+({RoundNumberIntegerRegex})(\s+))+)(({NumberOrdinalRegex}))))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"(?:{CompoundNumberOrdinals}|{SuffixRoundNumberOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1ला|[2-3]रा|4था|[0-9]वां))|([०-९]*(१ला|[२-३]रा|४था|[०-९]वां)))";
+      public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1(ला|ली)|[2-3]रा|4था|[0-9](वां|वीं|वें|वाँ|वा)))|([०-९]*(१(ला|ली)|[२-३]रा|४था|[०-९](वां|वीं|वें|वाँ|वा))))";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounRegex = $@"(?<=\b)(((({AllNumericalIntRegex})(\s?)((({RoundNumberIntegerRegex})|({RoundNumberOrdinalRegex}))\s?)?)((और\s)?))+((आधा|आधे|चौथाई|तिहाई)))(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(और\s+)?)?(एक)(\s+|\s*-\s*)(?!\bफ़र्स्ट)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(आधा|आधे|चौथाई|तिहाई)))|(आधा|आधे))";
       public static readonly string FractionPrepositionRegex = $@"(?<numerator>(({AllIntRegex}\s+)|((?<![\.,])\d+)(\s|\s+)|({RoundNumberOrdinalRegex})))(((बटा|बटे)\s*)|((का|की|के|कें|में)\s*))(?<denominator>(({AllOrdinalRegex})|({CompoundNumberOrdinals})|(\d+)|({AllIntRegex})|({AllNumericalIntRegex})))";

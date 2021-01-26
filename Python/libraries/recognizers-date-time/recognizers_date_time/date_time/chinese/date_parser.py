@@ -15,6 +15,7 @@ from ..utilities import DateTimeResolutionResult, DateTimeFormatUtil, DateUtils,
 from ..parsers import DateTimeParseResult
 from ..base_date import BaseDateParser
 from .date_parser_config import ChineseDateParserConfiguration
+from ..utilities import parse_chinese_dynasty_year
 
 
 class ChineseDateParser(BaseDateParser):
@@ -168,7 +169,7 @@ class ChineseDateParser(BaseDateParser):
                     if past_date >= reference:
                         if self.is_valid_date(year, month - 1, day):
                             past_date += datedelta(months=-1)
-                        elif self.is_non_leap_year_Feb_29th(year, month - 1, day):
+                        elif DateUtils.is_Feb_29th(year, month - 1, day):
                             past_date += datedelta(months=-2)
                 elif not has_year:
                     if future_date < reference:
@@ -297,16 +298,7 @@ class ChineseDateParser(BaseDateParser):
         else:
             result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
-        future_date = DateUtils.safe_create_from_min_value(year, month, day)
-        past_date = DateUtils.safe_create_from_min_value(year, month, day)
-
-        if no_year and future_date < reference:
-            future_date = DateUtils.safe_create_from_min_value(
-                year + 1, month, day)
-
-        if no_year and past_date >= reference:
-            past_date = DateUtils.safe_create_from_min_value(
-                year - 1, month, day)
+        future_date, past_date = DateUtils.generate_dates(no_year, reference, year, month, day)
 
         result.future_value = future_date
         result.past_value = past_date
@@ -325,6 +317,10 @@ class ChineseDateParser(BaseDateParser):
 
     def convert_chinese_year_to_number(self, source: str) -> int:
         year = 0
+        dynasty_year = parse_chinese_dynasty_year(source, self.config.dynasty_year_regex, self.config.dynasty_start_year, self.config.dynasty_year_map, self.integer_extractor, self.config.number_parser)
+        if dynasty_year is not None:
+            return dynasty_year
+
         er: ExtractResult = next(
             iter(self.config.integer_extractor.extract(source)), None)
         if er and er.type == NumberConstants.SYS_NUM_INTEGER:
@@ -352,13 +348,10 @@ class ChineseDateParser(BaseDateParser):
             return self.config.day_of_month[source] % 31
         return self.config.day_of_month[source]
 
-    def is_leap_year(self, year) -> bool:
-        return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
-
     def get_month_max_day(self, year, month) -> int:
         max_day = self.month_max_days[month - 1]
 
-        if not self.is_leap_year(year) and month == 2:
+        if not DateUtils.is_leap_year(year) and month == 2:
             max_day -= 1
         return max_day
 
@@ -373,14 +366,11 @@ class ChineseDateParser(BaseDateParser):
 
         return DateUtils.is_valid_date(year, month, day)
 
-    def is_non_leap_year_Feb_29th(self, year, month, day):
-        return not self.is_leap_year(year) and month == 2 and day == 29
-
     # Handle cases like "三天前"
     def parser_duration_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        duration_res = self.duration_extractor.extract(source, reference).pop()
-
+        duration_res = self.duration_extractor.extract(source, reference).pop() if self.duration_extractor.extract(
+            source, reference) else []
         if duration_res:
             match = self.config._unit_regex.search(source)
             if match:

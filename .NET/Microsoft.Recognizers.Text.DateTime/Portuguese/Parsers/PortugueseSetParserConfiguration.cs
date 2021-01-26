@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -82,23 +83,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
-            if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diaria") || trimmedText.EndsWith("diariamente"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diaria", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("diariamente", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semanalmente"))
+            else if (trimmedText.Equals("semanalmente", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("quinzenalmente"))
+            else if (trimmedText.Equals("quinzenalmente", StringComparison.Ordinal))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensalmente"))
+            else if (trimmedText.Equals("mensalmente", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("anualmente"))
+            else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }
@@ -115,19 +118,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
-            if (trimmedText.Equals("dia") || trimmedText.Equals("dias"))
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.Equals("dia", StringComparison.Ordinal) || trimmedText.Equals("dias", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semana") || trimmedText.Equals("semanas"))
+            else if (trimmedText.Equals("semana", StringComparison.Ordinal) || trimmedText.Equals("semanas", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mes") || trimmedText.Equals("meses"))
+            else if (trimmedText.Equals("mes", StringComparison.Ordinal) || trimmedText.Equals("meses", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("ano") || trimmedText.Equals("anos"))
+            else if (trimmedText.Equals("ano", StringComparison.Ordinal) || trimmedText.Equals("anos", StringComparison.Ordinal))
             {
                 timex = "P1Y";
             }

@@ -23,7 +23,7 @@ public class PortugueseDateTime {
 
     public static final Boolean CheckBothBeforeAfter = false;
 
-    public static final String TillRegex = "(?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\\s+(o|[aà](s)?))?";
+    public static final String TillRegex = "(?<till>\\b(at[eé]h?|[aà]s|ao?)\\b|--|-|—|——)(\\s+\\b(o|[aà](s)?)\\b)?";
 
     public static final String RangeConnectorRegex = "(?<and>(e\\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})"
             .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
@@ -155,11 +155,15 @@ public class PortugueseDateTime {
 
     public static final String RangeUnitRegex = "\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b";
 
+    public static final String BeforeAfterRegex = "^[.]";
+
     public static final String InConnectorRegex = "\\b(em)\\b";
 
     public static final String SinceYearSuffixRegex = "^[.]";
 
     public static final String WithinNextPrefixRegex = "^[.]";
+
+    public static final String TodayNowRegex = "\\b(hoje|agora)\\b";
 
     public static final String CenturySuffixRegex = "^[.]";
 

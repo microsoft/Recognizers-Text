@@ -73,10 +73,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex TimeFollowedUnit =
             new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
 
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenTokenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
+        private static readonly Regex RangeConnectorRegex =
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+
         private static readonly Regex[] SimpleCases =
-{
+        {
             DutchTimePeriodExtractorConfiguration.PureNumFromTo,
+            DutchTimePeriodExtractorConfiguration.TimeDateFromTo,
             DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+            DutchTimePeriodExtractorConfiguration.SpecificTimeFromTo,
         };
 
         public DutchDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -174,32 +185,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("from"))
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("from", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("between"))
+            var betweenMatch = BetweenTokenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("between", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)
         {
-            var rangeConnetorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
-
-            return rangeConnetorRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

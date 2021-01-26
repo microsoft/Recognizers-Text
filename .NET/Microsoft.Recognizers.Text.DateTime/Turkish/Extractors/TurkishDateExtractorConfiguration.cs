@@ -118,6 +118,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DayRegex =
@@ -140,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -243,6 +247,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IEnumerable<Regex> ImplicitDateList { get; }
@@ -290,5 +296,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

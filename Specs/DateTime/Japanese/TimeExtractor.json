@@ -634,5 +634,154 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "今日０時にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "０時",
+        "Type": "time",
+        "Start": 2,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "今日十時ぐらい以降、マイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十時ぐらい",
+        "Type": "time",
+        "Start": 2,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今日０時かっきりマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "０時かっきり",
+        "Type": "time",
+        "Start": 2,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今日夜二時半にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜二時半",
+        "Type": "time",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "今日午後十一時半にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "午後十一時半",
+        "Type": "time",
+        "Start": 2,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今日十一時四十五分にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十一時四十五分",
+        "Type": "time",
+        "Start": 2,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "今日夜十時頃以降、マイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜十時頃",
+        "Type": "time",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "今日の１時",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "今日朝十時ぐらい、マイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "朝十時ぐらい",
+        "Type": "time",
+        "Start": 2,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今日夜19:30にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜19:30",
+        "Type": "time",
+        "Start": 2,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "今日夜9:30にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜9:30",
+        "Type": "time",
+        "Start": 2,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今日０時15分にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "０時15分",
+        "Type": "time",
+        "Start": 2,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今日朝十一時にマイクロソフトビルの入り口で会いましょう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "朝十一時",
+        "Type": "time",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
   }
 ]

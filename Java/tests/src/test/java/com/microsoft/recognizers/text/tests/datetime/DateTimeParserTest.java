@@ -22,6 +22,18 @@ import com.microsoft.recognizers.text.datetime.english.parsers.EnglishTimeParser
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.TimeParser;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDatePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDateTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchDurationParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchSetParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParser;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeAltParser;
@@ -49,6 +61,7 @@ import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriod
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeResolutionResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.TimeZoneResolutionResultMixIn;
@@ -114,7 +127,7 @@ public class DateTimeParserTest extends AbstractTest {
                     DateTimeParseResult actual = t.getValue1();
 
                     Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
-                    Assert.assertTrue(getMessage(currentCase, "text"), expected.getText().equalsIgnoreCase(actual.getText()));
+                    Assert.assertTrue(getMessage(currentCase, "text") + String.format(" expected: \"%s\" actual: \"%s\"", expected.getText(), actual.getText()), expected.getText().equalsIgnoreCase(actual.getText()));
 
                     Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
                     Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
@@ -155,6 +168,7 @@ public class DateTimeParserTest extends AbstractTest {
             Assert.assertEquals("Actual results size differs", expectedResults.size(), actualResults.size());
 
             IntStream.range(0, expectedResults.size()).mapToObj(i -> new Pair<>(expectedResults.get(i), actualResults.get(i))).forEach(o -> {
+
                 Map<String, Object> expectedItem = o.getValue0();
                 Map<String, Object> actualItem = o.getValue1();
                 Assert.assertTrue(String.format("Keys error \n\tExpected:\t%s\n\tActual:\t%s",
@@ -178,15 +192,17 @@ public class DateTimeParserTest extends AbstractTest {
                     return getEnglishParser(name);
                 case Culture.Spanish:
                     return getSpanishParser(name);
+                case Culture.French:
+                    return getFrenchParser(name);
                 default:
-                    throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                    throw new NotSupportedException("Parser Type/Name not supported for culture: " + culture);
             }
-        } catch (IllegalArgumentException ex) {
+        } catch (NotSupportedException ex) {
             throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 
-    private static IDateTimeParser getEnglishParser(String name) {
+    private static IDateTimeParser getEnglishParser(String name) throws NotSupportedException {
 
         switch (name) {
             case "DateParser":
@@ -214,11 +230,11 @@ public class DateTimeParserTest extends AbstractTest {
             case "MergedParser":
                 return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
             default:
-                throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                throw new NotSupportedException("English parser Type/Name not supported for type: " + name);
         }
     }
 
-    private static IDateTimeParser getSpanishParser(String name) {
+    private static IDateTimeParser getSpanishParser(String name) throws NotSupportedException {
 
         switch (name) {
             case "DateParser":
@@ -244,7 +260,36 @@ public class DateTimeParserTest extends AbstractTest {
             case "TimePeriodParser":
                 return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
-                throw new AssumptionViolatedException("Parser Type/Name not supported.");
+                throw new NotSupportedException("Spanish parser Type/Name not supported for type: " + name);
+        }
+    }
+    private static IDateTimeParser getFrenchParser(String name) throws NotSupportedException {
+
+        switch (name) {
+            case "DateParser":
+                return new BaseDateParser(new FrenchDateParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DatePeriodParser":
+                return new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            //case "DateTimeAltParser":
+            //    return new BaseDateTimeAltParser(new FrenchDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimeParser":
+                return new BaseDateTimeParser(new FrenchDateTimeParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimePeriodParser":
+                return new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DurationParser":
+                return new BaseDurationParser(new FrenchDurationParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "HolidayParser":
+                return new BaseHolidayParser(new FrenchHolidayParserConfiguration());
+            case "SetParser":
+                return new BaseSetParser(new FrenchSetParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "MergedParser":
+                return new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(DateTimeOptions.None));
+            case "TimeParser":
+                return new FrenchTimeParser(new FrenchTimeParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimePeriodParser":
+                return new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            default:
+                throw new NotSupportedException("French parser Type/Name not supported for type: " + name);
         }
     }
 

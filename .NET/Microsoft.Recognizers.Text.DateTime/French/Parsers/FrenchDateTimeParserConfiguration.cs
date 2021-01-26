@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
@@ -107,13 +108,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             int result = hour;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("matin") && hour >= Constants.HalfDayHourCount)
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("matin", StringComparison.Ordinal) && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("matin") && hour < Constants.HalfDayHourCount)
+            else if (!trimmedText.EndsWith("matin", StringComparison.Ordinal) && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -123,17 +126,22 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("maintenant"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("maintenant", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("récemment") || trimmedText.Equals("précédemment") || trimmedText.Equals("auparavant"))
+            else if (trimmedText.Equals("récemment", StringComparison.Ordinal) ||
+                     trimmedText.Equals("précédemment", StringComparison.Ordinal) ||
+                     trimmedText.Equals("auparavant", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("dès que possible") || trimmedText.Equals("dqp"))
+            else if (trimmedText.Equals("dès que possible", StringComparison.Ordinal) ||
+                     trimmedText.Equals("dqp", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
@@ -150,15 +158,21 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var swift = 0;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
-                trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.StartsWith("prochain", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochain", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("prochaine", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochaine", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("dernier") || trimmedText.StartsWith("dernière") ||
-                      trimmedText.EndsWith("dernier") || trimmedText.EndsWith("dernière"))
+            else if (trimmedText.StartsWith("dernier", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("dernière", StringComparison.Ordinal) ||
+                     trimmedText.EndsWith("dernier", StringComparison.Ordinal) ||
+                     trimmedText.EndsWith("dernière", StringComparison.Ordinal))
             {
                 swift = -1;
             }

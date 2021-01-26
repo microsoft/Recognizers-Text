@@ -5,7 +5,7 @@ CurrencyFractionMapping: !dictionary
     __D: CENT
     RUB: KOPEK
     AFN: PUL
-    EUR: CENT
+    EUR: CENT|KWARTJE|DUBBELTJE|STUIVER
     ALL: QINDARKE
     _ALP: PENNY
     GBP: PENNY
@@ -245,6 +245,9 @@ CurrencyFractionalRatios: !dictionary
     Tiyin: 100
     Hào: 10
     Ngwee: 100
+    Kwartje: 4
+    Dubbeltje: 10
+    Stuiver: 20
 NonStandardFractionalSubunits: !dictionary
   types: [ string, long ]
   entries:

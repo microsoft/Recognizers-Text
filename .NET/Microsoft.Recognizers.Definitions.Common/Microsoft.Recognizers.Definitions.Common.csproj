@@ -22,15 +22,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="YamlDotNet" Version="8.1.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -354,6 +354,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+	<Compile Update="Swedish\NumbersWithUnitDefinitions.cs">
+	  <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+	  <DesignTime>True</DesignTime>
+	  <AutoGen>True</AutoGen>
+	</Compile>
     <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -504,6 +509,8 @@
     <None Update="Swedish\ChoiceDefinitions.tt">
     </None>
     <None Update="Swedish\NumbersDefinitions.tt">
+    </None>
+    <None Update="Swedish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Turkish\ChoiceDefinitions.tt">
     </None>

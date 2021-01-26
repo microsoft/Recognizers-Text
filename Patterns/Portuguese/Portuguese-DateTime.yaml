@@ -3,7 +3,7 @@
 LangMarker: Por
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
-  def: (?<till>at[eé]h?|[aà]s|ao?|--|-|—|——)(\s+(o|[aà](s)?))?
+  def: (?<till>\b(at[eé]h?|[aà]s|ao?)\b|--|-|—|——)(\s+\b(o|[aà](s)?)\b)?
 RangeConnectorRegex: !nestedRegex
   def: (?<and>(e\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
@@ -117,6 +117,8 @@ MonthOfRegex: !simpleRegex
   def: (mes)(\s*)((do|da|de))
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>anos?|meses|m[êe]s|semanas?)\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(em)\b
 SinceYearSuffixRegex: !simpleRegex

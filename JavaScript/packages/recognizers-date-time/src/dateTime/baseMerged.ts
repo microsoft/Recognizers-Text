@@ -353,7 +353,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.beforeMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.beforeMod);
             pr.value = val;
         }
 
@@ -362,7 +362,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.afterMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.afterMod);
             pr.value = val;
         }
 
@@ -371,7 +371,7 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.start -= modStr.length;
             pr.text = modStr + pr.text;
             let val = pr.value;
-            val.mod = TimeTypeConstants.sinceMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.sinceMod);
             pr.value = val;
         }
 
@@ -426,6 +426,15 @@ export class BaseMergedParser implements IDateTimeParser {
             return this.config.setParser.parse(extractorResult, referenceDate);
         }
         return null;
+    }
+    
+    protected combineMod(originalMod: string, newMod: string): string {
+        let combinedMod = newMod;
+        if (originalMod) {
+            combinedMod = newMod + "-" + originalMod;
+        }
+        
+        return combinedMod;
     }
 
     protected determineDateTimeType(type: string, hasMod: boolean): string {
@@ -543,6 +552,10 @@ export class BaseMergedParser implements IDateTimeParser {
             }
         }
 
+        if (comment && this.HasDoubleTimex(comment)) {
+            this.processDoubleTimex(result, Constants.ResolveToFutureKey, Constants.ResolveToPastKey, timex);
+        }
+
         result.forEach((value, key) => {
             if (this.isObject(value)) {
                 // is "StringMap"
@@ -657,12 +670,16 @@ export class BaseMergedParser implements IDateTimeParser {
     private addPeriodToResolution(resolutions: StringMap, startType: string, endType: string, mod: string, result: StringMap) {
         let start = resolutions[startType];
         let end = resolutions[endType];
+        if (start === Constants.InvalidDateString || end === Constants.InvalidDateString) {
+            return;
+        }
+
         if (!StringUtility.isNullOrEmpty(mod)) {
             // For the 'before' mod
             // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
             // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-            if (mod === TimeTypeConstants.beforeMod) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(TimeTypeConstants.beforeMod)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.LATE_MOD)) {
                     result[TimeTypeConstants.END] = start;
                 }
                 else {
@@ -674,8 +691,8 @@ export class BaseMergedParser implements IDateTimeParser {
             // For the 'after' mod
             // 1. Cases like "After January". the end of the period should be the start of the new period, not the end
             // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-            if (mod === TimeTypeConstants.afterMod) {
-                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+            if (mod.startsWith(TimeTypeConstants.afterMod)) {
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end) && !mod.endsWith(Constants.EARLY_MOD)) {
                     result[TimeTypeConstants.START] = end;
                 }
                 else {
@@ -699,6 +716,24 @@ export class BaseMergedParser implements IDateTimeParser {
 
     protected getValues(obj: any): any[] {
         return Object.keys(obj).map(key => obj[key]);
+    }
+
+    protected processDoubleTimex(resolutionDic: Map<string, any>, futureKey: string, pastKey: string, originTimex: string) {
+        let timexes = originTimex.split(Constants.CompositeTimexDelimiter);
+
+        if (!resolutionDic.has(futureKey) || !resolutionDic.has(pastKey) || timexes.length != 2)
+        {
+            return;
+        }
+
+        let futureResolution: StringMap = resolutionDic.get(futureKey);
+        let pastResolution: StringMap = resolutionDic.get(pastKey);
+        futureResolution[Constants.TimexKey] = timexes[0];
+        pastResolution[Constants.TimexKey] = timexes[1];
+    }
+    
+    private HasDoubleTimex(comment: string): boolean {
+        return comment === Constants.Comment_DoubleTimex;
     }
 
     protected resolveAMPM(valuesMap: Map<string, any>, keyName: string) {

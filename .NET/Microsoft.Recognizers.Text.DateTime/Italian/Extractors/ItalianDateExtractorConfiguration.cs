@@ -130,6 +130,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -149,6 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 
             const RegexOptions dateRegexOption = RegexOptions.Singleline;
@@ -204,6 +208,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -251,5 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }
