@@ -286,15 +286,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             switch (source["timeUnit"])
             {
                 case "H":
-                    Hours = decimal.Parse(source["amount"]);
+                    Hours = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
 
                 case "M":
-                    Minutes = decimal.Parse(source["amount"]);
+                    Minutes = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
 
                 case "S":
-                    Seconds = decimal.Parse(source["amount"]);
+                    Seconds = decimal.Parse(source["amount"], System.Globalization.CultureInfo.InvariantCulture);
                     break;
             }
         }

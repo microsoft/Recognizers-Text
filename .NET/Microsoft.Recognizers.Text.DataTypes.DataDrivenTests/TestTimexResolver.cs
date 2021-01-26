@@ -309,9 +309,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Resolver_DateRange_Demaical_Period_PT()
         {
-            var sourceLanguage = CultureInfo.InstalledUICulture;
+            var sourceLanguage = CultureInfo.CurrentCulture;
             var testLanguage = new CultureInfo("pt-PT", false);
-            CultureInfo.CurrentUICulture = testLanguage;
             CultureInfo.CurrentCulture = testLanguage;
             var today = new System.DateTime(2019, 4, 30);
             var resolution = TimexResolver.Resolve(new[] { "(2019-04-05,XXXX-04-11,P5.54701493625231D)" }, today);
@@ -320,16 +319,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("daterange", resolution.Values[0].Type);
             Assert.AreEqual("2019-04-05", resolution.Values[0].Start);
             Assert.AreEqual("2019-04-10", resolution.Values[0].End);
-            CultureInfo.CurrentUICulture = sourceLanguage;
             CultureInfo.CurrentCulture = sourceLanguage;
         }
 
         [TestMethod]
         public void DataTypes_Resolver_DateRange_Demaical_Period_EN()
         {
-            var sourceLanguage = CultureInfo.InstalledUICulture;
+            var sourceLanguage = CultureInfo.CurrentCulture;
             var testLanguage = new CultureInfo("en-En", false);
-            CultureInfo.CurrentUICulture = testLanguage;
             CultureInfo.CurrentCulture = testLanguage;
             var today = new System.DateTime(2019, 4, 30);
             var resolution = TimexResolver.Resolve(new[] { "(2019-04-05,XXXX-04-11,P5.54701493625231D)" }, today);
@@ -338,7 +335,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("daterange", resolution.Values[0].Type);
             Assert.AreEqual("2019-04-05", resolution.Values[0].Start);
             Assert.AreEqual("2019-04-10", resolution.Values[0].End);
-            CultureInfo.CurrentUICulture = sourceLanguage;
             CultureInfo.CurrentCulture = sourceLanguage;
         }
 
