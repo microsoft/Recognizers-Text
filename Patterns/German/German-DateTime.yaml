@@ -137,7 +137,7 @@ WeekOfRegex: !simpleRegex
 MonthOfRegex: !simpleRegex
   def: (monat)(\s*)(des)
 MonthRegex: !simpleRegex
-  def: (?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|januar|j[äa]n(ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.))
+  def: (?<month>apr((il)?\b|\.)|aug((ust)?\b|\.)|dez((ember)?\b|\.)|feb((ruar|ber)?\b|\.)|januar|j[äa]n((ner)?\b|\.)|jul((e?i|l)?\b|l\.)|jun([io]?\b|\.)|märz|mai|nov((ember)?\b|\.)|okt((ober)?\b|\.)|sept?((ember)?\b|\.))
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
@@ -180,10 +180,10 @@ SpecialDate: !nestedRegex
   def: (?=\b(an( dem)?|am)\s+){DayRegex}\b
   references: [ DayRegex ]
 DateExtractor1: !nestedRegex
-  def: \b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})((\s+|\s*,\s*)({DateYearRegex}))?\b
-  references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
+  def: \b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex}\s*[/\\.,\- ]\s*{MonthRegex}(\s*[/\\.,\- ]\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,\- ]\s*{DayRegex}\s*[/\\.,\- ]\s*{MonthRegex})\b
+  references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex, BaseDateTime.FourDigitYearRegex ]
 DateExtractor2: !nestedRegex
-  def: \b({DayRegex}((\s*){MonthRegex})((\,\s*|\s*){DateYearRegex})?)\b
+  def: \b({MonthRegex}\s*[/\\.,\- ]\s*{DayRegex}(\s*[/\\.,\- ]\s*{DateYearRegex})?)\b
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({DayRegex}{MonthRegex})
@@ -212,8 +212,8 @@ DateExtractor10: !nestedRegex
   #def: \b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, RelativeRegex ]
 DateExtractorA: !nestedRegex
-  def: ({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DateYearRegex, MonthNumRegex, DayRegex ]
+  def: ({DateYearRegex}\s*[/\\\-\. ]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\. ]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\. ]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\. ]\s*{DayRegex}|{DayRegex}\s*[/\\\-\. ]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\. ]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)
+  references: [ DateYearRegex, MonthNumRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex ]
 OfMonth: !nestedRegex
   def: ^(\s*des\s*|\s*)?{MonthRegex}
   references: [ MonthRegex ]
