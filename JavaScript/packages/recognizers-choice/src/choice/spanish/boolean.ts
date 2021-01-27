@@ -15,6 +15,5 @@ export class SpanishBooleanExtractorConfiguration implements IBooleanExtractorCo
         this.regexFalse = RegExpUtility.getSafeRegExp(SpanishChoice.FalseRegex);
         this.tokenRegex = RegExpUtility.getSafeRegExp(SpanishChoice.TokenizerRegex, 'is');
         this.onlyTopMatch = onlyTopMatch;
-        this.emojiSkinToneRegex = null;
     }
 }
