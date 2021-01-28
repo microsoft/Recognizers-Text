@@ -422,7 +422,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
-        public void DataTypes_Resolver_TimeRange_23_45_to_00_20()
+        public void DataTypes_Resolver_TimeRange_23_45_to_01_20()
         {
             var today = System.DateTime.Now;
             var resolution = TimexResolver.Resolve(new[] { "(T23:45,T01:20,PT1H35M)" }, today);
