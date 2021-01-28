@@ -221,6 +221,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(resolution.Values[0].End);
         }
 
+        [TestMethod]
         public void DataTypes_Resolver_Duration_1hour30minutes()
         {
             var resolution = TimexResolver.Resolve(new[] { "PT1H30M" });
