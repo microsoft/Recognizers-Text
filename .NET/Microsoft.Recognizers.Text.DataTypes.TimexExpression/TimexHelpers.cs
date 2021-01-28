@@ -179,41 +179,40 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             if (duration.Minutes != null)
             {
                 result.Minute += (int)duration.Minutes.Value;
-
                 if (result.Minute.Value > 59)
                 {
-                    result.Hour++;
-                    var minute = result.Minute % 60;
-                    result.Minute = minute;
+                    result.Hour = (result.Hour ?? 0) + 1;
+                    result.Minute = result.Minute.Value % 60;
                 }
             }
 
             if (duration.Hours != null)
             {
                 result.Hour += (int)duration.Hours.Value;
-                if (result.Hour.Value > 23)
+            }
+
+            if (result.Hour != null && result.Hour.Value > 23)
+            {
+                var days = Math.Floor(result.Hour.Value / 24m);
+                var hour = result.Hour.Value % 24;
+                result.Hour = hour;
+
+                if (result.Year != null && result.Month != null && result.DayOfMonth != null)
                 {
-                    var days = Math.Floor(result.Hour.Value / 24m);
-                    var hour = result.Hour.Value % 24;
-                    result.Hour = hour;
+                    var d = new DateObject(result.Year.Value, result.Month.Value, result.DayOfMonth.Value, 0, 0, 0);
+                    d = d.AddDays((double)days);
 
-                    if (result.Year != null && result.Month != null && result.DayOfMonth != null)
-                    {
-                        var d = new DateObject(result.Year.Value, result.Month.Value, result.DayOfMonth.Value, 0, 0, 0);
-                        d = d.AddDays((double)days);
+                    result.Year = d.Year;
+                    result.Month = d.Month;
+                    result.DayOfMonth = d.Day;
 
-                        result.Year = d.Year;
-                        result.Month = d.Month;
-                        result.DayOfMonth = d.Day;
+                    return result;
+                }
 
-                        return result;
-                    }
-
-                    if (result.DayOfWeek != null)
-                    {
-                        result.DayOfWeek += (int)days;
-                        return result;
-                    }
+                if (result.DayOfWeek != null)
+                {
+                    result.DayOfWeek += (int)days;
+                    return result;
                 }
             }
 
@@ -257,11 +256,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static TimexProperty TimeAdd(TimexProperty start, TimexProperty duration)
         {
+            int second = (int)(start.Second + (duration.Seconds ?? 0));
+            int minute = (int)(start.Minute + (second / 60) + (duration.Minutes ?? 0));
+            int hour = (int)(start.Hour + (minute / 60) + (duration.Hours ?? 0));
+
             return new TimexProperty
             {
-                Hour = (int)(start.Hour.Value + duration.Hours ?? 0),
-                Minute = (int)(start.Minute + duration.Minutes ?? 0),
-                Second = (int)(start.Second + duration.Seconds ?? 0),
+                Hour = hour % 24,
+                Minute = minute % 60,
+                Second = second % 60,
             };
         }
 

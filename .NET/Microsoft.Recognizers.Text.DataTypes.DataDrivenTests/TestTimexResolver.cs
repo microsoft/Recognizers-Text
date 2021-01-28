@@ -352,6 +352,62 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_TimeRange_11_30_to_12_00()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(T11:30,T12:00,PT30M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(T11:30,T12,PT30M)", resolution.Values[0].Timex);
+            Assert.AreEqual("timerange", resolution.Values[0].Type);
+            Assert.AreEqual("11:30:00", resolution.Values[0].Start);
+            Assert.AreEqual("12:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_TimeRange_11_to_11_30()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(T11:00,T11:30,PT30M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(T11,T11:30,PT30M)", resolution.Values[0].Timex);
+            Assert.AreEqual("timerange", resolution.Values[0].Type);
+            Assert.AreEqual("11:00:00", resolution.Values[0].Start);
+            Assert.AreEqual("11:30:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_TimeRange_23_45_to_00_30()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(T23:45,T00:30,PT45M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(T23:45,T00:30,PT45M)", resolution.Values[0].Timex);
+            Assert.AreEqual("timerange", resolution.Values[0].Type);
+            Assert.AreEqual("23:45:00", resolution.Values[0].Start);
+            Assert.AreEqual("00:30:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTimeRange_20190401_09_30_to_20190401_11()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(2019-04-01T09:30,2019-04-01T11,PT1H30M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(2019-04-01T09:30,2019-04-01T11,PT1H30M)", resolution.Values[0].Timex);
+            Assert.AreEqual("datetimerange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-01 09:30:00", resolution.Values[0].Start);
+            Assert.AreEqual("2019-04-01 11:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_TimeRange_4am_to_8pm()
         {
             var today = System.DateTime.Now;
@@ -362,6 +418,20 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("timerange", resolution.Values[0].Type);
             Assert.AreEqual("04:00:00", resolution.Values[0].Start);
             Assert.AreEqual("20:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_TimeRange_23_45_to_00_20()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(T23:45,T01:20,PT1H35M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(T23:45,T01:20,PT1H35M)", resolution.Values[0].Timex);
+            Assert.AreEqual("timerange", resolution.Values[0].Type);
+            Assert.AreEqual("23:45:00", resolution.Values[0].Start);
+            Assert.AreEqual("01:20:00", resolution.Values[0].End);
             Assert.IsNull(resolution.Values[0].Value);
         }
 
