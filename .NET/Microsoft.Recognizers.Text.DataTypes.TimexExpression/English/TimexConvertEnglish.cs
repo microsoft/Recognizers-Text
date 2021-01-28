@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
             var date = timex.DayOfMonth.ToString();
-            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString())];
+            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString(), System.Globalization.CultureInfo.InvariantCulture)];
 
             if (timex.Year != null)
             {
@@ -121,42 +121,43 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string ConvertTimexDurationToString(TimexProperty timex, bool includeSingleCount)
         {
+            string result = string.Empty;
             if (timex.Years != null)
             {
-                return ConvertDurationPropertyToString(timex.Years.Value, "year", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Years.Value, Constants.YearUnit, includeSingleCount);
             }
 
             if (timex.Months != null)
             {
-                return ConvertDurationPropertyToString(timex.Months.Value, "month", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Months.Value, Constants.MonthUnit, includeSingleCount);
             }
 
             if (timex.Weeks != null)
             {
-                return ConvertDurationPropertyToString(timex.Weeks.Value, "week", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Weeks.Value, Constants.WeekUnit, includeSingleCount);
             }
 
             if (timex.Days != null)
             {
-                return ConvertDurationPropertyToString(timex.Days.Value, "day", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Days.Value, Constants.DayUnit, includeSingleCount);
             }
 
             if (timex.Hours != null)
             {
-                return ConvertDurationPropertyToString(timex.Hours.Value, "hour", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Hours.Value, Constants.HourUnit, includeSingleCount);
             }
 
             if (timex.Minutes != null)
             {
-                return ConvertDurationPropertyToString(timex.Minutes.Value, "minute", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Minutes.Value, Constants.MinuteUnit, includeSingleCount);
             }
 
             if (timex.Seconds != null)
             {
-                return ConvertDurationPropertyToString(timex.Seconds.Value, "second", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Seconds.Value, Constants.SecondUnit, includeSingleCount);
             }
 
-            return string.Empty;
+            return result;
         }
 
         private static string ConvertDuration(TimexProperty timex)

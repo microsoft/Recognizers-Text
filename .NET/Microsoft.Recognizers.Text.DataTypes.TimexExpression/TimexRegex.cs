@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -52,14 +53,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 PeriodCollectionName, new Regex[]
                 {
                     new Regex(@"^P(?<amount>\d*\.?\d+)(?<dateUnit>Y|M|W|D)$"),
-                    new Regex(@"^PT(?<amount>\d*\.?\d+)(?<timeUnit>H|M|S)$"),
+                    new Regex(@"^PT(?<hourAmount>\d*\.?\d+)H(\d*\.?\d+(M|S)){0,2}$"),
+                    new Regex(@"^PT(\d*\.?\d+H)?(?<minuteAmount>\d*\.?\d+)M(\d*\.?\d+S)?$"),
+                    new Regex(@"^PT(\d*\.?\d+(H|M)){0,2}(?<secondAmount>\d*\.?\d+)S$"),
                 }
             },
         };
 
         public static bool Extract(string name, string timex, IDictionary<string, string> result)
         {
-            var lowerName = name.ToLower();
+            var lowerName = name.ToLower(CultureInfo.InvariantCulture);
             var nameGroup = new string[lowerName == DateTimeCollectionName ? 2 : 1];
 
             if (lowerName == DateTimeCollectionName)

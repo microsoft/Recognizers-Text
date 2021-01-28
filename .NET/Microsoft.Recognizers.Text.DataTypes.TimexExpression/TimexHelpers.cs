@@ -175,9 +175,21 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static TimexProperty TimexTimeAdd(TimexProperty start, TimexProperty duration)
         {
+            var result = start.Clone();
+            if (duration.Minutes != null)
+            {
+                result.Minute += (int)duration.Minutes.Value;
+
+                if (result.Minute.Value > 59)
+                {
+                    result.Hour++;
+                    var minute = result.Minute % 60;
+                    result.Minute = minute;
+                }
+            }
+
             if (duration.Hours != null)
             {
-                var result = start.Clone();
                 result.Hour += (int)duration.Hours.Value;
                 if (result.Hour.Value > 23)
                 {
@@ -203,25 +215,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         return result;
                     }
                 }
-
-                return result;
             }
 
-            if (duration.Minutes != null)
-            {
-                var result = start.Clone();
-                result.Minute += (int)duration.Minutes.Value;
-
-                if (result.Minute.Value > 59)
-                {
-                    result.Hour++;
-                    result.Minute = 0;
-                }
-
-                return result;
-            }
-
-            return start;
+            return result;
         }
 
         public static TimexProperty TimexDateTimeAdd(TimexProperty start, TimexProperty duration)

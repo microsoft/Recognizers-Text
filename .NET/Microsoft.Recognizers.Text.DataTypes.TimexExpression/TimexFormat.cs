@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System.Globalization;
+using System.Text;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -63,42 +64,47 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDuration(TimexProperty timex)
         {
+            var isTimeDurationAlreadyExist = false;
+            var timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
             if (timex.Years != null)
             {
-                return $"P{timex.Years}Y";
+                timexBuilder.Append($"{timex.Years}Y");
             }
 
             if (timex.Months != null)
             {
-                return $"P{timex.Months}M";
+                timexBuilder.Append($"{timex.Months}M");
             }
 
             if (timex.Weeks != null)
             {
-                return $"P{timex.Weeks}W";
+                timexBuilder.Append($"{timex.Weeks}W");
             }
 
             if (timex.Days != null)
             {
-                return $"P{timex.Days}D";
+                timexBuilder.Append($"{timex.Days}D");
             }
 
             if (timex.Hours != null)
             {
-                return $"PT{timex.Hours}H";
+                timexBuilder.Append(isTimeDurationAlreadyExist ? $"{timex.Hours}D" : $"{Constants.TimeTimexPrefix}{timex.Hours}H");
+                isTimeDurationAlreadyExist = true;
             }
 
             if (timex.Minutes != null)
             {
-                return $"PT{timex.Minutes}M";
+                timexBuilder.Append(isTimeDurationAlreadyExist ? $"{timex.Minutes}M" : $"{Constants.TimeTimexPrefix}{timex.Minutes}M");
+                isTimeDurationAlreadyExist = true;
             }
 
             if (timex.Seconds != null)
             {
-                return $"PT{timex.Seconds}S";
+                timexBuilder.Append(isTimeDurationAlreadyExist ? $"{timex.Seconds}D" : $"{Constants.TimeTimexPrefix}{timex.Seconds}S");
+                isTimeDurationAlreadyExist = true;
             }
 
-            return string.Empty;
+            return timexBuilder.ToString();
         }
 
         private static string FormatTime(TimexProperty timex)
@@ -125,12 +131,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.Month != null && timex.DayOfMonth != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
             }
 
             if (timex.DayOfWeek != null)
             {
-                return $"XXXX-WXX-{timex.DayOfWeek}";
+                return $"{Constants.TimexFuzzyYear}-{Constants.TimexFuzzyWeek}-{timex.DayOfWeek}";
             }
 
             return string.Empty;
@@ -170,17 +176,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.Month != null && timex.WeekOfMonth != null && timex.DayOfWeek != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-WXX-{timex.WeekOfMonth}-{timex.DayOfWeek}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{Constants.TimexFuzzyWeek}-{timex.WeekOfMonth}-{timex.DayOfWeek}";
             }
 
             if (timex.Month != null && timex.WeekOfMonth != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{timex.WeekOfMonth?.ToString("D2", CultureInfo.InvariantCulture)}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{timex.WeekOfMonth?.ToString("D2", CultureInfo.InvariantCulture)}";
             }
 
             if (timex.Month != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}";
             }
 
             return string.Empty;

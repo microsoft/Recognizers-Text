@@ -221,6 +221,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(resolution.Values[0].End);
         }
 
+        public void DataTypes_Resolver_Duration_1hour30minutes()
+        {
+            var resolution = TimexResolver.Resolve(new[] { "PT1H30M" });
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("PT1H30M", resolution.Values[0].Timex);
+            Assert.AreEqual("duration", resolution.Values[0].Type);
+            Assert.AreEqual("5400", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+        }
+
         [TestMethod]
         public void DataTypes_Resolver_DateRange_September()
         {
@@ -353,6 +365,20 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_TimeRange_15_15_to_16_20()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(T15:15,T16:20,PT1H5M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(T15:15,T16:20,PT1H5M)", resolution.Values[0].Timex);
+            Assert.AreEqual("timerange", resolution.Values[0].Type);
+            Assert.AreEqual("15:15:00", resolution.Values[0].Start);
+            Assert.AreEqual("16:20:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_TimeRange_Morning()
         {
             var today = System.DateTime.Now;
@@ -431,6 +457,48 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("datetimerange", resolution.Values[0].Type);
             Assert.AreEqual("2017-10-09 04:00:00", resolution.Values[0].Start);
             Assert.AreEqual("2017-10-12 15:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTimeRange_20200604_15_00_to_20200604_17_30()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(2020-06-04T15,2020-06-04T17:30,PT2H30M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(2020-06-04T15,2020-06-04T17:30,PT2H30M)", resolution.Values[0].Timex);
+            Assert.AreEqual("datetimerange", resolution.Values[0].Type);
+            Assert.AreEqual("2020-06-04 15:00:00", resolution.Values[0].Start);
+            Assert.AreEqual("2020-06-04 17:30:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateTimeRange_20190325_10_to_20190325_11()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(2019-03-25T10,2019-03-25T11,PT1H)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(2019-03-25T10,2019-03-25T11,PT1H)", resolution.Values[0].Timex);
+            Assert.AreEqual("datetimerange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-03-25 10:00:00", resolution.Values[0].Start);
+            Assert.AreEqual("2019-03-25 11:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_DateRange_20190427_20190511_2weeks()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(2019-04-27,2019-05-11,P2W)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(2019-04-27,2019-05-11,P2W)", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-27", resolution.Values[0].Start);
+            Assert.AreEqual("2019-05-11", resolution.Values[0].End);
             Assert.IsNull(resolution.Values[0].Value);
         }
 
