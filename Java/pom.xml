@@ -20,6 +20,7 @@
         <module>libraries/recognizers-text-number-with-unit</module>
         <module>libraries/recognizers-text-choice</module>
         <module>libraries/recognizers-text-date-time</module>
+        <module>libraries/recognizers-text-datatypes-timex-expression</module>
         <module>tests</module>
         <module>samples/simple-console</module>
     </modules>
