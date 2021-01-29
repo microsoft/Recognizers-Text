@@ -65,6 +65,46 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_Date_6th()
+        {
+            var today = new System.DateTime(2019, 4, 23, 15, 30, 0);
+            var resolution = TimexResolver.Resolve(new[] { "XXXX-XX-06" }, today);
+            Assert.AreEqual(2, resolution.Values.Count);
+
+            Assert.AreEqual("XXXX-XX-06", resolution.Values[0].Timex);
+            Assert.AreEqual("date", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-06", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+
+            Assert.AreEqual("XXXX-XX-06", resolution.Values[1].Timex);
+            Assert.AreEqual("date", resolution.Values[1].Type);
+            Assert.AreEqual("2019-05-06", resolution.Values[1].Value);
+            Assert.IsNull(resolution.Values[1].Start);
+            Assert.IsNull(resolution.Values[1].End);
+        }
+
+        [TestMethod]
+        public void DataTypes_Resolver_Date_Feb_2nd()
+        {
+            var today = new System.DateTime(2020, 10, 20);
+            var resolution = TimexResolver.Resolve(new[] { "XXXX-02-02 " }, today);
+            Assert.AreEqual(2, resolution.Values.Count);
+
+            Assert.AreEqual("XXXX-02-02", resolution.Values[0].Timex);
+            Assert.AreEqual("date", resolution.Values[0].Type);
+            Assert.AreEqual("2020-02-02", resolution.Values[0].Value);
+            Assert.IsNull(resolution.Values[0].Start);
+            Assert.IsNull(resolution.Values[0].End);
+
+            Assert.AreEqual("XXXX-02-02", resolution.Values[1].Timex);
+            Assert.AreEqual("date", resolution.Values[1].Type);
+            Assert.AreEqual("2021-02-02", resolution.Values[1].Value);
+            Assert.IsNull(resolution.Values[1].Start);
+            Assert.IsNull(resolution.Values[1].End);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_DateTime_Wednesday_4()
         {
             var today = new System.DateTime(2017, 9, 28, 15, 30, 0);

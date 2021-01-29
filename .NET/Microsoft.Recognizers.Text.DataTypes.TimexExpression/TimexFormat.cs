@@ -128,6 +128,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
             }
 
+            if (timex.DayOfMonth != null)
+            {
+                return $"{Constants.TimexFuzzyYear}-{Constants.TimexFuzzyMonth}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
+            }
+
             if (timex.DayOfWeek != null)
             {
                 return $"XXXX-WXX-{timex.DayOfWeek}";

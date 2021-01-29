@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     // date
                     new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
                     new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)"),
+                    new Regex(@"^XXXX-XX-(?<dayOfMonth>\d\d)"),
                     new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
 
                     // daterange

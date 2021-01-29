@@ -142,12 +142,35 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string LastDateValue(TimexProperty timex, DateObject date)
         {
-            if (timex.Month != null && timex.DayOfMonth != null)
+            if (timex.DayOfMonth != null)
             {
+                var year = date.Year;
+                var month = date.Month;
+                if (timex.Month != null)
+                {
+                    month = timex.Month.Value;
+                    if (date.Month <= month || (date.Month == month && date.Day <= timex.DayOfMonth))
+                    {
+                        year--;
+                    }
+                }
+                else
+                {
+                    if (date.Day <= timex.DayOfMonth)
+                    {
+                        month--;
+                        if (month < 1)
+                        {
+                            month = (month + 12) % 12;
+                            year--;
+                        }
+                    }
+                }
+
                 return TimexValue.DateValue(new TimexProperty
                 {
-                    Year = date.Year - 1,
-                    Month = timex.Month,
+                    Year = year,
+                    Month = month,
                     DayOfMonth = timex.DayOfMonth,
                 });
             }
@@ -169,12 +192,35 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string NextDateValue(TimexProperty timex, DateObject date)
         {
-            if (timex.Month != null && timex.DayOfMonth != null)
+            if (timex.DayOfMonth != null)
             {
+                var year = date.Year;
+                var month = date.Month;
+                if (timex.Month != null)
+                {
+                    month = timex.Month.Value;
+                    if (date.Month > month || (date.Month == month && date.Day > timex.DayOfMonth))
+                    {
+                        year++;
+                    }
+                }
+                else
+                {
+                    if (date.Day > timex.DayOfMonth)
+                    {
+                        month++;
+                        if (month > 12)
+                        {
+                            month = month % 12;
+                            year--;
+                        }
+                    }
+                }
+
                 return TimexValue.DateValue(new TimexProperty
                 {
-                    Year = date.Year,
-                    Month = timex.Month,
+                    Year = year,
+                    Month = month,
                     DayOfMonth = timex.DayOfMonth,
                 });
             }

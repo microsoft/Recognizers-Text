@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static bool IsDate(TimexProperty timexProperty)
         {
-            return (timexProperty.Month != null && timexProperty.DayOfMonth != null) || timexProperty.DayOfWeek != null;
+            return timexProperty.DayOfMonth != null || timexProperty.DayOfWeek != null;
         }
 
         private static bool IsTimeRange(TimexProperty timexProperty)
