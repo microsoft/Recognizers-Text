@@ -54,7 +54,7 @@ public abstract class AbstractNumberModel implements IModel {
             return new ModelResult(
                     o.getText(),
                     o.getStart(),
-                o.getStart() + o.getLength(),
+                o.getStart() + o.getLength() - 1,
                 getModelTypeName(),
                 sortedMap
             );                
