@@ -96,5 +96,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]

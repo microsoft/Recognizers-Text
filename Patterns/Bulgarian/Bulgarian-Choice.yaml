@@ -7,8 +7,11 @@ ItIsNotRegex: !simpleRegex
   def: не\s+е\s+
 IAmNotRegex: !simpleRegex
   def: не\s+съм\s+
-TrueRegex: !simpleRegex
-  def: \b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+SkinToneRegex: !simpleRegex
+  def: '(\uD83C\uDFFB|\uD83C\uDFFC|\uD83C\uDFFD|\uD83C\uDFFE|\uD83C\uDFFF)'
+TrueRegex: !nestedRegex
+  def: \b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C){SkinToneRegex}?
+  references: [ SkinToneRegex ]
 FalseRegex: !nestedRegex
-  def: \b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
-  references: [ ItIsNotRegex, IAmNotRegex ]
+  def: \b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90){SkinToneRegex}?
+  references: [ ItIsNotRegex, IAmNotRegex, SkinToneRegex ]

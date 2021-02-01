@@ -125,5 +125,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾 Alles klar",
+    "NotSupportedByDesign": "python,java,javascript",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿 Alles klar",
+    "NotSupportedByDesign": "python,java,javascript",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻 Alles klar",
+    "NotSupportedByDesign": "python,java,javascript",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupportedByDesign": "python,java,javascript",
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]
