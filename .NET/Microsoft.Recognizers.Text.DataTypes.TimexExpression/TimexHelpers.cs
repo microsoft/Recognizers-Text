@@ -2,6 +2,9 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -254,6 +257,46 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
+        public static string GenerateCompoundDurationTimex(List<string> timexList)
+        {
+            var isTimeDurationAlreadyExist = false;
+            var timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
+
+            foreach (string timexComponent in timexList)
+            {
+                // The Time Duration component occurs first time
+                if (!isTimeDurationAlreadyExist && IsTimeDurationTimex(timexComponent))
+                {
+                    timexBuilder.Append($"{Constants.TimeTimexPrefix}{GetDurationTimexWithoutPrefix(timexComponent)}");
+                    isTimeDurationAlreadyExist = true;
+                }
+                else
+                {
+                    timexBuilder.Append($"{GetDurationTimexWithoutPrefix(timexComponent)}");
+                }
+            }
+
+            return timexBuilder.ToString();
+        }
+
+        public static string GenerateDateTimex(int year, int month, int day, bool byWeek)
+        {
+            var yearString = year < 0 ? Constants.TimexFuzzyYear : TimexDateHelpers.FixedFormatNumber(year, 4);
+            var monthString = month < 0 ? Constants.TimexFuzzyMonth : TimexDateHelpers.FixedFormatNumber(month, 2);
+            string dayString;
+            if (byWeek)
+            {
+                dayString = day.ToString(CultureInfo.InvariantCulture);
+                monthString = Constants.TimexWeek + monthString;
+            }
+            else
+            {
+                dayString = day < 0 ? Constants.TimexDay : TimexDateHelpers.FixedFormatNumber(day, 2);
+            }
+
+            return $"{yearString}-{monthString}-{dayString}";
+        }
+
         private static TimexProperty TimeAdd(TimexProperty start, TimexProperty duration)
         {
             int second = (int)(start.Second + (duration.Seconds ?? 0));
@@ -297,6 +340,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             result.Weekend = null;
             result.PartOfDay = null;
             return result;
+        }
+
+        private static bool IsTimeDurationTimex(string timex)
+        {
+            return timex.StartsWith($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}", StringComparison.Ordinal);
+        }
+
+        private static string GetDurationTimexWithoutPrefix(string timex)
+        {
+            // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
+            return timex.Substring(IsTimeDurationTimex(timex) ? 2 : 1);
         }
     }
 }

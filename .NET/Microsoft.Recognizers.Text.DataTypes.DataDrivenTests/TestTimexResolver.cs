@@ -366,6 +366,20 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_TimeRange_11_30_to_12()
+        {
+            var today = System.DateTime.Now;
+            var resolution = TimexResolver.Resolve(new[] { "(T11:30,T12,PT30M)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(T11:30,T12,PT30M)", resolution.Values[0].Timex);
+            Assert.AreEqual("timerange", resolution.Values[0].Type);
+            Assert.AreEqual("11:30:00", resolution.Values[0].Start);
+            Assert.AreEqual("12:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_TimeRange_11_to_11_30()
         {
             var today = System.DateTime.Now;

@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
@@ -64,47 +65,43 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDuration(TimexProperty timex)
         {
-            var isTimeDurationAlreadyExist = false;
-            var timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
+            var timexList = new List<string> { };
             if (timex.Years != null)
             {
-                timexBuilder.Append($"{timex.Years}Y");
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Years}{Constants.TimexYear}");
             }
 
             if (timex.Months != null)
             {
-                timexBuilder.Append($"{timex.Months}M");
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Months}{Constants.TimexMonth}");
             }
 
             if (timex.Weeks != null)
             {
-                timexBuilder.Append($"{timex.Weeks}W");
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Weeks}{Constants.TimexWeek}");
             }
 
             if (timex.Days != null)
             {
-                timexBuilder.Append($"{timex.Days}D");
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Days}{Constants.TimexDay}");
             }
 
             if (timex.Hours != null)
             {
-                timexBuilder.Append(isTimeDurationAlreadyExist ? $"{timex.Hours}D" : $"{Constants.TimeTimexPrefix}{timex.Hours}H");
-                isTimeDurationAlreadyExist = true;
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}{timex.Hours}{Constants.TimexHour}");
             }
 
             if (timex.Minutes != null)
             {
-                timexBuilder.Append(isTimeDurationAlreadyExist ? $"{timex.Minutes}M" : $"{Constants.TimeTimexPrefix}{timex.Minutes}M");
-                isTimeDurationAlreadyExist = true;
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}{timex.Minutes}{Constants.TimexMinute}");
             }
 
             if (timex.Seconds != null)
             {
-                timexBuilder.Append(isTimeDurationAlreadyExist ? $"{timex.Seconds}D" : $"{Constants.TimeTimexPrefix}{timex.Seconds}S");
-                isTimeDurationAlreadyExist = true;
+                timexList.Add($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}{timex.Seconds}{Constants.TimexSecond}");
             }
 
-            return timexBuilder.ToString();
+            return TimexHelpers.GenerateCompoundDurationTimex(timexList);
         }
 
         private static string FormatTime(TimexProperty timex)
@@ -124,22 +121,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDate(TimexProperty timex)
         {
-            if (timex.Year != null && timex.Month != null && timex.DayOfMonth != null)
-            {
-                return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
-            }
-
-            if (timex.Month != null && timex.DayOfMonth != null)
-            {
-                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
-            }
-
-            if (timex.DayOfWeek != null)
-            {
-                return $"{Constants.TimexFuzzyYear}-{Constants.TimexFuzzyWeek}-{timex.DayOfWeek}";
-            }
-
-            return string.Empty;
+            return TimexHelpers.GenerateDateTimex(timex.Year ?? -1, timex.Month ?? -1, timex.DayOfWeek != null ? timex.DayOfWeek.Value : timex.DayOfMonth ?? -1, timex.DayOfWeek != null);
         }
 
         private static string FormatDateRange(TimexProperty timex)

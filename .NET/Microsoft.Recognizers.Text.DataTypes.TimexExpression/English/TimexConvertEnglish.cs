@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Globalization;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -13,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (types.Contains(Constants.TimexTypes.Present))
             {
-                return "now";
+                return Constants.Now;
             }
 
             if (types.Contains(Constants.TimexTypes.DateTimeRange))
@@ -60,11 +61,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var timex = timexSet.Timex;
             if (timex.Types.Contains(Constants.TimexTypes.Duration))
             {
-                return $"every {ConvertTimexDurationToString(timex, false)}";
+                return $"{Constants.Every} {ConvertTimexDurationToString(timex, false)}";
             }
             else
             {
-                return $"every {ConvertTimexToString(timex)}";
+                return $"{Constants.Every} {ConvertTimexToString(timex)}";
             }
         }
 
@@ -72,18 +73,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             if (timex.Hour == 0 && timex.Minute == 0 && timex.Second == 0)
             {
-                return "midnight";
+                return Constants.Midnight;
             }
 
             if (timex.Hour == 12 && timex.Minute == 0 && timex.Second == 0)
             {
-                return "midday";
+                return Constants.Midday;
             }
 
-            var hour = (timex.Hour == 0) ? "12" : (timex.Hour > 12) ? (timex.Hour - 12).ToString() : timex.Hour.ToString();
-            var minute = (timex.Minute == 0 && timex.Second == 0) ? string.Empty : ":" + timex.Minute.ToString().PadLeft(2, '0');
-            var second = (timex.Second == 0) ? string.Empty : ":" + timex.Second.ToString().PadLeft(2, '0');
-            var period = timex.Hour < 12 ? "AM" : "PM";
+            var hour = (timex.Hour == 0) ? "12" : (timex.Hour > 12) ? (timex.Hour - 12).Value.ToString(CultureInfo.InvariantCulture) : timex.Hour.Value.ToString(CultureInfo.InvariantCulture);
+            var minute = (timex.Minute == 0 && timex.Second == 0) ? string.Empty : Constants.TimeTimexConnector + timex.Minute.Value.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0');
+            var second = (timex.Second == 0) ? string.Empty : Constants.TimeTimexConnector + timex.Second.Value.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0');
+            var period = timex.Hour < 12 ? Constants.AM : Constants.PM;
 
             return $"{hour}{minute}{second}{period}";
         }
@@ -96,8 +97,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
-            var date = timex.DayOfMonth.ToString();
-            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString(), System.Globalization.CultureInfo.InvariantCulture)];
+            var date = timex.DayOfMonth.Value.ToString(CultureInfo.InvariantCulture);
+            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture)];
 
             if (timex.Year != null)
             {
@@ -115,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
             else
             {
-                return $"{value} {property}s";
+                return $"{value} {property}{Constants.TimeDurationUnit}";
             }
         }
 
@@ -169,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var season = (timex.Season != null) ? TimexConstantsEnglish.Seasons[timex.Season] : string.Empty;
 
-            var year = (timex.Year != null) ? timex.Year.ToString() : string.Empty;
+            var year = (timex.Year != null) ? timex.Year.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
 
             if (timex.WeekOfYear != null)
             {
