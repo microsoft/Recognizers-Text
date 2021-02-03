@@ -35,12 +35,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public const string SecondUnit = "second";
         public const string TimeDurationUnit = "s";
 
-        public const string Now = "now";
-        public const string Midnight = "midnight";
-        public const string Midday = "midday";
         public const string AM = "AM";
         public const string PM = "PM";
-        public const string Every = "every";
+
+        public const int InvalidValue = -1;
 
         public static class TimexTypes
         {

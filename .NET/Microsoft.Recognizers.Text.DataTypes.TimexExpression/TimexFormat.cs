@@ -68,37 +68,37 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var timexList = new List<string> { };
             if (timex.Years != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Years}{Constants.TimexYear}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Year, timex.Years ?? Constants.InvalidValue));
             }
 
             if (timex.Months != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Months}{Constants.TimexMonth}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Month, timex.Months ?? Constants.InvalidValue));
             }
 
             if (timex.Weeks != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Weeks}{Constants.TimexWeek}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Week, timex.Weeks ?? Constants.InvalidValue));
             }
 
             if (timex.Days != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{timex.Days}{Constants.TimexDay}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Day, timex.Days ?? Constants.InvalidValue));
             }
 
             if (timex.Hours != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}{timex.Hours}{Constants.TimexHour}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Hour, timex.Hours ?? Constants.InvalidValue));
             }
 
             if (timex.Minutes != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}{timex.Minutes}{Constants.TimexMinute}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Minute, timex.Minutes ?? Constants.InvalidValue));
             }
 
             if (timex.Seconds != null)
             {
-                timexList.Add($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}{timex.Seconds}{Constants.TimexSecond}");
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Second, timex.Seconds ?? Constants.InvalidValue));
             }
 
             return TimexHelpers.GenerateCompoundDurationTimex(timexList);
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDate(TimexProperty timex)
         {
-            return TimexHelpers.GenerateDateTimex(timex.Year ?? -1, timex.Month ?? -1, timex.DayOfWeek != null ? timex.DayOfWeek.Value : timex.DayOfMonth ?? -1, timex.DayOfWeek != null);
+            return TimexHelpers.GenerateDateTimex(timex.Year ?? Constants.InvalidValue, timex.Month ?? Constants.InvalidValue, timex.DayOfWeek != null ? timex.DayOfWeek.Value : timex.DayOfMonth ?? Constants.InvalidValue, timex.DayOfWeek != null);
         }
 
         private static string FormatDateRange(TimexProperty timex)

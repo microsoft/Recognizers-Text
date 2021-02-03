@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (types.Contains(Constants.TimexTypes.Present))
             {
-                return Constants.Now;
+                return TimexConstantsEnglish.Now;
             }
 
             if (types.Contains(Constants.TimexTypes.DateTimeRange))
@@ -61,11 +61,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var timex = timexSet.Timex;
             if (timex.Types.Contains(Constants.TimexTypes.Duration))
             {
-                return $"{Constants.Every} {ConvertTimexDurationToString(timex, false)}";
+                return $"{TimexConstantsEnglish.Every} {ConvertTimexDurationToString(timex, false)}";
             }
             else
             {
-                return $"{Constants.Every} {ConvertTimexToString(timex)}";
+                return $"{TimexConstantsEnglish.Every} {ConvertTimexToString(timex)}";
             }
         }
 
@@ -73,12 +73,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             if (timex.Hour == 0 && timex.Minute == 0 && timex.Second == 0)
             {
-                return Constants.Midnight;
+                return TimexConstantsEnglish.Midnight;
             }
 
             if (timex.Hour == 12 && timex.Minute == 0 && timex.Second == 0)
             {
-                return Constants.Midday;
+                return TimexConstantsEnglish.Midday;
             }
 
             var hour = (timex.Hour == 0) ? "12" : (timex.Hour > 12) ? (timex.Hour - 12).Value.ToString(CultureInfo.InvariantCulture) : timex.Hour.Value.ToString(CultureInfo.InvariantCulture);

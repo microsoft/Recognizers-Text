@@ -328,7 +328,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var today = new System.DateTime(2019, 4, 30);
             var resolution = TimexResolver.Resolve(new[] { "(2019-04-05,XXXX-04-11,P5.54701493625231D)" }, today);
             Assert.AreEqual(1, resolution.Values.Count);
-            Assert.AreEqual("(2019-04-05,2019-04-10,P5,54701493625231D)", resolution.Values[0].Timex);
+            Assert.AreEqual("(2019-04-05,2019-04-10,P5.54701493625231D)", resolution.Values[0].Timex);
             Assert.AreEqual("daterange", resolution.Values[0].Type);
             Assert.AreEqual("2019-04-05", resolution.Values[0].Start);
             Assert.AreEqual("2019-04-10", resolution.Values[0].End);
