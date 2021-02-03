@@ -13,7 +13,9 @@ import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -36,10 +38,10 @@ public class NumberTest extends AbstractTest {
         List<ModelResult> results = recognize(currentCase);
 
         // assert
-        assertResultsNumber(currentCase, results);
+        assertResultsNumber(currentCase, results, new ArrayList() {{ add("value");}});
     }
 
-    public static <T extends ModelResult> void assertResultsNumber(TestCase currentCase, List<T> results) {
+    public static <T extends ModelResult> void assertResultsNumber(TestCase currentCase, List<T> results, List<String> testResolutionKeys) {
 
         List<ExtendedModelResult> expectedResults = readExpectedResults(ExtendedModelResult.class, currentCase.results);
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
@@ -56,6 +58,10 @@ public class NumberTest extends AbstractTest {
                     // Number and NumberWithUnit are supported currently.
                     Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
                     Assert.assertEquals(getMessage(currentCase, "end"), expected.end, actual.end);
+
+                    for (String key : testResolutionKeys) {
+                        Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
+                    }
                 });
     }
 
