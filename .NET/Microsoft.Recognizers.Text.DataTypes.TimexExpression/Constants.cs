@@ -33,6 +33,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public const string HourUnit = "hour";
         public const string MinuteUnit = "minute";
         public const string SecondUnit = "second";
+        public const string TimeDurationUnit = "s";
+
+        public const string AM = "AM";
+        public const string PM = "PM";
+
+        public const int InvalidValue = -1;
 
         public static class TimexTypes
         {

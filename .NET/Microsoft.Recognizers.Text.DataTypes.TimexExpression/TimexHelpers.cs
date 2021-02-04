@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Globalization;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -171,6 +172,31 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             return start;
+        }
+
+        public static string GenerateDateTimex(int year, int monthOrWeekOfYear, int day, int weekOfMonth, bool byWeek)
+        {
+            var yearString = year == Constants.InvalidValue ? Constants.TimexFuzzyYear : TimexDateHelpers.FixedFormatNumber(year, 4);
+            var monthWeekString = monthOrWeekOfYear == Constants.InvalidValue ? Constants.TimexFuzzyMonth : TimexDateHelpers.FixedFormatNumber(monthOrWeekOfYear, 2);
+            string dayString;
+            if (byWeek)
+            {
+                dayString = day.ToString(CultureInfo.InvariantCulture);
+                if (weekOfMonth != Constants.InvalidValue)
+                {
+                    monthWeekString = monthWeekString + $"-{Constants.TimexFuzzyWeek}-" + weekOfMonth.ToString(CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    monthWeekString = Constants.TimexWeek + monthWeekString;
+                }
+            }
+            else
+            {
+                dayString = day == Constants.InvalidValue ? Constants.TimexFuzzyDay : TimexDateHelpers.FixedFormatNumber(day, 2);
+            }
+
+            return $"{yearString}-{monthWeekString}-{dayString}";
         }
 
         public static TimexProperty TimexTimeAdd(TimexProperty start, TimexProperty duration)

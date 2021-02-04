@@ -108,10 +108,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static bool IsDateRange(TimexProperty timexProperty)
         {
-            return (timexProperty.Year != null && timexProperty.DayOfMonth == null) ||
-                   (timexProperty.Year != null && timexProperty.Month != null && timexProperty.DayOfMonth == null) ||
-                   (timexProperty.Month != null && timexProperty.DayOfMonth == null) ||
-                   timexProperty.Season != null || timexProperty.WeekOfYear != null || timexProperty.WeekOfMonth != null;
+            return (timexProperty.DayOfMonth == null && timexProperty.DayOfWeek == null) &&
+                (timexProperty.Year != null || timexProperty.Month != null ||
+                timexProperty.Season != null || timexProperty.WeekOfYear != null ||
+                timexProperty.WeekOfMonth != null);
         }
 
         private static bool IsDefinite(TimexProperty timexProperty)
