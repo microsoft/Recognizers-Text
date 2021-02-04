@@ -208,5 +208,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾 tamam",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿 tamam",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻 tamam",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]
