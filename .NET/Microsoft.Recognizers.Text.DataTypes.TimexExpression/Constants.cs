@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public const string TimexHour = "H";
         public const string TimexMinute = "M";
         public const string TimexSecond = "S";
+        public const string TimexNight = "NI";
         public const char TimexFuzzy = 'X';
         public const string TimexFuzzyYear = "XXXX";
         public const string TimexFuzzyMonth = "XX";

@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -123,44 +125,64 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static List<Resolution.Entry> ResolveDate(TimexProperty timex, DateObject date)
         {
-            return new List<Resolution.Entry>
+            var dateValueList = GetDateValues(timex, date);
+            var result = new List<Resolution.Entry> { };
+            foreach (string dateValue in dateValueList)
             {
-                new Resolution.Entry
+                result.Add(new Resolution.Entry
                 {
                     Timex = timex.TimexValue,
                     Type = "date",
-                    Value = LastDateValue(timex, date),
-                },
-                new Resolution.Entry
-                {
-                    Timex = timex.TimexValue,
-                    Type = "date",
-                    Value = NextDateValue(timex, date),
-                },
-            };
+                    Value = dateValue,
+                });
+            }
+
+            return result;
         }
 
         private static string LastDateValue(TimexProperty timex, DateObject date)
         {
-            if (timex.Month != null && timex.DayOfMonth != null)
+            if (timex.DayOfMonth != null)
             {
+                var year = date.Year;
+                var month = date.Month;
+                if (timex.Month != null)
+                {
+                    month = timex.Month.Value;
+                    if (date.Month <= month || (date.Month == month && date.Day <= timex.DayOfMonth))
+                    {
+                        year--;
+                    }
+                }
+                else
+                {
+                    if (date.Day <= timex.DayOfMonth)
+                    {
+                        month--;
+                        if (month < 1)
+                        {
+                            month = (month + 12) % 12;
+                            year--;
+                        }
+                    }
+                }
+
                 return TimexValue.DateValue(new TimexProperty
                 {
-                    Year = date.Year - 1,
-                    Month = timex.Month,
+                    Year = year,
+                    Month = month,
                     DayOfMonth = timex.DayOfMonth,
                 });
             }
 
             if (timex.DayOfWeek != null)
             {
-                var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
-                var result = TimexDateHelpers.DateOfLastDay(day, date);
+                var start = GenerateWeekDate(timex, date, true);
                 return TimexValue.DateValue(new TimexProperty
                 {
-                    Year = result.Year,
-                    Month = result.Month,
-                    DayOfMonth = result.Day,
+                    Year = start.Year,
+                    Month = start.Month,
+                    DayOfMonth = start.Day,
                 });
             }
 
@@ -169,25 +191,47 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string NextDateValue(TimexProperty timex, DateObject date)
         {
-            if (timex.Month != null && timex.DayOfMonth != null)
+            if (timex.DayOfMonth != null)
             {
+                var year = date.Year;
+                var month = date.Month;
+                if (timex.Month != null)
+                {
+                    month = timex.Month.Value;
+                    if (date.Month > month || (date.Month == month && date.Day > timex.DayOfMonth))
+                    {
+                        year++;
+                    }
+                }
+                else
+                {
+                    if (date.Day > timex.DayOfMonth)
+                    {
+                        month++;
+                        if (month > 12)
+                        {
+                            month = month % 12;
+                            year--;
+                        }
+                    }
+                }
+
                 return TimexValue.DateValue(new TimexProperty
                 {
-                    Year = date.Year,
-                    Month = timex.Month,
+                    Year = year,
+                    Month = month,
                     DayOfMonth = timex.DayOfMonth,
                 });
             }
 
             if (timex.DayOfWeek != null)
             {
-                var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
-                var result = TimexDateHelpers.DateOfNextDay(day, date);
+                var start = GenerateWeekDate(timex, date, false);
                 return TimexValue.DateValue(new TimexProperty
                 {
-                    Year = result.Year,
-                    Month = result.Month,
-                    DayOfMonth = result.Day,
+                    Year = start.Year,
+                    Month = start.Month,
+                    DayOfMonth = start.Day,
                 });
             }
 
@@ -265,24 +309,88 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return firstWeekDay.AddDays(weekOfYear * 7);
         }
 
-        private static Tuple<string, string> MonthWeekDateRange(int year, int month, int weekOfYear)
+        private static Tuple<string, string> MonthWeekDateRange(int year, int month, int weekOfMonth)
         {
-            var dateInWeek = new DateObject(year, month, 1 + ((weekOfYear - 1) * 7));
-            if (dateInWeek.DayOfWeek == DayOfWeek.Sunday)
-            {
-                dateInWeek = dateInWeek.AddDays(1);
-            }
-            else if (dateInWeek.DayOfWeek > DayOfWeek.Monday)
-            {
-                dateInWeek = dateInWeek.AddDays(1 - (int)dateInWeek.DayOfWeek);
-            }
-
-            var start = dateInWeek;
-            var end = dateInWeek.AddDays(7);
+            var start = GenerateMonthWeekDateStart(year, month, weekOfMonth);
+            var end = start.AddDays(7);
 
             return new Tuple<string, string>(
                 TimexValue.DateValue(new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day }),
                 TimexValue.DateValue(new TimexProperty { Year = end.Year, Month = end.Month, DayOfMonth = end.Day }));
+        }
+
+        private static DateObject GenerateMonthWeekDateStart(int year, int month, int weekOfMonth)
+        {
+            var dateInWeek = new DateObject(year, month, 1 + ((weekOfMonth - 1) * 7));
+
+            // Align the date of the week according to Thursday, base on ISO 8601, https://en.wikipedia.org/wiki/ISO_8601
+            if (dateInWeek.DayOfWeek > DayOfWeek.Thursday)
+            {
+                dateInWeek = dateInWeek.AddDays(7 - (int)dateInWeek.DayOfWeek + 1);
+            }
+            else
+            {
+                dateInWeek = dateInWeek.AddDays(1 - (int)dateInWeek.DayOfWeek);
+            }
+
+            return dateInWeek;
+        }
+
+        private static DateObject GenerateWeekDate(TimexProperty timex, DateObject date, bool isBefore)
+        {
+            DateObject start;
+            if (timex.WeekOfMonth == null && timex.WeekOfYear == null)
+            {
+                var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
+                if (isBefore)
+                {
+                    start = TimexDateHelpers.DateOfLastDay(day, date);
+                }
+                else
+                {
+                    start = TimexDateHelpers.DateOfNextDay(day, date);
+                }
+            }
+            else
+            {
+                int dayOfWeek = timex.DayOfWeek.Value - 1;
+                int year = timex.Year ?? date.Year;
+                if (timex.WeekOfYear != null)
+                {
+                    int weekOfYear = timex.WeekOfYear.Value;
+                    start = FirstDateOfWeek(year, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
+                    if (timex.Year == null)
+                    {
+                        if (isBefore && start > date)
+                        {
+                            start = FirstDateOfWeek(year - 1, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
+                        }
+                        else if (!isBefore && start < date)
+                        {
+                            start = FirstDateOfWeek(year + 1, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
+                        }
+                    }
+                }
+                else
+                {
+                    int month = timex.Month ?? date.Month;
+                    int weekOfMonth = timex.WeekOfMonth.Value;
+                    start = GenerateMonthWeekDateStart(year, month, weekOfMonth).AddDays(dayOfWeek);
+                    if (timex.Year == null || timex.Month == null)
+                    {
+                        if (isBefore && start > date)
+                        {
+                            start = GenerateMonthWeekDateStart(timex.Month != null ? year - 1 : year, timex.Month == null ? month - 1 : month, weekOfMonth).AddDays(dayOfWeek);
+                        }
+                        else if (!isBefore && start < date)
+                        {
+                            start = GenerateMonthWeekDateStart(timex.Month != null ? year + 1 : year, timex.Month == null ? month + 1 : month, weekOfMonth).AddDays(dayOfWeek);
+                        }
+                    }
+                }
+            }
+
+            return start;
         }
 
         private static List<Resolution.Entry> ResolveDateRange(TimexProperty timex, DateObject date)
@@ -301,6 +409,24 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
             else
             {
+                if (timex.Month != null && timex.WeekOfMonth != null)
+                {
+                    var yearDateRangeList = GetMonthWeekDateRange(timex.Year ?? Constants.InvalidValue, timex.Month.Value, timex.WeekOfMonth.Value, date.Year);
+                    var result = new List<Resolution.Entry> { };
+                    foreach (Tuple<string, string> yearDateRange in yearDateRangeList)
+                    {
+                        result.Add(new Resolution.Entry
+                        {
+                            Timex = timex.TimexValue,
+                            Type = "daterange",
+                            Start = yearDateRange.Item1,
+                            End = yearDateRange.Item2,
+                        });
+                    }
+
+                    return result;
+                }
+
                 if (timex.Year != null && timex.Month != null)
                 {
                     var dateRange = MonthDateRange(timex.Year.Value, timex.Month.Value);
@@ -328,30 +454,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                             Type = "daterange",
                             Start = dateRange.Item1,
                             End = dateRange.Item2,
-                        },
-                    };
-                }
-
-                if (timex.Month != null && timex.WeekOfMonth != null)
-                {
-                    var lastYearDateRange = MonthWeekDateRange(date.Year - 1, timex.Month.Value, timex.WeekOfMonth.Value);
-                    var thisYearDateRange = MonthWeekDateRange(date.Year, timex.Month.Value, timex.WeekOfMonth.Value);
-
-                    return new List<Resolution.Entry>
-                    {
-                        new Resolution.Entry
-                        {
-                            Timex = timex.TimexValue,
-                            Type = "daterange",
-                            Start = lastYearDateRange.Item1,
-                            End = lastYearDateRange.Item2,
-                        },
-                        new Resolution.Entry
-                        {
-                            Timex = timex.TimexValue,
-                            Type = "daterange",
-                            Start = thisYearDateRange.Item1,
-                            End = thisYearDateRange.Item2,
                         },
                     };
                 }
@@ -458,36 +560,81 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return resolvedDates;
         }
 
+        private static List<string> GetDateValues(TimexProperty timex, DateObject date)
+        {
+            List<string> result = new List<string> { };
+            if (timex.Year != null && timex.Month != null && timex.DayOfMonth != null)
+            {
+                result.Add(TimexValue.DateValue(timex));
+            }
+            else
+            {
+                result.Add(LastDateValue(timex, date));
+                if (timex.Year == null)
+                {
+                    result.Add(NextDateValue(timex, date));
+                }
+            }
+
+            return result;
+        }
+
+        private static List<Tuple<string, string>> GetMonthWeekDateRange(int year, int month, int weekOfMonth, int referYear)
+        {
+            var result = new List<Tuple<string, string>> { };
+            if (year == Constants.InvalidValue)
+            {
+                result.Add(MonthWeekDateRange(referYear - 1, month, weekOfMonth));
+                result.Add(MonthWeekDateRange(referYear, month, weekOfMonth));
+            }
+            else
+            {
+                result.Add(MonthWeekDateRange(year, month, weekOfMonth));
+            }
+
+            return result;
+        }
+
         private static List<Resolution.Entry> ResolveDateTimeRange(TimexProperty timex, DateObject date)
         {
             if (timex.PartOfDay != null)
             {
-                var dateValue = TimexValue.DateValue(timex);
+                var dateValues = GetDateValues(timex, date);
                 var timeRange = PartOfDayTimeRange(timex);
-                return new List<Resolution.Entry>
+                var result = new List<Resolution.Entry> { };
+                foreach (string dateValue in dateValues)
                 {
-                    new Resolution.Entry
-                    {
-                        Timex = timex.TimexValue,
-                        Type = "datetimerange",
-                        Start = $"{dateValue} {timeRange.Item1}",
-                        End = $"{dateValue} {timeRange.Item2}",
-                    },
-                };
+                    result.Add(
+                        new Resolution.Entry
+                        {
+                            Timex = timex.TimexValue,
+                            Type = "datetimerange",
+                            Start = TimexHelpers.FormatResolvedDateValue(dateValue, timeRange.Item1),
+                            End = TimexHelpers.FormatResolvedDateValue(dateValue, timeRange.Item2),
+                        });
+                }
+
+                return result;
             }
             else
             {
                 var range = TimexHelpers.ExpandDateTimeRange(timex);
-                return new List<Resolution.Entry>
+                var startDateValues = GetDateValues(range.Start, date);
+                var endDateValues = GetDateValues(range.End, date);
+                var result = new List<Resolution.Entry> { };
+                foreach (var dateRange in startDateValues.Zip(endDateValues, (n, w) => new { start = n, end = w }))
                 {
-                    new Resolution.Entry
-                    {
-                        Timex = timex.TimexValue,
-                        Type = "datetimerange",
-                        Start = $"{TimexValue.DateValue(range.Start)} {TimexValue.TimeValue(range.Start, date)}",
-                        End = $"{TimexValue.DateValue(range.End)} {TimexValue.TimeValue(range.End, date)}",
-                    },
-                };
+                    result.Add(
+                        new Resolution.Entry
+                        {
+                            Timex = timex.TimexValue,
+                            Type = "datetimerange",
+                            Start = TimexHelpers.FormatResolvedDateValue(dateRange.start, TimexValue.TimeValue(range.Start, date)),
+                            End = TimexHelpers.FormatResolvedDateValue(dateRange.end, TimexValue.TimeValue(range.End, date)),
+                        });
+                }
+
+                return result;
             }
         }
     }

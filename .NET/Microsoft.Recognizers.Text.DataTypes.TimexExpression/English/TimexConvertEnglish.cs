@@ -96,16 +96,21 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 return TimexConstantsEnglish.Days[timex.DayOfWeek.Value - 1];
             }
 
-            var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
             var date = timex.DayOfMonth.Value.ToString(CultureInfo.InvariantCulture);
             var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture)];
 
-            if (timex.Year != null)
+            if (timex.Month != null)
             {
-                return $"{date}{abbreviation} {month} {timex.Year}".Trim();
+                var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
+                if (timex.Year != null)
+                {
+                    return $"{date}{abbreviation} {month} {timex.Year}".Trim();
+                }
+
+                return $"{date}{abbreviation} {month}";
             }
 
-            return $"{date}{abbreviation} {month}";
+            return $"{date}{abbreviation}";
         }
 
         private static string ConvertDurationPropertyToString(decimal value, string property, bool includeSingleCount)

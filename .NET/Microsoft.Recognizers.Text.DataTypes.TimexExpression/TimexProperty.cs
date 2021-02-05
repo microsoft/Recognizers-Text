@@ -200,6 +200,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             foreach (var item in source)
             {
+                if (item.Value.Equals(string.Empty))
+                {
+                    continue;
+                }
+
                 switch (item.Key)
                 {
                     case "year":
