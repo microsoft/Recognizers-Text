@@ -1,0 +1,287 @@
+[
+  {
+    "Input": "Réservez-moi une chambre à l'heure de Beijing",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Beijing",
+        "Type": "timezone",
+        "Start": 29,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à utc 4h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "utc 4h30",
+        "Type": "timezone",
+        "Start": 27,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à gmt 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "gmt 3 heures",
+        "Type": "timezone",
+        "Start": 27,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure standard d’Afghanistan",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure standard d’Afghanistan",
+        "Type": "timezone",
+        "Start": 29,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure d’Afghanistan",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "l’heure d’Afghanistan",
+        "Type": "timezone",
+        "Start": 27,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l'heure de Beijing",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Beijing",
+        "Type": "timezone",
+        "Start": 28,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l'heure de Saint-Louis",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Saint-Louis",
+        "Type": "timezone",
+        "Start": 29,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure de San José",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de San José",
+        "Type": "timezone",
+        "Start": 29,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Pour moi, l’heure de Christchurch, l’heure de Colchester ou l’heure d’Édimbourg, ça va.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Christchurch",
+        "Type": "timezone",
+        "Start": 12,
+        "Length": 21
+      },
+      {
+        "Text": "heure de Colchester",
+        "Type": "timezone",
+        "Start": 37,
+        "Length": 19
+      },
+      {
+        "Text": "heure d’Édimbourg",
+        "Type": "timezone",
+        "Start": 62,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Cortana vous enverra un e-mail pour trouver un temps qui marche dans le fuseau horaire de Sydney.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Sydney",
+        "Type": "timezone",
+        "Start": 72,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Cortana vous enverra un e-mail pour trouver un temps qui fonctionne à l’heure de Montréal.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Montréal",
+        "Type": "timezone",
+        "Start": 72,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Cortana vous enverra un courriel pour trouver un temps qui fonctionne à l’heure de Montréal.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Montréal",
+        "Type": "timezone",
+        "Start": 74,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l'heure du Pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure du Pacifique",
+        "Type": "timezone",
+        "Start": 28,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l'heure de l'Est",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de l'Est",
+        "Type": "timezone",
+        "Start": 28,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous à l'heure de Saint Barthélemy",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Saint Barthélemy",
+        "Type": "timezone",
+        "Start": 21,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans le fuseau horaire de Saint-Barthélemy",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Saint-Barthélemy",
+        "Type": "timezone",
+        "Start": 25,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "C’est le résultat du vote qui compte.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Montre-moi les horaires à Lincoln Square",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "J’ai dit l’heure de New York, pas l’heure de York",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de New York",
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 17
+      },
+      {
+        "Text": "heure de York",
+        "Type": "timezone",
+        "Start": 36,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je suis dans le fuseau horaire du Pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire du Pacifique",
+        "Type": "timezone",
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Rencontrons-nous à 13 heures dans le fuseau horaire des Rocheuses",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire des Rocheuses",
+        "Type": "timezone",
+        "Start": 37,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Il est 13 heures, l'heure avancée de l'Est",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée de l'Est",
+        "Type": "timezone",
+        "Start": 20,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Il est environ 13 heures ACDT",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ACDT",
+        "Type": "timezone",
+        "Start": 25,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Autrefois…",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  }
+]
