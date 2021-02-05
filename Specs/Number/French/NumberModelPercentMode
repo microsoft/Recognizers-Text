@@ -1,0 +1,54 @@
+[
+  {
+    "Input": "un sur trois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "trois",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 7,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "un sur vingt-et-un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "vingt-et-un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21"
+        },
+        "Start": 7,
+        "End": 18
+      }
+    ]
+  }
+]
