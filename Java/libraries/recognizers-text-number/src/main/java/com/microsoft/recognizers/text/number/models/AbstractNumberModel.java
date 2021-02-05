@@ -51,10 +51,11 @@ public abstract class AbstractNumberModel implements IModel {
             SortedMap<String, Object> sortedMap = new TreeMap<String, Object>();
             sortedMap.put(ResolutionKey.Value, o.getResolutionStr());
 
+            // We decreased the end property by 1 in order to keep parity with other platforms (C#/JS).
             return new ModelResult(
                     o.getText(),
                     o.getStart(),
-                o.getStart() + o.getLength(),
+                o.getStart() + o.getLength() - 1,
                 getModelTypeName(),
                 sortedMap
             );                
