@@ -556,5 +556,3978 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "« Pendant 3 ans » , a-t-il dit il y a 5 ans.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Pendant 3 ans",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-03-14,2021-03-14,P3Y)",
+              "type": "daterange",
+              "start": "2018-03-14",
+              "end": "2021-03-14"
+            }
+          ]
+        },
+        "Start": 2,
+        "Length": 13
+      },
+      {
+        "Text": "il y a 5 ans",
+        "Start": 31,
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2013-03-14",
+              "type": "date",
+              "value": "2013-03-14"
+            }
+          ]
+        },
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "à 715ampm",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "715ampm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T07:15",
+              "type": "time",
+              "value": "07:15:00"
+            },
+            {
+              "timex": "T19:15",
+              "type": "time",
+              "value": "19:15:00"
+            }
+          ]
+        },
+        "Start": 2,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ajoutez le déjeuner à midi et demi vendredi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "midi et demi vendredi",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-04 12:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-11 12:30:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Qu’est-ce que j’ai la semaine du 30 novembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine du 30 novembre",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2015-11-30",
+              "end": "2015-12-07"
+            },
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2016-11-28",
+              "end": "2016-12-05"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Pour 4 lundi à midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi à midi",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-10-31 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ajoutez 649 minuit ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "minuit ce soir",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "j’ai besoin d’une réserve pour 3 personnes dans une pizzeria conjointe à Seattle pour ce soir vers 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir vers 20 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T20",
+              "type": "datetime",
+              "value": "2016-11-07 20:00:00"
+            }
+          ]
+        },
+        "Start": 86,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Prenez un rendez-vous pour Pâques",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Pâques",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Prenez un rendez-vous pour Pâques en 2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Pâques en 2019",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "après-demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après-demain",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "après-demain à 8 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après-demain à 8 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09T08",
+              "type": "datetime",
+              "value": "2016-11-09 08:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "au vendredi après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi après-midi",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "au vendredi à 15 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi à 15 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-04 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-11 15:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Prenez un rendez-vous pour demain matin à 9 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain matin à 9 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "mettez le mariage de make cable dans mon calendrier pour mercredi le 31",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-13"
+            },
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-20"
+            }
+          ]
+        },
+        "Start": 57,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "mettez le mariage de make cable dans mon calendrier pour mardi le 31",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi le 31",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-10-31",
+              "type": "date",
+              "value": "2017-10-31"
+            }
+          ]
+        },
+        "Start": 57,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion dans 8 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 8 minutes",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:08:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:08:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion dans 10 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 10 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T10:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 10:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion dans 10 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 10 jours",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion dans 3 semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 semaines",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion dans 3 mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 mois",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-02-07",
+              "type": "date",
+              "value": "2017-02-07"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai dans 3 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 ans",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-11-07",
+              "type": "date",
+              "value": "2019-11-07"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "après 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 20 heures",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "avant 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant 20 heures",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "depuis 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis 20 heures",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "30/02/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "30/02/2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "32 janvier 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "12/13/2017",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "ajoutez le yoga au calendrier personnel le lundi et le mercredi à 15 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-10-31"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 43,
+        "Length": 5
+      },
+      {
+        "Text": "mercredi à 15 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-02 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-09 15:00:00"
+            }
+          ]
+        },
+        "Start": 55,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion à 8 heures chaque semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 8
+      },
+      {
+        "Text": "chaque semaine",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 33,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "programme le deuxième samedi de chaque mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deuxième samedi",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-12",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 15
+      },
+      {
+        "Text": "chaque mois",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Prenez un rendez-vous pour Pâques dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Pâques dimanche",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Prenez un rendez-vous pour Pâques lundi en 2017",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Pâques lundi en 2017",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-04-17",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "bloquez 1 heure au mon agenda demain matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 heure",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 7
+      },
+      {
+        "Text": "demain matin",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
+            }
+          ]
+        },
+        "Start": 30,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Changez la réunion à Bellevue du 22 juillet au 22 août",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 juillet",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2016-07-22"
+            },
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2017-07-22"
+            }
+          ]
+        },
+        "Start": 33,
+        "Length": 10
+      },
+      {
+        "Text": "22 août",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2016-08-22"
+            },
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2017-08-22"
+            }
+          ]
+        },
+        "Start": 47,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "au vendredi pour 3 à Bellevue dans l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 8
+      },
+      {
+        "Text": "dans l’après-midi",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        },
+        "Start": 30,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "prenez les médicaments de Jordan à la pharmacie Costco de la Havane avant mardi prochain à 12 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant mardi prochain à 12 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-15T12:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 12:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "2016-11-15T00:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 00:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 68,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion avant 14 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant 14 heures",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion 14 heures auparavant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 heures auparavant",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais changer le rendez-vous de 10 heures à 20 heures!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 9
+      },
+      {
+        "Text": "20 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 46,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais changer le rendez-vous de dix heures à vingt heures!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dix heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 10
+      },
+      {
+        "Text": "vingt heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 47,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais changer le rendez-vous de 10 heures à 9 heures!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 9
+      },
+      {
+        "Text": "9 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        },
+        "Start": 46,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vais changer le rendez-vous de 10 heures à 26 heures!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais changer le rendez-vous de 10 heures à 26 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer dans 5 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 minutes",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "dans 5 minutes.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 minutes",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Horaire de la matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "matinée",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai avant demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant demain",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai au plus tard demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "au plus tard demain",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "donnez-moi toutes les places ouvertes dont la date est après ou au 01/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après ou au 01/01/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 55,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai plus tard que le 01 janvier 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard que le 01 janvier 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai après le 01/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après le 01/01/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai avant le 01 jan 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant le 01 jan 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Il sera fermée à partir du 01 janvier 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à partir du 01 janvier 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "fin au 01/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin au 01/01/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai avant 2020",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant 2020",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2020-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "La limite est jusqu’en 2012",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jusqu’en 2012",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2012-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "La limite est en 2012 ou après",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2012 ou après",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2012-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 5 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 jours",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2017-11-13,P5D)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2017-11-13"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 10 mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 10 mois",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 3 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 ans",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2020-11-08,P3Y)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2020-11-08"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 5 ans, 1 mois et 12 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 ans, 1 mois et 12 jours",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2022-12-20"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 15 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 15 secondes",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:12:15"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 5 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 minutes",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:17:00"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 5 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 21:12:00"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans 1 jour et 5 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 1 jour et 5 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche se terminerait dans 2 jours, 1 heure, 5 minutes et 30 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 jours, 1 heure, 5 minutes et 30 secondes",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-09 17:17:30"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans les 1 jour et 5 heures prochains",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 1 jour et 5 heures prochains",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche se terminerait dans les 2 jours, 1 heure, 5 minutes et 30 secondes à venir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 2 jours, 1 heure, 5 minutes et 30 secondes à venir",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-09 17:17:30"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 59
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans les 15 prochaines secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 15 prochaines secondes",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:12:15"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je sortiraide retour dans les 10 prochains mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 10 prochains mois",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en novembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en 11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en 11, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11, 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai au mois de novembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois de novembre 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir en 2016-11",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir en 11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir en novembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sors en 11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je sors en novembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai au mois de 11, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois de 11, 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en novembre, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre, 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je sors en 2016-11",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir en 11, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11, 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en 2016.11",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016.11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je sors en 11, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11, 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en 2016-11",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir en 11 de l'année 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11 de l'année 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai en 11 de l'année 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11 de l'année 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Il arrivera le 01/01/2016 ou plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/01/2016 ou plus tard",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Il arrivera plus tard que le 01/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard que le 01/01/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Il arrivera le 01 janvier 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 janvier 2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Il partira le 01 jan 2016 ou avant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 jan 2016 ou avant",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Il partira avant le 01/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant le 01/01/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera terminée le 01/01/2016 ou plus tôt",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/01/2016 ou plus tôt",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera terminée le 01 janvier 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 janvier 2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera terminée avant le 01/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant le 01/01/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 26,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera terminée avant ou en février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant ou en février 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 26,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera terminée avant février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant février 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-02-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 26,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera terminée en février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "février 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "type": "daterange",
+              "start": "2018-02-01",
+              "end": "2018-03-01"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tu ne peux pas partir en 2016 ou plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016 ou plus tard",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tu ne peux pas partir après 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tu ne peux pas partir en 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2017-01-01"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Vous pouvez quitter le bureau à 18h30 ou après aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18h30 ou après aujourd'hui",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Vous pouvez quitter le bureau après 18h30 aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 18h30 aujourd’hui",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 30,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Vous pouvez quitter le bureau à 18h30 aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18h30 aujourd’hui",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "type": "datetime",
+              "value": "2016-11-07 18:30:00"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tu dois partir après-demain ou avant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après-demain ou avant",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tu dois partir après-demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après-demain",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Tu dois partir avant après-demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant après-demain",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Tu dois partir à 15 heures ou plus tôt le 15/05/2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 heures ou plus tôt le 15/05/2018",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Tu dois partir avant 15 heures le 15 mai 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant 15 heures le 15 mai 2018",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Tu dois partir à 15 heures le 15/05/2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 heures le 15/05/2018",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "type": "datetime",
+              "value": "2018-05-15 15:00:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre deux jours après aujourd’hui?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux jours après aujourd’hui",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-02",
+              "type": "date",
+              "value": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre trois semaines après demain?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois semaines après demain",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-22",
+              "type": "date",
+              "value": "2018-06-22"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Où étiez-vous il y a trois jours?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a trois jours",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-28",
+              "type": "date",
+              "value": "2018-05-28"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "montrez-moi les ventes avant 2010 ou après 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant 2010",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2010-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 10
+      },
+      {
+        "Text": "après 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "montrez-moi les ventes après 2010 et avant 2018 ou avant 2000 mais pas en 1998",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 2010",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2011-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 10
+      },
+      {
+        "Text": "avant 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 10
+      },
+      {
+        "Text": "avant 2000",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2000-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 51,
+        "Length": 10
+      },
+      {
+        "Text": "1998",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "1998",
+              "type": "daterange",
+              "start": "1998-01-01",
+              "end": "1999-01-01"
+            }
+          ]
+        },
+        "Start": 74,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "montrez-moi les enregistrements plus de 4 jours et moins d’une semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de 4 jours",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 15
+      },
+      {
+        "Text": "moins d’une semaine",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "Mod": "less",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        },
+        "Start": 51,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "montrez-moi les enregistrements plus d’une heure et 30 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus d’une heure et 30 minutes",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H30M",
+              "Mod": "more",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "J’ai déjà fini mon travail plus de deux semaines avant aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de deux semaines avant aujourd’hui",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "J’ai déjà fini mon travail plus de 2 semaines avant aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de 2 semaines avant aujourd'hui",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-15"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche aurait dû être accomplie plus de deux jours avant hier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de deux jours avant hier",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-26",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-26"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera accomplie moins de 3 jours après demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "moins de 3 jours après demain",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-30,2018-06-02,P3D)",
+              "type": "daterange",
+              "start": "2018-05-30",
+              "end": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera plus de deux semaines après aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de deux semaines après aujourd’hui",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-12",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Commençons dans 3 minutes à partir de maintenant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes à partir de maintenant",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Commençons dans 3 minutes à partir d'aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 9
+      },
+      {
+        "Text": "aujourd'hui",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "type": "date",
+              "value": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera dans deux semaines après aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans deux semaines après aujourd'hui",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-29,2018-06-12,P2W)",
+              "type": "daterange",
+              "start": "2018-05-29",
+              "end": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera dans les deux semaines prochaines après aujourd\"hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les deux semaines prochaines après aujourd\"hui",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-29,2018-06-12,P2W)",
+              "type": "daterange",
+              "start": "2018-05-29",
+              "end": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 51
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera dans les deux semaines prochaines avant aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux semaines prochaines avant aujourd'hui",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-08",
+              "type": "date",
+              "value": "2018-06-08"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera dans les deux semaines prochaines après demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux semaines prochaines après demain",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera dans deux semaines avant hier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux semaines avant hier",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-07",
+              "type": "date",
+              "value": "2018-06-07"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "montrez-moi les ventes de 2010-2020 et pas de 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 2010-2020",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2020-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 12
+      },
+      {
+        "Text": "2015",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 46,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "On pourrait partir après 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "On pourrait partir après février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après février 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "On pourrait partir après février",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après février",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            },
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera le 01/01/2015 après 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/01/2015 après 2 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01-01T02:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 02:00:00"
+            },
+            {
+              "timex": "2015-01-01T14:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 14:00:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera aujourd’hui avant 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd’hui avant 16 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-22T16",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-22 16:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera mercredi prochain plus tard que 10 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi prochain plus tard que 10 heures du matin",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-04T10",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-07-04 10:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 50
+      }
+    ]
+  },
+  {
+    "Input": "C’est arrivé mardi dernier à 14 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi dernier à 14 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-19T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-19 14:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Allons-y le 1er février au plus tard à 6 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er février au plus tard à 6 heures",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 18:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 18:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "C’est arrivé la semaine prochaine après 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine prochaine",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 17
+      },
+      {
+        "Text": "après 2 heures",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T02:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "T14:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes en 2007 et 2009",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2007",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2007",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 4
+      },
+      {
+        "Text": "2009",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2009",
+              "type": "daterange",
+              "start": "2009-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        },
+        "Start": 30,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes entre 2007 et 2009",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 2007 et 2009",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes de l'an 2008",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "an 2008",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2008",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes de l’année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "l’année",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes de la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes de la semaine à venir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine à venir",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W29",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-07-23"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Montrez les ventes de la semaine 31",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine 31",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W31",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-08-06"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars dans 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 heures",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-05T03:00:00",
+              "type": "datetime",
+              "value": "2018-07-05 03:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars dans deux semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans deux semaines",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je pars dans 2 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 jours",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars dans 2 mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 mois",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-09-05",
+              "type": "date",
+              "value": "2018-09-05"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je pars dans 2 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 ans",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-07-05",
+              "type": "date",
+              "value": "2020-07-05"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars dans 2 jours à partir d'aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 jours à partir d'aujourd'hui",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Vas-tu partir après 18 heures aujourd'hui?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 18 heures aujourd'hui",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Vous partirez à 18 heures ou après aujourd’hui?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18 heures ou après aujourd’hui",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Vous arriverez avant 18 h aujourd'hui?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant 18 h aujourd'hui",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Vous arriverez à 18 heures ou après aujourd’hui?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18 heures ou après aujourd’hui",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "< div>18 heures</ div>",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 6,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Il est < > 18 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18 heures",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Il partira après 2016 et avant 2018, ou avant 2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 2016",
+        "Start": 11,
+        "Length": 10,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "avant 2018",
+        "Start": 25,
+        "Length": 10,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "avant 2019",
+        "Start": 40,
+        "Length": 10,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
