@@ -55,6 +55,15 @@ Install Recognizer's by adding the following dependencies in your `pom.xml`:
     </dependency>
     ````
 
+- Get sequence Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text.sequence</groupId>
+        <artifactId>recognizers-text-sequence</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+
 - Get choice Recognizer's features:
     ````xml
     <dependency>
