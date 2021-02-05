@@ -1,6 +1,7 @@
 [
   {
     "Input": "Meu telefone é 1 (877) 609-2233.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "1 (877) 609-2233",
@@ -14,6 +15,7 @@
   },
   {
     "Input": "Meu telefone é +1 541-754-3010.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+1 541-754-3010",
@@ -27,6 +29,7 @@
   },
   {
     "Input": "Meu telefone é (541) 754-3010.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(541) 754-3010",
@@ -40,6 +43,7 @@
   },
   {
     "Input": "Meu telefone é 541-754-3010.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "541-754-3010",
@@ -53,6 +57,7 @@
   },
   {
     "Input": "Meu telefone é +1-541-754-3010.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+1-541-754-3010",
@@ -66,6 +71,7 @@
   },
   {
     "Input": "Meu telefone é 1-541-754-3010.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "1-541-754-3010",
@@ -79,6 +85,7 @@
   },
   {
     "Input": "Meu telefone é (55) 3333-33333.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(55) 3333-33333",
@@ -92,6 +99,7 @@
   },
   {
     "Input": "Meu telefone é (081) 3333-33333.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(081) 3333-33333",
@@ -105,6 +113,7 @@
   },
   {
     "Input": "Meu telefone é ( 19 ) 38294427.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "( 19 ) 38294427",
@@ -118,6 +127,7 @@
   },
   {
     "Input": "Meu telefone é (19) 35831647.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(19) 35831647",
@@ -131,6 +141,7 @@
   },
   {
     "Input": "Meu telefone é (21) 996205563.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(21) 996205563",
@@ -144,6 +155,7 @@
   },
   {
     "Input": "Meu telefone é (21)99713-3601.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(21)99713-3601",
@@ -157,6 +169,7 @@
   },
   {
     "Input": "Meu telefone é (71)3019-9811.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "(71)3019-9811",
@@ -170,6 +183,7 @@
   },
   {
     "Input": "Meu telefone é 018 997821551.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "018 997821551",
@@ -183,6 +197,7 @@
   },
   {
     "Input": "Meu telefone é 21 995556144.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "21 995556144",
@@ -196,6 +211,7 @@
   },
   {
     "Input": "Meu telefone é 280930640.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "280930640",
@@ -209,6 +225,7 @@
   },
   {
     "Input": "Meu telefone é 92995299770.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "92995299770",
@@ -222,6 +239,7 @@
   },
   {
     "Input": "Meu telefone é 972101245.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "972101245",
@@ -235,6 +253,7 @@
   },
   {
     "Input": "Meu telefone é +44 (0)7123 129683.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+44 (0)7123 129683",
@@ -248,6 +267,7 @@
   },
   {
     "Input": "Meu telefone é +44 7123 123456.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+44 7123 123456",
@@ -261,6 +281,7 @@
   },
   {
     "Input": "Meu telefone é +44 7700900397.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+44 7700900397",
@@ -274,6 +295,7 @@
   },
   {
     "Input": "Meu telefone é +447700 900 397.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+447700 900 397",
@@ -287,6 +309,7 @@
   },
   {
     "Input": "Meu telefone é 0044 07456934723.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0044 07456934723",
@@ -300,6 +323,7 @@
   },
   {
     "Input": "Meu telefone é 0044 07700 900873.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0044 07700 900873",
@@ -313,6 +337,7 @@
   },
   {
     "Input": "Meu telefone é 004407624938475.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "004407624938475",
@@ -326,6 +351,7 @@
   },
   {
     "Input": "Meu telefone é 07098 785467.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "07098 785467",
@@ -339,6 +365,7 @@
   },
   {
     "Input": "Meu telefone é 07453 372 351.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "07453 372 351",
@@ -352,6 +379,7 @@
   },
   {
     "Input": "Meu telefone é 07700 900873.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "07700 900873",
@@ -365,6 +393,7 @@
   },
   {
     "Input": "Meu telefone é 07700900095.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "07700900095",
@@ -378,6 +407,7 @@
   },
   {
     "Input": "Meu telefone é 07877 954 457.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "07877 954 457",
@@ -391,6 +421,7 @@
   },
   {
     "Input": "Meu telefone é 07893 564893.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "07893 564893",
@@ -404,6 +435,7 @@
   },
   {
     "Input": "Meu telefone é +49 171 1234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 171 1234567",
@@ -417,6 +449,7 @@
   },
   {
     "Input": "Meu telefone é +49 1741234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 1741234567",
@@ -430,6 +463,7 @@
   },
   {
     "Input": "Meu telefone é +49 176 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 176 12345678",
@@ -443,6 +477,7 @@
   },
   {
     "Input": "Meu telefone é +49 176- 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 176- 12345678",
@@ -456,6 +491,7 @@
   },
   {
     "Input": "Meu telefone é +49 176-12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 176-12345678",
@@ -469,6 +505,7 @@
   },
   {
     "Input": "Meu telefone é +49 176/ 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 176/ 12345678",
@@ -482,6 +519,7 @@
   },
   {
     "Input": "Meu telefone é +49 176/12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 176/12345678",
@@ -495,6 +533,7 @@
   },
   {
     "Input": "Meu telefone é +49 17612345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49 17612345678",
@@ -508,6 +547,7 @@
   },
   {
     "Input": "Meu telefone é +491731234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+491731234567",
@@ -521,6 +561,7 @@
   },
   {
     "Input": "Meu telefone é +49176 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49176 12345678",
@@ -534,6 +575,7 @@
   },
   {
     "Input": "Meu telefone é +49176- 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49176- 12345678",
@@ -547,6 +589,7 @@
   },
   {
     "Input": "Meu telefone é +49176/ 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "+49176/ 12345678",
@@ -560,6 +603,7 @@
   },
   {
     "Input": "Meu telefone é 00 49 176 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "00 49 176 12345678",
@@ -573,6 +617,7 @@
   },
   {
     "Input": "Meu telefone é 00 49 17612345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "00 49 17612345678",
@@ -586,6 +631,7 @@
   },
   {
     "Input": "Meu telefone é 0049 171 1234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0049 171 1234567",
@@ -599,6 +645,7 @@
   },
   {
     "Input": "Meu telefone é 0049 176 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0049 176 12345678",
@@ -612,6 +659,7 @@
   },
   {
     "Input": "Meu telefone é 00491731234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "00491731234567",
@@ -625,6 +673,7 @@
   },
   {
     "Input": "Meu telefone é 0049176 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0049176 12345678",
@@ -638,6 +687,7 @@
   },
   {
     "Input": "Meu telefone é 004917612345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "004917612345678",
@@ -651,6 +701,7 @@
   },
   {
     "Input": "Meu telefone é 0171 1234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0171 1234567",
@@ -664,6 +715,7 @@
   },
   {
     "Input": "Meu telefone é 01731234567.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "01731234567",
@@ -677,6 +729,7 @@
   },
   {
     "Input": "Meu telefone é 0176 -12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176 -12345678",
@@ -690,6 +743,7 @@
   },
   {
     "Input": "Meu telefone é 0176 12 34 56 78.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176 12 34 56 78",
@@ -703,6 +757,7 @@
   },
   {
     "Input": "Meu telefone é 0176 123 456 78.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176 123 456 78",
@@ -716,6 +771,7 @@
   },
   {
     "Input": "Meu telefone é 0176 1234 5678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176 1234 5678",
@@ -729,6 +785,7 @@
   },
   {
     "Input": "Meu telefone é 0176 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176 12345678",
@@ -742,6 +799,7 @@
   },
   {
     "Input": "Meu telefone é 0176- 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176- 12345678",
@@ -755,6 +813,7 @@
   },
   {
     "Input": "Meu telefone é 0176-12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176-12345678",
@@ -768,6 +827,7 @@
   },
   {
     "Input": "Meu telefone é 0176/ 12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176/ 12345678",
@@ -781,6 +841,7 @@
   },
   {
     "Input": "Meu telefone é 0176/12345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "0176/12345678",
@@ -794,6 +855,7 @@
   },
   {
     "Input": "Meu telefone é 017612345678.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "017612345678",
@@ -807,6 +869,7 @@
   },
   {
     "Input": "Meu telefone é 622 15 31 23.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "622 15 31 23",
@@ -820,6 +883,7 @@
   },
   {
     "Input": "Meu telefone é 632 139823.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "632 139823",
@@ -833,6 +897,7 @@
   },
   {
     "Input": "Meu telefone é 679 124 898.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "679 124 898",
@@ -846,6 +911,7 @@
   },
   {
     "Input": "Meu telefone é 652123123.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "652123123",
@@ -859,6 +925,7 @@
   },
   {
     "Input": "Meu telefone é 3333/2/6666.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "3333/2/6666",
@@ -872,6 +939,7 @@
   },
   {
     "Input": "Meu telefone é 1000-1-999.",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "1000-1-999",
@@ -885,42 +953,52 @@
   },
   {
     "Input": "s666666666 é uma sequência de caracteres.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "666666666s é uma sequência de caracteres.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "s666666666s é uma sequência de caracteres.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "666666666S é uma sequência de caracteres, mas não um telefone.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "3333*2=6666 não parece um número telefônico.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "3333/2=6666 não parece um número telefônico.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "1000-1=999 não parece um número telefônico.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "(456 (4)) 345 não parece um número telefônico.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "(081)  342-86221d não parece um número telefônico.",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "19) 35831647 parece que tem um parenteses faltando antes do código de área",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "35831647",
@@ -934,6 +1012,7 @@
   },
   {
     "Input": "(19 35831647 parece que tem um parenteses faltando depois do código de área",
+    "NotSupported":"java",
     "Results": [
       {
         "Text": "19 35831647",
@@ -947,26 +1026,32 @@
   },
   {
     "Input": "conta número 1234567",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "conta bancária: 12345678",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "conta número 12345678",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "conta número: 12345678",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "conta bancária número: 12345678",
+    "NotSupported":"java",
     "Results": []
   },
   {
     "Input": "minha conta é 12345678",
+    "NotSupported":"java",
     "Results": []
   }
 ]

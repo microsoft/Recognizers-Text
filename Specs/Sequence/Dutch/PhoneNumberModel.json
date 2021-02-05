@@ -1,7 +1,7 @@
 [
   {
     "Input": "Tel: (+31)12-3456789.",
-    "NotSupported":"javascript",
+    "NotSupported":"javascript, java",
     "Results": [
       {
         "Text": "(+31)12-3456789",
