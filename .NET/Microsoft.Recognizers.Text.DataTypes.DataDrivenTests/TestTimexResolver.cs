@@ -147,6 +147,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Resolver_DateTimeRange_Thanksgiving()
         {
+            // XXXX-11-WXX-4-4 -> 4th Thursday (4th ISO weekday) in unspecified week in November in unspecified year
             var today = new System.DateTime(2020, 10, 20);
             var resolution = TimexResolver.Resolve(new[] { "XXXX-11-WXX-4-4" }, today);
             Assert.AreEqual(2, resolution.Values.Count);

@@ -609,8 +609,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         {
                             Timex = timex.TimexValue,
                             Type = "datetimerange",
-                            Start = $"{dateValue} {timeRange.Item1}",
-                            End = $"{dateValue} {timeRange.Item2}",
+                            Start = TimexHelpers.FormatResolvedDateValue(dateValue, timeRange.Item1),
+                            End = TimexHelpers.FormatResolvedDateValue(dateValue, timeRange.Item2),
                         });
                 }
 
@@ -629,8 +629,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         {
                             Timex = timex.TimexValue,
                             Type = "datetimerange",
-                            Start = $"{dateRange.start} {TimexValue.TimeValue(range.Start, date)}",
-                            End = $"{dateRange.end} {TimexValue.TimeValue(range.End, date)}",
+                            Start = TimexHelpers.FormatResolvedDateValue(dateRange.start, TimexValue.TimeValue(range.Start, date)),
+                            End = TimexHelpers.FormatResolvedDateValue(dateRange.end, TimexValue.TimeValue(range.End, date)),
                         });
                 }
 

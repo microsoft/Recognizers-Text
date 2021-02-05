@@ -16,7 +16,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public const string Yesterday = "yesterday";
         public const string Weekend = "weekend";
         public const string Tonight = "tonight";
-        public const string TimexNight = "NI";
         public const string This = "this";
         public const string Last = "last";
         public const string Next = "next";

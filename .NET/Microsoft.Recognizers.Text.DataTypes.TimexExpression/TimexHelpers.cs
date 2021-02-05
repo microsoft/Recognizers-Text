@@ -391,6 +391,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return timexBuilder.ToString();
         }
 
+        public static string FormatResolvedDateValue(string dateValue, string timeValue)
+        {
+            return $"{dateValue} {timeValue}";
+        }
+
         private static TimexProperty TimeAdd(TimexProperty start, TimexProperty duration)
         {
             int second = (int)(start.Second + (duration.Seconds ?? 0));

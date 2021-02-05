@@ -159,7 +159,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     if (TimexDateHelpers.DatePartEquals(timexDate, date))
                     {
-                        if (timex.PartOfDay == TimexConstantsEnglish.TimexNight)
+                        if (timex.PartOfDay == Constants.TimexNight)
                         {
                             return TimexConstantsEnglish.Tonight;
                         }
