@@ -162,7 +162,9 @@
       "header": [
         "package com.microsoft.recognizers.text.sequence.resources;",
         "",
-        "public class ChineseIp {"
+        "public class ChineseIp {",
+        "",
+        "private static ChinesePhoneNumbers PhoneNumbersDefinitions;"
       ],
       "footer": [
         "}"
