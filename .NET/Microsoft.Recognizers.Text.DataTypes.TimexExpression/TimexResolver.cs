@@ -266,74 +266,38 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static Tuple<string, string> YearDateRange(int year)
         {
+            var yearDateRange = TimexHelpers.YearDateRange(year);
+
             return new Tuple<string, string>(
-                TimexValue.DateValue(new TimexProperty { Year = year, Month = 1, DayOfMonth = 1 }),
-                TimexValue.DateValue(new TimexProperty { Year = year + 1, Month = 1, DayOfMonth = 1 }));
+                TimexValue.DateValue(yearDateRange.Item1),
+                TimexValue.DateValue(yearDateRange.Item2));
         }
 
         private static Tuple<string, string> MonthDateRange(int year, int month)
         {
+            var monthDateRange = TimexHelpers.MonthDateRange(year, month);
+
             return new Tuple<string, string>(
-                TimexValue.DateValue(new TimexProperty { Year = year, Month = month, DayOfMonth = 1 }),
-                TimexValue.DateValue(new TimexProperty { Year = month == 12 ? year + 1 : year, Month = month == 12 ? 1 : month + 1, DayOfMonth = 1 }));
+                TimexValue.DateValue(monthDateRange.Item1),
+                TimexValue.DateValue(monthDateRange.Item2));
         }
 
         private static Tuple<string, string> YearWeekDateRange(int year, int weekOfYear, bool? isWeekend)
         {
-            var firstMondayInWeek = FirstDateOfWeek(year, weekOfYear, System.Globalization.CultureInfo.InvariantCulture);
-
-            var start = (isWeekend == null || isWeekend.Value == false) ?
-                            firstMondayInWeek :
-                            TimexDateHelpers.DateOfNextDay(DayOfWeek.Saturday, firstMondayInWeek);
-            var end = firstMondayInWeek + TimeSpan.FromDays(7);
+            var yearWeekDateRange = TimexHelpers.YearWeekDateRange(year, weekOfYear, isWeekend);
 
             return new Tuple<string, string>(
-                TimexValue.DateValue(new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day }),
-                TimexValue.DateValue(new TimexProperty { Year = end.Year, Month = end.Month, DayOfMonth = end.Day }));
-        }
-
-        // this is based on https://stackoverflow.com/questions/19901666/get-date-of-first-and-last-day-of-week-knowing-week-number/34727270
-        private static DateObject FirstDateOfWeek(int year, int weekOfYear, System.Globalization.CultureInfo cultureInfo)
-        {
-            // ISO uses FirstFourDayWeek, and Monday as first day of week, according to https://en.wikipedia.org/wiki/ISO_8601
-            var jan1 = new DateObject(year, 1, 1);
-            int daysOffset = (int)DayOfWeek.Monday - (int)jan1.DayOfWeek;
-            var firstWeekDay = jan1.AddDays(daysOffset);
-
-            int firstWeek = cultureInfo.Calendar.GetWeekOfYear(jan1, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
-            if ((firstWeek <= 1 || firstWeek >= 52) && daysOffset >= -3)
-            {
-                weekOfYear -= 1;
-            }
-
-            return firstWeekDay.AddDays(weekOfYear * 7);
+                TimexValue.DateValue(yearWeekDateRange.Item1),
+                TimexValue.DateValue(yearWeekDateRange.Item2));
         }
 
         private static Tuple<string, string> MonthWeekDateRange(int year, int month, int weekOfMonth)
         {
-            var start = GenerateMonthWeekDateStart(year, month, weekOfMonth);
-            var end = start.AddDays(7);
+            var monthWeekDateRange = TimexHelpers.MonthWeekDateRange(year, month, weekOfMonth);
 
             return new Tuple<string, string>(
-                TimexValue.DateValue(new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day }),
-                TimexValue.DateValue(new TimexProperty { Year = end.Year, Month = end.Month, DayOfMonth = end.Day }));
-        }
-
-        private static DateObject GenerateMonthWeekDateStart(int year, int month, int weekOfMonth)
-        {
-            var dateInWeek = new DateObject(year, month, 1 + ((weekOfMonth - 1) * 7));
-
-            // Align the date of the week according to Thursday, base on ISO 8601, https://en.wikipedia.org/wiki/ISO_8601
-            if (dateInWeek.DayOfWeek > DayOfWeek.Thursday)
-            {
-                dateInWeek = dateInWeek.AddDays(7 - (int)dateInWeek.DayOfWeek + 1);
-            }
-            else
-            {
-                dateInWeek = dateInWeek.AddDays(1 - (int)dateInWeek.DayOfWeek);
-            }
-
-            return dateInWeek;
+                TimexValue.DateValue(monthWeekDateRange.Item1),
+                TimexValue.DateValue(monthWeekDateRange.Item2));
         }
 
         private static DateObject GenerateWeekDate(TimexProperty timex, DateObject date, bool isBefore)
@@ -358,16 +322,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 if (timex.WeekOfYear != null)
                 {
                     int weekOfYear = timex.WeekOfYear.Value;
-                    start = FirstDateOfWeek(year, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
+                    start = TimexHelpers.FirstDateOfWeek(year, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
                     if (timex.Year == null)
                     {
                         if (isBefore && start > date)
                         {
-                            start = FirstDateOfWeek(year - 1, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
+                            start = TimexHelpers.FirstDateOfWeek(year - 1, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
                         }
                         else if (!isBefore && start < date)
                         {
-                            start = FirstDateOfWeek(year + 1, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
+                            start = TimexHelpers.FirstDateOfWeek(year + 1, weekOfYear, CultureInfo.InvariantCulture).AddDays(dayOfWeek);
                         }
                     }
                 }
@@ -375,16 +339,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     int month = timex.Month ?? date.Month;
                     int weekOfMonth = timex.WeekOfMonth.Value;
-                    start = GenerateMonthWeekDateStart(year, month, weekOfMonth).AddDays(dayOfWeek);
+                    start = TimexHelpers.GenerateMonthWeekDateStart(year, month, weekOfMonth).AddDays(dayOfWeek);
                     if (timex.Year == null || timex.Month == null)
                     {
                         if (isBefore && start > date)
                         {
-                            start = GenerateMonthWeekDateStart(timex.Month != null ? year - 1 : year, timex.Month == null ? month - 1 : month, weekOfMonth).AddDays(dayOfWeek);
+                            start = TimexHelpers.GenerateMonthWeekDateStart(timex.Month != null ? year - 1 : year, timex.Month == null ? month - 1 : month, weekOfMonth).AddDays(dayOfWeek);
                         }
                         else if (!isBefore && start < date)
                         {
-                            start = GenerateMonthWeekDateStart(timex.Month != null ? year + 1 : year, timex.Month == null ? month + 1 : month, weekOfMonth).AddDays(dayOfWeek);
+                            start = TimexHelpers.GenerateMonthWeekDateStart(timex.Month != null ? year + 1 : year, timex.Month == null ? month + 1 : month, weekOfMonth).AddDays(dayOfWeek);
                         }
                     }
                 }
