@@ -54,6 +54,10 @@ public class BaseEmailExtractor extends BaseSequenceExtractor {
         Map<Pattern, String> regexes = new HashMap<Pattern, String>();
         regexes.put(Pattern.compile(BaseEmail.EmailRegex), Constants.EMAIL_REGEX);
         // EmailRegex2 will break the code as it's not supported in Java, comment out for now
+        // Error: java.util.regex.PatternSyntaxException: Unknown inline modifier near index 4
+        // The same issue happens in JS and it was disabled in https://github.com/microsoft/Recognizers-Text/pull/905
+        // @TODO: we need to search a way to handle inline modifier.
+        // See https://stackoverflow.com/questions/48189725/java-regex-pattern-compilation-error
         // regexes.put(Pattern.compile(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX);
 
         super.regexes = regexes;
