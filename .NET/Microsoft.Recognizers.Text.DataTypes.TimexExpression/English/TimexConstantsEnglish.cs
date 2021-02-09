@@ -7,6 +7,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     internal static class TimexConstantsEnglish
     {
+        public const string Every = "every";
+        public const string Now = "now";
+        public const string Midnight = "midnight";
+        public const string Midday = "midday";
         public static readonly string[] Days =
         {
             "Monday",

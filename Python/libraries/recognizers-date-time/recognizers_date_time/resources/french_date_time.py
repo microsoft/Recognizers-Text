@@ -207,7 +207,7 @@ class FrenchDateTime:
     NextPrefixRegex = f'.^'
     PastPrefixRegex = f'.^'
     PreviousPrefixRegex = f'.^'
-    RelativeDayRegex = f'\\b(((la\\s+)?{{RelativeRegex}}\\s+journ[ée]e))\\b'
+    RelativeDayRegex = f'\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b'
     ConnectorRegex = f'^(,|pour|t|vers)$'
     ConnectorAndRegex = f'\\b(et\\s*(le|las?)?)\\b.+'
     FromRegex = f'((de|du)?)$'
@@ -242,6 +242,7 @@ class FrenchDateTime:
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     ComplexDatePeriodRegex = f'^[.]'
+    AmbiguousPointRangeRegex = f'^(mar\\.?)$'
     UnitMap = dict([("annees", "Y"),
                     ("annee", "Y"),
                     ("an", "Y"),

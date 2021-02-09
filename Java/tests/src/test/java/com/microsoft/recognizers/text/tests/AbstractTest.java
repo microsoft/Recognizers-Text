@@ -107,7 +107,9 @@ public abstract class AbstractTest {
 
     @Test
     public void test() {
+
         count(currentCase);
+
         if (!isJavaSupported(this.currentCase.notSupported)) {
             countSkip(currentCase);
             throw new AssumptionViolatedException("Test case wih input '" + this.currentCase.input + "' not supported.");

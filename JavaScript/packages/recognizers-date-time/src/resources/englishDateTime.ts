@@ -75,7 +75,7 @@ export namespace EnglishDateTime {
     export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
     export const QuarterTermRegex = `\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b`;
     export const RelativeQuarterTermRegex = `\\b(?<orderQuarter>${StrictRelativeRegex})\\s+quarter\\b`;
-    export const QuarterRegex = `((the\\s+)?${QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)|${RelativeQuarterTermRegex}`;
+    export const QuarterRegex = `((the\\s+)?${QuarterTermRegex}(?:((\\s+of)?\\s+|\\s*[,-]\\s*)(${YearRegex}|${RelativeRegex}\\s+year))?)|${RelativeQuarterTermRegex}`;
     export const QuarterRegexYearFront = `(?:${YearRegex}|${RelativeRegex}\\s+year)('s)?(?:\\s*-\\s*|\\s+(the\\s+)?)?${QuarterTermRegex}`;
     export const HalfYearTermRegex = `(?<cardinal>first|1st|second|2nd)\\s+half`;
     export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)(\\s*-\\s*|\\s+(the\\s+)?)?h(?<number>[1-2])`;
@@ -93,7 +93,7 @@ export namespace EnglishDateTime {
     export const WeekOfRegex = `(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const MonthRegex = `(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)`;
-    export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|${TwoDigitYearRegex})`;
+    export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|(?<!,\\s?)${TwoDigitYearRegex}|${TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))`;
     export const YearSuffix = `((,|\\sof)?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
     export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>(3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))s?)\\b`;
@@ -101,7 +101,7 @@ export namespace EnglishDateTime {
     export const ThisRegex = `\\b(this(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b`;
     export const LastDateRegex = `\\b(${PreviousPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+(of\\s+)?last\\s*week))\\b`;
     export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b`;
-    export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
+    export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd)\\b`;
     export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
     export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
     export const SetWeekDayRegex = `\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\\b`;
@@ -181,7 +181,7 @@ export namespace EnglishDateTime {
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
     export const BusinessHourSplitStrings = [ "business","hour" ];
-    export const NowRegex = `\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b`;
+    export const NowRegex = `\\b(?<now>(right\\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\\b`;
     export const NowParseRegex = `\\b(${NowRegex}|^(date)$)\\b`;
     export const SuffixRegex = `^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b`;
     export const NonTimeContextTokens = `(building)`;
@@ -204,7 +204,7 @@ export namespace EnglishDateTime {
     export const PeriodicRegex = `\\b(?<periodic>((?<multiplier>semi|bi|tri)(\\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\\b`;
     export const EachUnitRegex = `\\b(?<each>(each|every|any|once an?)(?<other>\\s+other)?\\s+(${DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|${WeekDayRegex})|(?<specialUnit>weekends))`;
     export const EachPrefixRegex = `\\b(?<each>(each|every|once an?)\\s*$)`;
-    export const SetEachRegex = `\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)\\b`;
+    export const SetEachRegex = `\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)(?!the|that)\\b`;
     export const SetLastRegex = `(?<last>following|next|upcoming|this|${LastNegPrefix}last|past|previous|current)`;
     export const EachDayRegex = `^\\s*(each|every)\\s*day\\b`;
     export const DurationFollowedUnit = `(^\\s*${DurationUnitRegex}\\s+${SuffixAndRegex})|(^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex})`;
@@ -221,7 +221,7 @@ export namespace EnglishDateTime {
     export const AMTimeRegex = `(?<am>morning)`;
     export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
     export const NightTimeRegex = `(night)`;
-    export const NowTimeRegex = `(now)`;
+    export const NowTimeRegex = `(now|at th(e|is) minute)`;
     export const RecentlyTimeRegex = `(recently|previously)`;
     export const AsapTimeRegex = `(as soon as possible|asap)`;
     export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
@@ -309,7 +309,7 @@ export namespace EnglishDateTime {
     export const MealtimeDinnerTermList = [ "dinner","dinnertime","supper" ];
     export const DaytimeTermList = [ "daytime" ];
     export const NightTermList = [ "night" ];
-    export const SameDayTerms = [ "today" ];
+    export const SameDayTerms = [ "today","otd" ];
     export const PlusOneDayTerms = [ "tomorrow","tmr","day after" ];
     export const MinusOneDayTerms = [ "yesterday","day before" ];
     export const PlusTwoDayTerms = [ "day after tomorrow","day after tmr" ];
