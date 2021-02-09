@@ -4,6 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-27T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "von 5 bis 6",
@@ -34,6 +35,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-27T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "von 5 bis 6",
@@ -64,6 +66,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-27T00:00:00"
     },
+    "NotSupported": "python",
     "Results": []
   },
   {
@@ -71,6 +74,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-27T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "viertel nach drei",

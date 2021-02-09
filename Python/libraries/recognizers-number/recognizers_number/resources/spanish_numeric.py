@@ -45,7 +45,7 @@ class SpanishNumeric:
     OneToNineOrdinalRegex = f'(primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])'
     TensOrdinalRegex = f'(nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])'
     HundredOrdinalRegex = f'(cent[eé]sim[oa]|ducent[eé]sim[oa]|tricent[eé]sim[oa]|cuadringent[eé]sim[oa]|quingent[eé]sim[oa]|sexcent[eé]sim[oa]|septingent[eé]sim[oa]|octingent[eé]sim[oa]|noningent[eé]sim[oa])'
-    SpecialUnderHundredOrdinalRegex = f'(und[eé]cim[oa]|duod[eé]cimo|decimoctav[oa])'
+    SpecialUnderHundredOrdinalRegex = f'(und[eé]cim[oa]|duod[eé]cim[oa]|decimoctav[oa])'
     UnderHundredOrdinalRegex = f'({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})'
     UnderThousandOrdinalRegex = f'((({HundredOrdinalRegex}(\\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})'
     OverThousandOrdinalRegex = f'(({AllIntRegex})([eé]sim[oa]))'
@@ -53,7 +53,7 @@ class SpanishNumeric:
     SufixRoundOrdinalRegex = f'(({AllIntRegex})({SimpleRoundOrdinalRegex}))'
     ComplexRoundOrdinalRegex = f'((({SufixRoundOrdinalRegex}(\\s)?)?{ComplexOrdinalRegex})|{SufixRoundOrdinalRegex})'
     AllOrdinalRegex = f'{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
-    OrdinalSuffixRegex = f'(?<=\\b)(\\d*((1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|(1|2|3|4|5|6|7|8|9|0)[ºª]))(?=\\b)'
+    OrdinalSuffixRegex = f'(?<=\\b)(\\d*((1(er|r[oa])|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\\d\\.?[ºª]))(?=\\b)'
     OrdinalNounRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     SpecialFractionInteger = f'((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))a?v[oa]s?)'
     FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
@@ -76,19 +76,19 @@ class SpanishNumeric:
     DoubleCaretExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
     NumberWithPrefixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|por\\s+cien(to)?\\b)'
     TillRegex = f'(\\ba\\b|hasta|--|-|—|——|~|–)'
-    MoreRegex = f'(más\\s+(alt[oa]s?|grandes)\\s+que|(m[áa]s|mayor(es)?|superior(es)?|por\\s+encima)((\\s+(que|del?|al?))|(?=\\s+o\\b))|(?<!<|=)>)'
+    MoreRegex = f'(más\\s+(alt[oa]s?|grandes)\\s+que|(m[áa]s|mayor(es)?|superior(es)?|por\\s+encima)\\b((\\s+(que|del?|al?))|(?=\\s+o\\b))|(?<!<|=)>)'
     LessRegex = f'((meno(s|r(es)?)|inferior(es)?|por\\s+debajo)((\\s+(que|del?|al?)|(?=\\s+o\\b)))|más\\s+baj[oa]\\s+que|(?<!>|=)<)'
     EqualRegex = f'((igual(es)?|equivalente(s)?|equivalen?)(\\s+(al?|que|del?))?|(?<!<|>)=)'
     MoreOrEqualPrefix = f'((no\\s+{LessRegex})|(por\\s+lo\\s+menos|como\\s+m[íi]nimo|al\\s+menos))'
     MoreOrEqual = f'(({MoreRegex}\\s+(o)?\\s+{EqualRegex})|({EqualRegex}\\s+(o|y)\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(o)\\s+{EqualRegex})?|({EqualRegex}\\s+(o)\\s+)?{MoreOrEqualPrefix}|>\\s*=)'
-    MoreOrEqualSuffix = f'((\\b(y|o)\\b\\s+(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(alt[oa]|baj[oa]|que|del?))|(\\s+(que|del?|al?)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo|por\\s+lo\\s+menos|al\\s+menos)'
+    MoreOrEqualSuffix = f'((\\b(y|o)\\b\\s+(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(alt[oa]|baj[oa]|que|del?|al?))|(\\s+(que|del?|al?)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo|por\\s+lo\\s+menos|al\\s+menos)\\b'
     LessOrEqualPrefix = f'((no\\s+{MoreRegex})|(como\\s+(m[aá]ximo|mucho)))'
     LessOrEqual = f'(({LessRegex}\\s+(o)?\\s+{EqualRegex})|({EqualRegex}\\s+(o)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(o)?\\s+{EqualRegex})?|({EqualRegex}\\s+(o)?\\s+)?{LessOrEqualPrefix}|<\\s*=)'
-    LessOrEqualSuffix = f'((\\b(y|o)\\b\\s+(meno(s|r(es)?|inferior(es)?))((?!\\s+(alt[oa]|baj[oa]|que|del?|al?))|(\\s+(que|del?|al?)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo)'
-    NumberSplitMark = f'(?![,.](?!\\d+))'
-    MoreRegexNoNumberSucceed = f'(\\b(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(que|del?|al?))|\\s+((que|del?)(?!(\\s*\\d+))))|(por encima)(?!(\\s*\\d+)))'
-    LessRegexNoNumberSucceed = f'(\\b(meno(s|r(es)?)|inferior(es)?)((?!\\s+(que|del?|al?))|\\s+((que|del?)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))'
-    EqualRegexNoNumberSucceed = f'(\\b(igual(es)?|equivalentes?|equivalen?)((?!\\s+(al?|que|del?))|(\\s+(al?|que|del?)(?!(\\s*\\d+)))))'
+    LessOrEqualSuffix = f'((\\b(y|o)\\b\\s+(meno(s|r(es)?|inferior(es)?))((?!\\s+(alt[oa]|baj[oa]|que|del?|al?))|(\\s+(que|del?|al?)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo)\\b'
+    NumberSplitMark = f'(?![,.](?!\\d+))(?!\\s*\\b(((y|e)\\s+)?({LessRegex}|{MoreRegex}|{EqualRegex}|no|de)|pero|o|a)\\b)'
+    MoreRegexNoNumberSucceed = f'(\\b(m[áa]s|mayor(es)?|superior(es)?)((?!\\s+(que|del?|al?))|\\s+((que|del?)(?!(\\s*\\d+))))|(por encima)(?!(\\s*\\d+)))\\b'
+    LessRegexNoNumberSucceed = f'(\\b(meno(s|r(es)?)|inferior(es)?)((?!\\s+(que|del?|al?))|\\s+((que|del?|al?)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))\\b'
+    EqualRegexNoNumberSucceed = f'(\\b(igual(es)?|equivalentes?|equivalen?)((?!\\s+(al?|que|del?))|(\\s+(al?|que|del?)(?!(\\s*\\d+)))))\\b'
     OneNumberRangeMoreRegex1 = f'({MoreOrEqual}|{MoreRegex})\\s*((el|las?|los)\\s+)?(?<number1>({NumberSplitMark}.)+)'
     OneNumberRangeMoreRegex1LB = f'(?<!no\\s+){OneNumberRangeMoreRegex1}'
     OneNumberRangeMoreRegex2 = f'(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}'
@@ -101,7 +101,7 @@ class SpanishNumeric:
     TwoNumberRangeRegex1 = f'\\bentre\\s*((el|las?|los)\\s+)?(?<number1>({NumberSplitMark}.)+)\\s*y\\s*((el|las?|los)\\s+)?(?<number2>({NumberSplitMark}.)+)'
     TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(\\by\\b|\\be\\b|pero|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})'
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\\s*(\\by\\b|\\be\\b|pero|,)\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})'
-    TwoNumberRangeRegex4 = f'(\\bde(sde)?\\s+)?(\\b(el|las?|los)\\s+)?(?<number1>({NumberSplitMark}(?!\\b(entre|de(sde)?|es)\\b).)+)\\s*{TillRegex}\\s*((el|las?|los)\\s+)?(?<number2>({NumberSplitMark}.)+)'
+    TwoNumberRangeRegex4 = f'(\\bde(sde)?\\s+)?(\\b(el|las?|los)\\s+)?\\b(?!\\s+)(?<number1>({NumberSplitMark}(?!\\b(entre|de(sde)?|es)\\b).)+)\\b\\s*{TillRegex}\\s*((el|las?|los)\\s+)?\\b(?!\\s+)(?<number2>({NumberSplitMark}.)+)\\b'
     AmbiguousFractionConnectorsRegex = f'(\\b(en|de)\\b)'
     DecimalSeparatorChar = ','
     FractionMarkerToken = 'sobre'
@@ -211,6 +211,8 @@ class SpanishNumeric:
                              ("sexta", 6),
                              ("septimo", 7),
                              ("septima", 7),
+                             ("séptimo", 7),
+                             ("séptima", 7),
                              ("octavo", 8),
                              ("octava", 8),
                              ("noveno", 9),
@@ -221,8 +223,12 @@ class SpanishNumeric:
                              ("décima", 10),
                              ("undecimo", 11),
                              ("undecima", 11),
+                             ("undécimo", 11),
+                             ("undécima", 11),
                              ("duodecimo", 12),
                              ("duodecima", 12),
+                             ("duodécimo", 12),
+                             ("duodécima", 12),
                              ("decimotercero", 13),
                              ("decimotercera", 13),
                              ("decimocuarto", 14),
@@ -239,44 +245,84 @@ class SpanishNumeric:
                              ("decimonovena", 19),
                              ("vigesimo", 20),
                              ("vigesima", 20),
+                             ("vigésimo", 20),
+                             ("vigésima", 20),
                              ("trigesimo", 30),
                              ("trigesima", 30),
+                             ("trigésimo", 30),
+                             ("trigésima", 30),
                              ("cuadragesimo", 40),
                              ("cuadragesima", 40),
+                             ("cuadragésimo", 40),
+                             ("cuadragésima", 40),
                              ("quincuagesimo", 50),
                              ("quincuagesima", 50),
+                             ("quincuagésimo", 50),
+                             ("quincuagésima", 50),
                              ("sexagesimo", 60),
                              ("sexagesima", 60),
+                             ("sexagésimo", 60),
+                             ("sexagésima", 60),
                              ("septuagesimo", 70),
                              ("septuagesima", 70),
+                             ("septuagésimo", 70),
+                             ("septuagésima", 70),
                              ("octogesimo", 80),
                              ("octogesima", 80),
+                             ("octogésimo", 80),
+                             ("octogésima", 80),
                              ("nonagesimo", 90),
                              ("nonagesima", 90),
+                             ("nonagésimo", 90),
+                             ("nonagésima", 90),
                              ("centesimo", 100),
                              ("centesima", 100),
+                             ("centésimo", 100),
+                             ("centésima", 100),
                              ("ducentesimo", 200),
                              ("ducentesima", 200),
+                             ("ducentésimo", 200),
+                             ("ducentésima", 200),
                              ("tricentesimo", 300),
                              ("tricentesima", 300),
+                             ("tricentésimo", 300),
+                             ("tricentésima", 300),
                              ("cuadringentesimo", 400),
                              ("cuadringentesima", 400),
+                             ("cuadringentésimo", 400),
+                             ("cuadringentésima", 400),
                              ("quingentesimo", 500),
                              ("quingentesima", 500),
+                             ("quingentésimo", 500),
+                             ("quingentésima", 500),
                              ("sexcentesimo", 600),
                              ("sexcentesima", 600),
+                             ("sexcentésimo", 600),
+                             ("sexcentésima", 600),
                              ("septingentesimo", 700),
                              ("septingentesima", 700),
+                             ("septingentésimo", 700),
+                             ("septingentésima", 700),
                              ("octingentesimo", 800),
                              ("octingentesima", 800),
+                             ("octingentésimo", 800),
+                             ("octingentésima", 800),
                              ("noningentesimo", 900),
                              ("noningentesima", 900),
+                             ("noningentésimo", 900),
+                             ("noningentésima", 900),
                              ("milesimo", 1000),
                              ("milesima", 1000),
+                             ("milésimo", 1000),
+                             ("milésima", 1000),
                              ("millonesimo", 1000000),
                              ("millonesima", 1000000),
+                             ("millonésimo", 1000000),
+                             ("millonésima", 1000000),
                              ("billonesimo", 1000000000000),
-                             ("billonesima", 1000000000000)])
+                             ("billonesima", 1000000000000),
+                             ("billonésimo", 1000000000000),
+                             ("billonésima", 1000000000000)])
     PrefixCardinalMap = dict([("dos", 2),
                               ("tres", 3),
                               ("cuatro", 4),

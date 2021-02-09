@@ -75,7 +75,7 @@ export namespace EnglishDateTime {
     export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
     export const QuarterTermRegex = `\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b`;
     export const RelativeQuarterTermRegex = `\\b(?<orderQuarter>${StrictRelativeRegex})\\s+quarter\\b`;
-    export const QuarterRegex = `((the\\s+)?${QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)|${RelativeQuarterTermRegex}`;
+    export const QuarterRegex = `((the\\s+)?${QuarterTermRegex}(?:((\\s+of)?\\s+|\\s*[,-]\\s*)(${YearRegex}|${RelativeRegex}\\s+year))?)|${RelativeQuarterTermRegex}`;
     export const QuarterRegexYearFront = `(?:${YearRegex}|${RelativeRegex}\\s+year)('s)?(?:\\s*-\\s*|\\s+(the\\s+)?)?${QuarterTermRegex}`;
     export const HalfYearTermRegex = `(?<cardinal>first|1st|second|2nd)\\s+half`;
     export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)(\\s*-\\s*|\\s+(the\\s+)?)?h(?<number>[1-2])`;
@@ -93,7 +93,7 @@ export namespace EnglishDateTime {
     export const WeekOfRegex = `(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const MonthRegex = `(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)`;
-    export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|${TwoDigitYearRegex})`;
+    export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|(?<!,\\s?)${TwoDigitYearRegex}|${TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))`;
     export const YearSuffix = `((,|\\sof)?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
     export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>(3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))s?)\\b`;
@@ -101,7 +101,7 @@ export namespace EnglishDateTime {
     export const ThisRegex = `\\b(this(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b`;
     export const LastDateRegex = `\\b(${PreviousPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+(of\\s+)?last\\s*week))\\b`;
     export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b`;
-    export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
+    export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd)\\b`;
     export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
     export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
     export const SetWeekDayRegex = `\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\\b`;
@@ -181,7 +181,7 @@ export namespace EnglishDateTime {
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
     export const BusinessHourSplitStrings = [ "business","hour" ];
-    export const NowRegex = `\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b`;
+    export const NowRegex = `\\b(?<now>(right\\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\\b`;
     export const NowParseRegex = `\\b(${NowRegex}|^(date)$)\\b`;
     export const SuffixRegex = `^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b`;
     export const NonTimeContextTokens = `(building)`;
@@ -204,7 +204,7 @@ export namespace EnglishDateTime {
     export const PeriodicRegex = `\\b(?<periodic>((?<multiplier>semi|bi|tri)(\\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\\b`;
     export const EachUnitRegex = `\\b(?<each>(each|every|any|once an?)(?<other>\\s+other)?\\s+(${DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|${WeekDayRegex})|(?<specialUnit>weekends))`;
     export const EachPrefixRegex = `\\b(?<each>(each|every|once an?)\\s*$)`;
-    export const SetEachRegex = `\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)\\b`;
+    export const SetEachRegex = `\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)(?!the|that)\\b`;
     export const SetLastRegex = `(?<last>following|next|upcoming|this|${LastNegPrefix}last|past|previous|current)`;
     export const EachDayRegex = `^\\s*(each|every)\\s*day\\b`;
     export const DurationFollowedUnit = `(^\\s*${DurationUnitRegex}\\s+${SuffixAndRegex})|(^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex})`;
@@ -221,7 +221,7 @@ export namespace EnglishDateTime {
     export const AMTimeRegex = `(?<am>morning)`;
     export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
     export const NightTimeRegex = `(night)`;
-    export const NowTimeRegex = `(now)`;
+    export const NowTimeRegex = `(now|at th(e|is) minute)`;
     export const RecentlyTimeRegex = `(recently|previously)`;
     export const AsapTimeRegex = `(as soon as possible|asap)`;
     export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
@@ -291,7 +291,7 @@ export namespace EnglishDateTime {
     export const DayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["monday", 1],["tuesday", 2],["wednesday", 3],["thursday", 4],["friday", 5],["saturday", 6],["sunday", 0],["mon", 1],["tue", 2],["tues", 2],["wed", 3],["wedn", 3],["weds", 3],["thu", 4],["thur", 4],["thurs", 4],["fri", 5],["sat", 6],["sun", 0]]);
     export const MonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["january", 1],["february", 2],["march", 3],["april", 4],["may", 5],["june", 6],["july", 7],["august", 8],["september", 9],["october", 10],["november", 11],["december", 12],["jan", 1],["feb", 2],["mar", 3],["apr", 4],["jun", 6],["jul", 7],["aug", 8],["sep", 9],["sept", 9],["oct", 10],["nov", 11],["dec", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9]]);
     export const Numbers: ReadonlyMap<string, number> = new Map<string, number>([["zero", 0],["one", 1],["a", 1],["an", 1],["two", 2],["three", 3],["four", 4],["five", 5],["six", 6],["seven", 7],["eight", 8],["nine", 9],["ten", 10],["eleven", 11],["twelve", 12],["thirteen", 13],["fourteen", 14],["fifteen", 15],["sixteen", 16],["seventeen", 17],["eighteen", 18],["nineteen", 19],["twenty", 20],["twenty one", 21],["twenty two", 22],["twenty three", 23],["twenty four", 24],["twenty five", 25],["twenty six", 26],["twenty seven", 27],["twenty eight", 28],["twenty nine", 29],["thirty", 30],["thirty one", 31],["thirty two", 32],["thirty three", 33],["thirty four", 34],["thirty five", 35],["thirty six", 36],["thirty seven", 37],["thirty eight", 38],["thirty nine", 39],["forty", 40],["forty one", 41],["forty two", 42],["forty three", 43],["forty four", 44],["forty five", 45],["forty six", 46],["forty seven", 47],["forty eight", 48],["forty nine", 49],["fifty", 50],["fifty one", 51],["fifty two", 52],["fifty three", 53],["fifty four", 54],["fifty five", 55],["fifty six", 56],["fifty seven", 57],["fifty eight", 58],["fifty nine", 59],["sixty", 60],["sixty one", 61],["sixty two", 62],["sixty three", 63],["sixty four", 64],["sixty five", 65],["sixty six", 66],["sixty seven", 67],["sixty eight", 68],["sixty nine", 69],["seventy", 70],["seventy one", 71],["seventy two", 72],["seventy three", 73],["seventy four", 74],["seventy five", 75],["seventy six", 76],["seventy seven", 77],["seventy eight", 78],["seventy nine", 79],["eighty", 80],["eighty one", 81],["eighty two", 82],["eighty three", 83],["eighty four", 84],["eighty five", 85],["eighty six", 86],["eighty seven", 87],["eighty eight", 88],["eighty nine", 89],["ninety", 90],["ninety one", 91],["ninety two", 92],["ninety three", 93],["ninety four", 94],["ninety five", 95],["ninety six", 96],["ninety seven", 97],["ninety eight", 98],["ninety nine", 99],["one hundred", 100]]);
-    export const DayOfMonth: ReadonlyMap<string, number> = new Map<string, number>([["1st", 1],["2nd", 2],["3rd", 3],["4th", 4],["5th", 5],["6th", 6],["7th", 7],["8th", 8],["9th", 9],["10th", 10],["11th", 11],["11st", 11],["12th", 12],["12nd", 12],["13th", 13],["13rd", 13],["14th", 14],["15th", 15],["16th", 16],["17th", 17],["18th", 18],["19th", 19],["20th", 20],["21st", 21],["21th", 21],["22nd", 22],["22th", 22],["23rd", 23],["23th", 23],["24th", 24],["25th", 25],["26th", 26],["27th", 27],["28th", 28],["29th", 29],["30th", 30],["31st", 31],["01st", 1],["02nd", 2],["03rd", 3],["04th", 4],["05th", 5],["06th", 6],["07th", 7],["08th", 8],["09th", 9]]);
+    export const DayOfMonth: ReadonlyMap<string, number> = new Map<string, number>([["1st", 1],["1th", 1],["2nd", 2],["2th", 2],["3rd", 3],["3th", 3],["4th", 4],["5th", 5],["6th", 6],["7th", 7],["8th", 8],["9th", 9],["10th", 10],["11th", 11],["11st", 11],["12th", 12],["12nd", 12],["13th", 13],["13rd", 13],["14th", 14],["15th", 15],["16th", 16],["17th", 17],["18th", 18],["19th", 19],["20th", 20],["21st", 21],["21th", 21],["22nd", 22],["22th", 22],["23rd", 23],["23th", 23],["24th", 24],["25th", 25],["26th", 26],["27th", 27],["28th", 28],["29th", 29],["30th", 30],["31st", 31],["01st", 1],["01th", 1],["02nd", 2],["02th", 2],["03rd", 3],["03th", 3],["04th", 4],["05th", 5],["06th", 6],["07th", 7],["08th", 8],["09th", 9]]);
     export const DoubleNumbers: ReadonlyMap<string, number> = new Map<string, number>([["half", 0.5],["quarter", 0.25]]);
     export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["easterday", ["easterday","easter","eastersunday"]],["ashwednesday", ["ashwednesday"]],["palmsunday", ["palmsunday"]],["maundythursday", ["maundythursday"]],["goodfriday", ["goodfriday"]],["eastersaturday", ["eastersaturday"]],["eastermonday", ["eastermonday"]],["ascensionday", ["ascensionday"]],["whitesunday", ["whitesunday","pentecost","pentecostday"]],["whitemonday", ["whitemonday"]],["trinitysunday", ["trinitysunday"]],["corpuschristi", ["corpuschristi"]],["earthday", ["earthday"]],["fathers", ["fatherday","fathersday"]],["mothers", ["motherday","mothersday"]],["thanksgiving", ["thanksgivingday","thanksgiving"]],["blackfriday", ["blackfriday"]],["cybermonday", ["cybermonday"]],["martinlutherking", ["mlkday","martinlutherkingday","martinlutherkingjrday"]],["washingtonsbirthday", ["washingtonsbirthday","washingtonbirthday","presidentsday"]],["canberra", ["canberraday"]],["labour", ["labourday","laborday"]],["columbus", ["columbusday"]],["memorial", ["memorialday"]],["yuandan", ["yuandan"]],["maosbirthday", ["maosbirthday"]],["teachersday", ["teachersday","teacherday"]],["singleday", ["singleday"]],["allsaintsday", ["allsaintsday"]],["youthday", ["youthday"]],["childrenday", ["childrenday","childday"]],["femaleday", ["femaleday"]],["treeplantingday", ["treeplantingday"]],["arborday", ["arborday"]],["girlsday", ["girlsday"]],["whiteloverday", ["whiteloverday"]],["loverday", ["loverday","loversday"]],["christmas", ["christmasday","christmas"]],["xmas", ["xmasday","xmas"]],["newyear", ["newyear"]],["newyearday", ["newyearday"]],["newyearsday", ["newyearsday"]],["inaugurationday", ["inaugurationday"]],["groundhougday", ["groundhougday"]],["valentinesday", ["valentinesday"]],["stpatrickday", ["stpatrickday","stpatricksday","stpatrick"]],["aprilfools", ["aprilfools"]],["stgeorgeday", ["stgeorgeday"]],["mayday", ["mayday","intlworkersday","internationalworkersday","workersday"]],["cincodemayoday", ["cincodemayoday"]],["baptisteday", ["baptisteday"]],["usindependenceday", ["usindependenceday"]],["independenceday", ["independenceday"]],["bastilleday", ["bastilleday"]],["halloweenday", ["halloweenday","halloween"]],["allhallowday", ["allhallowday"]],["allsoulsday", ["allsoulsday"]],["guyfawkesday", ["guyfawkesday"]],["veteransday", ["veteransday"]],["christmaseve", ["christmaseve"]],["newyeareve", ["newyearseve","newyeareve"]],["juneteenth", ["juneteenth","freedomday","jubileeday"]]]);
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["hundreds", 0],["tens", 10],["twenties", 20],["thirties", 30],["forties", 40],["fifties", 50],["sixties", 60],["seventies", 70],["eighties", 80],["nineties", 90]]);
@@ -309,7 +309,7 @@ export namespace EnglishDateTime {
     export const MealtimeDinnerTermList = [ "dinner","dinnertime","supper" ];
     export const DaytimeTermList = [ "daytime" ];
     export const NightTermList = [ "night" ];
-    export const SameDayTerms = [ "today" ];
+    export const SameDayTerms = [ "today","otd" ];
     export const PlusOneDayTerms = [ "tomorrow","tmr","day after" ];
     export const MinusOneDayTerms = [ "yesterday","day before" ];
     export const PlusTwoDayTerms = [ "day after tomorrow","day after tmr" ];

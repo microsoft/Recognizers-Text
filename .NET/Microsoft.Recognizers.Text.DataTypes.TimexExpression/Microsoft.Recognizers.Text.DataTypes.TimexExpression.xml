@@ -4,5 +4,40 @@
         <name>Microsoft.Recognizers.Text.DataTypes.TimexExpression</name>
     </assembly>
     <members>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Year">
+            <summary>
+            Year
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Month">
+            <summary>
+            Month
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Week">
+            <summary>
+            Week
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Day">
+            <summary>
+            Day
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Hour">
+            <summary>
+            Hour
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Minute">
+            <summary>
+            Minute
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Second">
+            <summary>
+            Second
+            </summary>
+        </member>
     </members>
 </doc>

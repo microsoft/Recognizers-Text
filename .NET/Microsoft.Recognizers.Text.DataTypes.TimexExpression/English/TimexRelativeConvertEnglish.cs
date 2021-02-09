@@ -49,34 +49,34 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
                 if (TimexDateHelpers.DatePartEquals(timexDate, date))
                 {
-                    return "today";
+                    return TimexConstantsEnglish.Today;
                 }
 
                 var tomorrow = TimexDateHelpers.Tomorrow(date);
                 if (TimexDateHelpers.DatePartEquals(timexDate, tomorrow))
                 {
-                    return "tomorrow";
+                    return TimexConstantsEnglish.Tomorrow;
                 }
 
                 var yesterday = TimexDateHelpers.Yesterday(date);
                 if (TimexDateHelpers.DatePartEquals(timexDate, yesterday))
                 {
-                    return "yesterday";
+                    return TimexConstantsEnglish.Yesterday;
                 }
 
                 if (TimexDateHelpers.IsThisWeek(timexDate, date))
                 {
-                    return $"this {GetDateDay(timexDate.DayOfWeek)}";
+                    return $"{TimexConstantsEnglish.This} {GetDateDay(timexDate.DayOfWeek)}";
                 }
 
                 if (TimexDateHelpers.IsNextWeek(timexDate, date))
                 {
-                    return $"next {GetDateDay(timexDate.DayOfWeek)}";
+                    return $"{TimexConstantsEnglish.Next} {GetDateDay(timexDate.DayOfWeek)}";
                 }
 
                 if (TimexDateHelpers.IsLastWeek(timexDate, date))
                 {
-                    return $"last {GetDateDay(timexDate.DayOfWeek)}";
+                    return $"{TimexConstantsEnglish.Last} {GetDateDay(timexDate.DayOfWeek)}";
                 }
             }
 
@@ -100,17 +100,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         var thisWeek = TimexDateHelpers.WeekOfYear(date);
                         if (thisWeek == timex.WeekOfYear)
                         {
-                            return timex.Weekend != null ? "this weekend" : "this week";
+                            return timex.Weekend != null ? $"{TimexConstantsEnglish.This} {TimexConstantsEnglish.Weekend}" : $"{TimexConstantsEnglish.This} {Constants.WeekUnit}";
                         }
 
                         if (thisWeek == timex.WeekOfYear + 1)
                         {
-                            return timex.Weekend != null ? "last weekend" : "last week";
+                            return timex.Weekend != null ? $"{TimexConstantsEnglish.Last} {TimexConstantsEnglish.Weekend}" : $"{TimexConstantsEnglish.Last} {Constants.WeekUnit}";
                         }
 
                         if (thisWeek == timex.WeekOfYear - 1)
                         {
-                            return timex.Weekend != null ? "next weekend" : "next week";
+                            return timex.Weekend != null ? $"{TimexConstantsEnglish.Next} {TimexConstantsEnglish.Weekend}" : $"{TimexConstantsEnglish.Next} {Constants.WeekUnit}";
                         }
                     }
 
@@ -118,31 +118,31 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     {
                         if (timex.Month == date.Month)
                         {
-                            return "this month";
+                            return $"{TimexConstantsEnglish.This} {Constants.MonthUnit}";
                         }
 
                         if (timex.Month == date.Month + 1)
                         {
-                            return "next month";
+                            return $"{TimexConstantsEnglish.Next} {Constants.MonthUnit}";
                         }
 
                         if (timex.Month == date.Month - 1)
                         {
-                            return "last month";
+                            return $"{TimexConstantsEnglish.Last} {Constants.MonthUnit}";
                         }
                     }
 
-                    return (timex.Season != null) ? $"this {TimexConstantsEnglish.Seasons[timex.Season]}" : "this year";
+                    return (timex.Season != null) ? $"{TimexConstantsEnglish.This} {TimexConstantsEnglish.Seasons[timex.Season]}" : $"{TimexConstantsEnglish.This} {Constants.YearUnit}";
                 }
 
                 if (timex.Year == year + 1)
                 {
-                    return (timex.Season != null) ? $"next {TimexConstantsEnglish.Seasons[timex.Season]}" : "next year";
+                    return (timex.Season != null) ? $"{TimexConstantsEnglish.Next} {TimexConstantsEnglish.Seasons[timex.Season]}" : $"{TimexConstantsEnglish.Next} {Constants.YearUnit}";
                 }
 
                 if (timex.Year == year - 1)
                 {
-                    return (timex.Season != null) ? $"last {TimexConstantsEnglish.Seasons[timex.Season]}" : "last year";
+                    return (timex.Season != null) ? $"{TimexConstantsEnglish.Last} {TimexConstantsEnglish.Seasons[timex.Season]}" : $"{TimexConstantsEnglish.Last} {Constants.YearUnit}";
                 }
             }
 
@@ -159,36 +159,36 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     if (TimexDateHelpers.DatePartEquals(timexDate, date))
                     {
-                        if (timex.PartOfDay == "NI")
+                        if (timex.PartOfDay == Constants.TimexNight)
                         {
-                            return "tonight";
+                            return TimexConstantsEnglish.Tonight;
                         }
                         else
                         {
-                            return $"this {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
+                            return $"{TimexConstantsEnglish.This} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                         }
                     }
 
                     var tomorrow = TimexDateHelpers.Tomorrow(date);
                     if (TimexDateHelpers.DatePartEquals(timexDate, tomorrow))
                     {
-                        return $"tomorrow {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
+                        return $"{TimexConstantsEnglish.Tomorrow} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
 
                     var yesterday = TimexDateHelpers.Yesterday(date);
                     if (TimexDateHelpers.DatePartEquals(timexDate, yesterday))
                     {
-                        return $"yesterday {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
+                        return $"{TimexConstantsEnglish.Yesterday} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
 
                     if (TimexDateHelpers.IsNextWeek(timexDate, date))
                     {
-                        return $"next {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
+                        return $"{TimexConstantsEnglish.Next} {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
 
                     if (TimexDateHelpers.IsLastWeek(timexDate, date))
                     {
-                        return $"last {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
+                        return $"{TimexConstantsEnglish.Last} {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
                 }
             }

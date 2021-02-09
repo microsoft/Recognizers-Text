@@ -79,6 +79,7 @@ CULTURES = {
     'Portuguese': Culture.Portuguese,
     'Spanish': Culture.Spanish,
     'Turkish': Culture.Turkish,
+    # 'German': Culture.German,
 }
 
 SPECS = get_all_specs()

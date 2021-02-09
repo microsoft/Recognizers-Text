@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string ThisRegex = $@"\b(this(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
       public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(of\s+)?last\s*week))\b";
       public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b";
-      public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b";
+      public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd)\b";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
-      public const string NowRegex = @"\b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b";
+      public const string NowRegex = @"\b(?<now>(right\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\b";
       public static readonly string NowParseRegex = $@"\b({NowRegex}|^(date)$)\b";
       public const string SuffixRegex = @"^\s*(in the\s+)?(morning|afternoon|evening|night)\b";
       public const string NonTimeContextTokens = @"(building)";
@@ -231,7 +231,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string AMTimeRegex = @"(?<am>morning)";
       public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
       public const string NightTimeRegex = @"(night)";
-      public const string NowTimeRegex = @"(now)";
+      public const string NowTimeRegex = @"(now|at th(e|is) minute)";
       public const string RecentlyTimeRegex = @"(recently|previously)";
       public const string AsapTimeRegex = @"(as soon as possible|asap)";
       public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
@@ -578,8 +578,11 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
         {
             { @"1st", 1 },
+            { @"1th", 1 },
             { @"2nd", 2 },
+            { @"2th", 2 },
             { @"3rd", 3 },
+            { @"3th", 3 },
             { @"4th", 4 },
             { @"5th", 5 },
             { @"6th", 6 },
@@ -615,8 +618,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"30th", 30 },
             { @"31st", 31 },
             { @"01st", 1 },
+            { @"01th", 1 },
             { @"02nd", 2 },
+            { @"02th", 2 },
             { @"03rd", 3 },
+            { @"03th", 3 },
             { @"04th", 4 },
             { @"05th", 5 },
             { @"06th", 6 },
@@ -774,7 +780,8 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly IList<string> SameDayTerms = new List<string>
         {
-            @"today"
+            @"today",
+            @"otd"
         };
       public static readonly IList<string> PlusOneDayTerms = new List<string>
         {
