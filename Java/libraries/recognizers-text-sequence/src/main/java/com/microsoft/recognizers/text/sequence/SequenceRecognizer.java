@@ -75,11 +75,19 @@ public class SequenceRecognizer extends Recognizer<SequenceOptions> {
         this(null, options, true);
     }
 
+    public static List<ModelResult> recognizePhoneNumber(String query, String culture) {
+        return recognizePhoneNumber(query, culture, SequenceOptions.None, true);
+    }
+
     public static List<ModelResult> recognizePhoneNumber(String query, String culture, SequenceOptions options,
             Boolean fallbackToDefaultCulture) {
         options = options != null ? options : SequenceOptions.None;
         return SequenceRecognizer.recognizeByModel(recognizer -> ((SequenceRecognizer)recognizer).getPhoneNumberModel(culture, fallbackToDefaultCulture),
                 query, options);
+    }
+
+    public static List<ModelResult> recognizeIpAddress(String query, String culture) {
+        return recognizeIpAddress(query, culture, SequenceOptions.None, true);
     }
 
     public static List<ModelResult> recognizeIpAddress(String query, String culture, SequenceOptions options,
@@ -89,11 +97,19 @@ public class SequenceRecognizer extends Recognizer<SequenceOptions> {
                 query, options);
     }
 
+    public static List<ModelResult> recognizeMention(String query, String culture) {
+        return recognizeMention(query, culture, SequenceOptions.None, true);
+    }
+
     public static List<ModelResult> recognizeMention(String query, String culture, SequenceOptions options,
             Boolean fallbackToDefaultCulture) {
         options = options != null ? options : SequenceOptions.None;
         return SequenceRecognizer.recognizeByModel(recognizer -> ((SequenceRecognizer)recognizer).getMentionModel(culture, fallbackToDefaultCulture),
                 query, options);
+    }
+
+    public static List<ModelResult> recognizeHashtag(String query, String culture) {
+        return recognizeHashtag(query, culture, SequenceOptions.None, true);
     }
 
     public static List<ModelResult> recognizeHashtag(String query, String culture, SequenceOptions options,
@@ -103,6 +119,10 @@ public class SequenceRecognizer extends Recognizer<SequenceOptions> {
                 query, options);
     }
 
+    public static List<ModelResult> recognizeEmail(String query, String culture) {
+        return recognizeEmail(query, culture, SequenceOptions.None, true);
+    }
+
     public static List<ModelResult> recognizeEmail(String query, String culture, SequenceOptions options,
             Boolean fallbackToDefaultCulture) {
         options = options != null ? options : SequenceOptions.None;
@@ -110,11 +130,19 @@ public class SequenceRecognizer extends Recognizer<SequenceOptions> {
                 options);
     }
 
+    public static List<ModelResult> recognizeURL(String query, String culture) {
+        return recognizeURL(query, culture, SequenceOptions.None, true);
+    }
+
     public static List<ModelResult> recognizeURL(String query, String culture, SequenceOptions options,
             Boolean fallbackToDefaultCulture) {
         options = options != null ? options : SequenceOptions.None;
         return SequenceRecognizer.recognizeByModel(recognizer -> ((SequenceRecognizer)recognizer).getURLModel(culture, fallbackToDefaultCulture), query,
                 options);
+    }
+
+    public static List<ModelResult> recognizeGUID(String query, String culture) {
+        return recognizeGUID(query, culture, SequenceOptions.None, true);
     }
 
     public static List<ModelResult> recognizeGUID(String query, String culture, SequenceOptions options,

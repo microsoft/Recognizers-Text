@@ -100,31 +100,31 @@ public class Sample {
 
                 // PhoneNumber recognizer will find any phone number presented
                 // E.g "My phone number is ( 19 ) 38294427."
-                SequenceRecognizer.recognizePhoneNumber(query, culture, SequenceOptions.None, true),
+                SequenceRecognizer.recognizePhoneNumber(query, culture),
 
                 // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
                 // E.g "My Ip is 8.8.8.8"
-                SequenceRecognizer.recognizeIpAddress(query, culture, SequenceOptions.None, true),
+                SequenceRecognizer.recognizeIpAddress(query, culture),
 
                 // Mention recognizer will find all the mention usages
                 // E.g "@Cicero"
-                SequenceRecognizer.recognizeMention(query, culture, SequenceOptions.None, true),
+                SequenceRecognizer.recognizeMention(query, culture),
 
                 // Hashtag recognizer will find all the hash tag usages
                 // E.g "task #123"
-                SequenceRecognizer.recognizeHashtag(query, culture, SequenceOptions.None, true),
+                SequenceRecognizer.recognizeHashtag(query, culture),
 
                 // Email recognizer will find all the emails
                 // E.g "a@b.com"
-                SequenceRecognizer.recognizeEmail(query, culture, SequenceOptions.None, true),
+                SequenceRecognizer.recognizeEmail(query, culture),
 
                 // URL recognizer will find all the urls
                 // E.g "bing.com"
-                SequenceRecognizer.recognizeURL(query, culture, SequenceOptions.None, true),
+                SequenceRecognizer.recognizeURL(query, culture),
 
                 // GUID recognizer will find all the GUID usages
                 // E.g "{123e4567-e89b-12d3-a456-426655440000}"
-                SequenceRecognizer.recognizeGUID(query, culture, SequenceOptions.None, true)
+                SequenceRecognizer.recognizeGUID(query, culture)
         );
     }
 
