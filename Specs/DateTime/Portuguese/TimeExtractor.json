@@ -614,14 +614,7 @@
   {
     "Input": "Voltarei ao meio dia",
     "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "ao meio dia",
-        "Type": "time",
-        "Start": 9,
-        "Length": 11
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voltarei de meio dia",

@@ -358,5 +358,17 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "Voltarei ao meio dia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "meio dia",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
   }
 ]

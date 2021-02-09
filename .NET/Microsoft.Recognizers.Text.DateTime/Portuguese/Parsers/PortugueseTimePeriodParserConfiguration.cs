@@ -77,6 +77,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 timeOfDay = Constants.Afternoon;
             }
+            else if (DateTimeDefinitions.MidDayTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                timeOfDay = Constants.MidDay;
+            }
             else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Evening;

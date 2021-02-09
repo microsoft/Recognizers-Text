@@ -478,14 +478,14 @@
         "Text": "tarde",
         "Type": "timerange",
         "Value": {
-          "Timex": "TEV",
+          "Timex": "TAF",
           "FutureResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
           },
           "PastResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
           }
         },
         "Start": 12,
@@ -516,6 +516,32 @@
         },
         "Start": 13,
         "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei ao meio dia",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "meio dia",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMI",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 8
       }
     ]
   }

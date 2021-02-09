@@ -133,13 +133,13 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string TimeRegex7 = $@"\b{TimeSuffix}\s+[àa]s?\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex8 = $@"\b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex9 = $@"\b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(e\s+)?{MinuteNumRegex}?)\b";
-      public const string TimeRegex10 = @"(\b([àa]|ao?)|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)";
+      public const string TimeRegex10 = @"(\b([àa])|na|de|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)";
       public static readonly string TimeRegex11 = $@"\b({WrittenTimeRegex})(\s+{DescRegex})?\b";
       public static readonly string TimeRegex12 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
       public const string PrepositionRegex = @"(?<prep>([àa]s?|em|por|pelo|pela|no|na|de|d[oa]?)?$)";
       public const string NowRegex = @"\b(?<now>((logo|exatamente)\s+)?agora(\s+mesmo)?|neste\s+momento|(assim\s+que|t[ãa]o\s+cedo\s+quanto)\s+(poss[ií]vel|possas?|possamos)|o\s+mais\s+(cedo|r[aá]pido)\s+poss[íi]vel|recentemente|previamente)\b";
       public const string SuffixRegex = @"^\s*((e|a|em|por|pelo|pela|no|na|de)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b";
-      public const string TimeOfDayRegex = @"\b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia)))\b";
+      public const string TimeOfDayRegex = @"\b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|(((depois\s+do|ap[óo]s\s+o)\s+)?(almo[çc]o|meio dia|meio-dia)))\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(((((a)?\s+|[nd]?es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?([àa]|em|por|pelo|pela|de|no|na?\s+)?{SpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*)";
@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string AnUnitRegex = $@"\b(um(a)?)\s+{UnitRegex}";
       public const string DuringRegex = @"^[.]";
       public const string AllRegex = @"\b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b";
-      public const string HalfRegex = @"\b(?<half>mei[oa]\s+(?<unit>ano|m[êe]s|semana|dia|hora))\b";
+      public const string HalfRegex = @"\b(?<half>mei[oa]\s+(?<unit>ano|m[êe]s|semana|hora))\b";
       public const string ConjunctionRegex = @"^[.]";
       public const string InexactNumberRegex = @"\b(poucos|pouco|algum|alguns|v[áa]rios)\b";
       public static readonly string InexactNumberUnitRegex = $@"\b(poucos|pouco|algum|alguns|v[áa]rios)\s+{UnitRegex}";
@@ -538,14 +538,18 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             @"manha",
             @"manhã"
         };
+      public static readonly IList<string> MidDayTermList = new List<string>
+        {
+            @"meio dia"
+        };
       public static readonly IList<string> AfternoonTermList = new List<string>
         {
             @"passado o meio dia",
-            @"depois do meio dia"
+            @"depois do meio dia",
+            @"tarde"
         };
       public static readonly IList<string> EveningTermList = new List<string>
-        {
-            @"tarde"
+        {  
         };
       public static readonly IList<string> NightTermList = new List<string>
         {

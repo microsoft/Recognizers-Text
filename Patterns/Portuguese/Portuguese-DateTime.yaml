@@ -323,7 +323,7 @@ TimeRegex9: !nestedRegex
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(e\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
 TimeRegex10: !simpleRegex
-  def: (\b([àa]|ao?)|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
+  def: (\b([àa])|na|de|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
 TimeRegex11: !nestedRegex
   # (tres menos vinte) (pm)?
   def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
@@ -340,7 +340,7 @@ NowRegex: !simpleRegex
 SuffixRegex: !simpleRegex
   def: ^\s*((e|a|em|por|pelo|pela|no|na|de)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia)))\b
+  def: \b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|(((depois\s+do|ap[óo]s\s+o)\s+)?(almo[çc]o|meio dia|meio-dia)))\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(((((a)?\s+|[nd]?es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
@@ -908,6 +908,10 @@ MorningTermList: !list
   entries:
     - manha
     - manhã
+MidDayTermList: !list
+  types: [ string ] 
+  entries: 
+    - meio dia
 AfternoonTermList: !list
   types: [ string ]
   entries:

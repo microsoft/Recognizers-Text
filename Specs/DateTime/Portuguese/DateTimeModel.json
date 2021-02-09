@@ -1328,5 +1328,104 @@
         }
       }
     ]
+  },
+  {
+    "Input": "30 minutos atrás",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30 minutos atrás",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-18T17:30:00",
+              "type": "datetime",
+              "value": "2019-09-18 17:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei ao meio dia",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "meio dia",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMI",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei da tarde",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 12,
+        "End": 16,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei da noite",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start": 12,
+        "End": 16,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
