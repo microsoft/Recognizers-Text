@@ -6,7 +6,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using Microsoft.Recognizers.Text.DataDrivenTests;
 using Newtonsoft.Json;
 
@@ -14,14 +13,9 @@ namespace Microsoft.Recognizers.Text.Validation
 {
     public class ValidationTool
     {
-        private static readonly string[] StageStrs = new string[3]
-        {
-            "JSON vaild",
-            "content vaild",
-            "model result",
-        };
+        private const string AutoUpdatedSplit = "\n\t";
 
-        private static readonly string AutoUpdatedSplit = "\n\t";
+        private const string BackupFileExtension = ".bak";
 
         private static ToolOptions options;
 
@@ -35,12 +29,19 @@ namespace Microsoft.Recognizers.Text.Validation
                 return;
             }
 
+            if (options == null || string.IsNullOrWhiteSpace(options.SpecsPath))
+            {
+                return;
+            }
+
             string[] specsPaths = ListSpecFiles(options.SpecsPath);
 
             foreach (string path in specsPaths)
             {
                 List<BasicStageResult> stageResults = RunPipeline(path);
+
                 ShowLogs(stageResults);
+
                 if (options.Save)
                 {
                     SaveMatchResults(stageResults, path);
@@ -53,13 +54,15 @@ namespace Microsoft.Recognizers.Text.Validation
         // Parser args parameters
         private static bool ParserArgs(string[] args)
         {
-            var command = new RootCommand(description: "Specs file validtion tool")
+            var command = new RootCommand(description: "Specs validation tool")
             {
-                new Option<bool>(aliases: new string[] {"--save", "-s"}, () => false) {
-                    Description = "Save match result in original file.",
+                new Option<bool>(aliases: new string[] { "--save", "-s" }, () => false)
+                {
+                    Description = "Save auto-fixes in original spec files.",
                 },
-                new Argument<string>("specs-path") {
-                    Description = "The specs file path, could be file path or a directory containing specs."
+                new Argument<string>("specs-path")
+                {
+                    Description = "The specs path can be a spec file path or a directory containing spec files.",
                 },
             };
 
@@ -120,10 +123,10 @@ namespace Microsoft.Recognizers.Text.Validation
                 return;
             }
 
-            string newPath = path + ".bak";
-            if (!File.Exists(newPath))
+            string backupFilePath = path + BackupFileExtension;
+            if (!File.Exists(backupFilePath))
             {
-                File.Copy(path, newPath);
+                File.Copy(path, backupFilePath);
             }
 
             // Convert match results and original specs to same data type Newtonsoft.Json.Linq.JArray.
@@ -138,8 +141,12 @@ namespace Microsoft.Recognizers.Text.Validation
                 originalSpecs[i]["Results"] = jsonSpecs[i]["Results"];
             }
 
-            string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented);
-            File.WriteAllText(path, rawResults, Encoding.UTF8);
+            string rawResults = JsonConvert.SerializeObject(originalSpecs, Formatting.Indented) + "\n";
+
+            // Write file in UTF-8, but omit BOM.
+            var encoding = new UTF8Encoding(false);
+            File.WriteAllText(path, rawResults, encoding);
+
             Console.WriteLine($"Success save match results to path: {path}");
         }
 
@@ -152,6 +159,7 @@ namespace Microsoft.Recognizers.Text.Validation
             Console.WriteLine(@"-------------------------");
             Console.WriteLine($"Begin to check file: {path}");
             Console.WriteLine();
+
             foreach (BasicStageResult stage in stageResults)
             {
                 for (int index = 0; index < stage.Logs.Count - 1; ++index)
@@ -160,6 +168,7 @@ namespace Microsoft.Recognizers.Text.Validation
                 }
 
                 Console.WriteLine(ConsoleStageResult(stage.StageName, !stage.IsSuccess ? stage.Logs[stage.Logs.Count - 1] : string.Empty, stage.IsSuccess, stage.SucceedNum));
+
                 if (!stage.IsSuccess)
                 {
                     if (!isSuccess)
@@ -172,17 +181,17 @@ namespace Microsoft.Recognizers.Text.Validation
             }
 
             Console.WriteLine();
-            string logStr = $"Check concluded for file: {path}.";
+            string logLines = $"Check concluded for file: {path}.";
             if (isSuccess)
             {
-                logStr += "Passed all validation stages.";
+                logLines += "Passed all validation stages.";
             }
             else
             {
-                logStr += $"Failed to check {errorStages}.";
+                logLines += $"Failed to check {errorStages}.";
             }
 
-            Console.WriteLine(logStr);
+            Console.WriteLine(logLines);
             Console.WriteLine(@"-------------------------");
         }
 
@@ -206,51 +215,51 @@ namespace Microsoft.Recognizers.Text.Validation
         private static BasicStageResult LoadJsonFile(string filePath)
         {
             List<TestModel> specs = new List<TestModel> { };
-            List<string> logStrs = new List<string> { };
+            List<string> logLines = new List<string> { };
             bool isSuccess = true;
 
             if (!Path.GetExtension(filePath).Equals(".json", StringComparison.OrdinalIgnoreCase))
             {
-                logStrs.Add($"File path {filePath} extension should be \".json\"");
+                logLines.Add($"File path {filePath} extension should be \".json\"");
                 isSuccess = false;
             }
 
             var rawData = File.ReadAllText(filePath);
 
-            // Try to load Specs JSON file, and catch exception.
+            // Try to load specs JSON file, and catch exceptions.
             try
             {
                 specs = (List<TestModel>)JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
                 if (!specs.Any())
                 {
-                    logStrs.Add($"JSON File is empty.");
+                    logLines.Add($"JSON File is empty.");
                     isSuccess = false;
                 }
             }
             catch (JsonReaderException jre)
             {
-                logStrs.Add($"JSON Reader exception! \nException Type: {jre.GetType()}, \nException Message: {jre.Message}, \nPosition: Line{jre.LineNumber}/{jre.LinePosition}.");
+                logLines.Add($"JSON Reader exception! \nException Type: {jre.GetType()}, \nException Message: {jre.Message}, \nPosition: Line{jre.LineNumber}/{jre.LinePosition}.");
                 isSuccess = false;
             }
             catch (JsonSerializationException jse)
             {
-                logStrs.Add($"JSON Serialzation Exception! \nException Type: {jse.GetType()}, \nException Message: {jse.Message}, \nPosition: Line{jse.LineNumber}/{jse.LinePosition}.");
+                logLines.Add($"JSON Serialzation Exception! \nException Type: {jse.GetType()}, \nException Message: {jse.Message}, \nPosition: Line{jse.LineNumber}/{jse.LinePosition}.");
                 isSuccess = false;
             }
             catch (Exception e)
             {
-                logStrs.Add($"Other error! \nException Type: {e.GetType()}, \nException Message: {e.Message}.");
+                logLines.Add($"Other error! \nException Type: {e.GetType()}, \nException Message: {e.Message}.");
                 isSuccess = false;
             }
 
-            return new BasicStageResult(filePath, "Json is valid", logStrs, specs, isSuccess);
+            return new BasicStageResult(filePath, "Json is valid", logLines, specs, isSuccess);
         }
 
         private static BasicStageResult CheckBasicContent(BasicStageResult stage)
         {
             List<TestModel> data = stage.Specs;
             List<TestModel> matchData = new List<TestModel> { };
-            List<string> logStrs = new List<string> { };
+            List<string> logLines = new List<string> { };
             List<string> counterStrs = new List<string> { };
             List<string> autoUpdatedStrs = new List<string> { };
             int errorNum = 0;
@@ -262,15 +271,22 @@ namespace Microsoft.Recognizers.Text.Validation
                 {
                     if (errorNum == 0)
                     {
-                        logStrs.Add(string.Empty);
+                        logLines.Add(string.Empty);
                     }
 
                     ++errorNum;
-                    logStrs.Add($"\tSpec error in item #{item.i + 1}, \n\tText: {item.value.Input}, \n\tContext: {JsonConvert.SerializeObject(item.value.Context)},\n\tError Message: {specResult.logStr}\n");
-                    counterStrs.Add(RemoveLogStrDetailInformation(specResult.logStr));
-                    if (options.Save && specResult.logStr.Contains(AutoUpdatedSplit))
+
+                    var msg = $"\tSpec error in item #{item.i + 1}, " +
+                              $"{AutoUpdatedSplit}Text: {item.value.Input}, " +
+                              $"{AutoUpdatedSplit}Context: {JsonConvert.SerializeObject(item.value.Context)}, " +
+                              $"{AutoUpdatedSplit}Error Message: {specResult.logLine}\n";
+
+                    logLines.Add(msg);
+                    counterStrs.Add(RemoveLogDetailInformation(specResult.logLine));
+
+                    if (options.Save && specResult.logLine.Contains(AutoUpdatedSplit))
                     {
-                        autoUpdatedStrs.Add(specResult.logStr.Split(AutoUpdatedSplit)[1]);
+                        autoUpdatedStrs.Add(specResult.logLine.Split(AutoUpdatedSplit)[1]);
                     }
                 }
 
@@ -279,34 +295,35 @@ namespace Microsoft.Recognizers.Text.Validation
 
             if (options.Save)
             {
-                logStrs.Add(CountLogLines(autoUpdatedStrs));
+                logLines.Add(CountLogLines(autoUpdatedStrs));
             }
 
-            logStrs.Add(CountLogLines(counterStrs));
+            logLines.Add(CountLogLines(counterStrs));
 
-            return new BasicStageResult(stage.FilePath, "Content valid", logStrs, matchData, errorNum == 0, matchData.Count - errorNum);
+            return new BasicStageResult(stage.FilePath, "Content valid", logLines, matchData, errorNum == 0, matchData.Count - errorNum);
         }
 
         private static BasicStageResult CheckModelResult(BasicStageResult stage)
         {
-            // ToDo: Compare the Recoginzer model result with specs file result.
+            // @TODO: Compare the Recoginzer model results with results in specs file.
             List<TestModel> data = stage.Specs;
-            List<string> logStrs = new List<string> { };
+            List<string> logLines = new List<string> { };
             bool isSuccess = true;
-            string logStr = string.Empty;
-            return new BasicStageResult(stage.FilePath, "Model Result", logStrs, data, isSuccess);
+
+            // To be implemented.
+
+            return new BasicStageResult(stage.FilePath, "Model Result", logLines, data, isSuccess);
         }
 
-        // Function waiting to be realized
-        private static (string logStr, bool isSuccess) GetSpecBasicContent(TestModel spec)
+        private static (string logLine, bool isSuccess) GetSpecBasicContent(TestModel spec)
         {
-            // Check the content in one Spec file
-            string logStr = string.Empty;
+            // Check the contents in one spec file
+            string logLine = string.Empty;
             bool isSuccess = true;
 
             if (string.Empty.Equals(spec.Input))
             {
-                logStr = "Json file is empty";
+                logLine = "Json file is empty";
                 isSuccess = false;
             }
             else
@@ -318,11 +335,11 @@ namespace Microsoft.Recognizers.Text.Validation
                     string resultStr = CheckSpecAttributes(spec, result);
                     if (!string.Empty.Equals(resultStr))
                     {
-                        logStr = resultStr;
+                        logLine = resultStr;
                         isSuccess = false;
                         if (options.Save)
                         {
-                            logStr += MatchIndex(spec, result);
+                            logLine += MatchIndex(spec, result);
                         }
                     }
 
@@ -336,7 +353,7 @@ namespace Microsoft.Recognizers.Text.Validation
                 }
             }
 
-            return (logStr, isSuccess);
+            return (logLine, isSuccess);
         }
 
         private static string CheckSpecAttributes(TestModel spec, dynamic result)
@@ -384,64 +401,65 @@ namespace Microsoft.Recognizers.Text.Validation
             return string.Empty;
         }
 
-        private static string CountLogLines(List<string> logStrs)
+        private static string CountLogLines(List<string> logLines)
         {
-            Dictionary<string, int> logStrCounter = new Dictionary<string, int>();
-            foreach (string f in logStrs)
+            Dictionary<string, int> logCollector = new Dictionary<string, int>();
+            foreach (string f in logLines)
             {
                 int oldValue;
-                logStrCounter.TryGetValue(f, out oldValue);
-                logStrCounter[f] = ++oldValue;
+                logCollector.TryGetValue(f, out oldValue);
+                logCollector[f] = ++oldValue;
             }
 
-            string needLogStr = string.Empty;
-            var logStrLogs = logStrCounter.Keys.Where(f => !string.Empty.Equals(f));
-            foreach (string logStrLog in logStrLogs)
+            string feedLine = string.Empty;
+            var validLines = logCollector.Keys.Where(f => !string.Empty.Equals(f));
+            foreach (string line in validLines)
             {
-                string logStr = logStrLog.Replace(".", string.Empty);
-                needLogStr += $"{logStrCounter[logStrLog]} specs {logStr}, ";
+                string logLine = line.Replace(".", string.Empty);
+                feedLine += $"{logCollector[line]} specs {logLine}, ";
             }
 
-            return needLogStr;
+            return feedLine;
         }
 
-        private static string ConsoleStageResult(string stage, string logStr, bool isSuccess, int succeedNum = -1)
+        private static string ConsoleStageResult(string stage, string logLine, bool isSuccess, int succeedNum = -1)
         {
             // Log stage result, and return success/error bool flag.
-            string statusLogStr = isSuccess ? "Success" : $"Error: {logStr}";
+            string status = isSuccess ? "Success" : $"Error: {logLine}";
             if (succeedNum != -1)
             {
-                statusLogStr += isSuccess ? ": " : string.Empty;
-                statusLogStr += $"{succeedNum} specs checked successfully";
+                status += isSuccess ? ": " : string.Empty;
+                status += $"{succeedNum} specs checked successfully";
             }
 
-            return $"{stage} check {statusLogStr}.";
+            return $"{stage} check {status}.";
         }
 
-        private static string RemoveLogStrDetailInformation(string logStr)
+        private static string RemoveLogDetailInformation(string logLine)
         {
-            if (logStr.Contains("out of bounds."))
+            if (logLine.Contains("out of bounds."))
             {
-                int valueStart = logStr.IndexOf("value");
-                logStr = $"{logStr.Substring(0, valueStart)}value out of bounds.";
+                int valueStart = logLine.IndexOf("value", StringComparison.Ordinal);
+                logLine = $"{logLine.Substring(0, valueStart)} value out of bounds.";
             }
-            else if (logStr.Contains(","))
+            else if (logLine.Contains(","))
             {
-                logStr = logStr.Split(",")[0];
+                logLine = logLine.Split(",")[0];
             }
-            else if (logStr.Contains(AutoUpdatedSplit))
+            else if (logLine.Contains(AutoUpdatedSplit))
             {
-                logStr = logStr.Split(AutoUpdatedSplit)[0];
+                logLine = logLine.Split(AutoUpdatedSplit)[0];
             }
 
-            return logStr;
+            return logLine;
         }
 
-        private static string MatchIndex(TestModel spec, dynamic result) {
-            string logStr = string.Empty;
+        private static string MatchIndex(TestModel spec, dynamic result)
+        {
+            string logLine = string.Empty;
             if (spec.Input == null || result["Text"] == null || result["Text"].Equals(string.Empty))
             {
-                return logStr;
+                return logLine;
             }
 
             string input = spec.Input;
@@ -452,11 +470,11 @@ namespace Microsoft.Recognizers.Text.Validation
                 index = input.IndexOf(text, StringComparison.Ordinal);
                 if (input.Substring(index + 1).Contains(text, StringComparison.Ordinal))
                 {
-                    logStr = $"{AutoUpdatedSplit}Failed to auto update , text match is potentially ambiguous.";
+                    logLine = $"{AutoUpdatedSplit}Failed to auto update , text match is potentially ambiguous.";
                 }
                 else
                 {
-                    logStr = $"{AutoUpdatedSplit}Auto update success.";
+                    logLine = $"{AutoUpdatedSplit}Auto update success.";
                     result["Start"] = index;
                     if (result["End"] == null)
                     {
@@ -469,11 +487,21 @@ namespace Microsoft.Recognizers.Text.Validation
                 }
             }
 
-            return logStr;
+            return logLine;
         }
 
         internal class BasicStageResult
         {
+            public BasicStageResult(string path, string stage, List<string> logLines, List<TestModel> specs, bool isSuccess, int succeedNum = -1)
+            {
+                this.FilePath = path;
+                this.StageName = stage;
+                this.IsSuccess = isSuccess;
+                this.Logs = logLines;
+                this.Specs = specs;
+                this.SucceedNum = succeedNum;
+            }
+
             public string FilePath { get; set; }
 
             public string StageName { get; set; }
@@ -485,29 +513,19 @@ namespace Microsoft.Recognizers.Text.Validation
             public List<string> Logs { get; set; }
 
             public List<TestModel> Specs { get; set; }
-
-            public BasicStageResult(string path, string stage, List<string> logStrs, List<TestModel> specs, bool isSuccess, int succeedNum = -1)
-            {
-                this.FilePath = path;
-                this.StageName = stage;
-                this.IsSuccess = isSuccess;
-                this.Logs = logStrs;
-                this.Specs = specs;
-                this.SucceedNum = succeedNum;
-            }
         }
 
         internal class ToolOptions
         {
-            public string SpecsPath { get; set; }
-
-            public bool Save { get; set; }
-
             public ToolOptions(string specsPath, bool save)
             {
                 this.SpecsPath = specsPath;
                 this.Save = save;
             }
+
+            public string SpecsPath { get; set; }
+
+            public bool Save { get; set; }
         }
     }
 

@@ -6,9 +6,11 @@ export class EnglishBooleanExtractorConfiguration implements IBooleanExtractorCo
     readonly regexTrue: RegExp;
     readonly regexFalse: RegExp;
     readonly tokenRegex: RegExp;
+    readonly emojiSkinToneRegex: RegExp;
     readonly onlyTopMatch: boolean;
 
     constructor(onlyTopMatch: boolean = true) {
+        this.emojiSkinToneRegex = RegExpUtility.getSafeRegExp(EnglishChoice.SkinToneRegex);
         this.regexTrue = RegExpUtility.getSafeRegExp(EnglishChoice.TrueRegex);
         this.regexFalse = RegExpUtility.getSafeRegExp(EnglishChoice.FalseRegex);
         this.tokenRegex = RegExpUtility.getSafeRegExp(EnglishChoice.TokenizerRegex, 'is');

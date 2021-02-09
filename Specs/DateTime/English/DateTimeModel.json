@@ -19118,7 +19118,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "feb 29",
@@ -19147,7 +19146,6 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "2/29",
@@ -19176,7 +19174,6 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "feb 29th",
@@ -19274,7 +19271,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "feb 28th to march 1st",
@@ -19305,7 +19301,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "2/29-3/1",
@@ -19336,7 +19331,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "2/29-3/1/2019",
@@ -19349,6 +19343,54 @@
               "timex": "(2019-02-29,2019-03-01,PXD)",
               "type": "daterange",
               "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Pierre de Fermat died otd.",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "otd",
+        "Start": 22,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-01-15",
+              "type": "date",
+              "value": "2021-01-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I have a secure enough supply line, at the minute I'm ok.",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "at the minute",
+        "Start": 36,
+        "End": 48,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2021-01-15 00:00:00"
             }
           ]
         }

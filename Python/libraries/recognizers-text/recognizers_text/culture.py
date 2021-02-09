@@ -9,6 +9,7 @@ class Culture:
     Portuguese: str = 'pt-br'
     Spanish: str = 'es-es'
     Turkish: str = 'tr-tr'
+    German: str = 'de-de'
 
 
 class BaseCultureInfo:

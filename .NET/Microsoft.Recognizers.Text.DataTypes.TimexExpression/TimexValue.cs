@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Globalization;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -24,8 +25,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 if (date.Kind == DateTimeKind.Utc)
                 {
                     var timeString = $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Second, 2)}";
-                    var tempDateTime = DateTime.Parse(timeString);
-                    return tempDateTime.ToUniversalTime().ToString("HH:mm:ss");
+                    var tempDateTime = DateTime.Parse(timeString, CultureInfo.InvariantCulture);
+                    return tempDateTime.ToUniversalTime().ToString("HH:mm:ss", CultureInfo.InvariantCulture);
                 }
                 else
                 {
@@ -43,42 +44,43 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static string DurationValue(TimexProperty timexProperty)
         {
+            decimal duration = 0;
             if (timexProperty.Years != null)
             {
-                return (31536000 * timexProperty.Years).ToString();
+                duration += 31536000 * timexProperty.Years ?? 0;
             }
 
             if (timexProperty.Months != null)
             {
-                return (2592000 * timexProperty.Months).ToString();
+                duration += 2592000 * timexProperty.Months ?? 0;
             }
 
             if (timexProperty.Weeks != null)
             {
-                return (604800 * timexProperty.Weeks).ToString();
+                duration += 604800 * timexProperty.Weeks ?? 0;
             }
 
             if (timexProperty.Days != null)
             {
-                return (86400 * timexProperty.Days).ToString();
+                duration += 86400 * timexProperty.Days ?? 0;
             }
 
             if (timexProperty.Hours != null)
             {
-                return (3600 * timexProperty.Hours).ToString();
+                duration += 3600 * timexProperty.Hours ?? 0;
             }
 
             if (timexProperty.Minutes != null)
             {
-                return (60 * timexProperty.Minutes).ToString();
+                duration += 60 * timexProperty.Minutes ?? 0;
             }
 
             if (timexProperty.Seconds != null)
             {
-                return timexProperty.Seconds.ToString();
+                duration += timexProperty.Seconds ?? 0;
             }
 
-            return string.Empty;
+            return duration.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

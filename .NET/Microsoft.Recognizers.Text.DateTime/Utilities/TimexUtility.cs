@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text;
+using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -52,27 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var unitList = new List<string>(unitToTimexComponents.Keys);
             unitList.Sort((x, y) => (unitValueMap[x] < unitValueMap[y] ? 1 : -1));
-
-            var isTimeDurationAlreadyExist = false;
-            var timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
-
-            for (int i = 0; i < unitList.Count; i++)
-            {
-                var timexComponent = unitToTimexComponents[unitList[i]];
-
-                // The Time Duration component occurs first time,
-                if (!isTimeDurationAlreadyExist && IsTimeDurationTimex(timexComponent))
-                {
-                    timexBuilder.Append($"{Constants.TimeTimexPrefix}{GetDurationTimexWithoutPrefix(timexComponent)}");
-                    isTimeDurationAlreadyExist = true;
-                }
-                else
-                {
-                    timexBuilder.Append($"{GetDurationTimexWithoutPrefix(timexComponent)}");
-                }
-            }
-
-            return timexBuilder.ToString();
+            unitList = unitList.Select(t => unitToTimexComponents[t]).ToList();
+            return TimexHelpers.GenerateCompoundDurationTimex(unitList);
         }
 
         // TODO: Unify this two methods. This one here detect if "begin/end" have same year, month and day with "alter begin/end" and make them nonspecific.
@@ -427,12 +410,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static bool IsTimeDurationTimex(string timex)
         {
             return timex.StartsWith($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}", StringComparison.Ordinal);
-        }
-
-        private static string GetDurationTimexWithoutPrefix(string timex)
-        {
-            // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
-            return timex.Substring(IsTimeDurationTimex(timex) ? 2 : 1);
         }
 
         private static string GetDatePeriodTimexUnitCount(DateObject begin, DateObject end, DatePeriodTimexType timexType)

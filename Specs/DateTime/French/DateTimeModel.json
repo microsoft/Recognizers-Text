@@ -2343,7 +2343,8 @@
     "Context": {
       "ReferenceDateTime": "2016-07-15T00:00:00"
     },
-    "NotSupported": "python",
+    "Comment": "In python and java, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "mercredi 10 juin 2020",
@@ -2383,7 +2384,8 @@
     "Context": {
       "ReferenceDateTime": "2016-07-15T00:00:00"
     },
-    "NotSupported": "python",
+    "Comment": "In python and java, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "mer. 10 juin 2020",
@@ -2423,7 +2425,8 @@
     "Context": {
       "ReferenceDateTime": "2016-07-15T00:00:00"
     },
-    "NotSupported": "python",
+    "Comment": "In  python and java, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "mer. 24 juin 2020",
@@ -2846,8 +2849,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
-    "NotSupported": "python",
+    "Comment": "In python and java, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "2 4 2009",
@@ -2894,8 +2897,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
-    "NotSupported": "python",
+    "Comment": "In python and java, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "18 8 1978",
@@ -2942,8 +2945,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "In python, the full stop is included in the extracted text (even if the extractor returns the correct match)",
-    "NotSupported": "python",
+    "Comment": "In python and java, the full stop is included in the extracted text (even if the extractor returns the correct match)",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "18 8 78",
@@ -2967,7 +2970,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2",
@@ -2996,7 +2998,6 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2",
@@ -3025,7 +3026,6 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2",
@@ -3123,7 +3123,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "28/2-1/3",
@@ -3154,7 +3153,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2-1/3",
@@ -3185,7 +3183,6 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "29/2-1/3/2019",
