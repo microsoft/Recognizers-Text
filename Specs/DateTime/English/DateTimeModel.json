@@ -19396,5 +19396,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Feb 2th 9:00 am",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 2th 9:00 am",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-02T09:00",
+              "type": "datetime",
+              "value": "2020-02-02 09:00:00"
+            },
+            {
+              "timex": "XXXX-02-02T09:00",
+              "type": "datetime",
+              "value": "2021-02-02 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
