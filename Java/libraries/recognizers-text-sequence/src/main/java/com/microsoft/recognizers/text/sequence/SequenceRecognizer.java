@@ -24,6 +24,7 @@ import com.microsoft.recognizers.text.sequence.english.parsers.PhoneNumberParser
 import com.microsoft.recognizers.text.sequence.english.parsers.URLParser;
 import com.microsoft.recognizers.text.sequence.extractors.BaseIpExtractor;
 import com.microsoft.recognizers.text.sequence.extractors.BasePhoneNumberExtractor;
+import com.microsoft.recognizers.text.sequence.extractors.BasePhoneNumberExtractorConfiguration;
 import com.microsoft.recognizers.text.sequence.extractors.BaseURLExtractor;
 import com.microsoft.recognizers.text.sequence.models.EmailModel;
 import com.microsoft.recognizers.text.sequence.models.GUIDModel;
@@ -32,7 +33,6 @@ import com.microsoft.recognizers.text.sequence.models.IpAddressModel;
 import com.microsoft.recognizers.text.sequence.models.MentionModel;
 import com.microsoft.recognizers.text.sequence.models.PhoneNumberModel;
 import com.microsoft.recognizers.text.sequence.models.URLModel;
-import com.microsoft.recognizers.text.sequence.spanish.SpanishPhoneNumberExtractorConfiguration;
 
 import java.util.List;
 import java.util.Locale;
@@ -184,7 +184,7 @@ public class SequenceRecognizer extends Recognizer<SequenceOptions> {
                         new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration(options))));
 
         this.registerModel(PhoneNumberModel.class, Culture.Spanish, (options) -> new PhoneNumberModel(
-            new PhoneNumberParser(), new BasePhoneNumberExtractor(new SpanishPhoneNumberExtractorConfiguration(options))));
+            new PhoneNumberParser(), new BasePhoneNumberExtractor(new BasePhoneNumberExtractorConfiguration(options))));
 
         this.registerModel(IpAddressModel.class, Culture.English, (options) -> new IpAddressModel(new IpParser(),
                 new BaseIpExtractor(new EnglishIpExtractorConfiguration(options))));
