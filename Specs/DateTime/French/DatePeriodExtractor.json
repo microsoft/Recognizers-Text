@@ -4305,6 +4305,18 @@
     ]
   },
   {
+    "Input": "Je vais partir été",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "été",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 3
+      }
+    ]
+  },
+  {
     "Input": "Je vais partir l'été 2016",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
