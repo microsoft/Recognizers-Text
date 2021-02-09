@@ -1,381 +1,363 @@
 [
-    {
-      "Input": "我电脑IP是1.1.1.1",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "1.1.1.1",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "1.1.1.1",
-            "type": "ipv4"
-          }
+  {
+    "Input": "我电脑IP是1.1.1.1",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "1.1.1.1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1.1.1.1",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "我电脑IP是1.1.1.2/25",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "1.1.1.2",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "1.1.1.2",
-            "type": "ipv4"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑IP是1.1.1.2/25",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "1.1.1.2",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1.1.1.2",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "我电脑IP是0.0.0.0",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "0.0.0.0",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "0.0.0.0",
-            "type": "ipv4"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑IP是0.0.0.0",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "0.0.0.0",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "0.0.0.0",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "我电脑IP是255.255.255.255",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "255.255.255.255",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "255.255.255.255",
-            "type": "ipv4"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑IP是255.255.255.255",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "255.255.255.255",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "255.255.255.255",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "8.8.8.8是IP地址",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "8.8.8.8",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "8.8.8.8",
-            "type": "ipv4"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "8.8.8.8是IP地址",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "8.8.8.8",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "8.8.8.8",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "8.8.8.1/24是IP地址",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "8.8.8.1",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "8.8.8.1",
-            "type": "ipv4"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "8.8.8.1/24是IP地址",
+    "Results": [
+      {
+        "Text": "8.8.8.1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "8.8.8.1",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "08.008.08.08是IP地址",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "08.008.08.08",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "8.8.8.8",
-            "type": "ipv4"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "08.008.08.08是IP地址",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "08.008.08.08",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "8.8.8.8",
+          "type": "ipv4"
         }
-      ]
-    },
-    {
-      "Input": "我电脑IP不是256.1.1.1",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IP例子1111.1.1.1",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IP例子1101.1.1.1",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IP例子1.1000.1.1",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IP例子1.1.1000.1",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IP例子1.1.1.256",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "我电脑的V6地址是ABEF:452::FE10",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "ABEF:452::FE10",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "ABEF:452::FE10",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑IP不是256.1.1.1",
+    "Results": []
+  },
+  {
+    "Input": "错误的IP例子1111.1.1.1",
+    "Results": []
+  },
+  {
+    "Input": "错误的IP例子1101.1.1.1",
+    "Results": []
+  },
+  {
+    "Input": "错误的IP例子1.1000.1.1",
+    "Results": []
+  },
+  {
+    "Input": "错误的IP例子1.1.1000.1",
+    "Results": []
+  },
+  {
+    "Input": "错误的IP例子1.1.1.256",
+    "Results": []
+  },
+  {
+    "Input": "我电脑的V6地址是ABEF:452::FE10",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "ABEF:452::FE10",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "ABEF:452::FE10",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是12::1",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "12::1",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "12::1",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是12::1",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "12::1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "12::1",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是::",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "::",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "::",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是::",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "::",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "::",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是::1",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "::1",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "::1",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是::1",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "::1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "::1",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是1::1",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "1::1",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "1::1",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是1::1",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "1::1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1::1",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是1::",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "1::",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "1::",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是1::",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "1::",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1::",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是0000:0000:0000:0000:0000:0000:0000:0000",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "0000:0000:0000:0000:0000:0000:0000:0000",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "0:0:0:0:0:0:0:0",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是0000:0000:0000:0000:0000:0000:0000:0000",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "0000:0000:0000:0000:0000:0000:0000:0000",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "0:0:0:0:0:0:0:0",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是123:45::ADC:6",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "123:45::ADC:6",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "123:45::ADC:6",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是123:45::ADC:6",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "123:45::ADC:6",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "123:45::ADC:6",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是::1:123:23",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "::1:123:23",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "::1:123:23",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是::1:123:23",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "::1:123:23",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "::1:123:23",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是fe80:0000:0000:0000:0204:61ff:fe9d:f156",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "fe80:0000:0000:0000:0204:61ff:fe9d:f156",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "fe80:0:0:0:204:61ff:fe9d:f156",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是fe80:0000:0000:0000:0204:61ff:fe9d:f156",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "fe80:0000:0000:0000:0204:61ff:fe9d:f156",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "fe80:0:0:0:204:61ff:fe9d:f156",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是fe80:0:0:0:204:61ff:fe9d:f156",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "fe80:0:0:0:204:61ff:fe9d:f156",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "fe80:0:0:0:204:61ff:fe9d:f156",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是fe80:0:0:0:204:61ff:fe9d:f156",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "fe80:0:0:0:204:61ff:fe9d:f156",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "fe80:0:0:0:204:61ff:fe9d:f156",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是fe80::204:61ff:fe9d:f156",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "fe80::204:61ff:fe9d:f156",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "fe80::204:61ff:fe9d:f156",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是fe80::204:61ff:fe9d:f156",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "fe80::204:61ff:fe9d:f156",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "fe80::204:61ff:fe9d:f156",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "我电脑的V6地址是2001::",
-      "NotSupported": "java",
-      "Results": [
-        {
-          "Text": "2001::",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "2001::",
-            "type": "ipv6"
-          }
+      }
+    ]
+  },
+  {
+    "Input": "我电脑的V6地址是2001::",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "2001::",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "2001::",
+          "type": "ipv6"
         }
-      ]
-    },
-    {
-      "Input": "火车到站10:00",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IPV6地址FE06::1::2",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IPV6地址:",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "我说 :",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "我说:",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "lync:",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "lync: :",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": ":正像你说的这样。",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": ": 正像你说的这样。",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IPV6地址12::44:f:45::1",
-      "NotSupported": "java",
-      "Results": []
-    },
-    {
-      "Input": "错误的IPV6地址JKLN:ssej::1",
-      "NotSupported": "java",
-      "Results": []
-    }
-  ]
+      }
+    ]
+  },
+  {
+    "Input": "火车到站10:00",
+    "Results": []
+  },
+  {
+    "Input": "错误的IPV6地址FE06::1::2",
+    "Results": []
+  },
+  {
+    "Input": "错误的IPV6地址:",
+    "Results": []
+  },
+  {
+    "Input": "我说 :",
+    "Results": []
+  },
+  {
+    "Input": "我说:",
+    "Results": []
+  },
+  {
+    "Input": "lync:",
+    "Results": []
+  },
+  {
+    "Input": "lync: :",
+    "Results": []
+  },
+  {
+    "Input": ":正像你说的这样。",
+    "Results": []
+  },
+  {
+    "Input": ": 正像你说的这样。",
+    "Results": []
+  },
+  {
+    "Input": "错误的IPV6地址12::44:f:45::1",
+    "Results": []
+  },
+  {
+    "Input": "错误的IPV6地址JKLN:ssej::1",
+    "Results": []
+  }
+]

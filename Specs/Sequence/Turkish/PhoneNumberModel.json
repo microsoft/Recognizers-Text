@@ -1,7 +1,7 @@
 [
   {
     "Input": "Tel: (+31)12-3456789.",
-    "NotSupported":"javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "(+31)12-3456789",
@@ -17,7 +17,7 @@
   },
   {
     "Input": "Tel: (0212) 338 10 00",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
@@ -34,7 +34,7 @@
   },
   {
     "Input": "Tel: 2122281693",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
@@ -52,7 +52,7 @@
   {
     "Input": "Tel: 0850 222 1 833",
     "Comment": "0850 is fixed here, mostly for call centers",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
@@ -70,7 +70,7 @@
   {
     "Input": "Tel: 444 0 446",
     "Comment": "444 is fixed here, mostly for call centers",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
@@ -88,7 +88,7 @@
   {
     "Input": "Tel: 258 55 55",
     "Comment": "258 is one of the city codes",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
@@ -106,7 +106,7 @@
   {
     "Input": "Tel: 0530 357 29 86",
     "Comment": "0530 is a cell phone prefix, there are around 10 of them, such as 0535, 0542, etc.",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
@@ -124,7 +124,7 @@
   {
     "Input": "Tel: +90 216 544 3800",
     "Comment": "International Calls, +90 is optional",
-    "NotSupported":"dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {

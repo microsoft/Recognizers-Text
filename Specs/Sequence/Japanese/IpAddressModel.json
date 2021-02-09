@@ -1,16 +1,16 @@
 [
-    {
-      "Input": "私のコンピューターIPは1.1.1.1です",
-      "NotSupported": "python, java",
-      "Results": [
-        {
-          "Text": "1.1.1.1",
-          "TypeName": "ip",
-          "Resolution": {
-            "value": "1.1.1.1",
-            "type": "ipv4"
-          }
+  {
+    "Input": "私のコンピューターIPは1.1.1.1です",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1.1.1.1",
+        "TypeName": "ip",
+        "Resolution": {
+          "value": "1.1.1.1",
+          "type": "ipv4"
         }
-      ]
-    }
+      }
+    ]
+  }
 ]
