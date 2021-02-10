@@ -45,7 +45,6 @@
   },
   {
     "Input": "我的电话号是(541) 754-3010.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(541) 754-3010",
@@ -129,7 +128,6 @@
   },
   {
     "Input": "我的电话号是( 19 ) 38294427.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "( 19 ) 38294427",
@@ -143,7 +141,6 @@
   },
   {
     "Input": "我的电话号是(19) 35831647.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(19) 35831647",
@@ -157,7 +154,6 @@
   },
   {
     "Input": "我的电话号是(21) 996205563.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(21) 996205563",
@@ -185,7 +181,6 @@
   },
   {
     "Input": "我的电话号是(71)3019-9811.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(71)3019-9811",
@@ -269,7 +264,6 @@
   },
   {
     "Input": "我的电话号是+44 (0)7123 129683.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+44 (0)7123 129683",
@@ -283,7 +277,6 @@
   },
   {
     "Input": "我的电话号是+44 7123 123456.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+44 7123 123456",
@@ -297,7 +290,6 @@
   },
   {
     "Input": "我的电话号是+44 7700900397.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+44 7700900397",
@@ -311,7 +303,6 @@
   },
   {
     "Input": "我的电话号是+447700 900 397.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+447700 900 397",
@@ -451,7 +442,6 @@
   },
   {
     "Input": "我的电话号是+49 171 1234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 171 1234567",
@@ -465,7 +455,6 @@
   },
   {
     "Input": "我的电话号是+49 1741234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 1741234567",
@@ -479,7 +468,6 @@
   },
   {
     "Input": "我的电话号是+49 176 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 176 12345678",
@@ -493,7 +481,6 @@
   },
   {
     "Input": "我的电话号是+49 176- 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 176- 12345678",
@@ -507,7 +494,6 @@
   },
   {
     "Input": "我的电话号是+49 176-12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 176-12345678",
@@ -521,7 +507,6 @@
   },
   {
     "Input": "我的电话号是+49 176/ 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 176/ 12345678",
@@ -535,7 +520,6 @@
   },
   {
     "Input": "我的电话号是+49 176/12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 176/12345678",
@@ -549,7 +533,6 @@
   },
   {
     "Input": "我的电话号是+49 17612345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49 17612345678",
@@ -563,7 +546,6 @@
   },
   {
     "Input": "我的电话号是+491731234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+491731234567",
@@ -577,7 +559,6 @@
   },
   {
     "Input": "我的电话号是+49176 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49176 12345678",
@@ -591,7 +572,6 @@
   },
   {
     "Input": "我的电话号是+49176- 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49176- 12345678",
@@ -605,7 +585,6 @@
   },
   {
     "Input": "我的电话号是+49176/ 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+49176/ 12345678",
@@ -1038,7 +1017,6 @@
   },
   {
     "Input": "我的电话号是(123)456-7890.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(123)456-7890",
@@ -1136,7 +1114,6 @@
   },
   {
     "Input": "我的电话号是+971521234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+971521234567",
@@ -1760,7 +1737,6 @@
   },
   {
     "Input": "我的电话号是(15) 4343-4343.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(15) 4343-4343",
@@ -1774,7 +1750,7 @@
   },
   {
     "Input": "我的电话号是+55 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "+55 15 3702-7523",
@@ -1787,7 +1763,7 @@
   },
   {
     "Input": "我的电话号是(+55) 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "(+55) 15 3702-7523",
@@ -1800,7 +1776,7 @@
   },
   {
     "Input": "我的电话号是(+55)1537027523.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "(+55)1537027523",
@@ -1813,7 +1789,7 @@
   },
   {
     "Input": "我的电话号是(+55)(15)3702-7523.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "(+55)(15)3702-7523",
@@ -1826,7 +1802,7 @@
   },
   {
     "Input": "我的电话号是(+55) 15 99202-7523.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "(+55) 15 99202-7523",
@@ -1852,7 +1828,6 @@
   },
   {
     "Input": "我的电话号是(16) 9208-4635.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(16) 9208-4635",
@@ -1922,7 +1897,6 @@
   },
   {
     "Input": "我的电话号是+86-18911111111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+86-18911111111",
@@ -1936,7 +1910,6 @@
   },
   {
     "Input": "我的电话号是86-18911111111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "86-18911111111",
@@ -1964,7 +1937,6 @@
   },
   {
     "Input": "我的电话号是+86 18911111111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+86 18911111111",
@@ -1978,7 +1950,6 @@
   },
   {
     "Input": "我的电话号是86 18911111111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "86 18911111111",
@@ -2006,7 +1977,6 @@
   },
   {
     "Input": "我的电话号是+86 189-1111-1111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+86 189-1111-1111",
@@ -2020,7 +1990,6 @@
   },
   {
     "Input": "我的电话号是86 189-1111-1111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "86 189-1111-1111",
@@ -2132,7 +2101,6 @@
   },
   {
     "Input": "我的电话号是+86 20 61302222-8866.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+86 20 61302222-8866",
@@ -2146,7 +2114,6 @@
   },
   {
     "Input": "我的电话号是+86 20 6130-2222-8866.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+86 20 6130-2222-8866",
@@ -2160,7 +2127,6 @@
   },
   {
     "Input": "我的电话号是+86 10 59081185.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+86 10 59081185",
@@ -2230,7 +2196,6 @@
   },
   {
     "Input": "我的电话号是+420123456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+420123456789",
@@ -2257,7 +2222,7 @@
   },
   {
     "Input": "我的电话号是+420 123 456 789.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "+420 123 456 789",
@@ -2475,7 +2440,6 @@
   },
   {
     "Input": "我的电话号是+919911112341.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+919911112341",
@@ -2489,7 +2453,6 @@
   },
   {
     "Input": "我的电话号是+91 9415007327.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+91 9415007327",
@@ -2517,7 +2480,6 @@
   },
   {
     "Input": "我的电话号是+911204312280.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+911204312280",
@@ -2615,7 +2577,6 @@
   },
   {
     "Input": "我的电话号是+212644444444.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+212644444444",
@@ -2781,7 +2742,6 @@
   },
   {
     "Input": "我的电话号是+31101234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31101234567",
@@ -2809,7 +2769,6 @@
   },
   {
     "Input": "我的电话号是+31(0) 10123 4567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31(0) 10123 4567",
@@ -2823,7 +2782,6 @@
   },
   {
     "Input": "我的电话号是+3110-1234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+3110-1234567",
@@ -2851,7 +2809,6 @@
   },
   {
     "Input": "我的电话号是+316 123 456 78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+316 123 456 78",
@@ -2865,7 +2822,6 @@
   },
   {
     "Input": "我的电话号是+31(0)6 123 45678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31(0)6 123 45678",
@@ -2879,7 +2835,6 @@
   },
   {
     "Input": "我的电话号是+31 (0) 6 123 45678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 (0) 6 123 45678",
@@ -2893,7 +2848,6 @@
   },
   {
     "Input": "我的电话号是+31 (20) 5001234.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 (20) 5001234",
@@ -2907,7 +2861,6 @@
   },
   {
     "Input": "我的电话号是+31 (0)6 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 (0)6 12345678",
@@ -2921,7 +2874,6 @@
   },
   {
     "Input": "我的电话号是+31111-123456.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31111-123456",
@@ -2962,7 +2914,6 @@
   },
   {
     "Input": "我的电话号是+40213 564 864.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+40213 564 864",
@@ -3186,7 +3137,6 @@
   },
   {
     "Input": "我的电话号是+421123456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+421123456789",
@@ -3213,7 +3163,7 @@
   },
   {
     "Input": "我的电话号是+421 123 456 789.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "+421 123 456 789",
@@ -3254,7 +3204,7 @@
   },
   {
     "Input": "我的电话号是(0161) 123 4567.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "(0161) 123 4567",
@@ -3281,7 +3231,7 @@
   },
   {
     "Input": "我的电话号是+44 161 123 4567.",
-    "NotSupported": "dotnet,javascript,python,java",
+    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "+44 161 123 4567",
@@ -3294,7 +3244,6 @@
   },
   {
     "Input": "我的电话号是+441611234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+441611234567",
@@ -3443,62 +3392,50 @@
   },
   {
     "Input": "我的电话号是112-3333.",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "你知道 bazinga?",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "你知道bazinga?",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "s666666666是一个序列号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "666666666s是一个序列号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "s666666666s是一个序列号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "666666666S 是一个序列号，不是一个电话号。",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "3333*2=6666看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "3333/2=6666 看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "1000-1=999看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "(456 (4)) 345 看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "(081)  342-86221d看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
@@ -3531,52 +3468,42 @@
   },
   {
     "Input": "-2208960000看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "-77.034040723966看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "0.000000012看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "P0-001-000016155-9看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "16/04/2010看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "16-04-2010看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "2009/2010看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "T005-2333-100731-SW-2看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "我的电话号是86 (40) 08423331.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "86 (40) 08423331",
@@ -3590,7 +3517,6 @@
   },
   {
     "Input": "我的电话号是(+45) 12-34-56-78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 12-34-56-78",
@@ -3604,7 +3530,6 @@
   },
   {
     "Input": "我的电话号是(+45) 12 345 678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 12 345 678",
@@ -3618,7 +3543,6 @@
   },
   {
     "Input": "我的电话号是(+45) 12 34 56 78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 12 34 56 78",
@@ -3632,7 +3556,6 @@
   },
   {
     "Input": "我的电话号是(+45) 1234 5678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 1234 5678",
@@ -3646,7 +3569,6 @@
   },
   {
     "Input": "我的电话号是(+45) 12345678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 12345678",
@@ -3660,7 +3582,6 @@
   },
   {
     "Input": "我的电话号是+45 12-34-56-78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+45 12-34-56-78",
@@ -3674,7 +3595,6 @@
   },
   {
     "Input": "我的电话号是+45 12 345 678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+45 12 345 678",
@@ -3688,7 +3608,6 @@
   },
   {
     "Input": "我的电话号是+45 12 34 56 78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+45 12 34 56 78",
@@ -3702,7 +3621,6 @@
   },
   {
     "Input": "我的电话号是+45 1234 5678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+45 1234 5678",
@@ -3786,7 +3704,6 @@
   },
   {
     "Input": "我的电话号是(0045) 12-34-56-78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(0045) 12-34-56-78",
@@ -3800,7 +3717,6 @@
   },
   {
     "Input": "我的电话号是(0045) 12 34 56 78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(0045) 12 34 56 78",
@@ -3828,7 +3744,6 @@
   },
   {
     "Input": "我的电话号是(+45)12-34-56-78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45)12-34-56-78",
@@ -3842,7 +3757,6 @@
   },
   {
     "Input": "我的电话号是 (+45)12-34-56-78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45)12-34-56-78",
@@ -3856,7 +3770,6 @@
   },
   {
     "Input": "我的电话号是(+45) 12-345-678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 12-345-678",
@@ -3870,7 +3783,6 @@
   },
   {
     "Input": "我的电话号是(+45) 1234-5678.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+45) 1234-5678",
@@ -3912,7 +3824,6 @@
   },
   {
     "Input": "我的电话号是(012) 3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(012) 3456789",
@@ -3926,7 +3837,6 @@
   },
   {
     "Input": "我的电话号是+31 12-3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 12-3456789",
@@ -3940,7 +3850,6 @@
   },
   {
     "Input": "我的电话号是+31 12 3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 12 3456789",
@@ -3954,7 +3863,6 @@
   },
   {
     "Input": "我的电话号是(+31) 12-3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31) 12-3456789",
@@ -3968,7 +3876,6 @@
   },
   {
     "Input": "我的电话号是(+31) (12) 3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31) (12) 3456789",
@@ -3982,7 +3889,6 @@
   },
   {
     "Input": "我的电话号是(+31) 12 3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31) 12 3456789",
@@ -3996,7 +3902,6 @@
   },
   {
     "Input": "我的电话号是(+31)12-3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31)12-3456789",
@@ -4010,7 +3915,6 @@
   },
   {
     "Input": "我的电话号是 (+31) 12 3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31) 12 3456789",
@@ -4052,7 +3956,6 @@
   },
   {
     "Input": "我的电话号是+31 123-456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 123-456789",
@@ -4066,7 +3969,6 @@
   },
   {
     "Input": "我的电话号是+31 123 456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 123 456789",
@@ -4108,7 +4010,6 @@
   },
   {
     "Input": "我的电话号是+31 6-23456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 6-23456789",
@@ -4122,7 +4023,6 @@
   },
   {
     "Input": "我的电话号是+31 6 23456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 6 23456789",
@@ -4178,7 +4078,6 @@
   },
   {
     "Input": "我的电话号是+31 (6) 12234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31 (6) 12234567",
@@ -4192,7 +4091,6 @@
   },
   {
     "Input": "我的电话号是(06) 12234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(06) 12234567",
@@ -4206,7 +4104,6 @@
   },
   {
     "Input": "我的电话号是(+31)(6) 12234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31)(6) 12234567",
@@ -4220,7 +4117,6 @@
   },
   {
     "Input": "我的电话号是(+39) 012234.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+39) 012234",
@@ -4234,7 +4130,6 @@
   },
   {
     "Input": "我的电话号是(+39) 012 23411111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+39) 012 23411111",
@@ -4262,7 +4157,6 @@
   },
   {
     "Input": "我的电话号是+39 012-23411111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+39 012-23411111",
@@ -4276,7 +4170,6 @@
   },
   {
     "Input": "我的电话号是+39 3122 411111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+39 3122 411111",
@@ -4290,7 +4183,6 @@
   },
   {
     "Input": "我的电话号是+39 31 22411111.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+39 31 22411111",
@@ -4346,42 +4238,34 @@
   },
   {
     "Input": "(45)+(31)-278394不是电话号.",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "算式45+31-339243873不是电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "算式 45*31-339243873不是电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "0039 31122627111-26737看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "(39 (6)) 345276看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "+45-12-34-56-78看起来不像电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "323456太短了，不像个电话号.",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "我的电话号是(06)-12234567.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(06)-12234567",
@@ -4395,7 +4279,6 @@
   },
   {
     "Input": "我的电话号是(+31) (12)-3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(+31) (12)-3456789",
@@ -4409,7 +4292,6 @@
   },
   {
     "Input": "我的电话号是(012)-3456789.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(012)-3456789",
@@ -4423,7 +4305,6 @@
   },
   {
     "Input": "我的电话号是 +45 12 34 56 78.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+45 12 34 56 78",
@@ -4437,7 +4318,6 @@
   },
   {
     "Input": "我的电话号是(03336) 24056.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(03336) 24056",
@@ -4479,7 +4359,6 @@
   },
   {
     "Input": "我的电话号是(0131) 496 0537.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(0131) 496 0537",
@@ -4493,7 +4372,6 @@
   },
   {
     "Input": "我的电话号是+44(0)113 496 0009.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+44(0)113 496 0009",
@@ -4535,7 +4413,6 @@
   },
   {
     "Input": "我的电话号是(797)203-4036x470.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(797)203-4036x470",
@@ -4549,7 +4426,6 @@
   },
   {
     "Input": "我的电话号是+73(3)3045560862.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+73(3)3045560862",
@@ -4563,7 +4439,6 @@
   },
   {
     "Input": "我的电话号是+34319 02 81 26.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+34319 02 81 26",
@@ -4577,7 +4452,6 @@
   },
   {
     "Input": "我的电话号是+34 554 94 87 12.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+34 554 94 87 12",
@@ -4591,7 +4465,6 @@
   },
   {
     "Input": "我的电话号是+33 (0)4 64 04 62 70.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+33 (0)4 64 04 62 70",
@@ -4605,7 +4478,6 @@
   },
   {
     "Input": "我的电话号是+33 4 44 09 59 45.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+33 4 44 09 59 45",
@@ -4619,7 +4491,6 @@
   },
   {
     "Input": "我的电话号是+31(0)14-5008352.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+31(0)14-5008352",
@@ -4633,7 +4504,6 @@
   },
   {
     "Input": "我的电话号是(084)-9682756.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(084)-9682756",
@@ -4647,12 +4517,10 @@
   },
   {
     "Input": "00 10 00 31 46 D9 E9 11不像是电话号，他是十六进制的.",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "#20020211895不是电话号, since it starts with #.",
-    "NotSupported": "java",
     "Results": []
   },
   {
@@ -4797,7 +4665,6 @@
   },
   {
     "Input": "我的电话号是+44(0)1134960009.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+44(0)1134960009",
@@ -4839,7 +4706,6 @@
   },
   {
     "Input": "#Organization#-#Name#-(123) 456-7890.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(123) 456-7890",
@@ -4867,7 +4733,6 @@
   },
   {
     "Input": "#组织#咖啡聊天-跟进-#名称#-123 456 7890。",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "123 456 7890",
@@ -4895,7 +4760,6 @@
   },
   {
     "Input": "介绍性聊天-名称@ 123)456-7890 - SE roles先生在微软。",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "123)456-7890",
@@ -4909,7 +4773,6 @@
   },
   {
     "Input": "介绍性聊天- #Name#@(123) 456-7890-微软的Principal DS",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "(123) 456-7890",
@@ -4923,7 +4786,6 @@
   },
   {
     "Input": "Intro chat- #Name @123.456.7890- DS roles at微软",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "123.456.7890",
@@ -4937,7 +4799,6 @@
   },
   {
     "Input": "介绍性聊天- #Name# @ 1234567890-数据科学家/应用科学家在微软，华盛顿州",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "1234567890",
@@ -4967,7 +4828,6 @@
   },
   {
     "Input": "要拨打#Person#，请输入011-82-10-1234-5678。",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "011-82-10-1234-5678",
@@ -4983,7 +4843,6 @@
   },
   {
     "Input": "我的首选号码是+55 11 12345-6789\n谢谢。",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "+55 11 12345-6789",
@@ -5159,32 +5018,26 @@
   },
   {
     "Input": "三月 1 14377:00 不是个电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "200.38294427 不是个电话号.",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "这些看起来都不像电话号：1 506 64，37 41 4，38 5145，20 15 11，58 2105，19 32 2，25 32 2，15 3  20，10 41 20，8196 12，8198 27，8244 45，46 358 1",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "91a-677-0060 不是电话号。",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "9a1-677-0060和a91-677-0060都不是电话号",
-    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "宝爵台球会所-13604770960",
-    "NotSupported": "java",
     "Results": []
   }
 ]

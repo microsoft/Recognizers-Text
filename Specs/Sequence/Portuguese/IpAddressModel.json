@@ -1,7 +1,6 @@
 [
   {
     "Input": "O IP do meu computador é 1.1.1.1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -16,7 +15,6 @@
   },
   {
     "Input": "O IP do meu computador é 1.1.1.2/25",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -31,7 +29,6 @@
   },
   {
     "Input": "O IP do meu computador é 0.0.0.0",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -46,7 +43,6 @@
   },
   {
     "Input": "O IP do meu computador é 255.255.255.255",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -61,7 +57,6 @@
   },
   {
     "Input": "8.8.8.8 é um endereço IP",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -76,7 +71,6 @@
   },
   {
     "Input": "8.8.8.1/24 é um endereço IP",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -91,7 +85,6 @@
   },
   {
     "Input": "08.008.08.08 é um endereço IP",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -106,43 +99,36 @@
   },
   {
     "Input": "O IP do meu computador é 256.1.1.1. É nada! :)",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "IP incorreto 1111.1.1.1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "IP incorreto 1101.1.1.1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "IP incorreto 1.1000.1.1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "IP incorreto 1.1.1000.1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "IP incorreto 1.1.1.256",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "O endereço IPv6 do meu computador é ABEF:452::FE10",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -157,7 +143,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é 12::1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -172,7 +157,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é ::",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -187,7 +171,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é ::1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -202,7 +185,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é 1::1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -217,7 +199,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é 1::",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -232,7 +213,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é 0000:0000:0000:0000:0000:0000:0000:0000",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -247,7 +227,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é 123:45::ADC:6",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -262,7 +241,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é ::1:123:23",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -277,7 +255,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -292,7 +269,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é fe80:0000:0000:0000:0204:61ff:fe9d:f156",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -307,7 +283,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é fe80:0:0:0:204:61ff:fe9d:f156",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -322,7 +297,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é fe80::204:61ff:fe9d:f156",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -337,7 +311,6 @@
   },
   {
     "Input": "O endereço IPv6 do meu computador é 2001::",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -352,19 +325,16 @@
   },
   {
     "Input": "endereço IPv6 incorreto FE06::1::2",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "endereço IPv6 incorreto 12::44:f:45::1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "endereço IPv6 incorreto JKLN:ssej::1",
-    "NotSupported":"java",
     "NotSupportedByDesign": "python",
     "Results": []
   }
