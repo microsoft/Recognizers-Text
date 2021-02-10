@@ -1,6 +1,7 @@
 [
   {
     "Input": "はmicrosoft.comです",
+    "Notsupported": "java",
     "Results": [
       {
         "Text": "microsoft.com",
