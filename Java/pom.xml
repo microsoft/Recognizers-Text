@@ -21,6 +21,7 @@
         <module>libraries/recognizers-text-choice</module>
         <module>libraries/recognizers-text-date-time</module>
         <module>libraries/recognizers-text-datatypes-timex-expression</module>
+        <module>libraries/recognizers-text-sequence</module>
         <module>tests</module>
         <module>samples/simple-console</module>
     </modules>

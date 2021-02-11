@@ -17,7 +17,11 @@ public class SpanishChoice {
 
     public static final String TokenizerRegex = "[^\\w\\d\\u00E0-\\u00FC]";
 
-    public static final String TrueRegex = "\\b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)";
+    public static final String SkinToneRegex = "(\\uD83C\\uDFFB|\\uD83C\\uDFFC|\\uD83C\\uDFFD|\\uD83C\\uDFFE|\\uD83C\\uDFFF)";
 
-    public static final String FalseRegex = "\\b(falso|no|nop|n|no)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)";
+    public static final String TrueRegex = "\\b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C){SkinToneRegex}?"
+            .replace("{SkinToneRegex}", SkinToneRegex);
+
+    public static final String FalseRegex = "\\b(falso|no|nop|n|no)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90){SkinToneRegex}?"
+            .replace("{SkinToneRegex}", SkinToneRegex);
 }

@@ -208,5 +208,65 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾 Няма проблем",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿 Няма проблем",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻 Няма проблем",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupported": "javascript, java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]

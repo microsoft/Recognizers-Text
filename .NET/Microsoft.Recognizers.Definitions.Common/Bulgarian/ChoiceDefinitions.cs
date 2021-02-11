@@ -25,7 +25,8 @@ namespace Microsoft.Recognizers.Definitions.Bulgarian
       public const string TokenizerRegex = @"[^\w\d]";
       public const string ItIsNotRegex = @"не\s+е\s+";
       public const string IAmNotRegex = @"не\s+съм\s+";
-      public const string TrueRegex = @"\b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
-      public static readonly string FalseRegex = $@"\b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+      public const string SkinToneRegex = @"(\uD83C\uDFFB|\uD83C\uDFFC|\uD83C\uDFFD|\uD83C\uDFFE|\uD83C\uDFFF)";
+      public static readonly string TrueRegex = $@"\b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C){SkinToneRegex}?";
+      public static readonly string FalseRegex = $@"\b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90){SkinToneRegex}?";
     }
 }
