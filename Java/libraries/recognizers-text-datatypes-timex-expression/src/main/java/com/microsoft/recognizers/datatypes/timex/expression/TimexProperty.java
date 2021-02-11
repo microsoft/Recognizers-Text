@@ -328,7 +328,7 @@ public class TimexProperty {
         Integer dayOfMonth = this.getDayOfMonth();
         Integer dayOfWeek = this.getDayOfWeek();
         String season = this.getSeason();
-        Integer weekOfYear =  this.getWeekOfYear();
+        Integer weekOfYear = this.getWeekOfYear();
         Boolean weekend = this.getWeekend();
         Integer innerWeekOfMonth = this.getWeekOfMonth();
         Integer hour = this.getHour();
@@ -404,8 +404,14 @@ public class TimexProperty {
                 case "dateUnit":
                     this.assignDateDuration(source);
                     break;
-                case "timeUnit":
-                    this.assignTimeDuration(source);
+                case "hourAmount":
+                    setHours(new BigDecimal(item.getValue()));
+                    break;
+                case "minuteAmount":
+                    setMinutes(new BigDecimal(item.getValue()));
+                    break;
+                case "secondAmount":
+                    setSeconds(new BigDecimal(item.getValue()));
                     break;
                 default:
             }
@@ -425,21 +431,6 @@ public class TimexProperty {
                 break;
             case "D":
                 this.days = new BigDecimal(source.get("amount"));
-                break;
-            default:
-        }
-    }
-
-    private void assignTimeDuration(Map<String, String> source) {
-        switch (source.get("timeUnit")) {
-            case "H":
-                this.hours = new BigDecimal(source.get("amount"));
-                break;
-            case "M":
-                this.minutes = new BigDecimal(source.get("amount"));
-                break;
-            case "S":
-                this.seconds = new BigDecimal(source.get("amount"));
                 break;
             default:
         }

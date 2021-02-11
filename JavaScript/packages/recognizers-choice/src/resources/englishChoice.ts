@@ -12,6 +12,7 @@
 export namespace EnglishChoice {
     export const LangMarker = `Eng`;
     export const TokenizerRegex = `[^\\w\\d]`;
-    export const TrueRegex = `\\b(true|yes|yep|yup|yeah|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C|\\u0001f44c)`;
-    export const FalseRegex = `\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90|\\u0001F44E|\\u0001F590)`;
+    export const SkinToneRegex = `(\\uD83C\\uDFFB|\\uD83C\\uDFFC|\\uD83C\\uDFFD|\\uD83C\\uDFFE|\\uD83C\\uDFFF)`;
+    export const TrueRegex = `\\b(true|yes|yep|yup|yeah|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C|\\u0001f44c)${SkinToneRegex}?`;
+    export const FalseRegex = `\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90|\\u0001F44E|\\u0001F590)${SkinToneRegex}?`;
 }

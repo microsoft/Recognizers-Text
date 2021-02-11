@@ -44,7 +44,9 @@ public class TimexRegex {
 
     private static Pattern[] PERIOD_COLLECTION_NAME_PATTERNS = {
             Pattern.compile("^P(?<amount>\\d*\\.?\\d+)(?<dateUnit>Y|M|W|D)$"),
-            Pattern.compile("^PT(?<amount>\\d*\\.?\\d+)(?<timeUnit>H|M|S)$"), };
+            Pattern.compile("^PT(?<hourAmount>\\d*\\.?\\d+)H(\\d*\\.?\\d+(M|S)){0,2}$"),
+            Pattern.compile("^PT(\\d*\\.?\\d+H)?(?<minuteAmount>\\d*\\.?\\d+)M(\\d*\\.?\\d+S)?$"),
+            Pattern.compile("^PT(\\d*\\.?\\d+(H|M)){0,2}(?<secondAmount>\\d*\\.?\\d+)S$"), };
 
     private static Map<String, Pattern[]> TIMEX_REGEX = new HashMap<String, Pattern[]>() {
         {

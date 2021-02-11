@@ -23,7 +23,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
     {
       public const string LangMarker = @"Hin";
       public const string TokenizerRegex = @"[^\w\d\u0900-\u097f]";
-      public const string TrueRegex = @"\b(true|yes|yep|y|sure|ok|agree|बिलकुल|हाँ|हां|सहमत)\b|(\uD83D\uDC4D|\uD83D\uDC4C|\u0001f44c)";
-      public const string FalseRegex = @"\b(false|nope|nop|no|not\s+ok|disagree)\b|((नहीं|ठीक\s+नहीं|असहमत)\b|(ना))|(\uD83D\uDC4E|\u270B|\uD83D\uDD90|\u0001F44E|\u0001F590)";
+      public const string SkinToneRegex = @"(\uD83C\uDFFB|\uD83C\uDFFC|\uD83C\uDFFD|\uD83C\uDFFE|\uD83C\uDFFF)";
+      public static readonly string TrueRegex = $@"\b(true|yes|yep|y|sure|ok|agree|बिलकुल|हाँ|हां|सहमत)\b|(\uD83D\uDC4D|\uD83D\uDC4C|\u0001f44c){SkinToneRegex}?";
+      public static readonly string FalseRegex = $@"\b(false|nope|nop|no|not\s+ok|disagree)\b|((नहीं|ठीक\s+नहीं|असहमत)\b|(ना))|(\uD83D\uDC4E|\u270B|\uD83D\uDD90|\u0001F44E|\u0001F590){SkinToneRegex}?";
     }
 }

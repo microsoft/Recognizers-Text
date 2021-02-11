@@ -33,34 +33,43 @@ public class TimexValue {
     }
 
     public static String durationValue(TimexProperty timexProperty) {
+        BigDecimal duration = new BigDecimal(0);
         if (timexProperty.getYears() != null) {
-            return new BigDecimal(31536000 * timexProperty.getYears().doubleValue()).toPlainString();
+            double value = 31536000 * ((timexProperty.getYears() != null) ? timexProperty.getYears().doubleValue() : 0);
+            duration = duration.add(BigDecimal.valueOf(value));
         }
 
         if (timexProperty.getMonths() != null) {
-            return new BigDecimal(2592000 * timexProperty.getMonths().doubleValue()).toPlainString();
+            double value = 2592000
+                    * ((timexProperty.getMonths() != null) ? timexProperty.getMonths().doubleValue() : 0);
+            duration = duration.add(BigDecimal.valueOf(value));
         }
 
         if (timexProperty.getWeeks() != null) {
-            return new BigDecimal(604800 * timexProperty.getWeeks().doubleValue()).toPlainString();
+            double value = 604800 * ((timexProperty.getWeeks() != null) ? timexProperty.getWeeks().doubleValue() : 0);
+            duration = duration.add(BigDecimal.valueOf(value));
         }
 
         if (timexProperty.getDays() != null) {
-            return new BigDecimal(86400 * timexProperty.getDays().doubleValue()).toPlainString();
+            double value = 86400 * ((timexProperty.getDays() != null) ? timexProperty.getDays().doubleValue() : 0);
+            duration = duration.add(BigDecimal.valueOf(value));
         }
 
         if (timexProperty.getHours() != null) {
-            return new BigDecimal(3600 * timexProperty.getHours().doubleValue()).toPlainString();
+            double value = 3600 * ((timexProperty.getHours() != null) ? timexProperty.getHours().doubleValue() : 0);
+            duration = duration.add(BigDecimal.valueOf(value));
         }
 
         if (timexProperty.getMinutes() != null) {
-            return new BigDecimal(60 * timexProperty.getMinutes().doubleValue()).toPlainString();
+            double value = 60 * ((timexProperty.getMinutes() != null) ? timexProperty.getMinutes().doubleValue() : 0);
+            duration = duration.add(BigDecimal.valueOf(value));
         }
 
         if (timexProperty.getSeconds() != null) {
-            return timexProperty.getSeconds().toPlainString();
+            duration = duration.add(BigDecimal.valueOf((timexProperty.getSeconds() != null) ? timexProperty.getSeconds().doubleValue() : 0));
         }
 
-        return new String();
+        duration = BigDecimal.valueOf(duration.intValue());
+        return duration.toPlainString();
     }
 }

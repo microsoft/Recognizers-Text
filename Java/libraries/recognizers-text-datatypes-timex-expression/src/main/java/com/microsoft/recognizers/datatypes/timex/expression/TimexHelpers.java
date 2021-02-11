@@ -3,10 +3,29 @@
 
 package com.microsoft.recognizers.datatypes.timex.expression;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class TimexHelpers {
+    public static final HashMap<TimexUnit, String> TIMEX_UNIT_TO_STRING_MAP = new HashMap<TimexUnit, String>() {
+        {
+            put(TimexUnit.Year, Constants.TIMEX_YEAR);
+            put(TimexUnit.Month, Constants.TIMEX_MONTH);
+            put(TimexUnit.Week, Constants.TIMEX_WEEK);
+            put(TimexUnit.Day, Constants.TIMEX_DAY);
+            put(TimexUnit.Hour, Constants.TIMEX_HOUR);
+            put(TimexUnit.Minute, Constants.TIMEX_MINUTE);
+            put(TimexUnit.Second, Constants.TIMEX_SECOND);
+        }
+    };
+
+    public static final List<TimexUnit> TimeTimexUnitList = Arrays.asList(TimexUnit.Hour, TimexUnit.Minute,
+            TimexUnit.Second);
+
     public static TimexRange expandDateTimeRange(TimexProperty timex) {
         HashSet<String> types = timex.getTypes().size() != 0 ? timex.getTypes() : TimexInference.infer(timex);
 
@@ -178,49 +197,95 @@ public class TimexHelpers {
         return start;
     }
 
-    public static TimexProperty timexTimeAdd(TimexProperty start, TimexProperty duration) {
-        if (duration.getHours() != null) {
-            TimexProperty result = start.clone();
-            result.setHour(result.getHour() + (int)Math.round(duration.getHours().doubleValue()));
-            if (result.getHour() > 23) {
-                Double days = Math.floor(result.getHour() / 24d);
-                Integer hour = result.getHour() % 24;
-                result.setHour(hour);
+    public static String generateCompoundDurationTimex(List<String> timexList) {
+        Boolean isTimeDurationAlreadyExist = false;
+        StringBuilder timexBuilder = new StringBuilder(Constants.GENERAL_PERIOD_PREFIX);
 
-                if (result.getYear() != null && result.getMonth() != null && result.getDayOfMonth() != null) {
-                    LocalDateTime d = LocalDateTime.of(result.getYear(), result.getMonth(), result.getDayOfMonth(), 0, 0, 0);
-                    d = d.plusDays(days.longValue());
-
-                    result.setYear(d.getYear());
-                    result.setMonth(d.getMonthValue());
-                    result.setDayOfMonth(d.getDayOfMonth());
-
-                    return result;
-                }
-
-                if (result.getDayOfWeek() != null) {
-                    result.setDayOfWeek(result.getDayOfWeek() + (int)Math.round(days));
-                    return result;
-                }
+        for (String timexComponent : timexList) {
+            // The Time Duration component occurs first time
+            if (!isTimeDurationAlreadyExist && isTimeDurationTimex(timexComponent)) {
+                timexBuilder.append(Constants.TIME_TIMEX_PREFIX.concat(getDurationTimexWithoutPrefix(timexComponent)));
+                isTimeDurationAlreadyExist = true;
+            } else {
+                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
             }
-
-            return result;
         }
 
+        return timexBuilder.toString();
+    }
+
+    public static String generateDateTimex(int year, int month, int day, Boolean byWeek) {
+        String yearString = year == Constants.INVALID_VALUE ? Constants.TIMEX_FUZZY_YEAR
+                : TimexDateHelpers.fixedFormatNumber(year, 4);
+        String monthString = month == Constants.INVALID_VALUE ? Constants.TIMEX_FUZZY_MONTH
+                : TimexDateHelpers.fixedFormatNumber(month, 2);
+        String dayString;
+
+        if (byWeek) {
+            dayString = String.valueOf(day);
+            monthString = Constants.TIMEX_WEEK + monthString;
+        } else {
+            dayString = day == Constants.INVALID_VALUE ? Constants.TIMEX_DAY
+                    : TimexDateHelpers.fixedFormatNumber(day, 2);
+        }
+
+        return String.join("-", yearString, monthString, dayString);
+    }
+
+    public static String generateDurationTimex(TimexUnit unit, BigDecimal value) {
+        if (value.intValue() == Constants.INVALID_VALUE) {
+            return new String();
+        }
+
+        StringBuilder timexBuilder = new StringBuilder(Constants.GENERAL_PERIOD_PREFIX);
+        if (TimeTimexUnitList.contains(unit)) {
+            timexBuilder.append(Constants.TIME_TIMEX_PREFIX);
+        }
+
+        timexBuilder.append(value.toString());
+        timexBuilder.append(TIMEX_UNIT_TO_STRING_MAP.get(unit));
+        return timexBuilder.toString();
+    }
+
+    public static TimexProperty timexTimeAdd(TimexProperty start, TimexProperty duration) {
+
+        TimexProperty result = start.clone();
         if (duration.getMinutes() != null) {
-            TimexProperty result = start.clone();
-            Integer newMinute = result.getMinute() + (int)Math.round(duration.getMinutes().doubleValue());
-            result.setMinute(newMinute);
+            result.setMinute(result.getMinute() + (int)Math.round(duration.getMinutes().doubleValue()));
 
             if (result.getMinute() > 59) {
-                result.setHour(result.getHour() + 1);
-                result.setMinute(0);
+                result.setHour(((result.getHour() != null) ? result.getHour() : 0) + 1);
+                result.setMinute(result.getMinute() % 60);
             }
-
-            return result;
         }
 
-        return start;
+        if (duration.getHours() != null) {
+            result.setHour(result.getHour() + (int)Math.round(duration.getHours().doubleValue()));
+        }
+
+        if (result.getHour() != null && result.getHour() > 23) {
+            Double days = Math.floor(result.getHour() / 24d);
+            Integer hour = result.getHour() % 24;
+            result.setHour(hour);
+
+            if (result.getYear() != null && result.getMonth() != null && result.getDayOfMonth() != null) {
+                LocalDateTime d = LocalDateTime.of(result.getYear(), result.getMonth(), result.getDayOfMonth(), 0, 0, 0);
+                d = d.plusDays(days.longValue());
+
+                result.setYear(d.getYear());
+                result.setMonth(d.getMonthValue());
+                result.setDayOfMonth(d.getDayOfMonth());
+
+                return result;
+            }
+
+            if (result.getDayOfWeek() != null) {
+                result.setDayOfWeek(result.getDayOfWeek() + (int)Math.round(days));
+                return result;
+            }
+        }
+
+        return result;
     }
 
     public static TimexProperty timexDateTimeAdd(TimexProperty start, TimexProperty duration) {
@@ -267,26 +332,15 @@ public class TimexHelpers {
     }
 
     private static TimexProperty timeAdd(TimexProperty start, TimexProperty duration) {
-        Integer hourPreSet = start.getHour();
-        Integer minutePreSet = start.getMinute();
-        Integer secondPreSet = start.getSecond();
-        if (duration.getHours() != null) {
-            hourPreSet += (int)Math.round(duration.getHours().doubleValue());
-        }
-        Integer hour = hourPreSet != null ? hourPreSet : 0;
-        if (duration.getMinutes() != null) {
-            minutePreSet += (int)Math.round(duration.getMinutes().doubleValue());
-        }
-        Integer minute = minutePreSet != null ? minutePreSet : 0;
-        if (duration.getSeconds() != null) {
-            secondPreSet += (int)Math.round(duration.getSeconds().doubleValue());
-        }
-        Integer second = secondPreSet != null ? secondPreSet : 0;
+        int second = start.getSecond() + (int)(duration.getSeconds() != null ? duration.getSeconds() : 0);
+        int minute = start.getMinute() + second / 60 + (duration.getMinutes() != null ? duration.getMinutes().intValue() : 0);
+        int hour = start.getHour() + (minute / 60) + (duration.getHours() != null ? duration.getHours().intValue() : 0);
+
         return new TimexProperty() {
             {
-                setHour(hour);
-                setMinute(minute);
-                setSecond(second);
+                setHour((hour == 24 && minute % 60 == 0 && second % 60 == 0) ? hour : hour % 24);
+                setMinute(minute % 60);
+                setSecond(second % 60);
             }
         };
     }
@@ -318,5 +372,14 @@ public class TimexHelpers {
         result.setWeekend(null);
         result.setPartOfDay(null);
         return result;
+    }
+
+    private static Boolean isTimeDurationTimex(String timex) {
+        return timex.startsWith(Constants.GENERAL_PERIOD_PREFIX.concat(Constants.TIME_TIMEX_PREFIX));
+    }
+
+    private static String getDurationTimexWithoutPrefix(String timex) {
+        // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
+        return timex.substring(isTimeDurationTimex(timex) ? 2 : 1);
     }
 }

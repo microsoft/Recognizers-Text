@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
 import com.google.common.collect.ImmutableMap;
+import com.microsoft.recognizers.datatypes.timex.expression.TimexHelpers;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
 import com.microsoft.recognizers.text.datetime.DateTimeResolutionKey;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class TimexUtility {
     private static final HashMap<DatePeriodTimexType, String> DatePeriodTimexTypeToTimexSuffix = new HashMap<DatePeriodTimexType, String>() {
@@ -28,31 +30,12 @@ public class TimexUtility {
     public static String generateCompoundDurationTimex(Map<String, String> unitToTimexComponents, ImmutableMap<String, Long> unitValueMap) {
         List<String> unitList = new ArrayList<>(unitToTimexComponents.keySet());
         unitList.sort((x, y) -> unitValueMap.get(x) < unitValueMap.get(y) ? 1 : -1);
-        boolean isTimeDurationAlreadyExist = false;
-        StringBuilder timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
-
-        for (String unitKey : unitList) {
-            String timexComponent = unitToTimexComponents.get(unitKey);
-
-            // The Time Duration component occurs first time
-            if (!isTimeDurationAlreadyExist && isTimeDurationTimex(timexComponent)) {
-                timexBuilder.append(Constants.TimeTimexPrefix);
-                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
-                isTimeDurationAlreadyExist = true;
-            } else {
-                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
-            }
-        }
-        return timexBuilder.toString();
+        unitList = unitList.stream().map(t -> unitToTimexComponents.get(t)).collect(Collectors.toList());
+        return TimexHelpers.generateCompoundDurationTimex(unitList);
     }
 
-    private static boolean isTimeDurationTimex(String timex) {
+    private static Boolean isTimeDurationTimex(String timex) {
         return timex.startsWith(Constants.GeneralPeriodPrefix + Constants.TimeTimexPrefix);
-    }
-
-    private static String getDurationTimexWithoutPrefix(String timex) {
-        // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
-        return timex.substring(isTimeDurationTimex(timex) ? 2 : 1);
     }
 
     public static String getDatePeriodTimexUnitCount(LocalDateTime begin, LocalDateTime end,
