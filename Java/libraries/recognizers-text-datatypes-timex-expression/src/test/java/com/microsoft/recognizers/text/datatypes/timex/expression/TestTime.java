@@ -12,14 +12,14 @@ public class TestTime {
     @Test
     public void dataTypesTimeConstructor() {
         Time t = new Time(23, 45, 32);
-        Assert.assertEquals(23, (int) t.getHour());
-        Assert.assertEquals(45, (int) t.getMinute());
-        Assert.assertEquals(32, (int) t.getSecond());
+        Assert.assertEquals(23, (int)t.getHour());
+        Assert.assertEquals(45, (int)t.getMinute());
+        Assert.assertEquals(32, (int)t.getSecond());
     }
 
     @Test
     public void dataTypesTimeGetTime() {
         Time t = new Time(23, 45, 32);
-        Assert.assertEquals(85532000, (int) t.getTime());
+        Assert.assertEquals(85532000, (int)t.getTime());
     }
 }

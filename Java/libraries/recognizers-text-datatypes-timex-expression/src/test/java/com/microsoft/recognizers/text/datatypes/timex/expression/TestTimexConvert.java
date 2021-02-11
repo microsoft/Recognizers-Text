@@ -87,9 +87,12 @@ public class TestTimexConvert {
 
     @Test
     public void dataTypesConvertFullDatetime() {
-        Assert.assertEquals("6:30:45PM 3rd January 1984", TimexConvert.convertTimexToString(new TimexProperty("1984-01-03T18:30:45")));
-        Assert.assertEquals("midnight 1st January 2000", TimexConvert.convertTimexToString(new TimexProperty("2000-01-01T00")));
-        Assert.assertEquals("7:30PM 29th May 1967", TimexConvert.convertTimexToString(new TimexProperty("1967-05-29T19:30:00")));
+        Assert.assertEquals("6:30:45PM 3rd January 1984",
+                TimexConvert.convertTimexToString(new TimexProperty("1984-01-03T18:30:45")));
+        Assert.assertEquals("midnight 1st January 2000",
+                TimexConvert.convertTimexToString(new TimexProperty("2000-01-01T00")));
+        Assert.assertEquals("7:30PM 29th May 1967",
+                TimexConvert.convertTimexToString(new TimexProperty("1967-05-29T19:30:00")));
     }
 
     @Test
@@ -128,8 +131,10 @@ public class TestTimexConvert {
 
     @Test
     public void dataTypesConvertWeekOfMonth() {
-        Assert.assertEquals("first week of January", TimexConvert.convertTimexToString(new TimexProperty("XXXX-01-W01")));
-        Assert.assertEquals("third week of August", TimexConvert.convertTimexToString(new TimexProperty("XXXX-08-W03")));
+        Assert.assertEquals("first week of January",
+                TimexConvert.convertTimexToString(new TimexProperty("XXXX-01-W01")));
+        Assert.assertEquals("third week of August",
+                TimexConvert.convertTimexToString(new TimexProperty("XXXX-08-W03")));
     }
 
     @Test
@@ -148,7 +153,8 @@ public class TestTimexConvert {
 
     @Test
     public void dataTypesConvertDateAndPartOfDay() {
-        Assert.assertEquals("7th September 2017 night", TimexConvert.convertTimexToString(new TimexProperty("2017-09-07TNI")));
+        Assert.assertEquals("7th September 2017 night",
+                TimexConvert.convertTimexToString(new TimexProperty("2017-09-07TNI")));
     }
 
     @Test
@@ -168,105 +174,89 @@ public class TestTimexConvert {
     }
 
     @Test
-    public void dataTypesConvertYears()
-    {
+    public void dataTypesConvertYears() {
         Assert.assertEquals("2 years", TimexConvert.convertTimexToString(new TimexProperty("P2Y")));
         Assert.assertEquals("1 year", TimexConvert.convertTimexToString(new TimexProperty("P1Y")));
     }
 
     @Test
-    public void dataTypesConvertMonths()
-    {
+    public void dataTypesConvertMonths() {
         Assert.assertEquals("4 months", TimexConvert.convertTimexToString(new TimexProperty("P4M")));
         Assert.assertEquals("1 month", TimexConvert.convertTimexToString(new TimexProperty("P1M")));
         Assert.assertEquals("0 months", TimexConvert.convertTimexToString(new TimexProperty("P0M")));
     }
 
     @Test
-    public void dataTypesConvertWeeks()
-    {
+    public void dataTypesConvertWeeks() {
         Assert.assertEquals("6 weeks", TimexConvert.convertTimexToString(new TimexProperty("P6W")));
         Assert.assertEquals("9.5 weeks", TimexConvert.convertTimexToString(new TimexProperty("P9.5W")));
     }
 
     @Test
-    public void dataTypesConvertDays()
-    {
+    public void dataTypesConvertDays() {
         Assert.assertEquals("5 days", TimexConvert.convertTimexToString(new TimexProperty("P5D")));
         Assert.assertEquals("1 day", TimexConvert.convertTimexToString(new TimexProperty("P1D")));
     }
 
     @Test
-    public void dataTypesConvertHours()
-    {
+    public void dataTypesConvertHours() {
         Assert.assertEquals("5 hours", TimexConvert.convertTimexToString(new TimexProperty("PT5H")));
         Assert.assertEquals("1 hour", TimexConvert.convertTimexToString(new TimexProperty("PT1H")));
     }
 
     @Test
-    public void dataTypesConvertMinutes()
-    {
+    public void dataTypesConvertMinutes() {
         Assert.assertEquals("30 minutes", TimexConvert.convertTimexToString(new TimexProperty("PT30M")));
         Assert.assertEquals("1 minute", TimexConvert.convertTimexToString(new TimexProperty("PT1M")));
     }
 
     @Test
-    public void dataTypesConvertSeconds()
-    {
+    public void dataTypesConvertSeconds() {
         Assert.assertEquals("45 seconds", TimexConvert.convertTimexToString(new TimexProperty("PT45S")));
     }
 
     @Test
-    public void dataTypesConvertEvery2Days()
-    {
+    public void dataTypesConvertEvery2Days() {
         Assert.assertEquals("every 2 days", TimexConvert.convertTimexSetToString(new TimexSet("P2D")));
     }
 
     @Test
-    public void dataTypesConvertEveryWeek()
-    {
+    public void dataTypesConvertEveryWeek() {
         Assert.assertEquals("every week", TimexConvert.convertTimexSetToString(new TimexSet("P1W")));
     }
 
     @Test
-    public void dataTypesConvertEveryOctober()
-    {
+    public void dataTypesConvertEveryOctober() {
         Assert.assertEquals("every October", TimexConvert.convertTimexSetToString(new TimexSet("XXXX-10")));
     }
 
     @Test
-    public void dataTypesConvertEverySunday()
-    {
+    public void dataTypesConvertEverySunday() {
         Assert.assertEquals("every Sunday", TimexConvert.convertTimexSetToString(new TimexSet("XXXX-WXX-7")));
     }
 
     @Test
-    public void dataTypesConvertEveryDay()
-    {
+    public void dataTypesConvertEveryDay() {
         Assert.assertEquals("every day", TimexConvert.convertTimexSetToString(new TimexSet("P1D")));
     }
 
     @Test
-    public void dataTypesConvertEveryYear()
-    {
+    public void dataTypesConvertEveryYear() {
         Assert.assertEquals("every year", TimexConvert.convertTimexSetToString(new TimexSet("P1Y")));
     }
 
     @Test
-    public void dataTypesConvertEverySpring()
-    {
+    public void dataTypesConvertEverySpring() {
         Assert.assertEquals("every spring", TimexConvert.convertTimexSetToString(new TimexSet("SP")));
     }
 
     @Test
-    public void dataTypesConvertEveryWinter()
-    {
+    public void dataTypesConvertEveryWinter() {
         Assert.assertEquals("every winter", TimexConvert.convertTimexSetToString(new TimexSet("WI")));
     }
 
     @Test
-    public void dataTypesConvertEveryEvening()
-    {
+    public void dataTypesConvertEveryEvening() {
         Assert.assertEquals("every evening", TimexConvert.convertTimexSetToString(new TimexSet("TEV")));
     }
 }

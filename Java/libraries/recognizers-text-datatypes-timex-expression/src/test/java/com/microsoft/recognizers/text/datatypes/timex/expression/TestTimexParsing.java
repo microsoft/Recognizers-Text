@@ -5,17 +5,17 @@ package com.microsoft.recognizers.text.datatypes.timex.expression;
 
 import com.microsoft.recognizers.datatypes.timex.expression.Constants;
 import com.microsoft.recognizers.datatypes.timex.expression.TimexProperty;
-import org.junit.Assert;
-import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class TestTimexParsing {
 
     @Test
-    public void dataTypesParsingCompleteDate()
-    {
+    public void dataTypesParsingCompleteDate() {
         TimexProperty timex = new TimexProperty("2017-05-29");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -25,9 +25,9 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2017, (int) timex.getYear());
-        Assert.assertEquals(5, (int) timex.getMonth());
-        Assert.assertEquals(29, (int) timex.getDayOfMonth());
+        Assert.assertEquals(2017, (int)timex.getYear());
+        Assert.assertEquals(5, (int)timex.getMonth());
+        Assert.assertEquals(29, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
@@ -48,8 +48,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingMonthAndDayOfMonth()
-    {
+    public void dataTypesParsingMonthAndDayOfMonth() {
         TimexProperty timex = new TimexProperty("XXXX-12-05");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -59,8 +58,8 @@ public class TestTimexParsing {
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
         Assert.assertNull(timex.getYear());
-        Assert.assertEquals(12, (int) timex.getMonth());
-        Assert.assertEquals(5, (int) timex.getDayOfMonth());
+        Assert.assertEquals(12, (int)timex.getMonth());
+        Assert.assertEquals(5, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
@@ -81,8 +80,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDayOfWeek()
-    {
+    public void dataTypesParsingDayOfWeek() {
         TimexProperty timex = new TimexProperty("XXXX-WXX-3");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -94,7 +92,7 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
-        Assert.assertEquals(3, (int) timex.getDayOfWeek());
+        Assert.assertEquals(3, (int)timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
@@ -114,8 +112,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingHoursMinutesAndSeconds()
-    {
+    public void dataTypesParsingHoursMinutesAndSeconds() {
         TimexProperty timex = new TimexProperty("T17:30:05");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -131,9 +128,9 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(17, (int) timex.getHour());
-        Assert.assertEquals(30, (int) timex.getMinute());
-        Assert.assertEquals(5, (int) timex.getSecond());
+        Assert.assertEquals(17, (int)timex.getHour());
+        Assert.assertEquals(30, (int)timex.getMinute());
+        Assert.assertEquals(5, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -147,8 +144,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingHoursAndMinutes()
-    {
+    public void dataTypesParsingHoursAndMinutes() {
         TimexProperty timex = new TimexProperty("T17:30");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -164,9 +160,9 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(17, (int) timex.getHour());
-        Assert.assertEquals(30, (int) timex.getMinute());
-        Assert.assertEquals(0, (int) timex.getSecond());
+        Assert.assertEquals(17, (int)timex.getHour());
+        Assert.assertEquals(30, (int)timex.getMinute());
+        Assert.assertEquals(0, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -180,8 +176,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingHours()
-    {
+    public void dataTypesParsingHours() {
         TimexProperty timex = new TimexProperty("T17");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -197,9 +192,9 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(17, (int) timex.getHour());
-        Assert.assertEquals(0, (int) timex.getMinute());
-        Assert.assertEquals(0, (int) timex.getSecond());
+        Assert.assertEquals(17, (int)timex.getHour());
+        Assert.assertEquals(0, (int)timex.getMinute());
+        Assert.assertEquals(0, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -213,8 +208,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsing_Now()
-    {
+    public void dataTypesParsing_Now() {
         TimexProperty timex = new TimexProperty("PRESENT_REF");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -249,8 +243,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingFullDatetime()
-    {
+    public void dataTypesParsingFullDatetime() {
         TimexProperty timex = new TimexProperty("1984-01-03T18:30:45");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -262,16 +255,16 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(1984, (int) timex.getYear());
-        Assert.assertEquals(1, (int) timex.getMonth());
-        Assert.assertEquals(3, (int) timex.getDayOfMonth());
+        Assert.assertEquals(1984, (int)timex.getYear());
+        Assert.assertEquals(1, (int)timex.getMonth());
+        Assert.assertEquals(3, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(18, (int) timex.getHour());
-        Assert.assertEquals(30, (int) timex.getMinute());
-        Assert.assertEquals(45, (int) timex.getSecond());
+        Assert.assertEquals(18, (int)timex.getHour());
+        Assert.assertEquals(30, (int)timex.getMinute());
+        Assert.assertEquals(45, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -285,8 +278,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingParticularTimeOnParticularDayOfWeek()
-    {
+    public void dataTypesParsingParticularTimeOnParticularDayOfWeek() {
         TimexProperty timex = new TimexProperty("XXXX-WXX-3T16");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -300,13 +292,13 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
-        Assert.assertEquals(3, (int) timex.getDayOfWeek());
+        Assert.assertEquals(3, (int)timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(16, (int) timex.getHour());
-        Assert.assertEquals(0, (int) timex.getMinute());
-        Assert.assertEquals(0, (int) timex.getSecond());
+        Assert.assertEquals(16, (int)timex.getHour());
+        Assert.assertEquals(0, (int)timex.getMinute());
+        Assert.assertEquals(0, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -320,8 +312,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingYear()
-    {
+    public void dataTypesParsingYear() {
         TimexProperty timex = new TimexProperty("2016");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -330,7 +321,7 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2016, (int) timex.getYear());
+        Assert.assertEquals(2016, (int)timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
@@ -353,8 +344,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingSummerOf1999()
-    {
+    public void dataTypesParsingSummerOf1999() {
         TimexProperty timex = new TimexProperty("1999-SU");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -363,7 +353,7 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(1999, (int) timex.getYear());
+        Assert.assertEquals(1999, (int)timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
@@ -386,8 +376,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingYearAndWeek()
-    {
+    public void dataTypesParsingYearAndWeek() {
         TimexProperty timex = new TimexProperty("2017-W37");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -396,11 +385,11 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2017, (int) timex.getYear());
+        Assert.assertEquals(2017, (int)timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
-        Assert.assertEquals(37, (int) timex.getWeekOfYear());
+        Assert.assertEquals(37, (int)timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
         Assert.assertNull(timex.getHour());
@@ -419,8 +408,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingSeasonSummer()
-    {
+    public void dataTypesParsingSeasonSummer() {
         TimexProperty timex = new TimexProperty("SU");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -452,8 +440,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingSeasonWinter()
-    {
+    public void dataTypesParsingSeasonWinter() {
         TimexProperty timex = new TimexProperty("WI");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -485,8 +472,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingYearAndWeekend()
-    {
+    public void dataTypesParsingYearAndWeekend() {
         TimexProperty timex = new TimexProperty("2017-W37-WE");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -495,11 +481,11 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2017, (int) timex.getYear());
+        Assert.assertEquals(2017, (int)timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
-        Assert.assertEquals(37, (int) timex.getWeekOfYear());
+        Assert.assertEquals(37, (int)timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
         Assert.assertNull(timex.getHour());
@@ -518,8 +504,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingMay()
-    {
+    public void dataTypesParsingMay() {
         TimexProperty timex = new TimexProperty("XXXX-05");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -529,7 +514,7 @@ public class TestTimexParsing {
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
         Assert.assertNull(timex.getYear());
-        Assert.assertEquals(5, (int) timex.getMonth());
+        Assert.assertEquals(5, (int)timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
@@ -551,8 +536,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingJuly2020()
-    {
+    public void dataTypesParsingJuly2020() {
         TimexProperty timex = new TimexProperty("2020-07");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -561,8 +545,8 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2020, (int) timex.getYear());
-        Assert.assertEquals(7, (int) timex.getMonth());
+        Assert.assertEquals(2020, (int)timex.getYear());
+        Assert.assertEquals(7, (int)timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
@@ -584,8 +568,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingWeekOfMonth()
-    {
+    public void dataTypesParsingWeekOfMonth() {
         TimexProperty timex = new TimexProperty("XXXX-01-W01");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -595,11 +578,11 @@ public class TestTimexParsing {
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
         Assert.assertNull(timex.getYear());
-        Assert.assertEquals(1, (int) timex.getMonth());
+        Assert.assertEquals(1, (int)timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
-        Assert.assertEquals(1, (int) timex.getWeekOfMonth());
+        Assert.assertEquals(1, (int)timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
         Assert.assertNull(timex.getHour());
         Assert.assertNull(timex.getMinute());
@@ -617,8 +600,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingWednesdayToSaturday()
-    {
+    public void dataTypesParsingWednesdayToSaturday() {
         TimexProperty timex = new TimexProperty("(XXXX-WXX-3,XXXX-WXX-6,P3D)");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -632,7 +614,7 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
-        Assert.assertEquals(3, (int) timex.getDayOfWeek());
+        Assert.assertEquals(3, (int)timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
@@ -652,8 +634,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingJan1ToAug5()
-    {
+    public void dataTypesParsingJan1ToAug5() {
         TimexProperty timex = new TimexProperty("(XXXX-01-01,XXXX-08-05,P216D)");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -665,8 +646,8 @@ public class TestTimexParsing {
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
         Assert.assertNull(timex.getYear());
-        Assert.assertEquals(1, (int) timex.getMonth());
-        Assert.assertEquals(1, (int) timex.getDayOfMonth());
+        Assert.assertEquals(1, (int)timex.getMonth());
+        Assert.assertEquals(1, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
@@ -687,8 +668,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingJan1ToAug5Year2015()
-    {
+    public void dataTypesParsingJan1ToAug5Year2015() {
         TimexProperty timex = new TimexProperty("(2015-01-01,2015-08-05,P216D)");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -700,9 +680,9 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2015, (int) timex.getYear());
-        Assert.assertEquals(1, (int) timex.getMonth());
-        Assert.assertEquals(1, (int) timex.getDayOfMonth());
+        Assert.assertEquals(2015, (int)timex.getYear());
+        Assert.assertEquals(1, (int)timex.getMonth());
+        Assert.assertEquals(1, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
@@ -722,9 +702,8 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getNow());
     }
 
-        @Test
-    public void dataTypesParsingDayTime()
-    {
+    @Test
+    public void dataTypesParsingDayTime() {
         TimexProperty timex = new TimexProperty("TDT");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -756,8 +735,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingNightTime()
-    {
+    public void dataTypesParsingNightTime() {
         TimexProperty timex = new TimexProperty("TNI");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -789,8 +767,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingMorning()
-    {
+    public void dataTypesParsingMorning() {
         TimexProperty timex = new TimexProperty("TMO");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -822,8 +799,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingAfternoon()
-    {
+    public void dataTypesParsingAfternoon() {
         TimexProperty timex = new TimexProperty("TAF");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -855,8 +831,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingEvening()
-    {
+    public void dataTypesParsingEvening() {
         TimexProperty timex = new TimexProperty("TEV");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -888,8 +863,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingTimerange430pmTo445pm()
-    {
+    public void dataTypesParsingTimerange430pmTo445pm() {
         TimexProperty timex = new TimexProperty("(T16:30,T16:45,PT15M)");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -907,9 +881,9 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(16, (int) timex.getHour());
-        Assert.assertEquals(30, (int) timex.getMinute());
-        Assert.assertEquals(0, (int) timex.getSecond());
+        Assert.assertEquals(16, (int)timex.getHour());
+        Assert.assertEquals(30, (int)timex.getMinute());
+        Assert.assertEquals(0, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -923,8 +897,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDateTimeRange()
-    {
+    public void dataTypesParsingDateTimeRange() {
         TimexProperty timex = new TimexProperty("XXXX-WXX-5TEV");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -938,7 +911,7 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
-        Assert.assertEquals(5, (int) timex.getDayOfWeek());
+        Assert.assertEquals(5, (int)timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
@@ -958,8 +931,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingLastNight()
-    {
+    public void dataTypesParsingLastNight() {
         TimexProperty timex = new TimexProperty("2017-09-07TNI");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -971,9 +943,9 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2017, (int) timex.getYear());
-        Assert.assertEquals(9, (int) timex.getMonth());
-        Assert.assertEquals(7, (int) timex.getDayOfMonth());
+        Assert.assertEquals(2017, (int)timex.getYear());
+        Assert.assertEquals(9, (int)timex.getMonth());
+        Assert.assertEquals(7, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
@@ -994,8 +966,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingLast5Minutes()
-    {
+    public void dataTypesParsingLast5Minutes() {
         TimexProperty timex = new TimexProperty("(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1011,16 +982,16 @@ public class TestTimexParsing {
         };
         HashSet<String> actual = timex.getTypes();
         Assert.assertEquals(expected, actual);
-        Assert.assertEquals(2017, (int) timex.getYear());
-        Assert.assertEquals(9, (int) timex.getMonth());
-        Assert.assertEquals(8, (int) timex.getDayOfMonth());
+        Assert.assertEquals(2017, (int)timex.getYear());
+        Assert.assertEquals(9, (int)timex.getMonth());
+        Assert.assertEquals(8, (int)timex.getDayOfMonth());
         Assert.assertNull(timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(21, (int) timex.getHour());
-        Assert.assertEquals(19, (int) timex.getMinute());
-        Assert.assertEquals(29, (int) timex.getSecond());
+        Assert.assertEquals(21, (int)timex.getHour());
+        Assert.assertEquals(19, (int)timex.getMinute());
+        Assert.assertEquals(29, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -1034,8 +1005,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingWed4PMToSat3PM()
-    {
+    public void dataTypesParsingWed4PMToSat3PM() {
         TimexProperty timex = new TimexProperty("(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1053,13 +1023,13 @@ public class TestTimexParsing {
         Assert.assertNull(timex.getYear());
         Assert.assertNull(timex.getMonth());
         Assert.assertNull(timex.getDayOfMonth());
-        Assert.assertEquals(3, (int) timex.getDayOfWeek());
+        Assert.assertEquals(3, (int)timex.getDayOfWeek());
         Assert.assertNull(timex.getWeekOfYear());
         Assert.assertNull(timex.getWeekOfMonth());
         Assert.assertNull(timex.getSeason());
-        Assert.assertEquals(16, (int) timex.getHour());
-        Assert.assertEquals(0, (int) timex.getMinute());
-        Assert.assertEquals(0, (int) timex.getSecond());
+        Assert.assertEquals(16, (int)timex.getHour());
+        Assert.assertEquals(0, (int)timex.getMinute());
+        Assert.assertEquals(0, (int)timex.getSecond());
         Assert.assertNull(timex.getWeekend());
         Assert.assertNull(timex.getPartOfDay());
         Assert.assertNull(timex.getYears());
@@ -1073,8 +1043,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationYears()
-    {
+    public void dataTypesParsingDurationYears() {
         TimexProperty timex = new TimexProperty("P2Y");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1106,8 +1075,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationMonths()
-    {
+    public void dataTypesParsingDurationMonths() {
         TimexProperty timex = new TimexProperty("P4M");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1139,8 +1107,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationWeeks()
-    {
+    public void dataTypesParsingDurationWeeks() {
         TimexProperty timex = new TimexProperty("P6W");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1172,8 +1139,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationWeeksFloatingPoint()
-    {
+    public void dataTypesParsingDurationWeeksFloatingPoint() {
         TimexProperty timex = new TimexProperty("P2.5W");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1205,8 +1171,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationDays()
-    {
+    public void dataTypesParsingDurationDays() {
         TimexProperty timex = new TimexProperty("P1D");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1238,8 +1203,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationHours()
-    {
+    public void dataTypesParsingDurationHours() {  
         TimexProperty timex = new TimexProperty("PT5H");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1271,8 +1235,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationMinutes()
-    {
+    public void dataTypesParsingDurationMinutes() {
         TimexProperty timex = new TimexProperty("PT30M");
         HashSet<String> expected = new HashSet<String>() {
             {
@@ -1304,8 +1267,7 @@ public class TestTimexParsing {
     }
 
     @Test
-    public void dataTypesParsingDurationSeconds()
-    {
+    public void dataTypesParsingDurationSeconds() {
         TimexProperty timex = new TimexProperty("PT45S");
         HashSet<String> expected = new HashSet<String>() {
             {

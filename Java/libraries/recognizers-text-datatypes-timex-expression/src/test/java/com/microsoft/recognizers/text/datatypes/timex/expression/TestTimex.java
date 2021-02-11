@@ -5,21 +5,22 @@ package com.microsoft.recognizers.text.datatypes.timex.expression;
 
 import com.microsoft.recognizers.datatypes.timex.expression.Time;
 import com.microsoft.recognizers.datatypes.timex.expression.TimexProperty;
-import org.junit.Assert;
-import org.junit.Test;
 
 import java.time.LocalDateTime;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TestTimex {
     @Test
     public void dataTypesTimexFromDate() {
-        LocalDateTime date = LocalDateTime.of(2017, 12, 5,0,0);
+        LocalDateTime date = LocalDateTime.of(2017, 12, 5, 0, 0);
         Assert.assertEquals("2017-12-05", TimexProperty.fromDate(date).getTimexValue());
     }
 
     @Test
     public void dataTypesTimexFromDateTime() {
-        LocalDateTime date = LocalDateTime.of(2017, 12, 5, 23,57,35);
+        LocalDateTime date = LocalDateTime.of(2017, 12, 5, 23, 57, 35);
         Assert.assertEquals("2017-12-05T23:57:35", TimexProperty.fromDateTime(date).getTimexValue());
     }
 
@@ -34,8 +35,8 @@ public class TestTimex {
     public void dataTypesTimexRoundtripTime() {
         TestTimex.roundtrip("T17:30:45");
         TestTimex.roundtrip("T05:06:07");
-         TestTimex.roundtrip("T17:30");
-         TestTimex.roundtrip("T23");
+        TestTimex.roundtrip("T17:30");
+        TestTimex.roundtrip("T23");
     }
 
     @Test
@@ -107,7 +108,7 @@ public class TestTimex {
 
     @Test
     public void dataTypesTimexToNaturalLanguage() {
-        LocalDateTime today = LocalDateTime.of(2017, 10, 16,0,0);
+        LocalDateTime today = LocalDateTime.of(2017, 10, 16, 0, 0);
         Assert.assertEquals("tomorrow", new TimexProperty("2017-10-17").toNaturalLanguage(today));
     }
 

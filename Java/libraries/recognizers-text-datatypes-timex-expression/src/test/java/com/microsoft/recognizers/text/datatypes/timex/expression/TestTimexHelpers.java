@@ -3,17 +3,22 @@
 
 package com.microsoft.recognizers.text.datatypes.timex.expression;
 
-import com.microsoft.recognizers.datatypes.timex.expression.*;
-import org.junit.Assert;
-import org.junit.Test;
+import com.microsoft.recognizers.datatypes.timex.expression.DateRange;
+import com.microsoft.recognizers.datatypes.timex.expression.Time;
+import com.microsoft.recognizers.datatypes.timex.expression.TimeRange;
+import com.microsoft.recognizers.datatypes.timex.expression.TimexHelpers;
+import com.microsoft.recognizers.datatypes.timex.expression.TimexProperty;
+import com.microsoft.recognizers.datatypes.timex.expression.TimexRange;
 
 import java.time.LocalDateTime;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TestTimexHelpers {
     
     @Test
-    public void dataTypesHelpersExpandDateTimeRangeShort()
-    {
+    public void dataTypesHelpersExpandDateTimeRangeShort() {
         TimexProperty timex = new TimexProperty("(2017-09-27,2017-09-29,P2D)");
         TimexRange range = TimexHelpers.expandDateTimeRange(timex);
         Assert.assertEquals("2017-09-27", range.getStart().getTimexValue());
@@ -21,8 +26,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersExpandDateTimeRangeLong()
-    {
+    public void dataTypesHelpersExpandDateTimeRangeLong() {
         TimexProperty timex = new TimexProperty("(2006-01-01,2008-06-01,P882D)");
         TimexRange range = TimexHelpers.expandDateTimeRange(timex);
         Assert.assertEquals("2006-01-01", range.getStart().getTimexValue());
@@ -30,8 +34,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersExpandDateTimeRangeIncludeTime()
-    {
+    public void dataTypesHelpersExpandDateTimeRangeIncludeTime() {
         TimexProperty timex = new TimexProperty("(2017-10-10T16:02:04,2017-10-10T16:07:04,PT5M)");
         TimexRange range = TimexHelpers.expandDateTimeRange(timex);
         Assert.assertEquals("2017-10-10T16:02:04", range.getStart().getTimexValue());
@@ -39,8 +42,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersExpandDateTimeRangeMonth()
-    {
+    public void dataTypesHelpersExpandDateTimeRangeMonth() {
         TimexProperty timex = new TimexProperty("2017-05");
         TimexRange range = TimexHelpers.expandDateTimeRange(timex);
         Assert.assertEquals("2017-05-01", range.getStart().getTimexValue());
@@ -48,8 +50,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersExpandDateTimeRangeYear()
-    {
+    public void dataTypesHelpersExpandDateTimeRangeYear() {
         TimexProperty timex = new TimexProperty("1999");
         TimexRange range = TimexHelpers.expandDateTimeRange(timex);
         Assert.assertEquals("1999-01-01", range.getStart().getTimexValue());
@@ -57,8 +58,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersExpandTimeRange()
-    {
+    public void dataTypesHelpersExpandTimeRange() {
         TimexProperty timex = new TimexProperty("(T14,T16,PT2H)");
         TimexRange range = TimexHelpers.expandTimeRange(timex);
         Assert.assertEquals("T14", range.getStart().getTimexValue());
@@ -66,8 +66,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersDateRangeFromTimex()
-    {
+    public void dataTypesHelpersDateRangeFromTimex() {
         TimexProperty timex = new TimexProperty("(2017-09-27,2017-09-29,P2D)");
         DateRange range = TimexHelpers.dateRangeFromTimex(timex);
 
@@ -79,8 +78,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersTimeRangeFromTimex()
-    {
+    public void dataTypesHelpersTimeRangeFromTimex() {
         TimexProperty timex = new TimexProperty("(T14,T16,PT2H)");
         TimeRange range = TimexHelpers.timeRangeFromTimex(timex);
         Assert.assertEquals(new Time(14, 0, 0).getTime(), range.getStart().getTime());
@@ -88,8 +86,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersDateFromTimex()
-    {
+    public void dataTypesHelpersDateFromTimex() {
         TimexProperty timex = new TimexProperty("2017-09-27");
         LocalDateTime date = TimexHelpers.dateFromTimex(timex);
 
@@ -98,8 +95,7 @@ public class TestTimexHelpers {
     }
 
     @Test
-    public void dataTypesHelpersTimeFromTimex()
-    {
+    public void dataTypesHelpersTimeFromTimex() {
         TimexProperty timex = new TimexProperty("T00:05:00");
         Time time = TimexHelpers.timeFromTimex(timex);
         Assert.assertEquals(new Time(0, 5, 0).getTime(), time.getTime());
