@@ -296,7 +296,6 @@ public class TimexResolver {
         return firstWeekDay;
     }
 
-    // TODO: research about Pair
     private static Pair<String, String> monthWeekDateRange(Integer year, Integer month, Integer weekOfYear) {
         LocalDateTime dateInWeek = LocalDateTime.of(year, month, 1 + ((weekOfYear - 1) * 7), 0, 0);
         if (dateInWeek.getDayOfWeek() == DayOfWeek.SUNDAY) {
@@ -448,7 +447,6 @@ public class TimexResolver {
         }
     }
 
-    // TODO: research about Pair
     private static Pair<String, String> partOfDayTimeRange(TimexProperty timex) {
         switch (timex.getPartOfDay()) {
             case "MO":
