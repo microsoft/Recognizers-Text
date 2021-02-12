@@ -90,17 +90,19 @@ public class TimexConvertEnglish {
             return TimexConstantsEnglish.DAYS[timex.getDayOfWeek() - 1];
         }
 
-        String month = TimexConstantsEnglish.MONTHS[timex.getMonth() - 1];
         String date = String.valueOf(timex.getDayOfMonth());
 
         String abbreviation = TimexConstantsEnglish.DATE_ABBREVIATION[Integer
                 .parseInt(String.valueOf(date.charAt(date.length() - 1)))];
 
-        if (timex.getYear() != null) {
-            return String.format("%1$s%2$s %3$s %4$s", date, abbreviation, month, timex.getYear()).trim();
+        if (timex.getMonth() != null) {
+            String month = TimexConstantsEnglish.MONTHS[timex.getMonth() - 1];
+            if (timex.getYear() != null) {
+                return String.format("%1$s%2$s %3$s %4$s", date, abbreviation, month, timex.getYear()).trim();
+            }
+            return String.format("%1$s%2$s %3$s", date, abbreviation, month);
         }
-
-        return String.format("%1$s%2$s %3$s", date, abbreviation, month);
+        return date.concat(abbreviation);
     }
 
     private static String convertDurationPropertyToString(BigDecimal value, String property,

@@ -121,12 +121,14 @@ public class TimexFormat {
     }
 
     private static String formatDate(TimexProperty timex) {
-        int year = timex.getYear() != null ? timex.getYear() : Constants.INVALID_VALUE;
-        int month = timex.getMonth() != null ? timex.getMonth() : Constants.INVALID_VALUE;
-        int day = timex.getDayOfWeek() != null ? timex.getDayOfWeek()
+        Integer year = timex.getYear() != null ? timex.getYear() : Constants.INVALID_VALUE;
+        Integer month = timex.getWeekOfYear() != null ? timex.getWeekOfYear()
+                : (timex.getMonth() != null ? timex.getMonth() : Constants.INVALID_VALUE);
+        Integer day = timex.getDayOfWeek() != null ? timex.getDayOfWeek()
                 : timex.getDayOfMonth() != null ? timex.getDayOfMonth() : Constants.INVALID_VALUE;
+        Integer weekOfMonth = timex.getWeekOfMonth() != null ? timex.getWeekOfMonth() : Constants.INVALID_VALUE;
 
-        return TimexHelpers.generateDateTimex(year, month, day, timex.getDayOfWeek() != null);
+        return TimexHelpers.generateDateTimex(year, month, day, weekOfMonth, timex.getDayOfWeek() != null);
     }
 
     private static String formatDateRange(TimexProperty timex) {
@@ -138,6 +140,12 @@ public class TimexFormat {
         if (timex.getYear() != null && timex.getWeekOfYear() != null) {
             return String.format("%1$s-W%2$s", TimexDateHelpers.fixedFormatNumber(timex.getYear(), 4),
                     TimexDateHelpers.fixedFormatNumber(timex.getWeekOfYear(), 2));
+        }
+
+        if (timex.getYear() != null && timex.getMonth() != null && timex.getWeekOfMonth() != null) {
+            return String.format("%1$s-%2$s-W%3$s", TimexDateHelpers.fixedFormatNumber(timex.getYear(), 4),
+                    TimexDateHelpers.fixedFormatNumber(timex.getMonth(), 2),
+                    TimexDateHelpers.fixedFormatNumber(timex.getWeekOfMonth(), 2));
         }
 
         if (timex.getYear() != null && timex.getSeason() != null) {

@@ -148,7 +148,8 @@ public class TimexHelpers {
 
             if (durationDays != null) {
                 if (start.getYear() != null) {
-                    LocalDateTime d = LocalDateTime.of(start.getYear(), start.getMonth(), start.getDayOfMonth(), 0, 0, 0);
+                    LocalDateTime d = LocalDateTime.of(start.getYear(), start.getMonth(), start.getDayOfMonth(), 0, 0,
+                            0);
                     LocalDateTime d2 = d.plusDays(durationDays.longValue());
                     return new TimexProperty() {
                         {
@@ -214,22 +215,27 @@ public class TimexHelpers {
         return timexBuilder.toString();
     }
 
-    public static String generateDateTimex(int year, int month, int day, Boolean byWeek) {
+    public static String generateDateTimex(Integer year, Integer monthOrWeekOfYear, Integer day, Integer weekOfMonth,
+            boolean byWeek) {
         String yearString = year == Constants.INVALID_VALUE ? Constants.TIMEX_FUZZY_YEAR
                 : TimexDateHelpers.fixedFormatNumber(year, 4);
-        String monthString = month == Constants.INVALID_VALUE ? Constants.TIMEX_FUZZY_MONTH
-                : TimexDateHelpers.fixedFormatNumber(month, 2);
+        String monthWeekString = monthOrWeekOfYear == Constants.INVALID_VALUE ? Constants.TIMEX_FUZZY_MONTH
+                : TimexDateHelpers.fixedFormatNumber(monthOrWeekOfYear, 2);
         String dayString;
-
         if (byWeek) {
-            dayString = String.valueOf(day);
-            monthString = Constants.TIMEX_WEEK + monthString;
+            dayString = day.toString();
+            if (weekOfMonth != Constants.INVALID_VALUE) {
+                monthWeekString = monthWeekString + String.format("-%s-", Constants.TIMEX_FUZZY_WEEK)
+                        + weekOfMonth.toString();
+            } else {
+                monthWeekString = Constants.TIMEX_WEEK + monthWeekString;
+            }
         } else {
-            dayString = day == Constants.INVALID_VALUE ? Constants.TIMEX_DAY
+            dayString = day == Constants.INVALID_VALUE ? Constants.TIMEX_FUZZY_DAY
                     : TimexDateHelpers.fixedFormatNumber(day, 2);
         }
 
-        return String.join("-", yearString, monthString, dayString);
+        return String.join("-", yearString, monthWeekString, dayString);
     }
 
     public static String generateDurationTimex(TimexUnit unit, BigDecimal value) {
@@ -269,7 +275,8 @@ public class TimexHelpers {
             result.setHour(hour);
 
             if (result.getYear() != null && result.getMonth() != null && result.getDayOfMonth() != null) {
-                LocalDateTime d = LocalDateTime.of(result.getYear(), result.getMonth(), result.getDayOfMonth(), 0, 0, 0);
+                LocalDateTime d = LocalDateTime.of(result.getYear(), result.getMonth(), result.getDayOfMonth(), 0, 0,
+                        0);
                 d = d.plusDays(days.longValue());
 
                 result.setYear(d.getYear());
@@ -331,10 +338,15 @@ public class TimexHelpers {
         };
     }
 
+    public static String formatResolvedDateValue(String dateValue, String timeValue) {
+        return String.format("%1$s %2$s", dateValue, timeValue);
+    }
+
     private static TimexProperty timeAdd(TimexProperty start, TimexProperty duration) {
-        int second = start.getSecond() + (int)(duration.getSeconds() != null ? duration.getSeconds() : 0);
-        int minute = start.getMinute() + second / 60 + (duration.getMinutes() != null ? duration.getMinutes().intValue() : 0);
-        int hour = start.getHour() + (minute / 60) + (duration.getHours() != null ? duration.getHours().intValue() : 0);
+        Integer second = start.getSecond() + (int)(duration.getSeconds() != null ? duration.getSeconds().intValue() : 0);
+        Integer minute = start.getMinute() + second / 60
+                + (duration.getMinutes() != null ? duration.getMinutes().intValue() : 0);
+        Integer hour = start.getHour() + (minute / 60) + (duration.getHours() != null ? duration.getHours().intValue() : 0);
 
         return new TimexProperty() {
             {
