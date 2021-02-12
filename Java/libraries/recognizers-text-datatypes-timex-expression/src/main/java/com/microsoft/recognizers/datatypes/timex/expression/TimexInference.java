@@ -80,7 +80,7 @@ public class TimexInference {
     }
 
     private static Boolean isDate(TimexProperty timexProperty) {
-        return (timexProperty.getMonth() != null && timexProperty.getDayOfMonth() != null) || timexProperty.getDayOfWeek() != null;
+        return timexProperty.getDayOfMonth() != null || timexProperty.getDayOfWeek() != null;
     }
 
     private static Boolean isTimeRange(TimexProperty timexProperty) {
@@ -88,10 +88,10 @@ public class TimexInference {
     }
 
     private static Boolean isDateRange(TimexProperty timexProperty) {
-        return (timexProperty.getYear() != null && timexProperty.getDayOfMonth() == null) || (timexProperty.getYear() != null &&
-            timexProperty.getMonth() != null & timexProperty.getDayOfMonth() == null) ||
-            (timexProperty.getMonth() != null && timexProperty.getDayOfMonth() == null) ||
-            timexProperty.getSeason() != null || timexProperty.getWeekOfYear() != null || timexProperty.getWeekOfMonth() != null;
+        return (timexProperty.getDayOfMonth() == null && timexProperty.getDayOfWeek() == null) &&
+                (timexProperty.getYear() != null || timexProperty.getMonth() != null ||
+                        timexProperty.getSeason() != null || timexProperty.getWeekOfYear() != null ||
+                        timexProperty.getWeekOfMonth() != null);
     }
 
     private static Boolean isDefinite(TimexProperty timexProperty) {

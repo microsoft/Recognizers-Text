@@ -41,7 +41,7 @@ public class TimexDateHelpers {
     public static Boolean isThisWeek(LocalDateTime date, LocalDateTime referenceDate) {
         // Note ISO 8601 week starts on a Monday
         LocalDateTime startOfWeek = referenceDate;
-        while (startOfWeek.getDayOfWeek().getValue() > DayOfWeek.MONDAY.getValue()) {
+        while (TimexDateHelpers.getUSDayOfWeek(startOfWeek.getDayOfWeek()) > TimexDateHelpers.getUSDayOfWeek(DayOfWeek.MONDAY)) {
             startOfWeek = startOfWeek.plusDays(-1);
         }
 
@@ -66,7 +66,7 @@ public class TimexDateHelpers {
         Integer weeks = 1;
 
         while (ds.compareTo(de) < 0) {
-            Integer dayOfWeek = ds.getDayOfWeek().getValue();
+            Integer dayOfWeek = TimexDateHelpers.getUSDayOfWeek(ds.getDayOfWeek());
 
             Integer isoDayOfWeek = (dayOfWeek == 0) ? 7 : dayOfWeek;
             if (isoDayOfWeek == 7) {
@@ -118,5 +118,9 @@ public class TimexDateHelpers {
         }
 
         return result;
+    }
+
+    public static Integer getUSDayOfWeek(DayOfWeek dayOfWeek) {
+        return dayOfWeek.getValue() % 7;
     }
 }

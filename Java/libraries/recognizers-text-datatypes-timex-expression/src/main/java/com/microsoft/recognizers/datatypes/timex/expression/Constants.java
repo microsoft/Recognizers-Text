@@ -16,6 +16,7 @@ public class Constants {
     public static final String TIMEX_HOUR = "H";
     public static final String TIMEX_MINUTE = "M";
     public static final String TIMEX_SECOND = "S";
+    public static final String TIMEX_NIGHT = "NI";
     public static final Character TIMEX_FUZZY = 'X';
     public static final String TIMEX_FUZZY_YEAR = "XXXX";
     public static final String TIMEX_FUZZY_MONTH = "XX";

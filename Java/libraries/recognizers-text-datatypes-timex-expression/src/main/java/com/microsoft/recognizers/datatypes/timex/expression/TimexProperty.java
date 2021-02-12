@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class TimexProperty {
     private Time time;
 
@@ -364,6 +366,11 @@ public class TimexProperty {
 
     public void assignProperties(Map<String, String> source) {
         for (Entry<String, String> item : source.entrySet()) {
+
+            if (StringUtils.isBlank(item.getValue())) {
+                continue;
+            }
+
             switch (item.getKey()) {
                 case "year":
                     setYear(Integer.parseInt(item.getValue()));
