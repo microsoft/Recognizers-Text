@@ -1528,8 +1528,8 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "el año fiscal de 2016",
-        "Start": 18,
+        "Text": "año fiscal de 2016",
+        "Start": 21,
         "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -6581,8 +6581,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año 2008",
-        "Start": 18,
+        "Text": "año 2008",
+        "Start": 21,
         "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -7407,8 +7407,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año 2008",
-        "Start": 20,
+        "Text": "año 2008",
+        "Start": 23,
         "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -8775,8 +8775,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año 2012 o posterior",
-        "Start": 19,
+        "Text": "año 2012 o posterior",
+        "Start": 22,
         "End": 41,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -8801,8 +8801,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año 2016 y más tarde",
-        "Start": 9,
+        "Text": "año 2016 y más tarde",
+        "Start": 12,
         "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14252,8 +14252,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año fiscal 2008",
-        "Start": 15,
+        "Text": "año fiscal 2008",
+        "Start": 18,
         "End": 32,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14276,8 +14276,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año calendario 2008",
-        "Start": 15,
+        "Text": "año calendario 2008",
+        "Start": 18,
         "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14301,8 +14301,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año 2008",
-        "Start": 15,
+        "Text": "año 2008",
+        "Start": 18,
         "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14326,8 +14326,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año escolar 2008",
-        "Start": 15,
+        "Text": "año escolar 2008",
+        "Start": 18,
         "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14375,8 +14375,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año escolar 2018",
-        "Start": 15,
+        "Text": "año escolar 2018",
+        "Start": 18,
         "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14399,8 +14399,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "el año calendario 18",
-        "Start": 15,
+        "Text": "año calendario 18",
+        "Start": 18,
         "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {

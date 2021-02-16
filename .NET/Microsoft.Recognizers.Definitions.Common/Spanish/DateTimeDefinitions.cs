@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+((entre(\s+el)?)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*)((en|del?)\s+)?{YearRegex})?\b";
       public static readonly string DayBetweenRegex = $@"\b((entre(\s+el)?)\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)((en|del?)\s+)?{YearRegex})?\b";
       public const string SpecialYearPrefixes = @"((del\s+)?calend[aá]rio|(?<special>fiscal|escolar))";
-      public static readonly string OneWordPeriodRegex = $@"\b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|(((la|el)\s+)?((({RelativeRegex}\s+)({DateUnitRegex}|(fin\s+de\s+)?semana|finde)(\s+{RelativeSuffixRegex})?)|{DateUnitRegex}(\s+{RelativeSuffixRegex}))|va\s+de\s+{DateUnitRegex}|((d?el\s+)?(año|mes)|((el\s+)?fin\s+de\s+|la\s+)?semana|(el\s+)?finde))\b)";
+      public static readonly string OneWordPeriodRegex = $@"\b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|(((la|el)\s+)?((({RelativeRegex}\s+)({DateUnitRegex}|(fin\s+de\s+)?semana|finde)(\s+{RelativeSuffixRegex})?)|{DateUnitRegex}(\s+{RelativeSuffixRegex}))|va\s+de\s+{DateUnitRegex}|((d?el\s+)?(año|mes)(\s+{SpecialYearPrefixes})?(?!((\s+{SpecialYearPrefixes})?(\s+de)?\s+\d+))|((el\s+)?fin\s+de\s+|la\s+)?semana|(el\s+)?finde))\b)";
       public static readonly string MonthWithYearRegex = $@"\b(((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\s+)?({MonthRegex})(\s+|(\s*[,-]\s*))((de(l|\s+la)?|en)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b";
       public static readonly string MonthNumWithYearRegex = $@"\b(({YearRegex}(\s*?)[/\-\.~](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-\.~](\s*?){YearRegex}))\b";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|([12345](\.)?ª)|[uú]ltima)\s+semana\s+{MonthSuffixRegex}((\s+de)?\s+({BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s+año))?)\b";
@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string MiddlePauseRegex = @"^[.]";
       public const string PrefixArticleRegex = @"\b(e[ln]\s+(d[ií]a\s+)?)";
       public const string OrRegex = @"^[.]";
-      public static readonly string SpecialYearTermsRegex = $@"\b((d?el\s+)?años?\s+({SpecialYearPrefixes}\s+)?(de\s+)?)";
+      public static readonly string SpecialYearTermsRegex = $@"\b(años?\s+({SpecialYearPrefixes}\s+)?(de\s+)?)";
       public static readonly string YearPlusNumberRegex = $@"\b({SpecialYearTermsRegex}((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
       public const string NumberAsTimeRegex = @"^[.]";
       public static readonly string TimeBeforeAfterRegex = $@"\b((?<=\b(antes|no\s+m[aá]s\s+tard(e|ar)\s+(de|a\s+las?)|por| después)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))\b";

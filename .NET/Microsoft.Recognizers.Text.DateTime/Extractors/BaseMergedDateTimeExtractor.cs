@@ -223,6 +223,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
+                    // The second condition avoids merging UnspecificDatePeriodRegex matches because they will be later filtered by
+                    // FilterUnspecificDatePeriod and only the results extracted by DatePeriod should be removed there, not those extracted by Duration.
                     if (dst[i].IsOverlap(result) && !(dst[i].Text == result.Text && this.config.UnspecificDatePeriodRegex.IsMatch(result.Text)))
                     {
                         isFound = true;

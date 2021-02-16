@@ -3476,10 +3476,10 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "el año 247",
+        "Text": "año 247",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 19,
+        "Length": 7
       }
     ]
   },
