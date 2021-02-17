@@ -361,7 +361,7 @@
   },
   {
     "Input": "Please visit https://luis.xxx?action=add for more information",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
@@ -411,12 +411,12 @@
   },
   {
     "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "[image: image2.png]http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
-    "NotSupportedByDesign": "javascript",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "http://dafdafdasf-dajfdlkajfkla-fdafd-dafdafafs-dafdafdaf.com",
