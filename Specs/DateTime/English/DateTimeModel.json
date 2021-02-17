@@ -19448,5 +19448,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "My temperature was 37.1 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in the morning",
+        "Start": 24,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

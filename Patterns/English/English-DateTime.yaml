@@ -374,13 +374,13 @@ TimeRegexWithDotConnector: !nestedRegex
   def: ({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})
   references: [ BaseDateTime.HourRegex, BaseDateTime.MinuteRegex ]
 TimeRegex1: !nestedRegex
-  def: \b({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*|[.]){DescRegex}
+  def: \b({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|(?<!\d[,.]){BaseDateTime.HourRegex})(\s*|[.]){DescRegex}
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
-  def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\s*{DescRegex})|\b)
+  def: (\b{TimePrefix}\s+)?(t)?(?<!\d[,.]){BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
-  def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
+  def: (\b{TimePrefix}\s+)?(?<!\d[,.]){BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex4: !nestedRegex
   def: \b{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b
@@ -389,7 +389,7 @@ TimeRegex5: !nestedRegex
   def: \b{TimePrefix}\s+{BasicTime}((\s*{DescRegex})|\b)
   references: [ TimePrefix, BasicTime, DescRegex ]
 TimeRegex6: !nestedRegex
-  def: '{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b'
+  def: (?<!\d[,.]){BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
   def: \b{TimeSuffixFull}\s+(at\s+)?{BasicTime}((\s*{DescRegex})|\b)
@@ -401,10 +401,10 @@ TimeRegex9: !nestedRegex
   def: \b{PeriodHourNumRegex}(\s+|-){FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]
 TimeRegex10: !nestedRegex
-  def: \b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
+  def: \b({TimePrefix}\s+)?(?<!\d[,.]){BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex11: !nestedRegex
-  def: \b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\s*{DescRegex}))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)))
+  def: \b((?:({TimeTokenPrefix})?(?<!\d[,.]){TimeRegexWithDotConnector}(\s*{DescRegex}))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)))
   references: [ TimeTokenPrefix, TimeRegexWithDotConnector, DescRegex ]
 FirstTimeRegexInTimeRange: !nestedRegex
   def: \b{TimeRegexWithDotConnector}(\s*{DescRegex})?
@@ -467,7 +467,7 @@ TimeOfTodayBeforeRegex: !nestedRegex
   def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|in|on))?\s*$'
   references: [ DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayAfterRegex: !nestedRegex
-  def: (?<!{NonTimeContextTokens}\s*)\b({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}\b
+  def: (?<!{NonTimeContextTokens}\s*)\b({HourNumRegex}|(?<!\d[,.]){BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}\b
   references: [ NonTimeContextTokens, HourNumRegex, BaseDateTime.HourRegex, DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
