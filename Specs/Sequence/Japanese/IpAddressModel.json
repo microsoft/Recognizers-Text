@@ -1,7 +1,7 @@
 [
     {
       "Input": "私のコンピューターIPは1.1.1.1です",
-      "NotSupported": "python, java",
+      "NotSupported": "python",
       "Results": [
         {
           "Text": "1.1.1.1",
