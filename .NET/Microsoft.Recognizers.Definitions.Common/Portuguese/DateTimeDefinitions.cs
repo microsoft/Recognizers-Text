@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string DateExtractor7 = $@"\b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor8 = $@"(?<=\b(em|no|o)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
-      public static readonly string DateExtractor10 = $@"\b({YearRegex}\s*[/\\\-\. ]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\. ]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\. ]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\. ]\s*{DayRegex}|{DayRegex}\s*[/\\\-\. ]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\. ]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
+      public static readonly string DateExtractor10 = $@"\b({YearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
       public static readonly string DateExtractor11 = $@"(?<=\b(dia)\s+){DayRegex}";
       public const string HourNumRegex = @"\b(?<hournum>zero|uma|duas|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze)\b";
       public const string MinuteNumRegex = @"(?<minnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)";

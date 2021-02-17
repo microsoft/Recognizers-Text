@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string DateExtractor7 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor8 = $@"(?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
-      public static readonly string DateExtractorA = $@"\b({DateYearRegex}\s*[/\\\-\.]?\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]?\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]?\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]?\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]?\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]?\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
+      public static readonly string DateExtractorA = $@"\b({DateYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
       public static readonly string OfMonth = $@"^\s*de\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(le)?\s*$";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";

@@ -2599,11 +2599,11 @@
     ]
   },
   {
-    "Input": "Ik ga terug op September 2020 23.",
+    "Input": "Ik ga terug op September-2020-23.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "September 2020 23",
+        "Text": "September-2020-23",
         "Type": "date",
         "Start": 15,
         "Length": 17
@@ -2647,11 +2647,11 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 23 2020 September",
+    "Input": "Ik ga terug op 23-2020-September",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "23 2020 September",
+        "Text": "23-2020-September",
         "Type": "date",
         "Start": 15,
         "Length": 17

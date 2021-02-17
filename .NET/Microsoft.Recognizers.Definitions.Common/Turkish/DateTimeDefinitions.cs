@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string DateExtractor7S = $@"\b(({DayRegex}\s*[/\\.,\-]?\s*{MonthRegex})((\s*\(\s*{SingleWeekDayRegex}\s*\))|\s*,?\s+{SingleWeekDayRegex}(\s+günü)?)?)";
       public const string DateExtractor9L = @"^[\*]";
       public const string DateExtractor9S = @"^[\*]";
-      public static readonly string DateExtractorA = $@"\b({WeekDayRegex}\s+)?(({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]?\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\. ]\s*{DayRegex})|({MonthRegex}\s*[/\\\-\. ]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\. ]\s*{DayRegex})|({DayRegex}\s*[/\\\-\. ]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\. ]\s*{MonthRegex}))";
+      public static readonly string DateExtractorA = $@"\b({WeekDayRegex}\s+)?(({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex})|({MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex})|({DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex}))";
       public static readonly string OfMonth = $@"^\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthPossessiveSuffixRegex}\s*$";
       public static readonly string WeekDayEnd = $@"(bu\s+)?{WeekDayRegex}\s*,?\s*$";

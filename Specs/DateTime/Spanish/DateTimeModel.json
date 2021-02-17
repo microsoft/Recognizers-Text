@@ -20810,7 +20810,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "sep-23-2020",
@@ -20834,7 +20833,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "septiembre-2020-23",
@@ -20858,7 +20856,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "2020/23/sep.",
@@ -20882,7 +20879,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "2020/sep/23",
@@ -20906,7 +20902,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "23/sep/2020",
@@ -20930,7 +20925,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "23-2020-septiembre",

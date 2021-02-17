@@ -304,7 +304,7 @@ DateExtractor9S: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{DayRegex}\s*[-|\/|.]\s*{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?![%])\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, WeekDayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractorA: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]?\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]?\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)|{MonthRegex}\s*[/\\\-\.]?\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]?\s*(de\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?:ste|de|e)?|{DayRegex}\s*[/\\\-\.]?\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]?\s*{MonthRegex})
+  def: \b({WeekDayRegex}\s+)?({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*(de\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?:ste|de|e)?|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, MonthRegex, DayRegex, WeekDayRegex ]
 OfMonth: !nestedRegex
   def: (^\s*((van|in)\s+)?)({MonthRegex})
