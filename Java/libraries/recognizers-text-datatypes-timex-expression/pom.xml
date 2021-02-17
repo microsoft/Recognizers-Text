@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.microsoft.recognizers.text.datetime</groupId>
-    <artifactId>recognizers-text-date-time</artifactId>
+    <groupId>com.microsoft.recognizers.text.datatypes.timex.expression</groupId>
+    <artifactId>recognizers-text-datatypes-timex-expression</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Microsoft.Recognizers.Text - Date-Time Recognizers</description>
+    <description>Microsoft.Recognizers.Text.DataTypes.TimexExpression provides parsing and evaluation of TIMEX expressions.</description>
     <url>https://github.com/Microsoft/Recognizers-Text/</url>
 
     <parent>
@@ -35,39 +35,33 @@
             <organizationUrl>https://www.microsoft.com/</organizationUrl>
         </developer>
     </developers>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
         <dependency>
             <groupId>com.microsoft.recognizers.text</groupId>
             <artifactId>recognizers-text</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.microsoft.recognizers.text.number</groupId>
-            <artifactId>recognizers-text-number</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.microsoft.recognizers.text.numberwithunit</groupId>
-            <artifactId>recognizers-text-number-with-unit</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-    	    <groupId>com.microsoft.recognizers.text.datatypes.timex.expression</groupId>
-            <artifactId>recognizers-text-datatypes-timex-expression</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>24.1-jre</version>
+            <version>24.1.1-jre</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -81,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-    
 </project>
