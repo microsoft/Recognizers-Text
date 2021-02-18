@@ -19424,5 +19424,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "it happened last night at 8.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-16T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last night at 8",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-15T20",
+              "type": "datetime",
+              "value": "2018-08-15 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

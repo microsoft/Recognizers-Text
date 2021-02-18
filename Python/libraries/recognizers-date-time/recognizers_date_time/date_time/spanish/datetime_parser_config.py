@@ -126,6 +126,8 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
             SpanishDateTime.NextPrefixRegex)
         self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PreviousPrefixRegex)
+        self.last_night_time_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LastNightTimeRegex)
 
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
@@ -165,7 +167,7 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
         source = source.strip().lower()
         swift = 0
 
-        if self.previous_prefix_regex.search(source):
+        if self.previous_prefix_regex.search(source) or self.last_night_time_regex.search(source):
             swift = -1
         elif self.next_prefix_regex.search(source):
             swift = 1
