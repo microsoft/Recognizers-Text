@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex PluralTokenRegex =
-            new Regex(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
 
         public TurkishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

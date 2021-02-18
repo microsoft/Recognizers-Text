@@ -17,34 +17,34 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             : base(options)
         {
 
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+            AmbiguousFractionConnectorsRegex = RegexCache.Get(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
 
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+            RelativeReferenceRegex = RegexCache.Get(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.HinglishOrdinalRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.HinglishOrdinalRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.CompoundHindiOrdinalRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.CompoundHindiOrdinalRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.CompoundNumberOrdinals, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.CompoundNumberOrdinals, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.CompoundEnglishOrdinalRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.CompoundEnglishOrdinalRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };

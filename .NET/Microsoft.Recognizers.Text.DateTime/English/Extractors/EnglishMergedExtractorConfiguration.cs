@@ -11,51 +11,51 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfterRegex, RegexFlags);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
-            new Regex(BaseDateTime.EqualRegex, RegexFlags);
+            RegexCache.Get(BaseDateTime.EqualRegex, RegexFlags);
 
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.FromToRegex, RegexFlags);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
 
         public static readonly Regex AmbiguousRangeModifierPrefix =
-            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
 
         public static readonly Regex SuffixAfterRegex =
-            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
         public static readonly Regex UnspecificTimePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificTimePeriodRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.UnspecificTimePeriodRegex, RegexFlags);
 
         public static readonly Regex FailFastRegex =
-            new Regex(DateTimeDefinitions.FailFastRegex, RegexFlags | RegexOptions.Compiled);
+            RegexCache.Get(DateTimeDefinitions.FailFastRegex, RegexFlags | RegexOptions.Compiled);
 
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
-            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
 
             // (the)? (day|week|month|year)
-            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
@@ -101,10 +101,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         // Used in Standard mode
-        public static Regex SinceRegex { get; set; } = new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+        public static Regex SinceRegex { get; set; } = RegexCache.Get(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         // used in Experimental mode
-        public static Regex SinceRegexExp { get; } = new Regex(DateTimeDefinitions.SinceRegexExp, RegexFlags);
+        public static Regex SinceRegexExp { get; } = RegexCache.Get(DateTimeDefinitions.SinceRegexExp, RegexFlags);
 
         public IDateExtractor DateExtractor { get; }
 

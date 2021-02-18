@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseEmailExtractor : BaseSequenceExtractor
     {
-        private static readonly Regex Rfc5322ValidationRegex = new Regex(BaseEmail.RFC5322Regex, RegexOptions.Compiled);
+        private static readonly Regex Rfc5322ValidationRegex = RegexCache.Get(BaseEmail.RFC5322Regex, RegexOptions.Compiled);
 
         private static readonly char[] TrimmableChars = { '.' };
 
@@ -22,11 +22,11 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseEmail.EmailRegex, RegexOptions.Compiled),
+                    RegexCache.Get(BaseEmail.EmailRegex, RegexOptions.Compiled),
                     Constants.EMAIL_REGEX
                 },
                 {
-                    new Regex(BaseEmail.EmailRegex2, RegexOptions.Compiled),
+                    RegexCache.Get(BaseEmail.EmailRegex2, RegexOptions.Compiled),
                     Constants.EMAIL_REGEX
                 },
             };

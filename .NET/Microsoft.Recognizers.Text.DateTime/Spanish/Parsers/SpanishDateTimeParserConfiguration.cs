@@ -24,8 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
+            AMTimeRegex = RegexCache.Get(DateTimeDefinitions.AmTimeRegex, RegexFlags);
+            PMTimeRegex = RegexCache.Get(DateTimeDefinitions.PmTimeRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;

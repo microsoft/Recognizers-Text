@@ -28,13 +28,13 @@ namespace Microsoft.Recognizers.Text.Sequence
                     Constants.URL_REGEX
                 },
                 {
-                    new Regex(BaseURL.UrlRegex2, RegexOptions.Compiled),
+                    RegexCache.Get(BaseURL.UrlRegex2, RegexOptions.Compiled),
                     Constants.URL_REGEX
                 },
             };
 
             Regexes = regexes.ToImmutableDictionary();
-            AmbiguousTimeTerm = new Regex(BaseURL.AmbiguousTimeTerm, RegexOptions.Compiled);
+            AmbiguousTimeTerm = RegexCache.Get(BaseURL.AmbiguousTimeTerm, RegexOptions.Compiled);
 
             TldMatcher = new StringMatcher();
             TldMatcher.Init(BaseURL.TldList);

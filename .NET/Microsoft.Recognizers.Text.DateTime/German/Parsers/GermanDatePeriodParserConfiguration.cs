@@ -10,25 +10,25 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex PenultimatePrefixRegex =
-            new Regex(DateTimeDefinitions.PenultimatePrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PenultimatePrefixRegex, RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
         public static readonly Regex AfterNextPrefixRegex =
-            new Regex(DateTimeDefinitions.AfterNextPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfterNextPrefixRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             CenturySuffixRegex = GermanDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = GermanDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
-            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
+            TodayNowRegex = RegexCache.Get(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

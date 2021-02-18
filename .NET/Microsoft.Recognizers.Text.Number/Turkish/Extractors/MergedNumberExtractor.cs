@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
         {
             NumberExtractor = Turkish.NumberExtractor.GetInstance(mode, options);
             RoundNumberIntegerRegexWithLocks =
-                new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
+                RegexCache.Get(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
             ConnectorRegex =
-                new Regex(NumbersDefinitions.ConnectorRegex, RegexFlags);
+                RegexCache.Get(NumbersDefinitions.ConnectorRegex, RegexFlags);
         }
 
         public sealed override BaseNumberExtractor NumberExtractor { get; set; }

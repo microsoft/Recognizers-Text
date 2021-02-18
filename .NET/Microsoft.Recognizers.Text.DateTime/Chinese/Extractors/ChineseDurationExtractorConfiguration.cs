@@ -27,13 +27,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexFlags);
+        private static readonly Regex YearRegex = RegexCache.Get(DateTimeDefinitions.DurationYearRegex, RegexFlags);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexFlags);
+        private static readonly Regex HalfSuffixRegex = RegexCache.Get(DateTimeDefinitions.DurationHalfSuffixRegex, RegexFlags);
 
-        private static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+        private static readonly Regex DurationUnitRegex = RegexCache.Get(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
 
-        private static readonly Regex DurationConnectorRegex = new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
+        private static readonly Regex DurationConnectorRegex = RegexCache.Get(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
 
         private static readonly Dictionary<string, string> UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLower());
 

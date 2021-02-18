@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+        private static readonly Regex DurationUnitRegex = RegexCache.Get(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
 
         private static readonly IParser InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
 

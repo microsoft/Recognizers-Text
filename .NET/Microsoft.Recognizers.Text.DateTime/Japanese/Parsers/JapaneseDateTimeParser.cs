@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
+        public static readonly Regex SimpleAmRegex = RegexCache.Get(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
+        public static readonly Regex SimplePmRegex = RegexCache.Get(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

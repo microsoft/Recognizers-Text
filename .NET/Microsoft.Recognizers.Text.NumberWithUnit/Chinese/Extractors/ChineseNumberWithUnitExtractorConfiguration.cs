@@ -19,12 +19,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
+            RegexCache.Get(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
 
         private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
+            RegexCache.Get(BaseUnits.PmNonUnitRegex, RegexFlags);
 
-        private static readonly Regex HalfUnitRegex = new Regex(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags);
+        private static readonly Regex HalfUnitRegex = RegexCache.Get(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags);
 
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {

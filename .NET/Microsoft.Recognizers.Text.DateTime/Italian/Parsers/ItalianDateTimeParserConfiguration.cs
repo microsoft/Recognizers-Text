@@ -21,10 +21,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeParser = config.TimeParser;
 
             NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            AMTimeRegex = RegexCache.Get(DateTimeDefinitions.AMTimeRegex, RegexFlags);
+            PMTimeRegex = RegexCache.Get(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;

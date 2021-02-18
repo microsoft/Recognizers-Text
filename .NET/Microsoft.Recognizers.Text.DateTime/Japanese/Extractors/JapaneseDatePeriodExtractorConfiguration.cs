@@ -12,81 +12,81 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
+        public static readonly Regex TillRegex = RegexCache.Get(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
 
-        public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
+        public static readonly Regex DayRegex = RegexCache.Get(DateTimeDefinitions.DayRegex, RegexFlags);
 
-        public static readonly Regex DayRegexForPeriod = new Regex(DateTimeDefinitions.DayRegexForPeriod, RegexFlags);
+        public static readonly Regex DayRegexForPeriod = RegexCache.Get(DateTimeDefinitions.DayRegexForPeriod, RegexFlags);
 
-        public static readonly Regex DayRegexInJapanese = new Regex(DateTimeDefinitions.DatePeriodDayRegexInJapanese, RegexFlags);
+        public static readonly Regex DayRegexInJapanese = RegexCache.Get(DateTimeDefinitions.DatePeriodDayRegexInJapanese, RegexFlags);
 
-        public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
+        public static readonly Regex MonthNumRegex = RegexCache.Get(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriodThisRegex, RegexFlags);
+        public static readonly Regex ThisRegex = RegexCache.Get(DateTimeDefinitions.DatePeriodThisRegex, RegexFlags);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriodLastRegex, RegexFlags);
+        public static readonly Regex LastRegex = RegexCache.Get(DateTimeDefinitions.DatePeriodLastRegex, RegexFlags);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DatePeriodNextRegex, RegexFlags);
+        public static readonly Regex NextRegex = RegexCache.Get(DateTimeDefinitions.DatePeriodNextRegex, RegexFlags);
 
-        public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexFlags);
+        public static readonly Regex RelativeMonthRegex = RegexCache.Get(DateTimeDefinitions.RelativeMonthRegex, RegexFlags);
 
-        public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
+        public static readonly Regex MonthRegex = RegexCache.Get(DateTimeDefinitions.MonthRegex, RegexFlags);
 
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+        public static readonly Regex YearRegex = RegexCache.Get(DateTimeDefinitions.YearRegex, RegexFlags);
 
-        public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexFlags);
+        public static readonly Regex StrictYearRegex = RegexCache.Get(DateTimeDefinitions.StrictYearRegex, RegexFlags);
 
-        public static readonly Regex YearRegexInNumber = new Regex(DateTimeDefinitions.YearRegexInNumber, RegexFlags);
+        public static readonly Regex YearRegexInNumber = RegexCache.Get(DateTimeDefinitions.YearRegexInNumber, RegexFlags);
 
-        public static readonly Regex ZeroToNineIntegerRegexJap = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexJap, RegexFlags);
+        public static readonly Regex ZeroToNineIntegerRegexJap = RegexCache.Get(DateTimeDefinitions.ZeroToNineIntegerRegexJap, RegexFlags);
 
-        public static readonly Regex YearInJapaneseRegex = new Regex(DateTimeDefinitions.DatePeriodYearInJapaneseRegex, RegexFlags);
+        public static readonly Regex YearInJapaneseRegex = RegexCache.Get(DateTimeDefinitions.DatePeriodYearInJapaneseRegex, RegexFlags);
 
-        public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
+        public static readonly Regex MonthSuffixRegex = RegexCache.Get(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
 
         // for case "(从)?(2017年)?一月十日到十二日"
-        public static readonly Regex SimpleCasesRegex = new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
+        public static readonly Regex SimpleCasesRegex = RegexCache.Get(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
 
-        public static readonly Regex YearAndMonth = new Regex(DateTimeDefinitions.YearAndMonth, RegexFlags);
+        public static readonly Regex YearAndMonth = RegexCache.Get(DateTimeDefinitions.YearAndMonth, RegexFlags);
 
-        public static readonly Regex SimpleYearAndMonth = new Regex(DateTimeDefinitions.SimpleYearAndMonth, RegexFlags);
+        public static readonly Regex SimpleYearAndMonth = RegexCache.Get(DateTimeDefinitions.SimpleYearAndMonth, RegexFlags);
 
         // 2017.12, 2017-12, 2017/12, 12/2017
-        public static readonly Regex PureNumYearAndMonth = new Regex(DateTimeDefinitions.PureNumYearAndMonth, RegexFlags);
+        public static readonly Regex PureNumYearAndMonth = RegexCache.Get(DateTimeDefinitions.PureNumYearAndMonth, RegexFlags);
 
-        public static readonly Regex OneWordPeriodRegex = new Regex(DateTimeDefinitions.OneWordPeriodRegex, RegexFlags);
+        public static readonly Regex OneWordPeriodRegex = RegexCache.Get(DateTimeDefinitions.OneWordPeriodRegex, RegexFlags);
 
-        public static readonly Regex WeekOfMonthRegex = new Regex(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
+        public static readonly Regex WeekOfMonthRegex = RegexCache.Get(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
+        public static readonly Regex UnitRegex = RegexCache.Get(DateTimeDefinitions.UnitRegex, RegexFlags);
 
-        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexFlags);
+        public static readonly Regex FollowedUnit = RegexCache.Get(DateTimeDefinitions.FollowedUnit, RegexFlags);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexFlags);
+        public static readonly Regex NumberCombinedWithUnit = RegexCache.Get(DateTimeDefinitions.NumberCombinedWithUnit, RegexFlags);
 
-        public static readonly Regex YearToYear = new Regex(DateTimeDefinitions.YearToYear, RegexFlags);
+        public static readonly Regex YearToYear = RegexCache.Get(DateTimeDefinitions.YearToYear, RegexFlags);
 
-        public static readonly Regex MonthToMonth = new Regex(DateTimeDefinitions.MonthToMonth, RegexFlags);
+        public static readonly Regex MonthToMonth = RegexCache.Get(DateTimeDefinitions.MonthToMonth, RegexFlags);
 
-        public static readonly Regex DayToDay = new Regex(DateTimeDefinitions.DayToDay, RegexFlags);
+        public static readonly Regex DayToDay = RegexCache.Get(DateTimeDefinitions.DayToDay, RegexFlags);
 
-        public static readonly Regex MonthDayRange = new Regex(DateTimeDefinitions.MonthDayRange, RegexFlags);
+        public static readonly Regex MonthDayRange = RegexCache.Get(DateTimeDefinitions.MonthDayRange, RegexFlags);
 
-        public static readonly Regex YearMonthRange = new Regex(DateTimeDefinitions.YearMonthRange, RegexFlags);
+        public static readonly Regex YearMonthRange = RegexCache.Get(DateTimeDefinitions.YearMonthRange, RegexFlags);
 
-        public static readonly Regex YearMonthDayRange = new Regex(DateTimeDefinitions.YearMonthDayRange, RegexFlags);
+        public static readonly Regex YearMonthDayRange = RegexCache.Get(DateTimeDefinitions.YearMonthDayRange, RegexFlags);
 
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
+        public static readonly Regex PastRegex = RegexCache.Get(DateTimeDefinitions.PastRegex, RegexFlags);
 
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
+        public static readonly Regex FutureRegex = RegexCache.Get(DateTimeDefinitions.FutureRegex, RegexFlags);
 
-        public static readonly Regex SeasonRegex = new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags);
+        public static readonly Regex SeasonRegex = RegexCache.Get(DateTimeDefinitions.SeasonRegex, RegexFlags);
 
-        public static readonly Regex SeasonWithYear = new Regex(DateTimeDefinitions.SeasonWithYear, RegexFlags);
+        public static readonly Regex SeasonWithYear = RegexCache.Get(DateTimeDefinitions.SeasonWithYear, RegexFlags);
 
-        public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags);
+        public static readonly Regex QuarterRegex = RegexCache.Get(DateTimeDefinitions.QuarterRegex, RegexFlags);
 
-        public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
+        public static readonly Regex DecadeRegex = RegexCache.Get(DateTimeDefinitions.DecadeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

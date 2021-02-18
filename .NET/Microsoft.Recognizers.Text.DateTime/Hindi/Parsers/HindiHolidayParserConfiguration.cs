@@ -14,9 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public HindiHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            ThisPrefixRegex = RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = HindiHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }

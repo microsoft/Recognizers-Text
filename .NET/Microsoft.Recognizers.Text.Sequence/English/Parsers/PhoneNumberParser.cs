@@ -33,10 +33,10 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static string continueDigitRegex = @"\d{5}\d*";
         private static string digitRegex = @"\d";
 
-        private static readonly Regex CountryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
-        private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
-        private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
-        private static readonly Regex NoAreaCodeUsPhoneNumberRegex = new Regex(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
+        private static readonly Regex CountryCodeRegex = RegexCache.Get(BasePhoneNumbers.CountryCodeRegex);
+        private static readonly Regex AreaCodeRegex = RegexCache.Get(BasePhoneNumbers.AreaCodeIndicatorRegex);
+        private static readonly Regex FormatIndicatorRegex = RegexCache.Get(BasePhoneNumbers.FormatIndicatorRegex);
+        private static readonly Regex NoAreaCodeUsPhoneNumberRegex = RegexCache.Get(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
         public static double ScorePhoneNumber(string phoneNumberText)
         {
@@ -53,8 +53,8 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 int formatIndicatorCount = formatMatches.Count;
                 score += Math.Min(formatIndicatorCount, maxFormatIndicatorNum) * formattedAward;
                 score -= formatMatches.Cast<Match>().Any(o => o.Value.Length > 1) ? continueFormatIndicatorDeductionScore : 0;
-                if (Regex.IsMatch(phoneNumberText, singleBracketRegex) &&
-                    !Regex.IsMatch(phoneNumberText, completeBracketRegex))
+                if (RegexCache.IsMatch(phoneNumberText, singleBracketRegex) &&
+                    !RegexCache.IsMatch(phoneNumberText, completeBracketRegex))
                 {
                     score -= wrongFormatDeductionScore;
                 }
@@ -64,20 +64,20 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             score += Math.Min(Regex.Matches(phoneNumberText, digitRegex).Count - phoneNumberLengthBase, maxLengthAwardNum) * lengthAward;
 
             // Same tailing digit deduction
-            if (Regex.IsMatch(phoneNumberText, tailSameDigitRegex))
+            if (RegexCache.IsMatch(phoneNumberText, tailSameDigitRegex))
             {
                 score -= (Regex.Match(phoneNumberText, tailSameDigitRegex).Length - tailSameLimit) * tailSameDeductionScore;
             }
 
             // Pure digit deduction
-            if (Regex.IsMatch(phoneNumberText, pureDigitRegex))
+            if (RegexCache.IsMatch(phoneNumberText, pureDigitRegex))
             {
                 score -= phoneNumberText.Length > pureDigitLengthLimit ?
                     (phoneNumberText.Length - pureDigitLengthLimit) * lengthAward : 0;
             }
 
             // Special format deduction
-            score -= BasePhoneNumbers.TypicalDeductionRegexList.Any(o => Regex.IsMatch(phoneNumberText, o)) ? typicalFormatDeductionScore : 0;
+            score -= BasePhoneNumbers.TypicalDeductionRegexList.Any(o => RegexCache.IsMatch(phoneNumberText, o)) ? typicalFormatDeductionScore : 0;
 
             // Continue digit deduction
             score -= Math.Max(Regex.Matches(phoneNumberText, continueDigitRegex).Count - 1, 0) * continueDigitDeductionScore;

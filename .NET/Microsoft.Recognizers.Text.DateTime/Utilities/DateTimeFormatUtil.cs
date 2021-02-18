@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class DateTimeFormatUtil
     {
-        private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
-        private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
+        private static readonly Regex HourTimexRegex = RegexCache.Get(@"(?<!P)T(\d{2})");
+        private static readonly Regex WeekDayTimexRegex = RegexCache.Get(@"XXXX-WXX-(\d)");
 
         public static int ParseChineseDynastyYear(string yearStr, Regex dynastyYearRegex, string dynastyStartYear, ImmutableDictionary<string, int> dynastyYearMap, IExtractor integerExtractor, IParser numberParser)
         {

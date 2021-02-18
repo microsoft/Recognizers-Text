@@ -12,28 +12,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DoubleMultiplierRegex =
-            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
 
         private static readonly Regex HalfMultiplierRegex =
-            new Regex(DateTimeDefinitions.HalfMultiplierRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.HalfMultiplierRegex, RegexFlags);
 
         private static readonly Regex DayTypeRegex =
-            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DayTypeRegex, RegexFlags);
 
         private static readonly Regex WeekTypeRegex =
-            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
 
         private static readonly Regex WeekendTypeRegex =
-            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
 
         private static readonly Regex MonthTypeRegex =
-            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
 
         private static readonly Regex QuarterTypeRegex =
-            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
 
         private static readonly Regex YearTypeRegex =
-            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.YearTypeRegex, RegexFlags);
 
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

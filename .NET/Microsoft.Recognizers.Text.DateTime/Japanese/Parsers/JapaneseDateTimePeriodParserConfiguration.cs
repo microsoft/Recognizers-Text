@@ -16,13 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
+        public static readonly Regex MORegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
+        public static readonly Regex AFRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
+        public static readonly Regex EVRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+        public static readonly Regex NIRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

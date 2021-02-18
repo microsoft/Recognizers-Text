@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         public IntegerExtractor(KoreanNumberExtractorMode mode = KoreanNumberExtractorMode.Default)
         {
+            // Do not use Regex Cache here, as we use it as the key in this dictionary
+
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {

@@ -10,15 +10,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.SetUnitRegex, RegexFlags);
+        public static readonly Regex UnitRegex = RegexCache.Get(DateTimeDefinitions.SetUnitRegex, RegexFlags);
 
-        public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.SetEachUnitRegex, RegexFlags);
+        public static readonly Regex EachUnitRegex = RegexCache.Get(DateTimeDefinitions.SetEachUnitRegex, RegexFlags);
 
-        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.SetEachPrefixRegex, RegexFlags);
+        public static readonly Regex EachPrefixRegex = RegexCache.Get(DateTimeDefinitions.SetEachPrefixRegex, RegexFlags);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags);
+        public static readonly Regex LastRegex = RegexCache.Get(DateTimeDefinitions.SetLastRegex, RegexFlags);
 
-        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.SetEachDayRegex, RegexFlags);
+        public static readonly Regex EachDayRegex = RegexCache.Get(DateTimeDefinitions.SetEachDayRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

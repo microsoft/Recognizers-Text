@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
-        public static readonly Regex TimeZoneEndRegex = new Regex(TimeZoneDefinitions.TimeZoneEndRegex, RegexOptions.Singleline);
+        public static readonly Regex TimeZoneEndRegex = RegexCache.Get(TimeZoneDefinitions.TimeZoneEndRegex, RegexOptions.Singleline);
 
         // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
         public static int ComputeMinutes(string utcOffset)

@@ -7,22 +7,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
     public class HindiDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
-           new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+           RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AmRegex, RegexFlags);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PmRegex, RegexFlags);
 
         public static readonly Regex RangePrefixRegex =
-            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
 
         public static readonly Regex[] RelativePrefixList =
         {
@@ -37,10 +37,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.OrRegex, RegexFlags);
 
         private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DayRegex, RegexFlags);
 
         public HindiDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)

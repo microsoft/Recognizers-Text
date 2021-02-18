@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     public class DutchTimeZoneExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
         public static readonly Regex DirectUtcRegex =
-            new Regex(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RegexCache.Get(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly List<string> AbbreviationsList =
             new List<string>(TimeZoneDefinitions.AbbreviationsList);
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             TimeZoneUtility.BuildMatcherFromLists(AbbreviationsList, FullNameList);
 
         public static readonly Regex LocationTimeSuffixRegex =
-            new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RegexCache.Get(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly StringMatcher LocationMatcher = new StringMatcher();
 

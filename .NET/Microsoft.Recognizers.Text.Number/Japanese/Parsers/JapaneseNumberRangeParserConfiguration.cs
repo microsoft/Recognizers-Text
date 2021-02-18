@@ -18,12 +18,12 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
             NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(config));
 
-            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
-            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
-            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);
-            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexFlags);
-            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags);
-            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags);
+            MoreOrEqual = RegexCache.Get(NumbersDefinitions.MoreOrEqual, RegexFlags);
+            LessOrEqual = RegexCache.Get(NumbersDefinitions.LessOrEqual, RegexFlags);
+            MoreOrEqualSuffix = RegexCache.Get(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);
+            LessOrEqualSuffix = RegexCache.Get(NumbersDefinitions.LessOrEqualSuffix, RegexFlags);
+            MoreOrEqualSeparate = RegexCache.Get(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags);
+            LessOrEqualSeparate = RegexCache.Get(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags);
         }
 
         public CultureInfo CultureInfo { get; private set; }

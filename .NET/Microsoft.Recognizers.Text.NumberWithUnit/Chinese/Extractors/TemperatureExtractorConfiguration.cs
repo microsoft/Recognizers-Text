@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
+            RegexCache.Get(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
 
         public TemperatureExtractorConfiguration()
             : this(new CultureInfo(Culture.Chinese))

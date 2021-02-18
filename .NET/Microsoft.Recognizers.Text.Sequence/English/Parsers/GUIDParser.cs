@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static string pureDigitRegex = @"^\d*$";
         private static string formatRegex = @"-";
 
-        private static readonly Regex GuidElementRegex = new Regex(BaseGUID.GUIDRegexElement, RegexOptions.Compiled);
+        private static readonly Regex GuidElementRegex = RegexCache.Get(BaseGUID.GUIDRegexElement, RegexOptions.Compiled);
 
         public static double ScoreGUID(string textGUID)
         {
@@ -27,8 +27,8 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 int startIndex = elementMatch.Groups[1].Index;
                 string guidElement = elementMatch.Groups[1].Value;
                 score -= startIndex == 0 ? noBoundaryPenalty : 0;
-                score -= Regex.IsMatch(guidElement, formatRegex) ? 0 : noFormatPenalty;
-                score -= Regex.IsMatch(textGUID, pureDigitRegex) ? pureDigitPenalty : 0;
+                score -= RegexCache.IsMatch(guidElement, formatRegex) ? 0 : noFormatPenalty;
+                score -= RegexCache.IsMatch(textGUID, pureDigitRegex) ? pureDigitPenalty : 0;
             }
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);

@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.Choice.Arabic
     public class ArabicBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
-            new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
+            RegexCache.Get(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public static readonly Regex FalseRegex =
-            new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
+            RegexCache.Get(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public static readonly Regex TokenRegex =
-            new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
+            RegexCache.Get(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {

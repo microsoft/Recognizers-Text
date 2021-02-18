@@ -18,15 +18,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexFlags),
+                    RegexCache.Get(DateTimeDefinitions.TimeRegexes1, RegexFlags),
                     TimeType.CjkTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexFlags),
+                    RegexCache.Get(DateTimeDefinitions.TimeRegexes2, RegexFlags),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexFlags),
+                    RegexCache.Get(DateTimeDefinitions.TimeRegexes3, RegexFlags),
                     TimeType.LessTime
                 },
             };

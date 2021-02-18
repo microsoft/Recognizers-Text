@@ -14,8 +14,8 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
         public MergedNumberExtractor(NumberMode mode, NumberOptions options)
         {
             NumberExtractor = Hindi.NumberExtractor.GetInstance(mode, options);
-            RoundNumberIntegerRegexWithLocks = new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
-            ConnectorRegex = new Regex(NumbersDefinitions.ConnectorRegex, RegexFlags);
+            RoundNumberIntegerRegexWithLocks = RegexCache.Get(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags);
+            ConnectorRegex = RegexCache.Get(NumbersDefinitions.ConnectorRegex, RegexFlags);
         }
 
         public sealed override BaseNumberExtractor NumberExtractor { get; set; }

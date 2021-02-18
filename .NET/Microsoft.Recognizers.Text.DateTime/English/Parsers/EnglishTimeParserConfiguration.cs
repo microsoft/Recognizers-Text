@@ -13,13 +13,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NightRegex, RegexFlags);
 
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)

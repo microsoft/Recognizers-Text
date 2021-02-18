@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                    ambiguityBuilder.Add(RegexCache.Get(item.Key, RegexFlags), RegexCache.Get(item.Value, RegexFlags));
                 }
             }
 

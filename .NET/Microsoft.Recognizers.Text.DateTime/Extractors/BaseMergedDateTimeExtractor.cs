@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
-        private static readonly Regex NumberOrConnectorRegex = new Regex(@"^[0-9-]+$", RegexOptions.Compiled);
+        private static readonly Regex NumberOrConnectorRegex = RegexCache.Get(@"^[0-9-]+$", RegexOptions.Compiled);
 
         private readonly IMergedExtractorConfiguration config;
 

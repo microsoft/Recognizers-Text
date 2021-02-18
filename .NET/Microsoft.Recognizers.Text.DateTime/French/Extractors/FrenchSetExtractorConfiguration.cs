@@ -11,29 +11,29 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
         public static readonly Regex SetUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
 
         // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement'
         public static readonly Regex PeriodicRegex =
-            new Regex(DateTimeDefinitions.PeriodicRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PeriodicRegex, RegexFlags);
 
         public static readonly Regex EachUnitRegex =
-            new Regex(DateTimeDefinitions.EachUnitRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.EachUnitRegex, RegexFlags);
 
         public static readonly Regex EachPrefixRegex =
-            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.EachPrefixRegex, RegexFlags);
 
         public static readonly Regex EachDayRegex =
-            new Regex(DateTimeDefinitions.EachDayRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.EachDayRegex, RegexFlags);
 
         public static readonly Regex SetLastRegex =
-            new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SetLastRegex, RegexFlags);
 
         public static readonly Regex SetWeekDayRegex =
-            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SetWeekDayRegex, RegexFlags);
 
         public static readonly Regex SetEachRegex =
-            new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.SetEachRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

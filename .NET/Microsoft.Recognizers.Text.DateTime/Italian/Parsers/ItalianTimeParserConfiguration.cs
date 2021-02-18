@@ -11,10 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            RegexCache.Get(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            RegexCache.Get(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
         public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

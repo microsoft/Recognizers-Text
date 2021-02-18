@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex PluralTokenRegex =
-            new Regex(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PluralTokenRegex, RegexFlags);
 
         public HindiTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
 
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
+            NegativeNumberTermsRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+            RelativeReferenceRegex = RegexCache.Get(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
             Options = options;
 
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                    ambiguityBuilder.Add(RegexCache.Get(item.Key, RegexFlags), RegexCache.Get(item.Value, RegexFlags));
                 }
             }
 

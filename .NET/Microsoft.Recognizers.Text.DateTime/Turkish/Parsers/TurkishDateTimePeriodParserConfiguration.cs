@@ -8,16 +8,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public class TurkishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
 
         public static readonly Regex AfternoonStartEndRegex =
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
 
         public static readonly Regex EveningStartEndRegex =
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
 
         public static readonly Regex NightStartEndRegex =
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

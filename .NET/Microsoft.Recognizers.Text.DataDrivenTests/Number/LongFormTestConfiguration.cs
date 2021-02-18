@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             this.CardinalNumberMap = ImmutableDictionary<string, long>.Empty;
             this.OrdinalNumberMap = ImmutableDictionary<string, long>.Empty;
             this.RoundNumberMap = ImmutableDictionary<string, long>.Empty;
-            this.DigitalNumberRegex = new Regex(
+            this.DigitalNumberRegex = RegexCache.Get(
                 @"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))", RegexOptions.Singleline);
         }
 
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; }
 
         // Test-specific initialization: the Regex matches nothing.
-        public Regex NegativeNumberSignRegex { get; } = new Regex(@"[^\s\S]");
+        public Regex NegativeNumberSignRegex { get; } = RegexCache.Get(@"[^\s\S]");
 
         public bool IsCompoundNumberLanguage { get; }
 

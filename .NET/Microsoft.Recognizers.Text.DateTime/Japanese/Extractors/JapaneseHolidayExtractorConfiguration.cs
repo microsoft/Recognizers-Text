@@ -7,12 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public class JapaneseHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex LunarHolidayRegex =
-            new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegexList1, RegexFlags),
-            new Regex(DateTimeDefinitions.HolidayRegexList2, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegexList1, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegexList2, RegexFlags),
             LunarHolidayRegex,
         };
 

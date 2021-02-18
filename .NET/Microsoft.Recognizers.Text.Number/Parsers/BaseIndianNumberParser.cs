@@ -545,7 +545,7 @@ namespace Microsoft.Recognizers.Text.Number
                 textNumberPattern = @"(?<=\b)(" + singleIntFrac + @")(?=\b)";
             }
 
-            return new Regex(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
+            return RegexCache.Get(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
         }
     }
 }

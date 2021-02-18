@@ -8,8 +8,8 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         public EnglishIpExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            Ipv4Regex = new Regex(BaseIp.Ipv4Regex, RegexOptions.Compiled);
-            Ipv6Regex = new Regex(BaseIp.Ipv6Regex, RegexOptions.Compiled);
+            Ipv4Regex = RegexCache.Get(BaseIp.Ipv4Regex, RegexOptions.Compiled);
+            Ipv6Regex = RegexCache.Get(BaseIp.Ipv6Regex, RegexOptions.Compiled);
         }
 
     }

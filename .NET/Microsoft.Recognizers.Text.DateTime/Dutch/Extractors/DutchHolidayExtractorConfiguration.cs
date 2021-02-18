@@ -8,10 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     public class DutchHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.YearRegex, RegexFlags);
 
         public static readonly Regex H =
-            new Regex(DateTimeDefinitions.HolidayRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.HolidayRegex, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {

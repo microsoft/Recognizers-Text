@@ -7,12 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class ChineseHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
 
-        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+        public static readonly Regex LunarHolidayRegex = RegexCache.Get(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegexList1, RegexFlags),
-            new Regex(DateTimeDefinitions.HolidayRegexList2, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegexList1, RegexFlags),
+            RegexCache.Get(DateTimeDefinitions.HolidayRegexList2, RegexFlags),
             LunarHolidayRegex,
         };
 

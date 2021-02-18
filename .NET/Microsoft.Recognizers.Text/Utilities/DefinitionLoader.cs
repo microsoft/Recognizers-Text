@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text;
 
 namespace Microsoft.Recognizers.Definitions.Utilities
 {
@@ -16,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions.Utilities
                 {
                     if (!"null".Equals(item.Key, StringComparison.Ordinal))
                     {
-                        ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
+                        ambiguityFiltersDict.Add(RegexCache.Get(item.Key, RegexOptions.Singleline), RegexCache.Get(item.Value, RegexOptions.Singleline));
                     }
                 }
             }

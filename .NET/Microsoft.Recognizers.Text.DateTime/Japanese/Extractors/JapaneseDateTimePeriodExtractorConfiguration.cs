@@ -13,35 +13,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
+        public static readonly Regex TillRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
+        public static readonly Regex PrepositionRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
 
-        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
+        public static readonly Regex HourRegex = RegexCache.Get(DateTimeDefinitions.HourRegex, RegexFlags);
 
-        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
+        public static readonly Regex HourNumRegex = RegexCache.Get(DateTimeDefinitions.HourNumRegex, RegexFlags);
 
-        public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexFlags);
+        public static readonly Regex ZhijianRegex = RegexCache.Get(DateTimeDefinitions.ZhijianRegex, RegexFlags);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
+        public static readonly Regex ThisRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags);
+        public static readonly Regex LastRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags);
+        public static readonly Regex NextRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags);
 
-        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
+        public static readonly Regex TimeOfDayRegex = RegexCache.Get(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
-        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
+        public static readonly Regex SpecificTimeOfDayRegex = RegexCache.Get(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+        public static readonly Regex UnitRegex = RegexCache.Get(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
-        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexFlags);
+        public static readonly Regex FollowedUnit = RegexCache.Get(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexFlags);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
+        public static readonly Regex NumberCombinedWithUnit = RegexCache.Get(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
 
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
+        public static readonly Regex PastRegex = RegexCache.Get(DateTimeDefinitions.PastRegex, RegexFlags);
 
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
+        public static readonly Regex FutureRegex = RegexCache.Get(DateTimeDefinitions.FutureRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

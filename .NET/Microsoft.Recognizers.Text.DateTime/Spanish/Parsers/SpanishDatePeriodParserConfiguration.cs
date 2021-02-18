@@ -11,31 +11,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     {
         // TODO: config this according to English
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex NextSuffixRegex =
-            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
 
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex PreviousSuffixRegex =
-            new Regex(DateTimeDefinitions.PreviousSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.PreviousSuffixRegex, RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         public static readonly Regex AfterNextSuffixRegex =
-            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeSuffixRegex =
-            new Regex(DateTimeDefinitions.RelativeSuffixRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RelativeSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
         public static readonly Regex AmbiguousPointRangeRegex =
             new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             CenturySuffixRegex = SpanishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = SpanishDatePeriodExtractorConfiguration.NowRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
-            TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
+            TodayNowRegex = RegexCache.Get(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class BaseNumberExtractor : IExtractor
     {
         public static readonly Regex CurrencyRegex =
-            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
+            RegexCache.Get(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
 
         protected static readonly ResultsCache<ExtractResult> ResultsCache = new ResultsCache<ExtractResult>(4);
 
@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Text.Number
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-            return new Regex(regexDefinition, flags);
+            return RegexCache.Get(regexDefinition, flags);
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)

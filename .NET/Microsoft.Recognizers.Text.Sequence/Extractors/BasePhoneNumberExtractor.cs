@@ -9,11 +9,11 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BasePhoneNumberExtractor : BaseSequenceExtractor
     {
-        private static readonly Regex InternationalDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
+        private static readonly Regex InternationalDialingPrefixRegex = RegexCache.Get(BasePhoneNumbers.InternationDialingPrefixRegex);
 
-        private static readonly Regex PreCheckPhoneNumberRegex = new Regex(BasePhoneNumbers.PreCheckPhoneNumberRegex, RegexOptions.Compiled);
+        private static readonly Regex PreCheckPhoneNumberRegex = RegexCache.Get(BasePhoneNumbers.PreCheckPhoneNumberRegex, RegexOptions.Compiled);
 
-        private static readonly Regex SSNFilterRegex = new Regex(BasePhoneNumbers.SSNFilterRegex, RegexOptions.Compiled);
+        private static readonly Regex SSNFilterRegex = RegexCache.Get(BasePhoneNumbers.SSNFilterRegex, RegexOptions.Compiled);
 
         private PhoneNumberConfiguration config;
 
@@ -28,43 +28,43 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.GeneralPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.BRPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_BR
                 },
                 {
-                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.UKPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.DEPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_DE
                 },
                 {
-                    new Regex(BasePhoneNumbers.USPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.USPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_US
                 },
                 {
-                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.CNPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
-                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.DKPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_DK
                 },
                 {
-                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.ITPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.NLPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
-                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    RegexCache.Get(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_SPECIAL
                 },
             };
@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                             if (!char.IsNumber(charGap) && !char.IsWhiteSpace(charGap))
                             {
                                 // check if the extracted string has a non-digit string before "-".
-                                var flag = Regex.IsMatch(text.Substring(0, (int)(er.Start - 2)), @"^[^0-9]+$");
+                                var flag = RegexCache.IsMatch(text.Substring(0, (int)(er.Start - 2)), @"^[^0-9]+$");
 
                                 // Handle cases like "91a-677-0060".
                                 if (char.IsLower(charGap) && !flag)
@@ -228,7 +228,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         private static bool CheckFormattedPhoneNumber(string phoneNumberText)
         {
-            return Regex.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
+            return RegexCache.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
         }
 
         private static int CountDigits(string candidateString)

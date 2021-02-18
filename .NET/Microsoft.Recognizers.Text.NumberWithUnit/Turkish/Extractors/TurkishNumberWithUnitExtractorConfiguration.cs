@@ -15,10 +15,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
     public abstract class TurkishNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
         private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+            RegexCache.Get(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
 
         private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+            RegexCache.Get(BaseUnits.PmNonUnitRegex, RegexOptions.None);
 
         protected TurkishNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {

@@ -22,57 +22,57 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             {
                 {
                     // between...and...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags),
                     NumberRangeConstants.TWONUMBETWEEN
                 },
                 {
                     // more than ... less than ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // less than ... more than ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // from ... to/~/- ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags),
                     NumberRangeConstants.TWONUMTILL
                 },
                 {
                     // more/greater/higher than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // 30 and/or greater/higher
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {
                     // 30 and/or less/smaller/lower
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {
                     // equal to ...
-                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
                     NumberRangeConstants.EQUAL
                 },
                 {
                     // equal to 30 or more than, larger than 30 or equal to ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
                     // equal to 30 or less, smaller than 30 or equal ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags),
+                    RegexCache.Get(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags),
                     NumberRangeConstants.LESS
                 },
             };
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             Regexes = regexes.ToImmutableDictionary();
 
             AmbiguousFractionConnectorsRegex =
-                new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+                RegexCache.Get(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
         }
 
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }

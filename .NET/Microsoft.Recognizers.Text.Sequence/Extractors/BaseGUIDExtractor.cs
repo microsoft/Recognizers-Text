@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseGUID.GUIDRegex),
+                    RegexCache.Get(BaseGUID.GUIDRegex),
                     Constants.GUID_REGEX
                 },
             };

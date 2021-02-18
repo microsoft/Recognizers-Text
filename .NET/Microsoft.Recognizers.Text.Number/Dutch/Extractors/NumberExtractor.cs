@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 
             keyPrefix = string.Intern(ExtractType + "_" + config.Options + "_" + config.Mode + "_" + config.Culture);
 
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
+            NegativeNumberTermsRegex = RegexCache.Get(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                    ambiguityBuilder.Add(RegexCache.Get(item.Key, RegexFlags), RegexCache.Get(item.Value, RegexFlags));
                 }
             }
 

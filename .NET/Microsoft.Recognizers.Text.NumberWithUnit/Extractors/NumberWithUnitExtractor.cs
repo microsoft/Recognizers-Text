@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         private readonly StringMatcher prefixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
 
         private readonly Regex separateRegex;
-        private readonly Regex singleCharUnitRegex = new Regex(BaseUnits.SingleCharUnitRegex,
+        private readonly Regex singleCharUnitRegex = RegexCache.Get(BaseUnits.SingleCharUnitRegex,
                                                                RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         private readonly int maxPrefixMatchLen;
@@ -424,7 +424,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
                 var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
-                var regex = new Regex(pattern, options);
+                var regex = RegexCache.Get(pattern, options);
                 regexes.Add(regex);
             }
 
@@ -485,7 +485,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
             var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
-            var regex = new Regex(pattern, options);
+            var regex = RegexCache.Get(pattern, options);
             return regex;
         }
 

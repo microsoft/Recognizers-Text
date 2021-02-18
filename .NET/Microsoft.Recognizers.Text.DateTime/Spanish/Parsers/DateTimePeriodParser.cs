@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
         public static readonly Regex ConnectorRegex =
-            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+            RegexCache.Get(DateTimeDefinitions.ConnectorRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
