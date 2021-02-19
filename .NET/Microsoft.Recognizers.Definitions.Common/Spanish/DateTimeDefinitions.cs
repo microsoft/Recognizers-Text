@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex}|\s*\bh\b)";
       public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"\b(({TimePrefix}\s+)?{TimeRegexWithDotConnector}(\s*({DescRegex}|{TimeSuffix}|\bh\b))|((las\s+{TimeRegexWithDotConnector})(?!\s*(por\s+cien(to)?|%))(\s*({DescRegex}|{TimeSuffix}|\bh\b)|\b)))";
-      public static readonly string TimeRegex4 = $@"\b(({DescRegex}?)|({BasicTime}?)({DescRegex}?)){TimePrefix}(\s*({HourNumRegex}|{BaseDateTime.HourRegex}))?(\s+{TensTimeRegex}(\s*(y\s+)?{MinuteNumRegex})?)?(\s*({OclockRegex}|{DescRegex})|\b)";
+      public static readonly string TimeRegex4 = $@"\b(({DescRegex}?)|({BasicTime}\s*)?({DescRegex}?)){TimePrefix}(\s*({HourNumRegex}|{BaseDateTime.HourRegex}))?(\s+{TensTimeRegex}(\s*(y\s+)?{MinuteNumRegex})?)?(\s*({OclockRegex}|{DescRegex})|\b)";
       public static readonly string TimeRegex5 = $@"\b({TimePrefix}|{BasicTime}{TimePrefix})\s+(\s*{DescRegex})?{BasicTime}?\s*{TimeSuffix}\b";
       public static readonly string TimeRegex6 = $@"({BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b)";
       public static readonly string TimeRegex7 = $@"\b{TimeSuffix}\s+a\s+las\s+{BasicTime}((\s*{DescRegex})|\b)";
