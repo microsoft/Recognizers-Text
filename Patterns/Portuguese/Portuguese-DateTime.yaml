@@ -197,7 +197,7 @@ DateYearRegex: !nestedRegex
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   # (domingo,)? 5 de Abril
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}?((\s*(de)|[/\\\.\-])\s*)?{MonthRegex}\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?(dia\s+)?{DayRegex}?((\s*(de)|[/\\\.\-])\s*)?{MonthRegex}\b
   references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor2: !nestedRegex
   # (domingo,)? 5 de Abril 5, 2016
@@ -334,7 +334,7 @@ TimeRegex9: !nestedRegex
   # onze (e)? vinte e cinco
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(e\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
-TimeRegex10: !simpleRegex
+TimeRegex10: !nestedRegex
   def: '{TimeTokenPrefixRegex}(madrugada|manh[ãa])'
   references: [ TimeTokenPrefixRegex ]
 TimeRegex11: !nestedRegex
@@ -409,7 +409,7 @@ DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 PeriodTimeOfDayWithDateRegex: !simpleRegex
-  def: \b((e|[àa]|em|na|no|ao|pel[ao]|de)\s+)?(?<timeOfDay>manh[ãa]|madrugada|(passado\s+(o\s+)?)?meio\s+dia|tarde|noite)\b
+  def: \b((e|[àa]|em|na|no|ao|pel[ao]|de)\s+)?(?<timeOfDay>manh[ãa]|madrugada|(passado\s+(o\s+)?)?meio\s+dia|tarde|noite)(\sdo)?\b
 RelativeTimeUnitRegex: !nestedRegex
   def: ({PastRegex}|{FutureRegex})\s+{UnitRegex}|{UnitRegex}\s+({PastRegex}|{FutureRegex})
   references: [ PastRegex, FutureRegex, UnitRegex ]

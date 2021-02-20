@@ -289,29 +289,54 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
         endMin = 0;
         boolean result = false;
 
-        // TODO: modify it according to the coresponding function in English part
-        if (trimmedText.endsWith("madrugada")) {
-            timeStr = "TDA";
+        if (SpanishDateTime.EarlyMorningTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+            timeStr = Constants.EarlyMorning;
             beginHour = 4;
             endHour = 8;
             result = true;
-        } else if (trimmedText.endsWith("mañana")) {
-            timeStr = "TMO";
+        } else if (SpanishDateTime.MorningTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+            timeStr = Constants.Morning;
             beginHour = 8;
             endHour = Constants.HalfDayHourCount;
             result = true;
-        } else if (trimmedText.contains("pasado mediodia") || trimmedText.contains("pasado el mediodia")) {
-            timeStr = "TAF";
+        } else if (SpanishDateTime.AfternoonTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+            timeStr = Constants.Afternoon;
             beginHour = Constants.HalfDayHourCount;
             endHour = 16;
             result = true;
-        } else if (trimmedText.endsWith("tarde")) {
-            timeStr = "TEV";
+        } else if (SpanishDateTime.EveningTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+            timeStr = Constants.Evening;
             beginHour = 16;
             endHour = 20;
             result = true;
-        } else if (trimmedText.endsWith("noche")) {
-            timeStr = "TNI";
+        } else if (SpanishDateTime.NightTermList.stream().anyMatch(o -> trimmedText.endsWith(o))) {
+            timeStr = Constants.Night;
+            beginHour = 20;
+            endHour = 23;
+            endMin = 59;
+            result = true;
+        } else if (SpanishDateTime.EarlyMorningTermList.stream().anyMatch(o -> trimmedText.startsWith(o))) {
+            timeStr = Constants.EarlyMorning;
+            beginHour = 4;
+            endHour = 8;
+            result = true;
+        } else if (SpanishDateTime.MorningTermList.stream().anyMatch(o -> trimmedText.startsWith(o))) {
+            timeStr = Constants.Morning;
+            beginHour = 8;
+            endHour = Constants.HalfDayHourCount;
+            result = true;
+        } else if (SpanishDateTime.AfternoonTermList.stream().anyMatch(o -> trimmedText.startsWith(o))) {
+            timeStr = Constants.Afternoon;
+            beginHour = Constants.HalfDayHourCount;
+            endHour = 16;
+            result = true;
+        } else if (SpanishDateTime.EveningTermList.stream().anyMatch(o -> trimmedText.startsWith(o))) {
+            timeStr = Constants.Evening;
+            beginHour = 16;
+            endHour = 20;
+            result = true;
+        } else if (SpanishDateTime.NightTermList.stream().anyMatch(o -> trimmedText.startsWith(o))) {
+            timeStr = Constants.Night;
             beginHour = 20;
             endHour = 23;
             endMin = 59;

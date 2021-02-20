@@ -225,7 +225,7 @@ public class PortugueseDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
-    public static final String DateExtractor1 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?{MonthRegex}\\b"
+    public static final String DateExtractor1 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?(dia\\s+)?{DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?{MonthRegex}\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
@@ -323,11 +323,26 @@ public class PortugueseDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{BaseDateTime.SecondRegex}", BaseDateTime.SecondRegex);
 
-    public static final String AtRegex = "\\b((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?\\b"
+    public static final String TimeTokenPrefixRegex = "(?<=((\\b([àa]|ao)|na|de|da|pela|as)\\s+))";
+
+    public static final String MidnightRegex = "(?<midnight>meia\\s*noite)";
+
+    public static final String MidafternoonRegex = "(?<midafternoon>meio\\s*da\\s*tarde)";
+
+    public static final String MiddayRegex = "{TimeTokenPrefixRegex}(?<midday>meio\\s*dia)"
+            .replace("{TimeTokenPrefixRegex}", TimeTokenPrefixRegex);
+
+    public static final String MidTimeRegex = "(?<mid>({MidnightRegex}|{MidafternoonRegex}|{MiddayRegex}))"
+            .replace("{MidnightRegex}", MidnightRegex)
+            .replace("{MidafternoonRegex}", MidafternoonRegex)
+            .replace("{MiddayRegex}", MiddayRegex);
+
+    public static final String AtRegex = "\\b((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)|{MidTimeRegex})(\\s+{OclockRegex})?\\b"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
-            .replace("{OclockRegex}", OclockRegex);
+            .replace("{OclockRegex}", OclockRegex)
+            .replace("{MidTimeRegex}", MidTimeRegex);
 
     public static final String ConnectNumRegex = "({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*{DescRegex})"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
@@ -389,7 +404,8 @@ public class PortugueseDateTime {
             .replace("{TensTimeRegex}", TensTimeRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
-    public static final String TimeRegex10 = "(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)";
+    public static final String TimeRegex10 = "{TimeTokenPrefixRegex}(madrugada|manh[ãa])"
+            .replace("{TimeTokenPrefixRegex}", TimeTokenPrefixRegex);
 
     public static final String TimeRegex11 = "\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
@@ -407,7 +423,7 @@ public class PortugueseDateTime {
 
     public static final String SuffixRegex = "^\\s*((e|a|em|por|pelo|pela|no|na|de)\\s+)?(manh[ãa]|madrugada|meio\\s*dia|tarde|noite)\\b";
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\\s+do|ap[óo]s\\s+o)\\s+(almo[çc]o|meio dia|meio-dia)))\\b";
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|no\\s+meio\\s+do\\s+dia|((depois\\s+do|ap[óo]s\\s+o)\\s+(almo[çc]o|meio dia|meio-dia)))\\b";
 
     public static final String SpecificTimeOfDayRegex = "\\b(((((a)?\\s+|[nd]?es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\\s+)?{TimeOfDayRegex}))\\b"
             .replace("{TimeOfDayRegex}", TimeOfDayRegex);
@@ -470,7 +486,7 @@ public class PortugueseDateTime {
     public static final String DateTimePeriodNumberCombinedWithUnit = "\\b(?<num>\\d+(\\.\\d*)?)\\s*{TimeUnitRegex}"
             .replace("{TimeUnitRegex}", TimeUnitRegex);
 
-    public static final String PeriodTimeOfDayWithDateRegex = "\\b((e|[àa]|em|na|no|ao|pel[ao]|de)\\s+)?(?<timeOfDay>manh[ãa]|madrugada|(passado\\s+(o\\s+)?)?meio\\s+dia|tarde|noite)\\b";
+    public static final String PeriodTimeOfDayWithDateRegex = "\\b((e|[àa]|em|na|no|ao|pel[ao]|de)\\s+)?(?<timeOfDay>manh[ãa]|madrugada|(passado\\s+(o\\s+)?)?meio\\s+dia|tarde|noite)(\\sdo)?\\b";
 
     public static final String RelativeTimeUnitRegex = "({PastRegex}|{FutureRegex})\\s+{UnitRegex}|{UnitRegex}\\s+({PastRegex}|{FutureRegex})"
             .replace("{PastRegex}", PastRegex)
@@ -938,6 +954,8 @@ public class PortugueseDateTime {
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");
 
     public static final List<String> MorningTermList = Arrays.asList("manha", "manhã");
+
+    public static final List<String> MidDayTermList = Arrays.asList("no meio do dia");
 
     public static final List<String> AfternoonTermList = Arrays.asList("passado o meio dia", "depois do meio dia");
 

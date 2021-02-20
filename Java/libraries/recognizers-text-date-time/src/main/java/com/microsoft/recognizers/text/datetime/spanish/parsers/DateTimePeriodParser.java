@@ -80,7 +80,14 @@ public class DateTimePeriodParser extends BaseDateTimePeriodParser {
             List<ExtractResult> ers = this.config.getDateExtractor().extract(beforeStr, referenceTime);
 
             if (ers.size() == 0) {
-                return ret;
+                String afterStr = trimmedText.substring(match.get().index + startIndex + match.get().length).trim();
+                ers = this.config.getDateExtractor().extract(afterStr, referenceTime);
+
+                if (ers.size() == 0) {
+                    return ret;
+                }
+
+                beforeStr = afterStr;
             }
 
             DateTimeParseResult pr = this.config.getDateParser().parse(ers.get(0), referenceTime);
