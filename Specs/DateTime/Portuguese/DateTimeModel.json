@@ -1364,6 +1364,152 @@
         "Text": "meio dia",
         "Start": 12,
         "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei de tarde",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 12,
+        "End": 16,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "da noite",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start":3,
+        "End": 7,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meio da tarde",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "meio da tarde",
+        "Start":0,
+        "End": 12,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "type": "time",
+              "value": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meio dia",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "meio dia",
+        "Start":0,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P0.5D",
+              "type": "duration",
+              "value": "43200"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meia noite",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "meia noite",
+        "Start":0,
+        "End": 9,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "no meio do dia",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "no meio do dia",
+        "Start":0,
+        "End": 13,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -1379,24 +1525,23 @@
     ]
   },
   {
-    "Input": "Voltarei da tarde",
+    "Input": "4 da tarde",
     "Context": {
       "ReferenceDateTime": "2021-01-15T18:00:00"
     },
     "NotSupported": "javascript,python",
     "Results": [
       {
-        "Text": "tarde",
-        "Start": 12,
-        "End": 16,
-        "TypeName": "datetimeV2.timerange",
+        "Text": "4 da tarde",
+        "Start":0,
+        "End": 9,
+        "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "TAF",
-              "type": "timerange",
-              "start": "12:00:00",
-              "end": "16:00:00"
+              "timex": "T16",
+              "type": "time",
+              "value": "16:00:00"
             }
           ]
         }
@@ -1404,24 +1549,30 @@
     ]
   },
   {
-    "Input": "Voltarei da noite",
+    "Input": "Lembre-se da noite do dia 21 de setembro",
     "Context": {
       "ReferenceDateTime": "2021-01-15T18:00:00"
     },
     "NotSupported": "javascript,python",
     "Results": [
       {
-        "Text": "noite",
-        "Start": 12,
-        "End": 16,
-        "TypeName": "datetimeV2.timerange",
+        "Text": "noite do dia 21 de setembro",
+        "Start": 13,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
-              "timex": "TNI",
-              "type": "timerange",
-              "start": "20:00:00",
-              "end": "23:59:59"
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2020-09-21 20:00:00",
+              "end": "2020-09-21 23:59:59"
+            },
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2021-09-21 20:00:00",
+              "end": "2021-09-21 23:59:59"
             }
           ]
         }

@@ -568,10 +568,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "de madrugada",
+        "Text": "madrugada",
         "Type": "time",
-        "Start": 9,
-        "Length": 12
+        "Start": 12,
+        "Length": 9
       }
     ]
   },
@@ -580,10 +580,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "na madrugada",
+        "Text": "madrugada",
         "Type": "time",
-        "Start": 9,
-        "Length": 12
+        "Start": 12,
+        "Length": 9
       }
     ]
   },
@@ -592,10 +592,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "de manhã",
+        "Text": "manhã",
         "Type": "time",
-        "Start": 9,
-        "Length": 8
+        "Start": 12,
+        "Length": 5
       }
     ]
   },
@@ -604,53 +604,46 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "pela manhã",
+        "Text": "manhã",
         "Type": "time",
-        "Start": 9,
-        "Length": 10
+        "Start": 14,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Voltarei ao meio dia",
     "NotSupported": "javascript, python",
-    "Results": []
+    "Results": [
+      {
+        "Text": "meio dia",
+        "Type": "time",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
   },
   {
     "Input": "Voltarei de meio dia",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "de meio dia",
+        "Text": "meio dia",
         "Type": "time",
-        "Start": 9,
-        "Length": 11
+        "Start": 12,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Voltarei a tarde",
     "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "a tarde",
-        "Type": "time",
-        "Start": 9,
-        "Length": 7
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voltarei a noite",
     "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "a noite",
-        "Type": "time",
-        "Start": 9,
-        "Length": 7
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voltarei 340pm",

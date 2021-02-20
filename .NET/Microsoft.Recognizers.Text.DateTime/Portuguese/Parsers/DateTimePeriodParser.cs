@@ -55,7 +55,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
                 if (ers.Count == 0)
                 {
-                    return ret;
+                    // prefix match
+                    var afterStr = trimmedText.Substring(match.Index + startIndex + match.Length).Trim();
+                    ers = this.Config.DateExtractor.Extract(afterStr, referenceTime);
+
+                    if (ers.Count == 0)
+                    {
+                        return ret;
+                    }
+
+                    beforeStr = afterStr;
                 }
 
                 var pr = this.Config.DateParser.Parse(ers[0], referenceTime);

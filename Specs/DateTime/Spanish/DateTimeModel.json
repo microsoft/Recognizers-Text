@@ -20564,5 +20564,36 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Recuerdas la noche del 21 de septiembre",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T18:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "noche del 21 de septiembre",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2020-09-21 20:00:00",
+              "end": "2020-09-21 23:59:59"
+            },
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2021-09-21 20:00:00",
+              "end": "2021-09-21 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

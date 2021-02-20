@@ -165,6 +165,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 endHour = 23;
                 endMin = 59;
             }
+            else if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)))
+            {
+                timeStr = Constants.EarlyMorning;
+                beginHour = 4;
+                endHour = 8;
+            }
+            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)))
+            {
+                timeStr = Constants.Morning;
+                beginHour = 8;
+                endHour = Constants.HalfDayHourCount;
+            }
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)))
+            {
+                timeStr = Constants.Afternoon;
+                beginHour = Constants.HalfDayHourCount;
+                endHour = 16;
+            }
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)))
+            {
+                timeStr = Constants.Evening;
+                beginHour = 16;
+                endHour = 20;
+            }
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal)))
+            {
+                timeStr = Constants.Night;
+                beginHour = 20;
+                endHour = 23;
+                endMin = 59;
+            }
             else
             {
                 timeStr = null;
