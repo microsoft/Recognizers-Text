@@ -48,8 +48,12 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
                 if (!lth ||
                     (lth.length != match.length && !(match.length == lth.length + 1 && match.value.endsWith(" "))))
                 {
-
-                    ret.push(new Token(match.index, match.index + match.length));
+                    // Check that the extracted time is not part of a decimal number (e.g. 123.24)
+                    if (!(match.index > 1 && (text.charAt(match.index - 1) == ',' ||
+                        text.charAt(match.index - 1) == '.') && !isNaN(text.charAt(match.index - 2) as any) && !isNaN(match.value.charAt(0) as any))) {
+                        
+                        ret.push(new Token(match.index, match.index + match.length));
+                    }
                 }
             });
         });

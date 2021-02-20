@@ -88,6 +88,12 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
 
             Match[] matches = RegExpUtility.getMatches(regex, text);
             for (Match match : matches) {
+                
+                // Check that the extracted time is not part of a decimal number (e.g. 123.24)
+                if (match.index > 1 && (text.charAt(match.index - 1) == ',' ||
+                        text.charAt(match.index - 1) == '.') && Character.isDigit(text.charAt(match.index - 2)) && Character.isDigit(match.value.charAt(0))) {
+                    continue;
+                }
 
                 // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
                 String lth = match.getGroup("lth").value;

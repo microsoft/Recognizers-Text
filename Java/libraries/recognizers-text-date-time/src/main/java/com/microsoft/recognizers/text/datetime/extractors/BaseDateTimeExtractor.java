@@ -128,6 +128,12 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
 
         Match[] matches = RegExpUtility.getMatches(this.config.getSimpleTimeOfTodayAfterRegex(), input);
         for (Match match : matches) {
+            // Check that the extracted time is not part of a decimal number (e.g. 123.24)
+            if (match.index > 1 && (input.charAt(match.index - 1) == ',' ||
+                    input.charAt(match.index - 1) == '.') && Character.isDigit(input.charAt(match.index - 2)) && Character.isDigit(match.value.charAt(0))) {
+                continue;
+            }
+            
             ret.add(new Token(match.index, match.index + match.length));
         }
 

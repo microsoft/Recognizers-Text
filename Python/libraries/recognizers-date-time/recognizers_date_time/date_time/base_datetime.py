@@ -329,6 +329,12 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
         matches: List[Match] = list(regex.finditer(
             self.config.simple_time_of_today_after_regex, source))
+
+        # Check that the extracted time is not part of a decimal number (e.g. 123.24)
+        for match in matches: 
+            if match.start() > 1 and (source[match.start() - 1] == ',' or source[match.start() - 1] == '.') and source[match.start() - 2].isdigit() and match.group()[0].isdigit():
+                matches.remove(match)
+
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
 

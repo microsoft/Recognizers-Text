@@ -105,6 +105,11 @@ class BaseTimeExtractor(DateTimeExtractor):
             # @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
             matches = list(filter(lambda match: self.lth_check(match), matches))
 
+            # Check that the extracted time is not part of a decimal number (e.g. 123.24)
+            for match in matches: 
+                if match.start() > 1 and (source[match.start() - 1] == ',' or source[match.start() - 1] == '.') and source[match.start() - 2].isdigit() and match.group()[0].isdigit():
+                    matches.remove(match)
+
             result.extend(map(lambda x: Token(x.start(), x.end()), matches))
 
         return result
