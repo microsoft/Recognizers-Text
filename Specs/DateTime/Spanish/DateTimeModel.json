@@ -20564,5 +20564,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "anoche a las 8 en punto",
+    "Context": {
+      "ReferenceDateTime": "2021-02-17T18:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "anoche a las 8 en punto",
+        "Start": 0,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-02-16T20",
+              "type": "datetime",
+              "value": "2021-02-16 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

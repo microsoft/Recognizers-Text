@@ -238,7 +238,7 @@ CurrencySuffixList: !dictionary
 #Manat
     Azerbaijani manat: aserbaidschan-manat|azn
     Turkmenistan manat: turkmenistan-manat|tmt
-    Manat: manat
+    Manat: manat|manats
     Qəpik: qəpik
 #Shilling
     Somali shilling: somalia-schilling|sh.so.|sos
@@ -259,7 +259,7 @@ CurrencySuffixList: !dictionary
     Maldivian rufiyaa: maledivischer rufiyaa|maledivische rufiyaa|maledivischen rufiyaa|mvr|.ރ
     Sri Lankan rupee: sri-lanka-rupie|sri-lanka-rupien|lkr|රු|ரூ
     Indonesian rupiah: indonesischer rupiah|indonesische rupiah|indonesischen rupiah|rupiah|perak|rp|idr
-    Rupee: rupie|rs
+    Rupee: rupie|rupien|rs
 #Krone
     Danish krone: dänische krone|dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk
     Norwegian krone: norwegische krone|norwegischen krone|norwegischer kronen|norwegische kronen|norwegischen kronen|nok
@@ -317,7 +317,7 @@ CurrencySuffixList: !dictionary
     Mexican peso: mexikanischer peso|mexikanische peso|mexikanischen peso|mxn
     Philippine peso: piso|philippinischer peso|philippinische peso|philippinischen peso|₱|php
     Uruguayan peso: uruguayischer peso|uruguayische peso|uruguayischen peso|uyu
-    Peso: peso
+    Peso: peso|pesos
     Centavo: centavos|centavo
 #Pound
     Alderney pound: alderney pfund|alderney £

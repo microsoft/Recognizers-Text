@@ -7,7 +7,7 @@ CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (?:hundred|thousand|million|billion|trillion|lakh|crore)
+  def: (?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?
 ZeroToNineIntegerRegex: !simpleRegex
   def: (?:three|seven|eight|four|five|zero|nine|one|two|six)
 TwoToNineIntegerRegex: !simpleRegex
@@ -239,7 +239,7 @@ WrittenFractionSeparatorTexts: [and]
 HalfADozenRegex: !simpleRegex
   def: half\s+a\s+dozen
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
@@ -279,8 +279,11 @@ CardinalNumberMap: !dictionary
     hundred: 100
     thousand: 1000
     million: 1000000
+    mln: 1000000
     billion: 1000000000
+    bln: 1000000000
     trillion: 1000000000000
+    tln: 1000000000000
     lakh: 100000
     crore: 10000000
 OrdinalNumberMap: !dictionary
@@ -360,8 +363,11 @@ RoundNumberMap: !dictionary
     hundred: 100
     thousand: 1000
     million: 1000000
+    mln: 1000000
     billion: 1000000000
+    bln: 1000000000
     trillion: 1000000000000
+    tln: 1000000000000
     lakh: 100000
     crore: 10000000
     hundredth: 100
