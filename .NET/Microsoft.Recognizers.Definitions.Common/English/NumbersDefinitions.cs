@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string LangMarker = @"Eng";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
-      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|billion|trillion|lakh|crore)";
+      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
       public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
       public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(minus|negative)\s+)";
@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"and" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"and" };
       public const string HalfADozenRegex = @"half\s+a\s+dozen";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"a", 1 },
@@ -152,8 +152,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"hundred", 100 },
             { @"thousand", 1000 },
             { @"million", 1000000 },
+            { @"mln", 1000000 },
             { @"billion", 1000000000 },
+            { @"bln", 1000000000 },
             { @"trillion", 1000000000000 },
+            { @"tln", 1000000000000 },
             { @"lakh", 100000 },
             { @"crore", 10000000 }
         };
@@ -233,8 +236,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"hundred", 100 },
             { @"thousand", 1000 },
             { @"million", 1000000 },
+            { @"mln", 1000000 },
             { @"billion", 1000000000 },
+            { @"bln", 1000000000 },
             { @"trillion", 1000000000000 },
+            { @"tln", 1000000000000 },
             { @"lakh", 100000 },
             { @"crore", 10000000 },
             { @"hundredth", 100 },

@@ -122,12 +122,12 @@ public class SpanishDateTimeParserConfiguration extends BaseOptionsConfiguration
         Matcher regexMatcher = SpanishDatePeriodParserConfiguration.previousPrefixRegex.matcher(trimmedText);
 
         int swift = 0;
-        if (regexMatcher.find()) {
-            swift = 1;
+        if (regexMatcher.find() || trimmedText.equals("anoche")) {
+            swift = -1;
         } else {
             regexMatcher = SpanishDatePeriodParserConfiguration.nextPrefixRegex.matcher(trimmedText);
             if (regexMatcher.find()) {
-                swift = -1;
+                swift = 1;
             }
         }
 

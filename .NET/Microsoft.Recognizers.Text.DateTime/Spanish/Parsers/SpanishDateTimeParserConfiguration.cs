@@ -153,7 +153,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
+            // @TODO move hardcoded values to resources file
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
+                trimmedText.StartsWith("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }
@@ -167,6 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool ContainsAmbiguousToken(string text, string matchedText)
         {
+            // @TODO move hardcoded values to resources file
             return text.Contains("esta mañana") && matchedText.Contains("mañana");
         }
     }

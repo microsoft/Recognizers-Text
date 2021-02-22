@@ -150,8 +150,8 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
             timex = 'PRESENT_REF'
         elif (
             source.endswith('posible') or source.endswith('pueda') or
-            source.endswith('puedas') or source.endswith(
-                'podamos') or source.endswith('puedan')
+            source.endswith('puedas') or source.endswith('podamos') or
+            source.endswith('puedan')
         ):
             timex = 'FUTURE_REF'
         elif source.endswith('mente'):
@@ -165,7 +165,7 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
         source = source.strip().lower()
         swift = 0
 
-        if self.previous_prefix_regex.search(source):
+        if self.previous_prefix_regex.search(source) or source == 'anoche':
             swift = -1
         elif self.next_prefix_regex.search(source):
             swift = 1
