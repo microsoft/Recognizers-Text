@@ -41,7 +41,7 @@ public class TestTimexRelativeConvert {
     }
 
     @Test
-    public void dataTypesRelativeConvertYesterdayCrossYearMonthBoundary() {
+    public void dataTypesRelativeConvertDateYesterdayCrossYearMonthBoundary() {
         TimexProperty timex = new TimexProperty("2017-12-31");
         LocalDateTime today = LocalDateTime.of(2018, 1, 1, 0, 0);
         Assert.assertEquals("yesterday", TimexRelativeConvert.convertTimexToStringRelative(timex, today));
@@ -153,7 +153,7 @@ public class TestTimexRelativeConvert {
     }
 
     @Test
-    public void dataTypesRelativeConvertThisWeek2() {
+    public void dataTypesRelativeConvertDateRangeThisWeek2() {
         TimexProperty timex = new TimexProperty("2017-W41");
         LocalDateTime today = LocalDateTime.of(2017, 10, 4, 0, 0);
         Assert.assertEquals("this week", TimexRelativeConvert.convertTimexToStringRelative(timex, today));

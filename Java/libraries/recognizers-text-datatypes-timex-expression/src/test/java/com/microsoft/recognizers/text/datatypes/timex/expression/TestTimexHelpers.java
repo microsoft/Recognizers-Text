@@ -78,6 +78,18 @@ public class TestTimexHelpers {
     }
 
     @Test
+    public void dataTypesHelpersDateRangeFromTimexWeek23() {
+        TimexProperty timex = new TimexProperty("2020-W23");
+        DateRange range = TimexHelpers.dateRangeFromTimex(timex);
+
+        LocalDateTime dateExpected = LocalDateTime.of(2020, 6, 1, 0, 0);
+        Assert.assertEquals(dateExpected, range.getStart());
+
+        dateExpected = LocalDateTime.of(2020, 6, 8, 0, 0);
+        Assert.assertEquals(dateExpected, range.getEnd());
+    }
+
+    @Test
     public void dataTypesHelpersTimeRangeFromTimex() {
         TimexProperty timex = new TimexProperty("(T14,T16,PT2H)");
         TimeRange range = TimexHelpers.timeRangeFromTimex(timex);

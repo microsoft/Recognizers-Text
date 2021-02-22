@@ -10,8 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalField;
-import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -256,84 +254,25 @@ public class TimexResolver {
     }
 
     private static Pair<String, String> yearDateRange(Integer year) {
-        return Pair.of(TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(year);
-                setMonth(1);
-                setDayOfMonth(1);
-            }
-        }), TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(year + 1);
-                setMonth(1);
-                setDayOfMonth(1);
-            }
-        }));
+        Pair<TimexProperty, TimexProperty> yearDateRange = TimexHelpers.yearDateRange(year);
+
+        return Pair.of(TimexValue.dateValue(yearDateRange.getLeft()), TimexValue.dateValue(yearDateRange.getRight()));
     }
 
     private static Pair<String, String> monthDateRange(Integer year, Integer month) {
-        return Pair.of(TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(year);
-                setMonth(month);
-                setDayOfMonth(1);
-            }
-        }), TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(month == 12 ? year + 1 : year);
-                setMonth(month == 12 ? 1 : month + 1);
-                setDayOfMonth(1);
-            }
-        }));
+        Pair<TimexProperty, TimexProperty> monthDateRange = TimexHelpers.monthDateRange(year, month);
+
+        return Pair.of(TimexValue.dateValue(monthDateRange.getLeft()), TimexValue.dateValue(monthDateRange.getRight()));
     }
 
     private static Pair<String, String> yearWeekDateRange(Integer year, Integer weekOfYear, Boolean isWeekend) {
-        LocalDateTime firstMondayInWeek = firstDateOfWeek(year, weekOfYear, Locale.ROOT);
+        Pair<TimexProperty, TimexProperty> yearWeekDateRange = TimexHelpers.yearWeekDateRange(year, weekOfYear, isWeekend);
 
-        LocalDateTime start = (isWeekend == null || isWeekend == false) ? firstMondayInWeek
-                : TimexDateHelpers.dateOfNextDay(DayOfWeek.SATURDAY, firstMondayInWeek);
-        LocalDateTime end = firstMondayInWeek;
-        LocalDateTime end2 = end.plusDays(7);
-
-        return Pair.of(TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(start.getYear());
-                setMonth(start.getMonthValue());
-                setDayOfMonth(start.getDayOfMonth());
-            }
-        }), TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(end2.getYear());
-                setMonth(end2.getMonthValue());
-                setDayOfMonth(end2.getDayOfMonth());
-            }
-        }));
-    }
-
-    // this is based on
-    // https://stackoverflow.com/questions/19901666/get-date-of-first-and-last-day-of-week-knowing-week-number/34727270
-    private static LocalDateTime firstDateOfWeek(Integer year, Integer weekOfYear, Locale cultureInfo) {
-        // ISO uses FirstFourDayWeek, and Monday as first day of week, according to
-        // https://en.wikipedia.org/wiki/ISO_8601
-        LocalDateTime jan1 = LocalDateTime.of(year, 1, 1, 0, 0);
-        Integer daysOffset = DayOfWeek.MONDAY.getValue() - TimexDateHelpers.getUSDayOfWeek(jan1.getDayOfWeek());
-        LocalDateTime firstWeekDay = jan1;
-        firstWeekDay = firstWeekDay.plusDays(daysOffset);
-
-        TemporalField woy = WeekFields.ISO.weekOfYear();
-        Integer firstWeek = jan1.get(woy);
-
-        if ((firstWeek <= 1 || firstWeek >= 52) && daysOffset >= -3) {
-            weekOfYear -= 1;
-        }
-
-        firstWeekDay = firstWeekDay.plusDays(weekOfYear * 7);
-
-        return firstWeekDay;
+        return Pair.of(TimexValue.dateValue(yearWeekDateRange.getLeft()), TimexValue.dateValue(yearWeekDateRange.getRight()));
     }
 
     private static Pair<String, String> monthWeekDateRange(Integer year, Integer month, Integer weekOfMonth) {
-        LocalDateTime start = generateMonthWeekDateStart(year, month, weekOfMonth);
+        LocalDateTime start = TimexHelpers.generateMonthWeekDateStart(year, month, weekOfMonth);
         LocalDateTime end = start.plusDays(7);
 
         return Pair.of(TimexValue.dateValue(new TimexProperty() {
@@ -351,20 +290,6 @@ public class TimexResolver {
         }));
     }
 
-    private static LocalDateTime generateMonthWeekDateStart(Integer year, Integer month, Integer weekOfMonth) {
-        LocalDateTime dateInWeek = LocalDateTime.of(year, month, 1 + (weekOfMonth - 1) * 7, 0, 0);
-
-        // Align the date of the week according to Thursday, base on ISO 8601,
-        // https://en.wikipedia.org/wiki/ISO_8601
-        if (TimexDateHelpers.getUSDayOfWeek(dateInWeek.getDayOfWeek()) > TimexDateHelpers.getUSDayOfWeek(DayOfWeek.THURSDAY)) {
-            dateInWeek = dateInWeek.plusDays(7 - TimexDateHelpers.getUSDayOfWeek(dateInWeek.getDayOfWeek()) + 1);
-        } else {
-            dateInWeek = dateInWeek.plusDays(1 - TimexDateHelpers.getUSDayOfWeek(dateInWeek.getDayOfWeek()));
-        }
-
-        return dateInWeek;
-    }
-
     private static LocalDateTime generateWeekDate(TimexProperty timex, LocalDateTime date, boolean isBefore) {
         LocalDateTime start;
         if (timex.getWeekOfMonth() == null && timex.getWeekOfYear() == null) {
@@ -379,24 +304,24 @@ public class TimexResolver {
             Integer year = timex.getYear() != null ? timex.getYear() : date.getYear();
             if (timex.getWeekOfYear() != null) {
                 Integer weekOfYear = timex.getWeekOfYear();
-                start = firstDateOfWeek(year, weekOfYear, Locale.getDefault()).plusDays(dayOfWeek);
+                start = TimexHelpers.firstDateOfWeek(year, weekOfYear, Locale.getDefault()).plusDays(dayOfWeek);
                 if (timex.getYear() == null) {
                     if (isBefore && start.isAfter(date)) {
-                        start = firstDateOfWeek(year - 1, weekOfYear, Locale.getDefault()).plusDays(dayOfWeek);
+                        start = TimexHelpers.firstDateOfWeek(year - 1, weekOfYear, Locale.getDefault()).plusDays(dayOfWeek);
                     } else if (!isBefore && start.isBefore(date)) {
-                        start = firstDateOfWeek(year + 1, weekOfYear, Locale.getDefault()).plusDays(dayOfWeek);
+                        start = TimexHelpers.firstDateOfWeek(year + 1, weekOfYear, Locale.getDefault()).plusDays(dayOfWeek);
                     }
                 }
             } else {
                 Integer month = timex.getMonth() != null ? timex.getMonth() : date.getMonthValue();
                 Integer weekOfMonth = timex.getWeekOfMonth();
-                start = generateMonthWeekDateStart(year, month, weekOfMonth).plusDays(dayOfWeek);
+                start = TimexHelpers.generateMonthWeekDateStart(year, month, weekOfMonth).plusDays(dayOfWeek);
                 if (timex.getYear() == null || timex.getMonth() == null) {
                     if (isBefore && start.isAfter(date)) {
-                        start = generateMonthWeekDateStart(timex.getMonth() != null ? year - 1 : year,
+                        start = TimexHelpers.generateMonthWeekDateStart(timex.getMonth() != null ? year - 1 : year,
                                 timex.getMonth() == null ? month - 1 : month, weekOfMonth).plusDays(dayOfWeek);
                     } else if (!isBefore && start.isBefore(date)) {
-                        start = generateMonthWeekDateStart(timex.getMonth() != null ? year + 1 : year,
+                        start = TimexHelpers.generateMonthWeekDateStart(timex.getMonth() != null ? year + 1 : year,
                                 timex.getMonth() == null ? month + 1 : month, weekOfMonth).plusDays(dayOfWeek);
                     }
                 }
