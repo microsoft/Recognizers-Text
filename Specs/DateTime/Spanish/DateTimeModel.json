@@ -20588,5 +20588,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "pasó anoche a las 8.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-16T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "anoche a las 8",
+        "Start": 5,
+        "End": 18,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-15T20",
+              "type": "datetime",
+              "value": "2018-08-15 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
