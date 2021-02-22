@@ -272,22 +272,9 @@ public class TimexResolver {
     }
 
     private static Pair<String, String> monthWeekDateRange(Integer year, Integer month, Integer weekOfMonth) {
-        LocalDateTime start = TimexHelpers.generateMonthWeekDateStart(year, month, weekOfMonth);
-        LocalDateTime end = start.plusDays(7);
+        Pair<TimexProperty, TimexProperty> monthWeekDateRange = TimexHelpers.monthWeekDateRange(year, month, weekOfMonth);
 
-        return Pair.of(TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(start.getYear());
-                setMonth(start.getMonthValue());
-                setDayOfMonth(start.getDayOfMonth());
-            }
-        }), TimexValue.dateValue(new TimexProperty() {
-            {
-                setYear(end.getYear());
-                setMonth(end.getMonthValue());
-                setDayOfMonth(end.getDayOfMonth());
-            }
-        }));
+        return Pair.of(TimexValue.dateValue(monthWeekDateRange.getLeft()), TimexValue.dateValue(monthWeekDateRange.getRight()));
     }
 
     private static LocalDateTime generateWeekDate(TimexProperty timex, LocalDateTime date, boolean isBefore) {
