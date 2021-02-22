@@ -411,5 +411,35 @@
         }
       }
     ]
+  },
+  {
+    "Input": "100 indische Rupien",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "100 indische rupien",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Indian rupee"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1000 Rupien",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "1000 rupien",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000",
+          "unit": "Rupee"
+        }
+      }
+    ]
   }
 ]

@@ -124,6 +124,7 @@ public class SpanishDateTimeParserConfiguration extends BaseOptionsConfiguration
         Matcher regexMatcher = SpanishDatePeriodParserConfiguration.previousPrefixRegex.matcher(trimmedText);
 
         int swift = 0;
+
         if (regexMatcher.find()) {
             swift = -1;
         } else {

@@ -2960,5 +2960,30 @@
         "End": 30
       }
     ]
+  },
+  {
+    "Input": "either 10 bln or 10 tln",
+    "Results": [
+      {
+        "Text": "10 bln",
+        "TypeName": "number",
+        "Start": 7,
+        "End": 12,
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000000"
+        }
+      },
+	  {
+        "Text": "10 tln",
+        "TypeName": "number",
+        "Start": 17,
+        "End": 22,
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000000000"
+        }
+      }
+    ]
   }
 ]

@@ -152,8 +152,8 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
             timex = 'PRESENT_REF'
         elif (
             source.endswith('posible') or source.endswith('pueda') or
-            source.endswith('puedas') or source.endswith(
-                'podamos') or source.endswith('puedan')
+            source.endswith('puedas') or source.endswith('podamos') or
+            source.endswith('puedan')
         ):
             timex = 'FUTURE_REF'
         elif source.endswith('mente'):

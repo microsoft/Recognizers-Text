@@ -157,7 +157,8 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
         let trimedText = text.trim().toLowerCase();
         let swift = 0;
 
-        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched || RegExpUtility.getFirstMatchIndex(this.lastNightTimeRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched ||
+            RegExpUtility.getFirstMatchIndex(this.lastNightTimeRegex, trimedText).matched) {
             swift = -1;
         }
         else if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {

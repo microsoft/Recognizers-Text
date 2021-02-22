@@ -25,11 +25,11 @@ public class GermanNumeric {
 
     public static final Boolean MultiDecimalSeparatorCulture = false;
 
-    public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine|einer|einen|zwei|zwo|sechs)";
+    public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine[rn]?|zwei|zwo|sechs)";
 
-    public static final String RoundNumberIntegerRegex = "(hundert|einhundert|tausend|(\\s*million\\s*)|(\\s*millionen\\s*)|(\\s*mio\\s*)|(\\s*milliarde\\s*)|(\\s*milliarden\\s*)|(\\s*mrd\\s*)|(\\s*billion\\s*)|(\\s*billionen\\s*))";
+    public static final String RoundNumberIntegerRegex = "((ein)?hundert|tausend|(\\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\\s*))";
 
-    public static final String AnIntRegex = "(eine|ein)(?=\\s)";
+    public static final String AnIntRegex = "(eine?)(?=\\s)";
 
     public static final String TenToNineteenIntegerRegex = "(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
 
@@ -60,7 +60,7 @@ public class GermanNumeric {
     public static final String PlaceHolderDefault = "\\D|\\b";
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\,\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})"
             .replace("{placeholder}", placeholder);
     }
 
@@ -79,6 +79,8 @@ public class GermanNumeric {
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String RoundNumberOrdinalRegex = "(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)";
+
+    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(ante)?penultimate|letzter|nächster|vorheriger|aktueller)";
 
     public static final String BasicOrdinalRegex = "(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)";
 
@@ -166,11 +168,106 @@ public class GermanNumeric {
     public static final String DoubleAllFloatRegex = "((?<=\\b){AllFloatRegex}(?=\\b))"
             .replace("{AllFloatRegex}", AllFloatRegex);
 
+    public static final String ConnectorRegex = "(?<spacer>und)";
+
     public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent(punkte)?\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
-    public static final String NumberWithPrefixPercentage = "(Prozent)(\\s*)({BaseNumbers.NumberReplaceToken})"
+    public static final String NumberWithPrefixPercentage = "(prozent)(\\s*)({BaseNumbers.NumberReplaceToken})"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
+
+    public static final String TillRegex = "(bis(\\s+zu)?|--|-|—|——|~|–)";
+
+    public static final String MoreRegex = "(?:(größer|höher|mehr)(\\s+als)?|über|darüber(hinaus)?|(?<!<|=)>)";
+
+    public static final String LessRegex = "(?:(weniger|winziger|kleiner|wenig)(\\s+als)?|darunter|unter|(?<!>|=)<)";
+
+    public static final String EqualRegex = "(gleich(\\s+(als|zu))?|(?<!<|>)=)";
+
+    public static final String MoreOrEqualPrefix = "((nicht\\s+{LessRegex})|(als\\s+letzte(r)?))"
+            .replace("{LessRegex}", LessRegex);
+
+    public static final String MoreOrEqual = "(?:({MoreRegex}\\s+(oder)?\\s+{EqualRegex})|({EqualRegex}\\s+(oder)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(oder)?\\s+{EqualRegex})?|({EqualRegex}\\s+(oder)?\\s+)?{MoreOrEqualPrefix}|>\\s*=|≥)"
+            .replace("{MoreRegex}", MoreRegex)
+            .replace("{EqualRegex}", EqualRegex)
+            .replace("{LessRegex}", LessRegex)
+            .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
+
+    public static final String MoreOrEqualSuffix = "((und|oder)\\s+(((mehr|größer|höher)((?!\\s+als)|(\\s+als(?!(\\s*\\d+)))))|((über|darüber)(?!\\s+als))))";
+
+    public static final String LessOrEqualPrefix = "((nicht\\s+{MoreRegex})|(at\\s+viele)|(bis\\s+zu))"
+            .replace("{MoreRegex}", MoreRegex);
+
+    public static final String LessOrEqual = "(({LessRegex}\\s+(oder)?\\s+{EqualRegex})|({EqualRegex}\\s+(oder)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(oder)?\\s+{EqualRegex})?|({EqualRegex}\\s+(oder)?\\s+)?{LessOrEqualPrefix}|<\\s*=|≤)"
+            .replace("{LessRegex}", LessRegex)
+            .replace("{EqualRegex}", EqualRegex)
+            .replace("{MoreRegex}", MoreRegex)
+            .replace("{LessOrEqualPrefix}", LessOrEqualPrefix);
+
+    public static final String LessOrEqualSuffix = "((und|oder)\\s+(weniger|geringer|kleiner|winziger)((?!\\s+als)|(\\s+als(?!(\\s*\\d+)))))";
+
+    public static final String NumberSplitMark = "(?![,.](?!\\d+))";
+
+    public static final String MoreRegexNoNumberSucceed = "((größer|mehr|höhrer|breiter)((?!\\s+als)|\\s+(als(?!(\\s*\\d+))))|((dar)?über)(?!(\\s*\\d+)))";
+
+    public static final String LessRegexNoNumberSucceed = "((kleiner|weniger|winziger)((?!\\s+als)|\\s+(als(?!(\\s*\\d+))))|((dar)?unter)(?!(\\s*\\d+)))";
+
+    public static final String EqualRegexNoNumberSucceed = "(gleich(s|ing)?((?!\\s+(zu|als))|(\\s+(zu|als)(?!(\\s*\\d+)))))";
+
+    public static final String OneNumberRangeMoreRegex1 = "({MoreOrEqual}|{MoreRegex})\\s*(der\\s+)?(?<number1>({NumberSplitMark}.)+)"
+            .replace("{MoreOrEqual}", MoreOrEqual)
+            .replace("{MoreRegex}", MoreRegex)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeMoreRegex2 = "(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}"
+            .replace("{MoreOrEqualSuffix}", MoreOrEqualSuffix)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeMoreSeparateRegex = "({EqualRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+or\\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+oder\\s+){EqualRegexNoNumberSucceed})"
+            .replace("{EqualRegex}", EqualRegex)
+            .replace("{MoreRegex}", MoreRegex)
+            .replace("{EqualRegexNoNumberSucceed}", EqualRegexNoNumberSucceed)
+            .replace("{MoreRegexNoNumberSucceed}", MoreRegexNoNumberSucceed)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeLessRegex1 = "({LessOrEqual}|{LessRegex})\\s*(the\\s+)?(?<number2>({NumberSplitMark}.)+)"
+            .replace("{LessOrEqual}", LessOrEqual)
+            .replace("{LessRegex}", LessRegex)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeLessRegex2 = "(?<number2>({NumberSplitMark}.)+)\\s*{LessOrEqualSuffix}"
+            .replace("{LessOrEqualSuffix}", LessOrEqualSuffix)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeLessSeparateRegex = "({EqualRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+or\\s+){LessRegexNoNumberSucceed})|({LessRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+oder\\s+){EqualRegexNoNumberSucceed})"
+            .replace("{EqualRegex}", EqualRegex)
+            .replace("{LessRegex}", LessRegex)
+            .replace("{EqualRegexNoNumberSucceed}", EqualRegexNoNumberSucceed)
+            .replace("{LessRegexNoNumberSucceed}", LessRegexNoNumberSucceed)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeEqualRegex = "{EqualRegex}\\s*(the\\s+)?(?<number1>({NumberSplitMark}.)+)"
+            .replace("{EqualRegex}", EqualRegex)
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String TwoNumberRangeRegex1 = "zwischen\\s*(der\\s+)?(?<number1>({NumberSplitMark}.)+)\\s*und\\s*(der\\s+)?(?<number2>({NumberSplitMark}.)+)"
+            .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String TwoNumberRangeRegex2 = "({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(und|aber|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})"
+            .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1)
+            .replace("{OneNumberRangeMoreRegex2}", OneNumberRangeMoreRegex2)
+            .replace("{OneNumberRangeLessRegex1}", OneNumberRangeLessRegex1)
+            .replace("{OneNumberRangeLessRegex2}", OneNumberRangeLessRegex2);
+
+    public static final String TwoNumberRangeRegex3 = "({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(und|aber|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})"
+            .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1)
+            .replace("{OneNumberRangeMoreRegex2}", OneNumberRangeMoreRegex2)
+            .replace("{OneNumberRangeLessRegex1}", OneNumberRangeLessRegex1)
+            .replace("{OneNumberRangeLessRegex2}", OneNumberRangeLessRegex2);
+
+    public static final String TwoNumberRangeRegex4 = "(von\\s+)?(?<number1>({NumberSplitMark}(?!\\bvon\\b).)+)\\s*{TillRegex}\\s*(der\\s+)?(?<number2>({NumberSplitMark}.)+)"
+            .replace("{TillRegex}", TillRegex)
+            .replace("{NumberSplitMark}", NumberSplitMark);
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 

@@ -25,7 +25,7 @@ public class EnglishNumeric {
 
     public static final Boolean MultiDecimalSeparatorCulture = true;
 
-    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|billion|trillion|lakh|crore)";
+    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
 
     public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|nine|one|two|six)";
 
@@ -319,7 +319,7 @@ public class EnglishNumeric {
 
     public static final String HalfADozenRegex = "half\\s+a\\s+dozen";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
@@ -358,8 +358,11 @@ public class EnglishNumeric {
         .put("hundred", 100L)
         .put("thousand", 1000L)
         .put("million", 1000000L)
+        .put("mln", 1000000L)
         .put("billion", 1000000000L)
+        .put("bln", 1000000000L)
         .put("trillion", 1000000000000L)
+        .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
         .build();
@@ -439,8 +442,11 @@ public class EnglishNumeric {
         .put("hundred", 100L)
         .put("thousand", 1000L)
         .put("million", 1000000L)
+        .put("mln", 1000000L)
         .put("billion", 1000000000L)
+        .put("bln", 1000000000L)
         .put("trillion", 1000000000000L)
+        .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
         .put("hundredth", 100L)
