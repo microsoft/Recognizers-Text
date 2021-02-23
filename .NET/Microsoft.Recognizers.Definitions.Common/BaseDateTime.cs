@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions
 
     public static class BaseDateTime
     {
-      public const string HourRegex = @"(?<hour>2[0-4]|[0-1]?\d)(h)?";
+      public const string HourRegex = @"(?<!\d[,.])(?<hour>2[0-4]|[0-1]?\d)(h)?";
       public const string TwoDigitHourRegex = @"(?<hour>[0-1]\d|2[0-4])(h)?";
       public const string MinuteRegex = @"(?<min>[0-5]?\d)(?!\d)";
       public const string TwoDigitMinuteRegex = @"(?<min>[0-5]\d)(?!\d)";

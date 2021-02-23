@@ -3447,5 +3447,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Meine Temperatur war 37,1 am Morgen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "am morgen",
+        "Start": 26,
+        "End": 34,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -19472,5 +19472,13 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Labs were notable for a BUN/Cr of 30/4.85, troponin 0.182",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

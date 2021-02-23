@@ -157,12 +157,7 @@ export class BaseDateTimeExtractor implements IDateTimeExtractor {
         });
         RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, source)
             .forEach(match => {
-                // Check that the extracted time is not part of a decimal number (e.g. 123.24)
-                if (!(match.index > 1 && (source.charAt(match.index - 1) == ',' ||
-                    source.charAt(match.index - 1) == '.') && !isNaN(source.charAt(match.index - 2) as any) && !isNaN(match.value.charAt(0) as any))) {
-                        
-                    tokens.push(new Token(match.index, match.index + match.length));
-                }
+                tokens.push(new Token(match.index, match.index + match.length));
             });
         return tokens;
     }
