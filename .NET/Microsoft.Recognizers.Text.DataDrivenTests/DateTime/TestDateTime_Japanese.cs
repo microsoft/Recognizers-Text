@@ -76,14 +76,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
-        public void TimeZoneExtractor(TestModel testSpec)
-        {
-            ExtractorInitialize(Extractors);
-            TestDateTimeExtractor(testSpec);
-        }
-
-        [NetCoreTestDataSource]
-        [TestMethod]
         public void DurationExtractor(TestModel testSpec)
         {
             ExtractorInitialize(Extractors);
@@ -106,11 +98,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        [NetCoreTestDataSource]
+        /*[NetCoreTestDataSource]
         [TestMethod]
         public void DateTimeModel(TestModel testSpec)
         {
             TestDateTime(testSpec);
-        }
+        }*/
     }
 }
