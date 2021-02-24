@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestTimexRangeResolve {
+public class TestTimexRangeResolver {
     @Test
     public void dataTypesRangeResolveDaterangeDefinite() {
         Set<String> candidates = new HashSet<String>() {
