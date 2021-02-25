@@ -261,20 +261,20 @@ DateExtractor5: !nestedRegex
   references: [ MonthNumRegex, MonthRegex, DayRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   # el 1/3
-  def: (?<=\b(en|el)\s+){MonthNumRegex}[\-\.]{DayRegex}\b(?!\s*[/\\\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex ]
+  def: (?<=\b(en|el)\s+){MonthNumRegex}[\-\.]{DayRegex}{BaseDateTime.CheckDecimalRegex}\b(?!\s*[/\\\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor7: !nestedRegex
   # 7/23
-  def: \b(?<!\d[.,]){MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b(?!\s*[/\\\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+  def: \b(?<!\d[.,]){MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor8: !nestedRegex
   # el 24-12
-  def: (?<=\b(en|el)\s+){DayRegex}[\\\-]{MonthNumRegex}\b(?!\s*[/\\\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex ]
+  def: (?<=\b(en|el)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b(?!\s*[/\\\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9: !nestedRegex
   # 23/7
-  def: \b({WeekDayRegex}\s+)?(?<!\d[.,]){DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b(?!\s*[/\\\.]\s*\d+)
-  references: [ WeekDayRegex, DayRegex, MonthNumRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}\s+)?(?<!\d[.,]){DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\.]\s*\d+)
+  references: [ WeekDayRegex, DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor10: !nestedRegex
   # 2015-12-23
   def: \b(?<!\d[.,]){YearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)

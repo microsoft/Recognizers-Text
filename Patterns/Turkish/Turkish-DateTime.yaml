@@ -300,8 +300,8 @@ DateExtractor9: !nestedRegex
   def: \b({SingleWeekDayRegex}\s+{OnRegex})\b
   references: [ SingleWeekDayRegex, OnRegex ]
 DateExtractor7L: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?({DayRegex}\s*[/]\s*{MonthNumRegex})(,?\s+{BaseDateTime.FourDigitYearRegex})?
-  references: [ WeekDayRegex, DayRegex, MonthNumRegex, BaseDateTime.FourDigitYearRegex ]
+  def: \b({WeekDayRegex}\s+)?({DayRegex}\s*[/]\s*{MonthNumRegex})(,?\s+{BaseDateTime.FourDigitYearRegex})?{BaseDateTime.CheckDecimalRegex}
+  references: [ WeekDayRegex, DayRegex, MonthNumRegex, BaseDateTime.FourDigitYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor7S: !simpleRegex
   def: ^[\*]
 DateExtractor9L: !simpleRegex

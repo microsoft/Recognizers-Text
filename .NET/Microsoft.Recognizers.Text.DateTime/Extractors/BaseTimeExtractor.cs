@@ -90,13 +90,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 foreach (Match match in matches)
                 {
-                    // Check that the extracted time is not part of a decimal number (e.g. 123.24)
-                    if (match.Index > 1 && (text[match.Index - 1].Equals(',') || text[match.Index - 1].Equals('.')) &&
-                        char.IsDigit(text[match.Index - 2]) && char.IsDigit(match.Value[0]))
-                    {
-                        continue;
-                    }
-
                     // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
                     var lth = match.Groups["lth"].Value;
 

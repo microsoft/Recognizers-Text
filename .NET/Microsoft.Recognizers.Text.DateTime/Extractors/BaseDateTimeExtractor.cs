@@ -223,13 +223,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var matches = this.config.SimpleTimeOfTodayAfterRegex.Matches(text);
             foreach (Match match in matches)
             {
-                // Check that the extracted time is not part of a decimal number (e.g. 123.24)
-                if (match.Index > 1 && (text[match.Index - 1].Equals(',') || text[match.Index - 1].Equals('.')) &&
-                    char.IsDigit(text[match.Index - 2]) && char.IsDigit(match.Value[0]))
-                {
-                    continue;
-                }
-
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
 

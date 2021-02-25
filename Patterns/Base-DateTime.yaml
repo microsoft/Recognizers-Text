@@ -17,6 +17,8 @@ HyphenDateRegex: !simpleRegex
 IllegalYearRegex: !nestedRegex
   def: ([-])({FourDigitYearRegex})([-])
   references: [ FourDigitYearRegex ]
+CheckDecimalRegex: !simpleRegex
+  def: (?![,.]\d)
 RangeConnectorSymbolRegex: !simpleRegex
   def: (--|-|—|——|~|–)
 BaseAmDescRegex: !simpleRegex
