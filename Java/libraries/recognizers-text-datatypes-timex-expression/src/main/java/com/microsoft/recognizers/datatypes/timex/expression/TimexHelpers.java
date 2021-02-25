@@ -4,11 +4,17 @@
 package com.microsoft.recognizers.datatypes.timex.expression;
 
 import java.math.BigDecimal;
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.temporal.TemporalField;
+import java.time.temporal.WeekFields;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 public class TimexHelpers {
     public static final HashMap<TimexUnit, String> TIMEX_UNIT_TO_STRING_MAP = new HashMap<TimexUnit, String>() {
@@ -41,31 +47,24 @@ public class TimexHelpers {
             };
         } else {
             if (timex.getYear() != null) {
-                TimexRange range = new TimexRange() {
+                Pair<TimexProperty, TimexProperty> dateRange;
+                if (timex.getMonth() != null && timex.getWeekOfMonth() != null) {
+                    dateRange = TimexHelpers.monthWeekDateRange(timex.getYear(), timex.getMonth(),
+                            timex.getWeekOfMonth());
+                } else if (timex.getMonth() != null) {
+                    dateRange = TimexHelpers.monthDateRange(timex.getYear(), timex.getMonth());
+                } else if (timex.getWeekOfYear() != null) {
+                    dateRange = TimexHelpers.yearWeekDateRange(timex.getYear(), timex.getWeekOfYear(),
+                            timex.getWeekend());
+                } else {
+                    dateRange = TimexHelpers.yearDateRange(timex.getYear());
+                }
+                return new TimexRange() {
                     {
-                        setStart(new TimexProperty() {
-                            {
-                                setYear(timex.getYear());
-                            }
-                        });
-                        setEnd(new TimexProperty());
+                        setStart(dateRange.getLeft());
+                        setEnd(dateRange.getRight());
                     }
                 };
-                if (timex.getMonth() != null) {
-                    range.getStart().setMonth(timex.getMonth());
-                    range.getStart().setDayOfMonth(1);
-                    range.getEnd().setYear(timex.getYear());
-                    range.getEnd().setMonth(timex.getMonth() + 1);
-                    range.getEnd().setDayOfMonth(1);
-                } else {
-                    range.getStart().setMonth(1);
-                    range.getStart().setDayOfMonth(1);
-                    range.getEnd().setYear(timex.getYear() + 1);
-                    range.getEnd().setMonth(1);
-                    range.getEnd().setDayOfMonth(1);
-                }
-
-                return range;
             }
         }
 
@@ -342,11 +341,130 @@ public class TimexHelpers {
         return String.format("%1$s %2$s", dateValue, timeValue);
     }
 
+    public static Pair<TimexProperty, TimexProperty> monthWeekDateRange(Integer year, Integer month,
+            Integer weekOfMonth) {
+        LocalDateTime start = TimexHelpers.generateMonthWeekDateStart(year, month, weekOfMonth);
+        LocalDateTime end = start.plusDays(7);
+        TimexProperty value1 = new TimexProperty() {
+            {
+                setYear(start.getYear());
+                setMonth(start.getMonth().getValue());
+                setDayOfMonth(start.getDayOfMonth());
+            }
+        };
+        TimexProperty value2 = new TimexProperty() {
+            {
+                setYear(end.getYear());
+                setMonth(end.getMonth().getValue());
+                setDayOfMonth(end.getDayOfMonth());
+            }
+        };
+        return Pair.of(value1, value2);
+    }
+
+    public static Pair<TimexProperty, TimexProperty> monthDateRange(Integer year, Integer month) {
+        TimexProperty value1 = new TimexProperty() {
+            {
+                setYear(year);
+                setMonth(month);
+                setDayOfMonth(1);
+            }
+        };
+        TimexProperty value2 = new TimexProperty() {
+            {
+                setYear(month == 12 ? year + 1 : year);
+                setMonth(month == 12 ? 1 : month + 1);
+                setDayOfMonth(1);
+            }
+        };
+        return Pair.of(value1, value2);
+    }
+
+    public static Pair<TimexProperty, TimexProperty> yearDateRange(Integer year) {
+        TimexProperty value1 = new TimexProperty() {
+            {
+                setYear(year);
+                setMonth(1);
+                setDayOfMonth(1);
+            }
+        };
+        TimexProperty value2 = new TimexProperty() {
+            {
+                setYear(year + 1);
+                setMonth(1);
+                setDayOfMonth(1);
+            }
+        };
+        return Pair.of(value1, value2);
+    }
+
+    public static Pair<TimexProperty, TimexProperty> yearWeekDateRange(Integer year, Integer weekOfYear,
+            Boolean isWeekend) {
+        LocalDateTime firstMondayInWeek = TimexHelpers.firstDateOfWeek(year, weekOfYear, null);
+
+        LocalDateTime start = (isWeekend == null || !isWeekend) ? firstMondayInWeek
+                : TimexDateHelpers.dateOfNextDay(DayOfWeek.SATURDAY, firstMondayInWeek);
+        LocalDateTime end = firstMondayInWeek.plusDays(7);
+        TimexProperty value1 = new TimexProperty() {
+            {
+                setYear(start.getYear());
+                setMonth(start.getMonth().getValue());
+                setDayOfMonth(start.getDayOfMonth());
+            }
+        };
+        TimexProperty value2 = new TimexProperty() {
+            {
+                setYear(end.getYear());
+                setMonth(end.getMonth().getValue());
+                setDayOfMonth(end.getDayOfMonth());
+            }
+        };
+        return Pair.of(value1, value2);
+    }
+
+    // this is based on
+    // https://stackoverflow.com/questions/19901666/get-date-of-first-and-last-day-of-week-knowing-week-number/34727270
+    public static LocalDateTime firstDateOfWeek(Integer year, Integer weekOfYear, Locale cultureInfo) {
+        // ISO uses FirstFourDayWeek, and Monday as first day of week, according to
+        // https://en.wikipedia.org/wiki/ISO_8601
+        LocalDateTime jan1 = LocalDateTime.of(year, 1, 1, 0, 0);
+        Integer daysOffset = DayOfWeek.MONDAY.getValue() - TimexDateHelpers.getUSDayOfWeek(jan1.getDayOfWeek());
+        LocalDateTime firstWeekDay = jan1;
+        firstWeekDay = firstWeekDay.plusDays(daysOffset);
+
+        TemporalField woy = WeekFields.ISO.weekOfYear();
+        Integer firstWeek = jan1.get(woy);
+
+        if ((firstWeek <= 1 || firstWeek >= 52) && daysOffset >= -3) {
+            weekOfYear -= 1;
+        }
+
+        firstWeekDay = firstWeekDay.plusDays(weekOfYear * 7);
+
+        return firstWeekDay;
+    }
+
+    public static LocalDateTime generateMonthWeekDateStart(Integer year, Integer month, Integer weekOfMonth) {
+        LocalDateTime dateInWeek = LocalDateTime.of(year, month, 1 + ((weekOfMonth - 1) * 7), 0, 0);
+
+        // Align the date of the week according to Thursday, base on ISO 8601,
+        // https://en.wikipedia.org/wiki/ISO_8601
+        if (dateInWeek.getDayOfWeek().getValue() > DayOfWeek.THURSDAY.getValue()) {
+            dateInWeek = dateInWeek.plusDays(7 - dateInWeek.getDayOfWeek().getValue() + 1);
+        } else {
+            dateInWeek = dateInWeek.plusDays(1 - dateInWeek.getDayOfWeek().getValue());
+        }
+
+        return dateInWeek;
+    }
+
     private static TimexProperty timeAdd(TimexProperty start, TimexProperty duration) {
-        Integer second = start.getSecond() + (int)(duration.getSeconds() != null ? duration.getSeconds().intValue() : 0);
+        Integer second = start.getSecond()
+                + (int)(duration.getSeconds() != null ? duration.getSeconds().intValue() : 0);
         Integer minute = start.getMinute() + second / 60
                 + (duration.getMinutes() != null ? duration.getMinutes().intValue() : 0);
-        Integer hour = start.getHour() + (minute / 60) + (duration.getHours() != null ? duration.getHours().intValue() : 0);
+        Integer hour = start.getHour() + (minute / 60)
+                + (duration.getHours() != null ? duration.getHours().intValue() : 0);
 
         return new TimexProperty() {
             {
