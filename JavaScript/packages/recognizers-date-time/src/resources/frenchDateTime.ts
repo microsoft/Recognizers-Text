@@ -204,7 +204,7 @@ export namespace FrenchDateTime {
     export const NextPrefixRegex = `.^`;
     export const PastPrefixRegex = `.^`;
     export const PreviousPrefixRegex = `.^`;
-    export const RelativeDayRegex = `\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b`;
+    export const RelativeDayRegex = `\\b(((la\\s+)?${RelativeRegex}\\s+journ[ée]e))\\b`;
     export const ConnectorRegex = `^(,|pour|t|vers)$`;
     export const ConnectorAndRegex = `\\b(et\\s*(le|las?)?)\\b.+`;
     export const FromRegex = `((de|du)?)$`;

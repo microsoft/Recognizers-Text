@@ -17,7 +17,7 @@ class EnglishNumeric:
     LangMarker = 'Eng'
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
-    RoundNumberIntegerRegex = f'(?:hundred|thousand|million|billion|trillion|lakh|crore)'
+    RoundNumberIntegerRegex = f'(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?'
     ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(?:three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'(?<negTerm>(minus|negative)\\s+)'
@@ -113,7 +113,7 @@ class EnglishNumeric:
     WrittenIntegerSeparatorTexts = [r'and']
     WrittenFractionSeparatorTexts = [r'and']
     HalfADozenRegex = f'half\\s+a\\s+dozen'
-    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("a", 1),
                               ("zero", 0),
                               ("an", 1),
@@ -149,8 +149,11 @@ class EnglishNumeric:
                               ("hundred", 100),
                               ("thousand", 1000),
                               ("million", 1000000),
+                              ("mln", 1000000),
                               ("billion", 1000000000),
+                              ("bln", 1000000000),
                               ("trillion", 1000000000000),
+                              ("tln", 1000000000000),
                               ("lakh", 100000),
                               ("crore", 10000000)])
     OrdinalNumberMap = dict([("first", 1),
@@ -224,8 +227,11 @@ class EnglishNumeric:
     RoundNumberMap = dict([("hundred", 100),
                            ("thousand", 1000),
                            ("million", 1000000),
+                           ("mln", 1000000),
                            ("billion", 1000000000),
+                           ("bln", 1000000000),
                            ("trillion", 1000000000000),
+                           ("tln", 1000000000000),
                            ("lakh", 100000),
                            ("crore", 10000000),
                            ("hundredth", 100),

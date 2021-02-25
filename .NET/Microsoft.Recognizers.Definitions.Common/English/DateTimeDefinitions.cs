@@ -578,8 +578,11 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
         {
             { @"1st", 1 },
+            { @"1th", 1 },
             { @"2nd", 2 },
+            { @"2th", 2 },
             { @"3rd", 3 },
+            { @"3th", 3 },
             { @"4th", 4 },
             { @"5th", 5 },
             { @"6th", 6 },
@@ -615,8 +618,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"30th", 30 },
             { @"31st", 31 },
             { @"01st", 1 },
+            { @"01th", 1 },
             { @"02nd", 2 },
+            { @"02th", 2 },
             { @"03rd", 3 },
+            { @"03th", 3 },
             { @"04th", 4 },
             { @"05th", 5 },
             { @"06th", 6 },

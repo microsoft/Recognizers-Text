@@ -133,6 +133,11 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string AmRegex = @"(?<am>((por|de|a|en)\s+la)\s+(mañana|madrugada))";
       public const string AmTimeRegex = @"(?<am>(esta|(por|de|a|en)\s+la)\s+(mañana|madrugada))";
       public const string PmTimeRegex = @"(?<pm>(esta|(por|de|a|en)\s+la)\s+(tarde|noche))";
+      public const string NightTimeRegex = @"(noche)";
+      public const string LastNightTimeRegex = @"(anoche)";
+      public const string NowTimeRegex = @"(ahora|mismo|momento)";
+      public const string RecentlyTimeRegex = @"(mente)";
+      public const string AsapTimeRegex = @"(posible|pueda[ns]?|podamos)";
       public static readonly string LessThanOneHour = $@"(?<lth>((\s+y\s+)?cuarto|(\s*)menos cuarto|(\s+y\s+)media|{BaseDateTime.DeltaMinuteRegex}(\s+(minutos?|mins?))|{DeltaMinuteNumRegex}(\s+(minutos?|mins?))))";
       public const string TensTimeRegex = @"(?<tens>diez|veint(i|e)|treinta|cuarenta|cincuenta)";
       public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s*((y|(?<prefix>menos))\s+)?(({TensTimeRegex}(\s*y\s+)?)?{MinuteNumRegex}))";

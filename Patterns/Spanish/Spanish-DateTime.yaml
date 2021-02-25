@@ -296,6 +296,16 @@ AmTimeRegex: !simpleRegex
   def: (?<am>(esta|(por|de|a|en)\s+la)\s+(mañana|madrugada))
 PmTimeRegex: !simpleRegex
   def: (?<pm>(esta|(por|de|a|en)\s+la)\s+(tarde|noche))
+NightTimeRegex: !simpleRegex
+  def: (noche)
+LastNightTimeRegex: !simpleRegex
+  def: (anoche)
+NowTimeRegex: !simpleRegex
+  def: (ahora|mismo|momento)
+RecentlyTimeRegex: !simpleRegex
+  def: (mente)
+AsapTimeRegex: !simpleRegex
+  def: (posible|pueda[ns]?|podamos)
 LessThanOneHour: !nestedRegex
   # "y media ..." "menos cuarto ..."
   def: (?<lth>((\s+y\s+)?cuarto|(\s*)menos cuarto|(\s+y\s+)media|{BaseDateTime.DeltaMinuteRegex}(\s+(minutos?|mins?))|{DeltaMinuteNumRegex}(\s+(minutos?|mins?))))

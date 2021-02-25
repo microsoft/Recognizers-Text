@@ -357,7 +357,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
         Matcher regexMatcher = regex.matcher(trimmedText);
 
         int swift = 0;
-        if (regexMatcher.find() || trimmedText.equals("anoche")) {
+        if (regexMatcher.find() || trimmedText.startsWith("anoche")) {
             swift = -1;
         } else {
             regex = Pattern.compile(SpanishDateTime.NextPrefixRegex);
