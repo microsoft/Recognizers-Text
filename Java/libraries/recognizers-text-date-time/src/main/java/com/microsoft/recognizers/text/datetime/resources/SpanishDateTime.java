@@ -369,6 +369,16 @@ public class SpanishDateTime {
 
     public static final String PmTimeRegex = "(?<pm>(esta|(por|de|a|en)\\s+la)\\s+(tarde|noche))";
 
+    public static final String NightTimeRegex = "(noche)";
+
+    public static final String LastNightTimeRegex = "(anoche)";
+
+    public static final String NowTimeRegex = "(ahora|mismo|momento)";
+
+    public static final String RecentlyTimeRegex = "(mente)";
+
+    public static final String AsapTimeRegex = "(posible|pueda[ns]?|podamos)";
+
     public static final String LessThanOneHour = "(?<lth>((\\s+y\\s+)?cuarto|(\\s*)menos cuarto|(\\s+y\\s+)media|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutos?|mins?))|{DeltaMinuteNumRegex}(\\s+(minutos?|mins?))))"
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)
             .replace("{DeltaMinuteNumRegex}", DeltaMinuteNumRegex);
