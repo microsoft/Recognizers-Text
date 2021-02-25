@@ -63,8 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                     {
                         return ret;
                     }
-
-                    beforeStr = afterStr;
                 }
 
                 var pr = this.Config.DateParser.Parse(ers[0], referenceTime);
