@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string LaterEarlyRegex = @"((?<early>temprano)|(?<late>fin(al)?(\s+de)?|m[aá]s\s+tarde))";
       public const string NowRegex = @"\b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente|este entonces)\b";
       public const string SuffixRegex = @"^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|(?<!(m[áa]s\s+))tarde|noche)\b";
-      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>(({LaterEarlyRegex}\s+)((del?|en|por)(\s+(el|los?|las?))?\s+)?|(en|por)\s+(el|l[ao]s?)\s+)?(mañana|madrugada|pasado\s+(el\s+)?medio\s?d[ií]a|(?<!((m[áa]s|tan)\s+))tarde|noche))\b";
+      public static readonly string TimeOfDayRegex = $@"\b((?<timeOfDay>(({LaterEarlyRegex}\s+)((del?|en|por)(\s+(el|los?|las?))?\s+)?)?(mañana|madrugada|pasado\s+(el\s+)?medio\s?d[ií]a|(?<!((m[áa]s|tan)\s+))tarde|noche))|(en|por)\s+las?\s+mañana)\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(((((a\s+)?la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex})|anoche)\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*$)";
