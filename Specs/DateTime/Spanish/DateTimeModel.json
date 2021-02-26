@@ -20756,5 +20756,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Regresaré a las 8 de la noche menos cuarto",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 de la noche menos cuarto",
+        "Start": 16,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
