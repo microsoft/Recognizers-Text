@@ -21109,5 +21109,30 @@
         "End": 33
       }
     ]
+  },
+  {
+    "Input": "Je serai de retour dans les 2h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dans les 2h",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 18:12:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

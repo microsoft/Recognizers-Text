@@ -462,8 +462,7 @@ SinceYearSuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
 WithinNextPrefixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+  def: \b(dans\s+les)\b
 TodayNowRegex: !simpleRegex
   def: \b(aujourd'hui|maintenant)\b
 MorningStartEndRegex: !simpleRegex
