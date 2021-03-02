@@ -144,15 +144,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         if (!innerResult.getSuccess()) {
             innerResult = this.parseSpecificTimeOfDay(text, reference);
         }
-
-        if (!innerResult.getSuccess()) {
-            innerResult = this.parseDuration(text, reference);
-        }
-
-        if (!innerResult.getSuccess()) {
-            innerResult = this.parseRelativeUnit(text, reference);
-        }
-
+        
         if (!innerResult.getSuccess()) {
             innerResult = this.parseDateWithPeriodPrefix(text, reference);
         }
@@ -160,6 +152,14 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         if (!innerResult.getSuccess()) {
             // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
             innerResult = this.parseDateWithTimePeriodSuffix(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.parseDuration(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.parseRelativeUnit(text, reference);
         }
 
         return innerResult;

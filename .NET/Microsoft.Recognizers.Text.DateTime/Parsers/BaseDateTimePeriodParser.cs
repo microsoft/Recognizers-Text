@@ -155,16 +155,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!innerResult.Success)
             {
-                innerResult = ParseDuration(entityText, referenceTime);
-            }
-
-            if (!innerResult.Success)
-            {
-                innerResult = ParseRelativeUnit(entityText, referenceTime);
-            }
-
-            if (!innerResult.Success)
-            {
                 innerResult = ParseDateWithPeriodPrefix(entityText, referenceTime);
             }
 
@@ -172,6 +162,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
                 innerResult = ParseDateWithTimePeriodSuffix(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDuration(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseRelativeUnit(entityText, referenceTime);
             }
 
             return innerResult;
