@@ -3200,5 +3200,51 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je retournerai 4:45 du matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "4:45 du matin",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04:45",
+              "type": "time",
+              "value": "04:45:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 4h45 du matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "4h45 du matin",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04:45",
+              "type": "time",
+              "value": "04:45:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 27
+      }
+    ]
   }
 ]
