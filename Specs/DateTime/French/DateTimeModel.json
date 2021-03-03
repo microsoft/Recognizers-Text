@@ -3485,6 +3485,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "sept heures dix",
@@ -3513,6 +3514,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "sept heures et dix",
@@ -3541,6 +3543,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "sept heures moins dix",
