@@ -215,13 +215,13 @@ PmRegex: !simpleRegex
 AmRegex: !simpleRegex
   def: (?<am>(du|de|ce|(du|de|dans)\s*l[ea]|le)?\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\s*matin)
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\s+(minutes?|mins?)))
+  def: (?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutes?|mins?))|(?<=heures?\s+((et|moins)\s+)?)({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
   def: (?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>vingt|trente|quarante|cinquante)\s+{MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>(heures\s*et\s+{LessThanOneHour}|et {LessThanOneHour}|{LessThanOneHour} [àa]))
+  def: (?<prefix>(heures?\s+((et|moins)\s+)?{LessThanOneHour}|(et|moins)\s+{LessThanOneHour}|{LessThanOneHour}\s+[àa]))
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -423,6 +423,14 @@ DateTokenPrefix: 'le '
 TimeTokenPrefix: 'à '
 TokenBeforeDate: 'le '
 TokenBeforeTime: 'à '
+HalfTokenRegex: !simpleRegex
+  def: \b(demie)$
+QuarterTokenRegex: !simpleRegex
+  def: \b((un\s+)?quart)$
+ThreeQuarterTokenRegex: !simpleRegex
+  def: \b(trois\s+quarts)$
+ToTokenRegex: !simpleRegex
+  def: \b(moins|[aà]$)\b
 AMTimeRegex: !simpleRegex
   def: (?<am>matin([ée]e)?)
 PMTimeRegex: !simpleRegex

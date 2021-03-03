@@ -101,7 +101,7 @@ public class FrenchTimeParserConfiguration extends BaseOptionsConfiguration impl
         }
 
         // 'to' i.e 'one to five' = 'un à cinq'
-        if (trimmedPrefix.endsWith("à")) {
+        if (trimmedPrefix.endsWith("à") || trimmedPrefix.contains("moins")) {
             deltaMin = -deltaMin;
         }
 

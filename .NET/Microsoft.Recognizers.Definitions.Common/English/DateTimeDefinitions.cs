@@ -70,6 +70,10 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"on ";
       public const string TokenBeforeTime = @"at ";
+      public const string HalfTokenRegex = @"^(half)";
+      public const string QuarterTokenRegex = @"^((a\s+)?quarter)";
+      public const string ThreeQuarterTokenRegex = @"^(three\s+quarter)";
+      public const string ToTokenRegex = @"\b(to)$";
       public const string FromRegex = @"\b(from(\s+the)?)$";
       public const string BetweenTokenRegex = @"\b(between(\s+the)?)$";
       public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";

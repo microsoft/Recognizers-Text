@@ -104,9 +104,9 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string OclockRegex = @"(?<oclock>heures?|h)";
       public const string PmRegex = @"(?<pm>(dans l'\s*)?apr[eè]s(\s*|-)midi|(du|ce|de|le)\s*(soir([ée]e)?)|(dans l[ea]\s+)?(nuit|soir[eé]e))";
       public const string AmRegex = @"(?<am>(du|de|ce|(du|de|dans)\s*l[ea]|le)?\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\s*matin)";
-      public static readonly string LessThanOneHour = $@"(?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\s+(minutes?|mins?)))";
+      public static readonly string LessThanOneHour = $@"(?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutes?|mins?))|(?<=heures?\s+((et|moins)\s+)?)({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))";
       public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>vingt|trente|quarante|cinquante)\s+{MinuteNumRegex}))";
-      public static readonly string TimePrefix = $@"(?<prefix>(heures\s*et\s+{LessThanOneHour}|et {LessThanOneHour}|{LessThanOneHour} [àa]))";
+      public static readonly string TimePrefix = $@"(?<prefix>(heures?\s+((et|moins)\s+)?{LessThanOneHour}|(et|moins)\s+{LessThanOneHour}|{LessThanOneHour}\s+[àa]))";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s*h\s*){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
       public const string MidnightRegex = @"(?<midnight>minuit)";
@@ -186,6 +186,10 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string TimeTokenPrefix = @"à ";
       public const string TokenBeforeDate = @"le ";
       public const string TokenBeforeTime = @"à ";
+      public const string HalfTokenRegex = @"\b(demie)$";
+      public const string QuarterTokenRegex = @"\b((un\s+)?quart)$";
+      public const string ThreeQuarterTokenRegex = @"\b(trois\s+quarts)$";
+      public const string ToTokenRegex = @"\b(moins|[aà]$)\b";
       public const string AMTimeRegex = @"(?<am>matin([ée]e)?)";
       public const string PMTimeRegex = @"\b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\s*ce|du)\s+)?soir)\b";
       public const string BeforeRegex = @"\b(avant)\b";

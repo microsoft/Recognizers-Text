@@ -118,6 +118,14 @@ DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
 TokenBeforeTime: 'at '
+HalfTokenRegex: !simpleRegex
+  def: ^(half)
+QuarterTokenRegex: !simpleRegex
+  def: ^((a\s+)?quarter)
+ThreeQuarterTokenRegex: !simpleRegex
+  def: ^(three\s+quarter)
+ToTokenRegex: !simpleRegex
+  def: \b(to)$
 FromRegex: !simpleRegex
   def: \b(from(\s+the)?)$
 BetweenTokenRegex: !simpleRegex

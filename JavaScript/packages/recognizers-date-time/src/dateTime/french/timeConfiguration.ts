@@ -92,7 +92,7 @@ export class FrenchTimeParserConfiguration implements ITimeParserConfiguration {
             }
         }
 
-        if (trimedPrefix.endsWith("à")) {
+        if (trimedPrefix.endsWith("à") || trimedPrefix.includes("moins")) {
             deltaMin = -deltaMin;
         }
 

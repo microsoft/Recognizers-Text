@@ -3479,5 +3479,89 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je retournerai sept heures dix",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sept heures dix",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:10",
+              "type": "time",
+              "value": "07:10:00"
+            },
+            {
+              "timex": "T19:10",
+              "type": "time",
+              "value": "19:10:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai sept heures et dix",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sept heures et dix",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:10",
+              "type": "time",
+              "value": "07:10:00"
+            },
+            {
+              "timex": "T19:10",
+              "type": "time",
+              "value": "19:10:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai sept heures moins dix",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sept heures moins dix",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06:50",
+              "type": "time",
+              "value": "06:50:00"
+            },
+            {
+              "timex": "T18:50",
+              "type": "time",
+              "value": "18:50:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 35
+      }
+    ]
   }
 ]
