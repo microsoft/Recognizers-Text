@@ -66,6 +66,7 @@ export class FrenchTimeParserConfiguration implements ITimeParserConfiguration {
         let deltaMin = 0;
         let trimedPrefix = prefix.trim().toLowerCase();
 
+        // @todo Move hardcoded strings to resource YAML file.
         if (trimedPrefix.endsWith("demie")) {
             deltaMin = 30;
         }

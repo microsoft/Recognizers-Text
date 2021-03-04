@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string TokenBeforeTime = @"at ";
       public const string HalfTokenRegex = @"^(half)";
       public const string QuarterTokenRegex = @"^((a\s+)?quarter)";
-      public const string ThreeQuarterTokenRegex = @"^(three\s+quarter)";
+      public const string ThreeQuarterTokenRegex = @"^(three\s+quarters?)";
       public const string ToTokenRegex = @"\b(to)$";
       public const string FromRegex = @"\b(from(\s+the)?)$";
       public const string BetweenTokenRegex = @"\b(between(\s+the)?)$";
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string NightRegex = @"\b(mid)?night\b";
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"(?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\s+(minutes?|mins?)))";
-      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))";
+      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+((?<tens>twenty|thirty|fou?rty|fifty)(\s*-?\s*))?{MinuteNumRegex}(\s+(minutes?|mins?))?)";
       public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHour}\s+(past|to))";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})";

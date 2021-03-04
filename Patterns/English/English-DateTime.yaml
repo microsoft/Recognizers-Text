@@ -123,7 +123,7 @@ HalfTokenRegex: !simpleRegex
 QuarterTokenRegex: !simpleRegex
   def: ^((a\s+)?quarter)
 ThreeQuarterTokenRegex: !simpleRegex
-  def: ^(three\s+quarter)
+  def: ^(three\s+quarters?)
 ToTokenRegex: !simpleRegex
   def: \b(to)$
 FromRegex: !simpleRegex
@@ -337,7 +337,7 @@ LessThanOneHour: !nestedRegex
   def: (?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\s+(minutes?|mins?)))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
-  def: (?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))
+  def: (?<writtentime>{HourNumRegex}\s+((?<tens>twenty|thirty|fou?rty|fifty)(\s*-?\s*))?{MinuteNumRegex}(\s+(minutes?|mins?))?)
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
   def: (?<prefix>{LessThanOneHour}\s+(past|to))

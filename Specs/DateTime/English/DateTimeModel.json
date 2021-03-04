@@ -19968,5 +19968,34 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The sun will set tomorrow at seven twenty-seven",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at seven twenty-seven",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:27",
+              "type": "datetime",
+              "value": "2016-11-08 07:27:00"
+            },
+            {
+              "timex": "2016-11-08T19:27",
+              "type": "datetime",
+              "value": "2016-11-08 19:27:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 46
+      }
+    ]
   }
 ]

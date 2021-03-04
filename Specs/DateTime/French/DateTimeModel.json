@@ -3566,5 +3566,34 @@
         "End": 35
       }
     ]
+  },
+  {
+    "Input": "le soleil se couchant demain à sept heures et vingt-sept minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "demain à sept heures et vingt-sept minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:27",
+              "type": "datetime",
+              "value": "2016-11-08 07:27:00"
+            },
+            {
+              "timex": "2016-11-08T19:27",
+              "type": "datetime",
+              "value": "2016-11-08 19:27:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 63
+      }
+    ]
   }
 ]
