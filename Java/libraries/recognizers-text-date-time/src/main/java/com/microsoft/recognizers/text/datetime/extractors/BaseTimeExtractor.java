@@ -88,6 +88,11 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
 
             Match[] matches = RegExpUtility.getMatches(regex, text);
             for (Match match : matches) {
+                
+                // @TODO Remove when lookbehinds are handled correctly
+                if (isDecimal(match, text)) {
+                    continue;
+                }
 
                 // @TODO Workaround to avoid incorrect partial-only matches. Remove after time regex reviews across languages.
                 String lth = match.getGroup("lth").value;
@@ -101,6 +106,17 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         }
 
         return ret;
+    }
+    
+    // Check if the match is part of a decimal number (e.g. 123.24)
+    private boolean isDecimal(Match match, String text) {
+        boolean isDecimal = false;
+        if (match.index > 1 && (text.charAt(match.index - 1) == ',' ||
+                text.charAt(match.index - 1) == '.') && Character.isDigit(text.charAt(match.index - 2)) && Character.isDigit(match.value.charAt(0))) {
+            isDecimal = true;
+        }
+        
+        return isDecimal;
     }
 
     private List<Token> atRegexMatch(String text) {

@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions
 
     public static class BaseDateTime
     {
-      public const string HourRegex = @"(?<hour>2[0-4]|[0-1]?\d)(h)?";
+      public const string HourRegex = @"(?<!\d[,.])(?<hour>2[0-4]|[0-1]?\d)(h)?";
       public const string TwoDigitHourRegex = @"(?<hour>[0-1]\d|2[0-4])(h)?";
       public const string MinuteRegex = @"(?<min>[0-5]?\d)(?!\d)";
       public const string TwoDigitMinuteRegex = @"(?<min>[0-5]\d)(?!\d)";
@@ -30,6 +30,7 @@ namespace Microsoft.Recognizers.Definitions
       public const string FourDigitYearRegex = @"\b(?<![$])(?<year>((1\d|20)\d{2})|2100)(?!\.0\b)\b";
       public const string HyphenDateRegex = @"((?<year1>[0-9]{4})-?(?<month1>1[0-2]|0[1-9])-?(?<day1>3[01]|0[1-9]|[12][0-9]))|((?<month2>1[0-2]|0[1-9])-?(?<day2>3[01]|0[1-9]|[12][0-9])-?(?<year2>[0-9]{4}))|((?<day3>3[01]|0[1-9]|[12][0-9])-?(?<month3>1[0-2]|0[1-9])-?(?<year3>[0-9]{4}))";
       public static readonly string IllegalYearRegex = $@"([-])({FourDigitYearRegex})([-])";
+      public const string CheckDecimalRegex = @"(?![,.]\d)";
       public const string RangeConnectorSymbolRegex = @"(--|-|—|——|~|–)";
       public const string BaseAmDescRegex = @"(am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)";
       public const string BasePmDescRegex = @"(pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)";

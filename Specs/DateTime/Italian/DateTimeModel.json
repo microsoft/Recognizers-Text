@@ -2561,5 +2561,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "La mia temperatura era 37.1 al mattino",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "al mattino",
+        "Start": 28,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

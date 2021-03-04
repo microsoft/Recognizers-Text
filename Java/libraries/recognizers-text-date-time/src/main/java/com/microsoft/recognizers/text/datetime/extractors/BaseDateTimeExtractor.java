@@ -128,10 +128,26 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
 
         Match[] matches = RegExpUtility.getMatches(this.config.getSimpleTimeOfTodayAfterRegex(), input);
         for (Match match : matches) {
+            // @TODO Remove when lookbehinds are handled correctly
+            if (isDecimal(match, input)) {
+                continue;
+            }
+            
             ret.add(new Token(match.index, match.index + match.length));
         }
 
         return ret;
+    }
+    
+    // Check if the match is part of a decimal number (e.g. 123.24)
+    private boolean isDecimal(Match match, String text) {
+        boolean isDecimal = false;
+        if (match.index > 1 && (text.charAt(match.index - 1) == ',' ||
+                text.charAt(match.index - 1) == '.') && Character.isDigit(text.charAt(match.index - 2)) && Character.isDigit(match.value.charAt(0))) {
+            isDecimal = true;
+        }
+        
+        return isDecimal;
     }
 
     public List<Token> timeOfTodayBefore(String input, LocalDateTime reference) {

@@ -108,6 +108,25 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                     isValidMatch = startsWithBasicDate(subText);
                 }
             }
+            
+            // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
+            MatchGroup dayGroup = match.getGroup("day");
+            MatchGroup monthGroup = match.getGroup("month");
+            if (!StringUtility.isNullOrEmpty(dayGroup.value) && !StringUtility.isNullOrEmpty(monthGroup.value)) {
+                String noDateText = match.value.replace(yearGroup.value, "")
+                    .replace(monthGroup.value, "").replace(dayGroup.value, "");
+                String[] separators = {"/", "\\", "-", "."};
+                int separatorCount = 0;
+                for (String separator : separators) {
+                    if (noDateText.contains(separator)) {
+                        separatorCount++;
+                    }
+                    if (separatorCount > 1) {
+                        isValidMatch = false;
+                        break;
+                    }
+                }
+            }
         }
 
         return isValidMatch;

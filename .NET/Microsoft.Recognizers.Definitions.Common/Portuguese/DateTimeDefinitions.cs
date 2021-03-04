@@ -102,10 +102,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?\b";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
-      public static readonly string DateExtractor6 = $@"(?<=\b(em|no|o)\s+){MonthNumRegex}[\-\.]{DayRegex}\b";
-      public static readonly string DateExtractor7 = $@"\b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?\b";
-      public static readonly string DateExtractor8 = $@"(?<=\b(em|no|o)\s+){DayRegex}[\\\-]{MonthNumRegex}\b";
-      public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?\b";
+      public static readonly string DateExtractor6 = $@"(?<=\b(em|no|o)\s+){MonthNumRegex}[\-\.]{DayRegex}{BaseDateTime.CheckDecimalRegex}\b";
+      public static readonly string DateExtractor7 = $@"\b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
+      public static readonly string DateExtractor8 = $@"(?<=\b(em|no|o)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b";
+      public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor10 = $@"\b{YearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor11 = $@"(?<=\b(dia)\s+){DayRegex}";
       public const string HourNumRegex = @"\b(?<hournum>zero|uma|duas|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze)\b";

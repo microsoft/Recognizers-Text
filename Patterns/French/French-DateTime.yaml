@@ -175,17 +175,17 @@ DateExtractor5: !nestedRegex
   def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
-  def: (?<=\b(le|sur(\sl[ae])?)\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b
-  references: [MonthNumRegex, DayRegex ]
+  def: (?<=\b(le|sur(\sl[ae])?)\s+){MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}\b
+  references: [MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor7: !nestedRegex
-  def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor8: !nestedRegex
-  def: (?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}\b
-  references: [ DayRegex, MonthNumRegex ]
+  def: (?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b
+  references: [ DayRegex, MonthNumRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9: !nestedRegex
-  def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractorA: !nestedRegex
   def: \b{DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]

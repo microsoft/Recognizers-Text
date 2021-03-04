@@ -241,17 +241,17 @@ DateExtractor5: !nestedRegex
   def: \b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
-  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}(?!(%|\s*{DescRegex}))\b
-  references: [MonthNumRegex, DayRegex ]
+  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
+  references: [MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor7: !nestedRegex
-  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor8: !nestedRegex
-  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{DayRegex}[\/\\\-]{MonthNumRegex}(?!(%|\s*{DescRegex}))\b
-  references: [ DayRegex, MonthNumRegex, DescRegex ]
+  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{DayRegex}[\/\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
+  references: [ DayRegex, MonthNumRegex, DescRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9: !nestedRegex
-  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+del\s+){DateYearRegex})?\b
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+del\s+){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractorA: !nestedRegex
   def: \b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]
