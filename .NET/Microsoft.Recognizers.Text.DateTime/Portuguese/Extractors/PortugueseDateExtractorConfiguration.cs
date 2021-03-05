@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 // (domingo,)? 5 de Abril 5, 2016
                 new Regex(DateTimeDefinitions.DateExtractor2, RegexFlags),
 
-                // (domingo,)? 6 de Abril
+                // (domingo,)? Abril 6
                 new Regex(DateTimeDefinitions.DateExtractor3, RegexFlags),
             };
 
