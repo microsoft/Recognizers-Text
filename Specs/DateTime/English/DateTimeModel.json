@@ -19997,5 +19997,63 @@
         "End": 46
       }
     ]
+  },
+  {
+    "Input": "The sun will set tomorrow at six forty-three minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at six forty-three minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T06:43",
+              "type": "datetime",
+              "value": "2016-11-08 06:43:00"
+            },
+            {
+              "timex": "2016-11-08T18:43",
+              "type": "datetime",
+              "value": "2016-11-08 18:43:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at thirty-six minutes past eight",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at thirty-six minutes past eight",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T08:36",
+              "type": "datetime",
+              "value": "2016-11-08 08:36:00"
+            },
+            {
+              "timex": "2016-11-08T20:36",
+              "type": "datetime",
+              "value": "2016-11-08 20:36:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 57
+      }
+    ]
   }
 ]

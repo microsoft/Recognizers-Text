@@ -205,9 +205,9 @@ RangeUnitRegex: !simpleRegex
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|[aá]\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\b
 MinuteNumRegex: !simpleRegex
-  def: (?<minnum>un|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)
+  def: (?<minnum>((vingt|trente|quarante|cinquante)(\s*(et|-)?\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)
 DeltaMinuteNumRegex: !simpleRegex
-  def: (?<deltaminnum>un|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)
+  def: (?<deltaminnum>((vingt|trente|quarante|cinquante)(\s*(et|-)?\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)
 OclockRegex: !simpleRegex
   def: (?<oclock>heures?|h)
 PmRegex: !simpleRegex
@@ -218,7 +218,7 @@ LessThanOneHour: !nestedRegex
   def: (?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutes?|mins?))|(?<=heures?\s+((et|moins)\s+)?)({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
-  def: (?<writtentime>{HourNumRegex}\s+(heures\s+)?(et\s+)?((?<tens>vingt|trente|quarante|cinquante)(\s*(et|-)?\s*))?{MinuteNumRegex}(\s+(minutes?|mins?))?)
+  def: (?<writtentime>{HourNumRegex}\s+(heures\s+)?(et\s+)?{MinuteNumRegex}(\s+(minutes?|mins?))?)
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
   def: (?<prefix>(heures?\s+((et|moins)\s+)?{LessThanOneHour}|(et|moins)\s+{LessThanOneHour}|{LessThanOneHour}\s+[àa]))

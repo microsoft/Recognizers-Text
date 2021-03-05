@@ -3595,5 +3595,34 @@
         "End": 63
       }
     ]
+  },
+  {
+    "Input": "le soleil se couchant demain à huit heures moins vingt-trois minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "demain à huit heures moins vingt-trois minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:37",
+              "type": "datetime",
+              "value": "2016-11-08 07:37:00"
+            },
+            {
+              "timex": "2016-11-08T19:37",
+              "type": "datetime",
+              "value": "2016-11-08 19:37:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 67
+      }
+    ]
   }
 ]
