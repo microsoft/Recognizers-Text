@@ -141,8 +141,9 @@ WeekDayRegex: !simpleRegex
 OnRegex: !nestedRegex
   def: (?<=\b(em|no)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
-RelaxedOnRegex: !simpleRegex
-  def: (?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b
+RelaxedOnRegex: !nestedRegex
+  def: (?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?({DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|{MonthRegex}))
+  references: [ DayRegex, MonthRegex ]
 ThisRegex: !nestedRegex
   def: \b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b
   references: [ WeekDayRegex ]
