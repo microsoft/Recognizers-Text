@@ -7,6 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
+using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
@@ -143,6 +144,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             //    options => new DateTimeModel(
             //      new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
             //      new JapaneseMergedExtractor(options)));
+
+            // TODO to be uncommented when all tests for Dutch are green.
+            /*RegisterModel<DateTimeModel>(
+                Culture.Korean,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new KoreanMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Korean, options, dmyDateFormat: false))),
+                    new BaseMergedDateTimeExtractor(
+                        new KoreanMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Korean, options, dmyDateFormat: false)))));
+            */
         }
     }
 }
