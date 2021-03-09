@@ -1328,5 +1328,279 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Eu voltarei set-23-2020.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "set-23-2020",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei setembro-2020-23.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "setembro-2020-23",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei 2020/23/set.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2020/23/set",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei 2020/set/23",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2020/set/23",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei 23/set/2020",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23/set/2020",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei 23-2020-setembro",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23-2020-setembro",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Me envie um comprovante da minha compra feita no dia 17/11",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "17/11",
+        "Start": 53,
+        "End": 57,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-17",
+              "type": "date",
+              "value": "2019-11-17"
+            },
+            {
+              "timex": "XXXX-11-17",
+              "type": "date",
+              "value": "2020-11-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei sexta-feira 23 às 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira 23 às 4",
+        "Start": 12,
+        "End": 30,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2018-11-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2019-08-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2018-11-23 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2019-08-23 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei sexta-feira de 23 às 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira de 23 às 4",
+        "Start": 12,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-02 23:00:00",
+              "end": "2019-08-02 04:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-09 23:00:00",
+              "end": "2019-08-09 04:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei sexta-feira 23 a 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira 23 a 4",
+        "Start": 12,
+        "End": 29,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-02 23:00:00",
+              "end": "2019-08-02 04:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-09 23:00:00",
+              "end": "2019-08-09 04:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

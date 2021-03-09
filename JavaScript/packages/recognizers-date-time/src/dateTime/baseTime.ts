@@ -48,7 +48,6 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
                 if (!lth ||
                     (lth.length != match.length && !(match.length == lth.length + 1 && match.value.endsWith(" "))))
                 {
-
                     ret.push(new Token(match.index, match.index + match.length));
                 }
             });

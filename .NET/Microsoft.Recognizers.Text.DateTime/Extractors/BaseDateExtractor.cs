@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.InternalCache;
@@ -214,6 +215,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
                         subText = TrimStartRangeConnectorSymbols(subText);
                         isValidMatch = StartsWithBasicDate(subText);
+                    }
+                }
+
+                // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
+                if (match.Groups["day"].Success && match.Groups["month"].Success)
+                {
+                    var noDateText = match.Value.Replace(match.Groups["year"].Value, string.Empty)
+                        .Replace(match.Groups["month"].Value, string.Empty)
+                        .Replace(match.Groups["day"].Value, string.Empty);
+                    var separators = new List<char> { '/', '\\', '-', '.' };
+                    if (separators.Where(separator => noDateText.Contains(separator)).Count() > 1)
+                    {
+                        isValidMatch = false;
                     }
                 }
             }

@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
 {
     [TestClass]
-    public class TestTimexRangeResolve
+    public class TestTimexRangeResolver
     {
         [TestMethod]
         public void DataTypes_RangeResolve_daterange_definite()
