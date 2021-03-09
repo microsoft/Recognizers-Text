@@ -310,11 +310,11 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight)
 PmRegex: !simpleRegex
-  def: (?<pm>(((?:at|in|around|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))
+  def: (?<pm>(((?:at|in|around|circa|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))
 PmRegexFull: !simpleRegex
-  def: (?<pm>((?:at|in|around|on|for)\s+(the\s+)?)?(afternoon|evening|(mid)?night|lunchtime))
+  def: (?<pm>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(afternoon|evening|(mid)?night|lunchtime))
 AmRegex: !simpleRegex
-  def: (?<am>((?:at|in|around|on|for)\s+(the\s+)?)?(morning))
+  def: (?<am>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(morning))
 LunchRegex: !simpleRegex
   def: \blunchtime\b
 NightRegex: !simpleRegex
@@ -464,13 +464,13 @@ TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
   references: [ DateTimeSpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
-  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|in|on))?\s*$'
+  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|circa|in|on))?\s*$'
   references: [ DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayAfterRegex: !nestedRegex
   def: (?<!{NonTimeContextTokens}\s*)\b({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}\b
   references: [ NonTimeContextTokens, HourNumRegex, BaseDateTime.HourRegex, DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
-  def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
+  def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|circa))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
   def: (the\s+)?end of(\s+the)?\s*$
@@ -611,7 +611,7 @@ ReferenceDatePeriodRegex: !nestedRegex
   def: \b{ReferencePrefixRegex}\s+(?<duration>week|month|year|decade|weekend)\b
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
-  def: ^(-|,|for|t|around|@)$
+  def: ^(-|,|for|t|around|circa|@)$
 FromToRegex: !simpleRegex
   def: (\b(from).+(to|and|or)\b.+)
 SingleAmbiguousMonthRegex: !simpleRegex
@@ -622,7 +622,7 @@ SingleAmbiguousTermsRegex: !simpleRegex
 UnspecificDatePeriodRegex: !simpleRegex
   def: ^(week|month|year)$
 PrepositionSuffixRegex: !simpleRegex
-  def: \b(on|in|at|around|from|to)$
+  def: \b(on|in|at|around|circa|from|to)$
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)
 ForTheRegex: !nestedRegex

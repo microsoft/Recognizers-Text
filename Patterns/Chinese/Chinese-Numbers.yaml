@@ -144,7 +144,7 @@ DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
 ZeroToNineFullHalfRegex: !simpleRegex
-  def: '[\d１２３４５６７８９０]'
+  def: '[\d]'
 DigitNumRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+'
   references: [ZeroToNineFullHalfRegex]
@@ -257,10 +257,10 @@ DoubleAllFloatRegex: !nestedRegex
   def: (?<![百佰]\s*分\s*之\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*[个個]\s*[百佰]\s*分\s*[点點])
   references: [AllIntRegex, AllFloatRegex, ZeroToNineIntegerRegex]
 DoubleExponentialNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 DoubleScientificNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegex: !nestedRegex
@@ -338,7 +338,7 @@ SpecialsPercentageRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex}|[十拾])\s*成(\s*(半|{ZeroToNineIntegerRegex}))?
   references: [ZeroToNineIntegerRegex]
 NumbersSpecialsPercentageRegex: !nestedRegex
-  def: ({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*成
+  def: ({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|10)\s*成
   references: [ZeroToNineFullHalfRegex]
 SimpleSpecialsPercentageRegex: !nestedRegex
   def: '{ZeroToNineIntegerRegex}\s*[点點]\s*{ZeroToNineIntegerRegex}\s*成'

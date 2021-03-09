@@ -25,14 +25,14 @@ namespace Microsoft.Recognizers.Definitions.French
       public const bool CheckBothBeforeAfter = false;
       public const string TillRegex = @"(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
       public const string RangeConnectorRegex = @"(?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)";
-      public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
-      public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
+      public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
+      public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string NextSuffixRegex = @"(?<order>prochaines?|prochain|suivante)\b";
       public const string PastSuffixRegex = @"(?<order>derni[eè]re?|pr[eé]c[eé]dente)\b";
       public const string ThisPrefixRegex = @"(?<order>ce(tte)?|au\s+cours+(du|de))\b";
       public const string RangePrefixRegex = @"(du|depuis|des?|entre)";
-      public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11e?|12e?|13e?|14e?|15e?|16e?|17e?|18e?|19e?|1er|1|21e?|20e?|22e?|23e?|24e?|25e?|26e?|27e?|28e?|29e?|2e?|30e?|31e?|3e?|4e?|5e?|6e?|7e?|8e?|9e?)(?=\b|t)";
-      public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
+      public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)";
+      public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
       public const string SpecialDescRegex = @"(p\b)";
       public static readonly string AmDescRegex = $@"(h\b|{BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"(h\b|{BaseDateTime.BasePmDescRegex})";
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string IshRegex = $@"\b(peu\s*pr[èe]s\s*{BaseDateTime.HourRegex}|peu\s*pr[èe]s\s*{WrittenTimeRegex}|peu\s*pr[èe]s\s*[àa]\s*{BaseDateTime.HourRegex}|peu pr[èe]s midi)\b";
       public const string TimeUnitRegex = @"(?<unit>heures?|hrs?|h|minutes?|mins?|secondes?|secs?)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>huere|minute)\b";
-      public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
+      public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}";
       public const string FivesRegex = @"(?<tens>(quinze|vingt(\s*|-*(cinq))?|trente(\s*|-*(cinq))?|quarante(\s*|-*(cinq))??|cinquante(\s*|-*(cinq))?|dix|cinq))\b";
       public const string PeriodHourNumRegex = @"(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)";
       public static readonly string TimeRegex1 = $@"\b({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}(\s+{TimePrefix})?\b";
@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string SpecificTimeBetweenAnd = @"^[.]";
       public const string PrepositionRegex = @"(?<prep>^([aà](\s+?la)?|en|sur(\s*l[ea])?|de)$)";
       public const string TimeOfDayRegex = @"\b(?<timeOfDay>((((dans\s+(l[ea])?\s+)?((?<early>d[eé]but(\s+|-)|t[oô]t(\s+|-)(l[ea]\s*)?)|(?<late>fin\s*|fin de(\s+(la)?)|tard\s*))?(matin([ée]e)?|((d|l)?'?)apr[eè]s[-|\s*]midi|nuit|soir([eé]e)?)))|(((\s+(l[ea])?\s+)?)jour(n[eé]e)?))s?)\b";
-      public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})|({TimeOfDayRegex}\s*({NextSuffixRegex}))\b|\bsoir|\bdu soir)s?\b";
+      public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})|({TimeOfDayRegex}\s*({NextSuffixRegex}))\b|\b(du )?soir)s?\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public const string NowRegex = @"\b(?<now>(ce\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\b";
@@ -152,9 +152,9 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\b";
       public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\b(ce(tte)?\s+)(soir|nuit))\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(en|dans|du\s+)?{DateTimeSpecificTimeOfDayRegex}";
-      public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+([àa]|pour))?\s*$";
+      public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+([àa]|vers|pour))?\s*$";
       public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(en|[àa]\s+)?{DateTimeSpecificTimeOfDayRegex}";
-      public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+([àa]|vers))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
+      public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+([àa]|vers|pour))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
       public const string SpecificEndOfRegex = @"(la\s+)?fin(\s+de\s*|\s*de*l[ea])?\s*$";
       public const string UnspecificEndOfRegex = @"^[.]";
       public const string UnspecificEndOfRangeRegex = @"^[.]";
@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string BeforeRegex2 = @"\b(entre\s*(le|la(s)?)?)\b";
       public const string AfterRegex = @"\b(apres)\b";
       public const string SinceRegex = @"\b(depuis)\b";
-      public const string AroundRegex = @"^[.]";
+      public const string AroundRegex = @"\b(vers)\b";
       public const string AgoPrefixRegex = @"\b(y a)\b";
       public const string LaterRegex = @"\b(plus tard)\b";
       public const string AgoRegex = @"^[.]";

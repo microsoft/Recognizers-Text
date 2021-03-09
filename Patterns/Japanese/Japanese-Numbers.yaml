@@ -102,7 +102,7 @@ DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
 ZeroToNineFullHalfRegex: !simpleRegex
-  def: '[\d１２３４５６７８９０]'
+  def: '[\d]'
 DigitNumRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+'
   references: [ZeroToNineFullHalfRegex]
@@ -215,7 +215,7 @@ OrdinalRegex: !nestedRegex
   def: (({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|(({AllIntRegex}+|{NumbersWithAllowListRegex}+)(番目|位|等))))|(最初|1等|ファースト)
   references: [NumbersWithAllowListRegex, AllIntRegex, OrdinalNumbersRegex, RoundNumberIntegerRegex]
 RelativeOrdinalRegex: !simpleRegex
-  def: (?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))
+  def: (?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から1つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))
 AllOrdinalRegex: !nestedRegex
   def: ({OrdinalRegex}|{RelativeOrdinalRegex})
   references: [OrdinalRegex, RelativeOrdinalRegex]
@@ -288,7 +288,7 @@ SpecialsPercentageRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex}|[十])\s*割(\s*(半|{ZeroToNineIntegerRegex}))?
   references: [ZeroToNineIntegerRegex]
 NumbersSpecialsPercentageRegex: !nestedRegex
-  def: ({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*割
+  def: ({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|10)\s*割
   references: [ZeroToNineFullHalfRegex]
 SimpleSpecialsPercentageRegex: !nestedRegex
   def: '{ZeroToNineIntegerRegex}\s*[.]\s*{ZeroToNineIntegerRegex}\s*割'
