@@ -20948,6 +20948,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "viernes 23 a las 4",

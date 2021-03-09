@@ -23,6 +23,9 @@ AmPmDescRegex: !nestedRegex
 DescRegex: !nestedRegex
   def: (?<desc>({AmDescRegex}|{PmDescRegex}))
   references: [ AmDescRegex, PmDescRegex ]
+OclockRegex: !simpleRegex
+  # "... em ponto"
+  def: (?<oclock>em\s+ponto)
 OfPrepositionRegex: !simpleRegex
   def: (\bd(o|a|e)s?\b)
 AfterNextSuffixRegex: !simpleRegex
@@ -248,9 +251,6 @@ MinuteNumRegex: !simpleRegex
   def: (?<minnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)
-OclockRegex: !simpleRegex
-  # "... em ponto"
-  def: (?<oclock>em\s+ponto)
 PmRegex: !simpleRegex
   # "... tarde"
   def: (?<pm>((pela|de|da|\b[àa]\b|na)\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
