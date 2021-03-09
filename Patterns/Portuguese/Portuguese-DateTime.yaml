@@ -23,6 +23,9 @@ AmPmDescRegex: !nestedRegex
 DescRegex: !nestedRegex
   def: (?<desc>({AmDescRegex}|{PmDescRegex}))
   references: [ AmDescRegex, PmDescRegex ]
+OclockRegex: !simpleRegex
+  # "... em ponto"
+  def: (?<oclock>em\s+ponto)
 OfPrepositionRegex: !simpleRegex
   def: (\bd(o|a|e)s?\b)
 AfterNextSuffixRegex: !simpleRegex
@@ -164,9 +167,9 @@ ForTheRegex: !simpleRegex
 WeekDayAndDayOfMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: .^
-WeekDayAndDayRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: .^
+WeekDayAndDayRegex: !nestedRegex
+  def: \b{WeekDayRegex}\s+({DayRegex})(?!([-:/]|\.\d|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -248,9 +251,6 @@ MinuteNumRegex: !simpleRegex
   def: (?<minnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)
-OclockRegex: !simpleRegex
-  # "... em ponto"
-  def: (?<oclock>em\s+ponto)
 PmRegex: !simpleRegex
   # "... tarde"
   def: (?<pm>((pela|de|da|\b[àa]\b|na)\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
@@ -373,7 +373,7 @@ ConnectorRegex: !simpleRegex
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>vinte e um|vinte e dois|vinte e tr[êe]s|vinte e quatro|zero|um|uma|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez[ea]sseis|dez[ea]ssete|dezoito|dez[ea]nove|vinte)
 PureNumFromTo: !nestedRegex
-  def: ((desde|de|da|das)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
+  def: (((desde|de|da|das)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}(?<![aà]s)|((desde|de|da|das)\s+(a(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex})\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
   def: (entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?

@@ -20942,5 +20942,44 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Voy a volver viernes 23 a las 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "viernes 23 a las 4",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2018-11-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2019-08-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2018-11-23 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2019-08-23 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

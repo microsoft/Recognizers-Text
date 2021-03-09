@@ -1501,5 +1501,106 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Eu voltarei sexta-feira 23 às 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira 23 às 4",
+        "Start": 12,
+        "End": 30,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2018-11-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2019-08-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2018-11-23 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2019-08-23 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei sexta-feira de 23 às 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira de 23 às 4",
+        "Start": 12,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-02 23:00:00",
+              "end": "2019-08-02 04:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-09 23:00:00",
+              "end": "2019-08-09 04:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei sexta-feira 23 a 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira 23 a 4",
+        "Start": 12,
+        "End": 29,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-02 23:00:00",
+              "end": "2019-08-02 04:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-5T23,XXXX-WXX-5T04,PT5H)",
+              "type": "datetimerange",
+              "start": "2019-08-09 23:00:00",
+              "end": "2019-08-09 04:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
