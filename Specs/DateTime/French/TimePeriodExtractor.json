@@ -493,5 +493,766 @@
         "Length": 46
       }
     ]
+  },
+  {
+    "Input": "Je serai dehors de 5 heures à 6 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures à 6 heures de l'après-midi",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 5h à 6h de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5h à 6h de l'après-midi",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 17 heures à 18 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "17 heures à 18 heures de l'après-midi",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 5 heures à 7 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures à 7 heures du matin",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 17 heures à 18 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 17 heures à 18 heures",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 5 heures et 18 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 5 heures et 18 heures",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 17 heures et 18 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 17 heures et 18 heures",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 17 heures et 18 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 17 heures et 18 heures de l'après-midi",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16 heures à 17 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16 heures à 17 heures",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4 heures à 5 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 heures à 5 heures de l'après-midi",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4:00 à 5:00 de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4:00 à 5:00 de l'après-midi",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16h00 à 17h00",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16h00 à 17h00",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4 heures à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 heures à 7 heures",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 15 heures à 19h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 heures à 19h30",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16h à 17h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16h à 17h",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4h à 5h de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4h à 5h de l'après-midi",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors 20 minutes à 3 à 8 de l'après-midi ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 minutes à 3 à 8 de l'après-midi ",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16 heures à 17 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17 heures de l'après-midi",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16 heures à 17h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17h30",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 3 heures du matin à 17 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 3 heures du matin à 17 heures",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 3 heures du matin à 17 heures de l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 3 heures du matin à 17 heures de l’après-midi",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 48
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 16 heures et 17h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 16 heures et 17h30",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 3 heures du matin et 17 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 3 heures du matin et 17 heures",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "matin",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous dans l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans l’après-midi",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans la nuit",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit dans le soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans le soir",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans la nuit",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt le matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt le matin",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tard le matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard le matin",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous en début de matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début de matinée",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous plus tard dans la matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la matinée",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous en début d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début d’après-midi",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous en fin d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en fin d’après-midi",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en début de soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début de soirée",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous plus tard dans la soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la soirée",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt la soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt la soirée",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "on se voit plus tard dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la nuit",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt le soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt le soir",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "prenez un rendez-vous plus tard dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la nuit",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 2 heures à 5 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 2 heures à 5 heures de l'après-midi",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Soirée à Jean's de 18 heures à 23 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 18 heures à 23 heures",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 14 heures à 16h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 14 heures à 16h30",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 14 heures à 17 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 14 heures à 17 heures",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13 heures à 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 heures à 16 heures",
+        "Type": "timerange",
+        "Start": 25,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13 heures à 16 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 heures à 16 heures",
+        "Type": "timerange",
+        "Start": 25,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13h30 à 16 heures!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "13h30 à 16 heures",
+        "Type": "timerange",
+        "Start": 25,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13h30 à 16 heures personne",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Salut Cortana- Veuillez prendre un rendez-vous sur Skype avec Jennifer. J’ai besoin d’une réunion de 30 minutes dans l’après-midi, ce vendredi je vais partir. ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans l’après-midi",
+        "Type": "timerange",
+        "Start": 112,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Salut Cortana- Veuillez prendre un rendez-vous sur Skype avec Jennifer. J’ai besoin d’une réunion de 30 minutes ce vendredi, je vais partir dans l’après-midi. ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans l’après-midi",
+        "Type": "timerange",
+        "Start": 140,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 1h30 à 3h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1h30 à 3h30",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13h30 à 3h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 13h30 à 3h30",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13h30 à 15h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 13h30 à 15h30",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 1 heures à 3h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1 heures à 3h30",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 1h30 à 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1h30 à 3 heures",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion entre 10 heures et 11h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 10 heures et 11h30",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion entre 10h10 et 12h50",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 10h10 et 12h50",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion entre 22h10 et 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 22h10 et 3 heures",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 22h30 à 10 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 22h30 à 10 heures",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 10h30 à 23 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 10h30 à 23 heures",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ne m’appelle pas pendant les heures ouvrées",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "pendant les heures ouvrées",
+        "Type": "timerange",
+        "Start": 17,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je sors l'heure de déjeuner",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de déjeuner",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Il est au déjeuner",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "au déjeuner",
+        "Type": "timerange",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ce concert populaire et amical pour la famille retourne dans la salle pour une autre heure de déjeuner rempli de chants traditionnels et de favoris festifs",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de déjeuner",
+        "Type": "timerange",
+        "Start": 85,
+        "Length": 17
+      }
+    ]
   }
 ]
