@@ -1091,5 +1091,1512 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "Je serai dehors de 5 heures à 6 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures à 6 heures de l'après-midi",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 17 heures à 18 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "17 heures à 18 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 5 heures à 7 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures à 7 heures du matin",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05,T07,PT2H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "07:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "07:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 17h à 18h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 17h à 18h",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 5 heures et 18 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 5 heures et 18 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 17 heures et 18 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 17 heures et 18 heures ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 5 heures et 6 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 5 heures et 6 heures de l'après-midi",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 1 heures à 17 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1 heures à 17 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01,T17,PT16H)",
+          "FutureResolution": {
+            "startTime": "01:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16 heures à 17 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16 heures à 17 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4 heures à 17 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 heures à 17 heures ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4 heures à 7 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 heures à 7 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T04:00,T07,PT3H)",
+          "FutureResolution": {
+            "startTime": "04:00:00",
+            "endTime": "07:00:00"
+          },
+          "PastResolution": {
+            "startTime": "04:00:00",
+            "endTime": "07:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 16h à 17h ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16h à 17h",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4 heures à 5 heures de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 heures à 5 heures de l'après-midi",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 3 heures du matin à 17 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 3 heures du matin à 17 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 3 heures du matin et 17 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 3 heures du matin et 17 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 16 heures et 17 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 16 heures et 17 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "matin",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous dans l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans l’après-midi",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans la nuit",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 23,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit dans le soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans le soir",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit le soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "soir",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt le matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt le matin",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tard le matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard le matin",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous au grand matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "au grand matin",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous plus tard dans la matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la matinée",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous en début d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début d’après-midi",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous en fin d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en fin d’après-midi",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en début de soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début de soirée",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous en fin de soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en fin de soirée",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt la soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt la soirée",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tard dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard dans la nuit",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous tôt le soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt le soir",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "start",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous tard dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard dans la nuit",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "Mod": "end",
+          "FutureResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 23,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous à partir de 13 heures jusqu'à 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à partir de 13 heures jusqu'à 16 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13,T16,PT3H)",
+          "FutureResolution": {
+            "startTime": "13:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous de 13h30 à 16 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 13h30 à 16 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T16,PT2H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Horaire de la matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "matinée",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 1h30 à 3 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1h30 à 3 heures ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T03,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "La classe est de 11 heures à 15 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 11 heures à 15 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T15,PT4H)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Le cours est de 23 heures à 3 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 23 heures à 3 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "La classe est de 23h01 à 11 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 23h01 à 11 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23:01,T11,PT11H59M)",
+          "FutureResolution": {
+            "startTime": "23:01:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:01:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "La classe est de 11h01 à 11 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 11h01 à 11 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11:01,T23,PT11H59M)",
+          "FutureResolution": {
+            "startTime": "11:01:00",
+            "endTime": "23:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:01:00",
+            "endTime": "23:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 11 heures à 11h50",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 11 heures à 11h50",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T11:50,PT50M)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          }
+        },
+        "Start": 34,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13h30 à 3h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 13h30 à 3h30",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15:30,PT2H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 13h30 à 15h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 13h30 à 15h30",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15:30,PT2H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 22,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 15 heures à 15h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 15 heures à 15h30",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T15,T15:30,PT30M)",
+          "FutureResolution": {
+            "startTime": "15:00:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "15:00:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "J’ai attendu de 0h01 à 13 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 0h01 à 13 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T13,PT12H59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "J’ai attendu de 0h01 à 1 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 0h01 à 1 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T01,PT59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 3 heures à 3h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 3 heures à 3h30",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T03:30,PT30M)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "03:30:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "03:30:00"
+          }
+        },
+        "Start": 22,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 1h30 à 3 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1h30 à 3 heures ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T03,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 1h30 à 15 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1h30 à 15 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 11 heures à 15 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 11 heures à 15 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T15,PT4H)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 11h à 11h50",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 11h à 11h50",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T11:50,PT50M)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          }
+        },
+        "Start": 34,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 11 heures à 3 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 11 heures à 3 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 10 heures à 11 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 10 heures à 11 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T11,PT1H)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 23 heures à 3 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 23 heures à 3 heures ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "aidez-moi à organiser une réunion de 23 heures à 15 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 23 heures à 15 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T15,PT16H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 34,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous entre 10 heures et 11h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 10 heures et 11h30",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:30:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:30:00"
+          }
+        },
+        "Start": 23,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous entre 10h10 et 12h50",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 10h10 et 12h50",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10:10,T12:50,PT2H40M)",
+          "FutureResolution": {
+            "startTime": "10:10:00",
+            "endTime": "12:50:00"
+          },
+          "PastResolution": {
+            "startTime": "10:10:00",
+            "endTime": "12:50:00"
+          }
+        },
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous entre 22h10 et 3 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 22h10 et 3 heures ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T22:10,T03,PT4H50M)",
+          "FutureResolution": {
+            "startTime": "22:10:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "22:10:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous de 22h10 à 10 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 22h10 à 10 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T22:10,T10,PT11H50M)",
+          "FutureResolution": {
+            "startTime": "22:10:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "22:10:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "prenons un rendez-vous de 10h30 à 23 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 10h30 à 23 heures",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10:30,T23,PT12H30M)",
+          "FutureResolution": {
+            "startTime": "10:30:00",
+            "endTime": "23:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:30:00",
+            "endTime": "23:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ne m’appelle pas pendant les heures ouvrées.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "pendant les heures ouvrées",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TBH",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors l'heure de déjeuner",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de déjeuner",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Il est au déjeuner",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "au déjeuner",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ce concert populaire et amical pour la famille retourne dans la salle pour un autre déjeuner rempli de chants traditionnels et de favoris festifs",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "déjeuner",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 84,
+        "Length": 8
+      }
+    ]
   }
 ]
