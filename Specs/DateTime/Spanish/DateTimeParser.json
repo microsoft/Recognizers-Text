@@ -1366,12 +1366,12 @@
         "Text": "anoche a las 7",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T19",
+          "Timex": "2016-11-06T19",
           "FutureResolution": {
-            "dateTime": "2016-11-07 19:00:00"
+            "dateTime": "2016-11-06 19:00:00"
           },
           "PastResolution": {
-            "dateTime": "2016-11-07 19:00:00"
+            "dateTime": "2016-11-06 19:00:00"
           }
         },
         "Start": 6,

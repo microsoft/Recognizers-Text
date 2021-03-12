@@ -29,7 +29,7 @@ FOR /R %%f IN (*Tests.dll) DO (
 )
 
 ECHO "!VsTestDir!\vstest.console"
-CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
+CALL "!VsTestDir!\vstest.console" /Logger:"console;verbosity=minimal" /Parallel %testcontainer%
 IF %ERRORLEVEL% NEQ 0 GOTO TEST_ERROR
 
 ECHO.

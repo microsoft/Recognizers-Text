@@ -18,7 +18,7 @@
   {
     "Input": "Tel: (0212) 338 10 00",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "(0212) 338 10 00",
@@ -35,7 +35,7 @@
   {
     "Input": "Tel: 2122281693",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "2122281693",
@@ -53,7 +53,7 @@
     "Input": "Tel: 0850 222 1 833",
     "Comment": "0850 is fixed here, mostly for call centers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "0850 222 1 833",
@@ -71,7 +71,7 @@
     "Input": "Tel: 444 0 446",
     "Comment": "444 is fixed here, mostly for call centers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "444 0 446",
@@ -89,7 +89,7 @@
     "Input": "Tel: 258 55 55",
     "Comment": "258 is one of the city codes",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "258 55 55",
@@ -107,7 +107,7 @@
     "Input": "Tel: 0530 357 29 86",
     "Comment": "0530 is a cell phone prefix, there are around 10 of them, such as 0535, 0542, etc.",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "0530 357 29 86",
@@ -125,7 +125,7 @@
     "Input": "Tel: +90 216 544 3800",
     "Comment": "International Calls, +90 is optional",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "+90 216 544 3800",

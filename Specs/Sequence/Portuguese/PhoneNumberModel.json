@@ -947,26 +947,32 @@
   },
   {
     "Input": "conta número 1234567",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "conta bancária: 12345678",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "conta número 12345678",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "conta número: 12345678",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "conta bancária número: 12345678",
+    "NotSupported": "java",
     "Results": []
   },
   {
     "Input": "minha conta é 12345678",
+    "NotSupported": "java",
     "Results": []
   }
 ]

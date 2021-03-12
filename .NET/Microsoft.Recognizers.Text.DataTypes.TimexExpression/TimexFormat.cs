@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDate(TimexProperty timex)
         {
-            return TimexHelpers.GenerateDateTimex(timex.Year ?? Constants.InvalidValue, timex.Month ?? Constants.InvalidValue, timex.DayOfWeek != null ? timex.DayOfWeek.Value : timex.DayOfMonth ?? Constants.InvalidValue, timex.DayOfWeek != null);
+            return TimexHelpers.GenerateDateTimex(timex.Year ?? Constants.InvalidValue, timex.WeekOfYear ?? (timex.Month ?? Constants.InvalidValue), timex.DayOfWeek != null ? timex.DayOfWeek.Value : timex.DayOfMonth ?? Constants.InvalidValue, timex.WeekOfMonth ?? Constants.InvalidValue, timex.DayOfWeek != null);
         }
 
         private static string FormatDateRange(TimexProperty timex)
@@ -134,6 +134,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             if (timex.Year != null && timex.WeekOfYear != null)
             {
                 return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-W{TimexDateHelpers.FixedFormatNumber(timex.WeekOfYear, 2)}";
+            }
+
+            if (timex.Year != null && timex.Month != null && timex.WeekOfMonth != null)
+            {
+                return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{TimexDateHelpers.FixedFormatNumber(timex.WeekOfMonth, 2)}";
             }
 
             if (timex.Year != null && timex.Season != null)

@@ -35,8 +35,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string ThisPrefixRegex = @"\b(diese[rnms]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?)\b";
       public const string RangePrefixRegex = @"(vo[nm]|zwischen)";
       public const string PenultimatePrefixRegex = @"\b(vorletzte[snm]?)\b";
-      public const string DayRegex = @"(de[rmsn]\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.|\b)";
-      public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)(\.)?";
+      public const string DayRegex = @"(de[rmsn]\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\.|\b))";
+      public const string MonthNumRegex = @"(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\.?)";
       public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string WhichWeekRegex = @"\b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
       public const string WeekOfRegex = @"(die\s+)?(woche)(\s+des)";
       public const string MonthOfRegex = @"(monat)(\s*)(des)";
-      public const string MonthRegex = @"(?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|januar|j[äa]n(ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.))";
+      public const string MonthRegex = @"(?<month>apr((il)?\b|\.)|aug((ust)?\b|\.)|dez((ember)?\b|\.)|feb((ruar|ber)?\b|\.)|januar|j[äa]n((ner)?\b|\.)|jul((e?i|l)?\b|l\.)|jun([io]?\b|\.)|märz|mai|nov((ember)?\b|\.)|okt((ober)?\b|\.)|sept?((ember)?\b|\.))";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string OnRegex = $@"(?<=\bam\s+)({DayRegex}s?)\b";
       public const string RelaxedOnRegex = @"(?<=\b(am|an dem)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)([\.]))";
@@ -91,17 +91,17 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b";
       public const string WrittenNumRegex = @"(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
       public static readonly string SpecialDate = $@"(?=\b(an( dem)?|am)\s+){DayRegex}\b";
-      public static readonly string DateExtractor1 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})((\s+|\s*,\s*)({DateYearRegex}))?\b";
-      public static readonly string DateExtractor2 = $@"\b({DayRegex}((\s*){MonthRegex})((\,\s*|\s*){DateYearRegex})?)\b";
+      public static readonly string DateExtractor1 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex}\s*[/\\.,\- ]\s*{MonthRegex}(\s*[/\\.,\- ]\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,\- ]\s*{DayRegex}\s*[/\\.,\- ]\s*{MonthRegex})\b";
+      public static readonly string DateExtractor2 = $@"\b({MonthRegex}\s*[/\\.,\- ]\s*{DayRegex}(\s*[/\\.,\- ]\s*{DateYearRegex})?)\b";
       public static readonly string DateExtractor3 = $@"\b({DayRegex}{MonthRegex})";
       public static readonly string DateExtractor4 = $@"\b({DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex})\b";
       public static readonly string DateExtractor5 = $@"\b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"^[.]";
-      public static readonly string DateExtractor7 = $@"({DayRegex}\s*[\.]\s*{MonthNumRegex}[\.])";
-      public static readonly string DateExtractor8 = $@"(?<=\b(am)\s+){DayRegex}[/\\\.]{MonthNumRegex}[/\\\.]({DateYearRegex})?\b";
-      public static readonly string DateExtractor9 = $@"\b({DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?)\b";
+      public static readonly string DateExtractor7 = $@"({DayRegex}\s*[\.]\s*{MonthNumRegex}[\.]){BaseDateTime.CheckDecimalRegex}";
+      public static readonly string DateExtractor8 = $@"(?<=\b(am)\s+){DayRegex}[/\\\.]{MonthNumRegex}([/\\\.]{DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
+      public static readonly string DateExtractor9 = $@"\b({DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?){BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor10 = $@"^[.]";
-      public static readonly string DateExtractorA = $@"({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateExtractorA = $@"({DateYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
       public static readonly string OfMonth = $@"^(\s*des\s*|\s*)?{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(de[rmn])?\s*$";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
@@ -555,37 +555,37 @@ namespace Microsoft.Recognizers.Definitions.German
         };
       public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
         {
-            { @"1. ", 1 },
-            { @"2. ", 2 },
-            { @"3. ", 3 },
-            { @"4. ", 4 },
-            { @"5. ", 5 },
-            { @"6. ", 6 },
-            { @"7. ", 7 },
-            { @"8. ", 8 },
-            { @"9. ", 9 },
-            { @"10. ", 10 },
-            { @"11. ", 11 },
-            { @"12. ", 12 },
-            { @"13. ", 13 },
-            { @"14. ", 14 },
-            { @"15. ", 15 },
-            { @"16. ", 16 },
-            { @"17. ", 17 },
-            { @"18. ", 18 },
-            { @"19. ", 19 },
-            { @"20. ", 20 },
-            { @"21. ", 21 },
-            { @"22. ", 22 },
-            { @"23. ", 23 },
-            { @"24. ", 24 },
-            { @"25. ", 25 },
-            { @"26. ", 26 },
-            { @"27. ", 27 },
-            { @"28. ", 28 },
-            { @"29. ", 29 },
-            { @"30. ", 30 },
-            { @"31. ", 31 },
+            { @"1.", 1 },
+            { @"2.", 2 },
+            { @"3.", 3 },
+            { @"4.", 4 },
+            { @"5.", 5 },
+            { @"6.", 6 },
+            { @"7.", 7 },
+            { @"8.", 8 },
+            { @"9.", 9 },
+            { @"10.", 10 },
+            { @"11.", 11 },
+            { @"12.", 12 },
+            { @"13.", 13 },
+            { @"14.", 14 },
+            { @"15.", 15 },
+            { @"16.", 16 },
+            { @"17.", 17 },
+            { @"18.", 18 },
+            { @"19.", 19 },
+            { @"20.", 20 },
+            { @"21.", 21 },
+            { @"22.", 22 },
+            { @"23.", 23 },
+            { @"24.", 24 },
+            { @"25.", 25 },
+            { @"26.", 26 },
+            { @"27.", 27 },
+            { @"28.", 28 },
+            { @"29.", 29 },
+            { @"30.", 30 },
+            { @"31.", 31 },
             { @"1", 1 },
             { @"2", 2 },
             { @"3", 3 },

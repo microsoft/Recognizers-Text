@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
       public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)";
+      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*(年|の))?|({SimpleYearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)";
       public static readonly string StrictYearRegex = $@"{YearRegex}";
       public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
       public static readonly string DatePeriodYearInJapaneseRegex = $@"(?<yearJap>({ZeroToNineIntegerRegexJap}{ZeroToNineIntegerRegexJap}{ZeroToNineIntegerRegexJap}{ZeroToNineIntegerRegexJap}|{ZeroToNineIntegerRegexJap}{ZeroToNineIntegerRegexJap}|{ZeroToNineIntegerRegexJap}{ZeroToNineIntegerRegexJap}{ZeroToNineIntegerRegexJap}))年";
@@ -145,9 +145,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             @"个月",
             @"年"
         };
-      public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
-      public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
-      public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)";
+      public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))";
+      public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的|の)?)?(?<holiday>新年|五一|劳动节|メーデー|元旦节|元旦|大晦日|愚人节|エイプリルフール|圣诞节|クリスマス(の日|イブ)?|感謝祭(の日)?|クリーンマンデイ|父の日|植树节|国庆节|国慶節|情人节|バレンタインデー|教(师节|師の日)|儿童节|妇女节|青年(节|の日)|建军节|建軍節|女生节|光棍节|双十一|清明(节|節)?|キング牧師記念日|旧正月|ガールズデー|(こども|子ども|子供)の日|お正月|植樹祭|シングルデー|シングルズデー|国際婦人デー|ダブル十一)";
+      public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母(亲节|の日)|父亲节|感恩节|万圣节|ハロウィン)";
       public const string SetUnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
       public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
       public const string SetEachPrefixRegex = @"(?<each>(每)\s*$)";

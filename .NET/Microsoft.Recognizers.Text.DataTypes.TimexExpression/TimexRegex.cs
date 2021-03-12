@@ -19,22 +19,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 DateCollectionName, new Regex[]
                 {
-                    // date
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
+                   // date
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<month>\d\d)(-(?<dayOfMonth>\d\d))?"),
                     new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
+                    new Regex(@"^XXXX-XX-(?<dayOfMonth>\d\d)"),
 
                     // daterange
                     new Regex(@"^(?<year>\d\d\d\d)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<month>\d\d)-W(?<weekOfMonth>\d\d)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<month>\d\d)-WXX-(?<weekOfMonth>\d{1,2})(-(?<dayOfWeek>\d))?"),
                     new Regex(@"^(?<season>SP|SU|FA|WI)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<season>SP|SU|FA|WI)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)-(?<weekend>WE)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-W(?<weekOfMonth>\d\d)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d{1,2})"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<season>SP|SU|FA|WI)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-W(?<weekOfYear>\d\d)(-(?<dayOfWeek>\d)|-(?<weekend>WE))?"),
                 }
             },
             {

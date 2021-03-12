@@ -71,7 +71,6 @@
     },
     {
       "Input": "8.8.8.1/24是IP地址",
-      "NotSupported": "java",
       "Results": [
         {
           "Text": "8.8.8.1",
@@ -99,32 +98,26 @@
     },
     {
       "Input": "我电脑IP不是256.1.1.1",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IP例子1111.1.1.1",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IP例子1101.1.1.1",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IP例子1.1000.1.1",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IP例子1.1.1000.1",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IP例子1.1.1.256",
-      "NotSupported": "java",
       "Results": []
     },
     {
@@ -325,57 +318,46 @@
     },
     {
       "Input": "火车到站10:00",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IPV6地址FE06::1::2",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IPV6地址:",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "我说 :",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "我说:",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "lync:",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "lync: :",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": ":正像你说的这样。",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": ": 正像你说的这样。",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IPV6地址12::44:f:45::1",
-      "NotSupported": "java",
       "Results": []
     },
     {
       "Input": "错误的IPV6地址JKLN:ssej::1",
-      "NotSupported": "java",
       "Results": []
     }
   ]

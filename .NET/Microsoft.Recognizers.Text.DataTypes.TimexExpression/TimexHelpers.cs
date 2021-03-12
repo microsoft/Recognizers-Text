@@ -81,25 +81,25 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 if (timex.Year != null)
                 {
-                    var range = new TimexRange { Start = new TimexProperty { Year = timex.Year }, End = new TimexProperty() };
-                    if (timex.Month != null)
+                    Tuple<TimexProperty, TimexProperty> dateRange;
+                    if (timex.Month != null && timex.WeekOfMonth != null)
                     {
-                        range.Start.Month = timex.Month;
-                        range.Start.DayOfMonth = 1;
-                        range.End.Year = timex.Year;
-                        range.End.Month = timex.Month + 1;
-                        range.End.DayOfMonth = 1;
+                        dateRange = MonthWeekDateRange(timex.Year.Value, timex.Month.Value, timex.WeekOfMonth.Value);
+                    }
+                    else if (timex.Month != null)
+                    {
+                        dateRange = MonthDateRange(timex.Year.Value, timex.Month.Value);
+                    }
+                    else if (timex.WeekOfYear != null)
+                    {
+                        dateRange = YearWeekDateRange(timex.Year.Value, timex.WeekOfYear.Value, timex.Weekend);
                     }
                     else
                     {
-                        range.Start.Month = 1;
-                        range.Start.DayOfMonth = 1;
-                        range.End.Year = timex.Year + 1;
-                        range.End.Month = 1;
-                        range.End.DayOfMonth = 1;
+                        dateRange = YearDateRange(timex.Year.Value);
                     }
 
-                    return range;
+                    return new TimexRange { Start = dateRange.Item1, End = dateRange.Item2 };
                 }
             }
 
@@ -225,6 +225,31 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             return start;
+        }
+
+        public static string GenerateDateTimex(int year, int monthOrWeekOfYear, int day, int weekOfMonth, bool byWeek)
+        {
+            var yearString = year == Constants.InvalidValue ? Constants.TimexFuzzyYear : TimexDateHelpers.FixedFormatNumber(year, 4);
+            var monthWeekString = monthOrWeekOfYear == Constants.InvalidValue ? Constants.TimexFuzzyMonth : TimexDateHelpers.FixedFormatNumber(monthOrWeekOfYear, 2);
+            string dayString;
+            if (byWeek)
+            {
+                dayString = day.ToString(CultureInfo.InvariantCulture);
+                if (weekOfMonth != Constants.InvalidValue)
+                {
+                    monthWeekString = monthWeekString + $"-{Constants.TimexFuzzyWeek}-" + weekOfMonth.ToString(CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    monthWeekString = Constants.TimexWeek + monthWeekString;
+                }
+            }
+            else
+            {
+                dayString = day == Constants.InvalidValue ? Constants.TimexFuzzyDay : TimexDateHelpers.FixedFormatNumber(day, 2);
+            }
+
+            return $"{yearString}-{monthWeekString}-{dayString}";
         }
 
         public static TimexProperty TimexTimeAdd(TimexProperty start, TimexProperty duration)
@@ -364,6 +389,83 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             timexBuilder.AppendFormat(CultureInfo.InvariantCulture, value.ToString(CultureInfo.InvariantCulture));
             timexBuilder.AppendFormat(CultureInfo.InvariantCulture, TimexUnitToStringMap[unit]);
             return timexBuilder.ToString();
+        }
+
+        public static string FormatResolvedDateValue(string dateValue, string timeValue)
+        {
+            return $"{dateValue} {timeValue}";
+        }
+
+        public static Tuple<TimexProperty, TimexProperty> MonthWeekDateRange(int year, int month, int weekOfMonth)
+        {
+            var start = GenerateMonthWeekDateStart(year, month, weekOfMonth);
+            var end = start.AddDays(7);
+
+            return new Tuple<TimexProperty, TimexProperty>(
+                new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day },
+                new TimexProperty { Year = end.Year, Month = end.Month, DayOfMonth = end.Day });
+        }
+
+        public static Tuple<TimexProperty, TimexProperty> MonthDateRange(int year, int month)
+        {
+            return new Tuple<TimexProperty, TimexProperty>(
+                new TimexProperty { Year = year, Month = month, DayOfMonth = 1 },
+                new TimexProperty { Year = month == 12 ? year + 1 : year, Month = month == 12 ? 1 : month + 1, DayOfMonth = 1 });
+        }
+
+        public static Tuple<TimexProperty, TimexProperty> YearDateRange(int year)
+        {
+            return new Tuple<TimexProperty, TimexProperty>(
+                new TimexProperty { Year = year, Month = 1, DayOfMonth = 1 },
+                new TimexProperty { Year = year + 1, Month = 1, DayOfMonth = 1 });
+        }
+
+        public static Tuple<TimexProperty, TimexProperty> YearWeekDateRange(int year, int weekOfYear, bool? isWeekend)
+        {
+            var firstMondayInWeek = FirstDateOfWeek(year, weekOfYear, System.Globalization.CultureInfo.InvariantCulture);
+
+            var start = (isWeekend == null || isWeekend.Value == false) ?
+                            firstMondayInWeek :
+                            TimexDateHelpers.DateOfNextDay(DayOfWeek.Saturday, firstMondayInWeek);
+            var end = firstMondayInWeek + TimeSpan.FromDays(7);
+
+            return new Tuple<TimexProperty, TimexProperty>(
+                new TimexProperty { Year = start.Year, Month = start.Month, DayOfMonth = start.Day },
+                new TimexProperty { Year = end.Year, Month = end.Month, DayOfMonth = end.Day });
+        }
+
+        // this is based on https://stackoverflow.com/questions/19901666/get-date-of-first-and-last-day-of-week-knowing-week-number/34727270
+        public static DateObject FirstDateOfWeek(int year, int weekOfYear, System.Globalization.CultureInfo cultureInfo)
+        {
+            // ISO uses FirstFourDayWeek, and Monday as first day of week, according to https://en.wikipedia.org/wiki/ISO_8601
+            var jan1 = new DateObject(year, 1, 1);
+            int daysOffset = (int)DayOfWeek.Monday - (int)jan1.DayOfWeek;
+            var firstWeekDay = jan1.AddDays(daysOffset);
+
+            int firstWeek = cultureInfo.Calendar.GetWeekOfYear(jan1, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            if ((firstWeek <= 1 || firstWeek >= 52) && daysOffset >= -3)
+            {
+                weekOfYear -= 1;
+            }
+
+            return firstWeekDay.AddDays(weekOfYear * 7);
+        }
+
+        public static DateObject GenerateMonthWeekDateStart(int year, int month, int weekOfMonth)
+        {
+            var dateInWeek = new DateObject(year, month, 1 + ((weekOfMonth - 1) * 7));
+
+            // Align the date of the week according to Thursday, base on ISO 8601, https://en.wikipedia.org/wiki/ISO_8601
+            if (dateInWeek.DayOfWeek > DayOfWeek.Thursday)
+            {
+                dateInWeek = dateInWeek.AddDays(7 - (int)dateInWeek.DayOfWeek + 1);
+            }
+            else
+            {
+                dateInWeek = dateInWeek.AddDays(1 - (int)dateInWeek.DayOfWeek);
+            }
+
+            return dateInWeek;
         }
 
         private static TimexProperty TimeAdd(TimexProperty start, TimexProperty duration)
