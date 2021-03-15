@@ -737,18 +737,6 @@
     ]
   },
   {
-    "Input": "Je partirai pour toute la semaine",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "toute la semaine",
-        "Type": "duration",
-        "Start": 17,
-        "Length": 16
-      }
-    ]
-  },
-  {
     "Input": "Je partirai pour tout le mois",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -937,18 +925,6 @@
         "Type": "duration",
         "Start": 17,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Je partirai pour une demi-heure",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "une demi-heure",
-        "Type": "duration",
-        "Start": 17,
-        "Length": 14
       }
     ]
   },
