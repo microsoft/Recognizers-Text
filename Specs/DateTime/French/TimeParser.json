@@ -3247,27 +3247,6 @@
     ]
   },
   {
-    "Input": "minuit",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "minuit",
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "au milieu de la nuit",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
