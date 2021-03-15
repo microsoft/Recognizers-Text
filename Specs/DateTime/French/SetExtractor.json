@@ -356,18 +356,6 @@
     ]
   },
   {
-    "Input": "Je vais partir chaque semaine",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "chaque semaine",
-        "Type": "set",
-        "Start": 15,
-        "Length": 14
-      }
-    ]
-  },
-  {
     "Input": "Je vais partir chaque jour",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
@@ -376,42 +364,6 @@
         "Type": "set",
         "Start": 15,
         "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "Je vais partir tous les jours",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "tous les jours",
-        "Type": "set",
-        "Start": 15,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "Je vais partir chaque mois",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "chaque mois",
-        "Type": "set",
-        "Start": 15,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "Je vais partir annuellement",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "annuellement",
-        "Type": "set",
-        "Start": 15,
-        "Length": 12
       }
     ]
   },
@@ -508,18 +460,6 @@
         "Type": "set",
         "Start": 15,
         "Length": 28
-      }
-    ]
-  },
-  {
-    "Input": "Je vais partir tous les matins",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "tous les matins",
-        "Type": "set",
-        "Start": 15,
-        "Length": 15
       }
     ]
   },
