@@ -2915,18 +2915,18 @@
             {
               "timex": "(XXXX-01-16T08:30,XXXX-01-16T09,PT30M)",
               "type": "datetimerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "et",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "2018-01-16 08:30:00",
               "end": "2018-01-16 09:00:00"
             },
             {
               "timex": "(XXXX-01-16T08:30,XXXX-01-16T09,PT30M)",
               "type": "datetimerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "et",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "2019-01-16 08:30:00",
               "end": "2019-01-16 09:00:00"
             }

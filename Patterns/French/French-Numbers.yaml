@@ -149,6 +149,79 @@ NumberWithSuffixPercentage: !nestedRegex
 NumberWithPrefixPercentage: !nestedRegex
   def: ((?<!{BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\s*)({BaseNumbers.NumberReplaceToken})(?=\s|$)
   references: [ BaseNumbers.NumberReplaceToken ]
+#NumberRange Regex
+TillRegex: !simpleRegex
+  def: ((?<!\bequal\s+)to|through|--|-|—|——|~|–)
+MoreRegex: !simpleRegex
+  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
+LessRegex: !simpleRegex
+  def: (?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
+EqualRegex: !simpleRegex
+  def: (equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)
+MoreOrEqualPrefix: !nestedRegex
+  def: ((no\s+{LessRegex})|(at\s+least))
+  references: [ LessRegex ]
+MoreOrEqual: !nestedRegex
+  def: (?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=|≥)
+  references: [ MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix ]
+MoreOrEqualSuffix: !simpleRegex
+  def: ((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!((\s+or\s+equal\s+to)?\s*\d+)))))|((over|above)(?!\s+than))))
+LessOrEqualPrefix: !nestedRegex
+  def: ((no\s+{MoreRegex})|(at\s+most)|(up\s+to))
+  references: [ MoreRegex ]
+LessOrEqual: !nestedRegex
+  def: (({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=|≤)
+  references: [ LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix ]
+LessOrEqualSuffix: !simpleRegex
+  def: ((and|or)\s+(less|lower|smaller|fewer)((?!\s+than)|(\s+than(?!(\s*\d+)))))
+NumberSplitMark: !nestedRegex
+  def: (?![,.](?!\d+))(?!\s*\b(and\s+({LessRegex}|{MoreRegex})|but|or|to)\b)
+  references: [ MoreRegex, LessRegex ]
+MoreRegexNoNumberSucceed: !simpleRegex
+  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))
+LessRegexNoNumberSucceed: !simpleRegex
+  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))
+EqualRegexNoNumberSucceed: !simpleRegex
+  def: (equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: ({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)
+  references: [ MoreOrEqual, MoreRegex, NumberSplitMark ]
+OneNumberRangeMoreRegex1LB: !nestedRegex
+  def: (?<!no\s+){OneNumberRangeMoreRegex1}
+  references: [ OneNumberRangeMoreRegex1 ]
+OneNumberRangeMoreRegex2: !nestedRegex
+  def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
+  references: [ MoreOrEqualSuffix, NumberSplitMark ]
+OneNumberRangeMoreSeparateRegex: !nestedRegex
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  references: [ EqualRegex, MoreRegex, EqualRegexNoNumberSucceed, MoreRegexNoNumberSucceed, NumberSplitMark ]
+OneNumberRangeLessRegex1: !nestedRegex
+  def: ({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  references: [ LessOrEqual, LessRegex, NumberSplitMark ]
+OneNumberRangeLessRegex1LB: !nestedRegex
+  def: (?<!no\s+){OneNumberRangeLessRegex1}
+  references: [ OneNumberRangeLessRegex1 ]
+OneNumberRangeLessRegex2: !nestedRegex
+  def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
+  references: [ LessOrEqualSuffix, NumberSplitMark ]
+OneNumberRangeLessSeparateRegex: !nestedRegex
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]
+OneNumberRangeEqualRegex: !nestedRegex
+  def: '(?<!\bthan\s+or\s+){EqualRegex}\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)'
+  references: [ EqualRegex, NumberSplitMark ]
+TwoNumberRangeRegex1: !nestedRegex
+  def: between\s*(the\s+)?(?<number1>({NumberSplitMark}.)+)\s*and\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  references: [ NumberSplitMark ]
+TwoNumberRangeRegex2: !nestedRegex
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: (from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
+  references: [ TillRegex, NumberSplitMark ]
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: sur

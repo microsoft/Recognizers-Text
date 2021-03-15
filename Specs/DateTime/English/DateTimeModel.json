@@ -19657,5 +19657,114 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet at friday the 26th at 4",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday the 26th at 4",
+        "Start": 14,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03-26T04",
+              "type": "datetime",
+              "value": "2021-03-26 04:00:00"
+            },
+            {
+              "timex": "2021-03-26T16",
+              "type": "datetime",
+              "value": "2021-03-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at friday the 26th around 4",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday the 26th around 4",
+        "Start": 14,
+        "End": 37,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03-26T04",
+              "type": "datetime",
+              "value": "2021-03-26 04:00:00"
+            },
+            {
+              "timex": "2021-03-26T16",
+              "type": "datetime",
+              "value": "2021-03-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Does friday at 4pm work?",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday at 4pm",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2021-03-12 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2021-03-19 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "circa 5 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "circa 5 in the morning",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T05",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "05:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

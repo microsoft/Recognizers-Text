@@ -125,7 +125,7 @@ class ChineseNumeric:
     RoundDirectList = [r'亿', r'兆', r'億']
     TenChars = [r'十', r'拾']
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
-    ZeroToNineFullHalfRegex = f'[\\d１２３４５６７８９０]'
+    ZeroToNineFullHalfRegex = f'[\\d]'
     DigitNumRegex = f'{ZeroToNineFullHalfRegex}+'
     DozenRegex = f'.*打$'
     PercentageRegex = f'(?<=(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\\s*分\\s*之).+|.+(?=个\\s*(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\\s*分\\s*点)|.*(?=[％%])'
@@ -167,8 +167,8 @@ class ChineseNumeric:
     DoubleWithMultiplierRegex = f'({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}+\\s*{BaseNumbers.NumberMultiplierRegex}'
     DoubleWithThousandsRegex = f'{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+)|({ZeroToNineFullHalfRegex}{{1,3}}(,{ZeroToNineFullHalfRegex}{{3}})+))([\\.．]{ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{{1,2}}'
     DoubleAllFloatRegex = f'(?<![百佰]\\s*分\\s*之\\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])'
-    DoubleExponentialNotationRegex = f'(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))'
-    DoubleScientificNotationRegex = f'(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)'
+    DoubleExponentialNotationRegex = f'(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))'
+    DoubleScientificNotationRegex = f'(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)'
     OrdinalRegex = f'第{AllIntRegex}'
     OrdinalNumbersRegex = f'第{ZeroToNineFullHalfRegex}+'
     AllFractionNumber = f'{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*又\\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\\s*分\\s*之\\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})({PointRegexStr}{AllIntRegex}*)?'
@@ -193,7 +193,7 @@ class ChineseNumeric:
     FoldsPercentageRegex = f'{ZeroToNineIntegerRegex}(\\s*[点點]?\\s*{ZeroToNineIntegerRegex})?\\s*折'
     SimpleFoldsPercentageRegex = f'{ZeroToNineFullHalfRegex}\\s*成(\\s*(半|{ZeroToNineFullHalfRegex}))?'
     SpecialsPercentageRegex = f'({ZeroToNineIntegerRegex}|[十拾])\\s*成(\\s*(半|{ZeroToNineIntegerRegex}))?'
-    NumbersSpecialsPercentageRegex = f'({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\\s*成'
+    NumbersSpecialsPercentageRegex = f'({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|10)\\s*成'
     SimpleSpecialsPercentageRegex = f'{ZeroToNineIntegerRegex}\\s*[点點]\\s*{ZeroToNineIntegerRegex}\\s*成'
     SpecialsFoldsPercentageRegex = f'半\\s*成|(?<=打)[对對]\\s*折|半\\s*折'
     SpeicalCharBeforeNumber = f'(有|是|为)'

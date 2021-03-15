@@ -369,7 +369,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Franco yibutiano", @"franco yibutiano|francos yibutianos|djf" },
             { @"Dinar yugoslavo", @"dinar yugoslavo|dinares yugoslavos|yud" },
             { @"Kwacha zambiano", @"kwacha zambiano|kwacha zambianos|zmw" },
-            { @"Ngwee zambiano", @"ngwee zambiano|ngwee zambianos" }
+            { @"Ngwee zambiano", @"ngwee zambiano|ngwee zambianos" },
+            { @"Bitcoin", @"bitcoin|bitcoins|btc|xbt|₿" },
+            { @"Millibitcoin", @"millibitcoin|millibitcoins|milibitcoin|milibitcoins" },
+            { @"Satoshi", @"satoshi|satoshis" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
@@ -405,7 +408,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Florín", @"ƒ" },
             { @"Libra", @"£" },
             { @"Colón costarricense", @"₡" },
-            { @"Lira turca", @"₺" }
+            { @"Lira turca", @"₺" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {

@@ -104,7 +104,7 @@
         "Resolution": {
           "value": "500000",
           "subtype": "Volume",
-          "unit": "Volume unit"
+          "unit": "Barrel"
         },
         "Start": 54,
         "End": 68
@@ -1012,6 +1012,117 @@
         },
         "Start": 20,
         "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "3 tablespoons butter, melted, and 1/2 cup olive oil",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 tablespoons",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Volume",
+          "unit": "Tablespoon",
+          "value": "3"
+        }
+      },
+      {
+        "Text": "1/2 cup",
+        "Start": 34,
+        "End": 40,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Volume",
+          "unit": "Cup",
+          "value": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "½ teaspoon baking powder",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "½ teaspoon",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Volume",
+          "unit": "Teaspoon",
+          "value": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 Kilometers per hour could also be informally written as 10kph, 10kmph, or 10km/hr",
+    "Results": [
+      {
+        "Text": "10 kilometers per hour",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Kilometer per hour",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "10kph",
+        "Start": 59,
+        "End": 63,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Kilometer per hour",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "10kmph",
+        "Start": 66,
+        "End": 71,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Kilometer per hour",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "10km/hr",
+        "Start": 77,
+        "End": 83,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Kilometer per hour",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A coin weighing one drachma is known as a stater",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "one drachma",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Dram",
+          "value": "1"
+        }
       }
     ]
   }

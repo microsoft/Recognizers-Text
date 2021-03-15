@@ -301,7 +301,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao|mao" },
             { @"Finnish markka", @"suomen markka|finnish markka|finsk mark|fim|markkaa|markka" },
-            { @"Penni", @"penniä|penni" }
+            { @"Penni", @"penniä|penni" },
+            { @"Bitcoin", @"bitcoin|bitcoins|btc|xbt|₿" },
+            { @"Millibitcoin", @"millibitcoin|millibitcoins|milibitcoin|milibitcoins" },
+            { @"Satoshi", @"satoshi|satoshis" }
         };
       public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
         {
@@ -489,7 +492,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"British Virgin Islands dollar", @"_BD" },
             { @"Ascension pound", @"_AP" },
             { @"Alderney pound", @"_ALP" },
-            { @"Abkhazian apsar", @"_AA" }
+            { @"Abkhazian apsar", @"_AA" },
+            { @"Bitcoin", @"_XBT" }
         };
       public static readonly Dictionary<string, string> FractionalUnitNameToCodeMap = new Dictionary<string, string>
         {
@@ -565,7 +569,9 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Kopiyka", @"KOPIYKA" },
             { @"Tiyin", @"TIYIN" },
             { @"Hào", @"HAO" },
-            { @"Ngwee", @"NGWEE" }
+            { @"Ngwee", @"NGWEE" },
+            { @"Millibitcoin", @"MILLIBITCOIN" },
+            { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
@@ -612,7 +618,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Euro", @"€" },
             { @"Pound", @"£" },
             { @"Costa Rican colón", @"₡" },
-            { @"Turkish lira", @"₺" }
+            { @"Turkish lira", @"₺" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {
@@ -662,7 +669,9 @@ namespace Microsoft.Recognizers.Definitions.English
             @"try",
             @"yer",
             @"yen",
-            @"db"
+            @"db",
+            @"satoshi",
+            @"satoshis"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
@@ -684,23 +693,33 @@ namespace Microsoft.Recognizers.Definitions.English
             @"barrel",
             @"barrels",
             @"grain",
+            @"grains",
             @"pound",
             @"stone",
+            @"stones",
             @"yards",
             @"yard",
             @"cord",
+            @"cords",
             @"dram",
+            @"drachm",
+            @"drachma",
             @"feet",
             @"foot",
             @"gill",
             @"knot",
+            @"knots",
             @"peck",
+            @"pecks",
             @"cup",
+            @"cups",
             @"fps",
             @"pts",
             @"in",
             @"dm",
-            @""""
+            @"""",
+            @"pinch",
+            @"pinches"
         };
       public const string BuildPrefix = @"(?<=(\s|^))";
       public const string BuildSuffix = @"(?=(\s|\W|$))";
@@ -734,24 +753,30 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
-            { @"Meter per second", @"meters / second|m/s|meters per second|metres per second|meter per second|metre per second" },
-            { @"Kilometer per hour", @"km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour" },
+            { @"Meter per second", @"meter/second|meters/second|meters / second|m/s|meters per second|metres per second|meter per second|metre per second" },
+            { @"Kilometer per hour", @"km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour|kph|kmph|km/hr" },
             { @"Kilometer per minute", @"km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute" },
             { @"Kilometer per second", @"km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second" },
-            { @"Mile per hour", @"mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour" },
-            { @"Knot", @"kt|knot|kn" },
-            { @"Foot per second", @"ft/s|foot/s|foot per second|feet per second|fps" },
-            { @"Foot per minute", @"ft/min|foot/min|foot per minute|feet per minute" },
+            { @"Mile per hour", @"mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour|mi/hr" },
+            { @"Knot", @"kt|knot|knots|kn" },
+            { @"Foot per second", @"ft/s|foot/s|feet/s|foot per second|feet per second|fps" },
+            { @"Foot per minute", @"ft/min|foot/min|feet/min|foot per minute|feet per minute" },
             { @"Yard per minute", @"yards per minute|yard per minute|yards / minute|yards/min|yard/min" },
             { @"Yard per second", @"yards per second|yard per second|yards / second|yards/s|yard/s" }
         };
+      public static readonly IList<string> AmbiguousSpeedUnitList = new List<string>
+        {
+            @"knot",
+            @"knots",
+            @"fps"
+        };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
-            { @"F", @"degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f" },
+            { @"F", @"degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|° f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f" },
             { @"K", @"k|K|kelvin" },
             { @"R", @"rankine|°r" },
             { @"D", @"delisle|°de" },
-            { @"C", @"degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c" },
+            { @"C", @"degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|° c|c" },
             { @"Degree", @"degree|degrees|deg.|deg|°" }
         };
       public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
@@ -770,16 +795,26 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Liter", @"l|litre|liter|liters|litres" },
             { @"Deciliter", @"dl|deciliter|decilitre|deciliters|decilitres" },
             { @"Centiliter", @"cl|centiliter|centilitre|centiliters|centilitres" },
-            { @"Milliliter", @"ml|mls|millilitre|milliliter|millilitres|milliliters" },
+            { @"Milliliter", @"ml|mls|millilitre|milliliter|millilitres|milliliters|cc" },
             { @"Cubic yard", @"cubic yard|cubic yards" },
             { @"Cubic inch", @"cubic inch|cubic inches" },
             { @"Cubic foot", @"cubic foot|cubic feet" },
             { @"Cubic mile", @"cubic mile|cubic miles" },
             { @"Fluid ounce", @"fl oz|fluid ounce|fluid ounces" },
-            { @"Teaspoon", @"teaspoon|teaspoons" },
-            { @"Tablespoon", @"tablespoon|tablespoons" },
-            { @"Pint", @"pint|pints" },
-            { @"Volume unit", @"fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl" }
+            { @"Teaspoon", @"teaspoon|teaspoons|teaspoonful|teaspoonfuls|tsp|tsp.|tspn|tspn.|tea spoon|tea spoons|t.|ts." },
+            { @"Tablespoon", @"tablespoon|tablespoons|tablespoonful|tablespoonfuls|tbl|tbl.|tbs|tbs.|tbsp|tbsp.|table spoon|table spoons|T.|Tb.|tbls.|tbls" },
+            { @"Pint", @"pint|pints|fl pt| fluid pint" },
+            { @"Quart", @"quart|quarts|fl qt" },
+            { @"Cup", @"cup|cups" },
+            { @"Gill", @"gill|gills" },
+            { @"Pinch", @"pinch|pinches" },
+            { @"Fluid Dram", @"fluid dram|fluid drachm|fluid drachma|fluidram|fluidrams" },
+            { @"Barrel", @"barrel|bbl|barrels" },
+            { @"Minim", @"minim" },
+            { @"Cord", @"cord|cords" },
+            { @"Peck", @"peck|pecks" },
+            { @"Bushel", @"bushel" },
+            { @"Hogshead", @"hogshead" }
         };
       public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
         {
@@ -787,21 +822,37 @@ namespace Microsoft.Recognizers.Definitions.English
             @"ounce",
             @"oz",
             @"cup",
+            @"cups",
             @"peck",
+            @"pecks",
             @"cord",
-            @"gill"
+            @"cords",
+            @"gill",
+            @"gills",
+            @"barrel",
+            @"barrels",
+            @"tbl",
+            @"quart",
+            @"quarts",
+            @"pinch"
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
             { @"Kilogram", @"kg|kilogram|kilograms|kilo|kilos" },
-            { @"Gram", @"g|gram|grams" },
+            { @"Gram", @"g|gram|grams|gm" },
             { @"Milligram", @"mg|milligram|milligrams" },
-            { @"Gallon", @"-gallon|gallons|gallon" },
+            { @"Gallon", @"-gallon|gallons|gallon|gal" },
             { @"Metric ton", @"metric tons|metric ton" },
             { @"Ton", @"-ton|ton|tons|tonne|tonnes" },
             { @"Pound", @"pound|pounds|lb|lbs" },
             { @"Ounce", @"-ounce|ounce|oz|ounces" },
-            { @"Weight unit", @"pennyweight|grain|british long ton|us short hundredweight|stone|dram" }
+            { @"Grain", @"grain|grains|gr" },
+            { @"Pennyweight", @"pennyweight" },
+            { @"Long ton (British)", @"british long ton|long ton (british)" },
+            { @"Short ton (US)", @"us short ton|short ton (us)" },
+            { @"Short hundredweight (US)", @"us short hundredweight|short hundredweight (us)" },
+            { @"Stone", @"stone" },
+            { @"Dram", @"dram|drachm|drachma|roman drachma|greek drachma" }
         };
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
@@ -809,7 +860,10 @@ namespace Microsoft.Recognizers.Definitions.English
             @"oz",
             @"stone",
             @"dram",
-            @"lbs"
+            @"lbs",
+            @"gal",
+            @"grain",
+            @"grains"
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {

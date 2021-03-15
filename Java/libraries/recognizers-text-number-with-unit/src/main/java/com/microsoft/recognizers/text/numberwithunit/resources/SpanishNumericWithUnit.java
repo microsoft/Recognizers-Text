@@ -353,6 +353,9 @@ public class SpanishNumericWithUnit {
         .put("Dinar yugoslavo", "dinar yugoslavo|dinares yugoslavos|yud")
         .put("Kwacha zambiano", "kwacha zambiano|kwacha zambianos|zmw")
         .put("Ngwee zambiano", "ngwee zambiano|ngwee zambianos")
+        .put("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿")
+        .put("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins")
+        .put("Satoshi", "satoshi|satoshis")
         .build();
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
@@ -390,6 +393,7 @@ public class SpanishNumericWithUnit {
         .put("Libra", "£")
         .put("Colón costarricense", "₡")
         .put("Lira turca", "₺")
+        .put("Bitcoin", "₿|btc|xbt")
         .build();
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le", "db", "std");

@@ -180,7 +180,8 @@ class BaseCurrency:
                                     ("UYU", "CENTESIMO"),
                                     ("VEF", "CENTIMO"),
                                     ("YER", "FILS"),
-                                    ("ZMW", "NGWEE")])
+                                    ("ZMW", "NGWEE"),
+                                    ("_XBT", "MILLIBITCOIN|SATOSHI")])
     CurrencyFractionalRatios = dict([("Kopek", 100),
                                      ("Pul", 100),
                                      ("Cent", 100),
@@ -256,12 +257,15 @@ class BaseCurrency:
                                      ("Ngwee", 100),
                                      ("Kwartje", 4),
                                      ("Dubbeltje", 10),
-                                     ("Stuiver", 20)])
+                                     ("Stuiver", 20),
+                                     ("Millibitcoin", 1000),
+                                     ("Satoshi", 100000000)])
     NonStandardFractionalSubunits = dict([("JOD", 1000),
                                           ("KWD", 1000),
                                           ("BHD", 1000),
                                           ("OMR", 1000),
                                           ("YDD", 1000),
                                           ("TND", 1000),
-                                          ("MRO", 5)])
+                                          ("MRO", 5),
+                                          ("_XBT", 1000)])
 # pylint: enable=line-too-long

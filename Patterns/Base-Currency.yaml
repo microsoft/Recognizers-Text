@@ -169,6 +169,7 @@ CurrencyFractionMapping: !dictionary
     VEF: CENTIMO
     YER: FILS
     ZMW: NGWEE
+    _XBT: MILLIBITCOIN|SATOSHI
 CurrencyFractionalRatios: !dictionary
   types: [ string, long ]
   entries:
@@ -248,6 +249,8 @@ CurrencyFractionalRatios: !dictionary
     Kwartje: 4
     Dubbeltje: 10
     Stuiver: 20
+    Millibitcoin: 1000
+    Satoshi: 100000000
 NonStandardFractionalSubunits: !dictionary
   types: [ string, long ]
   entries:
@@ -258,3 +261,4 @@ NonStandardFractionalSubunits: !dictionary
     YDD: 1000
     TND: 1000
     MRO: 5
+    _XBT: 1000

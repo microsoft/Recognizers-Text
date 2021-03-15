@@ -30,7 +30,7 @@ export namespace JapaneseNumeric {
     export const TenChars = [ "十" ];
     export const AllMultiplierLookupRegex = `(${BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)`;
     export const DigitalNumberRegex = `((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
-    export const ZeroToNineFullHalfRegex = `[\\d１２３４５６７８９０]`;
+    export const ZeroToNineFullHalfRegex = `[\\d]`;
     export const DigitNumRegex = `${ZeroToNineFullHalfRegex}+`;
     export const DozenRegex = `.*ダース$`;
     export const PercentageRegex = `.+(?=パ\\s*ー\\s*セ\\s*ン\\s*ト)|.*(?=[％%])`;
@@ -57,7 +57,7 @@ export namespace JapaneseNumeric {
     export const PointRegexStr = `[\\.．・]`;
     export const AllFloatRegex = `${NegativeNumberTermsRegex}?${AllIntRegex}\\s*${PointRegexStr}\\s*[一二三四五六七八九](\\s*${ZeroToNineIntegerRegex})*`;
     export const NumbersWithAllowListRegex = `(?<!(離は))(${NegativeNumberTermsRegex}?(${NotSingleRegex}|${SingleRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*${PercentageRegex}+))(?!(\\s*${AllMultiplierLookupRegex}))`;
-    export const NumbersAggressiveRegex = `((${AllIntRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*${PercentageRegex}*))`;
+    export const NumbersAggressiveRegex = `((${AllIntRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*(\\s*${PercentageRegex})?))`;
     export const PointRegex = `${PointRegexStr}`;
     export const DoubleSpecialsChars = `((?<!(${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}*))(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．,]${ZeroToNineFullHalfRegex}+(?!(${ZeroToNineFullHalfRegex}*[\\.．,]${ZeroToNineFullHalfRegex}+)))(?=\\b|\\D)(?!\\s*${AllMultiplierLookupRegex})`;
     export const DoubleRoundNumberSpecialsChars = `(?<!((${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+[\\.．・,](${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})*))((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?(${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+[\\.．・,](${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+(?!(${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})*[\\.．・,](${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+)`;
@@ -71,7 +71,7 @@ export namespace JapaneseNumeric {
     export const DoubleScientificNotationRegex = `(?<!\\d+[\\.])(${NegativeNumberTermsRegexNum}\\s*)?(\\d+([\\.]\\d+)?)\\^([-+＋]*[1-9]\\d*)`;
     export const OrdinalNumbersRegex = `(((第|だい)(${ZeroToNineFullHalfRegex}+)(${RoundNumberIntegerRegex}+)?))|((${ZeroToNineFullHalfRegex}+|${ZeroToNineIntegerRegex}+)(${RoundNumberIntegerRegex}+)?(番目|位|等(?!級)))`;
     export const OrdinalRegex = `((${OrdinalNumbersRegex})|((第|だい)(${AllIntRegex})|((${AllIntRegex}+|${NumbersWithAllowListRegex}+)(番目|位|等))))|(最初|1等|ファースト)`;
-    export const RelativeOrdinalRegex = `(?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))`;
+    export const RelativeOrdinalRegex = `(?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から1つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))`;
     export const AllOrdinalRegex = `(${OrdinalRegex}|${RelativeOrdinalRegex})`;
     export const AllFractionNumber = `(((${NegativeNumberTermsRegex}{0,1})|${NegativeNumberTermsRegexNum})((${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*[はと]{0,1}\\s*)?${NegativeNumberTermsRegex}{0,1}(${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*分\\s*の\\s*${NegativeNumberTermsRegex}{0,1}(${ZeroToNineFullHalfRegex}+|${AllIntRegex})+)|半(分|数)`;
     export const FractionNotationSpecialsCharsRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+\\s+${ZeroToNineFullHalfRegex}+[/／]${ZeroToNineFullHalfRegex}+`;
@@ -95,7 +95,7 @@ export namespace JapaneseNumeric {
     export const FoldsPercentageRegex = `${ZeroToNineIntegerRegex}(\\s*[.]?\\s*${ZeroToNineIntegerRegex})?\\s*[の]\\s*割引`;
     export const SimpleFoldsPercentageRegex = `${ZeroToNineFullHalfRegex}\\s*割(\\s*(半|(${ZeroToNineFullHalfRegex}\\s*分\\s*${ZeroToNineFullHalfRegex}\\s*厘)|${ZeroToNineFullHalfRegex}))?`;
     export const SpecialsPercentageRegex = `(${ZeroToNineIntegerRegex}|[十])\\s*割(\\s*(半|${ZeroToNineIntegerRegex}))?`;
-    export const NumbersSpecialsPercentageRegex = `(${ZeroToNineFullHalfRegex}[\\.．]${ZeroToNineFullHalfRegex}|[1１][0０])\\s*割`;
+    export const NumbersSpecialsPercentageRegex = `(${ZeroToNineFullHalfRegex}[\\.．]${ZeroToNineFullHalfRegex}|10)\\s*割`;
     export const SimpleSpecialsPercentageRegex = `${ZeroToNineIntegerRegex}\\s*[.]\\s*${ZeroToNineIntegerRegex}\\s*割`;
     export const SpecialsFoldsPercentageRegex = `半\\s*分|(?<=ダース)`;
     export const TillRegex = `(から|--|-|—|——|~)`;

@@ -269,7 +269,10 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"Yuan Chinois", @"yuan|yuans|yuan chinois|renminbi|cny|rmb|￥" },
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao" },
-            { @"Mark Finlandais", @"marks finlandais|mark finlandais|fim|mark" }
+            { @"Mark Finlandais", @"marks finlandais|mark finlandais|fim|mark" },
+            { @"Bitcoin", @"bitcoin|bitcoins|btc|xbt|₿" },
+            { @"Millibitcoin", @"millibitcoin|millibitcoins|milibitcoin|milibitcoins" },
+            { @"Satoshi", @"satoshi|satoshis" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
@@ -301,7 +304,8 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"Yuan Chinois", @"cny|rmb|￥|元" },
             { @"Yen Japonais", @"¥|jpy" },
             { @"Euro", @"€|eur" },
-            { @"Livre", @"£" }
+            { @"Livre", @"£" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {

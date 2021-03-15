@@ -162,7 +162,7 @@ public class ChineseNumeric {
     public static final String DigitalNumberRegex = "((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
-    public static final String ZeroToNineFullHalfRegex = "[\\d１２３４５６７８９０]";
+    public static final String ZeroToNineFullHalfRegex = "[\\d]";
 
     public static final String DigitNumRegex = "{ZeroToNineFullHalfRegex}+"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
@@ -311,11 +311,11 @@ public class ChineseNumeric {
             .replace("{AllFloatRegex}", AllFloatRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String DoubleExponentialNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))"
+    public static final String DoubleExponentialNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{NegativeNumberTermsRegexNum}", NegativeNumberTermsRegexNum);
 
-    public static final String DoubleScientificNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)"
+    public static final String DoubleScientificNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{NegativeNumberTermsRegexNum}", NegativeNumberTermsRegexNum);
 
@@ -423,7 +423,7 @@ public class ChineseNumeric {
     public static final String SpecialsPercentageRegex = "({ZeroToNineIntegerRegex}|[十拾])\\s*成(\\s*(半|{ZeroToNineIntegerRegex}))?"
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String NumbersSpecialsPercentageRegex = "({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\\s*成"
+    public static final String NumbersSpecialsPercentageRegex = "({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|10)\\s*成"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
 
     public static final String SimpleSpecialsPercentageRegex = "{ZeroToNineIntegerRegex}\\s*[点點]\\s*{ZeroToNineIntegerRegex}\\s*成"

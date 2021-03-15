@@ -349,40 +349,47 @@ CurrencySuffixList: !dictionary
     Jiao: jiao
 #Additional
     Mark Finlandais: marks finlandais|mark finlandais|fim|mark
+#CC
+    Bitcoin: bitcoin|bitcoins|btc|xbt|₿
+    Millibitcoin: millibitcoin|millibitcoins|milibitcoin|milibitcoins
+    Satoshi: satoshi|satoshis
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 #Dollar Prefix
-     Dollar: $
-     Dollar États-Unis: $us|usd|us$
-     Dollar des Caraïbes orientales: xcd|$ec
-     Dollar Australien: a$|$a|aud
-     Dollar des bahamas: bsd|b$
-     Dollar barbadien: bbd|bds$
-     Dollar de belize: bz$|bzd
-     Dollar des bermudes: bd$|bmd
-     Dollar de brunei: brunei $|bnd
-     Dollar de Singapour: s$|sgd
-     Dollar Canadien: cad|$ ca|$ca|$ c
-     Dollar des îles Caïmans: ci$|kyd
-     Dollar néo-zélandais: nz$|nzd
-     Dollar de Fidji: $fj|fjd
-     Dollar guyanien: g$|gyd
-     Dollar de Hong Kong: hkd|hk$
-     Dollar jamaïcain: j$|jmd
-     Dollar libérien: lrd|l$
-     Dollar namibien: nad|n$
-     Dollar des îles Salomon: $ si|$si|sbd
-     Nouveau dollar de Taïwan: nt$|twd
-     Réal brésilien: r$|brl|reais
-     Guaraní paraguayen: ₲|gs.|pyg
-     Dollar trinidadien: ttd|titis
-     Yuan Chinois: cny|rmb|￥|元
-     Yen Japonais: ¥|jpy
-     Euro: €|eur
-     Livre: £
+    Dollar: $
+    Dollar États-Unis: $us|usd|us$
+    Dollar des Caraïbes orientales: xcd|$ec
+    Dollar Australien: a$|$a|aud
+    Dollar des bahamas: bsd|b$
+    Dollar barbadien: bbd|bds$
+    Dollar de belize: bz$|bzd
+    Dollar des bermudes: bd$|bmd
+    Dollar de brunei: brunei $|bnd
+    Dollar de Singapour: s$|sgd
+    Dollar Canadien: cad|$ ca|$ca|$ c
+    Dollar des îles Caïmans: ci$|kyd
+    Dollar néo-zélandais: nz$|nzd
+    Dollar de Fidji: $fj|fjd
+    Dollar guyanien: g$|gyd
+    Dollar de Hong Kong: hkd|hk$
+    Dollar jamaïcain: j$|jmd
+    Dollar libérien: lrd|l$
+    Dollar namibien: nad|n$
+    Dollar des îles Salomon: $ si|$si|sbd
+    Nouveau dollar de Taïwan: nt$|twd
+#Other prefix
+    Réal brésilien: r$|brl|reais
+    Guaraní paraguayen: ₲|gs.|pyg
+    Dollar trinidadien: ttd|titis
+    Yuan Chinois: cny|rmb|￥|元
+    Yen Japonais: ¥|jpy
+    Euro: €|eur
+    Livre: £
+#CC
+    Bitcoin: ₿|btc|xbt
 AmbiguousCurrencyUnitList: !list
    types: [ string ]
    entries:

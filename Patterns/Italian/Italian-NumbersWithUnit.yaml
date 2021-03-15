@@ -366,6 +366,10 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka|marco finlandese|marchi finlandesi
     Penni: penniä|penni
+#CC
+    Bitcoin: bitcoin|bitcoins|btc|xbt|₿
+    Millibitcoin: millibitcoin|millibitcoins|milibitcoin|milibitcoins
+    Satoshi: satoshi|satoshis
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
@@ -412,6 +416,8 @@ CurrencyPrefixList: !dictionary
     Pound: £
     Costa Rican colón: ₡
     Turkish lira: ₺
+#CC
+    Bitcoin: ₿|btc|xbt
 AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:

@@ -412,7 +412,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"esat", -180 },
             { @"est", -300 },
             { @"estm", -300 },
-            { @"et", -240 },
+            { @"et", -300 },
             { @"fjst", 780 },
             { @"fjt", 720 },
             { @"get", 240 },
