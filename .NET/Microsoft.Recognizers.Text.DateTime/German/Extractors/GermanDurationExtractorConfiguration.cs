@@ -61,11 +61,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             : base(config)
         {
             CardinalExtractor = Number.German.NumberExtractor.GetInstance();
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -60,11 +60,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             : base(config)
         {
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
+            OrdinalExtractor = null;
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

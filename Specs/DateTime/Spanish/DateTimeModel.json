@@ -4751,8 +4751,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "mes",
-        "Start": 19,
+        "Text": "el mes",
+        "Start": 16,
         "End": 21,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4852,8 +4852,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año",
-        "Start": 35,
+        "Text": "del año",
+        "Start": 31,
         "End": 37,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4877,8 +4877,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "mes",
-        "Start": 26,
+        "Text": "del mes",
+        "Start": 22,
         "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -4902,8 +4902,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana",
-        "Start": 28,
+        "Text": "la semana",
+        "Start": 25,
         "End": 33,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -6606,8 +6606,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año",
-        "Start": 21,
+        "Text": "el año",
+        "Start": 18,
         "End": 23,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -6702,18 +6702,48 @@
     "Context": {
       "ReferenceDateTime": "2019-03-02T00:00:00"
     },
-    "Comment": "Also in English, 'first week' is not extracted ('4th week of month/year' and 'week 3' are the supported patterns).",
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "semana",
+        "Start": 29,
+        "End": 34,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "Mostrar ventas en 1ª semana",
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
-    "Comment": "Also in English, '1st week' is not extracted ('4th week of month/year' and 'week 3' are the supported patterns).",
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "semana",
+        "Start": 21,
+        "End": 26,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "No hay semana 00, ni W00",
@@ -7528,8 +7558,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año",
-        "Start": 23,
+        "Text": "el año",
+        "Start": 20,
         "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -8719,8 +8749,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año posterior a 2012",
-        "Start": 31,
+        "Text": "el año posterior a 2012",
+        "Start": 28,
         "End": 50,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -19778,8 +19808,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año",
-        "Start": 13,
+        "Text": "el año",
+        "Start": 10,
         "End": 15,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -19820,8 +19850,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "año",
-        "Start": 13,
+        "Text": "el año",
+        "Start": 10,
         "End": 15,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -20262,8 +20292,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana",
-        "Start": 25,
+        "Text": "la semana",
+        "Start": 22,
         "End": 30,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -20287,8 +20317,8 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "semana 1",
-        "Start": 21,
+        "Text": "la semana 1",
+        "Start": 18,
         "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -20323,6 +20353,69 @@
               "type": "daterange",
               "start": "2011-01-03",
               "end": "2011-01-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar ventas en el tercer mes y en el quinto día",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mes",
+        "Start": 28,
+        "End": 30,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "duration",
+              "value": "2592000"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "día",
+        "Start": 47,
+        "End": 49,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar ventas en el vigésimo año",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "año",
+        "Start": 30,
+        "End": 32,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "duration",
+              "value": "31536000"
             }
           ]
         }

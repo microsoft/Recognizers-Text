@@ -164,6 +164,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             // handle "few" related cases
             ret.AddRange(Token.GetTokenFromRegex(config.InexactNumberUnitRegex, text));
 
+            // handle "third week" (where only the unit "week" is extracted)
+            if (this.config.OrdinalExtractor != null)
+            {
+                ers = this.config.OrdinalExtractor.Extract(text);
+                foreach (var er in ers)
+                {
+                    var afterStr = text.Substring(er.Start + er.Length ?? 0);
+                    var match = this.config.DurationUnitRegex.MatchBegin(afterStr, trim: true);
+
+                    if (match.Success)
+                    {
+                        ret.Add(new Token((er.Start + er.Length ?? 0) + match.Index, (er.Start + er.Length ?? 0) + match.Index + match.Length));
+                    }
+                }
+            }
+
             return ret;
         }
 

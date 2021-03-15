@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor CardinalExtractor { get; }
 
+        IExtractor OrdinalExtractor { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }

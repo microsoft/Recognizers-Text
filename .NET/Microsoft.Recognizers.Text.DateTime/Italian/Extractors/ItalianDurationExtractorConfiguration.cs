@@ -60,11 +60,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             : base(config)
         {
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

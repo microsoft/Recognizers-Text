@@ -61,11 +61,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             : base(config)
         {
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
