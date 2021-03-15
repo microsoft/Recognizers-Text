@@ -1518,5 +1518,20 @@
         "End": 135
       }
     ]
+  },
+  {
+    "Input": "Eu ganhei duzentos BTC.",
+    "Results": [
+      {
+        "Text": "duzentos btc",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "200",
+          "unit": "Bitcoin"
+        },
+        "Start": 10,
+        "End": 21
+      }
+    ]
   }
 ]

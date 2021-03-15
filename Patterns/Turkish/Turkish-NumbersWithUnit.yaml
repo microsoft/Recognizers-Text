@@ -398,6 +398,10 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: fin markkası|fin mk|fim|markka|fin markı|fin markkasına|fin markkasında|fin markkasından|fin markkasını|fin markkasının|fin markkasıdır|fin markkasıydı|fin markkasıymış|fin markına|fin markında|fin markından|fin markını|fin markının|fin markıdır|fin markıydı|fin markıymış|markkaya|markkada|markkadan|markkayı|markkanın|markkadır|markkaydı|markkaymış
     Penni: penni|penniye|pennide|penniden|penniyi|penninin|pennidir|penniydi|penniymiş
+#CC
+    Bitcoin: bitcoin|bitcoins|btc|xbt|₿
+    Millibitcoin: millibitcoin|millibitcoins|milibitcoin|milibitcoins
+    Satoshi: satoshi|satoshis
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
   entries:
@@ -589,6 +593,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Ascension pound: _AP 
     Alderney pound: _ALP 
     Abkhazian apsar: _AA
+    Bitcoin: _XBT
 FractionalUnitNameToCodeMap: !dictionary
   types: [ string, string ]
   entries:
@@ -665,6 +670,8 @@ FractionalUnitNameToCodeMap: !dictionary
     Tiyin: TIYIN
     Hào: HAO
     Ngwee: NGWEE
+    Millibitcoin: MILLIBITCOIN
+    Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>\s)
 CurrencyPrefixList: !dictionary

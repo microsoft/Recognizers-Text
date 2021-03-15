@@ -290,7 +290,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao" },
             { @"Finnish markka", @"suomen markka|finnish markka|finsk mark|fim|markkaa|markka|marco finlandese|marchi finlandesi" },
-            { @"Penni", @"penniä|penni" }
+            { @"Penni", @"penniä|penni" },
+            { @"Bitcoin", @"bitcoin|bitcoins|btc|xbt|₿" },
+            { @"Millibitcoin", @"millibitcoin|millibitcoins|milibitcoin|milibitcoins" },
+            { @"Satoshi", @"satoshi|satoshis" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
@@ -334,7 +337,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"Euro", @"€" },
             { @"Pound", @"£" },
             { @"Costa Rican colón", @"₡" },
-            { @"Turkish lira", @"₺" }
+            { @"Turkish lira", @"₺" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {

@@ -2386,5 +2386,69 @@
         "End": 41
       }
     ]
+  },
+  {
+    "Input": "Supply limit: ₿21,000,000",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "₿21,000,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Bitcoin",
+          "value": "21000000"
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "He has lost a laptop containing 10000 bitcoins",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "10000 bitcoins",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Bitcoin",
+          "value": "10000"
+        },
+        "Start": 32,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "each block mined is now 6.25 BTC",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "6.25 btc",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Bitcoin",
+          "value": "6.25"
+        },
+        "Start": 24,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "2 satoshis one day will be worth something",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2 satoshis",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Satoshi",
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
   }
 ]

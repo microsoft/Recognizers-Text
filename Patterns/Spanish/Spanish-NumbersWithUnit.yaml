@@ -594,6 +594,10 @@ CurrencySuffixList: !dictionary
     Kwacha zambiano: kwacha zambiano|kwacha zambianos|zmw
     Ngwee zambiano: ngwee zambiano|ngwee zambianos
     #Zimbabue -> Dólar Estadounidense
+#CC
+    Bitcoin: bitcoin|bitcoins|btc|xbt|₿
+    Millibitcoin: millibitcoin|millibitcoins|milibitcoin|milibitcoins
+    Satoshi: satoshi|satoshis
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
@@ -621,6 +625,7 @@ CurrencyPrefixList: !dictionary
     Dólar namibio: n$|nad
     Dólar de las Islas Salomón: si$|sbd
     Nuevo dólar taiwanés: nt$|twd
+#Other prefix
     Real brasileño: r$|brl
     Guaraní: ₲|gs.|pyg
     Dólar trinitense: tt$|ttd
@@ -631,6 +636,8 @@ CurrencyPrefixList: !dictionary
     Libra: £
     Colón costarricense: ₡
     Lira turca: ₺
+#CC
+    Bitcoin: ₿|btc|xbt
 AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:
