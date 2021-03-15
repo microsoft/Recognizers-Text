@@ -2090,28 +2090,6 @@
       }
     ]
   },
-      {
-        "Text": "234",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "234"
-        },
-        "Start": 3,
-        "End": 5
-      },
-      {
-        "Text": "567",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "567"
-        },
-        "Start": 8,
-        "End": 10
-      }
-    ]
-  },
   {
     "Input": "-92321312.0",
     "NotSupported": "dotnet, javascript, python, java",
