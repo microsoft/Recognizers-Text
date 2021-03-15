@@ -338,21 +338,6 @@
     ]
   },
   {
-    "Input": "trente pourcentage",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "trente pourcentage",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "30%"
-        },
-        "Start": 0,
-        "End": 18
-      }
-    ]
-  },
-  {
     "Input": "cent pour cent.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
