@@ -1045,6 +1045,7 @@
   },
   {
     "Input": "½ teaspoon baking powder",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "½ teaspoon",

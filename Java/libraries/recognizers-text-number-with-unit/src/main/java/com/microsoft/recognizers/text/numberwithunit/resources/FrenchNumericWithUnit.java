@@ -267,6 +267,9 @@ public class FrenchNumericWithUnit {
         .put("Fen", "fen")
         .put("Jiao", "jiao")
         .put("Mark Finlandais", "marks finlandais|mark finlandais|fim|mark")
+        .put("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿")
+        .put("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins")
+        .put("Satoshi", "satoshi|satoshis")
         .build();
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
@@ -300,6 +303,7 @@ public class FrenchNumericWithUnit {
         .put("Yen Japonais", "¥|jpy")
         .put("Euro", "€|eur")
         .put("Livre", "£")
+        .put("Bitcoin", "₿|btc|xbt")
         .build();
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kina", "lari", "taka", "tala", "vatu", "yuan", "bob", "btn", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "mga", "mop", "nad", "omr", "sar", "sbd", "scr", "sdg", "sek", "sos", "std", "try", "yer");

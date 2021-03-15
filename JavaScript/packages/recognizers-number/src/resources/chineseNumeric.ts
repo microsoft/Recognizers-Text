@@ -30,7 +30,7 @@ export namespace ChineseNumeric {
     export const RoundDirectList = [ "亿","兆","億" ];
     export const TenChars = [ "十","拾" ];
     export const DigitalNumberRegex = `((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
-    export const ZeroToNineFullHalfRegex = `[\\d１２３４５６７８９０]`;
+    export const ZeroToNineFullHalfRegex = `[\\d]`;
     export const DigitNumRegex = `${ZeroToNineFullHalfRegex}+`;
     export const DozenRegex = `.*打$`;
     export const PercentageRegex = `(?<=(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\\s*分\\s*之).+|.+(?=个\\s*(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\\s*分\\s*点)|.*(?=[％%])`;
@@ -72,8 +72,8 @@ export namespace ChineseNumeric {
     export const DoubleWithMultiplierRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+\\s*${BaseNumbers.NumberMultiplierRegex}`;
     export const DoubleWithThousandsRegex = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+)|(${ZeroToNineFullHalfRegex}{1,3}(,${ZeroToNineFullHalfRegex}{3})+))([\\.．]${ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2}`;
     export const DoubleAllFloatRegex = `(?<![百佰]\\s*分\\s*之\\s*((${AllIntRegex}[点點]*)|${AllFloatRegex})*)${AllFloatRegex}(?!${ZeroToNineIntegerRegex}*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
-    export const DoubleExponentialNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]${ZeroToNineFullHalfRegex}*)|[0０](?!${ZeroToNineFullHalfRegex}+))`;
-    export const DoubleScientificNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?(${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]${ZeroToNineFullHalfRegex}*)`;
+    export const DoubleExponentialNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]${ZeroToNineFullHalfRegex}*)|0(?!${ZeroToNineFullHalfRegex}+))`;
+    export const DoubleScientificNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?(${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9]${ZeroToNineFullHalfRegex}*)`;
     export const OrdinalRegex = `第${AllIntRegex}`;
     export const OrdinalNumbersRegex = `第${ZeroToNineFullHalfRegex}+`;
     export const AllFractionNumber = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*又\\s*)?${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*分\\s*之\\s*${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})(${PointRegexStr}${AllIntRegex}*)?`;
@@ -98,7 +98,7 @@ export namespace ChineseNumeric {
     export const FoldsPercentageRegex = `${ZeroToNineIntegerRegex}(\\s*[点點]?\\s*${ZeroToNineIntegerRegex})?\\s*折`;
     export const SimpleFoldsPercentageRegex = `${ZeroToNineFullHalfRegex}\\s*成(\\s*(半|${ZeroToNineFullHalfRegex}))?`;
     export const SpecialsPercentageRegex = `(${ZeroToNineIntegerRegex}|[十拾])\\s*成(\\s*(半|${ZeroToNineIntegerRegex}))?`;
-    export const NumbersSpecialsPercentageRegex = `(${ZeroToNineFullHalfRegex}[\\.．]${ZeroToNineFullHalfRegex}|[1１][0０])\\s*成`;
+    export const NumbersSpecialsPercentageRegex = `(${ZeroToNineFullHalfRegex}[\\.．]${ZeroToNineFullHalfRegex}|10)\\s*成`;
     export const SimpleSpecialsPercentageRegex = `${ZeroToNineIntegerRegex}\\s*[点點]\\s*${ZeroToNineIntegerRegex}\\s*成`;
     export const SpecialsFoldsPercentageRegex = `半\\s*成|(?<=打)[对對]\\s*折|半\\s*折`;
     export const SpeicalCharBeforeNumber = `(有|是|为)`;

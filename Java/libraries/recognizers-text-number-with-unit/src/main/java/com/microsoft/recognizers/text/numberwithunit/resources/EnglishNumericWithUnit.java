@@ -296,6 +296,9 @@ public class EnglishNumericWithUnit {
         .put("Jiao", "jiao|mao")
         .put("Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka")
         .put("Penni", "penniä|penni")
+        .put("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿")
+        .put("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins")
+        .put("Satoshi", "satoshi|satoshis")
         .build();
 
     public static final ImmutableMap<String, String> CurrencyNameToIsoCodeMap = ImmutableMap.<String, String>builder()
@@ -484,6 +487,7 @@ public class EnglishNumericWithUnit {
         .put("Ascension pound", "_AP")
         .put("Alderney pound", "_ALP")
         .put("Abkhazian apsar", "_AA")
+        .put("Bitcoin", "_XBT")
         .build();
 
     public static final ImmutableMap<String, String> FractionalUnitNameToCodeMap = ImmutableMap.<String, String>builder()
@@ -560,6 +564,8 @@ public class EnglishNumericWithUnit {
         .put("Tiyin", "TIYIN")
         .put("Hào", "HAO")
         .put("Ngwee", "NGWEE")
+        .put("Millibitcoin", "MILLIBITCOIN")
+        .put("Satoshi", "SATOSHI")
         .build();
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>and)";
@@ -608,9 +614,10 @@ public class EnglishNumericWithUnit {
         .put("Pound", "£")
         .put("Costa Rican colón", "₡")
         .put("Turkish lira", "₺")
+        .put("Bitcoin", "₿|btc|xbt")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "all", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen", "db");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "all", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen", "db", "satoshi", "satoshis");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")
@@ -627,7 +634,7 @@ public class EnglishNumericWithUnit {
         .put("Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "pound", "stone", "yards", "yard", "cord", "dram", "feet", "foot", "gill", "knot", "peck", "cup", "fps", "pts", "in", "dm", "\"");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "grains", "pound", "stone", "stones", "yards", "yard", "cord", "cords", "dram", "drachm", "drachma", "feet", "foot", "gill", "knot", "knots", "peck", "pecks", "cup", "cups", "fps", "pts", "in", "dm", "\"", "pinch", "pinches");
 
     public static final String BuildPrefix = "(?<=(\\s|^))";
 
@@ -655,24 +662,26 @@ public class EnglishNumericWithUnit {
     public static final List<String> AmbiguousLengthUnitList = Arrays.asList("m", "yard", "yards", "pm", "pt", "pts");
 
     public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
-        .put("Meter per second", "meters / second|m/s|meters per second|metres per second|meter per second|metre per second")
-        .put("Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour")
+        .put("Meter per second", "meter/second|meters/second|meters / second|m/s|meters per second|metres per second|meter per second|metre per second")
+        .put("Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour|kph|kmph|km/hr")
         .put("Kilometer per minute", "km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute")
         .put("Kilometer per second", "km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second")
-        .put("Mile per hour", "mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour")
-        .put("Knot", "kt|knot|kn")
-        .put("Foot per second", "ft/s|foot/s|foot per second|feet per second|fps")
-        .put("Foot per minute", "ft/min|foot/min|foot per minute|feet per minute")
+        .put("Mile per hour", "mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour|mi/hr")
+        .put("Knot", "kt|knot|knots|kn")
+        .put("Foot per second", "ft/s|foot/s|feet/s|foot per second|feet per second|fps")
+        .put("Foot per minute", "ft/min|foot/min|feet/min|foot per minute|feet per minute")
         .put("Yard per minute", "yards per minute|yard per minute|yards / minute|yards/min|yard/min")
         .put("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s")
         .build();
 
+    public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("knot", "knots", "fps");
+
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
-        .put("F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f")
+        .put("F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|° f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f")
         .put("K", "k|K|kelvin")
         .put("R", "rankine|°r")
         .put("D", "delisle|°de")
-        .put("C", "degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c")
+        .put("C", "degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|° c|c")
         .put("Degree", "degree|degrees|deg.|deg|°")
         .build();
 
@@ -687,33 +696,49 @@ public class EnglishNumericWithUnit {
         .put("Liter", "l|litre|liter|liters|litres")
         .put("Deciliter", "dl|deciliter|decilitre|deciliters|decilitres")
         .put("Centiliter", "cl|centiliter|centilitre|centiliters|centilitres")
-        .put("Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters")
+        .put("Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters|cc")
         .put("Cubic yard", "cubic yard|cubic yards")
         .put("Cubic inch", "cubic inch|cubic inches")
         .put("Cubic foot", "cubic foot|cubic feet")
         .put("Cubic mile", "cubic mile|cubic miles")
         .put("Fluid ounce", "fl oz|fluid ounce|fluid ounces")
-        .put("Teaspoon", "teaspoon|teaspoons")
-        .put("Tablespoon", "tablespoon|tablespoons")
-        .put("Pint", "pint|pints")
-        .put("Volume unit", "fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl")
+        .put("Teaspoon", "teaspoon|teaspoons|teaspoonful|teaspoonfuls|tsp|tsp.|tspn|tspn.|tea spoon|tea spoons|t.|ts.")
+        .put("Tablespoon", "tablespoon|tablespoons|tablespoonful|tablespoonfuls|tbl|tbl.|tbs|tbs.|tbsp|tbsp.|table spoon|table spoons|T.|Tb.|tbls.|tbls")
+        .put("Pint", "pint|pints|fl pt| fluid pint")
+        .put("Quart", "quart|quarts|fl qt")
+        .put("Cup", "cup|cups")
+        .put("Gill", "gill|gills")
+        .put("Pinch", "pinch|pinches")
+        .put("Fluid Dram", "fluid dram|fluid drachm|fluid drachma|fluidram|fluidrams")
+        .put("Barrel", "barrel|bbl|barrels")
+        .put("Minim", "minim")
+        .put("Cord", "cord|cords")
+        .put("Peck", "peck|pecks")
+        .put("Bushel", "bushel")
+        .put("Hogshead", "hogshead")
         .build();
 
-    public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "peck", "cord", "gill");
+    public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "cups", "peck", "pecks", "cord", "cords", "gill", "gills", "barrel", "barrels", "tbl", "quart", "quarts", "pinch");
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos")
-        .put("Gram", "g|gram|grams")
+        .put("Gram", "g|gram|grams|gm")
         .put("Milligram", "mg|milligram|milligrams")
-        .put("Gallon", "-gallon|gallons|gallon")
+        .put("Gallon", "-gallon|gallons|gallon|gal")
         .put("Metric ton", "metric tons|metric ton")
         .put("Ton", "-ton|ton|tons|tonne|tonnes")
         .put("Pound", "pound|pounds|lb|lbs")
         .put("Ounce", "-ounce|ounce|oz|ounces")
-        .put("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")
+        .put("Grain", "grain|grains|gr")
+        .put("Pennyweight", "pennyweight")
+        .put("Long ton (British)", "british long ton|long ton (british)")
+        .put("Short ton (US)", "us short ton|short ton (us)")
+        .put("Short hundredweight (US)", "us short hundredweight|short hundredweight (us)")
+        .put("Stone", "stone")
+        .put("Dram", "dram|drachm|drachma|roman drachma|greek drachma")
         .build();
 
-    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs");
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")

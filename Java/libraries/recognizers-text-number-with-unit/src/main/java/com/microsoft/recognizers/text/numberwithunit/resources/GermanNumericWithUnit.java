@@ -292,6 +292,8 @@ public class GermanNumericWithUnit {
         .put("Jiao", "jiao")
         .put("Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka|finnische mark|finnischen mark")
         .put("Penni", "penniä|penni")
+        .put("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿")
+        .put("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins")
         .build();
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
@@ -337,6 +339,7 @@ public class GermanNumericWithUnit {
         .put("Pound", "£")
         .put("Costa Rican colón", "₡")
         .put("Turkish lira", "₺")
+        .put("Bitcoin", "₿|btc|xbt")
         .build();
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen");

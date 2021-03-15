@@ -231,7 +231,8 @@ class ChineseNumericWithUnit:
                                ("Fen", "分钱|分"),
                                ("Jiao", "毛钱|毛|角钱|角"),
                                ("Finnish markka", "芬兰马克"),
-                               ("Penni", "盆尼")])
+                               ("Penni", "盆尼"),
+                               ("Bitcoin", "₿|btc|xbt|个比特币|比特币")])
     CurrencyNameToIsoCodeMap = dict([("Afghan afghani", "AFN"),
                                      ("Euro", "EUR"),
                                      ("Albanian lek", "ALL"),
@@ -512,7 +513,8 @@ class ChineseNumericWithUnit:
                                ("Turkish lira", "₺"),
                                ("Euro", "€"),
                                ("Pound", "£"),
-                               ("Costa Rican colón", "₡")])
+                               ("Costa Rican colón", "₡"),
+                               ("Bitcoin", "₿|btc|xbt")])
     CurrencyAmbiguousValues = [r'元', r'仙', r'分', r'圆', r'块', r'毛', r'盾', r'箍', r'蚊', r'角']
     DimensionSuffixList = dict([("Meter", "米|公尺|m"),
                                 ("Kilometer", "千米|公里|km"),

@@ -335,7 +335,10 @@ class PortugueseNumericWithUnit:
                                ("Franco djibutiano", "franco djibutiano|francos djibutianos|franco jibutiano|francos jibutianos|djf"),
                                ("Dinar iugoslavo", "dinar iugoslavo|dinares iugoslavos|dinar jugoslavo|dinares jugoslavos|yud"),
                                ("Kwacha zambiano", "kwacha zambiano|kwacha zambianos|kwachas zambianos|zmw"),
-                               ("Ngwee zambiano", "ngwee zambiano|ngwee zambianos|ngwees zambianos")])
+                               ("Ngwee zambiano", "ngwee zambiano|ngwee zambianos|ngwees zambianos"),
+                               ("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿"),
+                               ("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins"),
+                               ("Satoshi", "satoshi|satoshis")])
     CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
     CurrencyPrefixList = dict([("Dólar", "$"),
                                ("Dólar estadunidense", "us$|u$d|usd$|usd"),
@@ -367,7 +370,8 @@ class PortugueseNumericWithUnit:
                                ("Florim", "ƒ"),
                                ("Libra", "£"),
                                ("Colón costarriquenho", "₡"),
-                               ("Lira turca", "₺")])
+                               ("Lira turca", "₺"),
+                               ("Bitcoin", "₿|btc|xbt")])
     AmbiguousCurrencyUnitList = [r'le', r'agora']
     InformationSuffixList = dict([("bit", "bit|bits"),
                                   ("kilobit", "kilobit|kilobits|kb|kbit"),

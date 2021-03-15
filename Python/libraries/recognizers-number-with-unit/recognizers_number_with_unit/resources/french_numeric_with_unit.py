@@ -254,7 +254,10 @@ class FrenchNumericWithUnit:
                                ("Yuan Chinois", "yuan|yuans|yuan chinois|renminbi|cny|rmb|￥"),
                                ("Fen", "fen"),
                                ("Jiao", "jiao"),
-                               ("Mark Finlandais", "marks finlandais|mark finlandais|fim|mark")])
+                               ("Mark Finlandais", "marks finlandais|mark finlandais|fim|mark"),
+                               ("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿"),
+                               ("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins"),
+                               ("Satoshi", "satoshi|satoshis")])
     CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
     CurrencyPrefixList = dict([("Dollar", "$"),
                                ("Dollar États-Unis", "$us|usd|us$"),
@@ -283,7 +286,8 @@ class FrenchNumericWithUnit:
                                ("Yuan Chinois", "cny|rmb|￥|元"),
                                ("Yen Japonais", "¥|jpy"),
                                ("Euro", "€|eur"),
-                               ("Livre", "£")])
+                               ("Livre", "£"),
+                               ("Bitcoin", "₿|btc|xbt")])
     AmbiguousCurrencyUnitList = [r'din.', r'kina', r'lari', r'taka', r'tala', r'vatu', r'yuan', r'bob', r'btn', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'mga', r'mop', r'nad', r'omr', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sos', r'std', r'try', r'yer']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
                                   ("Kilobit", "kilobit|kilobits|kb|kbit|kbits"),

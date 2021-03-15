@@ -349,13 +349,13 @@ TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?([àa]|em|por|pel[ao]|de|no|na?\s+)?{SpecificTimeOfDayRegex}
   references: [ SpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
-  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*)
+  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+([àa]s|para))?\s*)
   references: [ SpecificTimeOfDayRegex ]
 SimpleTimeOfTodayAfterRegex: !nestedRegex
-  def: ({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}
+  def: ({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?{SpecificTimeOfDayRegex}
   references: [ HourNumRegex, BaseDateTime.HourRegex, SpecificTimeOfDayRegex ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
-  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))
+  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+([àa]s|((cerca|perto|ao\s+redor|por\s+volta)\s+(de|das))))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))
   references: [ SpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
   def: ((no|ao)\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\s+d?o(\s+dia)?(\s+de)?)?\s*$
@@ -368,7 +368,7 @@ UnspecificEndOfRangeRegex: !simpleRegex
 UnitRegex: !simpleRegex
   def: (?<unit>anos?|meses|m[êe]s|semanas?|dias?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\b
 ConnectorRegex: !simpleRegex
-  def: ^(,|t|para [ao]|para as|pras|(cerca|perto)\s+(de|das)|quase)$
+  def: ^(,|t|para [ao]|para as|pras|(cerca|perto|ao\s+redor|por\s+volta)\s+(de|das)|quase)$
 # PortugueseTimePeriodExtractorConfiguration
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>vinte( e (um|dois|tr[êe]s|quatro))?|zero|uma?|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez([ea]sseis|[ea]ssete|oito|[ea]nove))
@@ -436,7 +436,7 @@ InexactNumberUnitRegex: !nestedRegex
   references: [ UnitRegex ]
 # PortugueseHolidayExtractorConfiguration
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
+  def: \b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia dos? presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
   references: [ YearRegex ]
 HolidayRegex2: !nestedRegex
   def: \b(?<holiday>(dia\s+(d[eoa]s?\s+)?)?(martin luther king|todos os santos|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
@@ -452,8 +452,7 @@ AfterRegex: !simpleRegex
 SinceRegex: !simpleRegex
   def: (desde(\s+(as?|o))?)
 AroundRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: (?:\b(?:cerca|perto|ao\s+redor|por\s+volta)\s*?\b)(\s+(de|das))?
 # PortugueseSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\b
