@@ -1322,18 +1322,6 @@
     ]
   },
   {
-    "Input": "minuit",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "minuit",
-        "Type": "time",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "au milieu de la nuit",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
