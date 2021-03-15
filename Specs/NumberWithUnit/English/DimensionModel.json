@@ -1014,5 +1014,92 @@
         "End": 23
       }
     ]
+  },
+  {
+    "Input": "I am 5' tall",
+    "Results": [
+      {
+        "Text": "5'",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Foot"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "I have 5 'ducks'",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "He said 'we are 5'",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "The measures are 3' and 6' more or less",
+    "Comment": "In python, _filter_ambiguity works differently from the .NET FilterAmbiguity and AmbiguityFiltersDict is matched (..6[' m]ore...)",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3'",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Foot"
+        },
+        "Start": 17,
+        "End": 18
+      },
+      {
+        "Text": "6'",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Foot"
+        },
+        "Start": 24,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "I have 5 \"ducks\"",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "He said \"we are 5\"",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "The measures are 3\" and 6\" more or less",
+    "Results": [
+      {
+        "Text": "3\"",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Inch"
+        },
+        "Start": 17,
+        "End": 18
+      },
+      {
+        "Text": "6\"",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Inch"
+        },
+        "Start": 24,
+        "End": 25
+      }
+    ]
   }
 ]

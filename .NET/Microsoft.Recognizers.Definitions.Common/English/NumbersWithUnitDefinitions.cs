@@ -568,6 +568,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Ngwee", @"NGWEE" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
+      public const string QuotationRegex = @"(?<Quote>\u0022(?!\s)[^\u0022]+(?<!\s)\u0022|\u0027(?!\s)[^\u0027]+(?<!\s)\u0027)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dobra", @"db|std" },
@@ -700,7 +701,8 @@ namespace Microsoft.Recognizers.Definitions.English
             @"pts",
             @"in",
             @"dm",
-            @""""
+            @"""",
+            @"'"
         };
       public const string BuildPrefix = @"(?<=(\s|^))";
       public const string BuildSuffix = @"(?=(\s|\W|$))";
@@ -719,7 +721,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Mile", @"-mile|mile|miles" },
             { @"Yard", @"yard|yards" },
             { @"Inch", @"-inch|inch|inches|in|""" },
-            { @"Foot", @"-foot|foot|feet|ft" },
+            { @"Foot", @"-foot|foot|feet|ft|'" },
             { @"Light year", @"light year|light-year|light years|light-years" },
             { @"Pt", @"pt|pts" }
         };

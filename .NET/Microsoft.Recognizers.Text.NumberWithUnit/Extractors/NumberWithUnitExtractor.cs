@@ -249,7 +249,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             numberData.Start = start - er.Start;
                             er.Data = numberData;
 
-                            // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
+                            // Special treatment, handle quotation marks wrongly extracted as Foot or Inch units
+                            // and cases like '2:00 pm', '00 pm' is not dimension
                             var isNotUnit = false;
                             if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal))
                             {
@@ -258,9 +259,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     nonUnitMatches = this.config.NonUnitRegex.Matches(source);
                                 }
 
-                                foreach (Match time in nonUnitMatches)
+                                foreach (Match match in nonUnitMatches)
                                 {
-                                    if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
+                                    if (match.Groups["Quote"].Success)
+                                    {
+                                        if ((match.Index >= er.Start && match.Index <= er.Start + er.Length) ||
+                                        (match.Index + match.Length >= er.Start && match.Index + match.Length <= er.Start + er.Length))
+                                        {
+                                            isNotUnit = true;
+                                            break;
+                                        }
+                                    }
+                                    else if (er.Start >= match.Index && er.Start + er.Length <= match.Index + match.Length)
                                     {
                                         isNotUnit = true;
                                         break;
