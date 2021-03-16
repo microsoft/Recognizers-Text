@@ -39,19 +39,6 @@
     ]
   },
   {
-    "Input": "سأترك لمدة 3 ساعات",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 11,
-        "Length": 7,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
     "Input": "سأغادر لمدة 3 ساعات",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -60,45 +47,6 @@
         "Text": "3 ساعات",
         "Start": 12,
         "Length": 7,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة 3 ساعات",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 12,
-        "Length": 7,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة 3 ساعات",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 12,
-        "Length": 7,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة 3 أيام",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 أيام",
-        "Start": 12,
-        "Length": 6,
         "Type": "duration"
       }
     ]
@@ -260,45 +208,6 @@
     ]
   },
   {
-    "Input": "سأغادر طوال اليوم",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال اليوم",
-        "Start": 7,
-        "Length": 10,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر طوال الأسبوع",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال الأسبوع",
-        "Start": 7,
-        "Length": 12,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر طوال الشهر",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال الشهر",
-        "Start": 7,
-        "Length": 10,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
     "Input": "سأغادر طوال السنة",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -357,45 +266,6 @@
     "Results": [
       {
         "Text": "عام كامل",
-        "Start": 12,
-        "Length": 8,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر ليوم كامل",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": " ليوم كامل",
-        "Start": 6,
-        "Length": 10,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة أسبوع كامل",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "أسبوع كامل",
-        "Start": 12,
-        "Length": 10,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة شهر كامل",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "شهر كامل",
         "Start": 12,
         "Length": 8,
         "Type": "duration"
@@ -468,19 +338,6 @@
     ]
   },
   {
-    "Input": "سأترك لمدة 3 دقائق",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 دقائق",
-        "Start": 11,
-        "Length": 7,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
     "Input": "سأغادر لمدة 30 دقيقة",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -507,19 +364,6 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة نصف ساعة",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "نصف ساعة",
-        "Start": 12,
-        "Length": 8,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
     "Input": "سأغادر لمدة ساعة ونصف",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -528,32 +372,6 @@
         "Text": "ساعة ونصف",
         "Start": 12,
         "Length": 9,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة ساعة ونصف",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "ساعة ونصف",
-        "Start": 12,
-        "Length": 9,
-        "Type": "duration"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة نصف ساعة",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "نصف ساعة",
-        "Start": 12,
-        "Length": 8,
         "Type": "duration"
       }
     ]

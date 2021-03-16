@@ -897,19 +897,6 @@
     ]
   },
   {
-    "Input": "التقيت به منذ شهرين ويوم واحد وساعتين",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": " منذ شهرين ويوم واحد وساعتين",
-        "Start": 9,
-        "Length": 28,
-        "Type": "datetime"
-      }
-    ]
-  },
-  {
     "Input": "سأغادر بعد يوم واحد و 30 دقيقة",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",

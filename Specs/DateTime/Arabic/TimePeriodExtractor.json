@@ -182,19 +182,6 @@
     ]
   },
   {
-    "Input": "سأكون بالخارج من 4 مساءً حتى 5 مساءً",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "من 4 مساءً حتى 5 مساءً",
-        "Start": 14,
-        "Length": 22,
-        "Type": "timerange"
-      }
-    ]
-  },
-  {
     "Input": "سأكون بالخارج من 4 إلى 5 مساءً",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -502,19 +489,6 @@
         "Text": " في أول الليل",
         "Start": 10,
         "Length": 13,
-        "Type": "timerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعنا نلتقي في وقت متأخر من الليل",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت متأخر من الليل",
-        "Start": 11,
-        "Length": 21,
         "Type": "timerange"
       }
     ]

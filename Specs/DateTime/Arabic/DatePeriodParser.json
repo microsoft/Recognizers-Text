@@ -1092,34 +1092,6 @@
     ]
   },
   {
-    "Input": "سأخرج من 2 أكتوبر إلى 22 أكتوبر",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "من 2 أكتوبر إلى 22 أكتوبر",
-        "Start": 6,
-        "Length": 25,
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-          "FutureResolution": {
-            "startDate": "2017-10-02",
-            "endDate": "2017-10-22"
-          },
-          "PastResolution": {
-            "startDate": "2016-10-02",
-            "endDate": "2016-10-22"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأخرج بين 2 أكتوبر و 22 أكتوبر",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2764,34 +2736,6 @@
     ]
   },
   {
-    "Input": "في السبعينيات",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "السبعينيات",
-        "Start": 3,
-        "Length": 10,
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-          "FutureResolution": {
-            "startDate": "2070-01-01",
-            "endDate": "2080-01-01"
-          },
-          "PastResolution": {
-            "startDate": "1970-01-01",
-            "endDate": "1980-01-01"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "السبعينيات",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -3536,34 +3480,6 @@
           "PastResolution": {
             "startDate": "2000-01-01",
             "endDate": "2014-01-01"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "حدث ذلك في العقدين الماضيين.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "العقدين الماضيين",
-        "Start": 11,
-        "Length": 16,
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(1990-01-01,2010-01-01,P20Y)",
-          "FutureResolution": {
-            "startDate": "1990-01-01",
-            "endDate": "2010-01-01"
-          },
-          "PastResolution": {
-            "startDate": "1990-01-01",
-            "endDate": "2010-01-01"
           }
         }
       }

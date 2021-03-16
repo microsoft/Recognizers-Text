@@ -182,32 +182,6 @@
     ]
   },
   {
-    "Input": "سأعود في 4.22",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Start": 9,
-        "Length": 4,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود في 22-4",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "4-22",
-        "Start": -1,
-        "Length": 4,
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "سأعود في 4/22",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -307,19 +281,6 @@
         "Text": "أول يناير",
         "Start": 9,
         "Length": 9,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود في 1 يناير",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "1 يناير",
-        "Start": 9,
-        "Length": 7,
         "Type": "date"
       }
     ]
@@ -481,19 +442,6 @@
     ]
   },
   {
-    "Input": "سأعود يوم الجمعة",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "الجمعة",
-        "Start": 10,
-        "Length": 6,
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "سأعود اليوم",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -572,32 +520,6 @@
     ]
   },
   {
-    "Input": "سأعود في اليوم التالي",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "اليوم التالي",
-        "Start": 9,
-        "Length": 12,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود يوم الجمعة",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "هذا الجمعة",
-        "Start": -1,
-        "Length": 10,
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "سأعود يوم الأحد القادم",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -632,32 +554,6 @@
         "Text": "اليوم الأخير",
         "Start": -1,
         "Length": 12,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود في آخر يوم",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في اليوم الأخير",
-        "Start": -1,
-        "Length": 15,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود اليوم",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "اليوم",
-        "Start": 6,
-        "Length": 5,
         "Type": "date"
       }
     ]
@@ -910,19 +806,6 @@
     ]
   },
   {
-    "Input": "عدت إلى 27.",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "إلى 27.",
-        "Start": 4,
-        "Length": 7,
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "عدت إلى الحادي والعشرين",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -983,19 +866,6 @@
         "Text": "للحادية والثلاثين",
         "Start": 4,
         "Length": 17,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "عدت يوم 27",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في 27",
-        "Start": -1,
-        "Length": 5,
         "Type": "date"
       }
     ]
@@ -1426,19 +1296,6 @@
         "Text": "عامين و 21 يومًا",
         "Start": 14,
         "Length": 16,
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "غادرت هنا منذ عامين وشهر واحد و 21 يومًا",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "عامين وشهر واحد و 21 يومًا",
-        "Start": 14,
-        "Length": 26,
         "Type": "date"
       }
     ]

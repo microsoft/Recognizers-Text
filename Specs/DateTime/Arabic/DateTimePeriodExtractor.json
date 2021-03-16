@@ -364,19 +364,6 @@
     ]
   },
   {
-    "Input": "سأعود 3 دقائق السابقة",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 دقائق السابقة",
-        "Start": 6,
-        "Length": 15,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
     "Input": "سأعود بعد 5 ساعات",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -585,32 +572,6 @@
     ]
   },
   {
-    "Input": "دعونا نجتمع في وقت مبكر من ليلة الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت مبكر من ليلة الثلاثاء",
-        "Start": 12,
-        "Length": 28,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع في وقت متأخر من ليلة الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت متأخر من ليلة الثلاثاء",
-        "Start": 12,
-        "Length": 29,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
     "Input": "دعونا نجتمع في الصباح الباكر يوم الثلاثاء",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -632,19 +593,6 @@
         "Text": "في وقت متأخر من صباح يوم الثلاثاء",
         "Start": 12,
         "Length": 33,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع في وقت مبكر من بعد ظهر يوم الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت مبكر من بعد ظهر يوم الثلاثاء",
-        "Start": 12,
-        "Length": 35,
         "Type": "datetimerange"
       }
     ]
@@ -684,58 +632,6 @@
         "Text": "في وقت متأخر من مساء يوم الثلاثاء",
         "Start": 12,
         "Length": 33,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع في وقت مبكر من ليلة الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت مبكر من ليلة الثلاثاء",
-        "Start": 12,
-        "Length": 28,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع في وقت متأخر من ليلة الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت متأخر من ليلة الثلاثاء",
-        "Start": 12,
-        "Length": 29,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع في وقت مبكر من ليلة الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت مبكر من ليلة الثلاثاء",
-        "Start": 12,
-        "Length": 28,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع في وقت متأخر من ليلة الثلاثاء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "في وقت متأخر من ليلة الثلاثاء",
-        "Start": 12,
-        "Length": 29,
         "Type": "datetimerange"
       }
     ]
@@ -814,32 +710,6 @@
         "Text": "يوم الثلاثاء في وقت متأخر من المساء",
         "Start": 12,
         "Length": 35,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع يوم الثلاثاء في وقت مبكر من الليل",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "يوم الثلاثاء في وقت مبكر من الليل",
-        "Start": 12,
-        "Length": 33,
-        "Type": "datetimerange"
-      }
-    ]
-  },
-  {
-    "Input": "دعونا نجتمع يوم الثلاثاء في وقت متأخر من الليل",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "يوم الثلاثاء في وقت متأخر من الليل",
-        "Start": 12,
-        "Length": 34,
         "Type": "datetimerange"
       }
     ]

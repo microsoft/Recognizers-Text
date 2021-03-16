@@ -1040,32 +1040,6 @@
     ]
   },
   {
-    "Input": "سأعود يوم الجمعة",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "هذا الجمعة",
-        "Start": -1,
-        "Length": 10,
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-11",
-          "FutureResolution": {
-            "date": "2016-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-11"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأعود يوم الأحد القادم",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1242,32 +1216,6 @@
           },
           "PastResolution": {
             "date": "2016-11-06"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأعود اليوم",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "اليوم",
-        "Start": 6,
-        "Length": 5,
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
           }
         }
       }
@@ -1674,32 +1622,6 @@
     "Results": [
       {
         "Text": "إلى 27!",
-        "Start": 4,
-        "Length": 7,
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "عدت إلى 27.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "إلى 27.",
         "Start": 4,
         "Length": 7,
         "Type": "date",

@@ -117,19 +117,6 @@
     ]
   },
   {
-    "Input": "سأغادر الساعة 3 مساءً كل يوم",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "الساعة 3 مساءً كل يوم",
-        "Start": 7,
-        "Length": 21,
-        "Type": "set"
-      }
-    ]
-  },
-  {
     "Input": "سأغادر كل 4/15",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -229,19 +216,6 @@
         "Text": "كل ليلة في 9",
         "Start": 7,
         "Length": 12,
-        "Type": "set"
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر كل صباح في الساعة 9 صباحًا",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "كل صباح في الساعة 9 صباحًا",
-        "Start": 7,
-        "Length": 26,
         "Type": "set"
       }
     ]

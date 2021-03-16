@@ -207,29 +207,6 @@
     ]
   },
   {
-    "Input": "سأعود في 7",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "7.0",
-        "Start": -1,
-        "Length": 3,
-        "Type": "time",
-        "Value": {
-          "Timex": "T07",
-          "FutureResolution": {
-            "time": "07:00:00"
-          },
-          "PastResolution": {
-            "time": "07:00:00"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأعود في السابعة",
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
@@ -293,29 +270,6 @@
           },
           "PastResolution": {
             "time": "19:56:00"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأعود 7:56:30 مساء",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "7:56:30 مساءً",
-        "Start": -1,
-        "Length": 13,
-        "Type": "time",
-        "Value": {
-          "Timex": "T19:56:30",
-          "FutureResolution": {
-            "time": "19:56:30"
-          },
-          "PastResolution": {
-            "time": "19:56:30"
           }
         }
       }

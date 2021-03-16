@@ -13,19 +13,6 @@
     ]
   },
   {
-    "Input": "سأعود في السابعة",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "سبعة",
-        "Start": -1,
-        "Length": 4,
-        "Type": "time"
-      }
-    ]
-  },
-  {
     "Input": "سأعود 7 مساء",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -60,19 +47,6 @@
         "Text": "7:56 مساءً",
         "Start": -1,
         "Length": 10,
-        "Type": "time"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود 7:56:35 مساءً",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "7:56:35 مساءً",
-        "Start": 6,
-        "Length": 13,
         "Type": "time"
       }
     ]
@@ -372,19 +346,6 @@
         "Text": "بعد الظهر الساعة 7",
         "Start": 6,
         "Length": 18,
-        "Type": "time"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود بعد الظهر الساعة 7",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "بعد الظهر 7",
-        "Start": -1,
-        "Length": 11,
         "Type": "time"
       }
     ]
@@ -762,32 +723,6 @@
         "Text": "وقت الظهيرة",
         "Start": 0,
         "Length": 11,
-        "Type": "time"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود 7 مساء",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "7 مساء",
-        "Start": 6,
-        "Length": 6,
-        "Type": "time"
-      }
-    ]
-  },
-  {
-    "Input": "سأعود 7 مساء.",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "7 مساء.",
-        "Start": 6,
-        "Length": 7,
         "Type": "time"
       }
     ]

@@ -1102,33 +1102,6 @@
     ]
   },
   {
-    "Input": "حدد موعدًا للاجتماع قبل الساعة 2 مساءً",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "قبل الساعة 2 مساءً",
-        "Start": 20,
-        "Length": 18,
-        "Type": "datetimeV2.timerange",
-        "Value": {
-          "values": [
-            {
-              "timex": "T14",
-              "Mod": "before",
-              "type": "timerange",
-              "end": "14:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "حدد موعدًا للاجتماع من قبل الساعة 2 مساءً",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1524,33 +1497,6 @@
             {
               "timex": "2016-01-01",
               "Mod": "since",
-              "type": "daterange",
-              "start": "2016-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر بعد 1/1/2016",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "بعد 1/1/2016",
-        "Start": 7,
-        "Length": 12,
-        "Type": "daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-01-01",
-              "Mod": "after",
               "type": "daterange",
               "start": "2016-01-01"
             }

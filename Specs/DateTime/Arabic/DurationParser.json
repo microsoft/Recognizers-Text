@@ -78,32 +78,6 @@
     ]
   },
   {
-    "Input": "سأترك لمدة 3 ساعات",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 11,
-        "Length": 7,
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3H",
-          "FutureResolution": {
-            "duration": "10800"
-          },
-          "PastResolution": {
-            "duration": "10800"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأغادر لمدة 3 ساعات",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -124,84 +98,6 @@
           },
           "PastResolution": {
             "duration": "10800"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة 3 ساعات",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 12,
-        "Length": 7,
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3H",
-          "FutureResolution": {
-            "duration": "10800"
-          },
-          "PastResolution": {
-            "duration": "10800"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة 3 ساعات",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 12,
-        "Length": 7,
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3H",
-          "FutureResolution": {
-            "duration": "10800"
-          },
-          "PastResolution": {
-            "duration": "10800"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة 3 أيام",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 أيام",
-        "Start": 12,
-        "Length": 6,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
           }
         }
       }
@@ -520,84 +416,6 @@
     ]
   },
   {
-    "Input": "سأغادر طوال اليوم",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال اليوم",
-        "Start": 7,
-        "Length": 10,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر طوال الأسبوع",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال الأسبوع",
-        "Start": 7,
-        "Length": 12,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1W",
-          "FutureResolution": {
-            "duration": "604800"
-          },
-          "PastResolution": {
-            "duration": "604800"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر طوال الشهر",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال الشهر",
-        "Start": 7,
-        "Length": 10,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1M",
-          "FutureResolution": {
-            "duration": "2592000"
-          },
-          "PastResolution": {
-            "duration": "2592000"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأغادر طوال السنة",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -728,84 +546,6 @@
     ]
   },
   {
-    "Input": "سأغادر ليوم كامل",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": " ليوم كامل",
-        "Start": 6,
-        "Length": 10,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة أسبوع كامل",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "أسبوع كامل",
-        "Start": 12,
-        "Length": 10,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1W",
-          "FutureResolution": {
-            "duration": "604800"
-          },
-          "PastResolution": {
-            "duration": "604800"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة شهر كامل",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "شهر كامل",
-        "Start": 12,
-        "Length": 8,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1M",
-          "FutureResolution": {
-            "duration": "2592000"
-          },
-          "PastResolution": {
-            "duration": "2592000"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأغادر لمدة سنة كامل",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -852,32 +592,6 @@
           },
           "PastResolution": {
             "duration": "3600"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر طوال اليوم",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال اليوم",
-        "Start": 7,
-        "Length": 10,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
           }
         }
       }
@@ -982,32 +696,6 @@
           },
           "PastResolution": {
             "duration": "1800"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر لمدة ساعة ونصف",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "ساعة ونصف",
-        "Start": 12,
-        "Length": 9,
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT1.5H",
-          "FutureResolution": {
-            "duration": "5400"
-          },
-          "PastResolution": {
-            "duration": "5400"
           }
         }
       }
