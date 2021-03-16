@@ -39,6 +39,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Arabic\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Arabic\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -383,6 +388,8 @@
 
   <ItemGroup>
     <None Update="Arabic\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Arabic\DateTimeDefinitions.tt">
     </None>
     <None Update="Arabic\NumbersDefinitions.tt">
     </None>

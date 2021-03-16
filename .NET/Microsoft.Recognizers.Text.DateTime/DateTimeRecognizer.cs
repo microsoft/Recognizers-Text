@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+using Microsoft.Recognizers.Text.DateTime.Arabic;
 using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
@@ -143,6 +144,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             //    options => new DateTimeModel(
             //      new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
             //      new JapaneseMergedExtractor(options)));
+
+            // TODO to be uncommented when all tests for Arabic are green.
+            /*RegisterModel<DateTimeModel>(
+                Culture.Arabic,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new ArabicMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Arabic, options, dmyDateFormat: false))),
+                    new BaseMergedDateTimeExtractor(
+                        new ArabicMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Arabic, options, dmyDateFormat: false)))));
+            */
         }
     }
 }
