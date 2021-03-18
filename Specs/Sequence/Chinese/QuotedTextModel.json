@@ -1,0 +1,28 @@
+[
+	{
+		"Input": " 这个“数字”是『123』或者『456』",
+		"Results": [
+			{
+				"Text": "“数字”",
+				"TypeName": "quotedText",
+				"Resolution": {
+					"value": "“数字”"
+				}
+			},
+			{
+				"Text": "『123』",
+				"TypeName": "quotedText",
+				"Resolution": {
+					"value": "『123』"
+				}
+			},
+			{
+				"Text": "『456』",
+				"TypeName": "quotedText",
+				"Resolution": {
+					"value": "『456』"
+				}
+			}
+		]
+	}
+]
