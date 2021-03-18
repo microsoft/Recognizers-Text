@@ -1,6 +1,6 @@
 [
 	{
-		"Input": "This is task “number” '123' or '456'",
+		"Input": "This is task “number” `123` or `456`",
 		"Results": [
 			{
 				"Text": "“number”",
@@ -10,43 +10,43 @@
 				}
 			},
 			{
-				"Text": "'123'",
+				"Text": "`123`",
 				"TypeName": "quotedText",
 				"Resolution": {
-					"value": "'123'"
+					"value": "`123`"
 				}
 			},
 			{
-				"Text": "'456'",
+				"Text": "`456`",
 				"TypeName": "quotedText",
 				"Resolution": {
-					"value": "'456'"
+					"value": "`456`"
 				}
 			}
 		]
 	},
 	{
-		"Input": "This is task “number '123' or '456'”",
+		"Input": "This is task “number `123` or `456`”",
 		"Results": [
 			{
-				"Text": "“number '123' or '456'”",
+				"Text": "“number `123` or `456`”",
 				"TypeName": "quotedText",
 				"Resolution": {
-					"value": "“number '123' or '456'”"
+					"value": "“number `123` or `456`”"
 				}
 			},
 			{
-				"Text": "'123'",
+				"Text": "`123`",
 				"TypeName": "quotedText",
 				"Resolution": {
-					"value": "'123'"
+					"value": "`123`"
 				}
 			},
 			{
-				"Text": "'456'",
+				"Text": "`456`",
 				"TypeName": "quotedText",
 				"Resolution": {
-					"value": "'456'"
+					"value": "`456`"
 				}
 			}
 		]

@@ -227,7 +227,11 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             RegisterModel<QuotedTextModel>(
                 Culture.English,
-                (options) => new QuotedTextModel(new QuotedTextParser(), new QuotedTextExtractor()));
+                (options) => new QuotedTextModel(new QuotedTextParser(), new EnglishQuotedTextExtractor()));
+
+            RegisterModel<QuotedTextModel>(
+              Culture.Chinese,
+              (options) => new QuotedTextModel(new QuotedTextParser(), new ChineseQuotedTextExtractor()));
 
             RegisterModel<EmailModel>(
                 Culture.English,

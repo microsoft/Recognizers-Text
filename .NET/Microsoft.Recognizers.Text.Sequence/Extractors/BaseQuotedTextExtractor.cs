@@ -9,19 +9,6 @@ namespace Microsoft.Recognizers.Text.Sequence
     {
         public BaseQuotedTextExtractor()
         {
-            var regexes = new Dictionary<Regex, string>
-            {
-                {
-                    new Regex(@"('([^']+)')"),
-                    Constants.QUOTED_TEXT_REGEX
-                },
-                {
-                    new Regex(@"(“([^“”]+)”)"),
-                    Constants.QUOTED_TEXT_REGEX
-                },
-            };
-
-            Regexes = regexes.ToImmutableDictionary();
         }
 
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
