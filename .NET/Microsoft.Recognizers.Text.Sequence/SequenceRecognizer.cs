@@ -112,7 +112,14 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetQuotedTextModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<QuotedTextModel>(Culture.English, fallbackToDefaultCulture);
+            if (culture != null && (
+           culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+           culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
+            {
+                return GetModel<QuotedTextModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
+            return GetModel<QuotedTextModel>(culture, fallbackToDefaultCulture);
         }
 
         public IModel GetEmailModel(string culture = null, bool fallbackToDefaultCulture = true)

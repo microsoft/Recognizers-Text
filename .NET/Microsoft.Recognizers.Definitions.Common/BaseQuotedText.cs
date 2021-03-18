@@ -5,9 +5,9 @@
 //     the code is regenerated.
 //
 //     Generation parameters:
-//     - DataFilename: Patterns\Base-QuotedTextText.yaml
+//     - DataFilename: Patterns\Base-QuotedText.yaml
 //     - Language: NULL
-//     - ClassName: BaseQuotedTextText
+//     - ClassName: BaseQuotedText
 // </auto-generated>
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.

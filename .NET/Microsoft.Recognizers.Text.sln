@@ -129,6 +129,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese", "Chinese", "{16B2
 	ProjectSection(SolutionItems) = preProject
 		..\Specs\Sequence\Chinese\IpAddressModel.json = ..\Specs\Sequence\Chinese\IpAddressModel.json
 		..\Specs\Sequence\Chinese\PhoneNumberModel.json = ..\Specs\Sequence\Chinese\PhoneNumberModel.json
+		..\Specs\Sequence\Chinese\QuotedTextModel.json = ..\Specs\Sequence\Chinese\QuotedTextModel.json
 		..\Specs\Sequence\Chinese\URLModel.json = ..\Specs\Sequence\Chinese\URLModel.json
 	EndProjectSection
 EndProject
