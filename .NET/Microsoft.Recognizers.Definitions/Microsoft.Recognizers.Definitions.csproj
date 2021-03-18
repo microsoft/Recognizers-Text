@@ -37,6 +37,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseGUID.cs" Link="BaseGUID.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseHashTag.cs" Link="BaseHashTag.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseQuotedText.cs" Link="BaseQuotedText.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseIp.cs" Link="BaseIp.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseMention.cs" Link="BaseMention.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseNumbers.cs" Link="BaseNumbers.cs" />

@@ -36,6 +36,13 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
+        public void QuotedTextModel(TestModel testSpec)
+        {
+            TestQuotedText(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
         public void EmailModel(TestModel testSpec)
         {
             TestEmail(testSpec);
