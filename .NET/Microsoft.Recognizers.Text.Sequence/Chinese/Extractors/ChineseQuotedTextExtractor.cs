@@ -9,6 +9,10 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
         private static Dictionary<Regex, string> regexes = new Dictionary<Regex, string>
             {
                 {
+                    new Regex(@"(""([^""]+)"")"),
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
                     new Regex(@"(“([^“”]+)”)"),
                     Constants.QUOTED_TEXT_REGEX
                 },
