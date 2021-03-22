@@ -1,139 +1,111 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IFullDateTimeParserConfiguration
+    public class ChineseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateTimeParserConfiguration
     {
-        public ChineseDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
+        public static readonly Regex LunarRegex = new Regex(DateTimeDefinitions.LunarRegex, RegexFlags);
+
+        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
+
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public ChineseDateTimeParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)
         {
-            DateExtractor = new ChineseDateExtractorConfiguration();
+            IntegerExtractor = config.IntegerExtractor;
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DurationExtractor = config.DurationExtractor;
 
-            DateParser = new ChineseDateParserConfiguration(this);
-            TimeParser = new ChineseTimeParserConfiguration(this);
-            DateTimeParser = new ChineseDateTimeParser(this);
-            DatePeriodParser = new ChineseDatePeriodParserConfiguration(this);
-            TimePeriodParser = new ChineseTimePeriodParserConfiguration(this);
-            DateTimePeriodParser = new ChineseDateTimePeriodParserConfiguration(this);
-            DurationParser = new ChineseDurationParserConfiguration(this);
-            GetParser = new ChineseSetParserConfiguration(this);
-            HolidayParser = new ChineseHolidayParserConfiguration(this);
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            NumberParser = config.NumberParser;
 
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
-            UnitValueMap = DateTimeDefinitions.ParserConfigurationUnitValueMap.ToImmutableDictionary();
-            SeasonMap = DateTimeDefinitions.ParserConfigurationSeasonMap.ToImmutableDictionary();
-            SeasonValueMap = DateTimeDefinitions.ParserConfigurationSeasonValueMap.ToImmutableDictionary();
-            CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
-            DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();
-            DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
-            MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
-            Numbers = InitNumbers();
-
-            DateRegexList = ChineseDateExtractorConfiguration.DateRegexList;
-
-            NextRegex = ChineseDateExtractorConfiguration.NextRegex;
-            ThisRegex = ChineseDateExtractorConfiguration.ThisRegex;
-            LastRegex = ChineseDateExtractorConfiguration.LastRegex;
-            YearRegex = ChineseDateExtractorConfiguration.YearRegex;
-            RelativeRegex = ChineseDateExtractorConfiguration.RelativeRegex;
-            StrictWeekDayRegex = ChineseDateExtractorConfiguration.WeekDayRegex;
-            WeekDayOfMonthRegex = ChineseDateExtractorConfiguration.WeekDayOfMonthRegex;
-            BeforeRegex = ChineseMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = ChineseMergedExtractorConfiguration.AfterRegex;
-            UntilRegex = ChineseMergedExtractorConfiguration.UntilRegex;
-            SincePrefixRegex = ChineseMergedExtractorConfiguration.SincePrefixRegex;
-            SinceSuffixRegex = ChineseMergedExtractorConfiguration.SinceSuffixRegex;
-            EqualRegex = ChineseMergedExtractorConfiguration.EqualRegex;
+            NowRegex = ChineseDateTimeExtractorConfiguration.NowRegex;
+            TimeOfTodayRegex = ChineseDateTimeExtractorConfiguration.TimeOfTodayRegex;
+            DateTimePeriodUnitRegex = ChineseDateTimeExtractorConfiguration.DateTimePeriodUnitRegex;
+            BeforeRegex = ChineseDateTimeExtractorConfiguration.BeforeRegex;
+            AfterRegex = ChineseDateTimeExtractorConfiguration.AfterRegex;
         }
 
-        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear, CultureInfo.InvariantCulture);
+        public IDateTimeExtractor DateExtractor { get; }
 
-        public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
+        public IDateTimeExtractor TimeExtractor { get; }
 
-        public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
-
-        public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
-
-        public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
-
-        public IDateExtractor DateExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
 
         public IDateTimeParser TimeParser { get; }
 
-        public IDateTimeParser DateTimeParser { get; }
+        public IExtractor IntegerExtractor { get; }
 
-        public IDateTimeParser DatePeriodParser { get; }
-
-        public IDateTimeParser TimePeriodParser { get; }
-
-        public IDateTimeParser DateTimePeriodParser { get; }
-
-        public IDateTimeParser DurationParser { get; }
-
-        public IDateTimeParser GetParser { get; }
-
-        public IDateTimeParser HolidayParser { get; }
+        public IParser NumberParser { get; }
 
         public ImmutableDictionary<string, string> UnitMap { get; }
 
-        public ImmutableDictionary<string, long> UnitValueMap { get; }
+        public Regex NowRegex { get; }
 
-        public ImmutableDictionary<string, string> SeasonMap { get; }
+        public Regex TimeOfTodayRegex { get; }
 
-        public ImmutableDictionary<string, int> SeasonValueMap { get; }
-
-        public ImmutableDictionary<string, int> CardinalMap { get; }
-
-        public ImmutableDictionary<string, int> DayOfMonth { get; }
-
-        public ImmutableDictionary<string, int> DayOfWeek { get; }
-
-        public ImmutableDictionary<string, int> MonthOfYear { get; }
-
-        public ImmutableDictionary<string, int> Numbers { get; }
-
-        public IEnumerable<Regex> DateRegexList { get; }
-
-        public Regex NextRegex { get; }
-
-        public Regex ThisRegex { get; }
-
-        public Regex LastRegex { get; }
-
-        public Regex YearRegex { get; }
-
-        public Regex RelativeRegex { get; }
-
-        public Regex StrictWeekDayRegex { get; }
-
-        public Regex WeekDayOfMonthRegex { get; }
+        public Regex DateTimePeriodUnitRegex { get; }
 
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
 
-        public Regex UntilRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.LunarRegex => LunarRegex;
 
-        public Regex SincePrefixRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.LunarHolidayRegex => LunarHolidayRegex;
 
-        public Regex SinceSuffixRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.SimpleAmRegex => SimpleAmRegex;
 
-        public Regex EqualRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.SimplePmRegex => SimplePmRegex;
 
-        public static int GetSwiftDay(string text)
+        public bool GetMatchedNowTimex(string text, out string timex)
+        {
+            var trimmedText = text.Trim();
+
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("现在", StringComparison.Ordinal))
+            {
+                timex = "PRESENT_REF";
+            }
+            else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
+                     trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
+                     trimmedText.Equals("刚才", StringComparison.Ordinal))
+            {
+                timex = "PAST_REF";
+            }
+            else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
+                     trimmedText.Equals("马上", StringComparison.Ordinal))
+            {
+                timex = "FUTURE_REF";
+            }
+            else
+            {
+                timex = null;
+                return false;
+            }
+
+            return true;
+        }
+
+        public int GetSwiftDay(string text)
         {
             var value = 0;
 
             // @TODO move hardcoded values to resources file
-
             if (text.Equals("今天", StringComparison.Ordinal) ||
                 text.Equals("今日", StringComparison.Ordinal) ||
                 text.Equals("最近", StringComparison.Ordinal))
@@ -170,11 +142,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return value;
         }
 
-        private static ImmutableDictionary<string, int> InitNumbers()
+        public void AdjustByTimeOfDay(string matchStr, ref int hour, ref int swift)
         {
-            return new Dictionary<string, int>
+            // @TODO move hardcoded values to resources file
+            switch (matchStr)
             {
-            }.ToImmutableDictionary();
+                case "今晚":
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        hour += Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "今早":
+                case "今晨":
+                    if (hour >= Constants.HalfDayHourCount)
+                    {
+                        hour -= Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "明晚":
+                    swift = 1;
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        hour += Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "明早":
+                case "明晨":
+                    swift = 1;
+                    if (hour >= Constants.HalfDayHourCount)
+                    {
+                        hour -= Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "昨晚":
+                    swift = -1;
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        hour += Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.Arabic;
+using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
@@ -497,27 +498,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new DateTime.Chinese.ChineseDateExtractorConfiguration();
+                    return new BaseCJKDateExtractor(new ChineseDateExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Time:
-                    return new DateTime.Chinese.ChineseTimeExtractorConfiguration();
+                    return new BaseCJKTimeExtractor(new ChineseTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Chinese.ChineseDatePeriodExtractorConfiguration(defaultConfig);
+                    return new BaseCJKDatePeriodExtractor(new ChineseDatePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.TimePeriod:
-                    return new DateTime.Chinese.ChineseTimePeriodExtractorChsConfiguration();
+                    return new BaseCJKTimePeriodExtractor(new ChineseTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTime:
-                    return new DateTime.Chinese.ChineseDateTimeExtractorConfiguration();
+                    return new BaseCJKDateTimeExtractor(new ChineseDateTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Chinese.ChineseDateTimePeriodExtractorConfiguration(defaultConfig);
+                    return new BaseCJKDateTimePeriodExtractor(new ChineseDateTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Duration:
-                    return new DateTime.Chinese.ChineseDurationExtractorConfiguration();
+                    return new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Holiday:
-                    return new BaseHolidayExtractor(new DateTime.Chinese.ChineseHolidayExtractorConfiguration(defaultConfig));
+                    return new BaseCJKHolidayExtractor(new ChineseHolidayExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Set:
-                    return new DateTime.Chinese.ChineseSetExtractorConfiguration();
+                    return new BaseCJKSetExtractor(new ChineseSetExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Merged:
-                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(defaultConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new ChineseMergedExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(skipConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new ChineseMergedExtractorConfiguration(skipConfig));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Chinese not supported");
@@ -525,30 +526,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetChineseParser(DateTimeParsers parserName)
         {
-            var config = new BaseDateTimeOptionsConfiguration(Culture.Chinese, DateTimeOptions.None);
+            var config = new ChineseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Chinese, DateTimeOptions.None));
 
             switch (parserName)
             {
                 case DateTimeParsers.Date:
-                    return new DateTime.Chinese.ChineseDateParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateParser(new ChineseDateParserConfiguration(config));
                 case DateTimeParsers.Time:
-                    return new DateTime.Chinese.ChineseTimeParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimeParser(new ChineseTimeParserConfiguration(config));
                 case DateTimeParsers.DatePeriod:
-                    return new DateTime.Chinese.ChineseDatePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDatePeriodParser(new ChineseDatePeriodParserConfiguration(config));
                 case DateTimeParsers.TimePeriod:
-                    return new DateTime.Chinese.ChineseTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimePeriodParser(new ChineseTimePeriodParserConfiguration(config));
                 case DateTimeParsers.DateTime:
-                    return new DateTime.Chinese.ChineseDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimeParser(new ChineseDateTimeParserConfiguration(config));
                 case DateTimeParsers.DateTimePeriod:
-                    return new DateTime.Chinese.ChineseDateTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimePeriodParser(new ChineseDateTimePeriodParserConfiguration(config));
                 case DateTimeParsers.Duration:
-                    return new DateTime.Chinese.ChineseDurationParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDurationParser(new ChineseDurationParserConfiguration(config));
                 case DateTimeParsers.Holiday:
-                    return new DateTime.Chinese.ChineseHolidayParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKHolidayParser(new ChineseHolidayParserConfiguration(config));
                 case DateTimeParsers.Set:
-                    return new DateTime.Chinese.ChineseSetParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKSetParser(new ChineseSetParserConfiguration(config));
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKMergedDateTimeParser(new ChineseMergedParserConfiguration(config));
             }
 
             throw new Exception($"Parser '{parserName}' for Chinese not supported");

@@ -69,9 +69,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             RegisterModel<DateTimeModel>(
                 Culture.Chinese,
                 options => new DateTimeModel(
-                    new FullDateTimeParser(
-                        new ChineseDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Chinese, options))),
-                    new ChineseMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Chinese, options))));
+                    new BaseCJKMergedDateTimeParser(
+                        new ChineseMergedParserConfiguration(new ChineseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Chinese, options)))),
+                    new BaseCJKMergedDateTimeExtractor(
+                        new ChineseMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Chinese, options)))));
 
             RegisterModel<DateTimeModel>(
                 Culture.Spanish,

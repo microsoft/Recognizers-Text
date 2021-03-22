@@ -1,53 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Utilities;
-
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese
+namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class ChineseDateTimeParser : IDateTimeParser
+    public class BaseCJKDateTimeParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
+        private readonly ICJKDateTimeParserConfiguration config;
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
-
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
-
-        private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
-
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
-
-        private readonly IDateTimeExtractor durationExtractor = new ChineseDurationExtractorConfiguration();
-
-        private readonly IExtractor integerExtractor;
-
-        private readonly IParser numberParser;
-
-        private readonly IFullDateTimeParserConfiguration config;
-
-        public ChineseDateTimeParser(IFullDateTimeParserConfiguration configuration)
+        public BaseCJKDateTimeParser(ICJKDateTimeParserConfiguration configuration)
         {
             config = configuration;
-
-            var numOptions = NumberOptions.None;
-            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
-            {
-                numOptions = NumberOptions.NoProtoCache;
-            }
-
-            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
-
-            integerExtractor = new IntegerExtractor(numConfig);
-            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -115,34 +83,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return candidateResults;
         }
 
-        private static DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var trimmedText = text.Trim();
 
             // handle "现在"
-            var match = ChineseDateTimeExtractorConfiguration.NowRegex.MatchExact(trimmedText, trim: true);
+            var match = this.config.NowRegex.MatchExact(trimmedText, trim: true);
 
             if (match.Success)
             {
 
-                // @TODO move hardcoded values to resource files
-                if (trimmedText.EndsWith("现在", StringComparison.Ordinal))
-                {
-                    ret.Timex = "PRESENT_REF";
-                }
-                else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
-                         trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
-                         trimmedText.Equals("刚才", StringComparison.Ordinal))
-                {
-                    ret.Timex = "PAST_REF";
-                }
-                else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
-                         trimmedText.Equals("马上", StringComparison.Ordinal))
-                {
-                    ret.Timex = "FUTURE_REF";
-                }
-
+                this.config.GetMatchedNowTimex(trimmedText, out string timex);
+                ret.Timex = timex;
                 ret.FutureValue = ret.PastValue = referenceTime;
                 ret.Success = true;
 
@@ -156,13 +109,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private bool IsLunarCalendar(string text)
         {
             var trimmedText = text.Trim();
-            var match = ChineseDateExtractorConfiguration.LunarRegex.Match(trimmedText);
+            var match = this.config.LunarRegex.Match(trimmedText);
             if (match.Success)
             {
                 return true;
             }
 
-            return ChineseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
+            return this.config.LunarHolidayRegex.IsMatch(trimmedText);
         }
 
         // merge a Date entity and a Time entity
@@ -170,13 +123,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var er1 = SingleDateExtractor.Extract(text, referenceTime);
+            var er1 = this.config.DateExtractor.Extract(text, referenceTime);
             if (er1.Count == 0)
             {
                 return ret;
             }
 
-            var er2 = SingleTimeExtractor.Extract(text, referenceTime);
+            var er2 = this.config.TimeExtractor.Extract(text, referenceTime);
             if (er2.Count == 0)
             {
                 return ret;
@@ -200,11 +153,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var sec = time.Second;
 
             // handle morning, afternoon
-            if (SimplePmRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
+            if (this.config.SimplePmRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
             {
                 hour += Constants.HalfDayHourCount;
             }
-            else if (SimpleAmRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
+            else if (this.config.SimpleAmRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
             {
                 hour -= Constants.HalfDayHourCount;
             }
@@ -220,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var val = (DateTimeResolutionResult)pr2.Value;
 
-            if (hour <= Constants.HalfDayHourCount && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !this.config.SimplePmRegex.IsMatch(text) && !this.config.SimpleAmRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 // ret.Timex += "ampm";
@@ -237,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = SingleTimeExtractor.Extract(text, referenceTime);
+            var ers = this.config.TimeExtractor.Extract(text, referenceTime);
             if (ers.Count != 1)
             {
                 return ret;
@@ -256,7 +209,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var min = time.Minute;
             var sec = time.Second;
 
-            var match = ChineseDateTimeExtractorConfiguration.TimeOfTodayRegex.Match(text);
+            var match = this.config.TimeOfTodayRegex.Match(text);
 
             if (match.Success)
             {
@@ -264,53 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var swift = 0;
 
-                // @TODO move hardcoded values to resources file
-
-                switch (matchStr)
-                {
-                    case "今晚":
-                        if (hour < Constants.HalfDayHourCount)
-                        {
-                            hour += Constants.HalfDayHourCount;
-                        }
-
-                        break;
-                    case "今早":
-                    case "今晨":
-                        if (hour >= Constants.HalfDayHourCount)
-                        {
-                            hour -= Constants.HalfDayHourCount;
-                        }
-
-                        break;
-                    case "明晚":
-                        swift = 1;
-                        if (hour < Constants.HalfDayHourCount)
-                        {
-                            hour += Constants.HalfDayHourCount;
-                        }
-
-                        break;
-                    case "明早":
-                    case "明晨":
-                        swift = 1;
-                        if (hour >= Constants.HalfDayHourCount)
-                        {
-                            hour -= Constants.HalfDayHourCount;
-                        }
-
-                        break;
-                    case "昨晚":
-                        swift = -1;
-                        if (hour < Constants.HalfDayHourCount)
-                        {
-                            hour += Constants.HalfDayHourCount;
-                        }
-
-                        break;
-                    default:
-                        break;
-                }
+                this.config.AdjustByTimeOfDay(matchStr, ref hour, ref swift);
 
                 var date = referenceTime.AddDays(swift).Date;
 
@@ -336,11 +243,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var durationRes = durationExtractor.Extract(text, referenceDate);
+            var durationRes = this.config.DurationExtractor.Extract(text, referenceDate);
 
             if (durationRes.Count > 0)
             {
-                var match = ChineseDateTimeExtractorConfiguration.DateTimePeriodUnitRegex.Match(text);
+                var match = this.config.DateTimePeriodUnitRegex.Match(text);
                 if (match.Success)
                 {
                     var suffix = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
@@ -353,7 +260,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         var unitStr = this.config.UnitMap[srcUnit];
 
-                        var beforeMatch = ChineseDateTimeExtractorConfiguration.BeforeRegex.Match(suffix);
+                        var beforeMatch = this.config.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.InvariantCulture))
                         {
                             DateObject date;
@@ -378,7 +285,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             return ret;
                         }
 
-                        var afterMatch = ChineseDateTimeExtractorConfiguration.AfterRegex.Match(suffix);
+                        var afterMatch = this.config.AfterRegex.Match(suffix);
                         if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
@@ -413,12 +320,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private int ConvertChineseToNum(string numStr)
         {
             var num = -1;
-            var er = integerExtractor.Extract(numStr);
+            var er = this.config.IntegerExtractor.Extract(numStr);
             if (er.Count != 0)
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
-                    num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
+                    num = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
                 }
             }
 

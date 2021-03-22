@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseTimeExtractorConfiguration : ChineseBaseDateTimeExtractorConfiguration<TimeType>
+    public class ChineseTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimeExtractorConfiguration
     {
         public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
 
@@ -54,7 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ChineseTimeExtractorConfiguration()
+        public ChineseTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             var regexes = new Dictionary<Regex, TimeType>
             {
@@ -74,8 +75,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             Regexes = regexes.ToImmutableDictionary();
         }
 
-        internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
+        public ImmutableDictionary<Regex, TimeType> Regexes { get; }
     }
 }
