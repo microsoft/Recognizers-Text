@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static Dictionary<Regex, string> regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(@"(""([^""]+)"")"),
+                    new Regex(@"(‘([^‘’]+)’)"),
                     Constants.QUOTED_TEXT_REGEX
                 },
                 {
@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                     Constants.QUOTED_TEXT_REGEX
                 },
                 {
-                    new Regex(@"(‘([^‘’]+)’)"),
+                    new Regex(@"(""([^""]+)"")"),
                     Constants.QUOTED_TEXT_REGEX
                 },
                 {
