@@ -836,6 +836,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var weekdayStr = match.Groups["weekday"].Value;
             var yearStr = match.Groups["year"].Value;
             var writtenYear = match.Groups["fullyear"].Value;
+            var ambiguousCentury = false;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
             {
@@ -856,6 +857,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
                         year += 2000;
+                    }
+                    else if (year >= Constants.MaxTwoDigitYearFutureNum && year < Constants.MinTwoDigitYearPastNum)
+                    {
+                        // Two-digit years in the range [30, 40) are ambiguos
+                        ambiguousCentury = true;
                     }
                 }
             }
@@ -892,6 +898,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.FutureValue = futurePastDates.future;
             ret.PastValue = futurePastDates.past;
             ret.Success = true;
+
+            // Ambiguous two-digit years are assigned values in both centuries (e.g. 35 -> 1935, 2035)
+            if (ambiguousCentury)
+            {
+                ret.PastValue = futurePastDates.past.AddYears(1900);
+                ret.FutureValue = futurePastDates.future.AddYears(2000);
+                if (ret.Timex.StartsWith("00"))
+                {
+                    ret.Timex = "XX" + ret.Timex.Substring(2);
+                }
+            }
 
             return ret;
         }
