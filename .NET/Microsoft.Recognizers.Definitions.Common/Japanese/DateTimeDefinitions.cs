@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DateRegexList11 = $@"({SimpleYearRegex}[/\\\-]{MonthNumRegexForPeriod})";
       public const string DatePeriodTillRegex = @"(?<till>到|至|--|-|—|——|~|–)";
       public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>与|和)";
-      public const string DatePeriodDayRegexInJapanese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十||廿|卅)";
+      public const string DatePeriodDayRegexInJapanese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
       public const string DatePeriodThisRegex = @"这个|这一个|这|这一|本";
       public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
       public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
@@ -123,13 +123,13 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string DurationHalfSuffixRegex = @"半";
       public static readonly Dictionary<string, string> DurationSuffixList = new Dictionary<string, string>
         {
-            { @"M", @"分钟" },
+            { @"M", @"分钟|分" },
             { @"S", @"秒钟|秒" },
-            { @"H", @"个小时|小时" },
-            { @"D", @"天" },
-            { @"W", @"星期|个星期|周" },
-            { @"Mon", @"个月" },
-            { @"Y", @"年" }
+            { @"H", @"个小时|小时|時間" },
+            { @"D", @"天|日間|日" },
+            { @"W", @"星期|个星期|周|週間" },
+            { @"Mon", @"个月|か月" },
+            { @"Y", @"年間|年" }
         };
       public static readonly IList<string> DurationAmbiguousUnits = new List<string>
         {
@@ -145,9 +145,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             @"个月",
             @"年"
         };
-      public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))";
-      public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的|の)?)?(?<holiday>新年|五一|劳动节|メーデー|元旦节|元旦|大晦日|愚人节|エイプリルフール|圣诞节|クリスマス(の日|イブ)?|感謝祭(の日)?|クリーンマンデイ|父の日|植树节|国庆节|国慶節|情人节|バレンタインデー|教(师节|師の日)|儿童节|妇女节|青年(节|の日)|建军节|建軍節|女生节|光棍节|双十一|清明(节|節)?|キング牧師記念日|旧正月|ガールズデー|(こども|子ども|子供)の日|お正月|植樹祭|シングルデー|シングルズデー|国際婦人デー|ダブル十一)";
-      public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母(亲节|の日)|父亲节|感恩节|万圣节|ハロウィン)";
+      public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>除夕|春节|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))";
+      public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年|来年))(的|の)?)?(?<holiday>新年|五一|劳动节|国際的な労働者の日|メーデー|元旦节|元旦|大晦日|愚人节|エイプリルフール|圣诞节|クリスマス(の日|イブ)?|感謝祭(の日)?|クリーンマンデイ|父の日|植树节|国庆节|国慶節|情人节|バレンタインデー|教(师节|師の日)|儿童节|妇女节|青年(节|の日)|建军节|建軍節|女生节|光棍节|双十一|清明(节|節)?|キング牧師記念日|旧正月|ガールズデー|(こども|子ども|子供)の日|お正月|植樹祭|シングルデー|シングルズデー|国際婦人デー|ダブル十一|復活祭|イースター)";
+      public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInJapaneseRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>母(亲节|の日)|父亲节|感恩节|万圣节|ハロウィン)";
       public const string SetUnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
       public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
       public const string SetEachPrefixRegex = @"(?<each>(每)\s*$)";
@@ -468,9 +468,14 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         };
       public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
         {
-            { @"父亲节", @"-06-WXX-6-3" },
+            { @"父亲节", @"-06-WXX-7-3" },
+            { @"父の日", @"-06-WXX-7-3" },
             { @"母亲节", @"-05-WXX-7-2" },
-            { @"感恩节", @"-11-WXX-4-4" }
+            { @"母の日", @"-05-WXX-7-2" },
+            { @"感恩节", @"-11-WXX-4-4" },
+            { @"感謝祭の日", @"-11-WXX-4-4" },
+            { @"感謝祭", @"-11-WXX-4-4" },
+            { @"キング牧師記念日", @"-01-WXX-1-3" }
         };
       public const string MergedBeforeRegex = @"(前|之前)$";
       public const string MergedAfterRegex = @"(后|後|之后|之後)$";
