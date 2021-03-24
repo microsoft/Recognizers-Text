@@ -5,18 +5,18 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
-	"IgnoreResolution": "true",
+    "IgnoreResolution": "true",
     "Results": [
       {
         "Text": "復活祭",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-04-01",
+          "Timex": "XXXX-03-27",
           "FutureResolution": {
-            "date": "2017-04-04"
+            "date": "2017-04-16"
           },
           "PastResolution": {
-            "date": "2016-04-04"
+            "date": "2016-03-27"
           }
         },
         "Start": 0,

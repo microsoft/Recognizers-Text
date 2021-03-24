@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             { "クリスマス", ChristmasDay },
             { "クリスマスイブ", ChristmasEve },
             { "新年", NewYear },
+            { "復活祭", EasterDay },
             { "愚人节", FoolDay },
             { "エイプリルフール", FoolDay },
             { "五一", LaborDay },
@@ -217,6 +218,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
 
         private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
+
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
 
         private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
 
