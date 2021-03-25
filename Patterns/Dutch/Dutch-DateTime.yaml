@@ -249,7 +249,7 @@ RelativeDayRegex: !nestedRegex
   def: \b(((de\s+)?{RelativeRegex}\s+dag))\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>op\s+({ArticleRegex}\s+))?(?<weekday>morgen|ochtend|middag|avond|nacht|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)s\b
+  def: \b(?<prefix>op\s+({ArticleRegex}\s+)?)?(?<weekday>morgen|ochtend|middag|avond|nacht|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)(s|(?<suffix>e)n)\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>((de\s+|\b))?(?<cardinal>eerste|tweede|derde|vierde|vijfde|zesde|tiende|1e|1ste|2e|2de|3e|3de|4e|4de|5e|5de|laatste)\s+{WeekDayRegex}(\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -326,13 +326,13 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vijfentwintig|vijventwintig|zesentwintig|zevenentwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|zesendertig|zevenendertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|zesenveertig|zevenenveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|zesenvijftig|zevenenvijftig|achtenvijftig|negenenvijftig)(?=\b)
 PmRegex: !nestedRegex
-  def: (?<pm>({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht))
+  def: (?<pm>({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)|dag)
   references: [ ApostrofsRegex ]
 PmRegexFull: !nestedRegex
   def: (?<pm>(({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))|van(avond|nacht)(?!\s+om\b)))
   references: [ ApostrofsRegex ]
 AmRegex: !nestedRegex
-  def: (?<am>(({ApostrofsRegex}|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))|(?<=gisteren|morgen|vandaag)(ochtend|morgen)|^ochtend))
+  def: (?<am>(({ApostrofsRegex}|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))|(?<=gisteren|morgen|vandaag)(ochtend|morgen)|^?ochtend))
   references: [ ApostrofsRegex ]
 LunchRegex: !simpleRegex
   def: \b(lunchtijd)\b
@@ -366,7 +366,7 @@ SecondDTRegEx: !nestedRegex
   def: ({BaseDateTime.SecondRegex})
   references: [ BaseDateTime.SecondRegex, BaseUnits.SecondRegex]
 BasicTime: !nestedRegex
-  def: \b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{HourDTRegEx}:{MinuteDTRegEx}(:{SecondDTRegEx})?|((?<prefix>half)\s+)?{HourDTRegEx}(?![.,:]?[%\d]))
+  def: \b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{HourDTRegEx}(:|\.){MinuteDTRegEx}(:{SecondDTRegEx})?|((?<prefix>half)\s+)?{HourDTRegEx}(?![.,:]?[%\d]))
   references: [ WrittenTimeRegex, HourNumRegex, HourDTRegEx, MinuteDTRegEx, SecondDTRegEx ]
 MidnightRegex: !nestedRegex
   def: (?<midnight>mid\s*(-\s*)?nacht|middernacht|(in\s+)?de nacht(\s+van)?|({ApostrofsRegex}|des)\s*nachts)
@@ -423,7 +423,7 @@ TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*u\s*)?(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: ({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)
+  def: ({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)|({WrittenTimeRegex}|{BasicTime})(\s*{DescRegex})(\s*{TimeSuffixFull})
   references: [ TimeSuffixFull, BasicTime, DescRegex, WrittenTimeRegex, TimePrefix ]
 TimeRegex8: !nestedRegex
   def: .^
@@ -435,8 +435,8 @@ TimeRegex10: !nestedRegex
   def: \b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*(u\b|h))(\s*{BaseDateTime.MinuteRegex})?(\s*{DescRegex})?
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex11: !nestedRegex
-  def: \b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\s*({DescRegex}|{TimeSuffix})))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)))
-  references: [ TimeTokenPrefix, TimeRegexWithDotConnector, DescRegex, TimeSuffix ]
+  def: \b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\s*({DescRegex}|{TimeSuffix})))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%|{EachUnitRegex})))
+  references: [ TimeTokenPrefix, TimeRegexWithDotConnector, DescRegex, TimeSuffix, EachUnitRegex ]
 TimeRegex12: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?=\s+(vandaag|morgen|op)))
   references: [ BaseDateTime.HourRegex ]
@@ -534,18 +534,20 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(en|ën)(\s*een)?\s*(?<suffix_num>hal(f|ve)|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>dagelijks|maandelijks|wekelijks|twee-wekelijks|jaarlijks)\b
+  def: \b(?<periodic>dagelijks|(drie)?maandelijkse?|wekelijks|twee-?wekelijks|jaarlijks|kwartaal)\b
 EachUnitRegex: !nestedRegex
-  def: (?<each>(iedere|elke)(?<other>\s+andere)?\s*{DurationUnitRegex})
-  references: [ DurationUnitRegex ]
+  def: (?<each>((iedere|elke|eenmaal per)(?<other>\s+andere)?\s*{DurationUnitRegex})|(({DurationUnitRegex}|{WeekDayRegex})\s+om(\s+de)?(?<other>\s+andere)?\s*(week|{DurationUnitRegex})))
+  references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(iedere|elke)\s*$)
+  def: \b(?<each>(iedere|elke|eenmaal per)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(iedere|elke)\s*)
+  def: \b(?<each>(iedere|elke|om de)\s*(?<other>\s+andere)?\s*(week)?)
 SetLastRegex: !simpleRegex
   def: (?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorige?|verleden|laatste)
 EachDayRegex: !simpleRegex
-  def: ^\s*(elke)\s*dag\b
+  def: ^\s*(iedere|elke)\s*dag\b
+BeforeEachDayRegex: !simpleRegex
+  def: (iedere|elke)\s*dag\s*
 DurationFollowedUnit: !nestedRegex
   def: ^\s*((?<suffix>(?<unit>(?<suffix_num>(een\s+)?kwartier)))|{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
@@ -659,7 +661,7 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(de\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+{DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
+  def: \b{WeekDayRegex}\s+{DayRegex}(?!([-]|:\d+|\.\d+|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: \brest\s+(van\s+)?((de|het|mijn|dit|deze|(de\s+)?huidige)\s+)?(?<duration>week|maand|jaar|decennium)\b
@@ -1364,4 +1366,16 @@ YearToDateTerms: !list
     - jaar tot heden
     - jaar tot op heden
     - vanaf vorig jaareinde
+DayTypeRegex: !simpleRegex
+  def: ^(dag(elijks)?)$
+WeekTypeRegex: !simpleRegex
+  def: ^(wekelijks|week)$
+BiWeekTypeRegex: !simpleRegex
+  def: ^(tweewekelijks)$
+MonthTypeRegex: !simpleRegex
+  def: ^(maand(elijks)?)$
+QuarterTypeRegex: !simpleRegex
+  def: ^(kwartaal|driemaandelijkse)$
+YearTypeRegex: !simpleRegex
+  def: ^(elk\s+jaar|jaar(lijks)?)$
 ...
