@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string WeekDayRegex = @"\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\b";
       public const string SingleWeekDayRegex = @"\b(?<weekday>(?<!(easter|palm)\s+)sunday|(?<!easter\s+)saturday|(?<!(easter|cyber)\s+)monday|mon|(?<!black\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b";
-      public const string MonthRegex = @"(?<month>\b(april|august|december|february|january|july|june|march|november|october|september)\b|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))";
+      public const string MonthRegex = @"(?<month>april|august|december|february|january|july|june|march|november|october|september|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))";
       public static readonly string WrittenMonthRegex = $@"(((the\s+)?month of\s+)?{MonthRegex})";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
       public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b";

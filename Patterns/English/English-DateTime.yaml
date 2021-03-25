@@ -105,7 +105,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
 MonthRegex: !simpleRegex
-  def: (?<month>\b(april|august|december|february|january|july|june|march|november|october|september)\b|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))
+  def: (?<month>april|august|december|february|january|july|june|march|november|october|september|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))
 WrittenMonthRegex: !nestedRegex
   def: (((the\s+)?month of\s+)?{MonthRegex})
   references: [ MonthRegex ]
