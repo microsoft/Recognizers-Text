@@ -104,8 +104,11 @@ SingleWeekDayRegex: !simpleRegex
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
-WrittenMonthRegex: !simpleRegex
-  def: (((the\s+)?month of\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))
+MonthRegex: !simpleRegex
+  def: (?<month>\b(april|august|december|february|january|july|june|march|november|october|september)\b|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))
+WrittenMonthRegex: !nestedRegex
+  def: (((the\s+)?month of\s+)?{MonthRegex})
+  references: [ MonthRegex ]
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
@@ -137,8 +140,8 @@ MonthWithYear: !nestedRegex
 SpecialYearPrefixes: !simpleRegex
   def: (calendar|(?<special>fiscal|school))
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(?<toDate>((un)?till?|to)\s+date)|({RelativeRegex}\s+)?(my\s+)?((?<business>working\s+week|workweek)|week(end)?|month|(({SpecialYearPrefixes}\s+)?year))(?!((\s+of)?\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
-  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex, SpecialYearPrefixes, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex ]
+  def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?{MonthRegex})|(month|year) to date|(?<toDate>((un)?till?|to)\s+date)|({RelativeRegex}\s+)?(my\s+)?((?<business>working\s+week|workweek)|week(end)?|month|(({SpecialYearPrefixes}\s+)?year))(?!((\s+of)?\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
+  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex, SpecialYearPrefixes, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, MonthRegex ]
 MonthNumWithYear: !nestedRegex
   def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
@@ -201,8 +204,6 @@ WeekOfRegex: !simpleRegex
   def: (the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?
 MonthOfRegex: !simpleRegex
   def: (month)(\s*)(of)
-MonthRegex: !simpleRegex
-  def: (?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?)
 # This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 # The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
