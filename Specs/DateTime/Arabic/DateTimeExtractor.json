@@ -1,0 +1,912 @@
+[
+  {
+    "Input": "سأعود الآن",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "حاليا",
+        "Start": -1,
+        "Length": 5,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في أقرب وقت ممكن",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في أقرب وقت ممكن",
+        "Start": 6,
+        "Length": 16,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود حاليا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "حاليا",
+        "Start": 6,
+        "Length": 5,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في 15 في الساعة 8:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 الساعة 8:00",
+        "Start": -1,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في 15 في الساعة 8:00:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 الساعة 8:00:30",
+        "Start": -1,
+        "Length": 17,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود يوم 15 ، 8 مساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 ، 8 مساء",
+        "Start": 10,
+        "Length": 11,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بتاريخ 21/4/2016 ، الساعة 8:00 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "21/04/2016 ، 8:00 مساءً",
+        "Start": -1,
+        "Length": 23,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بتاريخ 21/4/2016 ، الساعة 8:00:13 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "21/4/2016 ، الساعة 8:00:13 مساءً",
+        "Start": 13,
+        "Length": 32,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 23 أكتوبر في السابعة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23 أكتوبر في السابعة",
+        "Start": 6,
+        "Length": 20,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود أكتوبر 14 8:00 صباحا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أكتوبر 14 8:00 صباحا",
+        "Start": 6,
+        "Length": 20,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود أكتوبر 14 8:00:00 صباحا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أكتوبر 14 8:00:00 صباحا",
+        "Start": 6,
+        "Length": 23,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في 14 أكتوبر ، الساعة 8:00 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " 14 أكتوبر ، الساعة 8:00 صباحًا",
+        "Start": 8,
+        "Length": 31,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في 14 أكتوبر ، الساعة 8:00:01 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " 14 أكتوبر ، الساعة 8:00:01 صباحًا",
+        "Start": 8,
+        "Length": 34,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود غدا 8:00 صباحا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدا 8:00 صباحا",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود غدًا حوالي الساعة 8:00 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدًا حوالي الساعة 8:00 صباحًا",
+        "Start": 6,
+        "Length": 29,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود غدًا الساعة 8:00 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدًا الساعة 8:00 صباحًا",
+        "Start": 6,
+        "Length": 23,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود غدًا 8:00:05 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدًا 8:00:05 صباحًا",
+        "Start": 6,
+        "Length": 19,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الجمعة المقبل في الساعة 3 والنصف",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الجمعة المقبل في الساعة 3 والنصف",
+        "Start": 6,
+        "Length": 32,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في 5 مايو 2016 ، الساعة الثامنة وعشرين دقيقة مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " 5 مايو 2016 ، الساعة الثامنة وعشرين دقيقة مساءً",
+        "Start": 8,
+        "Length": 48,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 8 مساءً يوم 15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 8 مساءً يوم 16",
+        "Start": -1,
+        "Length": 21,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في السابعة في 15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " السابعة في 15",
+        "Start": 8,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 8 مساء الأحد القادم",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " 8 مساء الأحد القادم",
+        "Start": 12,
+        "Length": 20,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 8 مساء اليوم",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " 8 مساء اليوم",
+        "Start": 12,
+        "Length": 13,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود السابعة إلا الربع غدًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة إلا الربع غدًا",
+        "Start": 6,
+        "Length": 22,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 19:00 ، 2016-12-22",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "19:00 ، 2016-12-23",
+        "Start": -1,
+        "Length": 18,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة السابعة غدا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة السابعة غدا",
+        "Start": 6,
+        "Length": 18,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود صباح الغد الساعة 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صباح الغد الساعة 7",
+        "Start": 6,
+        "Length": 18,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 7:00 يوم الأحد بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7:00 يوم الأحد بعد الظهر",
+        "Start": 6,
+        "Length": 24,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود عشرين دقيقة بعد الخامسة صباح الغد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عشرين دقيقة بعد الخامسة صباح الغد",
+        "Start": 6,
+        "Length": 33,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 14 أكتوبر 8:00 ، 14 أكتوبر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14 أكتوبر 8:00",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 7 ، هذا الصباح",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7 ، هذا الصباح",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 8 مساء يوم الاثنين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 مساء يوم الاثنين",
+        "Start": 13,
+        "Length": 18,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 8 مساءً ، أول يناير",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 مساءً ، أول يناير",
+        "Start": 13,
+        "Length": 19,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 8 مساءً ، 1 يناير",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 مساءً ، 1 يناير",
+        "Start": 13,
+        "Length": 17,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 10 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 10 مساءً",
+        "Start": 6,
+        "Length": 15,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 8 هذا الصباح",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 هذا الصباح",
+        "Start": 6,
+        "Length": 12,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 8 هذا المساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 هذا المساء",
+        "Start": 6,
+        "Length": 12,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الليلة حوالي الساعة 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة حوالي الساعة 8",
+        "Start": -1,
+        "Length": 21,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذا الصباح في الساعة 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصباح في الساعة 8",
+        "Start": -1,
+        "Length": 22,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذا الصباح في الساعة 7 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصباح الساعة 7 مساءً",
+        "Start": -1,
+        "Length": 25,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذا الصباح في السابعة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصباح في السابعة",
+        "Start": 6,
+        "Length": 21,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذا الصباح الساعة 7:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصباح الساعة 7:00",
+        "Start": 6,
+        "Length": 22,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذه الليلة في 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذه الليلة في 7",
+        "Start": 6,
+        "Length": 15,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الليلة في 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة في 8",
+        "Start": -1,
+        "Length": 11,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "لشخصين الليلة الساعة 9:30 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة الساعة 9:30 مساءً",
+        "Start": 7,
+        "Length": 24,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "لشخصين الليلة الساعة 9:30:31 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة الساعة 9:30:31 مساءً",
+        "Start": 7,
+        "Length": 27,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود نهاية اليوم",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية اليوم",
+        "Start": 6,
+        "Length": 11,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود نهاية الغد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الغد",
+        "Start": 6,
+        "Length": 10,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود نهاية يوم الأحد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية يوم الأحد",
+        "Start": 6,
+        "Length": 15,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الخامس في 4 صباحا.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " الخامس في 4 صباحا.",
+        "Start": 8,
+        "Length": 19,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12-2016 12:23:59       ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "42705.51666666667",
+        "Start": -1,
+        "Length": 17,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد 5 ساعات",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 5 ساعات",
+        "Start": 6,
+        "Length": 11,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "معرفة ما إذا كنت متاحًا الساعة 3 مساءً يوم الأحد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 مساءً يوم الأحد",
+        "Start": 31,
+        "Length": 17,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "حدد موعدًا ليوم الغد الساعة 9 صباحًا.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الغد الساعة 9 صباحًا.",
+        "Start": 16,
+        "Length": 21,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود صباح الغد الساعة 9:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صباح الغد الساعة 9:01",
+        "Start": -1,
+        "Length": 21,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود صباح الغد في الساعة 9",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صباح الغد في الساعة 10",
+        "Start": -1,
+        "Length": 22,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود غدًا الساعة 9 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدا الساعة 9 صباحا",
+        "Start": -1,
+        "Length": 18,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود غدا في تمام الساعة 9",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدا في تمام الساعة 9",
+        "Start": 6,
+        "Length": 20,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "هذا الجمعة في الواحدة ظهرا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الجمعة في الواحدة ظهرا",
+        "Start": 0,
+        "Length": 26,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "أضف الغداء الساعة 12:30 ظهرًا يوم الجمعة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "  12:30 ظهرًا يوم الجمعة",
+        "Start": -1,
+        "Length": 24,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "أضف 649 منتصف الليل الليلة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " منتصف الليل الليلة",
+        "Start": 7,
+        "Length": 19,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الأول من أغسطس 11 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " الأول من أغسطس 11 صباحًا",
+        "Start": 8,
+        "Length": 25,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الأول من أغسطس 11 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " الأول من أغسطس 11 مساءً",
+        "Start": 8,
+        "Length": 24,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 1 أغسطس 11 مساءً.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1 أغسطس 11 مساءً.",
+        "Start": 6,
+        "Length": 17,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 25/02 11 صباحا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "25/02 11 صباحا",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 6  يناير2017 - 6:37 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "6  يناير2017 - 6:37 صباحًا",
+        "Start": 6,
+        "Length": 26,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "16. نوفمبر 2016 10:38",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "16. نوفمبر 2016 10:39",
+        "Start": -1,
+        "Length": 21,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر بعد يوم واحد وساعتين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد يوم واحد وساعتين",
+        "Start": 7,
+        "Length": 20,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "التقيت به منذ شهرين ويوم واحد وساعتين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " منذ شهرين ويوم واحد وساعتين",
+        "Start": 9,
+        "Length": 28,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر بعد يوم واحد و 30 دقيقة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد يوم واحد و 30 دقيقة",
+        "Start": 7,
+        "Length": 23,
+        "Type": "datetime"
+      }
+    ]
+  }
+]

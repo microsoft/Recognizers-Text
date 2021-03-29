@@ -1,0 +1,314 @@
+[
+  {
+    "Input": "سأغادر أسبوعيا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوعيا",
+        "Start": 7,
+        "Length": 7,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر يوميا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوميا",
+        "Start": 7,
+        "Length": 5,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل كل يوم",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يوم",
+        "Start": 6,
+        "Length": 6,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل شهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل شهر",
+        "Start": 7,
+        "Length": 6,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر سنويا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سنويا",
+        "Start": 7,
+        "Length": 5,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر سنويًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سنويًا",
+        "Start": 7,
+        "Length": 6,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل يومين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يومين",
+        "Start": 7,
+        "Length": 8,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل ثلاثة أسابيع",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل ثلاثة أسابيع",
+        "Start": 7,
+        "Length": 15,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 3 مساءً كل يوم",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 3 مساءً كل يوم",
+        "Start": 7,
+        "Length": 21,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل 4/15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل 4/15",
+        "Start": 7,
+        "Length": 7,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل يوم اثنين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يوم اثنين",
+        "Start": 7,
+        "Length": 12,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل يوم اثنين الساعة 4 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يوم اثنين الساعة 4 مساءً",
+        "Start": 7,
+        "Length": 27,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل صباح",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل صباح",
+        "Start": 7,
+        "Length": 7,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل صباح في الساعة 9 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل صباح في الساعة 9 صباحًا",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر بعد ظهر كل يوم في الساعة 4 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر كل يوم في الساعة 4 مساءً",
+        "Start": 7,
+        "Length": 32,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل ليلة في الساعة 9 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل ليلة في الساعة 9 مساءً",
+        "Start": 7,
+        "Length": 25,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل ليلة في 9",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل ليلة في 9",
+        "Start": 7,
+        "Length": 12,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر في الصباح في التاسعة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح في التاسعة",
+        "Start": 7,
+        "Length": 20,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 9 صباحًا كل يوم أحد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 9 صباحًا كل يوم أحد",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 9 صباحًا كل يوم الاثنين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 9 صباحًا كل يوم الاثنين",
+        "Start": 7,
+        "Length": 30,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 9 صباحًا أيام الإثنين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 9 صباحًا أيام الإثنين",
+        "Start": 7,
+        "Length": 28,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر أيام الاثنين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيام الاثنين",
+        "Start": 7,
+        "Length": 12,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر يوم الأحد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الأحد",
+        "Start": 7,
+        "Length": 9,
+        "Type": "set"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر أيام الأحد",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيام الأحد",
+        "Start": 7,
+        "Length": 10,
+        "Type": "set"
+      }
+    ]
+  }
+]

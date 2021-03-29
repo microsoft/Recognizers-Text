@@ -1,0 +1,684 @@
+[
+  {
+    "Input": "سأخرج من 5 إلى 6 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 مساءً",
+        "Start": 6,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى 6 في المساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 في المساء",
+        "Start": 6,
+        "Length": 20,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى 6 بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 مساءً",
+        "Start": -1,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى السابعة صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى السابعة صباحًا",
+        "Start": 6,
+        "Length": 23,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الخامسة إلى السادسة مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الخامسة إلى السادسة مساءً",
+        "Start": 6,
+        "Length": 28,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين الخامسة والسادسة مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الخامسة والسادسة مساءً",
+        "Start": 6,
+        "Length": 26,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين الساعة 5 و 6 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الساعة 5 و 6 مساءً",
+        "Start": 6,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين الخامسة والسادسة بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الخامسة والسادسة بعد الظهر",
+        "Start": 6,
+        "Length": 30,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج من 4 مساءً حتى 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 مساءً حتى 5 مساءً",
+        "Start": 14,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الساعة 4 حتى 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4 حتى 5 مساءً",
+        "Start": 13,
+        "Length": 13,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج من 4:00 حتى 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4:00 حتى 5 مساء",
+        "Start": 17,
+        "Length": 15,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الساعة 4:00 حتى 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4:00 حتى 5 مساءً",
+        "Start": 13,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج من الساعة 4:00 إلى الساعة 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 4:00 إلى الساعة 7",
+        "Start": 17,
+        "Length": 24,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 3 مساءً حتى السابعة والنصف",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 3 مساءً إلى السابعة والنصف",
+        "Start": -1,
+        "Length": 29,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج من 4 إلى 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 5 مساءً",
+        "Start": 14,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج  الثالثة إلا 20 دقيقة إلى الثامنة مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثالثة إلا 20 دقيقة إلى الثامنة مساءً",
+        "Start": 7,
+        "Length": 38,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 مساءً إلى 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 مساءً إلى 5 مساءً",
+        "Start": 6,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الرابعة مساءً حتى الخامسة والنصف",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الرابعة مساءً حتى الخامسة والنصف",
+        "Start": 6,
+        "Length": 35,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الثالثة صباحًا حتى الخامسة مساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الثالثة صباحا حتى الخامسة مساء",
+        "Start": -1,
+        "Length": 33,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الثالثة صباحا حتى الخامسة بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الثالثة صباحا حتى الخامسة بعد الظهر",
+        "Start": 6,
+        "Length": 38,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج بين الساعة 4 مساءً والخامسة والنصف صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الساعة الرابعة مساءً والخامسة والنصف مساءً",
+        "Start": -1,
+        "Length": 46,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 3 صباحًا و 5 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 3 صباحًا و 5 مساءً",
+        "Start": 6,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في الصباح",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح",
+        "Start": 11,
+        "Length": 9,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نلتقي بعد الظهر",
+        "Start": 5,
+        "Length": 15,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في الليل",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في اليل",
+        "Start": -1,
+        "Length": 7,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في المساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في المساء",
+        "Start": 11,
+        "Length": 9,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في الأمسيات",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الأمسيات",
+        "Start": 11,
+        "Length": 11,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في الصباح الباكر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح الباكر",
+        "Start": 12,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في أواخر الصباح",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في أواخر الصباح",
+        "Start": 12,
+        "Length": 15,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في الصباح الباكر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح الباكر",
+        "Start": 11,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في وقت متأخر من الصباح",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من الصباح",
+        "Start": 11,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت مبكر بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت مبكر بعد الظهر",
+        "Start": 12,
+        "Length": 21,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت متأخر بعد الظهر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نجتمع في وقت متأخر بعد الظهر",
+        "Start": 6,
+        "Length": 28,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في وقت مبكر من المساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت مبكر من المساء",
+        "Start": 11,
+        "Length": 21,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في وقت متأخر من المساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من المساء",
+        "Start": 11,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت مبكر من الليل",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت مبكر من الليل",
+        "Start": 12,
+        "Length": 20,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في وقت متأخر من الليل",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من الليل",
+        "Start": 11,
+        "Length": 21,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي في أول الليل",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " في أول الليل",
+        "Start": 10,
+        "Length": 13,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد اجتماع من الثانية إلى الخامسة مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الثانية إلى الخامسة مساءً",
+        "Start": 11,
+        "Length": 28,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "حفلة في جينز من 6 إلى 11 مساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 6 الى 11 مساء",
+        "Start": -1,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع من الساعة 14:00 إلى الساعة 16:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الساعة 14:00 إلى الساعة 16:30",
+        "Start": 13,
+        "Length": 32,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد اجتماع من اثنين إلى خمسة  مساء",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من اثنين إلى خمسة  مساء",
+        "Start": 11,
+        "Length": 23,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع الساعة 1 بعد الظهر إلى 4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 1 بعد الظهر إلى 4",
+        "Start": 13,
+        "Length": 24,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع الساعة من 1 بعد الظهر إلى 4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 1 بعد الظهر إلى 4",
+        "Start": 20,
+        "Length": 20,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "قم بإعداد الاجتماع 1:30 بعد الظهر. إلى 4!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "  1:30 بعد الظهر. إلى 4!",
+        "Start": -1,
+        "Length": 24,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "قم بإعداد الاجتماع 1:30 بعد الظهر. إلى 4 أشخاص",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة في فترة ما بعد الظهر ، وسأغادر يوم الجمعة.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر",
+        "Start": 97,
+        "Length": 9,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة يوم الجمعة ، وسأغادر بعد الظهر.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر",
+        "Start": 107,
+        "Length": 9,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع من 1:30 إلى 3:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 1:30 إلى 3:30",
+        "Start": 13,
+        "Length": 16,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع من 1:30 مساءً إلى 3:30 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 1:30 مساءً إلى 3:30",
+        "Start": 13,
+        "Length": 22,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع من 1:30 مساءً إلى 3:30 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 1:30 مساءً إلى 3:30 مساءً",
+        "Start": 13,
+        "Length": 28,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع من 1 إلى 3:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 1 إلى 3:30",
+        "Start": 13,
+        "Length": 13,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "عقد الاجتماع من 1:30 إلى 3",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 1:30 إلى 3",
+        "Start": 13,
+        "Length": 13,
+        "Type": "timerange"
+      }
+    ]
+  }
+]

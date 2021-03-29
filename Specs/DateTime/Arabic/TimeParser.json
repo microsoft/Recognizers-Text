@@ -1,0 +1,1750 @@
+[
+  {
+    "Input": "ضبط المنبه على ثمانية وأربعين",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ثمانية وأربعين",
+        "Start": 15,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه على ثمانية وأربعين صباحا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ثمانية وأربعين صباحا",
+        "Start": 15,
+        "Length": 20,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه على ثمانية وأربعين مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثامنة والأربعين مساءً",
+        "Start": -1,
+        "Length": 23,
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:40",
+          "FutureResolution": {
+            "time": "20:40:00"
+          },
+          "PastResolution": {
+            "time": "20:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه على عشرة وخمسة وأربعين",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عشرة وخمسة وأربعين",
+        "Start": 15,
+        "Length": 18,
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:45",
+          "FutureResolution": {
+            "time": "10:45:00"
+          },
+          "PastResolution": {
+            "time": "10:45:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه على خمسة عشر خمسة عشر  مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "خمسة عشر خمسة عشر",
+        "Start": 15,
+        "Length": 17,
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:15",
+          "FutureResolution": {
+            "time": "15:15:00"
+          },
+          "PastResolution": {
+            "time": "15:15:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه لخمسة عشر وثلاثين مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "خمسة عشر وثلاثين",
+        "Start": 12,
+        "Length": 16,
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:30",
+          "FutureResolution": {
+            "time": "15:30:00"
+          },
+          "PastResolution": {
+            "time": "15:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه على عشرة عشرة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عشرة عشرة",
+        "Start": 15,
+        "Length": 9,
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ضبط المنبه على عشرة وخمسة وخمسين  مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عشرة وخمسة وخمسين",
+        "Start": 15,
+        "Length": 17,
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:55",
+          "FutureResolution": {
+            "time": "22:55:00"
+          },
+          "PastResolution": {
+            "time": "22:55:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في 7",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مساءً 7",
+        "Start": -1,
+        "Length": 7,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في السابعة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة",
+        "Start": 9,
+        "Length": 7,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في السابعة مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة مساء",
+        "Start": 9,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 7:56 مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7:56 مساءً",
+        "Start": -1,
+        "Length": 10,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 7:56:30 مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7:56:30 مساءً",
+        "Start": -1,
+        "Length": 13,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12:34",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.5236111111111111",
+        "Start": -1,
+        "Length": 18,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12:34:25",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.523900462962963",
+        "Start": -1,
+        "Length": 17,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:25",
+          "FutureResolution": {
+            "time": "12:34:25"
+          },
+          "PastResolution": {
+            "time": "12:34:25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها الساعة 7",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعه 7",
+        "Start": -1,
+        "Length": 8,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "انها الساعة السابعة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة السابعة",
+        "Start": 5,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها 8 صباحًا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 صباحًا",
+        "Start": 5,
+        "Length": 8,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها 8 في الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 في الليل",
+        "Start": 5,
+        "Length": 10,
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "انها الثامنة والنصف",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثامنة والنصف",
+        "Start": 5,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها 8 والنصف مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8 والنصف مساءً",
+        "Start": 5,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:30",
+          "FutureResolution": {
+            "time": "20:30:00"
+          },
+          "PastResolution": {
+            "time": "20:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الساعة الثامنة و 30 دقيقة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثامنة و 30 دقيقة",
+        "Start": 7,
+        "Length": 18,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "انها الثامنة والربع",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثامنة والربع",
+        "Start": 5,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "انها الثامنة وربع",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثامنة وربع",
+        "Start": 5,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها 9 مساءً وثلاثة أرباع",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "9 مساءً وثلاثة أرباع",
+        "Start": 5,
+        "Length": 20,
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:45",
+          "FutureResolution": {
+            "time": "21:45:00"
+          },
+          "PastResolution": {
+            "time": "21:45:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها ثلاث دقائق قبل الثامنة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ثلاث دقائق قبل الثامنة",
+        "Start": 5,
+        "Length": 22,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:57",
+          "FutureResolution": {
+            "time": "07:57:00"
+          },
+          "PastResolution": {
+            "time": "07:57:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها الساعة السابعة والنصف",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة السابعة والنصف",
+        "Start": 5,
+        "Length": 21,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها الساعة السابعة والنصف بعد الظهر",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة والنصف بعد الظهر",
+        "Start": 12,
+        "Length": 24,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها السابعة والنصف صباحًا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة والنصف صباحا",
+        "Start": -1,
+        "Length": 20,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها الساعة 8 إلا ربع صباحًا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 8 إلا ربع صباحًا",
+        "Start": 5,
+        "Length": 23,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:45",
+          "FutureResolution": {
+            "time": "07:45:00"
+          },
+          "PastResolution": {
+            "time": "07:45:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "إنها الساعة الثامنة و20 دقيقة مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة الثامنة و20 دقيقة مساءً",
+        "Start": 5,
+        "Length": 30,
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:20",
+          "FutureResolution": {
+            "time": "20:20:00"
+          },
+          "PastResolution": {
+            "time": "20:20:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد الظهر الساعة 7",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر الساعة 7",
+        "Start": 6,
+        "Length": 18,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الظهر الساعة 7",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الظهر الساعة 7",
+        "Start": 6,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد الظهر 7:00",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر 7:00",
+        "Start": 6,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد الظهر 7:00:05",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر 7:00:05",
+        "Start": 6,
+        "Length": 17,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:05",
+          "FutureResolution": {
+            "time": "19:00:05"
+          },
+          "PastResolution": {
+            "time": "19:00:05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد الظهر السابعة مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر السابعة مساء",
+        "Start": 6,
+        "Length": 22,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة السابعة والنصف مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة والنصف مساءً",
+        "Start": 13,
+        "Length": 20,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في السابعة وخمسة وثلاثين مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة وخمس وثلاثين مساء",
+        "Start": -1,
+        "Length": 25,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:35",
+          "FutureResolution": {
+            "time": "19:35:00"
+          },
+          "PastResolution": {
+            "time": "19:35:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الحادية عشر وعشرين مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سأعود الحادية عشر وعشرين مساء",
+        "Start": -1,
+        "Length": 29,
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:20",
+          "FutureResolution": {
+            "time": "23:20:00"
+          },
+          "PastResolution": {
+            "time": "23:20:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الظهيرة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الظهيرة",
+        "Start": 6,
+        "Length": 7,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 12 ظهرا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12 ظهرا",
+        "Start": 13,
+        "Length": 7,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الحاديه عشر\n",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الحاديه عشر\n",
+        "Start": 9,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الحاديه عشر\n",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الحاديه عشر\n",
+        "Start": 6,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 340 مساء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "340 مساءً",
+        "Start": -1,
+        "Length": 9,
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:40",
+          "FutureResolution": {
+            "time": "15:40:00"
+          },
+          "PastResolution": {
+            "time": "15:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 1140 صباحا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1140 صباحًا",
+        "Start": -1,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:40",
+          "FutureResolution": {
+            "time": "11:40:00"
+          },
+          "PastResolution": {
+            "time": "11:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف الليل",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف.الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف.الليل",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف-الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف-الليل",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف الصباح",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف الصباح",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف.الصباح",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف.الصباح",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف-الصباح",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف-الصباح",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف الظهر",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف الظهر",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف.الظهر",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف.الظهر",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف-الظهر",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف-الظهر",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف النهار",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف النهار",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف.النهار",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف.النهار",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "منتصف-النهار",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف-النهار",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "وقت الظهيرة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "وقت الظهيرة",
+        "Start": 0,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12 وقت الغداء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12 وقت الغداء",
+        "Start": 6,
+        "Length": 13,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12 منتصف الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12 منتصف الليل",
+        "Start": 6,
+        "Length": 14,
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12 في الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12 في الليل",
+        "Start": 6,
+        "Length": 11,
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 1:00 منتصف الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1:00 منتصف الليل",
+        "Start": 6,
+        "Length": 16,
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 12 ظهرا وقت الغداء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 12 ظهرا وقت الغداء",
+        "Start": 6,
+        "Length": 25,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 11 صباحًا وقت الغداء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 11 صباحًا وقت الغداء",
+        "Start": 6,
+        "Length": 27,
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة 1 وقت الغداء",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 1 وقت الغداء",
+        "Start": 6,
+        "Length": 19,
+        "Type": "time",
+        "Value": {
+          "Timex": "T13",
+          "FutureResolution": {
+            "time": "13:00:00"
+          },
+          "PastResolution": {
+            "time": "13:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في وقت الغداء الساعة 11 صباحا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "وقت الغداء الساعة 11 صباحا",
+        "Start": 9,
+        "Length": 26,
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 7:56:13 مساءً",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7:56:13 مساءً",
+        "Start": 6,
+        "Length": 13,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:13",
+          "FutureResolution": {
+            "time": "19:56:13"
+          },
+          "PastResolution": {
+            "time": "19:56:13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 12:34:45",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.5241319444444444",
+        "Start": -1,
+        "Length": 18,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:45",
+          "FutureResolution": {
+            "time": "12:34:45"
+          },
+          "PastResolution": {
+            "time": "12:34:45"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد الظهر 7:00:25",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الظهر 7:00:25",
+        "Start": 6,
+        "Length": 17,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:25",
+          "FutureResolution": {
+            "time": "19:00:25"
+          },
+          "PastResolution": {
+            "time": "19:00:25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الساعة السابعة والنصف صباحًا",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السابعة والنصف صباحا",
+        "Start": -1,
+        "Length": 20,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود أحد عشر وخمسة",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أحد عشر وخمسة",
+        "Start": 6,
+        "Length": 13,
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:05",
+          "FutureResolution": {
+            "time": "11:05:00"
+          },
+          "PastResolution": {
+            "time": "11:05:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الخامسة والنصف إلا  ثلاث دقائق",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الخامسة والنصف إلا  ثلاث دقائق",
+        "Start": 6,
+        "Length": 30,
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:27",
+          "FutureResolution": {
+            "time": "05:27:00"
+          },
+          "PastResolution": {
+            "time": "05:27:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود خمسة وثلاثين في الليل",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "خمسة وثلاثين في الليل",
+        "Start": 6,
+        "Length": 21,
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الليلة الخامسة والنصف",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الليلة الخامسة والنصف",
+        "Start": 6,
+        "Length": 24,
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الظهر",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الظهر",
+        "Start": 6,
+        "Length": 5,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في وقت الغداء الساعة 12",
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "وقت الغداء الساعة 12 ظهرا",
+        "Start": -1,
+        "Length": 25,
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  }
+]
