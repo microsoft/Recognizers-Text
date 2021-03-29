@@ -63,6 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for Dutch is false.
+        // It only needs to be true in SetExtractor.
         bool ISetExtractorConfiguration.CheckBothBeforeAfter => true;
 
         Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;

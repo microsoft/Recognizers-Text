@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string MoreThanRegex = @"\b(meer\s+dan)\b";
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|(min\.|sec\.)|((?<half>halfuur)|(?<quarter>kwartier\s+uur)|(?<quarter>kwartier)|uur|uren|u|minuten|mins|min|m|secondes|seconden|secs|sec|s)\b)(\s+lang\b)?";
       public const string SuffixAndRegex = @"(?<suffix>\s*(en|ën)(\s*een)?\s*(?<suffix_num>hal(f|ve)|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))";
-      public const string PeriodicRegex = @"\b(?<periodic>dagelijks|(drie)?maandelijkse?|wekelijks|twee-?wekelijks|jaarlijks|kwartaal)\b";
+      public const string PeriodicRegex = @"\b(?<periodic>dagelijkse?|(drie)?maandelijkse?|wekelijkse?|twee-?wekelijkse?|jaarlijkse?|kwartaal)\b";
       public static readonly string EachUnitRegex = $@"(?<each>((iedere|elke|eenmaal per)(?<other>\s+andere)?\s*{DurationUnitRegex})|(({DurationUnitRegex}|{WeekDayRegex})\s+om(\s+de)?(?<other>\s+andere)?\s*(week|{DurationUnitRegex})))";
       public const string EachPrefixRegex = @"\b(?<each>(iedere|elke|eenmaal per)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(iedere|elke|om de)\s*(?<other>\s+andere)?\s*(week)?)";
@@ -933,11 +933,11 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             @"jaar tot op heden",
             @"vanaf vorig jaareinde"
         };
-      public const string DayTypeRegex = @"^(dag(elijks)?)$";
-      public const string WeekTypeRegex = @"^(wekelijks|week)$";
-      public const string BiWeekTypeRegex = @"^(tweewekelijks)$";
-      public const string MonthTypeRegex = @"^(maand(elijks)?)$";
-      public const string QuarterTypeRegex = @"^(kwartaal|driemaandelijkse)$";
-      public const string YearTypeRegex = @"^(elk\s+jaar|jaar(lijks)?)$";
+      public const string DayTypeRegex = @"^(dag(elijkse?)?)$";
+      public const string WeekTypeRegex = @"^(wekelijkse?|week)$";
+      public const string BiWeekTypeRegex = @"^(tweewekelijkse?)$";
+      public const string MonthTypeRegex = @"^(maand(elijkse?)?)$";
+      public const string QuarterTypeRegex = @"^(kwartaal|driemaandelijkse?)$";
+      public const string YearTypeRegex = @"^(elk\s+jaar|jaar(lijkse?)?)$";
     }
 }

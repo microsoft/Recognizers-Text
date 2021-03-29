@@ -1,6 +1,7 @@
 ---
 #ISO 639-2 Code
 LangMarker: Dut
+# Note: CheckBothBeforeAfter is set to true in DutchSetExtractorConfiguration
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
   def: (?<till>\b(tot(dat|\s+en\s+met)?|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})
@@ -534,7 +535,7 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(en|ën)(\s*een)?\s*(?<suffix_num>hal(f|ve)|kwart|kwartier)|(?<suffix_num>(een\s+)?kwartier))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>dagelijks|(drie)?maandelijkse?|wekelijks|twee-?wekelijks|jaarlijks|kwartaal)\b
+  def: \b(?<periodic>dagelijkse?|(drie)?maandelijkse?|wekelijkse?|twee-?wekelijkse?|jaarlijkse?|kwartaal)\b
 EachUnitRegex: !nestedRegex
   def: (?<each>((iedere|elke|eenmaal per)(?<other>\s+andere)?\s*{DurationUnitRegex})|(({DurationUnitRegex}|{WeekDayRegex})\s+om(\s+de)?(?<other>\s+andere)?\s*(week|{DurationUnitRegex})))
   references: [ DurationUnitRegex, WeekDayRegex ]
@@ -544,8 +545,10 @@ SetEachRegex: !simpleRegex
   def: \b(?<each>(iedere|elke|om de)\s*(?<other>\s+andere)?\s*(week)?)
 SetLastRegex: !simpleRegex
   def: (?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorige?|verleden|laatste)
+# This regex is used to extract Set patterns like "3pm every day" where "every day" follows the time.
 EachDayRegex: !simpleRegex
   def: ^\s*(iedere|elke)\s*dag\b
+# This regex is used to extract Set patterns like "every day at 3pm" where "every day" preceeds the time.
 BeforeEachDayRegex: !simpleRegex
   def: (iedere|elke)\s*dag\s*
 DurationFollowedUnit: !nestedRegex
@@ -1367,15 +1370,15 @@ YearToDateTerms: !list
     - jaar tot op heden
     - vanaf vorig jaareinde
 DayTypeRegex: !simpleRegex
-  def: ^(dag(elijks)?)$
+  def: ^(dag(elijkse?)?)$
 WeekTypeRegex: !simpleRegex
-  def: ^(wekelijks|week)$
+  def: ^(wekelijkse?|week)$
 BiWeekTypeRegex: !simpleRegex
-  def: ^(tweewekelijks)$
+  def: ^(tweewekelijkse?)$
 MonthTypeRegex: !simpleRegex
-  def: ^(maand(elijks)?)$
+  def: ^(maand(elijkse?)?)$
 QuarterTypeRegex: !simpleRegex
-  def: ^(kwartaal|driemaandelijkse)$
+  def: ^(kwartaal|driemaandelijkse?)$
 YearTypeRegex: !simpleRegex
-  def: ^(elk\s+jaar|jaar(lijks)?)$
+  def: ^(elk\s+jaar|jaar(lijkse?)?)$
 ...
