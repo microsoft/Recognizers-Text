@@ -97,30 +97,6 @@
     ]
   },
   {
-    "Input": "سأترك مدة 3 ساعات",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "3 ساعات",
-        "Start": 10,
-        "Length": 7,
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3H",
-          "FutureResolution": {
-            "duration": "10800"
-          },
-          "PastResolution": {
-            "duration": "10800"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "سأغادر لمدة 3 الساعات",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -797,30 +773,6 @@
           },
           "PastResolution": {
             "duration": "3600"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "سأغادر طوال يوم",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "طوال يوم",
-        "Start": 7,
-        "Length": 8,
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
           }
         }
       }
