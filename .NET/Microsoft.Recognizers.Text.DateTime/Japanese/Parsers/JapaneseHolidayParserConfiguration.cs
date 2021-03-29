@@ -20,42 +20,75 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {
             { "元旦", NewYear },
+            { "旧正月", NewYear },
             { "元旦节", NewYear },
+            { "お正月", NewYear },
             { "教师节", TeacherDay },
+            { "教師の日", TeacherDay },
             { "青年节", YouthDay },
+            { "青年の日", YouthDay },
             { "儿童节", ChildrenDay },
+            { "子供の日", ChildrenDay },
             { "妇女节", FemaleDay },
+            { "国際婦人デー", FemaleDay },
             { "植树节", TreePlantDay },
+            { "植樹祭", TreePlantDay },
             { "情人节", LoverDay },
+            { "バレンタインデー", LoverDay },
             { "圣诞节", ChristmasDay },
+            { "クリスマスの日", ChristmasDay },
+            { "クリスマス", ChristmasDay },
+            { "クリスマスイブ", ChristmasEve },
             { "新年", NewYear },
+            { "復活祭", EasterDay },
             { "愚人节", FoolDay },
+            { "エイプリルフール", FoolDay },
             { "五一", LaborDay },
             { "劳动节", LaborDay },
+            { "メーデー", LaborDay },
+            { "国際的な労働者の日", LaborDay },
             { "万圣节", HalloweenDay },
+            { "ハロウィン", HalloweenDay },
             { "中秋节", MidautumnDay },
             { "中秋", MidautumnDay },
+            { "中秋節", MidautumnDay },
             { "春节", SpringDay },
             { "除夕", NewYearEve },
+            { "大晦日", NewYearEve },
             { "元宵节", LanternDay },
+            { "元宵節", LanternDay },
             { "清明节", QingMingDay },
+            { "清明節", QingMingDay },
             { "清明", QingMingDay },
             { "端午节", DragonBoatDay },
+            { "端午の節句", BoysFestival },
             { "端午", DragonBoatDay },
             { "国庆节", JapNationalDay },
+            { "国慶節", JapNationalDay },
             { "建军节", JapMilBuildDay },
+            { "建軍節", JapMilBuildDay },
             { "女生节", GirlsDay },
+            { "ガールズデー", GirlsDay },
             { "光棍节", SinglesDay },
             { "双十一", SinglesDay },
+            { "ダブル十一", SinglesDay },
+            { "シングルデー", SinglesDay },
             { "重阳节", ChongYangDay },
+            { "重陽節", ChongYangDay },
         };
 
         public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
             <string, Func<int, DateObject>>
         {
             { "父亲节", GetFathersDayOfYear },
+            { "父の日", GetFathersDayOfYear },
             { "母亲节", GetMothersDayOfYear },
+            { "母の日", GetMothersDayOfYear },
             { "感恩节", GetThanksgivingDayOfYear },
+            { "感謝祭の日", GetThanksgivingDayOfYear },
+            { "感謝祭", GetThanksgivingDayOfYear },
+            { "キング牧師記念日", GetMartinLutherKingDayOfYear },
+
         };
 
         public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
@@ -184,6 +217,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
 
+        private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
+
+        private static DateObject EasterDay(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
+
         private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
 
         private static DateObject LaborDay(int year) => new DateObject(year, 5, 1);
@@ -201,6 +238,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static DateObject QingMingDay(int year) => new DateObject(year, 4, 4);
 
         private static DateObject DragonBoatDay(int year) => new DateObject(year, 5, 5);
+
+        private static DateObject BoysFestival(int year) => new DateObject(year, 5, 5);
 
         private static DateObject JapNationalDay(int year) => new DateObject(year, 10, 1);
 
