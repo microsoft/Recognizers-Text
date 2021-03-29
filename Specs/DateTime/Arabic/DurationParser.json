@@ -5,7 +5,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -31,7 +30,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -57,7 +55,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -78,17 +75,16 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة 3 ساعات",
+    "Input": "سأترك مدة 3 ساعات",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "3 ساعات",
-        "Start": 12,
+        "Start": 10,
         "Length": 7,
         "Type": "duration",
         "Value": {
@@ -104,12 +100,111 @@
     ]
   },
   {
+    "Input": "سأترك مدة 3 ساعات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعات",
+        "Start": 10,
+        "Length": 7,
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 الساعات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 الساعات",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 ساعة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعة",
+        "Start": 12,
+        "Length": 6,
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر مدة 3 أيام",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أيام",
+        "Start": 11,
+        "Length": 6,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة 3 أشهر",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -135,7 +230,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -161,7 +255,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -187,7 +280,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -213,7 +305,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -239,7 +330,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -265,7 +355,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -291,7 +380,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -317,7 +405,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -343,7 +430,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -369,7 +455,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -395,7 +480,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -416,12 +500,86 @@
     ]
   },
   {
+    "Input": "سأغادر طوال يوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال يوم",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال أسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال أسبوع",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال شهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال شهر",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "سأغادر طوال السنة",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -447,13 +605,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " يوم كامل",
-        "Start": -1,
-        "Length": 9,
+        "Text": "يوم كامل",
+        "Start": 8,
+        "Length": 8,
         "Type": "duration",
         "Value": {
           "Timex": "P1D",
@@ -473,7 +630,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -499,7 +655,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -525,7 +680,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -546,17 +700,91 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة سنة كامل",
+    "Input": "سأغادر يوم كامل",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم كامل",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر مدة أسبوع كامل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع كامل",
+        "Start": 11,
+        "Length": 10,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر مدة شهر كامل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كامل",
+        "Start": 11,
+        "Length": 8,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة سنة كاملة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "سنة كاملة",
-        "Start": -1,
+        "Start": 12,
         "Length": 9,
         "Type": "duration",
         "Value": {
@@ -577,7 +805,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -598,12 +825,36 @@
     ]
   },
   {
+    "Input": "سأغادر طوال يوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال يوم",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "نصف سنة",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -629,7 +880,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -650,18 +900,17 @@
     ]
   },
   {
-    "Input": " 3 دقائق",
+    "Input": "3 دقائق",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " 3 دقائق",
+        "Text": "3 دقائق",
         "Start": 0,
-        "Length": 8,
+        "Length": 7,
         "Type": "duration",
         "Value": {
           "Timex": "PT3M",
@@ -681,7 +930,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -707,7 +955,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -728,12 +975,36 @@
     ]
   },
   {
+    "Input": "سأغادر مدة ساعة ونصف",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعة ونصف",
+        "Start": 11,
+        "Length": 9,
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة نصف ساعة",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -759,7 +1030,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -785,7 +1055,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -806,16 +1075,15 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة عام واحد وشهر و 21 يومًا",
+    "Input": "سأغادر لمدة عام واحد و شهر و 21 يوما",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "عام واحد وشهر و 21 يومًا",
+        "Text": "عام واحد و شهر و 21 يوما",
         "Start": 12,
         "Length": 24,
         "Type": "duration",
@@ -832,18 +1100,17 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة يومين وشهر واحد",
+    "Input": "سأغادر لمدة 2 أيام و شهر واحد",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "يومين وشهر واحد",
+        "Text": "2 أيام و شهر واحد",
         "Start": 12,
-        "Length": 15,
+        "Length": 17,
         "Type": "duration",
         "Value": {
           "Timex": "P1M2D",
@@ -863,7 +1130,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {

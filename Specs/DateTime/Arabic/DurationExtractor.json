@@ -1,7 +1,6 @@
 [
   {
     "Input": "سأترك لمدة 3 ساعات",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "سأغادر لمدة 3 أيام",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "سأغادر لمدة 3.5 سنوات",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -39,8 +36,43 @@
     ]
   },
   {
+    "Input": "سأترك مدة 3 ساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعات",
+        "Start": 10,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 الساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 الساعات",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعة",
+        "Start": 12,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة 3 ساعات",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -52,8 +84,19 @@
     ]
   },
   {
+    "Input": "سأغادر مدة 3 أيام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أيام",
+        "Start": 11,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة 3 أشهر",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -66,7 +109,6 @@
   },
   {
     "Input": "سأغادر لمدة 3 دقائق",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -78,13 +120,12 @@
     ]
   },
   {
-    "Input": "سأترك لمدة 3 دقائق",
-    "NotSupported": "dotnet",
+    "Input": "سأترك مدة 3 دقائق",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "3 دقائق",
-        "Start": 11,
+        "Start": 10,
         "Length": 7,
         "Type": "duration"
       }
@@ -92,7 +133,6 @@
   },
   {
     "Input": "سأغادر لمدة 3.5 ثانية",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -105,7 +145,6 @@
   },
   {
     "Input": "سأترك لمدة 123.45 ثانية",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -118,7 +157,6 @@
   },
   {
     "Input": "سأغادر لمدة أسبوعين",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -131,7 +169,6 @@
   },
   {
     "Input": "سأغادر لمدة عشرين دقيقة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -144,7 +181,6 @@
   },
   {
     "Input": "سأغادر لمدة أربع وعشرين ساعة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -157,7 +193,6 @@
   },
   {
     "Input": "سأغادر طوال اليوم",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -170,7 +205,6 @@
   },
   {
     "Input": "سأغادر طوال الأسبوع",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -183,7 +217,6 @@
   },
   {
     "Input": "سأغادر طوال الشهر",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -196,7 +229,6 @@
   },
   {
     "Input": "سأغادر طوال العام",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -208,8 +240,43 @@
     ]
   },
   {
+    "Input": "سأغادر طوال يوم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال يوم",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال أسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال أسبوع",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال شهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال شهر",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
     "Input": "سأغادر طوال السنة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -222,20 +289,18 @@
   },
   {
     "Input": "سأغادر ليوم كامل",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " ليوم كامل",
-        "Start": 6,
-        "Length": 10,
+        "Text": "يوم كامل",
+        "Start": 8,
+        "Length": 8,
         "Type": "duration"
       }
     ]
   },
   {
     "Input": "سأغادر لمدة أسبوع كامل",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -248,7 +313,6 @@
   },
   {
     "Input": "سأغادر لمدة شهر كامل",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -261,7 +325,6 @@
   },
   {
     "Input": "سأغادر لمدة عام كامل",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -273,21 +336,55 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة سنة كامل",
-    "NotSupported": "dotnet",
+    "Input": "سأغادر يوم كامل",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "سنة كامل",
-        "Start": 12,
+        "Text": "يوم كامل",
+        "Start": 7,
         "Length": 8,
         "Type": "duration"
       }
     ]
   },
   {
+    "Input": "سأغادرلمدة أسبوع كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع كامل",
+        "Start": 11,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادرلمدة شهر كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كامل",
+        "Start": 11,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة سنة كاملة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سنة كاملة",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة ساعة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -300,7 +397,6 @@
   },
   {
     "Input": "سأترك لمدة عام",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -313,7 +409,6 @@
   },
   {
     "Input": "نصف سنة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -326,12 +421,23 @@
   },
   {
     "Input": "نصف عام",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "نصف سنة",
-        "Start": -1,
+        "Text": "نصف عام",
+        "Start": 0,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأترك لمدة 3 دقائق",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 دقائق",
+        "Start": 11,
         "Length": 7,
         "Type": "duration"
       }
@@ -339,7 +445,6 @@
   },
   {
     "Input": "سأغادر لمدة 30 دقيقة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -352,7 +457,6 @@
   },
   {
     "Input": "سأغادر لمدة نصف ساعة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -364,8 +468,19 @@
     ]
   },
   {
+    "Input": "سأغادر مدة نصف ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف ساعة",
+        "Start": 11,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة ساعة ونصف",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -377,8 +492,31 @@
     ]
   },
   {
+    "Input": "سأغادرمدة ساعة ونصف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعة ونصف",
+        "Start": 10,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة نصف الساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف الساعة",
+        "Start": 12,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
     "Input": "سأغادر لمدة ساعتين",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -391,7 +529,6 @@
   },
   {
     "Input": "سأغادر لمدة ساعتين ونصف",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -404,7 +541,6 @@
   },
   {
     "Input": "في أسبوع",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -417,7 +553,6 @@
   },
   {
     "Input": "في يوم",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -430,7 +565,6 @@
   },
   {
     "Input": "لمدة ساعة",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -443,7 +577,6 @@
   },
   {
     "Input": "لمدة شهر",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -456,20 +589,18 @@
   },
   {
     "Input": "سأغادر لبضع ساعات",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " بضع ساعات",
-        "Start": -1,
-        "Length": 10,
+        "Text": "بضع ساعات",
+        "Start": 8,
+        "Length": 9,
         "Type": "duration"
       }
     ]
   },
   {
     "Input": "سأغادر لبضع دقائق",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -482,7 +613,6 @@
   },
   {
     "Input": "سأرحل لبضعة أيام",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -495,7 +625,6 @@
   },
   {
     "Input": "سأغادر لعدة أيام",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -507,12 +636,11 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة عام واحد وشهر و 21 يومًا",
-    "NotSupported": "dotnet",
+    "Input": "سأغادر لمدة عام واحد و شهر و 21 يوما",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "عام واحد وشهر و 21 يومًا",
+        "Text": "عام واحد و شهر و 21 يوما",
         "Start": 12,
         "Length": 24,
         "Type": "duration"
@@ -520,14 +648,13 @@
     ]
   },
   {
-    "Input": "سأغادر لمدة يومين وشهر واحد",
-    "NotSupported": "dotnet",
+    "Input": "سأغادر لمدة 2 أيام و شهر واحد",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "يومين وشهر واحد",
+        "Text": "2 أيام و شهر واحد",
         "Start": 12,
-        "Length": 15,
+        "Length": 17,
         "Type": "duration"
       }
     ]
