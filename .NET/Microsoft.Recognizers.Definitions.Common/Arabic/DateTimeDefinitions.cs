@@ -23,25 +23,25 @@ namespace Microsoft.Recognizers.Definitions.Arabic
     {
       public const string LangMarker = @"Ara";
       public const bool CheckBothBeforeAfter = false;
-      public static readonly string TillRegex = $@"(?<till>\b(to|(un)?till?|thru|through)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string TillRegex = $@"(?<till>\b(إلى|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string RangeConnectorRegex = $@"(?<and>\b(و|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string LastNegPrefix = @"(?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)";
       public static readonly string RelativeRegex = $@"\b(?<order>القادم|التالي|الآتي|الحالي|الماضي|المقبل|الحاضر|السابق|الأخير)\b";
       public static readonly string StrictRelativeRegex = $@"\b(?<order>القادم|التالي|الآتي|هذا|الحالي|الماضي|السابق|الأخير)\b";
-      public const string UpcomingPrefixRegex = @"((this\s+)?((up)?coming))";
-      public static readonly string NextPrefixRegex = $@"\b(following|next|{UpcomingPrefixRegex})\b";
+      public const string UpcomingPrefixRegex = @"((هذه\s+)?(المقبل(ة)?))";
+      public static readonly string NextPrefixRegex = $@"\b(بعد|القادم(ة)?|{UpcomingPrefixRegex})\b";
       public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
       public const string PastPrefixRegex = @"((this\s+)?past)\b";
-      public static readonly string PreviousPrefixRegex = $@"({LastNegPrefix}last|previous|{PastPrefixRegex})\b";
-      public const string ThisPrefixRegex = @"(this|current)\b";
-      public const string RangePrefixRegex = @"(from|between)";
+      public static readonly string PreviousPrefixRegex = $@"(الماضي(ة)?|السابق(ة)?)\b";
+      public const string ThisPrefixRegex = @"(هذه|الحالي(ة)?)\b";
+      public const string RangePrefixRegex = @"(من|بين)";
       public const string CenturySuffixRegex = @"(^century)\b";
-      public const string ReferencePrefixRegex = @"(that|same)\b";
+      public const string ReferencePrefixRegex = @"(ذلك|نفس|هذا)\b";
       public const string FutureSuffixRegex = @"\b(in\s+the\s+)?(future|hence)\b";
       public const string DayRegex = @"(the\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)";
       public const string ImplicitDayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
-      public const string WrittenOneToNineRegex = @"(?:one|two|three|four|five|six|seven|eight|nine)";
+      public const string WrittenOneToNineRegex = @"(?:واحد|اثنان |ثلاثة |أربعة |خمسة |ستة |سبعة|ثمانية| تسعة)";
       public const string WrittenElevenToNineteenRegex = @"(?:eleven|twelve|(?:thir|four|fif|six|seven|eigh|nine)teen)";
       public const string WrittenTensRegex = @"(?:ten|twenty|thirty|fou?rty|fifty|sixty|seventy|eighty|ninety)";
       public static readonly string WrittenNumRegex = $@"(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
@@ -64,11 +64,11 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b";
       public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b";
-      public const string DateTokenPrefix = @"on ";
-      public const string TimeTokenPrefix = @"at ";
-      public const string TokenBeforeDate = @"on ";
-      public const string TokenBeforeTime = @"at ";
+      public const string DateUnitRegex = @"(?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن(ا)?|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام(ا)?|(ال)?أشهر(ا)?|(ال)?سنوات|(ال)?سنين|(ال)?أعوام(ا)?|(ال)?حقبات|(ال)?شهور|(ال)?قرون|نهاية الأسبوع|أسابيع|(?<=\s+\d{1,4})[ymwd])\b";
+      public const string DateTokenPrefix = @"في ";
+      public const string TimeTokenPrefix = @"عند ";
+      public const string TokenBeforeDate = @"في ";
+      public const string TokenBeforeTime = @"عند ";
       public const string FromRegex = @"\b(from(\s+the)?)$";
       public const string BetweenTokenRegex = @"\b(between(\s+the)?)$";
       public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string WeekOfMonthRegex = $@"\b(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex}(\s+{BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s+year)?)\b";
       public static readonly string WeekOfYearRegex = $@"\b(?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({YearRegex}|{RelativeRegex}\s+year))\b";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
-      public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
+      public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?)(\s)?(-)?{DateUnitRegex}";
       public const string QuarterTermRegex = @"\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b";
       public static readonly string RelativeQuarterTermRegex = $@"\b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b";
       public static readonly string QuarterRegex = $@"((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}";
@@ -159,7 +159,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string AtRegex = $@"\b(?:(?:(?<=\bat\s+)(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)(\s*((?<iam>a)|(?<ipm>p)))?|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b";
       public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b";
-      public const string RestrictedTimeUnitRegex = @"(?<unit>hour|minute)\b";
+      public const string RestrictedTimeUnitRegex = @"(?<unit>(ال)?ساعة|(ال)?دقيقة)\b";
       public const string FivesRegex = @"(?<tens>(?:fifteen|(?:twen|thir|fou?r|fif)ty(\s*five)?|ten|five))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
       public const string PeriodHourNumRegex = @"\b(?<hour>twenty(\s+(one|two|three|four))?|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|zero|one|two|three|five|eight|ten)\b";
@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btoni(ght|te))s?\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
-      public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
+      public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)(\s)?(-)?{TimeUnitRegex}";
       public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
       public const string NowRegex = @"\b(?<now>(right\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\b";
       public static readonly string NowParseRegex = $@"\b({NowRegex}|^(date)$)\b";
@@ -207,23 +207,23 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string PeriodTimeOfDayRegex = $@"\b((in\s+(the)?\s+)?{LaterEarlyRegex}?(this\s+)?{DateTimeTimeOfDayRegex})\b";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btoni(ght|te))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b";
-      public const string LessThanRegex = @"\b(less\s+than)\b";
-      public const string MoreThanRegex = @"\b(more\s+than)\b";
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b";
-      public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))";
+      public const string LessThanRegex = @"\b(أقل\s+من)\b";
+      public const string MoreThanRegex = @"\b(أكثر\s+من)\b";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|(ال)?ساعة|(ال)?ساعات|(ال)?دقيقة|(ال)?دقائق|(ال)?ثانية|(ال)?ثوان|(ال)?ليلة|(ال)?ليال)|ساعت(ين)?(ان)?|دقيقت(ين)?(ان)?|ثانيت(ين)?(ان)?|ليلت(ين)?(ان)?\b";
+      public const string SuffixAndRegex = @"(?<suffix>\s*(و)\s+(?<suffix_num>نصف|ربع))";
       public const string PeriodicRegex = @"\b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b";
       public static readonly string EachUnitRegex = $@"\b(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))";
       public const string EachPrefixRegex = @"\b(?<each>(each|every|once an?)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(each|every)(?<other>\s+other)?\s*)(?!the|that)\b";
       public static readonly string SetLastRegex = $@"(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)";
       public const string EachDayRegex = @"^\s*(each|every)\s*day\b";
-      public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
-      public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
-      public static readonly string AnUnitRegex = $@"(\b((?<half>(half)\s+)?an?|another)|(?<half>(1/2|½|half)))\s+{DurationUnitRegex}";
-      public const string DuringRegex = @"\b(for|during)\s+the\s+(?<unit>year|month|week|day)\b";
-      public const string AllRegex = @"\b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b";
-      public const string HalfRegex = @"((an?\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b";
-      public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
+      public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?\s+?{DurationUnitRegex})";
+      public static readonly string NumberCombinedWithDurationUnit = $@"((?<num>\d+(\.\d*)?(\s)?)?({DurationUnitRegex})(\s{WrittenOneToNineRegex})?(\sو)?(\s)?(?<num>\d+(\.\d*)?(\s)?)?(({DurationUnitRegex})?(\s{WrittenOneToNineRegex})?)(\sو)?(\s)?(?<num>\d+(\.\d*)?(\s)?)?({DurationUnitRegex})(\s{WrittenOneToNineRegex})?)";
+      public static readonly string AnUnitRegex = $@"\b((?<half>(1/2|½|نصف)))\s+{DurationUnitRegex}(\s(أخرى))?";
+      public const string DuringRegex = @"\b((((خلال|على مدى|مدة)\s)|ل)+)(?<unit>(ال)?عام(ين)?|(ال)?سنتين|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)\b";
+      public const string AllRegex = @"(?<all>(طوال\s+))?(?<unit>(ال)?عام|(ال)?سنة|(ال)?شهر|(ال)?أسبوع|(ال)?يوم)(?<all>(\s+كامل(ة)?))?";
+      public const string HalfRegex = @"\b((نصف)\s+)?(?<unit>(ال)?ساعة|ساعتين|دقيقة|دقيقتين|ثانية|ثانيتين|(ال)?عام(ين)?|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)(?<half>(\s+)?(و)?نصف)?\b";
+      public const string ConjunctionRegex = @"\b((و(\s+ل)?)|مع)\b";
       public const string ArabicThisYearRegex = @"(\s*)?(هذا|هذه)?(لعام|عام|العام|سنة)?(\s*)?";
       public const string ArabicEidDay = @"?(يوم |عيد |ليلة | ليل)?(?=\s*)";
       public static readonly string HolidayList1 = $@"((?=\s*){ArabicEidDay}(إثنين الرماد|رأس السنة الهجرية|الحج|يواندان|الفطر|رأس السنة الجديدة|الأضحى|الأب|الشكر|عيد الميلاد|المولد النبوي|الفصح)(){ArabicThisYearRegex}(العام|السنة)?({YearRegex})?({RelativeRegex})?)";
@@ -253,7 +253,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";
       public const string EveningStartEndRegex = @"(^(evening))|((evening)$)";
       public const string NightStartEndRegex = @"(^(over|to)?ni(ght|te))|((over|to)?ni(ght|te)$)";
-      public const string InexactNumberRegex = @"\b((a\s+)?few|some|several|(?<NumTwoTerm>(a\s+)?couple(\s+of)?))\b";
+      public const string InexactNumberRegex = @"بضع(ة)?|عدة|(?<NumTwoTerm>((ل))?عدد(\s+من)?)";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"(?:(?:(?:{NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string RelativeDurationUnitRegex = $@"(?:(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
@@ -277,7 +277,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b";
       public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
       public const string MiddlePauseRegex = @"\s*(,)\s*";
-      public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";
+      public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|و|،)\s*$";
       public const string PrefixArticleRegex = @"\bthe\s+";
       public const string OrRegex = @"\s*((\b|,\s*)(or|and)\b|,)\s*";
       public static readonly string SpecialYearTermsRegex = $@"\b((({SpecialYearPrefixes}\s+)?year)|(cy|(?<special>fy|sy)))";
@@ -296,75 +296,109 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string FailFastRegex = $@"{BaseDateTime.DeltaMinuteRegex}|\b(?:{BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(?:zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\d(-|——)?ish|((the\s+\w*)|\d)(th|rd|nd|st)|(mid\s*(-\s*)?)?(night|morning|afternoon|day)s?|evenings?||noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
-            { @"decades", @"10Y" },
-            { @"decade", @"10Y" },
-            { @"years", @"Y" },
-            { @"year", @"Y" },
-            { @"months", @"MON" },
-            { @"month", @"MON" },
+            { @"قرن", @"10Y" },
+            { @"حقبة", @"10Y" },
+            { @"قرون", @"10Y" },
+            { @"حقبات", @"10Y" },
+            { @"قرنين", @"20Y" },
+            { @"قرنان", @"20Y" },
+            { @"حقبتان", @"20Y" },
+            { @"حقبتين", @"20Y" },
+            { @"سنة", @"Y" },
+            { @"عام", @"Y" },
+            { @"سنوات", @"Y" },
+            { @"أعوام", @"Y" },
+            { @"عامان", @"2Y" },
+            { @"سنتان", @"2Y" },
+            { @"سنتين", @"2Y" },
+            { @"عامين", @"2Y" },
+            { @"شهر", @"MON" },
+            { @"أشهر", @"MON" },
+            { @"شهور", @"MON" },
+            { @"شهرا", @"MON" },
+            { @"شهرين", @"2MON" },
+            { @"شهران", @"2MON" },
             { @"quarters", @"3MON" },
             { @"quarter", @"3MON" },
             { @"semesters", @"6MON" },
             { @"semestres", @"6MON" },
             { @"semester", @"6MON" },
             { @"semestre", @"6MON" },
-            { @"weeks", @"W" },
-            { @"week", @"W" },
-            { @"weekends", @"WE" },
-            { @"weekend", @"WE" },
-            { @"fortnights", @"2W" },
-            { @"fortnight", @"2W" },
-            { @"weekdays", @"D" },
-            { @"weekday", @"D" },
-            { @"days", @"D" },
-            { @"day", @"D" },
-            { @"nights", @"D" },
-            { @"night", @"D" },
-            { @"hours", @"H" },
-            { @"hour", @"H" },
-            { @"hrs", @"H" },
-            { @"hr", @"H" },
-            { @"h", @"H" },
-            { @"minutes", @"M" },
-            { @"minute", @"M" },
-            { @"mins", @"M" },
-            { @"min", @"M" },
-            { @"seconds", @"S" },
-            { @"second", @"S" },
-            { @"secs", @"S" },
-            { @"sec", @"S" }
+            { @"أسبوع", @"W" },
+            { @"أسابيع", @"W" },
+            { @"أسبوعا", @"W" },
+            { @"أسبوعان", @"2W" },
+            { @"أسبوعين", @"2W" },
+            { @"نهاية الأسبوع", @"WE" },
+            { @"يوم", @"D" },
+            { @"أيام", @"D" },
+            { @"يوما", @"D" },
+            { @"يومان", @"2D" },
+            { @"يومين", @"2D" },
+            { @"ليال", @"D" },
+            { @"ليلة", @"D" },
+            { @"ساعة", @"H" },
+            { @"ساعات", @"H" },
+            { @"ساعتان", @"2H" },
+            { @"ساعتين", @"2H" },
+            { @"دقيقة", @"M" },
+            { @"دقائق", @"M" },
+            { @"دقيقتان", @"2M" },
+            { @"دقيقتين", @"2M" },
+            { @"ثانية", @"S" },
+            { @"ثوان", @"S" },
+            { @"ثانيتان", @"2S" },
+            { @"ثانيتين", @"2S" }
         };
       public static readonly Dictionary<string, long> UnitValueMap = new Dictionary<string, long>
         {
-            { @"decades", 315360000 },
-            { @"decade", 315360000 },
-            { @"years", 31536000 },
-            { @"year", 31536000 },
-            { @"months", 2592000 },
-            { @"month", 2592000 },
-            { @"fortnights", 1209600 },
-            { @"fortnight", 1209600 },
-            { @"weekends", 172800 },
-            { @"weekend", 172800 },
-            { @"weeks", 604800 },
-            { @"week", 604800 },
-            { @"days", 86400 },
-            { @"day", 86400 },
-            { @"nights", 86400 },
-            { @"night", 86400 },
-            { @"hours", 3600 },
-            { @"hour", 3600 },
-            { @"hrs", 3600 },
-            { @"hr", 3600 },
-            { @"h", 3600 },
-            { @"minutes", 60 },
-            { @"minute", 60 },
-            { @"mins", 60 },
-            { @"min", 60 },
-            { @"seconds", 1 },
-            { @"second", 1 },
-            { @"secs", 1 },
-            { @"sec", 1 }
+            { @"قرن", 315360000 },
+            { @"حقبة", 315360000 },
+            { @"قرون", 315360000 },
+            { @"حقبات", 315360000 },
+            { @"قرنين", 630720000 },
+            { @"حقبتين", 630720000 },
+            { @"قرنان", 630720000 },
+            { @"حقبتان", 630720000 },
+            { @"سنة", 31536000 },
+            { @"عام", 31536000 },
+            { @"سنوات", 31536000 },
+            { @"أعوام", 31536000 },
+            { @"عامان", 63072000 },
+            { @"سنتان", 63072000 },
+            { @"سنتين", 63072000 },
+            { @"عامين", 63072000 },
+            { @"شهر", 2592000 },
+            { @"أشهر", 2592000 },
+            { @"شهور", 2592000 },
+            { @"شهرا", 2592000 },
+            { @"شهرين", 5184000 },
+            { @"شهران", 5184000 },
+            { @"نهاية الأسبوع", 172800 },
+            { @"أسبوع", 604800 },
+            { @"أسابيع", 604800 },
+            { @"أسبوعا", 604800 },
+            { @"أسبوعان", 1209600 },
+            { @"أسبوعين", 1209600 },
+            { @"يوم", 86400 },
+            { @"أيام", 86400 },
+            { @"يوما", 86400 },
+            { @"يومان", 172800 },
+            { @"يومين", 172800 },
+            { @"ليلة", 86400 },
+            { @"ليال", 86400 },
+            { @"ساعة", 3600 },
+            { @"ساعات", 3600 },
+            { @"ساعتان", 7200 },
+            { @"ساعتين", 7200 },
+            { @"دقيقة", 60 },
+            { @"دقائق", 60 },
+            { @"دقيقتان", 120 },
+            { @"دقيقتين", 120 },
+            { @"ثانية", 1 },
+            { @"ثوان", 1 },
+            { @"ثانيتان", 2 },
+            { @"ثانيتين", 2 }
         };
       public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
         {
@@ -473,109 +507,107 @@ namespace Microsoft.Recognizers.Definitions.Arabic
         };
       public static readonly Dictionary<string, int> Numbers = new Dictionary<string, int>
         {
-            { @"zero", 0 },
-            { @"one", 1 },
-            { @"a", 1 },
-            { @"an", 1 },
-            { @"two", 2 },
-            { @"three", 3 },
-            { @"four", 4 },
-            { @"five", 5 },
-            { @"six", 6 },
-            { @"seven", 7 },
-            { @"eight", 8 },
-            { @"nine", 9 },
-            { @"ten", 10 },
-            { @"eleven", 11 },
-            { @"twelve", 12 },
-            { @"thirteen", 13 },
-            { @"fourteen", 14 },
-            { @"fifteen", 15 },
-            { @"sixteen", 16 },
-            { @"seventeen", 17 },
-            { @"eighteen", 18 },
-            { @"nineteen", 19 },
-            { @"twenty", 20 },
-            { @"twenty one", 21 },
-            { @"twenty two", 22 },
-            { @"twenty three", 23 },
-            { @"twenty four", 24 },
-            { @"twenty five", 25 },
-            { @"twenty six", 26 },
-            { @"twenty seven", 27 },
-            { @"twenty eight", 28 },
-            { @"twenty nine", 29 },
-            { @"thirty", 30 },
-            { @"thirty one", 31 },
-            { @"thirty two", 32 },
-            { @"thirty three", 33 },
-            { @"thirty four", 34 },
-            { @"thirty five", 35 },
-            { @"thirty six", 36 },
-            { @"thirty seven", 37 },
-            { @"thirty eight", 38 },
-            { @"thirty nine", 39 },
-            { @"forty", 40 },
-            { @"forty one", 41 },
-            { @"forty two", 42 },
-            { @"forty three", 43 },
-            { @"forty four", 44 },
-            { @"forty five", 45 },
-            { @"forty six", 46 },
-            { @"forty seven", 47 },
-            { @"forty eight", 48 },
-            { @"forty nine", 49 },
-            { @"fifty", 50 },
-            { @"fifty one", 51 },
-            { @"fifty two", 52 },
-            { @"fifty three", 53 },
-            { @"fifty four", 54 },
-            { @"fifty five", 55 },
-            { @"fifty six", 56 },
-            { @"fifty seven", 57 },
-            { @"fifty eight", 58 },
-            { @"fifty nine", 59 },
-            { @"sixty", 60 },
-            { @"sixty one", 61 },
-            { @"sixty two", 62 },
-            { @"sixty three", 63 },
-            { @"sixty four", 64 },
-            { @"sixty five", 65 },
-            { @"sixty six", 66 },
-            { @"sixty seven", 67 },
-            { @"sixty eight", 68 },
-            { @"sixty nine", 69 },
-            { @"seventy", 70 },
-            { @"seventy one", 71 },
-            { @"seventy two", 72 },
-            { @"seventy three", 73 },
-            { @"seventy four", 74 },
-            { @"seventy five", 75 },
-            { @"seventy six", 76 },
-            { @"seventy seven", 77 },
-            { @"seventy eight", 78 },
-            { @"seventy nine", 79 },
-            { @"eighty", 80 },
-            { @"eighty one", 81 },
-            { @"eighty two", 82 },
-            { @"eighty three", 83 },
-            { @"eighty four", 84 },
-            { @"eighty five", 85 },
-            { @"eighty six", 86 },
-            { @"eighty seven", 87 },
-            { @"eighty eight", 88 },
-            { @"eighty nine", 89 },
-            { @"ninety", 90 },
-            { @"ninety one", 91 },
-            { @"ninety two", 92 },
-            { @"ninety three", 93 },
-            { @"ninety four", 94 },
-            { @"ninety five", 95 },
-            { @"ninety six", 96 },
-            { @"ninety seven", 97 },
-            { @"ninety eight", 98 },
-            { @"ninety nine", 99 },
-            { @"one hundred", 100 }
+            { @"صفر", 0 },
+            { @"واحد", 1 },
+            { @"اثنان", 2 },
+            { @"ثلاثة", 3 },
+            { @"أربعة", 4 },
+            { @"خمسة", 5 },
+            { @"ستة", 6 },
+            { @"سبعة", 7 },
+            { @"ثمانية", 8 },
+            { @"تسعة", 9 },
+            { @"عشرة", 10 },
+            { @"أحد عشر", 11 },
+            { @"اثنا عشر", 12 },
+            { @"ثلاثة عشر", 13 },
+            { @"أربعة عشر", 14 },
+            { @"خمسة عشر", 15 },
+            { @"ستة عشر", 16 },
+            { @"سبعة عشر", 17 },
+            { @"ثمانية عشر", 18 },
+            { @"تسعة عشر", 19 },
+            { @"عشرون", 20 },
+            { @"واحد وعشرون", 21 },
+            { @"اثنان وعشرون", 22 },
+            { @"ثلاثة وعشرون", 23 },
+            { @"أربعة وعشرون", 24 },
+            { @"خمسة وعشرون", 25 },
+            { @"ستة وعشرون", 26 },
+            { @"سبعة وعشرون", 27 },
+            { @"ثمانية وعشرون", 28 },
+            { @"تسعة وعشرون", 29 },
+            { @"الثلاثين", 30 },
+            { @"واحد وثلاثون", 31 },
+            { @"اثنان وثلاثون", 32 },
+            { @"ثلاثة وثلاثون", 33 },
+            { @"أربعة وثلاثون", 34 },
+            { @"خمسة وثلاثون", 35 },
+            { @"ستة وثلاثون", 36 },
+            { @"سبعة وثلاثون", 37 },
+            { @"ثمانية وثلاثون", 38 },
+            { @"تسعة وثلاثون", 39 },
+            { @"أربعون", 40 },
+            { @"واحد وأربعون", 41 },
+            { @"اثنان وأربعون", 42 },
+            { @"ثلاثة وأربعون", 43 },
+            { @"أربعة وأربعون", 44 },
+            { @"خمسة وأربعون", 45 },
+            { @"ستة وأربعون", 46 },
+            { @"سبعة وأربعون", 47 },
+            { @"ثمانية وأربعون", 48 },
+            { @"تسعة وأربعون", 49 },
+            { @"خمسون", 50 },
+            { @"واحد وخمسون", 51 },
+            { @"اثنان وخمسون", 52 },
+            { @"ثلاثة وخمسون", 53 },
+            { @"أربعة وخمسون", 54 },
+            { @"خمسة وخمسون", 55 },
+            { @"ستة وخمسون", 56 },
+            { @"سبعة وخمسون", 57 },
+            { @"ثمانية وخمسون", 58 },
+            { @"تسعة وخمسون", 59 },
+            { @"ستين", 60 },
+            { @"واحد وستون", 61 },
+            { @"اثنان وستون", 62 },
+            { @"ثلاثة وستون", 63 },
+            { @"أربعة وستون", 64 },
+            { @"خمسة وستون", 65 },
+            { @"ستة وستون", 66 },
+            { @"سبعة وستون", 67 },
+            { @"ثمانية وستون", 68 },
+            { @"تسعة وستون", 69 },
+            { @"السبعون", 70 },
+            { @"واحد وسبعون", 71 },
+            { @"اثنان وسبعون", 72 },
+            { @"ثلاثة وسبعون", 73 },
+            { @"أربعة وسبعون", 74 },
+            { @"خمسة وسبعون", 75 },
+            { @"ستة وسبعون", 76 },
+            { @"سبعة وسبعون", 77 },
+            { @"ثمانية وسبعون", 78 },
+            { @"تسعة وسبعون", 79 },
+            { @"ثمانون", 80 },
+            { @"واحد وثمانون", 81 },
+            { @"اثنان وثمانون", 82 },
+            { @"ثلاثة وثمانون", 83 },
+            { @"أربعة وثمانون", 84 },
+            { @"خمسة وثمانون", 85 },
+            { @"ستة وثمانون", 86 },
+            { @"سبعة وثمانون", 87 },
+            { @"ثمانية وثمانين", 88 },
+            { @"تسعة وثمانون", 89 },
+            { @"تسعون", 90 },
+            { @"واحد وتسعون", 91 },
+            { @"اثنان وتسعون", 92 },
+            { @"ثلاثة وتسعون", 93 },
+            { @"أربعة وتسعون", 94 },
+            { @"خمسة وتسعون", 95 },
+            { @"ستة وتسعون", 96 },
+            { @"سبعة وتسعون", 97 },
+            { @"ثمانية وتسعون", 98 },
+            { @"تسعة وتسعون", 99 },
+            { @"مائة", 100 }
         };
       public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
         {

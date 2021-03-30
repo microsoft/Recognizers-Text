@@ -3,10 +3,10 @@
 LangMarker: Ara
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
-  def: (?<till>\b(to|(un)?till?|thru|through)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<till>\b(إلى|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RangeConnectorRegex: !nestedRegex
-  def: (?<and>\b(and|through|to)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<and>\b(و|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 # Filter regex, no need to localize
 LastNegPrefix: !simpleRegex
@@ -18,9 +18,9 @@ StrictRelativeRegex: !nestedRegex
   def: \b(?<order>القادم|التالي|الآتي|هذا|الحالي|الماضي|السابق|الأخير)\b
   references: [ LastNegPrefix ]
 UpcomingPrefixRegex: !simpleRegex
-  def: ((this\s+)?((up)?coming))
+  def: ((هذه\s+)?(المقبل(ة)?))
 NextPrefixRegex: !nestedRegex 
-  def: \b(following|next|{UpcomingPrefixRegex})\b
+  def: \b(بعد|القادم(ة)?|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 # We make "next" and "upcoming" separately as when parsing, some behaviours are different
 # "next Friday" might be different from "upcoming Friday"
@@ -29,18 +29,19 @@ AfterNextSuffixRegex: !simpleRegex
 PastPrefixRegex: !simpleRegex
   def: ((this\s+)?past)\b
 PreviousPrefixRegex: !nestedRegex
-  def: ({LastNegPrefix}last|previous|{PastPrefixRegex})\b
+  ##def: ({LastNegPrefix}الماضية|السابقة|{PastPrefixRegex})\b
+  def: (الماضي(ة)?|السابق(ة)?)\b
   references: [ LastNegPrefix, PastPrefixRegex ]
 # We make "past" and "previous" separately as when parsing, some behaviours are different
 # "last Tuesday" might be different from "past Tuesday"
 ThisPrefixRegex: !simpleRegex
-  def: (this|current)\b
+  def: (هذه|الحالي(ة)?)\b
 RangePrefixRegex: !simpleRegex
-  def: (from|between)
+  def: (من|بين)
 CenturySuffixRegex: !simpleRegex
   def: (^century)\b
 ReferencePrefixRegex: !simpleRegex
-  def: (that|same)\b
+  def: (ذلك|نفس|هذا)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+the\s+)?(future|hence)\b
 DayRegex: !simpleRegex
@@ -50,7 +51,7 @@ ImplicitDayRegex: !simpleRegex
 MonthNumRegex: !simpleRegex
   def: (?<month>1[0-2]|(0)?[1-9])\b
 WrittenOneToNineRegex: !simpleRegex
-  def: (?:one|two|three|four|five|six|seven|eight|nine)
+  def: (?:واحد|اثنان |ثلاثة |أربعة |خمسة |ستة |سبعة|ثمانية| تسعة)
 WrittenElevenToNineteenRegex: !simpleRegex
   def: (?:eleven|twelve|(?:thir|four|fif|six|seven|eigh|nine)teen)
 WrittenTensRegex: !simpleRegex
@@ -110,11 +111,11 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b
-DateTokenPrefix: 'on '
-TimeTokenPrefix: 'at '
-TokenBeforeDate: 'on '
-TokenBeforeTime: 'at '
+  def: (?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن(ا)?|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام(ا)?|(ال)?أشهر(ا)?|(ال)?سنوات|(ال)?سنين|(ال)?أعوام(ا)?|(ال)?حقبات|(ال)?شهور|(ال)?قرون|نهاية الأسبوع|أسابيع|(?<=\s+\d{1,4})[ymwd])\b
+DateTokenPrefix: 'في '
+TimeTokenPrefix: 'عند '
+TokenBeforeDate: 'في '
+TokenBeforeTime: 'عند '
 FromRegex: !simpleRegex
   def: \b(from(\s+the)?)$
 BetweenTokenRegex: !simpleRegex
@@ -152,7 +153,7 @@ FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
 NumberCombinedWithDateUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
+  def: \b(?<num>\d+(\.\d*)?)(\s)?(-)?{DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterTermRegex: !simpleRegex
   def: \b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b
@@ -359,7 +360,7 @@ IshRegex: !nestedRegex
 TimeUnitRegex: !simpleRegex
   def: ([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
 RestrictedTimeUnitRegex: !simpleRegex
-  def: (?<unit>hour|minute)\b
+  def: (?<unit>(ال)?ساعة|(ال)?دقيقة)\b
 FivesRegex: !simpleRegex
   def: (?<tens>(?:fifteen|(?:twen|thir|fou?r|fif)ty(\s*five)?|ten|five))\b
 HourRegex: !nestedRegex
@@ -442,7 +443,7 @@ TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 TimeNumberCombinedWithUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?){TimeUnitRegex}
+  def: \b(?<num>\d+(\.\d*)?)(\s)?(-)?{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 BusinessHourSplitStrings: ['business', 'hour']
 NowRegex: !simpleRegex
@@ -488,14 +489,14 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b
  references: [ PeriodTimeOfDayRegex ]
 LessThanRegex: !simpleRegex
-  def: \b(less\s+than)\b
+  def: \b(أقل\s+من)\b
 MoreThanRegex: !simpleRegex
-  def: \b(more\s+than)\b
+  def: \b(أكثر\s+من)\b
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b
+  def: (?<unit>{DateUnitRegex}|(ال)?ساعة|(ال)?ساعات|(ال)?دقيقة|(ال)?دقائق|(ال)?ثانية|(ال)?ثوان|(ال)?ليلة|(ال)?ليال)|ساعت(ين)?(ان)?|دقيقت(ين)?(ان)?|ثانيت(ين)?(ان)?|ليلت(ين)?(ان)?\b
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))
+  def: (?<suffix>\s*(و)\s+(?<suffix_num>نصف|ربع))
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
 EachUnitRegex: !nestedRegex
@@ -511,22 +512,22 @@ SetLastRegex: !nestedRegex
 EachDayRegex: !simpleRegex
   def: ^\s*(each|every)\s*day\b
 DurationFollowedUnit: !nestedRegex
-  def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
+  def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?\s+?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
-  references: [ DurationUnitRegex ]
+  def: ((?<num>\d+(\.\d*)?(\s)?)?({DurationUnitRegex})(\s{WrittenOneToNineRegex})?(\sو)?(\s)?(?<num>\d+(\.\d*)?(\s)?)?(({DurationUnitRegex})?(\s{WrittenOneToNineRegex})?)(\sو)?(\s)?(?<num>\d+(\.\d*)?(\s)?)?({DurationUnitRegex})(\s{WrittenOneToNineRegex})?)
+  references: [ DurationUnitRegex, WrittenOneToNineRegex ]
 AnUnitRegex: !nestedRegex
-  def: (\b((?<half>(half)\s+)?an?|another)|(?<half>(1/2|½|half)))\s+{DurationUnitRegex}
+  def: \b((?<half>(1/2|½|نصف)))\s+{DurationUnitRegex}(\s(أخرى))?
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
-  def: \b(for|during)\s+the\s+(?<unit>year|month|week|day)\b
+  def: \b((((خلال|على مدى|مدة)\s)|ل)+)(?<unit>(ال)?عام(ين)?|(ال)?سنتين|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)\b
 AllRegex: !simpleRegex
-  def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b
+  def: (?<all>(طوال\s+))?(?<unit>(ال)?عام|(ال)?سنة|(ال)?شهر|(ال)?أسبوع|(ال)?يوم)(?<all>(\s+كامل(ة)?))?
 HalfRegex: !simpleRegex
-  def: ((an?\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b
+  def: \b((نصف)\s+)?(?<unit>(ال)?ساعة|ساعتين|دقيقة|دقيقتين|ثانية|ثانيتين|(ال)?عام(ين)?|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)(?<half>(\s+)?(و)?نصف)?\b
 ConjunctionRegex: !simpleRegex
-  def: \b((and(\s+for)?)|with)\b
+  def: \b((و(\s+ل)?)|مع)\b
 # Major holidays + holiday w/ weekday in name
 ArabicThisYearRegex: !simpleRegex
   def: (\s*)?(هذا|هذه)?(لعام|عام|العام|سنة)?(\s*)? 
@@ -601,7 +602,7 @@ EveningStartEndRegex: !simpleRegex
 NightStartEndRegex: !simpleRegex
   def: (^(over|to)?ni(ght|te))|((over|to)?ni(ght|te)$)
 InexactNumberRegex: !simpleRegex
-  def: \b((a\s+)?few|some|several|(?<NumTwoTerm>(a\s+)?couple(\s+of)?))\b
+  def: بضع(ة)?|عدة|(?<NumTwoTerm>((ل))?عدد(\s+من)?)
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
@@ -660,7 +661,7 @@ GeneralEndingRegex: !simpleRegex
 MiddlePauseRegex: !simpleRegex
   def: \s*(,)\s*
 DurationConnectorRegex: !simpleRegex
-  def: ^\s*(?<connector>\s+|and|,)\s*$
+  def: ^\s*(?<connector>\s+|و|،)\s*$
 PrefixArticleRegex: !simpleRegex
   def: \bthe\s+
 OrRegex: !simpleRegex
@@ -708,75 +709,109 @@ FailFastRegex: !nestedRegex
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
-    decades: 10Y
-    decade: 10Y
-    years: Y
-    year: Y
-    months: MON
-    month: MON
+    قرن: 10Y
+    حقبة: 10Y
+    قرون: 10Y
+    حقبات: 10Y
+    قرنين: 20Y
+    قرنان: 20Y
+    حقبتان: 20Y
+    حقبتين: 20Y
+    سنة: Y
+    عام: Y
+    سنوات: Y
+    أعوام: Y
+    عامان: 2Y
+    سنتان: 2Y
+    سنتين: 2Y
+    عامين: 2Y
+    شهر: MON
+    أشهر: MON
+    شهور: MON
+    شهرا: MON
+    شهرين: 2MON
+    شهران: 2MON
     quarters: 3MON
     quarter: 3MON
     semesters: 6MON
     semestres: 6MON
     semester: 6MON
     semestre: 6MON
-    weeks: W
-    week: W
-    weekends: WE
-    weekend: WE
-    fortnights: 2W
-    fortnight: 2W
-    weekdays: D
-    weekday: D
-    days: D
-    day: D
-    nights: D
-    night: D
-    hours: H
-    hour: H
-    hrs: H
-    hr: H
-    h: H
-    minutes: M
-    minute: M
-    mins: M
-    min: M
-    seconds: S
-    second: S
-    secs: S
-    sec: S
+    أسبوع: W
+    أسابيع: W
+    أسبوعا: W
+    أسبوعان: 2W
+    أسبوعين: 2W
+    نهاية الأسبوع: WE
+    يوم: D
+    أيام: D
+    يوما: D
+    يومان: 2D
+    يومين: 2D
+    ليال: D
+    ليلة: D
+    ساعة: H
+    ساعات: H
+    ساعتان: 2H
+    ساعتين: 2H
+    دقيقة: M
+    دقائق: M
+    دقيقتان: 2M
+    دقيقتين: 2M
+    ثانية: S
+    ثوان: S
+    ثانيتان: 2S
+    ثانيتين: 2S
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
-    decades: 315360000
-    decade: 315360000
-    years: 31536000
-    year: 31536000
-    months: 2592000
-    month: 2592000
-    fortnights: 1209600
-    fortnight: 1209600
-    weekends: 172800
-    weekend: 172800
-    weeks: 604800
-    week: 604800
-    days: 86400
-    day: 86400
-    nights: 86400
-    night: 86400
-    hours: 3600
-    hour: 3600
-    hrs: 3600
-    hr: 3600
-    h: 3600
-    minutes: 60
-    minute: 60
-    mins: 60
-    min: 60
-    seconds: 1
-    second: 1
-    secs: 1
-    sec: 1
+    قرن: 315360000
+    حقبة: 315360000
+    قرون: 315360000
+    حقبات: 315360000
+    قرنين: 630720000
+    حقبتين: 630720000
+    قرنان: 630720000
+    حقبتان: 630720000
+    سنة: 31536000
+    عام: 31536000
+    سنوات: 31536000
+    أعوام: 31536000
+    عامان: 63072000
+    سنتان: 63072000
+    سنتين: 63072000
+    عامين: 63072000
+    شهر: 2592000
+    أشهر: 2592000
+    شهور: 2592000
+    شهرا: 2592000
+    شهرين: 5184000
+    شهران: 5184000
+    نهاية الأسبوع: 172800
+    أسبوع: 604800
+    أسابيع: 604800
+    أسبوعا: 604800
+    أسبوعان: 1209600
+    أسبوعين: 1209600
+    يوم: 86400
+    أيام: 86400
+    يوما: 86400
+    يومان: 172800
+    يومين: 172800
+    ليلة: 86400
+    ليال: 86400
+    ساعة: 3600
+    ساعات: 3600
+    ساعتان: 7200
+    ساعتين: 7200
+    دقيقة: 60
+    دقائق: 60
+    دقيقتان: 120
+    دقيقتين: 120
+    ثانية: 1
+    ثوان: 1
+    ثانيتان: 2
+    ثانيتين: 2
 SpecialYearPrefixesMap: !dictionary
   types: [ string, string ]
   entries:
@@ -885,109 +920,107 @@ MonthOfYear: !dictionary
 Numbers: !dictionary
   types: [ string, int ]
   entries:
-    'zero': 0
-    'one': 1
-    'a': 1
-    'an': 1
-    'two': 2
-    'three': 3
-    'four': 4
-    'five': 5
-    'six': 6
-    'seven': 7
-    'eight': 8
-    'nine': 9
-    'ten': 10
-    'eleven': 11
-    'twelve': 12
-    'thirteen': 13
-    'fourteen': 14
-    'fifteen': 15
-    'sixteen': 16
-    'seventeen': 17
-    'eighteen': 18
-    'nineteen': 19
-    'twenty': 20
-    'twenty one': 21
-    'twenty two': 22
-    'twenty three': 23
-    'twenty four': 24
-    'twenty five': 25
-    'twenty six': 26
-    'twenty seven': 27
-    'twenty eight': 28
-    'twenty nine': 29
-    'thirty': 30
-    'thirty one': 31
-    'thirty two': 32
-    'thirty three': 33
-    'thirty four': 34
-    'thirty five': 35
-    'thirty six': 36
-    'thirty seven': 37
-    'thirty eight': 38
-    'thirty nine': 39
-    'forty': 40
-    'forty one': 41
-    'forty two': 42
-    'forty three': 43
-    'forty four': 44
-    'forty five': 45
-    'forty six': 46
-    'forty seven': 47
-    'forty eight': 48
-    'forty nine': 49
-    'fifty': 50
-    'fifty one': 51
-    'fifty two': 52
-    'fifty three': 53
-    'fifty four': 54
-    'fifty five': 55
-    'fifty six': 56
-    'fifty seven': 57
-    'fifty eight': 58
-    'fifty nine': 59
-    'sixty': 60
-    'sixty one': 61
-    'sixty two': 62
-    'sixty three': 63
-    'sixty four': 64
-    'sixty five': 65
-    'sixty six': 66
-    'sixty seven': 67
-    'sixty eight': 68
-    'sixty nine': 69
-    'seventy': 70
-    'seventy one': 71
-    'seventy two': 72
-    'seventy three': 73
-    'seventy four': 74
-    'seventy five': 75
-    'seventy six': 76
-    'seventy seven': 77
-    'seventy eight': 78
-    'seventy nine': 79
-    'eighty': 80
-    'eighty one': 81
-    'eighty two': 82
-    'eighty three': 83
-    'eighty four': 84
-    'eighty five': 85
-    'eighty six': 86
-    'eighty seven': 87
-    'eighty eight': 88
-    'eighty nine': 89
-    'ninety': 90
-    'ninety one': 91
-    'ninety two': 92
-    'ninety three': 93
-    'ninety four': 94
-    'ninety five': 95
-    'ninety six': 96
-    'ninety seven': 97
-    'ninety eight': 98
-    'ninety nine': 99
-    'one hundred': 100
+    'صفر': 0
+    'واحد': 1
+    'اثنان': 2
+    'ثلاثة': 3
+    'أربعة': 4
+    'خمسة': 5
+    'ستة': 6
+    'سبعة': 7
+    'ثمانية': 8
+    'تسعة': 9
+    'عشرة': 10
+    'أحد عشر': 11
+    'اثنا عشر': 12
+    'ثلاثة عشر': 13
+    'أربعة عشر': 14
+    'خمسة عشر': 15
+    'ستة عشر': 16
+    'سبعة عشر': 17
+    'ثمانية عشر': 18
+    'تسعة عشر': 19
+    'عشرون': 20
+    'واحد وعشرون': 21
+    'اثنان وعشرون': 22
+    'ثلاثة وعشرون': 23
+    'أربعة وعشرون': 24
+    'خمسة وعشرون': 25
+    'ستة وعشرون': 26
+    'سبعة وعشرون': 27
+    'ثمانية وعشرون': 28
+    'تسعة وعشرون': 29
+    'الثلاثين': 30
+    'واحد وثلاثون': 31
+    'اثنان وثلاثون': 32
+    'ثلاثة وثلاثون': 33
+    'أربعة وثلاثون': 34
+    'خمسة وثلاثون': 35
+    'ستة وثلاثون': 36
+    'سبعة وثلاثون': 37
+    'ثمانية وثلاثون': 38
+    'تسعة وثلاثون': 39
+    'أربعون': 40
+    'واحد وأربعون': 41
+    'اثنان وأربعون': 42
+    'ثلاثة وأربعون': 43
+    'أربعة وأربعون': 44
+    'خمسة وأربعون': 45
+    'ستة وأربعون': 46
+    'سبعة وأربعون': 47
+    'ثمانية وأربعون': 48
+    'تسعة وأربعون': 49
+    'خمسون': 50
+    'واحد وخمسون': 51
+    'اثنان وخمسون': 52
+    'ثلاثة وخمسون': 53
+    'أربعة وخمسون': 54
+    'خمسة وخمسون': 55
+    'ستة وخمسون': 56
+    'سبعة وخمسون': 57
+    'ثمانية وخمسون': 58
+    'تسعة وخمسون': 59
+    'ستين': 60
+    'واحد وستون': 61
+    'اثنان وستون': 62
+    'ثلاثة وستون': 63
+    'أربعة وستون': 64
+    'خمسة وستون': 65
+    'ستة وستون': 66
+    'سبعة وستون': 67
+    'ثمانية وستون': 68
+    'تسعة وستون': 69
+    'السبعون': 70
+    'واحد وسبعون': 71
+    'اثنان وسبعون': 72
+    'ثلاثة وسبعون': 73
+    'أربعة وسبعون': 74
+    'خمسة وسبعون': 75
+    'ستة وسبعون': 76
+    'سبعة وسبعون': 77
+    'ثمانية وسبعون': 78
+    'تسعة وسبعون': 79
+    'ثمانون': 80
+    'واحد وثمانون': 81
+    'اثنان وثمانون': 82
+    'ثلاثة وثمانون': 83
+    'أربعة وثمانون': 84
+    'خمسة وثمانون': 85
+    'ستة وثمانون': 86
+    'سبعة وثمانون': 87
+    'ثمانية وثمانين': 88
+    'تسعة وثمانون': 89
+    'تسعون': 90
+    'واحد وتسعون': 91
+    'اثنان وتسعون': 92
+    'ثلاثة وتسعون': 93
+    'أربعة وتسعون': 94
+    'خمسة وتسعون': 95
+    'ستة وتسعون': 96
+    'سبعة وتسعون': 97
+    'ثمانية وتسعون': 98
+    'تسعة وتسعون': 99
+    'مائة': 100
 DayOfMonth: !dictionary
   types: [ string, int ]
   entries:
