@@ -198,7 +198,7 @@ public class EnglishNumeric {
 
     public static final String TillRegex = "((?<!\\bequal\\s+)to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
+    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
 
     public static final String LessRegex = "(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 

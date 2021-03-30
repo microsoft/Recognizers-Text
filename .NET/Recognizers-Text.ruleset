@@ -453,7 +453,7 @@
     <Rule Id="SA1302" Action="Error" />
     <Rule Id="SA1303" Action="Error" />
     <Rule Id="SA1304" Action="Error" />
-    <Rule Id="SA1305" Action="Error" />
+    <Rule Id="SA1305" Action="None" />
     <Rule Id="SA1306" Action="Error" />
     <Rule Id="SA1307" Action="Error" />
     <Rule Id="SA1308" Action="Error" />

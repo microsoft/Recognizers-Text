@@ -1018,5 +1018,50 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "票房占比过20的影片有几部？",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "过20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)"
+        },
+        "Start": 4,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "还有20万次以上来观影的呀？",
+    "NotSupported": "dotnet, javascript, java, python",
+    "Results": [
+      {
+        "Text": "20万次以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20000,)"
+        },
+        "Start": 2,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "我问你啊就是那个幕后之王收视率超过了百分之零点九",
+    "NotSupported": "dotnet, javascript, java, python",
+    "Results": [
+      {
+        "Text": "超过了百分之零点九",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.9,)"
+        },
+        "Start": 15,
+        "End": 23
+      }
+    ]
   }
 ]

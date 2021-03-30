@@ -67,7 +67,7 @@ export namespace EnglishNumeric {
     export const NumberWithPrefixPercentage = `(per\\s*cents?\\s+of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
     export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
     export const TillRegex = `((?<!\\bequal\\s+)to|through|--|-|—|——|~|–)`;
-    export const MoreRegex = `(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)`;
+    export const MoreRegex = `(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)`;
     export const LessRegex = `(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)`;
     export const EqualRegex = `(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)`;
     export const MoreOrEqualPrefix = `((no\\s+${LessRegex})|(at\\s+least))`;

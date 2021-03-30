@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -60,7 +61,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public FrenchDurationExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = Number.French.CardinalExtractor.GetInstance(numConfig);
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
