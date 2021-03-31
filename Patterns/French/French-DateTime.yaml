@@ -37,7 +37,7 @@ DescRegex: !nestedRegex
   def: (?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})
   references: [AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English

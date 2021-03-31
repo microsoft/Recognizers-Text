@@ -47,7 +47,7 @@ DescRegex: !nestedRegex
   def: ({OclockRegex})
   references: [ OclockRegex ]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b

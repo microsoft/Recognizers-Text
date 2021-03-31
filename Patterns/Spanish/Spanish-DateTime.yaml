@@ -46,7 +46,7 @@ RelativeSuffixRegex: !nestedRegex
 RangePrefixRegex: !simpleRegex
   def: ((de(l|sde)?|entre)(\s+la(s)?)?)
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
   def: (?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b

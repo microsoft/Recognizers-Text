@@ -852,11 +852,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
-                        year += 1900;
+                        year += Constants.BASE_YEAR_PAST_CENTURY;
                     }
                     else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
-                        year += 2000;
+                        year += Constants.BASE_YEAR_CURRENT_CENTURY;
                     }
                     else if (year >= Constants.MaxTwoDigitYearFutureNum && year < Constants.MinTwoDigitYearPastNum)
                     {
@@ -902,12 +902,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Ambiguous two-digit years are assigned values in both centuries (e.g. 35 -> 1935, 2035)
             if (ambiguousCentury)
             {
-                ret.PastValue = futurePastDates.past.AddYears(1900);
-                ret.FutureValue = futurePastDates.future.AddYears(2000);
-                if (ret.Timex.StartsWith("00"))
-                {
-                    ret.Timex = "XX" + ret.Timex.Substring(2);
-                }
+                ret.PastValue = futurePastDates.past.AddYears(Constants.BASE_YEAR_PAST_CENTURY);
+                ret.FutureValue = futurePastDates.future.AddYears(Constants.BASE_YEAR_CURRENT_CENTURY);
+                ret.Timex = TimexUtility.ModifyAmbiguousCenturyTimex(ret.Timex);
             }
 
             return ret;

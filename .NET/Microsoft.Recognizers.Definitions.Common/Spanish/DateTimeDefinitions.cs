@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string PreviousSuffixRegex = @"\b(pasad[ao]|anterior(?!\s+(al?|del?)\b))\b";
       public static readonly string RelativeSuffixRegex = $@"({AfterNextSuffixRegex}|{NextSuffixRegex}|{PreviousSuffixRegex})";
       public const string RangePrefixRegex = @"((de(l|sde)?|entre)(\s+la(s)?)?)";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b";
       public const string RelativeRegex = @"(?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b";
       public const string StrictRelativeRegex = @"(?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b";
       public const string WrittenOneToNineRegex = @"(un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";

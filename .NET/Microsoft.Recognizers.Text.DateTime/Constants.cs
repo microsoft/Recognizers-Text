@@ -212,6 +212,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum, CultureInfo.InvariantCulture);
         public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum, CultureInfo.InvariantCulture);
         public static readonly System.DateTime InvalidDate = default(System.DateTime);
+        public static readonly int BASE_YEAR_PAST_CENTURY = 1900;
+        public static readonly int BASE_YEAR_CURRENT_CENTURY = 2000;
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
