@@ -304,6 +304,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Korean\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Portuguese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -494,6 +499,8 @@
     <None Update="Japanese\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Korean\NumbersDefinitions.tt">
+    </None>
+    <None Update="Korean\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Portuguese\ChoiceDefinitions.tt">
     </None>

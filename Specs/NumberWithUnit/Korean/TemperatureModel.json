@@ -1,7 +1,7 @@
 [
   {
     "Input": "외부 온도는 섭씨 40도입니다. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -11,14 +11,14 @@
           "value": "40",
           "unit": "C"
         },
-        "Start": 27,
-        "End": 40
+        "Start": 7,
+        "End": 12
       }
     ]
   },
   {
     "Input": "텍사스는 화씨 90도입니다. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -28,14 +28,14 @@
           "value": "90",
           "unit": "F"
         },
-        "Start": 4,
-        "End": 16
+        "Start": 5,
+        "End": 10
       }
     ]
   },
   {
     "Input": "화씨 마이너스 5도",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -46,13 +46,13 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 19
+        "End": 9
       }
     ]
   },
   {
     "Input": "섭씨 6도",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -63,13 +63,13 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 6
+        "End": 4
       }
     ]
   },
   {
     "Input": "화씨 98.6도는 정상 온도입니다. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -80,13 +80,13 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 13
+        "End": 7
       }
     ]
   },
   {
     "Input": "온도를 섭씨 30도로 설정하십시오. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -96,14 +96,14 @@
           "value": "30",
           "unit": "C"
         },
-        "Start": 23,
-        "End": 40
+        "Start": 4,
+        "End": 9
       }
     ]
   },
   {
     "Input": "정상 온도는 화씨 98.6도입니다. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -113,48 +113,48 @@
           "value": "98.6",
           "unit": "F"
         },
-        "Start": 22,
-        "End": 44
+        "Start": 7,
+        "End": 14
       }
     ]
   },
   {
     "Input": "화씨 100 도 ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "화씨 100도",
+        "Text": "화씨 100 도",
         "TypeName": "temperature",
         "Resolution": {
           "value": "100",
           "unit": "F"
         },
         "Start": 0,
-        "End": 12
+        "End": 7
       }
     ]
   },
   {
     "Input": "섭씨 20 도 ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "섭씨 20도",
+        "Text": "섭씨 20 도",
         "TypeName": "temperature",
         "Resolution": {
           "value": "20",
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 6
       }
     ]
   },
   {
     "Input": "화씨 100.2도는 낮다. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -165,13 +165,13 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 22
+        "End": 8
       }
     ]
   },
   {
     "Input": "10.5도 ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -182,13 +182,13 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 4
       }
     ]
   },
   {
     "Input": "섭씨 20도 ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -199,13 +199,13 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 17
+        "End": 5
       }
     ]
   },
   {
     "Input": "섭씨 20.3",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -216,13 +216,13 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 6
       }
     ]
   },
   {
     "Input": "섭씨 34.5  ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -233,13 +233,13 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 11
+        "End": 6
       }
     ]
   },
   {
     "Input": "외부 온도는 98도입니다. ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -249,14 +249,14 @@
           "value": "98",
           "unit": "Degree"
         },
-        "Start": 27,
-        "End": 36
+        "Start": 7,
+        "End": 9
       }
     ]
   },
   {
     "Input": "온도 조절기를 85도로 설정하세요. ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -266,14 +266,14 @@
           "value": "85",
           "unit": "Degree"
         },
-        "Start": 22,
-        "End": 24
+        "Start": 8,
+        "End": 10
       }
     ]
   },
   {
     "Input": "온도를 5도 올리세요. ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -283,14 +283,14 @@
           "value": "5",
           "unit": "Degree"
         },
-        "Start": 25,
-        "End": 33
+        "Start": 4,
+        "End": 5
       }
     ]
   },
   {
     "Input": "온도를 화씨 70도로 설정하세요. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,14 +300,14 @@
           "value": "70",
           "unit": "F"
         },
-        "Start": 23,
-        "End": 34
+        "Start": 4,
+        "End": 9
       }
     ]
   },
   {
     "Input": "온도를 20도 올리세요. ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -317,14 +317,14 @@
           "value": "20",
           "unit": "Degree"
         },
-        "Start": 25,
-        "End": 34
+        "Start": 4,
+        "End": 6
       }
     ]
   },
   {
     "Input": "온도를 100도로 설정하세요. ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -334,14 +334,14 @@
           "value": "100",
           "unit": "Degree"
         },
-        "Start": 23,
-        "End": 33
+        "Start": 4,
+        "End": 7
       }
     ]
   },
   {
     "Input": "온도를 화씨 75도로 유지하세요. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -351,31 +351,31 @@
           "value": "75",
           "unit": "F"
         },
-        "Start": 24,
-        "End": 35
+        "Start": 4,
+        "End": 9
       }
     ]
   },
   {
     "Input": "온도를 섭씨 40도로 하세요.",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "섭씨 40",
+        "Text": "섭씨 40도",
         "TypeName": "temperature",
         "Resolution": {
           "value": "40",
           "unit": "C"
         },
-        "Start": 26,
-        "End": 35
+        "Start": 4,
+        "End": 9
       }
     ]
   },
   {
     "Input": "온도를 50도로 하세요. ",
-    "NotSupported": "dotnet",
+
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -385,14 +385,14 @@
           "value": "50",
           "unit": "Degree"
         },
-        "Start": 26,
-        "End": 32
+        "Start": 4,
+        "End": 6
       }
     ]
   },
   {
     "Input": "섭씨 10도를 화씨로 변환하세요. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -402,8 +402,8 @@
           "value": "10",
           "unit": "C"
         },
-        "Start": 8,
-        "End": 17
+        "Start": 0,
+        "End": 5
       },
       {
         "Text": "화씨",
@@ -412,14 +412,14 @@
           "value": null,
           "unit": "F"
         },
-        "Start": 22,
-        "End": 31
+        "Start": 8,
+        "End": 9
       }
     ]
   },
   {
     "Input": "섭씨 34.9도를 화씨로",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +430,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 14
+        "End": 7
       },
       {
         "Text": "화씨",
@@ -439,14 +439,14 @@
           "value": null,
           "unit": "F"
         },
-        "Start": 19,
-        "End": 27
+        "Start": 10,
+        "End": 11
       }
     ]
   },
   {
     "Input": "섭씨 200도를 화씨로 변환하세요. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,18 +456,8 @@
           "value": "200",
           "unit": "C"
         },
-        "Start": 8,
-        "End": 18
-      },
-      {
-        "Text": "도",
-        "TypeName": "temperature",
-        "Resolution": {
-          "value": null,
-          "unit": "C"
-        },
-        "Start": 20,
-        "End": 26
+        "Start": 0,
+        "End": 6
       },
       {
         "Text": "화씨",
@@ -476,25 +466,25 @@
           "value": null,
           "unit": "F"
         },
-        "Start": 33,
-        "End": 42
+        "Start": 9,
+        "End": 10
       }
     ]
   },
   {
-    "Input": "화씨를 섭씨로 101 화씨는 섭씨 몇 도입니까? ",
-    "NotSupported": "dotnet",
+    "Input": "화씨를 섭씨로 화씨 101도는 섭씨 몇 도입니까? ",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "화씨 101",
+        "Text": "화씨 101도",
         "TypeName": "temperature",
         "Resolution": {
           "value": "101",
           "unit": "F"
         },
-        "Start": 22,
-        "End": 35
+        "Start": 8,
+        "End": 14
       },
       {
         "Text": "화씨",
@@ -504,7 +494,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 9
+        "End": 1
       },
       {
         "Text": "섭씨",
@@ -513,8 +503,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 14,
-        "End": 20
+        "Start": 4,
+        "End": 5
       },
       {
         "Text": "섭씨",
@@ -523,14 +513,14 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 49,
-        "End": 55
+        "Start": 17,
+        "End": 18
       }
     ]
   },
   {
     "Input": "섭씨 50도 섭씨를 화씨로 ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -541,7 +531,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 17
+        "End": 5
       },
       {
         "Text": "섭씨",
@@ -550,8 +540,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 19,
-        "End": 25
+        "Start": 7,
+        "End": 8
       },
       {
         "Text": "화씨",
@@ -560,41 +550,41 @@
           "value": null,
           "unit": "F"
         },
-        "Start": 30,
-        "End": 39
+        "Start": 11,
+        "End": 12
       }
     ]
   },
   {
     "Input": "화씨 51도를 섭씨로 변환해 주시겠습니까?",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "화씨 51",
+        "Text": "화씨 51도",
         "TypeName": "temperature",
         "Resolution": {
           "value": "51",
           "unit": "F"
         },
-        "Start": 18,
-        "End": 30
+        "Start": 0,
+        "End": 5
       },
       {
-        "Text": "섭씨 도",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 35,
-        "End": 49
+        "Start": 8,
+        "End": 9
       }
     ]
   },
   {
     "Input": "화씨 106도를 섭씨로 변환하세요. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -604,24 +594,24 @@
           "value": "106",
           "unit": "F"
         },
-        "Start": 8,
-        "End": 28
+        "Start": 0,
+        "End": 6
       },
       {
-        "Text": "섭씨 도",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
           "unit": "C"
         },
-        "Start": 33,
-        "End": 47
+        "Start": 9,
+        "End": 10
       }
     ]
   },
   {
     "Input": "화씨 45도를 섭씨로 변환하세요. ",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -631,8 +621,8 @@
           "value": "45",
           "unit": "F"
         },
-        "Start": 8,
-        "End": 28
+        "Start": 0,
+        "End": 5
       },
       {
         "Text": "섭씨",
@@ -641,14 +631,14 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 33,
-        "End": 39
+        "Start": 8,
+        "End": 9
       }
     ]
   },
   {
     "Input": "화씨 마이너스 20도를 섭씨로 어떻게 변환하나요?",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -658,8 +648,8 @@
           "value": "-20",
           "unit": "F"
         },
-        "Start": 15,
-        "End": 37
+        "Start": 0,
+        "End": 10
       },
       {
         "Text": "섭씨",
@@ -668,8 +658,8 @@
           "value": null,
           "unit": "C"
         },
-        "Start": 42,
-        "End": 48
+        "Start": 13,
+        "End": 14
       }
     ]
   }

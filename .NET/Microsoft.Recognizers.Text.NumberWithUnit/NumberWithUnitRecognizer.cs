@@ -551,6 +551,62 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
+            RegisterModel<CurrencyModel>(
+                Culture.Korean,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Korean.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Korean.CurrencyParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Korean,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Korean.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Korean.TemperatureParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Korean,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Korean.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Korean.DimensionParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Korean,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Korean.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Korean.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    },
+                }));
+
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
