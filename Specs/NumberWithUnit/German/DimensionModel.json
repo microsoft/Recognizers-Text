@@ -363,5 +363,41 @@
     "Input": "2:00 pm",
     "NotSupported": "java",
     "Results": []
+  },
+  {
+    "Input": "12 Pfund Tasse Kaffee",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "12 pfund",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Pound",
+          "subtype": "Weight"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "12-Pfund-Tasse Kaffee",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "12-pfund",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Pound",
+          "subtype": "Weight"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
   }
 ]

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.German;
 
@@ -16,7 +17,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new GermanNumberParserConfiguration(numConfig));
-            this.ConnectorToken = string.Empty;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
 
             this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }

@@ -441,5 +441,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "siebenhundert-Euro",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "siebenhundert-euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "700",
+          "unit": "Euro"
+        }
+      }
+    ]
   }
 ]

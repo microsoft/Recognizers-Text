@@ -46,7 +46,7 @@ public abstract class GermanNumberWithUnitExtractorConfiguration implements INum
     }
 
     public String getConnectorToken() {
-        return "";
+        return GermanNumericWithUnit.ConnectorToken;
     }
 
     public Pattern getCompoundUnitConnectorRegex() {
