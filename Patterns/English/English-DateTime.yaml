@@ -105,7 +105,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
 MonthRegex: !simpleRegex
-  def: (?<month>april|august|december|february|january|july|june|march|november|october|september|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))
+  def: (?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)
 WrittenMonthRegex: !nestedRegex
   def: (((the\s+)?month of\s+)?{MonthRegex})
   references: [ MonthRegex ]
@@ -1151,6 +1151,7 @@ AmbiguityFiltersDict: !dictionary
     '\b(a|one) second\b': '\b(?<!an?\s+)(a|one) second (round|time)\b'
     '\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$': '(?<!\b(at|before|after|around|circa)\b\s)(breakfast|brunch|lunch|dinner|supper)(?!\s*time)'
     '^\d+m$': '^\d+m$'
+    '^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$': '([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

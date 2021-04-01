@@ -19883,6 +19883,38 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": []
+  },
+  {
+    "Input": "In dec $DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dec",
+        "Start": 3,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2016-12-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

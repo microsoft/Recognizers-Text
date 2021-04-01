@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string WeekDayRegex = @"\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\b";
       public const string SingleWeekDayRegex = @"\b(?<weekday>(?<!(easter|palm)\s+)sunday|(?<!easter\s+)saturday|(?<!(easter|cyber)\s+)monday|mon|(?<!black\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b";
-      public const string MonthRegex = @"(?<month>april|august|december|february|january|july|june|march|november|october|september|(?<![$%£&!?@#]|\p{L})(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)(?![$%£&@#]|\p{L}))";
+      public const string MonthRegex = @"(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)";
       public static readonly string WrittenMonthRegex = $@"(((the\s+)?month of\s+)?{MonthRegex})";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
       public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b";
@@ -737,7 +737,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"\bmay\b", @"\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" },
             { @"\b(a|one) second\b", @"\b(?<!an?\s+)(a|one) second (round|time)\b" },
             { @"\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", @"(?<!\b(at|before|after|around|circa)\b\s)(breakfast|brunch|lunch|dinner|supper)(?!\s*time)" },
-            { @"^\d+m$", @"^\d+m$" }
+            { @"^\d+m$", @"^\d+m$" },
+            { @"^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", @"([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {
