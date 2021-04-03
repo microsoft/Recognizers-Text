@@ -10025,5 +10025,101 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ik zal vertrekken om 09:00 's ochtends",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "09:00 's ochtends",
+        "Start": 21,
+        "End": 37,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09:00",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal vertrekken 's ochtends om 9",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "'s ochtends om 9",
+        "Start": 18,
+        "End": 33,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal elke maandag vertrekken om 09:00",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke maandag",
+        "Type": "set",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "09:00",
+        "Start": 34,
+        "End": 38,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09:00",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21:00",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
