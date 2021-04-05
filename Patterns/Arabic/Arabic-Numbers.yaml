@@ -135,21 +135,24 @@ AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+(نقطة|جزء|جزء من)){AllPointRegex}'
   references: [AllIntRegex, AllPointRegex]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)  
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)  
   references: [BaseNumbers.NumberMultiplierRegex]
 DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)[+-]*\^([+-]*[\u0660-\u0669]([\.,])?\d*)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)[+-]*\^([+-]*[\u0660-\u0669]([\.,])?\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+[\.,]\d+))(?!([\.,]\d+))(?={placeholder})
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+\u202A?[\.,]\u202A?\d+))(?!([\.,]\d+))(?={placeholder})
   params: [placeholder]
 DoubleWithoutIntegralRegex: !paramsRegex
-  def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  def: (?<=\s|^)(?<!(\d+))\u202A?[\.,]\u202A?\d+(?!([\.,]\d+))(?={placeholder})
   params: [placeholder]
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [RoundNumberIntegerRegex]
+DoubleWithThousandMarkRegex: !paramsRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}(\u202A?[،]\u202A?\d{3})+\u202A?[\.,]\u202A?\d+(?={placeholder})
+  params: [ placeholder ]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [AllFloatRegex]
