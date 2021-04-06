@@ -715,7 +715,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"^([eé]t[eé])$", @"(?<!((l\s*['`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b" },
-            { @"^(mer)$", @"(?<!((le|ce)\s+))mer\b" }
+            { @"^(mer)$", @"(?<!((le|ce)\s+))mer\b" },
+            { @"^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", @"([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])" }
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {

@@ -648,7 +648,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string[] DurationDateRestrictions = {  };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bgiorno|pomeriggio|sera|notte\b", @"\b(buona?\s*(giorno|pomeriggio|sera|notte))\b" }
+            { @"\bgiorno|pomeriggio|sera|notte\b", @"\b(buona?\s*(giorno|pomeriggio|sera|notte))\b" },
+            { @"^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", @"([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {
