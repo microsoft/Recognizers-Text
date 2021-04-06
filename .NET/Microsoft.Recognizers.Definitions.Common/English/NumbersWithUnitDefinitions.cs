@@ -52,6 +52,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Square yard", @"sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²" },
             { @"Acre", @"-acre|acre|acres" }
         };
+      public static readonly IList<string> AmbiguousAreaUnitList = new List<string>
+        {
+            @"n/a"
+        };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             { @"Abkhazian apsar", @"abkhazian apsar|apsars" },
@@ -834,7 +838,11 @@ namespace Microsoft.Recognizers.Definitions.English
             @"tbl",
             @"quart",
             @"quarts",
-            @"pinch"
+            @"pinch",
+            @"t.",
+            @"T.",
+            @"Tb.",
+            @"ts."
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {

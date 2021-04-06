@@ -1125,5 +1125,9 @@
         }
       }
     ]
+  },
+  {
+    "Input": "james t. kirk",
+    "Results": []
   }
 ]

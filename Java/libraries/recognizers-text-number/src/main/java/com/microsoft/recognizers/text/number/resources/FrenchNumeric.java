@@ -197,15 +197,15 @@ public class FrenchNumeric {
     public static final String NumberWithPrefixPercentage = "((?<!{BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\\s*)({BaseNumbers.NumberReplaceToken})(?=\\s|$)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
-    public static final String TillRegex = "((?<!\\b[èe]ga(l|ux)\\s+)[àa]|--|-|—|——|~|–)";
+    public static final String TillRegex = "((?<!\\b[èe]ga(l(es)?|ux)\\s+)[àa]|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(?:(bigger|greater|more|plus(\\s+(haut|grand|âgée?))?|sup[ée]rieur)(\\s+([àa]|que))?|dépassant|(au-dessus|(a\\s+)?plus|dépassant|au-delà)\\s+de|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
+    public static final String MoreRegex = "(?:(bigger|greater|more|plus(\\s+(haut|grand|âgée?))?|sup[ée]rieure?s?)(\\s+([àa]|que))?|dépassant|(au-dessus|(a\\s+)?plus|dépassant|au-delà)\\s+d[e'’]|exceed(ed|ing)?|(?<!<|=)>)";
 
-    public static final String LessRegex = "(?:(less|plus\\s+(bas|petit|jeune)|moins|inf[ée]rieur)(\\s+([àa]|de|que))?|below|under|(?<!>|=)<)";
+    public static final String LessRegex = "(?:(less|plus\\s+(bas|petit|jeune)|moins|inf[ée]rieure?s?)(\\s+([àa]|d[e'’]|que))?|((en )?dessous)\\s+de|under|(?<!>|=)<)";
 
-    public static final String EqualRegex = "([ée]ga(l|ux)(\\s+[àa])?|(?<!<|>)=)";
+    public static final String EqualRegex = "(([ée]ga(l(es)?|ux)|au\\s+nombre)(\\s+([àa]|d[e'’]))?|(?<!<|>)=)";
 
-    public static final String MoreOrEqualPrefix = "((pas\\s+{LessRegex})|(au\\s+moins|[àa] partir de))"
+    public static final String MoreOrEqualPrefix = "((pas\\s+{LessRegex})|(au\\s+moins|[àa] partir d[e'’]))"
             .replace("{LessRegex}", LessRegex);
 
     public static final String MoreOrEqual = "(?:({MoreRegex}\\s+(ou)?\\s+{EqualRegex})|({EqualRegex}\\s+(ou)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(ou)?\\s+{EqualRegex})?|({EqualRegex}\\s+(ou)?\\s+)?{MoreOrEqualPrefix}|>\\s*=|≥)"
@@ -214,7 +214,7 @@ public class FrenchNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
 
-    public static final String MoreOrEqualSuffix = "((et|ou)\\s+(((more|greater|higher|plus(\\s+grand)?|sup[ée]rieur)((?!\\s+([àa]|que))|(\\s+([àa]|que)(?!((\\s+ou\\s+[èe]ga(l|ux)\\s+[àa])?\\s*\\d+)))))|((a plus de|au-dessus de)(?!\\s+than))))";
+    public static final String MoreOrEqualSuffix = "((et|ou)\\s+(((more|greater|higher|plus(\\s+grand)?|sup[ée]rieure?s?)((?!\\s+([àa]|que))|(\\s+([àa]|que)(?!((\\s+ou\\s+[èe]ga(l(es)?|ux)\\s+[àa])?\\s*\\d+)))))|((a plus|au-dessus)\\s+d[e'’](?!\\s+than))))";
 
     public static final String LessOrEqualPrefix = "((pas\\s+{MoreRegex})|(au\\s+plus)|(jusqu'[àa]))"
             .replace("{MoreRegex}", MoreRegex);
@@ -225,17 +225,17 @@ public class FrenchNumeric {
             .replace("{MoreRegex}", MoreRegex)
             .replace("{LessOrEqualPrefix}", LessOrEqualPrefix);
 
-    public static final String LessOrEqualSuffix = "((et|ou)\\s+(less|lower|plus petit|moins|inf[ée]rieur)((?!\\s+([àa]|de|que))|(\\s+([àa]|de|que)(?!(\\s*\\d+)))))";
+    public static final String LessOrEqualSuffix = "((et|ou)\\s+(less|lower|plus petit|moins|inf[ée]rieure?s?)((?!\\s+([àa]|de|que))|(\\s+([àa]|d[e'’]|que)(?!(\\s*\\d+)))))";
 
     public static final String NumberSplitMark = "(?![,.](?!\\d+))(?!\\s*\\b(et\\s+({LessRegex}|{MoreRegex})|mais|ou|to)\\b)"
             .replace("{MoreRegex}", MoreRegex)
             .replace("{LessRegex}", LessRegex);
 
-    public static final String MoreRegexNoNumberSucceed = "((bigger|greater|more|plus(\\s+grand)?|sup[ée]rieur)((?!\\s+([àa]|que))|\\s+(([àa]|que)(?!(\\s*\\d+))))|((au-dessus|a plus)\\s+de)(?!(\\s*\\d+)))";
+    public static final String MoreRegexNoNumberSucceed = "((bigger|greater|more|plus(\\s+grand)?|sup[ée]rieure?s?)((?!\\s+([àa]|que))|\\s+(([àa]|que)(?!(\\s*\\d+))))|((au-dessus|a plus)\\s+d[e'’])(?!(\\s*\\d+)))";
 
-    public static final String LessRegexNoNumberSucceed = "((less|lower|plus petit|moins|inf[ée]rieur)((?!\\s+([àa]|de|que))|\\s+(([àa]|de|que)(?!(\\s*\\d+))))|(below|under)(?!(\\s*\\d+)))";
+    public static final String LessRegexNoNumberSucceed = "((less|lower|plus petit|moins|inf[ée]rieure?s?)((?!\\s+([àa]|d[e'’]|que))|\\s+(([àa]|d[e'’]|que)(?!(\\s*\\d+))))|(((en )?dessous)\\s+d[e'’]|under)(?!(\\s*\\d+)))";
 
-    public static final String EqualRegexNoNumberSucceed = "([èe]ga(l|ux)((?!\\s+([àa]))|(\\s+([àa]|que)(?!(\\s*\\d+)))))";
+    public static final String EqualRegexNoNumberSucceed = "([èe]ga(l(es)?|ux)((?!\\s+([àa]))|(\\s+([àa]|que)(?!(\\s*\\d+)))))";
 
     public static final String OneNumberRangeMoreRegex1 = "({MoreOrEqual}|{MoreRegex})\\s*(l[ae]\\s+)?(?<number1>({NumberSplitMark}.)+)"
             .replace("{MoreOrEqual}", MoreOrEqual)

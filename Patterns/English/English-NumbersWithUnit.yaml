@@ -32,6 +32,10 @@ AreaSuffixList: !dictionary
     Square mile: sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
     Square yard: sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²
     Acre: -acre|acre|acres
+AmbiguousAreaUnitList: !list
+  types: [ string ]
+  entries:
+    - n/a
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
 #Reference Source: https://en.wikipedia.org/wiki/List_of_circulating_currencies
@@ -927,6 +931,10 @@ AmbiguousVolumeUnitList: !list
     - quart
     - quarts
     - pinch
+    - t.
+    - T.
+    - Tb.
+    - ts.
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
