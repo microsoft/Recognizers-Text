@@ -98,7 +98,7 @@ DescRegex: !nestedRegex
   references: [ OclockRegex, AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex ]
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}('a\b)?|{FullTextYearRegex})
