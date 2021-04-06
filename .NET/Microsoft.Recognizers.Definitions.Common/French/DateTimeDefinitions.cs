@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string PmDescRegex = $@"(h\b|{BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"(h\b|{BaseDateTime.BaseAmPmDescRegex})";
       public static readonly string DescRegex = $@"(?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public const string FullTextYearRegex = @"^[\*]";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\.)?|mar(\.)?|mer(\.)?|jeu(\.)?|ven(\.)?|sam(\.)?|dim(\.)?)";

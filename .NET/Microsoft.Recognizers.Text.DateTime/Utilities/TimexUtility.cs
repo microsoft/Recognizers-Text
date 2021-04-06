@@ -407,6 +407,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"P{durationLength * multiplier:0.#}{durationType}";
         }
 
+        public static string ModifyAmbiguousCenturyTimex(string timex)
+        {
+            return "XX" + timex.Substring(2);
+        }
+
         private static bool IsTimeDurationTimex(string timex)
         {
             return timex.StartsWith($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}", StringComparison.Ordinal);

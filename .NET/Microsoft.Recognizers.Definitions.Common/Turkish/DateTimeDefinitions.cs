@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
       public static readonly string DescRegex = $@"((({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}('a\b)?|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>pazartesi(leri|si)?|salı(ları|sı)?|çarşamba(ları|sı)?|perşembe(leri|si)?|cuma(ları|sı)?|cumartesi(leri|si)?|pazar(ları|ı)?|pzt|sal|çrş|per|cum|cmt|paz)(\s+günü)?\b";
       public const string SingleWeekDayRegex = @"\b(?<weekday>pazartesi|salı|çarşamba|perşembe|cuma|cumartesi|pazar|pzt|sal|çrş|per|cum|cmt|paz)\b";
