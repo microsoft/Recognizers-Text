@@ -32,6 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags);
 
+        public static readonly Regex BeforeEachDayRegex =
+           new Regex(DateTimeDefinitions.BeforeEachDayRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public DutchSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -60,7 +63,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
-        bool ISetExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for Dutch is false.
+        // It only needs to be true in SetExtractor.
+        bool ISetExtractorConfiguration.CheckBothBeforeAfter => true;
 
         Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 
@@ -72,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex ISetExtractorConfiguration.EachDayRegex => EachDayRegex;
 
-        Regex ISetExtractorConfiguration.BeforeEachDayRegex => null;
+        Regex ISetExtractorConfiguration.BeforeEachDayRegex => BeforeEachDayRegex;
 
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 

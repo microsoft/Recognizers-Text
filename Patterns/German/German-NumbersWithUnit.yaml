@@ -524,6 +524,7 @@ BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\W|$))
+ConnectorToken: '-'
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]

@@ -439,6 +439,7 @@ namespace Microsoft.Recognizers.Definitions.German
         };
       public const string BuildPrefix = @"(?<=(\s|^))";
       public const string BuildSuffix = @"(?=(\s|\W|$))";
+      public const string ConnectorToken = @"-";
       public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
         {
             { @"Kilometer", @"km|kilometer|kilometern" },

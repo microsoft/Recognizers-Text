@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
             this.UnitNumExtractor = NumberExtractor.GetInstance(NumberMode.Unit);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
-            this.ConnectorToken = string.Empty;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
