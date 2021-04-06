@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (dot)
                     {
-                        tmp = tmp + (scale * (ch - '0'));
+                        tmp += scale * (ch - '0');
                         scale *= 0.1;
                     }
                     else
@@ -738,7 +738,7 @@ namespace Microsoft.Recognizers.Text.Number
                                     // e.g. three hundredth
                                     while (tempStack.Any())
                                     {
-                                        intPart = intPart + tempStack.Pop();
+                                        intPart += tempStack.Pop();
                                     }
 
                                     tempStack.Push(intPart * fracPart);
@@ -763,7 +763,7 @@ namespace Microsoft.Recognizers.Text.Number
                             else if (tempStack.Count >= 2)
                             {
                                 var sum = tempStack.Pop() + matchValue;
-                                sum = tempStack.Pop() + sum;
+                                sum += tempStack.Pop();
                                 tempStack.Push(sum);
                             }
                         }

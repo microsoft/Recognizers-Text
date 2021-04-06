@@ -696,7 +696,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // If only one Date is extracted and the Date text equals to the rest part of source text
-                    if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
+                    if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text, StringComparison.Ordinal))
                     {
                         string dateTimex;
                         DateObject futureTime;
