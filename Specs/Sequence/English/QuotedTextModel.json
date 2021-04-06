@@ -23,7 +23,8 @@
 					"value": "`456`"
 				}
 			}
-		]
+		],
+		"NotSupportedByDesign": "javascript, python, java"
 	},
 	{
 		"Input": "This “number is `123` or `456`”",
@@ -49,6 +50,7 @@
 					"value": "`456`"
 				}
 			}
-		]
+		],
+		"NotSupportedByDesign": "javascript, python, java"
 	}
 ]
