@@ -3202,6 +3202,11 @@
     ]
   },
   {
+    "Input": "Je retournerai 4:45 du matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    {
     "Input": "Je vais rentrer le 4 janvier 2019.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
