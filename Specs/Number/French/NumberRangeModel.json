@@ -380,11 +380,11 @@
     ]
   },
   {
-    "Input": "Sa taille est en dessuous de 170.",
+    "Input": "Sa taille est en dessous de 170.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
-        "Text": "en dessuous de 170",
+        "Text": "en dessous de 170",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
