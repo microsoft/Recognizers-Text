@@ -20981,5 +20981,295 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nos vamos a las 8 menos cuarto",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 menos cuarto",
+        "Start": 16,
+        "End": 29,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las 8 menos quince",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 menos quince",
+        "Start": 16,
+        "End": 29,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las 8 menos siete",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 menos siete",
+        "Start": 16,
+        "End": 28,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las 8 menos 15",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 menos 15",
+        "Start": 16,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las 8 menos 7",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 menos 7",
+        "Start": 16,
+        "End": 24,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las ocho menos cuarto",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ocho menos cuarto",
+        "Start": 16,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las ocho menos quince",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ocho menos quince",
+        "Start": 16,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las ocho menos siete",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ocho menos siete",
+        "Start": 16,
+        "End": 31,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las ocho menos 15",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ocho menos 15",
+        "Start": 16,
+        "End": 28,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos vamos a las ocho menos 7",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ocho menos 7",
+        "Start": 16,
+        "End": 27,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

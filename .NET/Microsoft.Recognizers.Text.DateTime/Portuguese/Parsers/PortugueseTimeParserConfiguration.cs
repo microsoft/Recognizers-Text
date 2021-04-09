@@ -12,6 +12,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex PastTokenRegex =
+            new Regex(DateTimeDefinitions.PastTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
+        private static readonly Regex LessThanOneHourPrefix =
+            new Regex(DateTimeDefinitions.LessThanOneHourPrefix, RegexFlags);
+
         public PortugueseTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -42,23 +59,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var deltaMin = 0;
             var trimmedPrefix = prefix.Trim();
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedPrefix.StartsWith("quarto", StringComparison.Ordinal) || trimmedPrefix.StartsWith("e um quarto", StringComparison.Ordinal) ||
-                trimmedPrefix.StartsWith("quinze", StringComparison.Ordinal) || trimmedPrefix.StartsWith("e quinze", StringComparison.Ordinal))
+            if (QuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.StartsWith("menos um quarto", StringComparison.Ordinal))
-            {
-                deltaMin = -15;
-            }
-            else if (trimmedPrefix.StartsWith("meia", StringComparison.Ordinal) || trimmedPrefix.StartsWith("e meia", StringComparison.Ordinal))
+            else if (HalfTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 30;
             }
             else
             {
-                var match = PortugueseTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
+                var match = LessThanOneHourPrefix.Match(trimmedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
@@ -71,17 +82,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 }
             }
 
-            if (trimmedPrefix.EndsWith("passadas", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pasados", StringComparison.Ordinal) ||
-                trimmedPrefix.EndsWith("depois das", StringComparison.Ordinal) || trimmedPrefix.EndsWith("depois da", StringComparison.Ordinal) || trimmedPrefix.EndsWith("depois do", StringComparison.Ordinal) ||
-                trimmedPrefix.EndsWith("passadas as", StringComparison.Ordinal) || trimmedPrefix.EndsWith("passadas das", StringComparison.Ordinal))
+            if (ToTokenRegex.IsMatch(trimmedPrefix))
             {
-                // deltaMin it's positive
-            }
-            else if (trimmedPrefix.EndsWith("para a", StringComparison.Ordinal) || trimmedPrefix.EndsWith("para as", StringComparison.Ordinal) ||
-                     trimmedPrefix.EndsWith("pra", StringComparison.Ordinal) || trimmedPrefix.EndsWith("pras", StringComparison.Ordinal) ||
-                     trimmedPrefix.EndsWith("antes da", StringComparison.Ordinal) || trimmedPrefix.EndsWith("antes das", StringComparison.Ordinal))
-            {
-                deltaMin = -deltaMin;
+                var match = ToTokenRegex.Match(trimmedPrefix);
+                if (hasMin && match.Groups[Constants.NegativeGroupName].Success)
+                {
+                    min = -min;
+                }
+                else
+                {
+                    deltaMin = -deltaMin;
+                }
             }
 
             min += deltaMin;
