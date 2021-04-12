@@ -113,8 +113,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         public IModel GetQuotedTextModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
             if (culture != null && (
-           culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
-           culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
+                    culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
+                    culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
             {
                 return GetModel<QuotedTextModel>(Culture.Chinese, fallbackToDefaultCulture);
             }
