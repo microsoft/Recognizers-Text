@@ -140,11 +140,11 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string RecentlyTimeRegex = @"(mente)";
       public const string AsapTimeRegex = @"(posible|pueda[ns]?|podamos)";
       public static readonly string LessThanOneHourPrefix = $@"(?<lth>cuarto|media|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})\s+(minutos?|mins?))";
-      public static readonly string LessThanOneHour = $@"(?<lth>((\s*(y|menos)\s+)?cuarto|\s*y\s+media|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutos?|mins?))|\s*(y|menos)\s+({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutos?|mins?))?))";
+      public static readonly string LessThanOneHour = $@"(?<lth>((\s*(y|menos)\s+)?cuarto|\s*y\s+media|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutos?|mins?))|\s*(y|menos)\s+({BaseDateTime.DeltaMinuteRegex}(?![,.:]\d)|{DeltaMinuteNumRegex})(\s+(minutos?|mins?))?))";
       public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s*((y|(?<prefix>menos))\s+)?{MinuteNumRegex})";
       public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHourPrefix}(\s+(pasad[ao]s)\s+(de\s+las|las)?|\s+(para|antes\s+de)?\s+(las?))?)";
       public static readonly string SpecialDescRegex = $@"\b(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})\b";
-      public static readonly string TimeSuffix = $@"(?<suffix>{LessThanOneHour}(\s+{SpecialDescRegex})?|{SpecialDescRegex}(\s+{LessThanOneHour})?)";
+      public static readonly string TimeSuffix = $@"(?<suffix>{LessThanOneHour}(\s+({AmRegex}|{PmRegex}|{OclockRegex}))?|({AmRegex}|{PmRegex}|{OclockRegex})(\s+{LessThanOneHour})?)";
       public static readonly string BasicTime = $@"\b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|({BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})(?!\d))";
       public const string MidTimeRegex = @"(?<mid>((?<midnight>media\s*noche)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))";
       public static readonly string AtRegex = $@"\b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})";
@@ -153,7 +153,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex}|\s*\bh\b)";
       public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"\b(({TimePrefix}\s+)?{TimeRegexWithDotConnector}(\s*({DescRegex}|{TimeSuffix}|\bh\b))|((las\s+{TimeRegexWithDotConnector})(?!\s*(por\s+cien(to)?|%))(\s*({DescRegex}|{TimeSuffix}|\bh\b)|\b)))";
-      public static readonly string TimeRegex4 = $@"\b((({HourNumRegex}|{BaseDateTime.HourRegex})\s+{TimeSuffix}|{BasicTime}\s*{DescRegex}?\s*{SpecialDescRegex}|{DescRegex}?{TimePrefix}\s*({HourNumRegex}|{BaseDateTime.HourRegex})(\s+(y\s+)?{MinuteNumRegex})?)(\s*({OclockRegex}|{DescRegex})|\b)|({HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}\s+{TimeSuffix}(\s*{OclockRegex}|\b))";
+      public static readonly string TimeRegex4 = $@"\b(((?<!entre\s)({HourNumRegex}|{BaseDateTime.HourRegex})\s+{TimeSuffix}|{BasicTime}\s*{DescRegex}?\s*{SpecialDescRegex}|{DescRegex}?{TimePrefix}\s*({HourNumRegex}|{BaseDateTime.HourRegex})(\s+(y\s+)?{MinuteNumRegex})?)(\s*({OclockRegex}|{DescRegex})|\b)|({HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}\s+{TimeSuffix}(\s*{OclockRegex}|\b))";
       public static readonly string TimeRegex5 = $@"\b({TimePrefix}|{BasicTime}{TimePrefix})\s+(\s*{DescRegex})?{BasicTime}?\s*{SpecialDescRegex}\b";
       public static readonly string TimeRegex6 = $@"({BasicTime}(\s*{DescRegex})?\s+{SpecialDescRegex}\b)";
       public static readonly string TimeRegex7 = $@"\b{SpecialDescRegex}\s+a\s+las\s+{BasicTime}((\s*{DescRegex})|\b)";

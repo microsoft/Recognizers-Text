@@ -21271,5 +21271,13 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nosotros estamos entre 10 y 23",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
   }
 ]
