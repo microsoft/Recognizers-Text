@@ -438,7 +438,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         }
 
         List<Map<String, String>> resolutions = new ArrayList<>();
-        Map<String, Object> res = new HashMap<>();
+        LinkedHashMap<String, Object> res = new LinkedHashMap<>();
 
         DateTimeResolutionResult val = (DateTimeResolutionResult)slot.getValue();
         if (val == null) {

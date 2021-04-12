@@ -33,7 +33,7 @@ AfterNextSuffixRegex: !simpleRegex
 RangePrefixRegex: !simpleRegex
   def: ((de(sde)?|das?|entre)\s+(a(s)?\s+)?)
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
   def: (?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b
@@ -897,7 +897,7 @@ DurationDateRestrictions: []
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'null': 'null'
+    '^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$': '([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ] 

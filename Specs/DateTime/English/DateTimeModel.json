@@ -19766,5 +19766,155 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back 12/12/30.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12/12/30",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX30-12-12",
+              "type": "date",
+              "value": "1930-12-12"
+            },
+            {
+              "timex": "XX30-12-12",
+              "type": "date",
+              "value": "2030-12-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 11/12/35.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "11/12/35",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX35-11-12",
+              "type": "date",
+              "value": "1935-11-12"
+            },
+            {
+              "timex": "XX35-11-12",
+              "type": "date",
+              "value": "2035-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 23/08/39.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23/08/39",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX39-08-23",
+              "type": "date",
+              "value": "1939-08-23"
+            },
+            {
+              "timex": "XX39-08-23",
+              "type": "date",
+              "value": "2039-08-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 03/18/40.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "03/18/40",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1940-03-18",
+              "type": "date",
+              "value": "1940-03-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "$DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "In dec $DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dec",
+        "Start": 3,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2016-12-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

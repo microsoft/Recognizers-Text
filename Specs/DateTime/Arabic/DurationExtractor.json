@@ -1,0 +1,662 @@
+[
+  {
+    "Input": "سأترك لمدة 3 ساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعات",
+        "Start": 11,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 أيام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أيام",
+        "Start": 12,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3.5 سنوات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3.5 سنوات",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأترك مدة 3 ساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعات",
+        "Start": 10,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 الساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 الساعات",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعة",
+        "Start": 12,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 ساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 ساعات",
+        "Start": 12,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر مدة 3 أيام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أيام",
+        "Start": 11,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 أشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أشهر",
+        "Start": 12,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3 دقائق",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 دقائق",
+        "Start": 12,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأترك مدة 3 دقائق",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 دقائق",
+        "Start": 10,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 3.5 ثانية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3.5 ثانية",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأترك لمدة 123.45 ثانية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "123.45 ثانية",
+        "Start": 11,
+        "Length": 12,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة أسبوعين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوعين",
+        "Start": 12,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة عشرين دقيقة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عشرين دقيقة",
+        "Start": 12,
+        "Length": 11,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة أربع وعشرين ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أربع وعشرين ساعة",
+        "Start": 12,
+        "Length": 16,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال اليوم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال اليوم",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال الأسبوع",
+        "Start": 7,
+        "Length": 12,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال الشهر",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال العام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال العام",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال يوم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال يوم",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال أسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال أسبوع",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال شهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال شهر",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر طوال السنة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "طوال السنة",
+        "Start": 7,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر ليوم كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم كامل",
+        "Start": 8,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة أسبوع كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع كامل",
+        "Start": 12,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة شهر كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كامل",
+        "Start": 12,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة عام كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام كامل",
+        "Start": 12,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر يوم كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم كامل",
+        "Start": 7,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادرلمدة أسبوع كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع كامل",
+        "Start": 11,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادرلمدة شهر كامل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كامل",
+        "Start": 11,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة سنة كاملة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سنة كاملة",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعة",
+        "Start": 12,
+        "Length": 4,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأترك لمدة عام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام",
+        "Start": 11,
+        "Length": 3,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "نصف سنة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف سنة",
+        "Start": 0,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "نصف عام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف عام",
+        "Start": 0,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأترك لمدة 3 دقائق",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 دقائق",
+        "Start": 11,
+        "Length": 7,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 30 دقيقة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "30 دقيقة",
+        "Start": 12,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة نصف ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف ساعة",
+        "Start": 12,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر مدة نصف ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف ساعة",
+        "Start": 11,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة ساعة ونصف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعة ونصف",
+        "Start": 12,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادرمدة ساعة ونصف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعة ونصف",
+        "Start": 10,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة نصف الساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نصف الساعة",
+        "Start": 12,
+        "Length": 10,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة ساعتين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعتين",
+        "Start": 12,
+        "Length": 6,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة ساعتين ونصف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعتين ونصف",
+        "Start": 12,
+        "Length": 11,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "في أسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع",
+        "Start": 3,
+        "Length": 5,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "في يوم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم",
+        "Start": 3,
+        "Length": 3,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "لمدة ساعة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ساعة",
+        "Start": 5,
+        "Length": 4,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "لمدة شهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر",
+        "Start": 5,
+        "Length": 3,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لبضع ساعات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بضع ساعات",
+        "Start": 8,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لبضع دقائق",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بضع دقائق",
+        "Start": 8,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل لبضعة أيام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بضعة أيام",
+        "Start": 7,
+        "Length": 9,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لعدة أيام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عدة أيام",
+        "Start": 8,
+        "Length": 8,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة عام واحد و شهر و 21 يوما",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام واحد و شهر و 21 يوما",
+        "Start": 12,
+        "Length": 24,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر لمدة 2 أيام و شهر واحد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 أيام و شهر واحد",
+        "Start": 12,
+        "Length": 17,
+        "Type": "duration"
+      }
+    ]
+  }
+]

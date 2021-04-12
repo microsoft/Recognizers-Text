@@ -47,7 +47,7 @@ DescRegex: !nestedRegex
   def: ({OclockRegex})
   references: [ OclockRegex ]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
@@ -1076,6 +1076,7 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\b(morgen|nachmittag|abend|nacht|tag)\b': '\b(gut(en?)?\s+(morgen|nachmittag|abend|nacht|tag))\b'
+    '^(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)$': '([$%£&!?@#])(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)|(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)([$%£&@#])'
 # As deciding between morgen (morning) and morgen (tomorrow) turns out to be rather difficult, we might want to ignore if for now
 #    '\bmorgen\b': '\b(morgen\s(morgen|nachmittag|abend|nacht|tag|früh))\b'
 # For TimeOfDay resolution

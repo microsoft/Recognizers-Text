@@ -19,6 +19,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
 	ProjectSection(SolutionItems) = preProject
 		..\Patterns\Arabic\Arabic-Choice.yaml = ..\Patterns\Arabic\Arabic-Choice.yaml
+		..\Patterns\Arabic\Arabic-DateTime.yaml = ..\Patterns\Arabic\Arabic-DateTime.yaml
 		..\Patterns\Arabic\Arabic-Numbers.yaml = ..\Patterns\Arabic\Arabic-Numbers.yaml
 		..\Patterns\Base-Currency.yaml = ..\Patterns\Base-Currency.yaml
 		..\Patterns\Base-DateTime.yaml = ..\Patterns\Base-DateTime.yaml
@@ -818,6 +819,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{21E1D26A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationTool", "..\Tools\src\ValidationTool\ValidationTool.csproj", "{28FE2836-58CE-48E6-B657-0A3A836AEC14}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arabic", "Arabic", "{E93CDEDA-0221-42F2-9408-896CE5FEE69D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Arabic\DateExtractor.json = ..\Specs\DateTime\Arabic\DateExtractor.json
+		..\Specs\DateTime\Arabic\DateParser.json = ..\Specs\DateTime\Arabic\DateParser.json
+		..\Specs\DateTime\Arabic\DatePeriodExtractor.json = ..\Specs\DateTime\Arabic\DatePeriodExtractor.json
+		..\Specs\DateTime\Arabic\DatePeriodParser.json = ..\Specs\DateTime\Arabic\DatePeriodParser.json
+		..\Specs\DateTime\Arabic\DateTimeExtractor.json = ..\Specs\DateTime\Arabic\DateTimeExtractor.json
+		..\Specs\DateTime\Arabic\DateTimeModel.json = ..\Specs\DateTime\Arabic\DateTimeModel.json
+		..\Specs\DateTime\Arabic\DateTimeParser.json = ..\Specs\DateTime\Arabic\DateTimeParser.json
+		..\Specs\DateTime\Arabic\DateTimePeriodExtractor.json = ..\Specs\DateTime\Arabic\DateTimePeriodExtractor.json
+		..\Specs\DateTime\Arabic\DateTimePeriodParser.json = ..\Specs\DateTime\Arabic\DateTimePeriodParser.json
+		..\Specs\DateTime\Arabic\DurationExtractor.json = ..\Specs\DateTime\Arabic\DurationExtractor.json
+		..\Specs\DateTime\Arabic\DurationParser.json = ..\Specs\DateTime\Arabic\DurationParser.json
+		..\Specs\DateTime\Arabic\HolidayExtractor.json = ..\Specs\DateTime\Arabic\HolidayExtractor.json
+		..\Specs\DateTime\Arabic\HolidayParser.json = ..\Specs\DateTime\Arabic\HolidayParser.json
+		..\Specs\DateTime\Arabic\MergedExtractor.json = ..\Specs\DateTime\Arabic\MergedExtractor.json
+		..\Specs\DateTime\Arabic\MergedParser.json = ..\Specs\DateTime\Arabic\MergedParser.json
+		..\Specs\DateTime\Arabic\SetExtractor.json = ..\Specs\DateTime\Arabic\SetExtractor.json
+		..\Specs\DateTime\Arabic\SetParser.json = ..\Specs\DateTime\Arabic\SetParser.json
+		..\Specs\DateTime\Arabic\TimeExtractor.json = ..\Specs\DateTime\Arabic\TimeExtractor.json
+		..\Specs\DateTime\Arabic\TimeParser.json = ..\Specs\DateTime\Arabic\TimeParser.json
+		..\Specs\DateTime\Arabic\TimePeriodExtractor.json = ..\Specs\DateTime\Arabic\TimePeriodExtractor.json
+		..\Specs\DateTime\Arabic\TimePeriodParser.json = ..\Specs\DateTime\Arabic\TimePeriodParser.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -971,6 +997,7 @@ Global
 		{2F41FB40-EA08-469A-A676-138F2E7C627E} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{2F41FB40-EA08-469A-A676-138F2E7C627F} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{28FE2836-58CE-48E6-B657-0A3A836AEC14} = {21E1D26A-635F-4965-A56E-20263D2A09FF}
+		{E93CDEDA-0221-42F2-9408-896CE5FEE69D} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

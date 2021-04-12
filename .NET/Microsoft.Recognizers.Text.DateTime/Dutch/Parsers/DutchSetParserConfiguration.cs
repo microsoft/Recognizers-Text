@@ -1,12 +1,33 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DayTypeRegex =
+            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekTypeRegex =
+            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+
+        private static readonly Regex BiWeekTypeRegex =
+            new Regex(DateTimeDefinitions.BiWeekTypeRegex, RegexFlags);
+
+        private static readonly Regex MonthTypeRegex =
+            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+
+        private static readonly Regex QuarterTypeRegex =
+            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
+
+        private static readonly Regex YearTypeRegex =
+            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+
         public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -81,28 +102,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             var trimmedText = text.Trim();
 
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedText.Equals("dagelijks", StringComparison.Ordinal))
+            if (DayTypeRegex.IsMatch(trimmedText))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("wekelijks", StringComparison.Ordinal))
+            else if (WeekTypeRegex.IsMatch(trimmedText))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("tweewekelijks", StringComparison.Ordinal))
+            else if (BiWeekTypeRegex.IsMatch(trimmedText))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("maandelijks", StringComparison.Ordinal))
+            else if (MonthTypeRegex.IsMatch(trimmedText))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("elk jaar", StringComparison.Ordinal) ||
-                     trimmedText.Equals("jaarlijks", StringComparison.Ordinal))
+            else if (YearTypeRegex.IsMatch(trimmedText))
             {
                 timex = "P1Y";
+            }
+            else if (QuarterTypeRegex.IsMatch(trimmedText))
+            {
+                timex = "P3M";
             }
             else
             {
@@ -115,33 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim();
-
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedText.Equals("dag", StringComparison.Ordinal))
-            {
-                timex = "P1D";
-            }
-            else if (trimmedText.Equals("week", StringComparison.Ordinal))
-            {
-                timex = "P1W";
-            }
-            else if (trimmedText.Equals("maand", StringComparison.Ordinal))
-            {
-                timex = "P1M";
-            }
-            else if (trimmedText.Equals("jaar", StringComparison.Ordinal))
-            {
-                timex = "P1Y";
-            }
-            else
-            {
-                timex = null;
-                return false;
-            }
-
-            return true;
+            return GetMatchedDailyTimex(text, out timex);
         }
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);

@@ -4858,5 +4858,55 @@
         "End": 7
       }
     ]
+  },
+  {
+    "Input": "25799‪,‪52",
+    "Comment": "The input contains special character \u202A (Left To Right Embedding) around the decimal separator",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "25799‪,‪52",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "25799.52"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "26،013‪,94",
+    "Comment": "The input contains special character \u202A (Left To Right Embedding) next to the decimal separator",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "26،013‪,94",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "26013.94"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12،220,13",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12،220,13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "12220.13"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
   }
 ]

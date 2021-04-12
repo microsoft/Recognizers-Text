@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             var culture = config.Culture;
             if (culture.IndexOf("*", StringComparison.Ordinal) != -1)
             {
-                culture = config.Culture.Replace("*", "ms");
+                culture = config.Culture.Replace("*", "sa");
             }
 
             this.CultureInfo = new CultureInfo(culture);

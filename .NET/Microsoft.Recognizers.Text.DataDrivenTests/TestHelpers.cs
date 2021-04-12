@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Arabic;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
@@ -165,6 +166,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetTurkishExtractor(extractorName);
                 case Culture.Hindi:
                     return GetHindiExtractor(extractorName);
+                case Culture.Arabic:
+                    return GetArabicExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
@@ -201,9 +204,79 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetTurkishParser(parserName);
                 case Culture.Hindi:
                     return GetHindiParser(parserName);
+                case Culture.Arabic:
+                    return GetArabicParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
+        }
+
+        public static IDateTimeExtractor GetArabicExtractor(DateTimeExtractors extractorName)
+        {
+            var config = new BaseDateTimeOptionsConfiguration(Culture.Arabic);
+            var previewConfig = new BaseDateTimeOptionsConfiguration(Culture.Arabic, DateTimeOptions.EnablePreview);
+            var skipConfig = new BaseDateTimeOptionsConfiguration(Culture.Arabic, DateTimeOptions.SkipFromToMerge);
+
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new ArabicDateExtractorConfiguration(config));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new ArabicTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new ArabicDatePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new ArabicTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new ArabicDateTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new ArabicDateTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new ArabicDurationExtractorConfiguration(config));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new ArabicHolidayExtractorConfiguration(config));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new ArabicSetExtractorConfiguration(config));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new ArabicMergedExtractorConfiguration(config));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new ArabicMergedExtractorConfiguration(skipConfig));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Arabic not supported");
+        }
+
+        public static IDateTimeParser GetArabicParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new ArabicCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Arabic));
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new ArabicDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Arabic.TimeParser(new ArabicTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new ArabicDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new ArabicTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new ArabicDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new ArabicDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new ArabicDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new ArabicHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new ArabicSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new ArabicMergedParserConfiguration(commonConfiguration));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Arabic not supported");
         }
 
         public static IDateTimeExtractor GetDutchExtractor(DateTimeExtractors extractorName)
