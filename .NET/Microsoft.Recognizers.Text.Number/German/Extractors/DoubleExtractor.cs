@@ -15,16 +15,17 @@ namespace Microsoft.Recognizers.Text.Number.German
         private static readonly ConcurrentDictionary<string, DoubleExtractor> Instances =
             new ConcurrentDictionary<string, DoubleExtractor>();
 
-        private DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        private DoubleExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
-            var regexes = new Dictionary<Regex, TypeTag>
+            this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder), RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(config.Placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder), RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(config.Placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -48,16 +49,14 @@ namespace Microsoft.Recognizers.Text.Number.German
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder, RegexFlags),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder, RegexFlags),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
-            };
-
-            Regexes = regexes.ToImmutableDictionary();
+            }.ToImmutableDictionary();
         }
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
@@ -65,15 +64,18 @@ namespace Microsoft.Recognizers.Text.Number.German
         // "Double";
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
 
-        public static DoubleExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        public static DoubleExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            if (!Instances.ContainsKey(placeholder))
+
+            var extractorKey = config.Placeholder;
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new DoubleExtractor(placeholder);
-                Instances.TryAdd(placeholder, instance);
+                var instance = new DoubleExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[extractorKey];
         }
     }
 }

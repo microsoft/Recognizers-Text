@@ -243,7 +243,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.French, options))),
-                    new French.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.English, options))));
+                    new French.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.French, options))));
 
             RegisterModel<NumberRangeModel>(
                 Culture.French,
@@ -257,30 +257,28 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.German, options))),
-                    German.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+                    German.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.German, options, NumberMode.PureNumber))));
 
             RegisterModel<OrdinalModel>(
                 Culture.German,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new GermanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.German, options))),
-                    German.OrdinalExtractor.GetInstance()));
+                    German.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.German, options))));
 
             RegisterModel<PercentModel>(
                 Culture.German,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.German, options))),
-                    new German.PercentageExtractor()));
+                    new German.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.German, options))));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.German,
                 (options) => new NumberRangeModel(
                     new BaseNumberRangeParser(new GermanNumberRangeParserConfiguration(
-                                      new BaseNumberOptionsConfiguration(Culture.German, options))),
+                                                  new BaseNumberOptionsConfiguration(Culture.German, options))),
                     new German.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.German, options))));
-            */
 
             RegisterModel<NumberModel>(
                Culture.Italian,

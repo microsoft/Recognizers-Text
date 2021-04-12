@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -106,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var endWithGeneralEndings = this.config.GeneralEndingRegex.Match(afterStr).Success;
                             var endWithAmPm = match.Groups[Constants.RightAmPmGroupName].Success;
 
-                            if (endWithGeneralEndings || endWithAmPm || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
+                            if (endWithGeneralEndings || endWithAmPm || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate, StringComparison.Ordinal))
                             {
                                 endWithValidToken = true;
                             }
