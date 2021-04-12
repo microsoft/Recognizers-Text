@@ -4,6 +4,13 @@
 		"NotSupportedByDesign": "javascript, python, java",
 		"Results": [
 			{
+				"Text": "“number”",
+				"TypeName": "quotedText",
+				"Resolution": {
+					"value": "“number”"
+				}
+			},
+			{
 				"Text": "`123`",
 				"TypeName": "quotedText",
 				"Resolution": {
@@ -15,13 +22,6 @@
 				"TypeName": "quotedText",
 				"Resolution": {
 					"value": "`456`"
-				}
-			},
-			{
-				"Text": "“number”",
-				"TypeName": "quotedText",
-				"Resolution": {
-					"value": "“number”"
 				}
 			}
 		]
@@ -31,6 +31,13 @@
 		"NotSupportedByDesign": "javascript, python, java",
 		"Results": [
 			{
+				"Text": "“number is `123` or `456`”",
+				"TypeName": "quotedText",
+				"Resolution": {
+					"value": "“number is `123` or `456`”"
+				}
+			},
+			{
 				"Text": "`123`",
 				"TypeName": "quotedText",
 				"Resolution": {
@@ -42,13 +49,6 @@
 				"TypeName": "quotedText",
 				"Resolution": {
 					"value": "`456`"
-				}
-			},
-			{
-				"Text": "“number is `123` or `456`”",
-				"TypeName": "quotedText",
-				"Resolution": {
-					"value": "“number is `123` or `456`”"
 				}
 			}
 		]
