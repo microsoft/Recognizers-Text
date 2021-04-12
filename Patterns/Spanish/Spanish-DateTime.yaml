@@ -1012,6 +1012,7 @@ AmbiguityFiltersDict: !dictionary
     '^a[nñ]o$': '(?<!el\s+)a[nñ]o'
     '^semana$': '(?<!la\s+)semana'
     '^mes$': '(?<!el\s+)mes'
+    '^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$': '([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ]

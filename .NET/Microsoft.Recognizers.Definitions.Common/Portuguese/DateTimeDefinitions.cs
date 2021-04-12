@@ -527,7 +527,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string[] DurationDateRestrictions = {  };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"null", @"null" }
+            { @"^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", @"([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])" }
         };
       public static readonly IList<string> EarlyMorningTermList = new List<string>
         {

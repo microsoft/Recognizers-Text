@@ -607,7 +607,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"^mi$", @"\bmi\b" },
             { @"^a[nñ]o$", @"(?<!el\s+)a[nñ]o" },
             { @"^semana$", @"(?<!la\s+)semana" },
-            { @"^mes$", @"(?<!el\s+)mes" }
+            { @"^mes$", @"(?<!el\s+)mes" },
+            { @"^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", @"([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])" }
         };
       public static readonly IList<string> EarlyMorningTermList = new List<string>
         {

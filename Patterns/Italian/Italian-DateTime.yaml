@@ -1019,6 +1019,7 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bgiorno|pomeriggio|sera|notte\b': '\b(buona?\s*(giorno|pomeriggio|sera|notte))\b'
+    '^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$': '([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
