@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -281,7 +282,7 @@ public class TimexUtility {
         return timex1 + Constants.CompositeTimexDelimiter + timex2;
     }
 
-    public static Map<String, Object> processDoubleTimex(Map<String, Object> resolutionDic, String futureKey, String pastKey, String originTimex) {
+    public static LinkedHashMap<String, Object> processDoubleTimex(LinkedHashMap<String, Object> resolutionDic, String futureKey, String pastKey, String originTimex) {
         String[] timexes = originTimex.split(Constants.CompositeTimexSplit);
 
         if (!resolutionDic.containsKey(futureKey) || !resolutionDic.containsKey(pastKey) || timexes.length != 2) {
