@@ -385,7 +385,7 @@ TimeRegex10: !simpleRegex
   def: (a\s+la|al)\s+(madrugada|mañana|tarde|noche)
 TimeRegex11: !nestedRegex
   # (tres menos veinte) (pm)?
-  def: \b({WrittenTimeRegex}|({HourNumRegex}|{BaseDateTime.HourRegex}(?!\d))\s*{LessThanOneHour})(\s+{DescRegex})?\b
+  def: \b({WrittenTimeRegex}|(?<!entre\s)({HourNumRegex}|{BaseDateTime.HourRegex}(?!\d))\s*{LessThanOneHour})(\s+{DescRegex})?\b
   references: [ WrittenTimeRegex, DescRegex, HourNumRegex, BaseDateTime.HourRegex, LessThanOneHour ]
 TimeRegex12: !nestedRegex
   # (tres min pasadas las)? 3h00 (pm)?

@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string TimeRegex8 = $@"\b{SpecialDescRegex}\s+{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex9 = $@"\b(?<writtentime>{HourNumRegex}\s+{MinuteNumRegex})\b";
       public const string TimeRegex10 = @"(a\s+la|al)\s+(madrugada|mañana|tarde|noche)";
-      public static readonly string TimeRegex11 = $@"\b({WrittenTimeRegex}|({HourNumRegex}|{BaseDateTime.HourRegex}(?!\d))\s*{LessThanOneHour})(\s+{DescRegex})?\b";
+      public static readonly string TimeRegex11 = $@"\b({WrittenTimeRegex}|(?<!entre\s)({HourNumRegex}|{BaseDateTime.HourRegex}(?!\d))\s*{LessThanOneHour})(\s+{DescRegex})?\b";
       public static readonly string TimeRegex12 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
       public const string PrepositionRegex = @"(?<prep>^(,\s*)?(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)";
       public const string LaterEarlyRegex = @"((?<early>temprano)|(?<late>fin(al)?(\s+de)?|m[aá]s\s+tarde))";
