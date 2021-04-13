@@ -3411,5 +3411,73 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je reviendrai 9h le Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9h le mardi",
+        "Start": 14,
+        "End": 24,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-01 09:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T21",
+              "type": "datetime",
+              "value": "2016-11-01 21:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T21",
+              "type": "datetime",
+              "value": "2016-11-08 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 9h le 13 décembre 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9h le 13 décembre 2018",
+        "Start": 14,
+        "End": 35,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12-13T09",
+              "type": "datetime",
+              "value": "2018-12-13 09:00:00"
+            },
+            {
+              "timex": "2018-12-13T21",
+              "type": "datetime",
+              "value": "2018-12-13 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

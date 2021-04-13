@@ -19916,5 +19916,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back 9am on Tuesday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9am on tuesday",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-01 09:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
