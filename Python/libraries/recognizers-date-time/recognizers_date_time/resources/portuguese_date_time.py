@@ -28,7 +28,7 @@ class PortugueseDateTime:
     OfPrepositionRegex = f'(\\bd(o|a|e)s?\\b)'
     AfterNextSuffixRegex = f'\\b(que\\s+vem|passad[oa])\\b'
     RangePrefixRegex = f'((de(sde)?|das?|entre)\\s+(a(s)?\\s+)?)'
-    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
+    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     RelativeRegex = f'(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b'
     StrictRelativeRegex = f'(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b'
     WrittenOneToNineRegex = f'(uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove)'
@@ -476,7 +476,7 @@ class PortugueseDateTime:
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
-    AmbiguityFiltersDict = dict([("null", "null")])
+    AmbiguityFiltersDict = dict([("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")])
     EarlyMorningTermList = [r'madrugada']
     MorningTermList = [r'manha', r'manhã']
     AfternoonTermList = [r'passado o meio dia', r'depois do meio dia']

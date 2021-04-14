@@ -362,6 +362,9 @@
     <Rule Id="CA1308" Action="None" /> <!-- Disabling ToUpper warning -->
 	<Rule Id="CA1062" Action="None" /> <!-- Disabling Check null warning -->
 	<Rule Id="CA1303" Action="None" /> <!-- Disabling Log hardcoded string warning -->
+	<Rule Id="CA1031" Action="None" /> <!-- Disabling suggestion of catching more specific exceptions -->
+	<Rule Id="CA1720" Action="None" /> <!-- Disabling Identifier contains type name -->
+	<Rule Id="CA1822" Action="None" /> <!-- Disabling Member does not access instance data and can be marked as static -->
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA0001" Action="Error" />
@@ -453,7 +456,7 @@
     <Rule Id="SA1302" Action="Error" />
     <Rule Id="SA1303" Action="Error" />
     <Rule Id="SA1304" Action="Error" />
-    <Rule Id="SA1305" Action="Error" />
+    <Rule Id="SA1305" Action="None" />
     <Rule Id="SA1306" Action="Error" />
     <Rule Id="SA1307" Action="Error" />
     <Rule Id="SA1308" Action="Error" />

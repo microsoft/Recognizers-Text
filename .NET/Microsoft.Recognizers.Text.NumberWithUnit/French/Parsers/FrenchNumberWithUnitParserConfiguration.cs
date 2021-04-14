@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
             var numConfig = new BaseNumberOptionsConfiguration(Culture.French, NumberOptions.None);
 
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new FrenchNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

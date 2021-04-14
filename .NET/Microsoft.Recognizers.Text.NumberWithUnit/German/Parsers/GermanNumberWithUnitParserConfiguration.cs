@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 
             var numConfig = new BaseNumberOptionsConfiguration(Culture.German, NumberOptions.None);
 
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new GermanNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

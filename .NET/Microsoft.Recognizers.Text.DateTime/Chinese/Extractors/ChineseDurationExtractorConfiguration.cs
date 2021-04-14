@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
-using Microsoft.Recognizers.Text.Utilities;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -35,7 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly Regex DurationConnectorRegex = new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
 
-        private static readonly Dictionary<string, string> UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLower());
+        private static readonly Dictionary<string, string> UnitMap =
+            DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLowerInvariant());
 
         private static readonly Dictionary<string, long> UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
 

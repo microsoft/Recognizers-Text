@@ -1125,5 +1125,49 @@
         }
       }
     ]
+  },
+  {
+    "Input": "james t. kirk",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "50 meters per millisecond, 50 centimeters/millisecond, and 50 km/ms all use non-standard units.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "50 meters per millisecond",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Meter per millisecond",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "50 centimeters/millisecond",
+        "Start": 27,
+        "End": 52,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Centimeter per millisecond",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "50 km/ms",
+        "Start": 59,
+        "End": 66,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Speed",
+          "unit": "Kilometer per millisecond",
+          "value": "50"
+        }
+      }
+    ]
   }
 ]

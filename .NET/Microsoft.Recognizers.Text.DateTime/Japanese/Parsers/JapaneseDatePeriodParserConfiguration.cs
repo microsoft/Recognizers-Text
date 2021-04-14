@@ -262,7 +262,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var yearStr = match.Groups["year"].Value;
                 if (!string.IsNullOrEmpty(yearStr))
                 {
-                    year = int.Parse(yearStr);
+                    year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= this.config.TwoNumYear)
                     {
                         year += 1900;
@@ -381,8 +381,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     var yearFrom = yearMatch[0].Groups["year"].Value;
                     var yearTo = yearMatch[1].Groups["year"].Value;
-                    beginYear = int.Parse(yearFrom);
-                    endYear = int.Parse(yearTo);
+                    beginYear = int.Parse(yearFrom, CultureInfo.InvariantCulture);
+                    endYear = int.Parse(yearTo, CultureInfo.InvariantCulture);
                 }
                 else if (yearInJapaneseMatch.Count == 2)
                 {
@@ -397,7 +397,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         var yearFrom = yearMatch[0].Groups["year"].Value;
                         var yearTo = yearInJapaneseMatch[0].Groups["yearch"].Value;
-                        beginYear = int.Parse(yearFrom);
+                        beginYear = int.Parse(yearFrom, CultureInfo.InvariantCulture);
                         endYear = ConvertJapaneseToInteger(yearTo);
                     }
                     else
@@ -405,7 +405,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         var yearFrom = yearInJapaneseMatch[0].Groups["yearch"].Value;
                         var yearTo = yearMatch[0].Groups["year"].Value;
                         beginYear = ConvertJapaneseToInteger(yearFrom);
-                        endYear = int.Parse(yearTo);
+                        endYear = int.Parse(yearTo, CultureInfo.InvariantCulture);
                     }
                 }
 
@@ -666,7 +666,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 // @TODO move hardcoded values to resource file
 
-                if (trimmedText.Equals("今年"))
+                if (trimmedText.Equals("今年", StringComparison.Ordinal))
                 {
                     ret.Timex = referenceDate.Year.ToString("D4", CultureInfo.InvariantCulture);
                     ret.FutureValue =
@@ -684,15 +684,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     var swift = -10;
 
-                    if (trimmedText.StartsWith("来年") || trimmedText.StartsWith("先年"))
+                    if (trimmedText.StartsWith("来年", StringComparison.Ordinal) || trimmedText.StartsWith("先年", StringComparison.Ordinal))
                     {
                         swift = 1;
                     }
-                    else if (trimmedText.StartsWith("前年"))
+                    else if (trimmedText.StartsWith("前年", StringComparison.Ordinal))
                     {
                         swift = -1;
                     }
-                    else if (trimmedText.StartsWith("今年"))
+                    else if (trimmedText.StartsWith("今年", StringComparison.Ordinal))
                     {
                         swift = 0;
                     }
@@ -731,7 +731,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         swift = -1;
                     }
 
-                    if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
+                    if (trimmedText.EndsWith("周", StringComparison.Ordinal) | trimmedText.EndsWith("星期", StringComparison.Ordinal))
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
@@ -744,7 +744,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    if (trimmedText.EndsWith("周末"))
+                    if (trimmedText.EndsWith("周末", StringComparison.Ordinal))
                     {
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
@@ -761,29 +761,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    if (trimmedText.EndsWith("月"))
+                    if (trimmedText.EndsWith("月", StringComparison.Ordinal))
                     {
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
                         ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-" + month.ToString("D2", CultureInfo.InvariantCulture);
                         futureYear = pastYear = year;
                     }
-                    else if (trimmedText.EndsWith("年"))
+                    else if (trimmedText.EndsWith("年", StringComparison.Ordinal))
                     {
                         year = referenceDate.AddYears(swift).Year;
-                        if (trimmedText.EndsWith("前年") || trimmedText.EndsWith("先年"))
+                        if (trimmedText.EndsWith("前年", StringComparison.Ordinal) || trimmedText.EndsWith("先年", StringComparison.Ordinal))
                         {
                             year--;
                         }
-                        else if (trimmedText.EndsWith("来年"))
+                        else if (trimmedText.EndsWith("来年", StringComparison.Ordinal))
                         {
                             year++;
                         }
-                        else if (trimmedText.EndsWith("前年"))
+                        else if (trimmedText.EndsWith("前年", StringComparison.Ordinal))
                         {
                             year -= 2;
                         }
-                        else if (trimmedText.EndsWith("后年"))
+                        else if (trimmedText.EndsWith("后年", StringComparison.Ordinal))
                         {
                             year += 2;
                         }
@@ -829,7 +829,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var tmp = match.Value;
 
                 // Trim() to handle extra whitespaces like '07 年'
-                if (tmp.EndsWith("年"))
+                if (tmp.EndsWith("年", StringComparison.Ordinal))
                 {
                     tmp = tmp.Substring(0, tmp.Length - 1).Trim();
                 }
@@ -870,7 +870,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success)
             {
                 var tmp = match.Value;
-                if (tmp.EndsWith("年"))
+                if (tmp.EndsWith("年", StringComparison.Ordinal))
                 {
                     tmp = tmp.Substring(0, tmp.Length - 1);
                 }
@@ -955,7 +955,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
+                futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
+                futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
                 // Handle cases like "Feb 28th - March 1st".
                 // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
@@ -1179,7 +1181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals("最后一"))
+            if (cardinalStr.Equals("最后一", StringComparison.Ordinal))
             {
                 cardinal = 5;
             }
@@ -1192,11 +1194,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith("下个"))
+                if (trimmedText.StartsWith("下个", StringComparison.Ordinal))
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith("上个"))
+                else if (trimmedText.StartsWith("上个", StringComparison.Ordinal))
                 {
                     swift = -1;
                 }
@@ -1261,17 +1263,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 if (!string.IsNullOrEmpty(yearNum))
                 {
                     hasYear = true;
-                    if (yearNum.EndsWith("年"))
+                    if (yearNum.EndsWith("年", StringComparison.Ordinal))
                     {
                         yearNum = yearNum.Substring(0, yearNum.Length - 1);
                     }
 
-                    year = int.Parse(yearNum);
+                    year = int.Parse(yearNum, CultureInfo.InvariantCulture);
                 }
                 else if (!string.IsNullOrEmpty(yearJap))
                 {
                     hasYear = true;
-                    if (yearJap.EndsWith("年"))
+                    if (yearJap.EndsWith("年", StringComparison.Ordinal))
                     {
                         yearJap = yearJap.Substring(0, yearJap.Length - 1);
                     }
@@ -1281,11 +1283,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 else if (!string.IsNullOrEmpty(yearRel))
                 {
                     hasYear = true;
-                    if (yearRel.EndsWith("前年") || yearRel.EndsWith("先年"))
+                    if (yearRel.EndsWith("前年", StringComparison.Ordinal) || yearRel.EndsWith("先年", StringComparison.Ordinal))
                     {
                         year--;
                     }
-                    else if (yearRel.EndsWith("来年"))
+                    else if (yearRel.EndsWith("来年", StringComparison.Ordinal))
                     {
                         year++;
                     }

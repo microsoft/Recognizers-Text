@@ -33,7 +33,7 @@ class SpanishDateTime:
     PreviousSuffixRegex = f'\\b(pasad[ao]|anterior(?!\\s+(al?|del?)\\b))\\b'
     RelativeSuffixRegex = f'({AfterNextSuffixRegex}|{NextSuffixRegex}|{PreviousSuffixRegex})'
     RangePrefixRegex = f'((de(l|sde)?|entre)(\\s+la(s)?)?)'
-    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b'
+    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b'
     RelativeRegex = f'(?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\\b'
     StrictRelativeRegex = f'(?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\\b'
     WrittenOneToNineRegex = f'(un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)'
@@ -556,7 +556,8 @@ class SpanishDateTime:
     AmbiguityFiltersDict = dict([("^mi$", "\\bmi\\b"),
                                  ("^a[nñ]o$", "(?<!el\\s+)a[nñ]o"),
                                  ("^semana$", "(?<!la\\s+)semana"),
-                                 ("^mes$", "(?<!el\\s+)mes")])
+                                 ("^mes$", "(?<!el\\s+)mes"),
+                                 ("^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])")])
     EarlyMorningTermList = [r'madrugada']
     MorningTermList = [r'mañana', r'la mañana']
     AfternoonTermList = [r'pasado mediodia', r'pasado el mediodia', r'pasado mediodía', r'pasado el mediodía', r'pasado medio dia', r'pasado el medio dia', r'pasado medio día', r'pasado el medio día']

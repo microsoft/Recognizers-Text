@@ -27,7 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IDateTimeExtractor DurationExtractor = new ChineseDurationExtractorConfiguration(false);
 
-        private static readonly Dictionary<string, string> UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLower());
+        private static readonly Dictionary<string, string> UnitMap =
+            DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLowerInvariant());
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -59,8 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var unitStr = unitResult.Unit;
                 var numStr = unitResult.Number;
 
-                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(double.Parse(numStr), unitStr, BaseDurationParser.IsLessThanDay(unitStr));
-                dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
+                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(double.Parse(numStr, CultureInfo.InvariantCulture), unitStr, BaseDurationParser.IsLessThanDay(unitStr));
+                dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr, CultureInfo.InvariantCulture) * UnitValueMap[unitStr];
                 dateTimeParseResult.Success = true;
             }
 

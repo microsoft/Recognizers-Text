@@ -172,12 +172,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var match = regex.Match(text);
             bool isMatchAtEdge = inPrefix ?
-                                 text.Trim().EndsWith(match.Value.Trim()) :
-                                 text.Trim().StartsWith(match.Value.Trim());
+                                 text.Trim().EndsWith(match.Value.Trim(), StringComparison.Ordinal) :
+                                 text.Trim().StartsWith(match.Value.Trim(), StringComparison.Ordinal);
 
             if (match.Success && isMatchAtEdge)
             {
-                var startIndex = inPrefix ? text.LastIndexOf(match.Value) : (int)er.Start;
+                var startIndex = inPrefix ? text.LastIndexOf(match.Value, StringComparison.Ordinal) : (int)er.Start;
                 var endIndex = (int)er.Start + (int)er.Length;
                 endIndex += inPrefix ? 0 : match.Index + match.Length;
 

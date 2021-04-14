@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
@@ -404,7 +405,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals(this.config.LastWeekDayToken))
+            if (cardinalStr.Equals(this.config.LastWeekDayToken, StringComparison.Ordinal))
             {
                 cardinal = 5;
             }
@@ -418,11 +419,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith(this.config.NextMonthToken))
+                if (trimmedText.StartsWith(this.config.NextMonthToken, StringComparison.Ordinal))
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith(this.config.LastMonthToken))
+                else if (trimmedText.StartsWith(this.config.LastMonthToken, StringComparison.Ordinal))
                 {
                     swift = -1;
                 }
@@ -492,7 +493,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 month = this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
                 if (!string.IsNullOrEmpty(yearStr))
                 {
-                    year = int.Parse(yearStr);
+                    year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
@@ -577,7 +578,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         unitStr = this.config.UnitMap[srcUnit];
 
                         var beforeMatch = JapaneseDateExtractorConfiguration.BeforeRegex.Match(suffix);
-                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -605,7 +606,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         }
 
                         var afterMatch = JapaneseDateExtractorConfiguration.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
                             DateObject date;
                             switch (unitStr)

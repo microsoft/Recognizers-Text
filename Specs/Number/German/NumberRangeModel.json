@@ -1,0 +1,62 @@
+[
+  {
+    "Input": "1995-01",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "weniger als 5 Verkäufe beim letzten Mal.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "weniger als 5",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5)"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Verkauft für weniger als 100 $",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "weniger als 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100)"
+        },
+        "Start": 13,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Auflage unter 5 Exemplaren",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "unter 5",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5)"
+        },
+        "Start": 8,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "+1-222-2222/2222 ist eine Telefonnummer.",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "+1-222-2222-2222 ist eine Telefonnummer.",
+    "NotSupported": "javascript, python",
+    "Results": []
+  }
+]

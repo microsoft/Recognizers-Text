@@ -52,6 +52,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Square yard", @"sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²" },
             { @"Acre", @"-acre|acre|acres" }
         };
+      public static readonly IList<string> AmbiguousAreaUnitList = new List<string>
+        {
+            @"n/a"
+        };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             { @"Abkhazian apsar", @"abkhazian apsar|apsars" },
@@ -762,7 +766,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Foot per second", @"ft/s|foot/s|feet/s|foot per second|feet per second|fps" },
             { @"Foot per minute", @"ft/min|foot/min|feet/min|foot per minute|feet per minute" },
             { @"Yard per minute", @"yards per minute|yard per minute|yards / minute|yards/min|yard/min" },
-            { @"Yard per second", @"yards per second|yard per second|yards / second|yards/s|yard/s" }
+            { @"Yard per second", @"yards per second|yard per second|yards / second|yards/s|yard/s" },
+            { @"Meter per millisecond", @"meter/millisecond|meters/millisecond|meter / millisecond|meters / millisecond|meter per millisecond|meters per millisecond|m/ms" },
+            { @"Centimeter per millisecond", @"centimeter/millisecond|centimeters/millisecond|centimeter / millisecond|centimeters / millisecond|centimeter per millisecond|centimeters per millisecond|cm/ms" },
+            { @"Kilometer per millisecond", @"kilometer/millisecond|kilometers/millisecond|kilometer / millisecond|kilometers / millisecond|kilometer per millisecond|kilometers per millisecond|km/ms" }
         };
       public static readonly IList<string> AmbiguousSpeedUnitList = new List<string>
         {
@@ -834,7 +841,11 @@ namespace Microsoft.Recognizers.Definitions.English
             @"tbl",
             @"quart",
             @"quarts",
-            @"pinch"
+            @"pinch",
+            @"t.",
+            @"T.",
+            @"Tb.",
+            @"ts."
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {

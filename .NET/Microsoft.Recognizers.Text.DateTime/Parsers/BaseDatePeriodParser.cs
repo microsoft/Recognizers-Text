@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (isBusinessDay)
             {
-                businessDayCount = int.Parse(timex.Substring(1, timex.Length - 3));
+                businessDayCount = int.Parse(timex.Substring(1, timex.Length - 3), CultureInfo.InvariantCulture);
             }
 
             if (future)
@@ -1186,7 +1186,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (!string.IsNullOrEmpty(match.Groups["FourDigitYear"].Value))
                     {
                         var date = referenceDate.AddYears(swift);
-                        year = int.Parse(match.Groups["FourDigitYear"].Value);
+                        year = int.Parse(match.Groups["FourDigitYear"].Value, CultureInfo.InvariantCulture);
 
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                         var endDate = inclusiveEndPeriod ?
@@ -1546,7 +1546,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
+                futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
+                futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
                 // Handle cases like "Feb 28th - March 1st".
                 // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
@@ -1899,7 +1901,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int halfNum;
             if (!string.IsNullOrEmpty(numberStr))
             {
-                halfNum = int.Parse(numberStr);
+                halfNum = int.Parse(numberStr, CultureInfo.InvariantCulture);
             }
             else
             {
@@ -1954,7 +1956,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int quarterNum;
             if (!string.IsNullOrEmpty(numberStr))
             {
-                quarterNum = int.Parse(numberStr);
+                quarterNum = int.Parse(numberStr, CultureInfo.InvariantCulture);
             }
             else if (!string.IsNullOrEmpty(orderQuarterStr))
             {

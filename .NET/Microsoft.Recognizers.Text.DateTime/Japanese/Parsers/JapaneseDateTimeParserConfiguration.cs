@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Japanese;
@@ -51,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             EqualRegex = JapaneseMergedExtractorConfiguration.EqualRegex;
         }
 
-        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
+        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear, CultureInfo.InvariantCulture);
 
         public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
 
