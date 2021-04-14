@@ -13304,5 +13304,32 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Tune in tomorrow, 13/04/21, at 7 PM CET for episode 3 of Decentralized",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow, 13/04/21, at 7 pm cet",
+        "Start": 8,
+        "End": 38,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-13T19",
+              "type": "datetime",
+              "timezone": "UTC+01:00",
+              "timezoneText": "cet",
+              "utcOffsetMins": "60",
+              "value": "2021-04-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
