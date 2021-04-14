@@ -168,8 +168,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Spanish.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Spanish.CurrencyParserConfiguration())
                     },
                 }));
 
@@ -208,8 +208,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Portuguese.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Portuguese.CurrencyParserConfiguration())
                     },
                 }));
 

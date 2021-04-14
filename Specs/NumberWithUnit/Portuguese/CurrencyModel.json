@@ -1533,5 +1533,37 @@
         "End": 21
       }
     ]
+  },
+  {
+    "Input": "custou apenas 15 dólares e 15 centavos.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dólares e 15 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dólar"
+        },
+        "Start": 14,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "custou apenas treze euros e quarenta e cinco centavos.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "treze euros e quarenta e cinco centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13,45",
+          "unit": "Euro"
+        },
+        "Start": 14,
+        "End": 52
+      }
+    ]
   }
 ]
