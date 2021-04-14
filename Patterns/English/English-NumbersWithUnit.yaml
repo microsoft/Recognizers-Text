@@ -857,6 +857,10 @@ SpeedSuffixList: !dictionary
     Foot per minute: ft/min|foot/min|feet/min|foot per minute|feet per minute
     Yard per minute: yards per minute|yard per minute|yards / minute|yards/min|yard/min
     Yard per second: yards per second|yard per second|yards / second|yards/s|yard/s
+#Non-standard units
+    Meter per millisecond: meter/millisecond|meters/millisecond|meter / millisecond|meters / millisecond|meter per millisecond|meters per millisecond|m/ms
+    Centimeter per millisecond: centimeter/millisecond|centimeters/millisecond|centimeter / millisecond|centimeters / millisecond|centimeter per millisecond|centimeters per millisecond|cm/ms
+    Kilometer per millisecond: kilometer/millisecond|kilometers/millisecond|kilometer / millisecond|kilometers / millisecond|kilometer per millisecond|kilometers per millisecond|km/ms
 AmbiguousSpeedUnitList: !list
   types: [ string ]
   entries:
