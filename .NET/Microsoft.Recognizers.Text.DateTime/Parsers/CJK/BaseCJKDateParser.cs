@@ -498,7 +498,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var yearChsStr = match.Groups["yearchs"].Value;
             int month = 0, day = 0, year = 0;
 
-            var tmp = ConvertChineseYearToInteger(yearChsStr);
+            var tmp = ConvertCJKYearToInteger(yearChsStr);
             year = tmp == -1 ? 0 : tmp;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
@@ -699,7 +699,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // convert Chinese Year to Integer
-        private int ConvertChineseYearToInteger(string yearChsStr)
+        private int ConvertCJKYearToInteger(string yearChsStr)
         {
             var year = 0;
             var num = 0;

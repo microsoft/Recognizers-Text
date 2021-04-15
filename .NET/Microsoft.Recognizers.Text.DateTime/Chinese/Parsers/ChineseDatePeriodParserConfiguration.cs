@@ -14,8 +14,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodParserConfiguration
     {
-                futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
-                futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
 
@@ -38,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             YearToYear = ChineseDatePeriodExtractorConfiguration.YearToYear;
             YearToYearSuffixRequired = ChineseDatePeriodExtractorConfiguration.YearToYearSuffixRequired;
             YearRegex = ChineseDatePeriodExtractorConfiguration.YearRegex;
-            YearInChineseRegex = ChineseDatePeriodExtractorConfiguration.YearInChineseRegex;
+            YearInCJKRegex = ChineseDatePeriodExtractorConfiguration.YearInChineseRegex;
             MonthToMonth = ChineseDatePeriodExtractorConfiguration.MonthToMonth;
             MonthToMonthSuffixRequired = ChineseDatePeriodExtractorConfiguration.MonthToMonthSuffixRequired;
             MonthRegex = ChineseDatePeriodExtractorConfiguration.MonthRegex;
@@ -85,6 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public string DynastyStartYear { get; }
 
+        public string TokenBeforeDate => string.Empty;
+
         public Regex DynastyYearRegex { get; }
 
         public Regex SimpleCasesRegex { get; }
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex RelativeRegex { get; }
 
-        public Regex YearInChineseRegex { get; }
+        public Regex YearInCJKRegex { get; }
 
         public Regex MonthToMonth { get; }
 

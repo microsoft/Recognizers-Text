@@ -29,6 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string DynastyStartYear { get; }
 
+        string TokenBeforeDate { get; }
+
         int TwoNumYear { get; }
 
         Regex SimpleCasesRegex { get; }
@@ -49,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearToYearSuffixRequired { get; }
 
-        Regex YearInChineseRegex { get; }
+        Regex YearInCJKRegex { get; }
 
         Regex MonthToMonth { get; }
 

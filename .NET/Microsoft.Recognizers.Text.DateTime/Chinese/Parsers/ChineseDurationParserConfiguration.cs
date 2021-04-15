@@ -12,7 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public ChineseDurationParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)
-            DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLowerInvariant());
         {
             InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
 

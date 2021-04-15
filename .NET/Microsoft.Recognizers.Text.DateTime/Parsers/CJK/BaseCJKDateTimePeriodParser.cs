@@ -21,39 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
-        public static string BuildTimex(TimeResult timeResult)
-        {
-            var build = new StringBuilder("T");
-            if (timeResult.Hour >= 0)
-            {
-                build.Append(timeResult.Hour.ToString("D2", CultureInfo.InvariantCulture));
-            }
-
-            if (timeResult.Minute >= 0)
-            {
-                build.Append(":" + timeResult.Minute.ToString("D2", CultureInfo.InvariantCulture));
-            }
-
-            if (timeResult.Second >= 0)
-            {
-                build.Append(":" + timeResult.Second.ToString("D2", CultureInfo.InvariantCulture));
-            }
-
-            return build.ToString();
-        }
-
-        public static TimeResult DateObject2TimeResult(DateObject dateTime)
-        {
-            var timeResult = new TimeResult
-            {
-                Hour = dateTime.Hour,
-                Minute = dateTime.Minute,
-                Second = dateTime.Second,
-            };
-
-            return timeResult;
-        }
-
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);

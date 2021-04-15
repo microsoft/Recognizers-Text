@@ -29,7 +29,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-            DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLowerInvariant());
         private readonly bool merge;
 
         public ChineseDurationExtractorConfiguration(IDateTimeOptionsConfiguration config, bool merge = true)

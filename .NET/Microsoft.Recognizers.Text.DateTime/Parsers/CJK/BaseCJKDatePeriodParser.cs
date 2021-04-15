@@ -196,6 +196,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
+        // @TODO use the method defined in AbstractYearExtractor
         public int GetYearFromText(Match match)
         {
             int year = Constants.InvalidYear;
@@ -208,11 +209,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                 if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                 {
-                    year += 1900;
+                    year += Constants.BASE_YEAR_PAST_CENTURY;
                 }
                 else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                 {
-                    year += 2000;
+                    year += Constants.BASE_YEAR_CURRENT_CENTURY;
                 }
             }
             else
@@ -273,11 +274,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                         {
-                            year += 1900;
+                            year += Constants.BASE_YEAR_PAST_CENTURY;
                         }
                         else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                         {
-                            year += 2000;
+                            year += Constants.BASE_YEAR_CURRENT_CENTURY;
                         }
                     }
                 }
@@ -286,25 +287,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return year;
         }
 
-        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
-        {
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek)weekday);
-            if (weekday == 0)
-            {
-                weekday = 7;
-            }
-
-            if (weekday < (int)firstDay.DayOfWeek)
-            {
-                firstWeekday = firstDay.Next((DayOfWeek)weekday);
-            }
-
-            return firstWeekday.AddDays(7 * (cardinal - 1));
-        }
-
-        // convert Chinese Number to Integer
-        private int ConvertChineseToNum(string numStr)
+        // convert CJK Number to Integer
+        private int ConvertCJKToNum(string numStr)
         {
             var num = -1;
             var er = this.config.IntegerExtractor.Extract(numStr);
@@ -319,13 +303,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return num;
         }
 
-        // convert Chinese Year to Integer
-        private int ConvertChineseToInteger(string yearChsStr)
+        // convert CJK Year to Integer
+        private int ConvertCJKToInteger(string yearCJKStr)
         {
             var year = 0;
             var num = 0;
 
-            int dynastyYear = DateTimeFormatUtil.ParseChineseDynastyYear(yearChsStr,
+            int dynastyYear = DateTimeFormatUtil.ParseChineseDynastyYear(yearCJKStr,
                                                                          this.config.DynastyYearRegex,
                                                                          this.config.DynastyStartYear,
                                                                          this.config.DynastyYearMap,
@@ -336,7 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return dynastyYear;
             }
 
-            var er = this.config.IntegerExtractor.Extract(yearChsStr);
+            var er = this.config.IntegerExtractor.Extract(yearCJKStr);
             if (er.Count != 0)
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
@@ -348,7 +332,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (num < 10)
             {
                 num = 0;
-                foreach (var ch in yearChsStr)
+                foreach (var ch in yearCJKStr)
                 {
                     num *= 10;
 
@@ -397,11 +381,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= this.config.TwoNumYear)
                     {
-                        year += 1900;
+                        year += Constants.BASE_YEAR_PAST_CENTURY;
                     }
                     else if (year < 100 && year < this.config.TwoNumYear)
                     {
-                        year += 2000;
+                        year += Constants.BASE_YEAR_CURRENT_CENTURY;
                     }
 
                     inputYear = true;
@@ -494,7 +478,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var yearMatch = this.config.YearRegex.Matches(text);
-                var yearInChineseMatch = this.config.YearInChineseRegex.Matches(text);
+                var yearInCJKMatch = this.config.YearInCJKRegex.Matches(text);
                 var beginYear = 0;
                 var endYear = 0;
 
@@ -505,47 +489,47 @@ namespace Microsoft.Recognizers.Text.DateTime
                     beginYear = int.Parse(yearFrom, CultureInfo.InvariantCulture);
                     endYear = int.Parse(yearTo, CultureInfo.InvariantCulture);
                 }
-                else if (yearInChineseMatch.Count == 2)
+                else if (yearInCJKMatch.Count == 2)
                 {
-                    var yearFrom = yearInChineseMatch[0].Groups["yearchs"].Value;
-                    var yearTo = yearInChineseMatch[1].Groups["yearchs"].Value;
-                    beginYear = ConvertChineseToInteger(yearFrom);
-                    endYear = ConvertChineseToInteger(yearTo);
+                    var yearFrom = yearInCJKMatch[0].Groups["yearchs"].Value;
+                    var yearTo = yearInCJKMatch[1].Groups["yearchs"].Value;
+                    beginYear = ConvertCJKToInteger(yearFrom);
+                    endYear = ConvertCJKToInteger(yearTo);
                 }
-                else if (yearInChineseMatch.Count == 1 && yearMatch.Count == 1)
+                else if (yearInCJKMatch.Count == 1 && yearMatch.Count == 1)
                 {
-                    if (yearMatch[0].Index < yearInChineseMatch[0].Index)
+                    if (yearMatch[0].Index < yearInCJKMatch[0].Index)
                     {
                         var yearFrom = yearMatch[0].Groups["year"].Value;
-                        var yearTo = yearInChineseMatch[0].Groups["yearch"].Value;
+                        var yearTo = yearInCJKMatch[0].Groups["yearch"].Value;
                         beginYear = int.Parse(yearFrom, CultureInfo.InvariantCulture);
-                        endYear = ConvertChineseToInteger(yearTo);
+                        endYear = ConvertCJKToInteger(yearTo);
                     }
                     else
                     {
-                        var yearFrom = yearInChineseMatch[0].Groups["yearch"].Value;
+                        var yearFrom = yearInCJKMatch[0].Groups["yearch"].Value;
                         var yearTo = yearMatch[0].Groups["year"].Value;
-                        beginYear = ConvertChineseToInteger(yearFrom);
+                        beginYear = ConvertCJKToInteger(yearFrom);
                         endYear = int.Parse(yearTo, CultureInfo.InvariantCulture);
                     }
                 }
 
                 if (beginYear < 100 && beginYear >= this.config.TwoNumYear)
                 {
-                    beginYear += 1900;
+                    beginYear += Constants.BASE_YEAR_PAST_CENTURY;
                 }
                 else if (beginYear < 100 && beginYear < this.config.TwoNumYear)
                 {
-                    beginYear += 2000;
+                    beginYear += Constants.BASE_YEAR_CURRENT_CENTURY;
                 }
 
                 if (endYear < 100 && endYear >= this.config.TwoNumYear)
                 {
-                    endYear += 1900;
+                    endYear += Constants.BASE_YEAR_PAST_CENTURY;
                 }
                 else if (endYear < 100 && endYear < this.config.TwoNumYear)
                 {
-                    endYear += 2000;
+                    endYear += Constants.BASE_YEAR_CURRENT_CENTURY;
                 }
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
@@ -682,7 +666,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
 
-                year = ConvertChineseToInteger(yearChs);
+                year = ConvertCJKToInteger(yearChs);
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
@@ -698,11 +682,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (year < 100 && year >= this.config.TwoNumYear)
             {
-                year += 1900;
+                year += Constants.BASE_YEAR_PAST_CENTURY;
             }
             else if (year < this.config.TwoNumYear)
             {
-                year += 2000;
+                year += Constants.BASE_YEAR_CURRENT_CENTURY;
             }
 
             var monthStr = match.Groups["month"].Value;
@@ -956,7 +940,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
 
-            match = this.config.YearInChineseRegex.MatchExact(text, trim: true);
+            match = this.config.YearInCJKRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -975,7 +959,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                var year = ConvertChineseToInteger(yearStr);
+                var year = ConvertCJKToInteger(yearStr);
 
                 return HandleYearResult(ret, hasHalf, isFirstHalf, year);
             }
@@ -1005,11 +989,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (year < 100 && year >= this.config.TwoNumYear)
             {
-                year += 1900;
+                year += Constants.BASE_YEAR_PAST_CENTURY;
             }
             else if (year < 100 && year < this.config.TwoNumYear)
             {
-                year += 2000;
+                year += Constants.BASE_YEAR_CURRENT_CENTURY;
             }
 
             var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
@@ -1037,6 +1021,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // @TODO Unify this method with its counterpart in BaseDatePeriodParser (if possible) and move it to Utilities
         // parse entities that made up by two time points
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceDate)
         {
@@ -1044,14 +1029,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er = this.config.DateExtractor.Extract(text, referenceDate);
             if (er.Count < 2)
             {
-                er = this.config.DateExtractor.Extract("on " + text, referenceDate);
+                er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
                 if (er.Count < 2)
                 {
                     return ret;
                 }
 
-                er[0].Start -= 3;
-                er[1].Start -= 3;
+                er[0].Start -= this.config.TokenBeforeDate.Length;
+                er[1].Start -= this.config.TokenBeforeDate.Length;
             }
 
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
@@ -1208,7 +1193,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var srcUnit = match.Groups["unit"].Value;
 
                     var numberStr = durationRes[0].Text.Substring(0, match.Index).Trim();
-                    var number = ConvertChineseToNum(numberStr);
+                    var number = ConvertCJKToNum(numberStr);
 
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
@@ -1341,13 +1326,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 noYear = true;
             }
 
-            var value = ComputeDate(cardinal, 1, month, year);
+            var value = DateContext.ComputeDate(cardinal, 1, month, year);
 
             var futureDate = value;
             var pastDate = value;
             if (noYear && futureDate < referenceDate)
             {
-                futureDate = ComputeDate(cardinal, 1, month, year + 1);
+                futureDate = DateContext.ComputeDate(cardinal, 1, month, year + 1);
                 if (futureDate.Month != month)
                 {
                     futureDate = futureDate.AddDays(-7);
@@ -1356,7 +1341,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (noYear && pastDate >= referenceDate)
             {
-                pastDate = ComputeDate(cardinal, 1, month, year - 1);
+                pastDate = DateContext.ComputeDate(cardinal, 1, month, year - 1);
                 if (pastDate.Month != month)
                 {
                     pastDate = pastDate.AddDays(-7);
@@ -1404,7 +1389,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         yearChs = yearChs.Substring(0, yearChs.Length - 1);
                     }
 
-                    year = ConvertChineseToInteger(yearChs);
+                    year = ConvertCJKToInteger(yearChs);
                 }
                 else if (!string.IsNullOrEmpty(yearRel))
                 {
@@ -1421,11 +1406,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (year < 100 && year >= this.config.TwoNumYear)
                 {
-                    year += 1900;
+                    year += Constants.BASE_YEAR_PAST_CENTURY;
                 }
                 else if (year < 100 && year < this.config.TwoNumYear)
                 {
-                    year += 2000;
+                    year += Constants.BASE_YEAR_CURRENT_CENTURY;
                 }
 
                 // parse season
@@ -1474,7 +1459,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     yearChs = yearChs.Substring(0, yearChs.Length - 1);
                 }
 
-                year = ConvertChineseToInteger(yearChs);
+                year = ConvertCJKToInteger(yearChs);
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
@@ -1490,11 +1475,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (year < 100 && year >= this.config.TwoNumYear)
             {
-                year += 1900;
+                year += Constants.BASE_YEAR_PAST_CENTURY;
             }
             else if (year < 100 && year < this.config.TwoNumYear)
             {
-                year += 2000;
+                year += Constants.BASE_YEAR_CURRENT_CENTURY;
             }
 
             // parse quarterNum
@@ -1527,7 +1512,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var decadeStr = match.Groups["decade"].Value;
                 if (!int.TryParse(decadeStr, out decade))
                 {
-                    decade = ConvertChineseToNum(decadeStr);
+                    decade = ConvertCJKToNum(decadeStr);
                 }
 
                 var centuryStr = match.Groups["century"].Value;
@@ -1535,7 +1520,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (!int.TryParse(centuryStr, out century))
                     {
-                        century = ConvertChineseToNum(centuryStr);
+                        century = ConvertCJKToNum(centuryStr);
                     }
 
                     inputCentury = true;
