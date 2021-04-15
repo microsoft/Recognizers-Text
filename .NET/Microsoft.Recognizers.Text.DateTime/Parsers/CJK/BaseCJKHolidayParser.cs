@@ -160,11 +160,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (year < 100 && year >= 90)
             {
-                year += 1900;
+                year += Constants.BASE_YEAR_PAST_CENTURY;
             }
             else if (year < 20)
             {
-                year += 2000;
+                year += Constants.BASE_YEAR_CURRENT_CENTURY;
             }
 
             if (!string.IsNullOrEmpty(holidayStr))
