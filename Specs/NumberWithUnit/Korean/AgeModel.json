@@ -1,6 +1,7 @@
 [
   {
     "Input": "그녀가 다섯 살 때, 그녀는 자전거 타는 것을 배웠다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": "true",
     "Results": [
@@ -15,11 +16,13 @@
     ]
   },
   {
-    "Input": "이 전설은 십 년이 되었다.",
+    "Input": "이 전설은 십 세이 되었다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "십 년",
+        "Text": "십 세",
         "TypeName": "age",
         "Resolution": {
           "value": "10",
@@ -44,6 +47,7 @@
   },
   {
     "Input": "이제, 아흔다섯 살이 지나면, 관점이 바뀐다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": "true",
     "Results": [
@@ -58,12 +62,11 @@
     ]
   },
   {
-    "Input": "중국의 만리장성은 500년 이상 되었고, 5,000마일 이상 뻗어 있다.",
+    "Input": "중국의 만리장성은 500살 이상 되었고, 5,000마일 이상 뻗어 있다.",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "500년",
+        "Text": "500살",
         "TypeName": "age",
         "Resolution": {
           "value": "500",
@@ -75,7 +78,6 @@
   {
     "Input": "그녀는 60살이고; 1945년 5월 8일에 태어났다.",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "60살",
@@ -103,7 +105,9 @@
   },
   {
     "Input": "일 년짜리 약속을 이행해야 하는 압박이 언제 있는가?",
+    "Comment": "The input translates to 'When is the pressure to fulfill our one-year promise?' and does not represent an age but a duration.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "일 년",
@@ -118,7 +122,6 @@
   {
     "Input": "아기가 태어난 지 십 개월 밖에 되지 않았을 때의 일이다.",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "십 개월",
@@ -161,7 +164,6 @@
   {
     "Input": "가능하지만, 2006년에는 95%가 삼 개월 미만이었다.",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "삼 개월",
@@ -175,6 +177,7 @@
   },
   {
     "Input": "우리가 12월에 진행한다면, 그것은 삼 주가 될 것이다. ",
+    "Comment": "In Korean there are no unambiguous expressions for 'weeks' and 'days' intended as age.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -190,7 +193,9 @@
   },
   {
     "Input": "6주의 나이에, 벌써 크리스마스를 축하할 수 있다.",
+    "Comment": "In Korean there are no unambiguous expressions for 'weeks' and 'days' intended as age.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "6주",
@@ -204,6 +209,7 @@
   },
   {
     "Input": "90일이 된 공과금 청구서는 꽤 늦었다.",
+    "Comment": "Failed to extract number attached to unit.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [

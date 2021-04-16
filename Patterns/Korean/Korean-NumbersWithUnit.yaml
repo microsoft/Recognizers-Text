@@ -3,15 +3,18 @@
 AgeAmbiguousValues: !list
   types: [string]
   entries:
-    - 살|년|세|일|주|월|개월
+    - 살
+    - 세
+    - 월
+    - 개월
 AgeSuffixList: !dictionary
   types: [string, string]
   entries:
-    Year: 살|년|세
-    Month: 월|개월
-    Week: 주
-    Day: 일
-#ChineseNumberWithUnitExtractorConfiguration
+    Year: 살|세
+    Month: 개월
+    Week: ''
+    Day: ''
+#KoreanNumberWithUnitExtractorConfiguration
 BuildPrefix: ''
 BuildSuffix: ''
 ConnectorToken: ''
@@ -21,62 +24,64 @@ CurrencySuffixList: !dictionary
   entries:
 #Reference Source: https://justforex.com/ko/education/currencies
 #Afghan afghani
-    Afghan afghani: 아프가니 #阿富汗尼
+    Afghan afghani: 아프가니
     Pul: 普尔
 #Euro
-    Euro: 유로 #欧元
-    Cent: 센트 #美分
+    Euro: 유로
+    Cent: 센트
 #Albanian lek
 #No use of "ALL" "L"
-    Albanian lek: 렉 #阿尔巴尼亚列克|列克
+    Albanian lek: 렉
 #Angolan kwanza
-    Angolan kwanza: 콴자 #安哥拉宽扎|宽扎
+    Angolan kwanza: 콴자
 #Armenian
 #No use of "AMD"
-    Armenian dram: 아르메니아 드람 #亚美尼亚德拉姆
+    Armenian dram: 아르메니아 드람
 #Aruban florin
-    Aruban florin: 아루반 플로린 #阿鲁巴弗罗林|阿鲁巴币
+    Aruban florin: 아루반 플로린
 #Bangladeshi taka
-    Bangladeshi taka: 타카 #塔卡|孟加拉塔卡
-    Paisa: 파이사 #派萨|帕萨
+    Bangladeshi taka: 타카
+    Paisa: 파이사
 #Bhutanese ngultrum
-    Bhutanese ngultrum: 눌트럼 #不丹努尔特鲁姆|不丹努扎姆|努扎姆
+    Bhutanese ngultrum: 눌트럼
     Chetrum: 切特鲁姆
 #Bolivian boliviano
-    Bolivian boliviano: 볼리비아노 #玻利维亚诺|玻利维亚币
-#Bosnia and Herzegovina convertible mark   
-    Bosnia and Herzegovina convertible mark: 마커 #波斯尼亚和黑塞哥维那可兑换马克|波赫可兑换马克
+    Bolivian boliviano: 볼리비아노
+#Bosnia and Herzegovina convertible mark
+    Bosnia and Herzegovina convertible mark: 마커
 #Botswana pula
-    Botswana pula: 풀라 #博茨瓦纳普拉|普拉
+    Botswana pula: 풀라
     Thebe: thebe
 #Brazilian real
-    Brazilian real: 브라질리안 레알 #巴西雷亚尔
-#Bulgarian lev   
-    Bulgarian lev: 불가리안 레프 #保加利亚列弗|保加利亚列瓦
+    Brazilian real: 브라질리안 레알
+#Bulgarian lev
+    Bulgarian lev: 불가리안 레프
     Stotinka: 斯托丁卡
 #Cambodian riel
-    Cambodian riel: 캄보디아 릴 #瑞尔
+    Cambodian riel: 캄보디아 릴
 #Cape Verdean escudo
 #No use of "esc" and "$"
-    Cape Verdean escudo: 카보베르데 이스쿠두 #https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%B3%B4%EB%B2%A0%EB%A5%B4%EB%8D%B0 #佛得角埃斯库多|维德角埃斯库多
+    Cape Verdean escudo: 카보베르데 이스쿠두 #https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%B3%B4%EB%B2%A0%EB%A5%B4%EB%8D%B0
+#Costa Rican colón
+    Costa Rican colón: 콜론
 #Croatian kuna
-    Croatian kuna: 크로아티안 쿠나 #克罗地亚库纳|克罗地亚库那|克罗埃西亚库纳
+    Croatian kuna: 크로아티안 쿠나
     Lipa: 利巴
 #Eritrean nakfa
-    Eritrean nakfa: 낙파 #厄立特里亚纳克法
+    Eritrean nakfa: 낙파
 #Ethiopian birr
-    Ethiopian birr: 에디오피안 비르 #埃塞俄比亚比尔|埃塞俄比亚元
+    Ethiopian birr: 에디오피안 비르
 #Gambian dalasi
-    Gambian dalasi: 달라시 #https://ko.wikipedia.org/wiki/%EA%B0%90%EB%B9%84%EC%95%84 #冈比亚达拉西|甘比亚达拉西
-    Butut: 부투트 #https://ko.wikipedia.org/wiki/%EA%B0%90%EB%B9%84%EC%95%84_%EB%8B%AC%EB%9D%BC%EC%8B%9C #布达|布图
+    Gambian dalasi: 달라시 #https://ko.wikipedia.org/wiki/%EA%B0%90%EB%B9%84%EC%95%84
+    Butut: 부투트 #https://ko.wikipedia.org/wiki/%EA%B0%90%EB%B9%84%EC%95%84_%EB%8B%AC%EB%9D%BC%EC%8B%9C
 #Georgian lari
-    Georgian lari: 라리 #格鲁吉亚拉里
+    Georgian lari: 라리
     Tetri: 特特里|泰特里
 #Ghanaian cedi
-    Ghanaian cedi: 세디 #塞地|加纳塞地
+    Ghanaian cedi: 세디
     Pesewa: 比塞瓦
 #Guatemalan quetzal
-    Guatemalan quetzal: 케트살 #瓜地马拉格查尔
+    Guatemalan quetzal: 케트살
 #Haitian gourde
 #No use of G
     Haitian gourde: 海地古德
@@ -90,227 +95,228 @@ CurrencySuffixList: !dictionary
     Yemeni rial: 叶门莱尔|叶门里亚尔
     Israeli new shekel: ₪|ils|以色列币|以色列新克尔|谢克尔
 #Japanese yen
-    Japanese yen: 엔|옌 #日元|日本元|日币|日圆
+    Japanese yen: 엔|옌
     Sen: 日本銭
 #Kazakhstani tenge
-    Kazakhstani tenge: 텡게 #哈萨克斯坦坚戈
+    Kazakhstani tenge: 텡게
 #Kenyan shilling
-    Kenyan shilling: 케냐 실링 #肯尼亚先令
+    Kenyan shilling: 케냐 실링
 #North Korean won
     North Korean won: 북한 원
     South Korean won: 원
     Korean won: ₩
 #Kyrgyzstani som
-    Kyrgyzstani som: 섬 #吉尔吉斯斯坦索姆
+    Kyrgyzstani som: 섬
 #Lao kip
-    Lao kip: 킵 #基普|老挝基普|老挝币
+    Lao kip: 킵
     Att: att
 #Lesotho loti
-    Lesotho loti: 로티 #莱索托洛提|莱索托马洛蒂
+    Lesotho loti: 로티
 #South African rand
-    South African rand: 란드 #南非兰特
+    South African rand: 란드
 #Macedonian denar
-    Macedonian denar: 데나르 #马其顿代纳尔|马其顿币|代纳尔
+    Macedonian denar: 데나르
     Deni: 第尼
 #Malagasy ariary
-    Malagasy ariary: 마다가스카르 아리아 #..마다가스카르.. #马达加斯加阿里亚里
+    Malagasy ariary: 마다가스카르 아리아
     Iraimbilanja: 伊莱姆比拉贾
 #Malawian kwacha
-    Malawian kwacha: 콰차 #马拉威克瓦查
+    Malawian kwacha: 콰차
     Tambala: 坦巴拉
 #Malaysian ringgit
-    Malaysian ringgit: 말레이시아 링겟 #马来西亚币|马币|马来西亚林吉特
+    Malaysian ringgit: 말레이시아 링겟
 #Mauritanian ouguiya
-    Mauritanian ouguiya: 우기야 #모리타니 #毛里塔尼亚乌吉亚
+    Mauritanian ouguiya: 우기야
     Khoums: 库姆斯
 #Mozambican metical
-    Mozambican metical: 메티칼 #莫桑比克梅蒂卡尔|梅蒂卡尔
+    Mozambican metical: 메티칼
 #Burmese kyat
-    Burmese kyat: 차트 #缅甸元|缅元
+    Burmese kyat: 차트
     Pya: 缅分
 #Nigerian naira
-    Nigerian naira: 나이라 #尼日利亚奈拉|尼日利亚币|奈拉
+    Nigerian naira: 나이라
     Kobo: 考包
 #Turkish lira
-    Turkish lira: 터키리라 #土耳其里拉
+    Turkish lira: 터키리라
     Kuruş: 库鲁
 #Omani rial
-    Omani rial: 리알 오마니 #阿曼里亚尔|阿曼莱尔
+    Omani rial: 리알 오마니
 #Panamanian balboa
-    Panamanian balboa: 발보아 #巴拿马巴波亚
+    Panamanian balboa: 발보아
     Centesimo: 意大利分|乌拉圭分|巴拿马分
 #Papua New Guinean kina
-    Papua New Guinean kina: 키나 #基那
+    Papua New Guinean kina: 키나
     Toea: 托亚|托伊
 #Peruvian sol
-    Peruvian sol: 솔 #秘鲁索尔
+    Peruvian sol: 솔
 #Polish zloty
-    Polish złoty: P즐로티 #波兰币|波兰兹罗提|兹罗提
+    Polish złoty: P즐로티
     Grosz: 格罗希
 #Qatari riyal
-    Qatari riyal: 카타르 리알 #卡达里亚尔
+    Qatari riyal: 카타르 리알
     Saudi riyal: 沙特里亚尔
     Riyal: 里亚尔
     Dirham: 迪拉姆
     Halala: 哈拉
 #Samoan tālā
-    Samoan tālā: 탈라 #萨摩亚塔拉
+    Samoan tālā: 탈라
 #Sierra Leonean leone
-    Sierra Leonean leone: 리온 #塞拉利昂利昂|利昂
+    Sierra Leonean leone: 리온
 #Spain
-    Peseta: 페세타 #https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8E%98%EC%9D%B8_%ED%8E%98%EC%84%B8%ED%83%80 #比塞塔|西班牙比塞塔|西班牙币
+    Peseta: 페세타 #https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8E%98%EC%9D%B8_%ED%8E%98%EC%84%B8%ED%83%80
 #Swazi lilangeni
-    Swazi lilangeni: 릴랑게니 #https://ko.wikipedia.org/wiki/%EC%97%90%EC%8A%A4%EC%99%80%ED%8B%B0%EB%8B%88_%EB%A6%B4%EB%9E%91%EA%B2%8C%EB%8B%88 #斯威士兰里兰吉尼|兰吉尼
+    Swazi lilangeni: 릴랑게니 #https://ko.wikipedia.org/wiki/%EC%97%90%EC%8A%A4%EC%99%80%ED%8B%B0%EB%8B%88_%EB%A6%B4%EB%9E%91%EA%B2%8C%EB%8B%88
 #Tajikistani somoni
-    Tajikistani somoni: 소모니 #塔吉克斯坦索莫尼
+    Tajikistani somoni: 소모니
 #Thai baht
-    Thai baht: 바트 #泰铢|泰元
+    Thai baht: 바트
     Satang: 萨当
 #Tongan paʻanga
-    Tongan paʻanga: 파앙가 #汤加潘加|潘加
+    Tongan paʻanga: 파앙가
 #Ukrainian hryvnia
-    Ukrainian hryvnia: 흐리브냐 #乌克兰格里夫纳|格里夫纳
+    Ukrainian hryvnia: 흐리브냐
 #Vanuatu vatu
-    Vanuatu vatu: 바투 #瓦努阿图瓦图
+    Vanuatu vatu: 바투
 #Vietnamese dong
-    Vietnamese dong: 베트남 동 #越南盾
-    Indonesian rupiah: 루피아 #印度尼西亚盾
-    Netherlands guilder: 네덜란드 휠던|네덜란드 길더 #荷兰盾|荷属安的列斯盾|列斯盾
+    Vietnamese dong: 베트남 동
+    Indonesian rupiah: 루피아
+    Netherlands guilder: 네덜란드 휠던|네덜란드 길더
     Surinam florin: 苏里南盾
     Guilder: 盾
 #Zambian kwacha
     Zambian kwacha: 赞比亚克瓦查
 #Dirham
-    Moroccan dirham: 모로코 디르함 #摩洛哥迪拉姆
-    United Arab Emirates dirham: 아랍에미리트 디르함 #阿联酋迪拉姆
+    Moroccan dirham: 모로코 디르함
+    United Arab Emirates dirham: 아랍에미리트 디르함
 #Manat
-    Azerbaijani manat: 아제르바이잔 마나트 #阿塞拜疆马纳特
-    Turkmenistan manat: 투르크메니스탄 마나트 #土库曼马纳特
-    Manat: 마나트 #马纳特
+    Azerbaijani manat: 아제르바이잔 마나트
+    Turkmenistan manat: 투르크메니스탄 마나트
+    Manat: 마나트
 #Shilling
-    Somali shilling: 소말리아 실링 #索马里先令|索马利先令
-    Somaliland shilling: 소말릴랜드 실링 #索马里兰先令
-    Tanzanian shilling: 탄자니아 실링 #坦桑尼亚先令
-    Ugandan shilling: 우간다 실링 #乌干达先令
+    Somali shilling: 소말리아 실링
+    Somaliland shilling: 소말릴랜드 실링
+    Tanzanian shilling: 탄자니아 실링
+    Ugandan shilling: 우간다 실링
 #Leu
-    Romanian leu: 루마니아 레우 #罗马尼亚列伊
-    Moldovan leu: 몰도바 레우 #摩尔多瓦列伊
-    Leu: 레우 #列伊
+    Romanian leu: 루마니아 레우
+    Moldovan leu: 몰도바 레우
+    Leu: 레우
     Ban: 巴尼
 #Rupee
-    Nepalese rupee: 네팔 루피 #尼泊尔卢比
-    Pakistani rupee: 파키스탄 루피 #巴基斯坦卢比
-    Indian rupee: 인디안 루피 #印度卢比
-    Seychellois rupee: 세이셜 루피 #塞舌尔卢比
-    Mauritian rupee: 모리셔스 루피 #毛里求斯卢比
-    Maldivian rufiyaa: 루피야 #马尔代夫卢比
-    Sri Lankan rupee: 스리랑카 루피 #斯里兰卡卢比
-    Rupee: 루피 #卢比
+    Nepalese rupee: 네팔 루피
+    Pakistani rupee: 파키스탄 루피
+    Indian rupee: 인디안 루피
+    Seychellois rupee: 세이셜 루피
+    Mauritian rupee: 모리셔스 루피
+    Maldivian rufiyaa: 루피야
+    Sri Lankan rupee: 스리랑카 루피
+    Rupee: 루피
 #Krone
 #Czech koruna
-    Czech koruna: 체코 코루나 #捷克克朗
-    Danish krone: 덴마크 크로네 #丹麦克朗|丹麦克郎
-    Norwegian krone: 노르웨이 크로네 #挪威克朗
+    Czech koruna: 체코 코루나
+    Danish krone: 덴마크 크로네
+    Norwegian krone: 노르웨이 크로네
     Faroese króna: 페로 제도 크로나 #https://ko.wikipedia.org/wiki/%ED%8E%98%EB%A1%9C_%EC%A0%9C%EB%8F%84_%ED%81%AC%EB%A1%9C%EB%82%98#法罗克朗
     Icelandic króna: 아이슬란드 크로나 #https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%8A%AC%EB%9E%80%EB%93%9C_%ED%81%AC%EB%A1%9C%EB%82%98#冰岛克朗
-    Swedish krona: 스웨덴 크로나 #瑞典克朗
+    Swedish krona: 스웨덴 크로나
     Krone: 克朗
     Øre: 奥依拉|奥拉|埃利
 #Franc
     West African CFA franc: 非共体法郎
     Central African CFA franc: 中非法郎|中非金融合作法郎
     Comorian franc: 科摩罗法郎
-    Congolese franc: 콩고 프랑 #刚果法郎
-    Burundian franc: 브룬디 프랑 #布隆迪法郎
-    Djiboutian franc: 지투비 프랑 #吉布提法郎
-    CFP franc: CFP 프랑 #太平洋法郎
-    Guinean franc: 기나아 프랑 #几内亚法郎
-    Swiss franc: 스위스 프랑 #瑞士法郎
-    Rwandan franc: 르완다 프랑 #卢旺达法郎
+    Congolese franc: 콩고 프랑
+    Burundian franc: 브룬디 프랑
+    Djiboutian franc: 지투비 프랑
+    CFP franc: CFP 프랑
+    Guinean franc: 기나아 프랑
+    Swiss franc: 스위스 프랑
+    Rwandan franc: 르완다 프랑
     Belgian franc: 比利时法郎
     Rappen: 瑞士分|瑞士生丁
     Franc: 프랑
     Centime: 生丁|仙士
 #Ruble
-    Russian ruble: 러시아 루블 #俄国卢布|俄罗斯卢布
+    Russian ruble: 러시아 루블
     Transnistrian ruble: 德涅斯特卢布
-    Belarusian ruble: 벨라루시안 루블 #白俄罗斯卢布
+    Belarusian ruble: 벨라루시안 루블
     Kopek: 戈比
-    Ruble: 루블 #卢布
+    Ruble: 루블
 #Dinar
-    Algerian dinar: 알제르 디나르 #阿尔及利亚第纳尔
-    Bahraini dinar: 바레인 디나르 #巴林第纳尔
-    Iraqi dinar: 이라크 디나르 #伊拉克第纳尔
-    Jordanian dinar: 요르단 디나르 #约旦第纳尔
-    Kuwaiti dinar: 쿠웨이트 디나르 #科威特第纳尔|科威特币
-    Libyan dinar: 리비야 디나르 #利比亚第纳尔
-    Serbian dinar: 세르비아 디나르 #塞尔维亚第纳尔|塞尔维亚币
-    Tunisian dinar: 튀니지 디나르 #突尼斯第纳尔
-    Dinar: 디나르 #第纳尔
+    Algerian dinar: 알제르 디나르
+    Bahraini dinar: 바레인 디나르
+    Iraqi dinar: 이라크 디나르
+    Jordanian dinar: 요르단 디나르
+    Kuwaiti dinar: 쿠웨이트 디나르
+    Libyan dinar: 리비야 디나르
+    Serbian dinar: 세르비아 디나르
+    Tunisian dinar: 튀니지 디나르
+    Dinar: 디나르
     Fils: 费尔
     Para: 帕拉
     Millime: 米利姆
 #Peso
-    Argentine peso: 아르헨티나 페소 #阿根廷比索
-    Chilean peso: 칠레니아 페소 #智利比索
-    Colombian peso: 콜롬비안 페소 #哥伦比亚比索
-    Cuban peso: 쿠반 페소 #古巴比索
-    Dominican peso: 도미니칸 페소 #多米尼加比索
-    Mexican peso: 멕시코 페소 #墨西哥比索
-    Philippine peso: 필리핀 페소 #菲律宾比索
-    Uruguayan peso: 우루과이 페소 #乌拉圭比索
-    Peso: 페소 #比索
+    Argentine peso: 아르헨티나 페소
+    Chilean peso: 칠레니아 페소
+    Colombian peso: 콜롬비안 페소
+    Cuban peso: 쿠반 페소
+    Dominican peso: 도미니칸 페소
+    Mexican peso: 멕시코 페소
+    Philippine peso: 필리핀 페소
+    Uruguayan peso: 우루과이 페소
+    Peso: 페소
     Centavo: 仙|菲辅币
 #Pound
     Alderney pound: 奥尔德尼镑
-    British pound: 영국 파운드 #英镑
-    Guernsey pound: 건지섬 파운드 #https://ko.wikipedia.org/wiki/%EA%B1%B4%EC%A7%80%EC%84%AC_%ED%8C%8C%EC%9A%B4%EB%93%9C #根西镑
-    Saint Helena pound: 세인트 헬레나 파운드 #圣赫勒拿镑
-    Egyptian pound: 이집트 파운드 #埃及镑
-    Falkland Islands pound: 포크랜드 파운드 #福克兰镑
-    Gibraltar pound: 지브롤터 파운드 #直布罗陀镑
-    Manx pound: 맨섬 파운드 #https://ko.wikipedia.org/wiki/%EB%A7%A8%EC%84%AC_%ED%8C%8C%EC%9A%B4%EB%93%9C #马恩岛镑
-    Jersey pound: 저지섬 파운드 #https://ko.wikipedia.org/wiki/%EC%A0%80%EC%A7%80%EC%84%AC_%ED%8C%8C%EC%9A%B4%EB%93%9C #泽西岛镑
-    Lebanese pound: 레바논 파운드 #黎巴嫩镑
-    South Sudanese pound: 남수단 파운드 #南苏丹镑
-    Sudanese pound: 수단 파운드 #苏丹镑
-    Syrian pound: 시리아 파운드 #叙利亚镑
+    British pound: 영국 파운드
+    Guernsey pound: 건지섬 파운드 #https://ko.wikipedia.org/wiki/%EA%B1%B4%EC%A7%80%EC%84%AC_%ED%8C%8C%EC%9A%B4%EB%93%9C
+    Saint Helena pound: 세인트 헬레나 파운드
+    Egyptian pound: 이집트 파운드
+    Falkland Islands pound: 포크랜드 파운드
+    Gibraltar pound: 지브롤터 파운드
+    Manx pound: 맨섬 파운드 #https://ko.wikipedia.org/wiki/%EB%A7%A8%EC%84%AC_%ED%8C%8C%EC%9A%B4%EB%93%9C
+    Jersey pound: 저지섬 파운드 #https://ko.wikipedia.org/wiki/%EC%A0%80%EC%A7%80%EC%84%AC_%ED%8C%8C%EC%9A%B4%EB%93%9C
+    Lebanese pound: 레바논 파운드
+    South Sudanese pound: 남수단 파운드
+    Sudanese pound: 수단 파운드
+    Syrian pound: 시리아 파운드
     Pound: 파운드
     Pence: 펜스
     Shilling: 先令
+    Penny: 페니
 #Dollar
-    United States dollar: US 달러|미국 달러 #美元|美金|美圆
-    East Caribbean dollar: 동카리브 달러 #东加勒比元
-    Australian dollar: 오스트레일리아 달러|호주 달러 #澳大利亚元|澳元
-    Bahamian dollar: 바하미안 달러 #巴哈马元
-    Barbadian dollar: 바베이도스 달러 #巴巴多斯元
-    Belize dollar: 벨리즈 달러 #伯利兹元
-    Bermudian dollar: 버뮤디안 달러 #百慕大元
-    Brunei dollar: 브루나이 달러 #文莱元
-    Singapore dollar: 싱가폴 달러 #新加坡元|新元
-    Canadian dollar: 캐나다 달러 #加元|加拿大元
-    Cayman Islands dollar: 케이맨제도 달러 #开曼岛元
-    New Zealand dollar: 뉴질랜드 달러 #新西兰元|纽元
-    Cook Islands dollar: 쿡 제도 달러 #库克群岛元
-    Fijian dollar: 피지 달러 #https://ko.wikipedia.org/wiki/%EC%BF%A1_%EC%A0%9C%EB%8F%84_%EB%8B%AC%EB%9F%AC #斐济元|斐币
-    Guyanese dollar: 과야나 달러 #圭亚那元
-    Hong Kong dollar: 홍콩 달러 #蚊|港元|港圆|港币
-    Macau Pataca: 파타카 #澳门币|澳门元
-    New Taiwan dollar: 신 대만 달러 #箍|新台币|台币
-    Jamaican dollar: 자메이칸 달러 #牙买加元
-    Kiribati dollar: 키리바시 달러 #https://ko.wikipedia.org/wiki/%ED%82%A4%EB%A6%AC%EB%B0%94%EC%8B%9C_%EB%8B%AC%EB%9F%AC #吉里巴斯元
-    Liberian dollar: 리베리아 달러 #利比里亚元
-    Namibian dollar: 나미비야 달러 #纳米比亚元
-    Surinamese dollar: 수리단 달러 #苏里南元
-    Trinidad and Tobago dollar: 드리니아드 토바고 달러 #特立尼达多巴哥元
-    Tuvaluan dollar: 투발루 달러 #https://ko.wikipedia.org/wiki/%ED%88%AC%EB%B0%9C%EB%A3%A8_%EB%8B%AC%EB%9F%AC#吐瓦鲁元
+    United States dollar: US 달러|미국 달러
+    East Caribbean dollar: 동카리브 달러
+    Australian dollar: 오스트레일리아 달러|호주 달러
+    Bahamian dollar: 바하미안 달러
+    Barbadian dollar: 바베이도스 달러
+    Belize dollar: 벨리즈 달러
+    Bermudian dollar: 버뮤디안 달러
+    Brunei dollar: 브루나이 달러
+    Singapore dollar: 싱가폴 달러
+    Canadian dollar: 캐나다 달러
+    Cayman Islands dollar: 케이맨제도 달러
+    New Zealand dollar: 뉴질랜드 달러
+    Cook Islands dollar: 쿡 제도 달러
+    Fijian dollar: 피지 달러 #https://ko.wikipedia.org/wiki/%EC%BF%A1_%EC%A0%9C%EB%8F%84_%EB%8B%AC%EB%9F%AC
+    Guyanese dollar: 과야나 달러
+    Hong Kong dollar: 홍콩 달러
+    Macau Pataca: 파타카
+    New Taiwan dollar: 신 대만 달러
+    Jamaican dollar: 자메이칸 달러
+    Kiribati dollar: 키리바시 달러 #https://ko.wikipedia.org/wiki/%ED%82%A4%EB%A6%AC%EB%B0%94%EC%8B%9C_%EB%8B%AC%EB%9F%AC
+    Liberian dollar: 리베리아 달러
+    Namibian dollar: 나미비야 달러
+    Surinamese dollar: 수리단 달러
+    Trinidad and Tobago dollar: 드리니아드 토바고 달러
+    Tuvaluan dollar: 투발루 달러 #https://ko.wikipedia.org/wiki/%ED%88%AC%EB%B0%9C%EB%A3%A8_%EB%8B%AC%EB%9F%AC
     Dollar: 달러
 #Chinese yuan
-    Chinese yuan: 위안|중국 위안 #人民币|人民币元|元人民币|块钱|块|元|圆
+    Chinese yuan: 위안|중국 위안
     Fen: 分钱|分
     Jiao: 毛钱|毛|角钱|角
 #Additional
-    Finnish markka: 핀란드 마르카 #芬兰马克
+    Finnish markka: 핀란드 마르카
     Penni: 盆尼
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
@@ -498,10 +504,10 @@ CurrencyNameToIsoCodeMap: !dictionary
     Kiribati dollar: _KID
     Guernsey pound: _GGP
     Faroese króna: _FOK
-    Cook Islands dollar: _CKD 
-    British Virgin Islands dollar: _BD 
-    Ascension pound: _AP 
-    Alderney pound: _ALP 
+    Cook Islands dollar: _CKD
+    British Virgin Islands dollar: _BD
+    Ascension pound: _AP
+    Alderney pound: _ALP
     Abkhazian apsar: _AA
 FractionalUnitNameToCodeMap: !dictionary
   types: [ string, string ]
@@ -620,22 +626,20 @@ CurrencyAmbiguousValues: !list
 DimensionSuffixList: !dictionary
   types: [string, string]
   entries:
-# China 公制
     Meter: 미터|m
     Kilometer: 킬로미터|km
     Decimeter: 데시미터|dm
     Centimeter: 센티미터|cm
-    Micrometer: 밀리미터|mm
-    Microns: 마이크로미터
+    Millimeter: 밀리미터|mm
+    Micrometer: 마이크로미터|μm
     Picometer: 피코미터|pm
-    Nanometer: 나노미터
-# China 市制
-    Li: 里|市里 #리
-    Zhang: 丈 #장
-    Chi: 市尺|尺 #자|척
-    Cun: 市寸|寸 #치|촌
-    Fen: 市分|分 #분
-    Hao: 毫 #호
+    Nanometer: 나노미터|nm
+    Li: 里|市里
+    Zhang: 丈
+    Chi: 市尺|尺
+    Cun: 市寸|寸
+    Fen: 市分|分
+    Hao: 毫
     Mile: 마일
     Inch: 인치
     Foot: 피트
@@ -643,7 +647,6 @@ DimensionSuffixList: !dictionary
     Knot: 노트
     Light year: 광년
 # Speed
-# 미터/초, 초속 미터, 미터 매 초, 초당 미터
     Meter per second: 미터/초|m/s
     Kilometer per hour: 킬로미터/시|km/h
     Kilometer per minute: 킬로미터/분|km/min
@@ -670,8 +673,8 @@ DimensionSuffixList: !dictionary
     Cubic foot: 세제곱피트|입방 피트
     Gallon: 갤런
     Pint: 파인트
-    Dou: 市斗|斗 #되
-    Dan: 市石|石 #섬|석
+    Dou: 市斗|斗
+    Dan: 市石|石
 # Weight
     Kilogram: 킬로그램|kg
     Jin: 市斤|斤
@@ -682,7 +685,7 @@ DimensionSuffixList: !dictionary
     Ton: 톤|미터톤|t
     Pound: 파운드
     Ounce: 온스
-    Liang: 两 #냥
+    Liang: 两
 # Information
     Bit: 비트|b|bit
     Kilobit: 킬로비트|kb|Kb
@@ -717,20 +720,8 @@ DimensionAmbiguousValues: !list
     - 묘
     - 피트
     - 미터
+    - 배럴
     - 톤
-    - 升
-    - 寸
-    - 尺
-    - 斗
-    - 斤
-    - 桶
-    - 毫
-    - 石
-    - 码
-    - 磅
-    - 米
-    - 罐
-    - 里
     - m
     - km
     - dm
@@ -766,7 +757,6 @@ TemperatureSuffixList: !dictionary
 TemperaturePrefixList: !dictionary
   types: [string, string]
   entries:
-#华氏十三度
     F: 화씨온도|화씨
     K: 절대온도|절대
     R: 란씨온도|란씨

@@ -97,8 +97,9 @@
   },
   {
     "Input": "산업 전반에 걸쳐,이 국가의 석유 생산량은 올해 첫 8 개월 동안 하루 50 만 배럴 감소했다.",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "50 만 배럴",
@@ -130,7 +131,6 @@
   },
   {
     "Input": "5월 19일, fda는 미시시피, 뉴욕 및 펜실베니아에 사는 백 명 이상의 사람들이 오염된 버섯 복용으로 병에 걸린 후에 68 온스 캔의 중국 버섯을 억류하기 시작했습니다.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -179,8 +179,9 @@
   },
   {
     "Input": "아메리칸 항공의 연료 서비스 담당 이사인 잭 제너브 (jack zaves)는 연내 제트 연료 24억 갤런을 구매하는  '경영진은 놀라움을 원하고 있지 않다.' 고 언급했다. ",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "24억 갤런",
@@ -212,8 +213,9 @@
   },
   {
     "Input": "인근에 있는 여섯 마리의 돌고래는 150만 갤런의 바닷물 수족관에서 즐겁게 놀 것입니다.",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "150만 갤런",
@@ -325,8 +327,9 @@
   },
   {
     "Input": "이 자산의 핵심은 도쿄의 비즈니스 및 금융 중심지인 마루 노우치 지구의 19만 평방 미터에 이르는 엄청나게 비싼 건물입니다. 흔히 농담으로 '미츠비시 빌리지 (mitsubishi village)'라고 불립니다. ''",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "19만 평방 미터",
@@ -374,8 +377,9 @@
   },
   {
     "Input": "무역 그룹의 상무부 자료를 종합해 보면, 그 해 두 번째로 큰 월 수입인  8월 수입은 7월의 145만 8천 톤에서 5% 증가했지만 1988년 6월의 작년 최고치보다 낮은 수치를 보였다.",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "145만 8천 톤",
@@ -407,8 +411,9 @@
   },
   {
     "Input": "그래서 내년  3월에 실리엄 작물이 수확되면, 이는 실리엄 수확의 절정기였던 바로 지난 몇 년간의 만 6천 미터톤보다 적을 수 있습니다.",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "만 6천 미터톤",
@@ -440,8 +445,9 @@
   },
   {
     "Input": "회사 대변인은 'jiotto caspita'는 시속 188 마일 이상 달릴 수 있다고 말했다.",
-    "NotSupported": "dotnet",
+    "Comment": "Unit split around the number, literally 'per hour 188 miles'.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "시속 188 마일",
@@ -650,7 +656,6 @@
   },
   {
     "Input": "에섹스 다겐햄 소재 스털링 군비 회사가 상업 판매용 7.62 밀리미터 배럴, 탄창, 추출기 그리고 배출기로 구성된 변환 키트를 생산했습니다.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -667,8 +672,9 @@
   },
   {
     "Input": "프로젝트 비용은 4천 680만 달러입니다. 연간 구리 캐소드 생산량을 3만 4천 500 미터톤으로 25 % 증대시킬 계획이다.",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "3만 4천 500 미터톤",
@@ -684,8 +690,9 @@
   },
   {
     "Input": "연방 정부 기관인 캐나다 통계청은 캐나다 강철 주괴 생산이 10월 7일 주말 29만 천 890 미터톤을 기록했으며, 이는 전주의 총 생산량보다 8 퍼센트가 많은 수치라고 밝혔다. ",
-    "NotSupported": "dotnet",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29만 천 890 미터톤",

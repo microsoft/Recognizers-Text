@@ -23,14 +23,17 @@ namespace Microsoft.Recognizers.Definitions.Korean
     {
       public static readonly IList<string> AgeAmbiguousValues = new List<string>
         {
-            @"살|년|세|일|주|월|개월"
+            @"살",
+            @"세",
+            @"월",
+            @"개월"
         };
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Year", @"살|년|세" },
-            { @"Month", @"월|개월" },
-            { @"Week", @"주" },
-            { @"Day", @"일" }
+            { @"Year", @"살|세" },
+            { @"Month", @"개월" },
+            { @"Week", @"" },
+            { @"Day", @"" }
         };
       public const string BuildPrefix = @"";
       public const string BuildSuffix = @"";
@@ -58,6 +61,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"Stotinka", @"斯托丁卡" },
             { @"Cambodian riel", @"캄보디아 릴" },
             { @"Cape Verdean escudo", @"카보베르데 이스쿠두" },
+            { @"Costa Rican colón", @"콜론" },
             { @"Croatian kuna", @"크로아티안 쿠나" },
             { @"Lipa", @"利巴" },
             { @"Eritrean nakfa", @"낙파" },
@@ -218,6 +222,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"Pound", @"파운드" },
             { @"Pence", @"펜스" },
             { @"Shilling", @"先令" },
+            { @"Penny", @"페니" },
             { @"United States dollar", @"US 달러|미국 달러" },
             { @"East Caribbean dollar", @"동카리브 달러" },
             { @"Australian dollar", @"오스트레일리아 달러|호주 달러" },
@@ -555,10 +560,10 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"Kilometer", @"킬로미터|km" },
             { @"Decimeter", @"데시미터|dm" },
             { @"Centimeter", @"센티미터|cm" },
-            { @"Micrometer", @"밀리미터|mm" },
-            { @"Microns", @"마이크로미터" },
+            { @"Millimeter", @"밀리미터|mm" },
+            { @"Micrometer", @"마이크로미터|μm" },
             { @"Picometer", @"피코미터|pm" },
-            { @"Nanometer", @"나노미터" },
+            { @"Nanometer", @"나노미터|nm" },
             { @"Li", @"里|市里" },
             { @"Zhang", @"丈" },
             { @"Chi", @"市尺|尺" },
@@ -625,20 +630,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
             @"묘",
             @"피트",
             @"미터",
+            @"배럴",
             @"톤",
-            @"升",
-            @"寸",
-            @"尺",
-            @"斗",
-            @"斤",
-            @"桶",
-            @"毫",
-            @"石",
-            @"码",
-            @"磅",
-            @"米",
-            @"罐",
-            @"里",
             @"m",
             @"km",
             @"dm",

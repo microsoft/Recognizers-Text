@@ -2,7 +2,6 @@
   {
     "Input": "메릴랜드 주 몽고메리 카운티, 7천 5백만 달러 일반 채권, 시리즈 b,   1989년 매뉴팩처러스 하노버 트러스트에 의해 강화된 공공 개선  채권이다. ",
     "NotSupportedByDesign": "javascript,python,java",
-    "IgnoreResolution": "true",
     "Results": [
       {
         "Text": "7천 5백만 달러",
@@ -18,6 +17,7 @@
   },
   {
     "Input": "핀란드 대기업 노키아 oy ab 는 네덜란드 케이블 회사인 nkf kabel b . v 를 4억 2천만 핀란드 마르카에 사기로 계약했다고 밝혔다. ",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -36,7 +36,6 @@
   {
     "Input": "내셔널은 시겔과 슈스터에게 모든 요구를 포기하게 하기 위해 9만 4천 달러를 지급했다. ",
     "NotSupportedByDesign": "javascript,python,java",
-    "IgnoreResolution": "true",
     "Results": [
       {
         "Text": "9만 4천 달러",
@@ -52,6 +51,7 @@
   },
   {
     "Input": "제너럴다이내믹스 그룹의 제너럴다이내믹스 서비스는 파키스탄 전술 차량의 유지 시설을 건립하는 4천 820만 달러 상당의 군사 계약를 따냈다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -69,6 +69,7 @@
   },
   {
     "Input": "두 번째 시뮬레이터의 가격은 1천 640만 캐나다 달러이다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -87,6 +88,7 @@
   },
   {
     "Input": "고타스-라센 운송회사의 자회사인 골라 가스 홀딩사는 메릴 린치 자본 시장을 통해 2억 8천만 달러 상당의 제1 우선 배의 담보권을 제공했다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -104,6 +106,7 @@
   },
   {
     "Input": "bard / ems는 1988 년에 약 천 4백만 달러어치를 팔았다고 birtcher 씨는 말했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -121,6 +124,7 @@
   },
   {
     "Input": "합의 가격은 1만 2천 345 달러부터 시작합니다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -138,6 +142,7 @@
   },
   {
     "Input": "'배트맨 '' 홀로 지금까지 2억 4천 7백만 달러 이상의 박스 오피스 수입을 올렸고, 이는 워너 브라더스 영화 사상 최대 수입 영화로 기록됐다. ",
+    "Comment": "Extraction contains extra character '이' (which represents a number in certain contexts).",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -155,6 +160,7 @@
   },
   {
     "Input": "2014 년 10 월 coyle의 순 가치는 8백 10만 파운드로 추산되었습니다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -172,6 +178,7 @@
   },
   {
     "Input": "순이자 이익은 그 분기에 27 % 하락해서 2억 4천 4백만 달러를 기록했다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -189,6 +196,7 @@
   },
   {
     "Input": "연방 항소 법원은 파이프 라인 회사가 논란이되고있는 '의무인수'계약으로부터 10억 달러의 비용을 고객에게 전가하지 못하게하는 천연 가스 규제를 폐지했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -238,6 +246,7 @@
   },
   {
     "Input": "e. 로버트 월러치가 뉴욕 주 판사에게 6년 징역형을 선고받고 웨텍 스캔들에 대한 공갈죄로 25만 달러의 벌금을 부과받았다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -256,7 +265,6 @@
   {
     "Input": "오늘 수요일 발행 된 중동 경제 조사 (mees) 기사에 따르면 이라크는 12월 1일부터 공식 유가에 대해 유가 배럴당 50센트를 유엔 감시하에 없는 계정으로 지불하라고 고객에게 요청했다.",
     "NotSupportedByDesign": "javascript,python,java",
-    "IgnoreResolution": true,
     "Results": [
       {
         "Text": "50센트",
@@ -288,6 +296,7 @@
   },
   {
     "Input": "(storer는 또한 텔레비전 자산의 부분 지불로 1억 2천 5백만 달러 상당의 주니어 sci tv 채권을 가지고 갔다.)",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -337,6 +346,7 @@
   },
   {
     "Input": "1990년의 자본 지출은 올해 4억 7천만 달러에서 약간 증가할 것이라고 마로스 씨는 밝혔다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -386,7 +396,6 @@
   },
   {
     "Input": "12월 계약은 1달러 20센트 상승했다.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -394,10 +403,10 @@
         "TypeName": "currency",
         "Resolution": {
           "value": "1.2",
-          "unit": "Cent"
+          "unit": "Dollar"
         },
-        "Start": 27,
-        "End": 36
+        "Start": 8,
+        "End": 15
       }
     ]
   },
@@ -419,6 +428,7 @@
   },
   {
     "Input": "올해 3 사분기 순매출은 지난해 천 4백만 달러였다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -436,6 +446,7 @@
   },
   {
     "Input": "480억 달러의 자산을 보유한 퍼스트 내셔널 뱅크 오브 시카고 모회사는 금융 위기에 처한 국가의 대출 및 투자 손실을 흡수하기 위해 자산을 확보해 놓았다고 말했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -485,6 +496,7 @@
   },
   {
     "Input": "타임 워너에 인수된 워너 통신은 소니와 두 명의 생산자에 대해 10억 달러의 계약 위반 소송을 제기했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -502,6 +514,7 @@
   },
   {
     "Input": "asarco는 8월에 lac d 'amiante du quebec 자회사를 통해 1천 1백 70만 달러에 캐나다의 석면 채굴 유한 책임 회사에 나머지 1/3의 지분을 매각했습니다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -536,6 +549,7 @@
   },
   {
     "Input": "회계 연도 4사분기 매출은 전년도 11억 7천만 달러에서 18 퍼센트 증가했습니다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -569,6 +583,7 @@
   },
   {
     "Input": "예를 들어 뉴저지는 30만 달러를 수락하라는 요청을 받았지만 거절했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -586,6 +601,7 @@
   },
   {
     "Input": "판매는 6.2 퍼센트 상승해서 14억 5천만 달러를 기록했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -603,6 +619,7 @@
   },
   {
     "Input": "어제 오후부터 환매는 약 20억 달러 피텔리티 주식형 펀드의  총 현금 유동성의 15 퍼센트 미만을 나타냈습니다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -621,7 +638,6 @@
   {
     "Input": "onvia.com inc. , 34 센트 하락",
     "NotSupportedByDesign": "javascript,python,java",
-    "IgnoreResolution": true,
     "Results": [
       {
         "Text": "34 센트",
@@ -637,6 +653,7 @@
   },
   {
     "Input": "tw 안내서는 인수가 조기에 완결되었다면 세전 이익은 1989년 상반기 약 6천 2백 70만 달러 상당의 채무 증권에 대한 이자를 포함한 고정 금리를 충당하기에 불충분했을 것이라고 밝혔다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -654,6 +671,7 @@
   },
   {
     "Input": "filenet은 9월 30일 현금과 시장성이있는 유가 증권을 총 2천 2백 50만 달러 가지고 있다고 언급했다, 그리고 주주들.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -687,6 +705,7 @@
   },
   {
     "Input": "트랜스 세계 항공사는 drexel burnham을 통해 1억 5천만 달러의 선순위 채권을 제공했다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -736,6 +755,7 @@
   },
   {
     "Input": "1988년 3분기 이자 비용은 7천5백30만 달러였다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -753,6 +773,7 @@
   },
   {
     "Input": "23억8천만 달러 상당의 달콘 쉴드 트러스트가 쉴드의 사용으로 인해 발생하는 피해 보상 요구를 해결하기 위한 a. h. 로빈스의 파산 개편 계획의 일환으로 설립되었다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -770,6 +791,7 @@
   },
   {
     "Input": "그 제안의 조건은 32.99 퍼센트의 주식 보유량인 5억 2천 8백만 프랑의 가치를 가졌다. ",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -787,6 +809,7 @@
   },
   {
     "Input": "러시아는 에이즈와 결핵 확산을 막기 위해 1억 5천만 미국 달러의 세계 은행 대출을 받아들이고 4년 동안 지속된 협상 과정을 종식시켰다고 세계 은행 관계자들이 금요일 말했다.",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -837,6 +860,7 @@
   },
   {
     "Input": "3사분기 동안 총 수익은 1년 전에 비해 4.8 % 증가한 131억 8천만 달러라고 말했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -870,6 +894,7 @@
   },
   {
     "Input": "분석가들은 9월 경상 수지 적자 16억(25억 4천만 달러)을 전망한다.  8월은 20억 적자를 기록했다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -887,6 +912,7 @@
   },
   {
     "Input": "1억 2천 5백만 호주 달러의 제로 쿠폰 유로 채권은 1994년 12월 12일 함브로스 은행을 통해 15.06 % 적은 수수료를 지불하기 위해 50만 9375달러로 책정되었다. ",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -926,6 +952,7 @@
   },
   {
     "Input": "금요일 국무 장관은 8명의 각료가 산업계로부터 500만 엔을 받았다고 발표했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -944,6 +971,7 @@
   },
   {
     "Input": "도시키 카이후 총리에 의한 45만 엔을 포함하여",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1061,6 +1089,7 @@
   },
   {
     "Input": "여전히 올해 하반기 두 건의 대형 계약에 대한 예상 청구액을 반영하여 1989년 총 매출액이 200억 프랑에 이를 것으로 예상했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1078,6 +1107,7 @@
   },
   {
     "Input": "그 거래는  66억 5천만 페세타 상당의 제타 값에 의한 권리 요구를  신청하기 위해 호주에 기반을 둔 뉴스 그룹 murdoch의 뉴스 international plc을 요구했다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1112,6 +1142,7 @@
   },
   {
     "Input": "2억 5천만 네덜란드 휠던",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -1129,6 +1160,7 @@
   },
   {
     "Input": "또한 은행은 30을 매입할 수있는 옵션이 있습니다. 1990년 1월 이후  societe generale의 84% bip 지분, 주당 1천 15 프랑.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1146,7 +1178,6 @@
   },
   {
     "Input": "그 주식은 1 페니를 마감하기 위한 늦은 거래에서 떨어졌다.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1156,8 +1187,8 @@
           "value": "1",
           "unit": "Penny"
         },
-        "Start": 42,
-        "End": 50
+        "Start": 6,
+        "End": 9
       }
     ]
   },
@@ -1179,6 +1210,7 @@
   },
   {
     "Input": "그것의 분기별 영업 이익은 3억 6천 1백만 파운드로 향상되었다. ",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -1262,6 +1294,7 @@
   },
   {
     "Input": "애들레이드의 전자 산업 매출은 1990년 이래로 1년에 약 15 % 성장했으며 2011년에는 40억 달러를 초과했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1295,6 +1328,7 @@
   },
   {
     "Input": "말론은 20세기 폭스에게 계약 위반으로 160만 달러를 요구하는 소송을 제기했다.  ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1329,6 +1363,7 @@
   },
   {
     "Input": "로키드 마틴과 미국 정부는 126 대의 전투기에 대한 인도의 100억 미국 달러 계약을 위해 집중적으로 로비했다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1411,6 +1446,7 @@
   },
   {
     "Input": "9개월 동안 amr의 순매도는 15 % 증가한 4억 1천 590만 달러이다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1444,6 +1480,7 @@
   },
   {
     "Input": "harpercollins는 2008년에 300만 달러 책 프로젝트를 획득했다고 롤링스톤은 밝혔다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1493,6 +1530,7 @@
   },
   {
     "Input": "에어로 스미스는 1972년 중반 12만 5천 달러에 콜롬비아와 계약하여 데뷔 앨범인 에어로 스미스를 발표했습니다.",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1510,6 +1548,7 @@
   },
   {
     "Input": "그것은 2001년 1억 8천 6백만 달러에 odwalla inc를 구입한 이래로 코크스 최대 인수 중 하나였다. ",
+    "Comment": "Failed to parse number.",
     "NotSupportedByDesign": "javascript,python,java",
     "IgnoreResolution": true,
     "Results": [
@@ -1628,8 +1667,9 @@
   },
   {
     "Input": "1 달러와 1 그리고 1 점의 크레딧 포인트가 필요하다.",
-    "NotSupported": "dotnet",
+    "Comment": "The translation of the original English case 'It costs one dollar and one and one point of your credit points' does not make sense in Korean.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 달러와 1",
@@ -1701,8 +1741,9 @@
   },
   {
     "Input": "그것은 아마 1 회 5 마오 5가 필요할 겁니다. ",
-    "NotSupported": "dotnet",
+    "Comment": "The translation of the original English case 'It may need one kuai and five mao five.' does not make sense in Korean.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 회 5 마오 5",
@@ -1719,8 +1760,9 @@
   },
   {
     "Input": "1 달러와 2 그리고 3 점의 크레딧 포인트가 필요하다. ",
-    "NotSupported": "dotnet",
+    "Comment": "The translation of the original English case 'It costs one dollar and two and three points of your credit points.' does not make sense in Korean.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1 달러와 2 ",
@@ -1752,7 +1794,6 @@
   },
   {
     "Input": "이 책은 가격은 100 콜론입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1763,8 +1804,8 @@
           "unit": "Costa Rican colón",
           "isoCurrency": "CRC"
         },
-        "Start": 26,
-        "End": 30
+        "Start": 9,
+        "End": 14
       }
     ]
   },
@@ -1787,6 +1828,7 @@
   },
   {
     "Input": "축하합니다! 경쟁에서 이겼기 때문에 새 차와 10만 킵을 받게 될 겁니다. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1805,6 +1847,7 @@
   },
   {
     "Input": "Bob, 비상시 10만 루피를 빌려 주실 수 있습니까? 다음 주 월요일에 이자와 함께 갚을게요. ",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
@@ -1823,6 +1866,7 @@
   },
   {
     "Input": "이 새 노트북에 10만 센트는 비싸다고 생각하나요?",
+    "Comment": "Failed to extract number.",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": [
