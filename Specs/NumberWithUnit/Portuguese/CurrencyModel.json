@@ -1565,5 +1565,37 @@
         "End": 52
       }
     ]
+  },
+  {
+    "Input": "custa apenas 15 dólares e 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dólares e 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dólar"
+        },
+        "Start": 13,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "custa apenas 15 dólares 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dólares 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar"
+        },
+        "Start": 13,
+        "End": 25
+      }
+    ]
   }
 ]
