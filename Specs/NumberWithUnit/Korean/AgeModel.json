@@ -16,13 +16,12 @@
     ]
   },
   {
-    "Input": "이 전설은 십 세이 되었다.",
-    "Comment": "Failed to extract number.",
-    "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
+    "Input": "이 전설은 십 년이 되었다.",
+    "Comment": "The unit '년' (years) is ambiguous and does not specifically refer to age (it can be used in other contexts e.g. date or duration).",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "십 세",
+        "Text": "십 년",
         "TypeName": "age",
         "Resolution": {
           "value": "10",
@@ -62,11 +61,12 @@
     ]
   },
   {
-    "Input": "중국의 만리장성은 500살 이상 되었고, 5,000마일 이상 뻗어 있다.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "Input": "중국의 만리장성은 500년 이상 되었고, 5,000마일 이상 뻗어 있다.",
+    "Comment": "The unit '년' (years) is ambiguous and does not specifically refer to age (it can be used in other contexts e.g. date or duration).",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "500살",
+        "Text": "500년",
         "TypeName": "age",
         "Resolution": {
           "value": "500",
@@ -235,6 +235,36 @@
         "Resolution": {
           "unit": "Year",
           "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이 전설은 십 세이 되었다.",
+    "Comment": "Failed to extract number.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "십 세",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Year"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "중국의 만리장성은 500살 이상 되었고, 5,000마일 이상 뻗어 있다.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "500살",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Year"
         }
       }
     ]
