@@ -450,5 +450,70 @@
         }
       }
     ]
+  },
+  {
+    "Input": "det kostar bara 15 dollar och 15 cent.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar och 15 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 16,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "det kostar bara tretton euro och fyrtiofem cent.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tretton euro och fyrtiofem cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13,45",
+          "isoCurrency": "EUR",
+          "unit": "Euro"
+        },
+        "Start": 16,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "det kostar bara 15 dollar och 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar och 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 16,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "det kostar bara 15 dollar 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dollar"
+        },
+        "Start": 16,
+        "End": 27
+      }
+    ]
   }
 ]

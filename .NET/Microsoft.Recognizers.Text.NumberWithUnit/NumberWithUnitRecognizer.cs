@@ -248,8 +248,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new French.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new French.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new French.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new French.CurrencyParserConfiguration())
                     },
                 }));
 
@@ -288,8 +288,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                  {
                     {
-                        new NumberWithUnitExtractor(new German.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new German.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new German.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new German.CurrencyParserConfiguration())
                     },
                  }));
 
@@ -328,8 +328,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Italian.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Italian.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new Italian.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Italian.CurrencyParserConfiguration())
                     },
                 }));
 

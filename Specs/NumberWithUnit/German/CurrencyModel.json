@@ -332,22 +332,14 @@
   {
     "Input": "zwei Euro und fünfzig cent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupported": "java, javascript",
     "Results": [
       {
-        "Text": "zwei euro",
+        "Text": "zwei euro und fünfzig cent",
         "TypeName": "currency",
         "Resolution": {
-          "value": "2",
+          "value": "2,5",
           "unit": "Euro"
-        }
-      },
-      {
-        "Text": "fünfzig cent",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "50",
-          "unit": "Cent"
         }
       }
     ]
@@ -454,6 +446,70 @@
           "value": "700",
           "unit": "Euro"
         }
+      }
+    ]
+  },
+  {
+    "Input": "es kostet nur 15 Dollar und 15 Cent.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar und 15 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "es kostet nur dreizehn Euro und fünfundvierzig Cent.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dreizehn euro und fünfundvierzig cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13,45",
+          "unit": "Euro"
+        },
+        "Start": 14,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "es kostet nur 15 Dollar und 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar und 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "es kostet nur 15 Dollar 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 25
       }
     ]
   }
