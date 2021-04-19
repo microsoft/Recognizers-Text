@@ -348,6 +348,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
+                // Add timezone
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
+
                 var time = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
 
                 hour = time.Hour;
