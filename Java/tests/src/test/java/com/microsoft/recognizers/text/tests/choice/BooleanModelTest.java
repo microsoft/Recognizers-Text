@@ -34,16 +34,7 @@ public class BooleanModelTest extends AbstractTest {
         // parse
         List<ModelResult> results = recognize(currentCase);
         // assert
-        assertResultsWithKeys(currentCase, results, getKeysToTest(currentCase));
-    }
-
-    private List<String> getKeysToTest(TestCase currentCase) {
-        switch (currentCase.modelName) {
-            case "BooleanModel":
-                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Score);
-            default:
-                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Score);
-        }
+        assertResults(currentCase, results, Arrays.asList(ResolutionKey.Value, ResolutionKey.Score));
     }
 
     @Override
