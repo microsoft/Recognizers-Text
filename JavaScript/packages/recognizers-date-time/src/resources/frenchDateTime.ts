@@ -28,7 +28,7 @@ export namespace FrenchDateTime {
     export const PmDescRegex = `(h\\b|${BaseDateTime.BasePmDescRegex})`;
     export const AmPmDescRegex = `(h\\b|${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(?<desc>${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})`;
-    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
+    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
     export const FullTextYearRegex = `^[\\*]`;
     export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
     export const WeekDayRegex = `(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)`;
@@ -205,7 +205,7 @@ export namespace FrenchDateTime {
     export const PastPrefixRegex = `.^`;
     export const PreviousPrefixRegex = `.^`;
     export const RelativeDayRegex = `\\b(((la\\s+)?${RelativeRegex}\\s+journ[ée]e))\\b`;
-    export const ConnectorRegex = `^(,|pour|t|vers)$`;
+    export const ConnectorRegex = `^(,|pour|t|vers|le)$`;
     export const ConnectorAndRegex = `\\b(et\\s*(le|las?)?)\\b.+`;
     export const FromRegex = `((de|du)?)$`;
     export const FromRegex2 = `((depuis|de)(\\s*las?)?)$`;
@@ -257,7 +257,7 @@ export namespace FrenchDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"],["^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])"]]);
     export const AmbiguityTimeFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b"]]);
     export const MorningTermList = [ "matinee","matin","matinée" ];
     export const AfternoonTermList = [ "apres-midi","apres midi","après midi","après-midi" ];

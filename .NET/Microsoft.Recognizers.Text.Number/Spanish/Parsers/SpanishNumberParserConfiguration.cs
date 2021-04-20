@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
@@ -65,7 +66,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     continue;
                 }
 
-                if (tempWord.EndsWith("avo") || tempWord.EndsWith("ava"))
+                if (tempWord.EndsWith("avo", StringComparison.Ordinal) || tempWord.EndsWith("ava", StringComparison.Ordinal))
                 {
                     var origTempWord = tempWord;
                     var newLength = origTempWord.Length;

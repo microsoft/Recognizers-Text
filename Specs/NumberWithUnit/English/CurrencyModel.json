@@ -2450,5 +2450,37 @@
         "End": 9
       }
     ]
+  },
+  {
+    "Input": "it costs only 15 dollars and 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollars and 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15.15",
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "it costs only 15 dollars 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollars 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15.5",
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
   }
 ]

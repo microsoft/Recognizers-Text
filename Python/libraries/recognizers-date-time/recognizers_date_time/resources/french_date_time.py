@@ -31,7 +31,7 @@ class FrenchDateTime:
     PmDescRegex = f'(h\\b|{BaseDateTime.BasePmDescRegex})'
     AmPmDescRegex = f'(h\\b|{BaseDateTime.BaseAmPmDescRegex})'
     DescRegex = f'(?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})'
-    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
+    TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     FullTextYearRegex = f'^[\\*]'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
     WeekDayRegex = f'(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)'
@@ -208,7 +208,7 @@ class FrenchDateTime:
     PastPrefixRegex = f'.^'
     PreviousPrefixRegex = f'.^'
     RelativeDayRegex = f'\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b'
-    ConnectorRegex = f'^(,|pour|t|vers)$'
+    ConnectorRegex = f'^(,|pour|t|vers|le)$'
     ConnectorAndRegex = f'\\b(et\\s*(le|las?)?)\\b.+'
     FromRegex = f'((de|du)?)$'
     FromRegex2 = f'((depuis|de)(\\s*las?)?)$'
@@ -664,7 +664,8 @@ class FrenchDateTime:
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
-                                 ("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")])
+                                 ("^(mer)$", "(?<!((le|ce)\\s+))mer\\b"),
+                                 ("^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])")])
     AmbiguityTimeFiltersDict = dict([("heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b")])
     MorningTermList = [r'matinee', r'matin', r'matinée']
     AfternoonTermList = [r'apres-midi', r'apres midi', r'après midi', r'après-midi']

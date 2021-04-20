@@ -277,14 +277,34 @@ namespace Microsoft.Recognizers.Text.Number
             var decimalSeparator = false;
             var strLength = digitsStr.Length;
             var isNegative = false;
+
             var isFrac = digitsStr.Contains('/');
+
+            var lastDecimalSeparator = -1;
+            var lastNonDecimalSeparator = -1;
+            var hasSingleSeparator = false;
+
+            if (Config.IsMultiDecimalSeparatorCulture)
+            {
+                lastDecimalSeparator = digitsStr.LastIndexOf(Config.DecimalSeparatorChar);
+                lastNonDecimalSeparator = digitsStr.LastIndexOf(Config.NonDecimalSeparatorChar);
+
+                if ((lastDecimalSeparator < 0 && lastNonDecimalSeparator >= 0) ||
+                    (lastNonDecimalSeparator < 0 && lastDecimalSeparator >= 0))
+                {
+                    hasSingleSeparator = true;
+                }
+            }
 
             var calStack = new Stack<double>();
 
             for (var i = 0; i < digitsStr.Length; i++)
             {
                 var ch = digitsStr[i];
-                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i);
+                var prevCh = (i > 0) ? digitsStr[i - 1] : '\0';
+
+                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, hasSingleSeparator, prevCh);
+
                 if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal))
                 {
                     continue;
@@ -299,7 +319,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (decimalSeparator)
                     {
-                        temp = temp + (scale * (ch - '0'));
+                        temp += scale * (ch - '0');
                         scale *= 0.1;
                     }
                     else
@@ -323,7 +343,7 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         if (decimalSeparator)
                         {
-                            temp = temp + (Config.ZeroToNineMap[ch] * scale);
+                            temp += Config.ZeroToNineMap[ch] * scale;
                             scale *= 0.1;
                         }
                         else
@@ -409,7 +429,7 @@ namespace Microsoft.Recognizers.Text.Number
                             Config.CardinalNumberMap[matchStr] :
                             Config.OrdinalNumberMap[matchStr];
 
-                        // This is just for ordinal now. Not for fraction ever.
+                        // This is just for ordinal now. Not for fractions.
                         if (isOrdinal)
                         {
                             double fracPart = Config.OrdinalNumberMap[matchStr];
@@ -449,11 +469,11 @@ namespace Microsoft.Recognizers.Text.Number
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count < 2)
                             {
                                 tempStack.Push(matchValue);
                             }
-                            else if (tempStack.Count() >= 2)
+                            else if (tempStack.Count >= 2)
                             {
                                 var sum = tempStack.Pop() + matchValue;
                                 sum = tempStack.Pop() + sum;

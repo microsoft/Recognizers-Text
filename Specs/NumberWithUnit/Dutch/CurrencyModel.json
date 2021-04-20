@@ -382,5 +382,69 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "het kost slechts 15 dollar en 15 cent.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar en 15 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 17,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "het kost slechts dertien euro en vijfenveertig cent.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dertien euro en vijfenveertig cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13,45",
+          "unit": "Euro"
+        },
+        "Start": 17,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "het kost slechts 15 dollar en 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar en 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 17,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "het kost slechts 15 dollar 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollar 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dollar"
+        },
+        "Start": 17,
+        "End": 28
+      }
+    ]
   }
 ]

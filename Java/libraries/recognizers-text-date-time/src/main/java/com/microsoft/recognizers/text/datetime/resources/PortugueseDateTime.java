@@ -53,7 +53,7 @@ public class PortugueseDateTime {
 
     public static final String RangePrefixRegex = "((de(sde)?|das?|entre)\\s+(a(s)?\\s+)?)";
 
-    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
+    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
@@ -946,7 +946,7 @@ public class PortugueseDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("null", "null")
+        .put("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")
         .build();
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");

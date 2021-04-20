@@ -25,7 +25,7 @@ export namespace PortugueseDateTime {
     export const OfPrepositionRegex = `(\\bd(o|a|e)s?\\b)`;
     export const AfterNextSuffixRegex = `\\b(que\\s+vem|passad[oa])\\b`;
     export const RangePrefixRegex = `((de(sde)?|das?|entre)\\s+(a(s)?\\s+)?)`;
-    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
+    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
     export const RelativeRegex = `(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b`;
     export const StrictRelativeRegex = `(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b`;
     export const WrittenOneToNineRegex = `(uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove)`;
@@ -238,7 +238,7 @@ export namespace PortugueseDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
     export const MorningTermList = [ "manha","manhã" ];
     export const AfternoonTermList = [ "passado o meio dia","depois do meio dia" ];

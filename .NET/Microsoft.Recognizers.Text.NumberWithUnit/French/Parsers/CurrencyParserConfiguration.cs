@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Collections.Immutable;
+using System.Globalization;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
@@ -14,6 +16,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         {
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
+            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableDictionary();
+            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
         }
     }
 }

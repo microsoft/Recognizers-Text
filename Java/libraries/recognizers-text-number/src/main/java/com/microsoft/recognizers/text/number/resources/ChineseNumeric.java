@@ -435,7 +435,7 @@ public class ChineseNumeric {
 
     public static final String TillRegex = "(到|至|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)";
+    public static final String MoreRegex = "((大于|多于|高于|超过|大於|多於|高於|超過|超过)了?|过|>)";
 
     public static final String LessRegex = "(小于|少于|低于|小於|少於|低於|不到|不足|<)";
 
@@ -447,7 +447,7 @@ public class ChineseNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{SpeicalCharBeforeNumber}", SpeicalCharBeforeNumber);
 
-    public static final String MoreOrEqualSuffix = "(或|或者)\\s*(以上|之上|更[大多高])";
+    public static final String MoreOrEqualSuffix = "(或|或者)\\s*(次?以上|之上|更[大多高])";
 
     public static final String LessOrEqual = "(({LessRegex}\\s*(或|或者)?\\s*{EqualRegex})|(至多|最多){SpeicalCharBeforeNumber}?|不{MoreRegex}|≤)"
             .replace("{LessRegex}", LessRegex)
@@ -463,7 +463,7 @@ public class ChineseNumeric {
 
     public static final String OneNumberRangeMoreRegex2 = "比\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*更?[大多高]";
 
-    public static final String OneNumberRangeMoreRegex3 = "(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})";
+    public static final String OneNumberRangeMoreRegex3 = "(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|次?以上|之上|更[大多高])([万亿萬億]{0,2})";
 
     public static final String OneNumberRangeLessRegex1 = "({LessOrEqual}|{LessRegex})\\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\\d+))|。)).)+)"
             .replace("{LessOrEqual}", LessOrEqual)

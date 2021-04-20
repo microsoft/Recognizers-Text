@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public static readonly ImmutableDictionary<string, string> WeightSuffixList =
             NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues =
+        public static readonly ImmutableList<string> AmbiguousUnits =
             NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
 
         public WeightExtractorConfiguration()
@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
     }

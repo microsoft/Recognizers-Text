@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ImmutableList<string> AmbiguousValues =
+        private static readonly ImmutableList<string> AmbiguousUnits =
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 

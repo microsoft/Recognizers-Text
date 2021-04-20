@@ -977,7 +977,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) && futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 && futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
+                futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
+                futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
                 // Handle cases like "2月28日到3月1日".
                 // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
@@ -1019,19 +1021,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         switch (unitStr)
                         {
                             case Constants.TimexDay:
-                                beginDate = referenceDate.AddDays(-double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexWeek:
-                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexMonthFull:
-                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexYear:
-                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             default:
@@ -1051,19 +1053,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             case Constants.TimexDay:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(double.Parse(numStr));
+                                endDate = referenceDate.AddDays(double.Parse(numStr, CultureInfo.InvariantCulture));
                                 break;
                             case Constants.TimexWeek:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(7 * double.Parse(numStr));
+                                endDate = referenceDate.AddDays(7 * double.Parse(numStr, CultureInfo.InvariantCulture));
                                 break;
                             case Constants.TimexMonthFull:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 break;
                             case Constants.TimexYear:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 break;
                             default:
                                 return ret;

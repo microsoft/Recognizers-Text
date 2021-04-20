@@ -30,7 +30,7 @@ export namespace SpanishDateTime {
     export const PreviousSuffixRegex = `\\b(pasad[ao]|anterior(?!\\s+(al?|del?)\\b))\\b`;
     export const RelativeSuffixRegex = `(${AfterNextSuffixRegex}|${NextSuffixRegex}|${PreviousSuffixRegex})`;
     export const RangePrefixRegex = `((de(l|sde)?|entre)(\\s+la(s)?)?)`;
-    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b`;
+    export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b`;
     export const RelativeRegex = `(?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\\b`;
     export const StrictRelativeRegex = `(?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\\b`;
     export const WrittenOneToNineRegex = `(un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)`;
@@ -273,7 +273,7 @@ export namespace SpanishDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [ "hoy" ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^mi$", "\\bmi\\b"],["^a[nñ]o$", "(?<!el\\s+)a[nñ]o"],["^semana$", "(?<!la\\s+)semana"],["^mes$", "(?<!el\\s+)mes"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^mi$", "\\bmi\\b"],["^a[nñ]o$", "(?<!el\\s+)a[nñ]o"],["^semana$", "(?<!la\\s+)semana"],["^mes$", "(?<!el\\s+)mes"],["^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
     export const MorningTermList = [ "mañana","la mañana" ];
     export const AfternoonTermList = [ "pasado mediodia","pasado el mediodia","pasado mediodía","pasado el mediodía","pasado medio dia","pasado el medio dia","pasado medio día","pasado el medio día" ];

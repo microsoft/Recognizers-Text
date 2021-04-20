@@ -68,7 +68,7 @@ public class SpanishDateTime {
 
     public static final String RangePrefixRegex = "((de(l|sde)?|entre)(\\s+la(s)?)?)";
 
-    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b"
+    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b"
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
@@ -1169,6 +1169,7 @@ public class SpanishDateTime {
         .put("^a[nñ]o$", "(?<!el\\s+)a[nñ]o")
         .put("^semana$", "(?<!la\\s+)semana")
         .put("^mes$", "(?<!el\\s+)mes")
+        .put("^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])")
         .build();
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");

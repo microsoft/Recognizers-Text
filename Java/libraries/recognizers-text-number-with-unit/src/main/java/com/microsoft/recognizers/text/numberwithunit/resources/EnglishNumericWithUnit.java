@@ -47,6 +47,8 @@ public class EnglishNumericWithUnit {
         .put("Acre", "-acre|acre|acres")
         .build();
 
+    public static final List<String> AmbiguousAreaUnitList = Arrays.asList("n/a");
+
     public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Abkhazian apsar", "abkhazian apsar|apsars")
         .put("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani")
@@ -672,6 +674,9 @@ public class EnglishNumericWithUnit {
         .put("Foot per minute", "ft/min|foot/min|feet/min|foot per minute|feet per minute")
         .put("Yard per minute", "yards per minute|yard per minute|yards / minute|yards/min|yard/min")
         .put("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s")
+        .put("Meter per millisecond", "meter/millisecond|meters/millisecond|meter / millisecond|meters / millisecond|meter per millisecond|meters per millisecond|m/ms")
+        .put("Centimeter per millisecond", "centimeter/millisecond|centimeters/millisecond|centimeter / millisecond|centimeters / millisecond|centimeter per millisecond|centimeters per millisecond|cm/ms")
+        .put("Kilometer per millisecond", "kilometer/millisecond|kilometers/millisecond|kilometer / millisecond|kilometers / millisecond|kilometer per millisecond|kilometers per millisecond|km/ms")
         .build();
 
     public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("knot", "knots", "fps");
@@ -718,7 +723,7 @@ public class EnglishNumericWithUnit {
         .put("Hogshead", "hogshead")
         .build();
 
-    public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "cups", "peck", "pecks", "cord", "cords", "gill", "gills", "barrel", "barrels", "tbl", "quart", "quarts", "pinch");
+    public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "cups", "peck", "pecks", "cord", "cords", "gill", "gills", "barrel", "barrels", "tbl", "quart", "quarts", "pinch", "t.", "T.", "Tb.", "ts.");
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos")

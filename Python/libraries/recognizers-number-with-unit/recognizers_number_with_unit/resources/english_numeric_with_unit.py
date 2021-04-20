@@ -32,6 +32,7 @@ class EnglishNumericWithUnit:
                            ("Square mile", "sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²"),
                            ("Square yard", "sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²"),
                            ("Acre", "-acre|acre|acres")])
+    AmbiguousAreaUnitList = [r'n/a']
     CurrencySuffixList = dict([("Abkhazian apsar", "abkhazian apsar|apsars"),
                                ("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani"),
                                ("Pul", "pul"),
@@ -631,7 +632,10 @@ class EnglishNumericWithUnit:
                             ("Foot per second", "ft/s|foot/s|feet/s|foot per second|feet per second|fps"),
                             ("Foot per minute", "ft/min|foot/min|feet/min|foot per minute|feet per minute"),
                             ("Yard per minute", "yards per minute|yard per minute|yards / minute|yards/min|yard/min"),
-                            ("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s")])
+                            ("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s"),
+                            ("Meter per millisecond", "meter/millisecond|meters/millisecond|meter / millisecond|meters / millisecond|meter per millisecond|meters per millisecond|m/ms"),
+                            ("Centimeter per millisecond", "centimeter/millisecond|centimeters/millisecond|centimeter / millisecond|centimeters / millisecond|centimeter per millisecond|centimeters per millisecond|cm/ms"),
+                            ("Kilometer per millisecond", "kilometer/millisecond|kilometers/millisecond|kilometer / millisecond|kilometers / millisecond|kilometer per millisecond|kilometers per millisecond|km/ms")])
     AmbiguousSpeedUnitList = [r'knot', r'knots', r'fps']
     TemperatureSuffixList = dict([("F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|° f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f"),
                                   ("K", "k|K|kelvin"),
@@ -668,7 +672,7 @@ class EnglishNumericWithUnit:
                              ("Peck", "peck|pecks"),
                              ("Bushel", "bushel"),
                              ("Hogshead", "hogshead")])
-    AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'cups', r'peck', r'pecks', r'cord', r'cords', r'gill', r'gills', r'barrel', r'barrels', r'tbl', r'quart', r'quarts', r'pinch']
+    AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'cups', r'peck', r'pecks', r'cord', r'cords', r'gill', r'gills', r'barrel', r'barrels', r'tbl', r'quart', r'quarts', r'pinch', r't.', r'T.', r'Tb.', r'ts.']
     WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos"),
                              ("Gram", "g|gram|grams|gm"),
                              ("Milligram", "mg|milligram|milligrams"),

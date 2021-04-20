@@ -34,9 +34,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
+            CardinalExtractor = Number.German.CardinalExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(numConfig));
 

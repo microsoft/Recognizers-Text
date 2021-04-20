@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -73,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
-                    deltaMin = int.Parse(minStr);
+                    deltaMin = int.Parse(minStr, CultureInfo.InvariantCulture);
                 }
                 else
                 {

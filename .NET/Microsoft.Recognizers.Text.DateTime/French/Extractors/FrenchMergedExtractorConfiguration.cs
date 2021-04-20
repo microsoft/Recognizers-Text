@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -68,7 +70,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.French.IntegerExtractor.GetInstance(numConfig);
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }

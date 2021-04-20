@@ -151,8 +151,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
+            IntegerExtractor = Number.French.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));

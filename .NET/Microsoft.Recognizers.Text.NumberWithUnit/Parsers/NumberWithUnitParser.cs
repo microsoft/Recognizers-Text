@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             var normalizedLastUnit = lastUnit.ToLowerInvariant();
-            if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken))
+            if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken, StringComparison.Ordinal))
             {
                 normalizedLastUnit = normalizedLastUnit.Substring(Config.ConnectorToken.Length).Trim();
                 lastUnit = lastUnit.Substring(Config.ConnectorToken.Length).Trim();
@@ -131,7 +131,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     };
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
 
-                    if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) && this.Config.TypeList.TryGetValue(unitValue, out var unitType))
+                    if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) &&
+                        this.Config.TypeList.TryGetValue(unitValue, out var unitType))
                     {
                         ret.Type = unitType;
                     }

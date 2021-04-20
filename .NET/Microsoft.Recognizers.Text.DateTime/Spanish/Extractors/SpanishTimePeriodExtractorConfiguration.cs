@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 {
                     if (timePeriodEr.Text.Equals(tomorrowStr, StringComparison.Ordinal))
                     {
-                        if (text.Substring(0, (int)timePeriodEr.Start + (int)timePeriodEr.Length).EndsWith(morningStr))
+                        if (text.Substring(0, (int)timePeriodEr.Start + (int)timePeriodEr.Length).EndsWith(morningStr, StringComparison.Ordinal))
                         {
                             timePeriodErsResult.Add(timePeriodEr);
                         }

@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Swedish
         // Merge CurrencyNameToIsoCodeMap with CurrencyPrefixList (excluding fake and unofficial Iso codes starting with underscore)
         public static readonly Dictionary<string, string> CurrencyPrefixDict =
             NumbersWithUnitDefinitions.CurrencyPrefixList
-            .Concat(NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.Where(x => !x.Value.StartsWith("_"))
-                .ToDictionary(x => x.Key, x => x.Value.ToLower())).GroupBy(x => x.Key)
+            .Concat(NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.Where(x => !x.Value.StartsWith("_", StringComparison.Ordinal))
+                .ToDictionary(x => x.Key, x => x.Value.ToLowerInvariant())).GroupBy(x => x.Key)
             .ToDictionary(x => x.Key, y => y.Count() > 1 ? string.Join("|", new string[] { y.First().Value, y.Last().Value }) : y.First().Value);
 
         public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = CurrencyPrefixDict.ToImmutableDictionary();

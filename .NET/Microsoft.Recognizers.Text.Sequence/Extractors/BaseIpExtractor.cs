@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -71,13 +72,13 @@ namespace Microsoft.Recognizers.Text.Sequence
                         var start = lastNotMatched + 1;
                         var length = i - lastNotMatched;
                         var substr = text.Substring(start, length);
-                        if (substr.StartsWith(Constants.IPV6_ELLIPSIS) &&
+                        if (substr.StartsWith(Constants.IPV6_ELLIPSIS, StringComparison.Ordinal) &&
                             (start > 0 && char.IsLetterOrDigit(text[start - 1]) && !SimpleTokenizer.IsCjk(text[start - 1])))
                         {
                             continue;
                         }
 
-                        if (substr.EndsWith(Constants.IPV6_ELLIPSIS) &&
+                        if (substr.EndsWith(Constants.IPV6_ELLIPSIS, StringComparison.Ordinal) &&
                             (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1]) && !SimpleTokenizer.IsCjk(text[start + 1])))
                         {
                             continue;

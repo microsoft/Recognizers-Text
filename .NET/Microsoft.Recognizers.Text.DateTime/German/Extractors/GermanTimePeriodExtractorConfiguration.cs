@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.German.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -68,7 +69,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
         }
 

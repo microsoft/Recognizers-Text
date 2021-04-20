@@ -19916,5 +19916,57 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back 9am on Tuesday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9am on tuesday",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-01 09:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tune in tomorrow, 13/04/21, at 7 PM CET for episode 3 of Decentralized",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow, 13/04/21, at 7 pm",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-13T19",
+              "type": "datetime",
+              "value": "2021-04-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                         if (numberPrefix != false && numberSuffix != false && number.Text.Contains(","))
                         {
-                            int commaIndex = (int)number.Start + number.Text.IndexOf(",");
+                            int commaIndex = (int)number.Start + number.Text.IndexOf(",", StringComparison.Ordinal);
                             source = source.Substring(0, commaIndex) + " " + source.Substring(commaIndex + 1);
                         }
                     }

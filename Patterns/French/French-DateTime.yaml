@@ -494,7 +494,7 @@ RelativeDayRegex: !nestedRegex
   def: \b(((la\s+)?{RelativeRegex}\s+journ[ée]e))\b
   references: [RelativeRegex]
 ConnectorRegex: !simpleRegex
-  def: ^(,|pour|t|vers)$
+  def: ^(,|pour|t|vers|le)$
 ConnectorAndRegex: !simpleRegex
   def: \b(et\s*(le|las?)?)\b.+
 FromRegex: !simpleRegex
