@@ -1,8 +1,8 @@
 package com.microsoft.recognizers.text.datetime.parsers;
 
 import com.google.common.collect.ImmutableMap;
-import com.microsoft.recognizers.text.ExtendedModelResult;
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
@@ -139,7 +139,7 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
     }
 
     private void getResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret) {
-        String parentText = ((Map<String, Object>)er.getData()).get(ExtendedModelResult.ParentTextKey).toString();
+        String parentText = ((Map<String, Object>)er.getData()).get(ModelResult.ParentTextKey).toString();
         String type = pr.getType();
 
         boolean isPeriod = false;
@@ -219,23 +219,23 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
             ret.setFutureResolution(ImmutableMap.<String, String>builder()
                     .put(startPointType, futureStartPointResolution)
                     .put(endPointType, futureEndPointResolution)
-                    .put(ExtendedModelResult.ParentTextKey, parentText)
+                    .put(ModelResult.ParentTextKey, parentText)
                     .build());
 
             ret.setPastResolution(ImmutableMap.<String, String>builder()
                     .put(startPointType, pastStartPointResolution)
                     .put(endPointType, pastEndPointResolution)
-                    .put(ExtendedModelResult.ParentTextKey, parentText)
+                    .put(ModelResult.ParentTextKey, parentText)
                     .build());
         } else if (isSinglePoint) {
             ret.setFutureResolution(ImmutableMap.<String, String>builder()
                     .put(singlePointType, singlePointResolution)
-                    .put(ExtendedModelResult.ParentTextKey, parentText)
+                    .put(ModelResult.ParentTextKey, parentText)
                     .build());
 
             ret.setPastResolution(ImmutableMap.<String, String>builder()
                     .put(singlePointType, singlePointResolution)
-                    .put(ExtendedModelResult.ParentTextKey, parentText)
+                    .put(ModelResult.ParentTextKey, parentText)
                     .build());
         }
 

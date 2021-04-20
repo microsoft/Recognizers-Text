@@ -9,6 +9,7 @@ public abstract class ModelResultMixIn {
                      @JsonProperty("start") int start,
                      @JsonProperty("end") int end,
                      @JsonProperty("typeName") String typeName,
-                     @JsonProperty("resolution") SortedMap<String, Object> resolution) {
+                     @JsonProperty("resolution") SortedMap<String, Object> resolution,
+                     @JsonProperty("parentText") String parentText) {
     }
 }

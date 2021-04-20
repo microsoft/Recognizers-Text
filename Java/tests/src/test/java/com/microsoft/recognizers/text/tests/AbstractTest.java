@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.recognizers.text.*;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeParseResultMixIn;
-import com.microsoft.recognizers.text.tests.helpers.ExtendedModelResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ExtractResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
@@ -265,7 +264,6 @@ public abstract class AbstractTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.addMixIn(ModelResult.class, ModelResultMixIn.class);
-        mapper.addMixIn(ExtendedModelResult.class, ExtendedModelResultMixIn.class);
 
         try {
             String json = mapper.writeValueAsString(result);
