@@ -136,15 +136,10 @@ public abstract class AbstractTest {
 
     protected void recognizeAndAssert(TestCase currentCase) {
         List<ModelResult> results = recognize(currentCase);
-        assertResults(currentCase, results);
+        assertResults(currentCase, results, Collections.emptyList());
     }
 
-    public static void assertResults(TestCase currentCase, List<ModelResult> results) {
-        assertResultsWithKeys(currentCase, results, Collections.emptyList());
-    }
-
-    public static void assertResultsWithKeys(TestCase currentCase, List<ModelResult> results, List<String> testResolutionKeys) {
-
+    public void assertResults(TestCase currentCase, List<ModelResult> results, List<String> testResolutionKeys) {
         List<ModelResult> expectedResults = readExpectedResults(ModelResult.class, currentCase.results);
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
 
@@ -157,14 +152,12 @@ public abstract class AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
 
-                    if (expected.resolution.containsKey(ResolutionKey.Value)) {
-                        Assert.assertEquals(getMessage(currentCase, "resolution.value"),
-                                            expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+                    // If both properties are equal to 0, it means they don't exist, so it will skip the validation
+                    if (expected.start != 0 && expected.end != 0) {
+                        Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
+                        Assert.assertEquals(getMessage(currentCase, "end"), expected.end, actual.end);
                     }
-
-                    for (String key : testResolutionKeys) {
-                        Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
-                    }
+                    assertModel(expected, actual, currentCase, testResolutionKeys);
                 });
     }
 
@@ -309,6 +302,12 @@ public abstract class AbstractTest {
 
     public static String getMessage(TestCase testCase, String propName) {
         return "Does not match " + propName + " on Input: \"" + testCase.input + "\"";
+    }
+
+    protected void assertModel(ModelResult expected, ModelResult actual, TestCase currentCase, List<String> testResolutionKeys) {
+        for (String key : testResolutionKeys) {
+            Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
+        }
     }
 
     private static String StringUtf8Bom(String input) {
