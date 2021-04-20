@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.English;
 
-namespace Microsoft.Recognizers.Text.Sequence.Chinese
+namespace Microsoft.Recognizers.Text.Sequence.English
 {
     public class EnglishQuotedTextExtractorConfiguration : QuotedTextConfiguration
     {

@@ -1,7 +1,6 @@
 [
  {
   "Input": "यह “संख्या” `123` या`456` है",
-  "NotSupportedByDesign": "javascript, python, java",
   "Results": [
    {
     "Text": "“संख्या”",

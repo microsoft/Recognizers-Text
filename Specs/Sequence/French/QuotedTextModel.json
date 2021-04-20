@@ -1,7 +1,6 @@
 [
  {
   "Input": "Ce «nombre» est `123` ou `456`",
-  "NotSupportedByDesign": "javascript, python, java",
   "Results": [
    {
     "Text": "«nombre»",
