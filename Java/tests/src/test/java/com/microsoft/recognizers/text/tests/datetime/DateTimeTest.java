@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.tests.datetime;
 
-import com.microsoft.recognizers.text.ExtendedModelResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
@@ -12,6 +11,7 @@ import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
@@ -35,45 +35,26 @@ public class DateTimeTest extends AbstractTest {
     }
 
     @Override
-    protected void recognizeAndAssert(TestCase currentCase) {
+    protected void assertModel(ModelResult expected,
+                               ModelResult actual,
+                               TestCase currentCase,
+                               List<String> testResolutionKeys) {
+        if (actual.parentText != null) {
+            Assert.assertEquals(getMessage(currentCase, "parentText"),
+                    expected.parentText, actual.parentText);
+        }
 
-        // parse
-        List<ModelResult> results = recognize(currentCase);
+        if (expected.resolution.containsKey(ResolutionKey.ValueSet)) {
 
-        // assert
-        assertResultsDateTime(currentCase, results);
-    }
+            Assert.assertNotNull(getMessage(currentCase, "resolution"), actual.resolution);
 
-    public static <T extends ModelResult> void assertResultsDateTime(TestCase currentCase, List<T> results) {
+            Assert.assertNotNull(getMessage(currentCase,
+                    ResolutionKey.ValueSet), actual.resolution.get(ResolutionKey.ValueSet));
 
-        List<ExtendedModelResult> expectedResults = readExpectedResults(ExtendedModelResult.class, currentCase.results);
-        Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
-
-        IntStream.range(0, expectedResults.size())
-                .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
-                .forEach(t -> {
-                    ExtendedModelResult expected = t.getValue0();
-                    T actual = t.getValue1();
-
-                    Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-                    if (actual instanceof ExtendedModelResult) {
-                        Assert.assertEquals(getMessage(currentCase, "parentText"),
-                                            expected.parentText, ((ExtendedModelResult)actual).parentText);
-                    }
-
-                    if (expected.resolution.containsKey(ResolutionKey.ValueSet)) {
-
-                        Assert.assertNotNull(getMessage(currentCase, "resolution"), actual.resolution);
-
-                        Assert.assertNotNull(getMessage(currentCase,
-                                             ResolutionKey.ValueSet), actual.resolution.get(ResolutionKey.ValueSet));
-
-                        assertValueSet(currentCase,
-                            (List<Map<String, Object>>)expected.resolution.get(ResolutionKey.ValueSet),
-                            (List<Map<String, Object>>)actual.resolution.get(ResolutionKey.ValueSet));
-                    }
-                });
+            assertValueSet(currentCase,
+                    (List<Map<String, Object>>)expected.resolution.get(ResolutionKey.ValueSet),
+                    (List<Map<String, Object>>)actual.resolution.get(ResolutionKey.ValueSet));
+        }
     }
 
     private static void assertValueSet(TestCase currentCase, List<Map<String, Object>> expected, List<Map<String, Object>> actual) {
