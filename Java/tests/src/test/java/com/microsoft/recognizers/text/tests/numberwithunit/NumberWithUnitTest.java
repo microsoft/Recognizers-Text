@@ -41,9 +41,9 @@ public class NumberWithUnitTest extends AbstractTest {
     private List<String> getKeysToTest(TestCase currentCase) {
         switch (currentCase.modelName) {
             case "CurrencyModel":
-                return Arrays.asList(ResolutionKey.Unit, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
             default:
-                return Arrays.asList(ResolutionKey.Unit);
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Unit);
         }
     }
 
