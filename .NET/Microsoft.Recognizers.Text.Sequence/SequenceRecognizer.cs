@@ -7,6 +7,7 @@ using Microsoft.Recognizers.Text.Sequence.French;
 using Microsoft.Recognizers.Text.Sequence.German;
 using Microsoft.Recognizers.Text.Sequence.Hindi;
 using Microsoft.Recognizers.Text.Sequence.Italian;
+using Microsoft.Recognizers.Text.Sequence.Japanese;
 using Microsoft.Recognizers.Text.Sequence.Korean;
 using Microsoft.Recognizers.Text.Sequence.Portuguese;
 using Microsoft.Recognizers.Text.Sequence.Spanish;
@@ -112,9 +113,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetQuotedTextModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            if (culture != null && (
-                    culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal) ||
-                    culture.ToLowerInvariant().StartsWith("ja-", StringComparison.Ordinal)))
+            if (culture != null && culture.ToLowerInvariant().StartsWith("zh-", StringComparison.Ordinal))
             {
                 return GetModel<QuotedTextModel>(Culture.Chinese, fallbackToDefaultCulture);
             }
@@ -233,12 +232,76 @@ namespace Microsoft.Recognizers.Text.Sequence
                 (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
 
             RegisterModel<QuotedTextModel>(
-                Culture.English,
-                (options) => new QuotedTextModel(new QuotedTextParser(), new EnglishQuotedTextExtractor()));
+                Culture.Chinese,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new ChineseQuotedTextExtractorConfiguration(options))));
 
             RegisterModel<QuotedTextModel>(
-              Culture.Chinese,
-              (options) => new QuotedTextModel(new QuotedTextParser(), new ChineseQuotedTextExtractor()));
+                Culture.English,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new EnglishQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Dutch,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new DutchQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.French,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new FrenchQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.German,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new GermanQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Hindi,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new HindiQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Italian,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new ItalianQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Japanese,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new JapaneseQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Korean,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new KoreanQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Portuguese,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new PortugueseQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Spanish,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new SpanishQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Turkish,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new TurkishQuotedTextExtractorConfiguration(options))));
 
             RegisterModel<EmailModel>(
                 Culture.English,

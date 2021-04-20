@@ -1,0 +1,29 @@
+[
+ {
+  "Input": "Questo «numero» è `123` o `456`",
+  "NotSupportedByDesign": "javascript, python, java",
+  "Results": [
+   {
+    "Text": "«numero»",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "«numero»"
+    }
+   },
+   {
+    "Text": "`123`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`123`"
+    }
+   },
+   {
+    "Text": "`456`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`456`"
+    }
+   }
+  ]
+ }
+]

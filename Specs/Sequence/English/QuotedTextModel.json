@@ -25,32 +25,5 @@
         }
       }
     ]
-  },
-  {
-    "Input": "This “number is `123` or `456`”",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "“number is `123` or `456`”",
-        "TypeName": "quotedText",
-        "Resolution": {
-          "value": "“number is `123` or `456`”"
-        }
-      },
-      {
-        "Text": "`123`",
-        "TypeName": "quotedText",
-        "Resolution": {
-          "value": "`123`"
-        }
-      },
-      {
-        "Text": "`456`",
-        "TypeName": "quotedText",
-        "Resolution": {
-          "value": "`456`"
-        }
-      }
-    ]
   }
 ]

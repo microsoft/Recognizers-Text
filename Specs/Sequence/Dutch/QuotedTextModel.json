@@ -1,0 +1,29 @@
+[
+ {
+  "Input": "Dit ,nummer’ is `123` of `456`",
+  "NotSupportedByDesign": "javascript, python, java",
+  "Results": [
+   {
+    "Text": ",nummer’",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": ",nummer’"
+    }
+   },
+   {
+    "Text": "`123`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`123`"
+    }
+   },
+   {
+    "Text": "`456`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`456`"
+    }
+   }
+  ]
+ }
+]

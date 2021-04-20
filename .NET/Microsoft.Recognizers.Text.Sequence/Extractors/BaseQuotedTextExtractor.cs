@@ -7,8 +7,53 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseQuotedTextExtractor : BaseSequenceExtractor
     {
-        public BaseQuotedTextExtractor()
+        private QuotedTextConfiguration config;
+
+        public BaseQuotedTextExtractor(QuotedTextConfiguration config)
         {
+            this.config = config;
+
+            var regexes = new Dictionary<Regex, string>
+            {
+                {
+                    config.QuotedTextRegex1,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex2,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex3,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex4,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex5,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex6,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex7,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex8,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+                {
+                    config.QuotedTextRegex9,
+                    Constants.QUOTED_TEXT_REGEX
+                },
+            };
+
+            Regexes = regexes.ToImmutableDictionary();
         }
 
         internal override ImmutableDictionary<Regex, string> Regexes { get; }

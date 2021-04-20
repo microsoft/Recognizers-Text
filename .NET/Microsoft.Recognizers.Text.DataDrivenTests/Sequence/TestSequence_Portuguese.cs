@@ -19,5 +19,12 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestIpAddress(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void QuotedTextModel(TestModel testSpec)
+        {
+            TestQuotedText(testSpec);
+        }
     }
 }
