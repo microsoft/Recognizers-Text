@@ -20086,6 +20086,7 @@
   },
   {
     "Input": "I'll go back on 5.1935",
+    "Comment": "This could be supported in the future, interpreted as date 'May 1935'",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -20093,13 +20094,7 @@
   },
   {
     "Input": "I'll go back 5.11",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": []
-  },
-  {
-    "Input": "I'll go back during 5.11",
+    "Comment": "Not supported because there is no preposition which is required to determine the interpretation.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -20134,14 +20129,45 @@
     ]
   },
   {
-    "Input": "I'll go back at 5.85",
+    "Input": "The price ended the day at 5.85",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the day",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back in 5.85",
+    "Comment": "This could be supported in the future, interpreted as date 'May 1985'",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": []
   },
   {
-    "Input": "I'll go back in 5.85",
+    "Input": "0.1993 is not a date",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "The address is 12.12.12.12",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
