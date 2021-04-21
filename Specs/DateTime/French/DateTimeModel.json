@@ -3479,5 +3479,150 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je retournerai sept heures dix",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "sept heures dix",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:10",
+              "type": "time",
+              "value": "07:10:00"
+            },
+            {
+              "timex": "T19:10",
+              "type": "time",
+              "value": "19:10:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai sept heures et dix",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "sept heures et dix",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:10",
+              "type": "time",
+              "value": "07:10:00"
+            },
+            {
+              "timex": "T19:10",
+              "type": "time",
+              "value": "19:10:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai sept heures moins dix",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "sept heures moins dix",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06:50",
+              "type": "time",
+              "value": "06:50:00"
+            },
+            {
+              "timex": "T18:50",
+              "type": "time",
+              "value": "18:50:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "le soleil se couchant demain à sept heures et vingt-sept minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "demain à sept heures et vingt-sept minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:27",
+              "type": "datetime",
+              "value": "2016-11-08 07:27:00"
+            },
+            {
+              "timex": "2016-11-08T19:27",
+              "type": "datetime",
+              "value": "2016-11-08 19:27:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "le soleil se couchant demain à huit heures moins vingt-trois minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "demain à huit heures moins vingt-trois minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:37",
+              "type": "datetime",
+              "value": "2016-11-08 07:37:00"
+            },
+            {
+              "timex": "2016-11-08T19:37",
+              "type": "datetime",
+              "value": "2016-11-08 19:37:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 67
+      }
+    ]
   }
 ]

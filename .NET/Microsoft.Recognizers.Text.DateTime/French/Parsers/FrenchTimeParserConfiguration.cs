@@ -12,6 +12,21 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
         public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -37,27 +52,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
-            var deltaMin = 0;
-            var trimmedPrefix = prefix.Trim();
+            int deltaMin;
 
-            // @TODO move hardcoded values to resources file
+            var trimedPrefix = prefix.Trim();
 
-            // c'este 8 heures et demie, - "it's half past 8"
-            if (trimmedPrefix.EndsWith("demie", StringComparison.Ordinal))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 30;
             }
-            else if (trimmedPrefix.EndsWith("un quart", StringComparison.Ordinal) || trimmedPrefix.EndsWith("quart", StringComparison.Ordinal))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.EndsWith("trois quarts", StringComparison.Ordinal))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 45;
             }
             else
             {
-                var match = FrenchTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
+                var match = FrenchTimeExtractorConfiguration.LessThanOneHour.Match(trimedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
@@ -70,8 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 }
             }
 
-            // 'to' i.e 'one to five' = 'un à cinq'
-            if (trimmedPrefix.EndsWith("à", StringComparison.Ordinal))
+            if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }
