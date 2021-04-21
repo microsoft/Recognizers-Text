@@ -1,4 +1,4 @@
-from datatypes_timex_expression import Timex, datetime, timedelta, TimexResolver
+from datatypes_timex_expression import Timex, datetime, TimexResolver
 
 
 def test_datatypes_resolver_date_definite():
@@ -210,32 +210,15 @@ def test_datatypes_resolver_dateRange_last_week():
     assert resolution.values[0].end == "2019-04-29"
 
 
-def test_datatypes_resolver_dateRange_this_week():
-    today = datetime.now()
-    year, week_of_year = today.isocalendar()[0:2]
-    timex = "{}-W{}".format(year, week_of_year)
-    resolution = TimexResolver.resolve([timex], today)
-    correct_start = datetime.strptime(timex + "-1", "%G-W%V-%u").date()
-    correct_end = correct_start + timedelta(days=7)
-
-    assert len(resolution.values) == 1
-    assert resolution.values[0].timex == timex
-    assert resolution.values[0].type == "daterange"
-    assert resolution.values[0].start == correct_start.isoformat()
-    assert resolution.values[0].end == correct_end.isoformat()
-
-
 def test_datatypes_resolver_dateRange_week_of_year():
-    timex = "2021-W16"
-    resolution = TimexResolver.resolve([timex])
-    correct_start = datetime.strptime(timex + "-1", "%G-W%V-%u").date()
-    correct_end = correct_start + timedelta(days=7)
+    today = datetime(2017, 4, 30)
+    resolution = TimexResolver.resolve(["2021-W16"], today)
 
     assert len(resolution.values) == 1
-    assert resolution.values[0].timex == timex
+    assert resolution.values[0].timex == "2021-W16"
     assert resolution.values[0].type == "daterange"
-    assert resolution.values[0].start == correct_start.isoformat()
-    assert resolution.values[0].end == correct_end.isoformat()
+    assert resolution.values[0].start == "2021-04-19"
+    assert resolution.values[0].end == "2021-04-26"
 
 
 def test_datatypes_resolver_dateRange_last_month():

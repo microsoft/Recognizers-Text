@@ -38,18 +38,18 @@ def test_datatypes_datehelpers_islastweek():
 
 
 def test_datatypes_datehelpers_weekofyear():
-    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 1)) == datetime(2017, 1, 1).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 2)) == datetime(2017, 1, 2).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2017, 2, 23)) == datetime(2017, 2, 23).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2017, 3, 15)) == datetime(2017, 3, 15).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2017, 9, 25)) == datetime(2017, 9, 25).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2017, 12, 31)) == datetime(2017, 12, 31).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 1)) == datetime(2018, 1, 1).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 2)) == datetime(2018, 1, 2).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 7)) == datetime(2018, 1, 7).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 8)) == datetime(2018, 1, 8).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2018, 12, 31)) == datetime(2018, 12, 31).isocalendar()[1]
-    assert TimexDateHelpers.week_of_year(datetime(2021, 4, 20)) == datetime(2021, 4, 20).isocalendar()[1]
+    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 1)) == 52
+    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 2)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2017, 2, 23)) == 8
+    assert TimexDateHelpers.week_of_year(datetime(2017, 3, 15)) == 11
+    assert TimexDateHelpers.week_of_year(datetime(2017, 9, 25)) == 39
+    assert TimexDateHelpers.week_of_year(datetime(2017, 12, 31)) == 52
+    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 1)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 2)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 7)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2018, 1, 8)) == 2
+    assert TimexDateHelpers.week_of_year(datetime(2018, 12, 31)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2021, 4, 20)) == 16
 
 
 def test_datatypes_datehelpers_invariance():
