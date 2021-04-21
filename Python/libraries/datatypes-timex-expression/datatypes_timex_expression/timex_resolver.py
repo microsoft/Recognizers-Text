@@ -153,15 +153,25 @@ class TimexResolver:
 
     @staticmethod
     def week_date_range(year: int, week_of_year: int):
-        date_in_week = datetime(year, 1, 1) + \
-            timedelta(days=(week_of_year-1)*7)
+        """Returns start and end dates of the given ISO week number of a given year"""
+        date_in_week = datetime(year, 1, 1)
+
+        # From Wikipedia: The ISO 8601 definition for week 01 is the week with
+        # the first Thursday of the Gregorian year (i.e. of January) in it.
+        if date_in_week.weekday() <= 3:
+            date_in_week -= timedelta(days=date_in_week.weekday())
+        else:
+            date_in_week += timedelta(days=7 - date_in_week.weekday())
+
+        date_in_week += timedelta(days=week_of_year * 7)
+
         start = TimexDateHelpers.date_of_last_day(
             Constants.DAYS['MONDAY'], date_in_week)
         end = TimexDateHelpers.date_of_last_day(
             Constants.DAYS['MONDAY'], date_in_week + timedelta(days=7))
 
-        return TimexValue.date_value(Timex(year=start.year, month=start.month, day_of_month=start.day)), TimexValue.date_value(
-            Timex(year=start.year, month=start.month, day_of_month=end.day))
+        return TimexValue.date_value(Timex(year=start.year, month=start.month, day_of_month=start.day)), \
+               TimexValue.date_value(Timex(year=start.year, month=start.month, day_of_month=end.day))
 
     @staticmethod
     def resolve_date_range(timex: Timex, date: datetime):

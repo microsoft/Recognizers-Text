@@ -4,84 +4,68 @@ from datetime import datetime, timedelta
 class TimexDateHelpers:
 
     @staticmethod
-    def tomorrow(date: datetime):
-        return date + timedelta(days=1)
+    def tomorrow(reference_date: datetime) -> datetime:
+        """Next day of the reference_date"""
+        return reference_date + timedelta(days=1)
 
     @staticmethod
-    def yesterday(date):
-        return date - timedelta(days=1)
+    def yesterday(reference_date: datetime) -> datetime:
+        """Previous day of the reference_date"""
+        return reference_date - timedelta(days=1)
 
     @staticmethod
-    def date_part_equal(date_x, date_y):
+    def date_part_equal(date_x, date_y) -> bool:
+        """Are two given dates equal?"""
         return date_x == date_y
 
     @staticmethod
-    def is_date_in_week(date, start_of_week):
-        d = start_of_week
-        for i in range(0, 7, 1):
-            if TimexDateHelpers.date_part_equal(date, d):
-                return True
-            d = d + timedelta(days=1)
-
-        return False
+    def is_date_in_week(date: datetime, start_of_week: datetime) -> bool:
+        """Is the given date in the week starting at start_of_week?"""
+        diff = date - start_of_week
+        return 0 <= diff.days < 7
 
     @staticmethod
-    def is_this_week(date, reference_date: datetime):
-        start_of_week = reference_date
-        while start_of_week.weekday() > 0:
-            start_of_week = start_of_week - timedelta(days=1)
+    def is_this_week(date: datetime, reference_date: datetime) -> bool:
+        """Is the given date in the current week based on reference_date?"""
+        start_of_week = reference_date - timedelta(days=reference_date.weekday())
         return TimexDateHelpers.is_date_in_week(date, start_of_week)
 
     @staticmethod
-    def is_next_week(date, reference_date):
+    def is_next_week(date: datetime, reference_date: datetime) -> bool:
+        """Is the given date in the next week based on reference_date?"""
         next_week_date = reference_date + timedelta(days=7)
         return TimexDateHelpers.is_this_week(date, next_week_date)
 
     @staticmethod
-    def is_last_week(date, reference_date):
-        next_week_date = reference_date - timedelta(days=7)
-        return TimexDateHelpers.is_this_week(date, next_week_date)
+    def is_last_week(date: datetime, reference_date: datetime) -> bool:
+        """Is the given date in the last week based on reference_date?"""
+        last_week_date = reference_date - timedelta(days=7)
+        return TimexDateHelpers.is_this_week(date, last_week_date)
 
     @staticmethod
-    def week_of_year(date: datetime):
-        ds = datetime(date.year, 1, 1)
-        de = datetime(date.year, date.month, date.day)
-        weeks = 1
-
-        while ds < de:
-            day_of_week = ds.weekday()
-
-            if day_of_week == 6:
-                weeks = weeks + 1
-
-            ds = ds + timedelta(days=1)
-
-        return weeks
+    def week_of_year(date: datetime) -> int:
+        """Iso week number of a given date"""
+        return date.isocalendar()[1]
 
     @staticmethod
-    def fixed_format_number(n, size):
+    def fixed_format_number(n: int, size: int) -> str:
         return str(n).rjust(size, '0')
 
     @staticmethod
-    def date_of_last_day(day: datetime, reference_date: datetime):
-        result = reference_date
-        result = result - timedelta(days=1)
-        while result.weekday() != day:
-            result = result - timedelta(days=1)
-
-        return result
+    def date_of_last_day(day: int, reference_date: datetime) -> datetime:
+        """Date of the previous given day from reference_date (e.g. previous Wednesday)"""
+        day_delta = (6 - day + reference_date.weekday()) % 7 + 1
+        return reference_date - timedelta(days=day_delta)
 
     @staticmethod
-    def date_of_next_day(day: datetime, reference_date: datetime):
-        result = reference_date
-        result = result + timedelta(days=1)
-        while result.weekday() != day:
-            result = result + timedelta(days=1)
-
-        return result
+    def date_of_next_day(day: int, reference_date: datetime) -> datetime:
+        """Date of the next given day from reference_date (e.g. next Wednesday)"""
+        day_delta = (6 + day - reference_date.weekday()) % 7 + 1
+        return reference_date + timedelta(days=day_delta)
 
     @staticmethod
-    def dates_matching_day(day, start: datetime, end: datetime):
+    def dates_matching_day(day: int, start: datetime, end: datetime) -> list:
+        """All dates matching the given day that are between start and end (e.g. all Wednesday between start and end)"""
         result = []
         d = start
         while not TimexDateHelpers.date_part_equal(d, end):
