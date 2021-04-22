@@ -13,6 +13,7 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
+using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
@@ -167,6 +168,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetHindiExtractor(extractorName);
                 case Culture.Arabic:
                     return GetArabicExtractor(extractorName);
+                case Culture.Korean:
+                    return GetKoreanExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
@@ -205,6 +208,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetHindiParser(parserName);
                 case Culture.Arabic:
                     return GetArabicParser(parserName);
+                case Culture.Korean:
+                    return GetKoreanParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -1068,6 +1073,72 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for Hindi not supported");
+        }
+
+        public static IDateTimeExtractor GetKoreanExtractor(DateTimeExtractors extractorName)
+        {
+
+            var defaultConfig = new BaseDateTimeOptionsConfiguration(Culture.Korean, DateTimeOptions.None);
+            var skipConfig = new BaseDateTimeOptionsConfiguration(Culture.Korean, DateTimeOptions.SkipFromToMerge);
+
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseCJKDateExtractor(new KoreanDateExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Time:
+                    return new BaseCJKTimeExtractor(new KoreanTimeExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseCJKDatePeriodExtractor(new KoreanDatePeriodExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseCJKTimePeriodExtractor(new KoreanTimePeriodExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.DateTime:
+                    return new BaseCJKDateTimeExtractor(new KoreanDateTimeExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseCJKDateTimePeriodExtractor(new KoreanDateTimePeriodExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Duration:
+                    return new BaseCJKDurationExtractor(new KoreanDurationExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Holiday:
+                    return new BaseCJKHolidayExtractor(new KoreanHolidayExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Set:
+                    return new BaseCJKSetExtractor(new KoreanSetExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Merged:
+                    return new BaseCJKMergedDateTimeExtractor(new KoreanMergedExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseCJKMergedDateTimeExtractor(new KoreanMergedExtractorConfiguration(skipConfig));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Korean not supported");
+        }
+
+        public static IDateTimeParser GetKoreanParser(DateTimeParsers parserName)
+        {
+            var config = new KoreanCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Korean, DateTimeOptions.None));
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseCJKDateParser(new KoreanDateParserConfiguration(config));
+                case DateTimeParsers.Time:
+                    return new BaseCJKTimeParser(new KoreanTimeParserConfiguration(config));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseCJKDatePeriodParser(new KoreanDatePeriodParserConfiguration(config));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseCJKTimePeriodParser(new KoreanTimePeriodParserConfiguration(config));
+                case DateTimeParsers.DateTime:
+                    return new BaseCJKDateTimeParser(new KoreanDateTimeParserConfiguration(config));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseCJKDateTimePeriodParser(new KoreanDateTimePeriodParserConfiguration(config));
+                case DateTimeParsers.Duration:
+                    return new BaseCJKDurationParser(new KoreanDurationParserConfiguration(config));
+                case DateTimeParsers.Holiday:
+                    return new BaseCJKHolidayParser(new KoreanHolidayParserConfiguration(config));
+                case DateTimeParsers.Set:
+                    return new BaseCJKSetParser(new KoreanSetParserConfiguration(config));
+                case DateTimeParsers.Merged:
+                    return new BaseCJKMergedDateTimeParser(new KoreanMergedParserConfiguration(config));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Korean not supported");
         }
     }
 

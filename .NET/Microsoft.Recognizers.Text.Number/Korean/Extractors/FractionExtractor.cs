@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public FractionExtractor()
+        public FractionExtractor(BaseNumberOptionsConfiguration config)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {

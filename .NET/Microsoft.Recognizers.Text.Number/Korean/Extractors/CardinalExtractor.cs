@@ -1,19 +1,20 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
         // CardinalExtractor = Int + Double
-        public CardinalExtractor(KoreanNumberExtractorMode mode = KoreanNumberExtractorMode.Default)
+        public CardinalExtractor(BaseNumberOptionsConfiguration config, CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
-            var intExtract = new IntegerExtractor(mode);
+            var intExtract = new IntegerExtractor(config, mode);
             builder.AddRange(intExtract.Regexes);
 
-            var douExtractor = new DoubleExtractor();
+            var douExtractor = new DoubleExtractor(config);
             builder.AddRange(douExtractor.Regexes);
 
             Regexes = builder.ToImmutable();

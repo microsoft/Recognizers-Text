@@ -2,11 +2,11 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Korean;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese
+namespace Microsoft.Recognizers.Text.DateTime.Korean
 {
-    public class ChineseTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimeExtractorConfiguration
+    public class KoreanTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimeExtractorConfiguration
     {
         public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
 
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ChineseTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
+        public KoreanTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             var regexes = new Dictionary<Regex, TimeType>

@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
             var numConfig = new BaseNumberOptionsConfiguration(config);
 
-            NumberExtractor = new NumberExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            NumberExtractor = new NumberExtractor(numConfig);
+            OrdinalExtractor = new OrdinalExtractor(numConfig);
             NumberParser = new BaseCJKNumberParser(new KoreanNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

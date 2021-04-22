@@ -2,16 +2,16 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Korean;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese
+namespace Microsoft.Recognizers.Text.DateTime.Korean
 {
-    public class ChineseTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimePeriodExtractorConfiguration
+    public class KoreanTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimePeriodExtractorConfiguration
     {
         public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;
 
         // 五点十分四十八秒
-        public static readonly string CJKTimeRegex = ChineseTimeExtractorConfiguration.CJKTimeRegex;
+        public static readonly string CJKTimeRegex = KoreanTimeExtractorConfiguration.CJKTimeRegex;
 
         // 六点 到 九点 | 六 到 九点
         public static readonly string LeftChsTimeRegex = DateTimeDefinitions.TimePeriodLeftChsTimeRegex;
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string RightChsTimeRegex = DateTimeDefinitions.TimePeriodRightChsTimeRegex;
 
         // 2:45
-        public static readonly string DigitTimeRegex = ChineseTimeExtractorConfiguration.DigitTimeRegex;
+        public static readonly string DigitTimeRegex = KoreanTimeExtractorConfiguration.DigitTimeRegex;
 
         public static readonly string LeftDigitTimeRegex = DateTimeDefinitions.TimePeriodLeftDigitTimeRegex;
 
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public ChineseTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
+        public KoreanTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             var regexes = new Dictionary<Regex, PeriodType>

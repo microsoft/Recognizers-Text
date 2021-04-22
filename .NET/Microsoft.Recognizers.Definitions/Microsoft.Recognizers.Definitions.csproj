@@ -82,6 +82,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\DateTimeDefinitions.cs" Link="Japanese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\NumbersDefinitions.cs" Link="Japanese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\NumbersWithUnitDefinitions.cs" Link="Japanese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\DateTimeDefinitions.cs" Link="Korean\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\NumbersWithUnitDefinitions.cs" Link="Korean\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\NumbersDefinitions.cs" Link="Korean\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\ChoiceDefinitions.cs" Link="Portuguese\ChoiceDefinitions.cs" />
