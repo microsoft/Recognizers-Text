@@ -14,9 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string CJKTimeRegex = ChineseTimeExtractorConfiguration.CJKTimeRegex;
 
         // 六点 到 九点 | 六 到 九点
-        public static readonly string LeftChsTimeRegex = DateTimeDefinitions.TimePeriodLeftChsTimeRegex;
+        public static readonly string LeftCJKTimeRegex = DateTimeDefinitions.TimePeriodLeftCJKTimeRegex;
 
-        public static readonly string RightChsTimeRegex = DateTimeDefinitions.TimePeriodRightChsTimeRegex;
+        public static readonly string RightCJKTimeRegex = DateTimeDefinitions.TimePeriodRightCJKTimeRegex;
 
         // 2:45
         public static readonly string DigitTimeRegex = ChineseTimeExtractorConfiguration.DigitTimeRegex;
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string RightDigitTimeRegex = DateTimeDefinitions.TimePeriodRightDigitTimeRegex;
 
-        public static readonly string ShortLeftChsTimeRegex = DateTimeDefinitions.TimePeriodShortLeftChsTimeRegex;
+        public static readonly string ShortLeftCJKTimeRegex = DateTimeDefinitions.TimePeriodShortLeftCJKTimeRegex;
 
         public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriodShortLeftDigitTimeRegex;
 

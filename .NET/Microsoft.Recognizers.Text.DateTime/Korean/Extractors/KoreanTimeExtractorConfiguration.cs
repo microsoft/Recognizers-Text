@@ -14,11 +14,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly string SecondNumRegex = DateTimeDefinitions.TimeSecondNumRegex;
 
-        public static readonly string HourChsRegex = DateTimeDefinitions.TimeHourChsRegex;
+        public static readonly string HourCJKRegex = DateTimeDefinitions.TimeHourCJKRegex;
 
-        public static readonly string MinuteChsRegex = DateTimeDefinitions.TimeMinuteChsRegex;
+        public static readonly string MinuteCJKRegex = DateTimeDefinitions.TimeMinuteCJKRegex;
 
-        public static readonly string SecondChsRegex = DateTimeDefinitions.TimeSecondChsRegex;
+        public static readonly string SecondCJKRegex = DateTimeDefinitions.TimeSecondCJKRegex;
 
         public static readonly string ClockDescRegex = DateTimeDefinitions.TimeClockDescRegex;
 

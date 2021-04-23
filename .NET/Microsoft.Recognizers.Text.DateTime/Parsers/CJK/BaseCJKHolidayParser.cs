@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var year = referenceDate.Year;
             var hasYear = false;
             var yearNum = match.Groups["year"].Value;
-            var yearChs = match.Groups["yearchs"].Value;
+            var yearCJK = match.Groups["yearCJK"].Value;
             var yearRel = match.Groups["yearrel"].Value;
 
             if (!string.IsNullOrEmpty(yearNum))
@@ -141,12 +141,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
-            else if (!string.IsNullOrEmpty(yearChs))
+            else if (!string.IsNullOrEmpty(yearCJK))
             {
                 hasYear = true;
-                yearChs = this.config.SanitizeYearToken(yearChs);
+                yearCJK = this.config.SanitizeYearToken(yearCJK);
 
-                year = ConvertToInteger(yearChs);
+                year = ConvertToInteger(yearCJK);
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
@@ -207,12 +207,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private int ConvertToInteger(string yearChsStr)
+        private int ConvertToInteger(string yearCJKStr)
         {
             var year = 0;
             var num = 0;
 
-            var er = this.config.IntegerExtractor.Extract(yearChsStr);
+            var er = this.config.IntegerExtractor.Extract(yearCJKStr);
             if (er.Count != 0)
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (num < 10)
             {
                 num = 0;
-                foreach (var ch in yearChsStr)
+                foreach (var ch in yearCJKStr)
                 {
                     num *= 10;
                     er = this.config.IntegerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));

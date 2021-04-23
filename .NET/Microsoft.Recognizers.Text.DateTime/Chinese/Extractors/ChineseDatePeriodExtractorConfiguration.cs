@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
         public static readonly Regex YearRegexInNumber = new Regex(DateTimeDefinitions.YearRegexInNumber, RegexFlags);
-        public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexFlags);
+        public static readonly Regex ZeroToNineIntegerRegexCJK = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexCJK, RegexFlags);
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
         public static readonly Regex SeasonRegex = new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags);

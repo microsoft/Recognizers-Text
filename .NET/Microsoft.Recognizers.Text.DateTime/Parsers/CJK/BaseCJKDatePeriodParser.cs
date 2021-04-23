@@ -309,12 +309,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var year = 0;
             var num = 0;
 
-            int dynastyYear = DateTimeFormatUtil.ParseChineseDynastyYear(yearCJKStr,
-                                                                         this.config.DynastyYearRegex,
-                                                                         this.config.DynastyStartYear,
-                                                                         this.config.DynastyYearMap,
-                                                                         this.config.IntegerExtractor,
-                                                                         this.config.NumberParser);
+            int dynastyYear = DateTimeFormatUtil.ParseDynastyYear(yearCJKStr,
+                                                                  this.config.DynastyYearRegex,
+                                                                  this.config.DynastyStartYear,
+                                                                  this.config.DynastyYearMap,
+                                                                  this.config.IntegerExtractor,
+                                                                  this.config.NumberParser);
             if (dynastyYear > 0)
             {
                 return dynastyYear;
@@ -491,8 +491,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (yearInCJKMatch.Count == 2)
                 {
-                    var yearFrom = yearInCJKMatch[0].Groups["yearchs"].Value;
-                    var yearTo = yearInCJKMatch[1].Groups["yearchs"].Value;
+                    var yearFrom = yearInCJKMatch[0].Groups["yearCJK"].Value;
+                    var yearTo = yearInCJKMatch[1].Groups["yearCJK"].Value;
                     beginYear = ConvertCJKToInteger(yearFrom);
                     endYear = ConvertCJKToInteger(yearTo);
                 }
@@ -648,7 +648,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // parse year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
-            var yearChs = match.Groups["yearchs"].Value;
+            var yearCJK = match.Groups["yearCJK"].Value;
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
@@ -659,14 +659,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
-            else if (!string.IsNullOrEmpty(yearChs))
+            else if (!string.IsNullOrEmpty(yearCJK))
             {
-                if (this.config.IsYearOnly(yearChs))
+                if (this.config.IsYearOnly(yearCJK))
                 {
-                    yearChs = yearChs.Substring(0, yearChs.Length - 1);
+                    yearCJK = yearCJK.Substring(0, yearCJK.Length - 1);
                 }
 
-                year = ConvertCJKToInteger(yearChs);
+                year = ConvertCJKToInteger(yearCJK);
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {
@@ -1368,7 +1368,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var year = referenceDate.Year;
                 var hasYear = false;
                 var yearNum = match.Groups["year"].Value;
-                var yearChs = match.Groups["yearchs"].Value;
+                var yearCJK = match.Groups["yearCJK"].Value;
                 var yearRel = match.Groups["yearrel"].Value;
 
                 if (!string.IsNullOrEmpty(yearNum))
@@ -1381,15 +1381,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     year = int.Parse(yearNum, CultureInfo.InvariantCulture);
                 }
-                else if (!string.IsNullOrEmpty(yearChs))
+                else if (!string.IsNullOrEmpty(yearCJK))
                 {
                     hasYear = true;
-                    if (this.config.IsYearOnly(yearChs))
+                    if (this.config.IsYearOnly(yearCJK))
                     {
-                        yearChs = yearChs.Substring(0, yearChs.Length - 1);
+                        yearCJK = yearCJK.Substring(0, yearCJK.Length - 1);
                     }
 
-                    year = ConvertCJKToInteger(yearChs);
+                    year = ConvertCJKToInteger(yearCJK);
                 }
                 else if (!string.IsNullOrEmpty(yearRel))
                 {
@@ -1441,7 +1441,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // parse year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
-            var yearChs = match.Groups["yearchs"].Value;
+            var yearCJK = match.Groups["yearCJK"].Value;
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
@@ -1452,14 +1452,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 year = int.Parse(yearNum, CultureInfo.InvariantCulture);
             }
-            else if (!string.IsNullOrEmpty(yearChs))
+            else if (!string.IsNullOrEmpty(yearCJK))
             {
-                if (this.config.IsYearOnly(yearChs))
+                if (this.config.IsYearOnly(yearCJK))
                 {
-                    yearChs = yearChs.Substring(0, yearChs.Length - 1);
+                    yearCJK = yearCJK.Substring(0, yearCJK.Length - 1);
                 }
 
-                year = ConvertCJKToInteger(yearChs);
+                year = ConvertCJKToInteger(yearCJK);
             }
             else if (!string.IsNullOrEmpty(yearRel))
             {

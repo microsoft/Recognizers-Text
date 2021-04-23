@@ -495,10 +495,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var monthStr = match.Groups["month"].Value;
             var dayStr = match.Groups["day"].Value;
             var yearStr = match.Groups["year"].Value;
-            var yearChsStr = match.Groups["yearchs"].Value;
+            var yearCJKStr = match.Groups["yearCJK"].Value;
             int month = 0, day = 0, year = 0;
 
-            var tmp = ConvertCJKYearToInteger(yearChsStr);
+            var tmp = ConvertCJKYearToInteger(yearCJKStr);
             year = tmp == -1 ? 0 : tmp;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
@@ -614,7 +614,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var srcUnit = match.Groups["unit"].Value;
 
                     var numberStr = text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start).Trim();
-                    var number = ConvertChineseToNum(numberStr);
+                    var number = ConvertCJKToNum(numberStr);
 
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
@@ -682,8 +682,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Convert Chinese Number to Integer
-        private int ConvertChineseToNum(string numStr)
+        // Convert CJK Number to Integer
+        private int ConvertCJKToNum(string numStr)
         {
             var num = -1;
             var er = this.config.IntegerExtractor.Extract(numStr);
@@ -698,12 +698,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return num;
         }
 
-        // convert Chinese Year to Integer
-        private int ConvertCJKYearToInteger(string yearChsStr)
+        // convert CJK Year to Integer
+        private int ConvertCJKYearToInteger(string yearCJKStr)
         {
             var year = 0;
             var num = 0;
-            int dynastyYear = DateTimeFormatUtil.ParseChineseDynastyYear(yearChsStr,
+            int dynastyYear = DateTimeFormatUtil.ParseDynastyYear(yearCJKStr,
                                                                          this.config.DynastyYearRegex,
                                                                          this.config.DynastyStartYear,
                                                                          this.config.DynastyYearMap,
@@ -714,7 +714,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return dynastyYear;
             }
 
-            var er = this.config.IntegerExtractor.Extract(yearChsStr);
+            var er = this.config.IntegerExtractor.Extract(yearCJKStr);
             if (er.Count != 0)
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
@@ -726,7 +726,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (num < 10)
             {
                 num = 0;
-                foreach (var ch in yearChsStr)
+                foreach (var ch in yearCJKStr)
                 {
                     num *= 10;
 

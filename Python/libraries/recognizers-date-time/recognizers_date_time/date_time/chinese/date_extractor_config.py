@@ -217,7 +217,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             ChineseDateTime.DateYearInCJKRegex
         )
         self._zero_to_nine_integer_regex_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.ZeroToNineIntegerRegexChs
+            ChineseDateTime.ZeroToNineIntegerRegexCJK
         )
         self._relative_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.RelativeRegex

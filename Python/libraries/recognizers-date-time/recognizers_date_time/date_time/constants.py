@@ -130,7 +130,7 @@ class Constants:
     REL_MONTH = 'relmonth'
     FIRST_TWO_YEAR_NUM = 'firsttwoyearnum'
     LAST_TWO_YEAR_NUM = 'lasttwoyearnum'
-    YEAR_CHINESE = 'yearchs'
+    YEAR_CHINESE = 'yearCJK'
     OTHER = 'other'
     YEAR_RELATIVE = 'yearrel'
     DAY_OF_MONTH = 'DayOfMonth'
