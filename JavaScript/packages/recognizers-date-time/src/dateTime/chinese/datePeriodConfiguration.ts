@@ -42,7 +42,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
             RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired),
             RegExpUtility.getSafeRegExp(ChineseDateTime.YearAndMonth),
             RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex),
+            RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInCJKRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.WeekOfMonthRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.getSafeRegExp(ChineseDateTime.QuarterRegex),
@@ -314,14 +314,14 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         super(config, false);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Integer, new ChineseNumberParserConfiguration());
-        this.yearInChineseRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
+        this.yearInChineseRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInCJKRegex);
         this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NumberCombinedWithUnit);
         this.unitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.UnitRegex);
         this.yearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearAndMonth);
         this.pureNumberYearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth);
         this.yearToYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYear);
         this.YearToYearSuffixRequired = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired);
-        this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
+        this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInCJKRegex);
         this.seasonWithYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear);
         this.dynastyStartYear = ChineseDateTime.DynastyStartYear;
         this.dynastyYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DynastyYearRegex);

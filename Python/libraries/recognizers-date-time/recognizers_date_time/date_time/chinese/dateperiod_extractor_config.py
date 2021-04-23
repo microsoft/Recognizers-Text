@@ -227,7 +227,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             ChineseDateTime.RelativeMonthRegex
         )
         self._day_regex_in_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DatePeriodDayRegexInChinese
+            ChineseDateTime.DatePeriodDayRegexInCJK
         )
         self._day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DayRegex
@@ -245,7 +245,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 ChineseDateTime.PureNumYearAndMonth),
             RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DatePeriodYearInChineseRegex),
+                ChineseDateTime.DatePeriodYearInCJKRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.QuarterRegex),
