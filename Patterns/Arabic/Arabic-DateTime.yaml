@@ -74,17 +74,17 @@ FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s*مائة(\s*و)?))\b
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
 OclockRegex: !simpleRegex
-  def: (?<oclock>o\s*((’|‘|')\s*)?clock|sharp)
+  def: (?<oclock>(ال)?ساعة|(ال)?ساعات)
 SpecialDescRegex: !simpleRegex
   def: ((?<ipm>)p\b)
 AmDescRegex: !nestedRegex
-  def: (?:{BaseDateTime.BaseAmDescRegex})
+  def: (في\s)?(صباح(ا)?|صباحًا|الصباح|{BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
 PmDescRegex: !nestedRegex
-  def: (:?{BaseDateTime.BasePmDescRegex})
+  def: (في\s)?((ال)?مساء|مساءً|ليلًا|ليلا|(ال)?ليل(ة)?|بعد الظهر|الظهر|ظهرا|{BaseDateTime.BasePmDescRegex})
   references: [BaseDateTime.BasePmDescRegex]
 AmPmDescRegex: !nestedRegex
-  def: (:?{BaseDateTime.BaseAmPmDescRegex})
+  def: (في\s)?(صباح(ا)?|صباحًا|الصباح|(ال)?مساء|مساءً|{BaseDateTime.BaseAmPmDescRegex})
   references: [BaseDateTime.BaseAmPmDescRegex]
 DescRegex: !nestedRegex
   def: (:?(:?({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
@@ -118,6 +118,18 @@ DateTokenPrefix: 'في '
 TimeTokenPrefix: 'عند '
 TokenBeforeDate: 'في '
 TokenBeforeTime: 'عند '
+HalfTokenRegex: !simpleRegex
+  def: ^(النصف|نصف|والنصف|ونصف)
+QuarterTokenRegex: !simpleRegex
+  def: ^(ربع|الربع|وربع|والربع|إلا ربع|إلا الربع)
+ThreeQuarterTokenRegex: !simpleRegex
+  def: ^(وثلاثة أرباع|ثلاثة أرباع|إلا الربع)
+ToTokenRegex: !simpleRegex
+  def: \b(إلا)$
+ToHalfTokenRegex: !simpleRegex
+  def: \b(إلا\s+(النصف|نصف))$
+ForHalfTokenRegex: !simpleRegex
+  def: \b(ل(s+)?(نصف))$
 FromRegex: !simpleRegex
   def: \b(from(\s+the)?)$
 BetweenTokenRegex: !simpleRegex
@@ -348,31 +360,31 @@ WeekDayStart: !simpleRegex
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years?|months?|weeks?)\b
 HourNumRegex: !simpleRegex
-  def: \b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b
+  def: \b(?<hournum>الأولى|(ال)?واحدة|(ال)?ثانية|(ال)?ثالثة|(ال)?رابعة|(ال)?خامسة|(ال)?سادسة|(ال)?سابعة|(ال)?ثامنة|(ال)?تاسعة|(ال)?عاشرة|(ال)?حادية عشر(ة)?|(ال)?ثانية عشر(ة)?|خمسة عشر|أحد عشر)\b
 MinuteNumRegex: !simpleRegex
-  def: (?<minnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight)
+  def: \b(?<minnum>أربع|خمس|ست|سبع|ثمان|تسع|عشر|عشرة|أحد عشر|إثني عشر|إثنا عشر|ثلاثة عشر|خمسة عشر|ثمانية عشر|أربعة عشر|ستة عشر|سبعة عشر|(ال)?حادية عشر(ة)?|تسعة عشر|عشرون|ثلاثون|أربعون|خمسون|عشرين|ثلاث(ين)?|أربعين|خمسين|واحد|إثنان|ثلاثة|خمسة|ثمانية)\b
 DeltaMinuteNumRegex: !simpleRegex
-  def: (?<deltaminnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight)
+  def: (?<deltaminnum>عشرة|أحد عشر|اثنا عشر|ثلاثة عشر|خمسة عشر|ثمانية عشر|أربعة|ستة|سبعة|تسعة|عشرين|أربعة عشر|ستة عشر|سبعة عشر|تسعة عشر| ثلاثون|أربعون|خمسين|أربعين|خمسون|واحد|اثنان|ثلاثة|خمسة|ثمانية|ثلاث(ين)?|أربع|خمس|ست|سبع|ثمان|تسع|(ال)?واحدة|(ال)?ثانية|(ال)?ثالثة|(ال)?رابعة|(ال)?خامسة|(ال)?سادسة|(ال)?سابعة|(ال)?ثامنة|(ال)?تاسعة|(ال)?عاشرة|(ال)?حادية عشر(ة)?|(ال)?ثانية عشر(ة)?)
 PmRegex: !simpleRegex
-  def: (?<pm>(((?:at|in|around|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))
+  def: (?<pm>(?:(في|حول)\s|ل)?(وقت\s)?(بعد الظهر|بعد الظهيرة|(ال)?مساء|مساءً|منتصف(\s|-)الليل|الغداء|الليل|ليلا))
 PmRegexFull: !simpleRegex
-  def: (?<pm>((?:at|in|around|on|for)\s+(the\s+)?)?(afternoon|evening|(mid)?night|lunchtime))
+  def: (?<pm>(?:(في|حول)\s|ل)?(وقت\s)?(بعد الظهر|بعد الظهيرة|(ال)?مساء|مساءً|منتصف(\s|-)الليل|الغداء|الليل|ليلا))
 AmRegex: !simpleRegex
-  def: (?<am>((?:at|in|around|on|for)\s+(the\s+)?)?(morning))
+  def: (?<am>(?:(في|حول)\s|ل)?(وقت\s)?((ال)?صباح|صباحا|صباحًا))
 LunchRegex: !simpleRegex
-  def: \blunchtime\b
+  def: \b(موعد الغذاء|وقت الغذاء)\b
 NightRegex: !simpleRegex
-  def: \b(mid)?night\b
+  def: \bمنتصف(\s|-)الليل\b
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\s+(minutes?|mins?)))
+  def: (?<lth>((ال)?ربع|ثلاثة أرباع|(ال)?نصف)|({BaseDateTime.DeltaMinuteRegex}(\s(دقيقة|دقائق))?)|({DeltaMinuteNumRegex}(\s(دقيقة|دقائق))?))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
-  def: (?<writtentime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>twenty|thirty|fou?rty|fifty)\s+{MinuteNumRegex}))
+  def: (?<writtentime>((ال)?ساعة\s)?{HourNumRegex}\s+(و(\s)?)?({MinuteNumRegex}|{LessThanOneHour}|({MinuteNumRegex}\s+(و(\s)?)?(?<tens>عشرون|ثلاثون|أربعون|خمسون|عشرين|ثلاثين|أربعين|خمسين))))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>{LessThanOneHour}\s+(past|to))
+  def: (?<prefix>(إلا|حتى|و|قبل)?(\s)?{LessThanOneHour})
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -381,27 +393,27 @@ TimeSuffixFull: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})
   references: [ AmRegex, PmRegexFull, OclockRegex ]
 BasicTime: !nestedRegex
-  def: \b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex}(?![%\d]))
-  references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
+  def: \b(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|({MinuteNumRegex}(\s(دقيقة|دقائق))?)|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex}(?![%\d]))
+  references: [ WrittenTimeRegex, HourNumRegex, MinuteNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidnightRegex: !simpleRegex
-  def: (?<midnight>mid\s*(-\s*)?night)
+  def: (?<midnight>منتصف(\s|(\s?-\s?))الليل)
 MidmorningRegex: !simpleRegex
-  def: (?<midmorning>mid\s*(-\s*)?morning)
+  def: (?<midmorning>منتصف(\s|(\s?-\s?))الصباح)
 MidafternoonRegex: !simpleRegex
-  def: (?<midafternoon>mid\s*(-\s*)?afternoon)
+  def: (?<midafternoon>منتصف(\s|(\s?-\s?))بعد الظهر)
 MiddayRegex: !simpleRegex
-  def: (?<midday>mid\s*(-\s*)?day|((12\s)?noon))
+  def: (?<midday>(وقت الغداء\s)?(منتصف(\s|(\s?-\s?)))?(النهار|(الساعة\s)?((((12\s)?الظهر)|(12\s)?الظهيرة)|(12\s)?ظهرا))(\sوقت الغداء)?)
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
 AtRegex: !nestedRegex
-  def: \b(?:(?:(?<=\bat\s+)(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)(\s*((?<iam>a)|(?<ipm>p)))?|{MidTimeRegex}))|{MidTimeRegex})\b
+  def: \b(?:(?:(?<=\bفي\s+)?(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 IshRegex: !nestedRegex
-  def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b'
-  references: [ BaseDateTime.HourRegex ]
+  def: \b((({BaseDateTime.HourRegex}|{WrittenTimeRegex})(\s|-))?(وقت\s)?((الظهيرة|الظهر|ظهر(ا|اً))))\b
+  references: [ BaseDateTime.HourRegex, WrittenTimeRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>(ال)?ساعة|(ال)?ساعات|(ال)?دقائق|(ال)?دقيقة|(ال)?ثانية|(ال)?ثوان|(ال)?ساعتين|(ال)?دقيقتين|(ال)?ثانيتين)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>(ال)?ساعة|(ال)?دقيقة)\b
 FivesRegex: !simpleRegex
@@ -418,7 +430,7 @@ TimeRegexWithDotConnector: !nestedRegex
   def: ({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})
   references: [ BaseDateTime.HourRegex, BaseDateTime.MinuteRegex ]
 TimeRegex1: !nestedRegex
-  def: \b({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*|[.]){DescRegex}
+  def: \b({TimePrefix}\s+)?({WrittenTimeRegex}(\s{TimePrefix})?|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*|[.]){DescRegex}
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
   def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\s*{DescRegex})|\b)
@@ -427,16 +439,16 @@ TimeRegex3: !nestedRegex
   def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex4: !nestedRegex
-  def: \b{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b
+  def: \b({TimePrefix}\s+)?{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}(\s*{DescRegex})?\b
   references: [ TimePrefix, BasicTime, DescRegex, TimeSuffix ]
 TimeRegex5: !nestedRegex
-  def: \b{TimePrefix}\s+{BasicTime}((\s*{DescRegex})|\b)
+  def: \b({DescRegex}\s)?{BasicTime}((\s*{DescRegex})((\s+{TimePrefix})?)|(\s+{TimePrefix}(\s+{TimePrefix})?))(\s{DescRegex})?
   references: [ TimePrefix, BasicTime, DescRegex ]
 TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: \b{TimeSuffixFull}\s+(at\s+)?{BasicTime}((\s*{DescRegex})|\b)
+  def: \b({DescRegex}\s)?(وقت الغداء\s)?{TimeSuffixFull}\s+(في\s+)?{BasicTime}(\s{DescRegex})?(\sوقت الغداء)?(\s{TimePrefix})?((\s*{DescRegex})|\b)?
   references: [ TimeSuffixFull, BasicTime, DescRegex ]
 TimeRegex8: !nestedRegex
   def: .^
@@ -719,7 +731,7 @@ NumberAsTimeRegex: !nestedRegex
   def: \b({WrittenTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b
   references: [ WrittenTimeRegex, PeriodHourNumRegex, BaseDateTime.HourRegex ]
 TimeBeforeAfterRegex: !nestedRegex
-  def: \b(((?<=\b(before|no later than|by|after)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
+  def: \b(((?<=\b(ب|((قبل|في موعد لا يتجاوز| بعد)\s))(وقت\s+)?)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
@@ -982,14 +994,19 @@ Numbers: !dictionary
     'واحد': 1
     'اثنان': 2
     'ثلاثة': 3
+    'ثلاث': 3
     'أربعة': 4
     'خمسة': 5
+    'الخامسة': 5
     'ستة': 6
     'سبعة': 7
+    'السابعة': 7
     'ثمانية': 8
+    'الثامنة': 8
     'تسعة': 9
     'عشرة': 10
     'أحد عشر': 11
+    'الحادية عشر': 11
     'اثنا عشر': 12
     'ثلاثة عشر': 13
     'أربعة عشر': 14
@@ -999,6 +1016,7 @@ Numbers: !dictionary
     'ثمانية عشر': 18
     'تسعة عشر': 19
     'عشرون': 20
+    'عشرين': 20
     'واحد وعشرون': 21
     'اثنان وعشرون': 22
     'ثلاثة وعشرون': 23
@@ -1009,6 +1027,7 @@ Numbers: !dictionary
     'ثمانية وعشرون': 28
     'تسعة وعشرون': 29
     'الثلاثين': 30
+    'ثلاثين': 30
     'واحد وثلاثون': 31
     'اثنان وثلاثون': 32
     'ثلاثة وثلاثون': 33
