@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var year = referenceDate.Year;
             var hasYear = false;
             var yearNum = match.Groups["year"].Value;
-            var yearCJK = match.Groups["yearCJK"].Value;
+            var yearCJK = match.Groups[Constants.YearCJKGroupName].Value;
             var yearRel = match.Groups["yearrel"].Value;
 
             if (!string.IsNullOrEmpty(yearNum))

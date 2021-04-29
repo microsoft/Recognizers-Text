@@ -491,8 +491,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (yearInCJKMatch.Count == 2)
                 {
-                    var yearFrom = yearInCJKMatch[0].Groups["yearCJK"].Value;
-                    var yearTo = yearInCJKMatch[1].Groups["yearCJK"].Value;
+                    var yearFrom = yearInCJKMatch[0].Groups[Constants.YearCJKGroupName].Value;
+                    var yearTo = yearInCJKMatch[1].Groups[Constants.YearCJKGroupName].Value;
                     beginYear = ConvertCJKToInteger(yearFrom);
                     endYear = ConvertCJKToInteger(yearTo);
                 }
@@ -648,7 +648,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // parse year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
-            var yearCJK = match.Groups["yearCJK"].Value;
+            var yearCJK = match.Groups[Constants.YearCJKGroupName].Value;
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {
@@ -1368,7 +1368,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var year = referenceDate.Year;
                 var hasYear = false;
                 var yearNum = match.Groups["year"].Value;
-                var yearCJK = match.Groups["yearCJK"].Value;
+                var yearCJK = match.Groups[Constants.YearCJKGroupName].Value;
                 var yearRel = match.Groups["yearrel"].Value;
 
                 if (!string.IsNullOrEmpty(yearNum))
@@ -1441,7 +1441,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // parse year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
-            var yearCJK = match.Groups["yearCJK"].Value;
+            var yearCJK = match.Groups[Constants.YearCJKGroupName].Value;
             var yearRel = match.Groups["yearrel"].Value;
             if (!string.IsNullOrEmpty(yearNum))
             {

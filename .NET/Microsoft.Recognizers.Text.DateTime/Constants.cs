@@ -146,6 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
         public const string NegativeGroupName = "neg";
+        public const string YearCJKGroupName = "yearCJK";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";

@@ -495,7 +495,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var monthStr = match.Groups["month"].Value;
             var dayStr = match.Groups["day"].Value;
             var yearStr = match.Groups["year"].Value;
-            var yearCJKStr = match.Groups["yearCJK"].Value;
+            var yearCJKStr = match.Groups[Constants.YearCJKGroupName].Value;
             int month = 0, day = 0, year = 0;
 
             var tmp = ConvertCJKYearToInteger(yearCJKStr);
