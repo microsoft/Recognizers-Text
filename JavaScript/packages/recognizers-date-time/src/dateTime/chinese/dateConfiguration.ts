@@ -498,7 +498,7 @@ export class ChineseDateParser extends BaseDateParser {
     protected matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let yearStr = match.groups('year').value;
-        let yearCJK = match.groups('yearCJK').value;
+        let yearCJK = match.groups(Constants.yearCJK).value;
         let monthStr = match.groups('month').value;
         let dayStr = match.groups('day').value;
         let month = 0;

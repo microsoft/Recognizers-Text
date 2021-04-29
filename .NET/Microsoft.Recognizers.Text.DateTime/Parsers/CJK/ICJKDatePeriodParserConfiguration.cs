@@ -81,6 +81,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DecadeRegex { get; }
 
+        Regex DayToDay { get; }
+
+        Regex DayRegexForPeriod { get; }
+
+        Regex SimpleYearAndMonth { get; }
+
+        Regex SpecialMonthRegex { get; }
+
+        Regex SpecialYearRegex { get; }
+
         int ToMonthNumber(string monthStr);
 
         bool IsMonthOnly(string text);
@@ -100,5 +110,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool IsYearAfterNext(string text);
 
         bool IsYearBeforeLast(string text);
+
+        int GetSwiftMonth(string text);
+
+        int GetSwiftYear(string text);
     }
 }

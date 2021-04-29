@@ -120,6 +120,9 @@ export class Constants {
     public readonly InvalidHour: number = Number.MIN_VALUE;
     public readonly InvalidMinute: number = Number.MIN_VALUE;
     public readonly InvalidSecond: number = Number.MIN_VALUE;
+    
+    // Group names
+    public readonly yearCJK: string = "yearCJK";
 }
 
 export class TimeTypeConstants {

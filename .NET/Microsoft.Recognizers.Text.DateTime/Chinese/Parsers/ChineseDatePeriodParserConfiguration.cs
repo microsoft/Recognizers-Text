@@ -39,9 +39,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             YearInCJKRegex = ChineseDatePeriodExtractorConfiguration.YearInCJKRegex;
             MonthToMonth = ChineseDatePeriodExtractorConfiguration.MonthToMonth;
             MonthToMonthSuffixRequired = ChineseDatePeriodExtractorConfiguration.MonthToMonthSuffixRequired;
+            DayToDay = ChineseDatePeriodExtractorConfiguration.DayToDay;
+            DayRegexForPeriod = ChineseDatePeriodExtractorConfiguration.DayRegexForPeriod;
             MonthRegex = ChineseDatePeriodExtractorConfiguration.MonthRegex;
+            SpecialMonthRegex = ChineseDatePeriodExtractorConfiguration.SpecialMonthRegex;
+            SpecialYearRegex = ChineseDatePeriodExtractorConfiguration.SpecialYearRegex;
             YearAndMonth = ChineseDatePeriodExtractorConfiguration.YearAndMonth;
             PureNumYearAndMonth = ChineseDatePeriodExtractorConfiguration.PureNumYearAndMonth;
+            SimpleYearAndMonth = ChineseDatePeriodExtractorConfiguration.SimpleYearAndMonth;
             OneWordPeriodRegex = ChineseDatePeriodExtractorConfiguration.OneWordPeriodRegex;
             NumberCombinedWithUnit = ChineseDatePeriodExtractorConfiguration.NumberCombinedWithUnit;
             PastRegex = ChineseDatePeriodExtractorConfiguration.PastRegex;
@@ -133,6 +138,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex DecadeRegex { get; }
 
+        public Regex DayToDay { get; }
+
+        public Regex DayRegexForPeriod { get; }
+
+        public Regex SimpleYearAndMonth { get; }
+
+        public Regex SpecialMonthRegex { get; }
+
+        public Regex SpecialYearRegex { get; }
+
         public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear, CultureInfo.InvariantCulture);
 
         public int ToMonthNumber(string monthStr)
@@ -192,6 +207,53 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.YearBeforeLastTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
+        }
+
+        public int GetSwiftMonth(string text)
+        {
+            // Current month: 今月
+            var value = 0;
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.Equals("来月", StringComparison.Ordinal))
+            {
+                value = 1;
+            }
+            else if (text.Equals("前月", StringComparison.Ordinal) ||
+                     text.Equals("先月", StringComparison.Ordinal) ||
+                     text.Equals("昨月", StringComparison.Ordinal) ||
+                     text.Equals("先々月", StringComparison.Ordinal))
+            {
+                value = -1;
+            }
+            else if (text.Equals("再来月", StringComparison.Ordinal))
+            {
+                value = 2;
+            }
+
+            return value;
+        }
+
+        public int GetSwiftYear(string text)
+        {
+            // Current year: 今年
+            var value = 0;
+
+            // @TODO move hardcoded values to resources file
+
+            if (text.Equals("来年", StringComparison.Ordinal) ||
+                text.Equals("らいねん", StringComparison.Ordinal))
+            {
+                value = 1;
+            }
+            else if (text.Equals("昨年", StringComparison.Ordinal) ||
+                     text.Equals("前年", StringComparison.Ordinal))
+            {
+                value = -1;
+            }
+
+            return value;
         }
     }
 }

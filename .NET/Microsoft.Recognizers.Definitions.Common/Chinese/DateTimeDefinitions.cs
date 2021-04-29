@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
       public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";
       public static readonly string DateNextRegex = $@"(下一个|下个|下一|下)(的)?{WeekDayRegex}";
+      public const string SpecialMonthRegex = @"^[.]";
+      public const string SpecialYearRegex = @"^[.]";
       public const string SpecialDayRegex = @"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)";
       public const string SpecialDayWithNumRegex = @"^[.]";
       public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})";
@@ -75,6 +77,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
       public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({YearRegex}|{DatePeriodYearInCJKRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\s+|\s*,\s*){YearRegex})?";
       public static readonly string YearAndMonth = $@"({DatePeriodYearInCJKRegex}|{YearRegex})\s*{MonthRegex}";
+      public static readonly string SimpleYearAndMonth = $@"({YearNumRegex}[/\\\-]{MonthNumRegex}\b$)";
       public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
       public static readonly string OneWordPeriodRegex = $@"(((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
@@ -86,6 +89,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string YearToYearSuffixRequired = $@"({DateRangePrepositions})({DatePeriodYearInCJKRegex}|{YearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInCJKRegex}|{YearRegex})\s*(之间|之内|期间|中间|间)";
       public static readonly string MonthToMonth = $@"({DateRangePrepositions})({MonthRegex}){DatePeriodTillRegex}({MonthRegex})";
       public static readonly string MonthToMonthSuffixRequired = $@"({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)";
+      public const string DayToDay = @"^[.]";
+      public const string DayRegexForPeriod = @"^[.]";
       public const string PastRegex = @"(?<past>(之前|前|上|近|过去))";
       public const string FutureRegex = @"(?<future>(之后|之後|后|後|(?<![一两几]\s*)下|未来(的)?))";
       public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";

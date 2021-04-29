@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public PercentageExtractor()
+        public PercentageExtractor(BaseNumberOptionsConfiguration config)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {

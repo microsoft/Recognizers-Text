@@ -591,7 +591,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let year = referenceDate.getFullYear();
         let yearNum = match.groups('year').value;
-        let yearChinese = match.groups('yearCJK').value;
+        let yearChinese = match.groups(Constants.yearCJK).value;
         let yearRelative = match.groups('yearrel').value;
         let hasYear = false;
 
@@ -641,7 +641,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let year = referenceDate.getFullYear();
         let yearNum = match.groups('year').value;
-        let yearChinese = match.groups('yearCJK').value;
+        let yearChinese = match.groups(Constants.yearCJK).value;
         let yearRelative = match.groups('yearrel').value;
 
         if (!StringUtility.isNullOrEmpty(yearNum)) {
@@ -873,7 +873,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         // parse year
         let year = referenceDate.getFullYear();
         let yearNum = match.groups('year').value;
-        let yearChinese = match.groups('yearCJK').value;
+        let yearChinese = match.groups(Constants.yearCJK).value;
         let yearRelative = match.groups('yearrel').value;
 
         if (!StringUtility.isNullOrEmpty(yearNum)) {
@@ -937,16 +937,16 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             endYear = this.convertChineseToNumber(yearMatches[1].groups('year').value);
         }
         else if (chineseYearMatches.length === 2) {
-            beginYear = this.convertYear(chineseYearMatches[0].groups('yearCJK').value, true);
-            endYear = this.convertYear(chineseYearMatches[1].groups('yearCJK').value, true);
+            beginYear = this.convertYear(chineseYearMatches[0].groups(Constants.yearCJK).value, true);
+            endYear = this.convertYear(chineseYearMatches[1].groups(Constants.yearCJK).value, true);
         }
         else if (yearMatches.length === 1 && chineseYearMatches.length === 1) {
             if (yearMatches[0].index < chineseYearMatches[0].index) {
                 beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
-                endYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearCJK').value);
+                endYear = this.convertChineseToNumber(chineseYearMatches[0].groups(Constants.yearCJK).value);
             }
             else {
-                beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearCJK').value);
+                beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups(Constants.yearCJK).value);
                 endYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             }
         }
