@@ -254,7 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var srcUnit = match.Groups["unit"].Value;
 
                     var numberStr = text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start).Trim();
-                    var number = ConvertChineseToNum(numberStr);
+                    var number = ConvertCJKToNum(numberStr);
 
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
@@ -316,8 +316,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // convert Chinese Number to Integer
-        private int ConvertChineseToNum(string numStr)
+        // convert CJK Number to Integer
+        private int ConvertCJKToNum(string numStr)
         {
             var num = -1;
             var er = this.config.IntegerExtractor.Extract(numStr);

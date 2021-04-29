@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexFlags);
 
-        public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.DatePeriodYearInChineseRegex, RegexFlags);
+        public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DatePeriodYearInCJKRegex, RegexFlags);
 
         // for case "(从)?(2017年)?一月十日到十二日"
         public static readonly Regex SimpleCasesRegex = new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
-        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.DatePeriodDayRegexInChinese, RegexFlags);
+        public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DatePeriodDayRegexInCJK, RegexFlags);
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriodThisRegex, RegexFlags);
         public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriodLastRegex, RegexFlags);
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
         public static readonly Regex YearRegexInNumber = new Regex(DateTimeDefinitions.YearRegexInNumber, RegexFlags);
-        public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexFlags);
+        public static readonly Regex ZeroToNineIntegerRegexCJK = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexCJK, RegexFlags);
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
         public static readonly Regex SeasonRegex = new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags);
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             MonthToMonthSuffixRequired,
             YearAndMonth,
             PureNumYearAndMonth,
-            YearInChineseRegex,
+            YearInCJKRegex,
             WeekOfMonthRegex,
             SeasonWithYear,
             QuarterRegex,

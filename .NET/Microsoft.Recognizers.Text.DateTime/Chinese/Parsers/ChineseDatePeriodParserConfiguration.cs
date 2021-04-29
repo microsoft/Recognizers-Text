@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             YearToYear = ChineseDatePeriodExtractorConfiguration.YearToYear;
             YearToYearSuffixRequired = ChineseDatePeriodExtractorConfiguration.YearToYearSuffixRequired;
             YearRegex = ChineseDatePeriodExtractorConfiguration.YearRegex;
-            YearInCJKRegex = ChineseDatePeriodExtractorConfiguration.YearInChineseRegex;
+            YearInCJKRegex = ChineseDatePeriodExtractorConfiguration.YearInCJKRegex;
             MonthToMonth = ChineseDatePeriodExtractorConfiguration.MonthToMonth;
             MonthToMonthSuffixRequired = ChineseDatePeriodExtractorConfiguration.MonthToMonthSuffixRequired;
             MonthRegex = ChineseDatePeriodExtractorConfiguration.MonthRegex;

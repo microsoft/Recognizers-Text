@@ -14,11 +14,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string SecondNumRegex = DateTimeDefinitions.TimeSecondNumRegex;
 
-        public static readonly string HourChsRegex = DateTimeDefinitions.TimeHourChsRegex;
+        public static readonly string HourCJKRegex = DateTimeDefinitions.TimeHourCJKRegex;
 
-        public static readonly string MinuteChsRegex = DateTimeDefinitions.TimeMinuteChsRegex;
+        public static readonly string MinuteCJKRegex = DateTimeDefinitions.TimeMinuteCJKRegex;
 
-        public static readonly string SecondChsRegex = DateTimeDefinitions.TimeSecondChsRegex;
+        public static readonly string SecondCJKRegex = DateTimeDefinitions.TimeSecondCJKRegex;
 
         public static readonly string ClockDescRegex = DateTimeDefinitions.TimeClockDescRegex;
 
@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string QuarterRegex = DateTimeDefinitions.TimeQuarterRegex;
 
         // e.g: 十二点五十八分|半|一刻
-        public static readonly string ChineseTimeRegex = DateTimeDefinitions.TimeChineseTimeRegex;
+        public static readonly string CJKTimeRegex = DateTimeDefinitions.TimeCJKTimeRegex;
 
         // e.g: 12:23
         public static readonly string DigitTimeRegex = DateTimeDefinitions.TimeDigitTimeRegex;

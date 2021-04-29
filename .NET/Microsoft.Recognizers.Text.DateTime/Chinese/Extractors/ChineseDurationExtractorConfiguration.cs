@@ -10,13 +10,6 @@ using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public enum DurationType
-    {
-        /// <summary>
-        /// Types of DurationType.
-        /// </summary>
-        WithNumber,
-    }
 
     public class ChineseDurationExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKDurationExtractorConfiguration
     {

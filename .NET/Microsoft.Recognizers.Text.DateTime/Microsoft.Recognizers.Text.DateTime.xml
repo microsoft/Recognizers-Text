@@ -4,11 +4,6 @@
         <name>Microsoft.Recognizers.Text.DateTime</name>
     </assembly>
     <members>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.DurationType.WithNumber">
-            <summary>
-            Types of DurationType.
-            </summary>
-        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByDay">
             <summary>
             Represents a day Period

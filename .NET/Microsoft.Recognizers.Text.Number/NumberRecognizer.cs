@@ -369,21 +369,21 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
-                    new Korean.NumberExtractor()));
+                    new Korean.NumberExtractor(new BaseNumberOptionsConfiguration(Culture.Korean, options))));
 
             RegisterModel<OrdinalModel>(
                 Culture.Korean,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new KoreanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
-                    new Korean.OrdinalExtractor()));
+                    new Korean.OrdinalExtractor(new BaseNumberOptionsConfiguration(Culture.Korean, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Korean,
                 (options) => new PercentModel(
                      AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new KoreanNumberParserConfiguration(
                                                                new BaseNumberOptionsConfiguration(Culture.Korean, options))),
-                     new Korean.PercentageExtractor()));
+                     new Korean.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Korean, options))));
 
             RegisterModel<NumberRangeModel>(
                 Culture.Korean,
