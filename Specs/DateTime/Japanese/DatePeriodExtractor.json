@@ -2839,18 +2839,6 @@
     ]
   },
   {
-    "Input": "先月",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "先月",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
     "Input": "せんげつ",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -2931,18 +2919,6 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "来年",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "来年",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 2
       }
     ]
   },
