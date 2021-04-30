@@ -10,10 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     {
         public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;
 
-        // 五点十分四十八秒
+        // 다섯 점 충분히 마흔 여덟 초
         public static readonly string CJKTimeRegex = KoreanTimeExtractorConfiguration.CJKTimeRegex;
 
-        // 六点 到 九点 | 六 到 九点
+        // 6 ~ 9시 | 6 ~ 9시
         public static readonly string LeftCJKTimeRegex = DateTimeDefinitions.TimePeriodLeftCJKTimeRegex;
 
         public static readonly string RightCJKTimeRegex = DateTimeDefinitions.TimePeriodRightCJKTimeRegex;

@@ -25,6 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // 2017.12, 2017-12, 2017/12, 12/2017
         public static readonly Regex PureNumYearAndMonth = new Regex(DateTimeDefinitions.PureNumYearAndMonth, RegexFlags);
 
+        public static readonly Regex SimpleYearAndMonth = new Regex(DateTimeDefinitions.SimpleYearAndMonth, RegexFlags);
+
         public static readonly Regex OneWordPeriodRegex = new Regex(DateTimeDefinitions.OneWordPeriodRegex, RegexFlags);
 
         public static readonly Regex WeekOfMonthRegex = new Regex(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
@@ -41,6 +43,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex MonthToMonthSuffixRequired = new Regex(DateTimeDefinitions.MonthToMonthSuffixRequired, RegexFlags);
 
+        public static readonly Regex DayToDay = new Regex(DateTimeDefinitions.DayToDay, RegexFlags);
+
+        public static readonly Regex DayRegexForPeriod = new Regex(DateTimeDefinitions.DayRegexForPeriod, RegexFlags);
+
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
@@ -50,6 +56,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags);
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
+
+        public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexFlags);
+
+        public static readonly Regex SpecialYearRegex = new Regex(DateTimeDefinitions.SpecialYearRegex, RegexFlags);
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DatePeriodDayRegexInCJK, RegexFlags);
@@ -80,6 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             YearAndMonth,
             PureNumYearAndMonth,
             YearInCJKRegex,
+            SpecialMonthRegex,
+            SpecialYearRegex,
             WeekOfMonthRegex,
             SeasonWithYear,
             QuarterRegex,

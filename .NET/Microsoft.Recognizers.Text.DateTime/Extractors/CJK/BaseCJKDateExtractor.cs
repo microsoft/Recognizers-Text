@@ -91,14 +91,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (pos < text.Length)
                 {
                     var suffix = text.Substring(pos);
-                    var beforeMatch = this.config.BeforeRegex.Match(suffix);
-                    var afterMatch = this.config.AfterRegex.Match(suffix);
+                    var match = this.config.BeforeRegex.Match(suffix);
+                    if (!match.Success)
+                    {
+                        match = this.config.AfterRegex.Match(suffix);
+                    }
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
-                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
+                    if (match.Success && suffix.Trim().StartsWith(match.Value, StringComparison.Ordinal))
                     {
                         var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
+                        ret.Add(new Token((int)er.Start, (int)(er.Start + er.Length) + match.Index + match.Length, metadata));
                     }
                 }
             }

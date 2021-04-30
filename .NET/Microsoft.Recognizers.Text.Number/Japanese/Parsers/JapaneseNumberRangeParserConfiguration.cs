@@ -13,9 +13,10 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         {
             CultureInfo = new CultureInfo(config.Culture);
 
-            NumberExtractor = new NumberExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            var numConfig = new BaseNumberOptionsConfiguration(config);
 
+            NumberExtractor = new NumberExtractor(numConfig);
+            OrdinalExtractor = new OrdinalExtractor(numConfig);
             NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

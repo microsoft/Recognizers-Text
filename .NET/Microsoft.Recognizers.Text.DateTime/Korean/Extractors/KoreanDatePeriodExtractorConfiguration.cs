@@ -17,13 +17,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DatePeriodYearInCJKRegex, RegexFlags);
 
-        // for case "(从)?(2017年)?一月十日到十二日"
+        // for case "(에서)? (2017)? 12 월 10 일"
         public static readonly Regex SimpleCasesRegex = new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
 
         public static readonly Regex YearAndMonth = new Regex(DateTimeDefinitions.YearAndMonth, RegexFlags);
 
         // 2017.12, 2017-12, 2017/12, 12/2017
         public static readonly Regex PureNumYearAndMonth = new Regex(DateTimeDefinitions.PureNumYearAndMonth, RegexFlags);
+
+        public static readonly Regex SimpleYearAndMonth = new Regex(DateTimeDefinitions.SimpleYearAndMonth, RegexFlags);
 
         public static readonly Regex OneWordPeriodRegex = new Regex(DateTimeDefinitions.OneWordPeriodRegex, RegexFlags);
 
@@ -41,6 +43,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex MonthToMonthSuffixRequired = new Regex(DateTimeDefinitions.MonthToMonthSuffixRequired, RegexFlags);
 
+        public static readonly Regex DayToDay = new Regex(DateTimeDefinitions.DayToDay, RegexFlags);
+
+        public static readonly Regex DayRegexForPeriod = new Regex(DateTimeDefinitions.DayRegexForPeriod, RegexFlags);
+
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
@@ -50,6 +56,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags);
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
+
+        public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexFlags);
+
+        public static readonly Regex SpecialYearRegex = new Regex(DateTimeDefinitions.SpecialYearRegex, RegexFlags);
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DatePeriodDayRegexInCJK, RegexFlags);
@@ -80,6 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             YearAndMonth,
             PureNumYearAndMonth,
             YearInCJKRegex,
+            SpecialMonthRegex,
+            SpecialYearRegex,
             WeekOfMonthRegex,
             SeasonWithYear,
             QuarterRegex,

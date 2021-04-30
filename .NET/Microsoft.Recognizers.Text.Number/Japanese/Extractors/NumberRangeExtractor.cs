@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(new NumberExtractor(),
-                   new OrdinalExtractor(),
+            : base(new NumberExtractor(new BaseNumberOptionsConfiguration(config)),
+                   new OrdinalExtractor(new BaseNumberOptionsConfiguration(config)),
                    new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(config)),
                    config)
         {

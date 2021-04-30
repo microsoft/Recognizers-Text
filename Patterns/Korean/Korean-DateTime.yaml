@@ -45,6 +45,12 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (다음\s?주?)\s*{WeekDayRegex}
   references: [WeekDayRegex]
+SpecialMonthRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+SpecialYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 SpecialDayRegex: !simpleRegex
   def: (최근|그저께|그제|((내일)?\s?모레)|그끄저께|어제|내일|오늘|금일|작일|익일|당일|명일|전일)
 SpecialDayWithNumRegex: !simpleRegex
@@ -144,6 +150,9 @@ SimpleCasesRegex: !nestedRegex
 YearAndMonth: !nestedRegex
   def: ({DatePeriodYearInCJKRegex}|{YearRegex})\s*{MonthRegex}
   references: [DatePeriodYearInCJKRegex, YearRegex, MonthRegex]
+SimpleYearAndMonth: !nestedRegex
+  def: ({YearNumRegex}[/\\\-]{MonthNumRegex}\b$)
+  references: [YearNumRegex, MonthNumRegex]
 PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
   references: [YearRegexInNumber, MonthNumRegex]
@@ -175,6 +184,12 @@ MonthToMonth: !nestedRegex
 MonthToMonthSuffixRequired: !nestedRegex
   def: ({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)
   references: [MonthRegex, DatePeriodTillSuffixRequiredRegex, DateRangePrepositions]
+DayToDay: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+DayRegexForPeriod: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 PastRegex: !simpleRegex
   def: (?<past>(之前|前|上|近|过去))
 FutureRegex: !simpleRegex

@@ -13,6 +13,7 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
+using Microsoft.Recognizers.Text.DateTime.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
@@ -569,27 +570,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new DateTime.Japanese.JapaneseDateExtractorConfiguration();
+                    return new BaseCJKDateExtractor(new JapaneseDateExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Time:
-                    return new DateTime.Japanese.JapaneseTimeExtractorConfiguration();
+                    return new BaseCJKTimeExtractor(new JapaneseTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Japanese.JapaneseDatePeriodExtractorConfiguration();
+                    return new BaseCJKDatePeriodExtractor(new JapaneseDatePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.TimePeriod:
-                    return new DateTime.Japanese.JapaneseTimePeriodExtractorConfiguration();
+                    return new BaseCJKTimePeriodExtractor(new JapaneseTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTime:
-                    return new DateTime.Japanese.JapaneseDateTimeExtractorConfiguration();
+                    return new BaseCJKDateTimeExtractor(new JapaneseDateTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Japanese.JapaneseDateTimePeriodExtractorConfiguration();
+                    return new BaseCJKDateTimePeriodExtractor(new JapaneseDateTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Duration:
-                    return new DateTime.Japanese.JapaneseDurationExtractorConfiguration();
+                    return new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Holiday:
-                    return new BaseHolidayExtractor(new DateTime.Japanese.JapaneseHolidayExtractorConfiguration(defaultConfig));
+                    return new BaseCJKHolidayExtractor(new JapaneseHolidayExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Set:
-                    return new DateTime.Japanese.JapaneseSetExtractorConfiguration();
+                    return new BaseCJKSetExtractor(new JapaneseSetExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Merged:
-                    return new DateTime.Japanese.JapaneseMergedExtractorConfiguration(defaultConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new JapaneseMergedExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new DateTime.Japanese.JapaneseMergedExtractorConfiguration(skipConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new JapaneseMergedExtractorConfiguration(skipConfig));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Japanese not supported");
@@ -597,31 +598,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetJapaneseParser(DateTimeParsers parserName)
         {
-
-            var config = new BaseDateTimeOptionsConfiguration(Culture.Japanese, DateTimeOptions.None);
+            var config = new JapaneseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Japanese, DateTimeOptions.None));
 
             switch (parserName)
             {
                 case DateTimeParsers.Date:
-                    return new DateTime.Japanese.JapaneseDateParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateParser(new JapaneseDateParserConfiguration(config));
                 case DateTimeParsers.Time:
-                    return new DateTime.Japanese.JapaneseTimeParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimeParser(new JapaneseTimeParserConfiguration(config));
                 case DateTimeParsers.DatePeriod:
-                    return new DateTime.Japanese.JapaneseDatePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDatePeriodParser(new JapaneseDatePeriodParserConfiguration(config));
                 case DateTimeParsers.TimePeriod:
-                    return new DateTime.Japanese.JapaneseTimePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimePeriodParser(new JapaneseTimePeriodParserConfiguration(config));
                 case DateTimeParsers.DateTime:
-                    return new DateTime.Japanese.JapaneseDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimeParser(new JapaneseDateTimeParserConfiguration(config));
                 case DateTimeParsers.DateTimePeriod:
-                    return new DateTime.Japanese.JapaneseDateTimePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimePeriodParser(new JapaneseDateTimePeriodParserConfiguration(config));
                 case DateTimeParsers.Duration:
-                    return new DateTime.Japanese.JapaneseDurationParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDurationParser(new JapaneseDurationParserConfiguration(config));
                 case DateTimeParsers.Holiday:
-                    return new DateTime.Japanese.JapaneseHolidayParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKHolidayParser(new JapaneseHolidayParserConfiguration(config));
                 case DateTimeParsers.Set:
-                    return new DateTime.Japanese.JapaneseSetParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKSetParser(new JapaneseSetParserConfiguration(config));
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKMergedDateTimeParser(new JapaneseMergedParserConfiguration(config));
             }
 
             throw new Exception($"Parser '{parserName}' for Japanese not supported");

@@ -113,6 +113,9 @@ export class Constants {
 
     static readonly CompositeTimexDelimiter: string = "|";
 
+    // Group names
+    static readonly yearCJK: string = "yearCJK";
+
     // Invalid year
     static readonly InvalidYear: number = Number.MIN_VALUE;
     public readonly InvalidMonth: number = Number.MIN_VALUE;
@@ -120,6 +123,7 @@ export class Constants {
     public readonly InvalidHour: number = Number.MIN_VALUE;
     public readonly InvalidMinute: number = Number.MIN_VALUE;
     public readonly InvalidSecond: number = Number.MIN_VALUE;
+    
 }
 
 export class TimeTypeConstants {
