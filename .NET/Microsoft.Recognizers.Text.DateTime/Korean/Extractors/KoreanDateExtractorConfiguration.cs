@@ -67,16 +67,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
                 WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
             };
 
-            // (农历)?(2016年)?一月三日(星期三)?
+            // (음력)? (2016)? 1 월 3 일 (수)?
             var dateRegex1 = new Regex(DateTimeDefinitions.DateRegexList1, RegexFlags);
 
-            // (2015年)?(农历)?十月初一(星期三)?
+            // (2015)? (음력)? 10 월 1 일 (수)?
             var dateRegex2 = new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags);
 
-            // (2015年)?(农历)?十月二十(星期三)?
+            // (2015)? (음력)? 10 월 20 일 (수)?
             var dateRegex3 = new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags);
 
-            // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            // 2015-12-23
             var dateRegex8 = new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags);
 
             // 23/7

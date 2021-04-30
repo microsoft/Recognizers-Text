@@ -1309,20 +1309,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = TimexUtility.MergeTimexAlternatives(ret.Timex, pastTimex);
             }
 
-            // @TODO remove this once Japanese do not consider these patternes as Dates
-            if ((this.config.YearAndMonth.IsExactMatch(pr1.Text, trim: true) &&
-                 this.config.YearAndMonth.IsExactMatch(pr2.Text, trim: true)) ||
-                (this.config.SimpleYearAndMonth.IsExactMatch(pr1.Text, trim: true) &&
-                 this.config.SimpleYearAndMonth.IsExactMatch(pr2.Text, trim: true)))
-            {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(int)(futureEnd - futureBegin).TotalDays / 30}M)";
-            }
-
-            /*else
-            {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
-            }*/
-
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;

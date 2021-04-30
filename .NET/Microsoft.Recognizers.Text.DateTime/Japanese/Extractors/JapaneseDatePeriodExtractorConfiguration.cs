@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DatePeriodYearInCJKRegex, RegexFlags);
 
-        // for case "(从)?(2017年)?一月十日到十二日"
+        // for case "（より）？（2017）？12日に1月10日"
         public static readonly Regex SimpleCasesRegex = new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
 
         public static readonly Regex YearAndMonth = new Regex(DateTimeDefinitions.YearAndMonth, RegexFlags);

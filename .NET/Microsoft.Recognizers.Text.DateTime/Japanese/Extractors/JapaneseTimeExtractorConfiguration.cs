@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly string BanHourPrefixRegex = DateTimeDefinitions.TimeBanHourPrefixRegex;
 
-        // e.g: 12点, 十二点, 十二点整
+        // e.g: 12時
         public static readonly string HourRegex = DateTimeDefinitions.TimeHourRegex;
 
         public static readonly string MinuteRegex = DateTimeDefinitions.TimeMinuteRegex;
@@ -39,13 +39,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly string QuarterRegex = DateTimeDefinitions.TimeQuarterRegex;
 
-        // e.g: 十二点五十八分|半|一刻
+        // e.g: 十二五十から八|半分|瞬間
         public static readonly string CJKTimeRegex = DateTimeDefinitions.TimeCJKTimeRegex;
 
         // e.g: 12:23
         public static readonly string DigitTimeRegex = DateTimeDefinitions.TimeDigitTimeRegex;
 
-        // e.g: 早上九点
+        // e.g: 朝の9時
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
         public static readonly string ApproximateDescPreffixRegex = DateTimeDefinitions.TimeApproximateDescPreffixRegex;

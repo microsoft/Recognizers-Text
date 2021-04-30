@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DatePeriodYearInCJKRegex, RegexFlags);
 
-        // for case "(从)?(2017年)?一月十日到十二日"
+        // for case "(에서)? (2017)? 12 월 10 일"
         public static readonly Regex SimpleCasesRegex = new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexFlags);
 
         public static readonly Regex YearAndMonth = new Regex(DateTimeDefinitions.YearAndMonth, RegexFlags);

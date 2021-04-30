@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         // 五点十分四十八秒
         public static readonly string CJKTimeRegex = JapaneseTimeExtractorConfiguration.CJKTimeRegex;
 
-        // 六点 到 九点 | 六 到 九点
+        // 6時から9時| 6時から9時
         public static readonly string LeftCJKTimeRegex = DateTimeDefinitions.TimePeriodLeftCJKTimeRegex;
 
         public static readonly string RightCJKTimeRegex = DateTimeDefinitions.TimePeriodRightCJKTimeRegex;
