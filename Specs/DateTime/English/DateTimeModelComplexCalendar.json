@@ -13385,5 +13385,69 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The event is scheduled 16:00, 23 Apr - 22:00, 27 April (UTC+8)",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "16:00, 23 apr - 22:00, 27 april (utc+8)",
+        "Start": 23,
+        "End": 61,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-23T16:00,XXXX-04-27T22:00,PT102H)",
+              "type": "datetimerange",
+              "timezone": "UTC+08:00",
+              "timezoneText": "utc+8",
+              "utcOffsetMins": "480",
+              "start": "2016-04-23 16:00:00",
+              "end": "2016-04-27 22:00:00"
+            },
+            {
+              "timex": "(XXXX-04-23T16:00,XXXX-04-27T22:00,PT102H)",
+              "type": "datetimerange",
+              "timezone": "UTC+08:00",
+              "timezoneText": "utc+8",
+              "utcOffsetMins": "480",
+              "start": "2017-04-23 16:00:00",
+              "end": "2017-04-27 22:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will start at 10.30 am ( CET ).",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at 10.30 am ( cet )",
+        "Start": 23,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:30",
+              "type": "time",
+              "timezone": "UTC+01:00",
+              "timezoneText": "cet",
+              "utcOffsetMins": "60",
+              "value": "10:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
