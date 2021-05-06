@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(new NumberExtractor(),
-                   new OrdinalExtractor(),
+            : base(new NumberExtractor(new BaseNumberOptionsConfiguration(config)),
+                   new OrdinalExtractor(new BaseNumberOptionsConfiguration(config)),
                    new BaseCJKNumberParser(new KoreanNumberParserConfiguration(config)),
                    config)
         {

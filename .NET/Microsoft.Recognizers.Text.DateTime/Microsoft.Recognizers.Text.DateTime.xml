@@ -4,11 +4,6 @@
         <name>Microsoft.Recognizers.Text.DateTime</name>
     </assembly>
     <members>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.DurationType.WithNumber">
-            <summary>
-            Types of DurationType.
-            </summary>
-        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByDay">
             <summary>
             Represents a day Period
@@ -97,11 +92,6 @@
         <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.EnablePreview">
             <summary>
             EnablePreview
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.DurationType.WithNumber">
-            <summary>
-            Types of DurationType.
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.AgoLaterMode.Date">

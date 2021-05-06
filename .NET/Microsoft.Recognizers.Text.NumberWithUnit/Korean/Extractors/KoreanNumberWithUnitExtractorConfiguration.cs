@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
 
             var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
 
-            this.UnitNumExtractor = new NumberExtractor(KoreanNumberExtractorMode.ExtractAll);
+            this.UnitNumExtractor = new NumberExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
 
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;

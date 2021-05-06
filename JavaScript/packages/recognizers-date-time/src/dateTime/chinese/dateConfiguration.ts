@@ -498,13 +498,13 @@ export class ChineseDateParser extends BaseDateParser {
     protected matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let yearStr = match.groups('year').value;
-        let yearChs = match.groups('yearchs').value;
+        let yearCJK = match.groups(Constants.yearCJK).value;
         let monthStr = match.groups('month').value;
         let dayStr = match.groups('day').value;
         let month = 0;
         let day = 0;
         let year = 0;
-        let yearTemp = this.convertChineseYearToNumber(yearChs);
+        let yearTemp = this.convertChineseYearToNumber(yearCJK);
         year = yearTemp === -1 ? 0 : yearTemp;
 
         if (this.config.monthOfYear.has(monthStr) && this.config.dayOfMonth.has(dayStr)) {

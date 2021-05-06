@@ -120,6 +120,7 @@ class Constants:
     FULL_YEAR_GROUP_NAME = 'fullyear'
     HOUR_NUM_GROUP_NAME = 'hournum'
     TENS_GROUP_NAME = 'tens'
+    YEAR_CJK_GROUP_NAME = 'yearCJK'
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -130,7 +131,7 @@ class Constants:
     REL_MONTH = 'relmonth'
     FIRST_TWO_YEAR_NUM = 'firsttwoyearnum'
     LAST_TWO_YEAR_NUM = 'lasttwoyearnum'
-    YEAR_CHINESE = 'yearchs'
+    YEAR_CHINESE = 'yearCJK'
     OTHER = 'other'
     YEAR_RELATIVE = 'yearrel'
     DAY_OF_MONTH = 'DayOfMonth'

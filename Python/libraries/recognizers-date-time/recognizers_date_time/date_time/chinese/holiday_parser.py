@@ -189,7 +189,7 @@ class ChineseHolidayParser(BaseHolidayParser):
 
         year = reference.year
         year_num = match.group('year')
-        year_chinese = match.group('yearchs')
+        year_chinese = match.group('yearCJK')
         year_relative = match.group('yearrel')
         has_year = False
 

@@ -171,7 +171,7 @@ NumbersWithAllowListRegex: !nestedRegex
   def: '(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}+))(?!(\s*{AllMultiplierLookupRegex}))'
   references: [NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, AllIntRegex, ZeroToNineIntegerRegex, AllFloatRegex, PercentageRegex, AllMultiplierLookupRegex]
 NumbersAggressiveRegex: !nestedRegex
-  def: (({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*(\s*{PercentageRegex})?))
+  def: (({AllIntRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\s*{PercentageRegex})))
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex, PercentageRegex]
 #DoubleExtractor
 PointRegex: !nestedRegex

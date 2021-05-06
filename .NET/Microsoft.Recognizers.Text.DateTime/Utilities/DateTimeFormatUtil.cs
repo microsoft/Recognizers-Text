@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
         private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
 
-        public static int ParseChineseDynastyYear(string yearStr, Regex dynastyYearRegex, string dynastyStartYear, ImmutableDictionary<string, int> dynastyYearMap, IExtractor integerExtractor, IParser numberParser)
+        public static int ParseDynastyYear(string yearStr, Regex dynastyYearRegex, string dynastyStartYear, ImmutableDictionary<string, int> dynastyYearMap, IExtractor integerExtractor, IParser numberParser)
         {
             int year = -1;
             var regionTitleMatch = dynastyYearRegex.MatchExact(yearStr, trim: true);
