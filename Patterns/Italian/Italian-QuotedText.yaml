@@ -1,0 +1,20 @@
+---
+LangMarker: Ita
+QuotedTextRegex1: !simpleRegex
+  def: (“([^“”]+)”)
+QuotedTextRegex2: !simpleRegex
+  def: (‘([^‘’]+)’)
+QuotedTextRegex3: !simpleRegex
+  def: (""([^""]+)"")
+QuotedTextRegex4: !simpleRegex
+  def: (\\'([^\']+)\\')
+QuotedTextRegex5: !simpleRegex
+  def: (`([^`]+)`)
+QuotedTextRegex6: !simpleRegex
+  def: («([^«»]+)»)
+QuotedTextRegex7: !simpleRegex
+  def: (‹([^‹›]+)›)
+QuotedTextRegex8: !simpleRegex
+  def: (123456)
+QuotedTextRegex9: !simpleRegex
+  def: (123456)

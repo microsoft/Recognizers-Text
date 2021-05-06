@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected virtual List<ExtractResult> PostFilter(List<ExtractResult> results)
         {
-            return results;
+            return results.OrderBy(p => p.Start).ToList();
         }
     }
 }

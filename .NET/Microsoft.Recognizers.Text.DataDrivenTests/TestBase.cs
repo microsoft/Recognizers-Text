@@ -342,6 +342,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             ValidateResults(testSpec);
         }
 
+        public void TestQuotedText(TestModel testSpec)
+        {
+            TestPreValidation(testSpec);
+            ValidateResults(testSpec);
+        }
+
         public void TestEmail(TestModel testSpec)
         {
             TestPreValidation(testSpec);

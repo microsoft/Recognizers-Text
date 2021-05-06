@@ -689,6 +689,7 @@ AmbiguousCurrencyUnitList: !list
     - std
     - try
     - yer
+    - livre
 #DimensionExtractorConfiguration
 InformationSuffixList: !dictionary
   types: [ string, string ]
