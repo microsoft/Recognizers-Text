@@ -604,7 +604,8 @@ namespace Microsoft.Recognizers.Definitions.French
             @"sos",
             @"std",
             @"try",
-            @"yer"
+            @"yer",
+            @"livre"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {
