@@ -354,5 +354,317 @@
         "Length": 37
       }
     ]
+  },
+  {
+    "Input": "Je vais partir chaque jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque jour",
+        "Type": "set",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque année",
+        "Type": "set",
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les deux jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les deux jours",
+        "Type": "set",
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les trois semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les trois semaines",
+        "Type": "set",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 15 heures chaque jour  ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 heures chaque jour  ",
+        "Type": "set",
+        "Start": 17,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 15 heures tous les jours ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 heures tous les jours ",
+        "Type": "set",
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque 4/15 ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque 4/15",
+        "Type": "set",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les lundis",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les lundis",
+        "Type": "set",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les lundis à 16 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les lundis à 16 heures ",
+        "Type": "set",
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque matin à 9 heures ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque matin à 9 heures ",
+        "Type": "set",
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les après-midi à 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les après-midi à 16 heures",
+        "Type": "set",
+        "Start": 15,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les soirs à 21 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les soirs à 21 heures",
+        "Type": "set",
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque nuit à 21 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque nuit à 21 heures",
+        "Type": "set",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les matins à 9 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les matins à 9 heures",
+        "Type": "set",
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque matin à 9 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque matin à 9 heures",
+        "Type": "set",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 9 heures tous les dimanches",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 heures tous les dimanches",
+        "Type": "set",
+        "Start": 17,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 9 heures chaque lundi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 heures chaque lundi",
+        "Type": "set",
+        "Start": 17,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à 9 heures tous les lundis",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 heures tous les lundis",
+        "Type": "set",
+        "Start": 17,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir lundis",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundis",
+        "Type": "set",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "chaque dimanche",
+        "Type": "set",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les dimanches",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tous les dimanches",
+        "Type": "set",
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Puis-je faire une réservation de deux nuits pour le 9 mai?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "nuits",
+        "Type": "set",
+        "Start": 38,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "On se voit une fois par semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une fois par semaine",
+        "Type": "set",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je pars en vacances une fois par an",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une fois par an",
+        "Type": "set",
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Un vendredi sur deux",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Un vendredi sur deux",
+        "Type": "set",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Organisons une réunion trimestrielle",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trimestrielle",
+        "Type": "set",
+        "Start": 23,
+        "Length": 13
+      }
+    ]
   }
 ]

@@ -768,5 +768,1050 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "Je reviens à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Start": 13,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à sept heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "sept",
+        "Type": "time",
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19 heures",
+        "Type": "time",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h",
+        "Type": "time",
+        "Start": 13,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h56",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h56",
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h56min35s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h56min35s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h56m35s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h56m35s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 12h34",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12h34",
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 12h34min20s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12h34min20s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à T12h34min20s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "T12h34min20s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 0h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0h",
+        "Type": "time",
+        "Start": 13,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 0h0min30s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0h0min30s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Il est 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 heures",
+        "Type": "time",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Il est sept heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "sept heures",
+        "Type": "time",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Il est 8 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 heures du matin",
+        "Type": "time",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Il est 20 heures du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures du soir",
+        "Type": "time",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Il est 8:30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8:30",
+        "Type": "time",
+        "Start": 7,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Il est 20h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h30",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Il est 8h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8h30",
+        "Type": "time",
+        "Start": 7,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Il est huit heures et quart",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "huit heures et quart",
+        "Type": "time",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Il est 8h15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8h15",
+        "Type": "time",
+        "Start": 7,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Il est 21h45",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21h45",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Il est 7h57",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h57",
+        "Type": "time",
+        "Start": 7,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Il est sept heures et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "sept heures et demie",
+        "Type": "time",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Il est 19h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h30",
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Il est 7h30 du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h30 du matin",
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Il est 7h45 du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h45 du matin",
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Il est 20h20 du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h20 du soir",
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour à 7h de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h de l'après-midi",
+        "Type": "time",
+        "Start": 21,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour à l'après-midi à 7h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "l'après-midi à 7h",
+        "Type": "time",
+        "Start": 21,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 7h du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h du soir",
+        "Type": "time",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h14s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h14s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h du soir",
+        "Type": "time",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h30",
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19h35",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h35",
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "J’y retourne à 11h05",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11h05",
+        "Type": "time",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "J'y retourne à 5h27",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5h27",
+        "Type": "time",
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "J’y retourne à 17h30 dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "17h30 dans la nuit",
+        "Type": "time",
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "J’y retourne dans la nuit à 17h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans la nuit à 17h30",
+        "Type": "time",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens vers midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vers midi",
+        "Type": "time",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "midi",
+        "Type": "time",
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 12:00 midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12:00 midi",
+        "Type": "time",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai vers 11 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vers 11 heures",
+        "Type": "time",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens vers 11 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vers 11 heures",
+        "Type": "time",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 15h40",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à 15h40",
+        "Type": "time",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 11h40",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à 11h40",
+        "Type": "time",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "au milieu de la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "au milieu de la nuit",
+        "Type": "time",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "milieu de la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de la nuit",
+        "Type": "time",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "milieu de la matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de la matinée",
+        "Type": "time",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "en milieu de matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en milieu de matinée",
+        "Type": "time",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "mi-matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mi-matinée",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "milieu de l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de l’après-midi",
+        "Type": "time",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "en milieu d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en milieu d’après-midi",
+        "Type": "time",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "midi",
+        "Type": "time",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "milieu de la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de la journée",
+        "Type": "time",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "mi-journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mi-journée",
+        "Type": "time",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 7 heures du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 heures du soir",
+        "Type": "time",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenir à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19 heures",
+        "Type": "time",
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19 heures",
+        "Type": "time",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à dix-neuf heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dix-neuf heures",
+        "Type": "time",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 7h56",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h56",
+        "Type": "time",
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 7h56min35s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h56min35s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 7h56m35s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h56m35s",
+        "Type": "time",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai à 7h56min35s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h56min35s",
+        "Type": "time",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 19:30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19:30",
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai à 19h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h30",
+        "Type": "time",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenir à 19h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h30",
+        "Type": "time",
+        "Start": 18,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 7h30 du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h30 du soir",
+        "Type": "time",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 3h40 de l'après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3h40 de l'après-midi",
+        "Type": "time",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 11h40 du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11h40 du matin",
+        "Type": "time",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "quels e-mails ont reçu p comme sujet",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "quels e-mails ont reçu une réponse",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je reviens à midi l'heure de déjeuner",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "midi l'heure de déjeuner",
+        "Type": "time",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens l'heure de déjeuner à 12 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de déjeuner à 12 heures",
+        "Type": "time",
+        "Start": 13,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à l'heure de déjeuner à midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à l'heure de déjeuner à midi",
+        "Type": "time",
+        "Start": 11,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, planifie une réunion pour la semaine prochaine.\nBentonville, AR 72716 P: 479.277\n",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "à 21 heures ça me convient.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21 heures",
+        "Type": "time",
+        "Start": 2,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "à 9 heures ça me convient.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je reviens à 21 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21 heures",
+        "Type": "time",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 9 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 heures",
+        "Type": "time",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 9 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 heures du matin",
+        "Type": "time",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens à 9h du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9h du matin",
+        "Type": "time",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Le prix de cet article est de 1.6714.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "à 15 heures : Je serai dehors cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 heures",
+        "Type": "time",
+        "Start": 2,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "cette semaine à 8 heures devrait être une période de dates et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 heures",
+        "Type": "time",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "cette semaine à 20 heures devrait être une période de dates et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures",
+        "Type": "time",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "la semaine 10 à 20 heures devrait être une période de dates et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures",
+        "Type": "time",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "la semaine 10 à 20h devrait être une période de dates et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h",
+        "Type": "time",
+        "Start": 16,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "la semaine 10 à 10h20 devrait être une période de dates et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10h20",
+        "Type": "time",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Le temps visé est 20h10",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h10",
+        "Type": "time",
+        "Start": 18,
+        "Length": 5
+      }
+    ]
   }
 ]
