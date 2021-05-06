@@ -167,13 +167,14 @@ namespace Microsoft.Recognizers.Text.Number
 
             foreach (var extractNum in extractNumList)
             {
-                if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
+                if (numberStr.Trim().EndsWith(extractNum.Text, StringComparison.Ordinal) &&
+                    match.Value.StartsWith(numberStr, StringComparison.Ordinal))
                 {
                     start = match.Index + extractNum.Start ?? 0;
                     length = length - extractNum.Start ?? 0;
                     validNum = true;
                 }
-                else if (extractNum.Start == 0 && match.Value.EndsWith(numberStr))
+                else if (extractNum.Start == 0 && match.Value.EndsWith(numberStr, StringComparison.Ordinal))
                 {
                     length = length - numberStr.Length + extractNum.Length ?? 0;
                     validNum = true;
@@ -196,7 +197,7 @@ namespace Microsoft.Recognizers.Text.Number
         // For these specific cases, we will not treat "30000 in 2010" as a fraction number
         private static bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
         {
-            return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr);
+            return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr, StringComparison.Ordinal);
         }
 
         private void GetMatchedStartAndLength(Match match, string type, string source, out int start, out int length)

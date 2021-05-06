@@ -246,7 +246,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Fen", @"分钱|分" },
             { @"Jiao", @"毛钱|毛|角钱|角" },
             { @"Finnish markka", @"芬兰马克" },
-            { @"Penni", @"盆尼" }
+            { @"Penni", @"盆尼" },
+            { @"Bitcoin", @"₿|btc|xbt|个比特币|比特币" }
         };
       public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
         {
@@ -536,7 +537,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Turkish lira", @"₺" },
             { @"Euro", @"€" },
             { @"Pound", @"£" },
-            { @"Costa Rican colón", @"₡" }
+            { @"Costa Rican colón", @"₡" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> CurrencyAmbiguousValues = new List<string>
         {

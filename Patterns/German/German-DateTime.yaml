@@ -47,7 +47,7 @@ DescRegex: !nestedRegex
   def: ({OclockRegex})
   references: [ OclockRegex ]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
@@ -56,9 +56,9 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
+  def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.|\b))
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
+  def: \b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.|\b))
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+monat(s)?)
   references: [RelativeRegex]
@@ -68,7 +68,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}|{MonthNumRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex, MonthNumRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>jahre|jahr|monate|monat|wochen?|tage|tag)(s)?
+  def: (?<unit>jahre|jahr|monate|monat|wochen?|tage?|tg)(s)?
 HalfTokenRegex: !simpleRegex
   def: ^(halb)
 QuarterToTokenRegex: !simpleRegex
@@ -193,8 +193,8 @@ DateExtractor4: !nestedRegex
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 # The final lookahead in DateExtractor5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor5: !nestedRegex
-  def: \b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
+  def: \b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b(?!\s*[/\\\-\.]\s*\d+)
+  references: [ WeekDayRegex, DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: ^[.]
   references: [ WeekDayRegex ]
@@ -395,7 +395,7 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
-  def: (?<unit>jahr(e(n|s)?)?|monat(en?|s)?|wochen?|tag(e(n|s)?)?|stunden?|std?|h|min(uten?)?|sek(unden?)?)\b
+  def: (?<unit>jahr(e(n|s)?)?|monat(en?|s)?|wochen?|tag(e(n|s)?)?|tg|stunden?|std?|h|min(uten?)?|sek(unden?)?)\b
 SpecialNumberUnitRegex: !simpleRegex
   def: \b(?<specialNum>beiden)\b
 SuffixAndRegex: !simpleRegex
@@ -433,13 +433,13 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((und(\s+für)?)|mit|für)\b
 HolidayRegex1: !nestedRegex
-  def: \b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b
+  def: \b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|tag der jugend|kindertag|(Internationaler\s+)?frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
-  def: \b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palmensonntag|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|buss- und bettag|buss und bettag|totensonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buss- und bettag|schweizer buss und bettag|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b
+  def: \b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palm(en)?sonntag|karsamstag|fastnachtssamstag|fastnachtssonntag|heilige drei könige|barbaratag|reformationstag|weltkindertag|augsburger friedensfest|johannistag|peter und paul|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|buss- und bettag|buss und bettag|totensonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buss- und bettag|schweizer buss und bettag|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex
-  def: ((dieses jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|groundhog|bastille|halloween|veterans|memorial|spring|lantern|qingming|dragon boat)\s+(day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?
+  def: ((dieses jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|groundhog|bastille|halloween|veterans|memorial|spring|lantern|qingming|dragon boat)\s+(day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?
   references: [ YearRegex, RelativeRegex ]
 DateTokenPrefix: 'am '
 TimeTokenPrefix: 'um '
@@ -597,6 +597,7 @@ UnitMap: !dictionary
     tages: D
     tage: D
     tag: D
+    tg: D
     stunden: H
     stunde: H
     h: H
@@ -622,6 +623,7 @@ UnitValueMap: !dictionary
     tagen: 86400
     tage: 86400
     tag: 86400
+    tg: 86400
     stunden: 3600
     stunde: 3600
     std: 3600
@@ -989,7 +991,7 @@ HolidayNames: !dictionary
     singleday: [ singleday ]
     allsaintsday: [ allerheiligen ]
     youthday: [ tag der jugend ]
-    childrenday: [ kindertag ]
+    childrenday: [ kindertag, weltkindertag ]
     femaleday: [ frauentag ]
     treeplantingday: [ treeplantingday ]
     arborday: [ tag des baumes ]
@@ -1024,7 +1026,7 @@ HolidayNames: !dictionary
     weiberfastnacht: [ weiberfastnacht ]
     carnival: [ karneval ]
     ashwednesday: [ aschermittwoch ]
-    palmsunday: [ palmensonntag ]
+    palmsunday: [ palmensonntag, palmsonntag ]
     goodfriday: [ karfreitag ]
     ascensionofchrist: [ christihimmelfahrt ]
     whitsunday: [ pfingstsonntag ]
@@ -1045,6 +1047,14 @@ HolidayNames: !dictionary
     beginningofwinter: [ winteranfang ]
     beginningofspring: [ frühlingsanfang ]
     beginningoffall: [ herbstanfang ]
+    eastersaturday: [ karsamstag ]
+    fastnachtssamstag: [ fastnachtssamstag ]
+    fastnachtssonntag : [ fastnachtssonntag ]
+    heiligedreikönige: [ heiligedreikönige ]
+    barbaratag: [ barbaratag ]
+    augsburgerfriedensfest: [ augsburgerfriedensfest ]
+    johannistag: [ johannistag ]
+    peterundpaul: [ peterundpaul ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
@@ -1076,9 +1086,14 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\b(morgen|nachmittag|abend|nacht|tag)\b': '\b(gut(en?)?\s+(morgen|nachmittag|abend|nacht|tag))\b'
+    '^(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)$': '([$%£&!?@#])(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)|(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)([$%£&@#])'
+    '^(mo|di|mi|do|fr|sa|so)$': '\b(mo|di|mi|do|fr|sa|so)\b'
 # As deciding between morgen (morning) and morgen (tomorrow) turns out to be rather difficult, we might want to ignore if for now
 #    '\bmorgen\b': '\b(morgen\s(morgen|nachmittag|abend|nacht|tag|früh))\b'
 # For TimeOfDay resolution
+AmbiguousTimePeriodRegex: !nestedRegex
+  def: \b((?<!{RelativeRegex}\s+)morgen|früh)\b
+  references: [ RelativeRegex ]
 MorningTermList: !list
   types: [ string ]
   entries:

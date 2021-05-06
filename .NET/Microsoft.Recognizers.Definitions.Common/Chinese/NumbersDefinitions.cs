@@ -159,7 +159,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             '拾'
         };
       public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
-      public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";
+      public const string ZeroToNineFullHalfRegex = @"[\d]";
       public static readonly string DigitNumRegex = $@"{ZeroToNineFullHalfRegex}+";
       public const string DozenRegex = @".*打$";
       public const string PercentageRegex = @"(?<=(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\s*分\s*之).+|.+(?=个\s*(((?<![十百千拾佰仟])[十百千拾佰仟])|([万亿兆萬億]))\s*分\s*点)|.*(?=[％%])";
@@ -201,8 +201,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string DoubleWithMultiplierRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
       public static readonly string DoubleWithThousandsRegex = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+)|({ZeroToNineFullHalfRegex}{{1,3}}(,{ZeroToNineFullHalfRegex}{{3}})+))([\.．]{ZeroToNineFullHalfRegex}+)?\s*[多几幾余]?[万亿萬億]{{1,2}}";
       public static readonly string DoubleAllFloatRegex = $@"(?<![百佰]\s*分\s*之\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*[个個]\s*[百佰]\s*分\s*[点點])";
-      public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))";
-      public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)";
+      public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))";
+      public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)";
       public static readonly string OrdinalRegex = $@"第{AllIntRegex}";
       public static readonly string OrdinalNumbersRegex = $@"第{ZeroToNineFullHalfRegex}+";
       public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*又\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*之\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})({PointRegexStr}{AllIntRegex}*)?";
@@ -227,21 +227,21 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegex}(\s*[点點]?\s*{ZeroToNineIntegerRegex})?\s*折";
       public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}\s*成(\s*(半|{ZeroToNineFullHalfRegex}))?";
       public static readonly string SpecialsPercentageRegex = $@"({ZeroToNineIntegerRegex}|[十拾])\s*成(\s*(半|{ZeroToNineIntegerRegex}))?";
-      public static readonly string NumbersSpecialsPercentageRegex = $@"({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*成";
+      public static readonly string NumbersSpecialsPercentageRegex = $@"({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|10)\s*成";
       public static readonly string SimpleSpecialsPercentageRegex = $@"{ZeroToNineIntegerRegex}\s*[点點]\s*{ZeroToNineIntegerRegex}\s*成";
       public const string SpecialsFoldsPercentageRegex = @"半\s*成|(?<=打)[对對]\s*折|半\s*折";
       public const string SpeicalCharBeforeNumber = @"(有|是|为)";
       public const string TillRegex = @"(到|至|--|-|—|——|~|–)";
-      public const string MoreRegex = @"((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)";
+      public const string MoreRegex = @"((大于|多于|高于|超过|大於|多於|高於|超過|超过)了?|过|>)";
       public const string LessRegex = @"(小于|少于|低于|小於|少於|低於|不到|不足|<)";
       public const string EqualRegex = @"(等于|等於|=)";
       public static readonly string MoreOrEqual = $@"(({MoreRegex}\s*(或|或者)?\s*{EqualRegex})|(至少|最少){SpeicalCharBeforeNumber}?|不{LessRegex}|≥)";
-      public const string MoreOrEqualSuffix = @"(或|或者)\s*(以上|之上|更[大多高])";
+      public const string MoreOrEqualSuffix = @"(或|或者)\s*(次?以上|之上|更[大多高])";
       public static readonly string LessOrEqual = $@"(({LessRegex}\s*(或|或者)?\s*{EqualRegex})|(至多|最多){SpeicalCharBeforeNumber}?|不{MoreRegex}|≤)";
       public const string LessOrEqualSuffix = @"(或|或者)\s*(以下|之下|更[小少低])";
       public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)";
       public const string OneNumberRangeMoreRegex2 = @"比\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*更?[大多高]";
-      public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})";
+      public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|次?以上|之上|更[大多高])([万亿萬億]{0,2})";
       public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)";
       public const string OneNumberRangeLessRegex2 = @"比\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)\s*更?[小少低]";
       public const string OneNumberRangeLessRegex3 = @"(?<number2>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*(以下|之下|更[小少低])";

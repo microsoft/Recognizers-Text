@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Turkish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -74,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
-                    deltaMin = int.Parse(minStr);
+                    deltaMin = int.Parse(minStr, CultureInfo.InvariantCulture);
                 }
                 else
                 {

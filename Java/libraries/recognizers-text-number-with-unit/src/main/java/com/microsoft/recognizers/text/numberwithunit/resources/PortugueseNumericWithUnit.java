@@ -349,6 +349,9 @@ public class PortugueseNumericWithUnit {
         .put("Dinar iugoslavo", "dinar iugoslavo|dinares iugoslavos|dinar jugoslavo|dinares jugoslavos|yud")
         .put("Kwacha zambiano", "kwacha zambiano|kwacha zambianos|kwachas zambianos|zmw")
         .put("Ngwee zambiano", "ngwee zambiano|ngwee zambianos|ngwees zambianos")
+        .put("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿")
+        .put("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins")
+        .put("Satoshi", "satoshi|satoshis")
         .build();
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
@@ -385,6 +388,7 @@ public class PortugueseNumericWithUnit {
         .put("Libra", "£")
         .put("Colón costarriquenho", "₡")
         .put("Lira turca", "₺")
+        .put("Bitcoin", "₿|btc|xbt")
         .build();
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le", "agora");

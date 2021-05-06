@@ -1,0 +1,886 @@
+[
+  {
+    "Input": "هذا يومان",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يومان",
+        "Start": 4,
+        "Length": 5,
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "هذا قبل الساعة 4 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "قبل الرابعة مساءً",
+        "Start": -1,
+        "Length": 17,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "هذا قبل الساعة 4 مساءً غدًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "قبل الساعة 4 مساءً غدًا",
+        "Start": 4,
+        "Length": 23,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "هذا قبل 4 مساء غدا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "قبل 4 مساء غدا",
+        "Start": 4,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "هذا بعد الساعة 4 مساءً",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الساعة 4 مساءً",
+        "Start": 4,
+        "Length": 18,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "هذا بعد الساعة 4 مساءً غدًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد الساعة 4 مساءً غدًا",
+        "Start": 4,
+        "Length": 23,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "هذا بعد 4 مساء غدا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 4 مساء غدا",
+        "Start": 4,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد 5 دقائق",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 5 دقائق",
+        "Start": 6,
+        "Length": 11,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "الأسبوع الماضي",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الماضي",
+        "Start": 0,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "حدد موعدًا للاجتماع في غضون 10 ساعات",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في غضون 10 ساعات",
+        "Start": 20,
+        "Length": 16,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "كيف يبدو هذا اليوم؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا اليوم",
+        "Start": 9,
+        "Length": 9,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "كيف يبدو هذا الأسبوع؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الاسبوع",
+        "Start": -1,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كيف يبدو أسبوعي؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اسبوعي",
+        "Start": -1,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كيف يبدو الأسبوع؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الإسبوع",
+        "Start": -1,
+        "Length": 7,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كيف يبدو يومي؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يومي",
+        "Start": 9,
+        "Length": 4,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "كيف يبدو اليوم؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم",
+        "Start": 9,
+        "Length": 5,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "حدد موعدًا للاجتماع من الساعة 9 صباحًا حتى 11 صباحًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الساعة 9 صباحًا حتى 11 صباحًا",
+        "Start": 20,
+        "Length": 32,
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "حدد موعدًا للاجتماع من الساعة 9 صباحًا حتى 11 صباحًا غدًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الساعة 9 صباحًا حتى 11 صباحًا غدًا",
+        "Start": 20,
+        "Length": 37,
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "تغيير اجتماع 22 يوليو في بلفيو إلى 22 أغسطس",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "22 يوليو",
+        "Start": 13,
+        "Length": 8,
+        "Type": "date"
+      },
+      {
+        "Text": "22 أغسطس",
+        "Start": 35,
+        "Length": 8,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "بعد 7/2",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 7/2",
+        "Start": 0,
+        "Length": 7,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "منذ 7/2",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منذ 7/2",
+        "Start": 0,
+        "Length": 7,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "قبل 7/2",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "قبل 7/2",
+        "Start": 0,
+        "Length": 7,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "6/6/2021 12.15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "6/6/2021 12.15",
+        "Start": 0,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "6/6/2012 15:15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "6/6/2012 15:15",
+        "Start": 0,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "06/06 ، 2015",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "06/06 ، 2015",
+        "Start": 0,
+        "Length": 12,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "29 مايو",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "29 مايو",
+        "Start": 0,
+        "Length": 7,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "29 مارس",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "29 مارس",
+        "Start": 0,
+        "Length": 7,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "ولدت في مارس",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مارس",
+        "Start": 8,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد ولدت في المارس",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "المارس",
+        "Start": 12,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "ماذا حدث في المايو",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "المايو",
+        "Start": 12,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "ما هي ساعات بالومينو؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "في الشمس",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "أي بريد إلكتروني تلقى ردًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "غالبًا ما يكون وحيدًا",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "غالبا طائر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "ساعات ميشيغان",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "سأغير موعد الساعة 3 مساءً إلى 4.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 مساءً",
+        "Start": 18,
+        "Length": 7,
+        "Type": "time"
+      },
+      {
+        "Text": "4.0",
+        "Start": -1,
+        "Length": 3,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة 3 مساءً إلى 4 ،",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 مساءً",
+        "Start": 18,
+        "Length": 7,
+        "Type": "time"
+      },
+      {
+        "Text": "4.0",
+        "Start": -1,
+        "Length": 3,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الثالثة مساءً إلى الرابعة",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثالثة مساءً",
+        "Start": 11,
+        "Length": 13,
+        "Type": "time"
+      },
+      {
+        "Text": "الرابعة",
+        "Start": 29,
+        "Length": 7,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى الحادية عشر",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "الحادية عشر",
+        "Start": 37,
+        "Length": 11,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى 4. ،",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "4.0",
+        "Start": -1,
+        "Length": 3,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى الحادية عشر!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "الحادية عشر",
+        "Start": 30,
+        "Length": 11,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سوف أغير موعد العاشرة صباحا إلى الحادية عشر؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": -1,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "الحادية عشر",
+        "Start": 32,
+        "Length": 11,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحا إلى 20!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": -1,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "20.0",
+        "Start": -1,
+        "Length": 4,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحا إلى عشرين!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": -1,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "عشرين",
+        "Start": 29,
+        "Length": 5,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى الثالثة عشر!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "الثالثة عشر",
+        "Start": 30,
+        "Length": 11,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى 13!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "13.0",
+        "Start": -1,
+        "Length": 4,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى 0!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "0.0",
+        "Start": -1,
+        "Length": 3,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى 24!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "24.0",
+        "Start": -1,
+        "Length": 4,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى صفر.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "صفر",
+        "Start": 37,
+        "Length": 3,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى أربعة وعشرين.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": " أربعة وعشرين",
+        "Start": 36,
+        "Length": 13,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحا إلى 4 ، ما رأيك؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": -1,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "4.0",
+        "Start": -1,
+        "Length": 3,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى 4.3",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى ستة وعشرين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى 4 أو بعد ذلك",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد العاشرة صباحًا إلى 25",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 11,
+        "Length": 14,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سأغير موعد الساعة العاشرة صباحًا إلى خمسة وعشرين",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العاشرة صباحًا",
+        "Start": 18,
+        "Length": 14,
+        "Type": "time"
+      },
+      {
+        "Text": "خمسة وعشرين",
+        "Start": 37,
+        "Length": 11,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "سيعقد الاجتماع القادم في 16 مارس, 2017 ، فماذا عن إجراء مناقشة في الساعة 2 ظهرًا بعد ظهر اليوم؟",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "16 مارس, 2017",
+        "Start": 25,
+        "Length": 13,
+        "Type": "date"
+      },
+      {
+        "Text": "الساعة 2 ظهرًا",
+        "Start": 66,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "في الأول من أبريل 2018 ، يمكننا التخطيط الساعة 2 ظهرًا بعد ظهر اليوم",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأول من أبريل 2018",
+        "Start": 3,
+        "Length": 19,
+        "Type": "date"
+      },
+      {
+        "Text": "الساعة 2 ظهرًا",
+        "Start": 40,
+        "Length": 14,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "النطاق قبل عام 2012",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "قبل عام 2012",
+        "Start": 7,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "النطاق حتى عام 2012",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "حتى عام 2012",
+        "Start": 7,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "النطاق 2012 أو بعده",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2012 أو بعده",
+        "Start": 7,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  }
+]

@@ -144,7 +144,7 @@ DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
 ZeroToNineFullHalfRegex: !simpleRegex
-  def: '[\d１２３４５６７８９０]'
+  def: '[\d]'
 DigitNumRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+'
   references: [ZeroToNineFullHalfRegex]
@@ -257,10 +257,10 @@ DoubleAllFloatRegex: !nestedRegex
   def: (?<![百佰]\s*分\s*之\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*[个個]\s*[百佰]\s*分\s*[点點])
   references: [AllIntRegex, AllFloatRegex, ZeroToNineIntegerRegex]
 DoubleExponentialNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 DoubleScientificNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegex: !nestedRegex
@@ -338,7 +338,7 @@ SpecialsPercentageRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex}|[十拾])\s*成(\s*(半|{ZeroToNineIntegerRegex}))?
   references: [ZeroToNineIntegerRegex]
 NumbersSpecialsPercentageRegex: !nestedRegex
-  def: ({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*成
+  def: ({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|10)\s*成
   references: [ZeroToNineFullHalfRegex]
 SimpleSpecialsPercentageRegex: !nestedRegex
   def: '{ZeroToNineIntegerRegex}\s*[点點]\s*{ZeroToNineIntegerRegex}\s*成'
@@ -351,7 +351,7 @@ SpeicalCharBeforeNumber: !simpleRegex
 TillRegex: !simpleRegex
   def: (到|至|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: ((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)
+  def: ((大于|多于|高于|超过|大於|多於|高於|超過|超过)了?|过|>)
 LessRegex: !simpleRegex
   def: (小于|少于|低于|小於|少於|低於|不到|不足|<)
 EqualRegex: !simpleRegex
@@ -360,7 +360,7 @@ MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s*(或|或者)?\s*{EqualRegex})|(至少|最少){SpeicalCharBeforeNumber}?|不{LessRegex}|≥)
   references: [ MoreRegex, EqualRegex, LessRegex, SpeicalCharBeforeNumber ]
 MoreOrEqualSuffix: !simpleRegex
-  def: (或|或者)\s*(以上|之上|更[大多高])
+  def: (或|或者)\s*(次?以上|之上|更[大多高])
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s*(或|或者)?\s*{EqualRegex})|(至多|最多){SpeicalCharBeforeNumber}?|不{MoreRegex}|≤)
   references: [ LessRegex, EqualRegex, MoreRegex, SpeicalCharBeforeNumber ]
@@ -372,7 +372,7 @@ OneNumberRangeMoreRegex1: !nestedRegex
 OneNumberRangeMoreRegex2: !simpleRegex
   def: 比\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*更?[大多高]
 OneNumberRangeMoreRegex3: !simpleRegex
-  def: (?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})
+  def: (?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|次?以上|之上|更[大多高])([万亿萬億]{0,2})
 OneNumberRangeLessRegex1: !nestedRegex
   def: ({LessOrEqual}|{LessRegex})\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)
   references: [ LessOrEqual, LessRegex ]

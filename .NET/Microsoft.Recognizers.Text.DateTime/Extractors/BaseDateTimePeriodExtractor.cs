@@ -379,7 +379,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var midStr = text.Substring(midBegin, midEnd - midBegin);
                     bool isMatchTokenBeforeDate = string.IsNullOrWhiteSpace(midStr) ||
-                                                  (midStr.TrimStart().StartsWith(config.TokenBeforeDate) &&
+                                                  (midStr.TrimStart().StartsWith(config.TokenBeforeDate, StringComparison.Ordinal) &&
                                                    (points[idx + 1].Type == Constants.SYS_DATETIME_DATE || points[idx + 1].Type == Constants.SYS_DATETIME_DATETIME));
 
                     if (this.config.CheckBothBeforeAfter && !string.IsNullOrWhiteSpace(midStr))

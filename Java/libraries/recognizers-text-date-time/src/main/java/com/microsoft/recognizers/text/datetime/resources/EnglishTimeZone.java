@@ -88,7 +88,7 @@ public class EnglishTimeZone {
         .put("esat", -180)
         .put("est", -300)
         .put("estm", -300)
-        .put("et", -240)
+        .put("et", -300)
         .put("fjst", 780)
         .put("fjt", 720)
         .put("get", 240)

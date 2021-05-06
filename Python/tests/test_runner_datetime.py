@@ -156,7 +156,7 @@ def test_datetime_model(
         assert_verbose(len(actual.resolution['values']), len(expected['Resolution']['values']), spec_info)
 
         for actual_resolution_value in actual.resolution['values']:
-            assert_model_resolution(actual_resolution_value, expected['Resolution']['values'])
+            assert_model_resolution(actual_resolution_value, expected['Resolution']['values'], spec_info)
 
 
 def get_props(results, prop):
@@ -167,11 +167,13 @@ def get_props(results, prop):
     return list_result
 
 
-def single_assert(actual, expected, prop):
+def single_assert(actual, expected, prop, spec_info):
     if expected.get(prop):
-        assert actual[prop] == expected[prop]
+        assert actual[prop] == expected[prop], \
+            "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)
     else:
-        assert actual.get(prop) is None
+        assert actual.get(prop) is None, \
+            "Actual: 'None' | Expected: {} | Context: {}".format(actual, expected, spec_info)
 
 
 def assert_verbose(actual, expected, spec_info):
@@ -179,19 +181,20 @@ def assert_verbose(actual, expected, spec_info):
         "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)
 
 
-def assert_prop(actual, expected, prop):
+def assert_prop(actual, expected, prop, spec_info):
     actual_val = actual.get(prop)
     expected_val = get_props(expected, prop)
-    assert actual_val in expected_val
+    assert actual_val in expected_val, \
+        "Actual: {} | Expected: {} | Prop: {} | Context: {}".format(actual, expected, prop, spec_info)
 
 
-def assert_model_resolution(actual, expected):
-    assert_prop(actual, expected, 'timex')
-    assert_prop(actual, expected, 'type')
-    assert_prop(actual, expected, 'value')
-    assert_prop(actual, expected, 'start')
-    assert_prop(actual, expected, 'end')
-    assert_prop(actual, expected, 'Mod')
+def assert_model_resolution(actual, expected, spec_info):
+    assert_prop(actual, expected, 'timex', spec_info)
+    assert_prop(actual, expected, 'type', spec_info)
+    assert_prop(actual, expected, 'value', spec_info)
+    assert_prop(actual, expected, 'start', spec_info)
+    assert_prop(actual, expected, 'end', spec_info)
+    assert_prop(actual, expected, 'Mod', spec_info)
 
 
 def simple_extractor_assert(spec_info, actual, expected, prop, resolution, ignore_result_case=False):

@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         };
       public static readonly string AllMultiplierLookupRegex = $@"({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)";
       public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
-      public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";
+      public const string ZeroToNineFullHalfRegex = @"[\d]";
       public static readonly string DigitNumRegex = $@"{ZeroToNineFullHalfRegex}+";
       public const string DozenRegex = @".*ダース$";
       public const string PercentageRegex = @".+(?=パ\s*ー\s*セ\s*ン\s*ト)|.*(?=[％%])";
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string PointRegexStr = @"[\.．・]";
       public static readonly string AllFloatRegex = $@"{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*";
       public static readonly string NumbersWithAllowListRegex = $@"(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}+))(?!(\s*{AllMultiplierLookupRegex}))";
-      public static readonly string NumbersAggressiveRegex = $@"(({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*(\s*{PercentageRegex})?))";
+      public static readonly string NumbersAggressiveRegex = $@"(({AllIntRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\s*{PercentageRegex})))";
       public static readonly string PointRegex = $@"{PointRegexStr}";
       public static readonly string DoubleSpecialsChars = $@"((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)(?!\s*{AllMultiplierLookupRegex})";
       public static readonly string DoubleRoundNumberSpecialsChars = $@"(?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+)";
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DoubleScientificNotationRegex = $@"(?<!\d+[\.])({NegativeNumberTermsRegexNum}\s*)?(\d+([\.]\d+)?)\^([-+＋]*[1-9]\d*)";
       public static readonly string OrdinalNumbersRegex = $@"(((第|だい)({ZeroToNineFullHalfRegex}+)({RoundNumberIntegerRegex}+)?))|(({ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+)({RoundNumberIntegerRegex}+)?(番目|位|等(?!級)))";
       public static readonly string OrdinalRegex = $@"(({OrdinalNumbersRegex})|((第|だい)({AllIntRegex})|(({AllIntRegex}+|{NumbersWithAllowListRegex}+)(番目|位|等))))|(最初|1等|ファースト)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から１つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>((最後)(から1つ前のこと|から(3|2|1)番目|(から1つ前)(のもの)|から三番目|から二番目|(から(一|1)つ前)(のもの|のこと)?|(から1つ)?(前))?|(次のもの)(前)?|(前(?=の))(のもの)?|(現在)(のこと)?|次|二位))";
       public static readonly string AllOrdinalRegex = $@"({OrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string AllFractionNumber = $@"((({NegativeNumberTermsRegex}{{0,1}})|{NegativeNumberTermsRegexNum})(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[はと]{{0,1}}\s*)?{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*の\s*{NegativeNumberTermsRegex}{{0,1}}({ZeroToNineFullHalfRegex}+|{AllIntRegex})+)|半(分|数)";
       public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
@@ -180,7 +180,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegex}(\s*[.]?\s*{ZeroToNineIntegerRegex})?\s*[の]\s*割引";
       public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}\s*割(\s*(半|({ZeroToNineFullHalfRegex}\s*分\s*{ZeroToNineFullHalfRegex}\s*厘)|{ZeroToNineFullHalfRegex}))?";
       public static readonly string SpecialsPercentageRegex = $@"({ZeroToNineIntegerRegex}|[十])\s*割(\s*(半|{ZeroToNineIntegerRegex}))?";
-      public static readonly string NumbersSpecialsPercentageRegex = $@"({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*割";
+      public static readonly string NumbersSpecialsPercentageRegex = $@"({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|10)\s*割";
       public static readonly string SimpleSpecialsPercentageRegex = $@"{ZeroToNineIntegerRegex}\s*[.]\s*{ZeroToNineIntegerRegex}\s*割";
       public const string SpecialsFoldsPercentageRegex = @"半\s*分|(?<=ダース)";
       public const string TillRegex = @"(から|--|-|—|——|~)";

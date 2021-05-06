@@ -77,6 +77,7 @@ public class FrenchTimeParserConfiguration extends BaseOptionsConfiguration impl
         int deltaMin = 0;
         final String trimmedPrefix = prefix.trim();
 
+        // @todo Move hardcoded strings to resource YAML file.
         // c'este 8 heures et demie, - "it's half past 8"
         if (trimmedPrefix.endsWith("demie")) {
             deltaMin = 30;
@@ -101,7 +102,7 @@ public class FrenchTimeParserConfiguration extends BaseOptionsConfiguration impl
         }
 
         // 'to' i.e 'one to five' = 'un à cinq'
-        if (trimmedPrefix.endsWith("à")) {
+        if (trimmedPrefix.endsWith("à") || trimmedPrefix.contains("moins")) {
             deltaMin = -deltaMin;
         }
 

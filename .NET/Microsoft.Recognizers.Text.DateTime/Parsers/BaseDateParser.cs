@@ -836,6 +836,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var weekdayStr = match.Groups["weekday"].Value;
             var yearStr = match.Groups["year"].Value;
             var writtenYear = match.Groups["fullyear"].Value;
+            var ambiguousCentury = false;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
             {
@@ -851,11 +852,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
-                        year += 1900;
+                        year += Constants.BASE_YEAR_PAST_CENTURY;
                     }
                     else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
-                        year += 2000;
+                        year += Constants.BASE_YEAR_CURRENT_CENTURY;
+                    }
+                    else if (year >= Constants.MaxTwoDigitYearFutureNum && year < Constants.MinTwoDigitYearPastNum)
+                    {
+                        // Two-digit years in the range [30, 40) are ambiguos
+                        ambiguousCentury = true;
                     }
                 }
             }
@@ -892,6 +898,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.FutureValue = futurePastDates.future;
             ret.PastValue = futurePastDates.past;
             ret.Success = true;
+
+            // Ambiguous two-digit years are assigned values in both centuries (e.g. 35 -> 1935, 2035)
+            if (ambiguousCentury)
+            {
+                ret.PastValue = futurePastDates.past.AddYears(Constants.BASE_YEAR_PAST_CENTURY);
+                ret.FutureValue = futurePastDates.future.AddYears(Constants.BASE_YEAR_CURRENT_CENTURY);
+                ret.Timex = TimexUtility.ModifyAmbiguousCenturyTimex(ret.Timex);
+            }
 
             return ret;
         }

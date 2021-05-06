@@ -1,105 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Immutable;
 using System.Globalization;
-using Microsoft.Recognizers.Definitions.Japanese;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
 using static Microsoft.Recognizers.Text.DateTime.Japanese.JapaneseDurationExtractorConfiguration;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseDurationParserConfiguration : IDateTimeParser
+    public class JapaneseDurationParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDurationParserConfiguration
     {
-        public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
 
-        public static readonly string ParserName = Constants.SYS_DATETIME_DURATION; // "Duration";
-
-        private static readonly IParser InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
-
-        private readonly IFullDateTimeParserConfiguration config;
-
-        public JapaneseDurationParserConfiguration(IFullDateTimeParserConfiguration configuration)
+        public JapaneseDurationParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
+            : base(config)
         {
-            config = configuration;
+            InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
+
+            var durationConfig = new BaseDateTimeOptionsConfiguration(config.Culture, DateTimeOptions.None);
+            DurationExtractor = new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(durationConfig), false);
+
+            YearRegex = JapaneseDurationExtractorConfiguration.YearRegex;
+            DurationUnitRegex = JapaneseDurationExtractorConfiguration.DurationUnitRegex;
+            DurationConnectorRegex = JapaneseDurationExtractorConfiguration.DurationConnectorRegex;
+
+            UnitMap = config.UnitMap;
+            UnitValueMap = config.UnitValueMap;
         }
 
-        public ParseResult Parse(ExtractResult extResult)
-        {
-            return this.Parse(extResult, DateObject.Now);
-        }
+        public IDateTimeExtractor DurationExtractor { get; }
 
-        public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
-        {
-            var referenceTime = refDate;
+        public IParser InternalParser { get; }
 
-            // handle cases like "三年半"
-            var hasHalfSuffix = false;
-            if (er.Text.EndsWith("半", StringComparison.Ordinal))
-            {
-                er.Length -= 1;
-                er.Text = er.Text.Substring(0, er.Text.Length - 1);
-                hasHalfSuffix = true;
-            }
+        public Regex YearRegex { get; }
 
-            var parseResult = InternalParser.Parse(er);
-            var unitResult = parseResult.Value as UnitValue;
+        public Regex DurationUnitRegex { get; }
 
-            if (unitResult == null)
-            {
-                return null;
-            }
+        public Regex DurationConnectorRegex { get; }
 
-            var dateTimeParseResult = new DateTimeResolutionResult();
-            var unitStr = unitResult.Unit;
-            var numStr = unitResult.Number;
+        public IImmutableDictionary<string, string> UnitMap { get; }
 
-            if (hasHalfSuffix)
-            {
-                numStr = (double.Parse(numStr, CultureInfo.InvariantCulture) + 0.5).ToString(CultureInfo.InvariantCulture);
-            }
-
-            dateTimeParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : string.Empty) + numStr + unitStr[0];
-            dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr, CultureInfo.InvariantCulture) * UnitValueMap[unitStr];
-            dateTimeParseResult.Success = true;
-
-            if (dateTimeParseResult.Success)
-            {
-                dateTimeParseResult.FutureResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DURATION, dateTimeParseResult.FutureValue.ToString() },
-                };
-
-                dateTimeParseResult.PastResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DURATION, dateTimeParseResult.PastValue.ToString() },
-                };
-            }
-
-            var ret = new DateTimeParseResult
-            {
-                Text = er.Text,
-                Start = er.Start,
-                Length = er.Length,
-                Type = er.Type,
-                Data = er.Data,
-                Value = dateTimeParseResult,
-                TimexStr = dateTimeParseResult.Timex,
-                ResolutionStr = string.Empty,
-            };
-
-            return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
+        public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         internal class DurationParserConfiguration : JapaneseNumberWithUnitParserConfiguration
         {
             public DurationParserConfiguration()
-                : base(new CultureInfo(Culture.Japanese))
+                : base(new CultureInfo(Text.Culture.Japanese))
             {
                 this.BindDictionary(DurationExtractorConfiguration.DurationSuffixList);
             }

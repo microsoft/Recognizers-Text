@@ -32,6 +32,7 @@ class EnglishNumericWithUnit:
                            ("Square mile", "sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²"),
                            ("Square yard", "sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²"),
                            ("Acre", "-acre|acre|acres")])
+    AmbiguousAreaUnitList = [r'n/a']
     CurrencySuffixList = dict([("Abkhazian apsar", "abkhazian apsar|apsars"),
                                ("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani"),
                                ("Pul", "pul"),
@@ -279,7 +280,10 @@ class EnglishNumericWithUnit:
                                ("Fen", "fen"),
                                ("Jiao", "jiao|mao"),
                                ("Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka"),
-                               ("Penni", "penniä|penni")])
+                               ("Penni", "penniä|penni"),
+                               ("Bitcoin", "bitcoin|bitcoins|btc|xbt|₿"),
+                               ("Millibitcoin", "millibitcoin|millibitcoins|milibitcoin|milibitcoins"),
+                               ("Satoshi", "satoshi|satoshis")])
     CurrencyNameToIsoCodeMap = dict([("Afghan afghani", "AFN"),
                                      ("Euro", "EUR"),
                                      ("Albanian lek", "ALL"),
@@ -464,7 +468,8 @@ class EnglishNumericWithUnit:
                                      ("British Virgin Islands dollar", "_BD"),
                                      ("Ascension pound", "_AP"),
                                      ("Alderney pound", "_ALP"),
-                                     ("Abkhazian apsar", "_AA")])
+                                     ("Abkhazian apsar", "_AA"),
+                                     ("Bitcoin", "_XBT")])
     FractionalUnitNameToCodeMap = dict([("Jiao", "JIAO"),
                                         ("Kopek", "KOPEK"),
                                         ("Pul", "PUL"),
@@ -537,7 +542,9 @@ class EnglishNumericWithUnit:
                                         ("Kopiyka", "KOPIYKA"),
                                         ("Tiyin", "TIYIN"),
                                         ("Hào", "HAO"),
-                                        ("Ngwee", "NGWEE")])
+                                        ("Ngwee", "NGWEE"),
+                                        ("Millibitcoin", "MILLIBITCOIN"),
+                                        ("Satoshi", "SATOSHI")])
     CompoundUnitConnectorRegex = f'(?<spacer>and)'
     CurrencyPrefixList = dict([("Dobra", "db|std"),
                                ("Dollar", "$"),
@@ -581,8 +588,9 @@ class EnglishNumericWithUnit:
                                ("Euro", "€"),
                                ("Pound", "£"),
                                ("Costa Rican colón", "₡"),
-                               ("Turkish lira", "₺")])
-    AmbiguousCurrencyUnitList = [r'din.', r'kiwi', r'kina', r'kobo', r'lari', r'lipa', r'napa', r'para', r'sfr.', r'taka', r'tala', r'toea', r'vatu', r'yuan', r'all', r'ang', r'ban', r'bob', r'btn', r'byr', r'cad', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'lei', r'mga', r'mop', r'nad', r'omr', r'pul', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sen', r'sol', r'sos', r'std', r'try', r'yer', r'yen', r'db']
+                               ("Turkish lira", "₺"),
+                               ("Bitcoin", "₿|btc|xbt")])
+    AmbiguousCurrencyUnitList = [r'din.', r'kiwi', r'kina', r'kobo', r'lari', r'lipa', r'napa', r'para', r'sfr.', r'taka', r'tala', r'toea', r'vatu', r'yuan', r'all', r'ang', r'ban', r'bob', r'btn', r'byr', r'cad', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'lei', r'mga', r'mop', r'nad', r'omr', r'pul', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sen', r'sol', r'sos', r'std', r'try', r'yer', r'yen', r'db', r'satoshi', r'satoshis']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
                                   ("Kilobit", "kilobit|kilobits|kb|Kb|kbit"),
                                   ("Megabit", "megabit|megabits|mb|Mb|mbit"),
@@ -595,7 +603,7 @@ class EnglishNumericWithUnit:
                                   ("Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte"),
                                   ("Terabyte", "-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte"),
                                   ("Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte")])
-    AmbiguousDimensionUnitList = [r'barrel', r'barrels', r'grain', r'pound', r'stone', r'yards', r'yard', r'cord', r'dram', r'feet', r'foot', r'gill', r'knot', r'peck', r'cup', r'fps', r'pts', r'in', r'dm', r'"']
+    AmbiguousDimensionUnitList = [r'barrel', r'barrels', r'grain', r'grains', r'pound', r'stone', r'stones', r'yards', r'yard', r'cord', r'cords', r'dram', r'drachm', r'drachma', r'feet', r'foot', r'gill', r'knot', r'knots', r'peck', r'pecks', r'cup', r'cups', r'fps', r'pts', r'in', r'dm', r'"', r'pinch', r'pinches']
     BuildPrefix = f'(?<=(\\s|^))'
     BuildSuffix = f'(?=(\\s|\\W|$))'
     LengthSuffixList = dict([("Kilometer", "km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre"),
@@ -615,21 +623,25 @@ class EnglishNumericWithUnit:
                              ("Light year", "light year|light-year|light years|light-years"),
                              ("Pt", "pt|pts")])
     AmbiguousLengthUnitList = [r'm', r'yard', r'yards', r'pm', r'pt', r'pts']
-    SpeedSuffixList = dict([("Meter per second", "meters / second|m/s|meters per second|metres per second|meter per second|metre per second"),
-                            ("Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour"),
+    SpeedSuffixList = dict([("Meter per second", "meter/second|meters/second|meters / second|m/s|meters per second|metres per second|meter per second|metre per second"),
+                            ("Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour|kph|kmph|km/hr"),
                             ("Kilometer per minute", "km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute"),
                             ("Kilometer per second", "km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second"),
-                            ("Mile per hour", "mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour"),
-                            ("Knot", "kt|knot|kn"),
-                            ("Foot per second", "ft/s|foot/s|foot per second|feet per second|fps"),
-                            ("Foot per minute", "ft/min|foot/min|foot per minute|feet per minute"),
+                            ("Mile per hour", "mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour|mi/hr"),
+                            ("Knot", "kt|knot|knots|kn"),
+                            ("Foot per second", "ft/s|foot/s|feet/s|foot per second|feet per second|fps"),
+                            ("Foot per minute", "ft/min|foot/min|feet/min|foot per minute|feet per minute"),
                             ("Yard per minute", "yards per minute|yard per minute|yards / minute|yards/min|yard/min"),
-                            ("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s")])
-    TemperatureSuffixList = dict([("F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f"),
+                            ("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s"),
+                            ("Meter per millisecond", "meter/millisecond|meters/millisecond|meter / millisecond|meters / millisecond|meter per millisecond|meters per millisecond|m/ms"),
+                            ("Centimeter per millisecond", "centimeter/millisecond|centimeters/millisecond|centimeter / millisecond|centimeters / millisecond|centimeter per millisecond|centimeters per millisecond|cm/ms"),
+                            ("Kilometer per millisecond", "kilometer/millisecond|kilometers/millisecond|kilometer / millisecond|kilometers / millisecond|kilometer per millisecond|kilometers per millisecond|km/ms")])
+    AmbiguousSpeedUnitList = [r'knot', r'knots', r'fps']
+    TemperatureSuffixList = dict([("F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|° f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f"),
                                   ("K", "k|K|kelvin"),
                                   ("R", "rankine|°r"),
                                   ("D", "delisle|°de"),
-                                  ("C", "degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c"),
+                                  ("C", "degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|° c|c"),
                                   ("Degree", "degree|degrees|deg.|deg|°")])
     AmbiguousTemperatureUnitList = [r'c', r'f', r'k']
     VolumeSuffixList = dict([("Cubic meter", "m3|cubic meter|cubic meters|cubic metre|cubic metres"),
@@ -640,26 +652,42 @@ class EnglishNumericWithUnit:
                              ("Liter", "l|litre|liter|liters|litres"),
                              ("Deciliter", "dl|deciliter|decilitre|deciliters|decilitres"),
                              ("Centiliter", "cl|centiliter|centilitre|centiliters|centilitres"),
-                             ("Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters"),
+                             ("Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters|cc"),
                              ("Cubic yard", "cubic yard|cubic yards"),
                              ("Cubic inch", "cubic inch|cubic inches"),
                              ("Cubic foot", "cubic foot|cubic feet"),
                              ("Cubic mile", "cubic mile|cubic miles"),
                              ("Fluid ounce", "fl oz|fluid ounce|fluid ounces"),
-                             ("Teaspoon", "teaspoon|teaspoons"),
-                             ("Tablespoon", "tablespoon|tablespoons"),
-                             ("Pint", "pint|pints"),
-                             ("Volume unit", "fluid dram|gill|quart|minim|cord|peck|bushel|hogshead|barrels|barrel|bbl")])
-    AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'peck', r'cord', r'gill']
+                             ("Teaspoon", "teaspoon|teaspoons|teaspoonful|teaspoonfuls|tsp|tsp.|tspn|tspn.|tea spoon|tea spoons|t.|ts."),
+                             ("Tablespoon", "tablespoon|tablespoons|tablespoonful|tablespoonfuls|tbl|tbl.|tbs|tbs.|tbsp|tbsp.|table spoon|table spoons|T.|Tb.|tbls.|tbls"),
+                             ("Pint", "pint|pints|fl pt| fluid pint"),
+                             ("Quart", "quart|quarts|fl qt"),
+                             ("Cup", "cup|cups"),
+                             ("Gill", "gill|gills"),
+                             ("Pinch", "pinch|pinches"),
+                             ("Fluid Dram", "fluid dram|fluid drachm|fluid drachma|fluidram|fluidrams"),
+                             ("Barrel", "barrel|bbl|barrels"),
+                             ("Minim", "minim"),
+                             ("Cord", "cord|cords"),
+                             ("Peck", "peck|pecks"),
+                             ("Bushel", "bushel"),
+                             ("Hogshead", "hogshead")])
+    AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'cups', r'peck', r'pecks', r'cord', r'cords', r'gill', r'gills', r'barrel', r'barrels', r'tbl', r'quart', r'quarts', r'pinch', r't.', r'T.', r'Tb.', r'ts.']
     WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos"),
-                             ("Gram", "g|gram|grams"),
+                             ("Gram", "g|gram|grams|gm"),
                              ("Milligram", "mg|milligram|milligrams"),
-                             ("Gallon", "-gallon|gallons|gallon"),
+                             ("Gallon", "-gallon|gallons|gallon|gal"),
                              ("Metric ton", "metric tons|metric ton"),
                              ("Ton", "-ton|ton|tons|tonne|tonnes"),
                              ("Pound", "pound|pounds|lb|lbs"),
                              ("Ounce", "-ounce|ounce|oz|ounces"),
-                             ("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")])
-    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs']
+                             ("Grain", "grain|grains|gr"),
+                             ("Pennyweight", "pennyweight"),
+                             ("Long ton (British)", "british long ton|long ton (british)"),
+                             ("Short ton (US)", "us short ton|short ton (us)"),
+                             ("Short hundredweight (US)", "us short hundredweight|short hundredweight (us)"),
+                             ("Stone", "stone"),
+                             ("Dram", "dram|drachm|drachma|roman drachma|greek drachma")])
+    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
     AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")])
 # pylint: enable=line-too-long

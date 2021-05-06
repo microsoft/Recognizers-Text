@@ -3,31 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseDateTimePeriodExtractorConfiguration : IDateTimeExtractor
+    public class JapaneseDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration,
+        ICJKDateTimePeriodExtractorConfiguration
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
 
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
 
-        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
-
-        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
-
         public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexFlags);
-
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
-
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags);
-
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags);
 
         public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
@@ -37,275 +28,100 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexFlags);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
-
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
 
+        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
+        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags);
+        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly JapaneseTimeExtractorConfiguration SingleTimeExtractor = new JapaneseTimeExtractorConfiguration();
-
-        private static readonly JapaneseDateTimeExtractorConfiguration TimeWithDateExtractor = new JapaneseDateTimeExtractorConfiguration();
-
-        private static readonly JapaneseDateExtractorConfiguration SingleDateExtractor = new JapaneseDateExtractorConfiguration();
-
-        private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
-
-        private static readonly JapaneseTimePeriodExtractorConfiguration TimePeriodExtractor = new JapaneseTimePeriodExtractorConfiguration();
-
-        public List<ExtractResult> Extract(string text)
+        public JapaneseDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
-            return Extract(text, DateObject.Now);
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            CardinalExtractor = new CardinalExtractor(numConfig);
+
+            SingleDateExtractor = new BaseCJKDateExtractor(new JapaneseDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseCJKTimeExtractor(new JapaneseTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseCJKDateTimeExtractor(new JapaneseDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseCJKTimePeriodExtractor(new JapaneseTimePeriodExtractorConfiguration(this));
         }
 
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTimePeriod(text, referenceTime));
-            tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
-            tokens.AddRange(MatchNumberWithUnit(text));
-            tokens.AddRange(MatchNight(text, referenceTime));
+        public IExtractor CardinalExtractor { get; }
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+        public IDateTimeExtractor SingleDateExtractor { get; }
+
+        public IDateTimeExtractor SingleTimeExtractor { get; }
+
+        public IDateTimeExtractor SingleDateTimeExtractor { get; }
+
+        public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.PrepositionRegex => PrepositionRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.TillRegex => TillRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex => SpecificTimeOfDayRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.FollowedUnit => FollowedUnit;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.PastRegex => PastRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        public bool GetFromTokenIndex(string text, out int index)
+        {
+            index = -1;
+
+            // @TODO move hardcoded values to resources file
+            if (text.Trim().EndsWith("从", StringComparison.Ordinal))
+            {
+                index = text.LastIndexOf("从", StringComparison.Ordinal);
+                return true;
+            }
+
+            return false;
         }
 
-        // merge Date and Time period
-        private List<Token> MergeDateAndTimePeriod(string text, DateObject referenceTime)
+        public bool GetBetweenTokenIndex(string text, out int index)
         {
-            var ret = new List<Token>();
-            var er1 = SingleDateExtractor.Extract(text, referenceTime);
-            var er2 = TimePeriodExtractor.Extract(text, referenceTime);
-            var timePoints = new List<ExtractResult>();
-
-            // handle the overlap problem
-            var j = 0;
-            for (var i = 0; i < er1.Count; i++)
+            index = -1;
+            var match = ZhijianRegex.Match(text);
+            if (match.Success)
             {
-                timePoints.Add(er1[i]);
-                while (j < er2.Count && er2[j].Start + er2[j].Length <= er1[i].Start)
-                {
-                    timePoints.Add(er2[j]);
-                    j++;
-                }
-
-                while (j < er2.Count && er2[j].IsOverlap(er1[i]))
-                {
-                    j++;
-                }
+                index = match.Length;
+                return true;
             }
 
-            for (; j < er2.Count; j++)
-            {
-                timePoints.Add(er2[j]);
-            }
-
-            timePoints = timePoints.OrderBy(o => o.Start).ToList();
-
-            // merge {Date} {TimePeriod}
-            var idx = 0;
-            while (idx < timePoints.Count - 1)
-            {
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD, StringComparison.Ordinal))
-                {
-                    var middleBegin = timePoints[idx].Start + timePoints[idx].Length ?? 0;
-                    var middleEnd = timePoints[idx + 1].Start ?? 0;
-
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrWhiteSpace(middleStr) || PrepositionRegex.IsMatch(middleStr))
-                    {
-                        var periodBegin = timePoints[idx].Start ?? 0;
-                        var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
-                        ret.Add(new Token(periodBegin, periodEnd));
-                        idx += 2;
-                        continue;
-                    }
-
-                    idx++;
-                }
-
-                idx++;
-            }
-
-            return ret;
+            return false;
         }
 
-        private List<Token> MergeTwoTimePoints(string text, DateObject referenceTime)
+        public bool HasConnectorToken(string text)
         {
-            var ret = new List<Token>();
-            var er1 = TimeWithDateExtractor.Extract(text, referenceTime);
-            var er2 = SingleTimeExtractor.Extract(text, referenceTime);
-            var timePoints = new List<ExtractResult>();
-
-            // handle the overlap problem
-            var j = 0;
-            for (var i = 0; i < er1.Count; i++)
-            {
-                timePoints.Add(er1[i]);
-                while (j < er2.Count && er2[j].Start + er2[j].Length <= er1[i].Start)
-                {
-                    timePoints.Add(er2[j]);
-                    j++;
-                }
-
-                while (j < er2.Count && er2[j].IsOverlap(er1[i]))
-                {
-                    j++;
-                }
-            }
-
-            for (; j < er2.Count; j++)
-            {
-                timePoints.Add(er2[j]);
-            }
-
-            timePoints = timePoints.OrderBy(o => o.Start).ToList();
-
-            // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
-            var idx = 0;
-            while (idx < timePoints.Count - 1)
-            {
-                // if both ends are Time. then this is a TimePeriod, not a DateTimePeriod
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
-                {
-                    idx++;
-                    continue;
-                }
-
-                var middleBegin = timePoints[idx].Start + timePoints[idx].Length ?? 0;
-                var middleEnd = timePoints[idx + 1].Start ?? 0;
-
-                var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-
-                // handle "{TimePoint} to {TimePoint}"
-                if (TillRegex.IsExactMatch(middleStr, trim: true))
-                {
-                    var periodBegin = timePoints[idx].Start ?? 0;
-                    var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
-
-                    // @TODO move hardcoded values to resources file
-
-                    // handle "from"
-                    var beforeStr = text.Substring(0, periodBegin);
-                    if (beforeStr.Trim().EndsWith("从", StringComparison.Ordinal))
-                    {
-                        periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
-                    }
-
-                    ret.Add(new Token(periodBegin, periodEnd));
-                    idx += 2;
-                    continue;
-                }
-
-                // handle "between {TimePoint} and {TimePoint}"
-                if (middleStr.Equals("和", StringComparison.Ordinal) ||
-                    middleStr.Equals("与", StringComparison.Ordinal) ||
-                    middleStr.Equals("到", StringComparison.Ordinal))
-                {
-                    var periodBegin = timePoints[idx].Start ?? 0;
-                    var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
-
-                    // handle "between"
-                    var afterStr = text.Substring(periodEnd);
-                    var match = ZhijianRegex.Match(afterStr);
-
-                    if (match.Success)
-                    {
-                        ret.Add(new Token(periodBegin, periodEnd + match.Length));
-                        idx += 2;
-                        continue;
-                    }
-                }
-
-                idx++;
-            }
-
-            return ret;
-        }
-
-        private List<Token> MatchNight(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var matches = SpecificTimeOfDayRegex.Matches(text);
-            foreach (Match match in matches)
-            {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
-
-            // Date followed by morning, afternoon
-            var ers = SingleDateExtractor.Extract(text, referenceTime);
-            if (ers.Count == 0)
-            {
-                return ret;
-            }
-
-            foreach (var er in ers)
-            {
-                var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = TimeOfDayRegex.Match(afterStr);
-                if (match.Success)
-                {
-                    var middleStr = afterStr.Substring(0, match.Index);
-                    if (string.IsNullOrWhiteSpace(middleStr) || PrepositionRegex.IsMatch(middleStr))
-                    {
-                        ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
-                    }
-                }
-            }
-
-            return ret;
-        }
-
-        private List<Token> MatchNumberWithUnit(string text)
-        {
-            var ret = new List<Token>();
-
-            var durations = new List<Token>();
-            var ers = CardinalExtractor.Extract(text);
-
-            foreach (var er in ers)
-            {
-                var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = FollowedUnit.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
-                }
-            }
-
-            var matches = UnitRegex.Matches(text);
-            foreach (Match match in matches)
-            {
-                durations.Add(new Token(match.Index, match.Index + match.Length));
-            }
-
-            foreach (var duration in durations)
-            {
-                var beforeStr = text.Substring(0, duration.Start);
-                if (string.IsNullOrWhiteSpace(beforeStr))
-                {
-                    continue;
-                }
-
-                var match = PastRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
-                {
-                    ret.Add(new Token(match.Index, duration.End));
-                    continue;
-                }
-
-                match = FutureRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
-                {
-                    ret.Add(new Token(match.Index, duration.End));
-                }
-            }
-
-            return ret;
+            // @TODO move hardcoded values to resources file
+            return text.Equals("和", StringComparison.Ordinal) ||
+                    text.Equals("与", StringComparison.Ordinal) ||
+                    text.Equals("到", StringComparison.Ordinal);
         }
     }
 }

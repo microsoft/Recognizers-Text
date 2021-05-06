@@ -188,6 +188,7 @@ public class BaseCurrency {
         .put("VEF", "CENTIMO")
         .put("YER", "FILS")
         .put("ZMW", "NGWEE")
+        .put("_XBT", "MILLIBITCOIN|SATOSHI")
         .build();
 
     public static final ImmutableMap<String, Long> CurrencyFractionalRatios = ImmutableMap.<String, Long>builder()
@@ -267,6 +268,8 @@ public class BaseCurrency {
         .put("Kwartje", 4L)
         .put("Dubbeltje", 10L)
         .put("Stuiver", 20L)
+        .put("Millibitcoin", 1000L)
+        .put("Satoshi", 100000000L)
         .build();
 
     public static final ImmutableMap<String, Long> NonStandardFractionalSubunits = ImmutableMap.<String, Long>builder()
@@ -277,5 +280,6 @@ public class BaseCurrency {
         .put("YDD", 1000L)
         .put("TND", 1000L)
         .put("MRO", 5L)
+        .put("_XBT", 1000L)
         .build();
 }

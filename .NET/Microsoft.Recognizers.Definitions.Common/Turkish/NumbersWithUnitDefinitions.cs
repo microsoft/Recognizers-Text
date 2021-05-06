@@ -308,7 +308,10 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao|mao" },
             { @"Finnish markka", @"fin markkası|fin mk|fim|markka|fin markı|fin markkasına|fin markkasında|fin markkasından|fin markkasını|fin markkasının|fin markkasıdır|fin markkasıydı|fin markkasıymış|fin markına|fin markında|fin markından|fin markını|fin markının|fin markıdır|fin markıydı|fin markıymış|markkaya|markkada|markkadan|markkayı|markkanın|markkadır|markkaydı|markkaymış" },
-            { @"Penni", @"penni|penniye|pennide|penniden|penniyi|penninin|pennidir|penniydi|penniymiş" }
+            { @"Penni", @"penni|penniye|pennide|penniden|penniyi|penninin|pennidir|penniydi|penniymiş" },
+            { @"Bitcoin", @"bitcoin|bitcoins|btc|xbt|₿" },
+            { @"Millibitcoin", @"millibitcoin|millibitcoins|milibitcoin|milibitcoins" },
+            { @"Satoshi", @"satoshi|satoshis" }
         };
       public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
         {
@@ -496,7 +499,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"British Virgin Islands dollar", @"_BD" },
             { @"Ascension pound", @"_AP" },
             { @"Alderney pound", @"_ALP" },
-            { @"Abkhazian apsar", @"_AA" }
+            { @"Abkhazian apsar", @"_AA" },
+            { @"Bitcoin", @"_XBT" }
         };
       public static readonly Dictionary<string, string> FractionalUnitNameToCodeMap = new Dictionary<string, string>
         {
@@ -572,7 +576,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Kopiyka", @"KOPIYKA" },
             { @"Tiyin", @"TIYIN" },
             { @"Hào", @"HAO" },
-            { @"Ngwee", @"NGWEE" }
+            { @"Ngwee", @"NGWEE" },
+            { @"Millibitcoin", @"MILLIBITCOIN" },
+            { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>\s)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>

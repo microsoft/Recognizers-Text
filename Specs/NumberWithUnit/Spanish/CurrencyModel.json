@@ -1534,5 +1534,69 @@
         "End": 53
       }
     ]
+  },
+  {
+    "Input": "solo cuesta 15 dolares y 15 centavos.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dolares y 15 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dólar"
+        },
+        "Start": 12,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "solo cuesta trece euros y cuarenta y cinco céntimos.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "trece euros y cuarenta y cinco céntimos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13,45",
+          "unit": "Euro"
+        },
+        "Start": 12,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "solo cuesta 15 dolares y 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dolares y 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dólar"
+        },
+        "Start": 12,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "solo cuesta 15 dolares 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dolares 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar"
+        },
+        "Start": 12,
+        "End": 24
+      }
+    ]
   }
 ]

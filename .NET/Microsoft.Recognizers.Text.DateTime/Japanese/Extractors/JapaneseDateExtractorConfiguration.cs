@@ -1,32 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Japanese;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseDateExtractorConfiguration : AbstractYearExtractor, IDateTimeExtractor
+    public class JapaneseDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateExtractorConfiguration
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
-
-        public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
-
-        public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
-
-        public static readonly Regex DayRegexInJapanese = new Regex(DateTimeDefinitions.DateDayRegexInJapanese, RegexFlags);
-
-        public static readonly Regex DayRegexNumInJapanese = new Regex(DateTimeDefinitions.DayRegexNumInJapanese, RegexFlags);
-
-        public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
-
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
-
-        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
-
-        public static readonly Regex ZeroToNineIntegerRegexJap = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexJap, RegexFlags);
-
-        public static readonly Regex YearInJapaneseRegex = new Regex(DateTimeDefinitions.DateYearInJapaneseRegex, RegexFlags);
 
         public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
 
@@ -40,73 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex SpecialDayRegex = new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
 
-        public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexFlags);
-
-        public static readonly Regex SpecialYearRegex = new Regex(DateTimeDefinitions.SpecialYearRegex, RegexFlags);
-
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
-        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
-
-        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
-
-        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
-
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
-
-        public static readonly Regex[] DateRegexList =
-        {
-            // ２０１６年１２月１日
-            new Regex(DateTimeDefinitions.DateRegexList1, RegexFlags),
-
-            // 2015/12/23
-            new Regex(DateTimeDefinitions.DateRegexList10, RegexFlags),
-
-            // # ２０１６年１２月
-            new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags),
-
-            // １２月１日
-            new Regex(DateTimeDefinitions.DateRegexList9, RegexFlags),
-
-            // (2015年)?(农历)?十月二十(星期三)?
-            new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags),
-
-            // 7/23
-            new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags),
-
-            // 23/7
-            new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags),
-
-            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
-
-                // 23-3-2015
-                new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags) :
-
-                // 3-23-2017
-                new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags),
-
-            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
-
-                // 3-23-2017
-                new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags) :
-
-                // 23-3-2015
-                new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags),
-
-            // 2015-12-23
-            new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags),
-
-            // 2016/12
-            new Regex(DateTimeDefinitions.DateRegexList11, RegexFlags),
-        };
-
-        public static readonly Regex[] ImplicitDateList =
-        {
-            LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
-            WeekDayRegex, WeekDayOfMonthRegex, SpecialMonthRegex, SpecialYearRegex, SpecialDate,
-        };
 
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
@@ -114,102 +35,93 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
+        public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
+        public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
+        public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DateDayRegexInCJK, RegexFlags);
+        public static readonly Regex DayRegexNumInCJK = new Regex(DateTimeDefinitions.DayRegexNumInCJK, RegexFlags);
+        public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
+        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+        public static readonly Regex ZeroToNineIntegerRegexCJK = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexCJK, RegexFlags);
+        public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DateYearInCJKRegex, RegexFlags);
+        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.LastPrefixRegex, RegexFlags);
+        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+        public static readonly Regex DynastyYearRegex = new Regex(DateTimeDefinitions.DynastyYearRegex, RegexFlags);
+        public static readonly string DynastyStartYear = DateTimeDefinitions.DynastyStartYear;
+        public static readonly ImmutableDictionary<string, int> DynastyYearMap = DateTimeDefinitions.DynastyYearMap.ToImmutableDictionary();
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
-
-        public JapaneseDateExtractorConfiguration(IDateExtractorConfiguration config = null)
+        public JapaneseDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-        }
+            var durationConfig = new BaseDateTimeOptionsConfiguration(config.Culture, DateTimeOptions.None);
 
-        public static List<Token> ExtractRaw(string text)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(ImplicitDate(text));
+            DurationExtractor = new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(durationConfig));
 
-            return tokens;
-        }
-
-        public override List<ExtractResult> Extract(string text)
-        {
-            return Extract(text, DateObject.Now);
-        }
-
-        public override List<ExtractResult> Extract(string text, DateObject referenceTime)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(ImplicitDate(text));
-            tokens.AddRange(DurationWithAgoAndLater(text, referenceTime));
-
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        // Match basic patterns in DateRegexList
-        private static List<Token> BasicRegexMatch(string text)
-        {
-            var ret = new List<Token>();
-            foreach (var regex in DateRegexList)
+            ImplicitDateList = new List<Regex>
             {
-                var matches = regex.Matches(text);
-                foreach (Match match in matches)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
-                }
-            }
+                LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+                WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
+            };
 
-            return ret;
+            // ２０１６年１２月１日
+            var dateRegex1 = new Regex(DateTimeDefinitions.DateRegexList1, RegexFlags);
+
+            // # ２０１６年１２月 (this is not a Date)
+            // var dateRegex2 = new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags);
+
+            // (2015年)?(农历)?十月二十(星期三)?
+            var dateRegex3 = new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags);
+
+            // 2015-12-23
+            var dateRegex8 = new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags);
+
+            // 23/7
+            var dateRegex5 = new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags);
+
+            // 7/23
+            var dateRegex4 = new Regex(DateTimeDefinitions.DateRegexList4, RegexFlags);
+
+            // 23-3-2017
+            var dateRegex7 = new Regex(DateTimeDefinitions.DateRegexList7, RegexFlags);
+
+            // 3-23-2015
+            var dateRegex6 = new Regex(DateTimeDefinitions.DateRegexList6, RegexFlags);
+
+            // １２月１日
+            var dateRegex9 = new Regex(DateTimeDefinitions.DateRegexList9, RegexFlags);
+
+            // 2015/12/23
+            var dateRegex10 = new Regex(DateTimeDefinitions.DateRegexList10, RegexFlags);
+
+            // 2016/12 (this is not a Date)
+            // var dateRegex11 = new Regex(DateTimeDefinitions.DateRegexList11, RegexFlags);
+
+            // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
+            var enableDmy = DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
+
+            DateRegexList = new List<Regex> { dateRegex1, dateRegex10, /*dateRegex2, */dateRegex9, dateRegex3, dateRegex4, dateRegex5 };
+            DateRegexList = DateRegexList.Concat(
+                enableDmy ?
+                new[] { dateRegex7, dateRegex6, dateRegex8/*, dateRegex11*/ } :
+                new[] { dateRegex6, dateRegex7, dateRegex8/*, dateRegex11*/ });
+
         }
 
-        // Match several other implicit cases
-        private static List<Token> ImplicitDate(string text)
-        {
-            var ret = new List<Token>();
-            foreach (var regex in ImplicitDateList)
-            {
-                var matches = regex.Matches(text);
-                foreach (Match match in matches)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
-                }
-            }
+        public IEnumerable<Regex> DateRegexList { get; }
 
-            return ret;
-        }
+        public IEnumerable<Regex> ImplicitDateList { get; }
 
-        // Process case like "三天前" "两个月前"
-        private List<Token> DurationWithAgoAndLater(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var durationEr = DurationExtractor.Extract(text, referenceTime);
-            foreach (var er in durationEr)
-            {
-                // Only handles date durations here
-                // Cases with dateTime durations will be handled in DateTime Extractor
-                if (DateTimePeriodUnitRegex.Match(er.Text).Success)
-                {
-                    continue;
-                }
+        public IDateTimeExtractor DurationExtractor { get; }
 
-                var pos = (int)er.Start + (int)er.Length;
-                if (pos < text.Length)
-                {
-                    var suffix = text.Substring(pos);
-                    var beforeMatch = BeforeRegex.Match(suffix);
-                    var afterMatch = AfterRegex.Match(suffix);
+        Regex ICJKDateExtractorConfiguration.DateTimePeriodUnitRegex => DateTimePeriodUnitRegex;
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
-                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
-                    {
-                        var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
-                    }
-                }
-            }
+        Regex ICJKDateExtractorConfiguration.BeforeRegex => BeforeRegex;
 
-            return ret;
-        }
+        Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
+
     }
 }

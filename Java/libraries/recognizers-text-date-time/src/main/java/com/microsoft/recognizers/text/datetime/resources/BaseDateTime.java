@@ -17,7 +17,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class BaseDateTime {
 
-    public static final String HourRegex = "(?<hour>2[0-4]|[0-1]?\\d)(h)?";
+    public static final String HourRegex = "(?<!\\d[,.])(?<hour>2[0-4]|[0-1]?\\d)(h)?";
 
     public static final String TwoDigitHourRegex = "(?<hour>[0-1]\\d|2[0-4])(h)?";
 
@@ -35,6 +35,8 @@ public class BaseDateTime {
 
     public static final String IllegalYearRegex = "([-])({FourDigitYearRegex})([-])"
             .replace("{FourDigitYearRegex}", FourDigitYearRegex);
+
+    public static final String CheckDecimalRegex = "(?![,.]\\d)";
 
     public static final String RangeConnectorSymbolRegex = "(--|-|—|——|~|–)";
 

@@ -12,10 +12,11 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ConcurrentDictionary<(NumberMode, string), FractionExtractor> Instances =
-         new ConcurrentDictionary<(NumberMode, string), FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), FractionExtractor>();
 
-        private FractionExtractor(NumberMode mode)
+        private FractionExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -38,7 +39,7 @@ namespace Microsoft.Recognizers.Text.Number.German
             };
 
             // Not add FractionPrepositionRegex when the mode is Unit to avoid wrong recognize cases like "$1000 over 3"
-            if (mode != NumberMode.Unit)
+            if (config.Mode != NumberMode.Unit)
             {
                 regexes.Add(
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
@@ -53,16 +54,17 @@ namespace Microsoft.Recognizers.Text.Number.German
         // "Fraction";
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
 
-        public static FractionExtractor GetInstance(NumberMode mode = NumberMode.Default, string placeholder = "")
+        public static FractionExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            var cacheKey = (mode, placeholder);
-            if (!Instances.ContainsKey(cacheKey))
+            var extractorKey = (config.Mode, config.Options);
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new FractionExtractor(mode);
-                Instances.TryAdd(cacheKey, instance);
+                var instance = new FractionExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[cacheKey];
+            return Instances[extractorKey];
         }
     }
 }

@@ -245,6 +245,7 @@ public class ChineseNumericWithUnit {
         .put("Jiao", "毛钱|毛|角钱|角")
         .put("Finnish markka", "芬兰马克")
         .put("Penni", "盆尼")
+        .put("Bitcoin", "₿|btc|xbt|个比特币|比特币")
         .build();
 
     public static final ImmutableMap<String, String> CurrencyNameToIsoCodeMap = ImmutableMap.<String, String>builder()
@@ -536,6 +537,7 @@ public class ChineseNumericWithUnit {
         .put("Euro", "€")
         .put("Pound", "£")
         .put("Costa Rican colón", "₡")
+        .put("Bitcoin", "₿|btc|xbt")
         .build();
 
     public static final List<String> CurrencyAmbiguousValues = Arrays.asList("元", "仙", "分", "圆", "块", "毛", "盾", "箍", "蚊", "角");

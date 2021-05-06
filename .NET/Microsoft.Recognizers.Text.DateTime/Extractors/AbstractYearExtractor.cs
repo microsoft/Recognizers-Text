@@ -31,11 +31,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                 if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                 {
-                    year += 1900;
+                    year += Constants.BASE_YEAR_PAST_CENTURY;
                 }
                 else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                 {
-                    year += 2000;
+                    year += Constants.BASE_YEAR_CURRENT_CENTURY;
                 }
             }
             else
@@ -96,11 +96,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                         {
-                            year += 1900;
+                            year += Constants.BASE_YEAR_PAST_CENTURY;
                         }
                         else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                         {
-                            year += 2000;
+                            year += Constants.BASE_YEAR_CURRENT_CENTURY;
                         }
                     }
                 }

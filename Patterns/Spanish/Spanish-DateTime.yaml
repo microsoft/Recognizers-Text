@@ -16,7 +16,7 @@ WrittenDayRegex: !simpleRegex
 DayRegex: !simpleRegex
   def: \b(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?:\.[º°])?(?=\b|t)
 MonthNumRegex: !simpleRegex
-  def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
+  def: (?<month>1[0-2]|(0)?[1-9])\b
 OclockRegex: !simpleRegex
   # "... en punto"
   def: (?<oclock>en\s+punto)
@@ -46,7 +46,7 @@ RelativeSuffixRegex: !nestedRegex
 RangePrefixRegex: !simpleRegex
   def: ((de(l|sde)?|entre)(\s+la(s)?)?)
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
   def: (?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b
@@ -336,7 +336,7 @@ AtRegex: !nestedRegex
   def: \b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})
   references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex, DescRegex, MidTimeRegex ]
 ConnectNumRegex: !nestedRegex
-  def: ({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex})
+  def: ({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})
   references: [ BaseDateTime.HourRegex, DescRegex ]
 TimeRegexWithDotConnector: !nestedRegex
   def: ({BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex})
@@ -406,7 +406,7 @@ TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}
   references: [ SpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
-  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*$)
+  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(((cerca|alrededor)?\s*(de|a)\s+)la(s)?|para))?\s*$)
   references: [ SpecificTimeOfDayRegex ]
 NonTimeContextTokens: !simpleRegex
   def: (edificio)
@@ -414,7 +414,7 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
   def: (?<!{NonTimeContextTokens}\s*)\b({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}\b
   references: [ HourNumRegex, BaseDateTime.HourRegex, SpecificTimeOfDayRegex, NonTimeContextTokens ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
-  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))\b
+  def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(((cerca|alrededor)?\s*(de|a)\s+)la(s)?|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))\b
   references: [ SpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
   def: ((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$
@@ -437,7 +437,7 @@ ConnectorRegex: !simpleRegex
   def: ^(,|t|(para|y|a|en|por) las?|(\s*,\s*)?(cerca|alrededor) de las?)$
 # SpanishTimePeriodExtractorConfiguration
 TimeHourNumRegex: !simpleRegex
-  def: (?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)
+  def: (?<hour>veint(i(uno|dos|tres|cuatro)|e)|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci(s([eé])is|siete|ocho|nueve))
 PureNumFromTo: !nestedRegex
   def: ((\b(desde|de)\s+(la(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(?!\s+al?\b)(\s*(?<leftDesc>{DescRegex}))?|(\b(desde|de)\s+(la(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?)\s*{TillRegex}\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
@@ -976,7 +976,7 @@ SingleAmbiguousMonthRegex: !simpleRegex
 UnspecificDatePeriodRegex: !simpleRegex
   def: ^[\.]
 PrepositionSuffixRegex: !simpleRegex
-  def: \b(en|el|la|cerca|desde|durante|hasta|hacia)$
+  def: \b(en|el|la|cerca|alrededor|desde|durante|hasta|hacia)$
 RestOfDateTimeRegex: !simpleRegex
   def: \bresto\s+((del?)\s+)?((la|el|est[ae])\s+)?(?<unit>(día|jornada))(\s+de\s+hoy)?\b
 SetWeekDayRegex: !simpleRegex
@@ -1012,6 +1012,7 @@ AmbiguityFiltersDict: !dictionary
     '^a[nñ]o$': '(?<!el\s+)a[nñ]o'
     '^semana$': '(?<!la\s+)semana'
     '^mes$': '(?<!el\s+)mes'
+    '^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$': '([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list
   types: [ string ]

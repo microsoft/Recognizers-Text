@@ -19657,5 +19657,403 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet at friday the 26th at 4",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday the 26th at 4",
+        "Start": 14,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03-26T04",
+              "type": "datetime",
+              "value": "2021-03-26 04:00:00"
+            },
+            {
+              "timex": "2021-03-26T16",
+              "type": "datetime",
+              "value": "2021-03-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at friday the 26th around 4",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday the 26th around 4",
+        "Start": 14,
+        "End": 37,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03-26T04",
+              "type": "datetime",
+              "value": "2021-03-26 04:00:00"
+            },
+            {
+              "timex": "2021-03-26T16",
+              "type": "datetime",
+              "value": "2021-03-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Does friday at 4pm work?",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday at 4pm",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2021-03-12 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2021-03-19 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "circa 5 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "circa 5 in the morning",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T05",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "05:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 12/12/30.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12/12/30",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX30-12-12",
+              "type": "date",
+              "value": "1930-12-12"
+            },
+            {
+              "timex": "XX30-12-12",
+              "type": "date",
+              "value": "2030-12-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 11/12/35.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "11/12/35",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX35-11-12",
+              "type": "date",
+              "value": "1935-11-12"
+            },
+            {
+              "timex": "XX35-11-12",
+              "type": "date",
+              "value": "2035-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 23/08/39.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23/08/39",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX39-08-23",
+              "type": "date",
+              "value": "1939-08-23"
+            },
+            {
+              "timex": "XX39-08-23",
+              "type": "date",
+              "value": "2039-08-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 03/18/40.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "03/18/40",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1940-03-18",
+              "type": "date",
+              "value": "1940-03-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "$DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "In dec $DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dec",
+        "Start": 3,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2016-12-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 9am on Tuesday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9am on tuesday",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-01 09:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tune in tomorrow, 13/04/21, at 7 PM CET for episode 3 of Decentralized",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow, 13/04/21, at 7 pm",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-13T19",
+              "type": "datetime",
+              "value": "2021-04-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at seven twenty-seven",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at seven twenty-seven",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:27",
+              "type": "datetime",
+              "value": "2016-11-08 07:27:00"
+            },
+            {
+              "timex": "2016-11-08T19:27",
+              "type": "datetime",
+              "value": "2016-11-08 19:27:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at six forty-three minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at six forty-three minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T06:43",
+              "type": "datetime",
+              "value": "2016-11-08 06:43:00"
+            },
+            {
+              "timex": "2016-11-08T18:43",
+              "type": "datetime",
+              "value": "2016-11-08 18:43:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at thirty-six minutes past eight",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at thirty-six minutes past eight",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T08:36",
+              "type": "datetime",
+              "value": "2016-11-08 08:36:00"
+            },
+            {
+              "timex": "2016-11-08T20:36",
+              "type": "datetime",
+              "value": "2016-11-08 20:36:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 57
+      }
+    ]
   }
 ]

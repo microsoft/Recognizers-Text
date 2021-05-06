@@ -214,10 +214,10 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             ChineseDateTime.ThisPrefixRegex
         )
         self._date_year_in_chinese_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DateYearInChineseRegex
+            ChineseDateTime.DateYearInCJKRegex
         )
         self._zero_to_nine_integer_regex_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.ZeroToNineIntegerRegexChs
+            ChineseDateTime.ZeroToNineIntegerRegexCJK
         )
         self._relative_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.RelativeRegex
@@ -229,10 +229,10 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             ChineseDateTime.MonthNumRegex
         )
         self._day_regex_num_in_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DayRegexNumInChinese
+            ChineseDateTime.DayRegexNumInCJK
         )
         self._date_day_regex_in_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DateDayRegexInChinese
+            ChineseDateTime.DateDayRegexInCJK
         )
         self._day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DayRegex

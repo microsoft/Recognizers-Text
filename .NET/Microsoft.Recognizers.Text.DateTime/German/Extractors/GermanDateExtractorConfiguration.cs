@@ -143,8 +143,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
 
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));

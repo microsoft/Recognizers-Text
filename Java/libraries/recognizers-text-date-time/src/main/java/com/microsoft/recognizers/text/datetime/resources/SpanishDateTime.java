@@ -36,7 +36,7 @@ public class SpanishDateTime {
 
     public static final String DayRegex = "\\b(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?:\\.[º°])?(?=\\b|t)";
 
-    public static final String MonthNumRegex = "(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b";
+    public static final String MonthNumRegex = "(?<month>1[0-2]|(0)?[1-9])\\b";
 
     public static final String OclockRegex = "(?<oclock>en\\s+punto)";
 
@@ -68,7 +68,7 @@ public class SpanishDateTime {
 
     public static final String RangePrefixRegex = "((de(l|sde)?|entre)(\\s+la(s)?)?)";
 
-    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-24-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b"
+    public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d))|\\.?[º°ª])\\b"
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
@@ -308,17 +308,18 @@ public class SpanishDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateExtractor2 = "\\b((el\\s+d[ií]a|{WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,]){DayRegex}\\s*([\\.\\-]|d[eo])\\s*{MonthRegex}(\\s*,\\s*|\\s*(del?)\\s*){DateYearRegex}\\b"
+    public static final String DateExtractor2 = "\\b((el\\s+d[ií]a|{WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,])(({DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex}((\\s+(del?\\s+)?|\\s*[.,/-]\\s*){DateYearRegex}\\b)?)|{BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*(el\\s+d[ií]a\\s+)?{DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex})"
+            .replace("{DayRegex}", DayRegex)
+            .replace("{MonthRegex}", MonthRegex)
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{DateYearRegex}", DateYearRegex)
+            .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
+
+    public static final String DateExtractor3 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\s*[.,/-]?\\s*)(el\\s+d[ií]a\\s+)?{DayRegex}((\\s+(del?\\s+)?|\\s*[.,/-]\\s*){DateYearRegex})?\\b"
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
-
-    public static final String DateExtractor3 = "\\b((el\\s+d[ií]a|{WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,]){DayRegex}(\\s+|\\s*,\\s*|\\s+d[eo]\\s+|\\s*-\\s*){MonthRegex}((\\s+|\\s*,\\s*|\\s+d[eo]\\s+|\\s*-\\s*){DateYearRegex}\\b)?"
-            .replace("{DayRegex}", DayRegex)
-            .replace("{MonthRegex}", MonthRegex)
-            .replace("{WeekDayRegex}", WeekDayRegex)
-            .replace("{DateYearRegex}", DateYearRegex);
 
     public static final String DateExtractor4 = "\\b(?<!\\d[.,]){MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
             .replace("{MonthNumRegex}", MonthNumRegex)
@@ -331,29 +332,35 @@ public class SpanishDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex);
 
-    public static final String DateExtractor6 = "(?<=\\b(en|el)\\s+){MonthNumRegex}[\\-\\.]{DayRegex}\\b(?!\\s*[/\\\\\\.]\\s*\\d+)"
-            .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{DayRegex}", DayRegex);
-
-    public static final String DateExtractor7 = "\\b(?<!\\d[.,]){MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+d[eo]\\s+){DateYearRegex})?\\b(?!\\s*[/\\\\\\.]\\s*\\d+)"
+    public static final String DateExtractor6 = "(?<=\\b(en|el)\\s+){MonthNumRegex}[\\-\\.]{DayRegex}{BaseDateTime.CheckDecimalRegex}\\b(?!\\s*[/\\\\\\.]\\s*\\d+)"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
-            .replace("{DateYearRegex}", DateYearRegex);
+            .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);
 
-    public static final String DateExtractor8 = "(?<=\\b(en|el)\\s+){DayRegex}[\\\\\\-]{MonthNumRegex}\\b(?!\\s*[/\\\\\\.]\\s*\\d+)"
+    public static final String DateExtractor7 = "\\b(?<!\\d[.,]){MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+d[eo]\\s+){DateYearRegex})?\\b{BaseDateTime.CheckDecimalRegex}(?!\\s*[/\\\\\\.]\\s*\\d+)"
             .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{DayRegex}", DayRegex);
+            .replace("{DayRegex}", DayRegex)
+            .replace("{DateYearRegex}", DateYearRegex)
+            .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);
 
-    public static final String DateExtractor9 = "\\b({WeekDayRegex}\\s+)?(?<!\\d[.,]){DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*|\\s+d[eo]\\s+){DateYearRegex})?\\b(?!\\s*[/\\\\\\.]\\s*\\d+)"
+    public static final String DateExtractor8 = "(?<=\\b(en|el)\\s+){DayRegex}[\\\\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\\b(?!\\s*[/\\\\\\.]\\s*\\d+)"
+            .replace("{MonthNumRegex}", MonthNumRegex)
+            .replace("{DayRegex}", DayRegex)
+            .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);
+
+    public static final String DateExtractor9 = "\\b({WeekDayRegex}\\s+)?(?<!\\d[.,]){DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*|\\s+d[eo]\\s+){DateYearRegex})?\\b{BaseDateTime.CheckDecimalRegex}(?!\\s*[/\\\\\\.]\\s*\\d+)"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{DateYearRegex}", DateYearRegex);
+            .replace("{DateYearRegex}", DateYearRegex)
+            .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);
 
-    public static final String DateExtractor10 = "\\b(?<!\\d[.,]){YearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)"
+    public static final String DateExtractor10 = "\\b(?<!\\d[.,])(({YearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+))|({MonthRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex})|({DayRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthRegex}))"
             .replace("{YearRegex}", YearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
-            .replace("{DayRegex}", DayRegex);
+            .replace("{DayRegex}", DayRegex)
+            .replace("{MonthRegex}", MonthRegex)
+            .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
 
     public static final String HourNumRegex = "\\b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\\b";
 
@@ -368,6 +375,16 @@ public class SpanishDateTime {
     public static final String AmTimeRegex = "(?<am>(esta|(por|de|a|en)\\s+la)\\s+(mañana|madrugada))";
 
     public static final String PmTimeRegex = "(?<pm>(esta|(por|de|a|en)\\s+la)\\s+(tarde|noche))";
+
+    public static final String NightTimeRegex = "(noche)";
+
+    public static final String LastNightTimeRegex = "(anoche)";
+
+    public static final String NowTimeRegex = "(ahora|mismo|momento)";
+
+    public static final String RecentlyTimeRegex = "(mente)";
+
+    public static final String AsapTimeRegex = "(posible|pueda[ns]?|podamos)";
 
     public static final String LessThanOneHour = "(?<lth>((\\s+y\\s+)?cuarto|(\\s*)menos cuarto|(\\s+y\\s+)media|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutos?|mins?))|{DeltaMinuteNumRegex}(\\s+(minutos?|mins?))))"
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)
@@ -389,6 +406,11 @@ public class SpanishDateTime {
             .replace("{PmRegex}", PmRegex)
             .replace("{OclockRegex}", OclockRegex);
 
+    public static final String GeneralDescRegex = "({DescRegex}|(?<suffix>{AmRegex}|{PmRegex}))"
+            .replace("{DescRegex}", DescRegex)
+            .replace("{AmRegex}", AmRegex)
+            .replace("{PmRegex}", PmRegex);
+
     public static final String BasicTime = "(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{HourNumRegex}", HourNumRegex)
@@ -405,7 +427,7 @@ public class SpanishDateTime {
             .replace("{DescRegex}", DescRegex)
             .replace("{MidTimeRegex}", MidTimeRegex);
 
-    public static final String ConnectNumRegex = "({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*{DescRegex})"
+    public static final String ConnectNumRegex = "({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*{DescRegex})"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{DescRegex}", DescRegex);
 
@@ -434,8 +456,9 @@ public class SpanishDateTime {
             .replace("{TimeTokenPrefix}", TimeTokenPrefix)
             .replace("{TimeSuffix}", TimeSuffix);
 
-    public static final String TimeRegex4 = "\\b(({DescRegex}?)|({BasicTime}?)({DescRegex}?)){TimePrefix}(\\s*({HourNumRegex}|{BaseDateTime.HourRegex}))?(\\s+{TensTimeRegex}(\\s*(y\\s+)?{MinuteNumRegex})?)?(\\s*({OclockRegex}|{DescRegex})|\\b)"
+    public static final String TimeRegex4 = "\\b(({DescRegex}?)|({BasicTime}\\s*)?({GeneralDescRegex}?)){TimePrefix}(\\s*({HourNumRegex}|{BaseDateTime.HourRegex}))?(\\s+{TensTimeRegex}(\\s*(y\\s+)?{MinuteNumRegex})?)?(\\s*({OclockRegex}|{DescRegex})|\\b)"
             .replace("{DescRegex}", DescRegex)
+            .replace("{GeneralDescRegex}", GeneralDescRegex)
             .replace("{BasicTime}", BasicTime)
             .replace("{TimePrefix}", TimePrefix)
             .replace("{HourNumRegex}", HourNumRegex)
@@ -490,7 +513,7 @@ public class SpanishDateTime {
 
     public static final String SuffixRegex = "^\\s*(((y|a|en|por)\\s+la|al)\\s+)?(mañana|madrugada|medio\\s*d[ií]a|(?<!(m[áa]s\\s+))tarde|noche)\\b";
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>(({LaterEarlyRegex}\\s+)((del?|en|por)(\\s+(el|los?|las?))?\\s+)?)?(mañana|madrugada|pasado\\s+(el\\s+)?medio\\s?d[ií]a|(?<!((m[áa]s|tan)\\s+))tarde|noche))\\b"
+    public static final String TimeOfDayRegex = "\\b((?<timeOfDay>(({LaterEarlyRegex}\\s+)((del?|en|por)(\\s+(el|los?|las?))?\\s+)?)?(mañana|madrugada|pasado\\s+(el\\s+)?medio\\s?d[ií]a|(?<!((m[áa]s|tan)\\s+))tarde|noche))|(en|por)\\s+las?\\s+mañana)\\b"
             .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
     public static final String SpecificTimeOfDayRegex = "\\b(((((a\\s+)?la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\\s+)?{TimeOfDayRegex})|anoche)\\b"
@@ -499,7 +522,7 @@ public class SpanishDateTime {
     public static final String TimeOfTodayAfterRegex = "^\\s*(,\\s*)?(en|de(l)?\\s+)?{SpecificTimeOfDayRegex}"
             .replace("{SpecificTimeOfDayRegex}", SpecificTimeOfDayRegex);
 
-    public static final String TimeOfTodayBeforeRegex = "({SpecificTimeOfDayRegex}(\\s*,)?(\\s+(a\\s+la(s)?|para))?\\s*$)"
+    public static final String TimeOfTodayBeforeRegex = "({SpecificTimeOfDayRegex}(\\s*,)?(\\s+(((cerca|alrededor)?\\s*(de|a)\\s+)la(s)?|para))?\\s*$)"
             .replace("{SpecificTimeOfDayRegex}", SpecificTimeOfDayRegex);
 
     public static final String NonTimeContextTokens = "(edificio)";
@@ -510,7 +533,7 @@ public class SpanishDateTime {
             .replace("{SpecificTimeOfDayRegex}", SpecificTimeOfDayRegex)
             .replace("{NonTimeContextTokens}", NonTimeContextTokens);
 
-    public static final String SimpleTimeOfTodayBeforeRegex = "({SpecificTimeOfDayRegex}(\\s*,)?(\\s+(a\\s+la|para))?\\s*({HourNumRegex}|{BaseDateTime.HourRegex}))\\b"
+    public static final String SimpleTimeOfTodayBeforeRegex = "({SpecificTimeOfDayRegex}(\\s*,)?(\\s+(((cerca|alrededor)?\\s*(de|a)\\s+)la(s)?|para))?\\s*({HourNumRegex}|{BaseDateTime.HourRegex}))\\b"
             .replace("{SpecificTimeOfDayRegex}", SpecificTimeOfDayRegex)
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
@@ -537,7 +560,7 @@ public class SpanishDateTime {
 
     public static final String ConnectorRegex = "^(,|t|(para|y|a|en|por) las?|(\\s*,\\s*)?(cerca|alrededor) de las?)$";
 
-    public static final String TimeHourNumRegex = "(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)";
+    public static final String TimeHourNumRegex = "(?<hour>veint(i(uno|dos|tres|cuatro)|e)|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci(s([eé])is|siete|ocho|nueve))";
 
     public static final String PureNumFromTo = "((\\b(desde|de)\\s+(la(s)?\\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(?!\\s+al?\\b)(\\s*(?<leftDesc>{DescRegex}))?|(\\b(desde|de)\\s+(la(s)?\\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?)\\s*{TillRegex}\\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
@@ -1110,7 +1133,7 @@ public class SpanishDateTime {
 
     public static final String UnspecificDatePeriodRegex = "^[\\.]";
 
-    public static final String PrepositionSuffixRegex = "\\b(en|el|la|cerca|desde|durante|hasta|hacia)$";
+    public static final String PrepositionSuffixRegex = "\\b(en|el|la|cerca|alrededor|desde|durante|hasta|hacia)$";
 
     public static final String RestOfDateTimeRegex = "\\bresto\\s+((del?)\\s+)?((la|el|est[ae])\\s+)?(?<unit>(día|jornada))(\\s+de\\s+hoy)?\\b";
 
@@ -1146,6 +1169,7 @@ public class SpanishDateTime {
         .put("^a[nñ]o$", "(?<!el\\s+)a[nñ]o")
         .put("^semana$", "(?<!la\\s+)semana")
         .put("^mes$", "(?<!el\\s+)mes")
+        .put("^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])")
         .build();
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");

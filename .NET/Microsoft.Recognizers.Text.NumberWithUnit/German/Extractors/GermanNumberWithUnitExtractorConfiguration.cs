@@ -25,10 +25,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         protected GermanNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = NumberExtractor.GetInstance(NumberMode.Unit);
+
+            var unitNumConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None, NumberMode.Unit);
+            this.UnitNumExtractor = NumberExtractor.GetInstance(unitNumConfig);
+
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
-            this.ConnectorToken = string.Empty;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }

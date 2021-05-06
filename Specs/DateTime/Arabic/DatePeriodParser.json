@@ -1,0 +1,3825 @@
+[
+  {
+    "Input": "سأخرج من 4 إلى 22 هذا الشهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 22 هذا الشهر",
+        "Start": 6,
+        "Length": 21,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 23 في الشهر المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4-23 في الشهر المقبل",
+        "Start": -1,
+        "Length": 23,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 3 حتى 12 سبتمبر هاهاها",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 3 حتى 12 سبتمبر",
+        "Start": 6,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الجمعة 11 حتى الثلاثاء 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الجمعة 11 حتى الثلاثاء 15",
+        "Start": 6,
+        "Length": 28,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-11,2016-11-15,P4D)",
+          "FutureResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 23 الشهر المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4 إلى 23 الشهر المقبل",
+        "Start": 9,
+        "Length": 21,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 حتى 23 من هذا الشهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4 حتى 23 من هذا الشهر",
+        "Start": 9,
+        "Length": 21,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج ما بين 4 و 22 هذا الشهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 4 و 22 هذا الشهر",
+        "Start": 9,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 3 و 12 سبتمبر هاهاها",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 3 و 12 سبتمبر",
+        "Start": 6,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 22 يناير 1995",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 22 يناير 1995",
+        "Start": 6,
+        "Length": 22,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 4-22 يناير 1995",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 4-22 يناير 1995",
+        "Start": 6,
+        "Length": 19,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 4 سبتمبر و 8 سبتمبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 4 سبتمبر و 8 سبتمبر",
+        "Start": 6,
+        "Length": 23,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
+          "FutureResolution": {
+            "startDate": "2017-09-04",
+            "endDate": "2017-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-04",
+            "endDate": "2016-09-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في هذا الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الاسبوع",
+        "Start": -1,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأسبوع القادم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الاسبوع القادم",
+        "Start": -1,
+        "Length": 14,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W46",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأسبوع الحالي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الحالي",
+        "Start": 9,
+        "Length": 14,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج فبراير",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "فبراير",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في هذا سبتمبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا سبتمبر",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في سبتمبر الماضي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبتمبر الماضي",
+        "Start": 9,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-09",
+          "FutureResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في يونيو القادم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو القادم",
+        "Start": 9,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث من هذا الشهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث من هذا الشهر",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11-W03",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الأخير من يوليو",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأخير من يوليو",
+        "Start": 6,
+        "Length": 23,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07-W04",
+          "FutureResolution": {
+            "startDate": "2017-07-24",
+            "endDate": "2017-07-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-25",
+            "endDate": "2016-08-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "أسبوع 16 سبتمبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع 16 سبتمبر",
+        "Start": 0,
+        "Length": 15,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-11",
+            "endDate": "2017-09-18"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-12",
+            "endDate": "2016-09-19"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "شهر سبتمبر 16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر سبتمبر 17",
+        "Start": -1,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 2015.3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 3-2015 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "Start": -1,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 2015/3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015/3",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 3/2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3/2015",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "جدولة اجتماع خلال اسبوعين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "خلال اسبوعين",
+        "Start": 13,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-15,2016-11-22,P1W)",
+          "FutureResolution": {
+            "startDate": "2016-11-15",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-15",
+            "endDate": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "اليومين المقبلين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليومين المقبلين",
+        "Start": 0,
+        "Length": 16,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الأيام القليلة الماضية",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأيام القليلة الماضية",
+        "Start": 0,
+        "Length": 22,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-07,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الإسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الإسبوع",
+        "Start": 0,
+        "Length": 7,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "هذا الاسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الاسبوع",
+        "Start": 0,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "اسبوعي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اسبوعي",
+        "Start": 0,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "عطلة نهاية الاسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عطلة نهاية الاسبوع",
+        "Start": 0,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نهاية هذا الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية هذا الأسبوع",
+        "Start": 0,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نهاية أسبوعي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية أسبوعي",
+        "Start": 0,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 2 أكتوبر إلى 22 أكتوبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 2 أكتوبر إلى 22 أكتوبر",
+        "Start": 6,
+        "Length": 25,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في 12  يناير2016 - 2016/01/22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يناير12 ,2016 - 2016/01/22",
+        "Start": -1,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-12,2016-01-22,P10D)",
+          "FutureResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأول من  يناير حتى الأربعاء ، 22  يناير",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " الأول من  يناير حتى الأربعاء ، 22  يناير",
+        "Start": 8,
+        "Length": 41,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج اليوم حتى الغد",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم حتى الغد",
+        "Start": 6,
+        "Length": 14,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 2 أكتوبر و 22 أكتوبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2 أكتوبر و 22 أكتوبر",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 19-20 نوفمبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " 19-20 نوفمبر",
+        "Start": 5,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 19 إلى 20 نوفمبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 19 إلى 20 نوفمبر",
+        "Start": 6,
+        "Length": 19,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من شهر نوفمبر بين 19 و 20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نوفمبر بين 19 و 20",
+        "Start": 13,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية  الأسبوع",
+        "Start": -1,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بقية الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية  الأسبوع",
+        "Start": -1,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل نهاية الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الأسبوع",
+        "Start": 6,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية هذا الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية هذا الأسبوع",
+        "Start": 6,
+        "Length": 16,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية أسبوعي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية اسبوعي",
+        "Start": -1,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل نهاية الأسبوع الحالي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الأسبوع الحالي",
+        "Start": 6,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل باقي الشهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "باقي الشهر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-30,P24D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية العام",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية العام",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-12-31,P55D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل باقي أسبوعي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-13T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "باقي اسبوعي",
+        "Start": -1,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-13,2016-11-13,P0D)",
+          "FutureResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج في عطلة نهاية الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عطلة نهاية الاسبوع",
+        "Start": -1,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج في نهاية هذا الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية هذا الأسبوع",
+        "Start": 17,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في يونيو 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو 2016",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج يونيو العام المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو العام المقبل",
+        "Start": 6,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج العام المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العام القادم",
+        "Start": -1,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 3 أيام القادمة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أيام القادمة",
+        "Start": 6,
+        "Length": 14,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-11,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأشهر الثلاثة القادمة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأشهر الثلاثة القادمة",
+        "Start": 9,
+        "Length": 22,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2017-02-08,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بعد 3 سنوات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 3 سنوات",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-11-08,2019-11-08,P1Y)",
+          "FutureResolution": {
+            "startDate": "2018-11-08",
+            "endDate": "2019-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2018-11-08",
+            "endDate": "2019-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بعد 3 أسابيع",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 3 أسابيع",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج آخر 3 سنوات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آخر 3 سنوات",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2013-11-07,2016-11-07,P3Y)",
+          "FutureResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأسابيع الثلاثة الماضية",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسابيع الثلاثة الماضية",
+        "Start": 9,
+        "Length": 24,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الأسبوع الأول من أكتوبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأول من أكتوبر",
+        "Start": 0,
+        "Length": 23,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10-W01",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-03",
+            "endDate": "2016-10-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث من عام 2027",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث من عام 2027",
+        "Start": 6,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-01-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث العام المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث العام المقبل",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01-W03",
+          "FutureResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الربع الثالث من عام 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربع الثالث من عام 2016",
+        "Start": 9,
+        "Length": 24,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الربع الثالث من هذا العام",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربع الثالث من هذا العام",
+        "Start": 9,
+        "Length": 25,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الربع الثالث 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سأخرج في الربع الثالث 2017",
+        "Start": -1,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل هذا الصيف",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصيف",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل الربيع القادم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربيع القادم",
+        "Start": 6,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل الصيف",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الصيف",
+        "Start": 6,
+        "Length": 5,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل صيف",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صيف",
+        "Start": 6,
+        "Length": 3,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل الصيف 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الصيف 2016",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل صيف 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صيف 2016",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "عطلات الشهر القادم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الشهر القادم",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "عطلة الشهر المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الشهر المقبل",
+        "Start": 5,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا في وقت لاحق من هذا الشهر",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت لاحق هذا الشهر",
+        "Start": -1,
+        "Length": 21,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-11",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا لاحقا في هذا الاسبوع",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "لاحقا في هذا الاسبوع",
+        "Start": 23,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "FutureResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا في وقت لاحق من هذا العام",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت لاحق من هذا العام",
+        "Start": 23,
+        "Length": 24,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا مطلع العام المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مطلع العام المقبل",
+        "Start": 23,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا مطلع الاسبوع المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مطلع الاسبوع المقبل",
+        "Start": 23,
+        "Length": 19,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا مطلع الشهر المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مطلع الشهر المقبل",
+        "Start": 23,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-12",
+          "FutureResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كان لدينا اجتماع أواخر العام الماضي",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أواخر العام الماضي",
+        "Start": 17,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كان لدينا اجتماع أواخر الأسبوع الماضي",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أواخر الأسبوع الماضي",
+        "Start": 17,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W44",
+          "FutureResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كان لدينا اجتماع أواخر الشهر الماضي",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أواخر الشهر الماضي",
+        "Start": 17,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-10",
+          "FutureResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو الأسبوع المقبل بين الأربعاء والجمعة.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع المقبل بين الأربعاء والجمعة",
+        "Start": 53,
+        "Length": 35,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-22,2017-11-24,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو الأسبوع الماضي بين الجمعة والأحد.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الماضي بين الجمعة والأحد",
+        "Start": 53,
+        "Length": 32,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-10,2017-11-12,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-12"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو هذا الأسبوع من الثلاثاء إلى الخميس",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الأسبوع من الثلاثاء إلى الخميس",
+        "Start": 53,
+        "Length": 34,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-14,2017-11-16,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كان لدينا اجتماع هذا الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الاسبوع",
+        "Start": -1,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كان لدينا اجتماع في الأسبوع الأول من هذا العام",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأول من هذا العام",
+        "Start": 20,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01-W01",
+          "FutureResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الأسبوع الأول من عام 2015",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأول من عام 2015",
+        "Start": 0,
+        "Length": 25,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-01-W01",
+          "FutureResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الأسبوع الثاني من عام 2015",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثاني من عام 2015",
+        "Start": 0,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-01-W02",
+          "FutureResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "نهاية هذا الأسبوع",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية هذا الأسبوع",
+        "Start": 0,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W47-WE",
+          "FutureResolution": {
+            "startDate": "2017-11-25",
+            "endDate": "2017-11-27"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-25",
+            "endDate": "2017-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "الأسبوع الأخير من عام 2015",
+    "Context": {
+      "ReferenceDateTime": "2017-11-20T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأخير من عام 2015",
+        "Start": 0,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-12-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج عام 247",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام 247",
+        "Start": 6,
+        "Length": 7,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0247",
+          "FutureResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في السبعينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في السبعينيات",
+        "Start": 0,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "من مواليد ألفين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ألفين",
+        "Start": 10,
+        "Length": 5,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في 1970",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1970.0",
+        "Start": -1,
+        "Length": 6,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "السبعينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينيات",
+        "Start": 0,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سبعينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبعينيات",
+        "Start": 0,
+        "Length": 8,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في الأربعينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأربعينيات",
+        "Start": 3,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2040-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1940-01-01",
+            "endDate": "1950-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "من السبعينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينات",
+        "Start": -1,
+        "Length": 9,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في السبعينيات القرن التاسع عشر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينيات",
+        "Start": 3,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في الألفين والعشرات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الألفين والعشرات",
+        "Start": 3,
+        "Length": 16,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في العشرينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العشرينيات",
+        "Start": 3,
+        "Length": 10,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في الألفين ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " الألفين ",
+        "Start": 2,
+        "Length": 9,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 2 إلى 7 فبراير ، ألفان وثمانية عشر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 2 إلى 7 فبراير ، ألفان وثمانية عشر",
+        "Start": 6,
+        "Length": 37,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "بين 2 و 7 فبراير ألفين وثمانية عشر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2 و 7 فبراير ألفين وثمانية عشر",
+        "Start": 0,
+        "Length": 34,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج ما بين 2-7 فبراير ألفين وثمانية عشر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2-7 فبراير ألفين وثمانية عشر",
+        "Start": 9,
+        "Length": 32,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في يونيو من عام تسعة وتسعين وتسعين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو من عام تسعة وتسعين وتسعين",
+        "Start": 11,
+        "Length": 31,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1999-06",
+          "FutureResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          },
+          "PastResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "تسعة عشر ثمانية وعشرون",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تسعة عشر ثمانية وعشرون",
+        "Start": 0,
+        "Length": 22,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1928",
+          "FutureResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في ألف وسبعمائة وتسعة وثمانين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ألف وسبعمائة وتسعة وثمانون",
+        "Start": -1,
+        "Length": 26,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1789",
+          "FutureResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث من عام ألفين وسبعة وعشرين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث من عام ألفين وسبعة وعشرين",
+        "Start": 6,
+        "Length": 40,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-01-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الربع الثالث من ألفين وعشرين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربع الثالث من ألفين وعشرين",
+        "Start": 9,
+        "Length": 28,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-07-01,2020-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "في ربيع عام تسعة عشر وثمانية وسبعين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ربيع عام تسعة عشر وثمانية وسبعين",
+        "Start": 3,
+        "Length": 32,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1978-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  },
+  {
+    "Input": "عام مائتين وسبعة وستين",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام مائتين وسبعة وستين",
+        "Start": 0,
+        "Length": 22,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0267",
+          "FutureResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الاسبوع بعد القادم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الاسبوع بعد القادم",
+        "Start": 6,
+        "Length": 18,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الشهر التالي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الشهر التالي",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج العام التالي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العام التالي",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في عطلة نهاية الأسبوع بعد اليوم التالي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عطلة نهاية الأسبوع بعد اليوم التالي",
+        "Start": 9,
+        "Length": 35,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "النطاق هو 2014-2018.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2018-2014",
+        "Start": -1,
+        "Length": 9,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "النطاق بين 2014-2018.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2014-2018",
+        "Start": 7,
+        "Length": 13,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "النطاق من 2014 إلى 2018.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 2014 إلى 2018",
+        "Start": 7,
+        "Length": 16,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "النطاق من 2014 حتى 2018.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 2014 حتى 2018.",
+        "Start": 7,
+        "Length": 17,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "المدى من ألفين إلى ألفين وأربعة عشر.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من ألفين إلى ألفين وأربعة عشر",
+        "Start": 6,
+        "Length": 29,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2014-01-01,P14Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في العقدين الماضيين.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العقدين الماضيين",
+        "Start": 11,
+        "Length": 16,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في العقد القادم.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العقد القادم",
+        "Start": 11,
+        "Length": 12,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في الثلاثة عقود القادمة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثلاثة عقود القادمة",
+        "Start": 11,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2050-01-01,P30Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سيحدث بعد 4 أسابيع في المستقبل.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 4 أسابيع في المستقبل",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-12-06,P4W)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سيحدث بعد يومين.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد يومين",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يمكن أن تجد لنا كورتانا موعدًا بداية الأسبوع المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بداية الأسبوع المقبل",
+        "Start": 31,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "بالتأكيد ، لنبدأ سكايب نهاية الأسبوع المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الأسبوع المقبل",
+        "Start": 23,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "بالتأكيد ، لنبدأ سكايب في الأسبوع القادم",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع القادم",
+        "Start": 26,
+        "Length": 14,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، تجد لنا موعدا نهاية شهر مارس",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية شهر مارس",
+        "Start": 24,
+        "Length": 14,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-03",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2018-03-16",
+            "endDate": "2018-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-16",
+            "endDate": "2017-04-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تحديد موعد لنا في منتصف الأسبوع المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف الأسبوع المقبل",
+        "Start": 33,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "mid",
+          "FutureResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-18"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يمكنني أن أجد لنا موعدا بداية الأسبوع المقبل",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بداية الأسبوع المقبل",
+        "Start": 24,
+        "Length": 20,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ماذا عن منتصف الصيف؟",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف الصيف",
+        "Start": 8,
+        "Length": 11,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "Mod": "mid",
+          "FutureResolution": {},
+          "PastResolution": {}
+        }
+      }
+    ]
+  }
+]

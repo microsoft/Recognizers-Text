@@ -25,13 +25,13 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string RoundNumberIntegerRegex = @"(?:مائتان|مائة|مائة|مائتين|ثلاثمائه|أربعة مئة|خمسمائة|ستمائة|سبعمائة|ثمان مائة|تسعمائة|تريليون|ترليون|آلاف|تريليونين|تريليونات|مليار|ملياري|مليارات|مليون|مليونان|ملايين|ملايين|ألف|مليونين|ألفين|مئة|الف|ومائتين|الفين|بألفين|مئتان|الآف)";
-      public const string ZeroToNineIntegerRegex = @"(وخمسة|بإثنان|وواحد|واحد|وأربعة|واثنان|اثنان|وثلاثة|ثلاثة|واربعة|أربعة|خمسة|وستة|ستة|وسبعة|سبعة|وثمانية|ثمانية|ثمانٍ|وتسعة|تسع|أحد|اثني|ثلاث|صفر|سبع|ست|اربع|السادس|الثامنة|تسعة|اثنين|واحدُ|وإثنين|وواحدُ|الواحد:?)";
-      public const string TwoToNineIntegerRegex = @"(?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|ست|ستة)";
+      public const string ZeroToNineIntegerRegex = @"(وخمسة|و خمسة|بإثنان|وواحد|و واحد|واحد|وأربعة|و أربعة|واثنان|اثنان|إثنان|وثلاثة|و ثلاثة|ثلاثة|واربعة|أربع|أربعة|خمسة|وستة|و ستة|ستة|وسبعة|و سبعة|سبعة|وثمانية|و ثمانية|ثمانية|ثمانٍ|وتسعة|و تسعة|تسع|أحد|اثني|إثني|ثلاث|صفر|سبع|ست|اربع|أربع|السادس|الثامنة|تسعة|اثنين|واحدُ|وإثنين|وواحدُ|الواحد:?)";
+      public const string TwoToNineIntegerRegex = @"(?:ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنتان|اثنين|اثتنين|اثنتان|إثنان|إثنتان|إثنين|إثتنين|إثنتان|ست|ستة)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(سالب|ناقص)(\s+)?)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(واحد|أحد)(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(?:((ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنان|اثنين|اثتنين|اثنتان|ستة|أحد|أربعة|اثني)\s(عشر|عشرة)))";
-      public const string TensNumberIntegerRegex = @"(عشرة|عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعين|وعشرين|وثلاثين|وأربعين|وخمسين|وستين|وسبعين|وثمانين|وتسعين|وعشرون|ثلاثون|وأربعون|وخمسون|وستون|وسبعون|وثمانون|وتسعون|عشرين|ثلاثين|أربعين|خمسين|ستين|سبعين|ثمانين|تسعون|العشرون:?)";
+      public const string TenToNineteenIntegerRegex = @"(?:((ثلاث|ثلاثة|سبعة|ثمان|ثمانية|أربع|أربعة|خمسة|تسعة|اثنان|اثنان|اثنين|اثتنين|اثنتان|إثنان|إثنتان|إثنين|إثتنين|إثنتان|ستة|أحد|أربعة|إثني|اثني)\s(عشر|عشرة)))";
+      public const string TensNumberIntegerRegex = @"(عشرة|عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعين|وعشرين|و عشرين|وثلاثين|و ثلاثين|وأربعين|و أربعين|وخمسين|و خمسين|وستين|وستين|وسبعين|و سبعين|وثمانين|و ثمانين|وتسعين|وتسعين|وعشرون|ثلاثون|وأربعون|و أربعون|وخمسون|و خمسون|وستون|و ستون|وسبعون|و سبعون|وثمانون|و ثمانون|وتسعون|و تسعون|عشرين|ثلاثين|أربعين|خمسين|ستين|سبعين|ثمانين|تسعون|العشرون:?)";
       public static readonly string SeparaIntRegex = $@"(?:((({RoundNumberIntegerRegex}\s{RoundNumberIntegerRegex})|{TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(((و)?)\s+(و)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(((\s+{RoundNumberIntegerRegex})+))";
       public static readonly string AllIntRegex = $@"(?:({SeparaIntRegex})((\s+(و)?)({SeparaIntRegex})(\s+{RoundNumberIntegerRegex})?)*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(و)?)*{SeparaIntRegex})";
       public const string PlaceHolderPureNumber = @"\b";
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((نصف\s+)(دزينة|دستة|دستات|دست|دزينات|دزينتين))|({AllIntRegex}(و)?\s+((و)?))(دزينة|دستة|دستات|دست|دزينات|دزينتين))(?=\b)";
       public static readonly string RoundNumberOrdinalRegex = $@"(?:((من|على)\s+)({RoundNumberIntegerRegex}))";
-      public const string NumberOrdinalRegex = @"(اخماس|ثلثان|واحد جزء من|أجزاء من|المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|وثلثان|ثمن|أثمان|التاسع والتسعون|التاسعة والتسعون|اثمان|خمس|أخماس|وثلاثون|ثلثان|الأخماس|اخماس|ثلثان|واحد جزء من|العشرون|التريليون|الواحد والعشرون|الخامسة والعشرون:?)";
+      public const string NumberOrdinalRegex = @"(اخماس|ثلثان|واحد جزء من|أجزاء من|المئتيان|مائتي|الحاديه عشر|سابعًا|خامسا|ثانيا|أول|الأول|الثاني|الثالث|الرابع|الخامس|السابع|الثامن|التاسع|الأولى|الثانية|الثالثة|الرابعة|الخامسة|السادسة|السابعة|التاسعة|السادس عشر|السابعة عشرة|السادسة عشرة|الثالثة عشرة|الحادية عشرة|السابع عشر|سادس عشر|الخامس عشر|الحادية عَشْرةَ|الثانيَ عَشَر|الثانيةَ عَشْرةَ|الثالثَ عَشَرَ|الثالثةَ عَشْرةَ|الرابعَ عَشَرَ|الرابعةَ عَشْرةَ|الخامِسَ عَشَرَ|الخامسةَ عَشْرةَ|السادِسَ عَشَرَ|السادسةَ عَشْرةَ|السابعَ عَشَرَ|السابعةَ عَشْرةَ|الثامنَ عَشَرَ|الثامنةَ عَشْرةَ|التاسعَ عَشَرَ|التاسعةَ عَشْرةَ|الحادِيَ عَشَرَ|الحادي عشر|الثاني عشر|الثالث عشر|الرابع عشر|الثامن عشر|التاسع عشر|الثانية عشرة|الرابعة عشرة|الخامسة عشرة|الثامنة عشرة|التاسعة عشرة|العاشر|العاشرة|عشرون|العشرين|الثلاثين|الثلاثون|الرابعة والأربعون|الرابع والأربعون|خمسون|الخمسون|الستين|ستون|والستين|سبعون|السبعون|والسبعون|ثامن عشر|الثامن عشر|الرابع والأربعين|الثامنة والثمانون|الثامن|والثمانين|وثلثان|ثمن|أثمان|التاسع والتسعون|التاسعة والتسعون|اثمان|خمس|أخماس|وثلاثون|ثلثان|الأخماس|اخماس|ثلثان|واحد جزء من|العشرون|التريليون|الواحد والعشرون|العشرين|الحادي والعشرين|الثاني والعشرين|الثالث والعشرين|الرابع والعشرين|الخامس والعشرين|السادس والعشرين|السابع والعشرين|الثامن والعشرين|التاسع والعشرين|الثلاثين|الحادي والثلاثين|الخامسة والعشرون:?)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(الواحد\s)?((السابق|السابقة|الثانية الى|((الذي)\s*(قبل|قبلا)\s*)?(الأخير)|قبل|بعد|سبق|سبقت|التالي|الحالي|الذي|اخر)(\s))?((تالي|الحالي|السابقة|سابق|قادم|التالي|((الذي)\s*(قبل|قبلا)\s*)?(الأخير)|آخر|أخير|حالي|اخر|الاخير|الأولى)(ة)?)|(الاخر|الاول|الأول|اول|الأولى|((الذي)\s*(قبل|قبلا)\s*)?(الأخير)|السابق|التالي|أخر))";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"(?:(((({TensNumberIntegerRegex}(\s+(و)?|\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({RoundNumberIntegerRegex}|المئة(\s+(و)?)))((\s+{RoundNumberIntegerRegex}|المئة)+|({BasicOrdinalRegex})))\s+(و)?)*({TensNumberIntegerRegex}(\s+|\s*))?{BasicOrdinalRegex}|({TensNumberIntegerRegex}))";
@@ -65,12 +65,13 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string FractionWithPartOfPrefix = $@"((جزء من)\s+)({AllIntRegexWithLocks})";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(نقطة|جزء|جزء من)){AllPointRegex}";
-      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)";
-      public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)[+-]*\^([+-]*[\u0660-\u0669]([\.,])?\d*)(?=\b)";
-      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+[\.,]\d+))(?!([\.,]\d+))(?={placeholder})";
-      public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
-      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
+      public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)";
+      public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)[+-]*\^([+-]*[\u0660-\u0669]([\.,])?\d*)(?=\b)";
+      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+\u202A?[\.,]\u202A?\d+))(?!([\.,]\d+))(?={placeholder})";
+      public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))\u202A?[\.,]\u202A?\d+(?!([\.,]\d+))(?={placeholder})";
+      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+      public static readonly Func<string, string> DoubleWithThousandMarkRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{{1,3}}(\u202A?[،]\u202A?\d{{3}})+\u202A?[\.,]\u202A?\d+(?={placeholder})";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
       public const string ConnectorRegex = @"(?<spacer>و)";
       public static readonly string NumberWithSuffixPercentage = $@"((?<!(٪|%))({BaseNumbers.NumberReplaceToken})(\s*)((٪|%)(?!{BaseNumbers.NumberReplaceToken})|(بالمائة|في المئة|بالمئة)))";
@@ -142,27 +143,45 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"ثمانية عشر", 18 },
             { @"تسعة عشر", 19 },
             { @"عشرون", 20 },
+            { @"وعشرون", 20 },
             { @"ثلاثون", 30 },
             { @"وثلاثون", 30 },
             { @"أربعون", 40 },
+            { @"وأربعون", 40 },
             { @"خمسون", 50 },
+            { @"وخمسون", 50 },
             { @"ستون", 60 },
+            { @"وستون", 60 },
             { @"سبعون", 70 },
+            { @"وسبعون", 70 },
             { @"ثمانون", 80 },
+            { @"وثمانون", 80 },
             { @"تسعون", 90 },
+            { @"وتسعون", 90 },
             { @"مائة", 100 },
-            { @"مائتين", 200 },
+            { @"ومائة", 100 },
             { @"مائتان", 200 },
+            { @"ومائتان", 200 },
+            { @"مائتين", 200 },
+            { @"ومائتين", 200 },
             { @"ثلاثمائة", 300 },
+            { @"وثلاثمائة", 300 },
             { @"أربعمائة", 400 },
+            { @"وأربعمائة", 400 },
             { @"خمسمائة", 500 },
+            { @"وخمسمائة", 500 },
             { @"ستمائة", 600 },
+            { @"وستمائة", 600 },
             { @"سبعمائة", 700 },
+            { @"وسبعمائة", 700 },
             { @"ثمانمائة", 800 },
+            { @"وثمانمائة", 800 },
             { @"تسعمائة", 900 },
+            { @"وتسعمائة", 900 },
             { @"ألف", 1000 },
             { @"آلاف", 1000 },
             { @"ألفين", 2000 },
+            { @"ألفان", 2000 },
             { @"المليون", 1000000 },
             { @"مليون", 1000000 },
             { @"مليار", 1000000000 },
@@ -264,30 +283,49 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"تاسع", 9 },
             { @"تاسعة", 9 },
             { @"واحد من عشرة", 10 },
+            { @"العاشر", 10 },
             { @"واحد من إحدى عشر", 11 },
             { @"الحادية عشرة", 11 },
             { @"الحادي عشر", 11 },
             { @"واحد من إثنى عشر", 12 },
             { @"الثانية عشرة", 12 },
+            { @"الثاني عشر", 12 },
             { @"واحد من ثلاثة عشر", 13 },
             { @"الثالثة عشرة", 13 },
+            { @"الثالث عشر", 13 },
             { @"واحد من أربعة عشر", 14 },
             { @"الرابعة عشرة", 14 },
+            { @"الرابع عشر", 14 },
             { @"واحد من خمسة عشر", 15 },
             { @"الخامسة عشرة", 15 },
+            { @"الخامس عشر", 15 },
             { @"واحد من ستة عشر", 16 },
             { @"السادسة عشرة", 16 },
+            { @"السادس عشر", 16 },
             { @"واحد من سبعة عشر", 17 },
             { @"السابعة عشرة", 17 },
+            { @"السابع عشر", 17 },
             { @"واحد من ثمانية عشر", 18 },
             { @"الثامنة عشرة", 18 },
+            { @"الثامن عشر", 18 },
             { @"واحد من تسعة عشر", 19 },
+            { @"التاسع عشر", 19 },
             { @"واحد من عشرين", 20 },
             { @"العشرون", 20 },
             { @"العشرين", 20 },
+            { @"الحادي والعشرين", 21 },
+            { @"الثاني والعشرين", 22 },
+            { @"الثالث والعشرين", 23 },
+            { @"الرابع والعشرين", 24 },
+            { @"الخامس والعشرين", 25 },
+            { @"السادس والعشرين", 26 },
+            { @"السابع والعشرين", 27 },
+            { @"الثامن والعشرين", 28 },
+            { @"التاسع والعشرين", 29 },
             { @"واحد من ثلاثين", 30 },
             { @"الثلاثون", 30 },
             { @"الثلاثين", 30 },
+            { @"الحادي والثلاثين", 31 },
             { @"واحد من أربعين", 40 },
             { @"الأربعون", 40 },
             { @"الأربعين", 40 },

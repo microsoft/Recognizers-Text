@@ -162,7 +162,7 @@ public class ChineseNumeric {
     public static final String DigitalNumberRegex = "((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
-    public static final String ZeroToNineFullHalfRegex = "[\\d１２３４５６７８９０]";
+    public static final String ZeroToNineFullHalfRegex = "[\\d]";
 
     public static final String DigitNumRegex = "{ZeroToNineFullHalfRegex}+"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
@@ -311,11 +311,11 @@ public class ChineseNumeric {
             .replace("{AllFloatRegex}", AllFloatRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String DoubleExponentialNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))"
+    public static final String DoubleExponentialNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{NegativeNumberTermsRegexNum}", NegativeNumberTermsRegexNum);
 
-    public static final String DoubleScientificNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)"
+    public static final String DoubleScientificNotationRegex = "(?<!{ZeroToNineFullHalfRegex}+[\\.．])({NegativeNumberTermsRegexNum}\\s*)?({ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{NegativeNumberTermsRegexNum}", NegativeNumberTermsRegexNum);
 
@@ -423,7 +423,7 @@ public class ChineseNumeric {
     public static final String SpecialsPercentageRegex = "({ZeroToNineIntegerRegex}|[十拾])\\s*成(\\s*(半|{ZeroToNineIntegerRegex}))?"
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String NumbersSpecialsPercentageRegex = "({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\\s*成"
+    public static final String NumbersSpecialsPercentageRegex = "({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|10)\\s*成"
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
 
     public static final String SimpleSpecialsPercentageRegex = "{ZeroToNineIntegerRegex}\\s*[点點]\\s*{ZeroToNineIntegerRegex}\\s*成"
@@ -435,7 +435,7 @@ public class ChineseNumeric {
 
     public static final String TillRegex = "(到|至|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "((大于|多于|高于|超过|大於|多於|高於|超過)了?|>)";
+    public static final String MoreRegex = "((大于|多于|高于|超过|大於|多於|高於|超過|超过)了?|过|>)";
 
     public static final String LessRegex = "(小于|少于|低于|小於|少於|低於|不到|不足|<)";
 
@@ -447,7 +447,7 @@ public class ChineseNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{SpeicalCharBeforeNumber}", SpeicalCharBeforeNumber);
 
-    public static final String MoreOrEqualSuffix = "(或|或者)\\s*(以上|之上|更[大多高])";
+    public static final String MoreOrEqualSuffix = "(或|或者)\\s*(次?以上|之上|更[大多高])";
 
     public static final String LessOrEqual = "(({LessRegex}\\s*(或|或者)?\\s*{EqualRegex})|(至多|最多){SpeicalCharBeforeNumber}?|不{MoreRegex}|≤)"
             .replace("{LessRegex}", LessRegex)
@@ -463,7 +463,7 @@ public class ChineseNumeric {
 
     public static final String OneNumberRangeMoreRegex2 = "比\\s*(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*更?[大多高]";
 
-    public static final String OneNumberRangeMoreRegex3 = "(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|以上|之上|更[大多高])([万亿萬億]{0,2})";
+    public static final String OneNumberRangeMoreRegex3 = "(?<number1>((?!(([,，](?!\\d+))|。|[或者])).)+)\\s*(或|或者)?\\s*([多几余幾餘]|次?以上|之上|更[大多高])([万亿萬億]{0,2})";
 
     public static final String OneNumberRangeLessRegex1 = "({LessOrEqual}|{LessRegex})\\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\\d+))|。)).)+)"
             .replace("{LessOrEqual}", LessOrEqual)

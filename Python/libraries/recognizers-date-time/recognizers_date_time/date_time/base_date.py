@@ -302,7 +302,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                     sub_text = text[text.index(year_group) + len(year_group):].strip()
                     sub_text = self.trim_start_range_connector_symbols(sub_text)
                     is_valid_match = self.starts_with_basic_date(sub_text)
-                    
+
             # Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
             day_group = RegExpUtility.get_group(match, Constants.DAY_GROUP_NAME)
             month_group = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
@@ -312,7 +312,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                 separator_count = 0
                 for separator in separators:
                     if separator in no_date_text:
-                        separator_count+=1
+                        separator_count += 1
                     if separator_count > 1:
                         is_valid_match = False
                         break

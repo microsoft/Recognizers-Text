@@ -310,6 +310,8 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: 芬兰马克
     Penni: 盆尼
+#CC
+    Bitcoin: ₿|btc|xbt|个比特币|比特币
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
   entries:
@@ -605,6 +607,8 @@ CurrencyPrefixList: !dictionary
     Euro: €
     Pound: £
     Costa Rican colón: ₡
+#CC
+    Bitcoin: ₿|btc|xbt
 CurrencyAmbiguousValues: !list
   types: [string]
   entries:

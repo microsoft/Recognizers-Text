@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -68,8 +69,18 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(this));
             HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
+
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }

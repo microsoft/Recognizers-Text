@@ -572,4 +572,20 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "我有20个比特币",
+    "Results": [
+      {
+        "Text": "20个比特币",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Bitcoin",
+          "value": "20"
+        },
+        "Start": 2,
+        "End": 7
+      }
+    ]
+  }
 ]

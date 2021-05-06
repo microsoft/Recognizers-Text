@@ -53,6 +53,7 @@ class FrenchTimeParserConfiguration(TimeParserConfiguration):
         delta_min = 0
         trimmed_prefix = prefix.strip().lower()
 
+        # @todo Move hardcoded strings to resource YAML file.
         if trimmed_prefix.endswith('demie'):
             delta_min = 30
         elif trimmed_prefix.endswith('un quart') or trimmed_prefix.endswith('quart'):
@@ -70,7 +71,7 @@ class FrenchTimeParserConfiguration(TimeParserConfiguration):
                         match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
-        if trimmed_prefix.endswith('à'):
+        if trimmed_prefix.endswith('à') or 'moins' in trimmed_prefix:
             delta_min = delta_min * -1
 
         adjust.minute += delta_min

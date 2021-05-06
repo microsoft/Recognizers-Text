@@ -154,7 +154,7 @@ NumberWithPrepositionPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: ((?<!\bequal\s+)to|through|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
+  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
 LessRegex: !simpleRegex
   def: (?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
 EqualRegex: !simpleRegex

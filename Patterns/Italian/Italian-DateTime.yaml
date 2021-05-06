@@ -103,7 +103,7 @@ FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{WrittenCenturyFullYearRegex})(?<lasttwoyearnum>{LastTwoYearNumRegex})?)\b
   references: [ WrittenCenturyFullYearRegex, LastTwoYearNumRegex ]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
@@ -1019,6 +1019,7 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bgiorno|pomeriggio|sera|notte\b': '\b(buona?\s*(giorno|pomeriggio|sera|notte))\b'
+    '^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$': '([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

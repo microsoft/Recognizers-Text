@@ -2915,18 +2915,18 @@
             {
               "timex": "(XXXX-01-16T08:30,XXXX-01-16T09,PT30M)",
               "type": "datetimerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "et",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "2018-01-16 08:30:00",
               "end": "2018-01-16 09:00:00"
             },
             {
               "timex": "(XXXX-01-16T08:30,XXXX-01-16T09,PT30M)",
               "type": "datetimerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "et",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "2019-01-16 08:30:00",
               "end": "2019-01-16 09:00:00"
             }
@@ -13299,6 +13299,87 @@
               "timex": "XXXX-WXX-2T09",
               "type": "set",
               "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tune in tomorrow, 13/04/21, at 7 PM CET for episode 3 of Decentralized",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow, 13/04/21, at 7 pm cet",
+        "Start": 8,
+        "End": 38,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-13T19",
+              "type": "datetime",
+              "timezone": "UTC+01:00",
+              "timezoneText": "cet",
+              "utcOffsetMins": "60",
+              "value": "2021-04-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voice chat tonight 9PM EST in #FEG telegram!",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tonight 9pm est",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-06T21",
+              "type": "datetime",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "value": "2018-06-06 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voice chat next morning 7:30am EDT in #FEG telegram!",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "next morning 7:30am edt",
+        "Start": 11,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-07T07:30",
+              "type": "datetime",
+              "timezone": "UTC-04:00",
+              "timezoneText": "edt",
+              "utcOffsetMins": "-240",
+              "value": "2018-06-07 07:30:00"
             }
           ]
         }
