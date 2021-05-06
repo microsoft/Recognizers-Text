@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string QuotedTextRegex1 = @"(“([^“”]+)”)";
       public const string QuotedTextRegex2 = @"(‘([^‘’]+)’)";
       public const string QuotedTextRegex3 = @"(„([^„”]+)”)";
-      public const string QuotedTextRegex4 = @"(,([^,’]+)’)";
+      public const string QuotedTextRegex4 = @"(,([^,’']+)[’'])";
       public const string QuotedTextRegex5 = @"(""([^""]+)"")";
       public const string QuotedTextRegex6 = @"(\\'([^\']+)\\')";
       public const string QuotedTextRegex7 = @"(`([^`]+)`)";

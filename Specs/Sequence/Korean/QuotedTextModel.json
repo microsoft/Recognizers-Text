@@ -1,6 +1,7 @@
 [
  {
   "Input": "이 `숫자`는 `123`또는 `456`입니다.",
+  "NotSupportedByDesign": "javascript, python, java",
   "Results": [
    {
     "Text": "`숫자`",

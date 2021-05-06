@@ -7,7 +7,7 @@ QuotedTextRegex2: !simpleRegex
 QuotedTextRegex3: !simpleRegex
   def: („([^„”]+)”)
 QuotedTextRegex4: !simpleRegex
-  def: (,([^,’]+)’)
+  def: (,([^,’']+)[’'])
 QuotedTextRegex5: !simpleRegex
   def: (""([^""]+)"")
 QuotedTextRegex6: !simpleRegex

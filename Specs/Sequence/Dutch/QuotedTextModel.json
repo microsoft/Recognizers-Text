@@ -1,6 +1,7 @@
 [
  {
   "Input": "Dit ,nummer’ is `123` of `456`",
+  "NotSupportedByDesign": "javascript, python, java",
   "Results": [
    {
     "Text": ",nummer’",

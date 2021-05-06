@@ -1,6 +1,7 @@
 [
  {
   "Input": "Bu “numara” `123` veya `456` dır",
+  "NotSupportedByDesign": "javascript, python, java",
   "Results": [
    {
     "Text": "“numara”",

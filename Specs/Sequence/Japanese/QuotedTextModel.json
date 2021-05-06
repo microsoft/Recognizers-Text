@@ -1,6 +1,7 @@
 [
  {
   "Input": "この`番号`は `123`または`456`です",
+  "NotSupportedByDesign": "javascript, python, java",
   "Results": [
    {
     "Text": "`番号`",
