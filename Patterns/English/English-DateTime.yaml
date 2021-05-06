@@ -95,7 +95,7 @@ TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
-  def: (?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  def: (?<!\d[.:])(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\b
@@ -221,7 +221,7 @@ YearSuffix: !nestedRegex
   def: ((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !nestedRegex
-  def: (?<=\bon\s+)({DayRegex}s?)\b
+  def: (?<=\bon\s+)({DayRegex}s?)(?![.,:']\d+)\b
   references: [ DayRegex ]
 RelaxedOnRegex: !simpleRegex
   def: (?<=\b(on|at|in)\s+)((?<day>(3[0-1]|[0-2]?\d)(?:th|nd|rd|st))s?)\b
@@ -275,7 +275,7 @@ DateExtractor4: !nestedRegex
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 # The final lookahead in DateExtractor5 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017"
 DateExtractor5: !nestedRegex
-  def: \b({DayPrefix}(\s*,)?\s+)?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  def: \b({DayPrefix}(\s*,)?\s+)?(?<!\d[/\\\.]){DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayPrefix, DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({DayPrefix}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%]){BaseDateTime.CheckDecimalRegex}\b
@@ -291,7 +291,7 @@ DateExtractor7S: !nestedRegex
 # Only use the long Regex would ignore "11/20" in "11/20, 12/20" and it is hard to exhaust all characters after the "year" as we also have cases like "11/20, 12 of April"
 # Same for DateExtractor9L and DateExtractor9S
 DateExtractor8: !nestedRegex
-  def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({DayPrefix}\s+)?{DayRegex}[\\\-]{MonthNumRegex}(?![%]){BaseDateTime.CheckDecimalRegex}\b
+  def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({DayPrefix}\s+)?{DayRegex}[\\\-\.]{MonthNumRegex}(?![%]){BaseDateTime.CheckDecimalRegex}\b
   references: [ DayRegex, MonthNumRegex, DayPrefix, DatePreposition, StrictRelativeRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9L: !nestedRegex
   def: \b({DayPrefix}(\s*,)?\s+)?{DayRegex}\s*/\s*{MonthNumRegex}{DateExtractorYearTermRegex}(?![%])\b
