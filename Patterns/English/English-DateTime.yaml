@@ -458,7 +458,7 @@ TimeNumberCombinedWithUnit: !nestedRegex
   references: [ TimeUnitRegex ]
 BusinessHourSplitStrings: ['business', 'hour']
 NowRegex: !simpleRegex
-  def: \b(?<now>(right\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\b
+  def: \b(?<now>(right\s+)?now|as\s+soon\s+as\s+possible|asap|recently|previously|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|present\s+time)))\b
 #Used in DatePeriodParser to parse patterns like "from March to date" ("^date$" is English specific and does not need to be translated).
 NowParseRegex: !nestedRegex
   def: \b({NowRegex}|^(date)$)\b
@@ -559,7 +559,7 @@ PMTimeRegex: !simpleRegex
 NightTimeRegex: !simpleRegex
   def: (night)
 NowTimeRegex: !simpleRegex
-  def: (now|at th(e|is) minute)
+  def: (now|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|present\s+time)))
 RecentlyTimeRegex: !simpleRegex
   def: (recently|previously)
 AsapTimeRegex: !simpleRegex

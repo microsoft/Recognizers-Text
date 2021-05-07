@@ -196,7 +196,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
-      public const string NowRegex = @"\b(?<now>(right\s+)?now|at th(e|is) minute|as soon as possible|asap|recently|previously)\b";
+      public const string NowRegex = @"\b(?<now>(right\s+)?now|as\s+soon\s+as\s+possible|asap|recently|previously|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|present\s+time)))\b";
       public static readonly string NowParseRegex = $@"\b({NowRegex}|^(date)$)\b";
       public const string SuffixRegex = @"^\s*(in the\s+)?(morning|afternoon|evening|night)\b";
       public const string NonTimeContextTokens = @"(building)";
@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string AMTimeRegex = @"(?<am>morning)";
       public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
       public const string NightTimeRegex = @"(night)";
-      public const string NowTimeRegex = @"(now|at th(e|is) minute)";
+      public const string NowTimeRegex = @"(now|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|present\s+time)))";
       public const string RecentlyTimeRegex = @"(recently|previously)";
       public const string AsapTimeRegex = @"(as soon as possible|asap)";
       public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
