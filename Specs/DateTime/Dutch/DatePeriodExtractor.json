@@ -3075,14 +3075,14 @@
     ]
   },
   {
-    "Input": "Het zal 2 dagen vanaf nu gebeuren",
+    "Input": "Het zal 2 dagen daarna gebeuren",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 dagen vanaf nu",
+        "Text": "2 dagen daarna",
         "Type": "daterange",
         "Start": 8,
-        "Length": 16
+        "Length": 14
       }
     ]
   },
