@@ -5183,31 +5183,6 @@
     ]
   },
   {
-    "Input": "Ik zal binnen de komende 1 dag en 5 uren terug zijn",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "binnen de komende 1 dag en 5 uren",
-        "Type": "datetimeV2.datetimerange",
-        "Value": {
-          "values": [
-            {
-              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
-              "type": "datetimerange",
-              "start": "2016-11-07 16:12:00",
-              "end": "2016-11-08 21:12:00"
-            }
-          ]
-        },
-        "Start": 7,
-        "Length": 33
-      }
-    ]
-  },
-  {
     "Input": "Het gebeurde op vorige week dinsdag tegen 2 uur 's middags",
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
