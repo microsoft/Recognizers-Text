@@ -92,10 +92,11 @@ class SpanishTimeParserConfiguration(TimeParserConfiguration):
             adjust.minute += 60
             adjust.hour -= 1
 
-        adjust.has_minute = True
+        adjust.has_minute = adjust.has_minute or adjust.minute != 0
 
     def adjust_by_suffix(self, suffix: str, adjust: AdjustParams):
         suffix = suffix.strip().lower()
+        self.adjust_by_prefix(suffix, adjust)
 
         delta_hour = 0
         match = regex.match(self.time_suffix, suffix)

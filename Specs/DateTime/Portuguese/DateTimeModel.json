@@ -1796,5 +1796,266 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nos encontraremos às quinze para as 8",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinze para as 8",
+        "Start": 21,
+        "End": 36,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às sete para as 8",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sete para as 8",
+        "Start": 21,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 15 para as 8",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 para as 8",
+        "Start": 21,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 7 para as 8",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 para as 8",
+        "Start": 21,
+        "End": 31,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às quinze para as oito",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinze para as oito",
+        "Start": 21,
+        "End": 39,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às sete para as oito",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sete para as oito",
+        "Start": 21,
+        "End": 37,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 15 para as oito",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 para as oito",
+        "Start": 21,
+        "End": 35,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            },
+            {
+              "timex": "T19:45",
+              "type": "time",
+              "value": "19:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 7 para as oito",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 para as oito",
+        "Start": 21,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nos encontraremos às 7 minutos para as oito",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 minutos para as oito",
+        "Start": 21,
+        "End": 42,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:53",
+              "type": "time",
+              "value": "07:53:00"
+            },
+            {
+              "timex": "T19:53",
+              "type": "time",
+              "value": "19:53:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
