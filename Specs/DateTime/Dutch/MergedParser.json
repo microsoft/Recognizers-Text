@@ -134,7 +134,7 @@
   },
   {
     "Input": "Ik wil voor 3 mensen bij een pizzatent reserveren in seattle voor vanavond rond 20.00",
-	"Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
+    "Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -297,7 +297,7 @@
   },
   {
     "Input": "op vrijdag voor 3 's middags",
-	"Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
+    "Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -352,7 +352,7 @@
   },
   {
     "Input": "Zet de bruiloft van make cable in mijn agena voor woensdag de eenendertigste",
-	"Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
+    "Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
     "Context": {
       "ReferenceDateTime": "2017-09-15T00:00:00"
     },
@@ -383,7 +383,7 @@
   },
   {
     "Input": "Zet de bruiloft van make cable in mijn agena voor dinsdag de eenendertigste",
-	"Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
+    "Comment": "Ambiguity issue of 'voor' interpreted as 'before' when it should be interpreted as 'for'",
     "Context": {
       "ReferenceDateTime": "2017-10-15T00:00:00"
     },
