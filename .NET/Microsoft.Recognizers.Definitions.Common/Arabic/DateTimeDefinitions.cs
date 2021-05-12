@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string LangMarker = @"Ara";
       public const bool CheckBothBeforeAfter = false;
       public static readonly string TillRegex = $@"(?<till>\b(إلى|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public static readonly string RangeConnectorRegex = $@"(?<and>\b(و|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string RangeConnectorRegex = $@"(?<and>و|خلال|عبر|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string LastNegPrefix = @"(?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)";
       public static readonly string RelativeRegex = $@"\b(?<order>القادم|التالي|الآتي|الحالي|الماضي|المقبل|الحاضر|السابق|الأخير)\b";
       public static readonly string StrictRelativeRegex = $@"\b(?<order>القادم|التالي|الآتي|هذا|الحالي|الماضي|السابق|الأخير)\b";
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string YearRegex = $@"(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"(?<weekday>(?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت|أحد|إثنين|ثلاثاء|أربعاء|خميس|جمعة|سبت))";
       public const string SingleWeekDayRegex = @"(?<weekday>(?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت|أحد|إثنين|ثلاثاء|أربعاء|خميس|جمعة|سبت))";
-      public const string NextRegex = @"الآتي|الأخير|التالي|القادم|من الآن|الحالي|المقبل|الحاضر";
+      public const string NextRegex = @"(\s+)?(الآتي|الأخير|التالي|القادم|من الآن|الحالي|المقبل|الحاضر)";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>(من\s+)?(هذا\s+)?(الشهر|شهر)(\s+)?({NextRegex})?)";
       public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
@@ -128,11 +128,11 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string SpecificDayRegex = @"((قبل|بعد)\s+)?((اليوم|يوم)\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(آخر يوم|الماضي|السابق|الأخير|يومين))";
       public static readonly string LastDateRegex = $@"({LastDayDateRegex}|{LastWeekDateRegex})";
       public static readonly string NextDayRegex = $@"(هذا يوم\s+|بعد\s+)?(?=(ال)?يوم\s+)?({WeekDayRegex})((\s+)({NextRegex}))?";
-      public static readonly string NextWeekDayRegex = $@"((بعد )|(في هذا ?=)|(هذا ?=))?((ال|لل|ل)?أسبوع(ين)?|{ArabicWeekRegex}|اليوم|يومي|غداً|غد|غدا)(يوم)?({ArabicWeekRegex})?(\s+)?({NextRegex})?(\s+)?({ArabicWeekRegex})?";
+      public static readonly string NextWeekDayRegex = $@"((بعد )|(في هذا ?=)|(هذا ?=))?((ال|لل|ل)?أسبوع(ين)?|{ArabicWeekRegex}|اليوم|يومي|غداً|غد|غدا)(يوم)?({ArabicWeekRegex})?(\s+{NextRegex})?(\s+{ArabicWeekRegex})?";
       public static readonly string NextWeekRegex = $@"(?=بعد )?(هذا )?({ArabicWeekRegex})\s*({NextRegex})?\s+?(يوم)?(\s+)?({WeekDayRegex})?";
       public static readonly string NextDateRegex = $@"({NextWeekRegex}|{NextDayRegex})";
       public static readonly string CardinalDayOfMonthRegex = $@"(((?<=في )|(إلى |لل|يوم ))((((ال)?عاشر|(ال)?حادي(ة)? والعشرين|(ال)?ثاني(ة)? والعشرين|(ال)?ثالث(ة)? والعشرين|(ال)?رابع(ة)? والعشرين|(ال)?خامس(ة)? والعشرين|(ال)?سادس(ة)? والعشرين|(ال)?سابع(ة)? والعشرين|(ال)?ثامن(ة)? والعشرين|(ال)?تاسع(ة)? والعشرين|(ال)?ثلاثين|(ال)?حادي(ة)? والثلاثين|(ال)?أول|(ال)?ثاني|(ال)?ثالث|(ال)?رابع|(ال)?خامس|(ال)?سادس|(ال)?سابع|(ال)?ثامن|(ال)?تاسع))|({DayRegex})))|((?<=يوم )({DayRegex})[\./-]\s+({MonthRegex}))";
-      public static readonly string SpecialDayRegex = $@"({NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})";
+      public static readonly string SpecialDayRegex = $@"((ال)?يوم(\s{DayRegex}\s{MonthRegex})|{NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
@@ -184,7 +184,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string RestrictedTimeUnitRegex = @"(?<unit>(ال)?ساعة|(ال)?دقيقة)\b";
       public const string FivesRegex = @"(?<tens>(?:fifteen|(?:twen|thir|fou?r|fif)ty(\s*five)?|ten|five))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
-      public const string PeriodHourNumRegex = @"\b(?<hour>twenty(\s+(one|two|three|four))?|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|zero|one|two|three|five|eight|ten)\b";
+      public const string PeriodHourNumRegex = @"(?<hour>((واحد|اثنان|اثنين|إثنين|ثلاثة|أربعة|إثنان)?(و(\s+)?(عشرون|عشرين)))|أحد عشر|إثني عشر|((ثلاثة|خمسة|ثمانية|أربعة|ستة|سبعة|تسعة)(عشر)?)|صفر|واحد|اثنان|إثنان|ثنان|اثنين|عشرة|الأولى|(ال)?واحدة|(ال)?ثانية|(ال)?ثالثة|(ال)?رابعة|(ال)?خامسة|(ال)?سادسة|(ال)?سابعة|(ال)?ثامنة|(ال)?تاسعة|(ال)?عاشرة|(ال)?حادية عشر(ة)?|(ال)?ثانية عشر(ة)?|خمسة عشر)";
       public static readonly string ConnectNumRegex = $@"\b{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}";
       public static readonly string TimeRegexWithDotConnector = $@"({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex1 = $@"\b({TimePrefix}\s+)?({WrittenTimeRegex}(\s{TimePrefix})?|{HourNumRegex}|{BaseDateTime.HourRegex})(\s*|[.]){DescRegex}";
@@ -193,22 +193,22 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string TimeRegex4 = $@"\b({TimePrefix}\s+)?{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}(\s*{DescRegex})?\b";
       public static readonly string TimeRegex5 = $@"\b({DescRegex}\s)?{BasicTime}((\s*{DescRegex})((\s+{TimePrefix})?)|(\s+{TimePrefix}(\s+{TimePrefix})?))(\s{DescRegex})?";
       public static readonly string TimeRegex6 = $@"{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
-      public static readonly string TimeRegex7 = $@"\b({DescRegex}\s)?(وقت الغداء\s)?{TimeSuffixFull}\s+(في\s+)?{BasicTime}(\s{DescRegex})?(\sوقت الغداء)?(\s{{TimePrefix}})?((\s*{DescRegex})|\b)?";
+      public static readonly string TimeRegex7 = $@"\b({DescRegex}\s)?(وقت الغداء\s)?{TimeSuffixFull}\s+(في\s+)?{BasicTime}(\s{DescRegex})?(\sوقت الغداء)?(\s{TimePrefix})?((\s*{DescRegex})|\b)?";
       public static readonly string TimeRegex8 = $@".^";
       public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}(\s+|-){FivesRegex}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex10 = $@"\b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
       public static readonly string TimeRegex11 = $@"\b((?:({TimeTokenPrefix})?{TimeRegexWithDotConnector}(\s*{DescRegex}))|(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)))";
       public static readonly string FirstTimeRegexInTimeRange = $@"\b{TimeRegexWithDotConnector}(\s*{DescRegex})?";
-      public static readonly string PureNumFromTo = $@"({RangePrefixRegex}\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?";
-      public static readonly string PureNumBetweenAnd = $@"(between\s+)(({BaseDateTime.TwoDigitHourRegex}{BaseDateTime.TwoDigitMinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*(({BaseDateTime.TwoDigitHourRegex}{BaseDateTime.TwoDigitMinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?";
-      public static readonly string SpecificTimeFromTo = $@"({RangePrefixRegex}\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
-      public static readonly string SpecificTimeBetweenAnd = $@"(between\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
+      public static readonly string PureNumFromTo = $@"({RangePrefixRegex}\s+)?(الساعة\s+)?(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*(\s+الساعة\s+)?(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\s+{TimePrefix})?(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?(\s+اليوم)?";
+      public static readonly string PureNumBetweenAnd = $@"(بين\s+)(الساعة\s+)?(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}(\s*)?(\s+الساعة\s+)?(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\s+{TimePrefix})?(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?(\s+اليوم)?";
+      public static readonly string SpecificTimeFromTo = $@"({RangePrefixRegex}\s+)?(الساعة\s+)?(?<time1>(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(\s+الساعة\s+)?(?<time2>(({TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|({HourRegex}|{PeriodHourNumRegex})(\s+{TimePrefix})?(\s*(?<rightDesc>{DescRegex}))?))(\s+اليوم)?";
+      public static readonly string SpecificTimeBetweenAnd = $@"(بين\s+)(الساعة\s+)?(?<time1>(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}(\s*)?(\s+الساعة\s+)?(?<time2>(({TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|(({BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex})|{HourRegex}|{PeriodHourNumRegex})(\s+{TimePrefix})?(\s*(?<rightDesc>{DescRegex}))?))(\s+اليوم)?";
       public const string SuffixAfterRegex = @"\b(((at)\s)?(or|and)\s+(above|after|later|greater)(?!\s+than))\b";
       public const string PrepositionRegex = @"(?<prep>^(at|on|of)(\s+the)?$)";
-      public const string LaterEarlyRegex = @"((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))";
-      public const string MealTimeRegex = @"\b(at\s+)?(?<mealTime>breakfast|brunch|lunch(\s*time)?|dinner(\s*time)?|supper)\b";
+      public const string LaterEarlyRegex = @"((?<early>(\s+|-)الباكر)|(?<late>وقت متأخر(\s+|-))|أواخر(\s+|-)|وقت مبكر(\s+|-)|أول(\s+|-)|آخر(\s+|-))";
+      public const string MealTimeRegex = @"\b((في|عند)\s+)?(وقت\s)?(?<mealTime>(ال)?إفطار|(ال)?فطور|(ال)?عشاء|(ال)?غذاء)\b";
       public static readonly string UnspecificTimePeriodRegex = $@"({MealTimeRegex})";
-      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b";
+      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((((في|عند)\s+)?{LaterEarlyRegex}?(من\s+)?(الصباح|بعد الظهر|الليل|المساء|الظهر|الأمسيات){LaterEarlyRegex}?)|{MealTimeRegex}|(((في|عند|خلال)\s+)?(النهار|((ساعة|ساعات)(\s)?العمل)))))\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btoni(ght|te))s?\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)(\s)?(-)?{TimeUnitRegex}";
@@ -546,19 +546,26 @@ namespace Microsoft.Recognizers.Definitions.Arabic
         {
             { @"صفر", 0 },
             { @"واحد", 1 },
+            { @"الواحدة", 1 },
             { @"اثنان", 2 },
+            { @"الثانية", 2 },
             { @"ثلاثة", 3 },
             { @"ثلاث", 3 },
+            { @"الثالثة", 3 },
             { @"أربعة", 4 },
+            { @"الرابعة", 4 },
             { @"خمسة", 5 },
             { @"الخامسة", 5 },
             { @"ستة", 6 },
+            { @"السادسة", 6 },
             { @"سبعة", 7 },
             { @"السابعة", 7 },
             { @"ثمانية", 8 },
             { @"الثامنة", 8 },
             { @"تسعة", 9 },
+            { @"التاسعة", 9 },
             { @"عشرة", 10 },
+            { @"العاشرة", 10 },
             { @"أحد عشر", 11 },
             { @"الحادية عشر", 11 },
             { @"اثنا عشر", 12 },

@@ -5,7 +5,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -33,7 +32,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -61,7 +59,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -89,7 +86,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -117,13 +113,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بين الخامسة والسادسة مساءً",
-        "Start": -1,
-        "Length": 26,
+        "Text": "بين 5 و 6 مساءً",
+        "Start": 6,
+        "Length": 15,
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -140,18 +135,17 @@
     ]
   },
   {
-    "Input": "سأخرج بين  5 مساءً و 6 مساءً",
+    "Input": "سأخرج بين 5 مساءً و 6 مساءً",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بين الساعة 5 و 6 مساءً",
-        "Start": -1,
-        "Length": 22,
+        "Text": "بين 5 مساءً و 6 مساءً",
+        "Start": 6,
+        "Length": 21,
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -168,18 +162,17 @@
     ]
   },
   {
-    "Input": "سأخرج بين  5 مساءً و 6 بعد الظهر",
+    "Input": "سأخرج بين 5 مساءً و 6 بعد الظهر",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بين الخامسة والسادسة بعد الظهر",
-        "Start": -1,
-        "Length": 30,
+        "Text": "بين 5 مساءً و 6 بعد الظهر",
+        "Start": 6,
+        "Length": 25,
         "Type": "timerange",
         "Value": {
           "Timex": "(T17,T18,PT1H)",
@@ -201,13 +194,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "من 1 صباحًا إلى 5 مساءً",
-        "Start": -1,
-        "Length": 23,
+        "Text": "من الساعة 1 صباحًا حتى 5 مساءً",
+        "Start": 6,
+        "Length": 30,
         "Type": "timerange",
         "Value": {
           "Timex": "(T01,T17,PT16H)",
@@ -229,7 +221,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -257,13 +248,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "4 حتى 5 مساءً",
-        "Start": 13,
-        "Length": 13,
+        "Text": "الساعة 4 حتى 5 مساءً",
+        "Start": 6,
+        "Length": 20,
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -285,13 +275,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الساعة 4:00 حتى الساعة 7",
-        "Start": -1,
-        "Length": 24,
+        "Text": "من الساعة 4:00 إلى الساعة 7",
+        "Start": 14,
+        "Length": 27,
         "Type": "timerange",
         "Value": {
           "Timex": "(T04:00,T07,PT3H)",
@@ -308,18 +297,44 @@
     ]
   },
   {
-    "Input": "سأكون بالخارج من 4 مساءً إلى 5 مساءً",
+    "Input": "سأكون بالخارج 4 مساءً - 5 مساءً",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "4 مساءً - 5 مساءً",
-        "Start": -1,
+        "Start": 14,
         "Length": 17,
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأكون بالخارج 4 - 5 مساءً",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4 - 5 مساءً",
+        "Start": 14,
+        "Length": 11,
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -341,13 +356,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "من الثالثة صباحا حتى الخامسة مساءا",
-        "Start": -1,
-        "Length": 34,
+        "Text": "من 3 صباحًا حتى 5 مساءً",
+        "Start": 6,
+        "Length": 23,
         "Type": "timerange",
         "Value": {
           "Timex": "(T03,T17,PT14H)",
@@ -364,17 +378,16 @@
     ]
   },
   {
-    "Input": "سأخرج بين الساعة 3 صباحًا و 5 مساءً",
+    "Input": "سأخرج بين 3 صباحًا و 5 مساءً",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "بين 3 صباحًا و 5 مساءً",
-        "Start": -1,
+        "Start": 6,
         "Length": 22,
         "Type": "timerange",
         "Value": {
@@ -397,13 +410,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بين 4 مساءً و 5 مساءً",
-        "Start": -1,
-        "Length": 21,
+        "Text": "بين الساعة 4 مساءً و 5 مساءً اليوم",
+        "Start": 6,
+        "Length": 34,
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -425,7 +437,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -453,13 +464,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "نلتقي بعد الظهر",
-        "Start": 5,
-        "Length": 15,
+        "Text": "بعد الظهر",
+        "Start": 11,
+        "Length": 9,
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
@@ -481,13 +491,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "في اليل",
-        "Start": -1,
-        "Length": 7,
+        "Text": "في الليل",
+        "Start": 11,
+        "Length": 8,
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -509,7 +518,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -537,7 +545,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -565,7 +572,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -593,7 +599,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -621,7 +626,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -649,7 +653,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -677,7 +680,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -705,13 +707,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "نجتمع في وقت متأخر بعد الظهر",
-        "Start": 6,
-        "Length": 28,
+        "Text": "في وقت متأخر بعد الظهر",
+        "Start": 12,
+        "Length": 22,
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
@@ -733,7 +734,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -761,7 +761,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -789,7 +788,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -817,7 +815,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -845,13 +842,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " في أول الليل",
-        "Start": 10,
-        "Length": 13,
+        "Text": "في أول الليل",
+        "Start": 11,
+        "Length": 12,
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -868,12 +864,38 @@
     ]
   },
   {
+    "Input": "دعنا نلتقي عند وقت متأخر من الليل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عند وقت متأخر من الليل",
+        "Start": 11,
+        "Length": 22,
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "FutureResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "عقد الاجتماع الساعة 1 بعد الظهر إلى 4",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -896,18 +918,16 @@
     ]
   },
   {
-    "Input": "قم بإعداد الاجتماع من 1:30 بعد الظهر. إلى 4",
+    "Input": "قم بإعداد الاجتماع من 1:30 بعد الظهر إلى 4.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "من 1:30 بعد الظهر. إلى 4",
+        "Text": "من 1:30 بعد الظهر إلى 4",
         "Start": 19,
-        "Length": 24,
+        "Length": 23,
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T16,PT2H30M)",
@@ -929,13 +949,12 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "صباح",
-        "Start": 21,
-        "Length": 4,
+        "Text": "الصباح",
+        "Start": 19,
+        "Length": 6,
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
@@ -957,7 +976,6 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -985,12 +1003,11 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "من 1:30 مساءً الى 3:30 مساء",
-        "Start": -1,
+        "Text": "من 1:30 مساءً إلى 3:30 مساء",
+        "Start": 13,
         "Length": 27,
         "Type": "timerange",
         "Value": {
@@ -1013,7 +1030,6 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1040,8 +1056,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1069,7 +1083,6 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
