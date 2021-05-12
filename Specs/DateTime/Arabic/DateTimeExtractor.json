@@ -909,7 +909,7 @@
       }
     ]
   },
-    {
+  {
     "Input": "لخميس، 06 مايو 2021 - 10:50 ص",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
@@ -922,7 +922,7 @@
       }
     ]
   },
-      {
+  {
     "Input": "الخميس 6 مايو 2021 01:08 ص",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
