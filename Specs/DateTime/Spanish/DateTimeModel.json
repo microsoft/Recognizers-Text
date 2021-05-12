@@ -20981,5 +20981,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Mi temperatura era 37.1 por la mañana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "por la mañana",
+        "Start": 24,
+        "End": 36,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -26,6 +26,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
@@ -88,6 +89,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
         this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.utilityConfiguration = new SpanishDateTimeUtilityConfiguration();
+        this.rangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
     }
 }
 

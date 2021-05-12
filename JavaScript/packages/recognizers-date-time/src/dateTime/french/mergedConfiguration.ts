@@ -21,6 +21,7 @@ import { FrenchTimeExtractorConfiguration } from "./timeConfiguration";
 import { FrenchTimePeriodExtractorConfiguration, FrenchTimePeriodParserConfiguration } from "./timePeriodConfiguration";
 import { FrenchDateTimePeriodExtractorConfiguration, FrenchDateTimePeriodParserConfiguration } from "./dateTimePeriodConfiguration";
 import { FrenchSetExtractorConfiguration, FrenchSetParserConfiguration } from "./setConfiguration";
+import { DefinitionLoader } from "../utilities";
 
 export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfiguration {
     readonly dateExtractor: IDateTimeExtractor;
@@ -44,6 +45,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
     readonly numberEndingPattern: RegExp;
     readonly unspecificDatePeriodRegex: RegExp;
     readonly filterWordRegexList: RegExp[];
+    readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean = false) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
@@ -68,6 +70,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
         this.holidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
         this.filterWordRegexList = [];
+        this.AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(FrenchDateTime.AmbiguityFiltersDict);
     }
 }
 

@@ -37,11 +37,14 @@ export interface IMergedExtractorConfiguration {
     numberEndingPattern: RegExp
     unspecificDatePeriodRegex: RegExp
     filterWordRegexList: RegExp[]
+    AmbiguityFiltersDict: Map<RegExp, RegExp>
 }
 
 export class BaseMergedExtractor implements IDateTimeExtractor {
     protected readonly config: IMergedExtractorConfiguration;
     protected readonly options: DateTimeOptions;
+
+    private static readonly NumberOrConnectorRegex: RegExp = new RegExp('^[0-9-]+$');
 
     constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions) {
         this.config = config;
@@ -69,6 +72,9 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         this.addTo(result, this.numberEndingRegexMatch(source, result), source);
 
         result = this.filterUnspecificDatePeriod(result);
+
+        // Remove common ambiguous cases
+        result = this.filterAmbiguity(result, source);
 
         this.addMod(result, source);
 
@@ -167,6 +173,25 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         ers = ers.filter(er => !RegExpUtility.isMatch(this.config.unspecificDatePeriodRegex, er.text));
         return ers;
     }
+
+    private filterAmbiguity(extractResults: ExtractResult[], text: string): ExtractResult[] {
+            if (this.config.AmbiguityFiltersDict != null) {
+                for (let [regexKey, regexValue] of this.config.AmbiguityFiltersDict) {
+                    extractResults.forEach(extractResult => {
+                        if (RegExpUtility.isMatch(regexKey, extractResult.text)) {
+                            let matches = RegExpUtility.getMatches(regexValue, text);
+                            extractResults = extractResults.filter(er => !matches.some(m => m.index < er.start + er.length && m.index + m.length > er.start));
+                        }
+                    });
+                }
+            }
+
+            // @TODO: Refactor to remove this method and use the general ambiguity filter approach
+            extractResults = extractResults.filter(er => !(RegExpUtility.isMatch(BaseMergedExtractor.NumberOrConnectorRegex, er.text) &&
+                    (text.substring(0, er.start).trim().endsWith("-") || text.substring((er.start + er.length)).trim().startsWith("-"))));
+
+            return extractResults;
+        }
 
     private filterAmbiguousSingleWord(er: ExtractResult, text: string): boolean {
         let matches = RegExpUtility.getMatches(this.config.singleAmbiguousMonthRegex, er.text.toLowerCase());
