@@ -57,7 +57,7 @@ export namespace JapaneseNumeric {
     export const PointRegexStr = `[\\.．・]`;
     export const AllFloatRegex = `${NegativeNumberTermsRegex}?${AllIntRegex}\\s*${PointRegexStr}\\s*[一二三四五六七八九](\\s*${ZeroToNineIntegerRegex})*`;
     export const NumbersWithAllowListRegex = `(?<!(離は))(${NegativeNumberTermsRegex}?(${NotSingleRegex}|${SingleRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*${PercentageRegex}+))(?!(\\s*${AllMultiplierLookupRegex}))`;
-    export const NumbersAggressiveRegex = `((${AllIntRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*(\\s*${PercentageRegex})?))`;
+    export const NumbersAggressiveRegex = `((${AllIntRegex})(?!(${AllIntRegex}|([、.]${ZeroToNineIntegerRegex})|${AllFloatRegex}|\\s*${PercentageRegex})))`;
     export const PointRegex = `${PointRegexStr}`;
     export const DoubleSpecialsChars = `((?<!(${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}*))(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．,]${ZeroToNineFullHalfRegex}+(?!(${ZeroToNineFullHalfRegex}*[\\.．,]${ZeroToNineFullHalfRegex}+)))(?=\\b|\\D)(?!\\s*${AllMultiplierLookupRegex})`;
     export const DoubleRoundNumberSpecialsChars = `(?<!((${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+[\\.．・,](${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})*))((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?(${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+[\\.．・,](${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+(?!(${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})*[\\.．・,](${ZeroToNineIntegerRegex}|${RoundNumberIntegerRegex})+)`;

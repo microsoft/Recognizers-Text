@@ -200,7 +200,7 @@ PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
 PrefixDayRegex: !simpleRegex
-  def: \b((?<EarlyPrefix>early)|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\s+in)?(\s+the\s+day)?$
+  def: \b((?<EarlyPrefix>earl(y|ier))|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\s+in)?(\s+the\s+day)?$
 SeasonDescRegex: !simpleRegex
   def: (?<seas>spring|summer|fall|autumn|winter)
 SeasonRegex: !nestedRegex
@@ -438,7 +438,7 @@ SuffixAfterRegex: !simpleRegex
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(,\s*)?(at|on|of)(\s+the)?$)
 LaterEarlyRegex: !simpleRegex
-  def: ((?<early>early(\s+|-))|(?<late>late(r?\s+|-)))
+  def: ((?<early>earl(y|ier)(\s+|-))|(?<late>late(r?\s+|-)))
 MealTimeRegex: !simpleRegex
   def: \b(at\s+)?(?<mealTime>breakfast|brunch|lunch(\s*time)?|dinner(\s*time)?|supper)\b
 UnspecificTimePeriodRegex: !nestedRegex

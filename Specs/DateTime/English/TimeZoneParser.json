@@ -583,6 +583,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Central by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -590,8 +591,8 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "UTC-05:00",
-            "UtcOffsetMins": -300
+            "Value": "UTC-06:00",
+            "UtcOffsetMins": -360
           }
         },
         "Start": 44,
@@ -653,14 +654,15 @@
   {
     "Input": "Let's meet at 1pm mountain timezone",
     "NotSupported": "javascript",
+    "Comment": "Mountain by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "Results": [
       {
         "Text": "mountain timezone",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "utcOffsetMins": "-360",
-            "value": "UTC-06:00"
+            "utcOffsetMins": "-420",
+            "value": "UTC-07:00"
           }
         },
         "Start": 18,
