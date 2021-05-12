@@ -1429,9 +1429,9 @@
       },
       {
         "Text": "اليوم",
-        "Type": "date",
         "Start": 76,
         "Length": 5,
+        "Type": "date"
       }
     ]
   }
