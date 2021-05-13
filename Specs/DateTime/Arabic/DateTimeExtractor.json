@@ -908,5 +908,31 @@
         "Type": "datetime"
       }
     ]
+  },
+  {
+    "Input": "لخميس، 06 مايو 2021 - 10:50 ص",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "خميس، 06 مايو 2021 - 10:50 ص",
+        "Start": 1,
+        "Length": 28,
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "الخميس 6 مايو 2021 01:08 ص",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "خميس، 06 مايو 2021 - 10:50 ص",
+        "Start": 0,
+        "Length": 26,
+        "Type": "datetime"
+      }
+    ]
   }
 ]

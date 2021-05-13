@@ -1416,5 +1416,23 @@
         "Type": "date"
       }
     ]
+  },
+  {
+    "Input": "ارتفاع أسعار الذهب في مصر اليوم 6 مايو.. العيار يقفز 4 جنيهات | بوابة أخبار اليوم الإلكترونية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم 6 مايو",
+        "Start": 26,
+        "Length": 12,
+        "Type": "date"
+      },
+      {
+        "Text": "اليوم",
+        "Start": 76,
+        "Length": 5,
+        "Type": "date"
+      }
+    ]
   }
 ]
