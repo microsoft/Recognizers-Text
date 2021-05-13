@@ -48,6 +48,8 @@ public class BaseDateTime {
 
     public static final String EqualRegex = "(?<!<|>)=";
 
+    public static final String BracketRegex = "^\\s*[\\)\\]]|[\\[\\(]\\s*$";
+
     public static final int MinYearNum = 1500;
 
     public static final int MaxYearNum = 2100;
