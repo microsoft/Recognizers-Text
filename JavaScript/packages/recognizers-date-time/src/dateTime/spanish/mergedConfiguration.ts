@@ -22,6 +22,7 @@ import { SpanishTimePeriodExtractorConfiguration, SpanishTimePeriodParserConfigu
 import { SpanishDateTimePeriodExtractorConfiguration, SpanishDateTimePeriodParserConfiguration } from "./dateTimePeriodConfiguration";
 import { SpanishSetExtractorConfiguration, SpanishSetParserConfiguration } from "./setConfiguration";
 import { SpanishDateTimePeriodParser } from "./dateTimePeriodParser";
+import { DefinitionLoader } from "../utilities";
 
 export class SpanishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
     readonly dateExtractor: IDateTimeExtractor;
@@ -45,6 +46,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly numberEndingPattern: RegExp;
     readonly unspecificDatePeriodRegex: RegExp;
     readonly filterWordRegexList: RegExp[];
+    readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean = false) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
@@ -69,6 +71,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.holidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
         this.filterWordRegexList = [];
+        this.AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(SpanishDateTime.AmbiguityFiltersDict);
     }
 }
 

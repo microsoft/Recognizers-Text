@@ -26,6 +26,7 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
