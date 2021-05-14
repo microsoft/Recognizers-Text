@@ -8,7 +8,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel
     {
-
         private string culture;
 
         private string requestedCulture;
@@ -25,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string RequestedCulture => this.requestedCulture;
 
-        protected IDateTimeExtractor Extractor { get; private set; }
+        protected IDateTimeExtractor Extractor { get; }
 
-        protected IDateTimeParser Parser { get; private set; }
+        protected IDateTimeParser Parser { get; }
 
         public List<ModelResult> Parse(string query)
         {

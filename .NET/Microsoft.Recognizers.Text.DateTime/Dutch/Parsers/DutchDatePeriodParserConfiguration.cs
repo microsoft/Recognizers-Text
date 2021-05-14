@@ -93,16 +93,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             SpecialDecadeCases = config.SpecialDecadeCases;
         }
 
-        public static IList<string> MonthTermsPadded { get; private set; } =
+        public static IList<string> MonthTermsPadded { get; } =
            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
 
-        public static IList<string> WeekendTermsPadded { get; private set; } =
+        public static IList<string> WeekendTermsPadded { get; } =
             DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
 
-        public static IList<string> WeekTermsPadded { get; private set; } =
+        public static IList<string> WeekTermsPadded { get; } =
             DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
 
-        public static IList<string> YearTermsPadded { get; private set; } =
+        public static IList<string> YearTermsPadded { get; } =
             DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         public int MinYearNum { get; }

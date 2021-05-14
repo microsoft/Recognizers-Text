@@ -7,13 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class AbstractYearExtractor : IDateExtractor
     {
-
         protected AbstractYearExtractor(IDateExtractorConfiguration config)
         {
             this.Config = config;
         }
 
-        protected IDateExtractorConfiguration Config { get; private set; }
+        protected IDateExtractorConfiguration Config { get; }
 
         public abstract List<ExtractResult> Extract(string input);
 

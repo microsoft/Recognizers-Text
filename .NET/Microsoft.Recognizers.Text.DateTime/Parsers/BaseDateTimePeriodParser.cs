@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             Config = configuration;
         }
 
-        protected IDateTimePeriodParserConfiguration Config { get; private set; }
+        protected IDateTimePeriodParserConfiguration Config { get; }
 
         public ParseResult Parse(ExtractResult result)
         {

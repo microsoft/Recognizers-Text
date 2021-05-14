@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             Config = configuration;
         }
 
-        protected IMergedParserConfiguration Config { get; private set; }
+        protected IMergedParserConfiguration Config { get; }
 
         public static void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
                                                             Dictionary<string, string> res)
