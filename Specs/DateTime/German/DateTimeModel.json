@@ -3939,17 +3939,18 @@
         }
       },
       {
-        "Text": "dieses jahr",
+        "Text": "dieses jahr früh",
         "Start": 11,
-        "End": 21,
+        "End": 26,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "2016",
+              "Mod": "start",
               "type": "daterange",
               "start": "2016-01-01",
-              "end": "2017-01-01"
+              "end": "2016-07-01"
             }
           ]
         }
@@ -3998,6 +3999,58 @@
               "timex": "2018-11-22",
               "type": "date",
               "value": "2018-11-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die ukrainische Heidelbeersaison könnte dieses Jahr später beginnen.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dieses jahr später",
+        "Start": 40,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lagerhaltung für Butter dieses Jahr früher begonnen.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dieses jahr früher",
+        "Start": 24,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-07-01"
             }
           ]
         }
