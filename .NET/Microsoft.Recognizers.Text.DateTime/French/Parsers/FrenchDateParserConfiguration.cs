@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -163,19 +162,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             // @TODO move hardcoded values to resource files
 
             // today
-            if (trimmedText.Equals("aujourd'hui", StringComparison.Ordinal) ||
-                trimmedText.Equals("auj", StringComparison.Ordinal))
+            if (trimmedText is "aujourd'hui" or "auj")
             {
                 swift = 0;
             }
-            else if (trimmedText.Equals("demain", StringComparison.Ordinal) ||
-                     trimmedText.Equals("a2m1", StringComparison.Ordinal) ||
-                     trimmedText.Equals("lendemain", StringComparison.Ordinal) ||
-                     trimmedText.Equals("jour suivant", StringComparison.Ordinal))
+            else if (trimmedText is "demain" or "a2m1" or "lendemain" or "jour suivant")
             {
                 swift = 1;
             } // yesterday
-            else if (trimmedText.Equals("hier", StringComparison.Ordinal))
+            else if (trimmedText is "hier")
             {
                 swift = -1;
             }
@@ -210,10 +205,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = 1;
             }
-            else if (trimmedText.Equals("dernière", StringComparison.Ordinal) ||
-                     trimmedText.Equals("dernières", StringComparison.Ordinal) ||
-                     trimmedText.Equals("derniere", StringComparison.Ordinal) ||
-                     trimmedText.Equals("dernieres", StringComparison.Ordinal))
+            else if (trimmedText is "dernière" or "dernières" or "derniere" or "dernieres")
             {
                 swift = -1;
             }
@@ -227,10 +219,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             // @TODO move hardcoded values to resource files
 
-            return trimmedText.Equals("dernière", StringComparison.Ordinal) ||
-                   trimmedText.Equals("dernières", StringComparison.Ordinal) ||
-                   trimmedText.Equals("derniere", StringComparison.Ordinal) ||
-                   trimmedText.Equals("dernieres", StringComparison.Ordinal);
+            return trimmedText is "dernière" or "dernières" or "derniere" or "dernieres";
         }
 
         public string Normalize(string text)

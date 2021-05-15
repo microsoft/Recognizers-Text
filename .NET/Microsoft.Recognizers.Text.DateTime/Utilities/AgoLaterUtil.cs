@@ -222,11 +222,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var resultDateTime = referenceTime;
             var timex = durationParseResult.TimexStr;
 
-            if (((DateTimeResolutionResult)durationParseResult.Value).Mod == Constants.MORE_THAN_MOD)
+            if (((DateTimeResolutionResult)durationParseResult.Value).Mod is Constants.MORE_THAN_MOD)
             {
                 ret.Mod = Constants.MORE_THAN_MOD;
             }
-            else if (((DateTimeResolutionResult)durationParseResult.Value).Mod == Constants.LESS_THAN_MOD)
+            else if (((DateTimeResolutionResult)durationParseResult.Value).Mod is Constants.LESS_THAN_MOD)
             {
                 ret.Mod = Constants.LESS_THAN_MOD;
             }
@@ -249,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, regex.Item1, inSuffix: true))
                 {
                     isMatch = true;
-                    isLater = regex.Item2 == Constants.LATER_LABEL;
+                    isLater = regex.Item2 is Constants.LATER_LABEL;
                     var match = regex.Item1.Match(afterStr);
                     dayStr = match.Groups["day"].Value;
                 }
@@ -267,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (string.IsNullOrEmpty(dayStr) && MatchingUtil.ContainsAgoLaterIndex(beforeStr, regex.Item1, inSuffix: false))
                     {
                         isMatch = true;
-                        isLater = regex.Item2 == Constants.LATER_LABEL;
+                        isLater = regex.Item2 is Constants.LATER_LABEL;
                         var match = regex.Item1.Match(beforeStr);
                         dayStr = match.Groups["day"].Value;
                     }

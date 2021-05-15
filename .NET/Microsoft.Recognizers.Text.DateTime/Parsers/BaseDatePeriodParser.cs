@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (innerResult.Success)
                 {
-                    if (innerResult.Mod == Constants.BEFORE_MOD)
+                    if (innerResult.Mod is Constants.BEFORE_MOD)
                     {
                         innerResult.FutureResolution = new Dictionary<string, string>
                         {
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             },
                         };
                     }
-                    else if (innerResult.Mod == Constants.AFTER_MOD)
+                    else if (innerResult.Mod is Constants.AFTER_MOD)
                     {
                         innerResult.FutureResolution = new Dictionary<string, string>
                         {

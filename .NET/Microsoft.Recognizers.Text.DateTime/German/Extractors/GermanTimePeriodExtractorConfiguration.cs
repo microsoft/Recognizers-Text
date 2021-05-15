@@ -138,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("und", StringComparison.Ordinal);
+            return text is "und";
         }
 
         // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning".

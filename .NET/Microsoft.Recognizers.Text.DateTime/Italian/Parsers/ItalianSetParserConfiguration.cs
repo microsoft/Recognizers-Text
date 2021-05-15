@@ -82,35 +82,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
             // @TODO move hardcoded values to resources file
 
-            if (trimmedText.Equals("quotidianamente", StringComparison.Ordinal) ||
-                trimmedText.Equals("quotidiano", StringComparison.Ordinal) ||
-                trimmedText.Equals("quotidiana", StringComparison.Ordinal) ||
-                trimmedText.Equals("giornalmente", StringComparison.Ordinal) ||
-                trimmedText.Equals("giornaliero", StringComparison.Ordinal) ||
-                trimmedText.Equals("giornaliera", StringComparison.Ordinal))
+            if (trimmedText is "quotidianamente"
+                            or "quotidiano"
+                            or "quotidiana"
+                            or "giornalmente"
+                            or "giornaliero"
+                            or "giornaliera")
             {
                 // daily
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("settimanale", StringComparison.Ordinal) ||
-                     trimmedText.Equals("settimanalmente", StringComparison.Ordinal))
+            else if (trimmedText is "settimanale"
+                                 or "settimanalmente")
             {
                 // weekly
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("bisettimanale", StringComparison.Ordinal))
+            else if (trimmedText is "bisettimanale")
             {
                 // bi weekly
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensile", StringComparison.Ordinal) ||
-                     trimmedText.Equals("mensilmente", StringComparison.Ordinal))
+            else if (trimmedText is "mensile"
+                                 or "mensilmente")
             {
                 // monthly
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("annuale", StringComparison.Ordinal) ||
-                     trimmedText.Equals("annualmente", StringComparison.Ordinal))
+            else if (trimmedText is "annuale"
+                                 or "annualmente")
             {
                 // yearly/annually
                 timex = "P1Y";
@@ -130,25 +130,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
             // @TODO move hardcoded values to resources file
 
-            if (trimmedText.Equals("giorno", StringComparison.Ordinal) ||
-                trimmedText.Equals("giornata", StringComparison.Ordinal) ||
-                trimmedText.Equals("giorni", StringComparison.Ordinal))
+            if (trimmedText is "giorno"
+                            or "giornata"
+                            or "giorni")
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("settimana", StringComparison.Ordinal) ||
-                     trimmedText.Equals("settimane", StringComparison.Ordinal))
+            else if (trimmedText is "settimana"
+                                 or "settimane")
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mese", StringComparison.Ordinal) ||
-                     trimmedText.Equals("mesi", StringComparison.Ordinal))
+            else if (trimmedText is "mese" or "mesi")
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("anno", StringComparison.Ordinal) ||
-                     trimmedText.Equals("annata", StringComparison.Ordinal) ||
-                     trimmedText.Equals("anni", StringComparison.Ordinal))
+            else if (trimmedText is "anno" or "annata" or "anni")
             {
                 // year
                 timex = "P1Y";

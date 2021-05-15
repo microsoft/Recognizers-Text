@@ -299,7 +299,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er = this.config.IntegerExtractor.Extract(numStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                if (er[0].Type is Number.Constants.SYS_NUM_INTEGER)
                 {
                     num = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
                 }
@@ -328,7 +328,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er = this.config.IntegerExtractor.Extract(yearCJKStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                if (er[0].Type is Number.Constants.SYS_NUM_INTEGER)
                 {
                     num = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
                 }
@@ -345,7 +345,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (er.Count != 0)
                     {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
+                        if (er[0].Type is Number.Constants.SYS_NUM_INTEGER)
                         {
                             num += Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
                         }
@@ -1512,7 +1512,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals("最后一", StringComparison.Ordinal))
+            if (cardinalStr is "最后一")
             {
                 cardinal = 5;
             }

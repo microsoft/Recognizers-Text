@@ -151,19 +151,19 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             // @TODO move hardcoded values to resources file
 
-            if (trimmedText.Equals("tag", StringComparison.Ordinal))
+            if (trimmedText is "tag")
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("woche", StringComparison.Ordinal))
+            else if (trimmedText is "woche")
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("monat", StringComparison.Ordinal))
+            else if (trimmedText is "monat")
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("jahr", StringComparison.Ordinal))
+            else if (trimmedText is "jahr")
             {
                 timex = "P1Y";
             }

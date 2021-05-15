@@ -19,9 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool IsLessThanDay(string unit)
         {
-            return unit.Equals("S", StringComparison.Ordinal) ||
-                   unit.Equals("M", StringComparison.Ordinal) ||
-                   unit.Equals("H", StringComparison.Ordinal);
+            return unit.Length == 1 && unit[0] is 'S' or 'M' or 'H';
         }
 
         public ParseResult Parse(ExtractResult result)
@@ -66,11 +64,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var res = (DateTimeResolutionResult)value;
             if (res != null && er.Data != null)
             {
-                if (er.Data.Equals(Constants.MORE_THAN_MOD))
+                if (er.Data is Constants.MORE_THAN_MOD)
                 {
                     res.Mod = Constants.MORE_THAN_MOD;
                 }
-                else if (er.Data.Equals(Constants.LESS_THAN_MOD))
+                else if (er.Data is Constants.LESS_THAN_MOD)
                 {
                     res.Mod = Constants.LESS_THAN_MOD;
                 }
@@ -252,9 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
 
-                    if (numVal > 1000 && (unitStr.Equals(Constants.TimexYear, StringComparison.Ordinal) ||
-                                                        unitStr.Equals(Constants.TimexMonthFull, StringComparison.Ordinal) ||
-                                                        unitStr.Equals(Constants.TimexWeek, StringComparison.Ordinal)))
+                    if (numVal > 1000 && (unitStr is Constants.TimexYear or Constants.TimexMonthFull or Constants.TimexWeek))
                     {
                         return ret;
                     }
@@ -327,9 +323,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
 
-                    if (numVal > 1000 && (unitStr.Equals(Constants.TimexYear, StringComparison.Ordinal) ||
-                                          unitStr.Equals(Constants.TimexMonthFull, StringComparison.Ordinal) ||
-                                          unitStr.Equals(Constants.TimexWeek, StringComparison.Ordinal)))
+                    if (numVal > 1000 && (unitStr is Constants.TimexYear or Constants.TimexMonthFull or Constants.TimexWeek))
                     {
                         return ret;
                     }

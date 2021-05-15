@@ -136,14 +136,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("neulich", StringComparison.Ordinal) ||
-                     trimmedText.Equals("vorher", StringComparison.Ordinal) ||
-                     trimmedText.Equals("vorhin", StringComparison.Ordinal))
+            else if (trimmedText is "neulich" or "vorher" or "vorhin")
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("so früh wie möglich", StringComparison.Ordinal) ||
-                     trimmedText.Equals("asap", StringComparison.Ordinal))
+            else if (trimmedText is "so früh wie möglich" or "asap")
             {
                 timex = "FUTURE_REF";
             }

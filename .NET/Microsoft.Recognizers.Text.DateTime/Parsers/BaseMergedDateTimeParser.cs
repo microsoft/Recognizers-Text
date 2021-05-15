@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(startType))
             {
                 start = resolutionDic[startType];
-                if (start.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                if (start is Constants.InvalidDateString)
                 {
                     return;
                 }
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(endType))
             {
                 end = resolutionDic[endType];
-                if (end.Equals(Constants.InvalidDateString, StringComparison.Ordinal))
+                if (end is Constants.InvalidDateString)
                 {
                     return;
                 }
@@ -276,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return Constants.SYS_DATETIME_DATETIMEPOINT;
             }
 
-            if (newType.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
+            if (newType is Constants.SYS_DATETIME_DATEPERIOD)
             {
                 return Constants.SYS_DATETIME_DATETIMEPERIOD;
             }
@@ -335,7 +335,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
 
                 // check also after match
-                if (this.Config.CheckBothBeforeAfter && er.Data != null && er.Data.Equals(Constants.HAS_MOD))
+                if (this.Config.CheckBothBeforeAfter && er.Data is Constants.HAS_MOD)
                 {
                     if (!beforeMatch.Success)
                     {
@@ -431,10 +431,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(equalMatch.Length);
                     modStr = equalMatch.Value;
                 }
-                else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) &&
+                else if ((er.Type is Constants.SYS_DATETIME_DATEPERIOD &&
                           Config.YearRegex.Match(er.Text).Success) ||
-                         er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
-                         er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                         er.Type is Constants.SYS_DATETIME_DATE or Constants.SYS_DATETIME_TIME)
                 {
                     // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                     // 2012 or after/above
@@ -541,7 +540,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // For cases like "3 pm or later on monday"
             if (pr.Value != null && Config.SuffixAfter.Match(pr.Text)?.Index != 0 &&
-                pr.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal) && !this.Config.CheckBothBeforeAfter)
+                pr.Type is Constants.SYS_DATETIME_DATETIME && !this.Config.CheckBothBeforeAfter)
             {
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
@@ -604,7 +603,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0)
             {
-                if (type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
+                if (type is Constants.SYS_DATETIME_DATETIME)
                 {
                     return Constants.SYS_DATETIME_TIME;
                 }
@@ -613,17 +612,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (hasMod)
                 {
-                    if (type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal))
+                    if (type is Constants.SYS_DATETIME_DATE)
                     {
                         return Constants.SYS_DATETIME_DATEPERIOD;
                     }
 
-                    if (type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                    if (type is Constants.SYS_DATETIME_TIME)
                     {
                         return Constants.SYS_DATETIME_TIMEPERIOD;
                     }
 
-                    if (type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
+                    if (type is Constants.SYS_DATETIME_DATETIME)
                     {
                         return Constants.SYS_DATETIME_DATETIMEPERIOD;
                     }
@@ -680,7 +679,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             string list = null;
 
             // Resolve dates list for date periods
-            if (slot.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && val.List != null)
+            if (slot.Type is Constants.SYS_DATETIME_DATEPERIOD && val.List != null)
             {
                 list = string.Join(",", val.List.Select(o => DateTimeFormatUtil.LuisDate((DateObject)o)).ToArray());
             }
@@ -706,7 +705,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // We also merge time entity with timezone entity and add the information in TimeZoneResolution to every DateTime resolutions.
             if (val.TimeZoneResolution != null)
             {
-                if (slot.Type.Equals(Constants.SYS_DATETIME_TIMEZONE, StringComparison.Ordinal))
+                if (slot.Type is Constants.SYS_DATETIME_TIMEZONE)
                 {
                     // single timezone
                     AddResolutionFields(res, Constants.ResolveTimeZone, new Dictionary<string, string>
@@ -729,7 +728,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var pastResolutionStr = ((DateTimeResolutionResult)slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult)slot.Value).FutureResolution;
 
-            if (typeOutput == Constants.SYS_DATETIME_DATETIMEALT && pastResolutionStr.Count > 0)
+            if (typeOutput is Constants.SYS_DATETIME_DATETIMEALT && pastResolutionStr.Count > 0)
             {
                 typeOutput = DetermineResolutionDateTimeType(pastResolutionStr);
             }
@@ -760,7 +759,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // If 'ampm', double our resolution accordingly
-            if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal))
+            if (!string.IsNullOrEmpty(comment) && comment is Constants.Comment_AmPm)
             {
                 if (res.ContainsKey(Constants.Resolve))
                 {
@@ -775,7 +774,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // If WeekOf and in CalendarMode, modify the past part of our resolution
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 &&
-                !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf, StringComparison.Ordinal))
+                comment is Constants.Comment_WeekOf)
             {
                 ResolveWeekOf(res, Constants.ResolveToPast);
             }
@@ -947,38 +946,38 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var res = new Dictionary<string, string>();
 
-            if (type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
+            if (type is Constants.SYS_DATETIME_DATETIME)
             {
                 AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
             }
-            else if (type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_TIME)
             {
                 AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
             }
-            else if (type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_DATE)
             {
                 AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
             }
-            else if (type.Equals(Constants.SYS_DATETIME_DURATION, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_DURATION)
             {
                 if (resolutionDic.ContainsKey(TimeTypeConstants.DURATION))
                 {
                     res.Add(ResolutionKey.Value, resolutionDic[TimeTypeConstants.DURATION]);
                 }
             }
-            else if (type.Equals(Constants.SYS_DATETIME_TIMEPERIOD, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_TIMEPERIOD)
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
             }
-            else if (type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_DATEPERIOD)
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, res);
             }
-            else if (type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
             }
-            else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT, StringComparison.Ordinal))
+            else if (type is Constants.SYS_DATETIME_DATETIMEALT)
             {
                 // for a period
                 if (resolutionDic.Count > 2 || !string.IsNullOrEmpty(mod))

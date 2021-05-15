@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Utilities;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration,
         ICJKDateTimePeriodExtractorConfiguration
     {
-
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
 
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
@@ -119,9 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public bool HasConnectorToken(string text)
         {
             // @TODO move hardcoded values to resources file
-            return text.Equals("和", StringComparison.Ordinal) ||
-                    text.Equals("与", StringComparison.Ordinal) ||
-                    text.Equals("到", StringComparison.Ordinal);
+            return text is "和" or "与" or "到";
         }
     }
 }

@@ -81,14 +81,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
-                     trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
-                     trimmedText.Equals("刚才", StringComparison.Ordinal))
+            else if (trimmedText is "刚刚才" or "刚刚" or "刚才")
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
-                     trimmedText.Equals("马上", StringComparison.Ordinal))
+            else if (trimmedText is "立刻" or "马上")
             {
                 timex = "FUTURE_REF";
             }
@@ -106,9 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var value = 0;
 
             // @TODO move hardcoded values to resources file
-            if (text.Equals("今天", StringComparison.Ordinal) ||
-                text.Equals("今日", StringComparison.Ordinal) ||
-                text.Equals("最近", StringComparison.Ordinal))
+            if (text is "今天" or "今日" or "最近")
             {
                 value = 0;
             }
@@ -120,21 +115,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 value = -1;
             }
-            else if (text.Equals("大后天", StringComparison.Ordinal) ||
-                     text.Equals("大後天", StringComparison.Ordinal))
+            else if (text is "大后天" or "大後天")
             {
                 value = 3;
             }
-            else if (text.Equals("大前天", StringComparison.Ordinal))
+            else if (text is "大前天")
             {
                 value = -3;
             }
-            else if (text.Equals("后天", StringComparison.Ordinal) ||
-                     text.Equals("後天", StringComparison.Ordinal))
+            else if (text is "后天" or "後天")
             {
                 value = 2;
             }
-            else if (text.Equals("前天", StringComparison.Ordinal))
+            else if (text is "前天")
             {
                 value = -2;
             }

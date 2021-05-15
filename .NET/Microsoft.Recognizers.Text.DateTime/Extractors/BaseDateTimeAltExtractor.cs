@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static void PruneInvalidImplicitDate(List<ExtractResult> ers)
         {
-            ers.RemoveAll(er => er.Data != null && er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) && er.Data.Equals(ExtractorName));
+            ers.RemoveAll(er => er.Data != null && er.Type is Constants.SYS_DATETIME_DATE && er.Data is ExtractorName);
         }
 
         private static bool IsSupportedAltEntitySequence(List<ExtractResult> altEntities)
@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
             return contextEr != null ||
-                   (originalErs.First().Type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type == Constants.SYS_DATETIME_DATEPERIOD);
+                   (originalErs.First().Type is Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type is Constants.SYS_DATETIME_DATEPERIOD);
         }
 
         private static Dictionary<string, object> MergeMetadata(object originalMetadata, Dictionary<string, object> newMetadata)
@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 result = originalMetadata as Dictionary<string, object>;
             }
 
-            if (originalMetadata == null)
+            if (originalMetadata is null)
             {
                 result = newMetadata;
             }

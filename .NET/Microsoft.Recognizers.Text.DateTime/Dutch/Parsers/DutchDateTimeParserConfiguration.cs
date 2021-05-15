@@ -132,13 +132,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("kort geleden", StringComparison.Ordinal) ||
-                     trimmedText.Equals("eerder", StringComparison.Ordinal))
+            else if (trimmedText is "kort geleden" or "eerder")
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("zo snel mogelijk", StringComparison.Ordinal) ||
-                     trimmedText.Equals("zsm", StringComparison.Ordinal))
+            else if (trimmedText is "zo snel mogelijk" or "zsm")
             {
                 timex = "FUTURE_REF";
             }

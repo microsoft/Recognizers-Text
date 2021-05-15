@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        if (innerResult.Mod == Constants.AFTER_MOD)
+                        if (innerResult.Mod is Constants.AFTER_MOD)
                         {
                             // Cases like "1/1/2015 after 2:00" there is no EndTime
                             innerResult.FutureResolution = new Dictionary<string, string>
@@ -485,12 +485,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (!this.Config.CheckBothBeforeAfter)
             {
-                return !string.IsNullOrEmpty(mod) && (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD);
+                return mod is Constants.BEFORE_MOD or Constants.AFTER_MOD;
             }
             else
             {
                 // matches with InclusiveModPrepositions are also parsed here
-                return !string.IsNullOrEmpty(mod) && (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD || mod == Constants.UNTIL_MOD || mod == Constants.SINCE_MOD);
+                return mod is Constants.BEFORE_MOD or Constants.AFTER_MOD or Constants.UNTIL_MOD or Constants.SINCE_MOD;
             }
         }
 
@@ -741,7 +741,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     pastTime.Year, pastTime.Month, pastTime.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
                             if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) &&
-                                timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal))
+                                timePeriodResolutionResult.Comment is Constants.Comment_AmPm)
                             {
                                 // AmPm comment is used for later SetParserResult to judge whether this parse result should have two parsing results
                                 // Cases like "from 10:30 to 11 on 1/1/2015" should have AmPm comment, as it can be parsed to "10:30am to 11am" and also be parsed to "10:30pm to 11pm"

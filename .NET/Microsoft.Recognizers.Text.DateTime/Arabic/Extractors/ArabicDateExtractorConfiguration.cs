@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
             };
 
             var enableDmy = DmyDateFormat ||
-                            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
+                            DateTimeDefinitions.DefaultLanguageFallback is Constants.DefaultLanguageFallback_DMY;
 
             DateRegexList = DateRegexList.Concat(enableDmy ?
                 new[] { dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegexA } :

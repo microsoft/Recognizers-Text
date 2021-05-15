@@ -91,24 +91,22 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 // daily
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("hebdomadaire", StringComparison.Ordinal))
+            else if (trimmedText is "hebdomadaire")
             {
                 // weekly
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("bihebdomadaire", StringComparison.Ordinal))
+            else if (trimmedText is "bihebdomadaire")
             {
                 // bi weekly
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensuel", StringComparison.Ordinal) ||
-                     trimmedText.Equals("mensuelle", StringComparison.Ordinal))
+            else if (trimmedText is "mensuel" or "mensuelle")
             {
                 // monthly
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("annuel", StringComparison.Ordinal) ||
-                     trimmedText.Equals("annuellement", StringComparison.Ordinal))
+            else if (trimmedText is "annuel" or "annuellement")
             {
                 // yearly/annually
                 timex = "P1Y";
@@ -128,21 +126,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             // @TODO move hardcoded values to resources file
 
-            if (trimmedText.Equals("jour", StringComparison.Ordinal) ||
-                trimmedText.Equals("journee", StringComparison.Ordinal))
+            if (trimmedText is "jour" or "journee")
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semaine", StringComparison.Ordinal))
+            else if (trimmedText is "semaine")
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mois", StringComparison.Ordinal))
+            else if (trimmedText is "mois")
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("an", StringComparison.Ordinal) ||
-                     trimmedText.Equals("annee", StringComparison.Ordinal))
+            else if (trimmedText is "an" or "annee")
             {
                 // year
                 timex = "P1Y";

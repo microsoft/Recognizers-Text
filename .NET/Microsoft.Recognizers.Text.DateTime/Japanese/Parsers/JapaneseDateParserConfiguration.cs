@@ -119,38 +119,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // @TODO move hardcoded values to resources file
 
             if (text.StartsWith("来", StringComparison.Ordinal) ||
-                text.Equals("あす", StringComparison.Ordinal) ||
-                text.Equals("あした", StringComparison.Ordinal) ||
-                text.Equals("明日", StringComparison.Ordinal))
+                text is "あす" or "あした" or "明日")
             {
                 value = 1;
             }
             else if (text.StartsWith("昨", StringComparison.Ordinal) ||
-                     text.Equals("きのう", StringComparison.Ordinal) ||
-                     text.Equals("前日", StringComparison.Ordinal))
+                     text is "きのう" or "前日")
             {
                 value = -1;
             }
-            else if (text.Equals("大后天", StringComparison.Ordinal) ||
-                     text.Equals("大後天", StringComparison.Ordinal))
+            else if (text is "大后天" or "大後天")
             {
                 value = 3;
             }
-            else if (text.Equals("大前天", StringComparison.Ordinal))
+            else if (text is "大前天")
             {
                 value = -3;
             }
-            else if (text.Equals("后天", StringComparison.Ordinal) ||
-                     text.Equals("後天", StringComparison.Ordinal) ||
-                     text.Equals("明後日", StringComparison.Ordinal) ||
-                     text.Equals("あさって", StringComparison.Ordinal))
+            else if (text is "后天" or "後天" or "明後日" or "あさって")
             {
                 value = 2;
             }
-            else if (text.Equals("前天", StringComparison.Ordinal) ||
-                     text.Equals("一昨日", StringComparison.Ordinal) ||
-                     text.Equals("二日前", StringComparison.Ordinal) ||
-                     text.Equals("おととい", StringComparison.Ordinal))
+            else if (text is "前天" or "一昨日" or "二日前" or "おととい")
             {
                 value = -2;
             }

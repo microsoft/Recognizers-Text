@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -134,14 +133,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("récemment", StringComparison.Ordinal) ||
-                     trimmedText.Equals("précédemment", StringComparison.Ordinal) ||
-                     trimmedText.Equals("auparavant", StringComparison.Ordinal))
+            else if (trimmedText is "récemment" or "précédemment" or "auparavant")
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("dès que possible", StringComparison.Ordinal) ||
-                     trimmedText.Equals("dqp", StringComparison.Ordinal))
+            else if (trimmedText is "dès que possible" or "dqp")
             {
                 timex = "FUTURE_REF";
             }

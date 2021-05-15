@@ -87,9 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool IsLessThanDay(string unit)
         {
-            return unit.Equals("S", StringComparison.Ordinal) ||
-                   unit.Equals("M", StringComparison.Ordinal) ||
-                   unit.Equals("H", StringComparison.Ordinal);
+            return unit.Length == 1 && unit[0] is 'S' or 'M' or 'H';
         }
 
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)

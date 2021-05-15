@@ -70,8 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var startPointType = string.Empty;
             var endPointType = string.Empty;
 
-            if (type == Constants.SYS_DATETIME_DATEPERIOD || type == Constants.SYS_DATETIME_TIMEPERIOD ||
-                type == Constants.SYS_DATETIME_DATETIMEPERIOD)
+            if (type is Constants.SYS_DATETIME_DATEPERIOD or Constants.SYS_DATETIME_TIMEPERIOD or Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
                 switch (type)
                 {
@@ -217,19 +216,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             dateTimeEr.Data = er.Data;
             var dateTimePr = new DateTimeParseResult();
 
-            if (subType == Constants.SYS_DATETIME_DATE)
+            if (subType is Constants.SYS_DATETIME_DATE)
             {
                 dateTimeEr.Type = Constants.SYS_DATETIME_DATE;
                 dateTimePr = this.config.DateParser.Parse(dateTimeEr, referenceTime);
             }
-            else if (subType == Constants.SYS_DATETIME_TIME)
+            else if (subType is Constants.SYS_DATETIME_TIME)
             {
                 if (!hasContext)
                 {
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
                     dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
                 }
-                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == Constants.ContextType_RelativePrefix)
+                else if (contextEr.Type is Constants.SYS_DATETIME_DATE or Constants.ContextType_RelativePrefix)
                 {
                     // For cases:
                     //      Monday 9 am or 11 am
@@ -237,38 +236,38 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
                     dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
                 }
-                else if (contextEr.Type == Constants.ContextType_AmPm)
+                else if (contextEr.Type is Constants.ContextType_AmPm)
                 {
                     // For cases: in the afternoon 3 o'clock or 5 o'clock
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
                     dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
                 }
             }
-            else if (subType == Constants.SYS_DATETIME_DATETIME)
+            else if (subType is Constants.SYS_DATETIME_DATETIME)
             {
                 // "next week Mon 9 am or Tue 1 pm"
                 dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
                 dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
             }
-            else if (subType == Constants.SYS_DATETIME_TIMEPERIOD)
+            else if (subType is Constants.SYS_DATETIME_TIMEPERIOD)
             {
                 if (!hasContext)
                 {
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIMEPERIOD;
                     dateTimePr = this.config.TimePeriodParser.Parse(dateTimeEr, referenceTime);
                 }
-                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == Constants.ContextType_RelativePrefix)
+                else if (contextEr.Type is Constants.SYS_DATETIME_DATE or Constants.ContextType_RelativePrefix)
                 {
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
                     dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
                 }
             }
-            else if (subType == Constants.SYS_DATETIME_DATETIMEPERIOD)
+            else if (subType is Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
                 dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
                 dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
             }
-            else if (subType == Constants.SYS_DATETIME_DATEPERIOD)
+            else if (subType is Constants.SYS_DATETIME_DATEPERIOD)
             {
                 dateTimeEr.Type = Constants.SYS_DATETIME_DATEPERIOD;
                 dateTimePr = this.config.DatePeriodParser.Parse(dateTimeEr, referenceTime);

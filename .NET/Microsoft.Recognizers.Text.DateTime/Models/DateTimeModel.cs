@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             };
 
             var type = parsedDateTime.Type.Split('.').Last();
-            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT, StringComparison.Ordinal))
+            if (type is Constants.SYS_DATETIME_DATETIMEALT)
             {
                 ret = new ExtendedModelResult(modelResult)
                 {

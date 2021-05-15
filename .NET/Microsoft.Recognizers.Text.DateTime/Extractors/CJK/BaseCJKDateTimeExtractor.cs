@@ -82,8 +82,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                if (ers[i].Type is Constants.SYS_DATETIME_DATE &&
+                    ers[j].Type is Constants.SYS_DATETIME_TIME)
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || this.config.PrepositionRegex.IsMatch(middleStr))
+                    if (string.IsNullOrEmpty(middleStr) || middleStr is "," || this.config.PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);

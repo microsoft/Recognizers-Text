@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             // @TODO move hardcoded values to resources file
 
-            return trimmedText.Equals("letzten", StringComparison.Ordinal);
+            return trimmedText is "letzten";
         }
 
         public string Normalize(string text)

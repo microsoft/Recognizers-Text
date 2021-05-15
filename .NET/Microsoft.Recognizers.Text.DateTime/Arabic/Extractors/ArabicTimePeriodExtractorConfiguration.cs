@@ -138,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("and", StringComparison.Ordinal);
+            return text is "and";
         }
 
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs) => TimePeriodFunctions.ApplyPotentialPeriodAmbiguityHotfix(text, timePeriodErs);

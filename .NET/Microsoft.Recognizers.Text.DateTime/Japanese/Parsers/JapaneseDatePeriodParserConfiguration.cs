@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.Japanese;
-using Microsoft.Recognizers.Text.Utilities;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodParserConfiguration
     {
-
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
 
         public JapaneseDatePeriodParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
@@ -216,18 +210,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             // @TODO move hardcoded values to resources file
 
-            if (text.Equals("来月", StringComparison.Ordinal))
+            if (text is "来月")
             {
                 value = 1;
             }
-            else if (text.Equals("前月", StringComparison.Ordinal) ||
-                     text.Equals("先月", StringComparison.Ordinal) ||
-                     text.Equals("昨月", StringComparison.Ordinal) ||
-                     text.Equals("先々月", StringComparison.Ordinal))
+            else if (text is "前月" or "先月" or "昨月" or "先々月")
             {
                 value = -1;
             }
-            else if (text.Equals("再来月", StringComparison.Ordinal))
+            else if (text is "再来月")
             {
                 value = 2;
             }
@@ -242,13 +233,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             // @TODO move hardcoded values to resources file
 
-            if (text.Equals("来年", StringComparison.Ordinal) ||
-                text.Equals("らいねん", StringComparison.Ordinal))
+            if (text is "来年" or "らいねん")
             {
                 value = 1;
             }
-            else if (text.Equals("昨年", StringComparison.Ordinal) ||
-                     text.Equals("前年", StringComparison.Ordinal))
+            else if (text is "昨年" or "前年")
             {
                 value = -1;
             }

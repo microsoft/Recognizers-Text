@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.Utilities;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -57,21 +53,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var trimmedText = text.Trim();
 
             // @TODO move hardcoded values to resources file
-            if (trimmedText.Equals("天", StringComparison.Ordinal) ||
-                trimmedText.Equals("日", StringComparison.Ordinal))
+            if (trimmedText is "天" or "日")
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("周", StringComparison.Ordinal) ||
-                     trimmedText.Equals("星期", StringComparison.Ordinal))
+            else if (trimmedText is "周" or "星期")
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("月", StringComparison.Ordinal))
+            else if (trimmedText is "月")
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("年", StringComparison.Ordinal))
+            else if (trimmedText is "年")
             {
                 timex = "P1Y";
             }

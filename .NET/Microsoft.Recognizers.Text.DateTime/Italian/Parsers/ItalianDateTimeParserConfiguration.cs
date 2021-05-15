@@ -140,13 +140,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("recentemente", StringComparison.Ordinal) ||
-                     trimmedText.Equals("precedentemente", StringComparison.Ordinal))
+            else if (trimmedText is "recentemente" or "precedentemente")
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("il prima possibile", StringComparison.Ordinal) ||
-                     trimmedText.Equals("asap", StringComparison.Ordinal))
+            else if (trimmedText is "il prima possibile" or "asap")
             {
                 timex = "FUTURE_REF";
             }

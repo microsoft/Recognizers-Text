@@ -71,8 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var idx = 0;
             while (idx < timePoints.Count - 1)
             {
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD, StringComparison.Ordinal))
+                if (timePoints[idx].Type is Constants.SYS_DATETIME_DATE &&
+                    timePoints[idx + 1].Type is Constants.SYS_DATETIME_TIMEPERIOD)
                 {
                     var middleBegin = timePoints[idx].Start + timePoints[idx].Length ?? 0;
                     var middleEnd = timePoints[idx + 1].Start ?? 0;
@@ -132,8 +132,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (idx < timePoints.Count - 1)
             {
                 // if both ends are Time. then this is a TimePeriod, not a DateTimePeriod
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                if (timePoints[idx].Type is Constants.SYS_DATETIME_TIME &&
+                    timePoints[idx + 1].Type is Constants.SYS_DATETIME_TIME)
                 {
                     idx++;
                     continue;
