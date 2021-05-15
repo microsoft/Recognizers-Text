@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
             // The fuzzy part needs to stay the same in the new end-inclusive timex
-            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
+            if (originalTimex.Contains(Constants.TimexFuzzy, StringComparison.Ordinal) && originalTimex.Length == timexEndInclusive.Length)
             {
                 var timexCharSet = new char[timexEndInclusive.Length];
 
