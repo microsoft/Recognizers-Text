@@ -515,7 +515,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 int i = 0;
                 while (i < extractResults.Count)
                 {
-                    if (metadata == null)
+                    if (metadata is null)
                     {
                         break;
                     }
@@ -528,7 +528,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         // No context extracted, the context would follow the previous one
                         // Such as "Wednesday" in "next Tuesday or Wednesday"
-                        if (metadataCandidate == null)
+                        if (metadataCandidate is null)
                         {
                             j++;
                         }

@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 

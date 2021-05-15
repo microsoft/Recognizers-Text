@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using DateObject = System.DateTime;
@@ -32,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var parseResult = this.config.InternalParser.Parse(er);
                 var unitResult = parseResult.Value as UnitValue;
 
-                if (unitResult == null)
+                if (unitResult is null)
                 {
                     return null;
                 }

@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var referenceTime = refDate;
             var extra = er.Data as DateTimeExtra<PeriodType>;
-            if (extra == null)
+            if (extra is null)
             {
                 var result = this.config.TimeExtractor.Extract(er.Text, refDate);
                 extra = result[0]?.Data as DateTimeExtra<PeriodType>;

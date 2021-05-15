@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            if (config.LocationTimeSuffixRegex == null)
+            if (config.LocationTimeSuffixRegex is null)
             {
                 return ret;
             }

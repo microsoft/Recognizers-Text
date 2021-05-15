@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
@@ -195,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            if (pr1.Value == null || pr2.Value == null)
+            if (pr1.Value is null || pr2.Value is null)
             {
                 return ret;
             }
@@ -271,7 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // the right side time contains "ampm", while the left side doesn't
             if (rightResult.Comment is Constants.Comment_AmPm &&
-                leftResult.Comment == null && rightTime < leftTime)
+                leftResult.Comment is null && rightTime < leftTime)
             {
                 rightTime = rightTime.AddHours(Constants.HalfDayHourCount);
             }

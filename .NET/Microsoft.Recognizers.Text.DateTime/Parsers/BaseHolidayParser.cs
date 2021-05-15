@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                if (function == null)
+                if (function is null)
                 {
                     return ret;
                 }

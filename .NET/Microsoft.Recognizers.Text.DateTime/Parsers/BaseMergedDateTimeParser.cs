@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
             // The fuzzy part needs to stay the same in the new end-inclusive timex
-            if (originalTimex.Contains(Constants.TimexFuzzy, StringComparison.Ordinal) && originalTimex.Length == timexEndInclusive.Length)
+            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
             {
                 var timexCharSet = new char[timexEndInclusive.Length];
 
@@ -451,7 +451,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Parse extracted datetime mention
             pr = ParseResult(er, referenceTime);
-            if (pr == null)
+            if (pr is null)
             {
                 return null;
             }
@@ -657,7 +657,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot)
         {
-            if (slot == null)
+            if (slot is null)
             {
                 return null;
             }
@@ -669,7 +669,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var timex = slot.TimexStr;
 
             var val = (DateTimeResolutionResult)slot.Value;
-            if (val == null)
+            if (val is null)
             {
                 return null;
             }
@@ -815,7 +815,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution == null)
+            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution is null)
             {
                 var notResolved = new Dictionary<string, string>
                 {

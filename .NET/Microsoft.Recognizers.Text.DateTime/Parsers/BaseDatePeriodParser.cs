@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Data = er.Data,
                 Metadata = er.Metadata,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
@@ -455,7 +455,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (futureBegin > futureEnd)
                         {
-                            if (dateContext == null || dateContext.IsEmpty())
+                            if (dateContext is null || dateContext.IsEmpty())
                             {
                                 futureBegin = pastBegin;
                             }
@@ -467,7 +467,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (pastEnd < pastBegin)
                         {
-                            if (dateContext == null || dateContext.IsEmpty())
+                            if (dateContext is null || dateContext.IsEmpty())
                             {
                                 pastEnd = futureEnd;
                             }
@@ -759,7 +759,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Handle expressions with "now"
-            if (er == null)
+            if (er is null)
             {
                 var nowPr = ParseNowAsDate(text, referenceDate);
                 if (nowPr.Value != null)
@@ -1453,7 +1453,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     var nowPr = ParseNowAsDate(text, referenceDate);
-                    if (nowPr.Value == null || er.Count < 1)
+                    if (nowPr.Value is null || er.Count < 1)
                     {
                         return ret;
                     }
@@ -1502,7 +1502,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 pr1 = this.config.DateParser.Parse(er[0], referenceDate);
                 pr2 = this.config.DateParser.Parse(er[1], referenceDate);
-                if (pr1.Value == null || pr2.Value == null)
+                if (pr1.Value is null || pr2.Value is null)
                 {
                     return ret;
                 }
@@ -1587,7 +1587,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Length = match.Length,
                     Value = retNow,
                     Type = Constants.SYS_DATETIME_DATE,
-                    TimexStr = retNow == null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
+                    TimexStr = retNow is null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
                 };
             }
 

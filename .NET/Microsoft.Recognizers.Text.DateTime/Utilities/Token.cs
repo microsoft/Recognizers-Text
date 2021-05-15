@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            if (regex == null)
+            if (regex is null)
             {
                 return ret;
             }

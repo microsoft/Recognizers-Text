@@ -221,7 +221,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private Metadata AssignModMetadata(Metadata metadata)
         {
-            if (metadata == null)
+            if (metadata is null)
             {
                 metadata = new Metadata { HasMod = true };
             }

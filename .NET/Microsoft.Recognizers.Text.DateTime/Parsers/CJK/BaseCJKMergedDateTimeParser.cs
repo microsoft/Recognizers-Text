@@ -161,7 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var res = new Dictionary<string, object>();
 
             var val = (DateTimeResolutionResult)slot.Value;
-            if (val == null)
+            if (val is null)
             {
                 return null;
             }
@@ -389,7 +389,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er.Type is Constants.SYS_DATETIME_DATE)
             {
                 pr = config.DateParser.Parse(er, referenceTime);
-                if (pr.Value == null)
+                if (pr.Value is null)
                 {
                     pr = config.HolidayParser.Parse(er, referenceTime);
                 }

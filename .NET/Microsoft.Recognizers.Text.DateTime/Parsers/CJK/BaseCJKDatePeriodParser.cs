@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
@@ -1265,7 +1265,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // @TODO Refactor code to remove the cycle between BaseDatePeriodParser and its config.
                 var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
 
-                if (pr1.Value == null || pr2.Value == null)
+                if (pr1.Value is null || pr2.Value is null)
                 {
                     return ret;
                 }
@@ -1298,7 +1298,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) &&
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
                 futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
                 futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {

@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
@@ -722,7 +722,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // cases with time1 = time2 are excluded to avoid parsing here expressions like
             // "morning-morning" (which in Hindi means "early-morning")
-            if (pr1.Value == null || pr2.Value == null || pr1.Text == pr2.Text)
+            if (pr1.Value is null || pr2.Value is null || pr1.Text == pr2.Text)
             {
                 return ret;
             }

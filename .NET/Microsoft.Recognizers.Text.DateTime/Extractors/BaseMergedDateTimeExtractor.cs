@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private Metadata AssignModMetadata(Metadata metadata)
         {
-            if (metadata == null)
+            if (metadata is null)
             {
                 metadata = new Metadata { HasMod = true };
             }
@@ -376,7 +376,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 var nextStr = afterStr.Trim().Substring(match.Length).Trim();
                                 var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text, StringComparison.Ordinal))
+                                if (nextEr is null || !nextStr.StartsWith(nextEr.Text, StringComparison.Ordinal))
                                 {
                                     isFollowedByOtherEntity = false;
                                 }

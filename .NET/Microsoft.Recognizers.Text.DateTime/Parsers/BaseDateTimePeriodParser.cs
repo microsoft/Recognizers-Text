@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value is null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
@@ -320,7 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var timePeriodParseResult = timePeriodErs.Count > 0 ? Config.TimePeriodParser.Parse(timePeriodErs[0]) : null;
                         var timePeriodResolutionResult = timePeriodErs.Count > 0 ? (DateTimeResolutionResult)timePeriodParseResult.Value : null;
 
-                        if (timePeriodResolutionResult == null)
+                        if (timePeriodResolutionResult is null)
                         {
                             return ParsePureNumberCases(text, referenceTime);
                         }
@@ -663,7 +663,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var timePeriodParseResult = Config.TimePeriodParser.Parse(ers[0]);
                 var timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.Value;
 
-                if (timePeriodResolutionResult == null)
+                if (timePeriodResolutionResult is null)
                 {
                     return ParsePureNumberCases(text, referenceTime);
                 }
@@ -1075,7 +1075,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            if (pr1.Value == null || pr2.Value == null)
+            if (pr1.Value is null || pr2.Value is null)
             {
                 return ret;
             }
