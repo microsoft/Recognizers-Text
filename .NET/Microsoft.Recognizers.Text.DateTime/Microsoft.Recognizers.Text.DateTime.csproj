@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;net462</TargetFrameworks>
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
+    <LangVersion>9</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
