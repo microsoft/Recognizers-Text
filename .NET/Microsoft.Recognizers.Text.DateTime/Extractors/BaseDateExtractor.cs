@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool IsMultipleDurationDate(ExtractResult er)
         {
-            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+            return er.Data != null && er.Data.ToString() is Constants.MultipleDuration_Date;
         }
 
         private static bool IsMultipleDuration(ExtractResult er)
@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "more than 3 days", "less than 4 weeks"
         private static bool IsInequalityDuration(ExtractResult er)
         {
-            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
+            return er.Data != null && (er.Data.ToString() is Constants.MORE_THAN_MOD or Constants.LESS_THAN_MOD);
         }
 
         private List<ExtractResult> ExtractImpl(string text, DateObject reference)

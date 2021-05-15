@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -275,7 +270,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             rightTime = rightTime.AddSeconds(second);
 
             // the right side time contains "ampm", while the left side doesn't
-            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) &&
+            if (rightResult.Comment is Constants.Comment_AmPm &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
                 rightTime = rightTime.AddHours(Constants.HalfDayHourCount);
