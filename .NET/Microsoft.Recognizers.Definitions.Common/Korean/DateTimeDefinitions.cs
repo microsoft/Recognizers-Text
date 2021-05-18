@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DynastyYearRegex = $@"(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{{1,3}}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){{0,3}}))";
       public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}|[일이]천{ZeroToNineIntegerRegexCJK}{{1,2}}))";
       public const string WeekDayRegex = @"(?<weekday>일요일|월요일|화요일|수요일|목요일|금요일|토요일)";
+      public const string WeekDayStartEnd = @"^[.]";
       public const string LunarRegex = @"음력";
       public static readonly string DateThisRegex = $@"(이번(\s+)?(주\s+)?){WeekDayRegex}";
       public static readonly string DateLastRegex = $@"((저번|지난)(\s+)?(주\s+)?){WeekDayRegex}";
