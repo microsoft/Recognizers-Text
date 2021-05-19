@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string BetweenRegex = @"(entre\s*([oa](s)?)?)";
       public const string WeekDayRegex = @"\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\b(\.?(?=\s|,|;|$)))";
       public static readonly string OnRegex = $@"(?<=\b(em|no)\s+)({DayRegex}s?)\b";
-      public static readonly string RelaxedOnRegex = $@"(?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?({DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|{MonthRegex}))";
+      public static readonly string RelaxedOnRegex = $@"(?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?({DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|(de\s+)?{MonthRegex}))";
       public static readonly string ThisRegex = $@"\b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b";
       public static readonly string LastDateRegex = $@"\b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a|na|da)\s+([uú]ltima\s+)?semana)))\b";
       public static readonly string NextDateRegex = $@"\b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}((\s+(pr[oó]xim[oa]|seguinte))|(\s+(da\s+)?(semana\s+seguinte|pr[oó]xima\s+semana))))\b";

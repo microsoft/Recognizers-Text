@@ -145,7 +145,7 @@ OnRegex: !nestedRegex
   def: (?<=\b(em|no)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
 RelaxedOnRegex: !nestedRegex
-  def: (?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?({DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|{MonthRegex}))
+  def: (?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?({DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|(de\s+)?{MonthRegex}))
   references: [ DayRegex, MonthRegex ]
 ThisRegex: !nestedRegex
   def: \b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b
