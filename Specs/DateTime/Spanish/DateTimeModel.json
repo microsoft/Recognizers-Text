@@ -21036,7 +21036,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "martes 6",
