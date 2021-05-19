@@ -511,7 +511,7 @@ ForTheRegex: !nestedRegex
   def: \b(für\s+den\s+{FlexibleDayRegex}(?<end>\s*(,|\.(?!(\d|\s?{WrittenMonthRegex}))|!|\?|$)))
   references: [FlexibleDayRegex, WrittenMonthRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+((de(r|n))\s+{FlexibleDayRegex})\b
+  def: \b{WeekDayRegex}(\s*,)?\s+((de(r|n))\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b

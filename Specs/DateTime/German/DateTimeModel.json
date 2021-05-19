@@ -4056,5 +4056,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Mein nächstes Gehalt ist Dienstag, der 25..",
+    "Context": {
+      "ReferenceDateTime": "2021-05-04T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dienstag, der 25",
+        "Start": 25,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-25",
+              "type": "date",
+              "value": "2021-05-25"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
