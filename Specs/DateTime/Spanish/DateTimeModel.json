@@ -21006,5 +21006,58 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Mi próximo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Mi pasado",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Este mi ultimo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Mi próximo sueldo será el martes 6",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "martes 6",
+        "Start": 26,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2016-09-06"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2016-12-06"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

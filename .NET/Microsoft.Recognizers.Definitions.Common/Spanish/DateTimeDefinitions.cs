@@ -604,7 +604,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string[] DurationDateRestrictions = { @"hoy" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"^mi$", @"\bmi\b" },
+            { @"^(este\s+)?mi(\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\s+viene))?$", @"\b(este\s+)?mi(\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\s+viene))?\b" },
             { @"^a[nñ]o$", @"(?<!el\s+)a[nñ]o" },
             { @"^semana$", @"(?<!la\s+)semana" },
             { @"^mes$", @"(?<!el\s+)mes" },
