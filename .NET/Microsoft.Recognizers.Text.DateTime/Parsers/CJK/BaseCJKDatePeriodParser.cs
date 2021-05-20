@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -14,8 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
         private static bool inclusiveEndPeriod = false;
-
-        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly ICJKDatePeriodParserConfiguration config;
 
@@ -980,7 +976,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (swift >= -1)
                     {
-                        year = year + swift;
+                        year += swift;
                         ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
                         futureYear = pastYear = year;
                     }
@@ -1298,7 +1294,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) &&
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
                 futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
                 futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
@@ -1342,19 +1338,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         switch (unitStr)
                         {
                             case Constants.TimexDay:
-                                beginDate = referenceDate.AddDays(-double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexWeek:
-                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexMonthFull:
-                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexYear:
-                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             default:

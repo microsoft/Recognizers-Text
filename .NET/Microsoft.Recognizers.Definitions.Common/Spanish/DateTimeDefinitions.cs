@@ -686,6 +686,11 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         {
             @"semana"
         };
+      public static readonly IList<string> FortnightTerms = new List<string>
+        {
+            @"quincena",
+            @"la quincena"
+        };
       public static readonly IList<string> YearTerms = new List<string>
         {
             @"año",

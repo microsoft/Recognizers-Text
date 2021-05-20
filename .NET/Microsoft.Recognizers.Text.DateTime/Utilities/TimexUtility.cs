@@ -46,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             { DatePeriodTimexType.ByDay, Constants.TimexDay },
             { DatePeriodTimexType.ByWeek, Constants.TimexWeek },
+            { DatePeriodTimexType.ByFortnight, Constants.TimexFortnight },
             { DatePeriodTimexType.ByMonth, Constants.TimexMonth },
             { DatePeriodTimexType.ByYear, Constants.TimexYear },
         };
@@ -427,6 +428,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     unitCount = (end - begin).TotalDays.ToString(CultureInfo.InvariantCulture);
                     break;
                 case DatePeriodTimexType.ByWeek:
+                    unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
+                    break;
+                case DatePeriodTimexType.ByFortnight:
                     unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
                     break;
                 case DatePeriodTimexType.ByMonth:

@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Utilities;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {

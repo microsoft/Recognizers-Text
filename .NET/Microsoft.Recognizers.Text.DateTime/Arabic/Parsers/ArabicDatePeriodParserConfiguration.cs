@@ -333,6 +333,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
                    (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
+        public bool IsFortnight(string text)
+        {
+            return false;
+        }
+
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();

@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex AnUnitRegex { get; }
 
+        public Regex PrefixArticleRegex { get; } = null;
+
         public Regex DuringRegex { get; }
 
         public Regex AllDateUnitRegex { get; }

@@ -338,6 +338,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
+        public bool IsFortnight(string text)
+        {
+            return false;
+        }
+
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -363,13 +364,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = result;
             }
 
-            // handle "during/for the day/week/month/year"
-            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
-                TryGetResultFromRegex(config.DuringRegex, text, "1", out result))
-            {
-                ret = result;
-            }
-
             // handle "half day", "half year"
             if (TryGetResultFromRegex(config.HalfDateUnitRegex, text, "0.5", out result))
             {
@@ -380,6 +374,41 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (TryGetResultFromRegex(config.FollowedUnit, text, "1", out result))
             {
                 ret = result;
+            }
+
+            // handle "during/for the day/week/month/year"
+            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
+                TryGetResultFromRegex(config.DuringRegex, text, "1", out result))
+            {
+                ret = result;
+            }
+            else
+            {
+                // handle cases like "the hour", which are special durations always not in CalendarMode
+                if ((this.config.Options & DateTimeOptions.CalendarMode) == 0)
+                {
+                    var regex = this.config.PrefixArticleRegex;
+
+                    if (regex != null)
+                    {
+                        var match = RegExpUtility.MatchBegin(regex, text, false);
+                        if (match.Success)
+                        {
+                            var srcUnit = text.Substring(match.Length);
+                            if (this.config.UnitValueMap.ContainsKey(srcUnit))
+                            {
+                                var numStr = "1";
+                                var unitStr = this.config.UnitMap[srcUnit];
+                                var numVal = double.Parse(numStr, CultureInfo.InvariantCulture);
+
+                                ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                                ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
+                                ret.Success = true;
+                            }
+                        }
+                    }
+                }
+
             }
 
             return ret;

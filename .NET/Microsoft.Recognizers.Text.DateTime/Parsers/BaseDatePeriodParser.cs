@@ -1036,35 +1036,44 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     swift = this.config.GetSwiftDayOrMonth(trimmedText);
-                    var isWorkingWeek = match.Groups["business"].Success;
 
-                    if (this.config.IsWeekOnly(trimmedText) || isWorkingWeek)
+                    var isWorkingWeek = match.Groups["business"].Success;
+                    var isFortnight = this.config.IsFortnight(trimmedText);
+
+                    if (isWorkingWeek || this.config.IsWeekOnly(trimmedText) || isFortnight)
                     {
-                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
+                        var delta = Constants.WeekDayCount * swift;
+                        var endDelta = delta;
+
+                        if (isFortnight)
+                        {
+                            endDelta = Constants.WeekDayCount; // One more week
+                        }
+
+                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(delta);
                         var endDay = isWorkingWeek ? DayOfWeek.Friday : DayOfWeek.Sunday;
 
-                        ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
-                        var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
-                        var endDate = inclusiveEndPeriod
-                                        ? referenceDate.This(endDay).AddDays(Constants.WeekDayCount * swift)
-                                        : referenceDate.This(endDay).AddDays(Constants.WeekDayCount * swift).AddDays(1);
+                        var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(delta);
+                        var endDate = inclusiveEndPeriod ?
+                                      referenceDate.This(endDay).AddDays(endDelta) :
+                                      referenceDate.This(endDay).AddDays(endDelta).AddDays(1);
 
                         if (earlyPrefix)
                         {
-                            endDate = inclusiveEndPeriod
-                                        ? referenceDate.This(DayOfWeek.Wednesday).AddDays(Constants.WeekDayCount * swift)
-                                        : referenceDate.This(DayOfWeek.Wednesday).AddDays(Constants.WeekDayCount * swift).AddDays(1);
+                            endDate = inclusiveEndPeriod ?
+                                      referenceDate.This(DayOfWeek.Wednesday).AddDays(endDelta) :
+                                      referenceDate.This(DayOfWeek.Wednesday).AddDays(endDelta).AddDays(1);
                         }
                         else if (midPrefix)
                         {
-                            beginDate = referenceDate.This(DayOfWeek.Tuesday).AddDays(Constants.WeekDayCount * swift);
-                            endDate = inclusiveEndPeriod
-                                        ? referenceDate.This(DayOfWeek.Friday).AddDays(Constants.WeekDayCount * swift)
-                                        : referenceDate.This(DayOfWeek.Friday).AddDays(Constants.WeekDayCount * swift).AddDays(1);
+                            beginDate = referenceDate.This(DayOfWeek.Tuesday).AddDays(delta);
+                            endDate = inclusiveEndPeriod ?
+                                      referenceDate.This(DayOfWeek.Friday).AddDays(endDelta) :
+                                      referenceDate.This(DayOfWeek.Friday).AddDays(endDelta).AddDays(1);
                         }
                         else if (latePrefix)
                         {
-                            beginDate = referenceDate.This(DayOfWeek.Thursday).AddDays(Constants.WeekDayCount * swift);
+                            beginDate = referenceDate.This(DayOfWeek.Thursday).AddDays(delta);
                         }
 
                         if (earlierPrefix && swift == 0)
@@ -1082,6 +1091,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                         }
 
+                        if (isFortnight)
+                        {
+                            ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDate, endDate, DatePeriodTimexType.ByFortnight);
+                        }
+                        else
+                        {
+                            ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
+                        }
+
                         if (latePrefix && swift != 0)
                         {
                             ret.Mod = Constants.LATE_MOD;
@@ -1092,6 +1110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 new Tuple<DateObject, DateObject>(beginDate, endDate);
 
                         ret.Success = true;
+
                         return ret;
                     }
 
