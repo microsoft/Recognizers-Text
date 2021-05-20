@@ -1047,7 +1047,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (isFortnight)
                         {
-                            endDelta = Constants.WeekDayCount; // One more week
+                            // One more week
+                            delta *= 2;
+                            endDelta = delta + Constants.WeekDayCount;
                         }
 
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(delta);
