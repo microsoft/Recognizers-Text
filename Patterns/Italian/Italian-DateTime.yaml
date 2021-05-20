@@ -235,11 +235,11 @@ DateExtractor3: !nestedRegex
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex, BaseDateTime.FourDigitYearRegex ]
 # The final lookahead in DateExtractor4|5|7|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017"  
 DateExtractor4: !nestedRegex
-  def: \b((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor6: !nestedRegex
   def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
   references: [MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
