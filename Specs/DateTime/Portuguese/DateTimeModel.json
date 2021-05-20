@@ -1825,5 +1825,53 @@
         "End": 34
       }
     ]
+  },
+  {
+    "Input": "meu próximo salário será terça-feira dia 25",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "terça-feira dia 25",
+        "Start": 25,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meu próximo salário será terça-feira dia vinte e cinco",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "terça-feira dia vinte e cinco",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
