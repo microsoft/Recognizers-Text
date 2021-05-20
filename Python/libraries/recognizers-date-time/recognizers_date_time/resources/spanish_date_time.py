@@ -553,7 +553,7 @@ class SpanishDateTime:
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = [r'hoy']
-    AmbiguityFiltersDict = dict([("^mi$", "\\bmi\\b"),
+    AmbiguityFiltersDict = dict([("^(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?$", "\\b(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?\\b"),
                                  ("^a[nñ]o$", "(?<!el\\s+)a[nñ]o"),
                                  ("^semana$", "(?<!la\\s+)semana"),
                                  ("^mes$", "(?<!el\\s+)mes"),
@@ -572,6 +572,7 @@ class SpanishDateTime:
     MonthToDateTerms = [r'mes a la fecha', r'meses a la fecha']
     WeekendTerms = [r'finde', r'fin de semana', r'fines de semana']
     WeekTerms = [r'semana']
+    FortnightTerms = [r'quincena', r'la quincena']
     YearTerms = [r'año', r'años']
     YearToDateTerms = [r'año a la fecha', r'años a la fecha']
     SpecialCharactersEquivalent = dict([("á", "a"),

@@ -161,6 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexMonth = "M";
         public const string TimexMonthFull = "MON";
         public const string TimexWeek = "W";
+        public const string TimexFortnight = "W"; // Unit calculation comes from code
         public const string TimexDay = "D";
         public const string TimexBusinessDay = "BD";
         public const string TimexWeekend = "WE";

@@ -314,6 +314,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                    ThisPrefixRegex.IsMatch(trimmedText) || NextSuffixRegex.IsMatch(trimmedText) || PastSuffixRegex.IsMatch(trimmedText)));
         }
 
+        public bool IsFortnight(string text)
+        {
+            return false;
+        }
+
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim();

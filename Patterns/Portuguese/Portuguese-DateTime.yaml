@@ -971,6 +971,10 @@ WeekTerms: !list
   types: [ string ]
   entries:
     - semana
+FortnightTerms: !list
+  types: [ string ]
+  entries:
+    - quinzena
 YearTerms: !list
   types: [ string ]
   entries:

@@ -326,6 +326,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o));
         }
 
+        public bool IsFortnight(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.FortnightTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
+        }
+
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();

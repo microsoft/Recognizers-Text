@@ -69,7 +69,7 @@ export namespace PortugueseDateTime {
     export const BetweenRegex = `(entre\\s*([oa](s)?)?)`;
     export const WeekDayRegex = `\\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\\b(\\.?(?=\\s|,|;|$)))`;
     export const OnRegex = `(?<=\\b(em|no)\\s+)(${DayRegex}s?)\\b`;
-    export const RelaxedOnRegex = `(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?(${DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|${MonthRegex}))`;
+    export const RelaxedOnRegex = `(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?(${DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?${MonthRegex}))`;
     export const ThisRegex = `\\b(([nd]?es[st][ea]\\s*)${WeekDayRegex})|(${WeekDayRegex}\\s*([nd]?es[st]a\\s+semana))\\b`;
     export const LastDateRegex = `\\b(([uú]ltim[ao])\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+(([nd]?es[st]a|na|da)\\s+([uú]ltima\\s+)?semana)))\\b`;
     export const NextDateRegex = `\\b(((pr[oó]xim[oa]|seguinte)\\s*)${WeekDayRegex})|(${WeekDayRegex}((\\s+(pr[oó]xim[oa]|seguinte))|(\\s+(da\\s+)?(semana\\s+seguinte|pr[oó]xima\\s+semana))))\\b`;
@@ -253,6 +253,7 @@ export namespace PortugueseDateTime {
     export const MonthToDateTerms = [ "mes ate agora","mes ate hoje","mes ate a data" ];
     export const WeekendTerms = [ "fim de semana" ];
     export const WeekTerms = [ "semana" ];
+    export const FortnightTerms = [ "quinzena" ];
     export const YearTerms = [ "ano","anos" ];
     export const YearToDateTerms = [ "ano ate agora","ano ate hoje","ano ate a data","anos ate agora","anos ate hoje","anos ate a data" ];
     export const SpecialCharactersEquivalent: ReadonlyMap<string, string> = new Map<string, string>([["á", "a"],["é", "e"],["í", "i"],["ó", "o"],["ú", "u"],["ê", "e"],["ô", "o"],["ü", "u"],["ã", "a"],["õ", "o"],["ç", "c"]]);

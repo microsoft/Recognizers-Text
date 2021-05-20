@@ -13,6 +13,11 @@
         ByWeek,
 
         /// <summary>
+        /// Represents a fortnight Period
+        /// </summary>
+        ByFortnight,
+
+        /// <summary>
         /// Represents a month Period
         /// </summary>
         ByMonth,

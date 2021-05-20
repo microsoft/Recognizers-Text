@@ -431,8 +431,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(equalMatch.Length);
                     modStr = equalMatch.Value;
                 }
-                else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) &&
-                          Config.YearRegex.Match(er.Text).Success) ||
+                else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && Config.YearRegex.Match(er.Text).Success) ||
                          er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
                          er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {

@@ -39,6 +39,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static IList<string> weekTermsPadded =
             DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
 
+        private static IList<string> fortnightTermsPadded =
+            DateTimeDefinitions.FortnightTerms.Select(str => $" {str} ").ToList();
+
         private static IList<string> yearTermsPadded =
             DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
@@ -331,6 +334,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.FortnightTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
+                   (fortnightTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearOnly(string text)

@@ -20259,5 +20259,167 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be offline for the hour",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the hour",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The same story played out in Kolkata, the capital city of the eastern state of West Bengal, a fortnight later.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a fortnight later",
+        "Start": 92,
+        "End": 108,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-06-03",
+              "type": "date",
+              "value": "2021-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "in a fortnight’s time",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in a fortnight",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-06-03",
+              "type": "date",
+              "value": "2021-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'm unavailable the fortnight",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the fortnight",
+        "Start": 16,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-05-17,2021-05-31,P2W)",
+              "type": "daterange",
+              "start": "2021-05-17",
+              "end": "2021-05-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mumbai has seen the highest number of daily infections over the past fortnight",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "daily",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "past fortnight",
+        "Start": 64,
+        "End": 77,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-05-03,2021-05-17,P2W)",
+              "type": "daterange",
+              "start": "2021-05-03",
+              "end": "2021-05-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We hope to leave in the next fortnight.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next fortnight",
+        "Start": 24,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-05-31,2021-06-14,P2W)",
+              "type": "daterange",
+              "start": "2021-05-31",
+              "end": "2021-06-14"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

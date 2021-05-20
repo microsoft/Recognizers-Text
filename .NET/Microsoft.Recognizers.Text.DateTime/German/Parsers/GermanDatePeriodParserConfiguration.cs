@@ -320,6 +320,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
+        public bool IsFortnight(string text)
+        {
+            return false;
+        }
+
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();

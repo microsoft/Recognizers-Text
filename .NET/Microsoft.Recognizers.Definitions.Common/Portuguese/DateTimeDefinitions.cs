@@ -600,6 +600,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         {
             @"semana"
         };
+      public static readonly IList<string> FortnightTerms = new List<string>
+        {
+            @"quinzena"
+        };
       public static readonly IList<string> YearTerms = new List<string>
         {
             @"ano",
