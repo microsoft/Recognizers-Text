@@ -178,7 +178,7 @@ public class PortugueseDateTime {
     public static final String OnRegex = "(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
 
-    public static final String RelaxedOnRegex = "(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|{MonthRegex}))"
+    public static final String RelaxedOnRegex = "(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?{MonthRegex}))"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
 
@@ -976,6 +976,8 @@ public class PortugueseDateTime {
     public static final List<String> WeekendTerms = Arrays.asList("fim de semana");
 
     public static final List<String> WeekTerms = Arrays.asList("semana");
+
+    public static final List<String> FortnightTerms = Arrays.asList("quinzena");
 
     public static final List<String> YearTerms = Arrays.asList("ano", "anos");
 

@@ -1165,7 +1165,7 @@ public class SpanishDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList("hoy");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("^mi$", "\\bmi\\b")
+        .put("^(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?$", "\\b(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?\\b")
         .put("^a[nñ]o$", "(?<!el\\s+)a[nñ]o")
         .put("^semana$", "(?<!la\\s+)semana")
         .put("^mes$", "(?<!el\\s+)mes")
@@ -1199,6 +1199,8 @@ public class SpanishDateTime {
     public static final List<String> WeekendTerms = Arrays.asList("finde", "fin de semana", "fines de semana");
 
     public static final List<String> WeekTerms = Arrays.asList("semana");
+
+    public static final List<String> FortnightTerms = Arrays.asList("quincena", "la quincena");
 
     public static final List<String> YearTerms = Arrays.asList("año", "años");
 

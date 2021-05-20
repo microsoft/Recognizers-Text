@@ -273,7 +273,7 @@ export namespace SpanishDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [ "hoy" ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^mi$", "\\bmi\\b"],["^a[nñ]o$", "(?<!el\\s+)a[nñ]o"],["^semana$", "(?<!la\\s+)semana"],["^mes$", "(?<!el\\s+)mes"],["^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?$", "\\b(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?\\b"],["^a[nñ]o$", "(?<!el\\s+)a[nñ]o"],["^semana$", "(?<!la\\s+)semana"],["^mes$", "(?<!el\\s+)mes"],["^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
     export const MorningTermList = [ "mañana","la mañana" ];
     export const AfternoonTermList = [ "pasado mediodia","pasado el mediodia","pasado mediodía","pasado el mediodía","pasado medio dia","pasado el medio dia","pasado medio día","pasado el medio día" ];
@@ -288,6 +288,7 @@ export namespace SpanishDateTime {
     export const MonthToDateTerms = [ "mes a la fecha","meses a la fecha" ];
     export const WeekendTerms = [ "finde","fin de semana","fines de semana" ];
     export const WeekTerms = [ "semana" ];
+    export const FortnightTerms = [ "quincena","la quincena" ];
     export const YearTerms = [ "año","años" ];
     export const YearToDateTerms = [ "año a la fecha","años a la fecha" ];
     export const SpecialCharactersEquivalent: ReadonlyMap<string, string> = new Map<string, string>([["á", "a"],["é", "e"],["í", "i"],["ó", "o"],["ú", "u"]]);

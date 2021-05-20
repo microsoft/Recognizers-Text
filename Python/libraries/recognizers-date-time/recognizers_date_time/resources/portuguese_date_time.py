@@ -72,7 +72,7 @@ class PortugueseDateTime:
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'
     WeekDayRegex = f'\\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\\b(\\.?(?=\\s|,|;|$)))'
     OnRegex = f'(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b'
-    RelaxedOnRegex = f'(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|{MonthRegex}))'
+    RelaxedOnRegex = f'(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?{MonthRegex}))'
     ThisRegex = f'\\b(([nd]?es[st][ea]\\s*){WeekDayRegex})|({WeekDayRegex}\\s*([nd]?es[st]a\\s+semana))\\b'
     LastDateRegex = f'\\b(([uú]ltim[ao])\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+(([nd]?es[st]a|na|da)\\s+([uú]ltima\\s+)?semana)))\\b'
     NextDateRegex = f'\\b(((pr[oó]xim[oa]|seguinte)\\s*){WeekDayRegex})|({WeekDayRegex}((\\s+(pr[oó]xim[oa]|seguinte))|(\\s+(da\\s+)?(semana\\s+seguinte|pr[oó]xima\\s+semana))))\\b'
@@ -491,6 +491,7 @@ class PortugueseDateTime:
     MonthToDateTerms = [r'mes ate agora', r'mes ate hoje', r'mes ate a data']
     WeekendTerms = [r'fim de semana']
     WeekTerms = [r'semana']
+    FortnightTerms = [r'quinzena']
     YearTerms = [r'ano', r'anos']
     YearToDateTerms = [r'ano ate agora', r'ano ate hoje', r'ano ate a data', r'anos ate agora', r'anos ate hoje', r'anos ate a data']
     SpecialCharactersEquivalent = dict([("á", "a"),
