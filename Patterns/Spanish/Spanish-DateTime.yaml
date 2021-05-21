@@ -377,8 +377,10 @@ TimeRegex9: !nestedRegex
   # once (y)? veinticinco
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(y\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
-#TimeRegex10: !simpleRegex
+TimeRegex10: !simpleRegex
+# This pattern does not represent time
 #  def: (a\s+la|al)\s+(madrugada|mañana|tarde|noche)
+  def: ^[\.]
 TimeRegex11: !nestedRegex
   # (tres menos veinte) (pm)?
   def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
