@@ -71,6 +71,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string MonthOfRegex = @"(mes)(\s*)((do|da|de))";
       public const string RangeUnitRegex = @"\b(?<unit>anos?|meses|m[êe]s|semanas?)\b";
       public const string BeforeAfterRegex = @"^[.]";
+      public const string UpcomingPrefixRegex = @".^";
+      public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b";
       public const string InConnectorRegex = @"\b(em)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
       public static readonly string WithinNextPrefixRegex = $@"\b(dentro\s+d(e|as)(\s+(?<next>{NextPrefixRegex}))?)\b";
@@ -496,8 +498,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string TimeTokenPrefix = @"as ";
       public const string TokenBeforeDate = @"o ";
       public const string TokenBeforeTime = @"as ";
-      public const string UpcomingPrefixRegex = @".^";
-      public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b";
       public const string PastPrefixRegex = @".^";
       public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"([nd]?es[st][ea])\b";

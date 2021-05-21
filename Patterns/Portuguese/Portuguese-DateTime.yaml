@@ -124,6 +124,12 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>anos?|meses|m[êe]s|semanas?)\b
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+NextPrefixRegex: !nestedRegex
+  def: (pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b
+  references: [ UpcomingPrefixRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(em)\b
 SinceYearSuffixRegex: !simpleRegex
@@ -821,12 +827,6 @@ DateTokenPrefix: 'em '
 TimeTokenPrefix: 'as '
 TokenBeforeDate: 'o '
 TokenBeforeTime: 'as '
-UpcomingPrefixRegex: !simpleRegex
-  def: .^
-# TODO: modify below regex according to the counterpart in English
-NextPrefixRegex: !nestedRegex
-  def: (pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b
-  references: [ UpcomingPrefixRegex ]
 PastPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
