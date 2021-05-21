@@ -20,6 +20,8 @@ RangePrefixRegex: !simpleRegex
   def: (du|depuis|des?|entre)
 DayRegex: !simpleRegex
   def: (?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)
+WrittenDayRegex: !simpleRegex
+  def: (?<day>((vingt|trente)(\s*-\s*|\s+)et(\s*-\s*|\s+))?un|(vingt(\s*-\s*|\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)
 MonthNumRegex: !simpleRegex
   def: (?<month>1[0-2]|(0)?[1-9])\b
 SpecialDescRegex: !simpleRegex
@@ -524,8 +526,8 @@ ForTheRegex: !nestedRegex
   def: \b(((pour le {FlexibleDayRegex})|(dans (le\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))
   references: [FlexibleDayRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b
-  references: [WeekDayRegex, FlexibleDayRegex]
+  def: \b({WeekDayRegex}\s+(le\s+{FlexibleDayRegex})|le\s+(?<DayOfMonth>{DayRegex}|{WrittenDayRegex})\s+{WeekDayRegex})\b
+  references: [WeekDayRegex, FlexibleDayRegex, DayRegex, WrittenDayRegex]
 WeekDayAndDayRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]

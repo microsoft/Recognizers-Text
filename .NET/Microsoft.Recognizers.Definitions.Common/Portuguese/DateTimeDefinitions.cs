@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string TillRegex = @"(?<till>\b(at[eé]h?|[aà]s|ao?)\b|--|-|—|——)(\s+\b(o|[aà](s)?)\b)?";
       public static readonly string RangeConnectorRegex = $@"(?<and>(e\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?=\b|t)";
+      public const string WrittenDayRegex = @"(?<day>(vinte\s+e\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\s+e\s+um)?)";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
       public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
@@ -86,7 +87,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string SpecialDayRegex = @"\b((d?o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((d?o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|ontem|amanh[ãa]|hoje)|(do\s+dia$)\b";
       public const string SpecialDayWithNumRegex = @"^[.]";
       public const string ForTheRegex = @".^";
-      public const string WeekDayAndDayOfMonthRegex = @".^";
+      public static readonly string FlexibleDayRegex = $@"(?<DayOfMonth>([a-z]+\s)?({WrittenDayRegex}|{DayRegex}))";
+      public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(dia\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+({DayRegex})(?!([-:/]|\.\d|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
       public const string RelativeWeekDayRegex = @"^[.]";
@@ -453,7 +455,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"vinte e sete", 27 },
             { @"vinte e oito", 28 },
             { @"vinte e nove", 29 },
-            { @"trinta", 30 }
+            { @"trinta", 30 },
+            { @"trinta e um", 31 }
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {

@@ -369,7 +369,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (matchCase.Success)
                         {
                             var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
-                            if (ordinalNum == result.Text)
+                            if (ordinalNum == result.Text && matchCase.Groups["DayOfMonth"].Index == result.Start)
                             {
                                 // Get week of day for the ordinal number which is regarded as a date of reference month
                                 var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
@@ -379,24 +379,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
 
-                                // Calculate matchLength considering that matchCase can precede or follow result
-                                var matchLength = matchCase.Index < result.Start ?
-                                                      result.Start + result.Length - matchCase.Index :
-                                                      matchCase.Index + matchCase.Length - result.Start;
-
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
-                                    matchCase.Length == matchLength)
+                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
                                 {
-
-                                    if (matchCase.Index < result.Start)
-                                    {
-                                        ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
-                                    }
-                                    else
-                                    {
-                                        ret.Add(new Token((int)result.Start, matchCase.Index + matchCase.Length));
-                                    }
+                                    ret.Add(new Token(matchCase.Index, matchCase.Index + matchCase.Length));
 
                                     isFound = true;
                                 }

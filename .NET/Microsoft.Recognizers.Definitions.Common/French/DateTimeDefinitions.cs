@@ -32,6 +32,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string ThisPrefixRegex = @"(?<order>ce(tte)?|au\s+cours+(du|de))\b";
       public const string RangePrefixRegex = @"(du|depuis|des?|entre)";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)";
+      public const string WrittenDayRegex = @"(?<day>((vingt|trente)(\s*-\s*|\s+)et(\s*-\s*|\s+))?un|(vingt(\s*-\s*|\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
       public const string SpecialDescRegex = @"(p\b)";
       public static readonly string AmDescRegex = $@"(h\b|{BaseDateTime.BaseAmDescRegex})";
@@ -229,7 +230,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string PrepositionSuffixRegex = @"\b(du|de|[àa]|vers|dans)$";
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
       public static readonly string ForTheRegex = $@"\b(((pour le {FlexibleDayRegex})|(dans (le\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
-      public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b";
+      public static readonly string WeekDayAndDayOfMonthRegex = $@"\b({WeekDayRegex}\s+(le\s+{FlexibleDayRegex})|le\s+(?<DayOfMonth>{DayRegex}|{WrittenDayRegex})\s+{WeekDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\b(reste|fin)\s+(d[eu]\s+)?((le|ce(tte)?)\s+)?(?<duration>semaine|mois|l'ann[ée]e)\b";
       public const string RestOfDateTimeRegex = @"\b(reste|fin)\s+(d[eu]\s+)?((le|ce(tte)?)\s+)?(?<unit>jour)\b";

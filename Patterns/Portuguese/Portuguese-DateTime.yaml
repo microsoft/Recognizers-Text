@@ -9,6 +9,8 @@ RangeConnectorRegex: !nestedRegex
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 DayRegex: !simpleRegex
   def: (?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?=\b|t)
+WrittenDayRegex: !simpleRegex
+  def: (?<day>(vinte\s+e\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\s+e\s+um)?)
 MonthNumRegex: !simpleRegex
   def: (?<month>1[0-2]|(0)?[1-9])\b
 AmDescRegex: !nestedRegex
@@ -164,9 +166,12 @@ SpecialDayWithNumRegex: !simpleRegex
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: .^
-WeekDayAndDayOfMonthRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: .^
+FlexibleDayRegex: !nestedRegex
+  def: (?<DayOfMonth>([a-z]+\s)?({WrittenDayRegex}|{DayRegex}))
+  references: [WrittenDayRegex, DayRegex ]
+WeekDayAndDayOfMonthRegex: !nestedRegex
+  def: \b{WeekDayRegex}\s+(dia\s+{FlexibleDayRegex})\b
+  references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+({DayRegex})(?!([-:/]|\.\d|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
@@ -769,6 +774,7 @@ Numbers: !dictionary
     'vinte e oito': 28
     'vinte e nove': 29
     trinta: 30
+    'trinta e um': 31
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries:
