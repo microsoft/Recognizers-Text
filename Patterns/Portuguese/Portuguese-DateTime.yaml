@@ -285,10 +285,21 @@ TimeSuffix: !nestedRegex
 BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
+MidnightRegex: !simpleRegex
+  def: (?<midnight>meia\s*(-\s*)?noite)
+MidmorningRegex: !simpleRegex
+  def: (?<midmorning>meio\s+da\s+manhã)
+MidafternoonRegex: !simpleRegex
+  def: (?<midafternoon>meio\s+da\s+tarde)
+MiddayRegex: !simpleRegex
+  def: (?<midday>meio\s*(-\s*)?dia)
+MidTimeRegex: !nestedRegex
+  def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
+  references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
 AtRegex: !nestedRegex
   # "as quatro" "às 3"
-  def: \b((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?\b
-  references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex, OclockRegex ]
+  def: \b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex}|(?<=\b([àa]|ao?|na|de|da|pela)\s+)madrugada)\b
+  references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex, OclockRegex, MidTimeRegex ]
 ConnectNumRegex: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})
   references: [ BaseDateTime.HourRegex, DescRegex ]
@@ -328,8 +339,8 @@ TimeRegex9: !nestedRegex
   # onze (e)? vinte e cinco
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(e\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
-TimeRegex10: !simpleRegex
-  def: (\b([àa]|ao?)|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
+#TimeRegex10: !simpleRegex
+#  def: (\b([àa]|ao?)|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
 TimeRegex11: !nestedRegex
   # (tres menos vinte) (pm)?
   def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
