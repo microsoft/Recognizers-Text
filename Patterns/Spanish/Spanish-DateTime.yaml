@@ -330,10 +330,10 @@ BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidTimeRegex: !simpleRegex
-  def: (?<mid>((?<midnight>media\s*noche)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))
+  def: (?<mid>((?<midnight>media\s*noche)|(?<midearlymorning>media\s*madrugada)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))
 AtRegex: !nestedRegex
   # "a las cuatro" "a las 3 h?"
-  def: \b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex}|madrugada)|{MidTimeRegex})
+  def: \b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})
   references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex, DescRegex, MidTimeRegex ]
 ConnectNumRegex: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})
@@ -377,10 +377,6 @@ TimeRegex9: !nestedRegex
   # once (y)? veinticinco
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(y\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
-TimeRegex10: !simpleRegex
-# This pattern does not represent time
-#  def: (a\s+la|al)\s+(madrugada|mañana|tarde|noche)
-  def: ^[\.]
 TimeRegex11: !nestedRegex
   # (tres menos veinte) (pm)?
   def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
@@ -1016,6 +1012,8 @@ AmbiguityFiltersDict: !dictionary
     '^mes$': '(?<!el\s+)mes'
     '^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$': '([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])'
 # For TimeOfDay resolution
+EarlyMorningStartEndRegex: !simpleRegex
+  def: (^(madrugada)|(madrugada)$)
 MorningStartEndRegex: !simpleRegex
   def: (^((la\s+)?mañana))|(((la\s+)?mañana)$)
 AfternoonStartEndRegex: !simpleRegex

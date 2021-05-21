@@ -145,8 +145,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string TimeSuffix = $@"(?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))";
       public static readonly string GeneralDescRegex = $@"({DescRegex}|(?<suffix>{AmRegex}|{PmRegex}))";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
-      public const string MidTimeRegex = @"(?<mid>((?<midnight>media\s*noche)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))";
-      public static readonly string AtRegex = $@"\b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex}|madrugada)|{MidTimeRegex})";
+      public const string MidTimeRegex = @"(?<mid>((?<midnight>media\s*noche)|(?<midearlymorning>media\s*madrugada)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))";
+      public static readonly string AtRegex = $@"\b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})";
       public static readonly string ConnectNumRegex = $@"({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})";
       public static readonly string TimeRegexWithDotConnector = $@"({BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex}|\s*\bh\b)";
@@ -609,6 +609,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"^mes$", @"(?<!el\s+)mes" },
             { @"^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", @"([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])" }
         };
+      public const string EarlyMorningStartEndRegex = @"(^(madrugada)|(madrugada)$)";
       public const string MorningStartEndRegex = @"(^((la\s+)?mañana))|(((la\s+)?mañana)$)";
       public const string AfternoonStartEndRegex = @"(^(pasado\s+(el\s+)?medio\s*dia))|((pasado\s+(el\s+)?medio\s*dia)$)";
       public const string EveningStartEndRegex = @"(^(tarde))|((tarde)$)";

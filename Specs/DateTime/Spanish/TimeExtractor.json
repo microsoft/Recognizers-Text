@@ -517,13 +517,13 @@
     ]
   },
   {
-    "Input": "Volvere a la madrugada",
+    "Input": "Volvere a la media madrugada",
     "Results": [
       {
-        "Text": "madrugada",
+        "Text": "media madrugada",
         "Type": "time",
         "Start": 13,
-        "Length": 9
+        "Length": 15
       }
     ]
   },
@@ -563,12 +563,12 @@
     ]
   },
   {
-    "Input": "Volvere a la media tarde",
+    "Input": "Volvere a media tarde",
     "Results": [
       {
         "Text": "media tarde",
         "Type": "time",
-        "Start": 13,
+        "Start": 10,
         "Length": 11
       }
     ]

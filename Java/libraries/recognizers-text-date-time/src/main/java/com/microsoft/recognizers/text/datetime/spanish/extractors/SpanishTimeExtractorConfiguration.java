@@ -79,8 +79,6 @@ public class SpanishTimeExtractorConfiguration extends BaseOptionsConfiguration
             // once (y)? veinticinco
             add(RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex9));
 
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex10));
-
             // (tres menos veinte) (pm)?
             add(RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex11));
 

@@ -9,6 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex EarlyMorningStartEndRegex =
+            new Regex(DateTimeDefinitions.EarlyMorningStartEndRegex, RegexFlags);
+
         public static readonly Regex MorningStartEndRegex =
             new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
 
@@ -147,7 +150,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (AfternoonStartEndRegex.IsMatch(trimmedText))
+            if (EarlyMorningStartEndRegex.IsMatch(trimmedText))
+            {
+                timeStr = Constants.EarlyMorning;
+                beginHour = 4;
+                endHour = 8;
+            }
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = Constants.Afternoon;
                 beginHour = Constants.HalfDayHourCount;

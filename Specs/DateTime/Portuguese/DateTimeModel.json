@@ -1904,7 +1904,82 @@
     ]
   },
   {
-    "Input": "Eu voltarei da tarde",
+    "Input": "Desfrute do nosso chá da tarde",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 25,
+        "End": 29,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "São ativos de tarde",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 14,
+        "End": 18,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Por isso passei a tarde polindo prata.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 18,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Por último, na tarde lhe daremos tempo livre",
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
@@ -1929,7 +2004,7 @@
     ]
   },
   {
-    "Input": "Eu voltarei da noite",
+    "Input": "Entramos no apartamento apenas à noite.",
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
@@ -1937,8 +2012,58 @@
     "Results": [
       {
         "Text": "noite",
-        "Start": 15,
-        "End": 19,
+        "Start": 33,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "As pessoas estavam assistindo na noite do assassinato.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start": 33,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Era de noite quando todos dormiam.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start": 7,
+        "End": 11,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [

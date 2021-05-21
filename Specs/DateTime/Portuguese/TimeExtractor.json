@@ -588,7 +588,7 @@
     ]
   },
   {
-    "Input": "Voltarei de meio da manhã",
+    "Input": "Voltarei no meio da manhã",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -600,7 +600,7 @@
     ]
   },
   {
-    "Input": "Voltarei pela meio da manhã",
+    "Input": "Voltarei pelo meio da manhã",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -636,13 +636,13 @@
     ]
   },
   {
-    "Input": "Voltarei a meio da tarde",
+    "Input": "Voltarei ao meio da tarde",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "meio da tarde",
         "Type": "time",
-        "Start": 11,
+        "Start": 12,
         "Length": 13
       }
     ]
