@@ -186,10 +186,10 @@ SpecialDayWithNumRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 FlexibleDayRegex: !nestedRegex
-  def: (?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))
+  def: (?<DayOfMonth>([a-z]+\s)?({WrittenDayRegex}|{DayRegex}))
   references: [WrittenDayRegex, DayRegex ]
 ForTheRegex: !nestedRegex
-  def: \b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+)|{WeekDayRegex}\s+)((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.(?![º°ª])|!|\?|-|$))(?!\d))
+  def: \b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+)|{WeekDayRegex}\s+(el\s+)?)((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.(?![º°ª])|!|\?|-|$))(?!\d))
   references: [FlexibleDayRegex, MonthRegex, WeekDayRegex ]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((el\s+(d[ií]a\s+)?){FlexibleDayRegex})\b

@@ -21,7 +21,7 @@ RangePrefixRegex: !simpleRegex
 DayRegex: !simpleRegex
   def: (?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)
 WrittenDayRegex: !simpleRegex
-  def: (?<day>un|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt-et-un|vingt et un|vingt|vingt deux|vingt-deux|vingt trois|vingt-trois|vingt quatre|vingt-quatre|vingt cinq|vingt-cinq|vingt six|vingt-six|vingt sept|vingt-sept|vingt huit|vingt-huit|vingt neuf|vingt-neuf|trente|trente et un|trente-et-un)
+  def: (?<day>((vingt|trente)(\s*-\s*|\s+)et(\s*-\s*|\s+))?un|(vingt(\s*-\s*|\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)
 MonthNumRegex: !simpleRegex
   def: (?<month>1[0-2]|(0)?[1-9])\b
 SpecialDescRegex: !simpleRegex

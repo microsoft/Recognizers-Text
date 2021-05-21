@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string ThisPrefixRegex = @"(?<order>ce(tte)?|au\s+cours+(du|de))\b";
       public const string RangePrefixRegex = @"(du|depuis|des?|entre)";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)";
-      public const string WrittenDayRegex = @"(?<day>un|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt-et-un|vingt et un|vingt|vingt deux|vingt-deux|vingt trois|vingt-trois|vingt quatre|vingt-quatre|vingt cinq|vingt-cinq|vingt six|vingt-six|vingt sept|vingt-sept|vingt huit|vingt-huit|vingt neuf|vingt-neuf|trente|trente et un|trente-et-un)";
+      public const string WrittenDayRegex = @"(?<day>((vingt|trente)(\s*-\s*|\s+)et(\s*-\s*|\s+))?un|(vingt(\s*-\s*|\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
       public const string SpecialDescRegex = @"(p\b)";
       public static readonly string AmDescRegex = $@"(h\b|{BaseDateTime.BaseAmDescRegex})";

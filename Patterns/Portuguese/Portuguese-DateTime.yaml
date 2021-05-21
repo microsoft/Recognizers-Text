@@ -10,7 +10,7 @@ RangeConnectorRegex: !nestedRegex
 DayRegex: !simpleRegex
   def: (?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?=\b|t)
 WrittenDayRegex: !simpleRegex
-  def: (?<day>um|dois|tres|três|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|dezena|dezenas|treze|catorze|quatorze|quinze|dezesseis|dezasseis|dezessete|dezassete|dezoito|dezenove|dezanove|vinte(\s+e\s+(um|dois|duas|tres|três|quatro|cinco|seis|sete|oito|nove))?|trinta(\s+e\s+um)?)
+  def: (?<day>(vinte\s+e\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\s+e\s+um)?)
 MonthNumRegex: !simpleRegex
   def: (?<month>1[0-2]|(0)?[1-9])\b
 AmDescRegex: !nestedRegex
@@ -167,7 +167,7 @@ ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: .^
 FlexibleDayRegex: !nestedRegex
-  def: (?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))
+  def: (?<DayOfMonth>([a-z]+\s)?({WrittenDayRegex}|{DayRegex}))
   references: [WrittenDayRegex, DayRegex ]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(dia\s+{FlexibleDayRegex})\b
