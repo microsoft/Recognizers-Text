@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string TimeRegex4 = $@"\b{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
       public static readonly string TimeRegex5 = $@"\b({TimePrefix}\s+{BasicTime}|{BasicTime}\s+{TimePrefix})((\s*({DescRegex}|{TimeSuffix}))|\b)";
       public static readonly string TimeRegex6 = $@"{BasicTime}(\s*u\s*)?(\s*{DescRegex})?\s+{TimeSuffix}\b";
-      public static readonly string TimeRegex7 = $@"({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)|({WrittenTimeRegex}|{BasicTime})(\s*{DescRegex})(\s*{TimeSuffixFull})";
+      public static readonly string TimeRegex7 = $@"({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?(?<!van(avond|nacht)\s+)({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)|({WrittenTimeRegex}|{BasicTime})(\s*{DescRegex})(\s*{TimeSuffixFull})";
       public static readonly string TimeRegex8 = $@".^";
       public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s*{FivesRegex}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex10 = $@"\b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*(u\b|h))(\s*{BaseDateTime.MinuteRegex})?(\s*{DescRegex})?";
@@ -212,7 +212,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?((in\s+de)|(op\s+de))?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op\s+de|op))?\s*$";
       public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex}(\s*:\s*{BaseDateTime.MinuteRegex})?)(\s*({OclockRegex}|u))?\s*(,\s*)?((in|op)\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}";
-      public static readonly string SimpleTimeOfTodayBeforeRegex = $@"\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op(\s+de)?))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b";
+      public static readonly string SimpleTimeOfTodayBeforeRegex = $@"\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op(\s+de)?))?\s*(?<!van(avond|nacht)\s+)({HourNumRegex}|{BaseDateTime.HourRegex})\b";
       public const string SpecificEndOfRegex = @"((\baan\s+)?((de|het)\s+)?eind(e? van)?(\s+de)?\s*$|^\s*(het\s+)?einde? van(\s+de(\s+dag)))";
       public const string UnspecificEndOfRegex = @"\b(((om|rond|tegen|op)\s+)?het\s+)?(einde?\s+van\s+(de\s+)?dag)\b";
       public const string UnspecificEndOfRangeRegex = @"\b(evj)\b";
@@ -237,14 +237,14 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AllRegex = @"\b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
-      public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|paasdag|paaszondag|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)";
+      public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|paasdag|paas(zondag|maandag)|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)";
       public static readonly string HolidayList2 = $@"(?<holiday>black friday|cyber monday|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)";
       public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse|us\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)";
       public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
       public static readonly string AMTimeRegex = $@"(?<am>{ApostrofsRegex}\s*(morgens|ochtends)|in\s+de\s+(morgen|ochtend))";
       public static readonly string PMTimeRegex = $@"(?<pm>{ApostrofsRegex}\s*(middags|avonds|nachts)|(in\s+de\s+)?(deze\s+)?((na)?middag|avond|nacht))\b";
       public const string InclusiveModPrepositions = @"(?<include>((in|tegen|tijdens|op|om)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))";
-      public static readonly string BeforeRegex = $@"(\b(?<!afspraak\s*){InclusiveModPrepositions}?(voor|vóór|vooraf(gaand?)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+(op|met)|tegen|tot(dat)?|door|uiterlijk|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
+      public static readonly string BeforeRegex = $@"(\b(?<!afspraak\s*){InclusiveModPrepositions}?(voor|vóór|vooraf(gaand?)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+(op|met)|tegen|tot(dat)?|uiterlijk|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
       public static readonly string AfterRegex = $@"(\b{InclusiveModPrepositions}?((na(\s+afloop\s+van)?|(?<!niet\s+)later\s+dan)|(jaar\s+na))(?!\s+of\s+gelijk\s+aan){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)";
       public const string SinceRegex = @"(\b(sinds|na\s+of\s+gelijk\s+aan|(startend|beginnend)\s+(vanaf|op|met)|zo\s+vroeg\s+als|ieder\s+moment\s+vanaf)\b\s*)|(?<!\w|<)(>=)";
       public const string AroundRegex = @"(\b(rond(om)?|ongeveer(\s+om)?)\s*\b)";
@@ -725,6 +725,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"whitesunday", new string[] { @"pinksteren" } },
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
             { @"easterday", new string[] { @"pasen", @"paasdag", @"paaszondag" } },
+            { @"eastermonday", new string[] { @"paasmaandag" } },
             { @"fathers", new string[] { @"vaderdag" } },
             { @"goodfriday", new string[] { @"goedevrijdag" } },
             { @"mothers", new string[] { @"moederdag" } },

@@ -424,7 +424,7 @@ TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*u\s*)?(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: ({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)|({WrittenTimeRegex}|{BasicTime})(\s*{DescRegex})(\s*{TimeSuffixFull})
+  def: ({TimeSuffixFull}\s+(om\s+)?({TimePrefix}\s+)?(?<!van(avond|nacht)\s+)({WrittenTimeRegex}|{BasicTime}))((\s*{DescRegex})|\b)|({WrittenTimeRegex}|{BasicTime})(\s*{DescRegex})(\s*{TimeSuffixFull})
   references: [ TimeSuffixFull, BasicTime, DescRegex, WrittenTimeRegex, TimePrefix ]
 TimeRegex8: !nestedRegex
   def: .^
@@ -508,7 +508,7 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
   def: ({HourNumRegex}|{BaseDateTime.HourRegex}(\s*:\s*{BaseDateTime.MinuteRegex})?)(\s*({OclockRegex}|u))?\s*(,\s*)?((in|op)\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}
   references: [ HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DateTimeSpecificTimeOfDayRegex, OclockRegex ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
-  def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op(\s+de)?))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
+  def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op(\s+de)?))?\s*(?<!van(avond|nacht)\s+)({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
   def: ((\baan\s+)?((de|het)\s+)?eind(e? van)?(\s+de)?\s*$|^\s*(het\s+)?einde? van(\s+de(\s+dag)))
@@ -569,7 +569,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
 HolidayList1: !nestedRegex
-  def: (?<holiday>goede vrijdag|pasen|paasdag|paaszondag|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)
+  def: (?<holiday>goede vrijdag|pasen|paasdag|paas(zondag|maandag)|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
   def: (?<holiday>black friday|cyber monday|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)
@@ -590,7 +590,7 @@ PMTimeRegex: !nestedRegex
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((in|tegen|tijdens|op|om)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))
 BeforeRegex: !nestedRegex
-  def: (\b(?<!afspraak\s*){InclusiveModPrepositions}?(voor|vóór|vooraf(gaand?)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+(op|met)|tegen|tot(dat)?|door|uiterlijk|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)
+  def: (\b(?<!afspraak\s*){InclusiveModPrepositions}?(voor|vóór|vooraf(gaand?)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+(op|met)|tegen|tot(dat)?|uiterlijk|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)
   references: [ InclusiveModPrepositions ]
 AfterRegex: !nestedRegex
   def: (\b{InclusiveModPrepositions}?((na(\s+afloop\s+van)?|(?<!niet\s+)later\s+dan)|(jaar\s+na))(?!\s+of\s+gelijk\s+aan){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)
@@ -1156,6 +1156,7 @@ HolidayNames: !dictionary
     whitesunday: [ pinksteren ]
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     easterday: [ pasen, paasdag, paaszondag ]
+    eastermonday: [ paasmaandag ]
     fathers: [ vaderdag ]
     goodfriday: [ goedevrijdag ]
     mothers: [ moederdag ]
