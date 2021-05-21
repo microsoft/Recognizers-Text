@@ -520,14 +520,14 @@
     ]
   },
   {
-    "Input": "Vou voltar em 3 horas",
+    "Input": "Vou voltar 3 horas no futuro",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "em 3 horas",
+        "Text": "3 horas no futuro",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
@@ -541,19 +541,19 @@
           }
         },
         "Start": 11,
-        "Length": 10
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Vou voltar em 5 h",
+    "Input": "Vou voltar 5 h no futuro",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "em 5 h",
+        "Text": "5 h no futuro",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
@@ -567,7 +567,7 @@
           }
         },
         "Start": 11,
-        "Length": 6
+        "Length": 13
       }
     ]
   },
