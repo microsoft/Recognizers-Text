@@ -289,16 +289,18 @@ MidnightRegex: !simpleRegex
   def: (?<midnight>meia\s*(-\s*)?noite)
 MidmorningRegex: !simpleRegex
   def: (?<midmorning>meio\s+da\s+manhã)
+MidEarlyMorning: !simpleRegex
+  def: (?<midearlymorning>meio\s+da\s+madrugada)
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>meio\s+da\s+tarde)
 MiddayRegex: !simpleRegex
   def: (?<midday>meio\s*(-\s*)?dia)
 MidTimeRegex: !nestedRegex
-  def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
-  references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
+  def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))
+  references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex, MidEarlyMorning ]
 AtRegex: !nestedRegex
   # "as quatro" "às 3"
-  def: \b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex}|(?<=\b([àa]|ao?|na|de|da|pela)\s+)madrugada)\b
+  def: \b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b
   references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex, OclockRegex, MidTimeRegex ]
 ConnectNumRegex: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})
