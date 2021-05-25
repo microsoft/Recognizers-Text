@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res.Add(ret);
             }
 
+            res.AddRange(ImplicitDuration(source));
+
             if (this.merge)
             {
                 res = MergeMultipleDuration(source, res);
@@ -164,6 +166,43 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        private List<ExtractResult> ImplicitDuration(string text)
+        {
+            var ret = new List<Token>();
+
+            // handle "all day", "all year"
+            ret.AddRange(Token.GetTokenFromRegex(config.AllRegex, text));
+
+            // handle "half day", "half year"
+            ret.AddRange(Token.GetTokenFromRegex(config.HalfRegex, text));
+
+            // handle "next day", "last year"
+            ret.AddRange(Token.GetTokenFromRegex(config.RelativeDurationUnitRegex, text));
+
+            // handle "more day", "more year"
+            ret.AddRange(Token.GetTokenFromRegex(config.MoreOrLessRegex, text));
+
+            // handle "during/for the day/week/month/year"
+            if ((config.Options & DateTimeOptions.CalendarMode) != 0)
+            {
+                ret.AddRange(Token.GetTokenFromRegex(config.DuringRegex, text));
+            }
+
+            var result = new List<ExtractResult>();
+            foreach (var e in ret)
+            {
+                var node = new ExtractResult();
+                node.Start = e.Start;
+                node.Length = e.Length;
+                node.Text = text.Substring(node.Start ?? 0, node.Length ?? 0);
+                node.Type = ExtractorName;
+
+                result.Add(node);
+            }
+
+            return result;
         }
     }
 }

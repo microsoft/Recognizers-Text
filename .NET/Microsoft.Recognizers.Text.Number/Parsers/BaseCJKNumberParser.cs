@@ -144,6 +144,12 @@ namespace Microsoft.Recognizers.Text.Number
                 demoPart = splitResult[1];
                 numPart = splitResult[2];
             }
+            else if (splitResult.Length == 1)
+            {
+                intPart = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
+                demoPart = "2";
+                numPart = "1";
+            }
             else
             {
                 intPart = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);

@@ -123,6 +123,12 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))";
       public static readonly string DateTimePeriodFollowedUnit = $@"^\s*{DateTimePeriodUnitRegex}";
       public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}";
+      public const string DurationAllRegex = @"^[.]";
+      public const string DurationHalfRegex = @"^[.]";
+      public const string DurationRelativeDurationUnitRegex = @"^[.]";
+      public const string DurationDuringRegex = @"^[.]";
+      public const string DurationSomeRegex = @"^[.]";
+      public const string DurationMoreOrLessRegex = @"^[.]";
       public const string DurationYearRegex = @"((\d{3,4})|0\d|两千)\s*年";
       public const string DurationHalfSuffixRegex = @"半";
       public static readonly Dictionary<string, string> DurationSuffixList = new Dictionary<string, string>

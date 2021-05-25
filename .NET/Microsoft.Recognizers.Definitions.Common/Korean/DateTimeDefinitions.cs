@@ -23,9 +23,9 @@ namespace Microsoft.Recognizers.Definitions.Korean
     {
       public const string LangMarker = @"Kor";
       public const string MonthRegex = @"(?<month>정월|일월|이월|삼월|사월|오월|유월|육월|칠월|팔월|구월|십월|시월|십일월|십이월|01월|02월|03월|04월|05월|06월|07월|08월|09월|10월|11월|12월|1월|2월|3월|4월|5월|6월|7월|8월|9월)";
-      public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)";
+      public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9|하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘)";
       public const string OneToNineIntegerRegex = @"[일이삼사오육륙칠팔구]";
-      public static readonly string DateDayRegexInCJK = $@"(?<day>(([12][0-9]|3[01]|[1-9]|삼삽일?|[이]?[십]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})[일]))";
+      public static readonly string DateDayRegexInCJK = $@"(?<day>(([12][0-9]|3[01]|[1-9]|삼십일?|[이]?[십]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})[일]))";
       public static readonly string DayRegexNumInCJK = $@"(?<day>[12][0-9]|3[01]|[1-9]|삼십일?|[이]?[십]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})";
       public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)";
       public const string TwoNumYear = @"50";
@@ -44,16 +44,16 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string SpecialMonthRegex = @"^[.]";
       public const string SpecialYearRegex = @"^[.]";
       public const string SpecialDayRegex = @"(최근|그저께|그제|((내일)?\s?모레)|그끄저께|어제|내일|오늘|금일|작일|익일|당일|명일|전일)";
-      public const string SpecialDayWithNumRegex = @"^[.]";
+      public const string SpecialDayWithNumRegex = @"(하루|이틀|사흘|나흘|닷새|엿새)";
       public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex}(월|달))의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|마지막)\s*{WeekDayRegex})";
-      public const string ThisPrefixRegex = @"이번";
+      public const string ThisPrefixRegex = @"이번|금";
       public const string LastPrefixRegex = @"저번|지난";
       public const string NextPrefixRegex = @"다음";
       public static readonly string RelativeRegex = $@"(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))";
       public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})년)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})\s달의?)?{DateDayRegexInCJK}";
       public const string DateUnitRegex = @"(?<unit>년|월|주|일)";
       public const string BeforeRegex = @"이전|之前|前";
-      public const string AfterRegex = @"이후|후에|之後|后|後";
+      public const string AfterRegex = @"이?후|후에|";
       public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInCJK}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
@@ -62,15 +62,15 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}";
       public static readonly string DateRegexList7 = $@"{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{SimpleYearRegex}";
       public static readonly string DateRegexList8 = $@"{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}";
-      public const string DatePeriodTillRegex = @"(?<till>到|至|--|-|—|——|~|–)";
-      public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>与|和)";
+      public const string DatePeriodTillRegex = @"(?<till>까지|--|-|—|——|~|–)";
+      public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>까지)";
       public const string DatePeriodDayRegexInCJK = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
       public const string DatePeriodThisRegex = @"这个|这一个|这|这一|本";
       public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
       public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-      public const string HalfYearRegex = @"((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))";
-      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*년)?|({SimpleYearRegex})\s*년){HalfYearRegex}?";
+      public const string HalfYearRegex = @"(상반기|하반기)";
+      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*년)?|({SimpleYearRegex})\s*년)\s*{HalfYearRegex}?";
       public static readonly string StrictYearRegex = $@"({YearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))";
       public const string YearRegexInNumber = @"(?<year>(\d{4}))";
       public static readonly string DatePeriodYearInCJKRegex = $@"{DateYearInCJKRegex}년{HalfYearRegex}?";
@@ -103,12 +103,12 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?(?<decade>(\d0|{DecadeRegexInCJK}))年代";
       public const string PrepositionRegex = @"(?<prep>^的|在$)";
       public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)";
-      public const string NightRegex = @"(?<night>早|晚)";
+      public const string NightRegex = @"(?<night>이른|늦은)";
       public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
       public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
       public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
-      public const string HourNumRegex = @"(?<hour>[零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
+      public const string HourNumRegex = @"(?<hour>[한두세네]|다섯|여섯|일곱|여덟|아홉|스무|스물[한두세네]|열([한두세네]|다섯|여섯|일곱|여덟|아홉)?)";
       public const string ZhijianRegex = @"^\s*(之间|之内|期间|中间|间)";
       public const string DateTimePeriodThisRegex = @"这个|这一个|这|这一";
       public const string DateTimePeriodLastRegex = @"上个|上一个|上|上一";
@@ -119,37 +119,59 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))";
       public static readonly string DateTimePeriodFollowedUnit = $@"^\s*{DateTimePeriodUnitRegex}";
       public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}";
-      public const string DurationYearRegex = @"((\d{3,4})|0\d)\s*년";
+      public const string DurationAllRegex = @"(내내|종일)";
+      public const string DurationHalfRegex = @"ㅂ";
+      public const string DurationRelativeDurationUnitRegex = @"(지난|저번|작(?=년))";
+      public const string DurationDuringRegex = @"(동안)";
+      public const string DurationSomeRegex = @"(몇|여러)";
+      public const string DurationMoreOrLessRegex = @"(더|이상|이하|초과|미만)";
+      public static readonly string DurationYearRegex = $@"(\d+|{ZeroToNineIntegerRegexCJK})\s*년\s*간";
       public const string DurationHalfSuffixRegex = @"반";
       public static readonly Dictionary<string, string> DurationSuffixList = new Dictionary<string, string>
         {
             { @"M", @"분" },
             { @"S", @"초" },
             { @"H", @"시|시간" },
-            { @"D", @"일" },
-            { @"W", @"주" },
-            { @"Mon", @"월" },
-            { @"Y", @"년" }
+            { @"D", @"일|칠|날" },
+            { @"BD", @"영업일 기준으로" },
+            { @"QD", @"한나절" },
+            { @"W", @"주|주일" },
+            { @"MON", @"월|달" },
+            { @"Y", @"년" },
+            { @"P1D", @"하루" },
+            { @"P2D", @"이틀" },
+            { @"P3D", @"사흘" },
+            { @"P4D", @"나흘" },
+            { @"P5D", @"닷새" },
+            { @"P6D", @"엿새" },
+            { @"P7D", @"이레" },
+            { @"P8D", @"여드레" },
+            { @"P9D", @"아흐레" },
+            { @"P10D", @"열흘" }
         };
       public static readonly IList<string> DurationAmbiguousUnits = new List<string>
         {
             @"분",
             @"초",
+            @"시",
             @"시간",
             @"일",
             @"주",
+            @"주일",
+            @"달",
             @"월",
             @"년",
             @"시"
         };
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|년)";
-      public const string DurationConnectorRegex = @"^\s*(?<connector>[多又余零]?)\s*$";
+      public const string DurationUnitRegex = @"(?<unit>(년|월|달|주일?|(?<!종)(?<=\d|\s+)일|(?<=\s)날|한나절|(?<=며)칠|시간?|분|초|영업일\s*기준으로|하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘|하루|종일|내내|몇|여러|더|이상|이하|초과|미만)\s*(이상|이하|초과|미만)?)";
+      public const string DurationConnectorRegex = @"(?<connector>\s*그리고\s*|\s)";
+      public static readonly string DurationMoreOrLessThanSurfix = $@"(?<DurationUnitRegex>\s*(이상|이하|초과|미만))";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|금년|작년))(의)?\s)?(?<holiday>섣달그믐날?|음력설|구정|추석|한가위|정월대보름|단오|석가탄신일)";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|금년|작년))(의)?\s)?(?<holiday>새해|설날|양력설|신정|근로자의 날|만우절|크리스마스 이브|크리스마스|식목일|건국기념일|발렌타인데이|밸런타인데이|스승의 날|교사의 날|어린이날|국제 여성의 날|세계 여성의 날|삼일절|3.1절|3·1절|현충일|광복절|개천절|한글날|기독탄신일)";
       public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|금년|작년))(의)?\s)?(?<holiday>추수감사절|할로윈|제헌절|국군의 날|유엔의 날|아버지의 날|클린 먼데이|마틴 루터 킹 데이|메이데이|부활절|국제 노동자의 날)";
-      public const string SetUnitRegex = @"(?<unit>년|월|달|주|일|시간|시|분|초)";
-      public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
-      public const string SetEachPrefixRegex = @"(?<each>(每)\s*$)";
+      public const string SetUnitRegex = @"(?<unit>년|월|달|주일?|일|시간|시|분|초)";
+      public static readonly string SetEachUnitRegex = $@"(?<each>{SetUnitRegex}\s?(마다))";
+      public const string SetEachPrefixRegex = @"(?<each>(매)\s*$)";
       public const string SetLastRegex = @"(?<last>last|this|next)";
       public const string SetEachDayRegex = @"(每|每一)(天|日)\s*$";
       public const string TimeHourNumRegex = @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
@@ -197,21 +219,39 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string ParserConfigurationDatePrefix = @" ";
       public static readonly Dictionary<string, string> ParserConfigurationUnitMap = new Dictionary<string, string>
         {
-            { @"年", @"Y" },
-            { @"月", @"MON" },
-            { @"个月", @"MON" },
-            { @"日", @"D" },
-            { @"周", @"W" },
-            { @"天", @"D" },
-            { @"小时", @"H" },
-            { @"个小时", @"H" },
-            { @"时", @"H" },
-            { @"分钟", @"M" },
-            { @"分", @"M" },
-            { @"秒钟", @"S" },
-            { @"秒", @"S" },
-            { @"星期", @"W" },
-            { @"个星期", @"W" }
+            { @"년", @"Y" },
+            { @"월", @"MON" },
+            { @"달", @"MON" },
+            { @"일", @"D" },
+            { @"날", @"D" },
+            { @"칠", @"D" },
+            { @"영업일 기준으로", @"BD" },
+            { @"한나절", @"QD" },
+            { @"주", @"W" },
+            { @"주일", @"W" },
+            { @"시", @"H" },
+            { @"시간", @"H" },
+            { @"분", @"M" },
+            { @"초", @"S" },
+            { @"하루", @"P1D" },
+            { @"이틀", @"P2D" },
+            { @"사흘", @"P3D" },
+            { @"나흘", @"P4D" },
+            { @"닷새", @"P5D" },
+            { @"엿새", @"P6D" },
+            { @"이레", @"P7D" },
+            { @"여드레", @"P8D" },
+            { @"아흐레", @"P9D" },
+            { @"열흘", @"P10D" },
+            { @"종일", @"whole" },
+            { @"내내", @"whole" },
+            { @"몇", @"some" },
+            { @"여러", @"some" },
+            { @"더", @"more" },
+            { @"이상", @"more" },
+            { @"이하", @"less" },
+            { @"초과", @"more" },
+            { @"미만", @"less" }
         };
       public static readonly Dictionary<string, long> ParserConfigurationUnitValueMap = new Dictionary<string, long>
         {
@@ -239,16 +279,17 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly IList<string> MonthTerms = new List<string>
         {
-            @"月"
+            @"월",
+            @"달"
         };
       public static readonly IList<string> WeekendTerms = new List<string>
         {
-            @"周末"
+            @"주말"
         };
       public static readonly IList<string> WeekTerms = new List<string>
         {
-            @"周",
-            @"星期"
+            @"주",
+            @"주일"
         };
       public static readonly IList<string> YearTerms = new List<string>
         {
@@ -256,7 +297,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly IList<string> ThisYearTerms = new List<string>
         {
-            @"금년"
+            @"금년",
+            @"올해"
         };
       public static readonly IList<string> LastYearTerms = new List<string>
         {
@@ -276,10 +318,10 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly Dictionary<string, string> ParserConfigurationSeasonMap = new Dictionary<string, string>
         {
-            { @"春", @"SP" },
-            { @"夏", @"SU" },
-            { @"秋", @"FA" },
-            { @"冬", @"WI" }
+            { @"봄", @"SP" },
+            { @"여름", @"SU" },
+            { @"가을", @"FA" },
+            { @"겨울", @"WI" }
         };
       public static readonly Dictionary<string, int> ParserConfigurationSeasonValueMap = new Dictionary<string, int>
         {
@@ -290,26 +332,26 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly Dictionary<string, int> ParserConfigurationCardinalMap = new Dictionary<string, int>
         {
-            { @"一", 1 },
-            { @"二", 2 },
-            { @"三", 3 },
-            { @"四", 4 },
-            { @"五", 5 },
+            { @"일", 1 },
+            { @"이", 2 },
+            { @"삼", 3 },
+            { @"사", 4 },
+            { @"오", 5 },
             { @"1", 1 },
             { @"2", 2 },
             { @"3", 3 },
             { @"4", 4 },
             { @"5", 5 },
-            { @"第一个", 1 },
-            { @"第二个", 2 },
-            { @"第三个", 3 },
-            { @"第四个", 4 },
-            { @"第五个", 5 },
-            { @"第一", 1 },
-            { @"第二", 2 },
-            { @"第三", 3 },
-            { @"第四", 4 },
-            { @"第五", 5 }
+            { @"첫 번째", 1 },
+            { @"두 번째", 2 },
+            { @"세 번째", 3 },
+            { @"네 번째", 4 },
+            { @"다섯 번째", 5 },
+            { @"첫째", 1 },
+            { @"둘째", 2 },
+            { @"셋째", 3 },
+            { @"넷째", 4 },
+            { @"다섯째", 5 }
         };
       public static readonly Dictionary<string, int> ParserConfigurationDayOfMonth = new Dictionary<string, int>
         {
@@ -353,205 +395,107 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"29", 29 },
             { @"30", 30 },
             { @"31", 31 },
-            { @"1日", 1 },
-            { @"2日", 2 },
-            { @"3日", 3 },
-            { @"4日", 4 },
-            { @"5日", 5 },
-            { @"6日", 6 },
-            { @"7日", 7 },
-            { @"8日", 8 },
-            { @"9日", 9 },
-            { @"10日", 10 },
-            { @"11日", 11 },
-            { @"12日", 12 },
-            { @"13日", 13 },
-            { @"14日", 14 },
-            { @"15日", 15 },
-            { @"16日", 16 },
-            { @"17日", 17 },
-            { @"18日", 18 },
-            { @"19日", 19 },
-            { @"20日", 20 },
-            { @"21日", 21 },
-            { @"22日", 22 },
-            { @"23日", 23 },
-            { @"24日", 24 },
-            { @"25日", 25 },
-            { @"26日", 26 },
-            { @"27日", 27 },
-            { @"28日", 28 },
-            { @"29日", 29 },
-            { @"30日", 30 },
-            { @"31日", 31 },
-            { @"一日", 1 },
-            { @"十一日", 11 },
-            { @"二十日", 20 },
-            { @"十日", 10 },
-            { @"二十一日", 21 },
-            { @"三十一日", 31 },
-            { @"二日", 2 },
-            { @"三日", 3 },
-            { @"四日", 4 },
-            { @"五日", 5 },
-            { @"六日", 6 },
-            { @"七日", 7 },
-            { @"八日", 8 },
-            { @"九日", 9 },
-            { @"十二日", 12 },
-            { @"十三日", 13 },
-            { @"十四日", 14 },
-            { @"十五日", 15 },
-            { @"十六日", 16 },
-            { @"十七日", 17 },
-            { @"十八日", 18 },
-            { @"十九日", 19 },
-            { @"二十二日", 22 },
-            { @"二十三日", 23 },
-            { @"二十四日", 24 },
-            { @"二十五日", 25 },
-            { @"二十六日", 26 },
-            { @"二十七日", 27 },
-            { @"二十八日", 28 },
-            { @"二十九日", 29 },
-            { @"三十日", 30 },
-            { @"1号", 1 },
-            { @"2号", 2 },
-            { @"3号", 3 },
-            { @"4号", 4 },
-            { @"5号", 5 },
-            { @"6号", 6 },
-            { @"7号", 7 },
-            { @"8号", 8 },
-            { @"9号", 9 },
-            { @"10号", 10 },
-            { @"11号", 11 },
-            { @"12号", 12 },
-            { @"13号", 13 },
-            { @"14号", 14 },
-            { @"15号", 15 },
-            { @"16号", 16 },
-            { @"17号", 17 },
-            { @"18号", 18 },
-            { @"19号", 19 },
-            { @"20号", 20 },
-            { @"21号", 21 },
-            { @"22号", 22 },
-            { @"23号", 23 },
-            { @"24号", 24 },
-            { @"25号", 25 },
-            { @"26号", 26 },
-            { @"27号", 27 },
-            { @"28号", 28 },
-            { @"29号", 29 },
-            { @"30号", 30 },
-            { @"31号", 31 },
-            { @"一号", 1 },
-            { @"十一号", 11 },
-            { @"二十号", 20 },
-            { @"十号", 10 },
-            { @"二十一号", 21 },
-            { @"三十一号", 31 },
-            { @"二号", 2 },
-            { @"三号", 3 },
-            { @"四号", 4 },
-            { @"五号", 5 },
-            { @"六号", 6 },
-            { @"七号", 7 },
-            { @"八号", 8 },
-            { @"九号", 9 },
-            { @"十二号", 12 },
-            { @"十三号", 13 },
-            { @"十四号", 14 },
-            { @"十五号", 15 },
-            { @"十六号", 16 },
-            { @"十七号", 17 },
-            { @"十八号", 18 },
-            { @"十九号", 19 },
-            { @"二十二号", 22 },
-            { @"二十三号", 23 },
-            { @"二十四号", 24 },
-            { @"二十五号", 25 },
-            { @"二十六号", 26 },
-            { @"二十七号", 27 },
-            { @"二十八号", 28 },
-            { @"二十九号", 29 },
-            { @"三十号", 30 },
-            { @"初一", 32 },
-            { @"三十", 30 },
-            { @"一", 1 },
-            { @"十一", 11 },
-            { @"二十", 20 },
-            { @"十", 10 },
-            { @"二十一", 21 },
-            { @"三十一", 31 },
-            { @"二", 2 },
-            { @"三", 3 },
-            { @"四", 4 },
-            { @"五", 5 },
-            { @"六", 6 },
-            { @"七", 7 },
-            { @"八", 8 },
-            { @"九", 9 },
-            { @"十二", 12 },
-            { @"十三", 13 },
-            { @"十四", 14 },
-            { @"十五", 15 },
-            { @"十六", 16 },
-            { @"十七", 17 },
-            { @"十八", 18 },
-            { @"十九", 19 },
-            { @"二十二", 22 },
-            { @"二十三", 23 },
-            { @"二十四", 24 },
-            { @"二十五", 25 },
-            { @"二十六", 26 },
-            { @"二十七", 27 },
-            { @"二十八", 28 },
-            { @"二十九", 29 }
+            { @"1일", 1 },
+            { @"2일", 2 },
+            { @"3일", 3 },
+            { @"4일", 4 },
+            { @"5일", 5 },
+            { @"6일", 6 },
+            { @"7일", 7 },
+            { @"8일", 8 },
+            { @"9일", 9 },
+            { @"10일", 10 },
+            { @"11일", 11 },
+            { @"12일", 12 },
+            { @"13일", 13 },
+            { @"14일", 14 },
+            { @"15일", 15 },
+            { @"16일", 16 },
+            { @"17일", 17 },
+            { @"18일", 18 },
+            { @"19일", 19 },
+            { @"20일", 20 },
+            { @"21일", 21 },
+            { @"22일", 22 },
+            { @"23일", 23 },
+            { @"24일", 24 },
+            { @"25일", 25 },
+            { @"26일", 26 },
+            { @"27일", 27 },
+            { @"28일", 28 },
+            { @"29일", 29 },
+            { @"30일", 30 },
+            { @"31일", 31 },
+            { @"일일", 1 },
+            { @"십일일", 11 },
+            { @"이십일", 21 },
+            { @"십일", 11 },
+            { @"이십일일", 21 },
+            { @"삼십일일", 31 },
+            { @"이일", 2 },
+            { @"삼일", 3 },
+            { @"사일", 4 },
+            { @"오일", 5 },
+            { @"육일", 6 },
+            { @"칠일", 7 },
+            { @"팔일", 8 },
+            { @"구일", 9 },
+            { @"십이일", 12 },
+            { @"십삼일", 13 },
+            { @"십사일", 14 },
+            { @"십오일", 15 },
+            { @"십육일", 16 },
+            { @"십칠일", 17 },
+            { @"십팔일", 18 },
+            { @"십구일", 19 },
+            { @"이십이일", 22 },
+            { @"이십삼일", 23 },
+            { @"이십사일", 24 },
+            { @"이십오일", 25 },
+            { @"이십육일", 26 },
+            { @"이십칠일", 27 },
+            { @"이십팔일", 28 },
+            { @"이십구일", 29 },
+            { @"삼십일", 31 },
+            { @"초하루", 32 },
+            { @"삼십", 30 },
+            { @"일", 1 },
+            { @"이십", 20 },
+            { @"십", 10 },
+            { @"이", 2 },
+            { @"삼", 3 },
+            { @"사", 4 },
+            { @"오", 5 },
+            { @"육", 6 },
+            { @"칠", 7 },
+            { @"팔", 8 },
+            { @"구", 9 },
+            { @"십이", 12 },
+            { @"십삼", 13 },
+            { @"십사", 14 },
+            { @"십오", 15 },
+            { @"십육", 16 },
+            { @"십칠", 17 },
+            { @"십팔", 18 },
+            { @"십구", 19 },
+            { @"이십이", 22 },
+            { @"이십삼", 23 },
+            { @"이십사", 24 },
+            { @"이십오", 25 },
+            { @"이십육", 26 },
+            { @"이십칠", 27 },
+            { @"이십팔", 28 },
+            { @"이십구", 29 }
         };
       public static readonly Dictionary<string, int> ParserConfigurationDayOfWeek = new Dictionary<string, int>
         {
-            { @"星期一", 1 },
-            { @"星期二", 2 },
-            { @"星期三", 3 },
-            { @"星期四", 4 },
-            { @"星期五", 5 },
-            { @"星期六", 6 },
-            { @"星期天", 0 },
-            { @"星期日", 0 },
-            { @"礼拜一", 1 },
-            { @"礼拜二", 2 },
-            { @"礼拜三", 3 },
-            { @"礼拜四", 4 },
-            { @"礼拜五", 5 },
-            { @"礼拜六", 6 },
-            { @"礼拜天", 0 },
-            { @"礼拜日", 0 },
-            { @"周一", 1 },
-            { @"周二", 2 },
-            { @"周三", 3 },
-            { @"周四", 4 },
-            { @"周五", 5 },
-            { @"周六", 6 },
-            { @"周日", 0 },
-            { @"周天", 0 },
-            { @"禮拜一", 1 },
-            { @"禮拜二", 2 },
-            { @"禮拜三", 3 },
-            { @"禮拜四", 4 },
-            { @"禮拜五", 5 },
-            { @"禮拜六", 6 },
-            { @"禮拜天", 0 },
-            { @"禮拜日", 0 },
-            { @"週一", 1 },
-            { @"週二", 2 },
-            { @"週三", 3 },
-            { @"週四", 4 },
-            { @"週五", 5 },
-            { @"週六", 6 },
-            { @"週日", 0 },
-            { @"週天", 0 }
+            { @"월요일", 1 },
+            { @"화요일", 2 },
+            { @"수요일", 3 },
+            { @"목요일", 4 },
+            { @"금요일", 5 },
+            { @"토요일", 6 },
+            { @"일요일", 0 }
         };
       public static readonly Dictionary<string, int> ParserConfigurationMonthOfYear = new Dictionary<string, int>
         {
@@ -576,41 +520,54 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"07", 7 },
             { @"08", 8 },
             { @"09", 9 },
-            { @"一月", 1 },
-            { @"二月", 2 },
-            { @"三月", 3 },
-            { @"四月", 4 },
-            { @"五月", 5 },
-            { @"六月", 6 },
-            { @"七月", 7 },
-            { @"八月", 8 },
-            { @"九月", 9 },
-            { @"十月", 10 },
-            { @"十一月", 11 },
-            { @"十二月", 12 },
-            { @"1月", 1 },
-            { @"2月", 2 },
-            { @"3月", 3 },
-            { @"4月", 4 },
-            { @"5月", 5 },
-            { @"6月", 6 },
-            { @"7月", 7 },
-            { @"8月", 8 },
-            { @"9月", 9 },
-            { @"10月", 10 },
-            { @"11月", 11 },
-            { @"12月", 12 },
-            { @"01月", 1 },
-            { @"02月", 2 },
-            { @"03月", 3 },
-            { @"04月", 4 },
-            { @"05月", 5 },
-            { @"06月", 6 },
-            { @"07月", 7 },
-            { @"08月", 8 },
-            { @"09月", 9 },
-            { @"正月", 13 },
-            { @"大年", 13 }
+            { @"한", 1 },
+            { @"두", 2 },
+            { @"세", 3 },
+            { @"네", 4 },
+            { @"다섯", 5 },
+            { @"여섯", 6 },
+            { @"일곱", 7 },
+            { @"여덟", 8 },
+            { @"아홉", 9 },
+            { @"열", 10 },
+            { @"얼한", 11 },
+            { @"열두", 12 },
+            { @"일월", 1 },
+            { @"이월", 2 },
+            { @"삼월", 3 },
+            { @"사월", 4 },
+            { @"오월", 5 },
+            { @"유월", 6 },
+            { @"육월", 6 },
+            { @"칠월", 7 },
+            { @"팔월", 8 },
+            { @"구월", 9 },
+            { @"시월", 10 },
+            { @"십월", 10 },
+            { @"십일월", 11 },
+            { @"십이월", 12 },
+            { @"1월", 1 },
+            { @"2월", 2 },
+            { @"3월", 3 },
+            { @"4월", 4 },
+            { @"5월", 5 },
+            { @"6월", 6 },
+            { @"7월", 7 },
+            { @"8월", 8 },
+            { @"9월", 9 },
+            { @"10월", 10 },
+            { @"11월", 11 },
+            { @"12월", 12 },
+            { @"01월", 1 },
+            { @"02월", 2 },
+            { @"03월", 3 },
+            { @"04월", 4 },
+            { @"05월", 5 },
+            { @"06월", 6 },
+            { @"07월", 7 },
+            { @"08월", 8 },
+            { @"09월", 9 },
+            { @"새해", 13 }
         };
       public const string DateTimeSimpleAmRegex = @"(?<am>早|晨)";
       public const string DateTimeSimplePmRegex = @"(?<pm>晚)";
@@ -623,21 +580,37 @@ namespace Microsoft.Recognizers.Definitions.Korean
         {
             { @"早", @"(?<!今|明|日|号)早(?!上)" },
             { @"晚", @"(?<!今|明|昨|傍|夜|日|号)晚(?!上)" },
-            { @"^\d{1,2}号", @"^\d{1,2}号" },
+            { @"^\d{1,2}일", @"^\d{1,2}号" },
             { @"周", @"周岁" },
-            { @"今日", @"今日头条" },
-            { @"明日", @"《明日之后》" },
-            { @"时", @"时间" }
+            { @"금일", @"오늘" },
+            { @"명일", @"내일" },
+            { @"시", @"시간" }
         };
       public static readonly Dictionary<string, long> DurationUnitValueMap = new Dictionary<string, long>
         {
             { @"Y", 31536000 },
-            { @"Mon", 2592000 },
+            { @"MON", 2592000 },
             { @"W", 604800 },
             { @"D", 86400 },
+            { @"BD", 5 },
+            { @"QD", 21600 },
             { @"H", 3600 },
             { @"M", 60 },
-            { @"S", 1 }
+            { @"S", 1 },
+            { @"P1D", 86400 },
+            { @"P2D", 172800 },
+            { @"P3D", 259200 },
+            { @"P4D", 345600 },
+            { @"P5D", 432000 },
+            { @"P6D", 518400 },
+            { @"P7D", 604800 },
+            { @"P8D", 691200 },
+            { @"P9D", 777600 },
+            { @"P10D", 864000 },
+            { @"whole", 1 },
+            { @"some", 2 },
+            { @"more", 3 },
+            { @"less", 4 }
         };
       public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
         {
@@ -645,28 +618,33 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"母亲节", @"-05-WXX-7-2" },
             { @"感恩节", @"-11-WXX-4-4" }
         };
-      public const string MergedBeforeRegex = @"(前|之前)$";
-      public const string MergedAfterRegex = @"(后|後|之后|之後)$";
+      public const string MergedBeforeRegex = @"(이?전)$";
+      public const string MergedAfterRegex = @"((이?후)|뒤)$";
       public static readonly Dictionary<char, int> TimeNumberDictionary = new Dictionary<char, int>
         {
-            { '零', 0 },
-            { '一', 1 },
-            { '二', 2 },
-            { '三', 3 },
-            { '四', 4 },
-            { '五', 5 },
-            { '六', 6 },
-            { '七', 7 },
-            { '八', 8 },
-            { '九', 9 },
-            { '〇', 0 },
-            { '两', 2 },
-            { '十', 10 }
+            { '영', 0 },
+            { '일', 1 },
+            { '이', 2 },
+            { '삼', 3 },
+            { '사', 4 },
+            { '오', 5 },
+            { '육', 6 },
+            { '칠', 7 },
+            { '팔', 8 },
+            { '구', 9 },
+            { '공', 0 },
+            { '십', 10 },
+            { '한', 1 },
+            { '두', 2 },
+            { '세', 3 },
+            { '네', 4 },
+            { '열', 10 }
         };
       public static readonly Dictionary<string, int> TimeLowBoundDesc = new Dictionary<string, int>
         {
-            { @"中午", 11 },
-            { @"下午", 12 },
+            { @"오전", 11 },
+            { @"정오", 12 },
+            { @"오후", 13 },
             { @"午后", 12 },
             { @"晚上", 18 },
             { @"夜里", 18 },

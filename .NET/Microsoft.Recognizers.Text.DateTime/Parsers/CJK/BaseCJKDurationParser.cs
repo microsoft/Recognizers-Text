@@ -38,10 +38,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var unitStr = unitResult.Unit;
-                var numStr = unitResult.Number;
+                var number = string.IsNullOrEmpty(unitResult.Number) ? 1 : double.Parse(unitResult.Number);
 
-                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(double.Parse(numStr), unitStr, BaseDurationParser.IsLessThanDay(unitStr));
-                dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * this.config.UnitValueMap[unitStr];
+                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, BaseDurationParser.IsLessThanDay(unitStr));
+                dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = number * this.config.UnitValueMap[unitStr];
                 dateTimeParseResult.Success = true;
             }
 
@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (unitMatch.Success)
                 {
                     var pr = (DateTimeParseResult)Parse(er);
-                    if (pr.Value != null)
+                    if (pr != null && pr.Value != null)
                     {
                         timexDict.Add(this.config.UnitMap[unitMatch.Groups["unit"].Value], pr.TimexStr);
                         prs.Add(pr);
@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // sort the timex using the granularity of the duration, "P1M23D" for "1 month 23 days" and "23 days 1 month"
-            if (prs.Count == ers.Count)
+            if (prs.Count > 0)
             {
                 ret.Timex = TimexUtility.GenerateCompoundDurationTimex(timexDict, this.config.UnitValueMap);
 

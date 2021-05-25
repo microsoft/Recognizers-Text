@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -19,8 +18,8 @@
             "duration": "10800"
           }
         },
-        "Start": 15,
-        "Length": 2
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -29,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -44,8 +43,8 @@
             "duration": "259200"
           }
         },
-        "Start": 15,
-        "Length": 4
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -54,7 +53,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,8 +67,8 @@
             "duration": "110376000"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -79,7 +77,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -94,8 +91,8 @@
             "duration": "7776000"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -104,7 +101,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -119,8 +115,8 @@
             "duration": "180"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -129,7 +125,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,8 +139,8 @@
             "duration": "3.5"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -154,7 +149,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -169,8 +163,8 @@
             "duration": "123.45"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 3,
+        "Length": 7
       }
     ]
   },
@@ -179,7 +173,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -194,8 +187,8 @@
             "duration": "1209600"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -204,7 +197,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -219,8 +211,8 @@
             "duration": "1200"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -229,7 +221,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -244,8 +235,8 @@
             "duration": "86400"
           }
         },
-        "Start": 15,
-        "Length": 21
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -254,7 +245,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -269,8 +260,8 @@
             "duration": "86400"
           }
         },
-        "Start": 15,
-        "Length": 7
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -279,7 +270,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -294,8 +284,8 @@
             "duration": "604800"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -304,7 +294,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -319,8 +308,8 @@
             "duration": "2592000"
           }
         },
-        "Start": 15,
-        "Length": 9
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -329,7 +318,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -344,8 +332,8 @@
             "duration": "31536000"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -354,7 +342,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -369,8 +356,8 @@
             "duration": "3600"
           }
         },
-        "Start": 15,
-        "Length": 7
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -379,7 +366,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -395,7 +381,7 @@
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 2
       }
     ]
   },
@@ -404,7 +390,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -419,8 +404,8 @@
             "duration": "180"
           }
         },
-        "Start": 15,
-        "Length": 5
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -429,7 +414,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -444,8 +428,8 @@
             "duration": "1800"
           }
         },
-        "Start": 15,
-        "Length": 10
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -454,7 +438,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,8 +453,8 @@
             "duration": "5400"
           }
         },
-        "Start": 15,
-        "Length": 18
+        "Start": 3,
+        "Length": 7
       }
     ]
   },
@@ -479,7 +463,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -494,8 +477,8 @@
             "duration": "7200"
           }
         },
-        "Start": 15,
-        "Length": 8
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -504,7 +487,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -519,8 +502,8 @@
             "duration": "9000"
           }
         },
-        "Start": 15,
-        "Length": 20
+        "Start": 3,
+        "Length": 7
       }
     ]
   },
@@ -529,7 +512,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,8 +526,8 @@
             "duration": "35942400"
           }
         },
-        "Start": 15,
-        "Length": 22
+        "Start": 3,
+        "Length": 10
       }
     ]
   },
@@ -554,7 +536,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -569,21 +551,21 @@
             "duration": "2764800"
           }
         },
-        "Start": 15,
-        "Length": 14
+        "Start": 3,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "나는 일주일 그리고 사흘 더  떠날 겁니다. ",
+    "Input": "나는 일주일 그리고 사흘 더 떠날 겁니다. ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "일주일 그리고 사흘",
+        "Text": "일주일 그리고 사흘 더",
         "Type": "duration",
         "Value": {
           "Timex": "P1W3D",
@@ -594,8 +576,8 @@
             "duration": "864000"
           }
         },
-        "Start": 15,
-        "Length": 19
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
@@ -604,7 +586,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -619,8 +601,8 @@
             "duration": "1209600"
           }
         },
-        "Start": 15,
-        "Length": 15
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -629,11 +611,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "며칠 ",
+        "Text": "며칠",
         "Type": "duration",
         "Value": {
           "Timex": "P2D",
@@ -644,8 +626,8 @@
             "duration": "172800"
           }
         },
-        "Start": 17,
-        "Length": 16
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -654,7 +636,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -670,8 +652,8 @@
             "duration": "172800"
           }
         },
-        "Start": 17,
-        "Length": 26
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -680,7 +662,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -696,8 +678,8 @@
             "duration": "3600"
           }
         },
-        "Start": 15,
-        "Length": 17
+        "Start": 3,
+        "Length": 7
       }
     ]
   },
@@ -706,11 +688,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "한 시간 더 ",
+        "Text": "한 시간 더",
         "Type": "duration",
         "Value": {
           "Timex": "PT1H",
@@ -721,8 +702,8 @@
             "duration": "3600"
           }
         },
-        "Start": 15,
-        "Length": 12
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -731,7 +712,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -746,8 +726,8 @@
             "duration": "604800"
           }
         },
-        "Start": 32,
-        "Length": 12
+        "Start": 6,
+        "Length": 5
       }
     ]
   },
@@ -756,11 +736,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "한 달 더 ",
+        "Text": "한 달 더",
         "Type": "duration",
         "Value": {
           "Timex": "P1M",
@@ -771,8 +750,8 @@
             "duration": "2592000"
           }
         },
-        "Start": 12,
-        "Length": 13
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -781,7 +760,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -796,18 +775,17 @@
             "duration": "86400"
           }
         },
-        "Start": 12,
-        "Length": 20
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "나는 20년 동안 떠날 겁니다.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 20년",
+        "Text": "20년",
         "Type": "duration",
         "Value": {
           "Timex": "P20Y",
@@ -818,8 +796,33 @@
             "duration": "630720000"
           }
         },
-        "Start": 15,
-        "Length": 11
+        "Start": 3,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "나는 일주일 그리고 사흘 동안 떠날 겁니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "일주일 그리고 사흘",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W3D",
+          "FutureResolution": {
+            "duration": "864000"
+          },
+          "PastResolution": {
+            "duration": "864000"
+          }
+        },
+        "Start": 3,
+        "Length": 10
       }
     ]
   }
