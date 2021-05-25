@@ -2101,5 +2101,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Veja tudo que rolou na madrugada",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "madrugada",
+        "Start": 23,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TDA",
+              "type": "timerange",
+              "start": "04:00:00",
+              "end": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
