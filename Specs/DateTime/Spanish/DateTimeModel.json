@@ -21136,5 +21136,110 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Regresaré por la tarde",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 17,
+        "End": 21,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré por la noche",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noche",
+        "Start": 17,
+        "End": 21,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré al mediodía",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mediodía",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Recuerdas la noche del 21 de septiembre",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noche del 21 de septiembre",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2018-09-21 20:00:00",
+              "end": "2018-09-21 23:59:59"
+            },
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2019-09-21 20:00:00",
+              "end": "2019-09-21 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

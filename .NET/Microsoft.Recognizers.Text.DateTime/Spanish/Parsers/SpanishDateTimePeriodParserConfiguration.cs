@@ -9,6 +9,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex EarlyMorningStartEndRegex =
+            new Regex(DateTimeDefinitions.EarlyMorningStartEndRegex, RegexFlags);
+
+        public static readonly Regex MorningStartEndRegex =
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+
+        public static readonly Regex AfternoonStartEndRegex =
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+
+        public static readonly Regex EveningStartEndRegex =
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+
+        public static readonly Regex NightStartEndRegex =
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -133,37 +150,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-
-            if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            if (EarlyMorningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = Constants.EarlyMorning;
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
-            {
-                timeStr = Constants.Morning;
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
-            }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = Constants.Afternoon;
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = Constants.Evening;
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = Constants.Night;
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
+            }
+            else if (MorningStartEndRegex.IsMatch(trimmedText))
+            {
+                timeStr = Constants.Morning;
+                beginHour = 8;
+                endHour = Constants.HalfDayHourCount;
             }
             else
             {

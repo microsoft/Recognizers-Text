@@ -197,6 +197,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     min = 0;
                     second = 0;
                 }
+                else if (!string.IsNullOrEmpty(match.Groups["midearlymorning"].Value))
+                {
+                    hour = 6;
+                    min = 0;
+                    second = 0;
+                }
                 else if (!string.IsNullOrEmpty(match.Groups["midmorning"].Value))
                 {
                     hour = 10;

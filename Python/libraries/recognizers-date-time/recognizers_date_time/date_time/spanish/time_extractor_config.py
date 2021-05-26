@@ -60,7 +60,6 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex7),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex8),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex9),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex10),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex11),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex12),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.ConnectNumRegex)

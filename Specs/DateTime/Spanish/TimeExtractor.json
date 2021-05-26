@@ -517,24 +517,24 @@
     ]
   },
   {
-    "Input": "Volvere a la madrugada",
+    "Input": "Volvere a la media madrugada",
     "Results": [
       {
-        "Text": "a la madrugada",
+        "Text": "media madrugada",
         "Type": "time",
-        "Start": 8,
-        "Length": 14
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "Volvere a la mañana",
+    "Input": "Volvere a la media mañana",
     "Results": [
       {
-        "Text": "a la mañana",
+        "Text": "media mañana",
         "Type": "time",
-        "Start": 8,
-        "Length": 11
+        "Start": 13,
+        "Length": 12
       }
     ]
   },
@@ -563,24 +563,24 @@
     ]
   },
   {
-    "Input": "Volvere a la tarde",
+    "Input": "Volvere a media tarde",
     "Results": [
       {
-        "Text": "a la tarde",
+        "Text": "media tarde",
         "Type": "time",
-        "Start": 8,
-        "Length": 10
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
-    "Input": "Volvere al noche",
+    "Input": "Volvere a la medianoche",
     "Results": [
       {
-        "Text": "al noche",
+        "Text": "medianoche",
         "Type": "time",
-        "Start": 8,
-        "Length": 8
+        "Start": 13,
+        "Length": 10
       }
     ]
   },

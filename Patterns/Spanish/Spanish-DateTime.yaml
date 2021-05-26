@@ -330,7 +330,7 @@ BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidTimeRegex: !simpleRegex
-  def: (?<mid>((?<midnight>media\s*noche)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))
+  def: (?<mid>((?<midnight>media\s*noche)|(?<midearlymorning>media\s*madrugada)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))
 AtRegex: !nestedRegex
   # "a las cuatro" "a las 3 h?"
   def: \b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})
@@ -377,8 +377,6 @@ TimeRegex9: !nestedRegex
   # once (y)? veinticinco
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(y\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
-TimeRegex10: !simpleRegex
-  def: (a\s+la|al)\s+(madrugada|mañana|tarde|noche)
 TimeRegex11: !nestedRegex
   # (tres menos veinte) (pm)?
   def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
@@ -434,7 +432,7 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
 UnitRegex: !simpleRegex
   def: (?<unit>años?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|fin(es)?\s+de\s+semana|finde|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
 ConnectorRegex: !simpleRegex
-  def: ^(,|t|(para|y|a|en|por) las?|(\s*,\s*)?(cerca|alrededor) de las?)$
+  def: ^(,|t|(para|y|a|en|por) las?|(\s*,\s*)?((cerca|alrededor)\s+)?(de\s+las?|del))$
 # SpanishTimePeriodExtractorConfiguration
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>veint(i(uno|dos|tres|cuatro)|e)|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci(s([eé])is|siete|ocho|nueve))
@@ -1014,6 +1012,16 @@ AmbiguityFiltersDict: !dictionary
     '^mes$': '(?<!el\s+)mes'
     '^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$': '([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])'
 # For TimeOfDay resolution
+EarlyMorningStartEndRegex: !simpleRegex
+  def: (^(madrugada)|(madrugada)$)
+MorningStartEndRegex: !simpleRegex
+  def: (^((la\s+)?mañana))|(((la\s+)?mañana)$)
+AfternoonStartEndRegex: !simpleRegex
+  def: (^(pasado\s+(el\s+)?medio\s*dia))|((pasado\s+(el\s+)?medio\s*dia)$)
+EveningStartEndRegex: !simpleRegex
+  def: (^(tarde))|((tarde)$)
+NightStartEndRegex: !simpleRegex
+  def: (^(noche)|(noche)$)
 EarlyMorningTermList: !list
   types: [ string ]
   entries: 
