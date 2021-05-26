@@ -257,6 +257,24 @@ DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}
   references: [DateTimePeriodUnitRegex]
 #DurationExtractorCJK
+DurationAllRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationHalfRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationRelativeDurationUnitRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationDuringRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationSomeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationMoreOrLessRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
 DurationYearRegex: !simpleRegex
   def: ((\d{3,4})|0\d|两千)\s*年
 DurationHalfSuffixRegex: !simpleRegex

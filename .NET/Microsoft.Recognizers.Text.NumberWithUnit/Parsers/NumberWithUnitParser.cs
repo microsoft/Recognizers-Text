@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var lastUnit = unitKeys.Last();
             if (halfResult != null)
             {
-                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length);
+                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length).Trim();
             }
 
             var normalizedLastUnit = lastUnit.ToLowerInvariant();

@@ -11,6 +11,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearRegex { get; }
 
+        Regex AllRegex { get; }
+
+        Regex HalfRegex { get; }
+
+        Regex RelativeDurationUnitRegex { get; }
+
+        Regex DuringRegex { get; }
+
+        Regex SomeRegex { get; }
+
+        Regex MoreOrLessRegex { get; }
+
         IExtractor InternalExtractor { get; }
 
         Dictionary<string, string> UnitMap { get; }

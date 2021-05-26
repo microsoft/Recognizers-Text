@@ -73,6 +73,9 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     regexes.Add(
                         new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.InexactNumberUnitRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
             }
 

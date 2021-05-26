@@ -37,15 +37,24 @@ ZeroToNineMap: !dictionary
     영: 0
     일: 1
     하: 1
+    한: 1
     이: 2
+    두: 2
     삼: 3    
     셋: 3
+    세: 3
     사: 4
+    네: 4
     오: 5
+    다: 5
     육: 6
+    여: 6
     칠: 7
+    곱: 7
     팔: 8
+    덟: 8
     구: 9
+    홉: 9
     빵: 0
     ０: 0
     １: 1
@@ -103,7 +112,6 @@ UnitMap: !dictionary
   types: [string, string]
   entries:
     ' ' : ''
-    몇: ''
 RoundDirectList: !list
   types: [char]
   entries:
@@ -132,7 +140,7 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '(와|과|분\s*의|중)'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (영|령|공|(?<!생)일|(?<!(율|답|둘))이(?!다)|두|삼|사(?!(랑|주))|(?<!시)오(?!(월|늘))|육|칠|팔|구|한|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)
+  def: (영|령|공|(?<!생|주|\d)(?<=십|백|천|만|억|조|\s*)일|(?<!(율|답|둘))이(?!다)|두|삼|사(?!(랑|주))|(?<!시)오(?!(월|늘))|육|(?<!며)칠|팔|구|한(?=\s*)|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)
 TenToNinetySinoIntegerRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex})?십
   references: [ZeroToNineIntegerRegex]
@@ -161,7 +169,7 @@ NotSingleRegex: !nestedRegex
   def: ({TenToNinetyNativeIntegerRegex})|((({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|[십천백셋])\s*(\s*{RoundNumberIntegerRegex}){1,2}(와)?|[십천백셋]|{RoundNumberIntegerRegex}\s*((과\s*)?{ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))((\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){1,2}(와)?|영)\s*)*(\s*{ZeroToNineIntegerRegex})?)
   references: [TenToNinetyNativeIntegerRegex, ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 SingleRegex: !nestedRegex
-  def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생)일|두|삼|사(?!(랑|주))|(?<![시])오(?!(월|늘))|육|칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))
+  def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생)일|두|삼|사(?!(랑|주))|(?<![시])오(?!(월|늘))|육|(?<!며)칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, AllowListRegex]
 NativeSingleRegex: !nestedRegex
   def: (?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineIntegerRegex})
@@ -342,7 +350,7 @@ OneNumberRangeMoreRegex1: !nestedRegex
   def: ((?<number1>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*({MoreOrEqual}|{MoreRegex}|{MoreOrEqualSuffix})(은|다)?)
   references: [MoreOrEqual, MoreRegex, MoreOrEqualSuffix]
 OneNumberRangeMoreRegex2: !nestedRegex
-  def: (?<number1>(((?!(((?!([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+))))|(사분의\s)).)+)(보다)?\s({MoreRegex})|(?<number1>((?!((、(?!\d+))|(、(?!\d+))|。))|(?!\s+).)+)\s*(((혹은\s*그)?){MoreRegex}|((혹은\s*그)?){MoreOrEqualSuffix})
+  def: (?<number1>(((?!(((?!([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|(?<!며)칠|팔|구))+))))|(사분의\s)).)+)(보다)?\s({MoreRegex})|(?<number1>((?!((、(?!\d+))|(、(?!\d+))|。))|(?!\s+).)+)\s*(((혹은\s*그)?){MoreRegex}|((혹은\s*그)?){MoreOrEqualSuffix})
   references: [MoreRegex, MoreOrEqualSuffix]
 OneNumberRangeMoreRegex3: !nestedRegex
   def: ({RangePrefixMoreRegex})\s*(?<number1>(((?!(((?!\d+))|((,)(?!\d+))|。)).)+))
@@ -383,7 +391,7 @@ TwoNumberRangeRegex4: !nestedRegex
   def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(까지)?
   references: [TillRegex]
 TwoNumberRangeRegex5: !nestedRegex
-  def: (?<number1>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+)\s*{TillRegex}\s*(?<number2>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+)\s*([십백천만억조경열]|((미만|적|낮|작|더적|더낮|더적|이하이다|까지|아래))+)
+  def: (?<number1>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|(?<!며)칠|팔|구))+)\s*{TillRegex}\s*(?<number2>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+)\s*([십백천만억조경열]|((미만|적|낮|작|더적|더낮|더적|이하이다|까지|아래))+)
   references: [TillRegex]
 TwoNumberRangeRegex6: !nestedRegex
   def: ((?<number1>((?!((，(?!\d+))|(,(?!\d+))|。|\D)).)+)\s*{TillRegex}+\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(까지))
@@ -391,6 +399,8 @@ TwoNumberRangeRegex6: !nestedRegex
 TwoNumberRangeRegex7: !nestedRegex
   def: ({OneNumberRangeMoreRegex2}\s*{OneNumberRangeLessRegex5})
   references: [OneNumberRangeMoreRegex2, OneNumberRangeLessRegex5]
+InexactNumberUnitRegex: !simpleRegex
+  def: (몇|며|여러)
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:
