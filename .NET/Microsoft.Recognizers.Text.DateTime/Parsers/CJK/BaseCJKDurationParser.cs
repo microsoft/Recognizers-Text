@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var unitStr = unitResult.Unit;
-                var number = string.IsNullOrEmpty(unitResult.Number) ? 1 : double.Parse(unitResult.Number);
+                var number = string.IsNullOrEmpty(unitResult.Number) ? 1 : double.Parse(unitResult.Number, CultureInfo.InvariantCulture);
 
                 dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, BaseDurationParser.IsLessThanDay(unitStr));
                 dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = number * this.config.UnitValueMap[unitStr];

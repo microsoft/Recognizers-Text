@@ -94,6 +94,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
                         var match_suffix = new List<ExtractResult>();
                         foreach (var mr in match)
                         {
+                            // Take into account possible whitespaces between result and half unit.
                             var subLength = (int)mr.Start - (start + length) >= 0 ? (int)mr.Start - (start + length) : 0;
                             var midStr = source.Substring(start + length, subLength);
                             if (string.IsNullOrWhiteSpace(midStr) && (int)mr.Start - (start + length) >= 0)
