@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string MorningRegex = @"(?<morning>matin([ée]e)?)";
       public const string AfternoonRegex = @"(?<afternoon>(d'|l')?apr[eè]s(-|\s*)midi)";
       public static readonly string MidmorningRegex = $@"(?<midmorning>milieu\s*d[ue]\s*{MorningRegex})";
-      public const string MiddayRegex = @"(?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi)";
+      public const string MiddayRegex = @"(?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi|(?<=\bà\s+)midi)";
       public static readonly string MidafternoonRegex = $@"(?<midafternoon>milieu\s*d'+{AfternoonRegex})";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"\b(((?<=\b[àa]\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
