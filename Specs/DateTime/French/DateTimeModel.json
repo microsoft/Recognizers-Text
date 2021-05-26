@@ -5097,12 +5097,12 @@
   },
   {
     "Input": "Je retournerair à midi",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "midi",
         "Start": 18,
-        "End": 22,
+        "End": 21,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -20847,6 +20847,59 @@
             }
           ]
         }
+      }
+    ]
+  },
+  {
+    "Input": "le déjeuner sera prêt à midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "midi",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        },
+        "Start": 24,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Il y a une fête programmée pour Vendredi à midi.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "vendredi à midi",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12",
+              "type": "datetime",
+              "value": "2016-11-04 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12",
+              "type": "datetime",
+              "value": "2016-11-11 12:00:00"
+            }
+          ]
+        },
+        "Start": 32,
+        "End": 46
       }
     ]
   }
