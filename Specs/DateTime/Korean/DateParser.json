@@ -1885,31 +1885,6 @@
     ]
   },
   {
-    "Input": "2017년 3월 7일에 돌아갈 거야. ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "IgnoreResolution": "true",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2017년 3월 7일",
-        "Type": "date",
-        "Value": {
-          "Timex": "1971-05-05",
-          "FutureResolution": {
-            "date": "1971-05-05"
-          },
-          "PastResolution": {
-            "date": "1971-05-05"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
     "Input": "너는 지금부터 한 달에 두 번씩 일요일마다 시간 괜찮니? ",
     "Comment": "Not a proper sentence in Korean and it is not possible to give a better translation of the original case 'Are you available two sundays from now?'",
     "Context": {
@@ -2135,54 +2110,6 @@
     ]
   },
   {
-    "Input": "10/2에 돌아갈게요",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "10/2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "10/2에 돌아갈게요",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "10/2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "10월 2일에 돌아갈게요",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2348,54 +2275,6 @@
         },
         "Start": 0,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "4/22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "4/22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 0,
-        "Length": 4
       }
     ]
   },

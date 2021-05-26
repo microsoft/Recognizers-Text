@@ -1245,18 +1245,6 @@
     ]
   },
   {
-    "Input": "4/22에 돌아갈게요",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "4/22 에 돌아갈게요",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1277,18 +1265,6 @@
         "Type": "date",
         "Start": 0,
         "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "4/22에 돌아갈게요",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Start": 0,
-        "Length": 4
       }
     ]
   },
@@ -1641,18 +1617,6 @@
     ]
   },
   {
-    "Input": "5월 11일에 야구",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "5월 11일",
-        "Type": "date",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "5월 4일에 돌아갈게요",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1682,18 +1646,6 @@
     "Results": [
       {
         "Text": "새해 첫 날",
-        "Type": "date",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "5월 21일에 돌아갈게요",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "5월 21일",
         "Type": "date",
         "Start": 0,
         "Length": 6
