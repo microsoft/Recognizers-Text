@@ -22,7 +22,7 @@ YearNumRegex: !simpleRegex
 SimpleYearRegex: !simpleRegex
   def: (?<year>(\d{2,4}))
 ZeroToNineIntegerRegexCJK: !simpleRegex
-  def: '[일이삼사오육륙칠팔구영공]'
+  def: '[일이삼사오육륙칠팔구영공십]'
 DynastyStartYear: '元'
 RegionTitleRegex: !simpleRegex
   def: (贞观|开元|神龙|洪武|建文|永乐|景泰|天顺|成化|嘉靖|万历|崇祯|顺治|康熙|雍正|乾隆|嘉庆|道光|咸丰|同治|光绪|宣统|民国)
@@ -30,20 +30,20 @@ DynastyYearRegex: !nestedRegex
   def: (?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{1,3}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){0,3}))
   references: [RegionTitleRegex, DynastyStartYear, ZeroToNineIntegerRegexCJK]
 DateYearInCJKRegex: !nestedRegex
-  def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{DynastyYearRegex}))
+  def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{2,4}|[일이]천{ZeroToNineIntegerRegexCJK}{1,2}|{DynastyYearRegex}))
   references: [ZeroToNineIntegerRegexCJK, DynastyYearRegex]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>일요일|월요일|화요일|수요일|목요일|금요일|토요일)
 LunarRegex: !simpleRegex
   def: 음력
 DateThisRegex: !nestedRegex
-  def: (이번\s?주?)\s*{WeekDayRegex}
+  def: (이번(\s+)?(주\s+)?){WeekDayRegex}
   references: [WeekDayRegex]
 DateLastRegex: !nestedRegex
-  def: ((저번|지난)\s?주?)\s*{WeekDayRegex}
+  def: ((저번|지난)(\s+)?(주\s+)?){WeekDayRegex}
   references: [WeekDayRegex]
 DateNextRegex: !nestedRegex
-  def: (다음\s?주?)\s*{WeekDayRegex}
+  def: (다음(\s+)?(주\s+)?){WeekDayRegex}
   references: [WeekDayRegex]
 SpecialMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
@@ -52,11 +52,14 @@ SpecialYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
 SpecialDayRegex: !simpleRegex
-  def: (최근|그저께|그제|((내일)?\s?모레)|그끄저께|어제|내일|오늘|금일|작일|익일|당일|명일|전일)
+  def: (최근|그저께|그제|((내일)?\s?모레)|그끄저께|어제|내일|오늘|금일|작일|익일|당일|명일|전일|다음 날|마지막 날|며칠|글피|그글피)
+DurationFromSpecialDayRegex: !nestedRegex
+  def: ({SpecialDayRegex}|지금(으로)?)\s*((부터)\s*(\d+|{ZeroToNineIntegerRegexCJK}+)\s*{DateUnitRegex})(\s*후)?
+  references: [SpecialDayRegex, DateUnitRegex, ZeroToNineIntegerRegexCJK ]
 SpecialDayWithNumRegex: !simpleRegex
   def: (하루|이틀|사흘|나흘|닷새|엿새)
 WeekDayOfMonthRegex: !nestedRegex
-  def: ((({MonthRegex}|{MonthNumRegex}(월|달))의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|마지막)\s*{WeekDayRegex})
+  def: (((((이번|저번|지난|다음)\s)?{MonthRegex}|((이번|저번|지난|다음)\s)?{MonthNumRegex}월|(이번|저번|지난|다음)\s*달)의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|일곱\s?번?째|여덟\s?번?째|아홉\s?번?째|열\s?번?\s?째|마지막)\s*주?\s*{WeekDayRegex})
   references: [MonthRegex, MonthNumRegex, WeekDayRegex]
 ThisPrefixRegex: !simpleRegex
   def: 이번|금
@@ -68,46 +71,48 @@ RelativeRegex: !nestedRegex
   def: (?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))
   references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex]
 SpecialDate: !nestedRegex
-  def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})년)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})\s달의?)?{DateDayRegexInCJK}
-  references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInCJK]
+  def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})년)?({RelativeRegex}\s달의?\s)?{DateDayRegexInCJK}
+  references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInCJK, RelativeRegex]
 DateUnitRegex: !simpleRegex
   def: (?<unit>년|월|주|일)
 BeforeRegex: !simpleRegex
-  def: 이전|之前|前
+  def: 이?전|之前|前
 AfterRegex: !simpleRegex
-  def: 이?후|후에|
-# (农历)?(2016年)?一月三日(星期三)?
+  def: 이?후|후에
 DateRegexList1: !nestedRegex
-  def: ({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?
-  references: [LunarRegex, SimpleYearRegex, DateYearInCJKRegex, MonthRegex, DateDayRegexInCJK, WeekDayRegex]
-# (2015年)?(农历)?十月初一(星期三)?
+  def: ({RelativeRegex}\s*)?({SimpleYearRegex}년\s*)?({LunarRegex}\s*)?({MonthRegex}\s*)?{DateDayRegexInCJK}(\s*(,\s*)?{WeekDayRegex})?(\s*(,\s*)?{SimpleYearRegex})?
+  references: [RelativeRegex, LunarRegex, SimpleYearRegex, MonthRegex, DateDayRegexInCJK, WeekDayRegex]
+# 1월-1일(화요일)?(, 2016)?
 DateRegexList2: !nestedRegex
-  def: ((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?
-  references: [MonthRegex, DateDayRegexInCJK, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInCJKRegex]
-# (2015年)?(农历)?十月二十(星期三)?
+  def: ({WeekDayRegex},?\s*)?({MonthRegex}\s*[/\\\-\.]?\s*{DateDayRegexInCJK})(\s*{WeekDayRegex})?(\s*(,\s*)?({SimpleYearRegex}|{DateYearInCJKRegex})년?)?
+  references: [MonthRegex, DateDayRegexInCJK, WeekDayRegex, SimpleYearRegex, DateYearInCJKRegex]
+# oo부터(2주)(후)?
 DateRegexList3: !nestedRegex
-  def: ((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInCJK}|{DayRegex})((\s*|,|，){WeekDayRegex})?
-  references: [MonthRegex, DayRegexNumInCJK, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInCJKRegex, DayRegex]
+  def: (({SpecialDayRegex}으?로?부터)\s((\d+\s*주간?(\s*{WeekDayRegex})?)|({DateDayRegexInCJK}|{SpecialDayRegex})\s[전후]))|((\d+년\s*)?(((한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|열한|열두)\s?달\s*)|(\d+개월\s*))?(((,\s*)|(\s*하고\s*))?{DateDayRegexInCJK}|{SpecialDayRegex})\s(전|후|지나서))|(((그\s)?(다음날|전날))|([그이] 날)|(지난 날)|(새해\s첫\s?날))|({DayRegex}일\s*{MonthNumRegex}월\s*{SimpleYearRegex}년)|(((앞으로\s+)|({SpecialDayRegex}으?로?부터\s+))?\d+\s*주\s(후|동안)\s+{WeekDayRegex})|(나의 하루)|(몇\s*[달일] 전)
+  references: [MonthRegex, DayRegexNumInCJK, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInCJKRegex, DayRegex, DateDayRegexInCJK, SpecialDayRegex, MonthNumRegex]
 # 7/23
 DateRegexList4: !nestedRegex
-  def: '{MonthNumRegex}\s*/\s*{DayRegex}'
+  def: '{MonthNumRegex}\s*/\s*{DayRegex}(?!\s*퍼센트)'
   references: [MonthNumRegex, DayRegex]
 # 23/7
 DateRegexList5: !nestedRegex
-  def: '{DayRegex}\s*/\s*{MonthNumRegex}'
+  def: '{DayRegex}\s*/\s*{MonthNumRegex}(?!\s*퍼센트)'
   references: [DayRegex, MonthNumRegex]
 # 3-23-2017
 DateRegexList6: !nestedRegex
-  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}'
+  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-,]\s*{SimpleYearRegex}'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 23-3-2015
 DateRegexList7: !nestedRegex
-  def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{SimpleYearRegex}'
+  def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.,]\s*{SimpleYearRegex}'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex]
 # 2015-12-23 - This regex represents the standard format in CJK dates (YMD) and has precedence over other orderings
 DateRegexList8: !nestedRegex
   def: '{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}'
   references: [SimpleYearRegex, MonthNumRegex, DayRegex]
+DateRegexList9: !nestedRegex
+  def: ({WeekDayRegex},\s*{MonthRegex}\s*{DateDayRegexInCJK},\s*{SimpleYearRegex}년)
+  references: [WeekDayRegex, MonthRegex, DateDayRegexInCJK, SimpleYearRegex]
 # Note that these "Till" connector can be used without any suffix like "之间|之内|期间|中间|间"
 # DatePeriodExtractorCJK
 DatePeriodTillRegex: !simpleRegex
@@ -283,7 +288,7 @@ DurationSuffixList: !dictionary
     BD: 영업일 기준으로
     QD: 한나절
     W: 주|주일
-    MON: 월|달
+    MON: 개월|월|달
     Y: 년
     P1D: 하루
     P2D: 이틀
@@ -684,6 +689,68 @@ ParserConfigurationDayOfMonth: !dictionary
     이십구일: 29
     삼십일: 30
     초하루: 32
+    1번: 1
+    2번: 2
+    3번: 3
+    4번: 4
+    5번: 5
+    6번: 6
+    7번: 7
+    8번: 8
+    9번: 9
+    10번: 10
+    11번: 11
+    12번: 12
+    13번: 13
+    14번: 14
+    15번: 15
+    16번: 16
+    17번: 17
+    18번: 18
+    19번: 19
+    20번: 20
+    21번: 21
+    22번: 22
+    23번: 23
+    24번: 24
+    25번: 25
+    26번: 26
+    27번: 27
+    28번: 28
+    29번: 29
+    30번: 30
+    31번: 31
+    일번: 1
+    십일번: 11
+    이십번: 20
+    십번: 10
+    이십일번: 21
+    삼십일번: 31
+    이번: 2
+    삼번: 3
+    사번: 4
+    오번: 5
+    육번: 6
+    칠번: 7
+    팔번: 8
+    구번: 9
+    십이번: 12
+    십삼번: 13
+    십사번: 14
+    십오번: 15
+    십육번: 16
+    십칠번: 17
+    십팔번: 18
+    십구번: 19
+    이십이번: 22
+    이십삼번: 23
+    이십사번: 24
+    이십오번: 25
+    이십육번: 26
+    이십칠번: 27
+    이십팔번: 28
+    이십구번: 29
+    삼십번: 30
     삼십: 30
     일: 1
     십일: 11

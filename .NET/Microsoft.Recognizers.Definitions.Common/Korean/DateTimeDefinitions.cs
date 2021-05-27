@@ -31,37 +31,39 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string TwoNumYear = @"50";
       public const string YearNumRegex = @"(?<year>((1[5-9]|20)\d{2})|2100)";
       public const string SimpleYearRegex = @"(?<year>(\d{2,4}))";
-      public const string ZeroToNineIntegerRegexCJK = @"[일이삼사오육륙칠팔구영공]";
+      public const string ZeroToNineIntegerRegexCJK = @"[일이삼사오육륙칠팔구영공십]";
       public const string DynastyStartYear = @"元";
       public const string RegionTitleRegex = @"(贞观|开元|神龙|洪武|建文|永乐|景泰|天顺|成化|嘉靖|万历|崇祯|顺治|康熙|雍正|乾隆|嘉庆|道光|咸丰|同治|光绪|宣统|民国)";
       public static readonly string DynastyYearRegex = $@"(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{{1,3}}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){{0,3}}))";
-      public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{DynastyYearRegex}))";
+      public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}|[일이]천{ZeroToNineIntegerRegexCJK}{{1,2}}|{DynastyYearRegex}))";
       public const string WeekDayRegex = @"(?<weekday>일요일|월요일|화요일|수요일|목요일|금요일|토요일)";
       public const string LunarRegex = @"음력";
-      public static readonly string DateThisRegex = $@"(이번\s?주?)\s*{WeekDayRegex}";
-      public static readonly string DateLastRegex = $@"((저번|지난)\s?주?)\s*{WeekDayRegex}";
-      public static readonly string DateNextRegex = $@"(다음\s?주?)\s*{WeekDayRegex}";
+      public static readonly string DateThisRegex = $@"(이번(\s+)?(주\s+)?){WeekDayRegex}";
+      public static readonly string DateLastRegex = $@"((저번|지난)(\s+)?(주\s+)?){WeekDayRegex}";
+      public static readonly string DateNextRegex = $@"(다음(\s+)?(주\s+)?){WeekDayRegex}";
       public const string SpecialMonthRegex = @"^[.]";
       public const string SpecialYearRegex = @"^[.]";
-      public const string SpecialDayRegex = @"(최근|그저께|그제|((내일)?\s?모레)|그끄저께|어제|내일|오늘|금일|작일|익일|당일|명일|전일)";
+      public const string SpecialDayRegex = @"(최근|그저께|그제|((내일)?\s?모레)|그끄저께|어제|내일|오늘|금일|작일|익일|당일|명일|전일|다음 날|마지막 날|며칠|글피|그글피)";
+      public static readonly string DurationFromSpecialDayRegex = $@"({SpecialDayRegex}|지금(으로)?)\s*((부터)\s*(\d+|{ZeroToNineIntegerRegexCJK}+)\s*{DateUnitRegex})(\s*후)?";
       public const string SpecialDayWithNumRegex = @"(하루|이틀|사흘|나흘|닷새|엿새)";
-      public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex}(월|달))의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|마지막)\s*{WeekDayRegex})";
+      public static readonly string WeekDayOfMonthRegex = $@"(((((이번|저번|지난|다음)\s)?{MonthRegex}|((이번|저번|지난|다음)\s)?{MonthNumRegex}월|(이번|저번|지난|다음)\s*달)의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|일곱\s?번?째|여덟\s?번?째|아홉\s?번?째|열\s?번?\s?째|마지막)\s*주?\s*{WeekDayRegex})";
       public const string ThisPrefixRegex = @"이번|금";
       public const string LastPrefixRegex = @"저번|지난";
       public const string NextPrefixRegex = @"다음";
       public static readonly string RelativeRegex = $@"(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))";
-      public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})년)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})\s달의?)?{DateDayRegexInCJK}";
+      public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})년)?({RelativeRegex}\s달의?\s)?{DateDayRegexInCJK}";
       public const string DateUnitRegex = @"(?<unit>년|월|주|일)";
-      public const string BeforeRegex = @"이전|之前|前";
-      public const string AfterRegex = @"이?후|후에|";
-      public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
-      public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
-      public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})년)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInCJK}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
-      public static readonly string DateRegexList4 = $@"{MonthNumRegex}\s*/\s*{DayRegex}";
-      public static readonly string DateRegexList5 = $@"{DayRegex}\s*/\s*{MonthNumRegex}";
-      public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}";
-      public static readonly string DateRegexList7 = $@"{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{SimpleYearRegex}";
+      public const string BeforeRegex = @"이?전|之前|前";
+      public const string AfterRegex = @"이?후|후에";
+      public static readonly string DateRegexList1 = $@"({RelativeRegex}\s*)?({SimpleYearRegex}년\s*)?({LunarRegex}\s*)?({MonthRegex}\s*)?{DateDayRegexInCJK}(\s*(,\s*)?{WeekDayRegex})?(\s*(,\s*)?{SimpleYearRegex})?";
+      public static readonly string DateRegexList2 = $@"({WeekDayRegex},?\s*)?({MonthRegex}\s*[/\\\-\.]?\s*{DateDayRegexInCJK})(\s*{WeekDayRegex})?(\s*(,\s*)?({SimpleYearRegex}|{DateYearInCJKRegex})년?)?";
+      public static readonly string DateRegexList3 = $@"(({SpecialDayRegex}으?로?부터)\s((\d+\s*주간?(\s*{WeekDayRegex})?)|({DateDayRegexInCJK}|{SpecialDayRegex})\s[전후]))|((\d+년\s*)?(((한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|열한|열두)\s?달\s*)|(\d+개월\s*))?(((,\s*)|(\s*하고\s*))?{DateDayRegexInCJK}|{SpecialDayRegex})\s(전|후|지나서))|(((그\s)?(다음날|전날))|([그이] 날)|(지난 날)|(새해\s첫\s?날))|({DayRegex}일\s*{MonthNumRegex}월\s*{SimpleYearRegex}년)|(((앞으로\s+)|({SpecialDayRegex}으?로?부터\s+))?\d+\s*주\s(후|동안)\s+{WeekDayRegex})|(나의 하루)|(몇\s*[달일] 전)";
+      public static readonly string DateRegexList4 = $@"{MonthNumRegex}\s*/\s*{DayRegex}(?!\s*퍼센트)";
+      public static readonly string DateRegexList5 = $@"{DayRegex}\s*/\s*{MonthNumRegex}(?!\s*퍼센트)";
+      public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-,]\s*{SimpleYearRegex}";
+      public static readonly string DateRegexList7 = $@"{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.,]\s*{SimpleYearRegex}";
       public static readonly string DateRegexList8 = $@"{SimpleYearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}";
+      public static readonly string DateRegexList9 = $@"({WeekDayRegex},\s*{MonthRegex}\s*{DateDayRegexInCJK},\s*{SimpleYearRegex}년)";
       public const string DatePeriodTillRegex = @"(?<till>까지|--|-|—|——|~|–)";
       public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>까지)";
       public const string DatePeriodDayRegexInCJK = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
@@ -136,7 +138,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"BD", @"영업일 기준으로" },
             { @"QD", @"한나절" },
             { @"W", @"주|주일" },
-            { @"MON", @"월|달" },
+            { @"MON", @"개월|월|달" },
             { @"Y", @"년" },
             { @"P1D", @"하루" },
             { @"P2D", @"이틀" },
@@ -458,6 +460,68 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"이십구일", 29 },
             { @"삼십일", 31 },
             { @"초하루", 32 },
+            { @"1번", 1 },
+            { @"2번", 2 },
+            { @"3번", 3 },
+            { @"4번", 4 },
+            { @"5번", 5 },
+            { @"6번", 6 },
+            { @"7번", 7 },
+            { @"8번", 8 },
+            { @"9번", 9 },
+            { @"10번", 10 },
+            { @"11번", 11 },
+            { @"12번", 12 },
+            { @"13번", 13 },
+            { @"14번", 14 },
+            { @"15번", 15 },
+            { @"16번", 16 },
+            { @"17번", 17 },
+            { @"18번", 18 },
+            { @"19번", 19 },
+            { @"20번", 20 },
+            { @"21번", 21 },
+            { @"22번", 22 },
+            { @"23번", 23 },
+            { @"24번", 24 },
+            { @"25번", 25 },
+            { @"26번", 26 },
+            { @"27번", 27 },
+            { @"28번", 28 },
+            { @"29번", 29 },
+            { @"30번", 30 },
+            { @"31번", 31 },
+            { @"일번", 1 },
+            { @"십일번", 11 },
+            { @"이십번", 20 },
+            { @"십번", 10 },
+            { @"이십일번", 21 },
+            { @"삼십일번", 31 },
+            { @"이번", 2 },
+            { @"삼번", 3 },
+            { @"사번", 4 },
+            { @"오번", 5 },
+            { @"육번", 6 },
+            { @"칠번", 7 },
+            { @"팔번", 8 },
+            { @"구번", 9 },
+            { @"십이번", 12 },
+            { @"십삼번", 13 },
+            { @"십사번", 14 },
+            { @"십오번", 15 },
+            { @"십육번", 16 },
+            { @"십칠번", 17 },
+            { @"십팔번", 18 },
+            { @"십구번", 19 },
+            { @"이십이번", 22 },
+            { @"이십삼번", 23 },
+            { @"이십사번", 24 },
+            { @"이십오번", 25 },
+            { @"이십육번", 26 },
+            { @"이십칠번", 27 },
+            { @"이십팔번", 28 },
+            { @"이십구번", 29 },
+            { @"삼십번", 30 },
             { @"삼십", 30 },
             { @"일", 1 },
             { @"이십", 20 },
