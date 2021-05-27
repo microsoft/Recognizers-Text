@@ -959,34 +959,6 @@
     ]
   },
   {
-    "Input": "너는 지금부터 한 달에 두 번씩 일요일마다 시간 괜찮니? ",
-    "Comment": "Not a proper sentence in Korean and it is not possible to give a better translation of the original case 'Are you available two sundays from now?'",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "지금부터 한 달에 두 번씩 일요일마다",
-        "Type": "date",
-        "Start": 3,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "너는 후에 두 번의 월요일에 시간 괜찮니?",
-    "Comment": "Not a proper sentence in Korean and it is not possible to give a better translation of the original case 'Are you available two monday later?'",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "후에 두 번의 월요일",
-        "Type": "date",
-        "Start": 3,
-        "Length": 11
-      }
-    ]
-  },
-  {
     "Input": "너는모레에 괜찮니?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

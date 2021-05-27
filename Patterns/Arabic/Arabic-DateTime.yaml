@@ -3,7 +3,7 @@
 LangMarker: Ara
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
-  def: (?<till>\b(إلى|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<till>\b(إلى|حتى يوم|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RangeConnectorRegex: !nestedRegex
   def: (?<and>و|خلال|عبر|{BaseDateTime.RangeConnectorSymbolRegex})
@@ -12,7 +12,7 @@ RangeConnectorRegex: !nestedRegex
 LastNegPrefix: !simpleRegex
   def: (?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)
 RelativeRegex: !nestedRegex
-  def:  \b(?<order>القادم|التالي|الآتي|الحالي|الماضي|المقبل|الحاضر|السابق|الأخير)\b
+  def: \b(?<order>القادم|التالي|الآتي|الحالي|الماضي|المقبل|الحاضر|السابق|الأخير)\b
   references: [ LastNegPrefix ]
 StrictRelativeRegex: !nestedRegex
   def: \b(?<order>القادم|التالي|الآتي|هذا|الحالي|الماضي|السابق|الأخير)\b
@@ -43,7 +43,7 @@ CenturySuffixRegex: !simpleRegex
 ReferencePrefixRegex: !simpleRegex
   def: (ذلك|نفس|هذا)\b
 FutureSuffixRegex: !simpleRegex
-  def: \b(in\s+the\s+)?(future|hence)\b
+  def: \b(الحالي(ة)|القادم(ة)|في المستقبل|التالي(ة)|الآتي(ة)|المقبلين|المقبل(ة))\b
 DayRegex: !simpleRegex
   def: (?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))
 ImplicitDayRegex: !simpleRegex
@@ -51,19 +51,20 @@ ImplicitDayRegex: !simpleRegex
 MonthNumRegex: !simpleRegex
   def: (?<month>1[0-2]|(0)?[1-9])\b
 WrittenOneToNineRegex: !simpleRegex
-  def: (?:واحد|اثنان |ثلاثة |أربعة |خمسة |ستة |سبعة|ثمانية| تسعة)
+  def: (?:واحد|اثنان|ثلاثة|أربعة|خمسة|ستة|سبعة|ثمانية|تسعة)
 WrittenElevenToNineteenRegex: !simpleRegex
-  def: (إحدى عشر|إثنى عشر|ثلاثة عشر|أربعة عشر|خمسة عشر|ستة عشر|سبعة عشر||ثمانية عشر||تسعة عشر)
+  def: (إحدى عشر|إثنى عشر|ثلاثة عشر|أربعة عشر|خمسة عشر|ستة عشر|سبعة عشر|ثمانية عشر|تسعة عشر)
 WrittenTensRegex: !simpleRegex
-  def: (عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعون)
+  def: (عشر[وي]ن|ثلاث[وي]ن|أربع[وي]ن|خمس[وي]ن|ست[وي]ن|سبع[وي]ن|ثمان[وي]ن|تسع[وي]ن)
 WrittenNumRegex: !nestedRegex
   def: (?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
-  def: (?<firsttwoyearnum>(واحد|اثنان)?\s*((,\s+|،\s+)?(ألفين|ألفان|ألف))(\s+و)?(\s*(ثلاث|أربع|خمس|ست|سبع|ثمان|تسع)\s*(مائة|مئتان)(\s+و)?)?)\s*(?<lasttwoyearnum>({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex})?(\s+و\s*)?)({WrittenTensRegex})?)?
+  def: (?<firsttwoyearnum>(واحد|اثنان\s*)?((,\s+|،\s+)?(الألفين|ألفين|ألفان|ألف))(\s+و)?(\s*(ثلاث|أربع|خمس|ست|سبع|ثمان|تسع)\s*(مائة|مئتان)(\s+و)?)?)(?<lasttwoyearnum>({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex})?(\s+و\s*)?)({WrittenTensRegex})?)?
   references: [ WrittenElevenToNineteenRegex, WrittenOneToNineRegex, WrittenTensRegex]
-WrittenCenturyOrdinalYearRegex: !simpleRegex
-  def: (?:twenty(\s+(one|two))?|ten|eleven|twelve|thirteen|fifteen|eigthteen|(?:four|six|seven|nine)(teen)?|one|two|three|five|eight)
+WrittenCenturyOrdinalYearRegex: !nestedRegex
+  def: (?<fullyear>({WrittenElevenToNineteenRegex}|مائة|مائتين)\s+((و)\s*)?({WrittenOneToNineRegex})\s+(و)\s*{WrittenTensRegex})
+  references: [WrittenElevenToNineteenRegex, WrittenOneToNineRegex, WrittenTensRegex ]
 CenturyRegex: !nestedRegex
   def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*مائة)?(\s*و)?)\b
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
@@ -71,7 +72,7 @@ LastTwoYearNumRegex: !nestedRegex
   def: (?:zero\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 FullTextYearRegex: !nestedRegex
-  def: \b((?<firsttwoyearnum>{CenturyRegex})\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s*مائة(\s*و)?))\b
+  def: (?<firsttwoyearnum>{CenturyRegex})\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})|(?<firsttwoyearnum>{WrittenCenturyFullYearRegex})|{WrittenCenturyOrdinalYearRegex}
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
 OclockRegex: !simpleRegex
   def: (?<oclock>(ال)?ساعة|(ال)?ساعات)
@@ -113,7 +114,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام|(ال)?أشهر|(ال)?سنوات|(ال)?سنين|(ال)?أعوام|(ال)?حقبات|(ال)?قرون|نهاية الأسبوع|(?<=\s+\d{1,4})[ymwd])\b
+  def: (?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام|الأسابيع|(ال)?أشهر|(ال)?سنوات|(ال)?سنين|(ال)?أعوام|(ال)?حقبات|(ال)?قرون|نهاية الأسبوع|(?<=\s+\d{1,4})[ymwd])\b
 DateTokenPrefix: 'في '
 TimeTokenPrefix: 'عند '
 TokenBeforeDate: 'في '
@@ -134,34 +135,39 @@ FromRegex: !simpleRegex
   def: \b(from(\s+the)?)$
 BetweenTokenRegex: !simpleRegex
   def: \b(between(\s+the)?)$
+OrdinalNumberRegex: !simpleRegex
+  def: ((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?عشرين|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع)
+SimpleCasePreMonthRegex: !nestedRegex
+  def: ((بين|من)\s+)(({DayRegex}-{DayRegex})\s+)((من|في)\s+)?((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)({RelativeRegex})?({YearRegex})?
+  references: [ DayRegex, SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, RelativeRegex, YearRegex ]
 SimpleCasesRegex: !nestedRegex
-  def: \b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex, RangePrefixRegex ]
+  def: (((من)\s+)?(({DayRegex}|{OrdinalNumberRegex})\s+)((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)?((حتى|إلى)\s*)(({DayRegex}|{OrdinalNumberRegex})\s+)((من هذا|من|هذا|في)\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})?(\s+({RelativeRegex}))?(\s+{YearRegex})?)|({SimpleCasePreMonthRegex})
+  references: [ DayRegex, OrdinalNumberRegex, SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, RelativeRegex, YearRegex, SimpleCasePreMonthRegex ]
 MonthFrontSimpleCasesRegex: !nestedRegex
-  def: \b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex, RangePrefixRegex ]
+  def: (((شهر\s+)?{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+(بين|من)\s+({DayRegex}|{OrdinalNumberRegex})\s+[و]\s*({DayRegex}|{OrdinalNumberRegex}))|({DayRegex}\s*[-\./]\s*{DayRegex}\s+{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})
+  references: [ SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, DayRegex, OrdinalNumberRegex ]
 MonthFrontBetweenRegex: !nestedRegex
   def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , YearRegex ]
 BetweenRegex: !nestedRegex
-  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
-  references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
+  def: ((بين|من)\s+)(({DayRegex}|{OrdinalNumberRegex})\s*)((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)?((حتى|إلى|و|-)\s*)(({DayRegex}|{OrdinalNumberRegex})\s+)((من هذا|من|هذا|في)\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})?(\s*([,،-])\s*)?(\s*({RelativeRegex}))?(\s+{YearRegex})?
+  references: [ DayRegex, OrdinalNumberRegex , SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, RelativeRegex, YearRegex ]
 MonthWithYear: !nestedRegex
-  def: \b(({WrittenMonthRegex}[\.]?(\s*)[/\\\-\.,]?(\s+(of|in))?(\s*)({YearRegex}|(?<order>following|next|last|this)\s+year))|(({YearRegex}|(?<order>following|next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b
-  references: [ WrittenMonthRegex, YearRegex ]
+  def: ((هذا\s+)?(شهر\s+)?({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})[\.]?(\s*)[/\\\-\.,]?(\s*(من عام|من|في|عام))?(\s*)({YearRegex}))|(({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+(هذا\s+)?((عام|العام)\s+)?({RelativeRegex})?)
+  references: [ SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, YearRegex, RelativeRegex ]
 SpecialYearPrefixes: !simpleRegex
-  def: (calendar|(?<special>fiscal|school))
+  def: (التقويمي(ة)?|(?<special>المالي(ة)?|الدراسي(ة)?))
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(?<toDate>((un)?till?|to)\s+date)|({RelativeRegex}\s+)?(my\s+)?((?<business>working\s+week|workweek)|week(end)?|month|(({SpecialYearPrefixes}\s+)?year))(?!((\s+of)?\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
-  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex, SpecialYearPrefixes, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex ]
+  def: ((بعد|في|آخر)\s+(\d+\s+)?((ال)?سنوات|(ال)?أعوام|(ال)?سنين|(ال)?أسابيع|(ال)?أشهر|(ال)?أيام))(\s+\d+)?(\s+{FutureSuffixRegex})?|((هذا\s+)?(شهر\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})(\s+{RelativeRegex})?)|((هذا\s+)?((عطلة|خلال)\s+)?((نهاية\s+)?({ArabicWeekRegex}|العام)\s*)((بعد\s+)?{RelativeRegex})?)
+  references: [ FutureSuffixRegex, SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, RelativeRegex, ArabicWeekRegex]
 MonthNumWithYear: !nestedRegex
   def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
-  def: \b(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex}(\s+{BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s+year)?)\b
-  references: [ MonthSuffixRegex, BaseDateTime.FourDigitYearRegex, RelativeRegex ]
+  def: (\b(?<wom>(الأسبوع)\s+((?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+)((من هذا|هذا|من)\s+)?(شهر\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})[,]?(\s+{YearRegex})?)\b)|(((الأسبوع|أسبوع)\s+)(في\s+)?{DayRegex}\s+({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex}))
+  references: [ SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, YearRegex, DayRegex ]
 WeekOfYearRegex: !nestedRegex
-  def: \b(?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({YearRegex}|{RelativeRegex}\s+year))\b
+  def: (?<woy>(الأسبوع)\s+(?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+((من هذا|هذا|من)\s+)?(العام|من عام|عام)\s*({YearRegex}|{RelativeRegex})?)
   references: [ YearRegex, RelativeRegex ]
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
@@ -170,13 +176,13 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(\s)?(-)?{DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterTermRegex: !simpleRegex
-  def: \b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b
+  def: (الربع[- ]+(?<cardinal>الأول|الثاني|الثالث|الرابع))
 RelativeQuarterTermRegex: !nestedRegex
-  def: \b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b
+  def: \b(الربع)\s+(?<orderQuarter>{StrictRelativeRegex})\b
   references: [ StrictRelativeRegex ]
 QuarterRegex: !nestedRegex
-  def: ((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
-  references: [ YearRegex, RelativeRegex, QuarterTermRegex, RelativeQuarterTermRegex ]
+  def: ({YearRegex}\s+)?({QuarterTermRegex})(((\s+(من عام|من))?\s+({YearRegex}))|(\s+(هذا|من هذا|)\s+العام))?
+  references: [ YearRegex, QuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: (?:{YearRegex}|{RelativeRegex}\s+year)('s)?(?:\s*-\s*|\s+(the\s+)?)?{QuarterTermRegex}
   references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
@@ -195,33 +201,33 @@ AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
   references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
-  def: \b(?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\s+in)?))\b
+  def: \b(?<EarlyPrefix>بداية|مطلع|وقت مبكر|(?<RelEarly>قبل))\b
 MidPrefixRegex: !simpleRegex
-  def: \b(?<MidPrefix>mid-?|middle of)\b
+  def: \b(?<MidPrefix>في منتصف|منتصف)\b
 LaterPrefixRegex: !simpleRegex
-  def: \b(?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))\b
+  def: \b(?<LatePrefix>نهاية|باقي|بقية|أواخر|(?<RelLate>في وقت لاحق|لاحقا في|بعد))\b
 PrefixPeriodRegex: !nestedRegex
-  def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
-  references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
+  def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex}|{RelativeRegex})
+  references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex, RelativeRegex]
 PrefixDayRegex: !simpleRegex
   def: \b((?<EarlyPrefix>early)|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\s+in)?(\s+the\s+day)?$
 SeasonDescRegex: !simpleRegex
-  def: (?<seas>spring|summer|fall|autumn|winter)
+  def: (?<seas>(ال)?ربيع|(ال)?صيف|(ال)?خريف|(ال)?شتاء)
 SeasonRegex: !nestedRegex
-  def: \b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
-  references: [ YearRegex, RelativeRegex, SeasonDescRegex, PrefixPeriodRegex ]
+  def: \b(?<season>(هذا\s+)?(منتصف\s+)?(({SeasonDescRegex})(\s+{PrefixPeriodRegex})?(\s*عام\s*)?(\s*{YearRegex})?))\b
+  references: [ SeasonDescRegex, PrefixPeriodRegex, YearRegex ]
 WhichWeekRegex: !simpleRegex
   def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
   def: (the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?
 MonthOfRegex: !simpleRegex
-  def: (month)(\s*)(of)
+  def: (من)(\s*)(شهر)
 SolarMonthRegex: !simpleRegex
-  def: (?<SolarMonth>يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)
+  def: (?<month>يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)
 LunarMonthRegex: !simpleRegex
-  def: (?<LunarMonth>محرم|صفر|ربيع الأول|ربيع الثاني|جمادى الأول|جمادى الثاني|رجب|شعبان|رمضان|شوال|ذو القعدة|ذو الحجة)
+  def: (?<month>محرم|صفر|ربيع الأول|ربيع الثاني|جمادى الأول|جمادى الثاني|رجب|شعبان|رمضان|شوال|ذو القعدة|ذو الحجة)
 ArabicMonthRegex: !simpleRegex
-  def: (?<ArabicMonth>كانون الثاني|شباط|آذار|نيسان|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول|أيار)
+  def: (?<month>كانون الثاني|شباط|آذار|نيسان|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول|أيار)
 MonthRegex: !nestedRegex
   def: (?<month>{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})
   references: [ SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex ]
@@ -237,7 +243,7 @@ OnRegex: !nestedRegex
   def: (?<=\bفي\s+){DayRegex}\b
   references: [ DayRegex ]
 OrdinalDayOfMonthRegex: !simpleRegex
-  def: (?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+(في\s+)((?:3[0-1]|[1-2]\d|0?[1-9])|((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع))
+  def: (?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+(في\s+)((?:3[0-1]|[1-2]\d|0?[1-9])|((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?عشرين|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع))
 WeekDayofMonthRegex: !simpleRegex
   def: (?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+(في\s+)?((?:3[0-1]|[1-2]\d|0?[1-9])|(الأول|الثاني|الثالث|الرابع|الخامس))
 RelaxedOnRegex: !nestedRegex
@@ -246,7 +252,7 @@ RelaxedOnRegex: !nestedRegex
 PrefixWeekDayRegex: !simpleRegex
   def: (\s*((,?\s*on)|[-—–]))
 ArabicWeekRegex: !simpleRegex
-  def: (?<ArabicWeek>الأسبوعين|الاسبوعين|أسابيع|الاسبوع|الأسبوع|أسبوع|أسبوعين|الاسابيع|الأسابيع)
+  def: (?<ArabicWeek>الأسبوعين|الاسبوعين|أسابيع|الاسبوع|الأسبوع|الإسبوع|أسبوعين|أسبوعي|اسبوعين|اسبوعي|أسبوع|الاسابيع|الأسابيع)
 ThisRegex: !nestedRegex
   def: (?=يوم\s+)?({WeekDayRegex})(\s+)?(من|هذا|)(\s+)?(هذا)?(\s+)({ArabicWeekRegex})((\s+)({RelativeRegex}))?
   references: [ WeekDayRegex, ArabicWeekRegex, RelativeRegex ]
@@ -258,8 +264,9 @@ LastWeekDateRegex: !nestedRegex
   references: [ ArabicWeekRegex, WeekDayRegex ]
 LastMonthYearDateRegex: !simpleRegex
   def: (قبل\s+)(\d+ )?((بضعة|بضع|عدة)\s+)?(سنتين|شهرين|الشهور|أشهر|اشهر|شهر|الشهر|أيام|عامين|عام|أعوام|سنة|سنين|سنوات)
-SpecificDayRegex: !simpleRegex
-  def: ((قبل|بعد)\s+)?((اليوم|يوم)\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(آخر يوم|الماضي|السابق|الأخير|يومين))
+SpecificDayRegex: !nestedRegex
+  def: ((قبل|بعد)\s+)?((اليوم|يوم)\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(آخر يوم|الماضي|السابق|الأخير|يومين)|({DayRegex}\s+{MonthRegex}))
+  references: [ DayRegex, MonthRegex ]
 LastDateRegex: !nestedRegex
   def: ({LastDayDateRegex}|{LastWeekDateRegex})
   references: [ LastDayDateRegex, LastWeekDateRegex, ]
@@ -269,8 +276,8 @@ NextDayRegex: !nestedRegex
   def: (هذا يوم\s+|بعد\s+)?(?=(ال)?يوم\s+)?({WeekDayRegex})((\s+)({NextRegex}))?
   references: [ WeekDayRegex, NextRegex ]
 NextWeekDayRegex: !nestedRegex
-  def: ((بعد )|(في هذا ?=)|(هذا ?=))?((ال|لل|ل)?أسبوع(ين)?|{ArabicWeekRegex}|اليوم|يومي|غداً|غد|غدا)(يوم)?({ArabicWeekRegex})?(\s+{NextRegex})?(\s+{ArabicWeekRegex})?
-  references: [ ArabicWeekRegex, NextRegex ]
+  def: ((بعد )|(في هذا ?=)|(هذا ?=))?((ال|لل|ل)?أسبوع(ين)?|{ArabicWeekRegex}|اليوم|يومي|الغد|غداً|غد|غدا)(يوم)?({ArabicWeekRegex})?(\s*(الآتي|الأخير|التالي|القادم|من الآن|الحالي|المقبل|الحاضر))?(\s*{ArabicWeekRegex})?
+  references: [ ArabicWeekRegex ]
 NextWeekRegex: !nestedRegex
   def: (?=بعد )?(هذا )?({ArabicWeekRegex})\s*({NextRegex})?\s+?(يوم)?(\s+)?({WeekDayRegex})?
   references: [ ArabicWeekRegex, NextRegex, WeekDayRegex ]
@@ -281,8 +288,8 @@ CardinalDayOfMonthRegex: !nestedRegex
   def: (((?<=في )|(إلى |لل|يوم ))((((ال)?عاشر|(ال)?حادي(ة)? والعشرين|(ال)?ثاني(ة)? والعشرين|(ال)?ثالث(ة)? والعشرين|(ال)?رابع(ة)? والعشرين|(ال)?خامس(ة)? والعشرين|(ال)?سادس(ة)? والعشرين|(ال)?سابع(ة)? والعشرين|(ال)?ثامن(ة)? والعشرين|(ال)?تاسع(ة)? والعشرين|(ال)?ثلاثين|(ال)?حادي(ة)? والثلاثين|(ال)?أول|(ال)?ثاني|(ال)?ثالث|(ال)?رابع|(ال)?خامس|(ال)?سادس|(ال)?سابع|(ال)?ثامن|(ال)?تاسع))|({DayRegex})))|((?<=يوم )({DayRegex})[\./-]\s+({MonthRegex}))
   references: [ DayRegex, MonthRegex ]
 SpecialDayRegex: !nestedRegex
-  def: ((ال)?يوم(\s{DayRegex}\s{MonthRegex})|{NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})
-  references: [ NextWeekDayRegex, CardinalDayOfMonthRegex, SpecificDayRegex, LastMonthYearDateRegex, DayRegex, MonthRegex ]
+  def: ({NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})
+  references: [ NextWeekDayRegex, CardinalDayOfMonthRegex, SpecificDayRegex, LastMonthYearDateRegex ]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b
   references: [ WrittenNumRegex ]
@@ -576,9 +583,9 @@ AnUnitRegex: !nestedRegex
   def: \b((?<half>(1/2|½|نصف)))\s+{DurationUnitRegex}(\s(أخرى))?
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
-  def: \b((((خلال|على مدى|مدة)\s)|ل)+)(?<unit>(ال)?عام(ين)?|(ال)?سنتين|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)\b
+  def: \b((((خلال|على مدى|مدة)\s)|ل)+)(?<unit>(ال)?عام(ين)?|(ال)?سنتين|(ال)?سنة|(ال)?شهر(ين)?|الأشهر|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)\b
 AllRegex: !simpleRegex
-  def: (?<all>(طوال\s+))?(?<unit>(ال)?عام|(ال)?سنة|(ال)?شهر|(ال)?أسبوع|(ال)?يوم)(?<all>(\s+كامل(ة)?))?
+  def: (?<all>(طوال\s+))?(?<unit>(ال)?عام|(ال)?سنة|(ال)?شهر|(ال)?أسبوع|(ال)?أسابيع|(ال)?أيام|(ال)?يوم)(?<all>(\s+كامل(ة)?))?
 HalfRegex: !simpleRegex
   def: \b((نصف)\s+)?(?<unit>(ال)?ساعة|ساعتين|دقيقة|دقيقتين|ثانية|ثانيتين|(ال)?عام(ين)?|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)(?<half>(\s+)?(و)?نصف)?\b
 ConjunctionRegex: !simpleRegex
@@ -587,7 +594,7 @@ ConjunctionRegex: !simpleRegex
 ArabicThisYearRegex: !simpleRegex
   def: (\s*)?(هذا|هذه)?(لعام|عام|العام|سنة)?(\s*)? 
 ArabicEidDay: !simpleRegex
-  def:  ?(يوم |عيد |ليلة | ليل)?(?=\s*)
+  def: ?(يوم |عيد |ليلة | ليل)?(?=\s*)
 HolidayList1: !nestedRegex
   def: ((?=\s*){ArabicEidDay}(إثنين الرماد|رأس السنة الهجرية|الحج|يواندان|الفطر|رأس السنة الجديدة|الأضحى|الأب|الشكر|عيد الميلاد|المولد النبوي|الفصح)(){ArabicThisYearRegex}(العام|السنة)?({YearRegex})?({RelativeRegex})?)
   references: [ ArabicEidDay, ArabicThisYearRegex, YearRegex, RelativeRegex ]
@@ -659,7 +666,7 @@ NightStartEndRegex: !simpleRegex
 InexactNumberRegex: !simpleRegex
   def: بضع(ة)?|عدة|(?<NumTwoTerm>((ل))?عدد(\s+من)?)
 InexactNumberUnitRegex: !nestedRegex
-  def: ({InexactNumberRegex})\s+({DurationUnitRegex})
+  def: ({InexactNumberRegex})\s+({DurationUnitRegex})|(في\s+)?((ال)?يومين|(ال)?أيام|(ال)?أسابيع|(ال)?أشهر|(ال)?سنوات|(ال)?أعوام|(ال)?سنين)\s+(العديدة|القليلة|الثلاثة|الأربعة|الخمسة|الستة|السبعة|الثمانية|التسعة|العشرة)
   references: [InexactNumberRegex, DurationUnitRegex]
 RelativeTimeUnitRegex: !nestedRegex
   def: (?:(?:(?:{NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
@@ -695,7 +702,7 @@ WeekDayAndDayRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
-  def: \b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year|decade)\b
+  def: \b(باقي|بقية)\s+(?<duration>الشهر|العام|الأسبوع|العقد)\b
 RestOfDateTimeRegex: !simpleRegex
   def: \b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
 AmbiguousRangeModifierPrefix: !simpleRegex
@@ -706,10 +713,10 @@ NumberEndingPattern: !nestedRegex
 OneOnOneRegex: !simpleRegex
   def: \b(1\s*:\s*1(?!\d))|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b
 LaterEarlyPeriodRegex: !nestedRegex
-  def: \b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))|({UnspecificEndOfRangeRegex}))\b
+  def: (\b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))|({UnspecificEndOfRangeRegex}))\b)|({PrefixPeriodRegex}\s+(من هذا|من|هذا)\s+(الشهر|الأسبوع|العام|الاسبوع)(\s+{PrefixPeriodRegex})?)
   references: [PrefixPeriodRegex, OneWordPeriodRegex, BaseDateTime.FourDigitYearRegex, UnspecificEndOfRangeRegex]
 WeekWithWeekDayRangeRegex: !nestedRegex
-  def: \b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b
+  def: \b(?<week>(هذا\s+)?(الأسبوع)\s+(({NextPrefixRegex}|{PreviousPrefixRegex})\s+)?)(((بين)\s+{WeekDayRegex}\s+(و)\s*{WeekDayRegex})|(من)\s+{WeekDayRegex}\s+(إلى)\s+{WeekDayRegex})\b
   references: [NextPrefixRegex, PreviousPrefixRegex, WeekDayRegex]
 GeneralEndingRegex: !simpleRegex
   def: ^\s*((\.,)|\.|,|!|\?)?\s*$
@@ -722,7 +729,7 @@ PrefixArticleRegex: !simpleRegex
 OrRegex: !simpleRegex
   def: \s*((\b|,\s*)(or|and)\b|,)\s*
 SpecialYearTermsRegex: !nestedRegex
-  def: \b((({SpecialYearPrefixes}\s+)?year)|(cy|(?<special>fy|sy)))
+  def: \b(((ال)?سنة|(ال)?عام)(\s+{SpecialYearPrefixes})?)
   references: [ SpecialYearPrefixes ]
 YearPlusNumberRegex: !nestedRegex
   def: \b({SpecialYearTermsRegex}\s*((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
@@ -736,15 +743,15 @@ TimeBeforeAfterRegex: !nestedRegex
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
 DecadeRegex: !simpleRegex
-  def: (?<decade>(?:nough|twen|thir|fou?r|fif|six|seven|eight|nine)ties|two\s+thousands)
+  def: (?<decade>(ال)?عشرات|(ال)?عشرينيات|(ال)?عشرينات|(ال)?ثلاثينات|(ال)?أربعينيات|(ال)?أربعينات|(ال)?خمسينيات|(ال)?خمسينات|(ال)?ستينات|(ال)?سبعينيات|(ال)?سبعينات|(ال)?ثمانينات|(ال)?تسعينات|الألفين|ألفين)
 DecadeWithCenturyRegex: !nestedRegex
-  def: (the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?(\s)?s\b)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
-  references: [ CenturyRegex, DecadeRegex ]
+  def: ({DecadeRegex})((\s+القرن(\s+(الثماني عشر|التاسع عشر)))|(\s+(و{DecadeRegex})))?
+  references: [ DecadeRegex ]
 RelativeDecadeRegex: !nestedRegex
-  def: \b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b
+  def: \b(?<number>(الثلاثة|الأربعة|الخمسة|الستة|السبعة|الثمانية|التسعة|العشر|\d+)\s+)?((ال)?عقدين|(ال)?عقد|(ال)?عقود)\s+(الماضيين|الماضية|الماضي|القادمين|القادمة|القادم)\b
   references: [ RelativeRegex ]
 YearPeriodRegex: !nestedRegex
-  def: ((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
+  def: (((من|بين)\s+)?{YearRegex}\s*({TillRegex}|{RangeConnectorRegex})\s*{YearRegex})
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 StrictTillRegex: !nestedRegex
   def: (?<till>\b(to|(un)?till?|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))
@@ -773,6 +780,7 @@ UnitMap: !dictionary
     حقبتان: 20Y
     حقبتين: 20Y
     سنة: Y
+    العام: Y
     عام: Y
     سنوات: Y
     أعوام: Y
@@ -780,6 +788,7 @@ UnitMap: !dictionary
     سنتان: 2Y
     سنتين: 2Y
     عامين: 2Y
+    الشهر: MON
     شهر: MON
     أشهر: MON
     شهور: MON
@@ -829,6 +838,7 @@ UnitValueMap: !dictionary
     قرنان: 630720000
     حقبتان: 630720000
     سنة: 31536000
+    العام: 31536000
     عام: 31536000
     سنوات: 31536000
     أعوام: 31536000
@@ -836,6 +846,7 @@ UnitValueMap: !dictionary
     سنتان: 63072000
     سنتين: 63072000
     عامين: 63072000
+    الشهر: 2592000
     شهر: 2592000
     أشهر: 2592000
     شهور: 2592000
@@ -877,11 +888,14 @@ SpecialYearPrefixesMap: !dictionary
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
-    spring: SP
-    summer: SU
-    fall: FA
-    autumn: FA
-    winter: WI
+    الربيع: SP
+    ربيع: SP
+    الصيف: SU
+    صيف: SU
+    الخريف: FA
+    خريف: FA
+    الشتاء: WI
+    شتاء: WI
 SeasonValueMap: !dictionary
   types: [ string, int ]
   entries:
@@ -892,16 +906,11 @@ SeasonValueMap: !dictionary
 CardinalMap: !dictionary
   types: [ string, int]
   entries:
-    first: 1
-    1st: 1
-    second: 2
-    2nd: 2
-    third: 3
-    3rd: 3
-    fourth: 4
-    4th: 4
-    fifth: 5
-    5th: 5
+    الأول: 1
+    الثاني: 2
+    الثالث: 3
+    الرابع: 4
+    الخامس: 5
 DayOfWeek: !dictionary
   types: [ string, int ]
   entries: 
@@ -1345,7 +1354,7 @@ FutureTerms: !list
 LastCardinalTerms: !list
   types: [ string ]
   entries:
-    - last
+    - الأخير
 MonthTerms: !list
   types: [ string ]
   entries:
