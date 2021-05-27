@@ -73,6 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 
         Regex IDateTimeUtilityConfiguration.RangePrefixRegex => RangePrefixRegex;
 
-        bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for Spanish is false.
+        // It only needs to be true here to extract 'ago/later' in prefixes (e.g. 'hace 30 minutos').
+        bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => true;
     }
 }

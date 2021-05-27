@@ -20902,5 +20902,53 @@
         "End": 46
       }
     ]
+  },
+  {
+    "Input": "Nous avons terminé notre cours il y a 30 minutes.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 30 minutes",
+        "Start": 31,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-20T15:00:00",
+              "type": "datetime",
+              "value": "2021-05-20 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je l'ai commandé il y a 24 heures.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 24 heures",
+        "Start": 17,
+        "End": 32,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-19T15:30:00",
+              "type": "datetime",
+              "value": "2021-05-19 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -160,12 +160,12 @@ RangeUnitRegex: !simpleRegex
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
-  def: \b(en)\b
+  def: \b(en)(?=\s*$)\b
 SinceYearSuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
-  def: \b(dentro\s+de)\b
+  def: \b(dentro\s+de)(?=\s*$)\b
 TodayNowRegex: !simpleRegex
   def: \b(hoy|ahora|este entonces)\b
 FromRegex: !simpleRegex
@@ -593,7 +593,7 @@ YearSuffix: !nestedRegex
   references: [ YearRegex, FullTextYearRegex ]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
-  def: \b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes)\b
+  def: \b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes|hace)\b
 LaterRegex: !simpleRegex
   def: \b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(?<day>hoy|ayer|mañana))\b
 # DateTimePeriodParser
