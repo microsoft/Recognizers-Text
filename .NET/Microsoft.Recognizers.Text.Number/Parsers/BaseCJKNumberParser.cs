@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.Number
             // TODO: @Refactor this check to determine the subtype for JA and KO
             if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
             {
-                ret.Type = DetermineType(extResult);
+                ret.Type = DetermineType(extResult, ret);
                 ret.Text = ret.Text.ToLowerInvariant();
             }
 

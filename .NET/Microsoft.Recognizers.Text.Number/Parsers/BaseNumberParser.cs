@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret != null)
             {
-                ret.Type = DetermineType(extResult);
+                ret.Type = DetermineType(extResult, ret);
                 ret.Text = ret.Text.ToLowerInvariant();
             }
 
@@ -357,12 +357,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                                 GetDigitalValue(numerator, 1) :
+                                 GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetDigitalValue(denominator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                               GetDigitalValue(denominator, 1) :
+                               GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -521,7 +521,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
-                Metadata = extResult.Metadata,
+                Metadata = extResult.Metadata != null ? extResult.Metadata : new Metadata(),
             };
 
             // [1] 24
@@ -556,7 +556,9 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // Scale used in calculating double
-            result.Value = GetDigitalValue(extText, power);
+            var value = GetDigitalValue(extText, power);
+            result.Value = value;
+            result.Metadata.TreatAsInteger = (value % 1) == 0;
 
             return result;
         }
@@ -867,7 +869,7 @@ namespace Microsoft.Recognizers.Text.Number
             return string.Join("|", sortKeys);
         }
 
-        protected static string DetermineType(ExtractResult er)
+        protected static string DetermineType(ExtractResult er, ParseResult pr)
         {
             if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
             {
@@ -889,11 +891,11 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
-                    subType = Constants.INTEGER;
+                    subType = (pr.Metadata == null || pr.Metadata.TreatAsInteger) ? Constants.INTEGER : Constants.DECIMAL;
                 }
                 else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
                 {
-                    subType = Constants.DECIMAL;
+                    subType = (pr.Metadata == null || !pr.Metadata.TreatAsInteger) ? Constants.DECIMAL : Constants.INTEGER;
                 }
             }
 
@@ -945,7 +947,8 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 result = true;
 
-                if (isMultiDecimalSeparatorCulture && hasSingleSeparator && (distanceEnd != decimalLength || (prevCh == '0' && distanceStart == 1)))
+                if (isMultiDecimalSeparatorCulture && hasSingleSeparator &&
+                    (distanceEnd != decimalLength || (prevCh == '0' && distanceStart == 1) || distanceStart > 3))
                 {
                     result = false;
                 }

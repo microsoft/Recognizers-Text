@@ -1270,7 +1270,7 @@
         "Text": "1.2b",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "1200000000"
         },
         "Start": 0,
@@ -2371,7 +2371,7 @@
         "Text": "2.12 hundred",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "212"
         },
         "Start": 14,
@@ -2468,7 +2468,7 @@
         "End": 35,
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "5"
         }
       },
@@ -2478,7 +2478,7 @@
         "End": 43,
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "5"
         }
       }
