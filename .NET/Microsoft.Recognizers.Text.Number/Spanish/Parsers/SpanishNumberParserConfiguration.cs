@@ -53,6 +53,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public string NonDecimalSeparatorText { get; private set; }
 
+        public override IEnumerable<string> NonStandardSeparatorVariants => NumbersDefinitions.NonStandardSeparatorVariants;
+
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var result = new List<string>();

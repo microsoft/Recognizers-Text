@@ -24,6 +24,12 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string LangMarker = @"Eng";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
+      public static readonly IList<string> NonStandardSeparatorVariants = new List<string>
+        {
+            @"en-za",
+            @"en-na",
+            @"en-zw"
+        };
       public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
       public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
       public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";

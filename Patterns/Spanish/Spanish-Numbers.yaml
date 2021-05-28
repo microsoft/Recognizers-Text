@@ -5,19 +5,31 @@ LangMarker: Spa
 CompoundNumberLanguage: !bool false
 #Does this culture uses period and comma intercheangeably as decimal separator?
 MultiDecimalSeparatorCulture: !bool true
+#List of culture variants that don't follow the default decimal separator
+NonStandardSeparatorVariants: !list
+  types: [ string ]
+  entries:
+    - es-mx
+    - es-do
+    - es-sv
+    - es-gt
+    - es-hn
+    - es-ni
+    - es-pa
+    - es-pr 
 #Integer Regex
 HundredsNumberIntegerRegex: !simpleRegex
   def: (cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))
 RoundNumberIntegerRegex: !simpleRegex
-  def: (mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)
+  def: (mil millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)
 TwentiesIntegerRegex: !simpleRegex
-  def: (veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)
+  def: (veinti(cuatro|cinco|siete|nueve|tr[eé]s|s[eé]is|ocho|d[oó]s|[uú]n[oa]?)|ventiun[ao]|veinte)
 TensNumberIntegerRegex: !simpleRegex
-  def: (cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)
+  def: (cincuenta|cuarenta|treinta|se[st]enta|ochenta|noventa)
 NegativeNumberTermsRegex: !simpleRegex
   def: (?<negTerm>(?<!(al|lo)\s+)menos\s+)
 NegativeNumberSignRegex: !nestedRegex
