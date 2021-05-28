@@ -1,0 +1,28 @@
+[
+  {
+    "Input": "Tiquetes de avión baratos Madrid - Cozumel desde $ 1,234 (1234.00)",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1,234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234"
+        },
+        "Start": 51,
+        "End": 55
+      },
+      {
+        "Text": "1234.00",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234"
+        },
+        "Start": 58,
+        "End": 64
+      }
+    ]
+  }
+]

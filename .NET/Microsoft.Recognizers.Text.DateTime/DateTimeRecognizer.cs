@@ -84,6 +84,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         new SpanishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Spanish, options)))));
 
             RegisterModel<DateTimeModel>(
+                Culture.SpanishMexican,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new SpanishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.SpanishMexican, options))),
+                    new BaseMergedDateTimeExtractor(
+                        new SpanishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.SpanishMexican, options)))));
+
+            RegisterModel<DateTimeModel>(
                 Culture.French,
                 options => new DateTimeModel(
                     new BaseMergedDateTimeParser(
