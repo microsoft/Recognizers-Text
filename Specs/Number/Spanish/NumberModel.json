@@ -2844,6 +2844,7 @@
   },
   {
     "Input": "0.0638, 0,0638, 1.000, 1,000, 0,683, 0.683, 1.111,11, 1111,13, 1111.13, 1111.121, 1111,121",
+    "Comment" : "Sub-type for 0.683 is currently incorrect.",
     "NotSupported": "dotnet, javascript, java, python",
     "Results": [
       {
@@ -2880,8 +2881,8 @@
         "Text": "1,000",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "1000"
+          "subtype": "decimal",
+          "value": "1"
         },
         "Start": 23,
         "End": 27
@@ -2955,6 +2956,32 @@
         },
         "Start": 82,
         "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "Tiquetes de avión baratos Madrid - Cozumel desde $ 1.234 (1234,00)",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1.234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234"
+        },
+        "Start": 51,
+        "End": 55
+      },
+      {
+        "Text": "1234,00",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1234"
+        },
+        "Start": 58,
+        "End": 64
       }
     ]
   }
