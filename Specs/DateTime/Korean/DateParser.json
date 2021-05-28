@@ -1885,58 +1885,6 @@
     ]
   },
   {
-    "Input": "너는 지금부터 한 달에 두 번씩 일요일마다 시간 괜찮니? ",
-    "Comment": "Not a proper sentence in Korean and it is not possible to give a better translation of the original case 'Are you available two sundays from now?'",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "지금부터 한 달에 두 번씩 일요일마다",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-20",
-          "FutureResolution": {
-            "date": "2018-05-20"
-          },
-          "PastResolution": {
-            "date": "2018-05-20"
-          }
-        },
-        "Start": 18,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "너는 후에 두 번의 월요일에 시간 괜찮니?",
-    "Comment": "Not a proper sentence in Korean and it is not possible to give a better translation of the original case 'Are you available two monday later?'",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "후에 두 번의 월요일",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-21",
-          "FutureResolution": {
-            "date": "2018-05-21"
-          },
-          "PastResolution": {
-            "date": "2018-05-21"
-          }
-        },
-        "Start": 18,
-        "Length": 16
-      }
-    ]
-  },
-  {
     "Input": "너는모레에 괜찮니?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"

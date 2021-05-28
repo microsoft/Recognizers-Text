@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
     {
       public const string LangMarker = @"Ara";
       public const bool CheckBothBeforeAfter = false;
-      public static readonly string TillRegex = $@"(?<till>\b(إلى|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string TillRegex = $@"(?<till>\b(إلى|حتى يوم|حتى|خلال|عبر)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public static readonly string RangeConnectorRegex = $@"(?<and>و|خلال|عبر|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string LastNegPrefix = @"(?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)";
       public static readonly string RelativeRegex = $@"\b(?<order>القادم|التالي|الآتي|الحالي|الماضي|المقبل|الحاضر|السابق|الأخير)\b";
@@ -37,19 +37,19 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string RangePrefixRegex = @"(من|بين)";
       public const string CenturySuffixRegex = @"(^century)\b";
       public const string ReferencePrefixRegex = @"(ذلك|نفس|هذا)\b";
-      public const string FutureSuffixRegex = @"\b(in\s+the\s+)?(future|hence)\b";
+      public const string FutureSuffixRegex = @"\b(الحالي(ة)|القادم(ة)|في المستقبل|التالي(ة)|الآتي(ة)|المقبلين|المقبل(ة))\b";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))";
       public const string ImplicitDayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
-      public const string WrittenOneToNineRegex = @"(?:واحد|اثنان |ثلاثة |أربعة |خمسة |ستة |سبعة|ثمانية| تسعة)";
-      public const string WrittenElevenToNineteenRegex = @"(إحدى عشر|إثنى عشر|ثلاثة عشر|أربعة عشر|خمسة عشر|ستة عشر|سبعة عشر||ثمانية عشر||تسعة عشر)";
-      public const string WrittenTensRegex = @"(عشرون|ثلاثون|أربعون|خمسون|ستون|سبعون|ثمانون|تسعون)";
+      public const string WrittenOneToNineRegex = @"(?:واحد|اثنان|ثلاثة|أربعة|خمسة|ستة|سبعة|ثمانية|تسعة)";
+      public const string WrittenElevenToNineteenRegex = @"(إحدى عشر|إثنى عشر|ثلاثة عشر|أربعة عشر|خمسة عشر|ستة عشر|سبعة عشر|ثمانية عشر|تسعة عشر)";
+      public const string WrittenTensRegex = @"(عشر[وي]ن|ثلاث[وي]ن|أربع[وي]ن|خمس[وي]ن|ست[وي]ن|سبع[وي]ن|ثمان[وي]ن|تسع[وي]ن)";
       public static readonly string WrittenNumRegex = $@"(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
-      public static readonly string WrittenCenturyFullYearRegex = $@"(?<firsttwoyearnum>(واحد|اثنان)?\s*((,\s+|،\s+)?(ألفين|ألفان|ألف))(\s+و)?(\s*(ثلاث|أربع|خمس|ست|سبع|ثمان|تسع)\s*(مائة|مئتان)(\s+و)?)?)\s*(?<lasttwoyearnum>({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex})?(\s+و\s*)?)({WrittenTensRegex})?)?";
-      public const string WrittenCenturyOrdinalYearRegex = @"(?:twenty(\s+(one|two))?|ten|eleven|twelve|thirteen|fifteen|eigthteen|(?:four|six|seven|nine)(teen)?|one|two|three|five|eight)";
+      public static readonly string WrittenCenturyFullYearRegex = $@"(?<firsttwoyearnum>(واحد|اثنان\s*)?((,\s+|،\s+)?(الألفين|ألفين|ألفان|ألف))(\s+و)?(\s*(ثلاث|أربع|خمس|ست|سبع|ثمان|تسع)\s*(مائة|مئتان)(\s+و)?)?)(?<lasttwoyearnum>({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex})?(\s+و\s*)?)({WrittenTensRegex})?)?";
+      public static readonly string WrittenCenturyOrdinalYearRegex = $@"(?<fullyear>({WrittenElevenToNineteenRegex}|مائة|مائتين)\s+((و)\s*)?({WrittenOneToNineRegex})\s+(و)\s*{WrittenTensRegex})";
       public static readonly string CenturyRegex = $@"\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*مائة)?(\s*و)?)\b";
       public static readonly string LastTwoYearNumRegex = $@"(?:zero\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
-      public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s*مائة(\s*و)?))\b";
+      public static readonly string FullTextYearRegex = $@"(?<firsttwoyearnum>{CenturyRegex})\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})|(?<firsttwoyearnum>{WrittenCenturyFullYearRegex})|{WrittenCenturyOrdinalYearRegex}";
       public const string OclockRegex = @"(?<oclock>(ال)?ساعة|(ال)?ساعات)";
       public const string SpecialDescRegex = @"((?<ipm>)p\b)";
       public static readonly string AmDescRegex = $@"(في\s)?(صباح(ا)?|صباحًا|الصباح|{BaseDateTime.BaseAmDescRegex})";
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>(من\s+)?(هذا\s+)?(الشهر|شهر)(\s+)?({NextRegex})?)";
       public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام|(ال)?أشهر|(ال)?سنوات|(ال)?سنين|(ال)?أعوام|(ال)?حقبات|(ال)?قرون|نهاية الأسبوع|(?<=\s+\d{1,4})[ymwd])\b";
+      public const string DateUnitRegex = @"(?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام|الأسابيع|(ال)?أشهر|(ال)?سنوات|(ال)?سنين|(ال)?أعوام|(ال)?حقبات|(ال)?قرون|نهاية الأسبوع|(?<=\s+\d{1,4})[ymwd])\b";
       public const string DateTokenPrefix = @"في ";
       public const string TimeTokenPrefix = @"عند ";
       public const string TokenBeforeDate = @"في ";
@@ -78,61 +78,63 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string ForHalfTokenRegex = @"\b(ل(s+)?(نصف))$";
       public const string FromRegex = @"\b(from(\s+the)?)$";
       public const string BetweenTokenRegex = @"\b(between(\s+the)?)$";
-      public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
-      public static readonly string MonthFrontSimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
+      public const string OrdinalNumberRegex = @"((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?عشرين|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع)";
+      public static readonly string SimpleCasePreMonthRegex = $@"((بين|من)\s+)(({DayRegex}-{DayRegex})\s+)((من|في)\s+)?((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)({RelativeRegex})?({YearRegex})?";
+      public static readonly string SimpleCasesRegex = $@"(((من)\s+)?(({DayRegex}|{OrdinalNumberRegex})\s+)((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)?((حتى|إلى)\s*)(({DayRegex}|{OrdinalNumberRegex})\s+)((من هذا|من|هذا|في)\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})?(\s+({RelativeRegex}))?(\s+{YearRegex})?)|({SimpleCasePreMonthRegex})";
+      public static readonly string MonthFrontSimpleCasesRegex = $@"(((شهر\s+)?{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+(بين|من)\s+({DayRegex}|{OrdinalNumberRegex})\s+[و]\s*({DayRegex}|{OrdinalNumberRegex}))|({DayRegex}\s*[-\./]\s*{DayRegex}\s+{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
-      public static readonly string BetweenRegex = $@"\b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
-      public static readonly string MonthWithYear = $@"\b(({WrittenMonthRegex}[\.]?(\s*)[/\\\-\.,]?(\s+(of|in))?(\s*)({YearRegex}|(?<order>following|next|last|this)\s+year))|(({YearRegex}|(?<order>following|next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b";
-      public const string SpecialYearPrefixes = @"(calendar|(?<special>fiscal|school))";
-      public static readonly string OneWordPeriodRegex = $@"\b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(?<toDate>((un)?till?|to)\s+date)|({RelativeRegex}\s+)?(my\s+)?((?<business>working\s+week|workweek)|week(end)?|month|(({SpecialYearPrefixes}\s+)?year))(?!((\s+of)?\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b";
+      public static readonly string BetweenRegex = $@"((بين|من)\s+)(({DayRegex}|{OrdinalNumberRegex})\s*)((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)?((حتى|إلى|و|-)\s*)(({DayRegex}|{OrdinalNumberRegex})\s+)((من هذا|من|هذا|في)\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})?(\s*([,،-])\s*)?(\s*({RelativeRegex}))?(\s+{YearRegex})?";
+      public static readonly string MonthWithYear = $@"((هذا\s+)?(شهر\s+)?({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})[\.]?(\s*)[/\\\-\.,]?(\s*(من عام|من|في|عام))?(\s*)({YearRegex}))|(({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+(هذا\s+)?((عام|العام)\s+)?({RelativeRegex})?)";
+      public const string SpecialYearPrefixes = @"(التقويمي(ة)?|(?<special>المالي(ة)?|الدراسي(ة)?))";
+      public static readonly string OneWordPeriodRegex = $@"((بعد|في|آخر)\s+(\d+\s+)?((ال)?سنوات|(ال)?أعوام|(ال)?سنين|(ال)?أسابيع|(ال)?أشهر|(ال)?أيام))(\s+\d+)?(\s+{FutureSuffixRegex})?|((هذا\s+)?(شهر\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})(\s+{RelativeRegex})?)|((هذا\s+)?((عطلة|خلال)\s+)?((نهاية\s+)?({ArabicWeekRegex}|العام)\s*)((بعد\s+)?{RelativeRegex})?)";
       public static readonly string MonthNumWithYear = $@"\b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b";
-      public static readonly string WeekOfMonthRegex = $@"\b(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex}(\s+{BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s+year)?)\b";
-      public static readonly string WeekOfYearRegex = $@"\b(?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({YearRegex}|{RelativeRegex}\s+year))\b";
+      public static readonly string WeekOfMonthRegex = $@"(\b(?<wom>(الأسبوع)\s+((?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+)((من هذا|هذا|من)\s+)?(شهر\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})[,]?(\s+{YearRegex})?)\b)|(((الأسبوع|أسبوع)\s+)(في\s+)?{DayRegex}\s+({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex}))";
+      public static readonly string WeekOfYearRegex = $@"(?<woy>(الأسبوع)\s+(?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+((من هذا|هذا|من)\s+)?(العام|من عام|عام)\s*({YearRegex}|{RelativeRegex})?)";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
       public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?)(\s)?(-)?{DateUnitRegex}";
-      public const string QuarterTermRegex = @"\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b";
-      public static readonly string RelativeQuarterTermRegex = $@"\b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b";
-      public static readonly string QuarterRegex = $@"((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}";
+      public const string QuarterTermRegex = @"(الربع[- ]+(?<cardinal>الأول|الثاني|الثالث|الرابع))";
+      public static readonly string RelativeQuarterTermRegex = $@"\b(الربع)\s+(?<orderQuarter>{StrictRelativeRegex})\b";
+      public static readonly string QuarterRegex = $@"({YearRegex}\s+)?({QuarterTermRegex})(((\s+(من عام|من))?\s+({YearRegex}))|(\s+(هذا|من هذا|)\s+العام))?";
       public static readonly string QuarterRegexYearFront = $@"(?:{YearRegex}|{RelativeRegex}\s+year)('s)?(?:\s*-\s*|\s+(the\s+)?)?{QuarterTermRegex}";
       public const string HalfYearTermRegex = @"(?<cardinal>first|1st|second|2nd)\s+half";
       public static readonly string HalfYearFrontRegex = $@"(?<year>((1[5-9]|20)\d{{2}})|2100)(\s*-\s*|\s+(the\s+)?)?h(?<number>[1-2])";
       public static readonly string HalfYearBackRegex = $@"(the\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})";
       public static readonly string HalfYearRelativeRegex = $@"(the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+year)";
       public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";
-      public const string EarlyPrefixRegex = @"\b(?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\s+in)?))\b";
-      public const string MidPrefixRegex = @"\b(?<MidPrefix>mid-?|middle of)\b";
-      public const string LaterPrefixRegex = @"\b(?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))\b";
-      public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})";
+      public const string EarlyPrefixRegex = @"\b(?<EarlyPrefix>بداية|مطلع|وقت مبكر|(?<RelEarly>قبل))\b";
+      public const string MidPrefixRegex = @"\b(?<MidPrefix>في منتصف|منتصف)\b";
+      public const string LaterPrefixRegex = @"\b(?<LatePrefix>نهاية|باقي|بقية|أواخر|(?<RelLate>في وقت لاحق|لاحقا في|بعد))\b";
+      public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex}|{RelativeRegex})";
       public const string PrefixDayRegex = @"\b((?<EarlyPrefix>early)|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\s+in)?(\s+the\s+day)?$";
-      public const string SeasonDescRegex = @"(?<seas>spring|summer|fall|autumn|winter)";
-      public static readonly string SeasonRegex = $@"\b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b";
+      public const string SeasonDescRegex = @"(?<seas>(ال)?ربيع|(ال)?صيف|(ال)?خريف|(ال)?شتاء)";
+      public static readonly string SeasonRegex = $@"\b(?<season>(هذا\s+)?(منتصف\s+)?(({SeasonDescRegex})(\s+{PrefixPeriodRegex})?(\s*عام\s*)?(\s*{YearRegex})?))\b";
       public const string WhichWeekRegex = @"\b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
       public const string WeekOfRegex = @"(the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?";
-      public const string MonthOfRegex = @"(month)(\s*)(of)";
-      public const string SolarMonthRegex = @"(?<SolarMonth>يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)";
-      public const string LunarMonthRegex = @"(?<LunarMonth>محرم|صفر|ربيع الأول|ربيع الثاني|جمادى الأول|جمادى الثاني|رجب|شعبان|رمضان|شوال|ذو القعدة|ذو الحجة)";
-      public const string ArabicMonthRegex = @"(?<ArabicMonth>كانون الثاني|شباط|آذار|نيسان|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول|أيار)";
+      public const string MonthOfRegex = @"(من)(\s*)(شهر)";
+      public const string SolarMonthRegex = @"(?<month>يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)";
+      public const string LunarMonthRegex = @"(?<month>محرم|صفر|ربيع الأول|ربيع الثاني|جمادى الأول|جمادى الثاني|رجب|شعبان|رمضان|شوال|ذو القعدة|ذو الحجة)";
+      public const string ArabicMonthRegex = @"(?<month>كانون الثاني|شباط|آذار|نيسان|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول|أيار)";
       public static readonly string MonthRegex = $@"(?<month>{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})";
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))";
       public static readonly string YearSuffix = $@"((\s*،\s*|,|\sمن)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string OnRegex = $@"(?<=\bفي\s+){DayRegex}\b";
-      public const string OrdinalDayOfMonthRegex = @"(?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+(في\s+)((?:3[0-1]|[1-2]\d|0?[1-9])|((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع))";
+      public const string OrdinalDayOfMonthRegex = @"(?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+(في\s+)((?:3[0-1]|[1-2]\d|0?[1-9])|((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?عشرين|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع))";
       public const string WeekDayofMonthRegex = @"(?=يوم\s+)?(الأحد|الإثنين|الاثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+(في\s+)?((?:3[0-1]|[1-2]\d|0?[1-9])|(الأول|الثاني|الثالث|الرابع|الخامس))";
       public static readonly string RelaxedOnRegex = $@"({OrdinalDayOfMonthRegex}|{WeekDayofMonthRegex})";
       public const string PrefixWeekDayRegex = @"(\s*((,?\s*on)|[-—–]))";
-      public const string ArabicWeekRegex = @"(?<ArabicWeek>الأسبوعين|الاسبوعين|أسابيع|الاسبوع|الأسبوع|أسبوع|أسبوعين|الاسابيع|الأسابيع)";
+      public const string ArabicWeekRegex = @"(?<ArabicWeek>الأسبوعين|الاسبوعين|أسابيع|الاسبوع|الأسبوع|الإسبوع|أسبوعين|أسبوعي|اسبوعين|اسبوعي|أسبوع|الاسابيع|الأسابيع)";
       public static readonly string ThisRegex = $@"(?=يوم\s+)?({WeekDayRegex})(\s+)?(من|هذا|)(\s+)?(هذا)?(\s+)({ArabicWeekRegex})((\s+)({RelativeRegex}))?";
       public static readonly string LastDayDateRegex = $@"(?=يوم\s+)?({WeekDayRegex})\s+(الماضي|السابق|الأخير)";
       public static readonly string LastWeekDateRegex = $@"({ArabicWeekRegex})\s+(الماضي|السابق|الأخير)\s+({WeekDayRegex})";
       public const string LastMonthYearDateRegex = @"(قبل\s+)(\d+ )?((بضعة|بضع|عدة)\s+)?(سنتين|شهرين|الشهور|أشهر|اشهر|شهر|الشهر|أيام|عامين|عام|أعوام|سنة|سنين|سنوات)";
-      public const string SpecificDayRegex = @"((قبل|بعد)\s+)?((اليوم|يوم)\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(آخر يوم|الماضي|السابق|الأخير|يومين))";
+      public static readonly string SpecificDayRegex = $@"((قبل|بعد)\s+)?((اليوم|يوم)\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(آخر يوم|الماضي|السابق|الأخير|يومين)|({DayRegex}\s+{MonthRegex}))";
       public static readonly string LastDateRegex = $@"({LastDayDateRegex}|{LastWeekDateRegex})";
       public static readonly string NextDayRegex = $@"(هذا يوم\s+|بعد\s+)?(?=(ال)?يوم\s+)?({WeekDayRegex})((\s+)({NextRegex}))?";
-      public static readonly string NextWeekDayRegex = $@"((بعد )|(في هذا ?=)|(هذا ?=))?((ال|لل|ل)?أسبوع(ين)?|{ArabicWeekRegex}|اليوم|يومي|غداً|غد|غدا)(يوم)?({ArabicWeekRegex})?(\s+{NextRegex})?(\s+{ArabicWeekRegex})?";
+      public static readonly string NextWeekDayRegex = $@"((بعد )|(في هذا ?=)|(هذا ?=))?((ال|لل|ل)?أسبوع(ين)?|{ArabicWeekRegex}|اليوم|يومي|الغد|غداً|غد|غدا)(يوم)?({ArabicWeekRegex})?(\s*(الآتي|الأخير|التالي|القادم|من الآن|الحالي|المقبل|الحاضر))?(\s*{ArabicWeekRegex})?";
       public static readonly string NextWeekRegex = $@"(?=بعد )?(هذا )?({ArabicWeekRegex})\s*({NextRegex})?\s+?(يوم)?(\s+)?({WeekDayRegex})?";
       public static readonly string NextDateRegex = $@"({NextWeekRegex}|{NextDayRegex})";
       public static readonly string CardinalDayOfMonthRegex = $@"(((?<=في )|(إلى |لل|يوم ))((((ال)?عاشر|(ال)?حادي(ة)? والعشرين|(ال)?ثاني(ة)? والعشرين|(ال)?ثالث(ة)? والعشرين|(ال)?رابع(ة)? والعشرين|(ال)?خامس(ة)? والعشرين|(ال)?سادس(ة)? والعشرين|(ال)?سابع(ة)? والعشرين|(ال)?ثامن(ة)? والعشرين|(ال)?تاسع(ة)? والعشرين|(ال)?ثلاثين|(ال)?حادي(ة)? والثلاثين|(ال)?أول|(ال)?ثاني|(ال)?ثالث|(ال)?رابع|(ال)?خامس|(ال)?سادس|(ال)?سابع|(ال)?ثامن|(ال)?تاسع))|({DayRegex})))|((?<=يوم )({DayRegex})[\./-]\s+({MonthRegex}))";
-      public static readonly string SpecialDayRegex = $@"((ال)?يوم(\s{DayRegex}\s{MonthRegex})|{NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})";
+      public static readonly string SpecialDayRegex = $@"({NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
@@ -242,8 +244,8 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?\s+?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"((?<num>\d+(\.\d*)?(\s)?)?({DurationUnitRegex})(\s{WrittenOneToNineRegex})?(\sو)?(\s)?(?<num>\d+(\.\d*)?(\s)?)?(({DurationUnitRegex})?(\s{WrittenOneToNineRegex})?)(\sو)?(\s)?(?<num>\d+(\.\d*)?(\s)?)?({DurationUnitRegex})(\s{WrittenOneToNineRegex})?)";
       public static readonly string AnUnitRegex = $@"\b((?<half>(1/2|½|نصف)))\s+{DurationUnitRegex}(\s(أخرى))?";
-      public const string DuringRegex = @"\b((((خلال|على مدى|مدة)\s)|ل)+)(?<unit>(ال)?عام(ين)?|(ال)?سنتين|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)\b";
-      public const string AllRegex = @"(?<all>(طوال\s+))?(?<unit>(ال)?عام|(ال)?سنة|(ال)?شهر|(ال)?أسبوع|(ال)?يوم)(?<all>(\s+كامل(ة)?))?";
+      public const string DuringRegex = @"\b((((خلال|على مدى|مدة)\s)|ل)+)(?<unit>(ال)?عام(ين)?|(ال)?سنتين|(ال)?سنة|(ال)?شهر(ين)?|الأشهر|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)\b";
+      public const string AllRegex = @"(?<all>(طوال\s+))?(?<unit>(ال)?عام|(ال)?سنة|(ال)?شهر|(ال)?أسبوع|(ال)?أسابيع|(ال)?أيام|(ال)?يوم)(?<all>(\s+كامل(ة)?))?";
       public const string HalfRegex = @"\b((نصف)\s+)?(?<unit>(ال)?ساعة|ساعتين|دقيقة|دقيقتين|ثانية|ثانيتين|(ال)?عام(ين)?|(ال)?سنة|(ال)?شهر(ين)?|(ال)?أسبوع(ين)?|(ال)?يوم(ين)?)(?<half>(\s+)?(و)?نصف)?\b";
       public const string ConjunctionRegex = @"\b((و(\s+ل)?)|مع)\b";
       public const string ArabicThisYearRegex = @"(\s*)?(هذا|هذه)?(لعام|عام|العام|سنة)?(\s*)?";
@@ -276,7 +278,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string EveningStartEndRegex = @"(^(evening))|((evening)$)";
       public const string NightStartEndRegex = @"(^(over|to)?ni(ght|te))|((over|to)?ni(ght|te)$)";
       public const string InexactNumberRegex = @"بضع(ة)?|عدة|(?<NumTwoTerm>((ل))?عدد(\s+من)?)";
-      public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
+      public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})|(في\s+)?((ال)?يومين|(ال)?أيام|(ال)?أسابيع|(ال)?أشهر|(ال)?سنوات|(ال)?أعوام|(ال)?سنين)\s+(العديدة|القليلة|الثلاثة|الأربعة|الخمسة|الستة|السبعة|الثمانية|التسعة|العشرة)";
       public static readonly string RelativeTimeUnitRegex = $@"(?:(?:(?:{NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string RelativeDurationUnitRegex = $@"(?:(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string ReferenceDatePeriodRegex = $@"\b{ReferencePrefixRegex}\s+(?<duration>week|month|year|decade|weekend)\b";
@@ -290,27 +292,27 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string ForTheRegex = $@"\b((((?<=for\s+)the\s+{FlexibleDayRegex})|((?<=on\s+)(the\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(the\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
-      public const string RestOfDateRegex = @"\b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year|decade)\b";
+      public const string RestOfDateRegex = @"\b(باقي|بقية)\s+(?<duration>الشهر|العام|الأسبوع|العقد)\b";
       public const string RestOfDateTimeRegex = @"\b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b";
       public const string AmbiguousRangeModifierPrefix = @"(from)";
       public static readonly string NumberEndingPattern = $@"^(?:\s+(?<meeting>meeting|appointment|conference|((skype|teams|zoom|facetime)\s+)?call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})([\.]?$|(\.,|,|!|\?)))";
       public const string OneOnOneRegex = @"\b(1\s*:\s*1(?!\d))|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b";
-      public static readonly string LaterEarlyPeriodRegex = $@"\b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))|({UnspecificEndOfRangeRegex}))\b";
-      public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b";
+      public static readonly string LaterEarlyPeriodRegex = $@"(\b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex}|(?<FourDigitYear>{BaseDateTime.FourDigitYearRegex}))|({UnspecificEndOfRangeRegex}))\b)|({PrefixPeriodRegex}\s+(من هذا|من|هذا)\s+(الشهر|الأسبوع|العام|الاسبوع)(\s+{PrefixPeriodRegex})?)";
+      public static readonly string WeekWithWeekDayRangeRegex = $@"\b(?<week>(هذا\s+)?(الأسبوع)\s+(({NextPrefixRegex}|{PreviousPrefixRegex})\s+)?)(((بين)\s+{WeekDayRegex}\s+(و)\s*{WeekDayRegex})|(من)\s+{WeekDayRegex}\s+(إلى)\s+{WeekDayRegex})\b";
       public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
       public const string MiddlePauseRegex = @"\s*(,)\s*";
       public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|و|،|,)\s*$";
       public const string PrefixArticleRegex = @"\bإلى\s+";
       public const string OrRegex = @"\s*((\b|,\s*)(or|and)\b|,)\s*";
-      public static readonly string SpecialYearTermsRegex = $@"\b((({SpecialYearPrefixes}\s+)?year)|(cy|(?<special>fy|sy)))";
+      public static readonly string SpecialYearTermsRegex = $@"\b(((ال)?سنة|(ال)?عام)(\s+{SpecialYearPrefixes})?)";
       public static readonly string YearPlusNumberRegex = $@"\b({SpecialYearTermsRegex}\s*((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
       public static readonly string NumberAsTimeRegex = $@"\b({WrittenTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
       public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(ب|((قبل|في موعد لا يتجاوز| بعد)\s))(وقت\s+)?)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
-      public const string DecadeRegex = @"(?<decade>(?:nough|twen|thir|fou?r|fif|six|seven|eight|nine)ties|two\s+thousands)";
-      public static readonly string DecadeWithCenturyRegex = $@"(the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?(\s)?s\b)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
-      public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b";
-      public static readonly string YearPeriodRegex = $@"((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
+      public const string DecadeRegex = @"(?<decade>(ال)?عشرات|(ال)?عشرينيات|(ال)?عشرينات|(ال)?ثلاثينات|(ال)?أربعينيات|(ال)?أربعينات|(ال)?خمسينيات|(ال)?خمسينات|(ال)?ستينات|(ال)?سبعينيات|(ال)?سبعينات|(ال)?ثمانينات|(ال)?تسعينات|الألفين|ألفين)";
+      public static readonly string DecadeWithCenturyRegex = $@"({DecadeRegex})((\s+القرن(\s+(الثماني عشر|التاسع عشر)))|(\s+(و{DecadeRegex})))?";
+      public static readonly string RelativeDecadeRegex = $@"\b(?<number>(الثلاثة|الأربعة|الخمسة|الستة|السبعة|الثمانية|التسعة|العشر|\d+)\s+)?((ال)?عقدين|(ال)?عقد|(ال)?عقود)\s+(الماضيين|الماضية|الماضي|القادمين|القادمة|القادم)\b";
+      public static readonly string YearPeriodRegex = $@"(((من|بين)\s+)?{YearRegex}\s*({TillRegex}|{RangeConnectorRegex})\s*{YearRegex})";
       public static readonly string StrictTillRegex = $@"(?<till>\b(to|(un)?till?|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))";
       public static readonly string StrictRangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))";
       public const string StartMiddleEndRegex = @"\b((?<StartOf>((the\s+)?(start|beginning)\s+of\s+)?)(?<MiddleOf>((the\s+)?middle\s+of\s+)?)(?<EndOf>((the\s+)?end\s+of\s+)?))";
@@ -327,6 +329,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"حقبتان", @"20Y" },
             { @"حقبتين", @"20Y" },
             { @"سنة", @"Y" },
+            { @"العام", @"Y" },
             { @"عام", @"Y" },
             { @"سنوات", @"Y" },
             { @"أعوام", @"Y" },
@@ -334,6 +337,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"سنتان", @"2Y" },
             { @"سنتين", @"2Y" },
             { @"عامين", @"2Y" },
+            { @"الشهر", @"MON" },
             { @"شهر", @"MON" },
             { @"أشهر", @"MON" },
             { @"شهور", @"MON" },
@@ -383,6 +387,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"قرنان", 630720000 },
             { @"حقبتان", 630720000 },
             { @"سنة", 31536000 },
+            { @"العام", 31536000 },
             { @"عام", 31536000 },
             { @"سنوات", 31536000 },
             { @"أعوام", 31536000 },
@@ -390,6 +395,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
             { @"سنتان", 63072000 },
             { @"سنتين", 63072000 },
             { @"عامين", 63072000 },
+            { @"الشهر", 2592000 },
             { @"شهر", 2592000 },
             { @"أشهر", 2592000 },
             { @"شهور", 2592000 },
@@ -431,11 +437,14 @@ namespace Microsoft.Recognizers.Definitions.Arabic
         };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
-            { @"spring", @"SP" },
-            { @"summer", @"SU" },
-            { @"fall", @"FA" },
-            { @"autumn", @"FA" },
-            { @"winter", @"WI" }
+            { @"الربيع", @"SP" },
+            { @"ربيع", @"SP" },
+            { @"الصيف", @"SU" },
+            { @"صيف", @"SU" },
+            { @"الخريف", @"FA" },
+            { @"خريف", @"FA" },
+            { @"الشتاء", @"WI" },
+            { @"شتاء", @"WI" }
         };
       public static readonly Dictionary<string, int> SeasonValueMap = new Dictionary<string, int>
         {
@@ -446,16 +455,11 @@ namespace Microsoft.Recognizers.Definitions.Arabic
         };
       public static readonly Dictionary<string, int> CardinalMap = new Dictionary<string, int>
         {
-            { @"first", 1 },
-            { @"1st", 1 },
-            { @"second", 2 },
-            { @"2nd", 2 },
-            { @"third", 3 },
-            { @"3rd", 3 },
-            { @"fourth", 4 },
-            { @"4th", 4 },
-            { @"fifth", 5 },
-            { @"5th", 5 }
+            { @"الأول", 1 },
+            { @"الثاني", 2 },
+            { @"الثالث", 3 },
+            { @"الرابع", 4 },
+            { @"الخامس", 5 }
         };
       public static readonly Dictionary<string, int> DayOfWeek = new Dictionary<string, int>
         {
@@ -895,7 +899,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
         };
       public static readonly IList<string> LastCardinalTerms = new List<string>
         {
-            @"last"
+            @"الأخير"
         };
       public static readonly IList<string> MonthTerms = new List<string>
         {
