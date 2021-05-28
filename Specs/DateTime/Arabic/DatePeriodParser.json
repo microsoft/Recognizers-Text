@@ -3551,7 +3551,7 @@
   {
     "Input": "سيحدث بعد يومين.",
     "Context": {
-      "ReferenceDateTime": "2017-11-08T00:00:00"
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
     "NotSupportedByDesign": "java, javascript, python",
@@ -3746,7 +3746,7 @@
   {
     "Input": "ماذا عن منتصف الصيف؟",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
     "NotSupportedByDesign": "java, javascript, python",
