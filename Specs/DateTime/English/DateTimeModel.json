@@ -20421,5 +20421,12 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Latitude: 40.1693, 1666.90125 BRL",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "Results": []
   }
 ]
