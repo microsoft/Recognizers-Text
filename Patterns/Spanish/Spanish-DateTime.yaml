@@ -1006,6 +1006,7 @@ DurationDateRestrictions: [ hoy ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
+    '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '^(este\s+)?mi(\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\s+viene))?$': '\b(este\s+)?mi(\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\s+viene))?\b'
     '^a[nñ]o$': '(?<!el\s+)a[nñ]o'
     '^semana$': '(?<!la\s+)semana'

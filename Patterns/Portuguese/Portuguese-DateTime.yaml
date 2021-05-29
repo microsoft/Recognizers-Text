@@ -914,6 +914,7 @@ DurationDateRestrictions: []
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
+    '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$': '([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])'
 # For TimeOfDay resolution
 EarlyMorningTermList: !list

@@ -719,6 +719,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string[] DurationDateRestrictions = {  };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
+            { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
             { @"^([eé]t[eé])$", @"(?<!((l\s*['`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b" },
             { @"^(mer)$", @"(?<!((le|ce)\s+))mer\b" },
             { @"^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", @"([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])" }
