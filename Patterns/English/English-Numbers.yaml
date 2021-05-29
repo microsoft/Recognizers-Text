@@ -5,6 +5,13 @@ LangMarker: Eng
 CompoundNumberLanguage: !bool false
 #Does this culture uses period and comma intercheangeably as decimal separator?
 MultiDecimalSeparatorCulture: !bool true
+#List of culture variants that don't follow the default decimal separator
+NonStandardSeparatorVariants: !list
+  types: [ string ]
+  entries:
+    - en-za
+    - en-na
+    - en-zw
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?

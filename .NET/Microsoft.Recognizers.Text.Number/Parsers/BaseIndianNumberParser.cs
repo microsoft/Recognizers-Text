@@ -45,12 +45,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                                 GetDigitalValue(numerator, 1) :
+                                 GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetDigitalValue(denominator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                               GetDigitalValue(denominator, 1) :
+                               GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -64,12 +64,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                                 GetDigitalValue(numerator, 1) :
+                                 GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetDigitalValue(denominator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                               GetDigitalValue(denominator, 1) :
+                               GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -274,27 +274,13 @@ namespace Microsoft.Recognizers.Text.Number
         {
             double temp = 0;
             double scale = 10;
-            var decimalSeparator = false;
+            var decimalSeparatorFound = false;
             var strLength = digitsStr.Length;
             var isNegative = false;
 
             var isFrac = digitsStr.Contains('/');
 
-            var lastDecimalSeparator = -1;
-            var lastNonDecimalSeparator = -1;
             var hasSingleSeparator = false;
-
-            if (Config.IsMultiDecimalSeparatorCulture)
-            {
-                lastDecimalSeparator = digitsStr.LastIndexOf(Config.DecimalSeparatorChar);
-                lastNonDecimalSeparator = digitsStr.LastIndexOf(Config.NonDecimalSeparatorChar);
-
-                if ((lastDecimalSeparator < 0 && lastNonDecimalSeparator >= 0) ||
-                    (lastNonDecimalSeparator < 0 && lastDecimalSeparator >= 0))
-                {
-                    hasSingleSeparator = true;
-                }
-            }
 
             var calStack = new Stack<double>();
 
@@ -303,7 +289,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var ch = digitsStr[i];
                 var prevCh = (i > 0) ? digitsStr[i - 1] : '\0';
 
-                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, hasSingleSeparator, prevCh);
+                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, i, hasSingleSeparator, prevCh, Config.NonDecimalSeparatorChar);
 
                 if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal))
                 {
@@ -317,7 +303,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch >= '0' && ch <= '9')
                 {
-                    if (decimalSeparator)
+                    if (decimalSeparatorFound)
                     {
                         temp += scale * (ch - '0');
                         scale *= 0.1;
@@ -329,7 +315,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch == Config.DecimalSeparatorChar || (!skippableNonDecimal && ch == Config.NonDecimalSeparatorChar))
                 {
-                    decimalSeparator = true;
+                    decimalSeparatorFound = true;
                     scale = 0.1;
                 }
                 else if (ch == '-')
@@ -341,7 +327,7 @@ namespace Microsoft.Recognizers.Text.Number
                     // handle Devanagari numerals defined in ZeroToNineMap
                     if (char.IsDigit(ch))
                     {
-                        if (decimalSeparator)
+                        if (decimalSeparatorFound)
                         {
                             temp += Config.ZeroToNineMap[ch] * scale;
                             scale *= 0.1;

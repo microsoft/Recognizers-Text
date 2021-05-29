@@ -753,6 +753,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string[] DurationDateRestrictions = { @"today", @"now" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
+            { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
             { @"\b(morgen|nachmittag|abend|nacht|tag)\b", @"\b(gut(en?)?\s+(morgen|nachmittag|abend|nacht|tag))\b" },
             { @"^(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)$", @"([$%£&!?@#])(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)|(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)([$%£&@#])" },
             { @"^(mo|di|mi|do|fr|sa|so)$", @"\b(mo|di|mi|do|fr|sa|so)\b" }

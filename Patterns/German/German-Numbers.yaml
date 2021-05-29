@@ -15,7 +15,7 @@ AnIntRegex: !simpleRegex
 TenToNineteenIntegerRegex: !simpleRegex
   def: (siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)
 TensNumberIntegerRegex: !simpleRegex
-  def: (siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)
+  def: (siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)
 NegativeNumberTermsRegex: !simpleRegex
    # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -84,13 +84,13 @@ FractionNotationRegex: !nestedRegex
 FractionUnitsRegex: !simpleRegex
   def: ((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))
 FractionHalfRegex: !simpleRegex
-  def: (einhalb)$
-OneHalfTokens: [ein, halb]
+  def: (einhalb(es)?)$
+OneHalfTokens: [ein, halb, halbes]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)|{FractionUnitsRegex})(?=\b)
+  def: (?<=\b)(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)|{FractionUnitsRegex})(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(er|e|es)?|hälfte))|{AllIntRegex}ein(halb))(?=\b)
+  def: (?<=\b)(({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
@@ -518,7 +518,7 @@ RoundNumberMap: !dictionary
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '^[.]': ''
+    '^(tausend|hundert)$': '(ed(ward(\s+m(\.)?)?)?|mary(\s+c(\.)?)?|joachim|claudia|franz|maria|klaus|prof(\.|essor)?|dr(\.)?|herr|fr[äa]u(lein)?|frl?\.)\s+(tausend|hundert)'
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English

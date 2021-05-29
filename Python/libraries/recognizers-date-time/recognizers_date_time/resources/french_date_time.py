@@ -25,6 +25,7 @@ class FrenchDateTime:
     ThisPrefixRegex = f'(?<order>ce(tte)?|au\\s+cours+(du|de))\\b'
     RangePrefixRegex = f'(du|depuis|des?|entre)'
     DayRegex = f'(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(e(r)?)?)(?=\\b|t)'
+    WrittenDayRegex = f'(?<day>((vingt|trente)(\\s*-\\s*|\\s+)et(\\s*-\\s*|\\s+))?un|(vingt(\\s*-\\s*|\\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)'
     MonthNumRegex = f'(?<month>1[0-2]|(0)?[1-9])\\b'
     SpecialDescRegex = f'(p\\b)'
     AmDescRegex = f'(h\\b|{BaseDateTime.BaseAmDescRegex})'
@@ -107,7 +108,7 @@ class FrenchDateTime:
     MorningRegex = f'(?<morning>matin([ée]e)?)'
     AfternoonRegex = f'(?<afternoon>(d\'|l\')?apr[eè]s(-|\\s*)midi)'
     MidmorningRegex = f'(?<midmorning>milieu\\s*d[ue]\\s*{MorningRegex})'
-    MiddayRegex = f'(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi)'
+    MiddayRegex = f'(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=\\bà\\s+)midi)'
     MidafternoonRegex = f'(?<midafternoon>milieu\\s*d\'+{AfternoonRegex})'
     MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))'
     AtRegex = f'\\b(((?<=\\b[àa]\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b'
@@ -222,7 +223,7 @@ class FrenchDateTime:
     PrepositionSuffixRegex = f'\\b(du|de|[àa]|vers|dans)$'
     FlexibleDayRegex = f'(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)'
     ForTheRegex = f'\\b(((pour le {FlexibleDayRegex})|(dans (le\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))'
-    WeekDayAndDayOfMonthRegex = f'\\b{WeekDayRegex}\\s+(le\\s+{FlexibleDayRegex})\\b'
+    WeekDayAndDayOfMonthRegex = f'\\b({WeekDayRegex}\\s+(le\\s+{FlexibleDayRegex})|le\\s+(?<DayOfMonth>{DayRegex}|{WrittenDayRegex})\\s+{WeekDayRegex})\\b'
     WeekDayAndDayRegex = f'\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b'
     RestOfDateRegex = f'\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<duration>semaine|mois|l\'ann[ée]e)\\b'
     RestOfDateTimeRegex = f'\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<unit>jour)\\b'
@@ -667,7 +668,8 @@ class FrenchDateTime:
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
-    AmbiguityFiltersDict = dict([("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
+    AmbiguityFiltersDict = dict([("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"),
+                                 ("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"),
                                  ("^(mer)$", "(?<!((le|ce)\\s+))mer\\b"),
                                  ("^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])")])
     AmbiguityTimeFiltersDict = dict([("heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b")])

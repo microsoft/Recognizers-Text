@@ -1,6 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Config;
-
-namespace Microsoft.Recognizers.Text.DateTime
+﻿namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDateTimeOptionsConfiguration : IConfiguration
     {

@@ -16,6 +16,7 @@ export namespace PortugueseDateTime {
     export const TillRegex = `(?<till>\\b(at[eé]h?|[aà]s|ao?)\\b|--|-|—|——)(\\s+\\b(o|[aà](s)?)\\b)?`;
     export const RangeConnectorRegex = `(?<and>(e\\s*(([àa]s?)|o)?)|${BaseDateTime.RangeConnectorSymbolRegex})`;
     export const DayRegex = `(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9]))(?=\\b|t)`;
+    export const WrittenDayRegex = `(?<day>(vinte\\s+e\\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\\s+e\\s+um)?)`;
     export const MonthNumRegex = `(?<month>1[0-2]|(0)?[1-9])\\b`;
     export const AmDescRegex = `(${BaseDateTime.BaseAmDescRegex})`;
     export const PmDescRegex = `(${BaseDateTime.BasePmDescRegex})`;
@@ -76,7 +77,8 @@ export namespace PortugueseDateTime {
     export const SpecialDayRegex = `\\b((d?o\\s+)?(dia\\s+antes\\s+de\\s+ontem|antes\\s+de\\s+ontem|anteontem)|((d?o\\s+)?(dia\\s+|depois\\s+|dia\\s+depois\\s+)?de\\s+amanh[aã])|(o\\s)?dia\\s+seguinte|(o\\s)?pr[oó]ximo\\s+dia|(o\\s+)?[uú]ltimo\\s+dia|ontem|amanh[ãa]|hoje)|(do\\s+dia$)\\b`;
     export const SpecialDayWithNumRegex = `^[.]`;
     export const ForTheRegex = `.^`;
-    export const WeekDayAndDayOfMonthRegex = `.^`;
+    export const FlexibleDayRegex = `(?<DayOfMonth>([a-z]+\\s)?(${WrittenDayRegex}|${DayRegex}))`;
+    export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(dia\\s+${FlexibleDayRegex})\\b`;
     export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(${DayRegex})(?!([-:/]|\\.\\d|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
     export const WeekDayOfMonthRegex = `(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
     export const RelativeWeekDayRegex = `^[.]`;
@@ -112,7 +114,13 @@ export namespace PortugueseDateTime {
     export const TimePrefix = `(?<prefix>${LessThanOneHour}(\\s+(passad[ao]s)\\s+(as)?|\\s+depois\\s+(das?|do)|\\s+pras?|\\s+(para|antes)?\\s+([àa]s?))?)`;
     export const TimeSuffix = `(?<suffix>(${LessThanOneHour}\\s+)?(${AmRegex}|${PmRegex}|${OclockRegex}))`;
     export const BasicTime = `(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex})`;
-    export const AtRegex = `\\b((?<=\\b([aà]s?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+${OclockRegex})?\\b`;
+    export const MidnightRegex = `(?<midnight>meia\\s*(-\\s*)?noite)`;
+    export const MidmorningRegex = `(?<midmorning>meio\\s+da\\s+manhã)`;
+    export const MidEarlyMorning = `(?<midearlymorning>meio\\s+da\\s+madrugada)`;
+    export const MidafternoonRegex = `(?<midafternoon>meio\\s+da\\s+tarde)`;
+    export const MiddayRegex = `(?<midday>meio\\s*(-\\s*)?dia)`;
+    export const MidTimeRegex = `(?<mid>(${MidnightRegex}|${MidmorningRegex}|${MidEarlyMorning}|${MidafternoonRegex}|${MiddayRegex}))`;
+    export const AtRegex = `\\b(((?<=\\b([aà]s?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+${OclockRegex})?|${MidTimeRegex})\\b`;
     export const ConnectNumRegex = `(${BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*${DescRegex})`;
     export const TimeRegex1 = `(\\b${TimePrefix}\\s+)?(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(${DescRegex})`;
     export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(t)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?((\\s*${DescRegex})|\\b)`;
@@ -123,7 +131,6 @@ export namespace PortugueseDateTime {
     export const TimeRegex7 = `\\b${TimeSuffix}\\s+[àa]s?\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
     export const TimeRegex8 = `\\b${TimeSuffix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
     export const TimeRegex9 = `\\b(?<writtentime>${HourNumRegex}\\s+(${TensTimeRegex}\\s*)(e\\s+)?${MinuteNumRegex}?)\\b`;
-    export const TimeRegex10 = `(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)`;
     export const TimeRegex11 = `\\b(${WrittenTimeRegex})(\\s+${DescRegex})?\\b`;
     export const TimeRegex12 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
     export const PrepositionRegex = `(?<prep>([àa]s?|em|por|pel[ao]|n[ao]|de|d[ao]?)?$)`;
@@ -199,7 +206,7 @@ export namespace PortugueseDateTime {
     export const CardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["primeiro", 1],["primeira", 1],["1o", 1],["1a", 1],["segundo", 2],["segunda", 2],["2o", 2],["2a", 2],["terceiro", 3],["terceira", 3],["3o", 3],["3a", 3],["cuarto", 4],["quarto", 4],["cuarta", 4],["quarta", 4],["4o", 4],["4a", 4],["quinto", 5],["quinta", 5],["5o", 5],["5a", 5]]);
     export const DayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["segunda-feira", 1],["segundas-feiras", 1],["segunda feira", 1],["segundas feiras", 1],["segunda", 1],["segundas", 1],["terça-feira", 2],["terças-feiras", 2],["terça feira", 2],["terças feiras", 2],["terça", 2],["terças", 2],["terca-feira", 2],["tercas-feiras", 2],["terca feira", 2],["tercas feiras", 2],["terca", 2],["tercas", 2],["quarta-feira", 3],["quartas-feiras", 3],["quarta feira", 3],["quartas feiras", 3],["quarta", 3],["quartas", 3],["quinta-feira", 4],["quintas-feiras", 4],["quinta feira", 4],["quintas feiras", 4],["quinta", 4],["quintas", 4],["sexta-feira", 5],["sextas-feiras", 5],["sexta feira", 5],["sextas feiras", 5],["sexta", 5],["sextas", 5],["sabado", 6],["sabados", 6],["sábado", 6],["sábados", 6],["domingo", 0],["domingos", 0],["seg", 1],["seg.", 1],["2a", 1],["ter", 2],["ter.", 2],["3a", 2],["qua", 3],["qua.", 3],["4a", 3],["qui", 4],["qui.", 4],["5a", 4],["sex", 5],["sex.", 5],["6a", 5],["sab", 6],["sab.", 6],["dom", 0],["dom.", 0]]);
     export const MonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["janeiro", 1],["fevereiro", 2],["março", 3],["marco", 3],["abril", 4],["maio", 5],["junho", 6],["julho", 7],["agosto", 8],["septembro", 9],["setembro", 9],["outubro", 10],["novembro", 11],["dezembro", 12],["jan", 1],["fev", 2],["mar", 3],["abr", 4],["mai", 5],["jun", 6],["jul", 7],["ago", 8],["sept", 9],["set", 9],["out", 10],["nov", 11],["dez", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9]]);
-    export const Numbers: ReadonlyMap<string, number> = new Map<string, number>([["zero", 0],["um", 1],["uma", 1],["dois", 2],["tres", 3],["três", 3],["quatro", 4],["cinco", 5],["seis", 6],["sete", 7],["oito", 8],["nove", 9],["dez", 10],["onze", 11],["doze", 12],["dezena", 12],["dezenas", 12],["treze", 13],["catorze", 14],["quatorze", 14],["quinze", 15],["dezesseis", 16],["dezasseis", 16],["dezessete", 17],["dezassete", 17],["dezoito", 18],["dezenove", 19],["dezanove", 19],["vinte", 20],["vinte e um", 21],["vinte e uma", 21],["vinte e dois", 22],["vinte e duas", 22],["vinte e tres", 23],["vinte e três", 23],["vinte e quatro", 24],["vinte e cinco", 25],["vinte e seis", 26],["vinte e sete", 27],["vinte e oito", 28],["vinte e nove", 29],["trinta", 30]]);
+    export const Numbers: ReadonlyMap<string, number> = new Map<string, number>([["zero", 0],["um", 1],["uma", 1],["dois", 2],["tres", 3],["três", 3],["quatro", 4],["cinco", 5],["seis", 6],["sete", 7],["oito", 8],["nove", 9],["dez", 10],["onze", 11],["doze", 12],["dezena", 12],["dezenas", 12],["treze", 13],["catorze", 14],["quatorze", 14],["quinze", 15],["dezesseis", 16],["dezasseis", 16],["dezessete", 17],["dezassete", 17],["dezoito", 18],["dezenove", 19],["dezanove", 19],["vinte", 20],["vinte e um", 21],["vinte e uma", 21],["vinte e dois", 22],["vinte e duas", 22],["vinte e tres", 23],["vinte e três", 23],["vinte e quatro", 24],["vinte e cinco", 25],["vinte e seis", 26],["vinte e sete", 27],["vinte e oito", 28],["vinte e nove", 29],["trinta", 30],["trinta e um", 31]]);
     export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["pai", ["diadopai","diadospais"]],["mae", ["diadamae","diadasmaes"]],["acaodegracas", ["diadegracas","diadeacaodegracas","acaodegracas"]],["trabalho", ["diadotrabalho","diadotrabalhador","diadostrabalhadores"]],["pascoa", ["diadepascoa","pascoa"]],["natal", ["natal","diadenatal"]],["vesperadenatal", ["vesperadenatal"]],["anonovo", ["anonovo","diadeanonovo","diadoanonovo"]],["vesperadeanonovo", ["vesperadeanonovo","vesperadoanonovo"]],["yuandan", ["yuandan"]],["todosossantos", ["todosossantos"]],["professor", ["diadoprofessor","diadosprofessores"]],["crianca", ["diadacrianca","diadascriancas"]],["mulher", ["diadamulher"]]]);
     export const VariableHolidaysTimexDictionary: ReadonlyMap<string, string> = new Map<string, string>([["pai", "-06-WXX-7-3"],["mae", "-05-WXX-7-2"],["acaodegracas", "-11-WXX-4-4"],["memoria", "-03-WXX-2-4"]]);
     export const DoubleNumbers: ReadonlyMap<string, number> = new Map<string, number>([["metade", 0.5],["quarto", 0.25]]);
@@ -238,7 +245,7 @@ export namespace PortugueseDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"],["^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
     export const MorningTermList = [ "manha","manhã" ];
     export const AfternoonTermList = [ "passado o meio dia","depois do meio dia" ];

@@ -527,6 +527,46 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
+            RegisterModel<CurrencyModel>(
+                Culture.SpanishMexican,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Spanish.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.SpanishMexican,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.SpanishMexican,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.SpanishMexican,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
+                    },
+                }));
+
             RegisterModel<AgeModel>(
                 Culture.Swedish,
                 (options) => new AgeModel(new Dictionary<IExtractor, IParser>

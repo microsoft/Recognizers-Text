@@ -22,6 +22,7 @@ export namespace FrenchDateTime {
     export const ThisPrefixRegex = `(?<order>ce(tte)?|au\\s+cours+(du|de))\\b`;
     export const RangePrefixRegex = `(du|depuis|des?|entre)`;
     export const DayRegex = `(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(e(r)?)?)(?=\\b|t)`;
+    export const WrittenDayRegex = `(?<day>((vingt|trente)(\\s*-\\s*|\\s+)et(\\s*-\\s*|\\s+))?un|(vingt(\\s*-\\s*|\\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)`;
     export const MonthNumRegex = `(?<month>1[0-2]|(0)?[1-9])\\b`;
     export const SpecialDescRegex = `(p\\b)`;
     export const AmDescRegex = `(h\\b|${BaseDateTime.BaseAmDescRegex})`;
@@ -104,7 +105,7 @@ export namespace FrenchDateTime {
     export const MorningRegex = `(?<morning>matin([ée]e)?)`;
     export const AfternoonRegex = `(?<afternoon>(d'|l')?apr[eè]s(-|\\s*)midi)`;
     export const MidmorningRegex = `(?<midmorning>milieu\\s*d[ue]\\s*${MorningRegex})`;
-    export const MiddayRegex = `(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi)`;
+    export const MiddayRegex = `(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=\\bà\\s+)midi)`;
     export const MidafternoonRegex = `(?<midafternoon>milieu\\s*d'+${AfternoonRegex})`;
     export const MidTimeRegex = `(?<mid>(${MidnightRegex}|${MidmorningRegex}|${MidafternoonRegex}|${MiddayRegex}))`;
     export const AtRegex = `\\b(((?<=\\b[àa]\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
@@ -219,7 +220,7 @@ export namespace FrenchDateTime {
     export const PrepositionSuffixRegex = `\\b(du|de|[àa]|vers|dans)$`;
     export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
     export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
-    export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
+    export const WeekDayAndDayOfMonthRegex = `\\b(${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})|le\\s+(?<DayOfMonth>${DayRegex}|${WrittenDayRegex})\\s+${WeekDayRegex})\\b`;
     export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-:]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
     export const RestOfDateRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b`;
     export const RestOfDateTimeRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|ce(tte)?)\\s+)?(?<unit>jour)\\b`;
@@ -261,7 +262,7 @@ export namespace FrenchDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"],["^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"],["^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b"],["^(mer)$", "(?<!((le|ce)\\s+))mer\\b"],["^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])"]]);
     export const AmbiguityTimeFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["heures?$", "\\b(pour|durée\\s+de|pendant)\\s+(\\S+\\s+){1,2}heures?\\b"]]);
     export const MorningTermList = [ "matinee","matin","matinée" ];
     export const AfternoonTermList = [ "apres-midi","apres midi","après midi","après-midi" ];

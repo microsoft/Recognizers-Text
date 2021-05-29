@@ -14,6 +14,7 @@ export namespace EnglishNumeric {
     export const LangMarker = `Eng`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
+    export const NonStandardSeparatorVariants = [ "en-za","en-na","en-zw" ];
     export const RoundNumberIntegerRegex = `(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?`;
     export const ZeroToNineIntegerRegex = `(?:three|seven|eight|four|five|zero|nine|one|two|six)`;
     export const TwoToNineIntegerRegex = `(?:three|seven|eight|four|five|nine|two|six)`;

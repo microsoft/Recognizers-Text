@@ -21,7 +21,7 @@ class GermanNumeric:
     RoundNumberIntegerRegex = f'((ein)?hundert|tausend|(\\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\\s*))'
     AnIntRegex = f'(eine?)(?=\\s)'
     TenToNineteenIntegerRegex = f'(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)'
-    TensNumberIntegerRegex = f'(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)'
+    TensNumberIntegerRegex = f'(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)'
     NegativeNumberTermsRegex = f'^[.]'
     NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'
     SeparaIntRegex = f'((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s*{RoundNumberIntegerRegex})+))'
@@ -49,10 +49,10 @@ class GermanNumeric:
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
     FractionUnitsRegex = f'((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))'
-    FractionHalfRegex = f'(einhalb)$'
-    OneHalfTokens = [r'ein', r'halb']
-    FractionNounRegex = f'(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)|{FractionUnitsRegex})(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(er|e|es)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)'
+    FractionHalfRegex = f'(einhalb(es)?)$'
+    OneHalfTokens = [r'ein', r'halb', r'halbes']
+    FractionNounRegex = f'(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)|{FractionUnitsRegex})(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)'
     AllPointRegex = f'((\\s*{ZeroToNineIntegerRegex})+|(\\s*{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s*komma\\s*){AllPointRegex})'
@@ -399,7 +399,7 @@ class GermanNumeric:
                            ("g", 1000000000),
                            ("b", 1000000000),
                            ("t", 1000000000000)])
-    AmbiguityFiltersDict = dict([("^[.]", "")])
+    AmbiguityFiltersDict = dict([("^(tausend|hundert)$", "(ed(ward(\\s+m(\\.)?)?)?|mary(\\s+c(\\.)?)?|joachim|claudia|franz|maria|klaus|prof(\\.|essor)?|dr(\\.)?|herr|fr[äa]u(lein)?|frl?\\.)\\s+(tausend|hundert)")])
     RelativeReferenceOffsetMap = dict([("", "")])
     RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

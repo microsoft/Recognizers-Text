@@ -109,6 +109,12 @@ export namespace ChineseDateTime {
     export const DateTimePeriodUnitRegex = `(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))`;
     export const DateTimePeriodFollowedUnit = `^\\s*${DateTimePeriodUnitRegex}`;
     export const DateTimePeriodNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateTimePeriodUnitRegex}`;
+    export const DurationAllRegex = `^[.]`;
+    export const DurationHalfRegex = `^[.]`;
+    export const DurationRelativeDurationUnitRegex = `^[.]`;
+    export const DurationDuringRegex = `^[.]`;
+    export const DurationSomeRegex = `^[.]`;
+    export const DurationMoreOrLessRegex = `^[.]`;
     export const DurationYearRegex = `((\\d{3,4})|0\\d|两千)\\s*年`;
     export const DurationHalfSuffixRegex = `半`;
     export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时|个钟头|钟头|时"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
