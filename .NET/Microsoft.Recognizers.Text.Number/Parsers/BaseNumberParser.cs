@@ -589,6 +589,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (isNonStandardSeparatorVariant)
                 {
+                    // Reverse separators
                     decimalSeparator = Config.NonDecimalSeparatorChar;
                     nonDecimalSeparator = Config.DecimalSeparatorChar;
                 }
@@ -618,8 +619,9 @@ namespace Microsoft.Recognizers.Text.Number
                 else if ((lastDecimalSeparator < lastNonDecimalSeparator) && !(lastDecimalSeparator == -1 || lastNonDecimalSeparator == -1))
                 {
                     // Switch separators
-                    decimalSeparator = Config.NonDecimalSeparatorChar;
-                    nonDecimalSeparator = Config.DecimalSeparatorChar;
+                    var aux = decimalSeparator;
+                    decimalSeparator = nonDecimalSeparator;
+                    nonDecimalSeparator = aux;
                 }
 
             }

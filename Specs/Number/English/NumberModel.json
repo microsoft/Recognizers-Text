@@ -2985,5 +2985,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "1.111,11, 1,111.11",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1.111,11",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.11"
+        },
+        "Start": 0,
+        "End": 7
+      },
+      {
+        "Text": "1,111.11",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.11"
+        },
+        "Start": 10,
+        "End": 17
+      }
+    ]
   }
 ]
