@@ -110,6 +110,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MaxMonth = 12;
         public const int MinMonth = 1;
 
+        // Day start hour
+        public const int DayHourStart = 0;
+
+        // hours of one day
+        public const int DayHourCount = 24;
+
         // hours of one half day
         public const int HalfDayHourCount = 12;
 
