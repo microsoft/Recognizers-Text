@@ -20,7 +20,7 @@ public class BaseNumbers {
     public static final String FractionNumberReplaceToken = "@builtin.num.fraction";
 
     public static String IntegerRegexDefinition(String placeholder, String thousandsmark) {
-        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{1,3}({thousandsmark}\\d{3})+(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d{1,3}({thousandsmark}\\d{3})+(?={placeholder})"
             .replace("{placeholder}", placeholder)
             .replace("{thousandsmark}", thousandsmark);
     }
@@ -28,7 +28,7 @@ public class BaseNumbers {
     public static final String FractionNotationRegex = "((((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))|[\\u00BC-\\u00BE\\u2150-\\u215E])";
 
     public static String DoubleRegexDefinition(String placeholder, String thousandsmark, String decimalmark) {
-        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{1,3}({thousandsmark}\\d{3})+{decimalmark}\\d+(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d{1,3}(({thousandsmark}\\d{3})+{decimalmark}|({decimalmark}\\d{3})+{thousandsmark})\\d+(?={placeholder})"
             .replace("{placeholder}", placeholder)
             .replace("{thousandsmark}", thousandsmark)
             .replace("{decimalmark}", decimalmark);

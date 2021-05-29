@@ -41,6 +41,8 @@ public class FrenchDateTime {
 
     public static final String DayRegex = "(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(e(r)?)?)(?=\\b|t)";
 
+    public static final String WrittenDayRegex = "(?<day>((vingt|trente)(\\s*-\\s*|\\s+)et(\\s*-\\s*|\\s+))?un|(vingt(\\s*-\\s*|\\s+))?(deux|trois|quatre|cinq|six|sept|huit|neuf)|dix|onze|douze|treize|quatorze|quinze|seize|dix-(sept|huit|neuf)|vingt|trente)";
+
     public static final String MonthNumRegex = "(?<month>1[0-2]|(0)?[1-9])\\b";
 
     public static final String SpecialDescRegex = "(p\\b)";
@@ -331,7 +333,7 @@ public class FrenchDateTime {
     public static final String MidmorningRegex = "(?<midmorning>milieu\\s*d[ue]\\s*{MorningRegex})"
             .replace("{MorningRegex}", MorningRegex);
 
-    public static final String MiddayRegex = "(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi)";
+    public static final String MiddayRegex = "(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=\\bà\\s+)midi)";
 
     public static final String MidafternoonRegex = "(?<midafternoon>milieu\\s*d'+{AfternoonRegex})"
             .replace("{AfternoonRegex}", AfternoonRegex);
@@ -677,9 +679,11 @@ public class FrenchDateTime {
     public static final String ForTheRegex = "\\b(((pour le {FlexibleDayRegex})|(dans (le\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))"
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
-    public static final String WeekDayAndDayOfMonthRegex = "\\b{WeekDayRegex}\\s+(le\\s+{FlexibleDayRegex})\\b"
+    public static final String WeekDayAndDayOfMonthRegex = "\\b({WeekDayRegex}\\s+(le\\s+{FlexibleDayRegex})|le\\s+(?<DayOfMonth>{DayRegex}|{WrittenDayRegex})\\s+{WeekDayRegex})\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
-            .replace("{FlexibleDayRegex}", FlexibleDayRegex);
+            .replace("{FlexibleDayRegex}", FlexibleDayRegex)
+            .replace("{DayRegex}", DayRegex)
+            .replace("{WrittenDayRegex}", WrittenDayRegex);
 
     public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
@@ -1202,6 +1206,7 @@ public class FrenchDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)")
         .put("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b")
         .put("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")
         .put("^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])")

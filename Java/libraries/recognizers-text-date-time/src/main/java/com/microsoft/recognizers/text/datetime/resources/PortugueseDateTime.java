@@ -30,6 +30,8 @@ public class PortugueseDateTime {
 
     public static final String DayRegex = "(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9]))(?=\\b|t)";
 
+    public static final String WrittenDayRegex = "(?<day>(vinte\\s+e\\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\\s+e\\s+um)?)";
+
     public static final String MonthNumRegex = "(?<month>1[0-2]|(0)?[1-9])\\b";
 
     public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
@@ -197,7 +199,13 @@ public class PortugueseDateTime {
 
     public static final String ForTheRegex = ".^";
 
-    public static final String WeekDayAndDayOfMonthRegex = ".^";
+    public static final String FlexibleDayRegex = "(?<DayOfMonth>([a-z]+\\s)?({WrittenDayRegex}|{DayRegex}))"
+            .replace("{WrittenDayRegex}", WrittenDayRegex)
+            .replace("{DayRegex}", DayRegex);
+
+    public static final String WeekDayAndDayOfMonthRegex = "\\b{WeekDayRegex}\\s+(dia\\s+{FlexibleDayRegex})\\b"
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
     public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+({DayRegex})(?!([-:/]|\\.\\d|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
@@ -337,11 +345,29 @@ public class PortugueseDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{BaseDateTime.SecondRegex}", BaseDateTime.SecondRegex);
 
-    public static final String AtRegex = "\\b((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?\\b"
+    public static final String MidnightRegex = "(?<midnight>meia\\s*(-\\s*)?noite)";
+
+    public static final String MidmorningRegex = "(?<midmorning>meio\\s+da\\s+manhã)";
+
+    public static final String MidEarlyMorning = "(?<midearlymorning>meio\\s+da\\s+madrugada)";
+
+    public static final String MidafternoonRegex = "(?<midafternoon>meio\\s+da\\s+tarde)";
+
+    public static final String MiddayRegex = "(?<midday>meio\\s*(-\\s*)?dia)";
+
+    public static final String MidTimeRegex = "(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))"
+            .replace("{MidnightRegex}", MidnightRegex)
+            .replace("{MidmorningRegex}", MidmorningRegex)
+            .replace("{MidafternoonRegex}", MidafternoonRegex)
+            .replace("{MiddayRegex}", MiddayRegex)
+            .replace("{MidEarlyMorning}", MidEarlyMorning);
+
+    public static final String AtRegex = "\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
-            .replace("{OclockRegex}", OclockRegex);
+            .replace("{OclockRegex}", OclockRegex)
+            .replace("{MidTimeRegex}", MidTimeRegex);
 
     public static final String ConnectNumRegex = "({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*{DescRegex})"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
@@ -402,8 +428,6 @@ public class PortugueseDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{TensTimeRegex}", TensTimeRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
-
-    public static final String TimeRegex10 = "(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)";
 
     public static final String TimeRegex11 = "\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
@@ -836,6 +860,7 @@ public class PortugueseDateTime {
         .put("vinte e oito", 28)
         .put("vinte e nove", 29)
         .put("trinta", 30)
+        .put("trinta e um", 31)
         .build();
 
     public static final ImmutableMap<String, String[]> HolidayNames = ImmutableMap.<String, String[]>builder()
@@ -946,6 +971,7 @@ public class PortugueseDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)")
         .put("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")
         .build();
 

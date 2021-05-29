@@ -238,11 +238,11 @@ public class SpanishDateTime {
 
     public static final String SpecialDayWithNumRegex = "^[.]";
 
-    public static final String FlexibleDayRegex = "(?<DayOfMonth>([A-Za-z]+\\s)?({WrittenDayRegex}|{DayRegex}))"
+    public static final String FlexibleDayRegex = "(?<DayOfMonth>([a-z]+\\s)?({WrittenDayRegex}|{DayRegex}))"
             .replace("{WrittenDayRegex}", WrittenDayRegex)
             .replace("{DayRegex}", DayRegex);
 
-    public static final String ForTheRegex = "\\b((((?<=para\\s+el\\s+){FlexibleDayRegex})|((?<!(\\b{MonthRegex},?|\\bpara)\\s+(el\\s+)|{WeekDayRegex}\\s+)((?<=(e[ln]\\s+))|(\\be[ln]\\s+d[ií]a\\s+)){FlexibleDayRegex}))(?<end>\\s*(,|\\.(?![º°ª])|!|\\?|-|$))(?!\\d))"
+    public static final String ForTheRegex = "\\b((((?<=para\\s+el\\s+){FlexibleDayRegex})|((?<!(\\b{MonthRegex},?|\\bpara)\\s+(el\\s+)|{WeekDayRegex}\\s+(el\\s+)?)((?<=(e[ln]\\s+))|(\\be[ln]\\s+d[ií]a\\s+)){FlexibleDayRegex}))(?<end>\\s*(,|\\.(?![º°ª])|!|\\?|-|$))(?!\\d))"
             .replace("{FlexibleDayRegex}", FlexibleDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
@@ -418,7 +418,7 @@ public class SpanishDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{BaseDateTime.SecondRegex}", BaseDateTime.SecondRegex);
 
-    public static final String MidTimeRegex = "(?<mid>((?<midnight>media\\s*noche)|(?<midmorning>media\\s*mañana)|(?<midafternoon>media\\s*tarde)|(?<midday>medio\\s*d[ií]a)))";
+    public static final String MidTimeRegex = "(?<mid>((?<midnight>media\\s*noche)|(?<midearlymorning>media\\s*madrugada)|(?<midmorning>media\\s*mañana)|(?<midafternoon>media\\s*tarde)|(?<midday>medio\\s*d[ií]a)))";
 
     public static final String AtRegex = "\\b((?<=\\b((a|de(sde)?)\\s+las?|al)\\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\b(\\s*\\bh\\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})"
             .replace("{HourNumRegex}", HourNumRegex)
@@ -493,8 +493,6 @@ public class SpanishDateTime {
             .replace("{TensTimeRegex}", TensTimeRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
-    public static final String TimeRegex10 = "(a\\s+la|al)\\s+(madrugada|mañana|tarde|noche)";
-
     public static final String TimeRegex11 = "\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{DescRegex}", DescRegex);
@@ -558,7 +556,7 @@ public class SpanishDateTime {
 
     public static final String UnitRegex = "(?<unit>años?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|fin(es)?\\s+de\\s+semana|finde|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\\b";
 
-    public static final String ConnectorRegex = "^(,|t|(para|y|a|en|por) las?|(\\s*,\\s*)?(cerca|alrededor) de las?)$";
+    public static final String ConnectorRegex = "^(,|t|(para|y|a|en|por) las?|(\\s*,\\s*)?((cerca|alrededor)\\s+)?(de\\s+las?|del))$";
 
     public static final String TimeHourNumRegex = "(?<hour>veint(i(uno|dos|tres|cuatro)|e)|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci(s([eé])is|siete|ocho|nueve))";
 
@@ -1165,12 +1163,23 @@ public class SpanishDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList("hoy");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)")
         .put("^(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?$", "\\b(este\\s+)?mi(\\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\\s+viene))?\\b")
         .put("^a[nñ]o$", "(?<!el\\s+)a[nñ]o")
         .put("^semana$", "(?<!la\\s+)semana")
         .put("^mes$", "(?<!el\\s+)mes")
         .put("^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", "([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])")
         .build();
+
+    public static final String EarlyMorningStartEndRegex = "(^(madrugada)|(madrugada)$)";
+
+    public static final String MorningStartEndRegex = "(^((la\\s+)?mañana))|(((la\\s+)?mañana)$)";
+
+    public static final String AfternoonStartEndRegex = "(^(pasado\\s+(el\\s+)?medio\\s*dia))|((pasado\\s+(el\\s+)?medio\\s*dia)$)";
+
+    public static final String EveningStartEndRegex = "(^(tarde))|((tarde)$)";
+
+    public static final String NightStartEndRegex = "(^(noche)|(noche)$)";
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");
 

@@ -332,6 +332,18 @@ public class ChineseDateTime {
     public static final String DateTimePeriodNumberCombinedWithUnit = "\\b(?<num>\\d+(\\.\\d*)?){DateTimePeriodUnitRegex}"
             .replace("{DateTimePeriodUnitRegex}", DateTimePeriodUnitRegex);
 
+    public static final String DurationAllRegex = "^[.]";
+
+    public static final String DurationHalfRegex = "^[.]";
+
+    public static final String DurationRelativeDurationUnitRegex = "^[.]";
+
+    public static final String DurationDuringRegex = "^[.]";
+
+    public static final String DurationSomeRegex = "^[.]";
+
+    public static final String DurationMoreOrLessRegex = "^[.]";
+
     public static final String DurationYearRegex = "((\\d{3,4})|0\\d|两千)\\s*年";
 
     public static final String DurationHalfSuffixRegex = "半";

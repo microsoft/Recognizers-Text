@@ -112,6 +112,12 @@ class ChineseDateTime:
     DateTimePeriodUnitRegex = f'(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))'
     DateTimePeriodFollowedUnit = f'^\\s*{DateTimePeriodUnitRegex}'
     DateTimePeriodNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\.\\d*)?){DateTimePeriodUnitRegex}'
+    DurationAllRegex = f'^[.]'
+    DurationHalfRegex = f'^[.]'
+    DurationRelativeDurationUnitRegex = f'^[.]'
+    DurationDuringRegex = f'^[.]'
+    DurationSomeRegex = f'^[.]'
+    DurationMoreOrLessRegex = f'^[.]'
     DurationYearRegex = f'((\\d{{3,4}})|0\\d|两千)\\s*年'
     DurationHalfSuffixRegex = f'半'
     DurationSuffixList = dict([("M", "分钟"),
