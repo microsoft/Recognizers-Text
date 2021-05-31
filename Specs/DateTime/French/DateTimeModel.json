@@ -20950,5 +20950,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je suis revenu dans mon pays il ya 2 jours.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il ya 2 jours",
+        "Start": 29,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-18",
+              "type": "date",
+              "value": "2021-05-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il y a à peu près un mois.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a à peu près un mois",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-20",
+              "type": "date",
+              "value": "2021-04-20"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il est parti depuis trois semaines.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis trois semaines",
+        "Start": 13,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-29",
+              "type": "date",
+              "value": "2021-04-29"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

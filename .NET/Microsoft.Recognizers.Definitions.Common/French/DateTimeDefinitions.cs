@@ -197,10 +197,10 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string BeforeRegex2 = @"\b(entre\s*(le|la(s)?)?)\b";
       public const string AfterRegex = @"\b(apres)\b";
       public const string SinceRegex = @"\b(depuis)\b";
-      public const string AroundRegex = @"\b(vers)\b";
+      public const string AroundRegex = @"\b(vers|à\s+peu\s+près|environ)\b";
       public const string AgoPrefixRegex = @"\b(y a)\b";
       public const string LaterRegex = @"\b(plus\s+tard|à\s+partir\s+(de\s+(maintenant|demain)|d'aujourd'hui)|après\s+(aujourd'hui|demain))\b";
-      public const string AgoRegex = @"\b(depuis|il\s+y\s+a|auparavant|avant\s+(?<day>hier|aujourd'hui))\b";
+      public static readonly string AgoRegex = $@"\b((depuis|il\s+y\s*a)(\s+{AroundRegex})?|auparavant|avant\s+(?<day>hier|aujourd'hui))\b";
       public const string BeforeAfterRegex = @"^\b$";
       public const string InConnectorRegex = @"\b(dans|en|sur)\b";
       public const string SinceYearSuffixRegex = @"^\b$";

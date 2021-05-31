@@ -446,13 +446,14 @@ AfterRegex: !simpleRegex
 SinceRegex: !simpleRegex
   def: \b(depuis)\b
 AroundRegex: !simpleRegex
-  def: \b(vers)\b
+  def: \b(vers|à\s+peu\s+près|environ)\b
 AgoPrefixRegex: !simpleRegex
   def: \b(y a)\b
 LaterRegex: !simpleRegex
   def: \b(plus\s+tard|à\s+partir\s+(de\s+(maintenant|demain)|d'aujourd'hui)|après\s+(aujourd'hui|demain))\b
-AgoRegex: !simpleRegex
-  def: \b(depuis|il\s+y\s+a|auparavant|avant\s+(?<day>hier|aujourd'hui))\b
+AgoRegex: !nestedRegex
+  def: \b((depuis|il\s+y\s*a)(\s+{AroundRegex})?|auparavant|avant\s+(?<day>hier|aujourd'hui))\b
+  references: [ AroundRegex ]
 BeforeAfterRegex: !simpleRegex
   def: ^\b$
 InConnectorRegex: !simpleRegex
