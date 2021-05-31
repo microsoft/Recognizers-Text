@@ -21241,5 +21241,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Terminamos nuestra clase hace 30 minutos.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "hace 30 minutos",
+        "Start": 25,
+        "End": 39,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-20T15:00:00",
+              "type": "datetime",
+              "value": "2021-05-20 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

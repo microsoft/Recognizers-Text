@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
     public class FrenchDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
         public static readonly Regex AgoRegex =
-            new Regex(DateTimeDefinitions.AgoPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AgoRegex, RegexFlags);
 
         public static readonly Regex LaterRegex =
             new Regex(DateTimeDefinitions.LaterRegex, RegexFlags);
@@ -74,6 +74,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
 
         Regex IDateTimeUtilityConfiguration.RangePrefixRegex => RangePrefixRegex;
 
-        bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for French is false.
+        // It only needs to be true here to extract 'ago/later' in prefixes (e.g. 'il y a 30 minutes').
+        bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => true;
     }
 }

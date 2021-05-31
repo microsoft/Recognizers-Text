@@ -83,9 +83,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string MonthOfRegex = $@"(mes)(\s+)({OfPrepositionRegex})";
       public const string RangeUnitRegex = @"\b(?<unit>años?|mes(es)?|semanas?)\b";
       public const string BeforeAfterRegex = @"^[.]";
-      public const string InConnectorRegex = @"\b(en)\b";
+      public const string InConnectorRegex = @"\b(en)(?=\s*$)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
-      public const string WithinNextPrefixRegex = @"\b(dentro\s+de)\b";
+      public const string WithinNextPrefixRegex = @"\b(dentro\s+de)(?=\s*$)\b";
       public const string TodayNowRegex = @"\b(hoy|ahora|este entonces)\b";
       public const string FromRegex = @"((\bde(sde)?)(\s*la(s)?)?)$";
       public const string BetweenRegex = @"(\bentre\s*(la(s)?)?)";
@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string ComplexDatePeriodRegex = $@"(?:((de(sde)?)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<end>.+)|((entre)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
       public const string AmbiguousPointRangeRegex = @"^(mar\.?)$";
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
-      public const string AgoRegex = @"\b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes)\b";
+      public const string AgoRegex = @"\b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes|hace)\b";
       public const string LaterRegex = @"\b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(?<day>hoy|ayer|mañana))\b";
       public const string Tomorrow = @"mañana";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
