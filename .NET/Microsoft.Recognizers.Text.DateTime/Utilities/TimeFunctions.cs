@@ -159,6 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return tempValue;
         }
 
+        // Handle am/pm modifiers (e.g. "1 in the afternoon") and time of day (e.g. "mid-morning")
         public void AddDesc(TimeResult result, string dayDesc)
         {
             if (string.IsNullOrEmpty(dayDesc))

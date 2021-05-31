@@ -424,10 +424,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "夜中",
+        "Text": "真夜中",
         "Type": "time",
-        "Start": 1,
-        "Length": 2
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -498,7 +498,7 @@
   },
   {
     "Input": "どのメールに返信がきましたか。",
-"NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {

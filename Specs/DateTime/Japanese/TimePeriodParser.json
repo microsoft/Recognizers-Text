@@ -1661,5 +1661,29 @@
         "Length": 2
       }
     ]
+  },
+  {
+    "Input": "日中",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "日中",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TDT",
+          "FutureResolution": {
+            "startTime": "06:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "06:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   }
 ]
