@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string AmbiguousPointRangeRegex = @"^(mar\.?)$";
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(el\s+)?año\s*)?{YearSuffix})";
-      public const string AgoRegex = @"\b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes)\b";
+      public const string AgoRegex = @"\b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes|hace)\b";
       public const string LaterRegex = @"\b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(ahora|(?<day>hoy|ayer|mañana)))\b";
       public const string Tomorrow = @"mañana";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
