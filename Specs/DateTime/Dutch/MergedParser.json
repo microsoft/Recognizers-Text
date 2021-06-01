@@ -5427,5 +5427,63 @@
         "Length": 5
       }
     ]
+  },
+  {
+    "Input": "We ontmoeten elkaar weer op tweede Paasdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweede paasdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-28",
+              "type": "date",
+              "value": "2016-03-28"
+            },
+            {
+              "timex": "XXXX-03-28",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Paaseieren zoeken rond het resort op eerste paasdag",
+    "Context": {
+      "ReferenceDateTime": "2018-07-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerste paasdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-04-01",
+              "type": "date",
+              "value": "2018-04-01"
+            },
+            {
+              "timex": "XXXX-04-01",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 14
+      }
+    ]
   }
 ]

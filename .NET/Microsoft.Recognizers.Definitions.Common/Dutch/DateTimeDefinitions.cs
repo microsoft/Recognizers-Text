@@ -237,7 +237,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AllRegex = @"\b(?<all>((de|het|een)(\s+))?((ge)?hele|volledige|ganse|heel|volledig|volle)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur|halfuur)|(?<unit>halfuur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
-      public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|paasdag|paas(zondag|maandag)|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)";
+      public static readonly string HolidayList1 = $@"(?<holiday>goede vrijdag|pasen|((eerste|tweede)\s+)?paasdag|paas(zondag|maandag)|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)";
       public static readonly string HolidayList2 = $@"(?<holiday>black friday|cyber monday|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)";
       public static readonly string HolidayList3 = $@"(?<holiday>(martin luther king|mlk|dankzeggings|valentijns|nieuwjaars|(eerste|1e|tweede|2e)\s+paas|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|(eerste|1e|tweede|2e)\s+kerst|vader|moeder|meisjes|(amerikaanse|us\s+)?onafhankelijkheids|(nederlandse\s+)?veteranen|boomplant|(nationale\s+)?boomfeest)dag)";
       public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(van dit\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?))\b";
@@ -724,8 +724,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"ascensionday", new string[] { @"hemelvaartsdag" } },
             { @"whitesunday", new string[] { @"pinksteren" } },
             { @"christmas", new string[] { @"kerstfeest", @"kerstmis", @"kerst", @"xmas" } },
-            { @"easterday", new string[] { @"pasen", @"paasdag", @"paaszondag" } },
-            { @"eastermonday", new string[] { @"paasmaandag" } },
+            { @"easterday", new string[] { @"pasen", @"eerstepaasdag", @"paasdag", @"paaszondag" } },
+            { @"eastermonday", new string[] { @"tweedepaasdag", @"paasmaandag" } },
             { @"fathers", new string[] { @"vaderdag" } },
             { @"goodfriday", new string[] { @"goedevrijdag" } },
             { @"mothers", new string[] { @"moederdag" } },
