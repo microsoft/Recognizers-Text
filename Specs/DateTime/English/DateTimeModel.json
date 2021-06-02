@@ -20555,7 +20555,6 @@
   },
   {
     "Input": "I'll be back within the next day and 5 hours",
-    "Comment": "The resolution of this case is wrong and needs to be fixed in DateTimePeriodParser",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -20569,10 +20568,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
               "type": "datetimerange",
               "start": "2016-11-07 16:12:00",
-              "end": "2016-11-07 21:12:00"
+              "end": "2016-11-08 21:12:00"
             }
           ]
         }
