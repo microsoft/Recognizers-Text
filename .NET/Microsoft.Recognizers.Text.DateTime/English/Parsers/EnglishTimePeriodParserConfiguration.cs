@@ -80,9 +80,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o, StringComparison.Ordinal)))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
                 timeOfDay = Constants.Daytime;
+            }
+            else if (DateTimeDefinitions.NighttimeTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                timeOfDay = Constants.Nighttime;
             }
             else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
