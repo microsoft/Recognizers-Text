@@ -170,15 +170,6 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 tokens.push(new Token(match.index, duration.end));
                 return;
             }
-            match = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
-            if (this.matchRegexInPrefix(beforeStr, match)) {
-                let rangeStr = source.substr(duration.start, duration.length);
-                let rangeMatch = RegExpUtility.getMatches(this.config.rangeUnitRegex, rangeStr).pop();
-                if (rangeMatch) {
-                    tokens.push(new Token(match.index, duration.end));
-                }
-                return;
-            }
         });
         return tokens;
     }

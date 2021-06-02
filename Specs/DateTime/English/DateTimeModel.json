@@ -20429,5 +20429,128 @@
     },
     "NotSupported": "python",
     "Results": []
+  },
+  {
+    "Input": "I'll be back within 5 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "within 5 minutes",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T00:00:00,2016-11-07T00:05:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 00:00:00",
+              "end": "2016-11-07 00:05:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back in 3 min",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in 3 min",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:03:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back 3 minutes from now",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes from now",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:03:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back within 3 min",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "within 3 min",
+        "Start": 13,
+        "End": 24,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-30T00:00:00,2019-07-30T00:03:00,PT3M)",
+              "type": "datetimerange",
+              "start": "2019-07-30 00:00:00",
+              "end": "2019-07-30 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back from now until 3 min later",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from now until 3 min later",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(PRESENT_REF,2019-07-30T00:03:00,PT3M)",
+              "type": "datetimerange",
+              "start": "2019-07-30 00:00:00",
+              "end": "2019-07-30 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

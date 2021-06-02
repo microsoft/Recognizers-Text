@@ -2,24 +2,34 @@
   {
     "Input": "Me mudarei em 3 anos",
     "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Me mudarei próximos 3 anos",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "em 3 anos",
+        "Text": "próximos 3 anos",
         "Type": "daterange",
         "Start": 11,
-        "Length": 9
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Me mudarei em 3 semanas",
     "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Me mudarei próximas 3 semanas",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "em 3 semanas",
+        "Text": "próximas 3 semanas",
         "Type": "daterange",
         "Start": 11,
-        "Length": 12
+        "Length": 18
       }
     ]
   },

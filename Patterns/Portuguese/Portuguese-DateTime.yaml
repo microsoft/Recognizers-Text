@@ -66,7 +66,7 @@ DateUnitRegex: !simpleRegex
 PastRegex: !simpleRegex
   def: (?<past>\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\b)
 FutureRegex: !simpleRegex
-  def: (?<past>\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\s+de|em|daqui\s+a)\b)
+  def: (?<past>\b(seguinte(s)?|pr[oó]xim[oa](s)?|daqui\s+a)\b)
 SimpleCasesRegex: !nestedRegex
   def: \b((desde\s+[oa]|desde|d[oa])\s+)?(dia\s+)?({DayRegex})\s*{TillRegex}\s*(o dia\s+)?({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -124,14 +124,20 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>anos?|meses|m[êe]s|semanas?)\b
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+NextPrefixRegex: !nestedRegex
+  def: (pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b
+  references: [ UpcomingPrefixRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(em)\b
 SinceYearSuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-WithinNextPrefixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(dentro\s+d(e|as)(\s+(?<next>{NextPrefixRegex}))?)\b
+  references: [ NextPrefixRegex ]
 TodayNowRegex: !simpleRegex
   def: \b(hoje|agora)\b
 CenturySuffixRegex: !simpleRegex
@@ -821,12 +827,6 @@ DateTokenPrefix: 'em '
 TimeTokenPrefix: 'as '
 TokenBeforeDate: 'o '
 TokenBeforeTime: 'as '
-UpcomingPrefixRegex: !simpleRegex
-  def: .^
-# TODO: modify below regex according to the counterpart in English
-NextPrefixRegex: !nestedRegex
-  def: (pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\b
-  references: [ UpcomingPrefixRegex ]
 PastPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
@@ -897,8 +897,7 @@ YearPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 FutureSuffixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: \b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b
 WrittenDecades: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary according to the counterpart in English
