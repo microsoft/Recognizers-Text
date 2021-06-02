@@ -3285,14 +3285,14 @@
     ]
   },
   {
-    "Input": "Het zal 2 dagen vanaf nu gebeuren",
+    "Input": "Het zal 2 dagen daarna gebeuren",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 dagen vanaf nu",
+        "Text": "2 dagen daarna",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -3306,7 +3306,7 @@
           }
         },
         "Start": 8,
-        "Length": 16
+        "Length": 14
       }
     ]
   },

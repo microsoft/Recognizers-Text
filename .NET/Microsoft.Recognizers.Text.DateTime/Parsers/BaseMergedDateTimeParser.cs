@@ -998,7 +998,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var combinedMod = newMod;
 
-            if (!string.IsNullOrEmpty(originalMod))
+            if (!string.IsNullOrEmpty(originalMod) && !originalMod.Equals(newMod, StringComparison.Ordinal))
             {
                 combinedMod = $"{newMod}-{originalMod}";
             }
