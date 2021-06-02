@@ -191,6 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Daytime = "TDT";
+        public const string Nighttime = "TNT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
         public const string MealtimeBreakfast = "TMEB";

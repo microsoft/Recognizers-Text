@@ -307,6 +307,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     result.BeginHour = 8;
                     result.EndHour = 18;
                     break;
+                case Constants.Nighttime:
+                    result.Timex = Constants.Nighttime;
+                    result.BeginHour = 0;
+                    result.EndHour = 8;
+                    break;
                 case Constants.BusinessHour:
                     result.Timex = Constants.BusinessHour;
                     result.BeginHour = 8;

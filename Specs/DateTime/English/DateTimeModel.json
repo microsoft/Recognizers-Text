@@ -20577,5 +20577,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "let's meet in the daytime",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the daytime",
+        "Start": 11,
+        "End": 24,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TDT",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "they were working in the night-time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the night-time",
+        "Start": 18,
+        "End": 34,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNT",
+              "type": "timerange",
+              "start": "00:00:00",
+              "end": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
