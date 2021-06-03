@@ -591,6 +591,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string SuffixAfterRegex = @"\b((a\s+)?(o|y)\s+(arriba|despu[eé]s|posterior|mayor|m[aá]s\s+tarde)(?!\s+(que|de)))\b";
       public static readonly string YearPeriodRegex = $@"((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
       public const string FutureSuffixRegex = @"\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro)\b";
+      public const string PastSuffixRegex = @"^\b$";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
             { @"", 0 }

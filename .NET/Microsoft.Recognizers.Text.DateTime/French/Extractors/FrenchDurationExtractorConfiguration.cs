@@ -48,6 +48,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex DurationConnectorRegex =
             new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
 
+        public static readonly Regex ModPrefixRegex =
+            new Regex(DateTimeDefinitions.ModPrefixRegex, RegexFlags);
+
+        public static readonly Regex ModSuffixRegex =
+            new Regex(DateTimeDefinitions.ModSuffixRegex, RegexFlags);
+
         public static readonly Regex SpecialNumberUnitRegex = null;
 
         public static readonly Regex MoreThanRegex =
@@ -114,5 +120,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDurationExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         Regex IDurationExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDurationExtractorConfiguration.ModPrefixRegex => ModPrefixRegex;
+
+        Regex IDurationExtractorConfiguration.ModSuffixRegex => ModSuffixRegex;
     }
 }

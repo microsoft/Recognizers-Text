@@ -590,6 +590,12 @@ YearPeriodRegex: !simpleRegex
   def: ^\b$
 FutureSuffixRegex: !simpleRegex
   def: \b(dans\s+le\s+futur)\b
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 ComplexDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$

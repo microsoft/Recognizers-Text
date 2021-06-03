@@ -41,6 +41,8 @@ ReferencePrefixRegex: !simpleRegex
 FutureSuffixRegex: !nestedRegex
   def: \b({NextPrefixRegex}|ileride|gelecekte)\b
   references: [ NextPrefixRegex ]
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
 DayRegex: !simpleRegex
   def: ((?<day>10|20|30|31|(1|2)[1-9]|0?[1-9])('i|'si|'sı|'ü|'u)?)
 ImplicitDayRegex: !simpleRegex
@@ -667,6 +669,12 @@ LaterRegex: !simpleRegex
   def: \b((?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra(ki)?)|sonra|şu\s+andan\s+itibaren)(\s+gelecek)?
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(içinde)\b
 SinceNumSuffixRegex: !simpleRegex

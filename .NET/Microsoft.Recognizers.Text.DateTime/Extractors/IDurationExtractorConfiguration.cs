@@ -35,6 +35,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MoreThanRegex { get; }
 
+        Regex ModPrefixRegex { get; }
+
+        Regex ModSuffixRegex { get; }
+
         Regex SpecialNumberUnitRegex { get; }
 
         bool CheckBothBeforeAfter { get; }

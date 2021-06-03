@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string CenturySuffixRegex = @"(^yüzyıl)";
       public const string ReferencePrefixRegex = @"(o|şu|aynı)\b";
       public static readonly string FutureSuffixRegex = $@"\b({NextPrefixRegex}|ileride|gelecekte)\b";
+      public const string PastSuffixRegex = @"^\b$";
       public const string DayRegex = @"((?<day>10|20|30|31|(1|2)[1-9]|0?[1-9])('i|'si|'sı|'ü|'u)?)";
       public const string ImplicitDayRegex = @"(?<day>(10|20|30|31|(1|2)[1-9])('i|'si|'sı|'ü|'u))(?=\b)";
       public const string DayFromSuffixRegex = @"(?<day>(1|5|8|11|15|18|21|25|28|31)'inden|(2|7|12|17|20|22|27)'sinden|(3|4|13|14|23|24)'ünden|(6|16|26)'sından|(9|10|19|29|30)'undan)";
@@ -285,6 +286,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string AgoRegex = @"\b((?<day>bugünden|gün|dünden|dün)\s+)?(önce(ki)?|evvel)\b";
       public const string LaterRegex = @"\b((?<day>yarından|yarın|bugünden|gün)\s+(itibaren|sonra(ki)?)|sonra|şu\s+andan\s+itibaren)(\s+gelecek)?";
       public const string BeforeAfterRegex = @"^[.]";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string InConnectorRegex = @"\b(içinde)\b";
       public const string SinceNumSuffixRegex = @"\b^(?!0)(\d{0,3}((1|2|7|8)'den|(3|4|5)'ten|(6|9)'dan)|\d{0,2}(10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den)|\d000'den)\b";
       public static readonly string SinceYearSuffixRegex = $@"({YearSuffix}\s+(yılından beri)|{SinceNumSuffixRegex}\s+beri)";

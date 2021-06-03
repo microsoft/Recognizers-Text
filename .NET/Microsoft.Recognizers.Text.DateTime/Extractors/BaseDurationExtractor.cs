@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -218,6 +218,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (extractorResults.Count <= 1)
             {
                 return extractorResults;
+            }
+
+            // If the first and last extractions are both preceded/followed by modifiers,
+            // they should not be merged, e.g. "last 2 weeks and 3 days ago"
+            var minStart = extractorResults.Min(er => er.Start);
+            var beforeStr = text.Substring(0, (int)minStart);
+            var beforeMod = this.config.ModPrefixRegex.MatchEnd(beforeStr, trim: true);
+            if (beforeMod.Success)
+            {
+                var maxEnd = extractorResults.Max(er => er.Start + er.Length);
+                var afterStr = text.Substring((int)maxEnd);
+                var afterMod = this.config.ModSuffixRegex.MatchBegin(afterStr, trim: true);
+                if (afterMod.Success)
+                {
+                    return extractorResults;
+                }
             }
 
             var unitMap = this.config.UnitMap;

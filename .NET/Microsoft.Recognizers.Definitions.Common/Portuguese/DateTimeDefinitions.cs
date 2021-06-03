@@ -523,6 +523,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string SuffixAfterRegex = @"^[.]";
       public const string YearPeriodRegex = @"^[.]";
       public const string FutureSuffixRegex = @"\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b";
+      public const string PastSuffixRegex = @"^\b$";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
             { @"", 0 }
