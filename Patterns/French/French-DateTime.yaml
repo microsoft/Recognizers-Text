@@ -58,7 +58,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(en\s*|le\s*|de\s*|dans\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(l')?ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\b
+  def: (?<unit>an|mois|((l')?ann[eé]e|semaine|journ[eé]e|jour)(?<plural>s)?)\b
 SimpleCasesRegex: !nestedRegex
   def: \b((d[ue])|entre\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -257,7 +257,7 @@ IshRegex: !nestedRegex
   def: '\b(peu\s*pr[èe]s\s*{BaseDateTime.HourRegex}|peu\s*pr[èe]s\s*{WrittenTimeRegex}|peu\s*pr[èe]s\s*[àa]\s*{BaseDateTime.HourRegex}|peu pr[èe]s midi)\b'
   references: [ BaseDateTime.HourRegex, WrittenTimeRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>heures?|hrs?|h|minutes?|mins?|secondes?|secs?)\b
+  def: (?<unit>h|(heure|hr|minute|min|seconde|sec)(?<plural>s)?)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>huere|minute)\b
 ConnectNumRegex: !nestedRegex

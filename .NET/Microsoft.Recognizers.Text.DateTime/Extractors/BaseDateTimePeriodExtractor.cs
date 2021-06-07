@@ -594,17 +594,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var durationExtraction in durationExtractions)
             {
-                var match = config.TimeUnitRegex.Match(durationExtraction.Text);
-                if (match.Success)
+                var timeUnitMatch = config.TimeUnitRegex.Match(durationExtraction.Text);
+                if (!timeUnitMatch.Success)
                 {
-                    durations.Add(new Token(
-                        durationExtraction.Start ?? 0,
-                        durationExtraction.Start + durationExtraction.Length ?? 0));
+                    continue;
                 }
-            }
 
-            foreach (var duration in durations)
-            {
+                var isPlurarUnit = timeUnitMatch.Groups[Constants.PluralUnit].Success;
+                var duration = new Token(durationExtraction.Start ?? 0, durationExtraction.Start + durationExtraction.Length ?? 0);
                 var beforeStr = text.Substring(0, duration.Start);
                 var afterStr = text.Substring(duration.Start + duration.Length);
 
@@ -658,7 +655,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Cases like "2 upcoming days", should be supported here
                     // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
-                    if (numbersInPrefix.Any() && !numbersInDuration.Any())
+                    if (numbersInPrefix.Any() && !numbersInDuration.Any() && isPlurarUnit)
                     {
                         var lastNumber = numbersInPrefix.OrderBy(t => t.Start + t.Length).Last();
 

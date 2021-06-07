@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>(من\s+)?(هذا\s+)?(الشهر|شهر)(\s+)?({NextRegex})?)";
       public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>(ال)?يوم(ا)?|(ال)?أسبوع(ا)?|(ال)?شهر(ا)?|(ال)?سنة|(ال)?عام(ا)?|(ال)?قرن|(ال)?حقبة|(ال)?يومان|(ال)?أسبوعان|(ال)?شهران|(ال)?سنتان|(ال)?عامان|(ال)?قرنان|(ال)?حقبتان|(ال)?يومين|(ال)?أسبوعين|(ال)?شهرين|(ال)?سنتين|(ال)?عامين|(ال)?قرنين|(ال)?حقبتين|(ال)?أيام|الأسابيع|(ال)?أشهر|(ال)?سنوات|(ال)?سنين|(ال)?أعوام|(ال)?حقبات|(ال)?قرون|نهاية الأسبوع|(?<=\s+\d{1,4})[ymwd])\b";
+      public const string DateUnitRegex = @"((?<unit>(((ال)?(يوم(ا)?|أسبوع(ا)?|شهر(ا)?|سنة|عام(ا)?|قرن|حقبة))|نهاية الأسبوع))|(?<plural>((ال)?(يومان|أسبوعان|شهران|سنتان|عامان|قرنان|حقبتان|يومين|أسبوعين|شهرين|سنتين|عامين|قرنين|حقبتين|يومان|أسبوعان|شهران|سنتان|عامان|قرنان|حقبتان|أيام|أسابيع|أشهر|سنوات|أعوام|حقبات|قرون|سنين|شهور)))|((?<=\s+\d{1,4})[ymwd]))\b";
       public const string DateTokenPrefix = @"في ";
       public const string TimeTokenPrefix = @"عند ";
       public const string TokenBeforeDate = @"في ";
@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"\b(?:(?:(?<=\bفي\s+)?(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b((({BaseDateTime.HourRegex}|{WrittenTimeRegex})(\s|-))?(وقت\s)?((الظهيرة|الظهر|ظهر(ا|اً))))\b";
-      public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)(?<unit>(ال)?ساعة|(ال)?ساعات|(ال)?دقائق|(ال)?دقيقة|(ال)?ثانية|(ال)?ثوان|(ال)?ساعتين|(ال)?دقيقتين|(ال)?ثانيتين)\b";
+      public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)((?<unit>((ال)?(ساعة|دقيقة|ثانية)))|(?<plural>((ال)?(ساعات|دقائق|ثوان|ساعتين|دقيقتين|ثانيتين|ساعتان|دقيقتان|ثانيتان))))\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>(ال)?ساعة|(ال)?دقيقة)\b";
       public const string FivesRegex = @"(?<tens>(?:fifteen|(?:twen|thir|fou?r|fif)ty(\s*five)?|ten|five))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";

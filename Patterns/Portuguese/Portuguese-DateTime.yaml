@@ -62,7 +62,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((em|no)\s+|d[eo]\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>anos?|meses|m[êe]s|semanas?|dias?)\b
+  def: (?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\b)
 FutureRegex: !simpleRegex
@@ -407,7 +407,7 @@ SpecificTimeBetweenAnd: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b
+  def: (?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
