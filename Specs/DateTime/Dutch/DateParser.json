@@ -4711,7 +4711,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgende week zondag",
+        "Text": "op volgende week zondag",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-01",
@@ -4722,8 +4722,8 @@
             "date": "2018-04-01"
           }
         },
-        "Start": 18,
-        "Length": 20
+        "Start": 15,
+        "Length": 23
       }
     ]
   },

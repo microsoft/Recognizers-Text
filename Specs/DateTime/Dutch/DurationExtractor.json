@@ -688,10 +688,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de hele dag",
+        "Text": "voor de hele dag",
         "Type": "duration",
-        "Start": 16,
-        "Length": 11
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -700,10 +700,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de hele week",
+        "Text": "voor de hele week",
         "Type": "duration",
-        "Start": 16,
-        "Length": 12
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
@@ -712,10 +712,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de hele maand",
+        "Text": "voor de hele maand",
         "Type": "duration",
-        "Start": 16,
-        "Length": 13
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -724,10 +724,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "het hele jaar",
+        "Text": "voor het hele jaar",
         "Type": "duration",
-        "Start": 16,
-        "Length": 13
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -736,10 +736,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de gehele dag",
+        "Text": "voor de gehele dag",
         "Type": "duration",
-        "Start": 16,
-        "Length": 13
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -748,10 +748,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de gehele week",
+        "Text": "voor de gehele week",
         "Type": "duration",
-        "Start": 16,
-        "Length": 14
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
@@ -760,10 +760,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de gehele maand",
+        "Text": "voor de gehele maand",
         "Type": "duration",
-        "Start": 16,
-        "Length": 15
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
@@ -772,10 +772,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "het gehele jaar",
+        "Text": "voor het gehele jaar",
         "Type": "duration",
-        "Start": 16,
-        "Length": 15
+        "Start": 11,
+        "Length": 20
       }
     ]
   },

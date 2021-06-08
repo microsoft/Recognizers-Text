@@ -139,14 +139,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedDateTimeExtractor(
                         new HindiMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi, options)))));
 
-            // TODO to be uncommented when all tests for Dutch are green.
-            // RegisterModel<DateTimeModel>(
-            //     Culture.Dutch,
-            //     options => new DateTimeModel(
-            //         new BaseMergedDateTimeParser(
-            //             new DutchMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options))),
-            //         new BaseMergedDateTimeExtractor(
-            //             new DutchMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options)))));
+            RegisterModel<DateTimeModel>(
+                Culture.Dutch,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new DutchMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options))),
+                    new BaseMergedDateTimeExtractor(
+                        new DutchMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options)))));
 
             // TODO to be uncommented when all tests for Japanese are green.
             // RegisterModel<DateTimeModel>(
