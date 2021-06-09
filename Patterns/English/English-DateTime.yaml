@@ -1121,6 +1121,11 @@ HolidayNames: !dictionary
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve ]
     juneteenth: [ juneteenth, freedomday, jubileeday]
+    # Islamic Holidays
+    ramadan: [ ramadan, ramazan, ramzan, ramadhan, ramathan ] # Not Implemented
+    sacrifice: [ eidaladha, eidalazha, eidulazha, feastofthesacrifice ] # Not Implemented
+    islamicnewyear: [ islamicnewyear, hijrinewyear, arabicnewyear ] # Not Implemented
+    eidalfitr: [ eidalfitr, festivalofbreakingthefast ] # Not Implemented
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:

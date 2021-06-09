@@ -114,6 +114,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "ketikoti", KetiKoti },
                 { "ramadan", Ramadan },
                 { "sacrifice", Sacrifice },
+                { "eidalfitr", EidAlFitr },
+                { "islamicnewyear", IslamicNewYear},
             };
         }
 
@@ -212,5 +214,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
 
         private static DateObject Sacrifice(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Sacrifice);
+
+        private static DateObject EidAlFitr(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.EidAlFitr);
+
+        private static DateObject IslamicNewYear(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.NewYear);
     }
 }
