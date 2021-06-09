@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "ramadan", Ramadan },
                 { "sacrifice", Sacrifice },
                 { "eidalfitr", EidAlFitr },
-                { "islamicnewyear", IslamicNewYear},
+                { "islamicnewyear", IslamicNewYear },
             };
         }
 
